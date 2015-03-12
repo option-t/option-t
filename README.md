@@ -30,6 +30,17 @@ console.log(some.isSome); // false
 console.log(some.value); // undefined
 ```
 
+### JSON Representation
+
+`new OptionType(1)` will be
+
+```json
+{
+    "is_some": true,
+    "value": 1
+}
+```
+
 
 ## License
 
