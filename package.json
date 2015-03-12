@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "description": "Option type implementation whose APIs are inspired by Rust's `Option<T>`.",
   "main": "src/OptionType.js",
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE.MIT",
+    "README.md",
+    "package.json",
+    "src/"
+  ],
   "scripts": {
     "lint": "eslint ./src/",
     "test": "mocha --require intelli-espower-loader ./test/manifest.js"
