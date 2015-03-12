@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "lint": "eslint ./src/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require intelli-espower-loader ./test/manifest.js"
   },
   "author": {
     "name": "Tetsuharu OHZEKI",
@@ -22,6 +22,10 @@
     "url": "https://github.com/saneyuki/option-t.js.git"
   },
   "devDependencies": {
-    "eslint": "^0.16.2"
+    "eslint": "^0.16.2",
+    "espower-loader": "^0.10.0",
+    "intelli-espower-loader": "^0.6.0",
+    "mocha": "^2.2.1",
+    "power-assert": "^0.10.2"
   }
 }
