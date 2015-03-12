@@ -1,0 +1,27 @@
+{
+  "name": "option-t",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "lint": "eslint ./src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Tetsuharu OHZEKI",
+    "email": "saneyuki.snyk@gmail.com",
+    "url": "https://github.com/saneyuki/"
+  },
+  "licenses": [
+    {
+      "type": "MIT License",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saneyuki/option-t.js.git"
+  },
+  "devDependencies": {
+    "eslint": "^0.16.2"
+  }
+}
