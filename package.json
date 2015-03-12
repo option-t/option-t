@@ -2,6 +2,7 @@
   "name": "option-t",
   "version": "0.1.0",
   "description": "",
+  "main": "src/OptionType.js",
   "scripts": {
     "lint": "eslint ./src/",
     "test": "mocha --require intelli-espower-loader ./test/manifest.js"

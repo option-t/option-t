@@ -1,7 +1,7 @@
 /*
  * @license MIT License
  *
- * Copyright (c) 2015 Tetsuharu OHZEKI <saneyuki.snyk@gmail.com>
+ * Copyright (c) 2014 Tetsuharu OHZEKI <saneyuki.snyk@gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,5 +24,10 @@
 
 'use strict';
 
-require('./test_initialize');
-require('./test_json');
+module.exports = Object.freeze({
+    primitiveVal: [-1, 0, 1, true, false, '', 'bar', null],
+
+    objectVal: [{ bar: 1}, [1, 2, 3]],
+
+    funcVal: [ function(){} ],
+});
