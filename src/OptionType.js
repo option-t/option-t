@@ -27,7 +27,7 @@
 /**
  *  @constructor
  *
- *  @param  {any}   value
+ *  @param  {any}   val
  *      * if `value` is `T` (not `undefined`), this should be `Some<T>`.
  *      * if `value` is `undefined`, this should be `None`.
  */
