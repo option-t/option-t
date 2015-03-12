@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "lint": "eslint ./src/",
+    "pretest": "npm run lint",
     "test": "mocha --require intelli-espower-loader ./test/manifest.js"
   },
   "author": {
