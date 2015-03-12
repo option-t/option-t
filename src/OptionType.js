@@ -24,5 +24,37 @@
 
 'use strict';
 
-require('./test_initialize');
-require('./test_json');
+/**
+ *  @constructor
+ *
+ *  @param  {any}   value
+ *      * if `value` is `T` (not `undefined`), this should be `Some<T>`.
+ *      * if `value` is `undefined`, this should be `None`.
+ */
+var OptionType = function OptionType(val) {
+    /* eslint-disable camelcase */
+    /*  @type   {boolean}   */
+    this.is_some = (val !== undefined);
+    /* eslint-enable */
+
+    /*  @type   {*}   */
+    this.value = val;
+
+    Object.seal(this);
+};
+OptionType.prototype = Object.seal({
+
+    /**
+     *  Return whether this is `Some<T>` or not.
+     *
+     *  @return {boolean}
+     */
+    get isSome() {
+        return this.is_some;
+    },
+
+});
+
+module.exports = {
+    OptionType: OptionType,
+};
