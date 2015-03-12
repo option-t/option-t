@@ -6,7 +6,9 @@
 
 ## Installation
 
-`npm install --save option-t`
+```sh
+npm install --save option-t
+```
 
 
 ## Usage
