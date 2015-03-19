@@ -19,7 +19,7 @@
         "no-extra-parens": 0,
         "valid-jsdoc": [2, {
             "requireReturn": true,
-            "requireParamDescription": true,
+            "requireParamDescription": false,
             "requireReturnDescription": false
         }],
 

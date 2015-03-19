@@ -72,6 +72,27 @@ OptionType.prototype = Object.seal({
         return this.value;
     },
 
+    /**
+     *  Maps an `OptionType<T>` to `OptionType<U>` by applying a function to a contained value.
+     *
+     *  @template   T, U
+     *
+     *  @param  {function(T):U}    fn
+     *      XXX: If `U` is `undefined`, this method will return `None<U>` in such case.
+     *           Because this library treats `undefined` as `None`.
+     *  @return {OptionType<U>}
+     */
+    map: function OptionTypeMap(fn) {
+        if (!this.is_some) {
+            // cheat to escape from a needless allocation.
+            return this;
+        }
+
+        var value = fn(this.value);
+        var option = new OptionType(value);
+        return option;
+    },
+
 });
 
 module.exports = {
