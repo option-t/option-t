@@ -32,12 +32,24 @@ console.log(some.value); // undefined
 
 ### JSON Representation
 
-`new OptionType(1)` will be
+#### `Some<T>`
+
+`new OptionType(1)` will be:
 
 ```json
 {
     "is_some": true,
     "value": 1
+}
+```
+
+#### `None`
+
+`new OptionType()` will be:
+
+```json
+{
+    "is_some": false
 }
 ```
 
