@@ -54,6 +54,9 @@ console.log(none.unwrap()); // this will throw `Error`.
 }
 ```
 
+## API
+
+see [inlined JSDoc](./src/OptionType.js).
 
 ## Semantics
 
