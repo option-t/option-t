@@ -93,6 +93,21 @@ OptionType.prototype = Object.seal({
         return option;
     },
 
+    /**
+     *  Finalize the self.
+     *  After this is called, the object's behavior is not defined.
+     *
+     *  @return {void}
+     */
+    drop: function () {
+        /* eslint-disable camelcase */
+        this.is_some = false;
+        /* eslint-enable */
+
+        this.value = null;
+        Object.freeze(this);
+    },
+
 });
 
 module.exports = {

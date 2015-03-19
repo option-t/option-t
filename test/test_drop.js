@@ -24,8 +24,42 @@
 
 'use strict';
 
-require('./test_initialize');
-require('./test_json');
-require('./test_unwrap');
-require('./test_map');
-require('./test_drop');
+var assert = require('power-assert');
+var OptionType = require('../src/OptionType').OptionType;
+
+describe('OptionType.drop()', function(){
+
+    describe('drop `Some<T>`', function () {
+        var option = null;
+
+        before(function(){
+            option = new OptionType(1);
+            option.drop();
+        });
+
+        after(function(){
+            option = null;
+        });
+
+        it('the inner should be freed', function() {
+            assert.strictEqual(option.value, null);
+        });
+    });
+
+    describe('drop `None`', function () {
+        var option = null;
+
+        before(function(){
+            option = new OptionType();
+            option.drop();
+        });
+
+        after(function(){
+            option = null;
+        });
+
+        it('the inner should be freed', function() {
+            assert.strictEqual(option.value, null);
+        });
+    });
+});
