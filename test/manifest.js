@@ -26,3 +26,4 @@
 
 require('./test_initialize');
 require('./test_json');
+require('./test_unwrap');

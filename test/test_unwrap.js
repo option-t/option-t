@@ -24,56 +24,46 @@
 
 'use strict';
 
-/**
- *  @constructor
- *  @template   T
- *
- *  @param  {T=}   val (optional)
- *      * if `value` is `T` (not `undefined`), this should be `Some<T>`.
- *      * if `value` is `undefined` or not passed, this should be `None`.
- */
-var OptionType = function OptionType(val) {
-    /* eslint-disable camelcase */
-    /** @type   {boolean}   */
-    this.is_some = (val !== undefined);
-    /* eslint-enable */
+var assert = require('power-assert');
+var OptionType = require('../src/OptionType').OptionType;
 
-    /** @type   {T}   */
-    this.value = val;
+describe('OptionType.unwrap()', function(){
 
-    Object.seal(this);
-};
-OptionType.prototype = Object.seal({
+    describe('unwrap `Some<T>`', function () {
+        it('should get the inner', function() {
+            var EXPECTED = 1;
+            var option = new OptionType(EXPECTED);
+            assert.strictEqual(option.unwrap(), EXPECTED);
+        });
+    });
 
-    /**
-     *  Return whether this is `Some<T>` or not.
-     *
-     *  @template   T
-     *  @return {boolean}
-     */
-    get isSome() {
-        return this.is_some;
-    },
+    describe('unwrap `None`', function () {
+        var none = null;
+        var error = null;
 
-    /**
-     *  Returns the inner `T` of a `Some<T>`.
-     *
-     *  @template   T
-     *
-     *  @return {T}
-     *  @throws {Error}
-     *      Throws if the self value equals `None`.
-     */
-    unwrap: function OptionTypeUnwrap() {
-        if (!this.is_some) {
-            throw new Error('called `unwrap()` on a `None` value');
-        }
+        before(function(){
+            none = new OptionType();
+            assert.ok(!none.isSome);
 
-        return this.value;
-    },
+            try {
+                none.unwrap();
+            }
+            catch (e) {
+                error = e;
+            }
+        });
 
+        after(function(){
+            none = null;
+            error = null;
+        });
+
+        it('should throw the error', function() {
+            assert.ok(error instanceof Error);
+        });
+
+        it('should be the expected error message', function() {
+            assert.strictEqual(error.message, 'called `unwrap()` on a `None` value');
+        });
+    });
 });
-
-module.exports = {
-    OptionType: OptionType,
-};

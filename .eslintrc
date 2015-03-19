@@ -59,7 +59,7 @@
         "semi": [2, "always"],
         "space-unary-ops": [2, {
             "words": true,
-            "nonwords": true
+            "nonwords": false
         }],
         "spaced-line-comment": 2,
 
