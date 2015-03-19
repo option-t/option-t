@@ -64,6 +64,6 @@
         "spaced-line-comment": 2,
 
         // ECMAScript 6
-        "generator-star": [2, "start"]
+        "generator-star-spacing": [2, "after"]
     }
 }
