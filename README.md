@@ -25,8 +25,8 @@ console.log(some.value); // 1
 
 // `None`
 var none = new OptionType();
-console.log(some.isSome); // false
-console.log(some.value); // undefined
+console.log(none.isSome); // false
+console.log(none.value); // undefined
 ```
 
 ### JSON Representation
