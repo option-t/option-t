@@ -22,11 +22,13 @@ var OptionType = require('option-t').OptionType;
 var some = new OptionType(1);
 console.log(some.isSome); // true
 console.log(some.value); // 1
+console.log(some.unwrap()); // 1
 
 // `None`
 var none = new OptionType();
 console.log(none.isSome); // false
-console.log(none.value); // undefined
+console.log(some.value); // undefined
+console.log(none.unwrap()); // this will throw `Error`.
 ```
 
 ### JSON Representation
