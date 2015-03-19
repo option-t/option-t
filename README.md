@@ -13,7 +13,6 @@
 npm install --save option-t
 ```
 
-
 ## Usage
 
 ```javascript
@@ -52,6 +51,27 @@ console.log(some.value); // undefined
     "is_some": false
 }
 ```
+
+
+## Semantics
+
+This library represents [Option type](http://en.wikipedia.org/wiki/Option_type) in ECMAScript.
+So this object will be the one of following states:
+
+* `Some<T>`: `option.isSome === true`.
+* `None`: `option.isSome === false`.
+
+
+### `Some<T>`
+
+This type represents that there are **some values `T`**.
+If this value wraps `null`, it just means that there is a null value.
+
+
+### `None` (`None<T>`)
+
+This type represents that there is **no value** explicitly.
+It is just `None !== null`.
 
 
 ## License
