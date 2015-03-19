@@ -13,7 +13,8 @@
   ],
   "scripts": {
     "lint": "eslint ./src/",
-    "pretest": "npm run lint",
+    "typetest": "tsc ./test/test_type_definition.ts --outDir ./__build/ --module commonjs",
+    "pretest": "npm run lint && npm run typetest",
     "test": "mocha --require intelli-espower-loader ./test/manifest.js"
   },
   "author": {
@@ -36,6 +37,7 @@
     "espower-loader": "^0.10.0",
     "intelli-espower-loader": "^0.6.0",
     "mocha": "^2.2.1",
-    "power-assert": "^0.10.2"
+    "power-assert": "^0.10.2",
+    "typescript": "^1.4.1"
   }
 }
