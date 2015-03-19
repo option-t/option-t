@@ -26,18 +26,19 @@
 
 /**
  *  @constructor
+ *  @template   T
  *
- *  @param  {any}   val
+ *  @param  {T=}   val (optional)
  *      * if `value` is `T` (not `undefined`), this should be `Some<T>`.
- *      * if `value` is `undefined`, this should be `None`.
+ *      * if `value` is `undefined` or not passed, this should be `None`.
  */
 var OptionType = function OptionType(val) {
     /* eslint-disable camelcase */
-    /*  @type   {boolean}   */
+    /** @type   {boolean}   */
     this.is_some = (val !== undefined);
     /* eslint-enable */
 
-    /*  @type   {*}   */
+    /** @type   {T}   */
     this.value = val;
 
     Object.seal(this);
