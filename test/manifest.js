@@ -28,4 +28,5 @@ require('./test_initialize');
 require('./test_json');
 require('./test_unwrap');
 require('./test_map');
+require('./test_flatmap');
 require('./test_drop');
