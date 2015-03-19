@@ -6,8 +6,9 @@
   "files": [
     "CHANGELOG.md",
     "LICENSE.MIT",
-    "README.md",
+    "option-t.d.ts",
     "package.json",
+    "README.md",
     "src/"
   ],
   "scripts": {
