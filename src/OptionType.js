@@ -48,6 +48,7 @@ OptionType.prototype = Object.seal({
     /**
      *  Return whether this is `Some<T>` or not.
      *
+     *  @template   T
      *  @return {boolean}
      */
     get isSome() {
