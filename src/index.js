@@ -24,45 +24,14 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var Some = require('../src/index').Some;
-var None = require('../src/index').None;
+var Option = require('./OptionT');
+var OptionType = require('./OptionType');
 
-describe('Option<T>.unwrap()', function(){
+var OptionT = {
+    OptionType: OptionType,
+    Some: Option.Some,
+    None: Option.None,
+    OptionT: Option.OptionT,
+};
 
-    describe('unwrap `Some<T>`', function () {
-        it('should get the inner', function() {
-            var EXPECTED = 1;
-            var option = new Some(EXPECTED);
-            assert.strictEqual(option.unwrap(), EXPECTED);
-        });
-    });
-
-    describe('unwrap `None`', function () {
-        var none = null;
-        var error = null;
-
-        before(function(){
-            none = new None();
-            try {
-                none.unwrap();
-            }
-            catch (e) {
-                error = e;
-            }
-        });
-
-        after(function(){
-            none = null;
-            error = null;
-        });
-
-        it('should throw the error', function() {
-            assert.ok(error instanceof Error);
-        });
-
-        it('should be the expected error message', function() {
-            assert.strictEqual(error.message, 'called `unwrap()` on a `None` value');
-        });
-    });
-});
+module.exports = OptionT;

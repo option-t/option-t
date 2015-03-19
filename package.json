@@ -2,7 +2,7 @@
   "name": "option-t",
   "version": "0.2.0",
   "description": "Option type implementation whose APIs are inspired by Rust's `Option<T>`.",
-  "main": "src/OptionType.js",
+  "main": "src/index.js",
   "files": [
     "CHANGELOG.md",
     "LICENSE.MIT",

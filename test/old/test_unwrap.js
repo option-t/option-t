@@ -25,52 +25,45 @@
 'use strict';
 
 var assert = require('power-assert');
-var Some = require('../src/index').Some;
-var None = require('../src/index').None;
+var OptionType = require('../../src/index').OptionType;
 
-describe('Option<T>.map()', function(){
-    describe('self is `None`', function () {
-        var option = null;
-        var isNotCalled = true;
+describe('OptionType.unwrap()', function(){
 
-        before(function(){
-            var none = new None();
-            option = none.map(function(){
-                isNotCalled = false;
-            });
-        });
-
-        it('the returned value shoule be `None`: 1', function() {
-            assert.strictEqual(option.isSome, false);
-        });
-
-        it('the returned value shoule be `None`: 2', function() {
-            assert.ok(option instanceof None);
-        });
-
-        it('the passed function should not be called', function() {
-            assert.strictEqual(isNotCalled, true);
+    describe('unwrap `Some<T>`', function () {
+        it('should get the inner', function() {
+            var EXPECTED = 1;
+            var option = new OptionType(EXPECTED);
+            assert.strictEqual(option.unwrap(), EXPECTED);
         });
     });
 
-    describe('self is `Some<T>`', function () {
-        var EXPECTED = "1";
-        var option = null;
+    describe('unwrap `None`', function () {
+        var none = null;
+        var error = null;
 
         before(function(){
-            var some = new Some(1);
-            option = some.map(function(val){
-                assert.notStrictEqual(val !== EXPECTED);
-                return EXPECTED;
-            });
+            none = new OptionType();
+            assert.ok(!none.isSome);
+
+            try {
+                none.unwrap();
+            }
+            catch (e) {
+                error = e;
+            }
         });
 
-        it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.ok(option instanceof Some);
+        after(function(){
+            none = null;
+            error = null;
         });
 
-        it('the returned value shoule be `Some<T>`: 2', function() {
-            assert.strictEqual(option.unwrap(), EXPECTED);
+        it('should throw the error', function() {
+            assert.ok(error instanceof Error);
+        });
+
+        it('should be the expected error message', function() {
+            assert.strictEqual(error.message, 'called `unwrap()` on a `None` value');
         });
     });
 });

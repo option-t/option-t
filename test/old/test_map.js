@@ -25,27 +25,24 @@
 'use strict';
 
 var assert = require('power-assert');
-var Some = require('../src/index').Some;
-var None = require('../src/index').None;
+var OptionType = require('../../src/index').OptionType;
 
-describe('Option<T>.map()', function(){
+describe('OptionType.map()', function(){
     describe('self is `None`', function () {
         var option = null;
         var isNotCalled = true;
 
         before(function(){
-            var none = new None();
+            var none = new OptionType();
+            assert.ok(!none.isSome);
+
             option = none.map(function(){
                 isNotCalled = false;
             });
         });
 
-        it('the returned value shoule be `None`: 1', function() {
+        it('the returned value shoule be `None`', function() {
             assert.strictEqual(option.isSome, false);
-        });
-
-        it('the returned value shoule be `None`: 2', function() {
-            assert.ok(option instanceof None);
         });
 
         it('the passed function should not be called', function() {
@@ -58,19 +55,34 @@ describe('Option<T>.map()', function(){
         var option = null;
 
         before(function(){
-            var some = new Some(1);
+            var some = new OptionType(1);
+            assert.ok(some.isSome);
+
             option = some.map(function(val){
                 assert.notStrictEqual(val !== EXPECTED);
                 return EXPECTED;
             });
         });
 
-        it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.ok(option instanceof Some);
+        it('the returned value shoule be `None`', function() {
+            assert.strictEqual(option.unwrap(), EXPECTED);
+        });
+    });
+
+    describe('the passed function returns undefined', function () {
+        var option = null;
+
+        before(function(){
+            var some = new OptionType(1);
+            assert.ok(some.isSome);
+
+            option = some.map(function(val){
+                return undefined;
+            });
         });
 
-        it('the returned value shoule be `Some<T>`: 2', function() {
-            assert.strictEqual(option.unwrap(), EXPECTED);
+        it('the returned value shoule be `None`', function() {
+            assert.strictEqual(option.isSome, false);
         });
     });
 });

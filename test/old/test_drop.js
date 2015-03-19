@@ -25,52 +25,41 @@
 'use strict';
 
 var assert = require('power-assert');
-var Some = require('../src/index').Some;
-var None = require('../src/index').None;
+var OptionType = require('../../src/index').OptionType;
 
-describe('Option<T>.map()', function(){
-    describe('self is `None`', function () {
+describe('OptionType.drop()', function(){
+
+    describe('drop `Some<T>`', function () {
         var option = null;
-        var isNotCalled = true;
 
         before(function(){
-            var none = new None();
-            option = none.map(function(){
-                isNotCalled = false;
-            });
+            option = new OptionType(1);
+            option.drop();
         });
 
-        it('the returned value shoule be `None`: 1', function() {
-            assert.strictEqual(option.isSome, false);
+        after(function(){
+            option = null;
         });
 
-        it('the returned value shoule be `None`: 2', function() {
-            assert.ok(option instanceof None);
-        });
-
-        it('the passed function should not be called', function() {
-            assert.strictEqual(isNotCalled, true);
+        it('the inner should be freed', function() {
+            assert.strictEqual(option.value, null);
         });
     });
 
-    describe('self is `Some<T>`', function () {
-        var EXPECTED = "1";
+    describe('drop `None`', function () {
         var option = null;
 
         before(function(){
-            var some = new Some(1);
-            option = some.map(function(val){
-                assert.notStrictEqual(val !== EXPECTED);
-                return EXPECTED;
-            });
+            option = new OptionType();
+            option.drop();
         });
 
-        it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.ok(option instanceof Some);
+        after(function(){
+            option = null;
         });
 
-        it('the returned value shoule be `Some<T>`: 2', function() {
-            assert.strictEqual(option.unwrap(), EXPECTED);
+        it('the inner should be freed', function() {
+            assert.strictEqual(option.value, null);
         });
     });
 });

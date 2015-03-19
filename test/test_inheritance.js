@@ -25,52 +25,22 @@
 'use strict';
 
 var assert = require('power-assert');
+var OptionT = require('../src/index').OptionT;
 var Some = require('../src/index').Some;
 var None = require('../src/index').None;
 
-describe('Option<T>.map()', function(){
-    describe('self is `None`', function () {
-        var option = null;
-        var isNotCalled = true;
-
-        before(function(){
-            var none = new None();
-            option = none.map(function(){
-                isNotCalled = false;
-            });
-        });
-
-        it('the returned value shoule be `None`: 1', function() {
-            assert.strictEqual(option.isSome, false);
-        });
-
-        it('the returned value shoule be `None`: 2', function() {
-            assert.ok(option instanceof None);
-        });
-
-        it('the passed function should not be called', function() {
-            assert.strictEqual(isNotCalled, true);
+describe('Inheritance for `Option<T>`', function(){
+    describe('`Some<T>`', function () {
+        it('should be instanceof `OptionT`', function() {
+            var option = new Some(1);
+            assert.ok(option instanceof OptionT);
         });
     });
 
-    describe('self is `Some<T>`', function () {
-        var EXPECTED = "1";
-        var option = null;
-
-        before(function(){
-            var some = new Some(1);
-            option = some.map(function(val){
-                assert.notStrictEqual(val !== EXPECTED);
-                return EXPECTED;
-            });
-        });
-
-        it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.ok(option instanceof Some);
-        });
-
-        it('the returned value shoule be `Some<T>`: 2', function() {
-            assert.strictEqual(option.unwrap(), EXPECTED);
+    describe('`None`', function () {
+        it('should be instanceof `OptionT`', function() {
+            var option = new None();
+            assert.ok(option instanceof OptionT);
         });
     });
 });
