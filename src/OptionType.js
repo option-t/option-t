@@ -94,12 +94,47 @@ OptionType.prototype = Object.seal({
     },
 
     /**
+     *  Returns `None` if the self is `None`,
+     *  otherwise calls `fn` with the wrapped value and returns the result.
+     *
+     *  @template   T, U
+     *
+     *  @param  {function(T): OptionType<U>}    fn
+     *  @return {OptionType<U>}
+     */
+    flatMap: function OptionTypeFlatMap(fn) {
+        if (!this.is_some) {
+            // cheat to escape from a needless allocation.
+            return this;
+        }
+
+        var mapped = fn(this.value);
+        if ( !(mapped instanceof OptionType) ) {
+            throw new Error('OptionType.flatMap()\' param `fn` should return `OptionType`.');
+        }
+
+        return mapped;
+    },
+
+    /**
+     *  The alias of `OptionType.flatMap()`.
+     *
+     *  @template   T, U
+     *
+     *  @param  {function(T): OptionType<U>}    fn
+     *  @return {OptionType<U>}
+     */
+    andThen: function OptionTypeAndThen(fn) {
+        return this.flatMap(fn);
+    },
+
+    /**
      *  Finalize the self.
      *  After this is called, the object's behavior is not defined.
      *
      *  @return {void}
      */
-    drop: function () {
+    drop: function OptionTypeDrop() {
         /* eslint-disable camelcase */
         this.is_some = false;
         /* eslint-enable */
