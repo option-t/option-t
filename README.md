@@ -1,4 +1,4 @@
-# OptionType
+# option-t
 
 [![npm version](https://badge.fury.io/js/option-t.svg)](http://badge.fury.io/js/option-t)
 [![Build Status](https://secure.travis-ci.org/saneyuki/option-t.js.svg?branch=master)](http://travis-ci.org/saneyuki/option-t.js)
