@@ -1,4 +1,4 @@
-# OptionType
+# option-t
 
 [![npm version](https://badge.fury.io/js/option-t.svg)](http://badge.fury.io/js/option-t)
 [![Build Status](https://secure.travis-ci.org/saneyuki/option-t.js.svg?branch=master)](http://travis-ci.org/saneyuki/option-t.js)
@@ -12,7 +12,6 @@
 ```sh
 npm install --save option-t
 ```
-
 
 ## Usage
 
@@ -32,7 +31,9 @@ console.log(some.value); // undefined
 
 ### JSON Representation
 
-`new OptionType(1)` will be
+#### `Some<T>`
+
+`new OptionType(1)` will be:
 
 ```json
 {
@@ -40,6 +41,37 @@ console.log(some.value); // undefined
     "value": 1
 }
 ```
+
+#### `None`
+
+`new OptionType()` will be:
+
+```json
+{
+    "is_some": false
+}
+```
+
+
+## Semantics
+
+This library represents [Option type](http://en.wikipedia.org/wiki/Option_type) in ECMAScript.
+So this object will be the one of following states:
+
+* `Some<T>`: `option.isSome === true`.
+* `None`: `option.isSome === false`.
+
+
+### `Some<T>`
+
+This type represents that there are **some values `T`**.
+If this value wraps `null`, it just means that there is a null value.
+
+
+### `None` (`None<T>`)
+
+This type represents that there is **no value** explicitly.
+It is just `None !== null`.
 
 
 ## License
