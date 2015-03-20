@@ -54,12 +54,12 @@ var OptionTProto = Object.freeze({
     },
 
     /**
-     *  Maps an `OptionType<T>` to `OptionType<U>` by applying a function to a contained value.
+     *  Maps an `Option<T>` to `Option<U>` by applying a function to a contained value.
      *
      *  @template   T, U
      *
      *  @param  {function(T):U}    fn
-     *  @return {OptionType<U>}
+     *  @return {Option<U>}
      */
     map: function OptionTMap(fn) {
         if (!this.is_some) {
@@ -78,8 +78,8 @@ var OptionTProto = Object.freeze({
      *
      *  @template   T, U
      *
-     *  @param  {function(T): OptionType<U>}    fn
-     *  @return {OptionType<U>}
+     *  @param  {function(T): Option<U>}    fn
+     *  @return {Option<U>}
      */
     flatMap: function OptionTFlatMap(fn) {
         if (!this.is_some) {
@@ -97,12 +97,12 @@ var OptionTProto = Object.freeze({
     },
 
     /**
-     *  The alias of `OptionType.flatMap()`.
+     *  The alias of `Option<T>.flatMap()`.
      *
      *  @template   T, U
      *
-     *  @param  {function(T): OptionType<U>}    fn
-     *  @return {OptionType<U>}
+     *  @param  {function(T): Option<U>}    fn
+     *  @return {Option<U>}
      */
     andThen: function OptionTAndThen(fn) {
         return this.flatMap(fn);

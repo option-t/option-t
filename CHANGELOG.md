@@ -2,6 +2,13 @@
 
 ## x.y.z
 
+### Update Documentation
+
+* Fix JSDoc in OptionT.js
+
+
+## 0.3.0
+
 ### New Feature
 
 * Add new interfaces. These constructors make interfaces more clear and explicit.
