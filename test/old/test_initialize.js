@@ -25,18 +25,16 @@
 'use strict';
 
 var assert = require('power-assert');
-var Some = require('../src/index').Some;
-var None = require('../src/index').None;
+var OptionType = require('../../src/index').OptionType;
 
 var primitiveVal = require('./utils').primitiveVal;
 var objectVal = require('./utils').objectVal;
 var funcVal = require('./utils').funcVal;
-var undefinedVal = require('./utils').undefinedVal;
 
-describe('initialization `Option<T>`', function(){
+describe('initialization', function(){
 
-    describe('`Some<T>`', function () {
-        var param = primitiveVal.concat(objectVal).concat(funcVal).concat(undefinedVal);
+    describe('this will be `Some<T>` if the argument is `T` and it\'s not `undefined`', function () {
+        var param = primitiveVal.concat(objectVal).concat(funcVal);
         param.forEach(function(value){
             var type = typeof value;
             var label = 'type: ' + type + ', value: `' + String(value) + '`';
@@ -45,7 +43,7 @@ describe('initialization `Option<T>`', function(){
                 var option = null;
 
                 before(function(){
-                    option = new Some(value);
+                    option = new OptionType(value);
                 });
 
                 after(function(){
@@ -63,18 +61,23 @@ describe('initialization `Option<T>`', function(){
         });
     });
 
-    describe('`None`', function () {
-        var option = null;
-        before(function(){
-          option = new None();
-        });
+    describe('this will be `None` if the argument is `undefined`.', function () {
+        [
+            [new OptionType(), 'pass `undefined` implicitly'],
+            [new OptionType(undefined), 'pass `undefined` explicitly']
+        ].forEach(function(tuple){
+            var val = tuple[0];
+            var label = tuple[1];
 
-        it('`isSome` should be expected', function () {
-          assert.strictEqual(option.isSome, false);
-        });
+            describe(label, function() {
+                it('`isSome` should be expected', function () {
+                    assert.strictEqual(val.isSome, false);
+                });
 
-        it('`value` should be expected', function () {
-          assert.strictEqual(option.value, undefined);
+                it('`value` should be expected', function () {
+                    assert.strictEqual(val.value, undefined);
+                });
+            });
         });
     });
 });

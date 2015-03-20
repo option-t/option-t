@@ -24,50 +24,19 @@
 
 'use strict';
 
-var warnDeprecatedAPI = function (name) {
-    if (process.env.NODE_ENV !== 'production' &&
-        !!console && (typeof console.warn === 'function')) {
-        console.warn(name + ' is deperecated. Use Option<T>');
-    }
-};
-
-/**
- *  @deprecated
- *  @constructor
- *  @template   T
- *
- *  @param  {T=}   val (optional)
- *      * if `value` is `T` (not `undefined`), this should be `Some<T>`.
- *      * if `value` is `undefined` or not passed, this should be `None`.
- */
-var OptionType = function OptionType(val) {
-    /* eslint-disable camelcase */
-    /** @type   {boolean}   */
-    this.is_some = (val !== undefined);
-    /* eslint-enable */
-
-    /** @type   {T}   */
-    this.value = val;
-
-    Object.seal(this);
-    warnDeprecatedAPI('OptionType');
-};
-OptionType.prototype = Object.seal({
-
+var OptionTProto = Object.freeze({
     /**
-     *  @deprecated
      *  Return whether this is `Some<T>` or not.
      *
      *  @template   T
+     *  @nosideeffects
      *  @return {boolean}
      */
     get isSome() {
-        warnDeprecatedAPI('OptionType.isSome');
         return this.is_some;
     },
 
     /**
-     *  @deprecated
      *  Returns the inner `T` of a `Some<T>`.
      *
      *  @template   T
@@ -76,8 +45,7 @@ OptionType.prototype = Object.seal({
      *  @throws {Error}
      *      Throws if the self value equals `None`.
      */
-    unwrap: function OptionTypeUnwrap() {
-        warnDeprecatedAPI('OptionType.unwrap()');
+    unwrap: function OptionTUnwrap() {
         if (!this.is_some) {
             throw new Error('called `unwrap()` on a `None` value');
         }
@@ -86,30 +54,25 @@ OptionType.prototype = Object.seal({
     },
 
     /**
-     *  @deprecated
      *  Maps an `OptionType<T>` to `OptionType<U>` by applying a function to a contained value.
      *
      *  @template   T, U
      *
      *  @param  {function(T):U}    fn
-     *      XXX: If `U` is `undefined`, this method will return `None<U>` in such case.
-     *           Because this library treats `undefined` as `None`.
      *  @return {OptionType<U>}
      */
-    map: function OptionTypeMap(fn) {
-        warnDeprecatedAPI('OptionType.map()');
+    map: function OptionTMap(fn) {
         if (!this.is_some) {
             // cheat to escape from a needless allocation.
             return this;
         }
 
         var value = fn(this.value);
-        var option = new OptionType(value);
+        var option = new Some(value);
         return option;
     },
 
     /**
-     *  @deprecated
      *  Returns `None` if the self is `None`,
      *  otherwise calls `fn` with the wrapped value and returns the result.
      *
@@ -118,23 +81,22 @@ OptionType.prototype = Object.seal({
      *  @param  {function(T): OptionType<U>}    fn
      *  @return {OptionType<U>}
      */
-    flatMap: function OptionTypeFlatMap(fn) {
-        warnDeprecatedAPI('OptionType.flatMap()');
+    flatMap: function OptionTFlatMap(fn) {
         if (!this.is_some) {
             // cheat to escape from a needless allocation.
             return this;
         }
 
         var mapped = fn(this.value);
-        if ( !(mapped instanceof OptionType) ) {
-            throw new Error('OptionType.flatMap()\' param `fn` should return `OptionType`.');
+        var isOption = (mapped instanceof Some || mapped instanceof None);
+        if (!isOption) {
+            throw new Error('Option<T>.flatMap()\' param `fn` should return `Option<T>`.');
         }
 
         return mapped;
     },
 
     /**
-     *  @deprecated
      *  The alias of `OptionType.flatMap()`.
      *
      *  @template   T, U
@@ -142,28 +104,83 @@ OptionType.prototype = Object.seal({
      *  @param  {function(T): OptionType<U>}    fn
      *  @return {OptionType<U>}
      */
-    andThen: function OptionTypeAndThen(fn) {
-        warnDeprecatedAPI('OptionType.andThen()');
+    andThen: function OptionTAndThen(fn) {
         return this.flatMap(fn);
     },
 
     /**
-     *  @deprecated
      *  Finalize the self.
      *  After this is called, the object's behavior is not defined.
      *
      *  @return {void}
      */
-    drop: function OptionTypeDrop() {
-        warnDeprecatedAPI('OptionType.drop()');
-        /* eslint-disable camelcase */
-        this.is_some = false;
-        /* eslint-enable */
-
+    drop: function OptionTDrop() {
         this.value = null;
         Object.freeze(this);
     },
-
 });
 
-module.exports = OptionType;
+/**
+ *  @constructor
+ *  @template   T
+ *
+ *  A base object of `Option<T>`.
+ *  This is only used to `option instanceof OptionT`
+ *  in an language environment which does not have an interface type system.
+ *
+ *  The usecase example is a `React.PropTypes.
+ */
+var OptionT = function OptionTBase() {};
+OptionT.prototype = OptionTProto;
+
+/**
+ *  @constructor
+ *  @template   T
+ *
+ *  @param  {T}   val
+ */
+var Some = function OptionTSome(val) {
+    /* eslint-disable camelcase */
+    /**
+     *  @private
+     *  @type   {boolean}
+     */
+    this.is_some = true;
+    /* eslint-enable */
+
+    /**
+     *  @private
+     *  @type   {T}
+     */
+    this.value = val;
+    Object.seal(this);
+};
+Some.prototype = new OptionT();
+
+/**
+ *  @constructor
+ *  @template   T
+ */
+var None = function OptionTNone() {
+    /* eslint-disable camelcase */
+    /**
+     *  @private
+     *  @type   {boolean}
+     */
+    this.is_some = false;
+    /* eslint-enable */
+
+    /**
+     *  @private
+     *  @type   {T}
+     */
+    this.value = undefined;
+    Object.seal(this);
+};
+None.prototype = new OptionT();
+
+module.exports = {
+    Some: Some,
+    None: None,
+    OptionT: OptionT,
+};

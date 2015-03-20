@@ -25,27 +25,24 @@
 'use strict';
 
 var assert = require('power-assert');
-var Some = require('../src/index').Some;
-var None = require('../src/index').None;
+var OptionType = require('../../src/index').OptionType;
 
-describe('Option<T>.flatMap()', function(){
+describe('OptionType.flatMap()', function(){
     describe('self is `None`', function () {
         var option = null;
         var isNotCalled = true;
 
         before(function(){
-            var none = new None();
+            var none = new OptionType();
+            assert.ok(!none.isSome);
+
             option = none.flatMap(function(){
                 isNotCalled = false;
             });
         });
 
-        it('the returned value shoule be `None`: 1', function() {
+        it('the returned value shoule be `None`', function() {
             assert.strictEqual(option.isSome, false);
-        });
-
-        it('the returned value shoule be `None`: 2', function() {
-            assert.ok(option instanceof None);
         });
 
         it('the passed function should not be called', function() {
@@ -57,76 +54,45 @@ describe('Option<T>.flatMap()', function(){
         var option = null;
 
         before(function(){
-            var some = new Some(1);
+            var some = new OptionType(1);
+            assert.ok(some.isSome);
 
             option = some.flatMap(function(val){
-                return new None();
+                return new OptionType();
             });
         });
 
-        it('the returned value shoule be `None`: 1', function() {
+        it('the returned value shoule be `None`', function() {
             assert.strictEqual(option.isSome, false);
         });
-
-        it('the returned value shoule be `None`: 2', function() {
-            assert.ok(option instanceof None);
-        });
     });
 
-    describe('self is `Some<T>`, `fn` returns `Some<T>`', function () {
-        var EXPECTED = "1";
-        var option = null;
-
-        before(function(){
-            var some = new Some(1);
-
-            option = some.flatMap(function(val){
-                assert.ok(val !== EXPECTED);
-                return new Some(EXPECTED);
-            });
-        });
-
-        it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.strictEqual(option.isSome, true);
-        });
-
-        it('the returned value shoule be `Some<T>`: 2', function() {
-            assert.ok(option instanceof Some);
-        });
-
-        it('the returned containing value shoule be expected', function() {
-            assert.strictEqual(option.unwrap(), EXPECTED);
-        });
-    });
-
-    describe('self is `None`, `fn` don\'t returns `Option<T>`', function () {
+    describe('self is `None`, `fn` don\'t returns `OptionType`', function () {
 
         var option = null;
         var isNotCalled = true;
 
         before(function(){
-            var none = new None();
+            var none = new OptionType();
+            assert.ok(!none.isSome);
 
             option = none.flatMap(function(){
                 return 1;
             });
         });
 
-        it('the returned value shoule be `None`: 1', function() {
+        it('the returned value shoule be `None`', function() {
             assert.strictEqual(option.isSome, false);
-        });
-
-        it('the returned value shoule be `None`: 2', function() {
-            assert.ok(option instanceof None);
         });
     });
 
-    describe('self is `Some<T>`, `fn` don\'t returns `Option<T>`', function () {
+    describe('self is `Some<T>`, `fn` don\'t returns `OptionType`', function () {
         var option = null;
         var error = null;
 
         before(function(){
-            var some = new Some(1);
+            var some = new OptionType(1);
+            assert.ok(some.isSome);
 
             try {
                 option = some.flatMap(function(val){
@@ -150,7 +116,7 @@ describe('Option<T>.flatMap()', function(){
         });
 
         it('the error message should be the expected', function() {
-            assert.strictEqual(error.message, 'Option<T>.flatMap()\' param `fn` should return `Option<T>`.');
+            assert.strictEqual(error.message, 'OptionType.flatMap()\' param `fn` should return `OptionType`.');
         });
     });
 });

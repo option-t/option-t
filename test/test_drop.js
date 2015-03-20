@@ -25,15 +25,16 @@
 'use strict';
 
 var assert = require('power-assert');
-var OptionType = require('../src/OptionType').OptionType;
+var Some = require('../src/index').Some;
+var None = require('../src/index').None;
 
-describe('OptionType.drop()', function(){
+describe('Option<T>.drop()', function(){
 
     describe('drop `Some<T>`', function () {
         var option = null;
 
         before(function(){
-            option = new OptionType(1);
+            option = new Some(1);
             option.drop();
         });
 
@@ -50,7 +51,7 @@ describe('OptionType.drop()', function(){
         var option = null;
 
         before(function(){
-            option = new OptionType();
+            option = new None();
             option.drop();
         });
 

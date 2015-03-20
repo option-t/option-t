@@ -25,15 +25,13 @@
 'use strict';
 
 var assert = require('power-assert');
-var Some = require('../src/index').Some;
-var None = require('../src/index').None;
+var OptionType = require('../../src/index').OptionType;
 
 var primitiveVal = require('./utils').primitiveVal;
 var objectVal = require('./utils').objectVal;
 var funcVal = require('./utils').funcVal;
-var undefinedVal = require('./utils').undefinedVal;
 
-describe('JSON serializeation `Option<T>`', function(){
+describe('JSON serializeation', function(){
 
     describe('Some<T>', function () {
         primitiveVal.forEach(function(value){
@@ -43,7 +41,7 @@ describe('JSON serializeation `Option<T>`', function(){
             describe(label, function() {
                 var result = null;
                 before(function(){
-                    var raw = new Some(value);
+                    var raw = new OptionType(value);
                     result = JSON.parse(JSON.stringify(raw));
                 });
 
@@ -70,7 +68,7 @@ describe('JSON serializeation `Option<T>`', function(){
             describe(label, function () {
                 var result = null;
                 before(function(){
-                    var raw = new Some(value);
+                    var raw = new OptionType(value);
                     result = JSON.parse(JSON.stringify(raw));
                 });
 
@@ -99,35 +97,7 @@ describe('JSON serializeation `Option<T>`', function(){
             describe(label, function () {
                 var result = null;
                 before(function(){
-                    var raw = new Some(value);
-                    result = JSON.parse(JSON.stringify(raw));
-                });
-
-                ['is_some'].forEach(function(key){
-                    it('json has `' + key + '` field.', function () {
-                        assert.ok(result.hasOwnProperty(key));
-                    });
-                });
-
-                it('`is_some` should be expected', function () {
-                    assert.strictEqual(result.is_some, true);
-                });
-
-                // `function` is not serialized to json.
-                it('`value` should be expected', function () {
-                    assert.strictEqual(result.value, undefined);
-                });
-            });
-        });
-
-        undefinedVal.forEach(function(value){
-            var type = typeof value;
-            var label = 'type: ' + type + ', value: `' + String(value) + '`';
-
-            describe(label, function () {
-                var result = null;
-                before(function(){
-                    var raw = new Some(value);
+                    var raw = new OptionType(value);
                     result = JSON.parse(JSON.stringify(raw));
                 });
 
@@ -150,24 +120,33 @@ describe('JSON serializeation `Option<T>`', function(){
     });
 
     describe('None', function () {
-        var result = null;
-        before(function(){
-            var raw = new None();
-            result = JSON.parse(JSON.stringify(raw));
-        });
+        [
+            [new OptionType(), 'pass `undefined` implicitly'],
+            [new OptionType(undefined), 'pass `undefined` explicitly']
+        ].forEach(function(tuple){
+            var raw = tuple[0];
+            var label = tuple[1];
 
-        ['is_some'].forEach(function(key){
-            it('json has `' + key + '` field.', function () {
-                assert.ok(result.hasOwnProperty(key));
+            describe(label, function() {
+                var result = null;
+                before(function(){
+                    result = JSON.parse(JSON.stringify(raw));
+                });
+
+                ['is_some'].forEach(function(key){
+                    it('json has `' + key + '` field.', function () {
+                        assert.ok(result.hasOwnProperty(key));
+                    });
+                });
+
+                it('`is_some` should be expected', function () {
+                    assert.strictEqual(result.is_some, false);
+                });
+
+                it('`value` should be expected', function () {
+                    assert.strictEqual(result.value, undefined);
+                });
             });
-        });
-
-        it('`is_some` should be expected', function () {
-            assert.strictEqual(result.is_some, false);
-        });
-
-        it('`value` should be expected', function () {
-            assert.strictEqual(result.value, undefined);
         });
     });
 });
