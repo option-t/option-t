@@ -4,6 +4,7 @@
 
 ### New Feature
 * Add `Option<T>.and()`.
+* Add `Option<T>.or()`.
 
 
 ### Update Documentation

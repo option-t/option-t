@@ -126,6 +126,23 @@ var OptionTProto = Object.freeze({
     },
 
     /**
+     *  Returns the self if it contains a value, otherwise returns `optb`.
+     *
+     *  @template   T
+     *
+     *  @param  {Option<T>} optb
+     *  @return {Option<T>}
+     */
+    or: function OptionTOr(optb) {
+        if (this.is_some) {
+            return this;
+        }
+        else {
+            return optb;
+        }
+    },
+
+    /**
      *  Finalize the self.
      *  After this is called, the object's behavior is not defined.
      *

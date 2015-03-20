@@ -52,6 +52,7 @@ var None = OptionT.None;
         return new Some( String(val) );
     });
     var and: OptionT.Option<string> = option.and(new Some<string>("bar"));
+    var or: OptionT.Option<number> = option.or(new Some<number>(10));
     option.drop();
 })();
 
@@ -65,6 +66,7 @@ var None = OptionT.None;
         return new None<string>();
     });
     var and: OptionT.Option<string> = option.and(new Some<string>("bar"));
+    var or: OptionT.Option<number> = option.or(new Some<number>(10));
     option.drop();
 })();
 
