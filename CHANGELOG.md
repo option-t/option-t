@@ -5,6 +5,7 @@
 ### New Feature
 * Add `Option<T>.and()`.
 * Add `Option<T>.or()`.
+* Add `Option<T>.orElse()`.
 
 
 ### Update Documentation

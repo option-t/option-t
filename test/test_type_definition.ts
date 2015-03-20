@@ -53,6 +53,9 @@ var None = OptionT.None;
     });
     var and: OptionT.Option<string> = option.and(new Some<string>("bar"));
     var or: OptionT.Option<number> = option.or(new Some<number>(10));
+    var orElse: OptionT.Option<number> = option.orElse((): OptionT.Option<number> => {
+        return new Some<number>(2);
+    });
     option.drop();
 })();
 
@@ -67,6 +70,9 @@ var None = OptionT.None;
     });
     var and: OptionT.Option<string> = option.and(new Some<string>("bar"));
     var or: OptionT.Option<number> = option.or(new Some<number>(10));
+    var orElse: OptionT.Option<number> = option.orElse((): OptionT.Option<number> => {
+        return new Some<number>(2);
+    });
     option.drop();
 })();
 

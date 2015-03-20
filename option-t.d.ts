@@ -42,6 +42,7 @@ declare module 'option-t' {
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         and<U>(optb: Option<U>): Option<U>;
         or(optb: Option<T>): Option<T>;
+        orElse(fn: () => Option<T>): Option<T>;
         drop(): void;
     }
 
@@ -53,6 +54,7 @@ declare module 'option-t' {
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         and<U>(optb: Option<U>): Option<U>;
         or(optb: Option<T>): Option<T>;
+        orElse(fn: () => Option<T>): Option<T>;
         drop(): void;
     }
 
@@ -64,6 +66,7 @@ declare module 'option-t' {
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         and<U>(optb: Option<U>): Option<U>;
         or(optb: Option<T>): Option<T>;
+        orElse(fn: () => Option<T>): Option<T>;
         drop(): void;
     }
 }

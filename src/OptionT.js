@@ -143,6 +143,30 @@ var OptionTProto = Object.freeze({
     },
 
     /**
+     *  Returns the self if it contains a value,
+     *  otherwise calls `fn` and returns the result.
+     *
+     *  @template   T
+     *
+     *  @param  {function(): Option<T>} fn
+     *  @return {Option<T>}
+     */
+    orElse: function OptionTOr(fn) {
+        if (this.is_some) {
+            return this;
+        }
+        else {
+            var value = fn();
+            if (value instanceof Some || value instanceof None) {
+                return value;
+            }
+
+            throw new Error('Option<T>.orElse()\' param `fn` should return `Option<T>`.');
+
+        }
+    },
+
+    /**
      *  Finalize the self.
      *  After this is called, the object's behavior is not defined.
      *
