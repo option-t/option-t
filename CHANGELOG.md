@@ -2,10 +2,13 @@
 
 ## x.y.z
 
+## 0.4.0
+
 ### New Feature
 * Add `Option<T>.and()`.
 * Add `Option<T>.or()`.
 * Add `Option<T>.orElse()`.
+* Export the definition of `Option<T>.andThen()`.
 
 
 ### Update Documentation
