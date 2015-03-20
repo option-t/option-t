@@ -24,6 +24,13 @@
 
 'use strict';
 
+var warnDeprecatedAPI = function (name) {
+    if (process.env.NODE_ENV !== 'production' &&
+        !!console && (typeof console.warn === 'function')) {
+        console.warn(name + ' is deperecated. Use Option<T>');
+    }
+};
+
 /**
  *  @deprecated
  *  @constructor
@@ -43,6 +50,7 @@ var OptionType = function OptionType(val) {
     this.value = val;
 
     Object.seal(this);
+    warnDeprecatedAPI('OptionType');
 };
 OptionType.prototype = Object.seal({
 
@@ -54,6 +62,7 @@ OptionType.prototype = Object.seal({
      *  @return {boolean}
      */
     get isSome() {
+        warnDeprecatedAPI('OptionType.isSome');
         return this.is_some;
     },
 
@@ -68,6 +77,7 @@ OptionType.prototype = Object.seal({
      *      Throws if the self value equals `None`.
      */
     unwrap: function OptionTypeUnwrap() {
+        warnDeprecatedAPI('OptionType.unwrap()');
         if (!this.is_some) {
             throw new Error('called `unwrap()` on a `None` value');
         }
@@ -87,6 +97,7 @@ OptionType.prototype = Object.seal({
      *  @return {OptionType<U>}
      */
     map: function OptionTypeMap(fn) {
+        warnDeprecatedAPI('OptionType.map()');
         if (!this.is_some) {
             // cheat to escape from a needless allocation.
             return this;
@@ -108,6 +119,7 @@ OptionType.prototype = Object.seal({
      *  @return {OptionType<U>}
      */
     flatMap: function OptionTypeFlatMap(fn) {
+        warnDeprecatedAPI('OptionType.flatMap()');
         if (!this.is_some) {
             // cheat to escape from a needless allocation.
             return this;
@@ -131,6 +143,7 @@ OptionType.prototype = Object.seal({
      *  @return {OptionType<U>}
      */
     andThen: function OptionTypeAndThen(fn) {
+        warnDeprecatedAPI('OptionType.andThen()');
         return this.flatMap(fn);
     },
 
@@ -142,6 +155,7 @@ OptionType.prototype = Object.seal({
      *  @return {void}
      */
     drop: function OptionTypeDrop() {
+        warnDeprecatedAPI('OptionType.drop()');
         /* eslint-disable camelcase */
         this.is_some = false;
         /* eslint-enable */
