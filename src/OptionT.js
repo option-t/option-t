@@ -109,6 +109,23 @@ var OptionTProto = Object.freeze({
     },
 
     /**
+     *  Returns `None` if the self is `None`, otherwise returns `optb`.
+     *
+     *  @template   T, U
+     *
+     *  @param  {Option<U>} optb
+     *  @return {Option<U>}
+     */
+    and: function OptionTAnd(optb) {
+        if (!this.is_some) {
+            return this;
+        }
+        else {
+            return optb;
+        }
+    },
+
+    /**
      *  Finalize the self.
      *  After this is called, the object's behavior is not defined.
      *

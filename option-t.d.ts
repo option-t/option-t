@@ -40,6 +40,7 @@ declare module 'option-t' {
         unwrap(): T;
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
+        and<U>(optb: Option<U>): Option<U>;
         drop(): void;
     }
 
@@ -49,6 +50,7 @@ declare module 'option-t' {
         unwrap(): T;
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
+        and<U>(optb: Option<U>): Option<U>;
         drop(): void;
     }
 
@@ -58,6 +60,7 @@ declare module 'option-t' {
         unwrap(): T;
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
+        and<U>(optb: Option<U>): Option<U>;
         drop(): void;
     }
 }

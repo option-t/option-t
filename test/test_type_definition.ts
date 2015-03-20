@@ -51,6 +51,7 @@ var None = OptionT.None;
     var flatMap: OptionT.Option<string> = option.flatMap((val: number): OptionT.Option<string> => {
         return new Some( String(val) );
     });
+    var and: OptionT.Option<string> = option.and(new Some<string>("bar"));
     option.drop();
 })();
 
@@ -63,6 +64,7 @@ var None = OptionT.None;
     var flatMap: OptionT.Option<string> = option.flatMap((val: number): OptionT.Option<string> => {
         return new None<string>();
     });
+    var and: OptionT.Option<string> = option.and(new Some<string>("bar"));
     option.drop();
 })();
 

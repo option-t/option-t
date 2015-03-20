@@ -2,8 +2,11 @@
 
 ## x.y.z
 
-### Update Documentation
+### New Feature
+* Add `Option<T>.and()`.
 
+
+### Update Documentation
 * Fix JSDoc in OptionT.js
 
 
