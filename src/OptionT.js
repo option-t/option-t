@@ -54,12 +54,12 @@ var OptionTProto = Object.freeze({
     },
 
     /**
-     *  Maps an `OptionType<T>` to `OptionType<U>` by applying a function to a contained value.
+     *  Maps an `Option<T>` to `Option<U>` by applying a function to a contained value.
      *
      *  @template   T, U
      *
      *  @param  {function(T):U}    fn
-     *  @return {OptionType<U>}
+     *  @return {Option<U>}
      */
     map: function OptionTMap(fn) {
         if (!this.is_some) {
@@ -78,8 +78,8 @@ var OptionTProto = Object.freeze({
      *
      *  @template   T, U
      *
-     *  @param  {function(T): OptionType<U>}    fn
-     *  @return {OptionType<U>}
+     *  @param  {function(T): Option<U>}    fn
+     *  @return {Option<U>}
      */
     flatMap: function OptionTFlatMap(fn) {
         if (!this.is_some) {
@@ -97,15 +97,73 @@ var OptionTProto = Object.freeze({
     },
 
     /**
-     *  The alias of `OptionType.flatMap()`.
+     *  The alias of `Option<T>.flatMap()`.
      *
      *  @template   T, U
      *
-     *  @param  {function(T): OptionType<U>}    fn
-     *  @return {OptionType<U>}
+     *  @param  {function(T): Option<U>}    fn
+     *  @return {Option<U>}
      */
     andThen: function OptionTAndThen(fn) {
         return this.flatMap(fn);
+    },
+
+    /**
+     *  Returns `None` if the self is `None`, otherwise returns `optb`.
+     *
+     *  @template   T, U
+     *
+     *  @param  {Option<U>} optb
+     *  @return {Option<U>}
+     */
+    and: function OptionTAnd(optb) {
+        if (!this.is_some) {
+            return this;
+        }
+        else {
+            return optb;
+        }
+    },
+
+    /**
+     *  Returns the self if it contains a value, otherwise returns `optb`.
+     *
+     *  @template   T
+     *
+     *  @param  {Option<T>} optb
+     *  @return {Option<T>}
+     */
+    or: function OptionTOr(optb) {
+        if (this.is_some) {
+            return this;
+        }
+        else {
+            return optb;
+        }
+    },
+
+    /**
+     *  Returns the self if it contains a value,
+     *  otherwise calls `fn` and returns the result.
+     *
+     *  @template   T
+     *
+     *  @param  {function(): Option<T>} fn
+     *  @return {Option<T>}
+     */
+    orElse: function OptionTOr(fn) {
+        if (this.is_some) {
+            return this;
+        }
+        else {
+            var value = fn();
+            if (value instanceof Some || value instanceof None) {
+                return value;
+            }
+
+            throw new Error('Option<T>.orElse()\' param `fn` should return `Option<T>`.');
+
+        }
     },
 
     /**

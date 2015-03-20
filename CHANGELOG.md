@@ -3,6 +3,18 @@
 ## x.y.z
 
 ### New Feature
+* Add `Option<T>.and()`.
+* Add `Option<T>.or()`.
+* Add `Option<T>.orElse()`.
+
+
+### Update Documentation
+* Fix JSDoc in OptionT.js
+
+
+## 0.3.0
+
+### New Feature
 
 * Add new interfaces. These constructors make interfaces more clear and explicit.
   * `OptionT.Some()` constructor creates a `Some<T>` representation.

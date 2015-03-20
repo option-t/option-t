@@ -39,3 +39,6 @@ require('./test_map');
 require('./test_flatmap');
 require('./test_drop');
 require('./test_inheritance');
+require('./test_and');
+require('./test_or');
+require('./test_or_else');
