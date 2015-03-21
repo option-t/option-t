@@ -95,10 +95,12 @@ describe('Option<T>.orElse()', function(){
     describe('self is `Some<T>`, param returns `Some<T>`', function () {
         var EXPECTED = 1;
         var option = null;
+        var isNotCalled = true;
 
         before(function(){
             var some = new Some(EXPECTED);
             option = some.orElse(function(){
+                isNotCalled = false;
                 return new Some(3);
             });
         });
@@ -110,15 +112,21 @@ describe('Option<T>.orElse()', function(){
         it('the returned value shoule be `Some<T>`: 2', function() {
             assert.strictEqual(option.unwrap(), EXPECTED);
         });
+
+        it('shoule not call callback', function() {
+            assert.ok(isNotCalled);
+        });
     });
 
     describe('self is `Some<T>`, param returns `None`', function () {
         var EXPECTED = 1;
         var option = null;
+        var isNotCalled = true;
 
         before(function(){
             var some = new Some(EXPECTED);
             option = some.orElse(function(){
+                isNotCalled = false;
                 return new None();
             });
         });
@@ -129,6 +137,10 @@ describe('Option<T>.orElse()', function(){
 
         it('the returned value shoule be `Some<T>`: 2', function() {
             assert.strictEqual(option.unwrap(), EXPECTED);
+        });
+
+        it('shoule not call callback', function() {
+            assert.ok(isNotCalled);
         });
     });
 });

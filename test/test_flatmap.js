@@ -100,7 +100,6 @@ describe('Option<T>.flatMap()', function(){
     });
 
     describe('self is `None`, `fn` don\'t returns `Option<T>`', function () {
-
         var option = null;
         var isNotCalled = true;
 
@@ -108,7 +107,7 @@ describe('Option<T>.flatMap()', function(){
             var none = new None();
 
             option = none.flatMap(function(){
-                return 1;
+                isNotCalled = false;
             });
         });
 
@@ -118,6 +117,10 @@ describe('Option<T>.flatMap()', function(){
 
         it('the returned value shoule be `None`: 2', function() {
             assert.ok(option instanceof None);
+        });
+
+        it('callback function should not be called', function() {
+            assert.ok(isNotCalled);
         });
     });
 
