@@ -39,7 +39,6 @@ OptionT.prototype = Object.freeze({
     /**
      *  Return whether this is `Some<T>` or not.
      *
-     *  @template   T
      *  @return {boolean}
      */
     get isSome() {
@@ -69,7 +68,7 @@ OptionT.prototype = Object.freeze({
      *  @template   T, U
      *
      *  @param  {function(T):U}    fn
-     *  @return {Option<U>}
+     *  @return {!Option<U>}
      */
     map: function OptionTMap(fn) {
         if (!this.is_some) {
@@ -88,8 +87,8 @@ OptionT.prototype = Object.freeze({
      *
      *  @template   T, U
      *
-     *  @param  {function(T): Option<U>}    fn
-     *  @return {Option<U>}
+     *  @param  {function(T): !Option<U>}    fn
+     *  @return {!Option<U>}
      */
     flatMap: function OptionTFlatMap(fn) {
         if (!this.is_some) {
@@ -111,8 +110,8 @@ OptionT.prototype = Object.freeze({
      *
      *  @template   T, U
      *
-     *  @param  {function(T): Option<U>}    fn
-     *  @return {Option<U>}
+     *  @param  {function(T): !Option<U>}    fn
+     *  @return {!Option<U>}
      */
     andThen: function OptionTAndThen(fn) {
         return this.flatMap(fn);
@@ -121,10 +120,10 @@ OptionT.prototype = Object.freeze({
     /**
      *  Returns `None` if the self is `None`, otherwise returns `optb`.
      *
-     *  @template   T, U
+     *  @template   U
      *
-     *  @param  {Option<U>} optb
-     *  @return {Option<U>}
+     *  @param  {!Option<U>} optb
+     *  @return {!Option<U>}
      */
     and: function OptionTAnd(optb) {
         return this.is_some ? optb : this;
@@ -135,8 +134,8 @@ OptionT.prototype = Object.freeze({
      *
      *  @template   T
      *
-     *  @param  {Option<T>} optb
-     *  @return {Option<T>}
+     *  @param  {!Option<T>} optb
+     *  @return {!Option<T>}
      */
     or: function OptionTOr(optb) {
         return this.is_some ? this : optb;
@@ -148,8 +147,8 @@ OptionT.prototype = Object.freeze({
      *
      *  @template   T
      *
-     *  @param  {function(): Option<T>} fn
-     *  @return {Option<T>}
+     *  @param  {function(): !Option<T>} fn
+     *  @return {!Option<T>}
      */
     orElse: function OptionTOr(fn) {
         if (this.is_some) {
