@@ -29,7 +29,6 @@ var OptionTProto = Object.freeze({
      *  Return whether this is `Some<T>` or not.
      *
      *  @template   T
-     *  @nosideeffects
      *  @return {boolean}
      */
     get isSome() {
