@@ -1,4 +1,4 @@
-/*
+/**
  * @license MIT License
  *
  * Copyright (c) 2015 Tetsuharu OHZEKI <saneyuki.snyk@gmail.com>
