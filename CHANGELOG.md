@@ -2,6 +2,12 @@
 
 ## x.y.z
 
+## 0.5.3
+
+### Internal
+* Use `OptionT` to check whether the object is `Option<T>`.
+
+
 ## 0.5.2
 
 ### Internal
