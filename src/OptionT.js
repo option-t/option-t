@@ -24,7 +24,18 @@
 
 'use strict';
 
-var OptionTProto = Object.freeze({
+/**
+ *  @constructor
+ *  @template   T
+ *
+ *  A base object of `Option<T>`.
+ *  This is only used to `option instanceof OptionT`
+ *  in an language environment which does not have an interface type system.
+ *
+ *  The usecase example is a `React.PropTypes.
+ */
+var OptionT = function OptionTBase() {};
+OptionT.prototype = Object.freeze({
     /**
      *  Return whether this is `Some<T>` or not.
      *
@@ -176,19 +187,6 @@ var OptionTProto = Object.freeze({
         Object.freeze(this);
     },
 });
-
-/**
- *  @constructor
- *  @template   T
- *
- *  A base object of `Option<T>`.
- *  This is only used to `option instanceof OptionT`
- *  in an language environment which does not have an interface type system.
- *
- *  The usecase example is a `React.PropTypes.
- */
-var OptionT = function OptionTBase() {};
-OptionT.prototype = OptionTProto;
 
 /**
  *  @constructor
