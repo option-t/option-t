@@ -2,6 +2,12 @@
 
 ## x.y.z
 
+## 0.5.2
+
+### Internal
+* Share the same object as prototype between `OptionT.Some` and `OptionT.None`.
+
+
 ## 0.5.1
 
 ### Update Documentation
