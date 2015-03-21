@@ -2,6 +2,12 @@
 
 ## x.y.z
 
+## 0.5.1
+
+### Update Documentation
+* Remove `@nosideeffect` annotation from `Option<T>.isSome`. It was a invalid annotation.
+
+
 ## 0.5.0
 
 ### Breaking Change
