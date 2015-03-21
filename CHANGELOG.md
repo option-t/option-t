@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+### New Feature
+* Add `Option<T>.unwrapOr()`.
+
 ## 0.6.0
 
 ### Update Documentation

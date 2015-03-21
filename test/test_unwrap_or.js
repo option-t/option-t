@@ -24,14 +24,33 @@
 
 'use strict';
 
-require('./test_initialize');
-require('./test_json');
-require('./test_unwrap');
-require('./test_unwrap_or');
-require('./test_map');
-require('./test_flatmap');
-require('./test_drop');
-require('./test_inheritance');
-require('./test_and');
-require('./test_or');
-require('./test_or_else');
+var assert = require('power-assert');
+var Some = require('../src/index').Some;
+var None = require('../src/index').None;
+
+describe('Option<T>.and()', function(){
+    describe('self is `None`', function () {
+        var EXPECTED = 1;
+
+        it('shoule be the default value', function() {
+            var option = new None();
+            var result = option.unwrapOr(EXPECTED);
+            assert.strictEqual(result, EXPECTED);
+        });
+    });
+
+    describe('self is `Some<T>`', function () {
+        var EXPECTED = 1;
+        var DEFAULT = 10;
+
+        before(function(){
+            assert.ok(EXPECTED !== DEFAULT);
+        });
+
+        it('shoule be the wrapped value', function() {
+            var option = new Some(EXPECTED);
+            var result = option.unwrapOr(DEFAULT);
+            assert.strictEqual(result, EXPECTED);
+        });
+    });
+});
