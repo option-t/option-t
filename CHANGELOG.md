@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+### Update Documentation
+* JSDoc: Change `Option<T>` used as parameter/return value to non-nullable type.
+  * This might cause some compile error if you use closure compiler's advanced optimization.
+
+
 ## 0.5.5
 
 ### Update Documentation
