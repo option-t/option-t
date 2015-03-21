@@ -3,7 +3,9 @@
 ## x.y.z
 
 ### New Feature
+* Add `Option<T>.isNone`.
 * Add `Option<T>.unwrapOr()`.
+
 
 ## 0.6.0
 

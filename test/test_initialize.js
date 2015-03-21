@@ -60,6 +60,10 @@ describe('initialization `Option<T>`', function(){
                     assert.strictEqual(option.isSome, true);
                 });
 
+                it('`isNone` should be expected', function () {
+                    assert.strictEqual(option.isNone, false);
+                });
+
                 it('the wrapped value should be expected', function() {
                     assert.strictEqual(option.value, value);
                 });
@@ -79,6 +83,10 @@ describe('initialization `Option<T>`', function(){
 
         it('`isSome` should be expected', function () {
           assert.strictEqual(option.isSome, false);
+        });
+
+        it('`isNone` should be expected', function () {
+          assert.strictEqual(option.isNone, true);
         });
 
         it('`value` should be expected', function () {
