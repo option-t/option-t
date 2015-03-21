@@ -182,6 +182,7 @@ var OptionPrototype = new OptionT();
 /**
  *  @constructor
  *  @template   T
+ *  @extends    {OptionT<T>}
  *
  *  @param  {T}   val
  */
@@ -206,6 +207,7 @@ Some.prototype = OptionPrototype;
 /**
  *  @constructor
  *  @template   T
+ *  @extends    {OptionT<T>}
  */
 var None = function OptionTNone() {
     /* eslint-disable camelcase */
