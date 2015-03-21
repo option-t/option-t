@@ -98,7 +98,7 @@ OptionT.prototype = Object.freeze({
         }
 
         var mapped = fn(this.value);
-        var isOption = (mapped instanceof Some || mapped instanceof None);
+        var isOption = (mapped instanceof OptionT);
         if (!isOption) {
             throw new Error('Option<T>.flatMap()\' param `fn` should return `Option<T>`.');
         }
@@ -127,12 +127,7 @@ OptionT.prototype = Object.freeze({
      *  @return {Option<U>}
      */
     and: function OptionTAnd(optb) {
-        if (!this.is_some) {
-            return this;
-        }
-        else {
-            return optb;
-        }
+        return this.is_some ? optb : this;
     },
 
     /**
@@ -144,12 +139,7 @@ OptionT.prototype = Object.freeze({
      *  @return {Option<T>}
      */
     or: function OptionTOr(optb) {
-        if (this.is_some) {
-            return this;
-        }
-        else {
-            return optb;
-        }
+        return this.is_some ? this : optb;
     },
 
     /**
@@ -167,12 +157,11 @@ OptionT.prototype = Object.freeze({
         }
         else {
             var value = fn();
-            if (value instanceof Some || value instanceof None) {
+            if (value instanceof OptionT) {
                 return value;
             }
 
             throw new Error('Option<T>.orElse()\' param `fn` should return `Option<T>`.');
-
         }
     },
 
