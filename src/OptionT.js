@@ -127,12 +127,7 @@ OptionT.prototype = Object.freeze({
      *  @return {Option<U>}
      */
     and: function OptionTAnd(optb) {
-        if (!this.is_some) {
-            return this;
-        }
-        else {
-            return optb;
-        }
+        return this.is_some ? optb : this;
     },
 
     /**
@@ -144,12 +139,7 @@ OptionT.prototype = Object.freeze({
      *  @return {Option<T>}
      */
     or: function OptionTOr(optb) {
-        if (this.is_some) {
-            return this;
-        }
-        else {
-            return optb;
-        }
+        return this.is_some ? this : optb;
     },
 
     /**
