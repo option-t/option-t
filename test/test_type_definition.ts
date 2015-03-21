@@ -33,7 +33,8 @@ var None = OptionT.None;
 (function(){
     var option: OptionT.Some<number> = new Some(1);
     var isSome: boolean = option.isSome;
-    var val: number = option.unwrap();
+    var unwrap: number = option.unwrap();
+    var unwrapOr: number = option.unwrapOr(10);
     var map: OptionT.Option<string> = option.map((val: number): string => String(val));
     var flatMap: OptionT.Option<string> = option.flatMap((val: number): OptionT.Option<string> => {
         return new Some( String(val) );
@@ -53,7 +54,8 @@ var None = OptionT.None;
 (function(){
     var option: OptionT.None<number> = new None<number>();
     var isSome: boolean = option.isSome;
-    var val: number = option.unwrap();
+    var unwrap: number = option.unwrap();
+    var unwrapOr: number = option.unwrapOr(10);
     var map: OptionT.Option<string> = option.map((val: number): string => String(val));
     var flatMap: OptionT.Option<string> = option.flatMap((val: number): OptionT.Option<string> => {
         return new None<string>();

@@ -27,6 +27,7 @@ declare module 'option-t' {
     interface Option<T> {
         isSome: boolean;
         unwrap(): T;
+        unwrapOr(def: T): T;
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         and<U>(optb: Option<U>): Option<U>;
@@ -40,6 +41,7 @@ declare module 'option-t' {
         constructor(val: T);
         isSome: boolean;
         unwrap(): T;
+        unwrapOr(def: T): T;
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         and<U>(optb: Option<U>): Option<U>;
@@ -53,6 +55,7 @@ declare module 'option-t' {
         constructor();
         isSome: boolean;
         unwrap(): T;
+        unwrapOr(def: T): T;
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         and<U>(optb: Option<U>): Option<U>;

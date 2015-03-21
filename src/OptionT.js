@@ -63,6 +63,18 @@ OptionT.prototype = Object.freeze({
     },
 
     /**
+     *  Returns the contained value or a default value `def`.
+     *
+     *  @template   T
+     *
+     *  @param  {T} def
+     *  @return {T}
+     */
+    unwrapOr: function OptionTUnwrapOr(def) {
+        return this.is_some ? this.value : def;
+    },
+
+    /**
      *  Maps an `Option<T>` to `Option<U>` by applying a function to a contained value.
      *
      *  @template   T, U
