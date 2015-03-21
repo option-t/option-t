@@ -40,11 +40,7 @@ describe('Option<T>.flatMap()', function(){
             });
         });
 
-        it('the returned value shoule be `None`: 1', function() {
-            assert.strictEqual(option.isSome, false);
-        });
-
-        it('the returned value shoule be `None`: 2', function() {
+        it('the returned value shoule be `None`', function() {
             assert.ok(option instanceof None);
         });
 
@@ -64,11 +60,7 @@ describe('Option<T>.flatMap()', function(){
             });
         });
 
-        it('the returned value shoule be `None`: 1', function() {
-            assert.strictEqual(option.isSome, false);
-        });
-
-        it('the returned value shoule be `None`: 2', function() {
+        it('the returned value shoule be `None`', function() {
             assert.ok(option instanceof None);
         });
     });
@@ -86,11 +78,7 @@ describe('Option<T>.flatMap()', function(){
             });
         });
 
-        it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.strictEqual(option.isSome, true);
-        });
-
-        it('the returned value shoule be `Some<T>`: 2', function() {
+        it('the returned value shoule be `Some<T>`', function() {
             assert.ok(option instanceof Some);
         });
 
@@ -111,11 +99,7 @@ describe('Option<T>.flatMap()', function(){
             });
         });
 
-        it('the returned value shoule be `None`: 1', function() {
-            assert.strictEqual(option.isSome, false);
-        });
-
-        it('the returned value shoule be `None`: 2', function() {
+        it('the returned value shoule be `None`', function() {
             assert.ok(option instanceof None);
         });
 
