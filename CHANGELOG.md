@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+### Breaking Change
+* `OptionType<T>` is obsolated. This API will be no longer supported.
+
 ## 0.4.0
 
 ### New Feature

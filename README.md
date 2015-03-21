@@ -56,7 +56,6 @@ console.log(none.unwrap()); // this will throw `Error`.
 
 * [Type Definition](./option-t.d.ts)
 * Implementation: See inline JSDoc.
-  * [`OptionType`](./src/OptionType.js) (__Deperecated__)
   * [`Option<T>`](./src/OptionT.js)
 
 ## Semantics

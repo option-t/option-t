@@ -23,17 +23,6 @@
  */
 
 declare module 'option-t' {
-    /**
-     *  @deprecated
-     */
-    export class OptionType<T> {
-        constructor(val?: T);
-        isSome: boolean;
-        unwrap(): T;
-        map<U>(fn: (v: T) => U): OptionType<U>;
-        flatMap<U>(fn: (v: T) => OptionType<U>): OptionType<U>;
-        drop(): void;
-    }
 
     interface Option<T> {
         isSome: boolean;
