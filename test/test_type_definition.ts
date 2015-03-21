@@ -41,6 +41,7 @@ var None = OptionT.None;
     var flatMap: OptionT.Option<string> = option.flatMap((val: number): OptionT.Option<string> => {
         return new Some( String(val) );
     });
+    var mapOr: string = option.mapOr("bar", (val: number): string => String(val));
     var and: OptionT.Option<string> = option.and(new Some<string>("bar"));
     var andThen: OptionT.Option<string> = option.andThen((val: number): OptionT.Option<string> => {
         return new None<string>();
@@ -64,6 +65,7 @@ var None = OptionT.None;
     var flatMap: OptionT.Option<string> = option.flatMap((val: number): OptionT.Option<string> => {
         return new None<string>();
     });
+    var mapOr: string = option.mapOr("bar", (val: number): string => String(val));
     var and: OptionT.Option<string> = option.and(new Some<string>("bar"));
     var andThen: OptionT.Option<string> = option.andThen((val: number): OptionT.Option<string> => {
         return new None<string>();
