@@ -2,6 +2,13 @@
 
 ## x.y.z
 
+## 0.5.4
+
+### Update Documentation
+* Fix JSDoc.
+  * Add `@extends` annotation to `Some` & `None`.
+  * Fix warning of closure compiler.
+
 ## 0.5.3
 
 ### Internal
