@@ -2,6 +2,12 @@
 
 ## x.y.z
 
+## 0.5.5
+
+### Update Documentation
+* Don't preserve the needless license block when minifying.
+
+
 ## 0.5.4
 
 ### Update Documentation
