@@ -4,6 +4,8 @@
 
 ### New Feature
 * Add `Option<T>.unwrapOr()`.
+* Add `Option<T>.unwrapOrElse()`.
+
 
 ## 0.6.0
 

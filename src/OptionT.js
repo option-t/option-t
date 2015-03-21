@@ -75,6 +75,18 @@ OptionT.prototype = Object.freeze({
     },
 
     /**
+     *  Returns the contained value or computes it from a closure `fn`.
+     *
+     *  @template   T
+     *
+     *  @param  {function(): T} fn
+     *  @return {T}
+     */
+    unwrapOrElse: function OptionTUnwrapOrElse(fn) {
+        return this.is_some ? this.value : fn();
+    },
+
+    /**
      *  Maps an `Option<T>` to `Option<U>` by applying a function to a contained value.
      *
      *  @template   T, U
