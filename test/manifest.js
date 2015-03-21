@@ -24,14 +24,6 @@
 
 'use strict';
 
-
-require('./old/test_initialize');
-require('./old/test_json');
-require('./old/test_unwrap');
-require('./old/test_map');
-require('./old/test_flatmap');
-require('./old/test_drop');
-
 require('./test_initialize');
 require('./test_json');
 require('./test_unwrap');

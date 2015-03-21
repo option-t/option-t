@@ -26,21 +26,8 @@
 
 /// <reference path="../option-t.d.ts" />;
 import OptionT = require('option-t');
-var OptionType = OptionT.OptionType;
 var Some = OptionT.Some;
 var None = OptionT.None;
-
-(function(){
-    var some: OptionT.OptionType<number> = new OptionType(1);
-    var none: OptionT.OptionType<number> = new OptionType<number>();
-    var isSome: boolean = some.isSome;
-    var val: number = some.unwrap();
-    var map: OptionT.OptionType<string> = some.map((val: number): string => String(val));
-    var flatMap: OptionT.OptionType<string> = some.flatMap((val: number): OptionT.OptionType<string> => {
-        return new OptionType( String(val) );
-    });
-    some.drop();
-})();
 
 // `Some<T>`
 (function(){

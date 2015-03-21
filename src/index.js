@@ -25,10 +25,8 @@
 'use strict';
 
 var Option = require('./OptionT');
-var OptionType = require('./OptionType');
 
 var OptionT = {
-    OptionType: OptionType,
     Some: Option.Some,
     None: Option.None,
     OptionT: Option.OptionT,
