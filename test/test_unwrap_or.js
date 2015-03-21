@@ -28,7 +28,7 @@ var assert = require('power-assert');
 var Some = require('../src/index').Some;
 var None = require('../src/index').None;
 
-describe('Option<T>.and()', function(){
+describe('Option<T>.unwrapOr()', function(){
     describe('self is `None`', function () {
         var EXPECTED = 1;
 

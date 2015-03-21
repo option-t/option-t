@@ -60,7 +60,7 @@ describe('Option<T>.map()', function(){
         before(function(){
             var some = new Some(1);
             option = some.map(function(val){
-                assert.notStrictEqual(val !== EXPECTED);
+                assert.notStrictEqual(val, EXPECTED);
                 return EXPECTED;
             });
         });

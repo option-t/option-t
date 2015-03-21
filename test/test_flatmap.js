@@ -40,11 +40,7 @@ describe('Option<T>.flatMap()', function(){
             });
         });
 
-        it('the returned value shoule be `None`: 1', function() {
-            assert.strictEqual(option.isSome, false);
-        });
-
-        it('the returned value shoule be `None`: 2', function() {
+        it('the returned value shoule be `None`', function() {
             assert.ok(option instanceof None);
         });
 
@@ -53,104 +49,77 @@ describe('Option<T>.flatMap()', function(){
         });
     });
 
-    describe('self is `Some<T>`, `fn` returns `None`', function () {
-        var option = null;
+    describe('self is `Some<T>`', function () {
 
-        before(function(){
-            var some = new Some(1);
+        describe('callback returns `None`', function () {
+            var option = null;
 
-            option = some.flatMap(function(val){
-                return new None();
-            });
-        });
+            before(function(){
+                var some = new Some(1);
 
-        it('the returned value shoule be `None`: 1', function() {
-            assert.strictEqual(option.isSome, false);
-        });
-
-        it('the returned value shoule be `None`: 2', function() {
-            assert.ok(option instanceof None);
-        });
-    });
-
-    describe('self is `Some<T>`, `fn` returns `Some<T>`', function () {
-        var EXPECTED = "1";
-        var option = null;
-
-        before(function(){
-            var some = new Some(1);
-
-            option = some.flatMap(function(val){
-                assert.ok(val !== EXPECTED);
-                return new Some(EXPECTED);
-            });
-        });
-
-        it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.strictEqual(option.isSome, true);
-        });
-
-        it('the returned value shoule be `Some<T>`: 2', function() {
-            assert.ok(option instanceof Some);
-        });
-
-        it('the returned containing value shoule be expected', function() {
-            assert.strictEqual(option.unwrap(), EXPECTED);
-        });
-    });
-
-    describe('self is `None`, `fn` don\'t returns `Option<T>`', function () {
-
-        var option = null;
-        var isNotCalled = true;
-
-        before(function(){
-            var none = new None();
-
-            option = none.flatMap(function(){
-                return 1;
-            });
-        });
-
-        it('the returned value shoule be `None`: 1', function() {
-            assert.strictEqual(option.isSome, false);
-        });
-
-        it('the returned value shoule be `None`: 2', function() {
-            assert.ok(option instanceof None);
-        });
-    });
-
-    describe('self is `Some<T>`, `fn` don\'t returns `Option<T>`', function () {
-        var option = null;
-        var error = null;
-
-        before(function(){
-            var some = new Some(1);
-
-            try {
                 option = some.flatMap(function(val){
-                    var rv = 'hoge';
-                    assert.notStrictEqual(val !== rv);
-                    return rv;
+                    return new None();
                 });
-            }
-            catch (e) {
-                error = e;
-            }
+            });
+
+            it('the returned value shoule be `None`', function() {
+                assert.ok(option instanceof None);
+            });
         });
 
-        after(function(){
-            option = null;
-            error = null;
+        describe('callback returns `Some<T>`', function () {
+            var EXPECTED = "1";
+            var option = null;
+
+            before(function(){
+                var some = new Some(1);
+
+                option = some.flatMap(function(val){
+                    assert.ok(val !== EXPECTED);
+                    return new Some(EXPECTED);
+                });
+            });
+
+            it('the returned value shoule be `Some<T>`', function() {
+                assert.ok(option instanceof Some);
+            });
+
+            it('the returned containing value shoule be expected', function() {
+                assert.strictEqual(option.unwrap(), EXPECTED);
+            });
         });
 
-        it('should throw an error', function() {
-            assert.ok(error instanceof Error);
-        });
+        describe('`fn` don\'t returns `Option<T>`', function () {
+            var option = null;
+            var error = null;
 
-        it('the error message should be the expected', function() {
-            assert.strictEqual(error.message, 'Option<T>.flatMap()\' param `fn` should return `Option<T>`.');
+            before(function(){
+                var some = new Some(1);
+
+                try {
+                    option = some.flatMap(function(val){
+                        var rv = 'hoge';
+                        assert.notStrictEqual(val !== rv);
+                        return rv;
+                    });
+                }
+                catch (e) {
+                    error = e;
+                }
+            });
+
+            after(function(){
+                option = null;
+                error = null;
+            });
+
+            it('should throw an error', function() {
+                assert.ok(error instanceof Error);
+            });
+
+            it('the error message should be the expected', function() {
+                assert.strictEqual(error.message, 'Option<T>.flatMap()\' param `fn` should return `Option<T>`.');
+            });
         });
     });
 });
