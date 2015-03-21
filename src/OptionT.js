@@ -98,7 +98,7 @@ OptionT.prototype = Object.freeze({
         }
 
         var mapped = fn(this.value);
-        var isOption = (mapped instanceof Some || mapped instanceof None);
+        var isOption = (mapped instanceof OptionT);
         if (!isOption) {
             throw new Error('Option<T>.flatMap()\' param `fn` should return `Option<T>`.');
         }
@@ -157,12 +157,11 @@ OptionT.prototype = Object.freeze({
         }
         else {
             var value = fn();
-            if (value instanceof Some || value instanceof None) {
+            if (value instanceof OptionT) {
                 return value;
             }
 
             throw new Error('Option<T>.orElse()\' param `fn` should return `Option<T>`.');
-
         }
     },
 
