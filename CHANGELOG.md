@@ -5,7 +5,7 @@
 ### Update Documentation
 * JSDoc: Change `Option<T>` used as parameter/return value to non-nullable type.
   * This might cause some compile error if you use closure compiler's advanced optimization.
-
+* JSDoc: Remove needless `@template` annotations.
 
 ## 0.5.5
 

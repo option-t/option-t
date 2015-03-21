@@ -39,7 +39,6 @@ OptionT.prototype = Object.freeze({
     /**
      *  Return whether this is `Some<T>` or not.
      *
-     *  @template   T
      *  @return {boolean}
      */
     get isSome() {
@@ -121,7 +120,7 @@ OptionT.prototype = Object.freeze({
     /**
      *  Returns `None` if the self is `None`, otherwise returns `optb`.
      *
-     *  @template   T, U
+     *  @template   U
      *
      *  @param  {!Option<U>} optb
      *  @return {!Option<U>}
