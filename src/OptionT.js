@@ -149,18 +149,6 @@ OptionT.prototype = Object.freeze({
     },
 
     /**
-     *  The alias of `Option<T>.flatMap()`.
-     *
-     *  @template   T, U
-     *
-     *  @param  {function(T): !Option<U>}    fn
-     *  @return {!Option<U>}
-     */
-    andThen: function OptionTAndThen(fn) {
-        return this.flatMap(fn);
-    },
-
-    /**
      *  Returns `None` if the self is `None`, otherwise returns `optb`.
      *
      *  @template   U
@@ -170,6 +158,18 @@ OptionT.prototype = Object.freeze({
      */
     and: function OptionTAnd(optb) {
         return this.is_some ? optb : this;
+    },
+
+    /**
+     *  The alias of `Option<T>.flatMap()`.
+     *
+     *  @template   T, U
+     *
+     *  @param  {function(T): !Option<U>}    fn
+     *  @return {!Option<U>}
+     */
+    andThen: function OptionTAndThen(fn) {
+        return this.flatMap(fn);
     },
 
     /**
