@@ -36,6 +36,7 @@ var None = OptionT.None;
     var unwrap: number = option.unwrap();
     var unwrapOr: number = option.unwrapOr(10);
     var unwrapOrElse: number = option.unwrapOrElse((): number => 10);
+    var expect: number = option.expect('barfoo');
     var map: OptionT.Option<string> = option.map((val: number): string => String(val));
     var flatMap: OptionT.Option<string> = option.flatMap((val: number): OptionT.Option<string> => {
         return new Some( String(val) );
@@ -58,6 +59,7 @@ var None = OptionT.None;
     var unwrap: number = option.unwrap();
     var unwrapOr: number = option.unwrapOr(10);
     var unwrapOrElse: number = option.unwrapOrElse((): number => 10);
+    var expect: number = option.expect('barfoo');
     var map: OptionT.Option<string> = option.map((val: number): string => String(val));
     var flatMap: OptionT.Option<string> = option.flatMap((val: number): OptionT.Option<string> => {
         return new None<string>();

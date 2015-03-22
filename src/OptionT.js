@@ -87,6 +87,25 @@ OptionT.prototype = Object.freeze({
     },
 
     /**
+     *  Returns the inner `T` of a `Some<T>`.
+     *
+     *  @template   T
+     *
+     *  @param  {string}  msg
+     *  @return {T}
+     *  @throws {Error}
+     *      Throws a custom error with provided `msg`
+     *      if the self value equals `None`.
+     */
+    expect: function OptionTExpect(msg) {
+        if (!this.is_some) {
+            throw new Error(msg);
+        }
+
+        return this.value;
+    },
+
+    /**
      *  Maps an `Option<T>` to `Option<U>` by applying a function to a contained value.
      *
      *  @template   T, U
