@@ -33,6 +33,7 @@ require('./test_expect');
 require('./test_map');
 require('./test_flatmap');
 require('./test_map_or');
+require('./test_map_or_else');
 require('./test_drop');
 require('./test_inheritance');
 require('./test_and');

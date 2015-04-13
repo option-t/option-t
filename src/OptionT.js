@@ -166,6 +166,24 @@ OptionT.prototype = Object.freeze({
         }
     },
 
+   /**
+     *  Applies a function `fn` to the contained value or computes a default result by `defFn`.
+     *
+     *  @template   T, U
+     *
+     *  @param  {function():U}  defFn
+     *  @param  {function(T):U} fn
+     *  @return {U}
+     */
+    mapOrElse: function OptionTMapOrElse(defFn, fn) {
+        if (this.is_some) {
+            return fn(this.value);
+        }
+        else {
+            return defFn();
+        }
+    },
+
     /**
      *  Returns `None` if the self is `None`, otherwise returns `optb`.
      *
