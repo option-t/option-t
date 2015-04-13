@@ -46,6 +46,15 @@ OptionT.prototype = Object.freeze({
     },
 
     /**
+     *  Return whether this is `None` or not.
+     *
+     *  @return {boolean}
+     */
+    get isNone() {
+        return !this.is_some;
+    },
+
+    /**
      *  Returns the inner `T` of a `Some<T>`.
      *
      *  @template   T

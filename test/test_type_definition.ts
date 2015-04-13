@@ -33,6 +33,7 @@ var None = OptionT.None;
 (function(){
     var option: OptionT.Some<number> = new Some(1);
     var isSome: boolean = option.isSome;
+    var isNone: boolean = option.isNone;
     var unwrap: number = option.unwrap();
     var unwrapOr: number = option.unwrapOr(10);
     var unwrapOrElse: number = option.unwrapOrElse((): number => 10);
@@ -59,6 +60,7 @@ var None = OptionT.None;
 (function(){
     var option: OptionT.None<number> = new None<number>();
     var isSome: boolean = option.isSome;
+    var isNone: boolean = option.isNone;
     var unwrap: number = option.unwrap();
     var unwrapOr: number = option.unwrapOr(10);
     var unwrapOrElse: number = option.unwrapOrElse((): number => 10);

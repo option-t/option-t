@@ -26,6 +26,7 @@ declare module 'option-t' {
 
     interface Option<T> {
         isSome: boolean;
+        isNone: boolean;
         unwrap(): T;
         unwrapOr(def: T): T;
         unwrapOrElse(fn: () => T): T;
@@ -44,6 +45,7 @@ declare module 'option-t' {
     class Some<T> implements Option<T> {
         constructor(val: T);
         isSome: boolean;
+        isNone: boolean;
         unwrap(): T;
         unwrapOr(def: T): T;
         unwrapOrElse(fn: () => T): T;
@@ -62,6 +64,7 @@ declare module 'option-t' {
     class None<T> implements Option<T> {
         constructor();
         isSome: boolean;
+        isNone: boolean;
         unwrap(): T;
         unwrapOr(def: T): T;
         unwrapOrElse(fn: () => T): T;

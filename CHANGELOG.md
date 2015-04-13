@@ -3,11 +3,13 @@
 ## x.y.z
 
 ### New Feature
+* Add `Option<T>.isNone`.
 * Add `Option<T>.unwrapOr()`.
 * Add `Option<T>.unwrapOrElse()`.
 * Add `Option<T>.expect()`.
 * Add `Option<T>.mapOr()`.
 * Add `Option<T>.mapOrElse()`.
+
 
 
 ## 0.6.0
