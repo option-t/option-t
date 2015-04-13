@@ -28,6 +28,7 @@ declare module 'option-t' {
         isSome: boolean;
         unwrap(): T;
         unwrapOr(def: T): T;
+        unwrapOrElse(fn: () => T): T;
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         and<U>(optb: Option<U>): Option<U>;
@@ -42,6 +43,7 @@ declare module 'option-t' {
         isSome: boolean;
         unwrap(): T;
         unwrapOr(def: T): T;
+        unwrapOrElse(fn: () => T): T;
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         and<U>(optb: Option<U>): Option<U>;
@@ -56,6 +58,7 @@ declare module 'option-t' {
         isSome: boolean;
         unwrap(): T;
         unwrapOr(def: T): T;
+        unwrapOrElse(fn: () => T): T;
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         and<U>(optb: Option<U>): Option<U>;
