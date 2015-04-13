@@ -33,6 +33,7 @@ declare module 'option-t' {
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         mapOr<U>(def: U, fn: (v: T) => U): U;
+        mapOrElse<U>(def: () => U, fn: (v: T) => U): U;
         and<U>(optb: Option<U>): Option<U>;
         andThen<U>(fn: (v: T) => Option<U>): Option<U>;
         or(optb: Option<T>): Option<T>;
@@ -50,6 +51,7 @@ declare module 'option-t' {
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         mapOr<U>(def: U, fn: (v: T) => U): U;
+        mapOrElse<U>(def: () => U, fn: (v: T) => U): U;
         and<U>(optb: Option<U>): Option<U>;
         andThen<U>(fn: (v: T) => Option<U>): Option<U>;
         or(optb: Option<T>): Option<T>;
@@ -67,6 +69,7 @@ declare module 'option-t' {
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         mapOr<U>(def: U, fn: (v: T) => U): U;
+        mapOrElse<U>(def: () => U, fn: (v: T) => U): U;
         and<U>(optb: Option<U>): Option<U>;
         andThen<U>(fn: (v: T) => Option<U>): Option<U>;
         or(optb: Option<T>): Option<T>;

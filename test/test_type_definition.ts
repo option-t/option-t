@@ -42,6 +42,8 @@ var None = OptionT.None;
         return new Some( String(val) );
     });
     var mapOr: string = option.mapOr("bar", (val: number): string => String(val));
+    var mapOrElse: string = option.mapOrElse((): string => { return String(10); },
+                                             (v: number) => { return String(v); });
     var and: OptionT.Option<string> = option.and(new Some<string>("bar"));
     var andThen: OptionT.Option<string> = option.andThen((val: number): OptionT.Option<string> => {
         return new None<string>();
@@ -66,6 +68,8 @@ var None = OptionT.None;
         return new None<string>();
     });
     var mapOr: string = option.mapOr("bar", (val: number): string => String(val));
+    var mapOrElse: string = option.mapOrElse((): string => { return String(10); },
+                                             (v: number) => { return String(v); });
     var and: OptionT.Option<string> = option.and(new Some<string>("bar"));
     var andThen: OptionT.Option<string> = option.andThen((val: number): OptionT.Option<string> => {
         return new None<string>();
