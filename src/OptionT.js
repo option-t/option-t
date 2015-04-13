@@ -155,7 +155,7 @@ OptionT.prototype = Object.freeze({
      *
      *  @param  {U} def
      *  @param  {function(T):U} fn
-     *  @return {!Option<U>}
+     *  @return {U}
      */
     mapOr: function OptionTMapOr(def, fn) {
         if (this.is_some) {
