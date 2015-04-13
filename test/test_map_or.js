@@ -38,9 +38,9 @@ describe('Option<T>.mapOr()', function(){
             assert.ok(result !== EXPECTED);
 
             var none = new None();
-            result = none.mapOr(EXPECTED, function(){
+            result = none.mapOr(function(){
                 isNotCalled = false;
-            });
+            }, EXPECTED);
         });
 
         it('the returned value shoule be expected', function() {
@@ -62,10 +62,10 @@ describe('Option<T>.mapOr()', function(){
             assert.ok(result !== DEFAULT);
 
             var some = new Some("bar");
-            result = some.mapOr(DEFAULT, function(val){
+            result = some.mapOr(function(val){
                 assert.notStrictEqual(val, EXPECTED);
                 return EXPECTED;
-            });
+            }, DEFAULT);
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {

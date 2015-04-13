@@ -39,11 +39,11 @@ describe('Option<T>.mapOrElse()', function(){
             assert.ok(result !== EXPECTED);
 
             var none = new None();
-            result = none.mapOrElse(function defaultFn() {
+            result = none.mapOrElse(function mapFn(){
+                mapFnIsCalled = true;
+            }, function defaultFn() {
                 defaultFnIsCalled = true;
                 return EXPECTED;
-            }, function mapFn(){
-                mapFnIsCalled = true;
             });
         });
 
@@ -73,13 +73,13 @@ describe('Option<T>.mapOrElse()', function(){
             assert.ok(result !== DEFAULT);
 
             var some = new Some("bar");
-            result = some.mapOrElse(function defaultFn() {
-                defaultFnIsCalled = true;
-                return DEFAULT;
-            }, function(val){
+            result = some.mapOrElse(function(val){
                 mapFnIsCalled = true;
                 assert.notStrictEqual(val, EXPECTED);
                 return EXPECTED;
+            }, function defaultFn() {
+                defaultFnIsCalled = true;
+                return DEFAULT;
             });
         });
 
