@@ -33,7 +33,7 @@
     "url": "https://github.com/saneyuki/option-t.js.git"
   },
   "devDependencies": {
-    "eslint": "^0.18.0",
+    "eslint": "^0.19.0",
     "espower-loader": "^0.10.0",
     "intelli-espower-loader": "^0.6.0",
     "mocha": "^2.2.1",
