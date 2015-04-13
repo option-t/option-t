@@ -7,8 +7,9 @@
 * Add `Option<T>.unwrapOr()`.
 * Add `Option<T>.unwrapOrElse()`.
 * Add `Option<T>.expect()`.
-* Add `Option<T>.mapOr()`.
-* Add `Option<T>.mapOrElse()`.
+* Add some experimental APIs. These are unstable.
+  * Add `Option<T>.mapOr()`.
+  * Add `Option<T>.mapOrElse()`.
 
 
 
