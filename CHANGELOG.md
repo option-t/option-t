@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+
+## 0.7.0
+
 ### New Feature
 * Add `Option<T>.isNone`.
 * Add `Option<T>.unwrapOr()`.
@@ -10,7 +13,6 @@
 * Add some experimental APIs. These are unstable.
   * Add `Option<T>.mapOr()`.
   * Add `Option<T>.mapOrElse()`.
-
 
 
 ## 0.6.0
