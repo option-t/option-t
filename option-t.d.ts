@@ -24,6 +24,18 @@
 
 declare module 'option-t' {
 
+    // for test
+    interface Promise<T> {
+        then<U>(
+            onFulfill: (T) => U | Promise<U>,
+            onReject?: (error: any) => U | Promise<U>
+        ): Promise<U>;
+
+        catch<U>(
+            onRejected: (error: any) => U | Promise<U>
+        ): Promise<U>;
+    }
+
     interface Option<T> {
         isSome: boolean;
         isNone: boolean;
@@ -39,6 +51,7 @@ declare module 'option-t' {
         andThen<U>(fn: (v: T) => Option<U>): Option<U>;
         or(optb: Option<T>): Option<T>;
         orElse(fn: () => Option<T>): Option<T>;
+        asPromise(): Promise<T>;
         drop(): void;
     }
 
@@ -58,6 +71,7 @@ declare module 'option-t' {
         andThen<U>(fn: (v: T) => Option<U>): Option<U>;
         or(optb: Option<T>): Option<T>;
         orElse(fn: () => Option<T>): Option<T>;
+        asPromise(): Promise<T>;
         drop(): void;
     }
 
@@ -77,6 +91,7 @@ declare module 'option-t' {
         andThen<U>(fn: (v: T) => Option<U>): Option<U>;
         or(optb: Option<T>): Option<T>;
         orElse(fn: () => Option<T>): Option<T>;
+        asPromise(): Promise<T>;
         drop(): void;
     }
 }

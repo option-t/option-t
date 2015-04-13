@@ -24,6 +24,18 @@
 
 'use strict';
 
+// for test
+interface Promise<T> {
+    then<U>(
+        onFulfill: (v: T) => U | Promise<U>,
+        onReject?: (error: any) => U | Promise<U>
+    ): Promise<U>;
+
+    catch<U>(
+        onRejected: (error: any) => U | Promise<U>
+    ): Promise<U>;
+}
+
 /// <reference path="../option-t.d.ts" />;
 import OptionT = require('option-t');
 var Some = OptionT.Some;
@@ -53,6 +65,7 @@ var None = OptionT.None;
     var orElse: OptionT.Option<number> = option.orElse((): OptionT.Option<number> => {
         return new Some<number>(2);
     });
+    var asPromise: Promise<number> = option.asPromise();
     option.drop();
 })();
 
@@ -80,6 +93,7 @@ var None = OptionT.None;
     var orElse: OptionT.Option<number> = option.orElse((): OptionT.Option<number> => {
         return new Some<number>(2);
     });
+    var asPromise: Promise<number> = option.asPromise();
     option.drop();
 })();
 

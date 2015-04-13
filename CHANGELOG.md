@@ -2,6 +2,10 @@
 
 ## x.y.z
 
+### New Feature
+* Add `Option<T>.asPromise()`.
+
+
 ## 0.7.1
 
 ### Bug Fix

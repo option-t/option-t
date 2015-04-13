@@ -38,6 +38,7 @@
     "intelli-espower-loader": "^0.6.0",
     "mocha": "^2.2.1",
     "power-assert": "^0.10.2",
+    "promise-test-helper": "^0.2.1",
     "typescript": "^1.4.1"
   }
 }
