@@ -148,16 +148,22 @@ OptionT.prototype = Object.freeze({
         return mapped;
     },
 
-    /**
-     *  The alias of `Option<T>.flatMap()`.
+   /**
+     *  Applies a function `fn` to the contained value or returns a default `def`.
      *
      *  @template   T, U
      *
-     *  @param  {function(T): !Option<U>}    fn
+     *  @param  {U} def
+     *  @param  {function(T):U} fn
      *  @return {!Option<U>}
      */
-    andThen: function OptionTAndThen(fn) {
-        return this.flatMap(fn);
+    mapOr: function OptionTMapOr(def, fn) {
+        if (this.is_some) {
+            return fn(this.value);
+        }
+        else {
+            return def;
+        }
     },
 
     /**
@@ -170,6 +176,18 @@ OptionT.prototype = Object.freeze({
      */
     and: function OptionTAnd(optb) {
         return this.is_some ? optb : this;
+    },
+
+    /**
+     *  The alias of `Option<T>.flatMap()`.
+     *
+     *  @template   T, U
+     *
+     *  @param  {function(T): !Option<U>}    fn
+     *  @return {!Option<U>}
+     */
+    andThen: function OptionTAndThen(fn) {
+        return this.flatMap(fn);
     },
 
     /**

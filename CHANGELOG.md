@@ -6,6 +6,7 @@
 * Add `Option<T>.unwrapOr()`.
 * Add `Option<T>.unwrapOrElse()`.
 * Add `Option<T>.expect()`.
+* Add `Option<T>.mapOr()`.
 
 
 ## 0.6.0
