@@ -29,6 +29,7 @@ declare module 'option-t' {
         unwrap(): T;
         unwrapOr(def: T): T;
         unwrapOrElse(fn: () => T): T;
+        expect(msg: string): T;
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         and<U>(optb: Option<U>): Option<U>;
@@ -44,6 +45,7 @@ declare module 'option-t' {
         unwrap(): T;
         unwrapOr(def: T): T;
         unwrapOrElse(fn: () => T): T;
+        expect(msg: string): T;
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         and<U>(optb: Option<U>): Option<U>;
@@ -59,6 +61,7 @@ declare module 'option-t' {
         unwrap(): T;
         unwrapOr(def: T): T;
         unwrapOrElse(fn: () => T): T;
+        expect(msg: string): T;
         map<U>(fn: (v: T) => U): Option<U>;
         flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
         and<U>(optb: Option<U>): Option<U>;

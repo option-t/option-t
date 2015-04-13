@@ -24,16 +24,46 @@
 
 'use strict';
 
-require('./test_initialize');
-require('./test_json');
-require('./test_unwrap');
-require('./test_unwrap_or');
-require('./test_unwrap_or_else');
-require('./test_expect');
-require('./test_map');
-require('./test_flatmap');
-require('./test_drop');
-require('./test_inheritance');
-require('./test_and');
-require('./test_or');
-require('./test_or_else');
+var assert = require('power-assert');
+var Some = require('../src/index').Some;
+var None = require('../src/index').None;
+
+describe('Option<T>.expect()', function(){
+
+    describe('unwrap `Some<T>`', function () {
+        it('should get the inner', function() {
+            var EXPECTED = 1;
+            var option = new Some(EXPECTED);
+            assert.strictEqual(option.expect(), EXPECTED);
+        });
+    });
+
+    describe('unwrap `None`', function () {
+        var EXPECTED = 'barfoo';
+        var none = null;
+        var error = null;
+
+        before(function(){
+            none = new None();
+            try {
+                none.expect(EXPECTED);
+            }
+            catch (e) {
+                error = e;
+            }
+        });
+
+        after(function(){
+            none = null;
+            error = null;
+        });
+
+        it('should throw the error', function() {
+            assert.ok(error instanceof Error);
+        });
+
+        it('should be the expected error message', function() {
+            assert.strictEqual(error.message, EXPECTED);
+        });
+    });
+});

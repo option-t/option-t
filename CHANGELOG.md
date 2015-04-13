@@ -5,6 +5,7 @@
 ### New Feature
 * Add `Option<T>.unwrapOr()`.
 * Add `Option<T>.unwrapOrElse()`.
+* Add `Option<T>.expect()`.
 
 
 ## 0.6.0
