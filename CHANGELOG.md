@@ -2,6 +2,8 @@
 
 ## x.y.z
 
+## 0.8.0
+
 ### New Feature
 * Add `Option<T>.asPromise()`.
 
