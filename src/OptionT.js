@@ -24,12 +24,6 @@
 
 'use strict';
 
-var dumpWarn = null;
-if (process.env.NODE_ENV !== 'production') {
-    dumpWarn = (typeof console.warn === 'function') ?
-               console.warn : console.log;
-}
-
 /**
  *  @constructor
  *  @template   T
@@ -176,7 +170,7 @@ OptionT.prototype = Object.freeze({
      */
     mapOr: function OptionTMapOr(def, fn) {
         if (process.env.NODE_ENV !== 'production') {
-            dumpWarn('Option<T>.mapOr() is experimental. This might be breaking changed whenever.');
+            console.warn('Option<T>.mapOr() is experimental. This might be breaking changed whenever.');
         }
 
         if (this.is_some) {
@@ -200,7 +194,7 @@ OptionT.prototype = Object.freeze({
      */
     mapOrElse: function OptionTMapOrElse(defFn, fn) {
         if (process.env.NODE_ENV !== 'production') {
-            dumpWarn('Option<T>.mapOrElse() is experimental. This might be breaking changed whenever.');
+            console.warn('Option<T>.mapOrElse() is experimental. This might be breaking changed whenever.');
         }
 
         if (this.is_some) {
