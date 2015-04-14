@@ -265,6 +265,19 @@ OptionT.prototype = Object.freeze({
     },
 
     /**
+     *  Cast the self as Promise.
+     *
+     *  If `T` is `Promise<U>`, then the wrapped `Promise<U>` is flatten automatically.
+     *  So this will returns `Promise<U>`.
+     *
+     *  @template   T
+     *  @return {Promise<T>};
+     */
+    asPromise: function OptionTAsPromise() {
+        return this.is_some ? Promise.resolve(this.value) : Promise.reject();
+    },
+
+    /**
      *  Finalize the self.
      *  After this is called, the object's behavior is not defined.
      *

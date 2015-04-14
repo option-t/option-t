@@ -24,6 +24,9 @@
 
 'use strict';
 
+// Load Promise poyfill to test on Node.js v0.10.x
+require('es6-promise').polyfill();
+
 require('./test_initialize');
 require('./test_json');
 require('./test_unwrap');
@@ -39,3 +42,4 @@ require('./test_inheritance');
 require('./test_and');
 require('./test_or');
 require('./test_or_else');
+require('./test_as_promise');

@@ -58,6 +58,18 @@ console.log(none.unwrap()); // this will throw `Error`.
 * Implementation: See inline JSDoc.
   * [`Option<T>`](./src/OptionT.js)
 
+
+### Cast `Option<T>` as `Promise<T>`.
+
+This library provides `Option<T>.asPromise()` to cast `Option<T>` as `Promise<T>`.
+It returns ES6 `Promise`.
+
+However, if you'd like to cast `Option<T>` as other promise style object,
+you can write a custom cast function. See [#51][issue 51] which describes a proof of concept.
+
+[issue 51]: https://github.com/saneyuki/option-t.js/issues/51
+
+
 ## Semantics
 
 This library represents [Option type](http://en.wikipedia.org/wiki/Option_type) in ECMAScript.
