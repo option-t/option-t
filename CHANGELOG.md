@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+## 0.7.1
+
+### Bug Fix
+* Fix `Uncaught TypeError: Illegal invocation` on browsers.
+
 
 ## 0.7.0
 
