@@ -160,8 +160,6 @@ OptionT.prototype = Object.freeze({
    /**
      *  Applies a function `fn` to the contained value or returns a default `def`.
      *
-     *  XXX: this API is unstable. See: https://github.com/saneyuki/option-t.js/pull/50
-     *
      *  @template   T, U
      *
      *  @param  {U} def
@@ -169,10 +167,6 @@ OptionT.prototype = Object.freeze({
      *  @return {U}
      */
     mapOr: function OptionTMapOr(def, fn) {
-        if (process.env.NODE_ENV !== 'production') {
-            console.warn('Option<T>.mapOr() is experimental. This might be breaking changed whenever.');
-        }
-
         if (this.is_some) {
             return fn(this.value);
         }
@@ -184,8 +178,6 @@ OptionT.prototype = Object.freeze({
    /**
      *  Applies a function `fn` to the contained value or computes a default result by `defFn`.
      *
-     *  XXX: this API is unstable. See: https://github.com/saneyuki/option-t.js/pull/50
-     *
      *  @template   T, U
      *
      *  @param  {function():U}  defFn
@@ -193,10 +185,6 @@ OptionT.prototype = Object.freeze({
      *  @return {U}
      */
     mapOrElse: function OptionTMapOrElse(defFn, fn) {
-        if (process.env.NODE_ENV !== 'production') {
-            console.warn('Option<T>.mapOrElse() is experimental. This might be breaking changed whenever.');
-        }
-
         if (this.is_some) {
             return fn(this.value);
         }
