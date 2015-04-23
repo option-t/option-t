@@ -2,6 +2,14 @@
 
 ## x.y.z
 
+### New Feature
+* Make `Option<T>.mapOr()` and `Option<T>.mapOrElse()` stable.
+  * We accept current signitures of these APIs as stable.
+    When Rust's upstream changes these APIs, we might follow them
+    with bumping our major version.
+  * Rust might change these API signitures. see: [rust-lang/rfcs#1025](https://github.com/rust-lang/rfcs/issues/1025).
+
+
 ## 0.8.0
 
 ### New Feature
