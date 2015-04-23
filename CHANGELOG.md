@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+
+## 0.9.0
+
 ### New Feature
 * Make `Option<T>.mapOr()` and `Option<T>.mapOrElse()` stable.
   * We accept current signitures of these APIs as stable.
