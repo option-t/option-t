@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "lint": "eslint ./src/",
-    "typetest": "tsc ./test/test_type_definition.ts --outDir ./__build/ --module commonjs",
+    "typetest": "tsc",
     "pretest": "npm run lint && npm run typetest",
     "test": "mocha --require intelli-espower-loader ./test/manifest.js"
   },
