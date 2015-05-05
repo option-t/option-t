@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "outDir": "./__build/",
+        "target": "ES5",
+        "sourceMap": true
+    },
+    "files": [
+        "./test/test_type_definition.ts"
+    ]
+}
