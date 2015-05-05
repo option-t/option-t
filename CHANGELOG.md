@@ -3,6 +3,13 @@
 ## x.y.z
 
 
+## 0.9.1
+
+### Bug Fix
+
+* Fix the compiler error if we use tsc's '--noImplicitAny' flag (#58)
+
+
 ## 0.9.0
 
 ### New Feature
