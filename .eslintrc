@@ -55,7 +55,9 @@
             "after": true
         }],
         "comma-style": [2, "last"],
+        "linebreak-style": [2, "unix"],
         "no-mixed-spaces-and-tabs": 2,
+        "no-unneeded-ternary": 2,
         "operator-linebreak": [2, "after"],
         "quotes": [2, "single", "avoid-escape"],
         "semi": [2, "always"],
@@ -66,6 +68,7 @@
         "spaced-line-comment": 2,
 
         // ECMAScript 6
-        "generator-star-spacing": [2, "after"]
+        "generator-star-spacing": [2, "after"],
+        "object-shorthand": 0
     }
 }
