@@ -3,6 +3,19 @@
 ## x.y.z
 
 
+## 0.9.2
+
+## New Feature
+
+* Support 'typescript' in package.json for [tsd][tsd] & [dtsm][dtsm]. ([#62][PR62])
+  * This does not affect this library's API model. Thus we release this as patch version.
+  * Thanks [@gifnksm](https://github.com/gifnksm)!
+
+[PR62]: https://github.com/saneyuki/option-t.js/pull/62
+[tsd]: https://github.com/Definitelytyped/tsd
+[dtsm]: https://github.com/vvakame/dtsm
+
+
 ## 0.9.1
 
 ### Bug Fix
