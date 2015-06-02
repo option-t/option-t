@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "es6-promise": "^2.0.1",
-    "eslint": "^0.21.0",
+    "eslint": "^0.22.1",
     "espower-loader": "^0.11.0",
     "intelli-espower-loader": "^0.7.0",
     "mocha": "^2.2.1",
