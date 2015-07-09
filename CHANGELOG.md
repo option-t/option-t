@@ -2,6 +2,13 @@
 
 ## x.y.z
 
+### New Feature
+
+* Add `OptionT.OptionBase`.
+  * This change also marks `OptionT.Option` as deprecated.
+  * We recommend to use this new base object instead of `OptionT.OptionT`.
+    See more details ( [#66](https://github.com/saneyuki/option-t.js/pull/66) ).
+
 
 ## 0.9.3
 

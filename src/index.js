@@ -29,7 +29,13 @@ var Option = require('./OptionT');
 var OptionT = {
     Some: Option.Some,
     None: Option.None,
+
+    /**
+     *  @deprecated Use `OptionBase`.
+     */
     OptionT: Option.OptionT,
+
+    OptionBase: Option.OptionT,
 };
 
 module.exports = OptionT;
