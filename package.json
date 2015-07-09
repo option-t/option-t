@@ -39,6 +39,11 @@
     "type": "git",
     "url": "https://github.com/saneyuki/option-t.js.git"
   },
+  "keywords": [
+    "monads",
+    "maybe",
+    "option"
+  ],
   "devDependencies": {
     "es6-promise": "^2.0.1",
     "eslint": "^0.22.1",
