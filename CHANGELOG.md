@@ -3,9 +3,16 @@
 ## x.y.z
 
 
+## 0.9.3
+
+### Internal
+
+* Add `keywords` section to package.json.
+
+
 ## 0.9.2
 
-## New Feature
+### New Feature
 
 * Support 'typescript' in package.json for [tsd][tsd] & [dtsm][dtsm]. ([#62][PR62])
   * This does not affect this library's API model. Thus we release this as patch version.
