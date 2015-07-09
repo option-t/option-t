@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+### Breaking Change
+
+* Remove `OptionT.OptionT`. ( [#67](https://github.com/saneyuki/option-t.js/pull/67) )
+  * This was marked as deprecated in 0.10.x.
+
 
 ## 0.10.1
 
