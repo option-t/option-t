@@ -32,8 +32,21 @@ var OptionT = {
 
     /**
      *  @deprecated Use `OptionBase`.
+     *  @return {OptionT.OptionBase}
      */
-    OptionT: Option.OptionT,
+    get OptionT() {
+        if (process.env.NODE_ENV !== 'production' && !!console) {
+            var LABEL = 'OptionT.OptionT is deprecated. Use OptionT.OptionBase instead.';
+            if (typeof console.warn === 'function') {
+                console.warn(LABEL);
+            }
+            else if (typeof console.warn === 'function') {
+                console.log(LABEL);
+            }
+        }
+
+        return Option.OptionT;
+    },
 
     OptionBase: Option.OptionT,
 };
