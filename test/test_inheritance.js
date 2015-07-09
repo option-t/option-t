@@ -25,7 +25,7 @@
 'use strict';
 
 var assert = require('power-assert');
-var OptionT = require('../src/index').OptionT;
+var OptionBase = require('../src/index').OptionBase;
 var Some = require('../src/index').Some;
 var None = require('../src/index').None;
 
@@ -33,14 +33,14 @@ describe('Inheritance for `Option<T>`', function(){
     describe('`Some<T>`', function () {
         it('should be instanceof `OptionT`', function() {
             var option = new Some(1);
-            assert.ok(option instanceof OptionT);
+            assert.ok(option instanceof OptionBase);
         });
     });
 
     describe('`None`', function () {
         it('should be instanceof `OptionT`', function() {
             var option = new None();
-            assert.ok(option instanceof OptionT);
+            assert.ok(option instanceof OptionBase);
         });
     });
 });

@@ -91,10 +91,10 @@ This is just interface. This is not exported to an environment
 which has no interface feature as a part of its type system like TypeScript.
 
 If you'd like to check whether the object `option` is `Option<T>` or not in such an environment,
-you can use `option instanceof OptionT.OptionT` to check it.
+you can use `option instanceof OptionT.OptionBase` to check it.
 
 But this way is not a tier-1 approach. We recommend to use a interface and type system strongly.
-Thus we don't export `OptionT` object to the type definition for TypeScript.
+Thus we don't export `OptionT.OptionBase` object to the type definition for TypeScript.
 
 
 #### `Some<T>`
