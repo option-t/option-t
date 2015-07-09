@@ -1,11 +1,21 @@
 # Changelog
 
+## x.y.z
+
+
+## 0.10.1
+
+### Documentation
+
+* Fix typos in changelog.
+
+
 ## 0.10.0
 
 ### New Feature
 
 * Add `OptionT.OptionBase`.
-  * This change also marks `OptionT.Option` as deprecated.
+  * This change also marks `OptionT.OptionT` as deprecated.
   * We recommend to use this new base object instead of `OptionT.OptionT`.
     See more details ( [#66](https://github.com/saneyuki/option-t.js/pull/66) ).
 
