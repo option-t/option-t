@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+
+## 0.11.0
+
 ### Breaking Change
 
 * Remove `OptionT.OptionT`. ( [#67](https://github.com/saneyuki/option-t.js/pull/67) )
