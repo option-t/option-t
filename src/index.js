@@ -29,26 +29,7 @@ var Option = require('./OptionT');
 var OptionT = {
     Some: Option.Some,
     None: Option.None,
-
-    /**
-     *  @deprecated Use `OptionBase`.
-     *  @return {OptionT.OptionBase}
-     */
-    get OptionT() {
-        if (process.env.NODE_ENV !== 'production' && !!console) {
-            var LABEL = 'OptionT.OptionT is deprecated. Use OptionT.OptionBase instead.';
-            if (typeof console.warn === 'function') {
-                console.warn(LABEL);
-            }
-            else if (typeof console.warn === 'function') {
-                console.log(LABEL);
-            }
-        }
-
-        return Option.OptionT;
-    },
-
-    OptionBase: Option.OptionT,
+    OptionBase: Option.OptionBase,
 };
 
 module.exports = OptionT;

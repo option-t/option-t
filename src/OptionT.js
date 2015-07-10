@@ -330,5 +330,5 @@ None.prototype = OptionPrototype;
 module.exports = {
     Some: Some,
     None: None,
-    OptionT: OptionT,
+    OptionBase: OptionT,
 };
