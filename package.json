@@ -52,7 +52,7 @@
     "mocha": "^2.2.1",
     "power-assert": "^0.11.0",
     "promise-test-helper": "^0.2.1",
-    "typescript": "^1.5.0-beta"
+    "typescript": "^1.5.3"
   },
   "typescript": {
     "definition": "option-t.d.ts"
