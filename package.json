@@ -54,6 +54,7 @@
     "promise-test-helper": "^0.2.1",
     "typescript": "^1.5.3"
   },
+  "typings": "option-t.d.ts",
   "typescript": {
     "definition": "option-t.d.ts"
   }
