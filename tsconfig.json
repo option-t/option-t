@@ -1,11 +1,10 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": false,
         "preserveConstEnums": true,
         "outDir": "./__build/",
-        "target": "ES5",
+        "target": "ES6",
         "sourceMap": true
     },
     "files": [
