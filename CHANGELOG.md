@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+### New Feature
+
+* Support `typings` field in package.json for TypeScript.
+  * See more details: https://github.com/Microsoft/TypeScript/pull/4352
+
 
 ## 0.11.0
 
