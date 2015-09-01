@@ -162,11 +162,11 @@ OptionT.prototype = Object.freeze({
      *
      *  @template   T, U
      *
-     *  @param  {U} def
      *  @param  {function(T):U} fn
+     *  @param  {U} def
      *  @return {U}
      */
-    mapOr: function OptionTMapOr(def, fn) {
+    mapOr: function OptionTMapOr(fn, def) {
         if (this.is_some) {
             return fn(this.value);
         }
@@ -180,11 +180,11 @@ OptionT.prototype = Object.freeze({
      *
      *  @template   T, U
      *
-     *  @param  {function():U}  defFn
      *  @param  {function(T):U} fn
+     *  @param  {function():U}  defFn
      *  @return {U}
      */
-    mapOrElse: function OptionTMapOrElse(defFn, fn) {
+    mapOrElse: function OptionTMapOrElse(fn, defFn) {
         if (this.is_some) {
             return fn(this.value);
         }
