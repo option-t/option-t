@@ -2,6 +2,8 @@
 
 ## x.y.z
 
+## 0.12.0
+
 ### New Feature
 
 * Support `typings` field in package.json for TypeScript.
