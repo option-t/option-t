@@ -8,6 +8,13 @@
   * See more details: https://github.com/Microsoft/TypeScript/pull/4352
 
 
+### Breaking Change
+
+* TypeScript's type definition only support ES6 target officially.
+  * You may continue to use this package without make your code to ES6 target.
+    See more details: [#72](https://github.com/saneyuki/option-t.js/pull/72)
+
+
 ## 0.11.0
 
 ### Breaking Change

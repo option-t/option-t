@@ -22,14 +22,10 @@
  * THE SOFTWARE.
  */
 
-/// <reference path="../node_modules/typescript/bin/lib.es6.d.ts"/>
 /// <reference path="../option-t.d.ts"/>
 
-'use strict';
-
-import OptionT = require('option-t');
-var Some = OptionT.Some;
-var None = OptionT.None;
+import * as OptionT from 'option-t';
+import {Option, Some, None} from 'option-t';
 
 // `Some<T>`
 (function(){
