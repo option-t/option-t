@@ -2,6 +2,12 @@
 
 ## x.y.z
 
+## 0.12.1
+
+### Documentation
+
+* Fix to forget the bump up version in CHANGELOG.md.
+
 ## 0.12.0
 
 ### New Feature
