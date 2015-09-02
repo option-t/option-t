@@ -22,21 +22,11 @@
  * THE SOFTWARE.
  */
 
+/// <reference path="../node_modules/typescript/bin/lib.es6.d.ts"/>
+/// <reference path="../option-t.d.ts"/>
+
 'use strict';
 
-// for test
-interface Promise<T> {
-    then<U>(
-        onFulfill: (v: T) => U | Promise<U>,
-        onReject?: (error: any) => U | Promise<U>
-    ): Promise<U>;
-
-    catch<U>(
-        onRejected: (error: any) => U | Promise<U>
-    ): Promise<U>;
-}
-
-/// <reference path="../option-t.d.ts" />;
 import OptionT = require('option-t');
 var Some = OptionT.Some;
 var None = OptionT.None;
