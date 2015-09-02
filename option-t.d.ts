@@ -24,18 +24,6 @@
 
 declare module 'option-t' {
 
-    // for test
-    interface Promise<T> {
-        then<U>(
-            onFulfill: (value: T) => U | Promise<U>,
-            onReject?: (error: any) => U | Promise<U>
-        ): Promise<U>;
-
-        catch<U>(
-            onRejected: (error: any) => U | Promise<U>
-        ): Promise<U>;
-    }
-
     interface Option<T> {
         isSome: boolean;
         isNone: boolean;
