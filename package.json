@@ -29,12 +29,7 @@
       "url": "https://github.com/gifnksm"
     }
   ],
-  "licenses": [
-    {
-      "type": "MIT License",
-      "url": "http://opensource.org/licenses/MIT"
-    }
-  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/saneyuki/option-t.js.git"
