@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+### Documentation
+
+* Add API documentations to TypeScript's type definition.
+
+
 ## 0.12.1
 
 ### Documentation
