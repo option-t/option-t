@@ -2,6 +2,14 @@
 
 ## x.y.z
 
+
+## 0.12.3
+
+### Bug Fix
+
+* Fix the bug whic is `SomeInstance instanceof None` will be `true`. ([#78](https://github.com/saneyuki/option-t.js/pull/78))
+
+
 ## 0.12.2
 
 ### Documentation
