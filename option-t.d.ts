@@ -165,7 +165,28 @@ declare module 'option-t' {
         drop(): void;
     }
 
-    class Some<T> implements Option<T> {
+    /**
+     *  The base object of `Some<T>` and `None<T>`.
+     *
+     *  XXX:
+     *  In general case, __we must not use this base object__.
+     *  __Use `Option<T>` interface strongly__.
+     *
+     *  You can only this object if you need to cooperate with some libralies
+     *  like `React.PropTypes` which are use `instanceof` checking to work together with
+     *  others in the pure JavaScript world.
+     *
+     *  The typical case is TSX (TypeScript JSX) syntax.
+     *  https://github.com/Microsoft/TypeScript/wiki/JSX
+     *
+     *  Our basic stance is that _you don't use this and need not it in almost case_.
+     *
+     *  See also:
+     *  https://github.com/saneyuki/option-t.js/pull/77
+     */
+    class OptionBase {}
+
+    class Some<T> extends OptionBase implements Option<T> {
         constructor(val: T);
         isSome: boolean;
         isNone: boolean;
@@ -185,7 +206,7 @@ declare module 'option-t' {
         drop(): void;
     }
 
-    class None<T> implements Option<T> {
+    class None<T> extends OptionBase implements Option<T> {
         constructor();
         isSome: boolean;
         isNone: boolean;
