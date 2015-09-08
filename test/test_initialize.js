@@ -56,6 +56,10 @@ describe('initialization `Option<T>`', function(){
                     assert.ok(option instanceof Some);
                 });
 
+                it('should not be `None`', function() {
+                    assert.ok(!(option instanceof None));
+                });
+
                 it('`isSome` should be expected', function () {
                     assert.strictEqual(option.isSome, true);
                 });
@@ -79,6 +83,10 @@ describe('initialization `Option<T>`', function(){
 
         it('should be `None`', function() {
             assert.ok(option instanceof None);
+        });
+
+        it('should not be `Some<T>`', function() {
+            assert.ok(!(option instanceof Some));
         });
 
         it('`isSome` should be expected', function () {

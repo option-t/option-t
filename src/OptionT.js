@@ -277,8 +277,6 @@ OptionT.prototype = Object.freeze({
     },
 });
 
-var OptionPrototype = new OptionT();
-
 /**
  *  @constructor
  *  @template   T
@@ -302,7 +300,7 @@ var Some = function OptionTSome(val) {
     this.value = val;
     Object.seal(this);
 };
-Some.prototype = OptionPrototype;
+Some.prototype = new OptionT();
 
 /**
  *  @constructor
@@ -325,7 +323,7 @@ var None = function OptionTNone() {
     this.value = undefined;
     Object.seal(this);
 };
-None.prototype = OptionPrototype;
+None.prototype = new OptionT();
 
 module.exports = {
     Some: Some,
