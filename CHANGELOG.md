@@ -2,6 +2,18 @@
 
 ## x.y.z
 
+### New Feature
+
+* Expose `OptionBase` to TypeScript's type definition.
+  * __NOTICE__:
+    * In general purpose, __you must not use this object__.
+    * You can only this object if you need to cooperate with some libralies
+      like `React.PropTypes` which are use `instanceof` checking to work together with
+      others in the pure JavaScript world.
+      The typical case is [TSX (TypeScript JSX) syntax](https://github.com/Microsoft/TypeScript/wiki/JSX).
+    * Our basic stance is that _you don't use this and need not it in almost case_.
+  * See also [#77](https://github.com/saneyuki/option-t.js/pull/77)
+
 
 ## 0.12.3
 

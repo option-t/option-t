@@ -25,7 +25,7 @@
 /// <reference path="../option-t.d.ts"/>
 
 import * as OptionT from 'option-t';
-import {Option, Some, None} from 'option-t';
+import {Option, Some, None, OptionBase} from 'option-t';
 
 // `Some<T>`
 (function(){
@@ -53,6 +53,10 @@ import {Option, Some, None} from 'option-t';
     });
     var asPromise: Promise<number> = option.asPromise();
     option.drop();
+
+    if (option instanceof OptionBase) {
+        const bar: any = null;
+    }
 })();
 
 // `None<T>`
@@ -81,6 +85,10 @@ import {Option, Some, None} from 'option-t';
     });
     var asPromise: Promise<number> = option.asPromise();
     option.drop();
+
+    if (option instanceof OptionBase) {
+        const bar: any = null;
+    }
 })();
 
 // `Option<T>`
