@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+
+## 0.13.0
+
 ### New Feature
 
 * Expose `OptionBase` to TypeScript's type definition.
@@ -13,6 +16,10 @@
       The typical case is [TSX (TypeScript JSX) syntax](https://github.com/Microsoft/TypeScript/wiki/JSX).
     * Our basic stance is that _you don't use this and need not it in almost case_.
   * See also [#77](https://github.com/saneyuki/option-t.js/pull/77)
+
+### Internal
+
+* Support Node.js v4. [#79](https://github.com/saneyuki/option-t.js/pull/79)
 
 
 ## 0.12.3
