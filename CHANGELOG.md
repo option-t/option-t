@@ -2,7 +2,7 @@
 
 ## x.y.z
 
-### Breaking Change
+### Internal
 
 * Upgrade TypeScript compiler which our supports to `^1.6.0-beta`. [#76][pr76]
 
