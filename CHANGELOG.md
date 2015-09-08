@@ -4,9 +4,15 @@
 
 ### Breaking Change
 
+* Change `OptionBase` type definition to [abstract class](https://github.com/Microsoft/TypeScript/issues/3578). ([#81][pr81])
+  * We require __TypeScript 1.6__ to use this feature.
+
+### Internal
+
 * Upgrade TypeScript compiler which our supports to `^1.6.0-beta`. [#76][pr76]
 
 [pr76]: https://github.com/saneyuki/option-t.js/pull/76
+[pr81]: https://github.com/saneyuki/option-t.js/pull/81
 
 
 ## 0.13.0

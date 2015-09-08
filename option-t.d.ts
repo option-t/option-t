@@ -184,7 +184,7 @@ declare module 'option-t' {
      *  See also:
      *  https://github.com/saneyuki/option-t.js/pull/77
      */
-    class OptionBase {}
+    abstract class OptionBase {}
 
     class Some<T> extends OptionBase implements Option<T> {
         constructor(val: T);
