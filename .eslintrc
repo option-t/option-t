@@ -5,6 +5,7 @@
     "extends": "eslint:recommended",
 
     "ecmaFeatures": {
+        "arrowFunctions": true,
         "blockBindings": true,
         "classes": true,
         "objectLiteralComputedProperties": true,

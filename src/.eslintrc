@@ -3,12 +3,29 @@
     // http://eslint.org/docs/configuring/#comments-in-configuration-files
 
     "ecmaFeatures": {
+        "arrowFunctions": false,
+        "binaryLiterals": false,
         "blockBindings": false,
         "classes": false,
+        "defaultParams": false,
+        "destructuring": false,
+        "forOf": false,
+        "generators": false,
+        "modules": false,
         "objectLiteralComputedProperties": false,
         "objectLiteralDuplicateProperties": false,
         "objectLiteralShorthandMethods": false,
-        "objectLiteralShorthandProperties": false
+        "objectLiteralShorthandProperties": false,
+        "octalLiterals": false,
+        "regexUFlag": false,
+        "regexYFlag": false,
+        "restParams": false,
+        "spread": false,
+        "superInFunctions": false,
+        "templateStrings": false,
+        "unicodeCodePointEscapes": false,
+        "globalReturn": false,
+        "experimentalObjectRestSpread": false
     },
 
     "env": {
