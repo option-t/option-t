@@ -2,6 +2,12 @@
 
 ## x.y.z
 
+### Breaking Change
+
+* Upgrade TypeScript compiler which our supports to `^1.6.0-beta`. [#76][pr76]
+
+[pr76]: https://github.com/saneyuki/option-t.js/pull/76
+
 
 ## 0.13.0
 
