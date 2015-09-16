@@ -8,6 +8,7 @@
         "sourceMap": true
     },
     "files": [
-        "./test/test_type_definition.ts"
+        "./test/test_type_definition.ts",
+        "./test/test_type_definition_es6.ts"
     ]
 }

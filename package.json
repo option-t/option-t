@@ -7,6 +7,7 @@
     "CHANGELOG.md",
     "LICENSE.MIT",
     "option-t.d.ts",
+    "option-t.es6.d.ts",
     "package.json",
     "README.md",
     "src/"
@@ -58,7 +59,7 @@
     "promise-test-helper": "^0.2.1",
     "typescript": "^1.6.2"
   },
-  "typings": "option-t.d.ts",
+  "typings": "./option-t.es6.d.ts",
   "typescript": {
     "definition": "option-t.d.ts"
   }
