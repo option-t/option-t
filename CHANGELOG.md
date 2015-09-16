@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+
+## 0.14.1
+
 ### Bug Fix
 
 * Support TypeScript 1.6 stable's `--moduleResolution node` mode. [#83](https://github.com/saneyuki/option-t.js/pull/83)
