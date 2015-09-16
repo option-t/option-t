@@ -62,6 +62,7 @@
 
         // Node.js
         "no-process-exit": 0,
+        "global-require": 2,
 
         // Stylistic Issues
         "indent": [2, 4, {
