@@ -2,6 +2,10 @@
 
 ## x.y.z
 
+### Documentation
+
+* Update README.md's 'semantics' section. [#85](https://github.com/saneyuki/option-t.js/pull/85)
+
 
 ## 0.14.1
 
