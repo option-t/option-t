@@ -8,6 +8,10 @@
 * Remove Node.js v0.10 from a CI tested environment [#90](https://github.com/saneyuki/option-t.js/pull/90)
   * This change does not have any effects to existed codes.
 
+### Documentation
+
+* Polish the documentation about casting to `Promise` [#91](https://github.com/saneyuki/option-t.js/pull/91)
+
 
 ## 0.14.2
 
