@@ -2,6 +2,13 @@
 
 ## x.y.z
 
+
+## 0.15.0
+
+* This version drops to support Node.js v0.10.
+  * This version would work on Node.js v0.10
+  * But we don't ensure to work on it in a future release.
+
 ### Internal
 
 * Add Node.js v5 as a CI tested environment [#89](https://github.com/saneyuki/option-t.js/pull/89)
