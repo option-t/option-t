@@ -2,6 +2,10 @@
 
 ## x.y.z
 
+### Internal
+
+* Add Node.js v5 as a CI tested environment [#89](https://github.com/saneyuki/option-t.js/pull/89)
+
 
 ## 0.14.2
 
