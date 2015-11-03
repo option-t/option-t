@@ -13,7 +13,7 @@
     "src/"
   ],
   "engines": {
-    "node": ">=0.10",
+    "node": ">=4.0",
     "iojs": ">=1.0 <4.0"
   },
   "scripts": {
@@ -50,7 +50,6 @@
     "option"
   ],
   "devDependencies": {
-    "es6-promise": "^3.0.2",
     "eslint": "^1.4.3",
     "espower-loader": "^1.0.0",
     "intelli-espower-loader": "^1.0.0",

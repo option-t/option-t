@@ -2,6 +2,12 @@
 
 ## x.y.z
 
+### Internal
+
+* Add Node.js v5 as a CI tested environment [#89](https://github.com/saneyuki/option-t.js/pull/89)
+* Remove Node.js v0.10 from a CI tested environment [#90](https://github.com/saneyuki/option-t.js/pull/90)
+  * This change does not have any effects to existed codes.
+
 
 ## 0.14.2
 
