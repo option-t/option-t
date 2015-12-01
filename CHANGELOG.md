@@ -2,6 +2,12 @@
 
 ## x.y.z
 
+### Internal
+
+* Upgrade TypeScript compiler which our supports to `^1.7.3`. [#94][pr94]
+
+[pr94]: https://github.com/saneyuki/option-t.js/pull/94
+
 
 ## 0.14.2
 
