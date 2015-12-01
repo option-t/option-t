@@ -54,7 +54,7 @@
     "eslint": "^1.4.3",
     "espower-loader": "^1.0.0",
     "intelli-espower-loader": "^1.0.0",
-    "mocha": "^2.3.0",
+    "mocha": "^2.3.4",
     "power-assert": "^1.0.0",
     "promise-test-helper": "^0.2.1",
     "typescript": "^1.6.2"
