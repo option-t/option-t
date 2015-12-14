@@ -5,6 +5,7 @@
 ### Internal
 
 * Upgrade TypeScript compiler which our supports to `^1.7.3`. [#94][pr94]
+* Upgrde ESLint to `^1.10.1`. [#95](https://github.com/saneyuki/option-t.js/pull/95)
 
 [pr94]: https://github.com/saneyuki/option-t.js/pull/94
 
