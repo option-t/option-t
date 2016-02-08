@@ -2,10 +2,20 @@
 
 ## x.y.z
 
+
+### Breaking Change
+
+* Remove Support iojs. [#98][pr98]
+  * Support only after NodeJS 4.2 LTS.
+
+[pr98]: https://github.com/saneyuki/option-t.js/pull/98
+
+
 ### Polish
 
 * Define `Option<T>.isSome` and `OptionT.isNone` as a type guard function. [#97][pr97]
   * This causes the __breaking change__ which cannot compile `~typescript@1.7.x`.
+
 
 ### Internal
 
