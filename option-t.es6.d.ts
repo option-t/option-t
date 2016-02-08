@@ -31,12 +31,12 @@ export interface Option<T> {
     /**
      *  Return whether the self is `Some<T>` or not.
      */
-    isSome: boolean;
+    isSome: this is Some<T>;
 
     /**
      *  Return whether the self is `None` or not.
      */
-    isNone: boolean;
+    isNone: this is None<T>;
 
     /**
      *  Return the inner `T` of a `Some<T>`.
@@ -186,8 +186,8 @@ export abstract class OptionBase {}
 
 export class Some<T> extends OptionBase implements Option<T> {
     constructor(val: T);
-    isSome: boolean;
-    isNone: boolean;
+    isSome: this is Some<T>;
+    isNone: this is None<T>;
     unwrap(): T;
     unwrapOr(def: T): T;
     unwrapOrElse(fn: () => T): T;
@@ -206,8 +206,8 @@ export class Some<T> extends OptionBase implements Option<T> {
 
 export class None<T> extends OptionBase implements Option<T> {
     constructor();
-    isSome: boolean;
-    isNone: boolean;
+    isSome: this is Some<T>;
+    isNone: this is None<T>;
     unwrap(): T;
     unwrapOr(def: T): T;
     unwrapOrElse(fn: () => T): T;
