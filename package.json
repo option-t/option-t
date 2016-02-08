@@ -13,8 +13,7 @@
     "src/"
   ],
   "engines": {
-    "node": ">=4.0",
-    "iojs": ">=1.0 <4.0"
+    "node": ">=4.2"
   },
   "scripts": {
     "lint": "eslint ./src/ .eslintrc.js",
