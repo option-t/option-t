@@ -2,12 +2,18 @@
 
 ## x.y.z
 
+### Polish
+
+* Define `Option<T>.isSome` and `OptionT.isNone` as a type guard function. [#97][pr97]
+  * This causes the __breaking change__ which cannot compile `~typescript@1.7.x`.
+
 ### Internal
 
-* Upgrade TypeScript compiler which our supports to `^1.7.3`. [#94][pr94]
+* Upgrade TypeScript compiler which our supports to `^1.8.0`. [#94][pr94], [#97][pr97]
 * Upgrde ESLint to `^1.10.1`. [#95](https://github.com/saneyuki/option-t.js/pull/95)
 
 [pr94]: https://github.com/saneyuki/option-t.js/pull/94
+[pr97]: https://github.com/saneyuki/option-t.js/pull/97
 
 
 ## 0.15.0
