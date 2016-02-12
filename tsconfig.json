@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "diagnostics": true,
         "noImplicitAny": true,
         "removeComments": false,
         "preserveConstEnums": true,
