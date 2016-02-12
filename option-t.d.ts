@@ -28,7 +28,8 @@ declare module 'option-t' {
      *  The Option/Maybe type interface whose APIs are inspired
      *  by Rust's `std::option::Option<T>`.
      */
-    interface Option<T> {
+    export type Option<T> = Some<T> | None<T>;
+    interface OptionMethods<T> {
 
         /**
          *  Return whether the self is `Some<T>` or not.
@@ -186,7 +187,7 @@ declare module 'option-t' {
      */
     abstract class OptionBase {}
 
-    class Some<T> extends OptionBase implements Option<T> {
+    class Some<T> extends OptionBase implements OptionMethods<T> {
         constructor(val: T);
         isSome: this is Some<T>;
         isNone: this is None<T>;
@@ -206,7 +207,7 @@ declare module 'option-t' {
         drop(): void;
     }
 
-    class None<T> extends OptionBase implements Option<T> {
+    class None<T> extends OptionBase implements OptionMethods<T> {
         constructor();
         isSome: this is Some<T>;
         isNone: this is None<T>;

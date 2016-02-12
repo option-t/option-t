@@ -2,13 +2,17 @@
 
 ## x.y.z
 
-
 ### Breaking Change
 
 * Remove Support iojs. [#98][pr98]
   * Support only after NodeJS 4.2 LTS.
+* `Option<T>` is just either `Some<T>` or `None<T>`. [#99][pr99]
+  * The previous interface `Option<T>` was renamed to `OptionMethods<T>`, and marked it as a private.
+    * This is just only for a defensive programming style.
+    * If you get a new problem by this change, please file a new issue. We'll consider to republish it.
 
 [pr98]: https://github.com/saneyuki/option-t.js/pull/98
+[pr99]: https://github.com/saneyuki/option-t.js/pull/99
 
 
 ### Polish
