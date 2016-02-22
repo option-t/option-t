@@ -2,6 +2,13 @@
 
 ## x.y.z
 
+## 0.16.3
+
+### Bug fix
+
+- Fix the compile error of `option-t.d.ts`. ([PR106](https://github.com/saneyuki/option-t.js/pull/106))
+  - This catches up [pr105](https://github.com/saneyuki/option-t.js/pull/105)
+
 ## 0.16.2
 
 ### Bug fix
