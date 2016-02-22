@@ -34,12 +34,12 @@ declare module 'option-t' {
         /**
          *  Return whether the self is `Some<T>` or not.
          */
-        isSome: this is Some<T>;
+        isSome: boolean;
 
         /**
          *  Return whether the self is `None` or not.
          */
-        isNone: this is None<T>;
+        isNone: boolean;
 
         /**
          *  Return the inner `T` of a `Some<T>`.
@@ -189,8 +189,8 @@ declare module 'option-t' {
 
     class Some<T> extends OptionBase implements OptionMethods<T> {
         constructor(val: T);
-        isSome: this is Some<T>;
-        isNone: this is None<T>;
+        isSome: boolean;
+        isNone: boolean;
         unwrap(): T;
         unwrapOr(def: T): T;
         unwrapOrElse(fn: () => T): T;
@@ -209,8 +209,8 @@ declare module 'option-t' {
 
     class None<T> extends OptionBase implements OptionMethods<T> {
         constructor();
-        isSome: this is Some<T>;
-        isNone: this is None<T>;
+        isSome: boolean;
+        isNone: boolean;
         unwrap(): T;
         unwrapOr(def: T): T;
         unwrapOrElse(fn: () => T): T;
