@@ -2,13 +2,18 @@
 
 ## x.y.z
 
-## 0.16.1
+## 0.16.2
 
 ### Bug fix
 
 - Revert [#97][pr97] to [fix the compile error on tsc nightly](https://github.com/saneyuki/option-t.js/issues/103)
 
 [pr97]: https://github.com/saneyuki/option-t.js/pull/97
+
+
+## 0.16.1
+
+a missing version.
 
 
 ## 0.16.0
