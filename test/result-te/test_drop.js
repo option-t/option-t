@@ -1,7 +1,7 @@
-/**
- * @license MIT License
+/*
+ * MIT License
  *
- * Copyright (c) 2015 Tetsuharu OHZEKI <saneyuki.snyk@gmail.com>
+ * Copyright (c) 2016 Tetsuharu OHZEKI <saneyuki.snyk@gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,10 +24,39 @@
 
 'use strict';
 
-var Option = require('./OptionT');
+const assert = require('power-assert');
 
-module.exports = {
-    Some: Option.Some,
-    None: Option.None,
-    OptionBase: Option.OptionBase,
-};
+const ResultMod = require('../../src/ResultTE');
+const Ok = ResultMod.Ok;
+const Err = ResultMod.Err;
+
+const EXPECTED_OK = 'expected_ok';
+const EXPECTED_ERR = 'expected_err';
+
+describe('Result<T, E>.or()', function(){
+    describe('Ok<T>', function () {
+        it('is callable', function () {
+            const ok = new Ok(EXPECTED_OK);
+            ok.drop();
+        });
+
+        it('should be freezed', function () {
+            const ok = new Ok(EXPECTED_OK);
+            ok.drop();
+            assert.strictEqual(Object.isFrozen(ok), true);
+        });
+    });
+
+    describe('Err<E>', function () {
+        it('is callable', function () {
+            const err = new Err(EXPECTED_ERR);
+            err.drop();
+        });
+
+        it('should be freezed', function () {
+            const err = new Err(EXPECTED_ERR);
+            err.drop();
+            assert.strictEqual(Object.isFrozen(err), true);
+        });
+    });
+});
