@@ -25,13 +25,13 @@
 'use strict';
 
 var assert = require('power-assert');
-var Some = require('../src/index').Some;
-var None = require('../src/index').None;
+var Some = require('../../src/index').Some;
+var None = require('../../src/index').None;
 
-var primitiveVal = require('./utils').primitiveVal;
-var objectVal = require('./utils').objectVal;
-var funcVal = require('./utils').funcVal;
-var undefinedVal = require('./utils').undefinedVal;
+var primitiveVal = require('../utils').primitiveVal;
+var objectVal = require('../utils').objectVal;
+var funcVal = require('../utils').funcVal;
+var undefinedVal = require('../utils').undefinedVal;
 
 describe('initialization `Option<T>`', function(){
 

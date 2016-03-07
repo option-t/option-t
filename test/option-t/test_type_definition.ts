@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-/// <reference path="../option-t.d.ts"/>
+/// <reference path="../../option-t.d.ts"/>
 
 import * as OptionT from 'option-t';
 import {Option, Some, None, OptionBase} from 'option-t';

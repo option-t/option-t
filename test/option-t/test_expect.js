@@ -25,51 +25,45 @@
 'use strict';
 
 var assert = require('power-assert');
-var Some = require('../src/index').Some;
-var None = require('../src/index').None;
+var Some = require('../../src/index').Some;
+var None = require('../../src/index').None;
 
-describe('Option<T>.mapOr()', function(){
-    describe('self is `None`', function () {
-        var EXPECTED = 1;
-        var result = 0;
-        var isNotCalled = true;
+describe('Option<T>.expect()', function(){
 
-        before(function(){
-            assert.ok(result !== EXPECTED);
-
-            var none = new None();
-            result = none.mapOr(EXPECTED, function(){
-                isNotCalled = false;
-            });
-        });
-
-        it('the returned value shoule be expected', function() {
-            assert.strictEqual(result, EXPECTED);
-        });
-
-        it('the passed function should not be called', function() {
-            assert.strictEqual(isNotCalled, true);
+    describe('unwrap `Some<T>`', function () {
+        it('should get the inner', function() {
+            var EXPECTED = 1;
+            var option = new Some(EXPECTED);
+            assert.strictEqual(option.expect(), EXPECTED);
         });
     });
 
-    describe('self is `Some<T>`', function () {
-        var EXPECTED = 1;
-        var DEFAULT = 2;
-        var result = 0;
+    describe('unwrap `None`', function () {
+        var EXPECTED = 'barfoo';
+        var none = null;
+        var error = null;
 
         before(function(){
-            assert.ok(result !== EXPECTED);
-            assert.ok(result !== DEFAULT);
-
-            var some = new Some("bar");
-            result = some.mapOr(DEFAULT, function(val){
-                assert.notStrictEqual(val, EXPECTED);
-                return EXPECTED;
-            });
+            none = new None();
+            try {
+                none.expect(EXPECTED);
+            }
+            catch (e) {
+                error = e;
+            }
         });
 
-        it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.strictEqual(result, EXPECTED);
+        after(function(){
+            none = null;
+            error = null;
+        });
+
+        it('should throw the error', function() {
+            assert.ok(error instanceof Error);
+        });
+
+        it('should be the expected error message', function() {
+            assert.strictEqual(error.message, EXPECTED);
         });
     });
 });
