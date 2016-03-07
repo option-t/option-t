@@ -34,7 +34,7 @@
  *
  *  The usecase example is a `React.PropTypes.
  */
-var OptionT = function OptionTBase() {};
+var OptionT = function OptionTBase() {};// eslint-disable-line no-empty-function
 OptionT.prototype = Object.freeze({
     /**
      *  Return whether this is `Some<T>` or not.
