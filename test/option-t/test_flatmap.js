@@ -57,7 +57,7 @@ describe('Option<T>.flatMap()', function(){
             before(function(){
                 var some = new Some(1);
 
-                option = some.flatMap(function(val){
+                option = some.flatMap(function(){
                     return new None();
                 });
             });
@@ -68,7 +68,7 @@ describe('Option<T>.flatMap()', function(){
         });
 
         describe('callback returns `Some<T>`', function () {
-            var EXPECTED = "1";
+            var EXPECTED = '1';
             var option = null;
 
             before(function(){
@@ -90,14 +90,13 @@ describe('Option<T>.flatMap()', function(){
         });
 
         describe('`fn` don\'t returns `Option<T>`', function () {
-            var option = null;
             var error = null;
 
             before(function(){
                 var some = new Some(1);
 
                 try {
-                    option = some.flatMap(function(val){
+                    some.flatMap(function(val){
                         var rv = 'hoge';
                         assert.notStrictEqual(val !== rv);
                         return rv;
@@ -109,7 +108,6 @@ describe('Option<T>.flatMap()', function(){
             });
 
             after(function(){
-                option = null;
                 error = null;
             });
 

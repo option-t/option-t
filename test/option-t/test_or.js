@@ -84,7 +84,7 @@ describe('Option<T>.or()', function(){
 
         before(function(){
             var some = new Some(EXPECTED);
-            option = some.or(new None);
+            option = some.or(new None());
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {

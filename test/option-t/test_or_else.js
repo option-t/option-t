@@ -71,7 +71,7 @@ describe('Option<T>.orElse()', function(){
             var none = new None();
             try {
                 none.orElse(function(){
-                    return "barfoo";
+                    return 'barfoo';
                 });
             }
             catch (e) {

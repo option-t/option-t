@@ -29,7 +29,7 @@ module.exports = Object.freeze({
 
     objectVal: [{ bar: 1}, [1, 2, 3]],
 
-    funcVal: [ function(){} ],
+    funcVal: [ function(){} ], // eslint-disable-line no-empty-function
 
     undefinedVal: [undefined],
 });

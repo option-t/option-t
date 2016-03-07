@@ -35,7 +35,7 @@ describe('Option<T>.map()', function(){
 
         before(function(){
             var none = new None();
-            option = none.map(function(){
+            option = none.map(function(){ // eslint-disable-line array-callback-return
                 isNotCalled = false;
             });
         });
@@ -54,7 +54,7 @@ describe('Option<T>.map()', function(){
     });
 
     describe('self is `Some<T>`', function () {
-        var EXPECTED = "1";
+        var EXPECTED = '1';
         var option = null;
 
         before(function(){
