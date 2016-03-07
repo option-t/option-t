@@ -24,19 +24,19 @@
 
 'use strict';
 
-require('./test_initialize');
-require('./test_json');
-require('./test_unwrap');
-require('./test_unwrap_or');
-require('./test_unwrap_or_else');
-require('./test_expect');
-require('./test_map');
-require('./test_flatmap');
-require('./test_map_or');
-require('./test_map_or_else');
-require('./test_drop');
-require('./test_inheritance');
-require('./test_and');
-require('./test_or');
-require('./test_or_else');
-require('./test_as_promise');
+require('./option-t/test_initialize');
+require('./option-t/test_json');
+require('./option-t/test_unwrap');
+require('./option-t/test_unwrap_or');
+require('./option-t/test_unwrap_or_else');
+require('./option-t/test_expect');
+require('./option-t/test_map');
+require('./option-t/test_flatmap');
+require('./option-t/test_map_or');
+require('./option-t/test_map_or_else');
+require('./option-t/test_drop');
+require('./option-t/test_inheritance');
+require('./option-t/test_and');
+require('./option-t/test_or');
+require('./option-t/test_or_else');
+require('./option-t/test_as_promise');

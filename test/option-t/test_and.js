@@ -25,25 +25,20 @@
 'use strict';
 
 var assert = require('power-assert');
-var Some = require('../src/index').Some;
-var None = require('../src/index').None;
+var Some = require('../../src/index').Some;
+var None = require('../../src/index').None;
 
-describe('Option<T>.or()', function(){
+describe('Option<T>.and()', function(){
     describe('self is `None`, param is `Some<T>`', function () {
-        var EXPECTED = 1;
         var option = null;
 
         before(function(){
             var none = new None();
-            option = none.or(new Some(EXPECTED));
+            option = none.and(new Some(1));
         });
 
-        it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.ok(option instanceof Some);
-        });
-
-        it('the returned value shoule be `Some<T>`: 2', function() {
-            assert.strictEqual(option.unwrap(), EXPECTED);
+        it('the returned value shoule be `None`', function() {
+            assert.ok(option instanceof None);
         });
     });
 
@@ -52,7 +47,7 @@ describe('Option<T>.or()', function(){
 
         before(function(){
             var none = new None();
-            option = none.or(new None());
+            option = none.and(new None());
         });
 
         it('the returned value shoule be `None`', function() {
@@ -61,12 +56,12 @@ describe('Option<T>.or()', function(){
     });
 
     describe('self is `Some<T>`, param is `Some<T>`', function () {
-        var EXPECTED = 1;
+        var EXPECTED = "1";
         var option = null;
 
         before(function(){
-            var some = new Some(EXPECTED);
-            option = some.or(new Some(3));
+            var some = new Some(1);
+            option = some.and(new Some(EXPECTED));
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {
@@ -79,20 +74,15 @@ describe('Option<T>.or()', function(){
     });
 
     describe('self is `Some<T>`, param is `None`', function () {
-        var EXPECTED = 1;
         var option = null;
 
         before(function(){
-            var some = new Some(EXPECTED);
-            option = some.or(new None);
+            var some = new Some(1);
+            option = some.and(new None());
         });
 
-        it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.ok(option instanceof Some);
-        });
-
-        it('the returned value shoule be `Some<T>`: 2', function() {
-            assert.strictEqual(option.unwrap(), EXPECTED);
+        it('the returned value shoule be `None`', function() {
+            assert.ok(option instanceof None);
         });
     });
 });

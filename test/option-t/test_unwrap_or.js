@@ -25,22 +25,32 @@
 'use strict';
 
 var assert = require('power-assert');
-var OptionBase = require('../src/index').OptionBase;
-var Some = require('../src/index').Some;
-var None = require('../src/index').None;
+var Some = require('../../src/index').Some;
+var None = require('../../src/index').None;
 
-describe('Inheritance for `Option<T>`', function(){
-    describe('`Some<T>`', function () {
-        it('should be instanceof `OptionT`', function() {
-            var option = new Some(1);
-            assert.ok(option instanceof OptionBase);
+describe('Option<T>.unwrapOr()', function(){
+    describe('self is `None`', function () {
+        var EXPECTED = 1;
+
+        it('shoule be the default value', function() {
+            var option = new None();
+            var result = option.unwrapOr(EXPECTED);
+            assert.strictEqual(result, EXPECTED);
         });
     });
 
-    describe('`None`', function () {
-        it('should be instanceof `OptionT`', function() {
-            var option = new None();
-            assert.ok(option instanceof OptionBase);
+    describe('self is `Some<T>`', function () {
+        var EXPECTED = 1;
+        var DEFAULT = 10;
+
+        before(function(){
+            assert.ok(EXPECTED !== DEFAULT);
+        });
+
+        it('shoule be the wrapped value', function() {
+            var option = new Some(EXPECTED);
+            var result = option.unwrapOr(DEFAULT);
+            assert.strictEqual(result, EXPECTED);
         });
     });
 });

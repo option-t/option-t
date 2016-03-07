@@ -25,45 +25,42 @@
 'use strict';
 
 var assert = require('power-assert');
-var Some = require('../src/index').Some;
-var None = require('../src/index').None;
+var Some = require('../../src/index').Some;
+var None = require('../../src/index').None;
 
-describe('Option<T>.expect()', function(){
+describe('Option<T>.drop()', function(){
 
-    describe('unwrap `Some<T>`', function () {
-        it('should get the inner', function() {
-            var EXPECTED = 1;
-            var option = new Some(EXPECTED);
-            assert.strictEqual(option.expect(), EXPECTED);
-        });
-    });
-
-    describe('unwrap `None`', function () {
-        var EXPECTED = 'barfoo';
-        var none = null;
-        var error = null;
+    describe('drop `Some<T>`', function () {
+        var option = null;
 
         before(function(){
-            none = new None();
-            try {
-                none.expect(EXPECTED);
-            }
-            catch (e) {
-                error = e;
-            }
+            option = new Some(1);
+            option.drop();
         });
 
         after(function(){
-            none = null;
-            error = null;
+            option = null;
         });
 
-        it('should throw the error', function() {
-            assert.ok(error instanceof Error);
+        it('the inner should be freed', function() {
+            assert.strictEqual(option.value, null);
+        });
+    });
+
+    describe('drop `None`', function () {
+        var option = null;
+
+        before(function(){
+            option = new None();
+            option.drop();
         });
 
-        it('should be the expected error message', function() {
-            assert.strictEqual(error.message, EXPECTED);
+        after(function(){
+            option = null;
+        });
+
+        it('the inner should be freed', function() {
+            assert.strictEqual(option.value, null);
         });
     });
 });

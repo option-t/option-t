@@ -25,42 +25,22 @@
 'use strict';
 
 var assert = require('power-assert');
-var Some = require('../src/index').Some;
-var None = require('../src/index').None;
+var OptionBase = require('../../src/index').OptionBase;
+var Some = require('../../src/index').Some;
+var None = require('../../src/index').None;
 
-describe('Option<T>.drop()', function(){
-
-    describe('drop `Some<T>`', function () {
-        var option = null;
-
-        before(function(){
-            option = new Some(1);
-            option.drop();
-        });
-
-        after(function(){
-            option = null;
-        });
-
-        it('the inner should be freed', function() {
-            assert.strictEqual(option.value, null);
+describe('Inheritance for `Option<T>`', function(){
+    describe('`Some<T>`', function () {
+        it('should be instanceof `OptionT`', function() {
+            var option = new Some(1);
+            assert.ok(option instanceof OptionBase);
         });
     });
 
-    describe('drop `None`', function () {
-        var option = null;
-
-        before(function(){
-            option = new None();
-            option.drop();
-        });
-
-        after(function(){
-            option = null;
-        });
-
-        it('the inner should be freed', function() {
-            assert.strictEqual(option.value, null);
+    describe('`None`', function () {
+        it('should be instanceof `OptionT`', function() {
+            var option = new None();
+            assert.ok(option instanceof OptionBase);
         });
     });
 });
