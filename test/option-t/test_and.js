@@ -56,7 +56,7 @@ describe('Option<T>.and()', function(){
     });
 
     describe('self is `Some<T>`, param is `Some<T>`', function () {
-        var EXPECTED = "1";
+        var EXPECTED = '1';
         var option = null;
 
         before(function(){

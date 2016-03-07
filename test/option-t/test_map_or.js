@@ -61,7 +61,7 @@ describe('Option<T>.mapOr()', function(){
             assert.ok(result !== EXPECTED);
             assert.ok(result !== DEFAULT);
 
-            var some = new Some("bar");
+            var some = new Some('bar');
             result = some.mapOr(DEFAULT, function(val){
                 assert.notStrictEqual(val, EXPECTED);
                 return EXPECTED;

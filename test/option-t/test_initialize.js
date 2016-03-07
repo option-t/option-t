@@ -78,7 +78,7 @@ describe('initialization `Option<T>`', function(){
     describe('`None`', function () {
         var option = null;
         before(function(){
-          option = new None();
+            option = new None();
         });
 
         it('should be `None`', function() {
@@ -90,15 +90,15 @@ describe('initialization `Option<T>`', function(){
         });
 
         it('`isSome` should be expected', function () {
-          assert.strictEqual(option.isSome, false);
+            assert.strictEqual(option.isSome, false);
         });
 
         it('`isNone` should be expected', function () {
-          assert.strictEqual(option.isNone, true);
+            assert.strictEqual(option.isNone, true);
         });
 
         it('`value` should be expected', function () {
-          assert.strictEqual(option.value, undefined);
+            assert.strictEqual(option.value, undefined);
         });
     });
 });

@@ -72,7 +72,7 @@ describe('Option<T>.mapOrElse()', function(){
             assert.ok(result !== EXPECTED);
             assert.ok(result !== DEFAULT);
 
-            var some = new Some("bar");
+            var some = new Some('bar');
             result = some.mapOrElse(function defaultFn() {
                 defaultFnIsCalled = true;
                 return DEFAULT;

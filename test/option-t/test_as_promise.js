@@ -53,7 +53,7 @@ describe('Option<T>.asPromise()', function(){
         });
 
         it('should be fulfilled', function() {
-            return shouldFulfilled(promise).then(function(v){
+            return shouldFulfilled(promise).then(function(){
                 assert.ok(true);
             });
         });
@@ -87,7 +87,7 @@ describe('Option<T>.asPromise()', function(){
         });
 
         it('should be fulfilled', function() {
-            return shouldFulfilled(promise).then(function(v){
+            return shouldFulfilled(promise).then(function(){
                 assert.ok(true);
             });
         });
@@ -121,7 +121,7 @@ describe('Option<T>.asPromise()', function(){
         });
 
         it('should be fulfilled', function() {
-            return shouldRejected(promise).catch(function(v){
+            return shouldRejected(promise).catch(function(){
                 assert.ok(true);
             });
         });
