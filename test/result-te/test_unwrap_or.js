@@ -1,7 +1,7 @@
-/**
- * @license MIT License
+/*
+ * MIT License
  *
- * Copyright (c) 2015 Tetsuharu OHZEKI <saneyuki.snyk@gmail.com>
+ * Copyright (c) 2016 Tetsuharu OHZEKI <saneyuki.snyk@gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,10 +24,38 @@
 
 'use strict';
 
-var Option = require('./OptionT');
+const assert = require('power-assert');
 
-module.exports = {
-    Some: Option.Some,
-    None: Option.None,
-    OptionBase: Option.OptionBase,
-};
+const ResultMod = require('../../src/ResultTE');
+const Ok = ResultMod.Ok;
+const Err = ResultMod.Err;
+
+describe('Result<T, E>.unwrapOr()', function(){
+    describe('Ok<T>', function () {
+        const EXPECTED = 0;
+        const NOT_EXPECTED = 1;
+
+        before(function(){
+            assert.notStrictEqual(EXPECTED, NOT_EXPECTED);
+        });
+
+        it('should be expected', function () {
+            const result = new Ok(EXPECTED);
+            assert.strictEqual(result.unwrapOr(NOT_EXPECTED), EXPECTED);
+        });
+    });
+
+    describe('Err<E>', function () {
+        const EXPECTED = 0;
+        const NOT_EXPECTED = 1;
+
+        before(function(){
+            assert.notStrictEqual(EXPECTED, NOT_EXPECTED);
+        });
+
+        it('should be expected', function () {
+            const result = new Err(NOT_EXPECTED);
+            assert.strictEqual(result.unwrapOr(EXPECTED), EXPECTED);
+        });
+    });
+});
