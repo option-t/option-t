@@ -45,6 +45,17 @@ import {Result, Ok, Err, ResultBase} from 'option-t/src/Result';
 [pr111]: https://github.com/saneyuki/option-t.js/pull/111
 
 
+#### `Option<T>.drop()` can take a custom destructor function
+
+Now, `Option<T>.drop()` can take a custom destructor function by [#118](https://github.com/saneyuki/option-t.js/pull/118).
+So you can pass a custom destructor function to dispose the inner value.
+
+```javascript
+const some = new Some(largeSensitiveObject);
+some.drop((v) => v.dispose());
+```
+
+
 ## 0.16.3
 
 ### Bug fix

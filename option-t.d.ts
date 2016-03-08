@@ -162,8 +162,13 @@ declare module 'option-t' {
         /**
          *  Finalize the self.
          *  After this is called, the object's behavior is not defined.
+         *
+         *  This method is inspired by Rust's `Drop` trait.
+         *
+         *  @param  destructor
+         *      This would be called with the inner value if self is `Some<T>`.
          */
-        drop(): void;
+        drop(destructor?: (v: T) => void): void;
     }
 
     /**
@@ -204,7 +209,7 @@ declare module 'option-t' {
         or(optb: Option<T>): Option<T>;
         orElse(fn: () => Option<T>): Option<T>;
         asPromise(): Promise<T>;
-        drop(): void;
+        drop(destructor?: (v: T) => void): void;
     }
 
     class None<T> extends OptionBase implements OptionMethods<T> {
@@ -224,6 +229,6 @@ declare module 'option-t' {
         or(optb: Option<T>): Option<T>;
         orElse(fn: () => Option<T>): Option<T>;
         asPromise(): Promise<T>;
-        drop(): void;
+        drop(destructor?: (v: T) => void): void;
     }
 }

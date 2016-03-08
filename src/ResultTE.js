@@ -294,13 +294,23 @@ ResultBase.prototype = Object.freeze({
      *  The destructor method inspired by Rust's `Drop` trait.
      *  We don't define the object's behavior after calling this.
      *
+     *  @param  {function(T)=}  destructor
+     *      This would be called with the inner value if self is `Ok<T>`.
+     *  @param  {function(E)=}  errDestructor
+     *      This would be called with the inner value if self is `Err<E>`.
      *  @return {void}
      */
-    drop: function ResultBaseDrop() {
+    drop: function ResultBaseDrop(destructor, errDestructor) {
         if (this._is_ok) {
+            if (typeof destructor === 'function') {
+                destructor(this._v);
+            }
             this._v = null;
         }
         else {
+            if (typeof errDestructor === 'function') {
+                errDestructor(this._e);
+            }
             this._e = null;
         }
         Object.freeze(this);

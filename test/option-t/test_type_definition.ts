@@ -53,6 +53,7 @@ import {Option, Some, None, OptionBase} from 'option-t';
     });
     var asPromise: Promise<number> = option.asPromise();
     option.drop();
+    option.drop((v: number) => {});
 
     if (option instanceof OptionBase) {
         const bar: any = null;
@@ -85,6 +86,7 @@ import {Option, Some, None, OptionBase} from 'option-t';
     });
     var asPromise: Promise<number> = option.asPromise();
     option.drop();
+    option.drop((v: number) => {});
 
     if (option instanceof OptionBase) {
         const bar: any = null;

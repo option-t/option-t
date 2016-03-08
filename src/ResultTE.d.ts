@@ -136,8 +136,13 @@ interface ResultMethods<T, E> {
     /**
      *  The destructor method inspired by Rust's `Drop` trait.
      *  We don't define the object's behavior after calling this.
+     *
+     *  @param  destructor
+     *      This would be called with the inner value if self is `Ok<T>`.
+     *  @param  errDestructor
+     *      This would be called with the inner value if self is `Err<E>`.
      */
-    drop(): void;
+    drop(destructor?: (v: T) => void, errDestructor?: (e: E) => void): void;
 }
 
 // XXX:
@@ -168,7 +173,7 @@ export class Ok<T, E> extends ResultBase implements ResultMethods<T, E> {
     unwrapOr(optb: T): T;
     unwrapOrElse(op: recoveryFn<E, T>): T;
     expect(message: string): T;
-    drop(): void;
+    drop(destructor?: (v: T) => void, errDestructor?: (e: E) => void): void;
 }
 
 // XXX:
@@ -198,5 +203,5 @@ export class Err<T, E> extends ResultBase implements ResultMethods<T, E> {
     unwrapOr(optb: T): T;
     unwrapOrElse(op: recoveryFn<E, T>): T;
     expect(message: string): T;
-    drop(): void;
+    drop(destructor?: (v: T) => void, errDestructor?: (e: E) => void): void;
 }
