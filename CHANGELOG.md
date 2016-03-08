@@ -2,6 +2,49 @@
 
 ## x.y.z
 
+### Internals
+
+- Update ESLint to v2.3.0. ([#109](https://github.com/saneyuki/option-t.js/pull/109))
+- Enable lint for `/test/` dir. ([#110](https://github.com/saneyuki/option-t.js/pull/110))
+- Use `assert.strictEqual()` instead of `assert.ok()`. ([#112](https://github.com/saneyuki/option-t.js/pull/112))
+- Split off `OptionT.d.ts` from '/option-t.es6.d.ts'. ([#115](https://github.com/saneyuki/option-t.js/pull/115))
+
+### Polish
+
+- Throw `TypeError` instead of `Error` if a callbacks for `Option<T>.andThen()` / `orElse()` returns
+  non `Option<T>` type. ([#116](https://github.com/saneyuki/option-t.js/pull/116))
+
+### New Feature
+
+#### `Result<T, E>`
+
+We introduce the new experimental feature `Result<T, E>` which is inspired by
+Rust's [`std::result::Result<T, E>`](https://doc.rust-lang.org/std/result/enum.Result.html) by [#88][issue88], [#111][pr111].
+
+See [`/src/ResultTE.ts`](./src/ResultTE.ts) for more details.
+
+This feature is *not* exported by default now.
+If you'd like to use it, let's try to import this:
+
+##### CommonJS:
+
+```javascript
+const ResultMod = require('option-t/src/Result');
+const Ok = ResultMod.Ok;
+const Err = ResultMod.Err;
+```
+
+##### TypeScript (+ES6 module syntax)
+
+```typescript
+import {Result, Ok, Err, ResultBase} from 'option-t/src/Result';
+```
+
+
+[issue88]: https://github.com/saneyuki/option-t.js/issues/88
+[pr111]: https://github.com/saneyuki/option-t.js/pull/111
+
+
 ## 0.16.3
 
 ### Bug fix
