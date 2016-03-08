@@ -28,8 +28,8 @@ const assert = require('power-assert');
 const shouldFulfilled = require('promise-test-helper').shouldFulfilled;
 const shouldRejected = require('promise-test-helper').shouldRejected;
 
-const Some = require('../../src/index').Some;
-const None = require('../../src/index').None;
+const Some = require('../../src/OptionT').Some;
+const None = require('../../src/OptionT').None;
 
 describe('Option<T>.asPromise()', function(){
 
