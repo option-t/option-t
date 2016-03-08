@@ -84,7 +84,7 @@ describe('Option<T>.orElse()', function(){
         });
 
         it('should throw an error', function() {
-            assert.strictEqual(error instanceof Error, true);
+            assert.strictEqual(error instanceof TypeError, true);
         });
 
         it('the error message should be the expected', function() {

@@ -151,7 +151,7 @@ OptionT.prototype = Object.freeze({
         var mapped = fn(this.value);
         var isOption = (mapped instanceof OptionT);
         if (!isOption) {
-            throw new Error('Option<T>.flatMap()\' param `fn` should return `Option<T>`.');
+            throw new TypeError('Option<T>.flatMap()\' param `fn` should return `Option<T>`.');
         }
 
         return mapped;
@@ -248,7 +248,7 @@ OptionT.prototype = Object.freeze({
                 return value;
             }
 
-            throw new Error('Option<T>.orElse()\' param `fn` should return `Option<T>`.');
+            throw new TypeError('Option<T>.orElse()\' param `fn` should return `Option<T>`.');
         }
     },
 
