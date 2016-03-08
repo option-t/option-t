@@ -24,20 +24,20 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var Some = require('../../src/index').Some;
-var None = require('../../src/index').None;
+const assert = require('power-assert');
+const Some = require('../../src/index').Some;
+const None = require('../../src/index').None;
 
 describe('Option<T>.mapOr()', function(){
     describe('self is `None`', function () {
-        var EXPECTED = 1;
-        var result = 0;
-        var isNotCalled = true;
+        const EXPECTED = 1;
+        let result = 0;
+        let isNotCalled = true;
 
         before(function(){
             assert.strictEqual(result !== EXPECTED, true);
 
-            var none = new None();
+            const none = new None();
             result = none.mapOr(EXPECTED, function(){
                 isNotCalled = false;
             });
@@ -53,15 +53,15 @@ describe('Option<T>.mapOr()', function(){
     });
 
     describe('self is `Some<T>`', function () {
-        var EXPECTED = 1;
-        var DEFAULT = 2;
-        var result = 0;
+        const EXPECTED = 1;
+        const DEFAULT = 2;
+        let result = 0;
 
         before(function(){
             assert.strictEqual(result !== EXPECTED, true);
             assert.strictEqual(result !== DEFAULT, true);
 
-            var some = new Some('bar');
+            const some = new Some('bar');
             result = some.mapOr(DEFAULT, function(val){
                 assert.notStrictEqual(val, EXPECTED);
                 return EXPECTED;

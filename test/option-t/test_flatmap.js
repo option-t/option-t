@@ -24,17 +24,17 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var Some = require('../../src/index').Some;
-var None = require('../../src/index').None;
+const assert = require('power-assert');
+const Some = require('../../src/index').Some;
+const None = require('../../src/index').None;
 
 describe('Option<T>.flatMap()', function(){
     describe('self is `None`', function () {
-        var option = null;
-        var isNotCalled = true;
+        let option = null;
+        let isNotCalled = true;
 
         before(function(){
-            var none = new None();
+            const none = new None();
             option = none.flatMap(function(){
                 isNotCalled = false;
             });
@@ -52,10 +52,10 @@ describe('Option<T>.flatMap()', function(){
     describe('self is `Some<T>`', function () {
 
         describe('callback returns `None`', function () {
-            var option = null;
+            let option = null;
 
             before(function(){
-                var some = new Some(1);
+                const some = new Some(1);
 
                 option = some.flatMap(function(){
                     return new None();
@@ -68,11 +68,11 @@ describe('Option<T>.flatMap()', function(){
         });
 
         describe('callback returns `Some<T>`', function () {
-            var EXPECTED = '1';
-            var option = null;
+            const EXPECTED = '1';
+            let option = null;
 
             before(function(){
-                var some = new Some(1);
+                const some = new Some(1);
 
                 option = some.flatMap(function(val){
                     assert.strictEqual(val !== EXPECTED, true);
@@ -90,14 +90,14 @@ describe('Option<T>.flatMap()', function(){
         });
 
         describe('`fn` don\'t returns `Option<T>`', function () {
-            var error = null;
+            let error = null;
 
             before(function(){
-                var some = new Some(1);
+                const some = new Some(1);
 
                 try {
                     some.flatMap(function(val){
-                        var rv = 'hoge';
+                        const rv = 'hoge';
                         assert.notStrictEqual(val !== rv);
                         return rv;
                     });

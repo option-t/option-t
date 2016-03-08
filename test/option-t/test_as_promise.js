@@ -24,23 +24,23 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var shouldFulfilled = require('promise-test-helper').shouldFulfilled;
-var shouldRejected = require('promise-test-helper').shouldRejected;
+const assert = require('power-assert');
+const shouldFulfilled = require('promise-test-helper').shouldFulfilled;
+const shouldRejected = require('promise-test-helper').shouldRejected;
 
-var Some = require('../../src/index').Some;
-var None = require('../../src/index').None;
+const Some = require('../../src/index').Some;
+const None = require('../../src/index').None;
 
 describe('Option<T>.asPromise()', function(){
 
     describe('cast `Some<T>` as `Promise<T>`', function () {
-        var EXPECTED = 1;
-        var promise = null;
+        const EXPECTED = 1;
+        let promise = null;
 
         before(function(){
             assert.strictEqual(EXPECTED !== undefined, true);
 
-            var option = new Some(EXPECTED);
+            const option = new Some(EXPECTED);
             promise = option.asPromise();
         });
 
@@ -66,19 +66,18 @@ describe('Option<T>.asPromise()', function(){
     });
 
     describe('cast `Some<Promise<T>>` as `Promise<T>` if the wrapped Promise is fulfilled', function () {
-        var EXPECTED = 1;
-        var wrapped = Promise.resolve(EXPECTED);
-        var promise = null;
+        const EXPECTED = 1;
+        const wrapped = Promise.resolve(EXPECTED);
+        let promise = null;
 
         before(function(){
             assert.strictEqual(EXPECTED !== undefined, true);
 
-            var option = new Some(wrapped);
+            const option = new Some(wrapped);
             promise = option.asPromise();
         });
 
         after(function(){
-            wrapped = null;
             promise = null;
         });
 
@@ -100,19 +99,18 @@ describe('Option<T>.asPromise()', function(){
     });
 
     describe('cast `Some<Promise<T>>` as `Promise<T>` if the wrapped Promise is rejected', function () {
-        var EXPECTED = 1;
-        var wrapped = Promise.reject(EXPECTED);
-        var promise = null;
+        const EXPECTED = 1;
+        const wrapped = Promise.reject(EXPECTED);
+        let promise = null;
 
         before(function(){
             assert.strictEqual(EXPECTED !== undefined, true);
 
-            var option = new Some(wrapped);
+            const option = new Some(wrapped);
             promise = option.asPromise();
         });
 
         after(function(){
-            wrapped = null;
             promise = null;
         });
 
@@ -134,10 +132,10 @@ describe('Option<T>.asPromise()', function(){
     });
 
     describe('cast `None<T>` as `Promise<T>`', function () {
-        var promise = null;
+        let promise = null;
 
         before(function(){
-            var option = new None();
+            const option = new None();
             promise = option.asPromise();
         });
 

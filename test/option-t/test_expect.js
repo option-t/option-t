@@ -24,27 +24,26 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var Some = require('../../src/index').Some;
-var None = require('../../src/index').None;
+const assert = require('power-assert');
+const Some = require('../../src/index').Some;
+const None = require('../../src/index').None;
 
 describe('Option<T>.expect()', function(){
 
     describe('unwrap `Some<T>`', function () {
         it('should get the inner', function() {
-            var EXPECTED = 1;
-            var option = new Some(EXPECTED);
+            const EXPECTED = 1;
+            const option = new Some(EXPECTED);
             assert.strictEqual(option.expect(), EXPECTED);
         });
     });
 
     describe('unwrap `None`', function () {
-        var EXPECTED = 'barfoo';
-        var none = null;
-        var error = null;
+        const EXPECTED = 'barfoo';
+        let error = null;
 
         before(function(){
-            none = new None();
+            const none = new None();
             try {
                 none.expect(EXPECTED);
             }
@@ -54,7 +53,6 @@ describe('Option<T>.expect()', function(){
         });
 
         after(function(){
-            none = null;
             error = null;
         });
 
