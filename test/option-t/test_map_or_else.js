@@ -36,7 +36,7 @@ describe('Option<T>.mapOrElse()', function(){
         var mapFnIsCalled = false;
 
         before(function(){
-            assert.ok(result !== EXPECTED);
+            assert.strictEqual(result !== EXPECTED, true);
 
             var none = new None();
             result = none.mapOrElse(function defaultFn() {
@@ -68,9 +68,9 @@ describe('Option<T>.mapOrElse()', function(){
         var mapFnIsCalled = false;
 
         before(function(){
-            assert.ok(EXPECTED !== DEFAULT);
-            assert.ok(result !== EXPECTED);
-            assert.ok(result !== DEFAULT);
+            assert.strictEqual(EXPECTED !== DEFAULT, true);
+            assert.strictEqual(result !== EXPECTED, true);
+            assert.strictEqual(result !== DEFAULT, true);
 
             var some = new Some('bar');
             result = some.mapOrElse(function defaultFn() {

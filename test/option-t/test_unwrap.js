@@ -58,7 +58,7 @@ describe('Option<T>.unwrap()', function(){
         });
 
         it('should throw the error', function() {
-            assert.ok(error instanceof Error);
+            assert.strictEqual(error instanceof Error, true);
         });
 
         it('should be the expected error message', function() {

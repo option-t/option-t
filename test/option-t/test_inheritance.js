@@ -33,14 +33,14 @@ describe('Inheritance for `Option<T>`', function(){
     describe('`Some<T>`', function () {
         it('should be instanceof `OptionT`', function() {
             var option = new Some(1);
-            assert.ok(option instanceof OptionBase);
+            assert.strictEqual(option instanceof OptionBase, true);
         });
     });
 
     describe('`None`', function () {
         it('should be instanceof `OptionT`', function() {
             var option = new None();
-            assert.ok(option instanceof OptionBase);
+            assert.strictEqual(option instanceof OptionBase, true);
         });
     });
 });

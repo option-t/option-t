@@ -44,7 +44,7 @@ describe('Option<T>.unwrapOr()', function(){
         var DEFAULT = 10;
 
         before(function(){
-            assert.ok(EXPECTED !== DEFAULT);
+            assert.strictEqual(EXPECTED !== DEFAULT, true);
         });
 
         it('shoule be the wrapped value', function() {

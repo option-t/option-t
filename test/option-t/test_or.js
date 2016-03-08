@@ -39,7 +39,7 @@ describe('Option<T>.or()', function(){
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.ok(option instanceof Some);
+            assert.strictEqual(option instanceof Some, true);
         });
 
         it('the returned value shoule be `Some<T>`: 2', function() {
@@ -56,7 +56,7 @@ describe('Option<T>.or()', function(){
         });
 
         it('the returned value shoule be `None`', function() {
-            assert.ok(option instanceof None);
+            assert.strictEqual(option instanceof None, true);
         });
     });
 
@@ -70,7 +70,7 @@ describe('Option<T>.or()', function(){
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.ok(option instanceof Some);
+            assert.strictEqual(option instanceof Some, true);
         });
 
         it('the returned value shoule be `Some<T>`: 2', function() {
@@ -88,7 +88,7 @@ describe('Option<T>.or()', function(){
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.ok(option instanceof Some);
+            assert.strictEqual(option instanceof Some, true);
         });
 
         it('the returned value shoule be `Some<T>`: 2', function() {

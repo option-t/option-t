@@ -45,7 +45,7 @@ describe('Option<T>.map()', function(){
         });
 
         it('the returned value shoule be `None`: 2', function() {
-            assert.ok(option instanceof None);
+            assert.strictEqual(option instanceof None, true);
         });
 
         it('the passed function should not be called', function() {
@@ -66,7 +66,7 @@ describe('Option<T>.map()', function(){
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.ok(option instanceof Some);
+            assert.strictEqual(option instanceof Some, true);
         });
 
         it('the returned value shoule be `Some<T>`: 2', function() {

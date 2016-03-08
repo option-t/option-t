@@ -35,7 +35,7 @@ describe('Option<T>.mapOr()', function(){
         var isNotCalled = true;
 
         before(function(){
-            assert.ok(result !== EXPECTED);
+            assert.strictEqual(result !== EXPECTED, true);
 
             var none = new None();
             result = none.mapOr(EXPECTED, function(){
@@ -58,8 +58,8 @@ describe('Option<T>.mapOr()', function(){
         var result = 0;
 
         before(function(){
-            assert.ok(result !== EXPECTED);
-            assert.ok(result !== DEFAULT);
+            assert.strictEqual(result !== EXPECTED, true);
+            assert.strictEqual(result !== DEFAULT, true);
 
             var some = new Some('bar');
             result = some.mapOr(DEFAULT, function(val){

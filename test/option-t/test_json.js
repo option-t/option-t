@@ -49,7 +49,7 @@ describe('JSON serializeation `Option<T>`', function(){
 
                 ['is_some', 'value'].forEach(function(key){
                     it('json has `' + key + '` field.', function () {
-                        assert.ok(result.hasOwnProperty(key));
+                        assert.strictEqual(result.hasOwnProperty(key), true);
                     });
                 });
 
@@ -76,7 +76,7 @@ describe('JSON serializeation `Option<T>`', function(){
 
                 ['is_some', 'value'].forEach(function(key){
                     it('json has `' + key + '` field.', function () {
-                        assert.ok(result.hasOwnProperty(key));
+                        assert.strictEqual(result.hasOwnProperty(key), true);
                     });
                 });
 
@@ -105,7 +105,7 @@ describe('JSON serializeation `Option<T>`', function(){
 
                 ['is_some'].forEach(function(key){
                     it('json has `' + key + '` field.', function () {
-                        assert.ok(result.hasOwnProperty(key));
+                        assert.strictEqual(result.hasOwnProperty(key), true);
                     });
                 });
 
@@ -133,7 +133,7 @@ describe('JSON serializeation `Option<T>`', function(){
 
                 ['is_some'].forEach(function(key){
                     it('json has `' + key + '` field.', function () {
-                        assert.ok(result.hasOwnProperty(key));
+                        assert.strictEqual(result.hasOwnProperty(key), true);
                     });
                 });
 
@@ -158,7 +158,7 @@ describe('JSON serializeation `Option<T>`', function(){
 
         ['is_some'].forEach(function(key){
             it('json has `' + key + '` field.', function () {
-                assert.ok(result.hasOwnProperty(key));
+                assert.strictEqual(result.hasOwnProperty(key), true);
             });
         });
 
