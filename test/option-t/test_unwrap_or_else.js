@@ -48,8 +48,8 @@ describe('Option<T>.unwrapOrElse()', function(){
         var result = null;
 
         before(function(){
-            assert.ok(EXPECTED !== DEFAULT);
-            assert.ok(result !== EXPECTED);
+            assert.strictEqual(EXPECTED !== DEFAULT, true);
+            assert.strictEqual(result !== EXPECTED, true);
 
             var option = new Some(EXPECTED);
             result = option.unwrapOrElse(function(){
@@ -63,7 +63,7 @@ describe('Option<T>.unwrapOrElse()', function(){
         });
 
         it('shoule not call callback', function() {
-            assert.ok(isNotCalled);
+            assert.strictEqual(isNotCalled, true);
         });
     });
 });

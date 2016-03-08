@@ -38,7 +38,7 @@ describe('Option<T>.asPromise()', function(){
         var promise = null;
 
         before(function(){
-            assert.ok(EXPECTED !== undefined);
+            assert.strictEqual(EXPECTED !== undefined, true);
 
             var option = new Some(EXPECTED);
             promise = option.asPromise();
@@ -49,12 +49,12 @@ describe('Option<T>.asPromise()', function(){
         });
 
         it('should be instanceof Promise', function() {
-            assert.ok(promise instanceof Promise);
+            assert.strictEqual(promise instanceof Promise, true);
         });
 
         it('should be fulfilled', function() {
             return shouldFulfilled(promise).then(function(){
-                assert.ok(true);
+                assert.strictEqual(true, true);
             });
         });
 
@@ -71,7 +71,7 @@ describe('Option<T>.asPromise()', function(){
         var promise = null;
 
         before(function(){
-            assert.ok(EXPECTED !== undefined);
+            assert.strictEqual(EXPECTED !== undefined, true);
 
             var option = new Some(wrapped);
             promise = option.asPromise();
@@ -83,12 +83,12 @@ describe('Option<T>.asPromise()', function(){
         });
 
         it('should be instanceof Promise', function() {
-            assert.ok(promise instanceof Promise);
+            assert.strictEqual(promise instanceof Promise, true);
         });
 
         it('should be fulfilled', function() {
             return shouldFulfilled(promise).then(function(){
-                assert.ok(true);
+                assert.strictEqual(true, true);
             });
         });
 
@@ -105,7 +105,7 @@ describe('Option<T>.asPromise()', function(){
         var promise = null;
 
         before(function(){
-            assert.ok(EXPECTED !== undefined);
+            assert.strictEqual(EXPECTED !== undefined, true);
 
             var option = new Some(wrapped);
             promise = option.asPromise();
@@ -117,12 +117,12 @@ describe('Option<T>.asPromise()', function(){
         });
 
         it('should be instanceof Promise', function() {
-            assert.ok(promise instanceof Promise);
+            assert.strictEqual(promise instanceof Promise, true);
         });
 
         it('should be fulfilled', function() {
             return shouldRejected(promise).catch(function(){
-                assert.ok(true);
+                assert.strictEqual(true, true);
             });
         });
 
@@ -146,12 +146,12 @@ describe('Option<T>.asPromise()', function(){
         });
 
         it('should be instanceof Promise', function() {
-            assert.ok(promise instanceof Promise);
+            assert.strictEqual(promise instanceof Promise, true);
         });
 
         it('should be rejected', function() {
             return shouldRejected(promise).catch(function(){
-                assert.ok(true);
+                assert.strictEqual(true, true);
             });
         });
 

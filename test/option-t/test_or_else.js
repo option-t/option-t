@@ -41,7 +41,7 @@ describe('Option<T>.orElse()', function(){
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.ok(option instanceof Some);
+            assert.strictEqual(option instanceof Some, true);
         });
 
         it('the returned value shoule be `Some<T>`: 2', function() {
@@ -60,7 +60,7 @@ describe('Option<T>.orElse()', function(){
         });
 
         it('the returned value shoule be `None`', function() {
-            assert.ok(option instanceof None);
+            assert.strictEqual(option instanceof None, true);
         });
     });
 
@@ -84,7 +84,7 @@ describe('Option<T>.orElse()', function(){
         });
 
         it('should throw an error', function() {
-            assert.ok(error instanceof Error);
+            assert.strictEqual(error instanceof Error, true);
         });
 
         it('the error message should be the expected', function() {
@@ -106,7 +106,7 @@ describe('Option<T>.orElse()', function(){
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.ok(option instanceof Some);
+            assert.strictEqual(option instanceof Some, true);
         });
 
         it('the returned value shoule be `Some<T>`: 2', function() {
@@ -114,7 +114,7 @@ describe('Option<T>.orElse()', function(){
         });
 
         it('shoule not call callback', function() {
-            assert.ok(isNotCalled);
+            assert.strictEqual(isNotCalled, true);
         });
     });
 
@@ -132,7 +132,7 @@ describe('Option<T>.orElse()', function(){
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.ok(option instanceof Some);
+            assert.strictEqual(option instanceof Some, true);
         });
 
         it('the returned value shoule be `Some<T>`: 2', function() {
@@ -140,7 +140,7 @@ describe('Option<T>.orElse()', function(){
         });
 
         it('shoule not call callback', function() {
-            assert.ok(isNotCalled);
+            assert.strictEqual(isNotCalled, true);
         });
     });
 });
