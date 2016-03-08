@@ -57,6 +57,10 @@ import {Result, Ok, Err, ResultBase} from '../../src/ResultTE';
     const unwrapOrElse: number = result.unwrapOrElse((e: void) => 1);
     const expect: number = result.expect('');
 
+    result.drop();
+    result.drop((v: number) => {});
+    result.drop((v: number) => {}, (e: void) => {});
+
     if (result instanceof ResultBase) {
         const bar: any = null;
     }
@@ -91,6 +95,10 @@ import {Result, Ok, Err, ResultBase} from '../../src/ResultTE';
     const unwrapOrElse: number = result.unwrapOrElse((e: void) => 1);
     const expect: number = result.expect('');
 
+    result.drop();
+    result.drop((v: number) => {});
+    result.drop((v: number) => {}, (e: void) => {});
+
     if (result instanceof ResultBase) {
         const bar: any = null;
     }
@@ -98,9 +106,9 @@ import {Result, Ok, Err, ResultBase} from '../../src/ResultTE';
 
 //  Result<T, E>
 (function(){
-    var option: Result<void, void> = new Err<void, void>(null);
+    let option: Result<void, void> = new Err<void, void>(null);
     option = new Ok<void, void>(null);
 
-    var option2: Result<void, void> = new Ok<void, void>(null);
+    let option2: Result<void, void> = new Ok<void, void>(null);
     option2 = new Err<void, void>(null);
 })();

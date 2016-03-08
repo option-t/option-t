@@ -269,9 +269,15 @@ OptionT.prototype = Object.freeze({
      *  Finalize the self.
      *  After this is called, the object's behavior is not defined.
      *
+     *  @param  {function(T)=}  destructor
+     *      This would be called with the inner value if self is `Some<T>`.
      *  @return {void}
      */
-    drop: function OptionTDrop() {
+    drop: function OptionTDrop(destructor) {
+        if (this.is_some && typeof destructor === 'function') {
+            destructor(this.value);
+        }
+
         this.value = null;
         Object.freeze(this);
     },
