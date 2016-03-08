@@ -25,9 +25,9 @@
 'use strict';
 
 const assert = require('power-assert');
-const OptionBase = require('../../src/index').OptionBase;
-const Some = require('../../src/index').Some;
-const None = require('../../src/index').None;
+const OptionBase = require('../../src/OptionT').OptionBase;
+const Some = require('../../src/OptionT').Some;
+const None = require('../../src/OptionT').None;
 
 describe('Inheritance for `Option<T>`', function(){
     describe('`Some<T>`', function () {
