@@ -24,26 +24,26 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var Some = require('../../src/index').Some;
-var None = require('../../src/index').None;
+const assert = require('power-assert');
+const Some = require('../../src/index').Some;
+const None = require('../../src/index').None;
 
-var primitiveVal = require('../utils').primitiveVal;
-var objectVal = require('../utils').objectVal;
-var funcVal = require('../utils').funcVal;
-var undefinedVal = require('../utils').undefinedVal;
+const primitiveVal = require('../utils').primitiveVal;
+const objectVal = require('../utils').objectVal;
+const funcVal = require('../utils').funcVal;
+const undefinedVal = require('../utils').undefinedVal;
 
 describe('JSON serializeation `Option<T>`', function(){
 
     describe('Some<T>', function () {
         primitiveVal.forEach(function(value){
-            var type = typeof value;
-            var label = 'type: ' + type + ', value: `' + String(value) + '`';
+            const type = typeof value;
+            const label = 'type: ' + type + ', value: `' + String(value) + '`';
 
             describe(label, function() {
-                var result = null;
+                let result = null;
                 before(function(){
-                    var raw = new Some(value);
+                    const raw = new Some(value);
                     result = JSON.parse(JSON.stringify(raw));
                 });
 
@@ -64,13 +64,13 @@ describe('JSON serializeation `Option<T>`', function(){
         });
 
         objectVal.forEach(function(value){
-            var type = typeof value;
-            var label = 'type: ' + type + ', value: `' + String(value) + '`';
+            const type = typeof value;
+            const label = 'type: ' + type + ', value: `' + String(value) + '`';
 
             describe(label, function () {
-                var result = null;
+                let result = null;
                 before(function(){
-                    var raw = new Some(value);
+                    const raw = new Some(value);
                     result = JSON.parse(JSON.stringify(raw));
                 });
 
@@ -93,13 +93,13 @@ describe('JSON serializeation `Option<T>`', function(){
         });
 
         funcVal.forEach(function(value){
-            var type = typeof value;
-            var label = 'type: ' + type + ', value: `' + String(value) + '`';
+            const type = typeof value;
+            const label = 'type: ' + type + ', value: `' + String(value) + '`';
 
             describe(label, function () {
-                var result = null;
+                let result = null;
                 before(function(){
-                    var raw = new Some(value);
+                    const raw = new Some(value);
                     result = JSON.parse(JSON.stringify(raw));
                 });
 
@@ -121,13 +121,13 @@ describe('JSON serializeation `Option<T>`', function(){
         });
 
         undefinedVal.forEach(function(value){
-            var type = typeof value;
-            var label = 'type: ' + type + ', value: `' + String(value) + '`';
+            const type = typeof value;
+            const label = 'type: ' + type + ', value: `' + String(value) + '`';
 
             describe(label, function () {
-                var result = null;
+                let result = null;
                 before(function(){
-                    var raw = new Some(value);
+                    const raw = new Some(value);
                     result = JSON.parse(JSON.stringify(raw));
                 });
 
@@ -150,9 +150,9 @@ describe('JSON serializeation `Option<T>`', function(){
     });
 
     describe('None', function () {
-        var result = null;
+        let result = null;
         before(function(){
-            var raw = new None();
+            const raw = new None();
             result = JSON.parse(JSON.stringify(raw));
         });
 

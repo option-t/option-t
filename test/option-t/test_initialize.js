@@ -24,25 +24,25 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var Some = require('../../src/index').Some;
-var None = require('../../src/index').None;
+const assert = require('power-assert');
+const Some = require('../../src/index').Some;
+const None = require('../../src/index').None;
 
-var primitiveVal = require('../utils').primitiveVal;
-var objectVal = require('../utils').objectVal;
-var funcVal = require('../utils').funcVal;
-var undefinedVal = require('../utils').undefinedVal;
+const primitiveVal = require('../utils').primitiveVal;
+const objectVal = require('../utils').objectVal;
+const funcVal = require('../utils').funcVal;
+const undefinedVal = require('../utils').undefinedVal;
 
 describe('initialization `Option<T>`', function(){
 
     describe('`Some<T>`', function () {
-        var param = primitiveVal.concat(objectVal).concat(funcVal).concat(undefinedVal);
+        const param = primitiveVal.concat(objectVal).concat(funcVal).concat(undefinedVal);
         param.forEach(function(value){
-            var type = typeof value;
-            var label = 'type: ' + type + ', value: `' + String(value) + '`';
+            const type = typeof value;
+            const label = 'type: ' + type + ', value: `' + String(value) + '`';
 
             describe(label, function () {
-                var option = null;
+                let option = null;
 
                 before(function(){
                     option = new Some(value);
@@ -76,7 +76,7 @@ describe('initialization `Option<T>`', function(){
     });
 
     describe('`None`', function () {
-        var option = null;
+        let option = null;
         before(function(){
             option = new None();
         });

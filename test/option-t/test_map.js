@@ -24,17 +24,17 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var Some = require('../../src/index').Some;
-var None = require('../../src/index').None;
+const assert = require('power-assert');
+const Some = require('../../src/index').Some;
+const None = require('../../src/index').None;
 
 describe('Option<T>.map()', function(){
     describe('self is `None`', function () {
-        var option = null;
-        var isNotCalled = true;
+        let option = null;
+        let isNotCalled = true;
 
         before(function(){
-            var none = new None();
+            const none = new None();
             option = none.map(function(){ // eslint-disable-line array-callback-return
                 isNotCalled = false;
             });
@@ -54,11 +54,11 @@ describe('Option<T>.map()', function(){
     });
 
     describe('self is `Some<T>`', function () {
-        var EXPECTED = '1';
-        var option = null;
+        const EXPECTED = '1';
+        let option = null;
 
         before(function(){
-            var some = new Some(1);
+            const some = new Some(1);
             option = some.map(function(val){
                 assert.notStrictEqual(val, EXPECTED);
                 return EXPECTED;

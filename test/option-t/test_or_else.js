@@ -24,17 +24,17 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var Some = require('../../src/index').Some;
-var None = require('../../src/index').None;
+const assert = require('power-assert');
+const Some = require('../../src/index').Some;
+const None = require('../../src/index').None;
 
 describe('Option<T>.orElse()', function(){
     describe('self is `None`, param returns `Some<T>`', function () {
-        var EXPECTED = 1;
-        var option = null;
+        const EXPECTED = 1;
+        let option = null;
 
         before(function(){
-            var none = new None();
+            const none = new None();
             option = none.orElse(function(){
                 return new Some(EXPECTED);
             });
@@ -50,10 +50,10 @@ describe('Option<T>.orElse()', function(){
     });
 
     describe('self is `None`, param returns `None`', function () {
-        var option = null;
+        let option = null;
 
         before(function(){
-            var none = new None();
+            const none = new None();
             option = none.orElse(function(){
                 return new None();
             });
@@ -65,10 +65,10 @@ describe('Option<T>.orElse()', function(){
     });
 
     describe('self is `None`, param don\'t return `Option<T>`', function () {
-        var error = null;
+        let error = null;
 
         before(function(){
-            var none = new None();
+            const none = new None();
             try {
                 none.orElse(function(){
                     return 'barfoo';
@@ -93,12 +93,12 @@ describe('Option<T>.orElse()', function(){
     });
 
     describe('self is `Some<T>`, param returns `Some<T>`', function () {
-        var EXPECTED = 1;
-        var option = null;
-        var isNotCalled = true;
+        const EXPECTED = 1;
+        let option = null;
+        let isNotCalled = true;
 
         before(function(){
-            var some = new Some(EXPECTED);
+            const some = new Some(EXPECTED);
             option = some.orElse(function(){
                 isNotCalled = false;
                 return new Some(3);
@@ -119,12 +119,12 @@ describe('Option<T>.orElse()', function(){
     });
 
     describe('self is `Some<T>`, param returns `None`', function () {
-        var EXPECTED = 1;
-        var option = null;
-        var isNotCalled = true;
+        const EXPECTED = 1;
+        let option = null;
+        let isNotCalled = true;
 
         before(function(){
-            var some = new Some(EXPECTED);
+            const some = new Some(EXPECTED);
             option = some.orElse(function(){
                 isNotCalled = false;
                 return new None();

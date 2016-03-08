@@ -24,32 +24,32 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var Some = require('../../src/index').Some;
-var None = require('../../src/index').None;
+const assert = require('power-assert');
+const Some = require('../../src/index').Some;
+const None = require('../../src/index').None;
 
 describe('Option<T>.unwrapOr()', function(){
     describe('self is `None`', function () {
-        var EXPECTED = 1;
+        const EXPECTED = 1;
 
         it('shoule be the default value', function() {
-            var option = new None();
-            var result = option.unwrapOr(EXPECTED);
+            const option = new None();
+            const result = option.unwrapOr(EXPECTED);
             assert.strictEqual(result, EXPECTED);
         });
     });
 
     describe('self is `Some<T>`', function () {
-        var EXPECTED = 1;
-        var DEFAULT = 10;
+        const EXPECTED = 1;
+        const DEFAULT = 10;
 
         before(function(){
             assert.strictEqual(EXPECTED !== DEFAULT, true);
         });
 
         it('shoule be the wrapped value', function() {
-            var option = new Some(EXPECTED);
-            var result = option.unwrapOr(DEFAULT);
+            const option = new Some(EXPECTED);
+            const result = option.unwrapOr(DEFAULT);
             assert.strictEqual(result, EXPECTED);
         });
     });

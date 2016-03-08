@@ -24,14 +24,14 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var Some = require('../../src/index').Some;
-var None = require('../../src/index').None;
+const assert = require('power-assert');
+const Some = require('../../src/index').Some;
+const None = require('../../src/index').None;
 
 describe('Option<T>.drop()', function(){
 
     describe('drop `Some<T>`', function () {
-        var option = null;
+        let option = null;
 
         before(function(){
             option = new Some(1);
@@ -48,7 +48,7 @@ describe('Option<T>.drop()', function(){
     });
 
     describe('drop `None`', function () {
-        var option = null;
+        let option = null;
 
         before(function(){
             option = new None();

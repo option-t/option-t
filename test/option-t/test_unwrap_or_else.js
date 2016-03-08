@@ -24,17 +24,17 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var Some = require('../../src/index').Some;
-var None = require('../../src/index').None;
+const assert = require('power-assert');
+const Some = require('../../src/index').Some;
+const None = require('../../src/index').None;
 
 describe('Option<T>.unwrapOrElse()', function(){
     describe('self is `None`', function () {
-        var EXPECTED = 1;
+        const EXPECTED = 1;
 
         it('shoule be the default value', function() {
-            var option = new None();
-            var result = option.unwrapOrElse(function(){
+            const option = new None();
+            const result = option.unwrapOrElse(function(){
                 return EXPECTED;
             });
             assert.strictEqual(result, EXPECTED);
@@ -42,16 +42,16 @@ describe('Option<T>.unwrapOrElse()', function(){
     });
 
     describe('self is `Some<T>`', function () {
-        var EXPECTED = 1;
-        var DEFAULT = 100;
-        var isNotCalled = true;
-        var result = null;
+        const EXPECTED = 1;
+        const DEFAULT = 100;
+        let isNotCalled = true;
+        let result = null;
 
         before(function(){
             assert.strictEqual(EXPECTED !== DEFAULT, true);
             assert.strictEqual(result !== EXPECTED, true);
 
-            var option = new Some(EXPECTED);
+            const option = new Some(EXPECTED);
             result = option.unwrapOrElse(function(){
                 isNotCalled = false;
                 return DEFAULT;

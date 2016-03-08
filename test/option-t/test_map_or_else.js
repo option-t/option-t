@@ -24,21 +24,21 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var Some = require('../../src/index').Some;
-var None = require('../../src/index').None;
+const assert = require('power-assert');
+const Some = require('../../src/index').Some;
+const None = require('../../src/index').None;
 
 describe('Option<T>.mapOrElse()', function(){
     describe('self is `None`', function () {
-        var EXPECTED = 1;
-        var result = 0;
-        var defaultFnIsCalled = false;
-        var mapFnIsCalled = false;
+        const EXPECTED = 1;
+        let result = 0;
+        let defaultFnIsCalled = false;
+        let mapFnIsCalled = false;
 
         before(function(){
             assert.strictEqual(result !== EXPECTED, true);
 
-            var none = new None();
+            const none = new None();
             result = none.mapOrElse(function defaultFn() {
                 defaultFnIsCalled = true;
                 return EXPECTED;
@@ -61,18 +61,18 @@ describe('Option<T>.mapOrElse()', function(){
     });
 
     describe('self is `Some<T>`', function () {
-        var EXPECTED = 1;
-        var DEFAULT = 2;
-        var result = 0;
-        var defaultFnIsCalled = false;
-        var mapFnIsCalled = false;
+        const EXPECTED = 1;
+        const DEFAULT = 2;
+        let result = 0;
+        let defaultFnIsCalled = false;
+        let mapFnIsCalled = false;
 
         before(function(){
             assert.strictEqual(EXPECTED !== DEFAULT, true);
             assert.strictEqual(result !== EXPECTED, true);
             assert.strictEqual(result !== DEFAULT, true);
 
-            var some = new Some('bar');
+            const some = new Some('bar');
             result = some.mapOrElse(function defaultFn() {
                 defaultFnIsCalled = true;
                 return DEFAULT;

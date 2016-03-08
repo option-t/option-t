@@ -24,22 +24,22 @@
 
 'use strict';
 
-var assert = require('power-assert');
-var OptionBase = require('../../src/index').OptionBase;
-var Some = require('../../src/index').Some;
-var None = require('../../src/index').None;
+const assert = require('power-assert');
+const OptionBase = require('../../src/index').OptionBase;
+const Some = require('../../src/index').Some;
+const None = require('../../src/index').None;
 
 describe('Inheritance for `Option<T>`', function(){
     describe('`Some<T>`', function () {
         it('should be instanceof `OptionT`', function() {
-            var option = new Some(1);
+            const option = new Some(1);
             assert.strictEqual(option instanceof OptionBase, true);
         });
     });
 
     describe('`None`', function () {
         it('should be instanceof `OptionT`', function() {
-            var option = new None();
+            const option = new None();
             assert.strictEqual(option instanceof OptionBase, true);
         });
     });
