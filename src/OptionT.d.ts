@@ -160,8 +160,13 @@ interface OptionMethods<T> {
     /**
      *  Finalize the self.
      *  After this is called, the object's behavior is not defined.
+     *
+     *  This method is inspired by Rust's `Drop` trait.
+     *
+     *  @param  destructor
+     *      This would be called with the inner value if self is `Some<T>`.
      */
-    drop(): void;
+    drop(destructor?: (v: T) => void): void;
 }
 
 /**
@@ -202,7 +207,7 @@ export class Some<T> extends OptionBase implements OptionMethods<T> {
     or(optb: Option<T>): Option<T>;
     orElse(fn: () => Option<T>): Option<T>;
     asPromise(): Promise<T>;
-    drop(): void;
+    drop(destructor?: (v: T) => void): void;
 }
 
 export class None<T> extends OptionBase implements OptionMethods<T> {
@@ -222,6 +227,6 @@ export class None<T> extends OptionBase implements OptionMethods<T> {
     or(optb: Option<T>): Option<T>;
     orElse(fn: () => Option<T>): Option<T>;
     asPromise(): Promise<T>;
-    drop(): void;
+    drop(destructor?: (v: T) => void): void;
 }
 
