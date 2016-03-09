@@ -31,6 +31,7 @@ const None = require('../../src/Option').None;
 const primitiveVal = require('../utils').primitiveVal;
 const objectVal = require('../utils').objectVal;
 const funcVal = require('../utils').funcVal;
+const symbolVal = require('../utils').symbolVal;
 const undefinedVal = require('../utils').undefinedVal;
 
 describe('JSON serializeation `Option<T>`', function(){
@@ -93,6 +94,34 @@ describe('JSON serializeation `Option<T>`', function(){
         });
 
         funcVal.forEach(function(value){
+            const type = typeof value;
+            const label = 'type: ' + type + ', value: `' + String(value) + '`';
+
+            describe(label, function () {
+                let result = null;
+                before(function(){
+                    const raw = new Some(value);
+                    result = JSON.parse(JSON.stringify(raw));
+                });
+
+                ['is_some'].forEach(function(key){
+                    it('json has `' + key + '` field.', function () {
+                        assert.strictEqual(result.hasOwnProperty(key), true);
+                    });
+                });
+
+                it('`is_some` should be expected', function () {
+                    assert.strictEqual(result.is_some, true);
+                });
+
+                // `function` is not serialized to json.
+                it('`value` should be expected', function () {
+                    assert.strictEqual(result.value, undefined);
+                });
+            });
+        });
+
+        symbolVal.forEach(function(value){
             const type = typeof value;
             const label = 'type: ' + type + ', value: `' + String(value) + '`';
 

@@ -31,12 +31,17 @@ const None = require('../../src/Option').None;
 const primitiveVal = require('../utils').primitiveVal;
 const objectVal = require('../utils').objectVal;
 const funcVal = require('../utils').funcVal;
+const symbolVal = require('../utils').symbolVal;
 const undefinedVal = require('../utils').undefinedVal;
 
 describe('initialization `Option<T>`', function(){
 
     describe('`Some<T>`', function () {
-        const param = primitiveVal.concat(objectVal).concat(funcVal).concat(undefinedVal);
+        const param = primitiveVal
+            .concat(objectVal)
+            .concat(funcVal)
+            .concat(symbolVal)
+            .concat(undefinedVal);
         param.forEach(function(value){
             const type = typeof value;
             const label = 'type: ' + type + ', value: `' + String(value) + '`';
