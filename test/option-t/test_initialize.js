@@ -25,8 +25,8 @@
 'use strict';
 
 const assert = require('power-assert');
-const Some = require('../../src/OptionT').Some;
-const None = require('../../src/OptionT').None;
+const Some = require('../../src/Option').Some;
+const None = require('../../src/Option').None;
 
 const primitiveVal = require('../utils').primitiveVal;
 const objectVal = require('../utils').objectVal;

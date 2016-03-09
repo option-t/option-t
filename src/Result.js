@@ -23,7 +23,7 @@
  */
 'use strict';
 
-var OptionTMod = require('./OptionT');
+var OptionTMod = require('./Option');
 var Some = OptionTMod.Some;
 var None = OptionTMod.None;
 
