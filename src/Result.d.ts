@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-import {Option, Some, None} from './OptionT';
+import {Option, Some, None} from './Option';
 
 type mapFn<T, U> = (v: T) => U;
 type flatmapOkFn<T, U, E> = (v: T) => Result<U, E>;

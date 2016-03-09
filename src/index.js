@@ -24,7 +24,7 @@
 
 'use strict';
 
-var Option = require('./OptionT');
+var Option = require('./Option');
 
 module.exports = {
     Some: Option.Some,

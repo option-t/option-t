@@ -26,7 +26,7 @@
 
 const assert = require('power-assert');
 
-const ResultMod = require('../../src/ResultTE');
+const ResultMod = require('../../src/Result');
 const Ok = ResultMod.Ok;
 const Err = ResultMod.Err;
 
