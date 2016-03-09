@@ -2,6 +2,8 @@
 
 ## x.y.z
 
+## 0.17.0
+
 ### Internals
 
 - Update ESLint to v2.3.0. ([#109](https://github.com/saneyuki/option-t.js/pull/109))
@@ -16,12 +18,12 @@
 
 ### New Feature
 
-#### `Result<T, E>`
+#### Introduce `Result<T, E>`
 
 We introduce the new experimental feature `Result<T, E>` which is inspired by
 Rust's [`std::result::Result<T, E>`](https://doc.rust-lang.org/std/result/enum.Result.html) by [#88][issue88], [#111][pr111].
 
-See [`/src/ResultTE.ts`](./src/ResultTE.ts) for more details.
+See [`/src/Result.ts`](./src/Result.d.ts) for more details.
 
 This feature is *not* exported by default now.
 If you'd like to use it, let's try to import this:
