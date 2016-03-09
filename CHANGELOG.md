@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+
+## 0.17.2
+
 ### Internals
 
 - Rename internal types' naming in `Result.d.ts`. ([#122](https://github.com/saneyuki/option-t.js/pull/122))
