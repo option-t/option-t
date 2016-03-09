@@ -24,10 +24,10 @@
 
 import {Option, Some, None} from './Option';
 
-type mapFn<T, U> = (v: T) => U;
-type flatmapOkFn<T, U, E> = (v: T) => Result<U, E>;
-type flatmapErrFn<T, E, F> = (e: E) => Result<T, F>;
-type recoveryFn<E, T> = (e: E) => T;
+type MapFn<T, U> = (v: T) => U;
+type FlatmapOkFn<T, U, E> = (v: T) => Result<U, E>;
+type FlatmapErrFn<T, E, F> = (e: E) => Result<T, F>;
+type RecoveryFn<E, T> = (e: E) => T;
 
 /**
  *  The Result/Either type interface whose APIs are inspired
@@ -66,7 +66,7 @@ interface ResultMethods<T, E> {
      *
      *  This function can be used to compose the results of two functions.
      */
-    map<U>(op: mapFn<T, U>): Result<U, E>;
+    map<U>(op: MapFn<T, U>): Result<U, E>;
 
     /**
      *  Maps a `Result<T, E>` to `Result<T, F>` by applying a function `mapFn<E, F>`
@@ -74,7 +74,7 @@ interface ResultMethods<T, E> {
      *
      *  This function can be used to pass through a successful result while handling an error.
      */
-    mapErr<F>(op: mapFn<E, F>): Result<T, F>;
+    mapErr<F>(op: MapFn<E, F>): Result<T, F>;
 
     /**
      *  Returns `res` if the result is `Ok`, otherwise returns the `Err` value of self.
@@ -85,7 +85,7 @@ interface ResultMethods<T, E> {
      *  Calls `op` if the result is `Ok`, otherwise returns the `Err` value of self.
      *  This function can be used for control flow based on result values.
      */
-    andThen<U>(op: flatmapOkFn<T, U, E>): Result<U, E>;
+    andThen<U>(op: FlatmapOkFn<T, U, E>): Result<U, E>;
 
     /**
      *  Returns `res` if the result is `Err`, otherwise returns the `Ok` value of self.
@@ -96,7 +96,7 @@ interface ResultMethods<T, E> {
      *  Calls `op` if the result is `Err`, otherwise returns the `Ok` value of self.
      *  This function can be used for control flow based on result values.
      */
-    orElse<F>(op: flatmapErrFn<T, E, F>): Result<T, F>;
+    orElse<F>(op: FlatmapErrFn<T, E, F>): Result<T, F>;
 
     /**
      *  Return the inner `T` of a `Ok(T)`.
@@ -123,7 +123,7 @@ interface ResultMethods<T, E> {
      *  Unwraps a result, returns the content of an `Ok`.
      *  If the value is an `Err` then it calls `op` with its value.
      */
-    unwrapOrElse(op: recoveryFn<E, T>): T;
+    unwrapOrElse(op: RecoveryFn<E, T>): T;
 
     /**
      *  Return the inner `T` of a `Ok(T)`.
@@ -162,16 +162,16 @@ export class Ok<T, E> extends ResultBase implements ResultMethods<T, E> {
     isErr(): this is Err<T, E>;
     ok(): Option<T>;
     err(): Option<E>;
-    map<U>(op: mapFn<T, U>): Result<U, E>;
-    mapErr<F>(op: mapFn<E, F>): Result<T, F>;
+    map<U>(op: MapFn<T, U>): Result<U, E>;
+    mapErr<F>(op: MapFn<E, F>): Result<T, F>;
     and<U>(res: Result<U, E>): Result<U, E>;
-    andThen<U>(op: flatmapOkFn<T, U, E>): Result<U, E>;
+    andThen<U>(op: FlatmapOkFn<T, U, E>): Result<U, E>;
     or<F>(res: Result<T, F>): Result<T, F>;
-    orElse<F>(op: flatmapErrFn<T, E, F>): Result<T, F>;
+    orElse<F>(op: FlatmapErrFn<T, E, F>): Result<T, F>;
     unwrap(): T;
     unwrapErr(): E;
     unwrapOr(optb: T): T;
-    unwrapOrElse(op: recoveryFn<E, T>): T;
+    unwrapOrElse(op: RecoveryFn<E, T>): T;
     expect(message: string): T;
     drop(destructor?: (v: T) => void, errDestructor?: (e: E) => void): void;
 }
@@ -192,16 +192,16 @@ export class Err<T, E> extends ResultBase implements ResultMethods<T, E> {
     isErr(): this is Err<T, E>;
     ok(): Option<T>;
     err(): Option<E>;
-    map<U>(op: mapFn<T, U>): Result<U, E>;
-    mapErr<F>(op: mapFn<E, F>): Result<T, F>;
+    map<U>(op: MapFn<T, U>): Result<U, E>;
+    mapErr<F>(op: MapFn<E, F>): Result<T, F>;
     and<U>(res: Result<U, E>): Result<U, E>;
-    andThen<U>(op: flatmapOkFn<T, U, E>): Result<U, E>;
+    andThen<U>(op: FlatmapOkFn<T, U, E>): Result<U, E>;
     or<F>(res: Result<T, F>): Result<T, F>;
-    orElse<F>(op: flatmapErrFn<T, E, F>): Result<T, F>;
+    orElse<F>(op: FlatmapErrFn<T, E, F>): Result<T, F>;
     unwrap(): T;
     unwrapErr(): E;
     unwrapOr(optb: T): T;
-    unwrapOrElse(op: recoveryFn<E, T>): T;
+    unwrapOrElse(op: RecoveryFn<E, T>): T;
     expect(message: string): T;
     drop(destructor?: (v: T) => void, errDestructor?: (e: E) => void): void;
 }
