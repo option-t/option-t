@@ -151,15 +151,6 @@ declare module 'option-t' {
         orElse(fn: () => Option<T>): Option<T>;
 
         /**
-         *  Cast the self as Promise.
-         *
-         *  If `T` is `Promise<U>` (the self is `Option<Promise<U>>`),
-         *  then the wrapped `Promise<U>` is flatten automatically by design.
-         *  So this will returns `Promise<U>`.
-         */
-        asPromise(): Promise<T>;
-
-        /**
          *  Finalize the self.
          *  After this is called, the object's behavior is not defined.
          *
@@ -208,7 +199,6 @@ declare module 'option-t' {
         andThen<U>(fn: (v: T) => Option<U>): Option<U>;
         or(optb: Option<T>): Option<T>;
         orElse(fn: () => Option<T>): Option<T>;
-        asPromise(): Promise<T>;
         drop(destructor?: (v: T) => void): void;
     }
 
@@ -228,7 +218,6 @@ declare module 'option-t' {
         andThen<U>(fn: (v: T) => Option<U>): Option<U>;
         or(optb: Option<T>): Option<T>;
         orElse(fn: () => Option<T>): Option<T>;
-        asPromise(): Promise<T>;
         drop(destructor?: (v: T) => void): void;
     }
 }
