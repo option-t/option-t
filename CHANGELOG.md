@@ -2,34 +2,39 @@
 
 ## x.y.z
 
+### Documentation
+
+* Add links to pull request for CHANGELOG.md. ([#129](https://github.com/saneyuki/option-t.js/pull/129))
+
+
 ## 0.18.3
 
 ### Documentation
 
-* Fix the link to API documentations.
+* Fix the link to API documentations.([#128](https://github.com/saneyuki/option-t.js/pull/128))
 
 
 ## 0.18.2
 
 ### Documentation
 
-* Add more descriptions about runtime nullability checking in README.md
+* Add more descriptions about runtime nullability checking in README.md ([#127](https://github.com/saneyuki/option-t.js/pull/127))
 
 
 ## 0.18.1
 
 ### Documentation
 
-* Add some semantics description to README.md
+* Add some semantics description to README.md ([#126](https://github.com/saneyuki/option-t.js/pull/126))
 
 
 ## 0.18.0
 
 ### Breaking Change
 
-#### Remove `Option<T>.asPromise()`
+#### Remove `Option<T>.asPromise()` ([#125](https://github.com/saneyuki/option-t.js/pull/125))
 
-In previous version (~v0.17), we provide `Option<T>.asPromise()` utility method for this purpose.
+In previous version (~v0.17), we provide `Option<T>.asPromise()` utility method casting from `Option<T>` to `Promise`.
 Its methods always treats `None` as a rejected `Promise`.
 But there are various cases which we would not like to cast to a Promise from an Optional type with single way,
 there are various context to handle a `None` value.
