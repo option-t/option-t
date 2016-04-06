@@ -54,9 +54,8 @@ console.log(none.unwrap()); // this will throw `Error`.
 
 ## API
 
-* [Type Definition](./option-t.d.ts)
-* Implementation: See inline JSDoc.
-  * [`Option<T>`](./src/OptionT.js)
+* [`Option<T>`](./src/Option.d.ts)
+* [`Result<T, E>`](./src/Result.d.ts)
 
 
 ### Cast `Option<T>` to `Promise`.
