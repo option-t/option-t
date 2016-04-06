@@ -177,6 +177,30 @@ In the future, a JavaScript runtime may make it more cheap,
 but we don't recommend to use this approach if you requires a high performance computing extremely.
 
 
+### Runtime Checking
+
+This would be most popular way to handle a returned value in JavaScript.
+
+```javascript
+const value = getSome(); // this returns the actual value, otherwise `undefined`.
+if (value !== undefined) {
+    // handle some value
+}
+else {
+    // handle none value
+}
+```
+
+These approach don't need an extra object allocation like the above approach (and `option-t`).
+
+And you need to think about "what is null type? including `undefined` or not?".
+At least in ECMA262, There are some ways to represent "there're no value".
+
+- `undefined` (e.g. `Map.prototype.get()`)
+- `null` (e.g. `RegExp.prototype.exec()`)
+- `-1` (e.g. `String.prototype.indexOf()`)
+
+
 #### Use static type checker
 
 Some static type checking tools provides a way to check nullability.
@@ -186,12 +210,9 @@ Some static type checking tools provides a way to check nullability.
   - [From TypeScript compiler 1.8, you can represent `type Maybe<T> = T | void`.](http://www.typescriptlang.org/docs/release-notes/typescript-1.8.html#improved-unionintersection-type-inference)
 - Google Closure Compiler also can check a non-nullable type via JSDoc style annotations in some compilation mode.
 
-
-These approach don't need an extra object allocation like the above approach (and `option-t`).
-
-However, they are just type information which is not in normal ECMA262 code.
-And you need to think about "what is null type? including `undefined` or not".
-
+Flowtype and TypeScript checks with thier control flow analysis
+(Sorry, I don't know the details of Google Closure Compiler's behavior).
+Thus you can leave a runtime nullability checking in your code.
 
 ## License
 

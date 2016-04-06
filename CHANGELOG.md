@@ -2,6 +2,13 @@
 
 ## x.y.z
 
+## 0.18.2
+
+### Documentation
+
+* Add more descriptions about runtime nullability checking in README.md
+
+
 ## 0.18.1
 
 ### Documentation
