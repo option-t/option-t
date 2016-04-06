@@ -139,6 +139,60 @@ This type represents that there is **no value** explicitly.
 It is just `None !== null`.
 
 
+
+### How to represent same things without this library?
+
+
+Of course, there some alternative approaches. We introduce them.
+
+
+#### Use an object with destructuring assignment.
+
+From ECMA262 6th, we can use _destructuring assignment_.
+It provides a convinient way to handle/unwrap a value in an object.
+
+```typescript
+type Option<T> = {
+  ok: boolean;
+  value: T;
+};
+
+const { ok, value, } = getSomeValue();
+if (ok) {
+    // handle some value case
+}
+else {
+    // handle none case.
+}
+```
+
+This does same thing which is like a return value of `iterator.next()`.
+But this approach cannot call instance methods on their returned values.
+If you would like to handle a result more seemless, we recommend to use `option-t`.
+
+On the other hand, this way (and `option-t`) need to allocate an object.
+This allocation cost would be a cost.
+
+In the future, a JavaScript runtime may make it more cheap,
+but we don't recommend to use this approach if you requires a high performance computing extremely.
+
+
+#### Use static type checker
+
+Some static type checking tools provides a way to check nullability.
+
+- Flowtype's semantics has [a built-in "Maybe" types](http://flowtype.org/docs/nullable-types.html),
+- TypeScript has [a non-nullable type check](https://github.com/Microsoft/TypeScript/issues/185),
+  - [From TypeScript compiler 1.8, you can represent `type Maybe<T> = T | void`.](http://www.typescriptlang.org/docs/release-notes/typescript-1.8.html#improved-unionintersection-type-inference)
+- Google Closure Compiler also can check a non-nullable type via JSDoc style annotations in some compilation mode.
+
+
+These approach don't need an extra object allocation like the above approach (and `option-t`).
+
+However, they are just type information which is not in normal ECMA262 code.
+And you need to think about "what is null type? including `undefined` or not".
+
+
 ## License
 
 [MIT License](./LICENSE.MIT)

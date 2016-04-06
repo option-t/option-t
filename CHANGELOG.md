@@ -2,6 +2,10 @@
 
 ## x.y.z
 
+### Documentation
+
+* Add some semantics description to README.md
+
 
 ## 0.18.0
 
