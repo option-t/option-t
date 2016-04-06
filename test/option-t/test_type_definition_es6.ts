@@ -51,7 +51,6 @@ import {Option, Some, None, OptionBase} from '../../src/Option';
     var orElse: Option<number> = option.orElse((): Option<number> => {
         return new Some<number>(2);
     });
-    var asPromise: Promise<number> = option.asPromise();
     option.drop();
     option.drop((v: number) => {});
 
@@ -84,7 +83,6 @@ import {Option, Some, None, OptionBase} from '../../src/Option';
     var orElse: Option<number> = option.orElse((): Option<number> => {
         return new Some<number>(2);
     });
-    var asPromise: Promise<number> = option.asPromise();
     option.drop();
     option.drop((v: number) => {});
 

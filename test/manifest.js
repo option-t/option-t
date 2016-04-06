@@ -39,7 +39,6 @@ require('./option-t/test_inheritance');
 require('./option-t/test_and');
 require('./option-t/test_or');
 require('./option-t/test_or_else');
-require('./option-t/test_as_promise');
 
 require('./result-te/test_initialize');
 require('./result-te/test_inheritance');

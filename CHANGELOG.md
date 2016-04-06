@@ -2,6 +2,41 @@
 
 ## x.y.z
 
+### Breaking Change
+
+#### Remove `Option<T>.asPromise()`
+
+In previous version (~v0.17), we provide `Option<T>.asPromise()` utility method for this purpose.
+Its methods always treats `None` as a rejected `Promise`.
+But there are various cases which we would not like to cast to a Promise from an Optional type with single way,
+there are various context to handle a `None` value.
+
+Thus we don't provide a default way to cast to `Promise`. Please define a most suitable way to your project.
+You can write a custom cast function or use `Option<T>.mapOrElse()`.
+
+```typescript
+// This functon treats `None` as a rejected `Promise`
+function castToPromise1(option: Option<T>): Promise<T> {
+  return option.mapOrElse(() => Promise.reject(), (v: T) => Promise.resolve(v));
+}
+
+// This function treats `None` as a `Promise` which is fulfilled with a tagged union object.
+function castToPromise2(option: Option<T>): Promise<{ ok: boolean; value: T }> {
+  const result = {
+    ok: false,
+    value: undefined,
+  };
+
+  return option.mapOrElse(() => {
+    return Promise.resolve(result);
+  }, (v: T) => {
+    result.ok = true;
+    result.value = v;
+    return Promise.resolve(v);
+  });
+}
+```
+
 
 ## 0.17.2
 
