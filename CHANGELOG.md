@@ -5,6 +5,7 @@
 ### Documentation
 
 * Add links to pull request for CHANGELOG.md. ([#129](https://github.com/saneyuki/option-t.js/pull/129))
+* Fix the sample code of casting from `Option<T>` to `Promise`. ([#130](https://github.com/saneyuki/option-t.js/pull/130))
 
 
 ## 0.18.3
@@ -60,7 +61,7 @@ function castToPromise2(option: Option<T>): Promise<{ ok: boolean; value: T }> {
   }, (v: T) => {
     result.ok = true;
     result.value = v;
-    return Promise.resolve(v);
+    return Promise.resolve(result);
   });
 }
 ```

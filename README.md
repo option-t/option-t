@@ -81,7 +81,7 @@ function castToPromise2(option: Option<T>): Promise<{ ok: boolean; value: T }> {
   }, (v: T) => {
     result.ok = true;
     result.value = v;
-    return Promise.resolve(v);
+    return Promise.resolve(result);
   });
 }
 ```
