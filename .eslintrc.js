@@ -30,9 +30,6 @@
 // http://eslint.org/docs/configuring/#comments-in-configuration-files
 module.exports = {
 
-    // Derive recommended rules to detect bad smells even if eslint added a new recommended one but we forgot to add them to ours.
-    'extends': 'eslint:recommended',
-
     'env': {
         'es6': true,
         'node': true,
@@ -55,7 +52,9 @@ module.exports = {
         'no-empty-character-class': 2,
         'no-ex-assign': 2,
         'no-extra-boolean-cast': 0,
-        'no-extra-parens': 0,
+        'no-extra-parens': [0, 'all', {
+            'nestedBinaryExpressions': false,
+        }],
         'no-extra-semi': 1,
         'no-func-assign': 2,
         'no-inner-declarations': 2,
@@ -67,6 +66,7 @@ module.exports = {
         'no-sparse-arrays': 2,
         'no-unexpected-multiline': 1,
         'no-unreachable': 1,
+        'no-unsafe-finally': 2,
         'use-isnan': 2,
         'valid-jsdoc': [2, {
             'requireReturn': true,
@@ -152,6 +152,7 @@ module.exports = {
         'no-unused-labels': 2, // http://eslint.org/docs/rules/no-unused-labels
         'no-useless-call': 1,
         'no-useless-concat': 1,
+        'no-useless-escape': 1, // http://eslint.org/docs/rules/no-useless-escape
         'no-void': 2, // We live in after ES5 : http://eslint.org/docs/rules/no-void
         'no-warning-comments': 0, // We need not always enable this : http://eslint.org/docs/rules/no-warning-comments
         'no-with': 2,
@@ -179,8 +180,13 @@ module.exports = {
         'no-unused-vars': [1, {
             'vars': 'all',
             'args': 'after-used',
+            'caughtErrors': 'all',
+            'caughtErrorsIgnorePattern': '^_',
         }],
-        'no-use-before-define': 0,
+        'no-use-before-define': [2, {
+            'functions': false, //  Function declarations are hoisted.
+            'classes': true, // Class declarations are not hoisted. We should warn it.
+        }],
 
         // Node.js
         'callback-return': 0, // http://eslint.org/docs/rules/callback-return
@@ -237,6 +243,9 @@ module.exports = {
         'max-nested-callback': 0, // http://eslint.org/docs/rules/max-nested-callbacks
         'max-params': 0, // http://eslint.org/docs/rules/max-params
         'max-statements': 0, // http://eslint.org/docs/rules/max-statements
+        'max-statements-per-line': [1, { // http://eslint.org/docs/rules/max-statements-per-line
+            'max': 1, // In almost case, We don't write 2~ statements in per line.
+        }],
         'new-cap': 1,
         'new-parens': 2,
         'newline-after-var': 0, // http://eslint.org/docs/rules/newline-after-var
@@ -259,7 +268,6 @@ module.exports = {
         'no-new-object': 2, // In almost case, we don't have to use `new Object()` without any comments.
         'no-plusplus': 0,
         'no-restricted-syntax': [2,
-            'ObjectPattern', 'ArrayPattern', 'RestElement', 'AssignmentPattern', // for plain NodeJS
             'ForInStatement', // We should ban a string reflection style in the environment which ES6 Map is available.
         ],
         'no-spaced-func': 2,
@@ -274,7 +282,10 @@ module.exports = {
         'one-var-declaration-per-line': 1, // http://eslint.org/docs/rules/one-var-declaration-per-line
         'operator-linebreak': [2, 'after'],
         'padded-blocks': 0,
-        'quotes': [2, 'single', 'avoid-escape'],
+        'quotes': [2, 'single', {
+            'avoidEscape': true,
+            'allowTemplateLiterals': true,
+        }],
         'require-jsdoc': [0, {
             'require': {
                 'FunctionDeclaration': true,
@@ -288,9 +299,12 @@ module.exports = {
             'after': true
         }],
         'sort-vars': 0,
-        // 'sort-imports': 1, // FIXME: https://github.com/karen-irc/karen/issues/539
+        'sort-imports': 0,
         'space-before-blocks': 0, // http://eslint.org/docs/rules/space-before-blocks
-        'space-before-function-paren': 0, // http://eslint.org/docs/rules/space-before-function-parentheses
+        'space-before-function-paren': [1, { // http://eslint.org/docs/rules/space-before-function-parentheses
+            'anonymous': 'ignore',
+            'named': 'never',
+        }],
         'space-in-parens': 0,
         'space-infix-ops': 1,
         'space-unary-ops': [2, {
@@ -313,17 +327,25 @@ module.exports = {
             'after': true
         }],
         'no-class-assign': 2,
-        'no-confusing-arrow': 1,
+        'no-confusing-arrow': [1, {
+            'allowParens': true,
+        }],
         'no-const-assign': 2,
         'no-dupe-class-members': 2,
+        'no-duplicate-imports': 1, // http://eslint.org/docs/rules/no-duplicate-imports
         'no-new-symbol': 2,
         'no-this-before-super': 2,
+        'no-useless-computed-key': 1,
         // 'no-useless-constructor': 2, // FIXME: this rule has the bag which deny to call `super()` in a derived class (ESLint v2b1)
         'no-var': 1,
         'no-whitespace-before-property': 1,
         'object-shorthand': 0,
-        'prefer-arrow-callback': 0,
-        'prefer-const': 1,
+        'prefer-arrow-callback': [0, {
+            'allowNamedFunctions': true, // for debugging stack trace
+        }],
+        'prefer-const': [1, {
+            'destructuring': 'any',
+        }],
         'prefer-reflect': 1,
         'prefer-rest-params': 1,
         'prefer-spread': 1,
