@@ -51,6 +51,7 @@ require('./result-te/test_and_then');
 require('./result-te/test_or');
 require('./result-te/test_or_else');
 require('./result-te/test_unwrap');
+require('./result-te/test_unwrap_err');
 require('./result-te/test_unwrap_or');
 require('./result-te/test_unwrap_or_else');
 require('./result-te/test_expect');

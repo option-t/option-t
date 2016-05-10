@@ -217,7 +217,7 @@ ResultBase.prototype = Object.freeze({
      *
      *  @return {T}
      *
-     *  @throws {Error}
+     *  @throws {TypeError}
      *      Throws if the self is a `Err`.
      */
     unwrap: function ResultBaseUnwrap() {
@@ -234,7 +234,7 @@ ResultBase.prototype = Object.freeze({
      */
     unwrapErr: function ResultBaseUnwrapErr() {
         if (this._is_ok) {
-            throw new Error('called `unwrapErr()` on a `Ok` value');
+            throw new TypeError('called `unwrapErr()` on a `Ok` value');
         }
         else {
             return this._e;
@@ -278,7 +278,7 @@ ResultBase.prototype = Object.freeze({
      *  @param  {string}    message
      *  @return {T}
      *
-     *  @throws {Error}
+     *  @throws {TypeError}
      *      Throws the passed `message` if the self is a `Err`.
      */
     expect: function ResultBaseExpect(message) {
@@ -286,7 +286,7 @@ ResultBase.prototype = Object.freeze({
             return this._v;
         }
         else {
-            throw new Error(message);
+            throw new TypeError(message);
         }
     },
 

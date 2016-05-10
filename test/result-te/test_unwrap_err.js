@@ -33,22 +33,14 @@ const Err = ResultMod.Err;
 const EXPECTED_OK = 'expected_ok';
 const EXPECTED_ERR = 'expected_err';
 
-describe('Result<T, E>.expect()', function(){
-    describe('Ok<T>', function () {
-        it('expect()', function () {
-            const ok = new Ok(EXPECTED_OK);
-            assert.strictEqual(ok.expect('not expected message'), EXPECTED_OK);
-        });
-    });
-
+describe('Result<T, E>.unwrapErr()', function(){
     describe('Err<E>', function () {
-        const UNEXPECTED = 100;
         let caught = null;
 
         before(function(){
+            const result = new Ok(EXPECTED_OK);
             try {
-                const err = new Err(UNEXPECTED);
-                err.expect(EXPECTED_ERR);
+                result.unwrapErr();
             }
             catch (e) {
                 caught = e;
@@ -56,11 +48,18 @@ describe('Result<T, E>.expect()', function(){
         });
 
         it('is instance of `Error`', function () {
-            assert.strictEqual( (caught instanceof TypeError), true);
+            assert.strictEqual((caught instanceof TypeError), true);
         });
 
         it('the error message is expected', function () {
-            assert.strictEqual(caught.message, EXPECTED_ERR);
+            assert.strictEqual(caught.message, 'called `unwrapErr()` on a `Ok` value');
+        });
+    });
+
+    describe('Err<E>', function () {
+        it('should be expected value', function () {
+            const ok = new Err(EXPECTED_ERR);
+            assert.strictEqual(ok.unwrapErr(), EXPECTED_ERR);
         });
     });
 });

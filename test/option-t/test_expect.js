@@ -57,7 +57,7 @@ describe('Option<T>.expect()', function(){
         });
 
         it('should throw the error', function() {
-            assert.strictEqual(error instanceof Error, true);
+            assert.strictEqual(error instanceof TypeError, true);
         });
 
         it('should be the expected error message', function() {
