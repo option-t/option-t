@@ -277,7 +277,7 @@ OptionT.prototype = Object.freeze({
  *
  *  @param  {T}   val
  */
-var Some = function OptionTSome(val) {
+function Some(val) {
     /* eslint-disable camelcase */
     /**
      *  @private
@@ -292,7 +292,7 @@ var Some = function OptionTSome(val) {
      */
     this.value = val;
     Object.seal(this);
-};
+}
 Some.prototype = new OptionT();
 
 /**
@@ -300,7 +300,7 @@ Some.prototype = new OptionT();
  *  @template   T
  *  @extends    {OptionT<T>}
  */
-var None = function OptionTNone() {
+function None() {
     /* eslint-disable camelcase */
     /**
      *  @private
@@ -315,7 +315,7 @@ var None = function OptionTNone() {
      */
     this.value = undefined;
     Object.seal(this);
-};
+}
 None.prototype = new OptionT();
 
 module.exports = {
