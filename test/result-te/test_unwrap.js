@@ -56,7 +56,7 @@ describe('Result<T, E>.unwrap()', function(){
         });
 
         it('is instance of `Error`', function () {
-            assert.strictEqual((caught instanceof Error), true);
+            assert.strictEqual((caught instanceof TypeError), true);
         });
 
         it('the error message is expected', function () {

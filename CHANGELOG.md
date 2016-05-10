@@ -2,6 +2,16 @@
 
 ## x.y.z
 
+### Breaking Change (Possible)
+
+- These would causes `TypeError` instread of `Error`. ([#132](https://github.com/saneyuki/option-t.js/pull/132))
+  - `Option<T>.unwrap()`
+  - `Option<T>.expect()`
+  - `Result<T, E>.unwrap()`
+  - `Result<T, E>.unwrapErr()`
+  - `Result<T, E>.expect()`
+
+
 ### Documentation
 
 * Add links to pull request for CHANGELOG.md. ([#129](https://github.com/saneyuki/option-t.js/pull/129))
