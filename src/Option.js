@@ -60,12 +60,12 @@ OptionT.prototype = Object.freeze({
      *  @template   T
      *
      *  @return {T}
-     *  @throws {Error}
+     *  @throws {TypeError}
      *      Throws if the self value equals `None`.
      */
     unwrap: function OptionTUnwrap() {
         if (!this.is_some) {
-            throw new Error('called `unwrap()` on a `None` value');
+            throw new TypeError('called `unwrap()` on a `None` value');
         }
 
         return this.value;
@@ -102,13 +102,13 @@ OptionT.prototype = Object.freeze({
      *
      *  @param  {string}  msg
      *  @return {T}
-     *  @throws {Error}
+     *  @throws {TypeError}
      *      Throws a custom error with provided `msg`
      *      if the self value equals `None`.
      */
     expect: function OptionTExpect(msg) {
         if (!this.is_some) {
-            throw new Error(msg);
+            throw new TypeError(msg);
         }
 
         return this.value;
