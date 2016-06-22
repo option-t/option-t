@@ -1,10 +1,38 @@
+/**
+ * MIT License
+ *
+ * Copyright (c) 2016 Tetsuharu OHZEKI <saneyuki.snyk@gmail.com>
+ * Copyright (c) 2016 Yusuke Suzuki <utatane.tea@gmail.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
 /*eslint quote-props: [2, "always"] */
 
 'use strict';
 
 // ESLint Configuration Files enables to include comments.
 // http://eslint.org/docs/configuring/#comments-in-configuration-files
+//
+// This file should only contains ESLint's builtin rules to increase a portability
+// of rulesets.
 module.exports = {
+
     'rules': {
         // Possible Errors
         'comma-dangle': [0, 'never'],
@@ -22,6 +50,7 @@ module.exports = {
         'no-extra-boolean-cast': 0,
         'no-extra-parens': [0, 'all', {
             'nestedBinaryExpressions': false,
+            'returnAssign': false,
         }],
         'no-extra-semi': 1,
         'no-func-assign': 2,
@@ -30,6 +59,7 @@ module.exports = {
         'no-irregular-whitespace': 2,
         'no-negated-in-lhs': 2,
         'no-obj-calls': 2,
+        'no-prototype-builtins': 2,
         'no-regex-spaces': 2,
         'no-sparse-arrays': 2,
         'no-unexpected-multiline': 1,
@@ -54,12 +84,14 @@ module.exports = {
         'array-callback-return': 1,
         'block-scoped-var': 1,
         'complexity': 0, // check a cyclomatic complexity
-        'consistent-return': 2,
+        'consistent-return': [2, {
+            'treatUndefinedAsUnspecified': true,
+        }],
         'curly': 2,
         'default-case': 0, // http://eslint.org/docs/rules/default-case
         'dot-location': 0, // http://eslint.org/docs/rules/dot-location
         'dot-notation': 2, // http://eslint.org/docs/rules/dot-notation
-        'eqeqeq': 2,
+        'eqeqeq': [2, 'always'],
         'guard-for-in': 0, // http://eslint.org/docs/rules/guard-for-in
         'no-alert': 1,
         'no-caller': 2,
@@ -208,6 +240,11 @@ module.exports = {
         'max-len': [2, 256, 4, { // http://eslint.org/docs/rules/max-len
             'ignoreUrls': true,
         }],
+        // 'max-lines': [1, {
+        //     'max': 150, // In almost case, we would not use more than this lines.
+        //     'skipBlankLines': false,
+        //     'skipComments': true, // In some case, uris are longer than max lines.
+        // }],
         'max-nested-callback': 0, // http://eslint.org/docs/rules/max-nested-callbacks
         'max-params': 0, // http://eslint.org/docs/rules/max-params
         'max-statements': 0, // http://eslint.org/docs/rules/max-statements
@@ -229,6 +266,7 @@ module.exports = {
         'no-continue': 0, // http://eslint.org/docs/rules/no-continue
         'no-inline-comments': 0, // http://eslint.org/docs/rules/no-inline-comments
         'no-lonely-if': 1, // http://eslint.org/docs/rules/no-lonely-if
+        'no-mixed-operators': 2,
         'no-mixed-spaces-and-tabs': 2,
         'no-multiple-empty-lines': 0, // Empty lines somtimes means a section of a program.
         'no-negated-condition': 0, // http://eslint.org/docs/rules/no-negated-condition
@@ -246,6 +284,8 @@ module.exports = {
         }],
         'no-unneeded-ternary': 2,
         'object-curly-spacing': 0, // http://eslint.org/docs/rules/object-curly-spacing
+        'object-curly-newline': 0, // http://eslint.org/docs/rules/object-curly-newline
+        'object-property-newline': 0, // I feel this is a trivial problem.
         'one-var': [2, 'never'], // http://eslint.org/docs/rules/one-var
         'one-var-declaration-per-line': 1, // http://eslint.org/docs/rules/one-var-declaration-per-line
         'operator-linebreak': [2, 'after'],
@@ -280,6 +320,7 @@ module.exports = {
             'nonwords': false
         }],
         'spaced-comment': 0,
+        'unicode-bom': [2, 'never'],
         'wrap-regex': 0,
 
         // ECMAScript 6
@@ -305,6 +346,7 @@ module.exports = {
         'no-this-before-super': 2,
         'no-useless-computed-key': 1,
         // 'no-useless-constructor': 2, // FIXME: this rule has the bag which deny to call `super()` in a derived class (ESLint v2b1)
+        'no-useless-rename': 2,
         'no-var': 1,
         'no-whitespace-before-property': 1,
         'object-shorthand': 0,
@@ -313,12 +355,14 @@ module.exports = {
         }],
         'prefer-const': [1, {
             'destructuring': 'any',
+            'ignoreReadBeforeAssign': false,
         }],
         'prefer-reflect': 1,
         'prefer-rest-params': 1,
         'prefer-spread': 1,
         'prefer-template': 0,
         'require-yield': 2,
+        'rest-spread-spacing': [2, 'never'], // clarify 'this is rest/spread operator'.
         'template-curly-spacing': [1, 'never'], // http://eslint.org/docs/rules/template-curly-spacing
         'yield-star-spacing': [1, 'after'],
     }
