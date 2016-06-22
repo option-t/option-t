@@ -22,6 +22,8 @@
  * THE SOFTWARE.
  */
 
+/*eslint no-prototype-builtins: 0*/
+
 'use strict';
 
 const assert = require('power-assert');
