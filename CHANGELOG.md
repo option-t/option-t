@@ -11,6 +11,10 @@
   - `Result<T, E>.unwrapErr()`
   - `Result<T, E>.expect()`
 
+### Internals
+
+- Remove Node v5 from CI. ([#136](https://github.com/saneyuki/option-t.js/pull/136))
+
 
 ### Documentation
 
