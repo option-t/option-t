@@ -10,7 +10,9 @@ module.exports = {
     },
 
     'env': {
-        'node': true,
+        'es6': false,
+        'node': false,
+        'commonjs': true,
     },
 
     'rules': {

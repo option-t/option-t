@@ -16,7 +16,7 @@
     "node": ">=4.2"
   },
   "scripts": {
-    "lint": "eslint ./src/ ./test/ .eslintrc.js",
+    "lint": "eslint --ext=.js .",
     "typetest": "tsc",
     "pretest": "npm run lint && npm run typetest",
     "test": "mocha --require intelli-espower-loader ./test/manifest.js"
