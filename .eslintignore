@@ -1,2 +1,5 @@
 __build/
 node_modules/
+
+# include .eslintrc.js as eslint's target.
+!.eslintrc.js
