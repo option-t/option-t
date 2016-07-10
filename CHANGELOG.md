@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+
+## 1.0.0
+
 ### Breaking Change (Possible)
 
 - These would causes `TypeError` instread of `Error`. ([#132](https://github.com/saneyuki/option-t.js/pull/132))
