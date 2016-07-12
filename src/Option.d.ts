@@ -22,6 +22,12 @@
  * THE SOFTWARE.
  */
 
+type MapFn<T, U> = (v: T) => U;
+type FlatmapFn<T, U> = (v: T) => Option<U>;
+type RecoveryFn<T> = () => T;
+type MayRecoveryFn<T> = () => Option<T>;
+type DestructorFn<T> = (v: T) => void;
+
 /**
  *  The Option/Maybe type interface whose APIs are inspired
  *  by Rust's `std::option::Option<T>`.
@@ -61,7 +67,7 @@ interface OptionMethods<T> {
      *  @param fn
      *      The function which produces a default value which is used if the self is a `None`.
      */
-    unwrapOrElse(fn: () => T): T;
+    unwrapOrElse(fn: RecoveryFn<T>): T;
 
     /**
      *  Return the inner `T` of a `Some<T>`.
@@ -81,7 +87,7 @@ interface OptionMethods<T> {
      *      The function which is applied to the contained value and return the result
      *      if the self is a `Some<T>`.
      */
-    map<U>(fn: (v: T) => U): Option<U>;
+    map<U>(fn: MapFn<T, U>): Option<U>;
 
     /**
      *  Return `None` if the self is `None`,
@@ -91,7 +97,7 @@ interface OptionMethods<T> {
      *      The function which is applied to the contained value and return the result
      *      if the self is a `Some<T>`. This result will be flattened once.
      */
-    flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
+    flatMap<U>(fn: FlatmapFn<T, U>): Option<U>;
 
     /**
      *  Apply a function `fn` to the contained value or return a default `def`.
@@ -102,7 +108,7 @@ interface OptionMethods<T> {
      *      The function which is applied to the contained value and return the result
      *      if the self is a `Some<T>`.
      */
-    mapOr<U>(def: U, fn: (v: T) => U): U;
+    mapOr<U>(def: U, fn: MapFn<T, U>): U;
 
     /**
      *  Apply a function `fn` to the contained value or produce a default result by `defFn`.
@@ -113,7 +119,7 @@ interface OptionMethods<T> {
      *      The function which is applied to the contained value and return the result
      *      if the self is a `Some<T>`.
      */
-    mapOrElse<U>(def: () => U, fn: (v: T) => U): U;
+    mapOrElse<U>(def: RecoveryFn<U>, fn: MapFn<T, U>): U;
 
     /**
      *  Return the passed value if the self is `Some<T>`,
@@ -129,7 +135,7 @@ interface OptionMethods<T> {
      *
      *  @param  fn
      */
-    andThen<U>(fn: (v: T) => Option<U>): Option<U>;
+    andThen<U>(fn: FlatmapFn<T, U>): Option<U>;
 
     /**
      *  Return the self if it contains a value, otherwise return `optb`.
@@ -146,7 +152,7 @@ interface OptionMethods<T> {
      *  @param  fn
      *      The function which produces a default value which is used if the self is a `None`.
      */
-    orElse(fn: () => Option<T>): Option<T>;
+    orElse(fn: MayRecoveryFn<T>): Option<T>;
 
     /**
      *  Finalize the self.
@@ -157,7 +163,7 @@ interface OptionMethods<T> {
      *  @param  destructor
      *      This would be called with the inner value if self is `Some<T>`.
      */
-    drop(destructor?: (v: T) => void): void;
+    drop(destructor?: DestructorFn<T>): void;
 }
 
 /**
@@ -187,17 +193,17 @@ export class Some<T> extends OptionBase implements OptionMethods<T> {
     isNone: boolean;
     unwrap(): T;
     unwrapOr(def: T): T;
-    unwrapOrElse(fn: () => T): T;
+    unwrapOrElse(fn: RecoveryFn<T>): T;
     expect(msg: string): T;
-    map<U>(fn: (v: T) => U): Option<U>;
-    flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
-    mapOr<U>(def: U, fn: (v: T) => U): U;
-    mapOrElse<U>(def: () => U, fn: (v: T) => U): U;
+    map<U>(fn: MapFn<T, U>): Option<U>;
+    flatMap<U>(fn: FlatmapFn<T, U>): Option<U>;
+    mapOr<U>(def: U, fn: MapFn<T, U>): U;
+    mapOrElse<U>(def: RecoveryFn<U>, fn: MapFn<T, U>): U;
     and<U>(optb: Option<U>): Option<U>;
-    andThen<U>(fn: (v: T) => Option<U>): Option<U>;
+    andThen<U>(fn: FlatmapFn<T, U>): Option<U>;
     or(optb: Option<T>): Option<T>;
-    orElse(fn: () => Option<T>): Option<T>;
-    drop(destructor?: (v: T) => void): void;
+    orElse(fn: MayRecoveryFn<T>): Option<T>;
+    drop(destructor?: DestructorFn<T>): void;
 }
 
 export class None<T> extends OptionBase implements OptionMethods<T> {
@@ -206,16 +212,16 @@ export class None<T> extends OptionBase implements OptionMethods<T> {
     isNone: boolean;
     unwrap(): T;
     unwrapOr(def: T): T;
-    unwrapOrElse(fn: () => T): T;
+    unwrapOrElse(fn: RecoveryFn<T>): T;
     expect(msg: string): T;
-    map<U>(fn: (v: T) => U): Option<U>;
-    flatMap<U>(fn: (v: T) => Option<U>): Option<U>;
-    mapOr<U>(def: U, fn: (v: T) => U): U;
-    mapOrElse<U>(def: () => U, fn: (v: T) => U): U;
+    map<U>(fn: MapFn<T, U>): Option<U>;
+    flatMap<U>(fn: FlatmapFn<T, U>): Option<U>;
+    mapOr<U>(def: U, fn: MapFn<T, U>): U;
+    mapOrElse<U>(def: RecoveryFn<U>, fn: MapFn<T, U>): U;
     and<U>(optb: Option<U>): Option<U>;
-    andThen<U>(fn: (v: T) => Option<U>): Option<U>;
+    andThen<U>(fn: FlatmapFn<T, U>): Option<U>;
     or(optb: Option<T>): Option<T>;
-    orElse(fn: () => Option<T>): Option<T>;
-    drop(destructor?: (v: T) => void): void;
+    orElse(fn: MayRecoveryFn<T>): Option<T>;
+    drop(destructor?: DestructorFn<T>): void;
 }
 
