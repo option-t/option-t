@@ -24,7 +24,7 @@
 
 'use strict';
 
-const assert = require('power-assert');
+const assert = require('assert');
 
 const ResultMod = require('../../src/Result');
 const Ok = ResultMod.Ok;

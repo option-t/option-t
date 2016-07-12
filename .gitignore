@@ -4,4 +4,4 @@ npm-debug.log
 node_modules/
 
 __build/
-__powered-test/
+__test_cache/
