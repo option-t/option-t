@@ -24,11 +24,11 @@
 
 import {Option, Some, None} from './Option';
 
-type MapFn<T, U> = (this: undefined, v: T) => U;
-type FlatmapOkFn<T, U, E> = (this: undefined, v: T) => Result<U, E>;
-type FlatmapErrFn<T, E, F> = (this: undefined, e: E) => Result<T, F>;
-type RecoveryFn<E, T> = (this: undefined, e: E) => T;
-type DestructorFn<T> = (this: undefined, v: T) => void;
+type MapFn<T, U> = (this: void, v: T) => U;
+type FlatmapOkFn<T, U, E> = (this: void, v: T) => Result<U, E>;
+type FlatmapErrFn<T, E, F> = (this: void, e: E) => Result<T, F>;
+type RecoveryFn<E, T> = (this: void, e: E) => T;
+type DestructorFn<T> = (this: void, v: T) => void;
 
 /**
  *  The Result/Either type interface whose APIs are inspired
