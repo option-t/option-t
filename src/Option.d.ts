@@ -225,4 +225,3 @@ export class None<T> extends OptionBase implements OptionMethods<T> {
     drop(destructor?: DestructorFn<T>): void;
 }
 
-export as namespace OptionT;

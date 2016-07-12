@@ -6,6 +6,8 @@
 
 - `this` type are specfied for callbacks ([#142](https://github.com/saneyuki/option-t.js/pull/142))
   - This change requires to use TypeScript 2.0 or highers.
+- Drop to support `classic` module resolutions ([#145](https://github.com/saneyuki/option-t.js/pull/145))
+  - Use `--moduleResolution node` or others.
 
 ### Internals
 
