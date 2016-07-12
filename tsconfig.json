@@ -1,12 +1,25 @@
 {
     "compilerOptions": {
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
         "diagnostics": true,
+        "forceConsistentCasingInFileNames": true,
+        "newLine": "LF",
+        "noFallthroughCasesInSwitch": true,
         "noImplicitAny": true,
-        "removeComments": false,
-        "preserveConstEnums": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitUseStrict": false,
+        "noUnusedLocals": false,
+        "noUnusedParameters": true,
         "outDir": "./__build/",
-        "target": "ES6",
-        "sourceMap": true
+        "pretty": true,
+        "preserveConstEnums": true,
+        "removeComments": false,
+        "sourceMap": true,
+        "strictNullChecks": true,
+        "suppressImplicitAnyIndexErrors": false,
+        "target": "ES2015"
     },
     "files": [
         "./test/option-t/test_type_definition.ts",

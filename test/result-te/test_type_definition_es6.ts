@@ -1,3 +1,5 @@
+//@noUnusedLocals:false
+
 /*
  * @license MIT License
  *
