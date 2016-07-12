@@ -1,4 +1,5 @@
 __build/
+__test_cache/
 node_modules/
 
 # include .eslintrc.js as eslint's target.

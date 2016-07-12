@@ -16,10 +16,12 @@
     "node": ">=4.2"
   },
   "scripts": {
+    "test_preprocess": "babel test/ --out-dir __test_cache/ --extensions .js,.jsx --source-maps inline",
     "lint": "eslint . ./**/.eslintrc.js --ext .js",
     "typetest": "tsc",
-    "pretest": "npm run lint && npm run typetest",
-    "test": "mocha --require intelli-espower-loader ./test/manifest.js"
+    "mocha": "mocha ./__test_cache/manifest.js",
+    "pretest": "npm-run-all --parallel lint test_preprocess typetest",
+    "test": "npm run mocha"
   },
   "author": {
     "name": "Tetsuharu OHZEKI",
@@ -49,12 +51,12 @@
     "option"
   ],
   "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-preset-assert": "^1.0.0",
     "eslint": "^3.0.1",
-    "espower-loader": "^1.0.0",
-    "intelli-espower-loader": "^1.0.1",
     "mocha": "^2.5.3",
-    "power-assert": "^1.4.1",
-    "promise-test-helper": "^0.2.1",
+    "npm-run-all": "^2.3.0",
     "typescript": "^2.0.0"
   },
   "typings": "./option-t.es6.d.ts",
