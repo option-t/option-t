@@ -2,6 +2,10 @@
 
 ## x.y.z
 
+### Internals
+
+- Use TypeScript v2.0 ([#141](https://github.com/saneyuki/option-t.js/pull/141))
+
 
 ## 1.0.0
 

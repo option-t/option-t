@@ -28,6 +28,7 @@ type MapFn<T, U> = (v: T) => U;
 type FlatmapOkFn<T, U, E> = (v: T) => Result<U, E>;
 type FlatmapErrFn<T, E, F> = (e: E) => Result<T, F>;
 type RecoveryFn<E, T> = (e: E) => T;
+type DestructorFn<T> = (v: T) => void;
 
 /**
  *  The Result/Either type interface whose APIs are inspired
@@ -142,7 +143,7 @@ interface ResultMethods<T, E> {
      *  @param  errDestructor
      *      This would be called with the inner value if self is `Err<E>`.
      */
-    drop(destructor?: (v: T) => void, errDestructor?: (e: E) => void): void;
+    drop(destructor?: DestructorFn<T>, errDestructor?: DestructorFn<E>): void;
 }
 
 // XXX:
@@ -173,7 +174,7 @@ export class Ok<T, E> extends ResultBase implements ResultMethods<T, E> {
     unwrapOr(optb: T): T;
     unwrapOrElse(op: RecoveryFn<E, T>): T;
     expect(message: string): T;
-    drop(destructor?: (v: T) => void, errDestructor?: (e: E) => void): void;
+    drop(destructor?: DestructorFn<T>, errDestructor?: DestructorFn<E>): void;
 }
 
 // XXX:
@@ -203,5 +204,5 @@ export class Err<T, E> extends ResultBase implements ResultMethods<T, E> {
     unwrapOr(optb: T): T;
     unwrapOrElse(op: RecoveryFn<E, T>): T;
     expect(message: string): T;
-    drop(destructor?: (v: T) => void, errDestructor?: (e: E) => void): void;
+    drop(destructor?: DestructorFn<T>, errDestructor?: DestructorFn<E>): void;
 }

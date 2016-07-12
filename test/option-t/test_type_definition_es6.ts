@@ -44,7 +44,7 @@ import {Option, Some, None, OptionBase} from '../../src/Option';
     var mapOrElse: string = option.mapOrElse((): string => { return String(10); },
                                              (v: number) => { return String(v); });
     var and: Option<string> = option.and(new Some<string>("bar"));
-    var andThen: Option<string> = option.andThen((val: number): Option<string> => {
+    var andThen: Option<string> = option.andThen((_: number): Option<string> => {
         return new None<string>();
     });
     var or: Option<number> = option.or(new Some<number>(10));
@@ -52,7 +52,7 @@ import {Option, Some, None, OptionBase} from '../../src/Option';
         return new Some<number>(2);
     });
     option.drop();
-    option.drop((v: number) => {});
+    option.drop((_: number) => {});
 
     if (option instanceof OptionBase) {
         const bar: any = null;
@@ -69,14 +69,14 @@ import {Option, Some, None, OptionBase} from '../../src/Option';
     var unwrapOrElse: number = option.unwrapOrElse((): number => 10);
     var expect: number = option.expect('barfoo');
     var map: Option<string> = option.map((val: number): string => String(val));
-    var flatMap: Option<string> = option.flatMap((val: number): Option<string> => {
+    var flatMap: Option<string> = option.flatMap((_: number): Option<string> => {
         return new None<string>();
     });
     var mapOr: string = option.mapOr("bar", (val: number): string => String(val));
     var mapOrElse: string = option.mapOrElse((): string => { return String(10); },
                                              (v: number) => { return String(v); });
     var and: Option<string> = option.and(new Some<string>("bar"));
-    var andThen: Option<string> = option.andThen((val: number): Option<string> => {
+    var andThen: Option<string> = option.andThen((_: number): Option<string> => {
         return new None<string>();
     });
     var or: Option<number> = option.or(new Some<number>(10));
@@ -84,7 +84,7 @@ import {Option, Some, None, OptionBase} from '../../src/Option';
         return new Some<number>(2);
     });
     option.drop();
-    option.drop((v: number) => {});
+    option.drop((_: number) => {});
 
     if (option instanceof OptionBase) {
         const bar: any = null;
