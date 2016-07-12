@@ -23,6 +23,6 @@
     },
     "files": [
         "./test/option-t/test_type_definition.ts",
-        "./test/option-t/test_type_definition_es6.ts"
+        "./test/result-te/test_type_definition.ts"
     ]
 }
