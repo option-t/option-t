@@ -24,11 +24,11 @@
 
 declare module 'option-t' {
 
-    type MapFn<T, U> = (this: undefined, v: T) => U;
-    type FlatmapFn<T, U> = (this: undefined, v: T) => Option<U>;
-    type RecoveryFn<T> = (this: undefined) => T;
-    type MayRecoveryFn<T> = (this: undefined) => Option<T>;
-    type DestructorFn<T> = (this: undefined, v: T) => void;
+    type MapFn<T, U> = (this: void, v: T) => U;
+    type FlatmapFn<T, U> = (this: void, v: T) => Option<U>;
+    type RecoveryFn<T> = (this: void) => T;
+    type MayRecoveryFn<T> = (this: void) => Option<T>;
+    type DestructorFn<T> = (this: void, v: T) => void;
 
     /**
      *  The Option/Maybe type interface whose APIs are inspired
