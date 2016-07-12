@@ -21,8 +21,8 @@
         "suppressImplicitAnyIndexErrors": false,
         "target": "ES2015"
     },
-    "files": [
-        "./test/option-t/test_type_definition.ts",
-        "./test/option-t/test_type_definition_es6.ts"
+    "include": [
+        "src/**/**.ts",
+        "test/**/**.ts"
     ]
 }
