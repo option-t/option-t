@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+### Breaking Change
+
+- `this` type are specfied for callbacks ([#142](https://github.com/saneyuki/option-t.js/pull/142))
+  - This change requires to use TypeScript 2.0 or highers.
+
 ### Internals
 
 - Use TypeScript v2.0 ([#141](https://github.com/saneyuki/option-t.js/pull/141))
