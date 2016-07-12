@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+### Breaking Change
+
+- `this` type are specfied for callbacks ([#XXX]())
+  - This change requires to use TypeScript 2.0 or highers.
+
 
 ## 1.0.0
 

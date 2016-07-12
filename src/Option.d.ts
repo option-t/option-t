@@ -22,11 +22,11 @@
  * THE SOFTWARE.
  */
 
-type MapFn<T, U> = (v: T) => U;
-type FlatmapFn<T, U> = (v: T) => Option<U>;
-type RecoveryFn<T> = () => T;
-type MayRecoveryFn<T> = () => Option<T>;
-type DestructorFn<T> = (v: T) => void;
+type MapFn<T, U> = (this: undefined, v: T) => U;
+type FlatmapFn<T, U> = (this: undefined, v: T) => Option<U>;
+type RecoveryFn<T> = (this: undefined) => T;
+type MayRecoveryFn<T> = (this: undefined) => Option<T>;
+type DestructorFn<T> = (this: undefined, v: T) => void;
 
 /**
  *  The Option/Maybe type interface whose APIs are inspired
