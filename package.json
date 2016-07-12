@@ -55,7 +55,7 @@
     "mocha": "^2.5.3",
     "power-assert": "^1.4.1",
     "promise-test-helper": "^0.2.1",
-    "typescript": "^1.8.10"
+    "typescript": "^2.0.0"
   },
   "typings": "./option-t.es6.d.ts",
   "typescript": {
