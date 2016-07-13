@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+
+## 2.0.0
+
 ### Breaking Change
 
 - `this` type are specfied for callbacks ([#142](https://github.com/saneyuki/option-t.js/pull/142))
