@@ -3,11 +3,11 @@
 ## x.y.z
 
 
-## 2.0.1
+## 2.0.2 (including 2.0.1)
 
 ### Bug fix
 
-- Fix the bug which cannot pack files correctly. ([#149](https://github.com/saneyuki/option-t.js/pull/149))
+- Fix the bug which cannot pack files correctly. ([#150](https://github.com/saneyuki/option-t.js/pull/150))
 
 
 ## 2.0.0
