@@ -60,8 +60,5 @@
     "power-assert": "^1.4.1",
     "typescript": "^2.0.0"
   },
-  "typings": "./option-t.es6.d.ts",
-  "typescript": {
-    "definition": "option-t.d.ts"
-  }
+  "typings": "./index.d.ts"
 }
