@@ -5,9 +5,8 @@
   "main": "src/index.js",
   "files": [
     "CHANGELOG.md",
+    "index.d.ts",
     "LICENSE.MIT",
-    "option-t.d.ts",
-    "option-t.es6.d.ts",
     "package.json",
     "README.md",
     "src/"
