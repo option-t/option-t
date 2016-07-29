@@ -153,7 +153,7 @@ export abstract class ResultBase {}
 
 export class Ok<T, E> extends ResultBase implements ResultMethods<T, E> {
 
-    private _is_ok: boolean;
+    private _is_ok: true;
     private _v: T;
     private _e: E;
 
@@ -183,7 +183,7 @@ export class Ok<T, E> extends ResultBase implements ResultMethods<T, E> {
 // or don't restrict type parameter `E`'s upper bound to `Error`.
 export class Err<T, E> extends ResultBase implements ResultMethods<T, E> {
 
-    private _is_ok: boolean;
+    private _is_ok: false;
     private _v: T;
     private _e: E;
 
