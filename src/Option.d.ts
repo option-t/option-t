@@ -51,7 +51,7 @@ interface OptionMethods<T> {
      *  @throws {Error}
      *      Throws if the self is a `None`.
      */
-    unwrap(): T;
+    unwrap(): T | never;
 
     /**
      *  Return the contained value or a default value `def`.
@@ -78,7 +78,7 @@ interface OptionMethods<T> {
      *      Throws a custom error with provided `msg`
      *      if the self value equals `None`.
      */
-    expect(msg: string): T;
+    expect(msg: string): T | never;
 
     /**
      *  Map an `Option<T>` to `Option<U>` by applying a function to the contained value.
@@ -210,10 +210,10 @@ export class None<T> extends OptionBase implements OptionMethods<T> {
     constructor();
     isSome: boolean;
     isNone: boolean;
-    unwrap(): T;
+    unwrap(): never;
     unwrapOr(def: T): T;
     unwrapOrElse(fn: RecoveryFn<T>): T;
-    expect(msg: string): T;
+    expect(msg: string): never;
     map<U>(fn: MapFn<T, U>): Option<U>;
     flatMap<U>(fn: FlatmapFn<T, U>): Option<U>;
     mapOr<U>(def: U, fn: MapFn<T, U>): U;
