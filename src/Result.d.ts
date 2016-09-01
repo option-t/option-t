@@ -105,7 +105,7 @@ interface ResultMethods<T, E> {
      *  @throws {Error}
      *      Throws if the self is a `Err`.
      */
-    unwrap(): T;
+    unwrap(): T | never;
 
     /**
      *  Return the inner `E` of a `Err(E)`.
@@ -113,7 +113,7 @@ interface ResultMethods<T, E> {
      *  @throws {Error}
      *      Throws if the self is a `Ok`.
      */
-    unwrapErr(): E;
+    unwrapErr(): E | never;
 
     /**
      *  Unwraps a result, return the content of an `Ok`. Else it returns `optb`.
@@ -132,7 +132,7 @@ interface ResultMethods<T, E> {
      *  @throws {Error}
      *      Throws the passed `message` if the self is a `Err`.
      */
-    expect(message: string): T;
+    expect(message: string): T | never;
 
     /**
      *  The destructor method inspired by Rust's `Drop` trait.
@@ -170,7 +170,7 @@ export class Ok<T, E> extends ResultBase implements ResultMethods<T, E> {
     or<F>(res: Result<T, F>): Result<T, F>;
     orElse<F>(op: FlatmapErrFn<T, E, F>): Result<T, F>;
     unwrap(): T;
-    unwrapErr(): E;
+    unwrapErr(): never;
     unwrapOr(optb: T): T;
     unwrapOrElse(op: RecoveryFn<E, T>): T;
     expect(message: string): T;
@@ -199,10 +199,10 @@ export class Err<T, E> extends ResultBase implements ResultMethods<T, E> {
     andThen<U>(op: FlatmapOkFn<T, U, E>): Result<U, E>;
     or<F>(res: Result<T, F>): Result<T, F>;
     orElse<F>(op: FlatmapErrFn<T, E, F>): Result<T, F>;
-    unwrap(): T;
+    unwrap(): never;
     unwrapErr(): E;
     unwrapOr(optb: T): T;
     unwrapOrElse(op: RecoveryFn<E, T>): T;
-    expect(message: string): T;
+    expect(message: string): never;
     drop(destructor?: DestructorFn<T>, errDestructor?: DestructorFn<E>): void;
 }

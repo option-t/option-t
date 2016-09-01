@@ -2,6 +2,10 @@
 
 ## x.y.z
 
+## Enhancement
+
+- Use `never` type. ([#154](https://github.com/saneyuki/option-t.js/pull/154))
+
 
 ## 2.0.2 (including 2.0.1)
 
