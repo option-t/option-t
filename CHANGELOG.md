@@ -1,10 +1,11 @@
 # Changelog
 
-## x.y.z
+## 2.1.0
 
 ## Enhancement
 
 - Use `never` type. ([#154](https://github.com/saneyuki/option-t.js/pull/154))
+- Use [literal type](https://github.com/Microsoft/TypeScript/pull/9407). ([#152](https://github.com/saneyuki/option-t.js/pull/152))
 
 
 ## 2.0.2 (including 2.0.1)
