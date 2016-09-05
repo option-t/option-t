@@ -30,7 +30,7 @@ import {Result, Ok, Err, ResultBase} from '../../src/Result';
 
 //  Ok<T>
 (function(){
-    const result: Ok<number, void> = new Ok<number, void>(1);
+    const result: Result<number, void> = new Ok<number, void>(1);
 
     const isOk: boolean = result.isOk();
     const isErr: boolean = result.isErr();
@@ -68,7 +68,7 @@ import {Result, Ok, Err, ResultBase} from '../../src/Result';
 
 //  Err<E>
 (function(){
-    const result: Err<number, void> = new Err<number, void>(undefined);
+    const result: Result<number, void> = new Err<number, void>(undefined);
 
     const isOk: boolean = result.isOk();
     const isErr: boolean = result.isErr();

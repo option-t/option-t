@@ -30,36 +30,37 @@ type FlatmapErrFn<T, E, F> = (this: void, e: E) => Result<T, F>;
 type RecoveryFn<E, T> = (this: void, e: E) => T;
 type DestructorFn<T> = (this: void, v: T) => void;
 
-/**
- *  The Result/Either type interface whose APIs are inspired
- *  by Rust's `std::result::Result<T, E>`.
- */
-export type Result<T, E> = Ok<T, E> | Err<T, E>;
+// XXX:
+// This is only used for the instanceof-basis runtime checking. (e.g. `React.PropTypes.instanceOf()`)
+// You MUST NOT use for other purpose.
+export abstract class ResultBase<T, E> {
+    private readonly _is_ok: boolean;
+    private readonly _v: T | undefined;
+    private readonly _e: E | undefined;
 
-interface ResultMethods<T, E> {
     /**
      *  Returns true if the result is `Ok`.
      */
-    isOk(): this is Ok<T, E>;
+    abstract isOk(): this is Ok<T, E>;
 
     /**
      *  Returns true if the result is `Err`.
      */
-    isErr(): this is Err<T, E>;
+    abstract isErr(): this is Err<T, E>;
 
     /**
      *  Converts from `Result<T, E>` to `Option<T>`.
      *  If the self is `Ok`, returns `Some<T>`.
      *  Otherwise, returns `None<T>`.
      */
-    ok(): Option<T>;
+    abstract ok(): Option<T>;
 
     /**
      *  Converts from `Result<T, E>` to `Option<E>`.
      *  If the self is `Err`, returns `Some<E>`.
      *  Otherwise, returns `None<E>`.
      */
-    err(): Option<E>;
+    abstract err(): Option<E>;
 
     /**
      *  Maps a `Result<T, E>` to `Result<U, E>` by applying a function `mapFn<T, U>`
@@ -67,7 +68,7 @@ interface ResultMethods<T, E> {
      *
      *  This function can be used to compose the results of two functions.
      */
-    map<U>(op: MapFn<T, U>): Result<U, E>;
+    abstract map<U>(op: MapFn<T, U>): Result<U, E>;
 
     /**
      *  Maps a `Result<T, E>` to `Result<T, F>` by applying a function `mapFn<E, F>`
@@ -75,29 +76,29 @@ interface ResultMethods<T, E> {
      *
      *  This function can be used to pass through a successful result while handling an error.
      */
-    mapErr<F>(op: MapFn<E, F>): Result<T, F>;
+    abstract mapErr<F>(op: MapFn<E, F>): Result<T, F>;
 
     /**
      *  Returns `res` if the result is `Ok`, otherwise returns the `Err` value of self.
      */
-    and<U>(res: Result<U, E>): Result<U, E>;
+    abstract and<U>(res: Result<U, E>): Result<U, E>;
 
     /**
      *  Calls `op` if the result is `Ok`, otherwise returns the `Err` value of self.
      *  This function can be used for control flow based on result values.
      */
-    andThen<U>(op: FlatmapOkFn<T, U, E>): Result<U, E>;
+    abstract andThen<U>(op: FlatmapOkFn<T, U, E>): Result<U, E>;
 
     /**
      *  Returns `res` if the result is `Err`, otherwise returns the `Ok` value of self.
      */
-    or<F>(res: Result<T, F>): Result<T, F>;
+    abstract or<F>(res: Result<T, F>): Result<T, F>;
 
     /**
      *  Calls `op` if the result is `Err`, otherwise returns the `Ok` value of self.
      *  This function can be used for control flow based on result values.
      */
-    orElse<F>(op: FlatmapErrFn<T, E, F>): Result<T, F>;
+    abstract orElse<F>(op: FlatmapErrFn<T, E, F>): Result<T, F>;
 
     /**
      *  Return the inner `T` of a `Ok(T)`.
@@ -105,7 +106,7 @@ interface ResultMethods<T, E> {
      *  @throws {Error}
      *      Throws if the self is a `Err`.
      */
-    unwrap(): T | never;
+    abstract unwrap(): T | never;
 
     /**
      *  Return the inner `E` of a `Err(E)`.
@@ -113,18 +114,18 @@ interface ResultMethods<T, E> {
      *  @throws {Error}
      *      Throws if the self is a `Ok`.
      */
-    unwrapErr(): E | never;
+    abstract unwrapErr(): E | never;
 
     /**
      *  Unwraps a result, return the content of an `Ok`. Else it returns `optb`.
      */
-    unwrapOr(optb: T): T;
+    abstract unwrapOr(optb: T): T;
 
     /**
      *  Unwraps a result, returns the content of an `Ok`.
      *  If the value is an `Err` then it calls `op` with its value.
      */
-    unwrapOrElse(op: RecoveryFn<E, T>): T;
+    abstract unwrapOrElse(op: RecoveryFn<E, T>): T;
 
     /**
      *  Return the inner `T` of a `Ok(T)`.
@@ -132,7 +133,7 @@ interface ResultMethods<T, E> {
      *  @throws {Error}
      *      Throws the passed `message` if the self is a `Err`.
      */
-    expect(message: string): T | never;
+    abstract expect(message: string): T | never;
 
     /**
      *  The destructor method inspired by Rust's `Drop` trait.
@@ -143,22 +144,10 @@ interface ResultMethods<T, E> {
      *  @param  errDestructor
      *      This would be called with the inner value if self is `Err<E>`.
      */
-    drop(destructor?: DestructorFn<T>, errDestructor?: DestructorFn<E>): void;
+    abstract drop(destructor?: DestructorFn<T>, errDestructor?: DestructorFn<E>): void;
 }
 
-// XXX:
-// This is only used for the instanceof-basis runtime checking. (e.g. `React.PropTypes.instanceOf()`)
-// You MUST NOT use for other purpose.
-export abstract class ResultBase {}
-
-export class Ok<T, E> extends ResultBase implements ResultMethods<T, E> {
-
-    private _is_ok: boolean;
-    private _v: T;
-    private _e: E;
-
-    constructor(v: T);
-
+interface Ok<T, E> extends ResultBase<T, E> {
     isOk(): this is Ok<T, E>;
     isErr(): this is Err<T, E>;
     ok(): Option<T>;
@@ -177,18 +166,16 @@ export class Ok<T, E> extends ResultBase implements ResultMethods<T, E> {
     drop(destructor?: DestructorFn<T>, errDestructor?: DestructorFn<E>): void;
 }
 
+interface OkConstructor {
+    new<T, E>(v: T): Result<T, E>;
+    readonly prototype: Ok<any, any>;
+}
+
 // XXX:
 // This class intend to represent the container of some error type `E`.
 // So we don't define this as `Error`'s subclass
 // or don't restrict type parameter `E`'s upper bound to `Error`.
-export class Err<T, E> extends ResultBase implements ResultMethods<T, E> {
-
-    private _is_ok: boolean;
-    private _v: T;
-    private _e: E;
-
-    constructor(e: E);
-
+interface Err<T, E> extends ResultBase<T, E> {
     isOk(): this is Ok<T, E>;
     isErr(): this is Err<T, E>;
     ok(): Option<T>;
@@ -206,3 +193,17 @@ export class Err<T, E> extends ResultBase implements ResultMethods<T, E> {
     expect(message: string): never;
     drop(destructor?: DestructorFn<T>, errDestructor?: DestructorFn<E>): void;
 }
+
+interface ErrConstructor {
+    new<T, E>(e: E): Result<T, E>;
+    readonly prototype: Err<any, any>;
+}
+
+/**
+ *  The Result/Either type interface whose APIs are inspired
+ *  by Rust's `std::result::Result<T, E>`.
+ */
+export type Result<T, E> = Ok<T, E> | Err<T, E>;
+
+export declare const Ok: OkConstructor;
+export declare const Err: ErrConstructor;
