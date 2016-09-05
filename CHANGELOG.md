@@ -1,5 +1,12 @@
 # Changelog
 
+## x.y.z
+
+## Bug fix
+
+- Revert [#152](https://github.com/saneyuki/option-t.js/pull/152) by ([#155](https://github.com/saneyuki/option-t.js/issues/155)).
+
+
 ## 2.1.0
 
 ## Enhancement
