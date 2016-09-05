@@ -2,14 +2,16 @@
 
 ## x.y.z
 
-## Bug fix
+## 2.1.1
+
+### Bug fix
 
 - Revert [#152](https://github.com/saneyuki/option-t.js/pull/152) by ([#155](https://github.com/saneyuki/option-t.js/issues/155)).
 
 
 ## 2.1.0
 
-## Enhancement
+### Enhancement
 
 - Use `never` type. ([#154](https://github.com/saneyuki/option-t.js/pull/154))
 - Use [literal type](https://github.com/Microsoft/TypeScript/pull/9407). ([#152](https://github.com/saneyuki/option-t.js/pull/152))
