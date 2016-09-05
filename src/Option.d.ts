@@ -189,8 +189,8 @@ export abstract class OptionBase {}
 
 export class Some<T> extends OptionBase implements OptionMethods<T> {
     constructor(val: T);
-    isSome: true;
-    isNone: false;
+    isSome: boolean;
+    isNone: boolean;
     unwrap(): T;
     unwrapOr(def: T): T;
     unwrapOrElse(fn: RecoveryFn<T>): T;
@@ -208,8 +208,8 @@ export class Some<T> extends OptionBase implements OptionMethods<T> {
 
 export class None<T> extends OptionBase implements OptionMethods<T> {
     constructor();
-    isSome: false;
-    isNone: true;
+    isSome: boolean;
+    isNone: boolean;
     unwrap(): never;
     unwrapOr(def: T): T;
     unwrapOrElse(fn: RecoveryFn<T>): T;
