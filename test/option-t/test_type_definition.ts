@@ -29,7 +29,7 @@ import {Option, Some, None, OptionBase} from '../../src/Option';
 
 // `Some<T>`
 (function(){
-    var option: Some<number> = new Some(1);
+    var option: Option<number> = new Some(1);
     var isSome: boolean = option.isSome;
     var isNone: boolean = option.isNone;
     var unwrap: number = option.unwrap();
@@ -61,7 +61,7 @@ import {Option, Some, None, OptionBase} from '../../src/Option';
 
 // `None<T>`
 (function(){
-    var option: None<number> = new None<number>();
+    var option: Option<number> = new None<number>();
     var isSome: boolean = option.isSome;
     var isNone: boolean = option.isNone;
     var unwrap: number = option.unwrap();
