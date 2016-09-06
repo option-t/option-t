@@ -2,6 +2,15 @@
 
 ## x.y.z
 
+## 3.0.0
+
+### Breaking Change
+
+- Rewrite d.ts ([#157](https://github.com/saneyuki/option-t.js/pull/157))
+  - By this change, you might have some failure to compile your code with this library.
+    So we think this would be a breaking change.
+
+
 ## 2.1.1
 
 ### Bug fix
