@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "files": [
     "CHANGELOG.md",
+    "docs/",
     "index.d.ts",
     "LICENSE.MIT",
     "package.json",
