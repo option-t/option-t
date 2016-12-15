@@ -57,42 +57,19 @@ console.log(none.unwrap()); // this will throw `Error`.
 * [`Option<T>`](./src/Option.d.ts)
 * [`Result<T, E>`](./src/Result.d.ts)
 
+### Idioms
 
-### Cast `Option<T>` to `Promise`.
+- You can see [some idioms](./docs/IDIOM.md) of this library for the interoperability to JavaScript world.
 
-If you'd like to cast `Option<T>` to a `Promise` like object,
-you can write a custom cast function or use `Option<T>.mapOrElse()`.
+### See also
 
-```typescript
-// This functon treats `None` as a rejected `Promise`
-function castToPromise1(option: Option<T>): Promise<T> {
-  return option.mapOrElse(() => Promise.reject(), (v: T) => Promise.resolve(v));
-}
+These documents would provide more information about `Option<T>` and `Result<T, E>`.
+These are written for Rust, but the essense is just same.
 
-// This function treats `None` as a `Promise` which is fulfilled with a tagged union object.
-function castToPromise2(option: Option<T>): Promise<{ ok: boolean; value: T }> {
-  const result = {
-    ok: false,
-    value: undefined,
-  };
-
-  return option.mapOrElse(() => {
-    return Promise.resolve(result);
-  }, (v: T) => {
-    result.ok = true;
-    result.value = v;
-    return Promise.resolve(result);
-  });
-}
-```
-
-In previous version (~v0.17), we provide `Option<T>.asPromise()` utility method for this purpose.
-Its methods always treats `None` as a rejected `Promise`.
-But there are various cases which we would not like to cast to a Promise from an Optional type with single way,
-there are various context to handle a `None` value.
-
-Thus we don't provide a default way to cast to `Promise`. Please define a most suitable way to your project.
-
+- [Error Handling - Rust by Example](http://rustbyexample.com/error.html)
+- [Error Handling - The Rust Programming Language](https://doc.rust-lang.org/book/error-handling.html)
+- [`std::option` - Rust](https://doc.rust-lang.org/std/option/)
+- [`std::result` - Rust](https://doc.rust-lang.org/std/result/)
 
 ## Semantics
 
