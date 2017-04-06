@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+
+## 4.0.0
+
 ### Breaking Change
 
 - Remove `engines` field from package.json.  ([#163](https://github.com/saneyuki/option-t.js/pull/163))
