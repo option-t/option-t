@@ -5,6 +5,8 @@
 ### Breaking Change
 
 - Remove `engines` field from package.json.  ([#163](https://github.com/saneyuki/option-t.js/pull/163))
+- All distribution codes are in `lib/` now. ([#164](https://github.com/saneyuki/option-t.js/pull/164))
+  - If you use `require('option-t/src/Result')`, please change to `require('option-t/lib/Result')`
 
 ### Enhancement
 

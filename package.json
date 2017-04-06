@@ -2,23 +2,29 @@
   "name": "option-t",
   "version": "3.0.0",
   "description": "Option type implementation whose APIs are inspired by Rust's `Option<T>`.",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "files": [
     "CHANGELOG.md",
     "docs/",
-    "index.d.ts",
     "LICENSE.MIT",
     "package.json",
     "README.md",
-    "src/"
+    "lib/"
   ],
   "scripts": {
-    "test_preprocess": "babel test/ --out-dir __test_cache/ --extensions .js,.jsx --source-maps inline",
+    "clean": "npm-run-all --parallel clean_build clean_test_cache clean_type_test",
+    "clean_build": "npm-run-all prebuild",
+    "clean_test_cache": "del ./__test_cache",
+    "clean_type_test": "del ./__type_test",
+    "prebuild": "del ./lib",
+    "build": "cpx './src/**/*.@(js|d.ts)' ./lib/ --preserve",
+    "test_preprocess": "babel test/ --out-dir ./__test_cache/ --extensions .js,.jsx --source-maps inline",
     "lint": "eslint . ./**/.eslintrc.js --ext .js",
-    "typetest": "tsc",
+    "typetest": "tsc -p ./tsconfig.json --outDir ./__type_test",
     "mocha": "mocha ./__test_cache/manifest.js",
-    "pretest": "npm-run-all --parallel lint test_preprocess typetest",
-    "test": "npm run mocha"
+    "pretest": "npm-run-all --parallel lint build test_preprocess",
+    "test": "npm-run-all --parallel mocha typetest",
+    "prepublish": "npm-run-all --serial clean test build"
   },
   "author": {
     "name": "Tetsuharu OHZEKI",
@@ -57,5 +63,9 @@
     "power-assert": "^1.4.1",
     "typescript": "^2.0.2"
   },
-  "typings": "./index.d.ts"
+  "typings": "./lib/index.d.ts",
+  "dependencies": {
+    "cpx": "^1.5.0",
+    "del-cli": "^0.2.1"
+  }
 }

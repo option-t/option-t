@@ -12,7 +12,6 @@
         "noImplicitUseStrict": false,
         "noUnusedLocals": false,
         "noUnusedParameters": true,
-        "outDir": "./__build/",
         "pretty": true,
         "preserveConstEnums": true,
         "removeComments": false,

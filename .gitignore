@@ -1,7 +1,8 @@
 .DS_Store*
 npm-debug.log
 
+lib/
 node_modules/
 
-__build/
 __test_cache/
+__type_test/
