@@ -12,9 +12,6 @@
     "README.md",
     "src/"
   ],
-  "engines": {
-    "node": ">=4.2"
-  },
   "scripts": {
     "test_preprocess": "babel test/ --out-dir __test_cache/ --extensions .js,.jsx --source-maps inline",
     "lint": "eslint . ./**/.eslintrc.js --ext .js",

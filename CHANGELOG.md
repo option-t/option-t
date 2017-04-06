@@ -2,6 +2,10 @@
 
 ## x.y.z
 
+### Breaking Change
+
+- Remove `engines` field from package.json.  ([#163](https://github.com/saneyuki/option-t.js/pull/163))
+
 ### Enhancement
 
 - Add `yarn.lock` for library developers ([#162](https://github.com/saneyuki/option-t.js/pull/162))
