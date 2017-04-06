@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+### Enhancement
+
+- Add `yarn.lock` for library developers ([#162](https://github.com/saneyuki/option-t.js/pull/162))
+
+
 ## 3.0.0
 
 ### Breaking Change
