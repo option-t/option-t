@@ -25,8 +25,8 @@
 'use strict';
 
 const assert = require('assert');
-const Some = require('../../src/Option').Some;
-const None = require('../../src/Option').None;
+const Some = require('../../lib/Option').Some;
+const None = require('../../lib/Option').None;
 
 describe('Option<T>.and()', function(){
     describe('self is `None`, param is `Some<T>`', function () {

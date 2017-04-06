@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-import {Option, Some, None, OptionBase} from './src/Option';
+import {Option, Some, None, OptionBase} from './Option';
 
 export {
     Option,
