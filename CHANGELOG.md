@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+### Breaking Change
+
+- Change from `Result<T, E>.isOk()/isErr()` to `Result<T, E>.isOk/isErr`. ([#165](https://github.com/saneyuki/option-t.js/pull/165))
+  - This sort the interface with `Option<T>.isSome/isNone`.
+
 
 ## 4.0.0
 

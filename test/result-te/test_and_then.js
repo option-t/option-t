@@ -53,7 +53,7 @@ describe('Result<T, E>.andThen()', function(){
             });
 
             it('the returned value should be `Ok', function () {
-                assert.strictEqual(result.isOk(), true);
+                assert.strictEqual(result.isOk, true);
             });
 
             it('the argument of `op` should be the expected value', function () {
@@ -86,7 +86,7 @@ describe('Result<T, E>.andThen()', function(){
             });
 
             it('the returned value should be `Err', function () {
-                assert.strictEqual(result.isErr(), true);
+                assert.strictEqual(result.isErr, true);
             });
 
             it('the argument of `op` should be the expected value', function () {
@@ -144,7 +144,7 @@ describe('Result<T, E>.andThen()', function(){
             });
 
             it('the returned value should be `Err', function () {
-                assert.strictEqual(result.isErr(), true);
+                assert.strictEqual(result.isErr, true);
             });
 
             it('the `op` callbacl should not be called', function () {
@@ -176,7 +176,7 @@ describe('Result<T, E>.andThen()', function(){
             });
 
             it('the returned value should be `Err', function () {
-                assert.strictEqual(result.isErr(), true);
+                assert.strictEqual(result.isErr, true);
             });
 
             it('the `op` callbacl should not be called', function () {

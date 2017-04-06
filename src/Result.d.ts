@@ -41,12 +41,12 @@ export abstract class ResultBase<T, E> {
     /**
      *  Returns true if the result is `Ok`.
      */
-    abstract isOk(): this is Ok<T, E>;
+    abstract readonly isOk: boolean;
 
     /**
      *  Returns true if the result is `Err`.
      */
-    abstract isErr(): this is Err<T, E>;
+    abstract readonly isErr: boolean;
 
     /**
      *  Converts from `Result<T, E>` to `Option<T>`.
@@ -148,8 +148,8 @@ export abstract class ResultBase<T, E> {
 }
 
 interface Ok<T, E> extends ResultBase<T, E> {
-    isOk(): this is Ok<T, E>;
-    isErr(): this is Err<T, E>;
+    readonly isOk: true;
+    readonly isErr: false;
     ok(): Option<T>;
     err(): Option<E>;
     map<U>(op: MapFn<T, U>): Result<U, E>;
@@ -176,8 +176,8 @@ interface OkConstructor {
 // So we don't define this as `Error`'s subclass
 // or don't restrict type parameter `E`'s upper bound to `Error`.
 interface Err<T, E> extends ResultBase<T, E> {
-    isOk(): this is Ok<T, E>;
-    isErr(): this is Err<T, E>;
+    readonly isOk: false;
+    readonly isErr: true;
     ok(): Option<T>;
     err(): Option<E>;
     map<U>(op: MapFn<T, U>): Result<U, E>;

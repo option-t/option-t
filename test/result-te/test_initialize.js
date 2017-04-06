@@ -67,11 +67,11 @@ describe('initialization `Result<T, E>`', function(){
                 });
 
                 it('`isOk` should be expected', function () {
-                    assert.strictEqual(result.isOk(), true);
+                    assert.strictEqual(result.isOk, true);
                 });
 
                 it('`isErr` should be expected', function () {
-                    assert.strictEqual(result.isErr(), false);
+                    assert.strictEqual(result.isErr, false);
                 });
             });
         });
@@ -107,11 +107,11 @@ describe('initialization `Result<T, E>`', function(){
                 });
 
                 it('`isOk` should be expected', function () {
-                    assert.strictEqual(result.isOk(), false);
+                    assert.strictEqual(result.isOk, false);
                 });
 
                 it('`isErr` should be expected', function () {
-                    assert.strictEqual(result.isErr(), true);
+                    assert.strictEqual(result.isErr, true);
                 });
             });
         });
