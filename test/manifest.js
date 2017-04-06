@@ -56,3 +56,9 @@ require('./result-te/test_unwrap_or');
 require('./result-te/test_unwrap_or_else');
 require('./result-te/test_expect');
 require('./result-te/test_drop');
+
+require('./Maybe/test_type_guard');
+
+require('./Nullable/test_type_guard');
+
+require('./Undefinable/test_type_guard');

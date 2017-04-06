@@ -2,6 +2,16 @@
 
 ## x.y.z
 
+### New Feature
+
+#### Add utility functions for values which may be `null` or `undefined` ([#167](https://github.com/saneyuki/option-t.js/pull/167))
+
+- This is just utility function for their "null value" in ECMA262 world. 
+- __This is experimental feature__. Their names are not stable.
+- You can use them by:
+  - `const Nullable = require('option-t/lib/Nullable');` for `null`
+  - `const Undefinable = require('option-t/lib/Undefinable');` for `undefined`
+  - `const Maybe = require('option-t/lib/Maybe');` for `null` or `undefined`
 
 ## 4.0.0
 
