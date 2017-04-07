@@ -7,7 +7,7 @@ export { mapForNullable as map } from './map';
 export { mapOrForNullable as mapOr } from './mapOr';
 export { mapOrElseForNullable as mapOrElse } from './mapOrElse';
 // export { orNullable as or } from './or';
-// export { orElseForNullable as orElse } from './orElse';
+export { orElseForNullable as orElse } from './orElse';
 export { unwrapNullable as unwrap } from './unwrap';
 export { unwrapOrFromNullable as unwrapOr } from './unwrapOr';
 export { unwrapOrElseFromNullable as unwrapOrElse } from './unwrapOrElse';
