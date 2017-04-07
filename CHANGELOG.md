@@ -2,6 +2,13 @@
 
 ## x.y.z
 
+### Breaking Change
+
+- By ([#169](https://github.com/saneyuki/option-t.js/pull/169)),
+  - You can use `andThen()` function from `option-t/lib/Nullable` or `option-t/lib/Undefinable`.
+  - We drop to support for `flatMap()` for `Nullable` or `Undefinable`.
+    - It's too hard to undarstand that "flatMap" operation for `T | undefined` or `T | null`.
+
 
 ## 4.1.0
 

@@ -1,9 +1,8 @@
 export * from './Nullable';
 //export { andNullable as and } from './and';
-//export { andThenForNullable as andThen } from './andThen';
+export { andThenForNullable as andThen } from './andThen';
 export { doOnNullable as do } from './do';
 export { expectNotNull as expect } from './expect';
-export { flatMapForNullable as flatMap } from './flatMap';
 export { mapForNullable as map } from './map';
 export { mapOrForNullable as mapOr } from './mapOr';
 export { mapOrElseForNullable as mapOrElse } from './mapOrElse';

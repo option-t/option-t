@@ -1,9 +1,8 @@
 export * from './Undefinable';
 //export { andUndefinable as and} from './and';
-//export { andThenForUndefinable as andThen} from './andThen';
+export { andThenForUndefinable as andThen} from './andThen';
 export { doOnUndefinable as do } from './do';
 export { expectNotUndefined as expect } from './expect';
-export { flatMapForUndefinable as flatMap } from './flatMap';
 export { mapForUndefinable as map } from './map';
 export { mapOrForUndefinable as mapOr } from './mapOr';
 export { mapOrElseForUndefinable as mapOrElse } from './mapOrElse';
