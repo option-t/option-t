@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+
+## 5.0.0
+
 ### Breaking Change
 
 - By ([#169](https://github.com/saneyuki/option-t.js/pull/169)),
