@@ -21,11 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-'use strict';
-
-var OptionTMod = require('./Option');
-var Some = OptionTMod.Some;
-var None = OptionTMod.None;
+import { Some, None } from './Option';
 
 /**
  *  @constructor
@@ -37,7 +33,7 @@ var None = OptionTMod.None;
  *
  *  The usecase example is a `React.PropTypes`.
  */
-function ResultBase() {}// eslint-disable-line no-empty-function
+export function ResultBase() {}// eslint-disable-line no-empty-function
 ResultBase.prototype = Object.freeze({
 
     /**
@@ -324,7 +320,7 @@ ResultBase.prototype = Object.freeze({
  *
  *  @param  {T} v
  */
-function Ok(v) {
+export function Ok(v) {
     /* eslint-disable camelcase */
     /**
      *  @private
@@ -356,7 +352,7 @@ Ok.prototype = new ResultBase();
  *
  *  @param  {E} e
  */
-function Err(e) {
+export function Err(e) {
     /* eslint-disable camelcase */
     /**
      *  @private
@@ -380,9 +376,3 @@ function Err(e) {
     Object.seal(this);
 }
 Err.prototype = new ResultBase();
-
-module.exports = {
-    Ok: Ok,
-    Err: Err,
-    ResultBase: ResultBase,
-};
