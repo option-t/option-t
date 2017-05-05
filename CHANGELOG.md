@@ -6,6 +6,7 @@
 
 - Upgrade dependencies. ([#172](https://github.com/saneyuki/option-t.js/pull/172))
   - This includes upgrading TypeScript to 2.3.
+- Drop support node v4. ([#173](https://github.com/saneyuki/option-t.js/pull/173))
 
 
 ## 5.0.0
