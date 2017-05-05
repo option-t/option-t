@@ -108,6 +108,12 @@
   - `Result<T, E>.unwrap()`
   - `Result<T, E>.unwrapErr()`
   - `Result<T, E>.expect()`
+- These don't check their return value's type if `process.env.NODE_ENV === 'production'`. ([#133](https://github.com/saneyuki/option-t.js/pull/133))
+  - `Option<T>.flatMap()`
+  - `Option<T>.andThen()`
+  - `Option<T>.orElse()`
+  - `Result<T, E>.andThen()`
+  - `Result<T, E>.orElse()`
 
 ### Internals
 

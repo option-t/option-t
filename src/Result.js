@@ -164,9 +164,11 @@ ResultBase.prototype = Object.freeze({
         }
 
         var mapped = op(this._v);
-        var isResult = (mapped instanceof ResultBase);
-        if (!isResult) {
-            throw new TypeError('Result<T, E>.andThen()\' param `op` should return `Result<U, E>`.');
+        if (process.env.NODE_ENV !== 'production') {
+            var isResult = (mapped instanceof ResultBase);
+            if (!isResult) {
+                throw new TypeError('Result<T, E>.andThen()\' param `op` should return `Result<U, E>`.');
+            }
         }
 
         return mapped;
@@ -204,9 +206,11 @@ ResultBase.prototype = Object.freeze({
         }
 
         var mapped = op(this._e);
-        var isResult = (mapped instanceof ResultBase);
-        if (!isResult) {
-            throw new TypeError('Result<T, E>.orElse()\' param `op` should return `Result<T, F>`.');
+        if (process.env.NODE_ENV !== 'production') {
+            var isResult = (mapped instanceof ResultBase);
+            if (!isResult) {
+                throw new TypeError('Result<T, E>.orElse()\' param `op` should return `Result<T, F>`.');
+            }
         }
 
         return mapped;
