@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+### Breaking Change
+
+- Upgrade dependencies
+  - This includes upgrading TypeScript to 2.3.
+
 
 ## 5.0.0
 
