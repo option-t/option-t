@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+### Breaking Change
+
+- Upgrade dependencies. ([#172](https://github.com/saneyuki/option-t.js/pull/172))
+  - This includes upgrading TypeScript to 2.3.
+
 
 ## 5.0.0
 

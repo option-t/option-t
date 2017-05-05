@@ -19,10 +19,10 @@
     "prebuild": "del ./lib",
     "build": "npm-run-all --parallel build_js build_ts",
     "build_js": "cpx './src/**/*.@(js|d.ts)' ./lib/ --preserve",
-    "build_ts": "tsc ./src/Maybe/index.ts ./src/Nullable/index.ts ./src/Undefinable/index.ts --outDir ./lib/ --pretty  --strictNullChecks  --alwaysStrict --lib es5 --declaration --module commonjs --newLine LF --noEmitOnError --moduleResolution node --noFallthroughCasesInSwitch --noImplicitAny --noImplicitReturns --noImplicitThis --noUnusedLocals --noUnusedParameters --strictNullChecks",
+    "build_ts": "tsc -p ./tsconfig_lib.json",
     "test_preprocess": "babel test/ --out-dir ./__test_cache/ --extensions .js,.jsx --source-maps inline",
     "lint": "eslint . ./**/.eslintrc.js --ext .js",
-    "typetest": "tsc -p ./tsconfig.json --outDir ./__type_test",
+    "typetest": "tsc -p ./tsconfig_test.json --outDir ./__type_test",
     "mocha": "mocha ./__test_cache/manifest.js",
     "pretest": "npm-run-all --parallel lint build test_preprocess",
     "test": "npm-run-all --parallel mocha typetest",
@@ -56,16 +56,16 @@
     "option"
   ],
   "devDependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-core": "^6.10.4",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
     "babel-preset-power-assert": "^1.0.0",
     "cpx": "^1.5.0",
     "del-cli": "^0.2.1",
     "eslint": "^3.0.1",
-    "mocha": "^3.2.0",
+    "mocha": "^3.3.0",
     "npm-run-all": "^4.0.2",
     "power-assert": "^1.4.1",
-    "typescript": "^2.0.2"
+    "typescript": "^2.3.2"
   },
   "typings": "./lib/index.d.ts"
 }

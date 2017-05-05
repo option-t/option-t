@@ -1,0 +1,9 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "lib": [
+            "es2017"
+        ],
+        "noUnusedLocals": false // for testing
+    }
+}

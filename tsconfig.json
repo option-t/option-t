@@ -1,22 +1,28 @@
 {
     "compilerOptions": {
+        "allowJs": false,
+        "allowSyntheticDefaultImports": false,
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
         "diagnostics": true,
         "forceConsistentCasingInFileNames": true,
+        "importHelpers": false,
+        "lib": [
+            "es5"
+        ],
+        "module": "commonjs",
+        "moduleResolution": "node",
         "newLine": "LF",
         "noFallthroughCasesInSwitch": true,
-        "noImplicitAny": true,
         "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "noImplicitUseStrict": false,
-        "noUnusedLocals": false,
+        "noUnusedLocals": true,
         "noUnusedParameters": true,
+        "plugins": [],
         "pretty": true,
         "preserveConstEnums": true,
         "removeComments": false,
         "sourceMap": true,
-        "strictNullChecks": true,
+        "strict": true,
         "suppressImplicitAnyIndexErrors": false,
         "target": "ES2015"
     },

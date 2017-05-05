@@ -1,0 +1,18 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "declaration": true,
+        "module": "commonjs",
+        "newLine": "LF",
+        "noEmitOnError": true,
+        "outDir": "./lib/"
+    },
+    "src": [
+        "./src/Maybe/index.ts",
+        "./src/Nullable/index.ts",
+        "./src/Undefinable/index.ts"
+    ],
+    "exclude": [
+        "test"
+    ]
+}
