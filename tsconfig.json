@@ -24,7 +24,7 @@
         "sourceMap": true,
         "strict": true,
         "suppressImplicitAnyIndexErrors": false,
-        "target": "ES2015"
+        "target": "es5"
     },
     "include": [
         "src/**/**.ts",

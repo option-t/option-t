@@ -7,6 +7,9 @@
 - Upgrade dependencies. ([#172](https://github.com/saneyuki/option-t.js/pull/172))
   - This includes upgrading TypeScript to 2.3.
 - Drop support node v4. ([#173](https://github.com/saneyuki/option-t.js/pull/173))
+- Upgrade our language baseline to ES5 ([#174](https://github.com/saneyuki/option-t.js/pull/174))
+  - If you use this package for a product targeted to ES3 environment (e.g. ~IE8),
+    You need to care about it.
 
 
 ## 5.0.0
