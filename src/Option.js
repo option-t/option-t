@@ -22,8 +22,6 @@
  * THE SOFTWARE.
  */
 
-'use strict';
-
 /**
  *  @constructor
  *  @template   T
@@ -34,8 +32,8 @@
  *
  *  The usecase example is a `React.PropTypes.
  */
-var OptionT = function OptionTBase() {};// eslint-disable-line no-empty-function
-OptionT.prototype = Object.freeze({
+export function OptionBase() {}// eslint-disable-line no-empty-function
+OptionBase.prototype = Object.freeze({
     /**
      *  Return whether this is `Some<T>` or not.
      *
@@ -149,7 +147,7 @@ OptionT.prototype = Object.freeze({
         }
 
         var mapped = fn(this.value);
-        var isOption = (mapped instanceof OptionT);
+        var isOption = (mapped instanceof OptionBase);
         if (!isOption) {
             throw new TypeError('Option<T>.flatMap()\' param `fn` should return `Option<T>`.');
         }
@@ -244,7 +242,7 @@ OptionT.prototype = Object.freeze({
         }
         else {
             var value = fn();
-            if (value instanceof OptionT) {
+            if (value instanceof OptionBase) {
                 return value;
             }
 
@@ -277,7 +275,7 @@ OptionT.prototype = Object.freeze({
  *
  *  @param  {T}   val
  */
-function Some(val) {
+export function Some(val) {
     /* eslint-disable camelcase */
     /**
      *  @private
@@ -293,14 +291,14 @@ function Some(val) {
     this.value = val;
     Object.seal(this);
 }
-Some.prototype = new OptionT();
+Some.prototype = new OptionBase();
 
 /**
  *  @constructor
  *  @template   T
  *  @extends    {OptionT<T>}
  */
-function None() {
+export function None() {
     /* eslint-disable camelcase */
     /**
      *  @private
@@ -316,10 +314,4 @@ function None() {
     this.value = undefined;
     Object.seal(this);
 }
-None.prototype = new OptionT();
-
-module.exports = {
-    Some: Some,
-    None: None,
-    OptionBase: OptionT,
-};
+None.prototype = new OptionBase();

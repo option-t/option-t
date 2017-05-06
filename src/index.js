@@ -22,12 +22,10 @@
  * THE SOFTWARE.
  */
 
-'use strict';
+import { OptionBase, Some, None } from './Option';
 
-var Option = require('./Option');
-
-module.exports = {
-    Some: Option.Some,
-    None: Option.None,
-    OptionBase: Option.OptionBase,
+export {
+    OptionBase,
+    Some,
+    None,
 };
