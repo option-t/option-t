@@ -48,7 +48,7 @@ describe('Maybe::isSomeActual', () => {
         const expected = test[1];
 
         it(`\`${String(input)}\` should be \`${String(expected)}\``, () => {
-            assert.strictEqual(Maybe.isSomeActual(input), expected);
+            assert.strictEqual(Maybe.isSomeValue(input), expected);
         });
     });
 });
@@ -74,7 +74,7 @@ describe('Maybe::isUndefinedOrNull', () => {
         const expected = test[1];
 
         it(`\`${String(input)}\` should be \`${String(expected)}\``, () => {
-            assert.strictEqual(Maybe.isUndefinedOrNull(input), expected);
+            assert.strictEqual(Maybe.isNullOrUndefined(input), expected);
         });
     });
 });

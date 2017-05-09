@@ -1,9 +1,9 @@
-export type Maybe<T> = T | undefined | null;
+export type Maybe<T> = T | null | undefined;
 
-export function isSomeActual<T>(v: Maybe<T>): v is T {
+export function isSomeValue<T>(v: Maybe<T>): v is T {
     return v !== undefined && v !== null;
 }
 
-export function isUndefinedOrNull<T>(v: Maybe<T>): v is undefined | null {
+export function isNullOrUndefined<T>(v: Maybe<T>): v is null | undefined {
     return v === undefined || v === null;
 }
