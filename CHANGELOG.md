@@ -2,6 +2,8 @@
 
 ## x.y.z
 
+## 6.0.0
+
 ### Breaking Change
 
 - Upgrade dependencies. ([#172](https://github.com/saneyuki/option-t.js/pull/172))
@@ -10,9 +12,10 @@
 - Upgrade our language baseline to ES5 ([#174](https://github.com/saneyuki/option-t.js/pull/174))
   - If you use this package for a product targeted to ES3 environment (e.g. ~IE8),
     You need to care about it.
-- Rename: ([#175](https://github.com/saneyuki/option-t.js/pull/175))
+- Rename: ([#176](https://github.com/saneyuki/option-t.js/pull/176))
   - `Maybe::isUndefinedOrNull()` -> `Maybe::isNullOrUndefined()`
   - `Maybe::isSomeActual()` -> `Maybe::isSomeValue()`
+
 
 ## 5.0.0
 
