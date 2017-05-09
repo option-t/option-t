@@ -2,6 +2,8 @@
 
 ## x.y.z
 
+## 6.1.0
+
 ### Enhancement
 
 - Enhancement for tree shaking via a bundler ([#177](https://github.com/saneyuki/option-t.js/pull/177)).
