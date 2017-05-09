@@ -2,6 +2,16 @@
 
 ## x.y.z
 
+### Enhancement
+
+- Enhancement for tree shaking via a bundler ([#177](https://github.com/saneyuki/option-t.js/pull/177)).
+  - Add ES module syntax version to `es6/` directory.
+  - You can use them with `option-t/es6/**`.
+  - By this change, the output code size may be more smaller
+    if you use a bundler which supports tree shaking like [webpack2](https://webpack.js.org/guides/tree-shaking/)
+    or [rollup.js](https://github.com/rollup/rollup).
+
+
 ## 6.0.0
 
 ### Breaking Change
