@@ -1,0 +1,18 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "declaration": true,
+        "module": "es2015",
+        "newLine": "LF",
+        "noEmitOnError": true,
+        "outDir": "./es6/"
+    },
+    "src": [
+        "./src/Maybe/index.ts",
+        "./src/Nullable/index.ts",
+        "./src/Undefinable/index.ts"
+    ],
+    "exclude": [
+        "test"
+    ]
+}
