@@ -68,7 +68,7 @@
     "babel-preset-power-assert": "^1.0.0",
     "cpx": "^1.5.0",
     "del-cli": "^1.1.0",
-    "eslint": "^3.0.1",
+    "eslint": "^4.1.1",
     "mocha": "^3.4.2",
     "npm-run-all": "^4.0.2",
     "power-assert": "^1.4.4",
