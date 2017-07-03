@@ -32,13 +32,14 @@ const Err = ResultMod.Err;
 
 const primitiveVal = require('../utils').primitiveVal;
 const objectVal = require('../utils').objectVal;
+const nonSerializableObjectVal = require('../utils').nonSerializableObjectVal;
 const funcVal = require('../utils').funcVal;
 const symbolVal = require('../utils').symbolVal;
 const undefinedVal = require('../utils').undefinedVal;
 
 describe('initialization `Result<T, E>`', function(){
     describe('Ok<T>', function () {
-        const param = primitiveVal.concat(objectVal).concat(funcVal).concat(symbolVal).concat(undefinedVal);
+        const param = primitiveVal.concat(objectVal).concat(nonSerializableObjectVal).concat(funcVal).concat(symbolVal).concat(undefinedVal);
         param.forEach(function(value){
             const type = typeof value;
             const label = 'type: ' + type + ', value: `' + String(value) + '`';
@@ -78,7 +79,7 @@ describe('initialization `Result<T, E>`', function(){
     });
 
     describe('Err<E>', function () {
-        const param = primitiveVal.concat(objectVal).concat(funcVal).concat(symbolVal).concat(undefinedVal);
+        const param = primitiveVal.concat(objectVal).concat(nonSerializableObjectVal).concat(funcVal).concat(symbolVal).concat(undefinedVal);
         param.forEach(function(value){
             const type = typeof value;
             const label = 'type: ' + type + ', value: `' + String(value) + '`';

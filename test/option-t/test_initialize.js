@@ -30,6 +30,7 @@ const None = require('../../lib/Option').None;
 
 const primitiveVal = require('../utils').primitiveVal;
 const objectVal = require('../utils').objectVal;
+const nonSerializableObjectVal = require('../utils').nonSerializableObjectVal;
 const funcVal = require('../utils').funcVal;
 const symbolVal = require('../utils').symbolVal;
 const undefinedVal = require('../utils').undefinedVal;
@@ -39,6 +40,7 @@ describe('initialization `Option<T>`', function(){
     describe('`Some<T>`', function () {
         const param = primitiveVal
             .concat(objectVal)
+            .concat(nonSerializableObjectVal)
             .concat(funcVal)
             .concat(symbolVal)
             .concat(undefinedVal);
