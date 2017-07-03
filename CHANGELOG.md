@@ -2,6 +2,10 @@
 
 ## x.y.z
 
+## Enhancement
+
+- Implement more APIs for [`Maybe`](https://github.com/saneyuki/option-t.js/tree/master/src/Maybe) module ([#185](https://github.com/saneyuki/option-t.js/pull/185))
+
 
 ### Breaking Change
 
