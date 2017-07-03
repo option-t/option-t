@@ -72,7 +72,7 @@
     "mocha": "^3.3.0",
     "npm-run-all": "^4.0.2",
     "power-assert": "^1.4.1",
-    "typescript": "^2.3.2"
+    "typescript": "^2.4.1"
   },
   "typings": "./lib/index.d.ts"
 }
