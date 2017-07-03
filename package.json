@@ -69,7 +69,7 @@
     "cpx": "^1.5.0",
     "del-cli": "^0.2.1",
     "eslint": "^3.0.1",
-    "mocha": "^3.3.0",
+    "mocha": "^3.4.2",
     "npm-run-all": "^4.0.2",
     "power-assert": "^1.4.4",
     "typescript": "^2.4.1"
