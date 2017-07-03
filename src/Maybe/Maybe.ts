@@ -1,6 +1,6 @@
 export type Maybe<T> = T | null | undefined;
 
-export function isSomeValue<T>(v: Maybe<T>): v is T {
+export function isNotNullAndUndefined<T>(v: Maybe<T>): v is T {
     return v !== undefined && v !== null;
 }
 

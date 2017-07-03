@@ -2,6 +2,13 @@
 
 ## x.y.z
 
+
+### Breaking Change
+
+- Rename: ([#184](https://github.com/saneyuki/option-t.js/pull/184))
+  - `Maybe::isSomeValue()` -> `Maybe::isNotNullAndUndefined()`
+
+
 ## 6.1.0
 
 ### Enhancement
