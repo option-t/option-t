@@ -30,6 +30,9 @@ module.exports = Object.freeze({
     objectVal: [
         { bar: 1},
         [1, 2, 3],
+    ],
+
+    nonSerializableObjectVal: [
         new Set(),
         new Map(),
         new WeakSet(),

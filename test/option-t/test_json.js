@@ -32,6 +32,7 @@ const None = require('../../lib/Option').None;
 
 const primitiveVal = require('../utils').primitiveVal;
 const objectVal = require('../utils').objectVal;
+const nonSerializableObjectVal = require('../utils').nonSerializableObjectVal;
 const funcVal = require('../utils').funcVal;
 const symbolVal = require('../utils').symbolVal;
 const undefinedVal = require('../utils').undefinedVal;
@@ -91,6 +92,34 @@ describe('JSON serializeation `Option<T>`', function(){
                 // after serialize & deserialize.
                 it('`value` should be expected', function () {
                     assert.deepEqual(result.value, value);
+                });
+            });
+        });
+
+        nonSerializableObjectVal.forEach(function(value){
+            const type = typeof value;
+            const label = 'type: ' + type + ', value: `' + String(value) + '`';
+
+            describe(label, function () {
+                let result = null;
+                before(function(){
+                    const raw = new Some(value);
+                    result = JSON.parse(JSON.stringify(raw));
+                });
+
+                ['is_some', 'value'].forEach(function(key){
+                    it('json has `' + key + '` field.', function () {
+                        assert.strictEqual(result.hasOwnProperty(key), true);
+                    });
+                });
+
+                it('`is_some` should be expected', function () {
+                    assert.strictEqual(result.is_some, true);
+                });
+
+                // Some objects cannot be serialized to json by default.
+                it('`value` should be expected', function () {
+                    assert.strictEqual(typeof result.value, 'object');
                 });
             });
         });
