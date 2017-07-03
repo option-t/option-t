@@ -155,7 +155,7 @@ OptionBase.prototype = Object.freeze({
         return mapped;
     },
 
-   /**
+    /**
      *  Applies a function `fn` to the contained value or returns a default `def`.
      *
      *  @template   T, U
@@ -173,7 +173,7 @@ OptionBase.prototype = Object.freeze({
         }
     },
 
-   /**
+    /**
      *  Applies a function `fn` to the contained value or computes a default result by `defFn`.
      *
      *  @template   T, U
