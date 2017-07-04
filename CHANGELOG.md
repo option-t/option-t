@@ -1,6 +1,6 @@
 # Changelog
 
-## x.y.z
+## 7.0.1
 
 ### Bug fix
 
