@@ -2,6 +2,10 @@
 
 ## x.y.z
 
+### Bug fix
+
+- `Maybe::unwrap()` should throw more detailed message. ([#186](https://github.com/saneyuki/option-t.js/pull/186))
+
 
 ## 7.0.0
 
