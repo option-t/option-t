@@ -3,6 +3,9 @@
 
 ## x.y.z
 
+
+## 8.0.0
+
 ## Enhancement
 
 - Add `.mjs` code to `option-t/es6` directory. ([#191](https://github.com/saneyuki/option-t.js/pull/191))
@@ -10,7 +13,6 @@
 - Add type aliases for a plain object ([#194](https://github.com/saneyuki/option-t.js/pull/194))
   - See [`option-t/PlainOption`](./src/PlainOption/index.ts) and [`option-t/PlainResult`](./src/PlainResult/index.ts).
   - __CAUTION: This is still expetimental APIs. We might change an interface for the future with the braking change__
-
 
 ## Breaking Change
 
