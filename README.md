@@ -4,7 +4,10 @@
 [![Build Status](https://secure.travis-ci.org/saneyuki/option-t.js.svg?branch=master)](http://travis-ci.org/saneyuki/option-t.js)
 
 * This library represents [Option type](http://en.wikipedia.org/wiki/Option_type) in ECMAScript.
+    * You can sort "nullable" convention in your project.
 * APIs are inspired by Rust Language's [`Option<T>`](https://doc.rust-lang.org/std/option/).
+* TypeScript friendly APIs.
+    * We recommend to use this with some static type systems like TypeScript.
 
 
 ## Installation
@@ -13,49 +16,38 @@
 npm install --save option-t
 ```
 
+
 ## Usage
 
 ```javascript
-var OptionT = require('option-t');
+const { Some, None, } = require('option-t');
 
 // `Some<T>`
-var some = new OptionT.Some(1);
+const some = new Some(1);
 console.log(some.isSome); // true
 console.log(some.unwrap()); // 1
 
 // `None`
-var none = new OptionT.None();
+const none = new None();
 console.log(none.isSome); // false
 console.log(none.unwrap()); // this will throw `Error`.
 ```
 
-### JSON Representation
-
-#### `Some<T>`
-
-`new Some(1)` will be:
-
-```json
-{
-    "is_some": true,
-    "value": 1
-}
-```
-
-#### `None`
-
-`new None()` will be:
-
-```json
-{
-    "is_some": false
-}
-```
 
 ## API
 
 * [`Option<T>`](./src/Option.d.ts)
 * [`Result<T, E>`](./src/Result.d.ts)
+* Utility functions for these types (TypeScript ready).
+    * [`Nullable<T>` (`T | null`)](./src/Nullable/)
+    * [`Undefinable<T>` (`T | undefined`)](./src/Undefinable/)
+    * [`Maybe<T>` (`T | null | undefined`)](./src/Maybe/)
+
+
+### JSON Representation
+
+Some types defines [JSON representations](./docs/JSON.md) if you serialize them by `JSON.stringify()`.
+
 
 ### Idioms
 
@@ -71,53 +63,16 @@ These are written for Rust, but the essense is just same.
 - [`std::option` - Rust](https://doc.rust-lang.org/std/option/)
 - [`std::result` - Rust](https://doc.rust-lang.org/std/result/)
 
+
+
 ## Semantics
 
-This library represents [Option type](http://en.wikipedia.org/wiki/Option_type) in ECMAScript.
-So this object will be the one of following states:
-
-* `Some<T>`
-  * `option instanceof OptionT.Some`
-  * `option.isSome === true`.
-* `None`
-  * `option instanceof OptionT.None`
-  * `option.isSome === false`.
-
-### `Option<T>`
-
-This type is a interface to represent `Option<T>`.
-`Some<T>` and `None` must implement this `Option<T>` interface.
-
-This is just interface. This is not exported to an environment
-which has no interface feature as a part of its type system like TypeScript.
-
-If you'd like to check whether the object `option` is `Option<T>` or not in such an environment,
-you can use `option instanceof OptionT.OptionBase` to check it.
-
-But this way is not a tier-1 approach. __We recommend to use a interface and type system strongly__.
-
-We export `OptionT.OptionBase` object to the type definition for TypeScript, but this is only for
-the compatibility to cooperate with some libralies which are use `instanceof` checking
-to work together with others in the pure JavaScript world.
-Our basic stance is that __you should not use `OptionT.OptionBase`
-and need not it in almost case in TypeScript or other static typed languages__.
+See [the document](./docs/SEMANTICS.md).
 
 
-#### `Some<T>`
-
-This type represents that there are **some values `T`**.
-If this value wraps `null`, it just means that there is a null value.
-
-
-#### `None` (`None<T>`)
-
-This type represents that there is **no value** explicitly.
-It is just `None !== null`.
-
-
+## FAQ
 
 ### How to represent same things without this library?
-
 
 Of course, there some alternative approaches. We introduce them.
 
@@ -153,7 +108,7 @@ In the future, a JavaScript runtime may make it more cheap,
 but we don't recommend to use this approach if you requires a high performance computing extremely.
 
 
-### Runtime Checking
+#### Runtime Checking
 
 This would be most popular way to handle a returned value in JavaScript.
 
