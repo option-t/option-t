@@ -8,6 +8,11 @@
 - Add `.mjs` code to `option-t/es6` directory. ([#191](https://github.com/saneyuki/option-t.js/pull/191))
 
 
+## Breaking Change
+
+- Rename `option-t/es6` to `option-t/esm` ([#192](https://github.com/saneyuki/option-t.js/pull/192))
+
+
 ## 7.0.1
 
 ### Bug fix

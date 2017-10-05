@@ -5,7 +5,7 @@
         "module": "es2015",
         "newLine": "LF",
         "noEmitOnError": true,
-        "outDir": "./es6/"
+        "outDir": "./esm/"
     },
     "src": [
         "./src/Maybe/index.ts",

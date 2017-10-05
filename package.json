@@ -6,7 +6,7 @@
   "files": [
     "CHANGELOG.md",
     "docs/",
-    "es6",
+    "esm",
     "LICENSE.MIT",
     "package.json",
     "README.md",
