@@ -36,13 +36,16 @@ console.log(none.unwrap()); // this will throw `Error`.
 
 ## API
 
-* [`Option<T>`](./src/Option.d.ts)
-* [`Result<T, E>`](./src/Result.d.ts)
+* Wrapper objects
+    * [`Option<T>`](./src/Option.d.ts)
+    * [`Result<T, E>`](./src/Result.d.ts)
 * Utility functions for these types (TypeScript ready).
     * [`Nullable<T>` (`T | null`)](./src/Nullable/)
     * [`Undefinable<T>` (`T | undefined`)](./src/Undefinable/)
     * [`Maybe<T>` (`T | null | undefined`)](./src/Maybe/)
-
+    * plain objects
+        * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/index.ts)
+        * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/index.ts)
 
 ### JSON Representation
 
