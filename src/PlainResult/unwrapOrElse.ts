@@ -1,0 +1,6 @@
+import { RecoveryFn } from './Function';
+import { Result, isOk } from './Result';
+
+export function unwrapOrElseFromResult<T, E>(v: Result<T, E>, def:  RecoveryFn<E, T>): T {
+    return isOk(v) ? v.val: def(v.err);
+}
