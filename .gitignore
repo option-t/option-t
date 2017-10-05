@@ -6,4 +6,5 @@ lib/
 node_modules/
 
 __test_cache/
+__tmp_mjs/
 __type_test/

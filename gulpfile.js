@@ -37,12 +37,15 @@ const DIST_ES6_DIR = path.resolve(__dirname, './es6/');
 const DIST_LIB_DIR = path.resolve(__dirname, './lib/');
 const TEST_CACHE_DIR = path.resolve(__dirname, './__test_cache/');
 const TYPE_TEST_DIR = path.resolve(__dirname, './__type_test/');
+const TMP_MJS_DIR = path.resolve(__dirname, './__tmp_mjs/');
+
 
 const BABEL_CMD = 'babel';
 const CPX_CMD = 'cpx';
 const DEL_CMD = 'del';
 const ESLINT_CMD = 'eslint';
 const MOCHA_CMD = 'mocha';
+const RENAME_CMD = 'rename';
 const TSC_CMD = 'tsc';
 
 /**
@@ -64,12 +67,13 @@ function execNpmCmd(cmd, args) {
 /**
  *  Clean
  */
-gulp.task('clean', ['clean_build', 'clean_test_cache', 'clean_type_test']);
+gulp.task('clean', ['clean_build', 'clean_test_cache', 'clean_type_test', 'clean_tmp_mjs']);
 gulp.task('clean_build', ['clean_build_cjs', 'clean_build_es6']);
 gulp.task('clean_build_cjs', () => execNpmCmd(DEL_CMD, [DIST_LIB_DIR]));
 gulp.task('clean_build_es6', () => execNpmCmd(DEL_CMD, [DIST_ES6_DIR]));
 gulp.task('clean_test_cache', () => execNpmCmd(DEL_CMD, [TEST_CACHE_DIR]));
 gulp.task('clean_type_test', () => execNpmCmd(DEL_CMD, [TYPE_TEST_DIR]));
+gulp.task('clean_tmp_mjs', () => execNpmCmd(DEL_CMD, [TMP_MJS_DIR]));
 
 
 /**
@@ -103,7 +107,7 @@ gulp.task('build_cjs_ts', ['clean_build_cjs'], () => {
     return p;
 });
 
-gulp.task('build_es6', ['build_es6_js', 'build_es6_ts']);
+gulp.task('build_es6', ['build_es6_js', 'build_es6_ts', 'build_mjs_cp_mjs_to_es6']);
 gulp.task('build_es6_js', ['clean_build_es6'], () => {
     const p = execNpmCmd(CPX_CMD, [
         './src/**/*.{js,d.ts}',
@@ -118,6 +122,37 @@ gulp.task('build_es6_ts', ['clean_build_es6'], () => {
     ]);
     return p;
 });
+gulp.task('build_mjs_cp_mjs_to_es6', ['build_mjs_rename_js_to_mjs'], () => {
+    const js = execNpmCmd(CPX_CMD, [
+        TMP_MJS_DIR + '/**/*.mjs',
+        DIST_ES6_DIR,
+        '--preserve',
+    ]);
+    return js;
+});
+gulp.task('build_mjs_rename_js_to_mjs', ['build_mjs_create_tmp_mjs'], () => {
+    const p = execNpmCmd(RENAME_CMD, [
+        TMP_MJS_DIR + '/**/*.js', '{{f}}.mjs'
+    ]);
+    return p;
+});
+gulp.task('build_mjs_create_tmp_mjs', ['clean_tmp_mjs'], () => {
+    const ts = execNpmCmd(TSC_CMD, [
+        '-p', './tsconfig_es6.json',
+        '--outDir', TMP_MJS_DIR,
+        '--sourceMap', 'false',
+        '--declaration', 'false'
+    ]);
+
+    const js = execNpmCmd(CPX_CMD, [
+        './src/**/*.js',
+        TMP_MJS_DIR,
+        '--preserve',
+    ]);
+
+    return Promise.all([ts, js]);
+});
+
 
 /**
  *  Test
