@@ -6,6 +6,7 @@
 ## Enhancement
 
 - Add `.mjs` code to `option-t/es6` directory. ([#191](https://github.com/saneyuki/option-t.js/pull/191))
+- Clean up README.md ([#193](https://github.com/saneyuki/option-t.js/pull/193))
 
 
 ## Breaking Change
