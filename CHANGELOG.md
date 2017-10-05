@@ -1,5 +1,13 @@
 # Changelog
 
+
+## x.y.z
+
+## Enhancement
+
+- Add `.mjs` code to `option-t/es6` directory. ([#191](https://github.com/saneyuki/option-t.js/pull/191))
+
+
 ## 7.0.1
 
 ### Bug fix

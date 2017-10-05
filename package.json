@@ -58,6 +58,7 @@
     "mocha": "^3.4.2",
     "npm-run-all": "^4.0.2",
     "power-assert": "^1.4.4",
+    "rename-cli": "^4.0.1",
     "typescript": "^2.4.1"
   },
   "typings": "./lib/index.d.ts"
