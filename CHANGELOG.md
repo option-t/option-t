@@ -3,6 +3,8 @@
 
 ## x.y.z
 
+## 9.0.0
+
 ### Breaking Change
 
 - Change the internal design for `Option<T>`. ([#195](https://github.com/saneyuki/option-t.js/pull/195))
