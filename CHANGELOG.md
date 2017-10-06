@@ -6,6 +6,9 @@
 ### Breaking Change
 
 - Change the internal design for `Option<T>`. ([#195](https://github.com/saneyuki/option-t.js/pull/195))
+- Rethink `PlainResult/do`. ([#197](https://github.com/saneyuki/option-t.js/pull/197))
+    - Add `doOnBoth` for `PlainResult/do`.
+    - Change exporting from `PlainResult/index`. You need to change `import { do, doErr, } from 'option-t/PlainResult';` -> `import { doOnOk, doOnErr, } from 'option-t/PlainResult';`.
 
 
 ## 8.0.1
