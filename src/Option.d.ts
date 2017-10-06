@@ -48,8 +48,8 @@ type DestructorFn<T> = (this: void, v: T) => void;
  *  https://github.com/saneyuki/option-t.js/pull/77
  */
 export abstract class OptionBase<T> {
-    private readonly is_some: boolean;
-    private readonly value: T | undefined;
+    private readonly ok: boolean;
+    private readonly val: T | undefined;
 
     /**
      *  Return whether the self is `Some<T>` or not.
@@ -180,6 +180,8 @@ export abstract class OptionBase<T> {
      *      This would be called with the inner value if self is `Some<T>`.
      */
     abstract drop(destructor?: DestructorFn<T>): void;
+
+    abstract toJSON(): object;
 }
 
 interface Some<T> extends OptionBase<T> {

@@ -76,7 +76,7 @@ describe('initialization `Option<T>`', function(){
                 });
 
                 it('the wrapped value should be expected', function() {
-                    assert.strictEqual(option.value, value);
+                    assert.strictEqual(option.toJSON().value, value);
                 });
             });
         });
@@ -105,7 +105,7 @@ describe('initialization `Option<T>`', function(){
         });
 
         it('`value` should be expected', function () {
-            assert.strictEqual(option.value, undefined);
+            assert.strictEqual(option.toJSON().value, undefined);
         });
     });
 });
