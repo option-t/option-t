@@ -52,7 +52,7 @@ describe('Result<T, E>.map()', function(){
         });
 
         it('the returned value should be `Ok<U, E>', function () {
-            assert.strictEqual(result.isOk(), true);
+            assert.strictEqual(result.isOk, true);
         });
 
         it('the argument of `op` should be the expected value', function () {
@@ -84,7 +84,7 @@ describe('Result<T, E>.map()', function(){
         });
 
         it('the returned value should be `Err<U, E>', function () {
-            assert.strictEqual(result.isErr(), true);
+            assert.strictEqual(result.isErr, true);
         });
 
         it('the `op` callbacl should not be called', function () {

@@ -39,18 +39,18 @@ ResultBase.prototype = Object.freeze({
     /**
      *  Returns true if the result is `Ok`.
      *
-     *  @return {boolean}
+     *  @type {boolean}
      */
-    isOk: function ResultBaseIsOk() {
+    get isOk() {
         return this._is_ok;
     },
 
     /**
      *  Returns true if the result is `Err`.
      *
-     *  @return {boolean}
+     *  @type {boolean}
      */
-    isErr: function ResultBaseIsErr() {
+    get isErr() {
         return !this._is_ok;
     },
 

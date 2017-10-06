@@ -51,7 +51,7 @@ describe('Result<T, E>.mapErr()', function(){
         });
 
         it('the returned value should be `Ok<T, F>', function () {
-            assert.strictEqual(result.isOk(), true);
+            assert.strictEqual(result.isOk, true);
         });
 
         it('the `op` callback should not be called', function () {
@@ -83,7 +83,7 @@ describe('Result<T, E>.mapErr()', function(){
         });
 
         it('the returned value should be `Err<T, F>', function () {
-            assert.strictEqual(result.isErr(), true);
+            assert.strictEqual(result.isErr, true);
         });
 
         it('the argument of `op` callback is expected', function () {

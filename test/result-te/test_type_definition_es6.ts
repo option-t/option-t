@@ -32,8 +32,14 @@ import {Result, Ok, Err, ResultBase} from '../../lib/Result';
 (function(){
     const result: Result<number, void> = new Ok<number, void>(1);
 
-    const isOk: boolean = result.isOk();
-    const isErr: boolean = result.isErr();
+    const isOk: boolean = result.isOk;
+    if (result.isOk) {
+        const r: Ok<number, void> = result;
+    }
+    const isErr: boolean = result.isErr;
+    if (result.isErr) {
+        const r: Err<number, void> = result;
+    }
 
     const ok: Option<number> = result.ok();
     const err: Option<void> = result.err();
@@ -70,8 +76,14 @@ import {Result, Ok, Err, ResultBase} from '../../lib/Result';
 (function(){
     const result: Result<number, void> = new Err<number, void>(undefined);
 
-    const isOk: boolean = result.isOk();
-    const isErr: boolean = result.isErr();
+    const isOk: boolean = result.isOk;
+    if (result.isOk) {
+        const r: Ok<number, void> = result;
+    }
+    const isErr: boolean = result.isErr;
+    if (result.isErr) {
+        const r: Err<number, void> = result;
+    }
 
     const ok: Option<number> = result.ok();
     const err: Option<void> = result.err();
