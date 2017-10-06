@@ -5,6 +5,8 @@ export {
     None,
     createSome,
     createNone,
+    isSome,
+    isNone,
 } from './Option';
 
 export { andForOption as and } from './and';

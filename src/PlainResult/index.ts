@@ -6,6 +6,8 @@ export {
     MutErr,
     createOk,
     createErr,
+    isOk,
+    isErr,
 } from './Result';
 
 export { andForResult as and } from './and';

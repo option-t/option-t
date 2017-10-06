@@ -16,7 +16,7 @@ export type MutSome<T> = {
 export type Some<T> = Readonly<MutSome<T>>;
 
 export function isSome<T>(v: Option<T>): v is Some<T> {
-    return !v.ok;
+    return v.ok;
 }
 
 export function createSome<T>(val: T): Some<T> {

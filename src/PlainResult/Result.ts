@@ -15,7 +15,7 @@ export type MutOk<T> = MutSome<T>;
 export type Ok<T> = Some<T>;
 
 export function isOk<T, E>(v: Result<T, E>): v is Ok<T> {
-    return !v.ok;
+    return v.ok;
 }
 
 export function createOk<T>(val: T): Ok<T> {
