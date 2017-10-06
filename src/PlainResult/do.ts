@@ -1,4 +1,4 @@
-import { DoFn } from './Function';
+import { DoFn } from '../utils/Function';
 import { Result } from './Result';
 
 function noop<T>(_v: T) {}

@@ -1,6 +1,6 @@
 import { expectNotNullAndUndefined } from './expect';
 import { ERR_MSG_SELECTOR } from './ErrorMessage';
-import { MapFn } from './Function';
+import { MapFn } from '../utils/Function';
 import { Maybe, isNotNullAndUndefined } from './Maybe';
 
 export function mapForMaybe<T, U>(src: Maybe<T>, selector: MapFn<T, U>): Maybe<U> {

@@ -22,9 +22,12 @@
  * THE SOFTWARE.
  */
 
-type MapFn<T, U> = (this: void, v: T) => U;
+import {
+    MapFn,
+    RecoveryFn,
+} from './utils/Function';
+
 type FlatmapFn<T, U> = (this: void, v: T) => Option<U>;
-type RecoveryFn<T> = (this: void) => T;
 type MayRecoveryFn<T> = (this: void) => Option<T>;
 type DestructorFn<T> = (this: void, v: T) => void;
 
