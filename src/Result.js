@@ -102,8 +102,8 @@ ResultBase.prototype = Object.freeze({
             return this;
         }
 
-        var value = op(this._v);
-        var result = new Ok(value);
+        const value = op(this._v);
+        const result = new Ok(value);
         return result;
     },
 
@@ -123,8 +123,8 @@ ResultBase.prototype = Object.freeze({
             return this;
         }
 
-        var value = op(this._e);
-        var result = new Err(value);
+        const value = op(this._e);
+        const result = new Err(value);
         return result;
     },
 
@@ -159,8 +159,8 @@ ResultBase.prototype = Object.freeze({
             return this;
         }
 
-        var mapped = op(this._v);
-        var isResult = (mapped instanceof ResultBase);
+        const mapped = op(this._v);
+        const isResult = (mapped instanceof ResultBase);
         if (!isResult) {
             throw new TypeError('Result<T, E>.andThen()\' param `op` should return `Result<U, E>`.');
         }
@@ -199,8 +199,8 @@ ResultBase.prototype = Object.freeze({
             return this;
         }
 
-        var mapped = op(this._e);
-        var isResult = (mapped instanceof ResultBase);
+        const mapped = op(this._e);
+        const isResult = (mapped instanceof ResultBase);
         if (!isResult) {
             throw new TypeError('Result<T, E>.orElse()\' param `op` should return `Result<T, F>`.');
         }
@@ -264,7 +264,7 @@ ResultBase.prototype = Object.freeze({
             return this._v;
         }
 
-        var recovered = op(this._e);
+        const recovered = op(this._e);
         return recovered;
     },
 

@@ -126,8 +126,8 @@ OptionBase.prototype = Object.freeze({
             return this;
         }
 
-        var value = fn(this.val);
-        var option = new Some(value);
+        const value = fn(this.val);
+        const option = new Some(value);
         return option;
     },
 
@@ -146,8 +146,8 @@ OptionBase.prototype = Object.freeze({
             return this;
         }
 
-        var mapped = fn(this.val);
-        var isOption = (mapped instanceof OptionBase);
+        const mapped = fn(this.val);
+        const isOption = (mapped instanceof OptionBase);
         if (!isOption) {
             throw new TypeError('Option<T>.flatMap()\' param `fn` should return `Option<T>`.');
         }
@@ -241,7 +241,7 @@ OptionBase.prototype = Object.freeze({
             return this;
         }
         else {
-            var value = fn();
+            const value = fn();
             if (value instanceof OptionBase) {
                 return value;
             }
