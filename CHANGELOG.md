@@ -3,6 +3,13 @@
 
 ## x.y.z
 
+## 9.0.1
+
+### Internals
+
+- Use `babel-plugin-transform-es2015-block-scoping` to use `const` / `let` for plain js files under `src/`. ([#198](https://github.com/saneyuki/option-t.js/pull/198))
+
+
 ## 9.0.0
 
 ### Breaking Change
