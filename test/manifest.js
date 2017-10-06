@@ -63,6 +63,8 @@ require('./Nullable/test_type_guard');
 
 require('./Undefinable/test_type_guard');
 
+require('./PlainOption/test_create');
 require('./PlainOption/test_type_guard');
 
+require('./PlainResult/test_create');
 require('./PlainResult/test_type_guard');
