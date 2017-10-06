@@ -14,8 +14,9 @@ export { andForResult as and } from './and';
 export { andThenForResult as andThen } from './andThen';
 export { asMutResult as asMut } from './asMut';
 export {
-    doOnOk as do,
-    doOnErr as doErr,
+    doOnOk,
+    doOnErr, 
+    doOnBoth,
 } from './do';
 export {
     expectIsOk as expect,
