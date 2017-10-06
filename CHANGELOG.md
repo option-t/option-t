@@ -3,6 +3,11 @@
 
 ## x.y.z
 
+### Bug fix
+
+- Fix the serious problems.
+  - `PlainOption.isSome()` and `PlainResult.isOk()` returns wrong results. ([#196](https://github.com/saneyuki/option-t.js/pull/196))
+
 
 ## 8.0.0
 
