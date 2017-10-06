@@ -43,7 +43,7 @@ describe('Option<T>.drop()', function(){
         });
 
         it('the inner should be freed', function() {
-            assert.strictEqual(option.value, null);
+            assert.strictEqual(option.toJSON().value, null);
         });
     });
 
@@ -60,7 +60,7 @@ describe('Option<T>.drop()', function(){
         });
 
         it('the inner should be freed', function() {
-            assert.strictEqual(option.value, null);
+            assert.strictEqual(option.toJSON().value, null);
         });
     });
 });
@@ -94,7 +94,7 @@ describe('Option<T>.drop() with destructor', function(){
         });
 
         it('the inner should be freed', function() {
-            assert.strictEqual(option.value, null);
+            assert.strictEqual(option.toJSON().value, null);
         });
     });
 
@@ -119,7 +119,7 @@ describe('Option<T>.drop() with destructor', function(){
         });
 
         it('the inner should be freed', function() {
-            assert.strictEqual(option.value, null);
+            assert.strictEqual(option.toJSON().value, null);
         });
     });
 });

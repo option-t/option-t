@@ -40,7 +40,7 @@ OptionBase.prototype = Object.freeze({
      *  @return {boolean}
      */
     get isSome() {
-        return this.is_some;
+        return this.ok;
     },
 
     /**
@@ -49,7 +49,7 @@ OptionBase.prototype = Object.freeze({
      *  @return {boolean}
      */
     get isNone() {
-        return !this.is_some;
+        return !this.ok;
     },
 
     /**
@@ -62,11 +62,11 @@ OptionBase.prototype = Object.freeze({
      *      Throws if the self value equals `None`.
      */
     unwrap: function OptionTUnwrap() {
-        if (!this.is_some) {
+        if (!this.ok) {
             throw new TypeError('called `unwrap()` on a `None` value');
         }
 
-        return this.value;
+        return this.val;
     },
 
     /**
@@ -78,7 +78,7 @@ OptionBase.prototype = Object.freeze({
      *  @return {T}
      */
     unwrapOr: function OptionTUnwrapOr(def) {
-        return this.is_some ? this.value : def;
+        return this.ok ? this.val : def;
     },
 
     /**
@@ -90,7 +90,7 @@ OptionBase.prototype = Object.freeze({
      *  @return {T}
      */
     unwrapOrElse: function OptionTUnwrapOrElse(fn) {
-        return this.is_some ? this.value : fn();
+        return this.ok ? this.val : fn();
     },
 
     /**
@@ -105,11 +105,11 @@ OptionBase.prototype = Object.freeze({
      *      if the self value equals `None`.
      */
     expect: function OptionTExpect(msg) {
-        if (!this.is_some) {
+        if (!this.ok) {
             throw new TypeError(msg);
         }
 
-        return this.value;
+        return this.val;
     },
 
     /**
@@ -121,12 +121,12 @@ OptionBase.prototype = Object.freeze({
      *  @return {!Option<U>}
      */
     map: function OptionTMap(fn) {
-        if (!this.is_some) {
+        if (!this.ok) {
             // cheat to escape from a needless allocation.
             return this;
         }
 
-        var value = fn(this.value);
+        var value = fn(this.val);
         var option = new Some(value);
         return option;
     },
@@ -141,12 +141,12 @@ OptionBase.prototype = Object.freeze({
      *  @return {!Option<U>}
      */
     flatMap: function OptionTFlatMap(fn) {
-        if (!this.is_some) {
+        if (!this.ok) {
             // cheat to escape from a needless allocation.
             return this;
         }
 
-        var mapped = fn(this.value);
+        var mapped = fn(this.val);
         var isOption = (mapped instanceof OptionBase);
         if (!isOption) {
             throw new TypeError('Option<T>.flatMap()\' param `fn` should return `Option<T>`.');
@@ -165,8 +165,8 @@ OptionBase.prototype = Object.freeze({
      *  @return {U}
      */
     mapOr: function OptionTMapOr(def, fn) {
-        if (this.is_some) {
-            return fn(this.value);
+        if (this.ok) {
+            return fn(this.val);
         }
         else {
             return def;
@@ -183,8 +183,8 @@ OptionBase.prototype = Object.freeze({
      *  @return {U}
      */
     mapOrElse: function OptionTMapOrElse(defFn, fn) {
-        if (this.is_some) {
-            return fn(this.value);
+        if (this.ok) {
+            return fn(this.val);
         }
         else {
             return defFn();
@@ -200,7 +200,7 @@ OptionBase.prototype = Object.freeze({
      *  @return {!Option<U>}
      */
     and: function OptionTAnd(optb) {
-        return this.is_some ? optb : this;
+        return this.ok ? optb : this;
     },
 
     /**
@@ -224,7 +224,7 @@ OptionBase.prototype = Object.freeze({
      *  @return {!Option<T>}
      */
     or: function OptionTOr(optb) {
-        return this.is_some ? this : optb;
+        return this.ok ? this : optb;
     },
 
     /**
@@ -237,7 +237,7 @@ OptionBase.prototype = Object.freeze({
      *  @return {!Option<T>}
      */
     orElse: function OptionTOr(fn) {
-        if (this.is_some) {
+        if (this.ok) {
             return this;
         }
         else {
@@ -259,13 +259,23 @@ OptionBase.prototype = Object.freeze({
      *  @return {void}
      */
     drop: function OptionTDrop(destructor) {
-        if (this.is_some && typeof destructor === 'function') {
-            destructor(this.value);
+        if (this.ok && typeof destructor === 'function') {
+            destructor(this.val);
         }
 
-        this.value = null;
+        this.val = null;
         Object.freeze(this);
     },
+
+    /**
+     *  @return {*}
+     */
+    toJSON: function OptionTtoJSON() {
+        return {
+            is_some: this.ok, // eslint-disable-line camelcase
+            value: this.val,
+        };
+    }
 });
 
 /**
@@ -276,19 +286,17 @@ OptionBase.prototype = Object.freeze({
  *  @param  {T}   val
  */
 export function Some(val) {
-    /* eslint-disable camelcase */
     /**
      *  @private
      *  @type   {boolean}
      */
-    this.is_some = true;
-    /* eslint-enable */
+    this.ok = true;
 
     /**
      *  @private
      *  @type   {T}
      */
-    this.value = val;
+    this.val = val;
     Object.seal(this);
 }
 Some.prototype = new OptionBase();
@@ -299,19 +307,17 @@ Some.prototype = new OptionBase();
  *  @extends    {OptionT<T>}
  */
 export function None() {
-    /* eslint-disable camelcase */
     /**
      *  @private
      *  @type   {boolean}
      */
-    this.is_some = false;
-    /* eslint-enable */
+    this.ok = false;
 
     /**
      *  @private
      *  @type   {T}
      */
-    this.value = undefined;
+    this.val = undefined;
     Object.seal(this);
 }
 None.prototype = new OptionBase();
