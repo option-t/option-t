@@ -48,6 +48,8 @@ const MOCHA_CMD = 'mocha';
 const RENAME_CMD = 'rename';
 const TSC_CMD = 'tsc';
 
+const BABEL_PRD_TRANSFORMER_LIST = ['transform-es2015-modules-commonjs', 'transform-es2015-block-scoping'].join(',');
+
 /**
  *  @param  {string}    cmd
  *  @param  {Array<string>} args
@@ -88,7 +90,7 @@ gulp.task('build_cjs_js', ['clean_build_cjs'], () => {
         '--out-dir', './lib/',
         '--extensions=.js',
         '--no-babelrc',
-        '--plugins', 'transform-es2015-modules-commonjs'
+        '--plugins', BABEL_PRD_TRANSFORMER_LIST
     ]);
     return p;
 });
@@ -109,12 +111,21 @@ gulp.task('build_cjs_ts', ['clean_build_cjs'], () => {
 
 gulp.task('build_esm', ['build_esm_js', 'build_esm_ts', 'build_mjs_cp_mjs_to_esm']);
 gulp.task('build_esm_js', ['clean_build_esm'], () => {
-    const p = execNpmCmd(CPX_CMD, [
-        './src/**/*.{js,d.ts}',
+    const dts = execNpmCmd(CPX_CMD, [
+        './src/**/*.d.ts',
         './esm/',
         '--preserve',
     ]);
-    return p;
+
+    const js = execNpmCmd(BABEL_CMD, [
+        './src',
+        '--out-dir', DIST_ESM_DIR,
+        '--extensions=.js',
+        '--no-babelrc',
+        '--plugins', BABEL_PRD_TRANSFORMER_LIST
+    ]);
+
+    return Promise.all([dts, js]);
 });
 gulp.task('build_esm_ts', ['clean_build_esm'], () => {
     const p = execNpmCmd(TSC_CMD, [
@@ -144,10 +155,12 @@ gulp.task('build_mjs_create_tmp_mjs', ['clean_tmp_mjs'], () => {
         '--declaration', 'false'
     ]);
 
-    const js = execNpmCmd(CPX_CMD, [
-        './src/**/*.js',
-        TMP_MJS_DIR,
-        '--preserve',
+    const js = execNpmCmd(BABEL_CMD, [
+        './src',
+        '--out-dir', TMP_MJS_DIR,
+        '--extensions=.js',
+        '--no-babelrc',
+        '--plugins', BABEL_PRD_TRANSFORMER_LIST,
     ]);
 
     return Promise.all([ts, js]);
