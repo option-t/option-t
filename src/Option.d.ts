@@ -45,7 +45,7 @@ type DestructorFn<T> = (this: void, v: T) => void;
  *  Our basic stance is that _you don't use this and need not it in almost case_.
  *
  *  See also:
- *  https://github.com/saneyuki/option-t.js/pull/77
+ *  https://github.com/karen-irc/option-t/pull/77
  */
 export abstract class OptionBase<T> {
     private readonly ok: boolean;

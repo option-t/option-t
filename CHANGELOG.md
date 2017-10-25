@@ -7,15 +7,15 @@
 
 ### Internals
 
-- Use `babel-plugin-transform-es2015-block-scoping` to use `const` / `let` for plain js files under `src/`. ([#198](https://github.com/saneyuki/option-t.js/pull/198))
+- Use `babel-plugin-transform-es2015-block-scoping` to use `const` / `let` for plain js files under `src/`. ([#198](https://github.com/karen-irc/option-t/pull/198))
 
 
 ## 9.0.0
 
 ### Breaking Change
 
-- Change the internal design for `Option<T>`. ([#195](https://github.com/saneyuki/option-t.js/pull/195))
-- Rethink `PlainResult/do`. ([#197](https://github.com/saneyuki/option-t.js/pull/197))
+- Change the internal design for `Option<T>`. ([#195](https://github.com/karen-irc/option-t/pull/195))
+- Rethink `PlainResult/do`. ([#197](https://github.com/karen-irc/option-t/pull/197))
     - Add `doOnBoth` for `PlainResult/do`.
     - Change exporting from `PlainResult/index`. You need to change `import { do, doErr, } from 'option-t/PlainResult';` -> `import { doOnOk, doOnErr, } from 'option-t/PlainResult';`.
 
@@ -25,41 +25,41 @@
 ### Bug fix
 
 - Fix the serious problems.
-  - `PlainOption.isSome()` and `PlainResult.isOk()` returns wrong results. ([#196](https://github.com/saneyuki/option-t.js/pull/196))
+  - `PlainOption.isSome()` and `PlainResult.isOk()` returns wrong results. ([#196](https://github.com/karen-irc/option-t/pull/196))
 
 
 ## 8.0.0
 
 ## Enhancement
 
-- Add `.mjs` code to `option-t/es6` directory. ([#191](https://github.com/saneyuki/option-t.js/pull/191))
-- Clean up README.md ([#193](https://github.com/saneyuki/option-t.js/pull/193))
-- Add type aliases for a plain object ([#194](https://github.com/saneyuki/option-t.js/pull/194))
+- Add `.mjs` code to `option-t/es6` directory. ([#191](https://github.com/karen-irc/option-t/pull/191))
+- Clean up README.md ([#193](https://github.com/karen-irc/option-t/pull/193))
+- Add type aliases for a plain object ([#194](https://github.com/karen-irc/option-t/pull/194))
   - See [`option-t/PlainOption`](./src/PlainOption/index.ts) and [`option-t/PlainResult`](./src/PlainResult/index.ts).
   - __CAUTION: This is still expetimental APIs. We might change an interface for the future with the braking change__
 
 ## Breaking Change
 
-- Rename `option-t/es6` to `option-t/esm` ([#192](https://github.com/saneyuki/option-t.js/pull/192))
+- Rename `option-t/es6` to `option-t/esm` ([#192](https://github.com/karen-irc/option-t/pull/192))
 
 
 ## 7.0.1
 
 ### Bug fix
 
-- `Maybe::unwrap()` should throw more detailed message. ([#186](https://github.com/saneyuki/option-t.js/pull/186))
+- `Maybe::unwrap()` should throw more detailed message. ([#186](https://github.com/karen-irc/option-t/pull/186))
 
 
 ## 7.0.0
 
 ## Enhancement
 
-- Implement more APIs for [`Maybe`](https://github.com/saneyuki/option-t.js/tree/master/src/Maybe) module ([#185](https://github.com/saneyuki/option-t.js/pull/185))
+- Implement more APIs for [`Maybe`](https://github.com/karen-irc/option-t/tree/master/src/Maybe) module ([#185](https://github.com/karen-irc/option-t/pull/185))
 
 
 ### Breaking Change
 
-- Rename: ([#184](https://github.com/saneyuki/option-t.js/pull/184))
+- Rename: ([#184](https://github.com/karen-irc/option-t/pull/184))
   - `Maybe::isSomeValue()` -> `Maybe::isNotNullAndUndefined()`
 
 
@@ -67,7 +67,7 @@
 
 ### Enhancement
 
-- Enhancement for tree shaking via a bundler ([#177](https://github.com/saneyuki/option-t.js/pull/177)).
+- Enhancement for tree shaking via a bundler ([#177](https://github.com/karen-irc/option-t/pull/177)).
   - Add ES module syntax version to `es6/` directory.
   - You can use them with `option-t/es6/**`.
   - By this change, the output code size may be more smaller
@@ -79,13 +79,13 @@
 
 ### Breaking Change
 
-- Upgrade dependencies. ([#172](https://github.com/saneyuki/option-t.js/pull/172))
+- Upgrade dependencies. ([#172](https://github.com/karen-irc/option-t/pull/172))
   - This includes upgrading TypeScript to 2.3.
-- Drop support node v4. ([#173](https://github.com/saneyuki/option-t.js/pull/173))
-- Upgrade our language baseline to ES5 ([#174](https://github.com/saneyuki/option-t.js/pull/174))
+- Drop support node v4. ([#173](https://github.com/karen-irc/option-t/pull/173))
+- Upgrade our language baseline to ES5 ([#174](https://github.com/karen-irc/option-t/pull/174))
   - If you use this package for a product targeted to ES3 environment (e.g. ~IE8),
     You need to care about it.
-- Rename: ([#176](https://github.com/saneyuki/option-t.js/pull/176))
+- Rename: ([#176](https://github.com/karen-irc/option-t/pull/176))
   - `Maybe::isUndefinedOrNull()` -> `Maybe::isNullOrUndefined()`
   - `Maybe::isSomeActual()` -> `Maybe::isSomeValue()`
 
@@ -94,21 +94,21 @@
 
 ### Breaking Change
 
-- By ([#169](https://github.com/saneyuki/option-t.js/pull/169)),
+- By ([#169](https://github.com/karen-irc/option-t/pull/169)),
   - You can use `andThen()` function from `option-t/lib/Nullable` or `option-t/lib/Undefinable`.
   - We drop to support for `flatMap()` for `Nullable` or `Undefinable`.
     - It's too hard to undarstand that "flatMap" operation for `T | undefined` or `T | null`.
 
 ### Enhancement
 
-- You can use `orElse()` function from `option-t/lib/Nullable` or `option-t/lib/Undefinable`. ([#170](https://github.com/saneyuki/option-t.js/pull/170))
+- You can use `orElse()` function from `option-t/lib/Nullable` or `option-t/lib/Undefinable`. ([#170](https://github.com/karen-irc/option-t/pull/170))
 
 
 ## 4.1.0
 
 ### New Feature
 
-#### Add utility functions for values which may be `null` or `undefined` ([#167](https://github.com/saneyuki/option-t.js/pull/167))
+#### Add utility functions for values which may be `null` or `undefined` ([#167](https://github.com/karen-irc/option-t/pull/167))
 
 - This is just utility function for their "null value" in ECMA262 world. 
 - __This is experimental feature__. Their names are not stable.
@@ -122,20 +122,20 @@
 
 ### Breaking Change
 
-- Remove `engines` field from package.json.  ([#163](https://github.com/saneyuki/option-t.js/pull/163))
-- All distribution codes are in `lib/` now. ([#164](https://github.com/saneyuki/option-t.js/pull/164))
+- Remove `engines` field from package.json.  ([#163](https://github.com/karen-irc/option-t/pull/163))
+- All distribution codes are in `lib/` now. ([#164](https://github.com/karen-irc/option-t/pull/164))
   - If you use `require('option-t/src/Result')`, please change to `require('option-t/lib/Result')`
 
 ### Enhancement
 
-- Add `yarn.lock` for library developers ([#162](https://github.com/saneyuki/option-t.js/pull/162))
+- Add `yarn.lock` for library developers ([#162](https://github.com/karen-irc/option-t/pull/162))
 
 
 ## 3.0.0
 
 ### Breaking Change
 
-- Rewrite d.ts ([#157](https://github.com/saneyuki/option-t.js/pull/157))
+- Rewrite d.ts ([#157](https://github.com/karen-irc/option-t/pull/157))
   - By this change, you might have some failure to compile your code with this library.
     So we think this would be a breaking change.
 
@@ -144,43 +144,43 @@
 
 ### Bug fix
 
-- Revert [#152](https://github.com/saneyuki/option-t.js/pull/152) by ([#155](https://github.com/saneyuki/option-t.js/issues/155)).
+- Revert [#152](https://github.com/karen-irc/option-t/pull/152) by ([#155](https://github.com/karen-irc/option-t/issues/155)).
 
 
 ## 2.1.0
 
 ### Enhancement
 
-- Use `never` type. ([#154](https://github.com/saneyuki/option-t.js/pull/154))
-- Use [literal type](https://github.com/Microsoft/TypeScript/pull/9407). ([#152](https://github.com/saneyuki/option-t.js/pull/152))
+- Use `never` type. ([#154](https://github.com/karen-irc/option-t/pull/154))
+- Use [literal type](https://github.com/Microsoft/TypeScript/pull/9407). ([#152](https://github.com/karen-irc/option-t/pull/152))
 
 
 ## 2.0.2 (including 2.0.1)
 
 ### Bug fix
 
-- Fix the bug which cannot pack files correctly. ([#150](https://github.com/saneyuki/option-t.js/pull/150))
+- Fix the bug which cannot pack files correctly. ([#150](https://github.com/karen-irc/option-t/pull/150))
 
 
 ## 2.0.0
 
 ### Breaking Change
 
-- `this` type are specfied for callbacks ([#142](https://github.com/saneyuki/option-t.js/pull/142))
+- `this` type are specfied for callbacks ([#142](https://github.com/karen-irc/option-t/pull/142))
   - This change requires to use TypeScript 2.0 or highers.
-- Drop to support `classic` module resolutions ([#145](https://github.com/saneyuki/option-t.js/pull/145))
+- Drop to support `classic` module resolutions ([#145](https://github.com/karen-irc/option-t/pull/145))
   - Use `--moduleResolution node` or others.
 
 ### Internals
 
-- Use TypeScript v2.0 ([#141](https://github.com/saneyuki/option-t.js/pull/141))
+- Use TypeScript v2.0 ([#141](https://github.com/karen-irc/option-t/pull/141))
 
 
 ## 1.0.0
 
 ### Breaking Change (Possible)
 
-- These would causes `TypeError` instread of `Error`. ([#132](https://github.com/saneyuki/option-t.js/pull/132))
+- These would causes `TypeError` instread of `Error`. ([#132](https://github.com/karen-irc/option-t/pull/132))
   - `Option<T>.unwrap()`
   - `Option<T>.expect()`
   - `Result<T, E>.unwrap()`
@@ -189,41 +189,41 @@
 
 ### Internals
 
-- Remove Node v5 from CI. ([#136](https://github.com/saneyuki/option-t.js/pull/136))
+- Remove Node v5 from CI. ([#136](https://github.com/karen-irc/option-t/pull/136))
 
 
 ### Documentation
 
-* Add links to pull request for CHANGELOG.md. ([#129](https://github.com/saneyuki/option-t.js/pull/129))
-* Fix the sample code of casting from `Option<T>` to `Promise`. ([#130](https://github.com/saneyuki/option-t.js/pull/130))
+* Add links to pull request for CHANGELOG.md. ([#129](https://github.com/karen-irc/option-t/pull/129))
+* Fix the sample code of casting from `Option<T>` to `Promise`. ([#130](https://github.com/karen-irc/option-t/pull/130))
 
 
 ## 0.18.3
 
 ### Documentation
 
-* Fix the link to API documentations.([#128](https://github.com/saneyuki/option-t.js/pull/128))
+* Fix the link to API documentations.([#128](https://github.com/karen-irc/option-t/pull/128))
 
 
 ## 0.18.2
 
 ### Documentation
 
-* Add more descriptions about runtime nullability checking in README.md ([#127](https://github.com/saneyuki/option-t.js/pull/127))
+* Add more descriptions about runtime nullability checking in README.md ([#127](https://github.com/karen-irc/option-t/pull/127))
 
 
 ## 0.18.1
 
 ### Documentation
 
-* Add some semantics description to README.md ([#126](https://github.com/saneyuki/option-t.js/pull/126))
+* Add some semantics description to README.md ([#126](https://github.com/karen-irc/option-t/pull/126))
 
 
 ## 0.18.0
 
 ### Breaking Change
 
-#### Remove `Option<T>.asPromise()` ([#125](https://github.com/saneyuki/option-t.js/pull/125))
+#### Remove `Option<T>.asPromise()` ([#125](https://github.com/karen-irc/option-t/pull/125))
 
 In previous version (~v0.17), we provide `Option<T>.asPromise()` utility method casting from `Option<T>` to `Promise`.
 Its methods always treats `None` as a rejected `Promise`.
@@ -261,22 +261,22 @@ function castToPromise2(option: Option<T>): Promise<{ ok: boolean; value: T }> {
 
 ### Internals
 
-- Rename internal types' naming in `Result.d.ts`. ([#122](https://github.com/saneyuki/option-t.js/pull/122))
+- Rename internal types' naming in `Result.d.ts`. ([#122](https://github.com/karen-irc/option-t/pull/122))
 
 
 ## 0.17.1
 
 ### Internals
 
-- Update ESLint to v2.3.0. ([#109](https://github.com/saneyuki/option-t.js/pull/109))
-- Enable lint for `/test/` dir. ([#110](https://github.com/saneyuki/option-t.js/pull/110))
-- Use `assert.strictEqual()` instead of `assert.ok()`. ([#112](https://github.com/saneyuki/option-t.js/pull/112))
-- Split off `OptionT.d.ts` from '/option-t.es6.d.ts'. ([#115](https://github.com/saneyuki/option-t.js/pull/115))
+- Update ESLint to v2.3.0. ([#109](https://github.com/karen-irc/option-t/pull/109))
+- Enable lint for `/test/` dir. ([#110](https://github.com/karen-irc/option-t/pull/110))
+- Use `assert.strictEqual()` instead of `assert.ok()`. ([#112](https://github.com/karen-irc/option-t/pull/112))
+- Split off `OptionT.d.ts` from '/option-t.es6.d.ts'. ([#115](https://github.com/karen-irc/option-t/pull/115))
 
 ### Polish
 
 - Throw `TypeError` instead of `Error` if a callbacks for `Option<T>.andThen()` / `orElse()` returns
-  non `Option<T>` type. ([#116](https://github.com/saneyuki/option-t.js/pull/116))
+  non `Option<T>` type. ([#116](https://github.com/karen-irc/option-t/pull/116))
 
 ### New Feature
 
@@ -305,13 +305,13 @@ import {Result, Ok, Err, ResultBase} from 'option-t/src/Result';
 ```
 
 
-[issue88]: https://github.com/saneyuki/option-t.js/issues/88
-[pr111]: https://github.com/saneyuki/option-t.js/pull/111
+[issue88]: https://github.com/karen-irc/option-t/issues/88
+[pr111]: https://github.com/karen-irc/option-t/pull/111
 
 
 #### `Option<T>.drop()` can take a custom destructor function
 
-Now, `Option<T>.drop()` can take a custom destructor function by [#118](https://github.com/saneyuki/option-t.js/pull/118).
+Now, `Option<T>.drop()` can take a custom destructor function by [#118](https://github.com/karen-irc/option-t/pull/118).
 So you can pass a custom destructor function to dispose the inner value.
 
 ```javascript
@@ -324,16 +324,16 @@ some.drop((v) => v.dispose());
 
 ### Bug fix
 
-- Fix the compile error of `option-t.d.ts`. ([PR106](https://github.com/saneyuki/option-t.js/pull/106))
-  - This catches up [pr105](https://github.com/saneyuki/option-t.js/pull/105)
+- Fix the compile error of `option-t.d.ts`. ([PR106](https://github.com/karen-irc/option-t/pull/106))
+  - This catches up [pr105](https://github.com/karen-irc/option-t/pull/105)
 
 ## 0.16.2
 
 ### Bug fix
 
-- Revert [#97][pr97] to [fix the compile error on tsc nightly](https://github.com/saneyuki/option-t.js/issues/103)
+- Revert [#97][pr97] to [fix the compile error on tsc nightly](https://github.com/karen-irc/option-t/issues/103)
 
-[pr97]: https://github.com/saneyuki/option-t.js/pull/97
+[pr97]: https://github.com/karen-irc/option-t/pull/97
 
 
 ## 0.16.1
@@ -352,8 +352,8 @@ a missing version.
     * This is just only for a defensive programming style.
     * If you get a new problem by this change, please file a new issue. We'll consider to republish it.
 
-[pr98]: https://github.com/saneyuki/option-t.js/pull/98
-[pr99]: https://github.com/saneyuki/option-t.js/pull/99
+[pr98]: https://github.com/karen-irc/option-t/pull/98
+[pr99]: https://github.com/karen-irc/option-t/pull/99
 
 
 ### Polish
@@ -365,10 +365,10 @@ a missing version.
 ### Internal
 
 * Upgrade TypeScript compiler which our supports to `^1.8.0`. [#94][pr94], [#97][pr97]
-* Upgrde ESLint to `^1.10.1`. [#95](https://github.com/saneyuki/option-t.js/pull/95)
+* Upgrde ESLint to `^1.10.1`. [#95](https://github.com/karen-irc/option-t/pull/95)
 
-[pr94]: https://github.com/saneyuki/option-t.js/pull/94
-[pr97]: https://github.com/saneyuki/option-t.js/pull/97
+[pr94]: https://github.com/karen-irc/option-t/pull/94
+[pr97]: https://github.com/karen-irc/option-t/pull/97
 
 
 ## 0.15.0
@@ -379,27 +379,27 @@ a missing version.
 
 ### Internal
 
-* Add Node.js v5 as a CI tested environment [#89](https://github.com/saneyuki/option-t.js/pull/89)
-* Remove Node.js v0.10 from a CI tested environment [#90](https://github.com/saneyuki/option-t.js/pull/90)
+* Add Node.js v5 as a CI tested environment [#89](https://github.com/karen-irc/option-t/pull/89)
+* Remove Node.js v0.10 from a CI tested environment [#90](https://github.com/karen-irc/option-t/pull/90)
   * This change does not have any effects to existed codes.
 
 ### Documentation
 
-* Polish the documentation about casting to `Promise` [#91](https://github.com/saneyuki/option-t.js/pull/91)
+* Polish the documentation about casting to `Promise` [#91](https://github.com/karen-irc/option-t/pull/91)
 
 
 ## 0.14.2
 
 ### Documentation
 
-* Update README.md's 'semantics' section. [#85](https://github.com/saneyuki/option-t.js/pull/85)
+* Update README.md's 'semantics' section. [#85](https://github.com/karen-irc/option-t/pull/85)
 
 
 ## 0.14.1
 
 ### Bug Fix
 
-* Support TypeScript 1.6 stable's `--moduleResolution node` mode. [#83](https://github.com/saneyuki/option-t.js/pull/83)
+* Support TypeScript 1.6 stable's `--moduleResolution node` mode. [#83](https://github.com/karen-irc/option-t/pull/83)
 
 
 ## 0.14.0
@@ -413,8 +413,8 @@ a missing version.
 
 * Upgrade TypeScript compiler which our supports to `^1.6.0-beta`. [#76][pr76]
 
-[pr76]: https://github.com/saneyuki/option-t.js/pull/76
-[pr81]: https://github.com/saneyuki/option-t.js/pull/81
+[pr76]: https://github.com/karen-irc/option-t/pull/76
+[pr81]: https://github.com/karen-irc/option-t/pull/81
 
 
 ## 0.13.0
@@ -429,18 +429,18 @@ a missing version.
       others in the pure JavaScript world.
       The typical case is [TSX (TypeScript JSX) syntax](https://github.com/Microsoft/TypeScript/wiki/JSX).
     * Our basic stance is that _you don't use this and need not it in almost case_.
-  * See also [#77](https://github.com/saneyuki/option-t.js/pull/77)
+  * See also [#77](https://github.com/karen-irc/option-t/pull/77)
 
 ### Internal
 
-* Support Node.js v4. [#79](https://github.com/saneyuki/option-t.js/pull/79)
+* Support Node.js v4. [#79](https://github.com/karen-irc/option-t/pull/79)
 
 
 ## 0.12.3
 
 ### Bug Fix
 
-* Fix the bug whic is `SomeInstance instanceof None` will be `true`. ([#78](https://github.com/saneyuki/option-t.js/pull/78))
+* Fix the bug whic is `SomeInstance instanceof None` will be `true`. ([#78](https://github.com/karen-irc/option-t/pull/78))
 
 
 ## 0.12.2
@@ -468,14 +468,14 @@ a missing version.
 
 * TypeScript's type definition only support ES6 target officially.
   * You may continue to use this package without make your code to ES6 target.
-    See more details: [#72](https://github.com/saneyuki/option-t.js/pull/72)
+    See more details: [#72](https://github.com/karen-irc/option-t/pull/72)
 
 
 ## 0.11.0
 
 ### Breaking Change
 
-* Remove `OptionT.OptionT`. ( [#67](https://github.com/saneyuki/option-t.js/pull/67) )
+* Remove `OptionT.OptionT`. ( [#67](https://github.com/karen-irc/option-t/pull/67) )
   * This was marked as deprecated in 0.10.x.
 
 
@@ -493,7 +493,7 @@ a missing version.
 * Add `OptionT.OptionBase`.
   * This change also marks `OptionT.OptionT` as deprecated.
   * We recommend to use this new base object instead of `OptionT.OptionT`.
-    See more details ( [#66](https://github.com/saneyuki/option-t.js/pull/66) ).
+    See more details ( [#66](https://github.com/karen-irc/option-t/pull/66) ).
 
 
 ## 0.9.3
@@ -511,7 +511,7 @@ a missing version.
   * This does not affect this library's API model. Thus we release this as patch version.
   * Thanks [@gifnksm](https://github.com/gifnksm)!
 
-[PR62]: https://github.com/saneyuki/option-t.js/pull/62
+[PR62]: https://github.com/karen-irc/option-t/pull/62
 [tsd]: https://github.com/Definitelytyped/tsd
 [dtsm]: https://github.com/vvakame/dtsm
 
@@ -635,7 +635,7 @@ a missing version.
   * Of cource, this constructor is simple api,
     but it don't handle `None` or `Some<T>` properly if we pass `undefined` value.
     In some case, this api cannot differentiate whether the `undefined` value means `None`
-    or "the value returns `undefined` correctly". [See more derails](https://github.com/saneyuki/option-t.js/issues/17).
+    or "the value returns `undefined` correctly". [See more derails](https://github.com/karen-irc/option-t/issues/17).
 
 
 ## 0.2.0
