@@ -35,7 +35,7 @@ function fromNullable<T>(v: T | null | undefined): Option<T> {
 }
 ```
 
-The early version of this project had such APIs. But we obsolete it ([#17](https://github.com/saneyuki/option-t.js/issues/17)).
+The early version of this project had such APIs. But we obsolete it ([#17](https://github.com/karen-irc/option-t/issues/17)).
 In JavaScript world, there are some style to represent "null". There is no defacto standard style.
 So we decided that we should provide an explicit operation for interoperability with others.
 
