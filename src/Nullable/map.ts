@@ -1,6 +1,6 @@
 import { expectNotNull } from './expect';
 import { ERR_MSG_SELECTOR } from './ErrorMessage';
-import { MapFn } from './Function';
+import { MapFn } from '../utils/Function';
 import { Nullable, isNotNull } from './Nullable';
 
 export function mapForNullable<T, U>(src: Nullable<T>, selector: MapFn<T, U>): Nullable<U> {

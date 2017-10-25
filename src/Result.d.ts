@@ -23,12 +23,14 @@
  */
 
 import {Option, Some, None} from './Option';
+import {
+    MapFn,
+    RecoveryWithErrorFn,
+    DoFn
+} from './utils/Function';
 
-type MapFn<T, U> = (this: void, v: T) => U;
 type FlatmapOkFn<T, U, E> = (this: void, v: T) => Result<U, E>;
 type FlatmapErrFn<T, E, F> = (this: void, e: E) => Result<T, F>;
-type RecoveryFn<E, T> = (this: void, e: E) => T;
-type DestructorFn<T> = (this: void, v: T) => void;
 
 // XXX:
 // This is only used for the instanceof-basis runtime checking. (e.g. `React.PropTypes.instanceOf()`)
@@ -125,7 +127,7 @@ export abstract class ResultBase<T, E> {
      *  Unwraps a result, returns the content of an `Ok`.
      *  If the value is an `Err` then it calls `op` with its value.
      */
-    abstract unwrapOrElse(op: RecoveryFn<E, T>): T;
+    abstract unwrapOrElse(op: RecoveryWithErrorFn<E, T>): T;
 
     /**
      *  Return the inner `T` of a `Ok(T)`.
@@ -144,7 +146,7 @@ export abstract class ResultBase<T, E> {
      *  @param  errDestructor
      *      This would be called with the inner value if self is `Err<E>`.
      */
-    abstract drop(destructor?: DestructorFn<T>, errDestructor?: DestructorFn<E>): void;
+    abstract drop(destructor?: DoFn<T>, errDestructor?: DoFn<E>): void;
 }
 
 interface Ok<T, E> extends ResultBase<T, E> {
@@ -161,9 +163,9 @@ interface Ok<T, E> extends ResultBase<T, E> {
     unwrap(): T;
     unwrapErr(): never;
     unwrapOr(optb: T): T;
-    unwrapOrElse(op: RecoveryFn<E, T>): T;
+    unwrapOrElse(op: RecoveryWithErrorFn<E, T>): T;
     expect(message: string): T;
-    drop(destructor?: DestructorFn<T>, errDestructor?: DestructorFn<E>): void;
+    drop(destructor?: DoFn<T>, errDestructor?: DoFn<E>): void;
 }
 
 interface OkConstructor {
@@ -189,9 +191,9 @@ interface Err<T, E> extends ResultBase<T, E> {
     unwrap(): never;
     unwrapErr(): E;
     unwrapOr(optb: T): T;
-    unwrapOrElse(op: RecoveryFn<E, T>): T;
+    unwrapOrElse(op: RecoveryWithErrorFn<E, T>): T;
     expect(message: string): never;
-    drop(destructor?: DestructorFn<T>, errDestructor?: DestructorFn<E>): void;
+    drop(destructor?: DoFn<T>, errDestructor?: DoFn<E>): void;
 }
 
 interface ErrConstructor {

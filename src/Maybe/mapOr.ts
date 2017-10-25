@@ -1,7 +1,7 @@
 import { Maybe, isNotNullAndUndefined } from './Maybe';
 import { expectNotNullAndUndefined } from './expect';
 import { ERR_MSG_SELECTOR } from './ErrorMessage';
-import { MapFn } from './Function';
+import { MapFn } from '../utils/Function';
 
 export function mapOrForMaybe<T, U>(src: Maybe<T>, def: U, selector: MapFn<T, U>): U {
     let r: U;

@@ -1,4 +1,4 @@
-import { RecoveryFn } from './Function';
+import { RecoveryFn } from '../utils/Function';
 import { Option, isSome } from './Option';
 
 export function unwrapOrElseFromOption<T>(v: Option<T>, def:  RecoveryFn<T>): T {

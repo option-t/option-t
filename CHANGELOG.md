@@ -3,6 +3,11 @@
 
 ## x.y.z
 
+### Internals
+
+- Clean up internals types. ([#200](https://github.com/karen-irc/option-t/pull/200))
+
+
 ## 9.0.2
 
 ### Internals

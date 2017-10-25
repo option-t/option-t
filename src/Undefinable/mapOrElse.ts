@@ -1,6 +1,6 @@
 import { ERR_MSG_SELECTOR, ERR_MSG_MUST_NOT_RETURN_UNDEF } from './ErrorMessage';
 import { expectNotUndefined } from './expect';
-import { RecoveryFn, MapFn } from './Function';
+import { RecoveryFn, MapFn } from '../utils/Function';
 import { Undefinable, isNotUndefined } from './Undefinable';
 
 export function mapOrElseForUndefinable<T, U>(src: Undefinable<T>, def: RecoveryFn<U>, selector: MapFn<T, U>): U {
