@@ -48,7 +48,7 @@ const MOCHA_CMD = 'mocha';
 const RENAME_CMD = 'rename';
 const TSC_CMD = 'tsc';
 
-const BABEL_PRD_TRANSFORMER_LIST = ['transform-es2015-modules-commonjs', 'transform-es2015-block-scoping'].join(',');
+const BABEL_PRD_TRANSFORMER_LIST = ['transform-es2015-block-scoping'];
 
 /**
  *  @param  {string}    cmd
@@ -90,7 +90,7 @@ gulp.task('build_cjs_js', ['clean_build_cjs'], () => {
         '--out-dir', './lib/',
         '--extensions=.js',
         '--no-babelrc',
-        '--plugins', BABEL_PRD_TRANSFORMER_LIST
+        '--plugins', ['transform-es2015-modules-commonjs', ...BABEL_PRD_TRANSFORMER_LIST].join(','),
     ]);
     return p;
 });

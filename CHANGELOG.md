@@ -3,6 +3,14 @@
 
 ## x.y.z
 
+### Bug fix
+
+- Fix the bug which does not emit some modules as ES module syntax into `esm/`. ([#201](https://github.com/karen-irc/option-t/pull/201))
+    - This fixes that some files in `option-t/esm` are not ES module.
+        - `option-t/esm`
+        - `option-t/esm/Option`
+        - `option-t/esm/Result`
+
 ### Internals
 
 - Clean up internals types. ([#200](https://github.com/karen-irc/option-t/pull/200))
