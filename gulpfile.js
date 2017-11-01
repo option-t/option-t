@@ -44,6 +44,7 @@ const BABEL_CMD = 'babel';
 const CPX_CMD = 'cpx';
 const DEL_CMD = 'del';
 const ESLINT_CMD = 'eslint';
+const TSLINT_CMD = 'tslint';
 const MOCHA_CMD = 'mocha';
 const RENAME_CMD = 'rename';
 const TSC_CMD = 'tsc';
@@ -193,11 +194,19 @@ gulp.task('test_preprocess', ['clean_test_cache'], () => {
     ]);
     return p;
 });
-gulp.task('lint', () => {
+gulp.task('lint', ['eslint', 'tslint']);
+gulp.task('eslint', () => {
     const p = execNpmCmd(ESLINT_CMD, [
         '.',
         './**/.eslintrc.js',
         ' --ext', '.js',
+    ]);
+    return p;
+});
+gulp.task('tslint', () => {
+    const p = execNpmCmd(TSLINT_CMD, [
+        '--config', path.join(CWD, './tslint.json'),
+        path.join(CWD, './src/**/*.ts{,x}'),
     ]);
     return p;
 });

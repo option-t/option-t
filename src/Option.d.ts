@@ -207,7 +207,7 @@ interface Some<T> extends OptionBase<T> {
 
 interface SomeConstructor {
     new<T>(v: T): Option<T>;
-    readonly prototype: Some<any>;
+    readonly prototype: Some<any>; // tslint:disable-line:no-any
 }
 
 interface None<T> extends OptionBase<T> {
@@ -230,7 +230,7 @@ interface None<T> extends OptionBase<T> {
 
 interface NoneConstructor {
     new<T>(): Option<T>;
-    readonly prototype: None<any>;
+    readonly prototype: None<any>; // tslint:disable-line:no-any
 }
 
 /**

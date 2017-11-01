@@ -28,5 +28,5 @@ export {
     Option,
     Some,
     None,
-    OptionBase
-}
+    OptionBase,
+};
