@@ -3,6 +3,11 @@
 
 ## x.y.z
 
+### Breaking Change
+
+- Remove to support Node v6 LTS. ([#204](https://github.com/karen-irc/option-t/pull/204))
+
+
 ## 9.0.3
 
 ### Bug fix
