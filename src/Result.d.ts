@@ -36,7 +36,7 @@ type FlatmapErrFn<T, E, F> = (this: void, e: E) => Result<T, F>;
 // This is only used for the instanceof-basis runtime checking. (e.g. `React.PropTypes.instanceOf()`)
 // You MUST NOT use for other purpose.
 export abstract class ResultBase<T, E> {
-    private readonly _is_ok: boolean;
+    private readonly _is_ok: boolean; // tslint:disable-line:variable-name
     private readonly _v: T | undefined;
     private readonly _e: E | undefined;
 
@@ -170,7 +170,7 @@ interface Ok<T, E> extends ResultBase<T, E> {
 
 interface OkConstructor {
     new<T, E>(v: T): Result<T, E>;
-    readonly prototype: Ok<any, any>;
+    readonly prototype: Ok<any, any>; // tslint:disable-line:no-any
 }
 
 // XXX:
@@ -198,7 +198,7 @@ interface Err<T, E> extends ResultBase<T, E> {
 
 interface ErrConstructor {
     new<T, E>(e: E): Result<T, E>;
-    readonly prototype: Err<any, any>;
+    readonly prototype: Err<any, any>; // tslint:disable-line:no-any
 }
 
 /**

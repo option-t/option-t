@@ -3,7 +3,7 @@ import { Maybe, isNotNullAndUndefined } from './Maybe';
 /**
  *  Returns `null` or `undefined` if the `src` is `null` or `undefined`,
  *  otherwise calls `fn` with the value and returns the result.
- * 
+ *
  *  XXX:
  *  Some languages call this operation flatmap.
  *  But we don't provide `flatMap()` as alias of this function.

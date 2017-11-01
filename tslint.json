@@ -1,9 +1,12 @@
 {
   "extends": [
+    "./tools/tslint/basic.json",
+    "./tools/tslint/typecheck.json"
   ],
 
   "defaultSeverity": "warn",
 
   "rules": {
+    "member-ordering": false
   }
 }

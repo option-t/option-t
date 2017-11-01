@@ -1,4 +1,4 @@
-import { MapFn } from '../utils/Function';;
+import { MapFn } from '../utils/Function';
 import { Result, Err, isOk, createOk } from './Result';
 
 export function mapForResult<T, U, E>(src: Result<T, E>, selector: MapFn<T, U>): Result<U, E> {
