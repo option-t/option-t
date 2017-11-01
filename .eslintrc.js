@@ -43,5 +43,6 @@ module.exports = {
 
     'rules': {
         'func-name-matching': 'off',
+        'no-magic-numbers': 'off',
     }
 };
