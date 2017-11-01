@@ -6,6 +6,12 @@ node_js:
   - "6"
   - "node" # latest stable Node.js release
 
+branches:
+  except:
+    # These branches are used by bors-ng
+    - staging.tmp
+    - trying.tmp
+
 notifications:
   email: false
 
