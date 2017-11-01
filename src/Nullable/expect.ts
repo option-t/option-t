@@ -1,7 +1,7 @@
-import { isNull, Nullable } from './Nullable';
+import { Nullable } from './Nullable';
 
 export function expectNotNull<T>(v: Nullable<T>, msg: string): T | never {
-    if (isNull(v)) {
+    if (v === null) {
         throw TypeError(msg);
     }
 

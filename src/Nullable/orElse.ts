@@ -1,7 +1,7 @@
-import { Nullable, isNotNull } from './Nullable';
+import { Nullable } from './Nullable';
 
 export function orElseForNullable<T>(a: Nullable<T>, b: (this: void) => Nullable<T>): Nullable<T> {
-    if (isNotNull(a)) {
+    if (a !== null) {
         return a;
     }
     else {
