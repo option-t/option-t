@@ -1,11 +1,16 @@
 # Changelog
 
 
-## x.y.z
+## 10.0.0
 
 ### Breaking Change
 
 - Remove to support Node v6 LTS. ([#204](https://github.com/karen-irc/option-t/pull/204))
+
+
+### Internals
+
+- Update dev dependnecies. ([#202](https://github.com/karen-irc/option-t/pull/202))
 
 
 ## 9.0.3
