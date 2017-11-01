@@ -1,4 +1,4 @@
-import { Nullable, isNotNull } from './Nullable';
+import { Nullable } from './Nullable';
 
 /**
  *  Returns `null` if the `src` is `null`,
@@ -10,7 +10,7 @@ import { Nullable, isNotNull } from './Nullable';
  *  because it's too hard to undarstand that "flatMap" operation for `T | null`
  */
 export function andThenForNullable<T, U>(src: Nullable<T>, fn: (this: void, v: T) => Nullable<U>): Nullable<U> {
-    if (isNotNull(src)) {
+    if (src !== null) {
         const r = fn(src);
         return r;
     }

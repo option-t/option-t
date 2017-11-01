@@ -1,5 +1,5 @@
-import { Nullable, isNotNull } from './Nullable';
+import { Nullable } from './Nullable';
 
 export function unwrapOrFromNullable<T>(v: Nullable<T>, def: T): T {
-    return isNotNull(v) ? v : def;
+    return (v !== null) ? v : def;
 }
