@@ -1,6 +1,6 @@
 {
   "name": "option-t",
-  "version": "10.0.0",
+  "version": "10.0.1",
   "description": "Option type implementation whose APIs are inspired by Rust's `Option<T>`.",
   "main": "lib/index.js",
   "files": [
