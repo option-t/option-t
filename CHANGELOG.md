@@ -1,5 +1,13 @@
 # Changelog
 
+## x.y.z
+
+## 10.0.1
+
+### Internals
+
+- Inline `isNull()`/`isNotNull()` by hand to decrease calling a function. ([#207](https://github.com/karen-irc/option-t/pull/207))
+
 
 ## 10.0.0
 
