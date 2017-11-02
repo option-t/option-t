@@ -24,7 +24,7 @@ export {
  } from './expect';
 export { mapForResult as map } from './map';
 export { mapErrForResult as mapErr } from './mapErr';
-export { orResult as or } from './or';
+export { orForResult as or } from './or';
 export { orElseForResult as orElse } from './orElse';
 export {
     toOptionFromOk,
