@@ -1,5 +1,5 @@
-import { Option, isSome } from './Option';
+import { Option } from './Option';
 
 export function andForOption<T, U>(a: Option<T>, b: Option<U>): Option<U> {
-    return isSome(a) ? b : a;
+    return a.ok ? b : a;
 }

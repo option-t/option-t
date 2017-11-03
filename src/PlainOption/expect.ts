@@ -1,7 +1,7 @@
-import { isNone, Option } from './Option';
+import { Option } from './Option';
 
 export function expectIsSome<T>(v: Option<T>, msg: string): T | never {
-    if (isNone(v)) {
+    if (!v.ok) {
         throw TypeError(msg);
     }
 

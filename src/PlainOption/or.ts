@@ -1,5 +1,5 @@
-import { Option, isSome } from './Option';
+import { Option } from './Option';
 
 export function orForOption<T>(a: Option<T>, b: Option<T>): Option<T> {
-    return isSome(a) ? a : b;
+    return a.ok ? a : b;
 }

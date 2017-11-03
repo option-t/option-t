@@ -1,8 +1,8 @@
 import { DoFn } from '../utils/Function';
-import { isNone, Option } from './Option';
+import { Option } from './Option';
 
 export function doOnOption<T>(v: Option<T>, fn: DoFn<T>): void {
-    if (isNone(v)) {
+    if (!v.ok) {
         return;
     }
 

@@ -1,5 +1,5 @@
-import { Option, isSome } from './Option';
+import { Option } from './Option';
 
 export function unwrapOrFromOption<T>(v: Option<T>, def: T): T {
-    return isSome(v) ? v.val : def;
+    return v.ok ? v.val : def;
 }

@@ -23,6 +23,7 @@
 ### Internals
 
 - Inline `isUndefined()`/`isNotUndefined()` by hand to decrease calling a function. ([#209](https://github.com/karen-irc/option-t/pull/209))
+- Inline `isSome()`/`isNone()` by hand to decrease calling a function.  ([#210](https://github.com/karen-irc/option-t/pull/210))
 
 
 ## 10.0.1

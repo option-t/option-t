@@ -1,7 +1,7 @@
-import { Option, isSome } from './Option';
+import { Option } from './Option';
 
 export function orElseForOption<T>(a: Option<T>, b: (this: void) => Option<T>): Option<T> {
-    if (isSome(a)) {
+    if (a.ok) {
         return a;
     }
     else {
