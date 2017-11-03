@@ -25,6 +25,7 @@
 - Inline `isUndefined()`/`isNotUndefined()` by hand to decrease calling a function. ([#209](https://github.com/karen-irc/option-t/pull/209))
 - Inline `isSome()`/`isNone()` by hand to decrease calling a function.  ([#210](https://github.com/karen-irc/option-t/pull/210))
 - Inline `isOk()`/`isErr()` by hand to decrease calling a function.  ([#211](https://github.com/karen-irc/option-t/pull/211))
+- Inline `isNotNullAndUndefined()`/`isNullOrUndefined()` by hand to decrease calling a function.  ([#212](https://github.com/karen-irc/option-t/pull/212))
 
 
 ## 10.0.1

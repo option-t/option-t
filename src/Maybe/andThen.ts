@@ -1,4 +1,4 @@
-import { Maybe, isNotNullAndUndefined } from './Maybe';
+import { Maybe } from './Maybe';
 
 /**
  *  Returns `null` or `undefined` if the `src` is `null` or `undefined`,
@@ -10,7 +10,7 @@ import { Maybe, isNotNullAndUndefined } from './Maybe';
  *  because it's too hard to undarstand that "flatMap" operation for `T | null | undefined`.
  */
 export function andThenForMaybe<T, U>(src: Maybe<T>, fn: (this: void, v: T) => Maybe<U>): Maybe<U> {
-    if (isNotNullAndUndefined(src)) {
+    if (src !== undefined && src !== null) {
         const r = fn(src);
         return r;
     }
