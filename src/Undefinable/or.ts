@@ -1,5 +1,5 @@
-import { Undefinable, isNotUndefined } from './Undefinable';
+import { Undefinable } from './Undefinable';
 
 export function orForUndefinable<T>(a: Undefinable<T>, b: Undefinable<T>): Undefinable<T> {
-    return isNotUndefined(a) ? a : b;
+    return (a !== undefined) ? a : b;
 }

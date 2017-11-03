@@ -1,5 +1,5 @@
-import { Undefinable, isNotUndefined } from './Undefinable';
+import { Undefinable } from './Undefinable';
 
 export function unwrapOrFromUndefinable<T>(v: Undefinable<T>, def: T): T {
-    return isNotUndefined(v) ? v : def;
+    return (v !== undefined) ? v : def;
 }
