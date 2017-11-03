@@ -2,6 +2,8 @@
 
 ## x.y.z
 
+## 11.0.0
+
 ### Breaking Change
 
 - Rename functions. ([#208](https://github.com/karen-irc/option-t/pull/208))
