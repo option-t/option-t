@@ -1,8 +1,8 @@
 import { MapFn } from '../utils/Function';
-import { Result, Err, isOk, createOk } from './Result';
+import { Result, Err, createOk } from './Result';
 
 export function mapForResult<T, U, E>(src: Result<T, E>, selector: MapFn<T, U>): Result<U, E> {
-    if (isOk(src)) {
+    if (src.ok) {
         const r: U = selector(src.val);
         return createOk(r);
     }
