@@ -2,6 +2,24 @@
 
 ## x.y.z
 
+### Breaking Change
+
+- Rename functions. ([#208](https://github.com/karen-irc/option-t/pull/208))
+    - `option-t/lib/Maybe`
+        - `/and`: `andMaybe()` -> `andForMaybe()`
+        - `/or`: `orMaybe()` -> `orForMaybe()`
+    - `option-t/lib/Nullable`
+        - `/and`: `andNullable()` -> `andForNullable()`
+        - `/or`: `orNullable()` -> `orForNullable()`
+    - `option-t/lib/Undefinable`
+        - `/and`: `andUndefinable()` -> `andForUndefinable()`
+        - `/or`: `orUndefinable()` -> `orForUndefinable()`
+    - `option-t/lib/PlainOption`
+        - `/or`: `orOption()` -> `orForOption()`
+    - `option-t/lib/PlainResult`
+        - `/or`: `orResult()` -> `orForResult()`
+ 
+
 ## 10.0.1
 
 ### Internals
