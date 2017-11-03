@@ -1,4 +1,4 @@
-import { Undefinable, isNotUndefined } from './Undefinable';
+import { Undefinable } from './Undefinable';
 
 /**
  *  Returns `undefined` if the `src` is `undefined`,
@@ -10,7 +10,7 @@ import { Undefinable, isNotUndefined } from './Undefinable';
  *  because it's too hard to undarstand that "flatMap" operation for `T | undefined`
  */
 export function andThenForUndefinable<T, U>(src: Undefinable<T>, fn: (this: void, v: T) => Undefinable<U>): Undefinable<U> {
-    if (isNotUndefined(src)) {
+    if (src !== undefined) {
         const r = fn(src);
         return r;
     }

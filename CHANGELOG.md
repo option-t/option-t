@@ -18,7 +18,12 @@
         - `/or`: `orOption()` -> `orForOption()`
     - `option-t/lib/PlainResult`
         - `/or`: `orResult()` -> `orForResult()`
- 
+
+
+### Internals
+
+- Inline `isUndefined()`/`isNotUndefined()` by hand to decrease calling a function. ([#209](https://github.com/karen-irc/option-t/pull/209))
+
 
 ## 10.0.1
 
