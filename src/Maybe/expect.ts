@@ -1,7 +1,7 @@
-import { isNullOrUndefined, Maybe } from './Maybe';
+import { Maybe } from './Maybe';
 
 export function expectNotNullAndUndefined<T>(v: Maybe<T>, msg: string): T | never {
-    if (isNullOrUndefined(v)) {
+    if (v === undefined || v === null) {
         throw TypeError(msg);
     }
 
