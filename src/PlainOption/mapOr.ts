@@ -1,9 +1,9 @@
-import { Option, isSome } from './Option';
+import { Option } from './Option';
 import { MapFn } from '../utils/Function';
 
 export function mapOrForOption<T, U>(src: Option<T>, def: U, selector: MapFn<T, U>): U {
     let r: U;
-    if (isSome(src)) {
+    if (src.ok) {
         r = selector(src.val);
     }
     else {

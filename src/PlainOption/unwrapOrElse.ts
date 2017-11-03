@@ -1,6 +1,6 @@
 import { RecoveryFn } from '../utils/Function';
-import { Option, isSome } from './Option';
+import { Option } from './Option';
 
 export function unwrapOrElseFromOption<T>(v: Option<T>, def:  RecoveryFn<T>): T {
-    return isSome(v) ? v.val: def();
+    return v.ok ? v.val: def();
 }
