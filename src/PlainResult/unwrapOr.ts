@@ -1,5 +1,5 @@
-import { Result, isOk } from './Result';
+import { Result } from './Result';
 
 export function unwrapOrFromResult<T, E>(v: Result<T, E>, def: T): T {
-    return isOk(v) ? v.val : def;
+    return v.ok ? v.val : def;
 }
