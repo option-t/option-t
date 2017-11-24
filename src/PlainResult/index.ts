@@ -29,6 +29,8 @@ export { orElseForResult as orElse } from './orElse';
 export {
     toOptionFromOk,
     toOptionFromErr,
+    toOptionFromOk as ok,
+    toOptionFromErr as err,
 } from './toOption';
 export {
     unwrapFromResult as unwrap,
