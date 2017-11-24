@@ -8,6 +8,11 @@
   - If you use `option-t/lib`, please replace it with `option-t/cjs`
 
 
+### Enhancement
+
+- You can use `import { ok, err, } from 'option-t/esm/PlainResult';` instead of `import { toOptionFromOk, toOptionFromErr, } from 'option-t/esm/PlainResult';`. ([#219](https://github.com/karen-irc/option-t/pull/219))
+
+
 ## 11.0.0
 
 ### Breaking Change
