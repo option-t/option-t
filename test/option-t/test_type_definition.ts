@@ -25,7 +25,7 @@
 // XXX:
 // The type definitions for '--moduleResolution node' is a ES6 format,
 // So it would test it by importing it simply.
-import {Option, Some, None, OptionBase} from '../../lib/Option';
+import {Option, Some, None, OptionBase} from '../../cjs/Option';
 
 // `Some<T>`
 (function(){

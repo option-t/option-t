@@ -25,8 +25,8 @@
 'use strict';
 
 const assert = require('assert');
-const Some = require('../../lib/Option').Some;
-const None = require('../../lib/Option').None;
+const Some = require('../../cjs/Option').Some;
+const None = require('../../cjs/Option').None;
 
 const primitiveVal = require('../utils').primitiveVal;
 const objectVal = require('../utils').objectVal;

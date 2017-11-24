@@ -2,15 +2,15 @@
   "name": "option-t",
   "version": "11.0.0",
   "description": "Option type implementation whose APIs are inspired by Rust's `Option<T>`.",
-  "main": "lib/index.js",
+  "main": "cjs/index.js",
   "files": [
     "CHANGELOG.md",
+    "cjs/",
     "docs/",
     "esm",
     "LICENSE.MIT",
     "package.json",
-    "README.md",
-    "lib/"
+    "README.md"
   ],
   "scripts": {
     "gulp": "gulp",
@@ -63,5 +63,5 @@
     "tslint": "^5.8.0",
     "typescript": "^2.6.1"
   },
-  "typings": "./lib/index.d.ts"
+  "typings": "./cjs/index.d.ts"
 }

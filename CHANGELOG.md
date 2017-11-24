@@ -2,6 +2,12 @@
 
 ## x.y.z
 
+### Breaking Change
+
+- Rename from `lib/` to `cjs/`. ([#218](https://github.com/karen-irc/option-t/pull/218))
+  - If you use `option-t/lib`, please replace it with `option-t/cjs`
+
+
 ## 11.0.0
 
 ### Breaking Change

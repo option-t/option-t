@@ -26,7 +26,7 @@
 
 const assert = require('assert');
 
-const ResultMod = require('../../lib/Result');
+const ResultMod = require('../../cjs/Result');
 const ResultBase = ResultMod.ResultBase;
 const Ok = ResultMod.Ok;
 const Err = ResultMod.Err;

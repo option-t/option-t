@@ -34,7 +34,7 @@ const NPM_MOD_DIR = path.resolve(__dirname, './node_modules/');
 const CWD = path.relative(__dirname, '');
 
 const DIST_ESM_DIR = path.resolve(__dirname, './esm/');
-const DIST_LIB_DIR = path.resolve(__dirname, './lib/');
+const DIST_COMMONJS_DIR = path.resolve(__dirname, './cjs/');
 const TEST_CACHE_DIR = path.resolve(__dirname, './__test_cache/');
 const TYPE_TEST_DIR = path.resolve(__dirname, './__type_test/');
 const TMP_MJS_DIR = path.resolve(__dirname, './__tmp_mjs/');
@@ -72,7 +72,7 @@ function execNpmCmd(cmd, args) {
  */
 gulp.task('clean', ['clean_build', 'clean_test_cache', 'clean_type_test', 'clean_tmp_mjs']);
 gulp.task('clean_build', ['clean_build_cjs', 'clean_build_esm']);
-gulp.task('clean_build_cjs', () => execNpmCmd(DEL_CMD, [DIST_LIB_DIR]));
+gulp.task('clean_build_cjs', () => execNpmCmd(DEL_CMD, [DIST_COMMONJS_DIR]));
 gulp.task('clean_build_esm', () => execNpmCmd(DEL_CMD, [DIST_ESM_DIR]));
 gulp.task('clean_test_cache', () => execNpmCmd(DEL_CMD, [TEST_CACHE_DIR]));
 gulp.task('clean_type_test', () => execNpmCmd(DEL_CMD, [TYPE_TEST_DIR]));
@@ -88,7 +88,7 @@ gulp.task('build_cjs', ['build_cjs_js', 'build_cjs_type_definition', 'build_cjs_
 gulp.task('build_cjs_js', ['clean_build_cjs'], () => {
     const p = execNpmCmd(BABEL_CMD, [
         './src',
-        '--out-dir', './lib/',
+        '--out-dir', './cjs/',
         '--extensions=.js',
         '--no-babelrc',
         '--plugins', ['transform-es2015-modules-commonjs', ...BABEL_PRD_TRANSFORMER_LIST].join(','),
@@ -98,14 +98,14 @@ gulp.task('build_cjs_js', ['clean_build_cjs'], () => {
 gulp.task('build_cjs_type_definition', ['clean_build_cjs'], () => {
     const p = execNpmCmd(CPX_CMD, [
         './src/**/*.d.ts',
-        './lib',
+        './cjs',
         '--preserve',
     ]);
     return p;
 });
 gulp.task('build_cjs_ts', ['clean_build_cjs'], () => {
     const p = execNpmCmd(TSC_CMD, [
-        '-p', './tsconfig_lib.json',
+        '-p', './tsconfig_cjs.json',
     ]);
     return p;
 });
