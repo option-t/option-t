@@ -25,7 +25,7 @@
 'use strict';
 
 const assert = require('assert');
-const PlainResult = require('../../lib/PlainResult');
+const PlainResult = require('../../cjs/PlainResult');
 
 describe('PlainResult::isOk', () => {
     const testcase = [

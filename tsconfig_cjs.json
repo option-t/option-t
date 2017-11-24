@@ -5,7 +5,7 @@
         "module": "commonjs",
         "newLine": "LF",
         "noEmitOnError": true,
-        "outDir": "./lib/"
+        "outDir": "./cjs/"
     },
     "src": [
         "./src/Maybe/index.ts",

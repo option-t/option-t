@@ -25,7 +25,7 @@
 'use strict';
 
 const assert = require('assert');
-const Nullable = require('../../lib/Nullable');
+const Nullable = require('../../cjs/Nullable');
 
 describe('Nullable::isNotNull', () => {
     const testcase = [

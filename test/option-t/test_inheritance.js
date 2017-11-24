@@ -25,9 +25,9 @@
 'use strict';
 
 const assert = require('assert');
-const OptionBase = require('../../lib/Option').OptionBase;
-const Some = require('../../lib/Option').Some;
-const None = require('../../lib/Option').None;
+const OptionBase = require('../../cjs/Option').OptionBase;
+const Some = require('../../cjs/Option').Some;
+const None = require('../../cjs/Option').None;
 
 describe('Inheritance for `Option<T>`', function(){
     describe('`Some<T>`', function () {

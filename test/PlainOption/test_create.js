@@ -25,7 +25,7 @@
 'use strict';
 
 const assert = require('assert');
-const { createSome, createNone, isSome, isNone } = require('../../lib/PlainOption');
+const { createSome, createNone, isSome, isNone } = require('../../cjs/PlainOption');
 
 describe('PlainOption::createSome', () => {
     const EXPECTED = 1;

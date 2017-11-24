@@ -2,7 +2,7 @@
 npm-debug.log
 
 esm/
-lib/
+cjs/
 node_modules/
 
 __test_cache/

@@ -25,7 +25,7 @@
 'use strict';
 
 const assert = require('assert');
-const PlainOption = require('../../lib/PlainOption');
+const PlainOption = require('../../cjs/PlainOption');
 
 describe('PlainOption::isSome', () => {
     const testcase = [
