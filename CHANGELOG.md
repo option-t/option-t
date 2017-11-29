@@ -2,6 +2,13 @@
 
 ## x.y.z
 
+### Breaking Change
+
+- Unship a source map. ([#220](https://github.com/karen-irc/option-t/pull/220))
+    - Our shipping code is down-level transformed. But ours not a complicated transform. We can read the transformed code.
+    - For debugging purpose, Showing _transformed_ code would be better if it's not complicated.
+    - Thus We stop to ship a source map.
+
 
 ## 12.0.0
 
