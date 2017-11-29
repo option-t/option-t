@@ -29,8 +29,8 @@ import {
     TapFn
 } from './utils/Function';
 
-type FlatmapOkFn<T, U, E> = (this: void, v: T) => Result<U, E>;
-type FlatmapErrFn<T, E, F> = (this: void, e: E) => Result<T, F>;
+export type FlatmapOkFn<T, U, E> = MapFn<T, Result<U, E>>;
+export type FlatmapErrFn<T, E, F> = MapFn<E, Result<T, F>>;
 
 // XXX:
 // This is only used for the instanceof-basis runtime checking. (e.g. `React.PropTypes.instanceOf()`)

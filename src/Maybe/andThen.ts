@@ -1,4 +1,7 @@
+import { MapFn } from '../utils/Function';
 import { Maybe } from './Maybe';
+
+export type FlatmapFn<T, U> = MapFn<T, Maybe<U>>;
 
 /**
  *  Returns `null` or `undefined` if the `src` is `null` or `undefined`,
@@ -9,7 +12,7 @@ import { Maybe } from './Maybe';
  *  But we don't provide `flatMap()` as alias of this function.
  *  because it's too hard to undarstand that "flatMap" operation for `T | null | undefined`.
  */
-export function andThenForMaybe<T, U>(src: Maybe<T>, fn: (this: void, v: T) => Maybe<U>): Maybe<U> {
+export function andThenForMaybe<T, U>(src: Maybe<T>, fn: FlatmapFn<T, U>): Maybe<U> {
     if (src !== undefined && src !== null) {
         const r = fn(src);
         return r;

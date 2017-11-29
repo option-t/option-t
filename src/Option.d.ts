@@ -25,11 +25,11 @@
 import {
     MapFn,
     RecoveryFn,
+    TapFn,
 } from './utils/Function';
 
-type FlatmapFn<T, U> = (this: void, v: T) => Option<U>;
-type MayRecoveryFn<T> = (this: void) => Option<T>;
-type DestructorFn<T> = (this: void, v: T) => void;
+export type FlatmapFn<T, U> = MapFn<T, Option<U>>;
+export type MayRecoveryFn<T> = RecoveryFn<Option<T>>;
 
 /**
  *  The base object of `Some<T>` and `None<T>`.
@@ -182,7 +182,7 @@ export abstract class OptionBase<T> {
      *  @param  destructor
      *      This would be called with the inner value if self is `Some<T>`.
      */
-    abstract drop(destructor?: DestructorFn<T>): void;
+    abstract drop(destructor?: TapFn<T>): void;
 
     abstract toJSON(): object;
 }
@@ -202,7 +202,7 @@ interface Some<T> extends OptionBase<T> {
     andThen<U>(fn: FlatmapFn<T, U>): Option<U>;
     or(optb: Option<T>): Option<T>;
     orElse(fn: MayRecoveryFn<T>): Option<T>;
-    drop(destructor?: DestructorFn<T>): void;
+    drop(destructor?: TapFn<T>): void;
 }
 
 interface SomeConstructor {
@@ -225,7 +225,7 @@ interface None<T> extends OptionBase<T> {
     andThen<U>(fn: FlatmapFn<T, U>): Option<U>;
     or(optb: Option<T>): Option<T>;
     orElse(fn: MayRecoveryFn<T>): Option<T>;
-    drop(destructor?: DestructorFn<T>): void;
+    drop(destructor?: TapFn<T>): void;
 }
 
 interface NoneConstructor {

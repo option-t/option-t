@@ -1,5 +1,7 @@
-import { FlatmapOkFn } from './Function';
+import { MapFn } from '../utils/Function';
 import { Result } from './Result';
+
+export type FlatmapOkFn<T, U, E> = MapFn<T, Result<U, E>>;
 
 /**
  *  XXX:

@@ -1,6 +1,9 @@
+import { RecoveryFn } from '../utils/Function';
 import { Option } from './Option';
 
-export function orElseForOption<T>(a: Option<T>, b: (this: void) => Option<T>): Option<T> {
+export type MayRecoveryFn<T> = RecoveryFn<Option<T>>;
+
+export function orElseForOption<T>(a: Option<T>, b: MayRecoveryFn<T>): Option<T> {
     if (a.ok) {
         return a;
     }

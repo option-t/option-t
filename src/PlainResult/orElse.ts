@@ -1,5 +1,7 @@
-import { FlatmapErrFn } from './Function';
+import { MapFn } from '../utils/Function';
 import { Result } from './Result';
+
+export type FlatmapErrFn<T, E, F> = MapFn<E, Result<T, F>>;
 
 export function orElseForResult<T, E, F>(a: Result<T, E>, errSelector: FlatmapErrFn<T, E, F>): Result<T, F> {
     if (a.ok) {
