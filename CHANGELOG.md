@@ -9,6 +9,10 @@
     - For debugging purpose, Showing _transformed_ code would be better if it's not complicated.
     - Thus We stop to ship a source map.
 
+## Enhancement
+
+- Add [LICENSE.MIT](./LICENSE.MIT). ([#221](https://github.com/karen-irc/option-t/pull/221))
+
 
 ## 12.0.0
 
