@@ -21,7 +21,7 @@
         "pretty": true,
         "preserveConstEnums": true,
         "removeComments": false,
-        "sourceMap": true,
+        "sourceMap": false,
         "strict": true,
         "suppressImplicitAnyIndexErrors": false,
         "target": "es5"

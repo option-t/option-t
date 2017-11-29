@@ -152,7 +152,6 @@ gulp.task('build_mjs_create_tmp_mjs', ['clean_tmp_mjs'], () => {
     const ts = execNpmCmd(TSC_CMD, [
         '-p', './tsconfig_esm.json',
         '--outDir', TMP_MJS_DIR,
-        '--sourceMap', 'false',
         '--declaration', 'false'
     ]);
 
@@ -190,7 +189,6 @@ gulp.task('test_preprocess', ['clean_test_cache'], () => {
         './test',
         '--out-dir', './__test_cache/',
         '--extensions=.js',
-        '--source-maps', 'inline',
     ]);
     return p;
 });
