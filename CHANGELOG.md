@@ -2,6 +2,8 @@
 
 ## x.y.z
 
+## 13.1.2
+
 ### Bug fix
 
 - Publish `lib/` to npm correctly.  ([#227](https://github.com/karen-irc/option-t/pull/227))
