@@ -2,6 +2,12 @@
 
 ## x.y.z
 
+## Enhancement
+
+- Add `lib/` directory which contains both of commonjs style `.js` file and es module style `.mjs` file. ([#224](https://github.com/karen-irc/option-t/pull/224))
+  - Please see _How to import_ section in [README.md](./README.md).
+
+
 ## 13.0.0
 
 ### Breaking Change

@@ -33,7 +33,6 @@ console.log(none.isSome); // false
 console.log(none.unwrap()); // this will throw `Error`.
 ```
 
-
 ## API
 
 * Wrapper objects
@@ -46,6 +45,30 @@ console.log(none.unwrap()); // this will throw `Error`.
     * plain objects
         * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/index.ts)
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/index.ts)
+
+
+### How to import
+
+This package provides some sub directories to import various functions.
+Each of them includes same directoty hierarchy with [under `src`/](./src/).
+
+- `option-t/cjs`
+  - This directory privides commonjs style modules with `.js` extension.
+- `option-t/esm`
+  - This directory privides ES modules with `.mjs` extension.
+  - Currently, we provides them with `.js` extension for compatibility.
+    However, we may only release `.mjs` for the future release.
+    If you uses some module bundler (e.g. webpack or rollup), please add the config to prefer `.mjs` file.
+- `option-t/lib`
+ - This directory privides both of an ES module and a commonjs style module.
+    - ES module has `.mjs` extension.
+    - CommonJS module has `.js` extension.
+  - This directory is provided for a bit tricky purpose.
+    - For example, your project distributes a bundled file with some module bundlers that can handle ES module (e.g. rollup or webpack),
+      But your project also use babel or typescript's downlevel trasnform to transform your code from ES module to Commonjs and
+      your project runs unit-tests for transformed code with plain Node.js which only use `require()`.
+    - _Please don't use this path if you don't have to use this_.
+
 
 ### JSON Representation
 

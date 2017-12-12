@@ -35,6 +35,7 @@ const CWD = path.relative(__dirname, '');
 
 const DIST_ESM_DIR = path.resolve(__dirname, './esm/');
 const DIST_COMMONJS_DIR = path.resolve(__dirname, './cjs/');
+const DIST_MIXED_LIB_DIR = path.resolve(__dirname, './lib/');
 const TEST_CACHE_DIR = path.resolve(__dirname, './__test_cache/');
 const TYPE_TEST_DIR = path.resolve(__dirname, './__type_test/');
 const TMP_MJS_DIR = path.resolve(__dirname, './__tmp_mjs/');
@@ -71,9 +72,10 @@ function execNpmCmd(cmd, args) {
  *  Clean
  */
 gulp.task('clean', ['clean_build', 'clean_test_cache', 'clean_type_test', 'clean_tmp_mjs']);
-gulp.task('clean_build', ['clean_build_cjs', 'clean_build_esm']);
+gulp.task('clean_build', ['clean_build_cjs', 'clean_build_esm', 'clean_build_mixedlib']);
 gulp.task('clean_build_cjs', () => execNpmCmd(DEL_CMD, [DIST_COMMONJS_DIR]));
 gulp.task('clean_build_esm', () => execNpmCmd(DEL_CMD, [DIST_ESM_DIR]));
+gulp.task('clean_build_mixedlib', () => execNpmCmd(DEL_CMD, [DIST_MIXED_LIB_DIR]));
 gulp.task('clean_test_cache', () => execNpmCmd(DEL_CMD, [TEST_CACHE_DIR]));
 gulp.task('clean_type_test', () => execNpmCmd(DEL_CMD, [TYPE_TEST_DIR]));
 gulp.task('clean_tmp_mjs', () => execNpmCmd(DEL_CMD, [TMP_MJS_DIR]));
@@ -82,7 +84,7 @@ gulp.task('clean_tmp_mjs', () => execNpmCmd(DEL_CMD, [TMP_MJS_DIR]));
 /**
  *  Build
  */
-gulp.task('build', ['build_cjs', 'build_esm']);
+gulp.task('build', ['build_cjs', 'build_esm', 'build_mixedlib']);
 
 gulp.task('build_cjs', ['build_cjs_js', 'build_cjs_type_definition', 'build_cjs_ts']);
 gulp.task('build_cjs_js', ['clean_build_cjs'], () => {
@@ -164,6 +166,32 @@ gulp.task('build_mjs_create_tmp_mjs', ['clean_tmp_mjs'], () => {
     ]);
 
     return Promise.all([ts, js]);
+});
+
+gulp.task('build_mixedlib', ['build_mixedlib_cp_mjs', 'build_mixedlib_cp_cjs', 'build_mixedlib_cp_dts']);
+gulp.task('build_mixedlib_cp_mjs', ['build_esm', 'clean_build_mixedlib'], () => {
+    const js = execNpmCmd(CPX_CMD, [
+        DIST_ESM_DIR + '/**/*.mjs',
+        DIST_MIXED_LIB_DIR,
+        '--preserve',
+    ]);
+    return js;
+});
+gulp.task('build_mixedlib_cp_cjs', ['build_cjs', 'clean_build_mixedlib'], () => {
+    const js = execNpmCmd(CPX_CMD, [
+        DIST_COMMONJS_DIR + '/**/*.js',
+        DIST_MIXED_LIB_DIR,
+        '--preserve',
+    ]);
+    return js;
+});
+gulp.task('build_mixedlib_cp_dts', ['build_esm', 'clean_build_mixedlib'], () => {
+    const js = execNpmCmd(CPX_CMD, [
+        DIST_ESM_DIR + '/**/*.d.ts',
+        DIST_MIXED_LIB_DIR,
+        '--preserve',
+    ]);
+    return js;
 });
 
 
