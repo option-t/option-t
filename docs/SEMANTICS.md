@@ -7,11 +7,11 @@ This library represents [Option type](http://en.wikipedia.org/wiki/Option_type) 
 This object will be the one of following states:
 
 * `Some<T>`
-  * `option instanceof OptionT.Some`
-  * `option.isSome === true`.
+    * `option instanceof OptionT.Some`
+    * `option.isSome === true`.
 * `None`
-  * `option instanceof OptionT.None`
-  * `option.isSome === false`.
+    * `option instanceof OptionT.None`
+    * `option.isSome === false`.
 
 
 This type is a interface to represent `Option<T>`.

@@ -12,7 +12,7 @@
 ### Enhancement
 
 - Add `lib/` directory which contains both of commonjs style `.js` file and es module style `.mjs` file. ([#224](https://github.com/karen-irc/option-t/pull/224))
-  - Please see _How to import_ section in [README.md](./README.md).
+    - Please see _How to import_ section in [README.md](./README.md).
 
 
 ## 13.0.0
@@ -39,7 +39,7 @@
 ### Breaking Change
 
 - Rename from `lib/` to `cjs/`. ([#218](https://github.com/karen-irc/option-t/pull/218))
-  - If you use `option-t/lib`, please replace it with `option-t/cjs`
+    - If you use `option-t/lib`, please replace it with `option-t/cjs`
 
 
 ### Enhancement
@@ -138,7 +138,7 @@
 ### Bug fix
 
 - Fix the serious problems.
-  - `PlainOption.isSome()` and `PlainResult.isOk()` returns wrong results. ([#196](https://github.com/karen-irc/option-t/pull/196))
+    - `PlainOption.isSome()` and `PlainResult.isOk()` returns wrong results. ([#196](https://github.com/karen-irc/option-t/pull/196))
 
 
 ## 8.0.0
@@ -148,8 +148,8 @@
 - Add `.mjs` code to `option-t/es6` directory. ([#191](https://github.com/karen-irc/option-t/pull/191))
 - Clean up README.md ([#193](https://github.com/karen-irc/option-t/pull/193))
 - Add type aliases for a plain object ([#194](https://github.com/karen-irc/option-t/pull/194))
-  - See [`option-t/PlainOption`](./src/PlainOption/index.ts) and [`option-t/PlainResult`](./src/PlainResult/index.ts).
-  - __CAUTION: This is still expetimental APIs. We might change an interface for the future with the braking change__
+    - See [`option-t/PlainOption`](./src/PlainOption/index.ts) and [`option-t/PlainResult`](./src/PlainResult/index.ts).
+    - __CAUTION: This is still expetimental APIs. We might change an interface for the future with the braking change__
 
 ## Breaking Change
 
@@ -173,7 +173,7 @@
 ### Breaking Change
 
 - Rename: ([#184](https://github.com/karen-irc/option-t/pull/184))
-  - `Maybe::isSomeValue()` -> `Maybe::isNotNullAndUndefined()`
+    - `Maybe::isSomeValue()` -> `Maybe::isNotNullAndUndefined()`
 
 
 ## 6.1.0
@@ -181,11 +181,11 @@
 ### Enhancement
 
 - Enhancement for tree shaking via a bundler ([#177](https://github.com/karen-irc/option-t/pull/177)).
-  - Add ES module syntax version to `es6/` directory.
-  - You can use them with `option-t/es6/**`.
-  - By this change, the output code size may be more smaller
-    if you use a bundler which supports tree shaking like [webpack2](https://webpack.js.org/guides/tree-shaking/)
-    or [rollup.js](https://github.com/rollup/rollup).
+    - Add ES module syntax version to `es6/` directory.
+    - You can use them with `option-t/es6/**`.
+    - By this change, the output code size may be more smaller
+      if you use a bundler which supports tree shaking like [webpack2](https://webpack.js.org/guides/tree-shaking/)
+      or [rollup.js](https://github.com/rollup/rollup).
 
 
 ## 6.0.0
@@ -193,14 +193,14 @@
 ### Breaking Change
 
 - Upgrade dependencies. ([#172](https://github.com/karen-irc/option-t/pull/172))
-  - This includes upgrading TypeScript to 2.3.
+    - This includes upgrading TypeScript to 2.3.
 - Drop support node v4. ([#173](https://github.com/karen-irc/option-t/pull/173))
 - Upgrade our language baseline to ES5 ([#174](https://github.com/karen-irc/option-t/pull/174))
-  - If you use this package for a product targeted to ES3 environment (e.g. ~IE8),
-    You need to care about it.
+    - If you use this package for a product targeted to ES3 environment (e.g. ~IE8),
+      You need to care about it.
 - Rename: ([#176](https://github.com/karen-irc/option-t/pull/176))
-  - `Maybe::isUndefinedOrNull()` -> `Maybe::isNullOrUndefined()`
-  - `Maybe::isSomeActual()` -> `Maybe::isSomeValue()`
+    - `Maybe::isUndefinedOrNull()` -> `Maybe::isNullOrUndefined()`
+    - `Maybe::isSomeActual()` -> `Maybe::isSomeValue()`
 
 
 ## 5.0.0
@@ -208,9 +208,9 @@
 ### Breaking Change
 
 - By ([#169](https://github.com/karen-irc/option-t/pull/169)),
-  - You can use `andThen()` function from `option-t/lib/Nullable` or `option-t/lib/Undefinable`.
-  - We drop to support for `flatMap()` for `Nullable` or `Undefinable`.
-    - It's too hard to undarstand that "flatMap" operation for `T | undefined` or `T | null`.
+    - You can use `andThen()` function from `option-t/lib/Nullable` or `option-t/lib/Undefinable`.
+    - We drop to support for `flatMap()` for `Nullable` or `Undefinable`.
+        - It's too hard to undarstand that "flatMap" operation for `T | undefined` or `T | null`.
 
 ### Enhancement
 
@@ -226,9 +226,9 @@
 - This is just utility function for their "null value" in ECMA262 world. 
 - __This is experimental feature__. Their names are not stable.
 - You can use them by:
-  - `const Nullable = require('option-t/lib/Nullable');` for `null`
-  - `const Undefinable = require('option-t/lib/Undefinable');` for `undefined`
-  - `const Maybe = require('option-t/lib/Maybe');` for `null` or `undefined`
+    - `const Nullable = require('option-t/lib/Nullable');` for `null`
+    - `const Undefinable = require('option-t/lib/Undefinable');` for `undefined`
+    - `const Maybe = require('option-t/lib/Maybe');` for `null` or `undefined`
 
 
 ## 4.0.0
@@ -237,7 +237,7 @@
 
 - Remove `engines` field from package.json.  ([#163](https://github.com/karen-irc/option-t/pull/163))
 - All distribution codes are in `lib/` now. ([#164](https://github.com/karen-irc/option-t/pull/164))
-  - If you use `require('option-t/src/Result')`, please change to `require('option-t/lib/Result')`
+    - If you use `require('option-t/src/Result')`, please change to `require('option-t/lib/Result')`
 
 ### Enhancement
 
@@ -249,8 +249,8 @@
 ### Breaking Change
 
 - Rewrite d.ts ([#157](https://github.com/karen-irc/option-t/pull/157))
-  - By this change, you might have some failure to compile your code with this library.
-    So we think this would be a breaking change.
+    - By this change, you might have some failure to compile your code with this library.
+      So we think this would be a breaking change.
 
 
 ## 2.1.1
@@ -280,9 +280,9 @@
 ### Breaking Change
 
 - `this` type are specfied for callbacks ([#142](https://github.com/karen-irc/option-t/pull/142))
-  - This change requires to use TypeScript 2.0 or highers.
+    - This change requires to use TypeScript 2.0 or highers.
 - Drop to support `classic` module resolutions ([#145](https://github.com/karen-irc/option-t/pull/145))
-  - Use `--moduleResolution node` or others.
+    - Use `--moduleResolution node` or others.
 
 ### Internals
 
@@ -294,11 +294,11 @@
 ### Breaking Change (Possible)
 
 - These would causes `TypeError` instread of `Error`. ([#132](https://github.com/karen-irc/option-t/pull/132))
-  - `Option<T>.unwrap()`
-  - `Option<T>.expect()`
-  - `Result<T, E>.unwrap()`
-  - `Result<T, E>.unwrapErr()`
-  - `Result<T, E>.expect()`
+    - `Option<T>.unwrap()`
+    - `Option<T>.expect()`
+    - `Result<T, E>.unwrap()`
+    - `Result<T, E>.unwrapErr()`
+    - `Result<T, E>.expect()`
 
 ### Internals
 
@@ -438,7 +438,7 @@ some.drop((v) => v.dispose());
 ### Bug fix
 
 - Fix the compile error of `option-t.d.ts`. ([PR106](https://github.com/karen-irc/option-t/pull/106))
-  - This catches up [pr105](https://github.com/karen-irc/option-t/pull/105)
+    - This catches up [pr105](https://github.com/karen-irc/option-t/pull/105)
 
 ## 0.16.2
 
@@ -459,11 +459,11 @@ a missing version.
 ### Breaking Change
 
 * Remove Support iojs. [#98][pr98]
-  * Support only after NodeJS 4.2 LTS.
+    * Support only after NodeJS 4.2 LTS.
 * `Option<T>` is just either `Some<T>` or `None<T>`. [#99][pr99]
-  * The previous interface `Option<T>` was renamed to `OptionMethods<T>`, and marked it as a private.
-    * This is just only for a defensive programming style.
-    * If you get a new problem by this change, please file a new issue. We'll consider to republish it.
+    * The previous interface `Option<T>` was renamed to `OptionMethods<T>`, and marked it as a private.
+        * This is just only for a defensive programming style.
+        * If you get a new problem by this change, please file a new issue. We'll consider to republish it.
 
 [pr98]: https://github.com/karen-irc/option-t/pull/98
 [pr99]: https://github.com/karen-irc/option-t/pull/99
@@ -472,7 +472,7 @@ a missing version.
 ### Polish
 
 * Define `Option<T>.isSome` and `OptionT.isNone` as a type guard function. [#97][pr97]
-  * This causes the __breaking change__ which cannot compile `~typescript@1.7.x`.
+    * This causes the __breaking change__ which cannot compile `~typescript@1.7.x`.
 
 
 ### Internal
@@ -487,14 +487,14 @@ a missing version.
 ## 0.15.0
 
 * This version drops to support Node.js v0.10.
-  * This version would work on Node.js v0.10
-  * But we don't ensure to work on it in a future release.
+    * This version would work on Node.js v0.10
+    * But we don't ensure to work on it in a future release.
 
 ### Internal
 
 * Add Node.js v5 as a CI tested environment [#89](https://github.com/karen-irc/option-t/pull/89)
 * Remove Node.js v0.10 from a CI tested environment [#90](https://github.com/karen-irc/option-t/pull/90)
-  * This change does not have any effects to existed codes.
+    * This change does not have any effects to existed codes.
 
 ### Documentation
 
@@ -520,7 +520,7 @@ a missing version.
 ### Breaking Change
 
 * Change `OptionBase` type definition to [abstract class](https://github.com/Microsoft/TypeScript/issues/3578). ([#81][pr81])
-  * We require __TypeScript 1.6__ to use this feature.
+    * We require __TypeScript 1.6__ to use this feature.
 
 ### Internal
 
@@ -535,14 +535,14 @@ a missing version.
 ### New Feature
 
 * Expose `OptionBase` to TypeScript's type definition.
-  * __NOTICE__:
-    * In general purpose, __you must not use this object__.
-    * You can only this object if you need to cooperate with some libralies
-      like `React.PropTypes` which are use `instanceof` checking to work together with
-      others in the pure JavaScript world.
-      The typical case is [TSX (TypeScript JSX) syntax](https://github.com/Microsoft/TypeScript/wiki/JSX).
-    * Our basic stance is that _you don't use this and need not it in almost case_.
-  * See also [#77](https://github.com/karen-irc/option-t/pull/77)
+    * __NOTICE__:
+        * In general purpose, __you must not use this object__.
+        * You can only this object if you need to cooperate with some libralies
+          like `React.PropTypes` which are use `instanceof` checking to work together with
+          others in the pure JavaScript world.
+          The typical case is [TSX (TypeScript JSX) syntax](https://github.com/Microsoft/TypeScript/wiki/JSX).
+        * Our basic stance is that _you don't use this and need not it in almost case_.
+    * See also [#77](https://github.com/karen-irc/option-t/pull/77)
 
 ### Internal
 
@@ -574,14 +574,14 @@ a missing version.
 ### New Feature
 
 * Support `typings` field in package.json for TypeScript.
-  * See more details: https://github.com/Microsoft/TypeScript/pull/4352
+    * See more details: https://github.com/Microsoft/TypeScript/pull/4352
 
 
 ### Breaking Change
 
 * TypeScript's type definition only support ES6 target officially.
-  * You may continue to use this package without make your code to ES6 target.
-    See more details: [#72](https://github.com/karen-irc/option-t/pull/72)
+    * You may continue to use this package without make your code to ES6 target.
+      See more details: [#72](https://github.com/karen-irc/option-t/pull/72)
 
 
 ## 0.11.0
@@ -589,7 +589,7 @@ a missing version.
 ### Breaking Change
 
 * Remove `OptionT.OptionT`. ( [#67](https://github.com/karen-irc/option-t/pull/67) )
-  * This was marked as deprecated in 0.10.x.
+    * This was marked as deprecated in 0.10.x.
 
 
 ## 0.10.1
@@ -604,9 +604,9 @@ a missing version.
 ### New Feature
 
 * Add `OptionT.OptionBase`.
-  * This change also marks `OptionT.OptionT` as deprecated.
-  * We recommend to use this new base object instead of `OptionT.OptionT`.
-    See more details ( [#66](https://github.com/karen-irc/option-t/pull/66) ).
+    * This change also marks `OptionT.OptionT` as deprecated.
+    * We recommend to use this new base object instead of `OptionT.OptionT`.
+      See more details ( [#66](https://github.com/karen-irc/option-t/pull/66) ).
 
 
 ## 0.9.3
@@ -621,8 +621,8 @@ a missing version.
 ### New Feature
 
 * Support 'typescript' in package.json for [tsd][tsd] & [dtsm][dtsm]. ([#62][PR62])
-  * This does not affect this library's API model. Thus we release this as patch version.
-  * Thanks [@gifnksm](https://github.com/gifnksm)!
+    * This does not affect this library's API model. Thus we release this as patch version.
+    * Thanks [@gifnksm](https://github.com/gifnksm)!
 
 [PR62]: https://github.com/karen-irc/option-t/pull/62
 [tsd]: https://github.com/Definitelytyped/tsd
@@ -640,10 +640,10 @@ a missing version.
 
 ### New Feature
 * Make `Option<T>.mapOr()` and `Option<T>.mapOrElse()` stable.
-  * We accept current signitures of these APIs as stable.
-    When Rust's upstream changes these APIs, we might follow them
-    with bumping our major version.
-  * Rust might change these API signitures. see: [rust-lang/rfcs#1025](https://github.com/rust-lang/rfcs/issues/1025).
+    * We accept current signitures of these APIs as stable.
+      When Rust's upstream changes these APIs, we might follow them
+      with bumping our major version.
+    * Rust might change these API signitures. see: [rust-lang/rfcs#1025](https://github.com/rust-lang/rfcs/issues/1025).
 
 
 ## 0.8.0
@@ -666,15 +666,15 @@ a missing version.
 * Add `Option<T>.unwrapOrElse()`.
 * Add `Option<T>.expect()`.
 * Add some experimental APIs. These are unstable.
-  * Add `Option<T>.mapOr()`.
-  * Add `Option<T>.mapOrElse()`.
+    * Add `Option<T>.mapOr()`.
+    * Add `Option<T>.mapOrElse()`.
 
 
 ## 0.6.0
 
 ### Update Documentation
 * JSDoc: Change `Option<T>` used as parameter/return value to non-nullable type.
-  * This might cause some compile error if you use closure compiler's advanced optimization.
+    * This might cause some compile error if you use closure compiler's advanced optimization.
 * JSDoc: Remove needless `@template` annotations.
 
 ## 0.5.5
@@ -687,8 +687,8 @@ a missing version.
 
 ### Update Documentation
 * Fix JSDoc.
-  * Add `@extends` annotation to `Some` & `None`.
-  * Fix warning of closure compiler.
+    * Add `@extends` annotation to `Some` & `None`.
+    * Fix warning of closure compiler.
 
 ## 0.5.3
 
@@ -731,45 +731,45 @@ a missing version.
 ### New Feature
 
 * Add new interfaces. These constructors make interfaces more clear and explicit.
-  * `OptionT.Some()` constructor creates a `Some<T>` representation.
-  * `OptionT.None()` constructor creates a `None` representation.
-  * `OptionT.Option<T>` interface means `Option<T>`.
-    * This can be used only on an environment having a interface in its type system (e.g. TypeScript).
-    * If you'd like to check whether the object `option` is `Option<T>` or not
-      in an environment like `React.PropTypes` which has no interface feature,
-      you can use `option instanceof OptionT.OptionT` to check the object.
-      But this way is not a tier-1 approach. We recommend to use a interface strongly.
-      (Thus we don't export `OptionT` to the type definition for TypeScript).
+    * `OptionT.Some()` constructor creates a `Some<T>` representation.
+    * `OptionT.None()` constructor creates a `None` representation.
+    * `OptionT.Option<T>` interface means `Option<T>`.
+        * This can be used only on an environment having a interface in its type system (e.g. TypeScript).
+        * If you'd like to check whether the object `option` is `Option<T>` or not
+          in an environment like `React.PropTypes` which has no interface feature,
+          you can use `option instanceof OptionT.OptionT` to check the object.
+          But this way is not a tier-1 approach. We recommend to use a interface strongly.
+          (Thus we don't export `OptionT` to the type definition for TypeScript).
 * Add type definitions for TypeScript.
 
 
 ### Deprecations
 * `OptionT.OptionType()` is now deprecated. This will be removed in future release.
-  * Of cource, this constructor is simple api,
-    but it don't handle `None` or `Some<T>` properly if we pass `undefined` value.
-    In some case, this api cannot differentiate whether the `undefined` value means `None`
-    or "the value returns `undefined` correctly". [See more derails](https://github.com/karen-irc/option-t/issues/17).
+    * Of cource, this constructor is simple api,
+      but it don't handle `None` or `Some<T>` properly if we pass `undefined` value.
+      In some case, this api cannot differentiate whether the `undefined` value means `None`
+      or "the value returns `undefined` correctly". [See more derails](https://github.com/karen-irc/option-t/issues/17).
 
 
 ## 0.2.0
 
 * __New Feature__
-  * Add methods:
-    * `unwrap()`
-    * `map()`
-    * `flatMap()`
-    * `drop()`
+    * Add methods:
+        * `unwrap()`
+        * `map()`
+        * `flatMap()`
+        * `drop()`
 
 ## 0.1.5
 
 * __Documentation__
-  * Write more descriptions to README.md.
+    * Write more descriptions to README.md.
 
 
 ## 0.1.4
 
 * __Documentation__
-  * Fix JSDoc.
+    * Fix JSDoc.
 
 
 ## 0.1.0
