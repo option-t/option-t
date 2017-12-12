@@ -7,7 +7,8 @@
     "CHANGELOG.md",
     "cjs/",
     "docs/",
-    "esm",
+    "esm/",
+    "lib/",
     "LICENSE.MIT",
     "package.json",
     "README.md"
