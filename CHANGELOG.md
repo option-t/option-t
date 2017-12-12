@@ -2,6 +2,10 @@
 
 ## x.y.z
 
+### Documentation
+
+- Fix the indent problem in README.md.  ([#225](https://github.com/karen-irc/option-t/pull/225))
+
 
 ## 13.1.0
 

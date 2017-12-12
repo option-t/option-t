@@ -15,3 +15,6 @@ indent_size = 4
 
 [tsconfig.json]
 indent_size = 4
+
+[*.md]
+indent_size = 4

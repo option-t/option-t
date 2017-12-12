@@ -53,20 +53,20 @@ This package provides some sub directories to import various functions.
 Each of them includes same directoty hierarchy with [under `src`/](./src/).
 
 - `option-t/cjs`
-  - This directory privides commonjs style modules with `.js` extension.
+    - This directory privides commonjs style modules with `.js` extension.
 - `option-t/esm`
-  - This directory privides ES modules with `.mjs` extension.
-  - Currently, we provides them with `.js` extension for compatibility.
-    However, we may only release `.mjs` for the future release.
-    If you uses some module bundler (e.g. webpack or rollup), please add the config to prefer `.mjs` file.
+    - This directory privides ES modules with `.mjs` extension.
+    - Currently, we provides them with `.js` extension for compatibility.
+      However, we may only release `.mjs` for the future release.
+      If you uses some module bundler (e.g. webpack or rollup), please add the config to prefer `.mjs` file.
 - `option-t/lib`
- - This directory privides both of an ES module and a commonjs style module.
-    - ES module has `.mjs` extension.
-    - CommonJS module has `.js` extension.
-  - This directory is provided for a bit tricky purpose.
-    - For example, your project distributes a bundled file with some module bundlers that can handle ES module (e.g. rollup or webpack),
-      But your project also use babel or typescript's downlevel trasnform to transform your code from ES module to Commonjs and
-      your project runs unit-tests for transformed code with plain Node.js which only use `require()`.
+    - This directory privides both of an ES module and a commonjs style module.
+        - ES module has `.mjs` extension.
+        - CommonJS module has `.js` extension.
+    - This directory is provided for a bit tricky purpose.
+        - For example, your project distributes a bundled file with some module bundlers that can handle ES module (e.g. rollup or webpack),
+          But your project also use babel or typescript's downlevel trasnform to transform your code from ES module to Commonjs and
+          your project runs unit-tests for transformed code with plain Node.js which only use `require()`.
     - _Please don't use this path if you don't have to use this_.
 
 
@@ -164,7 +164,7 @@ Some static type checking tools provides a way to check nullability.
 
 - Flowtype's semantics has [a built-in "Maybe" types](http://flowtype.org/docs/nullable-types.html),
 - TypeScript has [a non-nullable type check](https://github.com/Microsoft/TypeScript/issues/185),
-  - [From TypeScript compiler 1.8, you can represent `type Maybe<T> = T | void`.](http://www.typescriptlang.org/docs/release-notes/typescript-1.8.html#improved-unionintersection-type-inference)
+    - [From TypeScript compiler 1.8, you can represent `type Maybe<T> = T | void`.](http://www.typescriptlang.org/docs/release-notes/typescript-1.8.html#improved-unionintersection-type-inference)
 - Google Closure Compiler also can check a non-nullable type via JSDoc style annotations in some compilation mode.
 
 Flowtype and TypeScript checks with thier control flow analysis
