@@ -26,7 +26,7 @@ import {Option, Some, None} from './Option';
 import {
     MapFn,
     RecoveryWithErrorFn,
-    DoFn
+    TapFn
 } from './utils/Function';
 
 type FlatmapOkFn<T, U, E> = (this: void, v: T) => Result<U, E>;
@@ -146,7 +146,7 @@ export abstract class ResultBase<T, E> {
      *  @param  errDestructor
      *      This would be called with the inner value if self is `Err<E>`.
      */
-    abstract drop(destructor?: DoFn<T>, errDestructor?: DoFn<E>): void;
+    abstract drop(destructor?: TapFn<T>, errDestructor?: TapFn<E>): void;
 }
 
 interface Ok<T, E> extends ResultBase<T, E> {
@@ -165,7 +165,7 @@ interface Ok<T, E> extends ResultBase<T, E> {
     unwrapOr(optb: T): T;
     unwrapOrElse(op: RecoveryWithErrorFn<E, T>): T;
     expect(message: string): T;
-    drop(destructor?: DoFn<T>, errDestructor?: DoFn<E>): void;
+    drop(destructor?: TapFn<T>, errDestructor?: TapFn<E>): void;
 }
 
 interface OkConstructor {
@@ -193,7 +193,7 @@ interface Err<T, E> extends ResultBase<T, E> {
     unwrapOr(optb: T): T;
     unwrapOrElse(op: RecoveryWithErrorFn<E, T>): T;
     expect(message: string): never;
-    drop(destructor?: DoFn<T>, errDestructor?: DoFn<E>): void;
+    drop(destructor?: TapFn<T>, errDestructor?: TapFn<E>): void;
 }
 
 interface ErrConstructor {

@@ -14,10 +14,10 @@ export { andForResult as and } from './and';
 export { andThenForResult as andThen } from './andThen';
 export { asMutResult as asMut } from './asMut';
 export {
-    doOnOk,
-    doOnErr,
-    doOnBoth,
-} from './do';
+    tapOk as doOnOk,
+    tapErr as doOnErr,
+    tapBoth as doOnBoth,
+} from './tap';
 export {
     expectIsOk as expect,
     expectIsErr as expectErr,
@@ -26,6 +26,11 @@ export { mapForResult as map } from './map';
 export { mapErrForResult as mapErr } from './mapErr';
 export { orForResult as or } from './or';
 export { orElseForResult as orElse } from './orElse';
+export {
+    tapOk,
+    tapErr,
+    tapBoth,
+} from './tap';
 export {
     toOptionFromOk,
     toOptionFromErr,
