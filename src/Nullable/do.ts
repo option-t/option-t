@@ -1,7 +1,7 @@
-import { DoFn } from '../utils/Function';
+import { TapFn } from '../utils/Function';
 import { Nullable } from './Nullable';
 
-export function doOnNullable<T>(v: Nullable<T>, fn: DoFn<T>): void {
+export function doOnNullable<T>(v: Nullable<T>, fn: TapFn<T>): void {
     if (v === null) {
         return;
     }
