@@ -1,4 +1,7 @@
+import { MapFn } from '../utils/Function';
 import { Undefinable } from './Undefinable';
+
+export type FlatmapFn<T, U> = MapFn<T, Undefinable<U>>;
 
 /**
  *  Returns `undefined` if the `src` is `undefined`,
@@ -9,7 +12,7 @@ import { Undefinable } from './Undefinable';
  *  But we don't provide `flatMap()` as alias of this function.
  *  because it's too hard to undarstand that "flatMap" operation for `T | undefined`
  */
-export function andThenForUndefinable<T, U>(src: Undefinable<T>, fn: (this: void, v: T) => Undefinable<U>): Undefinable<U> {
+export function andThenForUndefinable<T, U>(src: Undefinable<T>, fn: FlatmapFn<T, U>): Undefinable<U> {
     if (src !== undefined) {
         const r = fn(src);
         return r;

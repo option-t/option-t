@@ -6,6 +6,9 @@
 
 - Remove `do()` functions ([#230](https://github.com/karen-irc/option-t/pull/230)).
     - You can migrate your code with v13.2.
+- Remove `option-t/cjs/PlainResult/Function` and `option-t/esm/PlainResult/Function`.
+    - This is a part of refactoring internal types.  ([#223](https://github.com/karen-irc/option-t/pull/223))
+    - This would affect TypeScript user.
 
 
 ## 13.2.0
