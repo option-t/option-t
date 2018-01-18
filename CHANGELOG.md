@@ -2,6 +2,27 @@
 
 ## x.y.z
 
+## 13.2.0
+
+### Enhancement
+
+#### Add `tap()` functions (Rename `do()` functions to `tap()` at all) ([#229](https://github.com/karen-irc/option-t/pull/229))
+
+We rename `do()` functions to `tap()` at all to sort with [`rxjs`](https://github.com/ReactiveX/rxjs)
+or [`ixjs`](https://github.com/ReactiveX/IxJS).
+We leave `do()` as an alias for `tap()` with a backward compatibility.
+You code will works well if you don't change your code on updating this version.
+
+_But it will be gone in the next major release_. We recommends to change your code.
+Basic migration guides is here:
+
+- Instead of `DoFn`, import `TapFn` from `option-t/***utils/Function`.
+- If you use `import { doOnA } from 'option-t/***/A/do';`, instead use `import { tapA } from 'option-t/***/A/tap';`.
+- If you use `import AMod from 'option-t/***/A'; AMod.do();`, instead use `import AMod from 'option-t/***/A'; AMod.tap();`.
+
+If you'd like to know more details see https://github.com/karen-irc/option-t/pull/229`.
+
+
 ## 13.1.2
 
 ### Bug fix
