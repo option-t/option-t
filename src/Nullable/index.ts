@@ -2,7 +2,6 @@ export * from './Nullable';
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
 //export { andForNullable as and } from './and';
 export { andThenForNullable as andThen } from './andThen';
-export { tapNullable as do } from './tap';
 export { expectNotNull as expect } from './expect';
 export { mapForNullable as map } from './map';
 export { mapOrForNullable as mapOr } from './mapOr';

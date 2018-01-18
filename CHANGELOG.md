@@ -2,6 +2,12 @@
 
 ## x.y.z
 
+### Breaking Change
+
+- Remove `do()` functions ([#230](https://github.com/karen-irc/option-t/pull/230)).
+    - You can migrate your code with v13.2.
+
+
 ## 13.2.0
 
 ### Enhancement
@@ -20,7 +26,7 @@ Basic migration guides is here:
 - If you use `import { doOnA } from 'option-t/***/A/do';`, instead use `import { tapA } from 'option-t/***/A/tap';`.
 - If you use `import AMod from 'option-t/***/A'; AMod.do();`, instead use `import AMod from 'option-t/***/A'; AMod.tap();`.
 
-If you'd like to know more details see https://github.com/karen-irc/option-t/pull/229`.
+If you'd like to know more details see https://github.com/karen-irc/option-t/pull/229.
 
 
 ## 13.1.2
