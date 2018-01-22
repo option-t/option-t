@@ -2,6 +2,15 @@
 
 ## x.y.z
 
+### Internal Change
+
+- Stabilize the shape for `PlainOption<T>`/`PlainResult<T, E>`. ([#231](https://github.com/karen-irc/option-t/pull/231))
+    - By this change, `None.val` in `lib/PlainOption/Option`, and `Ok.err`/`Err.val` in `lib/PlainResult/Result` would be filled with
+     `undefined` and they are [`[[Enumerable]]`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties).
+    - We don't think this is a breaking change because this library would not be used with `for-in` statement and others.
+        - If you use these object with those operations, please don't do that.
+
+
 ## 14.1.0
 
 ### Notable Change
@@ -12,7 +21,6 @@
     - See [#232](https://github.com/karen-irc/option-t/issues/232).
 - __At this major version, we will not obsolete them. But we might make them be obsolete for the next or the next-next major release__.
 - Instead use `Option<T>.isSome`, `Option<T>.isNone`, `Result<T, E>.isOk()`, or `Result<T, E>.isErr()`.
-
 
 
 ## 14.0.0
