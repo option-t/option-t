@@ -146,7 +146,7 @@ interface Resultable<T, E> {
 // This is only used for the instanceof-basis runtime checking. (e.g. `React.PropTypes.instanceOf()`)
 // You MUST NOT use for other purpose.
 export abstract class ResultBase<T, E> implements Resultable<T, E> {
-    private readonly _is_ok: boolean; // tslint:disable-line:variable-name
+    private readonly _isOk: boolean; // tslint:disable-line:variable-name
     private readonly _v: T | undefined;
     private readonly _e: E | undefined;
 
