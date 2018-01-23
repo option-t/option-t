@@ -1,5 +1,18 @@
 # Changelog
 
+## x.y.z
+
+### Notable Change
+
+#### Deprecate `instanceof` checking for `Some`/`None` in `option-t/lib/Option` and `Ok`/`Err` in `option-t/lib/Result`.
+
+- We plan to deprecate `instanceof` checking for above objects for the future release to stabilize object shapes of them for the performance reason.
+    - See [#232](https://github.com/karen-irc/option-t/issues/232).
+- __At this major version, we will not obsolete them. But we might make them be obsolete for the next or the next-next major release__.
+- Instead use `Option<T>.isSome`, `Option<T>.isNone`, `Result<T, E>.isOk()`, or `Result<T, E>.isErr()`.
+
+
+
 ## 14.0.0
 
 ### Breaking Change
