@@ -298,7 +298,7 @@ OptionBase.prototype = Object.freeze({
  *
  *  @constructor
  *  @template   T
- *  @extends    {OptionT<T>}
+ *  @extends    {OptionBase<T>}
  *
  *  @param  {T}   val
  */
@@ -314,7 +314,7 @@ export function Some(val) {
  *
  *  @constructor
  *  @template   T
- *  @extends    {OptionT<T>}
+ *  @extends    {OptionBase<T>}
  */
 export function None() {
     const o = new OptionBase(false, undefined);
