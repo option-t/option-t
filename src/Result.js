@@ -3,6 +3,9 @@ import { Some, None } from './Option';
 /**
  *  @constructor
  *  @template   T, E
+ *  @param  {boolean}   ok
+ *  @param  {T|undefined}   val
+ *  @param  {E|undefined}   err
  *
  *  A base object of `Result<T, E>`.
  *  This is only used to `option instanceof ResultBase`
@@ -10,7 +13,27 @@ import { Some, None } from './Option';
  *
  *  The usecase example is a `React.PropTypes`.
  */
-export function ResultBase() {}// eslint-disable-line no-empty-function
+export function ResultBase(ok, val, err) {
+    /* eslint-disable camelcase */
+    /**
+     *  @private
+     *  @type   {boolean}
+     */
+    this._is_ok = ok;
+    /* eslint-enable */
+
+    /**
+     *  @private
+     *  @type   {T}
+     */
+    this._v = val;
+
+    /**
+     *  @private
+     *  @type   {E}
+     */
+    this._e = err;
+}
 ResultBase.prototype = Object.freeze({
 
     /**
@@ -301,29 +324,10 @@ ResultBase.prototype = Object.freeze({
  *  @param  {T} v
  */
 export function Ok(v) {
-    /* eslint-disable camelcase */
-    /**
-     *  @private
-     *  @type   {boolean}
-     */
-    this._is_ok = true;
-    /* eslint-enable */
-
-    /**
-     *  @private
-     *  @type   {T}
-     */
-    this._v = v;
-
-    /**
-     *  @private
-     *  @type   {E}
-     */
-    this._e = undefined;
-
-    Object.seal(this);
+    const r = new ResultBase(true, v, undefined);
+    Object.seal(r);
+    return r;
 }
-Ok.prototype = new ResultBase();
 
 /**
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
@@ -336,29 +340,10 @@ Ok.prototype = new ResultBase();
  *  @param  {E} e
  */
 export function Err(e) {
-    /* eslint-disable camelcase */
-    /**
-     *  @private
-     *  @type   {boolean}
-     */
-    this._is_ok = false;
-    /* eslint-enable */
-
-    /**
-     *  @private
-     *  @type   {T}
-     */
-    this._v = undefined;
-
-    /**
-     *  @private
-     *  @type   {E}
-     */
-    this._e = e;
-
-    Object.seal(this);
+    const r = new ResultBase(false, undefined, e);
+    Object.seal(r);
+    return r;
 }
-Err.prototype = new ResultBase();
 
 /**
  *  @template   T, E

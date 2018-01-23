@@ -174,7 +174,7 @@ interface Ok<T, E> extends ResultBase<T, E> {
  */
 interface OkConstructor {
     new<T, E>(v: T): Result<T, E>;
-    readonly prototype: Ok<any, any>; // tslint:disable-line:no-any
+    readonly prototype: ResultBase<any, any>; // tslint:disable-line:no-any
 }
 
 // XXX:
@@ -206,7 +206,7 @@ interface Err<T, E> extends ResultBase<T, E> {
  */
 interface ErrConstructor {
     new<T, E>(e: E): Result<T, E>;
-    readonly prototype: Err<any, any>; // tslint:disable-line:no-any
+    readonly prototype: ResultBase<any, any>; // tslint:disable-line:no-any
 }
 
 /**

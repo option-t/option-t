@@ -25,6 +25,8 @@
 /**
  *  @constructor
  *  @template   T
+ *  @param  {boolean}   ok
+ *  @param  {T|undefined} val
  *
  *  A base object of `Option<T>`.
  *  This is only used to `option instanceof OptionT`
@@ -32,7 +34,19 @@
  *
  *  The usecase example is a `React.PropTypes.
  */
-export function OptionBase() {}// eslint-disable-line no-empty-function
+export function OptionBase(ok, val) {
+    /**
+     *  @private
+     *  @type   {boolean}
+     */
+    this.ok = ok;
+
+    /**
+     *  @private
+     *  @type   {T|undefined}
+     */
+    this.val = val;
+}
 OptionBase.prototype = Object.freeze({
     /**
      *  Return whether this is `Some<T>` or not.
@@ -289,20 +303,10 @@ OptionBase.prototype = Object.freeze({
  *  @param  {T}   val
  */
 export function Some(val) {
-    /**
-     *  @private
-     *  @type   {boolean}
-     */
-    this.ok = true;
-
-    /**
-     *  @private
-     *  @type   {T}
-     */
-    this.val = val;
-    Object.seal(this);
+    const o = new OptionBase(true, val);
+    Object.seal(o);
+    return o;
 }
-Some.prototype = new OptionBase();
 
 /**
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
@@ -313,20 +317,10 @@ Some.prototype = new OptionBase();
  *  @extends    {OptionT<T>}
  */
 export function None() {
-    /**
-     *  @private
-     *  @type   {boolean}
-     */
-    this.ok = false;
-
-    /**
-     *  @private
-     *  @type   {T}
-     */
-    this.val = undefined;
-    Object.seal(this);
+    const o = new OptionBase(false, undefined);
+    Object.seal(o);
+    return o;
 }
-None.prototype = new OptionBase();
 
 /**
  *  @template   T
