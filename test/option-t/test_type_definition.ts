@@ -1,11 +1,12 @@
 // XXX:
 // The type definitions for '--moduleResolution node' is a ES6 format,
 // So it would test it by importing it simply.
-import {Option, Some, None, OptionBase} from '../../cjs/Option';
+import {Option, Some, None, OptionBase, createSome, createNone} from '../../cjs/Option';
 
 // `Some<T>`
 (function(){
     var option: Option<number> = new Some(1);
+    option = createSome(1);
     var isSome: boolean = option.isSome;
     var isNone: boolean = option.isNone;
     var unwrap: number = option.unwrap();
@@ -38,6 +39,7 @@ import {Option, Some, None, OptionBase} from '../../cjs/Option';
 // `None<T>`
 (function(){
     var option: Option<number> = new None<number>();
+    option = createNone<number>();
     var isSome: boolean = option.isSome;
     var isNone: boolean = option.isNone;
     var unwrap: number = option.unwrap();

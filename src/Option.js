@@ -321,3 +321,22 @@ export function None() {
     Object.seal(this);
 }
 None.prototype = new OptionBase();
+
+/**
+ *  @template   T
+ *  @param  {T}   val
+ *  @return    {OptionT<T>}
+ */
+export function createSome(val) {
+    const o = new Some(val);
+    return o;
+}
+
+/**
+ *  @template   T
+ *  @return    {OptionT<T>}
+ */
+export function createNone() {
+    const o = new None();
+    return o;
+}
