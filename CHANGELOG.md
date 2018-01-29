@@ -2,6 +2,8 @@
 
 ## x.y.z
 
+## 14.1.0
+
 ### Notable Change
 
 #### Deprecate `instanceof` checking for `Some`/`None` in `option-t/lib/Option` and `Ok`/`Err` in `option-t/lib/Result`.
