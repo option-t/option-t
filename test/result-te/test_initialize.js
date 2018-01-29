@@ -60,11 +60,11 @@ describe('initialization `Result<T, E>`', function(){
                 });
 
                 it('should be `Ok<T>`', function() {
-                    assert.strictEqual(result instanceof Ok, true);
+                    assert.strictEqual(result.isOk(), true);
                 });
 
                 it('should not be `Err<E>`', function() {
-                    assert.strictEqual(result instanceof Err, false);
+                    assert.strictEqual(result.isErr(), false);
                 });
 
                 it('`isOk` should be expected', function () {
@@ -100,11 +100,11 @@ describe('initialization `Result<T, E>`', function(){
                 });
 
                 it('should be `Err<E>`', function() {
-                    assert.strictEqual(result instanceof Ok, false);
+                    assert.strictEqual(result.isOk(), false);
                 });
 
                 it('should not be `Ok<T>`', function() {
-                    assert.strictEqual(result instanceof Err, true);
+                    assert.strictEqual(result.isErr(), true);
                 });
 
                 it('`isOk` should be expected', function () {
