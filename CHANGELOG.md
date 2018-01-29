@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+
+## 14.2.0
+
 ### Internal Change
 
 - Stabilize the shape for `PlainOption<T>`/`PlainResult<T, E>`. ([#231](https://github.com/karen-irc/option-t/pull/231))
