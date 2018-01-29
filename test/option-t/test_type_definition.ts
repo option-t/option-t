@@ -6,7 +6,7 @@ import {Option, Some, None, OptionBase, createSome, createNone} from '../../cjs/
 // `Some<T>`
 (function(){
     var option: Option<number> = new Some(1);
-    option = createSome(1);
+    option = createSome<number>(1);
     var isSome: boolean = option.isSome;
     var isNone: boolean = option.isNone;
     var unwrap: number = option.unwrap();

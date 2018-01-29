@@ -2,11 +2,12 @@
 // The type definitions for '--moduleResolution node' is a ES6 format,
 // So it would test it by importing it simply.
 import {Option, Some, None} from '../../cjs/Option';
-import {Result, Ok, Err, ResultBase} from '../../cjs/Result';
+import {Result, Ok, Err, ResultBase, createOk, createErr} from '../../cjs/Result';
 
 //  Ok<T>
 (function(){
-    const result: Result<number, void> = new Ok<number, void>(1);
+    let result: Result<number, void> = new Ok<number, void>(1);
+    result = createOk<number, void>(1);
 
     const isOk: boolean = result.isOk();
     const isErr: boolean = result.isErr();
@@ -44,7 +45,8 @@ import {Result, Ok, Err, ResultBase} from '../../cjs/Result';
 
 //  Err<E>
 (function(){
-    const result: Result<number, void> = new Err<number, void>(undefined);
+    let result: Result<number, void> = new Err<number, void>(undefined);
+    result = createErr<number, void>(undefined);
 
     const isOk: boolean = result.isOk();
     const isErr: boolean = result.isErr();
