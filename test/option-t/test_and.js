@@ -14,7 +14,7 @@ describe('Option<T>.and()', function(){
         });
 
         it('the returned value shoule be `None`', function() {
-            assert.strictEqual(option instanceof None, true);
+            assert.strictEqual(option.isNone, true);
         });
     });
 
@@ -27,7 +27,7 @@ describe('Option<T>.and()', function(){
         });
 
         it('the returned value shoule be `None`', function() {
-            assert.strictEqual(option instanceof None, true);
+            assert.strictEqual(option.isNone, true);
         });
     });
 
@@ -41,7 +41,7 @@ describe('Option<T>.and()', function(){
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {
-            assert.strictEqual(option instanceof Some, true);
+            assert.strictEqual(option.isSome, true);
         });
 
         it('the returned value shoule be `Some<T>`: 2', function() {
@@ -58,7 +58,7 @@ describe('Option<T>.and()', function(){
         });
 
         it('the returned value shoule be `None`', function() {
-            assert.strictEqual(option instanceof None, true);
+            assert.strictEqual(option.isNone, true);
         });
     });
 });

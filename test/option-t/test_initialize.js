@@ -36,11 +36,11 @@ describe('initialization `Option<T>`', function(){
                 });
 
                 it('should be `Some<T>`', function() {
-                    assert.strictEqual(option instanceof Some, true);
+                    assert.strictEqual(option.isSome, true);
                 });
 
                 it('should not be `None`', function() {
-                    assert.strictEqual(option instanceof None, false);
+                    assert.strictEqual(option.isNone, false);
                 });
 
                 it('`isSome` should be expected', function () {
@@ -65,11 +65,11 @@ describe('initialization `Option<T>`', function(){
         });
 
         it('should be `None`', function() {
-            assert.strictEqual(option instanceof None, true);
+            assert.strictEqual(option.isNone, true);
         });
 
         it('should not be `Some<T>`', function() {
-            assert.strictEqual(option instanceof Some, false);
+            assert.strictEqual(option.isSome, false);
         });
 
         it('`isSome` should be expected', function () {

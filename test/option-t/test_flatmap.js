@@ -17,7 +17,7 @@ describe('Option<T>.flatMap()', function(){
         });
 
         it('the returned value shoule be `None`', function() {
-            assert.strictEqual(option instanceof None, true);
+            assert.strictEqual(option.isNone, true);
         });
 
         it('the passed function should not be called', function() {
@@ -39,7 +39,7 @@ describe('Option<T>.flatMap()', function(){
             });
 
             it('the returned value shoule be `None`', function() {
-                assert.strictEqual(option instanceof None, true);
+                assert.strictEqual(option.isNone, true);
             });
         });
 
@@ -57,7 +57,7 @@ describe('Option<T>.flatMap()', function(){
             });
 
             it('the returned value shoule be `Some<T>`', function() {
-                assert.strictEqual(option instanceof Some, true);
+                assert.strictEqual(option.isSome, true);
             });
 
             it('the returned containing value shoule be expected', function() {
