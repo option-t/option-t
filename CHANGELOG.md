@@ -2,6 +2,13 @@
 
 ## x.y.z
 
+## 14.2.1
+
+### Internal Change
+
+- Add the comment why `map()` for `Maybe`/`Nullable`/`Undefinable` throw the `TypeError` if the _selector_ returns a nullable type.
+  ([#236](https://github.com/karen-irc/option-t/pull/236))
+
 
 ## 14.2.0
 
