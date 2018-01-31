@@ -3,6 +3,14 @@ import { ERR_MSG_SELECTOR } from './ErrorMessage';
 import { MapFn } from '../utils/Function';
 import { Maybe } from './Maybe';
 
+/**
+ *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is not `null` and `undefined`.
+ *  Otherwise, return `null` or `undefined` inputted as _src_.
+ *
+ *  * `U` must not be `Maybe<*>`.
+ *      * If you'd like return `Maybe<*>` as `U`, use `andThen()`.
+ *      * If the result of _selector_ is `null` or `undefined`, this throw an `Error`.
+ */
 export function mapForMaybe<T, U>(src: Maybe<T>, selector: MapFn<T, U>): Maybe<U> {
     if (src !== undefined && src !== null) {
         const r: U = selector(src);

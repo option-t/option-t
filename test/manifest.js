@@ -34,18 +34,21 @@ require('./result-te/test_expect');
 require('./result-te/test_drop');
 
 require('./Maybe/test_expect');
+require('./Maybe/test_map');
 require('./Maybe/test_type_guard');
 require('./Maybe/test_unwrap');
 require('./Maybe/test_unwrap_or');
 require('./Maybe/test_unwrap_or_else');
 
 require('./Nullable/test_expect');
+require('./Nullable/test_map');
 require('./Nullable/test_type_guard');
 require('./Nullable/test_unwrap');
 require('./Nullable/test_unwrap_or');
 require('./Nullable/test_unwrap_or_else');
 
 require('./Undefinable/test_expect');
+require('./Undefinable/test_map');
 require('./Undefinable/test_type_guard');
 require('./Undefinable/test_unwrap');
 require('./Undefinable/test_unwrap_or');
