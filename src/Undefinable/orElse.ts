@@ -3,12 +3,16 @@ import { Undefinable } from './Undefinable';
 
 export type MayRecoveryFn<T> = RecoveryFn<Undefinable<T>>;
 
-export function orElseForUndefinable<T>(a: Undefinable<T>, b: MayRecoveryFn<T>): Undefinable<T> {
-    if (a !== undefined) {
-        return a;
+/**
+ *  Return _v_ as `T` if the passed _v_ is not `undefined`.
+ *  Otherwise, return the result of _def_.
+ */
+export function orElseForUndefinable<T>(v: Undefinable<T>, def: MayRecoveryFn<T>): Undefinable<T> {
+    if (v !== undefined) {
+        return v;
     }
     else {
-        const r = b();
+        const r = def();
         return r;
     }
 }
