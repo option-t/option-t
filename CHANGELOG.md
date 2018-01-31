@@ -2,6 +2,16 @@
 
 ## x.y.z
 
+## 14.2.2
+
+### Internal Change
+
+- Add the comment for some functions
+    - `expect()` for `Maybe`/`Nullable`/`Undefinable`. ([#250](https://github.com/karen-irc/option-t/pull/250))
+    - `unwrap()` for `Maybe`/`Nullable`/`Undefinable`. ([#251](https://github.com/karen-irc/option-t/pull/251))
+- Update dependencies. ([#252](https://github.com/karen-irc/option-t/pull/252))
+
+
 ## 14.2.1
 
 ### Internal Change
