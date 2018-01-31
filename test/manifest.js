@@ -33,10 +33,13 @@ require('./result-te/test_unwrap_or_else');
 require('./result-te/test_expect');
 require('./result-te/test_drop');
 
+require('./Maybe/test_expect');
 require('./Maybe/test_type_guard');
 
+require('./Nullable/test_expect');
 require('./Nullable/test_type_guard');
 
+require('./Undefinable/test_expect');
 require('./Undefinable/test_type_guard');
 
 require('./PlainOption/test_create');
