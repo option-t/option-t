@@ -216,6 +216,7 @@ gulp.task('test_preprocess', ['clean_test_cache'], () => {
         './test',
         '--out-dir', './__test_cache/',
         '--extensions=.js',
+        '--presets', 'power-assert',
     ]);
     return p;
 });
