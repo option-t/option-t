@@ -2,6 +2,30 @@
 
 ## x.y.z
 
+## 14.3.0
+
+### Notable Change
+
+- We don't recommend to pass a nullable value to the _def_ argument for `unwrapOr(v, def)`.
+  ([#253](https://github.com/karen-irc/option-t/pull/253))
+    - We may [assert the value for the future](https://github.com/karen-irc/option-t/issues/254).
+- We don't recommend to return a nullable value as the result of _def_ argument for `unwrapOrElse(v, def)`.
+　([#253](https://github.com/karen-irc/option-t/pull/253))
+    - We may [assert the value for the future](https://github.com/karen-irc/option-t/issues/254).
+
+
+### Internal Change
+
+- Upgrade our TypeScript version to v2.7. ([#255](https://github.com/karen-irc/option-t/pull/255))
+    - We don't introdue any new syntaxes by this change.
+      So we'd not like to mark this as _major_.
+- Reconfig tsconfig.json. ([#256](https://github.com/karen-irc/option-t/pull/256))
+- Update our `devDependencies`. ([#252](https://github.com/karen-irc/option-t/pull/252))
+    - If you're just an user, this change does not related to you.
+
+
+### Internal Change
+
 ## 14.2.2
 
 ### Internal Change
