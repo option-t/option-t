@@ -3,6 +3,14 @@ import { ERR_MSG_SELECTOR } from './ErrorMessage';
 import { MapFn } from '../utils/Function';
 import { Nullable } from './Nullable';
 
+/**
+ *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is not `null`,
+ *  Otherwise, return `null`.
+ *
+ *  * `U` must not be `Nullable<*>`.
+ *      * If you'd like return `Nullable<*>` as `U`, use `andThen()`.
+ *      * If the result of _selector_ is `null`, this throw an `Error`.
+ */
 export function mapForNullable<T, U>(src: Nullable<T>, selector: MapFn<T, U>): Nullable<U> {
     if (src !== null) {
         const r = selector(src);

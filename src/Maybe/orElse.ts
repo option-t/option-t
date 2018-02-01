@@ -3,12 +3,16 @@ import { Maybe } from './Maybe';
 
 export type MaybeRecoveryFn<T> = RecoveryFn<Maybe<T>>;
 
-export function orElseForMaybe<T>(a: Maybe<T>, b: MaybeRecoveryFn<T>): Maybe<T> {
-    if (a !== undefined && a !== null) {
-        return a;
+/**
+ *  Return _v_ as `T` if the passed _v_ is not `null` and `undefined`.
+ *  Otherwise, return the result of _def_.
+ */
+export function orElseForMaybe<T>(v: Maybe<T>, def: MaybeRecoveryFn<T>): Maybe<T> {
+    if (v !== undefined && v !== null) {
+        return v;
     }
     else {
-        const r = b();
+        const r = def();
         return r;
     }
 }
