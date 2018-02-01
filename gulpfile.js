@@ -208,7 +208,6 @@ gulp.task('mocha', ['test_preprocess', 'build'], () => {
 gulp.task('typetest', ['clean_type_test', 'build'], () => {
     const p = execNpmCmd(TSC_CMD, [
         '-p', './tsconfig_test.json',
-        '--outDir', './__type_test',
     ]);
     return p;
 });

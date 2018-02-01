@@ -1,9 +1,8 @@
 {
     "extends": "./tsconfig.json",
     "compilerOptions": {
-        "declaration": true,
         "module": "es2015",
-        "newLine": "LF",
+        "noEmit": false,
         "noEmitOnError": true,
         "outDir": "./esm/"
     },
