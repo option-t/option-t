@@ -19,7 +19,6 @@
 
 - Remove needless `.babelrc`. ([#257](https://github.com/karen-irc/option-t/pull/257))
 - Use mocha's `spec` reporter on CI env. ([#260](https://github.com/karen-irc/option-t/pull/260))
-- Introduce [ava](https://github.com/avajs/ava) as an alternative test runner. ([#258](https://github.com/karen-irc/option-t/pull/258))
 
 
 ## 14.3.0
