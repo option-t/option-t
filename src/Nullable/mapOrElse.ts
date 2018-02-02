@@ -3,6 +3,17 @@ import { ERR_MSG_MUST_NOT_RETURN_NULL, ERR_MSG_SELECTOR } from './ErrorMessage';
 import { MapFn, RecoveryFn } from '../utils/Function';
 import { Nullable } from './Nullable';
 
+/**
+ *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is not `null`.
+ *  Otherwise, return the result of _def_.
+ *
+ *  Basically, this operation is a combination `map()` and `unwrapOrElse()`.
+ *
+ *  * `U` must not be `Nullable<*>`.
+ *      * If the result of _selector_ is `null`, this throw an `Error`.
+ *      * If the result of _def_ is null`, this throw an `Error`.
+ *  * If you'd like to accept `Nullable<*>` as `U`, use a combination `andThen()` and `orElse()`.
+ */
 export function mapOrElseForNullable<T, U>(src: Nullable<T>, def: RecoveryFn<U>, selector: MapFn<T, U>): U {
     let r: U;
     let msg = '';
