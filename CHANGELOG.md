@@ -2,6 +2,15 @@
 
 ## x.y.z
 
+## 14.4.1
+
+### Documentations
+
+- Fix the changelog.
+
+
+## 14.4.0
+
 ### New Features
 
 #### Add factory functions for `lib/Option` and `lib/Result`. ([#235](https://github.com/karen-irc/option-t/pull/235))
