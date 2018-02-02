@@ -4,17 +4,17 @@ import { Undefinable } from './Undefinable';
 export type FlatmapFn<T, U> = MapFn<T, Undefinable<U>>;
 
 /**
- *  Returns `undefined` if the `src` is `undefined`,
- *  otherwise calls `fn` with the value and returns the result.
+ *  Returns `undefined` if the _src_ is `undefined`,
+ *  otherwise calls _selector_ with the value and returns the result.
  *
  *  XXX:
  *  Some languages call this operation flatmap.
  *  But we don't provide `flatMap()` as alias of this function.
  *  because it's too hard to undarstand that "flatMap" operation for `T | undefined`
  */
-export function andThenForUndefinable<T, U>(src: Undefinable<T>, fn: FlatmapFn<T, U>): Undefinable<U> {
+export function andThenForUndefinable<T, U>(src: Undefinable<T>, selector: FlatmapFn<T, U>): Undefinable<U> {
     if (src !== undefined) {
-        const r = fn(src);
+        const r = selector(src);
         return r;
     }
     else {
