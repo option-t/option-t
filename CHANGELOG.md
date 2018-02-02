@@ -2,6 +2,21 @@
 
 ## x.y.z
 
+### New Features
+
+#### Add factory functions for `lib/Option` and `lib/Result`. ([#235](https://github.com/karen-irc/option-t/pull/235))
+
+- This introduces:
+    - `createSome<T>(v: T)` and `createNone<T>()` for `lib/Option`.
+    - `createOk<T, E>(v: T)` and `createErr<T, E>(e: E)` for `lib/Result`.
+- These are migration plans for ([#232](https://github.com/karen-irc/option-t/issues/232)).
+    - We may make these obsolete for the future. So we recommend to use these factory functions instead of these.
+        - `new Some()` for `lib/Option`.
+        - `new None()` for `lib/Option`.
+        - `new Ok()` for `lib/Result`.
+        - `new Err()` for `lib/Result`.
+
+
 ### Documentations
 
 - Add the comment for some functions:
