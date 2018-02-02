@@ -12,6 +12,7 @@
     - `orElse()` for `Maybe`/`Nullable`/`Undefinable`. ([#259](https://github.com/karen-irc/option-t/pull/259))
     - `and()` for `Maybe`/`Nullable`/`Undefinable`. ([#265](https://github.com/karen-irc/option-t/pull/265))
     - `or()` for `Maybe`/`Nullable`/`Undefinable`. ([#266](https://github.com/karen-irc/option-t/pull/266))
+    - `tap()` for `Maybe`/`Nullable`/`Undefinable`. ([#264](https://github.com/karen-irc/option-t/pull/264))
 
 
 ### Internal Changes
