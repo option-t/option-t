@@ -201,7 +201,7 @@ gulp.task('build_mixedlib_cp_dts', ['build_esm', 'clean_build_mixedlib'], () => 
 gulp.task('test', ['lint', 'build', 'mocha', 'typetest']);
 gulp.task('mocha', ['test_preprocess', 'build'], () => {
     const p = execNpmCmd(MOCHA_CMD, [
-        './__test_cache/manifest.js',
+        '--recursive', './__test_cache/**/test_*.js',
     ]);
     return p;
 });
