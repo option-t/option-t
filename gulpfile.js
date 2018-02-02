@@ -199,15 +199,23 @@ gulp.task('build_mixedlib_cp_dts', ['build_esm', 'clean_build_mixedlib'], () => 
 /**
  *  Test
  */
-gulp.task('test', ['lint', 'build', 'mocha', 'typetest']);
-gulp.task('mocha', ['test_preprocess', 'build'], () => {
+
+function runMocha(base) {
     const reporter = IS_IN_CI ? 'spec' : 'nyan';
 
     const p = execNpmCmd(MOCHA_CMD, [
-        '--recursive', './__test_cache/**/test_*.js',
+        '--recursive', `./${base}/**/test_*.js`,
         '--reporter', reporter,
     ]);
     return p;
+}
+
+gulp.task('test', ['lint', 'build', 'mocha', 'typetest']);
+gulp.task('mocha', ['test_preprocess', 'build'], () => {
+    return runMocha('__test_cache');
+});
+gulp.task('run_mocha', [], () => {
+    return runMocha('test');
 });
 gulp.task('typetest', ['clean_type_test', 'build'], () => {
     const p = execNpmCmd(TSC_CMD, [
