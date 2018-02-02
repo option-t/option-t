@@ -241,3 +241,6 @@ export type Option<T> = Some<T> | None<T>;
 
 export declare const Some: SomeConstructor;
 export declare const None: NoneConstructor;
+
+export declare function createSome<T>(val: T): Some<T>;
+export declare function createNone<T>(): None<T>;

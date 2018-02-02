@@ -353,3 +353,23 @@ export function Err(e) {
     Object.seal(this);
 }
 Err.prototype = new ResultBase();
+
+/**
+ *  @template   T, E
+ *  @param  {!T} v
+ *  @return    {Result<T, E>}
+ */
+export function createOk(v) {
+    const o = new Ok(v);
+    return o;
+}
+
+/**
+ *  @template   T, E
+ *  @param  {!E} e
+ *  @return    {Result<T, E>}
+ */
+export function createErr(e) {
+    const o = new Err(e);
+    return o;
+}

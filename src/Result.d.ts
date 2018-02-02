@@ -209,3 +209,6 @@ export type Result<T, E> = Ok<T, E> | Err<T, E>;
 
 export declare const Ok: OkConstructor;
 export declare const Err: ErrConstructor;
+
+export declare function createOk<T, E>(val: T): Ok<T, E>;
+export declare function createErr<T, E>(err: E): Err<T, E>;
