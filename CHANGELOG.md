@@ -2,7 +2,7 @@
 
 ## x.y.z
 
-### Internal Change
+### Documentations
 
 - Add the comment for some functions:
     - `map()` for `Maybe`/`Nullable`/`Undefinable`. ([#259](https://github.com/karen-irc/option-t/pull/259))
@@ -10,13 +10,20 @@
     - `andThen()` for `Maybe`/`Nullable`/`Undefinable`. ([#261](https://github.com/karen-irc/option-t/pull/261))
     - `mapOrElse()` for `Maybe`/`Nullable`/`Undefinable`. ([#263](https://github.com/karen-irc/option-t/pull/263))
     - `orElse()` for `Maybe`/`Nullable`/`Undefinable`. ([#259](https://github.com/karen-irc/option-t/pull/259))
+    - `and()` for `Maybe`/`Nullable`/`Undefinable`. ([#265](https://github.com/karen-irc/option-t/pull/265))
+    - `or()` for `Maybe`/`Nullable`/`Undefinable`. ([#266](https://github.com/karen-irc/option-t/pull/266))
+
+
+### Internal Changes
+
 - Remove needless `.babelrc`. ([#257](https://github.com/karen-irc/option-t/pull/257))
 - Use mocha's `spec` reporter on CI env. ([#260](https://github.com/karen-irc/option-t/pull/260))
+- Introduce [ava](https://github.com/avajs/ava) as an alternative test runner. ([#258](https://github.com/karen-irc/option-t/pull/258))
 
 
 ## 14.3.0
 
-### Notable Change
+### Notable Change (Documentations)
 
 - We don't recommend to pass a nullable value to the _def_ argument for `unwrapOr(v, def)`.
   ([#253](https://github.com/karen-irc/option-t/pull/253))
@@ -37,17 +44,20 @@
 
 ## 14.2.2
 
-### Internal Change
+### Documentations
 
 - Add the comment for some functions
     - `expect()` for `Maybe`/`Nullable`/`Undefinable`. ([#250](https://github.com/karen-irc/option-t/pull/250))
     - `unwrap()` for `Maybe`/`Nullable`/`Undefinable`. ([#251](https://github.com/karen-irc/option-t/pull/251))
+
+### Internal Change
+
 - Update dependencies. ([#252](https://github.com/karen-irc/option-t/pull/252))
 
 
 ## 14.2.1
 
-### Internal Change
+### Internal Change & Documentations
 
 - Add the comment why `map()` for `Maybe`/`Nullable`/`Undefinable` throw the `TypeError` if the _selector_ returns a nullable type.
   ([#236](https://github.com/karen-irc/option-t/pull/236))
