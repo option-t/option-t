@@ -2,6 +2,18 @@
 
 ## x.y.z
 
+### Internal Change
+
+- Add the comment for some functions:
+    - `map()` for `Maybe`/`Nullable`/`Undefinable`. ([#259](https://github.com/karen-irc/option-t/pull/259))
+    - `mapOr()` for `Maybe`/`Nullable`/`Undefinable`. ([#262](https://github.com/karen-irc/option-t/pull/262))
+    - `andThen()` for `Maybe`/`Nullable`/`Undefinable`. ([#261](https://github.com/karen-irc/option-t/pull/261))
+    - `mapOrElse()` for `Maybe`/`Nullable`/`Undefinable`. ([#263](https://github.com/karen-irc/option-t/pull/263))
+    - `orElse()` for `Maybe`/`Nullable`/`Undefinable`. ([#259](https://github.com/karen-irc/option-t/pull/259))
+- Remove needless `.babelrc`. ([#257](https://github.com/karen-irc/option-t/pull/257))
+- Use mocha's `spec` reporter on CI env. ([#260](https://github.com/karen-irc/option-t/pull/260))
+
+
 ## 14.3.0
 
 ### Notable Change
@@ -22,9 +34,6 @@
 - Reconfig tsconfig.json. ([#256](https://github.com/karen-irc/option-t/pull/256))
 - Update our `devDependencies`. ([#252](https://github.com/karen-irc/option-t/pull/252))
     - If you're just an user, this change does not related to you.
-
-
-### Internal Change
 
 ## 14.2.2
 
