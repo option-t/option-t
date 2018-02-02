@@ -42,6 +42,7 @@ const TMP_MJS_DIR = path.resolve(__dirname, './__tmp_mjs/');
 
 const IS_IN_CI = process.env.CI === 'true';
 
+const AVA_CMD = 'ava';
 const BABEL_CMD = 'babel';
 const CPX_CMD = 'cpx';
 const DEL_CMD = 'del';
@@ -199,7 +200,17 @@ gulp.task('build_mixedlib_cp_dts', ['build_esm', 'clean_build_mixedlib'], () => 
 /**
  *  Test
  */
-gulp.task('test', ['lint', 'build', 'mocha', 'typetest']);
+
+function runAva() {
+    const p = execNpmCmd(AVA_CMD, [
+        'test_ava/'
+    ]);
+    return p;
+}
+
+gulp.task('test', ['lint', 'build', 'mocha', 'typetest'], runAva);
+gulp.task('ava', ['build'], runAva);
+gulp.task('run_ava', runAva);
 gulp.task('mocha', ['test_preprocess', 'build'], () => {
     const reporter = IS_IN_CI ? 'spec' : 'nyan';
 
