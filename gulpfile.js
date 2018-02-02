@@ -40,6 +40,7 @@ const TEST_CACHE_DIR = path.resolve(__dirname, './__test_cache/');
 const TYPE_TEST_DIR = path.resolve(__dirname, './__type_test/');
 const TMP_MJS_DIR = path.resolve(__dirname, './__tmp_mjs/');
 
+const IS_IN_CI = process.env.CI === 'true';
 
 const BABEL_CMD = 'babel';
 const CPX_CMD = 'cpx';
@@ -200,8 +201,11 @@ gulp.task('build_mixedlib_cp_dts', ['build_esm', 'clean_build_mixedlib'], () => 
  */
 gulp.task('test', ['lint', 'build', 'mocha', 'typetest']);
 gulp.task('mocha', ['test_preprocess', 'build'], () => {
+    const reporter = IS_IN_CI ? 'spec' : 'nyan';
+
     const p = execNpmCmd(MOCHA_CMD, [
-        './__test_cache/manifest.js',
+        '--recursive', './__test_cache/**/test_*.js',
+        '--reporter', reporter,
     ]);
     return p;
 });
