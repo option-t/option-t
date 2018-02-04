@@ -1,4 +1,4 @@
-import { ERR_MSG_SELECTOR, ERR_MSG_MUST_NOT_RETURN_UNDEF } from './ErrorMessage';
+import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE, ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 import { expectNotUndefined } from './expect';
 import { RecoveryFn, MapFn } from '../utils/Function';
 import { Undefinable } from './Undefinable';
@@ -19,11 +19,11 @@ export function mapOrElseForUndefinable<T, U>(src: Undefinable<T>, def: Recovery
     let msg = '';
     if (src !== undefined) {
         r = selector(src);
-        msg = ERR_MSG_SELECTOR;
+        msg = ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE;
     }
     else {
         r = def();
-        msg = '`def`' + ERR_MSG_MUST_NOT_RETURN_UNDEF;
+        msg = ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE;
     }
     return expectNotUndefined(r, msg);
 }
