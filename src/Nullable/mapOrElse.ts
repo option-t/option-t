@@ -1,6 +1,6 @@
 import { expectNotNull } from './expect';
 import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE, ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
-import { MapFn, RecoveryFn } from '../utils/Function';
+import { MapFn, RecoveryFn } from '../shared/Function';
 import { Nullable } from './Nullable';
 
 /**

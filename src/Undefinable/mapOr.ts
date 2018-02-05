@@ -1,6 +1,6 @@
 import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE, ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 import { expectNotUndefined } from './expect';
-import { MapFn } from '../utils/Function';
+import { MapFn } from '../shared/Function';
 import { Undefinable } from './Undefinable';
 
 /**

@@ -1,4 +1,4 @@
-import { MapFn } from '../utils/Function';
+import { MapFn } from '../shared/Function';
 import { Result } from './Result';
 
 export type FlatmapOkFn<T, U, E> = MapFn<T, Result<U, E>>;

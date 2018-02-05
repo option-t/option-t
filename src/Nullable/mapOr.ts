@@ -1,7 +1,7 @@
 import { Nullable } from './Nullable';
 import { expectNotNull } from './expect';
 import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE, ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
-import { MapFn } from '../utils/Function';
+import { MapFn } from '../shared/Function';
 
 /**
  *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is not `null`.

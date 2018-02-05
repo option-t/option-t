@@ -1,6 +1,6 @@
 import { Option } from './Option';
 import { Result, createErr, createOk } from '../PlainResult/Result';
-import { RecoveryFn } from '../utils/Function';
+import { RecoveryFn } from '../shared/Function';
 
 /**
  * Transforms the `Option<T>` into a `Result<T, E>`, mapping `Some(v)` to `Ok(v)` and `None` to `Err(err())`.

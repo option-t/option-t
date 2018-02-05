@@ -3,7 +3,7 @@ import {
     ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
 } from './ErrorMessage';
-import { MapFn, RecoveryFn } from '../utils/Function';
+import { MapFn, RecoveryFn } from '../shared/Function';
 import { Maybe } from './Maybe';
 
 /**

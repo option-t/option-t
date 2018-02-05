@@ -1,4 +1,4 @@
-import { RecoveryWithErrorFn } from '../utils/Function';
+import { RecoveryWithErrorFn } from '../shared/Function';
 import { Result } from './Result';
 
 export function unwrapOrElseFromResult<T, E>(v: Result<T, E>, def: RecoveryWithErrorFn<E, T>): T {

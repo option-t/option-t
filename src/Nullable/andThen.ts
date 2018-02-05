@@ -1,4 +1,4 @@
-import { MapFn } from '../utils/Function';
+import { MapFn } from '../shared/Function';
 import { Nullable } from './Nullable';
 
 export type FlatmapFn<T, U> = MapFn<T, Nullable<U>>;

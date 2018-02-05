@@ -1,4 +1,4 @@
-import { MapFn } from '../utils/Function';
+import { MapFn } from '../shared/Function';
 import { Undefinable } from './Undefinable';
 
 export type FlatmapFn<T, U> = MapFn<T, Undefinable<U>>;

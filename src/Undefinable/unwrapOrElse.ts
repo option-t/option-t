@@ -1,5 +1,5 @@
 import { Undefinable } from './Undefinable';
-import { RecoveryFn } from '../utils/Function';
+import { RecoveryFn } from '../shared/Function';
 
 /**
  *  Return _v_ as `T` if the passed _v_ is not `undefined`.
