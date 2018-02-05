@@ -291,6 +291,9 @@ ResultBase.prototype = Object.freeze({
 });
 
 /**
+ *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
+ *  Instead, please use `createOk()`.
+ *
  *  @constructor
  *  @template   T, E
  *  @extends    {ResultBase<T, E>}
@@ -323,6 +326,9 @@ export function Ok(v) {
 Ok.prototype = new ResultBase();
 
 /**
+ *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
+ *  Instead, please use `createErr()`.
+ *
  *  @constructor
  *  @template   T, E
  *  @extends    {ResultBase<T, E>}

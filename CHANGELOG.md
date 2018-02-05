@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+### Documentations
+
+- Add the jsdoc comment to constructors which are planned to deprecate in ([#232]( https://github.com/karen-irc/option-t/issues/232)).
+ ([#277](https://github.com/karen-irc/option-t/pull/277))
+
 
 ## 15.0.0
 

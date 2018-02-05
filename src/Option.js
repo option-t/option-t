@@ -279,6 +279,9 @@ OptionBase.prototype = Object.freeze({
 });
 
 /**
+ *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
+ *  Instead, please use `createSome()`.
+ *
  *  @constructor
  *  @template   T
  *  @extends    {OptionT<T>}
@@ -302,6 +305,9 @@ export function Some(val) {
 Some.prototype = new OptionBase();
 
 /**
+ *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
+ *  Instead, please use `createNone()`.
+ *
  *  @constructor
  *  @template   T
  *  @extends    {OptionT<T>}
