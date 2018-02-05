@@ -205,6 +205,10 @@ interface Some<T> extends OptionBase<T> {
     drop(destructor?: TapFn<T>): void;
 }
 
+/**
+ *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
+ *  Instead, please use `createSome()`.
+ */
 interface SomeConstructor {
     new<T>(v: T): Option<T>;
     readonly prototype: Some<any>; // tslint:disable-line:no-any
@@ -228,6 +232,10 @@ interface None<T> extends OptionBase<T> {
     drop(destructor?: TapFn<T>): void;
 }
 
+/**
+ *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
+ *  Instead, please use `createNone()`.
+ */
 interface NoneConstructor {
     new<T>(): Option<T>;
     readonly prototype: None<any>; // tslint:disable-line:no-any
@@ -239,7 +247,15 @@ interface NoneConstructor {
  */
 export type Option<T> = Some<T> | None<T>;
 
+/**
+ *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
+ *  Instead, please use `createSome()`.
+ */
 export declare const Some: SomeConstructor;
+/**
+ *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
+ *  Instead, please use `createNone()`.
+ */
 export declare const None: NoneConstructor;
 
 export declare function createSome<T>(val: T): Some<T>;

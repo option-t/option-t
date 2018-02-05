@@ -168,6 +168,10 @@ interface Ok<T, E> extends ResultBase<T, E> {
     drop(destructor?: TapFn<T>, errDestructor?: TapFn<E>): void;
 }
 
+/**
+ *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
+ *  Instead, please use `createOk()`.
+ */
 interface OkConstructor {
     new<T, E>(v: T): Result<T, E>;
     readonly prototype: Ok<any, any>; // tslint:disable-line:no-any
@@ -196,6 +200,10 @@ interface Err<T, E> extends ResultBase<T, E> {
     drop(destructor?: TapFn<T>, errDestructor?: TapFn<E>): void;
 }
 
+/**
+ *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
+ *  Instead, please use `createErr()`.
+ */
 interface ErrConstructor {
     new<T, E>(e: E): Result<T, E>;
     readonly prototype: Err<any, any>; // tslint:disable-line:no-any
@@ -207,7 +215,15 @@ interface ErrConstructor {
  */
 export type Result<T, E> = Ok<T, E> | Err<T, E>;
 
+/**
+ *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
+ *  Instead, please use `createOk()`.
+ */
 export declare const Ok: OkConstructor;
+/**
+ *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
+ *  Instead, please use `createErr()`.
+ */
 export declare const Err: ErrConstructor;
 
 export declare function createOk<T, E>(val: T): Ok<T, E>;
