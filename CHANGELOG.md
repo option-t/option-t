@@ -2,6 +2,23 @@
 
 ## x.y.z
 
+
+## 15.0.0
+
+### Breaking Change
+
+- Rename `lib/utils` -> `lib/shared`. ([#276](https://github.com/karen-irc/option-t/pull/276))
+    - If you use `option-t/lib/utils`, please replace with `option-t/lib/shared`.
+- Return the input value on `tap(`) for `Maybe`/`Nullable`/`Undefinable`/`PlainOption`/`PlainResult`. ([#271](https://github.com/karen-irc/option-t/pull/271))
+    - This function returned `void` previously.
+    - You would not have to change your code if you don't use the returned value (e.g. `const bar: void = tap(input, fn)` or `somefunc(tap(input, fn))`).
+
+
+### New Features
+
+- Implement `okOr()`/`okOrElse()` for `PlainOption`. ([#275](https://github.com/karen-irc/option-t/pull/275))
+
+
 ## 14.4.2
 
 ### Internal Change
