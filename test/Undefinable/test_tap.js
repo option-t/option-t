@@ -7,12 +7,14 @@ const { nonNullableValue } = require('../utils');
 
 describe('Undefinable::tap', () => {
     describe('pass the value', () => {
-        for (const value of nonNullableValue) {
-            describe(String(value), () => {
+        for (const input of nonNullableValue) {
+            describe(String(input), () => {
+                // eslint-disable-next-line
+                let result;
                 let called = 0;
 
                 before(() => {
-                    tapUndefinable(value, (_v) => {
+                    result = tapUndefinable(input, (_v) => {
                         called += 1;
                     });
                 });
@@ -20,14 +22,20 @@ describe('Undefinable::tap', () => {
                 it('should call selector fn', () => {
                     assert.strictEqual(called, 1);
                 });
+
+                it('should be input', () => {
+                    assert.strictEqual(result, input);
+                });
             });
         }
     });
 
     describe('pass null', () => {
+        // eslint-disable-next-line
+        let result;
         let called = 0;
         before(() => {
-            tapUndefinable(null, (_v) => {
+            result = tapUndefinable(null, (_v) => {
                 called += 1;
             });
         });
@@ -35,18 +43,28 @@ describe('Undefinable::tap', () => {
         it('should not call selector fn', () => {
             assert.strictEqual(called, 1);
         });
+
+        it('should be input', () => {
+            assert.strictEqual(result, null);
+        });
     });
 
     describe('pass undefined', () => {
+        // eslint-disable-next-line
+        let result;
         let called = 0;
         before(() => {
-            tapUndefinable(undefined, (_v) => {
+            result = tapUndefinable(undefined, (_v) => {
                 called += 1;
             });
         });
 
         it('should not call selector fn', () => {
             assert.strictEqual(called, 0);
+        });
+
+        it('should be input', () => {
+            assert.strictEqual(result, undefined);
         });
     });
 });
