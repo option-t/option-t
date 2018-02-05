@@ -26,7 +26,7 @@ import {
     MapFn,
     RecoveryFn,
     TapFn,
-} from './utils/Function';
+} from './shared/Function';
 
 export type FlatmapFn<T, U> = MapFn<T, Option<U>>;
 export type MayRecoveryFn<T> = RecoveryFn<Option<T>>;

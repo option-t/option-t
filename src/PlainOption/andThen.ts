@@ -1,4 +1,4 @@
-import { MapFn } from '../utils/Function';
+import { MapFn } from '../shared/Function';
 import { Option } from './Option';
 
 export type FlatmapFn<T, U> = MapFn<T, Option<U>>;

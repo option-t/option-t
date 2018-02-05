@@ -1,4 +1,4 @@
-import { TapFn } from '../utils/Function';
+import { TapFn } from '../shared/Function';
 import { Result } from './Result';
 
 function noop<T>(_v: T) {}

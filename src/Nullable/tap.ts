@@ -1,4 +1,4 @@
-import { TapFn } from '../utils/Function';
+import { TapFn } from '../shared/Function';
 import { Nullable } from './Nullable';
 
 /**

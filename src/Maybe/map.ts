@@ -1,6 +1,6 @@
 import { expectNotNullAndUndefined } from './expect';
 import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';
-import { MapFn } from '../utils/Function';
+import { MapFn } from '../shared/Function';
 import { Maybe } from './Maybe';
 
 /**

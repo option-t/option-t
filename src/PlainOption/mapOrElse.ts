@@ -1,4 +1,4 @@
-import { MapFn, RecoveryFn } from '../utils/Function';
+import { MapFn, RecoveryFn } from '../shared/Function';
 import { Option } from './Option';
 
 export function mapOrElseForOption<T, U>(src: Option<T>, def: RecoveryFn<U>, selector: MapFn<T, U>): U {

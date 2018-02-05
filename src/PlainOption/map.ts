@@ -1,4 +1,4 @@
-import { MapFn } from '../utils/Function';
+import { MapFn } from '../shared/Function';
 import { Option, createSome } from './Option';
 
 export function mapForOption<T, U>(src: Option<T>, selector: MapFn<T, U>): Option<U> {

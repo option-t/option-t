@@ -1,4 +1,4 @@
-import { MapFn } from '../utils/Function';
+import { MapFn } from '../shared/Function';
 import { Maybe } from './Maybe';
 
 export type FlatmapFn<T, U> = MapFn<T, Maybe<U>>;

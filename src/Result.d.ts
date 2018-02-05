@@ -27,7 +27,7 @@ import {
     MapFn,
     RecoveryWithErrorFn,
     TapFn
-} from './utils/Function';
+} from './shared/Function';
 
 export type FlatmapOkFn<T, U, E> = MapFn<T, Result<U, E>>;
 export type FlatmapErrFn<T, E, F> = MapFn<E, Result<T, F>>;

@@ -1,4 +1,4 @@
-import { RecoveryFn } from '../utils/Function';
+import { RecoveryFn } from '../shared/Function';
 import { Maybe } from './Maybe';
 
 /**

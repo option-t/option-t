@@ -1,5 +1,5 @@
 import { Option } from './Option';
-import { MapFn } from '../utils/Function';
+import { MapFn } from '../shared/Function';
 
 export function mapOrForOption<T, U>(src: Option<T>, def: U, selector: MapFn<T, U>): U {
     let r: U;
