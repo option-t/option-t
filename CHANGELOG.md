@@ -2,6 +2,18 @@
 
 ## x.y.z
 
+## 14.4.2
+
+### Internal Change
+
+- Deduplicate error message strings for `Maybe`/`Nullable`/`Undefinable`. ([#272](https://github.com/karen-irc/option-t/pull/272))
+
+
+### Documentations
+
+- Fix the changelog.
+
+
 ## 14.4.1
 
 ### Documentations
@@ -19,7 +31,7 @@
     - `createSome<T>(v: T)` and `createNone<T>()` for `lib/Option`.
     - `createOk<T, E>(v: T)` and `createErr<T, E>(e: E)` for `lib/Result`.
 - These are migration plans for ([#232](https://github.com/karen-irc/option-t/issues/232)).
-    - We may make these obsolete for the future. So we recommend to use these factory functions instead of these.
+    - We may make these obsolete for the future. So we recommend to use these factory functions instead of these costructors.
         - `new Some()` for `lib/Option`.
         - `new None()` for `lib/Option`.
         - `new Ok()` for `lib/Result`.
