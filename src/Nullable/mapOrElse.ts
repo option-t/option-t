@@ -1,5 +1,5 @@
 import { expectNotNull } from './expect';
-import { ERR_MSG_MUST_NOT_RETURN_NULL, ERR_MSG_SELECTOR } from './ErrorMessage';
+import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE, ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 import { MapFn, RecoveryFn } from '../utils/Function';
 import { Nullable } from './Nullable';
 
@@ -19,11 +19,11 @@ export function mapOrElseForNullable<T, U>(src: Nullable<T>, def: RecoveryFn<U>,
     let msg = '';
     if (src !== null) {
         r = selector(src);
-        msg = ERR_MSG_SELECTOR;
+        msg = ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE;
     }
     else {
         r = def();
-        msg = '`def`' + ERR_MSG_MUST_NOT_RETURN_NULL;
+        msg = ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE;
     }
     return expectNotNull(r, msg);
 }

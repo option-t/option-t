@@ -1,5 +1,5 @@
 import { expectNotNull } from './expect';
-import { ERR_MSG_SELECTOR } from './ErrorMessage';
+import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 import { MapFn } from '../utils/Function';
 import { Nullable } from './Nullable';
 
@@ -19,7 +19,7 @@ export function mapForNullable<T, U>(src: Nullable<T>, selector: MapFn<T, U>): N
         // the nested type `Nullable<Nullable<SomeType>>`. But this type means `(SomeType | null) | null`.
         // So a type checker would recognize this type as `SomeType | null`. So it's flattened.
         // Then the user should call `andThen` (_flatmap_) operation instead of this.
-        return expectNotNull(r, ERR_MSG_SELECTOR);
+        return expectNotNull(r, ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
     }
     else {
         return src;

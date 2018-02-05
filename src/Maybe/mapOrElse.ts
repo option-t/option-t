@@ -1,5 +1,8 @@
 import { expectNotNullAndUndefined } from './expect';
-import { ERR_MSG_MUST_NOT_RETURN_NULL_OR_UNDEF, ERR_MSG_SELECTOR } from './ErrorMessage';
+import {
+    ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
+    ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
+} from './ErrorMessage';
 import { MapFn, RecoveryFn } from '../utils/Function';
 import { Maybe } from './Maybe';
 
@@ -19,11 +22,11 @@ export function mapOrElseForMaybe<T, U>(src: Maybe<T>, def: RecoveryFn<U>, selec
     let msg = '';
     if (src !== undefined && src !== null) {
         r = selector(src);
-        msg = ERR_MSG_SELECTOR;
+        msg = ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE;
     }
     else {
         r = def();
-        msg = '`def`' + ERR_MSG_MUST_NOT_RETURN_NULL_OR_UNDEF;
+        msg = ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE;
     }
     return expectNotNullAndUndefined(r, msg);
 }
