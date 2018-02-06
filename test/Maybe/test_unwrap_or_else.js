@@ -85,7 +85,7 @@ describe('Maybe::unwrapOrElse', () => {
         });
     });
 
-    describe.skip('should not accept Maybe<*> as default (TODO: #254)', () => {
+    describe('should not accept Maybe<*> as default', () => {
         const testcases = [
             [undefined, undefined],
             [undefined, null],
