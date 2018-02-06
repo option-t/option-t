@@ -2,6 +2,8 @@
 
 ## x.y.z
 
+## 16.0.0
+
 ### Breaking Change
 
 #### Throw `TypeError` if you "null" value as default value to  `unwrapOr()`/`unwrapOrElse` operation for `Maybe`/`Nullable`/`Undefinable`. ([#278](https://github.com/karen-irc/option-t/pull/278))
@@ -17,12 +19,17 @@
         - `undefined` for `unwrapOrElseFromUndefinable()`
         - `null` or `undefined` for `unwrapOrElseFromMaybe()`
 
+### Internal Change
+
+- Update Lint rules. ([#279](https://github.com/karen-irc/option-t/pull/279))
+- Update `devDependencies`. ([#280](https://github.com/karen-irc/option-t/pull/280))
+
 
 ## 15.0.1
 
 ### Documentations
 
-- Add the jsdoc comment to constructors which are planned to deprecate in [#232]( https://github.com/karen-irc/option-t/issues/232).
+- Add the jsdoc comment to constructors which are planned to deprecate in [#232](https://github.com/karen-irc/option-t/issues/232).
  ([#277](https://github.com/karen-irc/option-t/pull/277))
 
 
