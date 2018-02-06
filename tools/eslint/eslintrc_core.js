@@ -1,4 +1,4 @@
-// Copied from https://github.com/voyagegroup/eslint-config-fluct/blob/aa487deaeb087e0ec92e479366a9d74c021a1d98/config/eslintrc_core.js
+// Copied from https://github.com/voyagegroup/eslint-config-fluct/blob/c7924e0cb27a110dcf2584b6f3a10a60e3b76407/config/eslintrc_core.js
 
 /**
  * MIT License
@@ -75,18 +75,14 @@ module.exports = {
             'requireReturn': true,
             'requireParamDescription': false,
             'requireReturnDescription': false,
-            //'preferType': {
-            //    'Boolean': 'boolean',
-            //    'Number': 'number',
-            //    'String': 'string',
-            //    'object': 'Object',
-            //},
         }],
         'valid-typeof': [1, {'requireStringLiterals': true}],
 
         // Best Practices
         'accessor-pairs': 0, // Allow only getter or setter to define a "read-only" or "write-only" object
-        'array-callback-return': 1, // https://eslint.org/docs/rules/array-callback-return.html
+        'array-callback-return': [1, { // https://eslint.org/docs/rules/array-callback-return.html
+            'allowImplicit': false, // Should return `undefined` explicitly
+        }],
         'block-scoped-var': 2, // https://eslint.org/docs/rules/block-scoped-var
         'class-methods-use-this': 0, // A class method does not use `this` in some case.
         'complexity': 0, // We think there is no meaning to measure it in a daily linting.
@@ -236,6 +232,7 @@ module.exports = {
                 'FunctionDeclaration': false,
                 'FunctionExpression': false,
                 'ImportDeclaration': false,
+                'NewExpression': false,
                 'ObjectPattern': false,
             },
         }],
@@ -253,6 +250,7 @@ module.exports = {
         'id-blacklist': 0, // https://eslint.org/docs/rules/id-blacklist
         'id-length': 0, // https://eslint.org/docs/rules/id-length
         'id-match': 0, // https://eslint.org/docs/rules/id-match
+        'implicit-arrow-linebreak': [2, 'beside'], // I think 'below' mode is horrible and confusable.
         'indent': [2, 4, {
             'SwitchCase': 1,
             'MemberExpression': 1,

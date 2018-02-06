@@ -1,4 +1,4 @@
-// Copied from https://github.com/voyagegroup/tslint-config-fluct/blob/931db5686fd144d1dc3b3b795a6a10fafd16fa0e/config/typecheck.json
+// Copied from https://github.com/voyagegroup/tslint-config-fluct/blob/48a6f6202699b6c922addc4cabe1ab71a7d8f5d1/config/typecheck.json
 {
   "rules": {
       // TODO: https://github.com/voyagegroup/tslint-config-fluct/issues/7
@@ -16,6 +16,7 @@
       // "no-unused-variable": false,
       // "no-use-before-declare": false,
       // "no-void-expression": false,
+      // "prefer-readonly": true,
       // "promise-function-async": false,
       // "restrict-plus-operands": false,
       // "return-undefined": false,
