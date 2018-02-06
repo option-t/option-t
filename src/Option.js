@@ -46,6 +46,8 @@ export function OptionBase(ok, val) {
      *  @type   {T|undefined}
      */
     this.val = val;
+
+    Object.seal(this);
 }
 OptionBase.prototype = Object.freeze({
     /**
@@ -303,8 +305,7 @@ OptionBase.prototype = Object.freeze({
  *  @param  {T}   val
  */
 export function Some(val) {
-    const o = new OptionBase(true, val);
-    Object.seal(o);
+    const o = createSome(val);
     return o;
 }
 
@@ -317,8 +318,7 @@ export function Some(val) {
  *  @extends    {OptionBase<T>}
  */
 export function None() {
-    const o = new OptionBase(false, undefined);
-    Object.seal(o);
+    const o = createNone();
     return o;
 }
 
@@ -328,7 +328,7 @@ export function None() {
  *  @return    {OptionT<T>}
  */
 export function createSome(val) {
-    const o = new Some(val);
+    const o = new OptionBase(true, val);
     return o;
 }
 
@@ -337,6 +337,6 @@ export function createSome(val) {
  *  @return    {OptionT<T>}
  */
 export function createNone() {
-    const o = new None();
+    const o = new OptionBase(false, undefined);
     return o;
 }
