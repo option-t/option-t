@@ -1,5 +1,7 @@
-import { Undefinable } from './Undefinable';
 import { RecoveryFn } from '../shared/Function';
+import { Undefinable } from './Undefinable';
+import { expectNotUndefined } from './expect';
+import { ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 
 /**
  *  Return _v_ as `T` if the passed _v_ is not `undefined`.
@@ -7,10 +9,14 @@ import { RecoveryFn } from '../shared/Function';
  *
  *  * The result of _def_ must not be `Undefinable<*>`.
  *      * If you try to recover the value, use `orElse()`
- *  * We may introduce an assert to check it is not `Undefinable<*>`
- *    as the running time checking for the future.
- *      * See https://github.com/karen-irc/option-t/issues/254.
+ *  * If the result of _def_ is `undefined`, throw `TypeError`.
  */
-export function unwrapOrElseFromUndefinable<T>(v: Undefinable<T>, def:  RecoveryFn<T>): T {
-    return (v !== undefined) ? v : def();
+export function unwrapOrElseFromUndefinable<T>(v: Undefinable<T>, def: RecoveryFn<T>): T {
+    if (v !== undefined) {
+        return v;
+    }
+    else {
+        const r = def();
+        return expectNotUndefined(r, ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE);
+    }
 }

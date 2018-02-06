@@ -1,16 +1,21 @@
 import { RecoveryFn } from '../shared/Function';
 import { Maybe } from './Maybe';
+import { expectNotNullAndUndefined } from './expect';
+import { ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';
 
 /**
  *  Return _v_ as `T` if the passed _v_ is not `null` and `undefined`.
  *  Otherwise, return the result of _def_.
  *
  *  * The result of _def_ must not be `Maybe<*>`.
- *      * If you try to recover the value, use `orElse()`
- *  * We may introduce an assert to check it is not `Maybe<*>`
- *    as the running time checking for the future.
- *      * See https://github.com/karen-irc/option-t/issues/254.
+ *  * If the result of _def_ is `null` or `undefined`, throw `TypeError`.
  */
 export function unwrapOrElseFromMaybe<T>(v: Maybe<T>, def: RecoveryFn<T>): T {
-    return (v !== undefined && v !== null) ? v : def();
+    if (v !== undefined && v !== null) {
+        return v;
+    }
+    else {
+        const r = def();
+        return expectNotNullAndUndefined(r, ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE);
+    }
 }

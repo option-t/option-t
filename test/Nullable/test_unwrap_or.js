@@ -59,7 +59,7 @@ describe('Nullable::unwrapOr', () => {
         });
     });
 
-    describe.skip('should not accept Maybe<*> as default (TODO: #254)', () => {
+    describe('should not accept Maybe<*> as default', () => {
         const testcases = [
             [null, null],
         ];
