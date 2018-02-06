@@ -31,6 +31,8 @@ export function ResultBase(ok, val, err) {
      *  @type   {E}
      */
     this._e = err;
+
+    Object.seal(this);
 }
 ResultBase.prototype = Object.freeze({
 
@@ -322,8 +324,7 @@ ResultBase.prototype = Object.freeze({
  *  @param  {T} v
  */
 export function Ok(v) {
-    const r = new ResultBase(true, v, undefined);
-    Object.seal(r);
+    const r = createOk(v);
     return r;
 }
 
@@ -338,8 +339,7 @@ export function Ok(v) {
  *  @param  {E} e
  */
 export function Err(e) {
-    const r = new ResultBase(false, undefined, e);
-    Object.seal(r);
+    const r = createErr(e);
     return r;
 }
 
@@ -349,7 +349,7 @@ export function Err(e) {
  *  @return    {Result<T, E>}
  */
 export function createOk(v) {
-    const o = new Ok(v);
+    const o = new ResultBase(true, v, undefined);
     return o;
 }
 
@@ -359,6 +359,6 @@ export function createOk(v) {
  *  @return    {Result<T, E>}
  */
 export function createErr(e) {
-    const o = new Err(e);
+    const o = new ResultBase(false, undefined, e);
     return o;
 }
