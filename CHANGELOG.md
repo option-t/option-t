@@ -2,11 +2,27 @@
 
 ## x.y.z
 
+### Breaking Change
+
+#### Throw `TypeError` if you "null" value as default value to  `unwrapOr()`/`unwrapOrElse` operation for `Maybe`/`Nullable`/`Undefinable`. ([#278](https://github.com/karen-irc/option-t/pull/278))
+
+- As we warning in v14.3.0, we assert a default value for `unwrapOr()`/`unwrapOrElse` operation for `Maybe`/`Nullable`/`Undefinable`.
+- In these case, these functions will throw `TypeError`.
+    - Pass these type as a default value for `unwrapOr()`
+        - `null` for `unwrapOrFromNullable()`
+        - `undefined` for `unwrapOrFromUndefinable()`
+        - `null` or `undefined` for `unwrapOrFromMaybe()`
+    - Pass these type as the result of default value factory function for `unwrapOrElse()`
+        - `null` for `unwrapOrElseFromNullable()`
+        - `undefined` for `unwrapOrElseFromUndefinable()`
+        - `null` or `undefined` for `unwrapOrElseFromMaybe()`
+
+
 ## 15.0.1
 
 ### Documentations
 
-- Add the jsdoc comment to constructors which are planned to deprecate in ([#232]( https://github.com/karen-irc/option-t/issues/232)).
+- Add the jsdoc comment to constructors which are planned to deprecate in [#232]( https://github.com/karen-irc/option-t/issues/232).
  ([#277](https://github.com/karen-irc/option-t/pull/277))
 
 
