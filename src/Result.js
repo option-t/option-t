@@ -341,7 +341,7 @@ export function Err(e) {
      *  @private
      *  @type   {boolean}
      */
-    this._is_ok = false;
+    this._is_ok = false
     /* eslint-enable */
 
     /**
