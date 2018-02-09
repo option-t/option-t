@@ -25,3 +25,8 @@ before_install:
 
 cache:
   yarn: true
+
+jobs:
+  include:
+    - stage: formatter-check
+      script: 'git diff --exit-code'
