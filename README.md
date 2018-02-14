@@ -33,11 +33,10 @@ npm install --save option-t
 ### Wrapper objects
 
 This is a wrapper object which have utility methods on its prototype.
-It's not 
 
 #### [`Option<T>`](./src/Option.d.ts)
 
-This can express that there is some values or a none.
+This can express that there is some values or none.
 
 ```javascript
 import { createSome, createNone, } from 'option-t/esm/Option';
@@ -78,7 +77,7 @@ This can express a value of `T` type, `null`, or `undefined`.
 
 ####  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/index.ts)
 
-This can express that there is some values or a none _as a plain object_.
+This can express that there is some values or none _as a plain object_.
 This does not have any property method on its prototype. But this allows no including unused methods of them.
 
 #### [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/index.ts)
