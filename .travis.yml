@@ -1,3 +1,4 @@
+dist: trusty
 sudo: false
 
 language: node_js
@@ -24,3 +25,8 @@ before_install:
 
 cache:
   yarn: true
+
+jobs:
+  include:
+    - stage: formatter-check
+      script: 'git diff --exit-code'

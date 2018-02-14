@@ -238,6 +238,7 @@ gulp.task('eslint', () => {
         '.',
         './**/.eslintrc.js',
         ' --ext', '.js',
+        '--fix'
     ]);
     return p;
 });
