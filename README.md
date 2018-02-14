@@ -17,23 +17,7 @@ npm install --save option-t
 ```
 
 
-## Usage
-
-```javascript
-const { Some, None, } = require('option-t');
-
-// `Some<T>`
-const some = new Some(1);
-console.log(some.isSome); // true
-console.log(some.unwrap()); // 1
-
-// `None`
-const none = new None();
-console.log(none.isSome); // false
-console.log(none.unwrap()); // this will throw `Error`.
-```
-
-## API
+## Usage & APIs
 
 * Wrapper objects
     * [`Option<T>`](./src/Option.d.ts)
@@ -46,8 +30,62 @@ console.log(none.unwrap()); // this will throw `Error`.
         * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/index.ts)
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/index.ts)
 
+### Wrapper objects
 
-### How to import
+This is a wrapper object which have utility methods on its prototype.
+It's not 
+
+#### [`Option<T>`](./src/Option.d.ts)
+
+This can express that there is some values or a none.
+
+```javascript
+import { createSome, createNone, } from 'option-t/esm/Option';
+// or
+const { createSome, createNone, } = require('option-t/cjs/Option');
+
+// `Some<T>`
+const some = createSome(1);
+console.log(some.isSome); // true
+console.log(some.unwrap()); // 1
+
+// `None`
+const none = createNone();
+console.log(none.isSome); // false
+console.log(none.unwrap()); // this will throw `Error`.
+```
+
+#### [`Result<T, E>`](./src/Result.d.ts)
+
+This can express that there is some values or some error information.
+
+
+### Utility functions for some types.
+
+These are designed for more tree shaking friendly and more usable for JavaScript common world.
+
+#### [`Nullable<T>` (`T | null`)](./src/Nullable/)
+
+This can express a value of `T` type or `null`.
+
+#### [`Undefinable<T>` (`T | undefined`)](./src/Undefinable/)
+
+This can express a value of `T` type or `undefined`.
+
+#### [`Maybe<T>` (`T | null | undefined`)](./src/Maybe/)
+
+This can express a value of `T` type, `null`, or `undefined`.
+
+####  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/index.ts) as a plain object
+
+This can express that there is some values or a none.
+
+#### [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/index.ts) as a plain object
+
+This can express that there is some values or some error information.
+
+
+## How to import
 
 This package provides some sub directories to import various functions.
 Each of them includes same directoty hierarchy with [under `src`/](./src/).
