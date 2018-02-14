@@ -2,6 +2,19 @@
 
 ## x.y.z
 
+
+## 16.1.0
+
+### Enhancement
+
+- `index.js` exports `createSome` and `createNone` for `lib/Option`. ([#283](https://github.com/karen-irc/option-t/pull/283))
+    - This follows up [#235](https://github.com/karen-irc/option-t/pull/235).
+    - By this change, you can write `import { createSome } from 'option-t';`.
+        - We don't recommend this usage because this is kept for the backward compatibility.
+          However, if your code still uses `import { Some, None } from 'option-t'`, then you can migrate them.
+
+
+
 ## 16.0.0
 
 ### Breaking Change
