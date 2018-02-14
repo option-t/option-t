@@ -76,13 +76,15 @@ This can express a value of `T` type or `undefined`.
 
 This can express a value of `T` type, `null`, or `undefined`.
 
-####  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/index.ts) as a plain object
+####  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/index.ts)
 
-This can express that there is some values or a none.
+This can express that there is some values or a none _as a plain object_.
+This does not have any property method on its prototype. But this allows no including unused methods of them.
 
-#### [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/index.ts) as a plain object
+#### [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/index.ts)
 
-This can express that there is some values or some error information.
+This can express that there is some values or some error information _as a plain object_.
+This does not have any property method on its prototype. But this allows no including unused methods of them.
 
 
 ## How to import
