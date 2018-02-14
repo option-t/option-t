@@ -3,6 +3,16 @@
 ## x.y.z
 
 
+## 16.1.1
+
+### Documentations
+
+- Update README.
+ ([#284](https://github.com/karen-irc/option-t/pull/284))
+ ([#285](https://github.com/karen-irc/option-t/pull/285))
+ ([#286](https://github.com/karen-irc/option-t/pull/286))
+
+
 ## 16.1.0
 
 ### Enhancement
