@@ -2,6 +2,17 @@
 
 ## x.y.z
 
+### Breaking Change
+
+- Obsolete `instanceof` checking for `lib/Option` and `lib/Result`. ([#287](https://github.com/karen-irc/option-t/pull/287))
+    - We preserve constructors: `Ok`, `Err`, `Some`, and `None` for a backward compatibility.
+    - We don't have any plan to remove these constructors. If we remove them, we might provide some refactoring scripts.
+- Overhaul type definitions for `lib/Option` and `lib/Result`. ([#287](https://github.com/karen-irc/option-t/pull/287))
+    - If your code use their type definitions, this may breaks your code.
+- Rename `ResultBase._is_ok` to `ResultBase._isOk`. ([#287](https://github.com/karen-irc/option-t/pull/287))
+    - These are private APIs. You should not use this.
+
+
 
 ## 16.1.1
 
