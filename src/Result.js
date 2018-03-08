@@ -3,6 +3,9 @@ import { Some, None } from './Option';
 /**
  *  @constructor
  *  @template   T, E
+ *  @param  {boolean}   ok
+ *  @param  {T|undefined}   val
+ *  @param  {E|undefined}   err
  *
  *  A base object of `Result<T, E>`.
  *  This is only used to `option instanceof ResultBase`
@@ -10,7 +13,27 @@ import { Some, None } from './Option';
  *
  *  The usecase example is a `React.PropTypes`.
  */
-export function ResultBase() {}// eslint-disable-line no-empty-function
+export function ResultBase(ok, val, err) {
+    /**
+     *  @private
+     *  @type   {boolean}
+     */
+    this._isOk = ok;
+
+    /**
+     *  @private
+     *  @type   {T}
+     */
+    this._v = val;
+
+    /**
+     *  @private
+     *  @type   {E}
+     */
+    this._e = err;
+
+    Object.seal(this);
+}
 ResultBase.prototype = Object.freeze({
 
     /**
@@ -19,7 +42,7 @@ ResultBase.prototype = Object.freeze({
      *  @return {boolean}
      */
     isOk: function ResultBaseIsOk() {
-        return this._is_ok;
+        return this._isOk;
     },
 
     /**
@@ -28,7 +51,7 @@ ResultBase.prototype = Object.freeze({
      *  @return {boolean}
      */
     isErr: function ResultBaseIsErr() {
-        return !this._is_ok;
+        return !this._isOk;
     },
 
     /**
@@ -39,7 +62,7 @@ ResultBase.prototype = Object.freeze({
      *  @return {!OptionT<T>}
      */
     ok: function ResultBaseOk() {
-        if (this._is_ok) {
+        if (this._isOk) {
             return new Some(this._v);
         }
         else {
@@ -55,7 +78,7 @@ ResultBase.prototype = Object.freeze({
      *  @return {!OptionT<E>}
      */
     err: function ResultBaseErr() {
-        if (!this._is_ok) {
+        if (!this._isOk) {
             return new Some(this._e);
         }
         else {
@@ -74,7 +97,7 @@ ResultBase.prototype = Object.freeze({
      *  @return {!Result<U, E>}
      */
     map: function ResultBaseMap(op) {
-        if (!this._is_ok) {
+        if (!this._isOk) {
             // cheat to escape from a needless allocation.
             return this;
         }
@@ -95,7 +118,7 @@ ResultBase.prototype = Object.freeze({
      *  @return {!Result<T, F>}
      */
     mapErr: function ResultBaseMapErr(op) {
-        if (this._is_ok) {
+        if (this._isOk) {
             // cheat to escape from a needless allocation.
             return this;
         }
@@ -113,7 +136,7 @@ ResultBase.prototype = Object.freeze({
      *  @return {!Result<U, E>}
      */
     and: function ResultBaseAnd(res) {
-        if (this._is_ok) {
+        if (this._isOk) {
             return res;
         }
         else {
@@ -131,7 +154,7 @@ ResultBase.prototype = Object.freeze({
      *  @return {!Result<U, E>}
      */
     andThen: function ResultBaseAndThen(op) {
-        if (!this._is_ok) {
+        if (!this._isOk) {
             // cheat to escape from a needless allocation.
             return this;
         }
@@ -153,7 +176,7 @@ ResultBase.prototype = Object.freeze({
      *  @return {!Result<T, F>}
      */
     or: function ResultBaseOr(res) {
-        if (this._is_ok) {
+        if (this._isOk) {
             // cheat to escape from a needless allocation.
             return this;
         }
@@ -171,7 +194,7 @@ ResultBase.prototype = Object.freeze({
      *  @return {!Result<T, F>}
      */
     orElse: function ResultBaseOrElse(op) {
-        if (this._is_ok) {
+        if (this._isOk) {
             // cheat to escape from a needless allocation.
             return this;
         }
@@ -206,7 +229,7 @@ ResultBase.prototype = Object.freeze({
      *      Throws if the self is a `Ok`.
      */
     unwrapErr: function ResultBaseUnwrapErr() {
-        if (this._is_ok) {
+        if (this._isOk) {
             throw new TypeError('called `unwrapErr()` on a `Ok` value');
         }
         else {
@@ -221,7 +244,7 @@ ResultBase.prototype = Object.freeze({
      *  @return {T}
      */
     unwrapOr: function ResultBaseUnwrapOr(optb) {
-        if (this._is_ok) {
+        if (this._isOk) {
             return this._v;
         }
         else {
@@ -237,7 +260,7 @@ ResultBase.prototype = Object.freeze({
      *  @return {T}
      */
     unwrapOrElse: function ResultBaseUnwrapOrElse(op) {
-        if (this._is_ok) {
+        if (this._isOk) {
             return this._v;
         }
 
@@ -255,7 +278,7 @@ ResultBase.prototype = Object.freeze({
      *      Throws the passed `message` if the self is a `Err`.
      */
     expect: function ResultBaseExpect(message) {
-        if (this._is_ok) {
+        if (this._isOk) {
             return this._v;
         }
         else {
@@ -274,7 +297,7 @@ ResultBase.prototype = Object.freeze({
      *  @return {void}
      */
     drop: function ResultBaseDrop(destructor, errDestructor) {
-        if (this._is_ok) {
+        if (this._isOk) {
             if (typeof destructor === 'function') {
                 destructor(this._v);
             }
@@ -301,29 +324,9 @@ ResultBase.prototype = Object.freeze({
  *  @param  {T} v
  */
 export function Ok(v) {
-    /* eslint-disable camelcase */
-    /**
-     *  @private
-     *  @type   {boolean}
-     */
-    this._is_ok = true;
-    /* eslint-enable */
-
-    /**
-     *  @private
-     *  @type   {T}
-     */
-    this._v = v;
-
-    /**
-     *  @private
-     *  @type   {E}
-     */
-    this._e = undefined;
-
-    Object.seal(this);
+    const r = createOk(v);
+    return r;
 }
-Ok.prototype = new ResultBase();
 
 /**
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
@@ -336,29 +339,9 @@ Ok.prototype = new ResultBase();
  *  @param  {E} e
  */
 export function Err(e) {
-    /* eslint-disable camelcase */
-    /**
-     *  @private
-     *  @type   {boolean}
-     */
-    this._is_ok = false;
-    /* eslint-enable */
-
-    /**
-     *  @private
-     *  @type   {T}
-     */
-    this._v = undefined;
-
-    /**
-     *  @private
-     *  @type   {E}
-     */
-    this._e = e;
-
-    Object.seal(this);
+    const r = createErr(e);
+    return r;
 }
-Err.prototype = new ResultBase();
 
 /**
  *  @template   T, E
@@ -366,7 +349,7 @@ Err.prototype = new ResultBase();
  *  @return    {Result<T, E>}
  */
 export function createOk(v) {
-    const o = new Ok(v);
+    const o = new ResultBase(true, v, undefined);
     return o;
 }
 
@@ -376,6 +359,6 @@ export function createOk(v) {
  *  @return    {Result<T, E>}
  */
 export function createErr(e) {
-    const o = new Err(e);
+    const o = new ResultBase(false, undefined, e);
     return o;
 }

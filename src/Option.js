@@ -25,6 +25,8 @@
 /**
  *  @constructor
  *  @template   T
+ *  @param  {boolean}   ok
+ *  @param  {T|undefined} val
  *
  *  A base object of `Option<T>`.
  *  This is only used to `option instanceof OptionT`
@@ -32,7 +34,21 @@
  *
  *  The usecase example is a `React.PropTypes.
  */
-export function OptionBase() {}// eslint-disable-line no-empty-function
+export function OptionBase(ok, val) {
+    /**
+     *  @private
+     *  @type   {boolean}
+     */
+    this.ok = ok;
+
+    /**
+     *  @private
+     *  @type   {T|undefined}
+     */
+    this.val = val;
+
+    Object.seal(this);
+}
 OptionBase.prototype = Object.freeze({
     /**
      *  Return whether this is `Some<T>` or not.
@@ -284,25 +300,14 @@ OptionBase.prototype = Object.freeze({
  *
  *  @constructor
  *  @template   T
- *  @extends    {OptionT<T>}
+ *  @extends    {OptionBase<T>}
  *
  *  @param  {T}   val
  */
 export function Some(val) {
-    /**
-     *  @private
-     *  @type   {boolean}
-     */
-    this.ok = true;
-
-    /**
-     *  @private
-     *  @type   {T}
-     */
-    this.val = val;
-    Object.seal(this);
+    const o = createSome(val);
+    return o;
 }
-Some.prototype = new OptionBase();
 
 /**
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
@@ -310,23 +315,12 @@ Some.prototype = new OptionBase();
  *
  *  @constructor
  *  @template   T
- *  @extends    {OptionT<T>}
+ *  @extends    {OptionBase<T>}
  */
 export function None() {
-    /**
-     *  @private
-     *  @type   {boolean}
-     */
-    this.ok = false;
-
-    /**
-     *  @private
-     *  @type   {T}
-     */
-    this.val = undefined;
-    Object.seal(this);
+    const o = createNone();
+    return o;
 }
-None.prototype = new OptionBase();
 
 /**
  *  @template   T
@@ -334,7 +328,7 @@ None.prototype = new OptionBase();
  *  @return    {OptionT<T>}
  */
 export function createSome(val) {
-    const o = new Some(val);
+    const o = new OptionBase(true, val);
     return o;
 }
 
@@ -343,6 +337,6 @@ export function createSome(val) {
  *  @return    {OptionT<T>}
  */
 export function createNone() {
-    const o = new None();
+    const o = new OptionBase(false, undefined);
     return o;
 }

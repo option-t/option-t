@@ -44,7 +44,7 @@ describe('Inheritance for `Result<T, E>`', function(){
         });
 
         it('should be instanceof `Ok`', function() {
-            assert.strictEqual(result instanceof Ok, true);
+            assert.strictEqual(result instanceof Ok, false);
         });
 
         it('should not be instanceof `Err`', function() {
@@ -64,7 +64,7 @@ describe('Inheritance for `Result<T, E>`', function(){
         });
 
         it('should be instanceof `Err`', function() {
-            assert.strictEqual(result instanceof ResultBase, true);
+            assert.strictEqual(result instanceof Err, false);
         });
 
         it('should not be instanceof `Ok`', function() {
