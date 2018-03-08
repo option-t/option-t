@@ -22,5 +22,8 @@ before_install:
   - which yarn # for debugging Travis
   - echo $PATH # for debugging Travis
 
+script:
+  - make ci -j 8
+
 cache:
   yarn: true
