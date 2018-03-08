@@ -1,4 +1,4 @@
-import { Some, None } from './Option';
+import { createSome, createNone } from './Option';
 
 /**
  *  @constructor
@@ -63,10 +63,10 @@ ResultBase.prototype = Object.freeze({
      */
     ok: function ResultBaseOk() {
         if (this._isOk) {
-            return new Some(this._v);
+            return createSome(this._v);
         }
         else {
-            return new None();
+            return createNone();
         }
     },
 
@@ -79,10 +79,10 @@ ResultBase.prototype = Object.freeze({
      */
     err: function ResultBaseErr() {
         if (!this._isOk) {
-            return new Some(this._e);
+            return createSome(this._e);
         }
         else {
-            return new None();
+            return createNone();
         }
     },
 
@@ -103,7 +103,7 @@ ResultBase.prototype = Object.freeze({
         }
 
         const value = op(this._v);
-        const result = new Ok(value);
+        const result = createOk(value);
         return result;
     },
 
@@ -124,7 +124,7 @@ ResultBase.prototype = Object.freeze({
         }
 
         const value = op(this._e);
-        const result = new Err(value);
+        const result = createErr(value);
         return result;
     },
 
