@@ -143,7 +143,7 @@ OptionBase.prototype = Object.freeze({
         }
 
         const value = fn(this.val);
-        const option = new Some(value);
+        const option = createSome(value);
         return option;
     },
 
