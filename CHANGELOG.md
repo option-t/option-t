@@ -4,6 +4,12 @@
 ## x.y.z
 
 
+## 17.1.0
+
+- Add `"SideEffects": false` to help webpack's tree shaking. ([#295](https://github.com/karen-irc/option-t/pull/295))
+- Update `devDependencies`. ([#296](https://github.com/karen-irc/option-t/pull/296))
+
+
 ## 17.0.0
 
 ### Breaking Change
