@@ -10,6 +10,18 @@ help:
 	@exit 1
 
 
+# Lint
+.PHONY: lint
+lint: __eslint __tslint ## Run all lints
+
+.PHONY: __eslint
+__eslint:
+	$(NPM_BIN)/eslint $(CURDIR) '$(CURDIR)/**/.eslintrc.js' --ext=.js,.jsx,.mjs
+
+.PHONY: __tslint
+__tslint:
+	$(NPM_BIN)/tslint --config $(CURDIR)/tslint.json '$(CURDIR)/src/**/*.ts{,x}'
+
 # Test
 git_diff: # Test whether there is no committed changes.
 	git diff --exit-code
