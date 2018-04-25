@@ -228,9 +228,7 @@ gulp.task('run_mocha', [], () => {
     return runMocha('test');
 });
 gulp.task('typetest', ['clean_type_test', 'build'], () => {
-    const p = execNpmCmd(TSC_CMD, [
-        '-p', './tsconfig_test.json',
-    ]);
+    const p = execMakeTask('tscheck', []);
     return p;
 });
 gulp.task('test_preprocess', ['clean_test_cache'], () => {

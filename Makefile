@@ -10,6 +10,9 @@ help:
 	@exit 1
 
 
+# Clean
+
+
 # Lint
 .PHONY: lint
 lint: __eslint __tslint ## Run all lints
@@ -22,9 +25,15 @@ __eslint:
 __tslint:
 	$(NPM_BIN)/tslint --config $(CURDIR)/tslint.json '$(CURDIR)/src/**/*.ts{,x}'
 
+
 # Test
-git_diff: # Test whether there is no committed changes.
+.PHONY: git_diff
+git_diff: ## Test whether there is no committed changes.
 	git diff --exit-code
+
+.PHONY: tscheck
+tscheck: ## Test check typing consistency.
+	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --noEmit
 
 
 # CI
