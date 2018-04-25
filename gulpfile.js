@@ -68,6 +68,18 @@ function execNpmCmd(cmd, args) {
     return spawnChildProcess(bin, args, option).then(assertReturnCode);
 }
 
+/**
+ *  @param  {string}    taskname
+ *  @param  {Array<string>} args
+ *  @return     {PromiseLike<number>}
+ */
+function execMakeTask(taskname, args) {
+    const option = {
+        cwd: CWD,
+        stdio: 'inherit',
+    };
+    return spawnChildProcess('make', [taskname, ...args], option).then(assertReturnCode);
+}
 
 /**
  *  Clean
