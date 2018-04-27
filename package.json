@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "gulp": "gulp",
-    "clean": "gulp clean",
+    "clean": "make clean -j",
     "build": "gulp build",
     "test": "gulp test",
     "prepublish": "npm-run-all --serial clean build"

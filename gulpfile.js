@@ -36,15 +36,12 @@ const CWD = path.relative(__dirname, '');
 const DIST_ESM_DIR = path.resolve(__dirname, './esm/');
 const DIST_COMMONJS_DIR = path.resolve(__dirname, './cjs/');
 const DIST_MIXED_LIB_DIR = path.resolve(__dirname, './lib/');
-const TEST_CACHE_DIR = path.resolve(__dirname, './__test_cache/');
-const TYPE_TEST_DIR = path.resolve(__dirname, './__type_test/');
 const TMP_MJS_DIR = path.resolve(__dirname, './__tmp_mjs/');
 
 const IS_IN_CI = process.env.CI === 'true';
 
 const BABEL_CMD = 'babel';
 const CPX_CMD = 'cpx';
-const DEL_CMD = 'del';
 const MOCHA_CMD = 'mocha';
 const RENAME_CMD = 'rename';
 const TSC_CMD = 'tsc';
@@ -84,12 +81,12 @@ function execMakeTask(taskname, args) {
  */
 gulp.task('clean', ['clean_build', 'clean_test_cache', 'clean_type_test', 'clean_tmp_mjs']);
 gulp.task('clean_build', ['clean_build_cjs', 'clean_build_esm', 'clean_build_mixedlib']);
-gulp.task('clean_build_cjs', () => execNpmCmd(DEL_CMD, [DIST_COMMONJS_DIR]));
-gulp.task('clean_build_esm', () => execNpmCmd(DEL_CMD, [DIST_ESM_DIR]));
-gulp.task('clean_build_mixedlib', () => execNpmCmd(DEL_CMD, [DIST_MIXED_LIB_DIR]));
-gulp.task('clean_test_cache', () => execNpmCmd(DEL_CMD, [TEST_CACHE_DIR]));
-gulp.task('clean_type_test', () => execNpmCmd(DEL_CMD, [TYPE_TEST_DIR]));
-gulp.task('clean_tmp_mjs', () => execNpmCmd(DEL_CMD, [TMP_MJS_DIR]));
+gulp.task('clean_build_cjs', () => execMakeTask('__clean_build_cjs', []));
+gulp.task('clean_build_esm', () => execMakeTask('__clean_build_esm', []));
+gulp.task('clean_build_mixedlib', () => execMakeTask('__clean_build_mixedlib', []));
+gulp.task('clean_test_cache', () => execMakeTask('__clean_test_cache', []));
+gulp.task('clean_type_test', () => execMakeTask('__clean_type_test', []));
+gulp.task('clean_tmp_mjs', () => execMakeTask('__clean_tmp_mjs', []));
 
 
 /**

@@ -1,6 +1,13 @@
-NODE_MOD := $(CURDIR)/node_modules
-NPM_BIN := $(NODE_MOD)/.bin
+NPM_MOD_DIR := $(CURDIR)/node_modules
+NPM_BIN := $(NPM_MOD_DIR)/.bin
 NPM_CMD := npm
+
+DIST_ESM_DIR := $(CURDIR)/esm
+DIST_COMMONJS_DIR := $(CURDIR)/cjs
+DIST_MIXED_LIB_DIR := $(CURDIR)/lib
+TEST_CACHE_DIR := $(CURDIR)/__test_cache
+TYPE_TEST_DIR := $(CURDIR)/__type_test
+TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
 
 all: help
 
@@ -11,6 +18,36 @@ help:
 
 
 # Clean
+.PHONY: clean
+clean: __clean_build __clean_test_cache __clean_type_test __clean_tmp_mjs
+
+.PHONY: __clean_build
+__clean_build: __clean_build_cjs __clean_build_esm __clean_build_mixedlib
+	$(NPM_BIN)/del $(TMP_MJS_DIR)
+
+.PHONY: __clean_build_cjs
+__clean_build_cjs:
+	$(NPM_BIN)/del $(DIST_COMMONJS_DIR)
+
+.PHONY: __clean_build_esm
+__clean_build_esm:
+	$(NPM_BIN)/del $(DIST_ESM_DIR)
+
+.PHONY: __clean_build_mixedlib
+__clean_build_mixedlib:
+	$(NPM_BIN)/del $(DIST_MIXED_LIB_DIR)
+
+.PHONY: __clean_test_cache
+__clean_test_cache:
+	$(NPM_BIN)/del $(TEST_CACHE_DIR)
+
+.PHONY: __clean_type_test
+__clean_type_test:
+	$(NPM_BIN)/del $(TYPE_TEST_DIR)
+
+.PHONY: clean_tmp_mjs
+__clean_tmp_mjs:
+	$(NPM_BIN)/del $(TMP_MJS_DIR)
 
 
 # Lint
