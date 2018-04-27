@@ -2,6 +2,8 @@ NPM_MOD_DIR := $(CURDIR)/node_modules
 NPM_BIN := $(NPM_MOD_DIR)/.bin
 NPM_CMD := npm
 
+SRC_TEST_DIR := $(CURDIR)/test
+
 DIST_ESM_DIR := $(CURDIR)/esm
 DIST_COMMONJS_DIR := $(CURDIR)/cjs
 DIST_MIXED_LIB_DIR := $(CURDIR)/lib
@@ -71,6 +73,10 @@ git_diff: ## Test whether there is no committed changes.
 .PHONY: tscheck
 tscheck: ## Test check typing consistency.
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --noEmit
+
+.PHONY: __test_preprocess
+__test_preprocess:
+	$(NPM_BIN)/babel $(SRC_TEST_DIR) --out-dir $(TEST_CACHE_DIR) --extensions .js --presets power-assert
 
 
 # CI

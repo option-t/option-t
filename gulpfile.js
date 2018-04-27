@@ -229,12 +229,7 @@ gulp.task('typetest', ['clean_type_test', 'build'], () => {
     return p;
 });
 gulp.task('test_preprocess', ['clean_test_cache'], () => {
-    const p = execNpmCmd(BABEL_CMD, [
-        './test',
-        '--out-dir', './__test_cache/',
-        '--extensions=.js',
-        '--presets', 'power-assert',
-    ]);
+    const p = execMakeTask('__test_preprocess', []);
     return p;
 });
 gulp.task('lint', () => {
