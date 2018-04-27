@@ -215,3 +215,8 @@ __eslint_fmt:
 .PHONY: __tslint_fmt
 __tslint_fmt: 
 	$(NPM_BIN)/tslint --config $(CURDIR)/tslint.json '$(CURDIR)/src/**/*.ts{,x}'
+
+.PHONY: prepublish
+prepublish: ## Run some commands for 'npm run prepublish'
+	$(MAKE) clean -C $(CURDIR)
+	$(MAKE) build -C $(CURDIR)

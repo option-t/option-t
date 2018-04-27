@@ -17,7 +17,7 @@
     "clean": "make clean -j",
     "build": "make build -j",
     "test": "make test -j",
-    "prepublish": "npm-run-all --serial clean build"
+    "prepublish": "make prepublish -j"
   },
   "author": {
     "name": "Tetsuharu OHZEKI",
@@ -56,7 +56,6 @@
     "del-cli": "^1.1.0",
     "eslint": "^4.19.1",
     "mocha": "^5.1.1",
-    "npm-run-all": "^4.1.2",
     "power-assert": "^1.5.0",
     "rename-cli": "^5.1.0",
     "tslint": "^5.9.1",
