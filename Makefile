@@ -163,6 +163,11 @@ __tslint:
 ###########################
 # Test
 ###########################
+.PHONY: test
+test: lint build __mocha tscheck ## Run all tests
+
+
+
 .PHONY: git_diff
 git_diff: ## Test whether there is no committed changes.
 	git diff --exit-code
@@ -172,11 +177,11 @@ tscheck: ## Test check typing consistency.
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --noEmit
 
 .PHONY: __test_preprocess
-__test_preprocess:
+__test_preprocess: __clean_test_cache
 	$(NPM_BIN)/babel $(SRC_TEST_DIR) --out-dir $(TEST_CACHE_DIR) --extensions .js --presets power-assert
 
 .PHONY: __mocha
-__mocha:
+__mocha: __test_preprocess build
 	$(MAKE) __run_mocha_with_power_assert -C $(CURDIR)
 
 .PHONY: __run_mocha_with_power_assert

@@ -17,7 +17,7 @@
     "gulp": "gulp",
     "clean": "make clean -j",
     "build": "make build -j",
-    "test": "gulp test",
+    "test": "make test -j",
     "prepublish": "npm-run-all --serial clean build"
   },
   "author": {
