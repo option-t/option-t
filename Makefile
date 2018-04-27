@@ -11,6 +11,14 @@ TEST_CACHE_DIR := $(CURDIR)/__test_cache
 TYPE_TEST_DIR := $(CURDIR)/__type_test
 TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
 
+## In CI environment, we should change some configuration
+ifeq ($(CI),true)
+	MOCHA_REPORTER = spec
+else
+	MOCHA_REPORTER = nyan
+endif
+
+
 all: help
 
 help:
@@ -77,6 +85,18 @@ tscheck: ## Test check typing consistency.
 .PHONY: __test_preprocess
 __test_preprocess:
 	$(NPM_BIN)/babel $(SRC_TEST_DIR) --out-dir $(TEST_CACHE_DIR) --extensions .js --presets power-assert
+
+.PHONY: __mocha
+__mocha:
+	$(MAKE) __run_mocha_with_power_assert -C $(CURDIR)
+
+.PHONY: __run_mocha_with_power_assert
+__run_mocha_with_power_assert:
+	$(NPM_BIN)/mocha --recursive '$(TEST_CACHE_DIR)/**/test_*.js' --reporter $(MOCHA_REPORTER)
+
+.PHONY: run_mocha
+run_mocha: ## Run mocha without any transforms.
+	$(NPM_BIN)/mocha --recursive '$(SRC_TEST_DIR)/**/test_*.js' --reporter $(MOCHA_REPORTER)
 
 
 # CI
