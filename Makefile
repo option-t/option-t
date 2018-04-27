@@ -27,7 +27,9 @@ help:
 	@exit 1
 
 
+###########################
 # Clean
+###########################
 .PHONY: clean
 clean: __clean_build __clean_test_cache __clean_type_test __clean_tmp_mjs
 
@@ -60,7 +62,9 @@ __clean_tmp_mjs:
 	$(NPM_BIN)/del $(TMP_MJS_DIR)
 
 
+###########################
 # Lint
+###########################
 .PHONY: lint
 lint: __eslint __tslint ## Run all lints
 
@@ -73,7 +77,9 @@ __tslint:
 	$(NPM_BIN)/tslint --config $(CURDIR)/tslint.json '$(CURDIR)/src/**/*.ts{,x}'
 
 
+###########################
 # Test
+###########################
 .PHONY: git_diff
 git_diff: ## Test whether there is no committed changes.
 	git diff --exit-code
@@ -99,14 +105,18 @@ run_mocha: ## Run mocha without any transforms.
 	$(NPM_BIN)/mocha --recursive '$(SRC_TEST_DIR)/**/test_*.js' --reporter $(MOCHA_REPORTER)
 
 
+###########################
 # CI
+###########################
 .PHONY: ci
 ci:
 	$(NPM_CMD) test
 	$(MAKE) git_diff
 
 
+###########################
 # Tools
+###########################
 .PHONY: fmt
 fmt: __eslint_fmt __tslint_fmt ## Apply all formatters
 
