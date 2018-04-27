@@ -33,18 +33,6 @@ const { spawnChildProcess, assertReturnCode } = require('./tools/spawn');
 const NPM_MOD_DIR = path.resolve(__dirname, './node_modules/');
 const CWD = path.relative(__dirname, '');
 
-const DIST_ESM_DIR = path.resolve(__dirname, './esm/');
-const DIST_COMMONJS_DIR = path.resolve(__dirname, './cjs/');
-const DIST_MIXED_LIB_DIR = path.resolve(__dirname, './lib/');
-const TMP_MJS_DIR = path.resolve(__dirname, './__tmp_mjs/');
-
-const BABEL_CMD = 'babel';
-const CPX_CMD = 'cpx';
-const RENAME_CMD = 'rename';
-const TSC_CMD = 'tsc';
-
-const BABEL_PRD_TRANSFORMER_LIST = ['transform-es2015-block-scoping'];
-
 /**
  *  @param  {string}    cmd
  *  @param  {Array<string>} args
@@ -89,116 +77,7 @@ gulp.task('clean_tmp_mjs', () => execMakeTask('__clean_tmp_mjs', []));
 /**
  *  Build
  */
-gulp.task('build', ['build_cjs', 'build_esm', 'build_mixedlib']);
-
-gulp.task('build_cjs', ['build_cjs_js', 'build_cjs_type_definition', 'build_cjs_ts']);
-gulp.task('build_cjs_js', ['clean_build_cjs'], () => {
-    const p = execNpmCmd(BABEL_CMD, [
-        './src',
-        '--out-dir', './cjs/',
-        '--extensions=.js',
-        '--no-babelrc',
-        '--plugins', ['transform-es2015-modules-commonjs', ...BABEL_PRD_TRANSFORMER_LIST].join(','),
-    ]);
-    return p;
-});
-gulp.task('build_cjs_type_definition', ['clean_build_cjs'], () => {
-    const p = execNpmCmd(CPX_CMD, [
-        './src/**/*.d.ts',
-        './cjs',
-        '--preserve',
-    ]);
-    return p;
-});
-gulp.task('build_cjs_ts', ['clean_build_cjs'], () => {
-    const p = execNpmCmd(TSC_CMD, [
-        '-p', './tsconfig_cjs.json',
-    ]);
-    return p;
-});
-
-gulp.task('build_esm', ['build_esm_js', 'build_esm_ts', 'build_mjs_cp_mjs_to_esm']);
-gulp.task('build_esm_js', ['clean_build_esm'], () => {
-    const dts = execNpmCmd(CPX_CMD, [
-        './src/**/*.d.ts',
-        './esm/',
-        '--preserve',
-    ]);
-
-    const js = execNpmCmd(BABEL_CMD, [
-        './src',
-        '--out-dir', DIST_ESM_DIR,
-        '--extensions=.js',
-        '--no-babelrc',
-        '--plugins', BABEL_PRD_TRANSFORMER_LIST
-    ]);
-
-    return Promise.all([dts, js]);
-});
-gulp.task('build_esm_ts', ['clean_build_esm'], () => {
-    const p = execNpmCmd(TSC_CMD, [
-        '-p', './tsconfig_esm.json',
-    ]);
-    return p;
-});
-gulp.task('build_mjs_cp_mjs_to_esm', ['build_mjs_rename_js_to_mjs'], () => {
-    const js = execNpmCmd(CPX_CMD, [
-        TMP_MJS_DIR + '/**/*.mjs',
-        DIST_ESM_DIR,
-        '--preserve',
-    ]);
-    return js;
-});
-gulp.task('build_mjs_rename_js_to_mjs', ['build_mjs_create_tmp_mjs'], () => {
-    const p = execNpmCmd(RENAME_CMD, [
-        TMP_MJS_DIR + '/**/*.js', '{{f}}.mjs'
-    ]);
-    return p;
-});
-gulp.task('build_mjs_create_tmp_mjs', ['clean_tmp_mjs'], () => {
-    const ts = execNpmCmd(TSC_CMD, [
-        '-p', './tsconfig_esm.json',
-        '--outDir', TMP_MJS_DIR,
-        '--declaration', 'false'
-    ]);
-
-    const js = execNpmCmd(BABEL_CMD, [
-        './src',
-        '--out-dir', TMP_MJS_DIR,
-        '--extensions=.js',
-        '--no-babelrc',
-        '--plugins', BABEL_PRD_TRANSFORMER_LIST,
-    ]);
-
-    return Promise.all([ts, js]);
-});
-
-gulp.task('build_mixedlib', ['build_mixedlib_cp_mjs', 'build_mixedlib_cp_cjs', 'build_mixedlib_cp_dts']);
-gulp.task('build_mixedlib_cp_mjs', ['build_esm', 'clean_build_mixedlib'], () => {
-    const js = execNpmCmd(CPX_CMD, [
-        DIST_ESM_DIR + '/**/*.mjs',
-        DIST_MIXED_LIB_DIR,
-        '--preserve',
-    ]);
-    return js;
-});
-gulp.task('build_mixedlib_cp_cjs', ['build_cjs', 'clean_build_mixedlib'], () => {
-    const js = execNpmCmd(CPX_CMD, [
-        DIST_COMMONJS_DIR + '/**/*.js',
-        DIST_MIXED_LIB_DIR,
-        '--preserve',
-    ]);
-    return js;
-});
-gulp.task('build_mixedlib_cp_dts', ['build_esm', 'clean_build_mixedlib'], () => {
-    const js = execNpmCmd(CPX_CMD, [
-        DIST_ESM_DIR + '/**/*.d.ts',
-        DIST_MIXED_LIB_DIR,
-        '--preserve',
-    ]);
-    return js;
-});
-
+gulp.task('build', () => execMakeTask('build', []));
 
 /**
  *  Test
