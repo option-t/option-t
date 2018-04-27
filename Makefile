@@ -173,7 +173,7 @@ git_diff: ## Test whether there is no committed changes.
 	git diff --exit-code
 
 .PHONY: tscheck
-tscheck: ## Test check typing consistency.
+tscheck: __clean_type_test build ## Test check typing consistency.
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --noEmit
 
 .PHONY: __test_preprocess
