@@ -27,8 +27,8 @@ npm install --save option-t
     * [`Undefinable<T>` (`T | undefined`)](./src/Undefinable/)
     * [`Maybe<T>` (`T | null | undefined`)](./src/Maybe/)
     * plain objects
-        * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/index.ts)
-        * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/index.ts)
+        * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/)
+        * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
 
 ### Wrapper objects
 
@@ -75,12 +75,12 @@ This can express a value of `T` type or `undefined`.
 
 This can express a value of `T` type, `null`, or `undefined`.
 
-####  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/index.ts)
+####  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/)
 
 This can express that there is some values or none _as a plain object_.
 This does not have any property method on its prototype. But this allows no including unused methods of them.
 
-#### [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/index.ts)
+#### [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
 
 This can express that there is some values or some error information _as a plain object_.
 This does not have any property method on its prototype. But this allows no including unused methods of them.
