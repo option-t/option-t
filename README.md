@@ -142,37 +142,6 @@ See [the document](./docs/SEMANTICS.md).
 Of course, there some alternative approaches. We introduce them.
 
 
-#### Use an object with destructuring assignment.
-
-From ECMA262 6th, we can use _destructuring assignment_.
-It provides a convinient way to handle/unwrap a value in an object.
-
-```typescript
-type Option<T> = {
-  ok: boolean;
-  value: T;
-};
-
-const { ok, value, } = getSomeValue();
-if (ok) {
-    // handle some value case
-}
-else {
-    // handle none case.
-}
-```
-
-This does same thing which is like a return value of `iterator.next()`.
-But this approach cannot call instance methods on their returned values.
-If you would like to handle a result more seemless, we recommend to use `option-t`.
-
-On the other hand, this way (and `option-t`) need to allocate an object.
-This allocation cost would be a cost.
-
-In the future, a JavaScript runtime may make it more cheap,
-but we don't recommend to use this approach if you requires a high performance computing extremely.
-
-
 #### Runtime Checking
 
 This would be most popular way to handle a returned value in JavaScript.
