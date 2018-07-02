@@ -224,17 +224,6 @@ These are written for Rust, but the essense is just same.
 
 
 
-
-
-## Semantics
-
-See [the document](./docs/SEMANTICS.md).
-
-
-
-
-
-
 ## License
 
 [MIT License](./LICENSE.MIT)
