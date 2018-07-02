@@ -32,6 +32,7 @@ yarn add option-t --save
         * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/)
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
 
+
 ### Wrapper objects
 
 This is a wrapper object which have utility methods on its prototype.
@@ -131,55 +132,11 @@ These are written for Rust, but the essense is just same.
 - [`std::result` - Rust](https://doc.rust-lang.org/std/result/)
 
 
-
 ## Semantics
 
 See [the document](./docs/SEMANTICS.md).
 
 
-## FAQ
-
-### How to represent same things without this library?
-
-Of course, there some alternative approaches. We introduce them.
-
-
-#### Runtime Checking
-
-This would be most popular way to handle a returned value in JavaScript.
-
-```javascript
-const value = getSome(); // this returns the actual value, otherwise `undefined`.
-if (value !== undefined) {
-    // handle some value
-}
-else {
-    // handle none value
-}
-```
-
-These approach don't need an extra object allocation like the above approach (and `option-t`).
-
-And you need to think about "what is null type? including `undefined` or not?".
-At least in ECMA262, There are some ways to represent "there're no value".
-
-- `undefined` (e.g. `Map.prototype.get()`)
-- `null` (e.g. `RegExp.prototype.exec()`)
-- `-1` (e.g. `String.prototype.indexOf()`)
-
-
-#### Use static type checker
-
-Some static type checking tools provides a way to check nullability.
-
-- Flowtype's semantics has [a built-in "Maybe" types](http://flowtype.org/docs/nullable-types.html),
-- TypeScript has [a non-nullable type check](https://github.com/Microsoft/TypeScript/issues/185),
-    - [From TypeScript compiler 1.8, you can represent `type Maybe<T> = T | void`.](http://www.typescriptlang.org/docs/release-notes/typescript-1.8.html#improved-unionintersection-type-inference)
-- Google Closure Compiler also can check a non-nullable type via JSDoc style annotations in some compilation mode.
-
-Flowtype and TypeScript checks with thier control flow analysis
-(Sorry, I don't know the details of Google Closure Compiler's behavior).
-Thus you can leave a runtime nullability checking in your code.
 
 ## License
 
