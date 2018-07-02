@@ -14,6 +14,8 @@
 
 ```sh
 npm install --save option-t
+// or
+yarn add option-t --save
 ```
 
 
