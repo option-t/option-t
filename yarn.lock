@@ -1047,12 +1047,13 @@ foreach@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/foreach/-/foreach-2.0.5.tgz#0bee005018aeb260d0a3af3ae658dd0136ec1b99"
 
-fs-extra@^2.0.0:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-2.1.2.tgz#046c70163cef9aad46b0e4a7fa467fb22d71de35"
+fs-extra@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-6.0.1.tgz#8abc128f7946e310135ddc93b98bddb410e7a34b"
   dependencies:
     graceful-fs "^4.1.2"
-    jsonfile "^2.1.0"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
 
 fs-minipass@^1.2.5:
   version "1.2.5"
@@ -1498,7 +1499,7 @@ isobject@^2.0.0:
   dependencies:
     isarray "1.0.0"
 
-jpeg-exif@^1.0.6:
+jpeg-exif@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/jpeg-exif/-/jpeg-exif-1.0.6.tgz#b5003a6c14fb0a15d71fd0e0bde0f8f29e21e5c4"
 
@@ -1529,9 +1530,9 @@ json5@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
 
-jsonfile@^2.1.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-2.4.0.tgz#3736a2b428b87bbda0cc83b53fa3d633a35c2ae8"
+jsonfile@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-4.0.0.tgz#8771aae0799b64076b76640fca058f9c10e33ecb"
   optionalDependencies:
     graceful-fs "^4.1.6"
 
@@ -2316,19 +2317,19 @@ remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
 
-rename-cli@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/rename-cli/-/rename-cli-5.1.0.tgz#7634cbf651ed0fe709288ab9470a9c9119ef2eef"
+rename-cli@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/rename-cli/-/rename-cli-5.1.2.tgz#1dec1294746d2eeeeb34cfb7f8d3337d7d845dcb"
   dependencies:
     blessed "^0.1.81"
     chalk "^2.3.2"
     cli-clear "^1.0.4"
     clipboardy "^1.2.3"
     dateformat "^2.2.0"
-    fs-extra "^2.0.0"
+    fs-extra "^6.0.1"
     globby "^6.1.0"
     inquirer "^3.3.0"
-    jpeg-exif "^1.0.6"
+    jpeg-exif "1.0.6"
     named-js-regexp "^1.3.3"
     num2fraction "^1.2.2"
     opn "^5.3.0"
@@ -2780,6 +2781,10 @@ universal-deep-strict-equal@^1.2.1:
     array-filter "^1.0.0"
     indexof "0.0.1"
     object-keys "^1.0.0"
+
+universalify@^0.1.0:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
 
 unzip-response@^2.0.1:
   version "2.0.1"
