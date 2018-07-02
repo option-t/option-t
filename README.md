@@ -10,11 +10,103 @@
     * We recommend to use this with some static type systems like TypeScript.
 
 
+
+
+
+
+## Motivation
+
+This library provies these conventions for your project:
+
+1. Uniform the expression of "none" value.
+2. Uniform the way to carry error information instead of throwing an error.
+3. Provide a utility function to handle _1_ and _2_ easily.
+
+And Rust's [`std::option`](https://doc.rust-lang.org/std/option/) and [`std::result`](https://doc.rust-lang.org/std/result/) are suggestive to achive these conventions in practice. Thus this package is inspired by their design.
+
+
+### Uniform the expression of "none" value.
+
+In JavaScript world, there are many ways to express "there is no values".
+At least in ECMA262, There are some ways to represent them:
+
+* `undefined` (e.g. `Map.prototype.get()`)
+* `null` (e.g. `RegExp.prototype.exec()`)
+* `-1` (e.g. `String.prototype.indexOf()`)
+
+In addition, ECMA262 intracts with [DOM binding](https://heycam.github.io/webidl/),  Node.js standtard modules, and others. There are additional various way to represetn "none" value.
+
+In practice, we write some _glue code_ to tame their various ways in our project to uniform their expression style. This library contributes to uniform the convention to write it. 
+
+
+### Uniform the way to carry error information instead of throwing an error.
+
+Exception is useful but it has some terrible aspect.
+It's easy that _try-catch_ statement be a jump instruction by large scoped _try-catch_ statement.
+It's hard to find where throws an error, it's also hard to handle a penetrated exception from a lower layer.
+Especially, exception mechanism is mis-match with an async programming model.
+ECMA262 7th' _async-await relaxes the problem about an exception with async programming,
+but there is still leave the problem about exception in traditional synchronous programming.
+Furthermore, if you interact with `setTimeout()` and other async APIs built with callback style on event loop,
+this problem faces to you.
+
+And some async-push based paradigm like `Rx.Observable<T>` does not allow throw any expception
+in their _Observable_ stream. If you throw an error in it, only _catch()_ operator can catch the error.
+But a programmer would sometimes forget to use its operator. This means that throwing an Error in Rx's _Observable_
+is pretty mis-matched action. _Promise<T>_ also has a similar problem.
+
+And exception in ECMA262 is not friendly with static typing model
+because ECMA262's _throw_ can throw not only `Error` but also other object type.
+
+In Rust which is a programming language designed for parallel and seftiness, it treats errors in two category:
+
+> Rust groups errors into two major categories: _recoverable_ and _unrecoverable_ errors.
+> For a recoverable error, such as a file not found error,
+> it’s reasonable to report the problem to the user and retry the operation.
+> Unrecoverable errors are always symptoms of bugs, like trying to access a location beyond the end of an array.
+
+This categorization is pretty useful to relax the problem about exception in ECMA262 which this section described.
+
+Thus this library provides a way to express _recoverable_ error and also recommmends
+to use throwing an error only if you intend throw an _unrecoverable_ error. 
+This categarization introduces a convinient convention for you:
+	
+* If the code uses _throw_, you should be careful about _unrecoverable_ error.
+* If the code returns `Result<T, E>` provided this library, then you should handle it correctly.
+
+This convention is claer as error handling style and it's static typing friendly by _generics_.
+
+
+### Provide a utility function to handle these uniformed expression easily.
+
+Some static type checking tools also provide a way to check nullability and provide these conventions.
+
+- Flowtype's semantics has [a built-in "Maybe" types](http://flowtype.org/docs/nullable-types.html),
+- TypeScript has [a non-nullable type check](https://github.com/Microsoft/TypeScript/issues/185),
+- Google Closure Compiler also can check a non-nullable type via JSDoc style annotations in some compilation mode.
+
+Flowtype and TypeScript checks with thier control flow analysis
+(Sorry, I don't know the details of Google Closure Compiler's behavior).
+
+However, these compiler does not provide a way to handle their value easily like `map` or `flatMap` operations.
+
+Rust's `std::option` and `std::result` has some utlity operation method to handle them easily.
+This library also provides a convinient way to handle them and its way is inspired by Rust's ones.
+
+
+
+
 ## Installation
 
 ```sh
 npm install --save option-t
+// or
+yarn add option-t --save
 ```
+
+
+
+
 
 
 ## Usage & APIs
@@ -27,8 +119,9 @@ npm install --save option-t
     * [`Undefinable<T>` (`T | undefined`)](./src/Undefinable/)
     * [`Maybe<T>` (`T | null | undefined`)](./src/Maybe/)
     * plain objects
-        * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/index.ts)
-        * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/index.ts)
+        * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/)
+        * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
+
 
 ### Wrapper objects
 
@@ -58,6 +151,24 @@ console.log(none.unwrap()); // this will throw `Error`.
 
 This can express that there is some values or some error information.
 
+```javascript
+import { createOk, createErr, } from 'option-t/esm/Result';
+// or
+const { createOk, createErr, } = require('option-t/cjs/Result');
+
+// `Ok<T, E>`
+const some = createOk(1);
+console.log(some.isOk()); // true
+console.log(some.unwrap()); // 1
+console.log(none.unwrapErr()); // this will throw `Error`.
+
+// `Err<T, E>`
+const none = createErr('some error info');
+console.log(none.isOk()); // false
+console.log(none.unwrap()); // this will throw `Error`.
+console.log(none.unwrapErr()); // 'some error info'
+```
+
 
 ### Utility functions for some types.
 
@@ -75,18 +186,18 @@ This can express a value of `T` type or `undefined`.
 
 This can express a value of `T` type, `null`, or `undefined`.
 
-####  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/index.ts)
+####  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/)
 
 This can express that there is some values or none _as a plain object_.
 This does not have any property method on its prototype. But this allows no including unused methods of them.
 
-#### [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/index.ts)
+#### [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
 
 This can express that there is some values or some error information _as a plain object_.
 This does not have any property method on its prototype. But this allows no including unused methods of them.
 
 
-## How to import
+### How to import
 
 This package provides some sub directories to import various functions.
 Each of them includes same directoty hierarchy with [under `src`/](./src/).
@@ -123,96 +234,21 @@ Some types defines [JSON representations](./docs/JSON.md) if you serialize them 
 These documents would provide more information about `Option<T>` and `Result<T, E>`.
 These are written for Rust, but the essense is just same.
 
-- [Error Handling - Rust by Example](http://rustbyexample.com/error.html)
-- [Error Handling - The Rust Programming Language](https://doc.rust-lang.org/book/error-handling.html)
+- [Error Handling - Rust by Example](https://doc.rust-lang.org/rust-by-example/error.html)
+- [Error Handling - The Rust Programming Language](https://doc.rust-lang.org/book/second-edition/ch09-00-error-handling.html)
 - [`std::option` - Rust](https://doc.rust-lang.org/std/option/)
 - [`std::result` - Rust](https://doc.rust-lang.org/std/result/)
 
 
 
-## Semantics
-
-See [the document](./docs/SEMANTICS.md).
-
-
-## FAQ
-
-### How to represent same things without this library?
-
-Of course, there some alternative approaches. We introduce them.
-
-
-#### Use an object with destructuring assignment.
-
-From ECMA262 6th, we can use _destructuring assignment_.
-It provides a convinient way to handle/unwrap a value in an object.
-
-```typescript
-type Option<T> = {
-  ok: boolean;
-  value: T;
-};
-
-const { ok, value, } = getSomeValue();
-if (ok) {
-    // handle some value case
-}
-else {
-    // handle none case.
-}
-```
-
-This does same thing which is like a return value of `iterator.next()`.
-But this approach cannot call instance methods on their returned values.
-If you would like to handle a result more seemless, we recommend to use `option-t`.
-
-On the other hand, this way (and `option-t`) need to allocate an object.
-This allocation cost would be a cost.
-
-In the future, a JavaScript runtime may make it more cheap,
-but we don't recommend to use this approach if you requires a high performance computing extremely.
-
-
-#### Runtime Checking
-
-This would be most popular way to handle a returned value in JavaScript.
-
-```javascript
-const value = getSome(); // this returns the actual value, otherwise `undefined`.
-if (value !== undefined) {
-    // handle some value
-}
-else {
-    // handle none value
-}
-```
-
-These approach don't need an extra object allocation like the above approach (and `option-t`).
-
-And you need to think about "what is null type? including `undefined` or not?".
-At least in ECMA262, There are some ways to represent "there're no value".
-
-- `undefined` (e.g. `Map.prototype.get()`)
-- `null` (e.g. `RegExp.prototype.exec()`)
-- `-1` (e.g. `String.prototype.indexOf()`)
-
-
-#### Use static type checker
-
-Some static type checking tools provides a way to check nullability.
-
-- Flowtype's semantics has [a built-in "Maybe" types](http://flowtype.org/docs/nullable-types.html),
-- TypeScript has [a non-nullable type check](https://github.com/Microsoft/TypeScript/issues/185),
-    - [From TypeScript compiler 1.8, you can represent `type Maybe<T> = T | void`.](http://www.typescriptlang.org/docs/release-notes/typescript-1.8.html#improved-unionintersection-type-inference)
-- Google Closure Compiler also can check a non-nullable type via JSDoc style annotations in some compilation mode.
-
-Flowtype and TypeScript checks with thier control flow analysis
-(Sorry, I don't know the details of Google Closure Compiler's behavior).
-Thus you can leave a runtime nullability checking in your code.
 
 ## License
 
 [MIT License](./LICENSE.MIT)
+
+
+
+
 
 
 ## Contribution
