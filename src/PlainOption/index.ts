@@ -13,6 +13,7 @@ export { andForOption as and } from './and';
 export { andThenForOption as andThen } from './andThen';
 export { asMutOption as asMut } from './asMut';
 export { expectIsSome as expect } from './expect';
+export { filterForOption as filter } from './filter';
 export { mapForOption as map } from './map';
 export { mapOrForOption as mapOr } from './mapOr';
 export { mapOrElseForOption as mapOrElse } from './mapOrElse';
