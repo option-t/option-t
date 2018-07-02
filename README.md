@@ -151,6 +151,24 @@ console.log(none.unwrap()); // this will throw `Error`.
 
 This can express that there is some values or some error information.
 
+```javascript
+import { createOk, createErr, } from 'option-t/esm/Result';
+// or
+const { createOk, createErr, } = require('option-t/cjs/Result');
+
+// `Ok<T, E>`
+const some = createOk(1);
+console.log(some.isOk()); // true
+console.log(some.unwrap()); // 1
+console.log(none.unwrapErr()); // this will throw `Error`.
+
+// `Err<T, E>`
+const none = createErr('some error info');
+console.log(none.isOk()); // false
+console.log(none.unwrap()); // this will throw `Error`.
+console.log(none.unwrapErr()); // 'some error info'
+```
+
 
 ### Utility functions for some types.
 
