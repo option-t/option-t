@@ -3,6 +3,11 @@
 
 ## x.y.z
 
+## 17.1.1
+
+- Overhaul README.md. ([#303](https://github.com/karen-irc/option-t/pull/303))
+- Update dependencies. ([#304](https://github.com/karen-irc/option-t/pull/304))
+
 
 ## 17.1.0
 
