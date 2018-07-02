@@ -790,19 +790,19 @@ eastasianwidth@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/eastasianwidth/-/eastasianwidth-0.1.1.tgz#44d656de9da415694467335365fb3147b8572b7c"
 
-empower-core@^0.6.2:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/empower-core/-/empower-core-0.6.2.tgz#5adef566088e31fba80ba0a36df47d7094169144"
+empower-core@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/empower-core/-/empower-core-1.2.0.tgz#ce3fb2484d5187fa29c23fba8344b0b2fdf5601c"
   dependencies:
     call-signature "0.0.2"
     core-js "^2.0.0"
 
-empower@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/empower/-/empower-1.2.3.tgz#6f0da73447f4edd838fec5c60313a88ba5cb852b"
+empower@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/empower/-/empower-1.3.0.tgz#6b05e77625e77dc44945c4328562c3020b01fa4b"
   dependencies:
     core-js "^2.0.0"
-    empower-core "^0.6.2"
+    empower-core "^1.2.0"
 
 error-ex@^1.2.0:
   version "1.3.1"
@@ -2065,7 +2065,7 @@ power-assert-context-traversal@^1.1.1:
     core-js "^2.0.0"
     estraverse "^4.1.0"
 
-power-assert-formatter@^1.3.1:
+power-assert-formatter@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/power-assert-formatter/-/power-assert-formatter-1.4.1.tgz#5dc125ed50a3dfb1dda26c19347f3bf58ec2884a"
   dependencies:
@@ -2119,13 +2119,13 @@ power-assert-util-string-width@^1.1.1:
   dependencies:
     eastasianwidth "^0.1.1"
 
-power-assert@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/power-assert/-/power-assert-1.5.0.tgz#624caa76a5dc228c00f36704bb1762657c174fee"
+power-assert@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/power-assert/-/power-assert-1.6.0.tgz#3a9d2b943cf0d6fc6a623766869c4460838c05fb"
   dependencies:
     define-properties "^1.1.2"
-    empower "^1.2.3"
-    power-assert-formatter "^1.3.1"
+    empower "^1.3.0"
+    power-assert-formatter "^1.4.1"
     universal-deep-strict-equal "^1.2.1"
     xtend "^4.0.0"
 
