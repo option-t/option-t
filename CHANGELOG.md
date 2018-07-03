@@ -3,6 +3,14 @@
 
 ## x.y.z
 
+## 17.1.2
+
+- Port some tests to avajs
+    - [#310](https://github.com/karen-irc/option-t/pull/310)
+    - [#311](https://github.com/karen-irc/option-t/pull/311)
+    - [#312](https://github.com/karen-irc/option-t/pull/312)
+
+
 ## 17.1.1
 
 - Overhaul README.md. ([#303](https://github.com/karen-irc/option-t/pull/303))
