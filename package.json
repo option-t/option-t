@@ -47,6 +47,7 @@
     "option"
   ],
   "devDependencies": {
+    "ava": "^1.0.0-beta.6",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-es2015-block-scoping": "^6.26.0",
@@ -62,5 +63,15 @@
     "typescript": "~2.7.2"
   },
   "sideEffects": false,
-  "typings": "./cjs/index.d.ts"
+  "typings": "./cjs/index.d.ts",
+  "ava": {
+    "files": [
+      "ava_test/**/test_*.js"
+    ],
+    "babel": {
+      "testOptions": {
+        "babelrc": false
+      }
+    }
+  }
 }
