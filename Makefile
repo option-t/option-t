@@ -186,6 +186,13 @@ run_mocha_with_power_assert:
 run_mocha: ## Run mocha without any transforms.
 	$(NPM_BIN)/mocha --recursive '$(SRC_TEST_DIR)/**/test_*.js' --reporter $(MOCHA_REPORTER)
 
+.PHONY: run_ava
+run_ava: build
+	$(MAKE) run_ava_only -C $(CURDIR)
+
+.PHONY: run_ava_only
+run_ava_only: ## Run ava only.
+	$(NPM_BIN)/ava
 
 .PHONY: git_diff
 git_diff: ## Test whether there is no committed changes.
