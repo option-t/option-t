@@ -3,6 +3,17 @@
 
 ## x.y.z
 
+## 18.0.
+
+### Breaking Changes
+
+- Update typescript compiler to v3.0 ([#314](https://github.com/karen-irc/option-t/pull/314)).
+
+### Internal Change
+
+- Update dependencies ([#314](https://github.com/karen-irc/option-t/pull/314)).
+
+
 ## 17.1.2
 
 - Port some tests to avajs
