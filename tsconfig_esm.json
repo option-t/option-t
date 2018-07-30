@@ -6,11 +6,6 @@
         "noEmitOnError": true,
         "outDir": "./esm/"
     },
-    "src": [
-        "./src/Maybe/index.ts",
-        "./src/Nullable/index.ts",
-        "./src/Undefinable/index.ts"
-    ],
     "exclude": [
         "test"
     ]
