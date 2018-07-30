@@ -169,7 +169,6 @@ module.exports = {
 
         // Variables
         'init-declarations': [2, 'always'],
-        'no-catch-shadow': 2, // https://eslint.org/docs/rules/no-catch-shadow
         'no-delete-var': 2, // In a general case, we don't have to do this.
         'no-label-var': 2,
         'no-restricted-globals' : [2, // https://eslint.org/docs/rules/no-restricted-globals
