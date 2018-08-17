@@ -5,7 +5,7 @@
 
 * This library represents [Option type](http://en.wikipedia.org/wiki/Option_type) in ECMAScript.
     * You can sort "nullable" convention in your project.
-* APIs are inspired by Rust Language's [`Option<T>`](https://doc.rust-lang.org/std/option/).
+* APIs are inspired by Rust Language's [`Option<T>`](https://doc.rust-lang.org/std/option/) and [`Result<T, E>`](https://doc.rust-lang.org/std/result/).
 * TypeScript friendly APIs.
     * We recommend to use this with some static type systems like TypeScript.
 
