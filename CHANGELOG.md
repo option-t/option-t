@@ -3,7 +3,16 @@
 
 ## x.y.z
 
-## 18.0.
+## 18.0.1
+
+### Internal Change
+
+- Lock yarnpkg on CI to v1.10.1 ([#318](https://github.com/karen-irc/option-t/pull/318).
+    - This changes only effects for a contributor.
+    - This avoids the problem like [317](https://github.com/karen-irc/option-t/pull/317).
+
+
+## 18.0.0
 
 ### Breaking Changes
 
