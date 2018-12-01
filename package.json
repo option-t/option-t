@@ -47,7 +47,7 @@
     "option"
   ],
   "devDependencies": {
-    "ava": "^1.0.0-beta.6",
+    "ava": "^1.0.0-rc.2",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-es2015-block-scoping": "^6.26.0",
@@ -55,9 +55,9 @@
     "babel-preset-power-assert": "^2.0.0",
     "cpx": "^1.5.0",
     "del-cli": "^1.1.0",
-    "eslint": "^5.2.0",
+    "eslint": "^5.9.0",
     "mocha": "^5.2.0",
-    "power-assert": "^1.6.0",
+    "power-assert": "^1.6.1",
     "rename-cli": "^5.1.2",
     "tslint": "^5.11.0",
     "typescript": "^3.0.1"
