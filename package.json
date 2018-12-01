@@ -57,7 +57,7 @@
     "del-cli": "^1.1.0",
     "eslint": "^5.9.0",
     "mocha": "^5.2.0",
-    "power-assert": "^1.6.0",
+    "power-assert": "^1.6.1",
     "rename-cli": "^5.1.2",
     "tslint": "^5.11.0",
     "typescript": "^3.0.1"
