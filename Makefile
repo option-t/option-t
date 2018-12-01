@@ -12,8 +12,6 @@ TEST_CACHE_DIR := $(CURDIR)/__test_cache
 TYPE_TEST_DIR := $(CURDIR)/__type_test
 TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
 
-BABEL_PRD_TRANSFORMER_LIST := "@babel/plugin-transform-block-scoping"
-
 ## In CI environment, we should change some configuration
 ifeq ($(CI),true)
 	MOCHA_REPORTER = spec
@@ -80,7 +78,7 @@ build_cjs_js: clean_build_cjs
     --out-dir $(DIST_COMMONJS_DIR) \
     --extensions .js \
     --no-babelrc \
-    --plugins "@babel/plugin-transform-modules-commonjs",$(BABEL_PRD_TRANSFORMER_LIST)
+    --config-file $(CURDIR)/tools/babel/babelrc.cjs.js
 
 .PHONY: build_cjs_type_definition
 build_cjs_type_definition: clean_build_cjs
@@ -103,7 +101,7 @@ build_esm_js_call_cpx: clean_build_esm
 
 .PHONY: build_esm_js_call_babel
 build_esm_js_call_babel: clean_build_esm
-	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(DIST_ESM_DIR) --extensions=.js --no-babelrc --plugins $(BABEL_PRD_TRANSFORMER_LIST)
+	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(DIST_ESM_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.esm.js
 
 .PHONY: build_esm_ts
 build_esm_ts: clean_build_esm
@@ -126,7 +124,7 @@ build_mjs_create_tmp_mjs_call_tsc: clean_tmp_mjs
 
 .PHONY: build_mjs_create_tmp_mjs_call_babel
 build_mjs_create_tmp_mjs_call_babel: clean_tmp_mjs
-	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(TMP_MJS_DIR) --extensions=.js --no-babelrc --plugins $(BABEL_PRD_TRANSFORMER_LIST)
+	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(TMP_MJS_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.esm.js
 
 
 .PHONY: build_mixedlib
@@ -173,7 +171,7 @@ tscheck: clean_type_test build ## Test check typing consistency.
 
 .PHONY: test_preprocess
 test_preprocess: clean_test_cache
-	$(NPM_BIN)/babel $(SRC_TEST_DIR) --out-dir $(TEST_CACHE_DIR) --extensions .js --presets babel-preset-power-assert
+	$(NPM_BIN)/babel $(SRC_TEST_DIR) --out-dir $(TEST_CACHE_DIR) --extensions .js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.power_assert.js
 
 .PHONY: mocha
 mocha: test_preprocess build
