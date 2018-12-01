@@ -3,6 +3,13 @@
 
 ## x.y.z
 
+## 18.0.3
+
+### Internal Change
+
+- Move to use @babel/preset-env to tranform code from set plugins directly. [#323](https://github.com/karen-irc/option-t/pull/323)
+    - This might cause some regression...
+
 
 ## 18.0.2
 
