@@ -36,6 +36,10 @@ module.exports = {
         './tools/eslint/eslintrc_core.js',
     ],
 
+    'parserOptions': {
+        'ecmaVersion': 2018,
+    },
+
     'env': {
         'es6': true,
         'node': true,
