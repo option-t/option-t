@@ -49,8 +49,7 @@
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
-    "@babel/plugin-transform-block-scoping": "^7.1.5",
-    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+    "@babel/preset-env": "^7.1.6",
     "ava": "^1.0.0-rc.2",
     "babel-preset-power-assert": "^3.0.0",
     "cpx": "^1.5.0",
