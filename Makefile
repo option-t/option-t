@@ -12,7 +12,7 @@ TEST_CACHE_DIR := $(CURDIR)/__test_cache
 TYPE_TEST_DIR := $(CURDIR)/__type_test
 TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
 
-BABEL_PRD_TRANSFORMER_LIST := transform-es2015-block-scoping
+BABEL_PRD_TRANSFORMER_LIST := "@babel/plugin-transform-block-scoping"
 
 ## In CI environment, we should change some configuration
 ifeq ($(CI),true)
@@ -80,7 +80,7 @@ build_cjs_js: clean_build_cjs
     --out-dir $(DIST_COMMONJS_DIR) \
     --extensions .js \
     --no-babelrc \
-    --plugins transform-es2015-modules-commonjs,$(BABEL_PRD_TRANSFORMER_LIST)
+    --plugins "@babel/plugin-transform-modules-commonjs",$(BABEL_PRD_TRANSFORMER_LIST)
 
 .PHONY: build_cjs_type_definition
 build_cjs_type_definition: clean_build_cjs
@@ -173,7 +173,7 @@ tscheck: clean_type_test build ## Test check typing consistency.
 
 .PHONY: test_preprocess
 test_preprocess: clean_test_cache
-	$(NPM_BIN)/babel $(SRC_TEST_DIR) --out-dir $(TEST_CACHE_DIR) --extensions .js --presets power-assert
+	$(NPM_BIN)/babel $(SRC_TEST_DIR) --out-dir $(TEST_CACHE_DIR) --extensions .js --presets babel-preset-power-assert
 
 .PHONY: mocha
 mocha: test_preprocess build
