@@ -3,6 +3,23 @@
 
 ## x.y.z
 
+
+## 18.0.2
+
+### API
+
+- Relax `this` type for callback functions. [#322](https://github.com/karen-irc/option-t/pull/322)
+    - This change is for TypeScript 3.2's `strictBindCallApply` option.
+
+
+### Internal Change
+
+- Update dependencies.
+    - [#319](https://github.com/karen-irc/option-t/pull/319)
+    - [#320](https://github.com/karen-irc/option-t/pull/320)
+    - [#321](https://github.com/karen-irc/option-t/pull/321)
+
+
 ## 18.0.1
 
 ### Internal Change
