@@ -3,6 +3,13 @@
 
 ## x.y.z
 
+## 18.1.0
+
+### New Feature
+
+- Add `mapOrElse()` operation for `Result<T, E>` & `PlainResult<T, E>`. [#327](https://github.com/karen-irc/option-t/pull/327)
+
+
 ## 18.0.3
 
 ### Internal Change
