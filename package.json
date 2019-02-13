@@ -54,7 +54,7 @@
     "babel-preset-power-assert": "^3.0.0",
     "cpx": "^1.5.0",
     "del-cli": "^1.1.0",
-    "eslint": "^5.9.0",
+    "eslint": "^5.13.0",
     "mocha": "^5.2.0",
     "power-assert": "^1.6.1",
     "rename-cli": "^5.1.2",
