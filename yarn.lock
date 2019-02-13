@@ -4586,10 +4586,10 @@ remove-trailing-separator@^1.0.1:
   resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
   integrity sha1-wkvOKig62tW8P1jg1IJJuSN52O8=
 
-rename-cli@^5.1.2:
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/rename-cli/-/rename-cli-5.1.2.tgz#1dec1294746d2eeeeb34cfb7f8d3337d7d845dcb"
-  integrity sha512-qtK/4Kw7KCtBsReHmJH4LKtRuBDAbx+tuQ0vxddMAAG/WqZsAtPFwZt1mMxJVISuruTU9qLJjLzyYcx9gCrgdw==
+rename-cli@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/rename-cli/-/rename-cli-6.0.0.tgz#a4e3d05cbac3b3ac574173ee0dcb7cd2f91e9a6b"
+  integrity sha512-T5LEqjWRIg7LCMhdjqVunGQVb5EsexjZMEBpsIJPXSG7zByHNt1+KphvEG7t4bTvNL8vu4NnEfEiXne1j+M0Fw==
   dependencies:
     blessed "^0.1.81"
     chalk "^2.3.2"
