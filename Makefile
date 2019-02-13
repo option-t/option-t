@@ -151,7 +151,7 @@ lint: eslint tslint ## Run all lints
 
 .PHONY: eslint
 eslint:
-	$(NPM_BIN)/eslint $(CURDIR) '$(CURDIR)/**/.eslintrc.js' --ext=.js,.jsx,.mjs
+	$(NPM_BIN)/eslint $(CURDIR) '$(CURDIR)/**/.eslintrc.js' --ext=.js,.jsx,.mjs,.ts,.tsx
 
 .PHONY: tslint
 tslint:

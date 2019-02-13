@@ -22,6 +22,8 @@
  * THE SOFTWARE.
  */
 
+/* eslint-enable valid-jsdoc */
+
 /**
  *  @constructor
  *  @template   T

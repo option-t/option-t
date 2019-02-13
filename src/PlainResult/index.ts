@@ -16,7 +16,7 @@ export { asMutResult as asMut } from './asMut';
 export {
     expectIsOk as expect,
     expectIsErr as expectErr,
- } from './expect';
+} from './expect';
 export { mapForResult as map } from './map';
 export { mapOrElseForResult as mapOrElse } from './mapOrElse';
 export { mapErrForResult as mapErr } from './mapErr';

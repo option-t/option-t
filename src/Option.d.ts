@@ -203,7 +203,9 @@ export abstract class OptionBase<T> implements Optionable<T> {
     or(optb: Option<T>): Option<T>;
     orElse(fn: MayRecoveryFn<T>): Option<T>;
     drop(destructor?: TapFn<T>): void;
-    toJSON(): { is_some: boolean; value: T | undefined  };
+    // FYI: this is json representation.
+    // eslint-disable-next-line camelcase
+    toJSON(): { is_some: boolean; value: T | undefined };
 }
 
 interface Some<T> extends Optionable<T> {

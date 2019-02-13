@@ -2,7 +2,7 @@ import { Result } from './Result';
 
 export function expectIsOk<T, E>(v: Result<T, E>, msg: string): T | never {
     if (!v.ok) {
-        throw TypeError(msg);
+        throw new TypeError(msg);
     }
 
     return v.val;
@@ -10,7 +10,7 @@ export function expectIsOk<T, E>(v: Result<T, E>, msg: string): T | never {
 
 export function expectIsErr<T, E>(v: Result<T, E>, msg: string): E | never {
     if (v.ok) {
-        throw TypeError(msg);
+        throw new TypeError(msg);
     }
 
     return v.err;
