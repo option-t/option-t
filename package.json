@@ -50,7 +50,7 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
-    "ava": "^1.0.0-rc.2",
+    "ava": "^1.2.1",
     "babel-preset-power-assert": "^3.0.0",
     "cpx": "^1.5.0",
     "del-cli": "^1.1.0",
