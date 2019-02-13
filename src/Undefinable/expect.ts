@@ -6,7 +6,7 @@ import { Undefinable } from './Undefinable';
  */
 export function expectNotUndefined<T>(v: Undefinable<T>, msg: string): T | never {
     if (v === undefined) {
-        throw TypeError(msg);
+        throw new TypeError(msg);
     }
     return v;
 }
