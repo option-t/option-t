@@ -24,5 +24,7 @@ module.exports = {
     },
 
     'rules': {
+        // See https://eslint.org/blog/2018/11/jsdoc-end-of-life
+        'valid-jsdoc': 'off',
     }
 };

@@ -1,5 +1,7 @@
 import { createSome, createNone } from './Option';
 
+/* eslint-enable valid-jsdoc */
+
 /**
  *  @constructor
  *  @template   T, E
