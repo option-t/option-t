@@ -6,6 +6,12 @@
 // ESLint Configuration Files enables to include comments.
 // http://eslint.org/docs/configuring/#comments-in-configuration-files
 module.exports = {
+    'parser': '@typescript-eslint/parser',
+    'plugins': [
+        '@typescript-eslint',
+        '@typescript-eslint/tslint',
+    ],
+
     'parserOptions': {
         'ecmaVersion': 5,
         'sourceType': 'module',
