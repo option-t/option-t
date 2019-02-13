@@ -66,6 +66,13 @@ interface Resultable<T, E> {
     map<U>(op: MapFn<T, U>): Result<U, E>;
 
     /**
+     *  Maps a `Result<T, E>` to `U` by applying a function to a contained `Ok` value,
+     *  or a `fallback` function to a contained `Err` value.
+     *  This function can be used to unpack a successful result while handling an error.
+     */
+    mapOrElse<U>(fallback: RecoveryWithErrorFn<E, U>, selector: MapFn<T, U>): U;
+
+    /**
      *  Maps a `Result<T, E>` to `Result<T, F>` by applying a function `mapFn<E, F>`
      *  to an contained `Err` value, leaving an `Ok` value untouched.
      *
@@ -157,6 +164,7 @@ export abstract class ResultBase<T, E> implements Resultable<T, E> {
     ok(): Option<T>;
     err(): Option<E>;
     map<U>(op: MapFn<T, U>): Result<U, E>;
+    mapOrElse<U>(fallback: RecoveryWithErrorFn<E, U>, selector: MapFn<T, U>): U;
     mapErr<F>(op: MapFn<E, F>): Result<T, F>;
     and<U>(res: Result<U, E>): Result<U, E>;
     andThen<U>(op: FlatmapOkFn<T, U, E>): Result<U, E>;
