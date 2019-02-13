@@ -108,6 +108,26 @@ ResultBase.prototype = Object.freeze({
     },
 
     /**
+     *  Maps a `Result<T, E>` to `U` by applying a function to a contained `Ok` value,
+     *  or a `fallback` function to a contained `Err` value.
+     *  This function can be used to unpack a successful result while handling an error.
+     *
+     *  @template   U
+     *  @param  {!function(E):U}    fallback
+     *  @param  {!function(T):U}    selector
+     *  @return {U}
+     */
+    mapOrElse: function ResultBaseMapOrResult(fallback, selector) {
+        if (!this._isOk) {
+            const r = fallback(this._e);
+            return r;
+        }
+
+        const r = selector(this._v);
+        return r;
+    },
+
+    /**
      *  Maps a `Result<T, E>` to `Result<T, F>` by applying a function `mapFn<E, F>`
      *  to an contained `Err` value, leaving an `Ok` value untouched.
      *
