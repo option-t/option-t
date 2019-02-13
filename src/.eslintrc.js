@@ -35,5 +35,8 @@ module.exports = {
             'caughtErrors': 'all',
             'caughtErrorsIgnorePattern': '^_', // Allow `catch (_e) {...}`
         }],
+
+        // Sort with TypeScript's `let a: A;` pattern.
+        'init-declarations': 'off',
     }
 };
