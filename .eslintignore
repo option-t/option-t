@@ -1,9 +1,7 @@
+__dist/
 __test_cache/
 __tmp_mjs/
 __type_test/
-esm/
-cjs/
-lib/
 node_modules/
 
 # include .eslintrc.js as eslint's target.

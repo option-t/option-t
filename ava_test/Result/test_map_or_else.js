@@ -3,7 +3,7 @@ import test from 'ava';
 const {
     createOk,
     createErr,
-} = require('../../cjs/Result');
+} = require('../../__dist/cjs/Result');
 
 const PLAN_COUNT = 2;
 

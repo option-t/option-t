@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { mapOrForMaybe } = require('../../cjs/Maybe/mapOr');
+const { mapOrForMaybe } = require('../../__dist/cjs/Maybe/mapOr');
 const { nonNullableValue } = require('../utils');
 
 describe('Maybe::mapOr', () => {

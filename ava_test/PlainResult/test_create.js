@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const PlainResult = require('../../cjs/PlainResult');
+const PlainResult = require('../../__dist/cjs/PlainResult');
 
 test('PlainResult::createOk', (t) => {
     const EXPECTED = Symbol('ok');

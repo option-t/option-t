@@ -3,11 +3,11 @@ import test from 'ava';
 const {
     createOk,
     createErr,
-} = require('../../cjs/PlainResult/Result');
+} = require('../../__dist/cjs/PlainResult/Result');
 
 const {
     mapOrElseForResult
-} = require('../../cjs/PlainResult/mapOrElse');
+} = require('../../__dist/cjs/PlainResult/mapOrElse');
 
 const PLAN_COUNT = 2;
 

@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { mapForNullable } = require('../../cjs/Nullable/map');
+const { mapForNullable } = require('../../__dist/cjs/Nullable/map');
 const { nonNullableValue } = require('../utils');
 
 describe('Nullable::mapForNullable', () => {

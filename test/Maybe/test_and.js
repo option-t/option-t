@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { andForMaybe } = require('../../cjs/Maybe/and');
+const { andForMaybe } = require('../../__dist/cjs/Maybe/and');
 const { nonNullableValue } = require('../utils');
 
 describe('Maybe::and', () => {

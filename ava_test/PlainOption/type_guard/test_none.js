@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const PlainOption = require('../../../cjs/PlainOption');
+const PlainOption = require('../../../__dist/cjs/PlainOption');
 
 const testcase = [
     [{

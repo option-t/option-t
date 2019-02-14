@@ -1,7 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const { unwrapUndefinable } = require('../../cjs/Undefinable/unwrap');
+const { unwrapUndefinable } = require('../../__dist/cjs/Undefinable/unwrap');
 const { nonNullableValue } = require('../utils');
 
 describe('Undefinable::unwrap', () => {

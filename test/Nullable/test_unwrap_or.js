@@ -1,7 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const { unwrapOrFromNullable } = require('../../cjs/Nullable/unwrapOr');
+const { unwrapOrFromNullable } = require('../../__dist/cjs/Nullable/unwrapOr');
 const { nonNullableValue } = require('../utils');
 
 describe('Nullable::unwrapOr', () => {

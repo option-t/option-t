@@ -16,8 +16,7 @@
   "scripts": {
     "clean": "make clean -j",
     "build": "make build -j",
-    "test": "make test -j",
-    "prepublish": "make prepublish -j"
+    "test": "make test -j"
   },
   "author": {
     "name": "Tetsuharu OHZEKI",

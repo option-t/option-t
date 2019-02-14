@@ -1,8 +1,8 @@
 'use strict';
 
 const assert = require('assert');
-const Some = require('../../cjs/Option').Some;
-const None = require('../../cjs/Option').None;
+const Some = require('../../__dist/cjs/Option').Some;
+const None = require('../../__dist/cjs/Option').None;
 
 const primitiveVal = require('../utils').primitiveVal;
 const objectVal = require('../utils').objectVal;

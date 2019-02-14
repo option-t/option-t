@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { orForNullable } = require('../../cjs/Nullable/or');
+const { orForNullable } = require('../../__dist/cjs/Nullable/or');
 const { nonNullableValue } = require('../utils');
 
 describe('Nullable::or', () => {

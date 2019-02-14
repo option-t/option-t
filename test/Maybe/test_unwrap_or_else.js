@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { unwrapOrElseFromMaybe } = require('../../cjs/Maybe/unwrapOrElse');
+const { unwrapOrElseFromMaybe } = require('../../__dist/cjs/Maybe/unwrapOrElse');
 const { nonNullableValue } = require('../utils');
 
 describe('Maybe::unwrapOrElse', () => {

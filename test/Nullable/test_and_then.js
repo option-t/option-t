@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { andThenForNullable } = require('../../cjs/Nullable/andThen');
+const { andThenForNullable } = require('../../__dist/cjs/Nullable/andThen');
 const { nonNullableValue } = require('../utils');
 
 describe('Nullable::andThen', () => {

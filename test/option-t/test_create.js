@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { createSome, createNone } = require('../../cjs/Option');
+const { createSome, createNone } = require('../../__dist/cjs/Option');
 
 const {
     primitiveVal,
