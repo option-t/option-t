@@ -34,15 +34,20 @@ help:
 ###########################
 # Clean
 ###########################
+CLEAN_TARGETS := \
+	build \
+	test_cache \
+	type_test \
+	tmp_mjs \
+
 .PHONY: clean
-clean: clean_build clean_test_cache clean_type_test clean_tmp_mjs
+clean: $(addprefix clean_, $(CLEAN_TARGETS))
 
 .PHONY: clean_build
-clean_build: clean_build_cjs clean_build_esm clean_build_mixedlib clean_dist
-	$(NPM_BIN)/del $(TMP_MJS_DIR)
+clean_build: clean_dist
 
 .PHONY: clean_dist
-clean_dist:
+clean_dist: $(addprefix clean_, build_cjs build_esm build_mixedlib) 
 	$(NPM_BIN)/del $(DIST_DIR)
 
 .PHONY: clean_build_cjs
