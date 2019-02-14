@@ -3,11 +3,14 @@ NPM_BIN := $(NPM_MOD_DIR)/.bin
 NPM_CMD := npm
 
 SRC_DIR := $(CURDIR)/src
+DOCS_DIR := $(CURDIR)/docs
 SRC_TEST_DIR := $(CURDIR)/test
 
-DIST_ESM_DIR := $(CURDIR)/esm
-DIST_COMMONJS_DIR := $(CURDIR)/cjs
-DIST_MIXED_LIB_DIR := $(CURDIR)/lib
+DIST_DIR := $(CURDIR)/__dist
+DIST_DOCS_DIR := $(DIST_DIR)/docs
+DIST_ESM_DIR := $(DIST_DIR)/esm
+DIST_COMMONJS_DIR := $(DIST_DIR)/cjs
+DIST_MIXED_LIB_DIR := $(DIST_DIR)/lib
 TEST_CACHE_DIR := $(CURDIR)/__test_cache
 TYPE_TEST_DIR := $(CURDIR)/__type_test
 TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
@@ -35,8 +38,12 @@ help:
 clean: clean_build clean_test_cache clean_type_test clean_tmp_mjs
 
 .PHONY: clean_build
-clean_build: clean_build_cjs clean_build_esm clean_build_mixedlib
+clean_build: clean_build_cjs clean_build_esm clean_build_mixedlib clean_dist
 	$(NPM_BIN)/del $(TMP_MJS_DIR)
+
+.PHONY: clean_dist
+clean_dist:
+	$(NPM_BIN)/del $(DIST_DIR)
 
 .PHONY: clean_build_cjs
 clean_build_cjs:
@@ -66,6 +73,9 @@ clean_tmp_mjs:
 ###########################
 # Build
 ###########################
+.PHONY: distribution
+distribution: clean_dist build cp_docs cp_changelog cp_license cp_readme cp_manifest
+
 .PHONY: build
 build: build_cjs build_esm build_mixedlib ## Build all targets.
 
@@ -86,8 +96,7 @@ build_cjs_type_definition: clean_build_cjs
 
 .PHONY: build_cjs_ts
 build_cjs_ts: clean_build_cjs
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_cjs.json
-
+	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_cjs.json --outDir $(DIST_COMMONJS_DIR)
 
 .PHONY: build_esm
 build_esm: build_esm_js build_esm_ts build_mjs_cp_mjs_to_esm ## Build `esm/`.
@@ -105,7 +114,7 @@ build_esm_js_call_babel: clean_build_esm
 
 .PHONY: build_esm_ts
 build_esm_ts: clean_build_esm
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_esm.json
+	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_esm.json --outDir $(DIST_ESM_DIR)
 
 .PHONY: build_mjs_cp_mjs_to_esm
 build_mjs_cp_mjs_to_esm: build_mjs_rename_js_to_mjs
@@ -141,6 +150,26 @@ build_mixedlib_cp_cjs: build_cjs clean_build_mixedlib
 .PHONY: build_mixedlib_cp_dts
 build_mixedlib_cp_dts: build_esm clean_build_mixedlib
 	$(NPM_BIN)/cpx '$(DIST_ESM_DIR)/**/*.d.ts' $(DIST_MIXED_LIB_DIR) --preserve
+
+.PHONY: cp_docs
+cp_docs: clean_dist
+	$(NPM_BIN)/cpx '$(DOCS_DIR)/**/*' $(DIST_DOCS_DIR)
+
+.PHONY: cp_changelog
+cp_changelog: clean_dist
+	$(NPM_BIN)/cpx '$(CURDIR)/CHANGELOG.md' $(DIST_DIR)
+
+.PHONY: cp_license
+cp_license: clean_dist
+	$(NPM_BIN)/cpx '$(CURDIR)/LICENSE.MIT' $(DIST_DIR)
+
+.PHONY: cp_readme
+cp_readme: clean_dist
+	$(NPM_BIN)/cpx '$(CURDIR)/README.md' $(DIST_DIR)
+
+.PHONY: cp_manifest
+cp_manifest: clean_dist
+	$(NPM_BIN)/cpx '$(CURDIR)/package.json' $(DIST_DIR)
 
 
 ###########################
@@ -224,4 +253,8 @@ tslint_fmt:
 .PHONY: prepublish
 prepublish: ## Run some commands for 'npm run prepublish'
 	$(MAKE) clean -C $(CURDIR)
-	$(MAKE) build -C $(CURDIR)
+	$(MAKE) distribution -C $(CURDIR)
+
+.PHONY: publish
+publish: prepublish ## Run some commands for 'npm publish'
+	cd $(DIST_DIR) && npm publish
