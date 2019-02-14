@@ -1,9 +1,6 @@
 .DS_Store*
 npm-debug.log
 
-esm/
-cjs/
-lib/
 node_modules/
 
 __dist/
