@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { orElseForUndefinable } = require('../../cjs/Undefinable/orElse');
+const { orElseForUndefinable } = require('../../__dist/cjs/Undefinable/orElse');
 const { nonNullableValue } = require('../utils');
 
 describe('Undefinable::orElseForUndefinable', () => {

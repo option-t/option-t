@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { tapMaybe } = require('../../cjs/Maybe/tap');
+const { tapMaybe } = require('../../__dist/cjs/Maybe/tap');
 const { nonNullableValue } = require('../utils');
 
 describe('Maybe::tap', () => {

@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { andThenForUndefinable } = require('../../cjs/Undefinable/andThen');
+const { andThenForUndefinable } = require('../../__dist/cjs/Undefinable/andThen');
 const { nonNullableValue } = require('../utils');
 
 describe('Undefinable::andThen', () => {

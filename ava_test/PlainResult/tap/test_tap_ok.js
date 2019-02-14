@@ -3,10 +3,10 @@ import test from 'ava';
 const {
     createErr,
     createOk,
-} = require('../../../cjs/PlainResult/Result');
+} = require('../../../__dist/cjs/PlainResult/Result');
 const {
     tapOk,
-} = require('../../../cjs/PlainResult/tap');
+} = require('../../../__dist/cjs/PlainResult/tap');
 
 test('input is Ok()', (t) => {
     t.plan(3);

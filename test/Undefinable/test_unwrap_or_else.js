@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { unwrapOrElseFromUndefinable } = require('../../cjs/Undefinable/unwrapOrElse');
+const { unwrapOrElseFromUndefinable } = require('../../__dist/cjs/Undefinable/unwrapOrElse');
 const { nonNullableValue } = require('../utils');
 
 describe('Undefinable::unwrapOrElse', () => {

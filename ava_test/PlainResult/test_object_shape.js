@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const { createOk, createErr, } = require('../../cjs/PlainResult');
+const { createOk, createErr, } = require('../../__dist/cjs/PlainResult');
 
 test('The shape of PlainResult::Ok', (t) => {
     const INNER_VAL = 10;

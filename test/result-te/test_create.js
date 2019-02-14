@@ -29,7 +29,7 @@ const assert = require('assert');
 const {
     createOk,
     createErr,
-} = require('../../cjs/Result');
+} = require('../../__dist/cjs/Result');
 
 const {
     primitiveVal,

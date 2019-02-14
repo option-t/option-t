@@ -3,8 +3,8 @@ import test from 'ava';
 const {
     createSome,
     createNone,
-} = require('../../cjs/PlainOption/Option');
-const { tapOption } = require('../../cjs/PlainOption/tap');
+} = require('../../__dist/cjs/PlainOption/Option');
+const { tapOption } = require('../../__dist/cjs/PlainOption/tap');
 
 test('input is Some', (t) => {
     const INPUT_INNER = Symbol('input');

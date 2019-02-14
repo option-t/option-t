@@ -1,7 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const Undefinable = require('../../cjs/Undefinable');
+const Undefinable = require('../../__dist/cjs/Undefinable');
 
 describe('Undefinable::isNotUndefined', () => {
     const testcase = [

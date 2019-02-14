@@ -1,7 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const { expectNotNull } = require('../../cjs/Nullable/expect');
+const { expectNotNull } = require('../../__dist/cjs/Nullable/expect');
 const { nonNullableValue } = require('../utils');
 
 describe('Nullable::expect', () => {

@@ -1,7 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const Maybe = require('../../cjs/Maybe');
+const Maybe = require('../../__dist/cjs/Maybe');
 
 describe('Maybe::isSomeActual', () => {
     const testcase = [

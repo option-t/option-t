@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { mapOrElseForUndefinable } = require('../../cjs/Undefinable/mapOrElse');
+const { mapOrElseForUndefinable } = require('../../__dist/cjs/Undefinable/mapOrElse');
 const { nonNullableValue } = require('../utils');
 
 describe('Undefinable::mapOrElse', () => {

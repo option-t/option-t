@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { orElseForMaybe } = require('../../cjs/Maybe/orElse');
+const { orElseForMaybe } = require('../../__dist/cjs/Maybe/orElse');
 const { nonNullableValue } = require('../utils');
 
 describe('Maybe::orElseForMaybe', () => {

@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { andForUndefinable } = require('../../cjs/Undefinable/and');
+const { andForUndefinable } = require('../../__dist/cjs/Undefinable/and');
 const { nonNullableValue } = require('../utils');
 
 describe('Undefinable::and', () => {
