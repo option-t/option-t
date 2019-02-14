@@ -3,6 +3,15 @@
 
 ## x.y.z
 
+## 18.1.1
+
+### Internal Change
+
+- Update dependencies. ([#328](https://github.com/karen-irc/option-t/pull/328))
+- Add ESLint as the linter for TypeScript. ([#329](https://github.com/karen-irc/option-t/pull/329))
+- Overhaul build system. ([#330]https://github.com/karen-irc/option-t/pull/330))
+
+
 ## 18.1.0
 
 ### New Feature
