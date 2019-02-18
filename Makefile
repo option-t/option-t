@@ -1,3 +1,4 @@
+NODE_BIN := node
 NPM_MOD_DIR := $(CURDIR)/node_modules
 NPM_BIN := $(NPM_MOD_DIR)/.bin
 NPM_CMD := npm
@@ -231,6 +232,10 @@ run_ava_only: ## Run ava only.
 git_diff: ## Test whether there is no committed changes.
 	git diff --exit-code
 
+.PHONY: test_distribution_contain_all
+test_distribution_contain_all:
+	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/pkg_files_tester.js
+
 
 ###########################
 # CI
@@ -259,6 +264,7 @@ tslint_fmt:
 prepublish: ## Run some commands for 'npm run prepublish'
 	$(MAKE) clean -C $(CURDIR)
 	$(MAKE) distribution -C $(CURDIR)
+	$(MAKE) test_distribution_contain_all -C $(CURDIR)
 
 .PHONY: publish
 publish: prepublish ## Run some commands for 'npm publish'
