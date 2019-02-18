@@ -63,7 +63,7 @@
     "typescript": "~3.0.1"
   },
   "sideEffects": false,
-  "typings": "./cjs/index.d.ts",
+  "typings": "./__dist/cjs/index.d.ts",
   "ava": {
     "files": [
       "ava_test/**/test_*.js"
