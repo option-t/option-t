@@ -3,6 +3,12 @@
 
 ## x.y.z
 
+
+## 18.1.2
+
+- Fix the failure to release [#332](https://github.com/karen-irc/option-t/issues/332).
+
+
 ## 18.1.1
 
 ### Internal Change
