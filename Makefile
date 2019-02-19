@@ -242,7 +242,7 @@ test_distribution_contain_all:
 ###########################
 .PHONY: ci
 ci:
-	$(NPM_CMD) test
+	$(MAKE) test
 	$(MAKE) git_diff
 
 
