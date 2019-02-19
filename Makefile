@@ -80,7 +80,7 @@ clean_tmp_mjs:
 # Build
 ###########################
 .PHONY: distribution
-distribution: clean_dist build cp_docs cp_changelog cp_license cp_readme cp_manifest
+distribution: build cp_docs cp_changelog cp_license cp_readme cp_manifest
 
 .PHONY: build
 build: build_cjs build_esm build_mixedlib ## Build all targets.
@@ -197,7 +197,7 @@ tslint:
 # Test
 ###########################
 .PHONY: test
-test: lint build run_ava mocha tscheck ## Run all tests
+test: lint build run_ava mocha tscheck test_distribution_contain_all ## Run all tests
 
 .PHONY: tscheck
 tscheck: clean_type_test build ## Test check typing consistency.
@@ -232,7 +232,11 @@ git_diff: ## Test whether there is no committed changes.
 	git diff --exit-code
 
 .PHONY: test_distribution_contain_all
-test_distribution_contain_all:
+test_distribution_contain_all: distribution
+	$(MAKE) run_test_distribution_contain_all
+
+.PHONY: run_test_distribution_contain_all
+run_test_distribution_contain_all:
 	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/pkg_files_tester.js
 
 
@@ -241,6 +245,7 @@ test_distribution_contain_all:
 ###########################
 .PHONY: ci
 ci:
+	$(MAKE) clean
 	$(MAKE) test
 	$(MAKE) git_diff
 
