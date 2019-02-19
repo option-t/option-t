@@ -80,7 +80,7 @@ clean_tmp_mjs:
 # Build
 ###########################
 .PHONY: distribution
-distribution: clean_dist build cp_docs cp_changelog cp_license cp_readme cp_manifest
+distribution: build cp_docs cp_changelog cp_license cp_readme cp_manifest
 
 .PHONY: build
 build: build_cjs build_esm build_mixedlib ## Build all targets.
@@ -89,7 +89,7 @@ build: build_cjs build_esm build_mixedlib ## Build all targets.
 build_cjs: build_cjs_js build_cjs_type_definition build_cjs_ts ## Build `cjs/`.
 
 .PHONY: build_cjs_js
-build_cjs_js: clean_build_cjs
+build_cjs_js: clean_dist
 	$(NPM_BIN)/babel $(SRC_DIR) \
     --out-dir $(DIST_COMMONJS_DIR) \
     --extensions .js \
@@ -97,11 +97,11 @@ build_cjs_js: clean_build_cjs
     --config-file $(CURDIR)/tools/babel/babelrc.cjs.js
 
 .PHONY: build_cjs_type_definition
-build_cjs_type_definition: clean_build_cjs
+build_cjs_type_definition: clean_dist
 	$(NPM_BIN)/cpx '$(SRC_DIR)/**/*.d.ts' $(DIST_COMMONJS_DIR) --preserve
 
 .PHONY: build_cjs_ts
-build_cjs_ts: clean_build_cjs
+build_cjs_ts: clean_dist
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_cjs.json --outDir $(DIST_COMMONJS_DIR)
 
 .PHONY: build_esm
@@ -111,15 +111,15 @@ build_esm: build_esm_js build_esm_ts build_mjs_cp_mjs_to_esm ## Build `esm/`.
 build_esm_js: build_esm_js_call_cpx build_esm_js_call_babel
 
 .PHONY: build_esm_js_call_cpx
-build_esm_js_call_cpx: clean_build_esm
+build_esm_js_call_cpx: clean_dist
 	$(NPM_BIN)/cpx '$(SRC_DIR)/**/*.d.ts' $(DIST_ESM_DIR) --preserve
 
 .PHONY: build_esm_js_call_babel
-build_esm_js_call_babel: clean_build_esm
+build_esm_js_call_babel: clean_dist
 	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(DIST_ESM_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.esm.js
 
 .PHONY: build_esm_ts
-build_esm_ts: clean_build_esm
+build_esm_ts: clean_dist
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_esm.json --outDir $(DIST_ESM_DIR)
 
 .PHONY: build_mjs_cp_mjs_to_esm
@@ -134,11 +134,11 @@ build_mjs_rename_js_to_mjs: build_mjs_create_tmp_mjs
 build_mjs_create_tmp_mjs: build_mjs_create_tmp_mjs_call_tsc build_mjs_create_tmp_mjs_call_babel
 
 .PHONY: build_mjs_create_tmp_mjs_call_tsc
-build_mjs_create_tmp_mjs_call_tsc: clean_tmp_mjs
+build_mjs_create_tmp_mjs_call_tsc: clean_dist
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_esm.json --outDir $(TMP_MJS_DIR) --declaration false
 
 .PHONY: build_mjs_create_tmp_mjs_call_babel
-build_mjs_create_tmp_mjs_call_babel: clean_tmp_mjs
+build_mjs_create_tmp_mjs_call_babel: clean_dist
 	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(TMP_MJS_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.esm.js
 
 
@@ -146,15 +146,15 @@ build_mjs_create_tmp_mjs_call_babel: clean_tmp_mjs
 build_mixedlib: build_mixedlib_cp_mjs build_mixedlib_cp_cjs build_mixedlib_cp_dts ## Build `lib/`.
 
 .PHONY: build_mixedlib_cp_mjs
-build_mixedlib_cp_mjs: build_esm clean_build_mixedlib
+build_mixedlib_cp_mjs: build_esm clean_dist
 	$(NPM_BIN)/cpx '$(DIST_ESM_DIR)/**/*.mjs' $(DIST_MIXED_LIB_DIR) --preserve
 
 .PHONY: build_mixedlib_cp_cjs
-build_mixedlib_cp_cjs: build_cjs clean_build_mixedlib
+build_mixedlib_cp_cjs: build_cjs clean_dist
 	$(NPM_BIN)/cpx '$(DIST_COMMONJS_DIR)/**/*.js' $(DIST_MIXED_LIB_DIR) --preserve
 
 .PHONY: build_mixedlib_cp_dts
-build_mixedlib_cp_dts: build_esm clean_build_mixedlib
+build_mixedlib_cp_dts: build_esm clean_dist
 	$(NPM_BIN)/cpx '$(DIST_ESM_DIR)/**/*.d.ts' $(DIST_MIXED_LIB_DIR) --preserve
 
 .PHONY: cp_docs
@@ -197,8 +197,7 @@ tslint:
 # Test
 ###########################
 .PHONY: test
-test: lint build mocha tscheck ## Run all tests
-	$(MAKE) run_ava_only -C $(CURDIR)
+test: lint build run_ava mocha tscheck test_distribution_contain_all ## Run all tests
 
 .PHONY: tscheck
 tscheck: clean_type_test build ## Test check typing consistency.
@@ -233,7 +232,11 @@ git_diff: ## Test whether there is no committed changes.
 	git diff --exit-code
 
 .PHONY: test_distribution_contain_all
-test_distribution_contain_all:
+test_distribution_contain_all: distribution
+	$(MAKE) run_test_distribution_contain_all
+
+.PHONY: run_test_distribution_contain_all
+run_test_distribution_contain_all:
 	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/pkg_files_tester.js
 
 
@@ -242,7 +245,8 @@ test_distribution_contain_all:
 ###########################
 .PHONY: ci
 ci:
-	$(NPM_CMD) test
+	$(MAKE) clean
+	$(MAKE) test
 	$(MAKE) git_diff
 
 
