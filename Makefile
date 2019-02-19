@@ -197,8 +197,7 @@ tslint:
 # Test
 ###########################
 .PHONY: test
-test: lint build mocha tscheck ## Run all tests
-	$(MAKE) run_ava_only -C $(CURDIR)
+test: lint build run_ava mocha tscheck ## Run all tests
 
 .PHONY: tscheck
 tscheck: clean_type_test build ## Test check typing consistency.
