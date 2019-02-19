@@ -3,6 +3,24 @@
 
 ## x.y.z
 
+### Documentations
+
+#### Add the guide to no recommendation to use _wrapper objects (`optiont-/{cjs,esm,lib}/Option<T>` & `optiont-/{cjs,esm,lib}/Result<T, E>`)_ in almost case.
+([#337](https://github.com/karen-irc/option-t/pull/337))
+
+* Basically, we recommend to use _utility types & functions_.
+* _Wrapper objects_ has some downside if your project has multiple versions of this package in its project dependencies.
+    * `instanceof` might not work expectedly if you `(a instanceof b)` in this case.
+      This is confusable behavior.
+        * `a` is created by the constructor provided by the version _a_ of this.
+        * `b` is the constructor provided by the version _b_ of this.
+    * Broat bundle size unnecessarily.
+        * It's hard for almost JS code minifier to minify a property on prototype chain.
+* So we decide to no-recommend _wrapper objects_ without any strong motivation.
+    * This does not mean to make them obsolete or deprecate **now**.
+    * We don't have any concrete plan to deperecate these API.
+    * Of course, however, we would lower priorities of them.
+
 
 ## 18.1.2
 
