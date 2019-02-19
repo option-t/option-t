@@ -3,6 +3,9 @@
 
 ## x.y.z
 
+
+## 18.2.0
+
 ### Documentations
 
 #### Add the guide to no recommendation to use _wrapper objects (`optiont-/{cjs,esm,lib}/Option<T>` & `optiont-/{cjs,esm,lib}/Result<T, E>`)_ in almost case.
@@ -33,7 +36,7 @@
 
 - Update dependencies. ([#328](https://github.com/karen-irc/option-t/pull/328))
 - Add ESLint as the linter for TypeScript. ([#329](https://github.com/karen-irc/option-t/pull/329))
-- Overhaul build system. ([#330]https://github.com/karen-irc/option-t/pull/330))
+- Overhaul build system. ([#330](https://github.com/karen-irc/option-t/pull/330))
 
 
 ## 18.1.0
