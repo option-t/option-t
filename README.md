@@ -127,6 +127,8 @@ yarn add option-t --save
 
 These are designed for more tree shaking friendly and more usable for JavaScript common world.
 
+_We recommend to use these in almost case._
+
 #### [`Nullable<T>` (`T | null`)](./src/Nullable/)
 
 This can express a value of `T` type or `null`.
@@ -153,6 +155,12 @@ This does not have any property method on its prototype. But this allows no incl
 ### Wrapper objects
 
 This is a wrapper object which have utility methods on its prototype.
+
+_We recommend to use utility types & functions if you don't have to use `instanceof` check and
+you should avoid to expose this object as a public API of your package_ 
+because `instanceof` checking might not work correctly if a user project has multiple version of this package in their dependencies.
+See ([#337](https://github.com/karen-irc/option-t/pull/337)).
+
 
 #### [`Option<T>`](./src/Option.d.ts)
 
