@@ -111,9 +111,6 @@ yarn add option-t --save
 
 ## Usage & APIs
 
-* Wrapper objects
-    * [`Option<T>`](./src/Option.d.ts)
-    * [`Result<T, E>`](./src/Result.d.ts)
 * Utility functions for these types (TypeScript ready).
     * [`Nullable<T>` (`T | null`)](./src/Nullable/)
     * [`Undefinable<T>` (`T | undefined`)](./src/Undefinable/)
@@ -121,6 +118,36 @@ yarn add option-t --save
     * plain objects
         * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/)
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
+* Wrapper objects
+    * [`Option<T>`](./src/Option.d.ts)
+    * [`Result<T, E>`](./src/Result.d.ts)
+
+
+### Utility functions for some types.
+
+These are designed for more tree shaking friendly and more usable for JavaScript common world.
+
+#### [`Nullable<T>` (`T | null`)](./src/Nullable/)
+
+This can express a value of `T` type or `null`.
+
+#### [`Undefinable<T>` (`T | undefined`)](./src/Undefinable/)
+
+This can express a value of `T` type or `undefined`.
+
+#### [`Maybe<T>` (`T | null | undefined`)](./src/Maybe/)
+
+This can express a value of `T` type, `null`, or `undefined`.
+
+####  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/)
+
+This can express that there is some values or none _as a plain object_.
+This does not have any property method on its prototype. But this allows no including unused methods of them.
+
+#### [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
+
+This can express that there is some values or some error information _as a plain object_.
+This does not have any property method on its prototype. But this allows no including unused methods of them.
 
 
 ### Wrapper objects
@@ -168,33 +195,6 @@ console.log(none.isOk()); // false
 console.log(none.unwrap()); // this will throw `Error`.
 console.log(none.unwrapErr()); // 'some error info'
 ```
-
-
-### Utility functions for some types.
-
-These are designed for more tree shaking friendly and more usable for JavaScript common world.
-
-#### [`Nullable<T>` (`T | null`)](./src/Nullable/)
-
-This can express a value of `T` type or `null`.
-
-#### [`Undefinable<T>` (`T | undefined`)](./src/Undefinable/)
-
-This can express a value of `T` type or `undefined`.
-
-#### [`Maybe<T>` (`T | null | undefined`)](./src/Maybe/)
-
-This can express a value of `T` type, `null`, or `undefined`.
-
-####  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/)
-
-This can express that there is some values or none _as a plain object_.
-This does not have any property method on its prototype. But this allows no including unused methods of them.
-
-#### [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
-
-This can express that there is some values or some error information _as a plain object_.
-This does not have any property method on its prototype. But this allows no including unused methods of them.
 
 
 ### How to import
