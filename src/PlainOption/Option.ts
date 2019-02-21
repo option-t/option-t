@@ -1,19 +1,9 @@
 export type Option<T> = Some<T> | None;
 
-/**
- *  This allows to mutate the value to save needless allocation.
- */
-export type MutOption<T> = MutSome<T> | None;
-
-/**
- *  This allows to mutate the value to save needless allocation.
- */
-export type MutSome<T> = {
+export type Some<T> = {
     readonly ok: true;
-    val: T;
+    readonly val: T;
 };
-
-export type Some<T> = Readonly<MutSome<T>>;
 
 export function isSome<T>(v: Option<T>): v is Some<T> {
     return v.ok;
@@ -27,8 +17,8 @@ export function createSome<T>(val: T): Some<T> {
     return r;
 }
 
-export type None = Readonly<{
-    ok: false;
+export type None = {
+    readonly ok: false;
 
     // To keep the same shape (hidden class or structure) with Some<T>,
     // we should initialize this property.
@@ -39,8 +29,8 @@ export type None = Readonly<{
     // and user will not do their operations for a "container" object like this.
     // Even if user will use `const { ok, val }` = None;`, then val will be undefined.
     // It's will not be a problem.
-    val?: undefined;
-}>;
+    readonly val?: undefined;
+};
 
 export function isNone<T>(v: Option<T>): v is None {
     return !v.ok;
