@@ -2,8 +2,6 @@ export {
     Result,
     Ok,
     Err,
-    MutOk,
-    MutErr,
     createOk,
     createErr,
     isOk,
@@ -12,7 +10,6 @@ export {
 
 export { andForResult as and } from './and';
 export { andThenForResult as andThen } from './andThen';
-export { asMutResult as asMut } from './asMut';
 export {
     expectIsOk as expect,
     expectIsErr as expectErr,

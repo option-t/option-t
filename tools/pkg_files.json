@@ -168,6 +168,8 @@
   "cjs/shared/ErrorMessage.js",
   "cjs/shared/Function.d.ts",
   "cjs/shared/Function.js",
+  "cjs/shared/Mutable.d.ts",
+  "cjs/shared/Mutable.js",
   "docs/IDIOM.md",
   "docs/JSON.md",
   "esm/Maybe/ErrorMessage.d.ts",
@@ -419,6 +421,9 @@
   "esm/shared/Function.d.ts",
   "esm/shared/Function.js",
   "esm/shared/Function.mjs",
+  "esm/shared/Mutable.d.ts",
+  "esm/shared/Mutable.js",
+  "esm/shared/Mutable.mjs",
   "lib/Maybe/ErrorMessage.d.ts",
   "lib/Maybe/ErrorMessage.js",
   "lib/Maybe/ErrorMessage.mjs",
@@ -668,5 +673,8 @@
   "lib/shared/Function.d.ts",
   "lib/shared/Function.js",
   "lib/shared/Function.mjs",
+  "lib/shared/Mutable.d.ts",
+  "lib/shared/Mutable.js",
+  "lib/shared/Mutable.mjs",
   "package.json"
 ]
