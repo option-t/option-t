@@ -108,7 +108,7 @@ build_esm_ts: clean_dist
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_esm.json --outDir $(DIST_ESM_DIR)
 
 .PHONY: build_mjs_cp_mjs_to_esm
-build_mjs_cp_mjs_to_esm: build_mjs_rename_js_to_mjs
+build_mjs_cp_mjs_to_esm: build_mjs_rename_js_to_mjs clean_dist
 	$(NPM_BIN)/cpx '$(TMP_MJS_DIR)/**/*.mjs' $(DIST_ESM_DIR) --preserve
 
 .PHONY: build_mjs_rename_js_to_mjs
@@ -119,11 +119,11 @@ build_mjs_rename_js_to_mjs: build_mjs_create_tmp_mjs
 build_mjs_create_tmp_mjs: build_mjs_create_tmp_mjs_call_tsc build_mjs_create_tmp_mjs_call_babel
 
 .PHONY: build_mjs_create_tmp_mjs_call_tsc
-build_mjs_create_tmp_mjs_call_tsc: clean_dist
+build_mjs_create_tmp_mjs_call_tsc: clean_tmp_mjs
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_esm.json --outDir $(TMP_MJS_DIR) --declaration false
 
 .PHONY: build_mjs_create_tmp_mjs_call_babel
-build_mjs_create_tmp_mjs_call_babel: clean_dist
+build_mjs_create_tmp_mjs_call_babel: clean_tmp_mjs
 	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(TMP_MJS_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.esm.js
 
 
