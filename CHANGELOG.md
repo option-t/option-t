@@ -4,6 +4,63 @@
 ## x.y.z
 
 
+## 19.0.0
+
+### Breaking Changes
+
+#### Drop Node v8 support ([#338](https://github.com/karen-irc/option-t/pull/338))
+
+* This does not mean that this code will not run with Node.js v8 immediately.
+* But this allow to introduce a change which is incompatible with Node v8.
+
+
+#### Reorganize modules to place `Mut***` in `PlainOption` & `PlainResult` ([#341](https://github.com/karen-irc/option-t/pull/341))
+
+##### Motivation
+
+* This improve the intelliSense provided by vscode (tsserver) for `PlainOption/Plain` & `PlainResult`.
+    * e.g. The previous one is shown as `Readonly<MutSome<T>>`. This is not straight forward.
+* * `Mut**` is only used in unsafe operation to improve extreme performance issue.
+    * We don't have to expose it in almost case.
+
+##### What's changed
+
+* Change `.ok` property on `MutOption<T>` and `MutResult<T, E>` to mutable.
+* Removed `MutSome<T>`, `MutOk<T>`, and `MutErr<E>`.
+    * We cannot (or it's hard to) ensure their types statically if we allow to change `.ok`.
+* Enforce import `{PlainOption, PlainResult}/asMut` to use `MutOption<T>` or `MutResult<T, E>`.
+    * These types are extreme usecase. I think user should import them explicitly.
+
+
+### New Features
+
+#### Introduce unsafe destructing function for `PlainOption` & `PlainResult` ([#342](https://github.com/karen-irc/option-t/pull/342))
+
+* This introduce these functions to allow to cut off the reference to the internal values from the outer container object.
+    * `PlainOption/drop`
+        * `unsafeDropForOption()`
+    * `PlainResult/drop`
+        * `unsafeDropBothForResult()`
+        * `unsafeDropOkForResult()`
+        * `unsafeDropErrForResult()`
+* These functions might be _unsafe_ in some case. So we add `unsafe` prefixes to them at this moment.
+  The unsafe example is here:
+
+ ```javascript
+ const some = createSome(1);
+ isSome(some); // -> true.
+ unsafeDropForOption(some, (some) => {
+     some.ok = false;
+ });
+ isSome(some); // -> false. This is dangerous by breaking the immutability of `PlainOption/Option` unexpectedly.
+ ```
+
+
+### Others
+
+- Refactoring Build System.
+
+
 ## 18.2.0
 
 ### Documentations
