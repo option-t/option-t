@@ -1,3 +1,5 @@
+export type NotNullAndUndefined<T> = T extends (null | undefined) ? never : T;
+
 export type Maybe<T> = T | null | undefined;
 
 export function isNotNullAndUndefined<T>(v: Maybe<T>): v is T {
