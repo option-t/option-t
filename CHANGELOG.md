@@ -4,6 +4,20 @@
 ## x.y.z
 
 
+## 19.1.0
+
+### New Features
+
+* Introduce `Not***` types for `Nullable`, `Undefinable`, and `Maybe` ([#344](https://github.com/karen-irc/option-t/pull/344))
+    * These ensure statically that the type will not be _nullable_ by TypeScript's conditional type.
+        * `NotNullAndUndefined<T>` will not be `null | undefined`.
+        * `NotNull<T>` will not be `null`.
+        * `NotUndefined<T>` will not be `undefined`.
+    * We use `Not***` prefixes for these type because typescript compiler has `NonNullable<T>` as its builtin type.
+    * We might make a function's type signature more strict for the future in [#345](https://github.com/karen-irc/option-t/pull/345)
+      by these types.
+
+
 ## 19.0.0
 
 ### Breaking Changes
