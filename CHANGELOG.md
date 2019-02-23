@@ -16,6 +16,7 @@
     * We use `Not***` prefixes for these type because typescript compiler has `NonNullable<T>` as its builtin type.
     * We might make a function's type signature more strict for the future in [#345](https://github.com/karen-irc/option-t/pull/345)
       by these types.
+        * You can try it via `npm install option-t@next` or `yarn add option-t@next`. Your feedback is welcome!
 
 
 ## 19.0.0
