@@ -1,5 +1,5 @@
 import { RecoveryFn } from '../shared/Function';
-import { Nullable } from './Nullable';
+import { Nullable, NotNull } from './Nullable';
 import { expectNotNull } from './expect';
 import { ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 
@@ -11,7 +11,7 @@ import { ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage'
  *      * If you try to recover the value, use `orElse()`
  *  * If the result of _def_ is `null`, throw `TypeError`.
  */
-export function unwrapOrElseFromNullable<T>(v: Nullable<T>, def: RecoveryFn<T>): T {
+export function unwrapOrElseFromNullable<T>(v: Nullable<T>, def: RecoveryFn<NotNull<T>>): NotNull<T> {
     if (v !== null) {
         return v;
     }

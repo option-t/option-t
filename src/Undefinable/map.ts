@@ -1,7 +1,7 @@
 import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 import { expectNotUndefined } from './expect';
 import { MapFn } from '../shared/Function';
-import { Undefinable } from './Undefinable';
+import { Undefinable, NotUndefined } from './Undefinable';
 
 /**
  *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is not `undefined`,
@@ -11,9 +11,9 @@ import { Undefinable } from './Undefinable';
  *      * If you'd like return `Undefinable<*>` as `U`, use `andThen()`.
  *      * If the result of _selector_ is `undefined`, this throw an `Error`.
  */
-export function mapForUndefinable<T, U>(src: Undefinable<T>, selector: MapFn<T, U>): Undefinable<U> {
+export function mapForUndefinable<T, U>(src: Undefinable<T>, selector: MapFn<NotUndefined<T>, NotUndefined<U>>): Undefinable<U> {
     if (src !== undefined) {
-        const r = selector(src);
+        const r: NotUndefined<U> = selector(src);
         // XXX:
         // If `U` is `Undefinable<SomeType>`, we think naturally the returned value of this function would be
         // the nested type `Undefinable<Undefinable<SomeType>>`. But this type means `(SomeType | undefined) | undefined`.

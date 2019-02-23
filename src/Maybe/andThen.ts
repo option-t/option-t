@@ -1,7 +1,7 @@
 import { MapFn } from '../shared/Function';
-import { Maybe } from './Maybe';
+import { Maybe, NotNullAndUndefined } from './Maybe';
 
-export type FlatmapFn<T, U> = MapFn<T, Maybe<U>>;
+export type FlatmapFn<T, U> = MapFn<NotNullAndUndefined<T>, Maybe<U>>;
 
 /**
  *  Returns `null` or `undefined` if the _src_ is `null` or `undefined`,

@@ -1,4 +1,4 @@
-import { Maybe } from './Maybe';
+import { Maybe, NotNullAndUndefined } from './Maybe';
 import { expectNotNullAndUndefined } from './expect';
 import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE, ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './ErrorMessage';
 import { MapFn } from '../shared/Function';
@@ -14,8 +14,8 @@ import { MapFn } from '../shared/Function';
  *      * If the result of _def_ is `null` or `undefined`, this throw an `Error`.
  *  * If you'd like to accept `Maybe<*>` as `U`, use a combination `andThen()` and `or()`.
  */
-export function mapOrForMaybe<T, U>(src: Maybe<T>, def: U, selector: MapFn<T, U>): U {
-    let r: U;
+export function mapOrForMaybe<T, U>(src: Maybe<T>, def: NotNullAndUndefined<U>, selector: MapFn<NotNullAndUndefined<T>, NotNullAndUndefined<U>>): NotNullAndUndefined<U> {
+    let r: NotNullAndUndefined<U>;
     let msg = '';
     if (src !== undefined && src !== null) {
         r = selector(src);

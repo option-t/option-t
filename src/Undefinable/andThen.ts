@@ -1,7 +1,7 @@
 import { MapFn } from '../shared/Function';
-import { Undefinable } from './Undefinable';
+import { Undefinable, NotUndefined } from './Undefinable';
 
-export type FlatmapFn<T, U> = MapFn<T, Undefinable<U>>;
+export type FlatmapFn<T, U> = MapFn<NotUndefined<T>, Undefinable<U>>;
 
 /**
  *  Returns `undefined` if the _src_ is `undefined`,

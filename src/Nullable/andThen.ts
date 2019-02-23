@@ -1,7 +1,7 @@
 import { MapFn } from '../shared/Function';
-import { Nullable } from './Nullable';
+import { Nullable, NotNull } from './Nullable';
 
-export type FlatmapFn<T, U> = MapFn<T, Nullable<U>>;
+export type FlatmapFn<T, U> = MapFn<NotNull<T>, Nullable<U>>;
 
 /**
  *  Returns `null` if the _src_ is `null`,
