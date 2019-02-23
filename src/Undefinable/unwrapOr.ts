@@ -1,4 +1,4 @@
-import { Undefinable } from './Undefinable';
+import { Undefinable, NotUndefined, isNotUndefined } from './Undefinable';
 import { expectNotUndefined } from './expect';
 import { ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 
@@ -9,8 +9,8 @@ import { ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
  *  * _def_ must not be `Undefinable<*>`.
  *  * If the result of _def_ is `undefined`, throw `TypeError`.
  */
-export function unwrapOrFromUndefinable<T>(v: Undefinable<T>, def: T): T {
-    if (v !== undefined) {
+export function unwrapOrFromUndefinable<T>(v: Undefinable<T>, def: T): NotUndefined<T> {
+    if (isNotUndefined(v)) {
         return v;
     }
     else {

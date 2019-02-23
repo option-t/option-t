@@ -1,7 +1,7 @@
 import { expectNotNull } from './expect';
 import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE, ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 import { MapFn, RecoveryFn } from '../shared/Function';
-import { Nullable } from './Nullable';
+import { Nullable, NotNull } from './Nullable';
 
 /**
  *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is not `null`.
@@ -14,7 +14,7 @@ import { Nullable } from './Nullable';
  *      * If the result of _def_ is null`, this throw an `Error`.
  *  * If you'd like to accept `Nullable<*>` as `U`, use a combination `andThen()` and `orElse()`.
  */
-export function mapOrElseForNullable<T, U>(src: Nullable<T>, def: RecoveryFn<U>, selector: MapFn<T, U>): U {
+export function mapOrElseForNullable<T, U>(src: Nullable<T>, def: RecoveryFn<U>, selector: MapFn<T, U>): NotNull<U> {
     let r: U;
     let msg = '';
     if (src !== null) {

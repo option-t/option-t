@@ -1,4 +1,4 @@
-import { Nullable } from './Nullable';
+import { Nullable, NotNull, isNotNull } from './Nullable';
 import { expectNotNull } from './expect';
 import { ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 
@@ -9,8 +9,8 @@ import { ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
  *  * _def_ must not be `Nullable<*>`.
  *  * If the _def_ is `null`, throw `TypeError`.
  */
-export function unwrapOrFromNullable<T>(v: Nullable<T>, def: T): T {
-    if (v !== null) {
+export function unwrapOrFromNullable<T>(v: Nullable<T>, def: T): NotNull<T> {
+    if (isNotNull(v)) {
         return v;
     }
     else {
