@@ -10,7 +10,7 @@ import { ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';
  *  * The result of _def_ must not be `Maybe<*>`.
  *  * If the result of _def_ is `null` or `undefined`, throw `TypeError`.
  */
-export function unwrapOrElseFromMaybe<T>(v: Maybe<T>, def: RecoveryFn<T>): NotNullAndUndefined<T> {
+export function unwrapOrElseFromMaybe<T>(v: Maybe<T>, def: RecoveryFn<NotNullAndUndefined<T>>): NotNullAndUndefined<T> {
     if (isNotNullAndUndefined(v)) {
         return v;
     }

@@ -9,7 +9,7 @@ import { ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
  *  * _def_ must not be `Undefinable<*>`.
  *  * If the result of _def_ is `undefined`, throw `TypeError`.
  */
-export function unwrapOrFromUndefinable<T>(v: Undefinable<T>, def: T): NotUndefined<T> {
+export function unwrapOrFromUndefinable<T>(v: Undefinable<T>, def: NotUndefined<T>): NotUndefined<T> {
     if (isNotUndefined(v)) {
         return v;
     }

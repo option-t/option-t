@@ -17,7 +17,7 @@ import { Maybe, NotNullAndUndefined } from './Maybe';
  *      * If the result of _def_ is `null` or `undefined`, this throw an `Error`.
  *  * If you'd like to accept `Maybe<*>` as `U`, use a combination `andThen()` and `orElse()`.
  */
-export function mapOrElseForMaybe<T, U>(src: Maybe<T>, def: RecoveryFn<U>, selector: MapFn<T, U>): NotNullAndUndefined<U> {
+export function mapOrElseForMaybe<T, U>(src: Maybe<T>, def: RecoveryFn<NotNullAndUndefined<U>>, selector: MapFn<T, NotNullAndUndefined<U>>): NotNullAndUndefined<U> {
     let r: U;
     let msg = '';
     if (src !== undefined && src !== null) {

@@ -14,7 +14,7 @@ import { Nullable, NotNull } from './Nullable';
  *      * If the result of _def_ is null`, this throw an `Error`.
  *  * If you'd like to accept `Nullable<*>` as `U`, use a combination `andThen()` and `orElse()`.
  */
-export function mapOrElseForNullable<T, U>(src: Nullable<T>, def: RecoveryFn<U>, selector: MapFn<T, U>): NotNull<U> {
+export function mapOrElseForNullable<T, U>(src: Nullable<T>, def: RecoveryFn<NotNull<U>>, selector: MapFn<T, NotNull<U>>): NotNull<U> {
     let r: U;
     let msg = '';
     if (src !== null) {

@@ -14,7 +14,7 @@ import { Undefinable, NotUndefined } from './Undefinable';
  *      * If the result of _def_ is `undefined`, this throw an `Error`.
  *  * If you'd like to accept `Undefinable<*>` as `U`, use a combination `andThen()` and `or()`.
  */
-export function mapOrForUndefinable<T, U>(src: Undefinable<T>, def: U, selector: MapFn<T, U>): NotUndefined<U> {
+export function mapOrForUndefinable<T, U>(src: Undefinable<T>, def: NotUndefined<U>, selector: MapFn<T, NotUndefined<U>>): NotUndefined<U> {
     let r: U;
     let msg = '';
     if (src !== undefined) {

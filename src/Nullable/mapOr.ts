@@ -14,7 +14,7 @@ import { MapFn } from '../shared/Function';
  *      * If the result of _def_ is `null`, this throw an `Error`.
  *  * If you'd like to accept `Nullable<*>` as `U`, use a combination `andThen()` and `or()`.
  */
-export function mapOrForNullable<T, U>(src: Nullable<T>, def: U, selector: MapFn<T, U>): NotNull<U> {
+export function mapOrForNullable<T, U>(src: Nullable<T>, def: U, selector: MapFn<T, NotNull<U>>): NotNull<U> {
     let r: U;
     let msg = '';
     if (src !== null) {

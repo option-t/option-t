@@ -11,7 +11,7 @@ import { ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessa
  *      * If you try to recover the value, use `orElse()`
  *  * If the result of _def_ is `undefined`, throw `TypeError`.
  */
-export function unwrapOrElseFromUndefinable<T>(v: Undefinable<T>, def: RecoveryFn<T>): NotUndefined<T> {
+export function unwrapOrElseFromUndefinable<T>(v: Undefinable<T>, def: RecoveryFn<NotUndefined<T>>): NotUndefined<T> {
     if (isNotUndefined(v)) {
         return v;
     }
