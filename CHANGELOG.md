@@ -3,6 +3,13 @@
 
 ## x.y.z
 
+## 19.1.2
+
+### Documentations
+
+* Fix the link to the idiom about express progressive data. ([#347](https://github.com/karen-irc/option-t/pull/347))
+
+
 ## 19.1.1
 
 ### Documentations
