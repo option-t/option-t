@@ -174,7 +174,6 @@
   "cjs/shared/Function.js",
   "cjs/shared/Mutable.d.ts",
   "cjs/shared/Mutable.js",
-  "docs/idiom/express_progress.md",
   "docs/idiom/Option.md",
   "docs/idiom/README.md",
   "docs/JSON.md",

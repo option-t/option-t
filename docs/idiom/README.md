@@ -10,4 +10,3 @@ But we often need a glue code for the interoperability to JavaScript world.
 This document provides some idioms of this library for the interoperability to JavaScript world.
 
 * [Patterns for `Option<T>`](./Option.md)
-* [Express Progressive data](./Option.md)
