@@ -174,7 +174,7 @@
   "cjs/shared/Function.js",
   "cjs/shared/Mutable.d.ts",
   "cjs/shared/Mutable.js",
-  "docs/IDIOM.md",
+  "docs/idiom/README.md",
   "docs/JSON.md",
   "esm/Maybe/ErrorMessage.d.ts",
   "esm/Maybe/ErrorMessage.js",
