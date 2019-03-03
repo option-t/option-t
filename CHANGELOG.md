@@ -3,6 +3,11 @@
 
 ## x.y.z
 
+### New Features
+
+* Introduce `transpose()` for `PlainOption<Result<T, E>>` & `PlainResult<Option<T>, E>`. ([#348](https://github.com/karen-irc/option-t/pull/348))
+
+
 ## 19.1.2
 
 ### Documentations
