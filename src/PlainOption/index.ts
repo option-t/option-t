@@ -16,6 +16,7 @@ export { mapOrForOption as mapOr } from './mapOr';
 export { mapOrElseForOption as mapOrElse } from './mapOrElse';
 export { orForOption as or } from './or';
 export { orElseForOption as orElse } from './orElse';
+export { transposeForOption as transpose } from './transpose';
 export { tapOption as tap } from './tap';
 export { unwrapOption as unwrap } from './unwrap';
 export { unwrapOrFromOption as unwrapOr } from './unwrapOr';

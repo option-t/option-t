@@ -24,6 +24,7 @@ export {
     tapErr,
     tapBoth,
 } from './tap';
+export { transposeForResult as transpose } from './transpose';
 export {
     toOptionFromOk,
     toOptionFromErr,
