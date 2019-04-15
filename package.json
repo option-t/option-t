@@ -50,7 +50,7 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@typescript-eslint/eslint-plugin": "^1.6.0",
-    "ava": "^1.2.1",
+    "ava": "^1.4.1",
     "babel-preset-power-assert": "^3.0.0",
     "cpx": "^1.5.0",
     "del-cli": "^1.1.0",
