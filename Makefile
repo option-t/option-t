@@ -167,7 +167,7 @@ cp_manifest: clean_dist
 # Lint
 ###########################
 .PHONY: lint
-lint: eslint tslint ## Run all lints
+lint: eslint ## Run all lints
 
 .PHONY: eslint
 eslint:
@@ -239,7 +239,7 @@ ci:
 # Tools
 ###########################
 .PHONY: fmt
-fmt: eslint_fmt tslint_fmt ## Apply all formatters
+fmt: eslint_fmt ## Apply all formatters
 
 .PHONY: eslint_fmt
 eslint_fmt: 
