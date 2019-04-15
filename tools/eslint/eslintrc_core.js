@@ -1,28 +1,27 @@
-// Copied from https://github.com/voyagegroup/eslint-config-fluct/blob/c7924e0cb27a110dcf2584b6f3a10a60e3b76407/config/eslintrc_core.js
+// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/e49d98bffd0df8f8d86d710f6ce7026acebb2790/config/eslintrc_core.js
 
-/**
- * MIT License
- *
- * Copyright (c) 2016-present VOYAGE GROUP, Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
+// MIT License
+//
+// Copyright (c) 2019 CyberAgent, Inc.
+// Copyright (c) 2016-2018 VOYAGE GROUP, Inc.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 // XXX: To uniform the style of an object literals, we enable `quote-props`
 /*eslint quote-props: [2, "always"] no-magic-numbers: 0 */
@@ -37,6 +36,7 @@ module.exports = {
 
         'for-direction': 0, // We don't think this is "possible error".
         'getter-return': 1, // https://eslint.org/docs/rules/getter-return
+        'no-async-promise-executor': 2, // https://eslint.org/docs/rules/no-async-promise-executor
         // We should reconsider about this after ECMA262 introduces
         // [async iteration](https://github.com/tc39/proposal-async-iteration),
         // But now, we enable this.
@@ -61,6 +61,7 @@ module.exports = {
         'no-inner-declarations': [2, 'functions'], // https://eslint.org/docs/rules/no-inner-declarations
         'no-invalid-regexp': 2, //https://eslint.org/docs/rules/no-invalid-regexp
         'no-irregular-whitespace': 2, // https://eslint.org/docs/rules/no-irregular-whitespace
+        'no-misleading-character-class': 2, // https://eslint.org/docs/rules/no-misleading-character-class
         'no-obj-calls': 2, // https://eslint.org/docs/rules/no-obj-calls
         'no-prototype-builtins': 2, // https://eslint.org/docs/rules/no-prototype-builtins
         'no-regex-spaces': 2, // https://eslint.org/docs/rules/no-regex-spaces
@@ -70,12 +71,15 @@ module.exports = {
         'no-unreachable': 1,
         'no-unsafe-finally': 2, // https://eslint.org/docs/rules/no-unsafe-finally
         'no-unsafe-negation': 2, // https://eslint.org/docs/rules/no-unsafe-negation
+        // This rule might be useful to detect a typical anti pattern about data race.
+        // However, it could not detect the problem if we assign a value into an interim variable
+        // because this rule only checks a syntax and ECMA262's semantics without other semantics.
+        //
+        // Data race is an essential problem of parallel/concurrent programming.
+        // Thus I doubt that detecting race condition correctly & statically is hard without introducing other semantics.
+        // So we regard this rule as meaningless actually and disable this.
+        'require-atomic-updates ': 0, // https://eslint.org/docs/rules/require-atomic-updates
         'use-isnan': 2, // Use `Number.isNaN`
-        'valid-jsdoc': [2, {
-            'requireReturn': true,
-            'requireParamDescription': false,
-            'requireReturnDescription': false,
-        }],
         'valid-typeof': [1, {'requireStringLiterals': true}],
 
         // Best Practices
@@ -93,6 +97,7 @@ module.exports = {
         'dot-notation': 2, // We hate reflection by strings. It's possible error.
         'eqeqeq': [2, 'always'], // Don't use loosely equality operator.
         'guard-for-in': 0, // This is an escape hatch to enumerate all members in prototype chain.
+        'max-classes-per-file': 0, // We don't have to enable this. https://eslint.org/docs/rules/max-classes-per-file
         'no-alert': 1, // for debugging.
         'no-caller': 2, // Don't touch `arguments` in a normal code.
         'no-case-declarations': 2, // https://eslint.org/docs/rules/no-case-declarations
@@ -141,7 +146,9 @@ module.exports = {
         'no-return-assign': 2, // This is a problem for readability.
         'no-return-await': 1, // Warn. Because this is not a serious problem which is same degree with `no-return-assign`.
         'no-script-url': 2, // Use an event handler.
-        'no-self-assign': 2, // https://eslint.org/docs/rules/no-self-assign
+        'no-self-assign': [2, { // https://eslint.org/docs/rules/no-self-assign
+            'props': true,
+        }],
         'no-self-compare': 2, // https://eslint.org/docs/rules/no-self-compare
         'no-sequences': 2, // We're not doing a code golf: https://eslint.org/docs/rules/no-sequences
         'no-throw-literal': 2,
@@ -149,6 +156,7 @@ module.exports = {
         'no-unused-expressions': 2, // https://eslint.org/docs/rules/no-unused-expressions
         'no-unused-labels': 2, // https://eslint.org/docs/rules/no-unused-labels
         'no-useless-call': 1,
+        'no-useless-catch': 1, // There is no reason to disable this.
         'no-useless-concat': 1,
         'no-useless-escape': 1,
         'no-useless-return': 1, // https://eslint.org/docs/rules/no-useless-return
@@ -160,6 +168,14 @@ module.exports = {
         }],
         'radix': 2, // Enforce 2nd argument of `parseInt()`.
         'require-await': 0,
+        //  * If you write a code for an environment which does not support `RegExp`'s `u` flag (it would be legacy environment)
+        //    without any down-level code transformer, it might be better to disable this rule.
+        //  * If you supply `u` flag to regular expression, a parser can detect a syntax error of regular expression.
+        //      * `/\w{1,2/u` will be syntax error.
+        //      * `/\w{1,2/` will not be a syntax error.
+        //        But the current ESLint (5.3) does not have any rules to detect this pattern aggressively.
+        //        So we enable this rule as _error_.
+        'require-unicode-regexp': 2, // https://eslint.org/docs/rules/require-unicode-regexp
         'vars-on-top': 0, // This is a truly ridiculous convention.
         'wrap-iife': 0, // https://eslint.org/docs/rules/wrap-iife
         'yoda': 0, // https://eslint.org/docs/rules/wrap-iife
@@ -168,7 +184,25 @@ module.exports = {
         'strict': [2, 'global'],
 
         // Variables
-        'init-declarations': [2, 'always'],
+
+        //  We think it would not be a large problem to disable this rule.
+        //
+        //  Historically, in ~ES5, we cannot distinguish a variables because there is no `const`.
+        //  So it reduces a problems to enforce to initialize a variable with some values.
+        //
+        //  Historically (again), some developers who lives in ~ES5 assigns various typed values to them
+        //  This habit sometimes stagger the type of variables and its bad habit prevents JSVM's optimizations for a long time.
+        //  So it has some guide effects for _humans_ to initialize a variable with some value to express the type of its variable.
+        //
+        //  However, today is post ES6 and we prefer to use `const` declaration by default,
+        //  and we have more stuffs to analyze our code on demand.
+        //  If we disable this rule, Lacking an initialization for `const` would be a parse error.
+        //  we think it's less problem to disable this rule.
+        //
+        //  And this rule conflicts with the pattern of TypeScript like `let a: T;`.
+        //  If we keep to enable this rule, `let: a: T;` would be error
+        //  and we need to write `let a: T | null = null;` even if a will not be `null`. This is not useful.
+        'init-declarations': 'off',
         'no-delete-var': 2, // In a general case, we don't have to do this.
         'no-label-var': 2,
         'no-restricted-globals' : [2, // https://eslint.org/docs/rules/no-restricted-globals
@@ -216,6 +250,7 @@ module.exports = {
         }],
         'camelcase': [2, { // https://eslint.org/docs/rules/camelcase
             'properties': 'always',
+            'ignoreDestructuring': false,
         }],
         'capitalized-comments': 0, // we don't think this is a serious problem.
         'comma-dangle': [0, 'never'], // XXX: This rule set does not think about IE8.
@@ -275,6 +310,7 @@ module.exports = {
             'ignoreRegExpLiterals': true,
         }],
         'max-lines': 0, // We trust our code review. https://eslint.org/docs/rules/max-lines
+        'max-lines-per-function': 0, // We trust our code review. https://eslint.org/docs/rules/max-lines-per-function
         'max-nested-callback': 0, // https://eslint.org/docs/rules/max-nested-callbacks
         'max-params': 0, // https://eslint.org/docs/rules/max-params
         'max-statements': 0, // https://eslint.org/docs/rules/max-statements
@@ -309,7 +345,9 @@ module.exports = {
             // Ban the way to reflection by strings (Enable explicitly if you'd like to use).
             'ForInStatement'
         ],
-        'no-tabs': 2,
+        'no-tabs': [2, {
+            'allowIndentationTabs': false,
+        }],
         'no-ternary': 0, // https://eslint.org/docs/rules/no-ternary
         'no-trailing-spaces': 1,
         'no-underscore-dangle': [2, { // Ban the name which starts with `_`.
@@ -340,19 +378,12 @@ module.exports = {
             { 'blankLine': 'always', 'prev': 'directive', 'next': '*' },
             { 'blankLine': 'any', 'prev': 'directive', 'next': 'directive' },
         ],
+        'prefer-object-spread': 1, // https://eslint.org/docs/rules/prefer-object-spread
         'quotes': [2, 'single', {
             'avoidEscape': true,
             'allowTemplateLiterals': true,
         }],
         'quote-props': 0, // `bar-foo` without quote will be parse error if we disable this rules.
-        'require-jsdoc': [0, {
-            'require': {
-                'FunctionDeclaration': true,
-                'MethodDefinition': true,
-                'ClassDeclaration': true,
-                'ArrowFunctionExpression': true,
-            }
-        }],
         'semi': [2, 'always'], // Enfoce semicolon.
         'semi-spacing':[2, { // Ban a space char before semicolon.
             'before': false,
@@ -417,6 +448,12 @@ module.exports = {
             'destructuring': 'any', // Let's use `const` if we make one of variables `const`.
         }],
         'prefer-destructuring': 0, // It's not always true that to prefer destructuring.
+
+        // After ECMAScript 2018, this feature improves code readability.
+        // But we need to investigate the perf impact if we recommend to named capture group.
+        // Until then, we disable this rule.
+        'prefer-named-capture-group': 'off',
+
         'prefer-numeric-literals': 2, // https://eslint.org/docs/rules/prefer-numeric-literals
         'prefer-rest-params': 1, // Recommend to use rest parameter instead of `arguments`.
         'prefer-spread': 1, // Recommend to use spread operator instead of `Function.prototype.apply`.
