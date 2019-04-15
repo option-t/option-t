@@ -50,7 +50,6 @@
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
     "@typescript-eslint/eslint-plugin": "^1.6.0",
-    "@typescript-eslint/eslint-plugin-tslint": "^1.6.0",
     "ava": "^1.2.1",
     "babel-preset-power-assert": "^3.0.0",
     "cpx": "^1.5.0",
@@ -59,7 +58,6 @@
     "mocha": "^6.0.0",
     "power-assert": "^1.6.1",
     "rename-cli": "^6.0.0",
-    "tslint": "^5.12.1",
     "typescript": "~3.0.1"
   },
   "sideEffects": false,

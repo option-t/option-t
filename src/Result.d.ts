@@ -153,7 +153,7 @@ interface Resultable<T, E> {
 // This is only used for the instanceof-basis runtime checking. (e.g. `React.PropTypes.instanceOf()`)
 // You MUST NOT use for other purpose.
 export abstract class ResultBase<T, E> implements Resultable<T, E> {
-    private readonly _isOk: boolean; // tslint:disable-line:variable-name
+    private readonly _isOk: boolean;
     private readonly _v: T | undefined;
     private readonly _e: E | undefined;
 
@@ -193,7 +193,8 @@ interface Ok<T, E> extends Resultable<T, E> {
  */
 interface OkConstructor {
     new <T, E>(v: T): Result<T, E>;
-    readonly prototype: ResultBase<any, any>; // tslint:disable-line:no-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    readonly prototype: ResultBase<any, any>;
 }
 
 // XXX:
@@ -214,7 +215,8 @@ interface Err<T, E> extends Resultable<T, E> {
  */
 interface ErrConstructor {
     new <T, E>(e: E): Result<T, E>;
-    readonly prototype: ResultBase<any, any>; // tslint:disable-line:no-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    readonly prototype: ResultBase<any, any>;
 }
 
 /**

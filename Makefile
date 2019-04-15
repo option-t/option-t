@@ -167,15 +167,11 @@ cp_manifest: clean_dist
 # Lint
 ###########################
 .PHONY: lint
-lint: eslint tslint ## Run all lints
+lint: eslint ## Run all lints
 
 .PHONY: eslint
 eslint:
 	$(NPM_BIN)/eslint $(CURDIR) '$(CURDIR)/**/.eslintrc.js' --ext=.js,.jsx,.mjs,.ts,.tsx
-
-.PHONY: tslint
-tslint:
-	$(NPM_BIN)/tslint --config $(CURDIR)/tslint.json '$(CURDIR)/src/**/*.ts{,x}'
 
 
 ###########################
@@ -239,15 +235,12 @@ ci:
 # Tools
 ###########################
 .PHONY: fmt
-fmt: eslint_fmt tslint_fmt ## Apply all formatters
+fmt: eslint_fmt ## Apply all formatters
 
 .PHONY: eslint_fmt
 eslint_fmt: 
 	$(NPM_BIN)/eslint $(CURDIR) $(CURDIR)/**/.eslintrc.js --ext .js --fix
 
-.PHONY: tslint_fmt
-tslint_fmt: 
-	$(NPM_BIN)/tslint --config $(CURDIR)/tslint.json '$(CURDIR)/src/**/*.ts{,x}'
 
 .PHONY: prepublish
 prepublish: ## Run some commands for 'npm run prepublish'
