@@ -7,19 +7,17 @@ const path = require('path');
 async function* getAllDescendantFiles(subrootDir) {
     const children = await fs.readdir(subrootDir, {
         encoding: 'utf8',
-        withFileTypes: false,
+        withFileTypes: true,
     });
 
-    for (const item of children) {
-        const fullpath = path.resolve(subrootDir, item);
-        // eslint-disable-next-line no-await-in-loop
-        const stat = await fs.stat(fullpath);
-        if (stat.isFile()) {
+    for (const dirent of children) {
+        const fullpath = path.resolve(subrootDir, dirent.name);
+        if (dirent.isFile()) {
             yield fullpath;
             continue;
         }
 
-        if (stat.isDirectory()) {
+        if (dirent.isDirectory()) {
             yield* getAllDescendantFiles(fullpath);
             continue;
         }
