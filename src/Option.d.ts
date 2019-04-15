@@ -183,13 +183,16 @@ interface Optionable<T> {
  *  https://github.com/karen-irc/option-t/pull/77
  */
 export abstract class OptionBase<T> implements Optionable<T> {
+    // eslint-disable-next-line @typescript-eslint/member-naming
     private readonly ok: boolean;
+    // eslint-disable-next-line @typescript-eslint/member-naming
     private readonly val: T | undefined;
-
-    protected constructor(ok: boolean, val: T | undefined);
 
     readonly isSome: boolean;
     readonly isNone: boolean;
+
+    protected constructor(ok: boolean, val: T | undefined);
+
     unwrap(): T | never;
     unwrapOr(def: T): T;
     unwrapOrElse(fn: RecoveryFn<T>): T;
@@ -204,8 +207,8 @@ export abstract class OptionBase<T> implements Optionable<T> {
     orElse(fn: MayRecoveryFn<T>): Option<T>;
     drop(destructor?: TapFn<T>): void;
     // FYI: this is json representation.
-    // eslint-disable-next-line camelcase
-    toJSON(): { is_some: boolean; value: T | undefined };
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    toJSON(): { is_some: boolean; value: T | undefined; };
 }
 
 interface Some<T> extends Optionable<T> {
@@ -221,7 +224,8 @@ interface Some<T> extends Optionable<T> {
  */
 interface SomeConstructor {
     new <T>(v: T): Option<T>;
-    readonly prototype: OptionBase<any>; // tslint:disable-line:no-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    readonly prototype: OptionBase<any>;
 }
 
 interface None<T> extends Optionable<T> {
@@ -237,7 +241,8 @@ interface None<T> extends Optionable<T> {
  */
 interface NoneConstructor {
     new <T>(): Option<T>;
-    readonly prototype: OptionBase<any>; // tslint:disable-line:no-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    readonly prototype: OptionBase<any>;
 }
 
 /**
