@@ -173,10 +173,6 @@ lint: eslint ## Run all lints
 eslint:
 	$(NPM_BIN)/eslint $(CURDIR) '$(CURDIR)/**/.eslintrc.js' --ext=.js,.jsx,.mjs,.ts,.tsx
 
-.PHONY: tslint
-tslint:
-	$(NPM_BIN)/tslint --config $(CURDIR)/tslint.json '$(CURDIR)/src/**/*.ts{,x}'
-
 
 ###########################
 # Test
@@ -245,9 +241,6 @@ fmt: eslint_fmt ## Apply all formatters
 eslint_fmt: 
 	$(NPM_BIN)/eslint $(CURDIR) $(CURDIR)/**/.eslintrc.js --ext .js --fix
 
-.PHONY: tslint_fmt
-tslint_fmt: 
-	$(NPM_BIN)/tslint --config $(CURDIR)/tslint.json '$(CURDIR)/src/**/*.ts{,x}'
 
 .PHONY: prepublish
 prepublish: ## Run some commands for 'npm run prepublish'
