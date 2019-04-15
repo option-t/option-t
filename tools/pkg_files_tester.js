@@ -1,26 +1,23 @@
 'use strict';
 
 const assert = require('assert');
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
-const util = require('util');
-
-const readFileAsync = util.promisify(fs.readFile);
-const readdirAsync = util.promisify(fs.readdir);
-const statAsync = util.promisify(fs.stat);
 
 async function* getAllDescendantFiles(subrootDir) {
-    const children = await readdirAsync(subrootDir);
-    for (const item of children) {
-        const fullpath = path.resolve(subrootDir, item);
-        // eslint-disable-next-line no-await-in-loop
-        const stat = await statAsync(fullpath);
-        if (stat.isFile()) {
+    const children = await fs.readdir(subrootDir, {
+        encoding: 'utf8',
+        withFileTypes: true,
+    });
+
+    for (const dirent of children) {
+        const fullpath = path.resolve(subrootDir, dirent.name);
+        if (dirent.isFile()) {
             yield fullpath;
             continue;
         }
 
-        if (stat.isDirectory()) {
+        if (dirent.isDirectory()) {
             yield* getAllDescendantFiles(fullpath);
             continue;
         }
@@ -58,8 +55,9 @@ async function testExpectedFilesInDistDir(expectedSet, fileIter) {
     const OUTDIR = process.env.OUTDIR;
     assert.strictEqual(typeof OUTDIR, 'string', '$OUTDIR envvar should be string');
 
-    const json = await readFileAsync(path.resolve(__dirname, './pkg_files.json'), {
+    const json = await fs.readFile(path.resolve(__dirname, './pkg_files.json'), {
         encoding: 'utf8',
+        flag: 'r',
     });
     const files = parseJSON(json);
     assert.notStrictEqual(files, null, 'Fail to parse the file list snapshot');
