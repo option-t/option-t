@@ -19,5 +19,8 @@ indent_size = 4
 [*.md]
 indent_size = 4
 
+[.circleci/**.yml]
+indent_size = 4
+
 [Makefile]
 indent_style = tab
