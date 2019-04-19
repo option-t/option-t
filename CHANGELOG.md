@@ -3,6 +3,16 @@
 
 ## x.y.z
 
+
+## 19.2.1
+
+### Internal Change
+
+* Update dev dependencies. [#354](https://github.com/karen-irc/option-t/pull/354)
+* Migrate to use typescript-eslint. [#350](https://github.com/karen-irc/option-t/issues/350) 
+* Use `fs.promises` directly in our toolchain. [#353](https://github.com/karen-irc/option-t/issues/353)
+
+
 ## 19.2.0
 
 ### New Features
