@@ -7,7 +7,7 @@ node_js:
   - "node" # latest stable Node.js release
 
 env:
-  - YARNPKG_VERSION=1.13.0
+  - YARNPKG_VERSION=1.16.0
 
 branches:
   except:
