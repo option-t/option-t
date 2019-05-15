@@ -1,6 +1,7 @@
 {
     "extends": "./tsconfig.json",
     "compilerOptions": {
+        "diagnostics": true,
         "lib": [
             "es2017"
         ],
