@@ -1,6 +1,7 @@
 {
     "extends": "./tsconfig.json",
     "compilerOptions": {
+        "diagnostics": true,
         "module": "commonjs",
         "noEmit": false,
         "noEmitOnError": true,
