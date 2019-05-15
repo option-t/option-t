@@ -1,4 +1,4 @@
-// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/e49d98bffd0df8f8d86d710f6ce7026acebb2790/config/eslintrc_typescript.js
+// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/b7d54b8100028dcb39b809ea9fbdc34a2ce5a2cd/config/eslintrc_typescript.js
 
 // MIT License
 //
@@ -43,6 +43,9 @@ module.exports = {
         // So I seem it's nice to sort with `Array<T>` to decrease impedance mismatch.
         '@typescript-eslint/array-type': ['warn', 'generic'],
 
+        // If you don't have use `await`, then it should be removed to reduce internal works.
+        '@typescript-eslint/await-thenable': 'warn',
+
         // We cannot define this. User project should enable this.
         '@typescript-eslint/ban-types': 'off',
 
@@ -63,7 +66,13 @@ module.exports = {
         // TODO: (#64) @typescript-eslint/explicit-function-return-type
 
         // It's redundant to enforce to supply `public`.
-        '@typescript-eslint/explicit-member-accessibility': 'off',
+        '@typescript-eslint/explicit-member-accessibility': ['warn', {
+            'accessibility': 'no-public',
+            'overrides': {
+                // Fro parameter properties, all items should be explicited.
+                'parameterProperties': 'explicit',
+            },
+        }],
 
         // If we enable this, this setting only allow either `T` form or `TKey` form.
         // In our internal codebase, however, enabling this rule increases the time to lint.
@@ -229,11 +238,55 @@ module.exports = {
         // know what they are doing.
         '@typescript-eslint/prefer-function-type': 'error',
 
+        // Today, in almost case, we don't have to write `for` loop because native implementations which supports
+        // iterator protocols or you might use some down-level transformers. So I think we should enable this rule.
+        //
+        // If your application cannot use any down-level transformers or if you face to some perf issue,
+        // let's disable this.
+        // If you would like to ban `for-of` loop by that the transformed code is large,
+        // then it might be more better to ban `for-of` syntax.
+        //
+        // TODO(#97):
+        // However, by the implementation of this rule v1.7,
+        // this mis-reports the error even if the collection in for loop does not have Symbol.iterator().
+        '@typescript-eslint/prefer-for-of': 'off',
+
+        // Today, in almost case, we would develop our application with ES2016~ polyfills
+        // and it's rare case to develop an app without ~ES2016 polyfills.
+        // So I think we should enable this rule.
+        // If your application cannot load any polyfills or have any perf issues,
+        // let's disable this.
+        // By the implementation of this rule in v1.7, this rule detects if the object fulfills:
+        //
+        //  * Has `indexOf()` property.
+        //  * Has `includes()` property.
+        //  * They has same signatures.
+        '@typescript-eslint/prefer-includes': 'warn',
+
         // Each style has its own pros & cons.
         '@typescript-eslint/prefer-interface': 'off',
 
         // This bans legacy syntax.
         '@typescript-eslint/prefer-namespace-keyword': 'error',
+
+        // * We enable this rule to sorting the style in your project.
+        // * I'm not sure about that this rule document says as the reason that `RegExp.prototype.exec()` is faster than
+        //  `String.prototype.match()`. We need to invetigate it as future work. See #117.
+        // * This rule might not cover the case that fulfills these conditions:
+        //      1.  `somestring.match(regexp)` and this `regexp` is a simple arguments which is annotated with `RegExp`
+        //          of function _A_.
+        //      2.  function _A_ would be take both of a regular expression with `g` flag and one without `g` flag.
+        //   But I think that such case has some potential bugs
+        //   because `String.prototype.match()` works in a different wary by supplying `g` flag.
+        // We should elminate such code.
+        '@typescript-eslint/prefer-regexp-exec': 'warn',
+
+        // Today, in almost case, we would develop our application with ES2015~ polyfills
+        // and it's rare case to develop an app without ~ES2015 polyfills.
+        // So I think we should enable this rule.
+        // If your application cannot load any polyfills or have any perf issues,
+        // let's disable this.
+        '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
 
         // Of course, It looks nice for styling to sort them
         // to async function that all functions returning `Promise`.
