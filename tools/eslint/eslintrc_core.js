@@ -1,4 +1,4 @@
-// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/e49d98bffd0df8f8d86d710f6ce7026acebb2790/config/eslintrc_core.js
+// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/b7d54b8100028dcb39b809ea9fbdc34a2ce5a2cd/config/eslintrc_core.js
 
 // MIT License
 //
