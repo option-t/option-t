@@ -2,6 +2,7 @@
   "name": "option-t",
   "version": "19.3.0",
   "description": "Option type implementation whose APIs are inspired by Rust's `Option<T>`.",
+  "type": "commonjs",
   "main": "cjs/index.js",
   "files": [
     "CHANGELOG.md",
