@@ -1,5 +1,16 @@
 # Changelog
 
+## x.y.z
+
+### Breaking Changes
+
+* Remove deprecated APIs ([#364](https://github.com/karen-irc/option-t/issues/364)).
+    - `new Some()` for `lib/Option`.
+    - `new None()` for `lib/Option`.
+    - `new Ok()` for `lib/Result`.
+    - `new Err()` for `lib/Result`.
+
+
 
 ## 19.3.0
 

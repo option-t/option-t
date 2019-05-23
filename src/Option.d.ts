@@ -218,16 +218,6 @@ interface Some<T> extends Optionable<T> {
     expect(msg: string): T;
 }
 
-/**
- *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
- *  Instead, please use `createSome()`.
- */
-interface SomeConstructor {
-    new <T>(v: T): Option<T>;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    readonly prototype: OptionBase<any>;
-}
-
 interface None<T> extends Optionable<T> {
     readonly isSome: false;
     readonly isNone: true;
@@ -236,33 +226,10 @@ interface None<T> extends Optionable<T> {
 }
 
 /**
- *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
- *  Instead, please use `createNone()`.
- */
-interface NoneConstructor {
-    new <T>(): Option<T>;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    readonly prototype: OptionBase<any>;
-}
-
-/**
  *  The Option/Maybe type interface whose APIs are inspired
  *  by Rust's `std::option::Option<T>`.
  */
 export type Option<T> = Some<T> | None<T>;
-
-/**
- *  @deprecated
- *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
- *  Instead, please use `createSome()`.
- */
-export declare const Some: SomeConstructor;
-/**
- *  @deprecated
- *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
- *  Instead, please use `createNone()`.
- */
-export declare const None: NoneConstructor;
 
 export declare function createSome<T>(val: T): Some<T>;
 export declare function createNone<T>(): None<T>;
