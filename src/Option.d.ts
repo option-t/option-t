@@ -252,11 +252,13 @@ interface NoneConstructor {
 export type Option<T> = Some<T> | None<T>;
 
 /**
+ *  @deprecated
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
  *  Instead, please use `createSome()`.
  */
 export declare const Some: SomeConstructor;
 /**
+ *  @deprecated
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
  *  Instead, please use `createNone()`.
  */

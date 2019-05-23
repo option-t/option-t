@@ -336,6 +336,7 @@ ResultBase.prototype = Object.freeze({
 });
 
 /**
+ *  @deprecated
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
  *  Instead, please use `createOk()`.
  *
@@ -351,6 +352,7 @@ export function Ok(v) {
 }
 
 /**
+ *  @deprecated
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
  *  Instead, please use `createErr()`.
  *
