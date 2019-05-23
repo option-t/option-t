@@ -1,4 +1,9 @@
-export * from './Undefinable';
+export {
+    NotUndefined,
+    Undefinable,
+    isNotUndefined,
+    isUndefined,
+} from './Undefinable';
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
 //export { andForUndefinable as and} from './and';
 export { andThenForUndefinable as andThen} from './andThen';
