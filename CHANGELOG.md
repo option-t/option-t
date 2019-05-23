@@ -1,7 +1,25 @@
 # Changelog
 
 
-## x.y.z
+## 19.3.0
+
+## Deprecations
+
+- Mark deprecated APIs. [#361](https://github.com/karen-irc/option-t/pull/361) & [#363](https://github.com/karen-irc/option-t/pull/363)
+  These are deprecated for a long time since `v14.1` ([#232](https://github.com/karen-irc/option-t/issues/232)).
+  We'll remove them in the next major release.
+    - `new Some()` for `lib/Option`.
+    - `new None()` for `lib/Option`.
+    - `new Ok()` for `lib/Result`.
+    - `new Err()` for `lib/Result`.
+
+### Internal Change
+
+- Update dev dependencies.
+    - [#360](https://github.com/karen-irc/option-t/pull/360)
+    - [#357](https://github.com/karen-irc/option-t/pull/357)
+    - [#358](https://github.com/karen-irc/option-t/pull/358)
+- Stop to use `export *`. ([#362](https://github.com/karen-irc/option-t/issues/362)).
 
 
 ## 19.2.1
