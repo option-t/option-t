@@ -188,6 +188,7 @@ interface Ok<T, E> extends Resultable<T, E> {
 }
 
 /**
+ *  @deprecated
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
  *  Instead, please use `createOk()`.
  */
@@ -210,6 +211,7 @@ interface Err<T, E> extends Resultable<T, E> {
 }
 
 /**
+ *  @deprecated
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
  *  Instead, please use `createErr()`.
  */
@@ -226,11 +228,13 @@ interface ErrConstructor {
 export type Result<T, E> = Ok<T, E> | Err<T, E>;
 
 /**
+ *  @deprecated
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
  *  Instead, please use `createOk()`.
  */
 export declare const Ok: OkConstructor;
 /**
+ *  @deprecated
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
  *  Instead, please use `createErr()`.
  */

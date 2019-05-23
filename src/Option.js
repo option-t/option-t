@@ -298,6 +298,7 @@ OptionBase.prototype = Object.freeze({
 });
 
 /**
+ *  @deprecated
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
  *  Instead, please use `createSome()`.
  *
@@ -313,6 +314,7 @@ export function Some(val) {
 }
 
 /**
+ *  @deprecated
  *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
  *  Instead, please use `createNone()`.
  *
