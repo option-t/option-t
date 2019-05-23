@@ -59,7 +59,7 @@
     "mocha": "^6.1.4",
     "power-assert": "^1.6.1",
     "rename-cli": "^6.0.0",
-    "typescript": "~3.0.1"
+    "typescript": "~3.4.5"
   },
   "sideEffects": false,
   "typings": "./cjs/index.d.ts",
