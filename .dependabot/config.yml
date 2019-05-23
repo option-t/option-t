@@ -9,6 +9,6 @@ update_configs:
       - "I-dependency-gardening"
     ignored_updates:
       - match:
-        dependency_name: "typescript"
-        version_requirement: "~3.0.0"
+          dependency_name: "typescript"
+          version_requirement: "~3.0.0"
     version_requirement_updates: "increase_versions"
