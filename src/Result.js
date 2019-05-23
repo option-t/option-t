@@ -1,5 +1,7 @@
 import { createSome, createNone } from './Option';
 
+import { isDeprecated } from './shared/deprecation';
+
 /* eslint-enable valid-jsdoc */
 
 /**
@@ -347,6 +349,8 @@ ResultBase.prototype = Object.freeze({
  *  @param  {T} v
  */
 export function Ok(v) {
+    // eslint-disable-next-line no-undef
+    isDeprecated(process, 'new Ok()', 'createOk()');
     const r = createOk(v);
     return r;
 }
@@ -363,6 +367,8 @@ export function Ok(v) {
  *  @param  {E} e
  */
 export function Err(e) {
+    // eslint-disable-next-line no-undef
+    isDeprecated(process, 'new Err()', 'createErr()');
     const r = createErr(e);
     return r;
 }
