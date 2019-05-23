@@ -24,8 +24,6 @@
 
 /* eslint-enable valid-jsdoc */
 
-import { isDeprecated } from './shared/deprecation';
-
 /**
  *  @constructor
  *  @template   T
@@ -298,40 +296,6 @@ OptionBase.prototype = Object.freeze({
         };
     }
 });
-
-/**
- *  @deprecated
- *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
- *  Instead, please use `createSome()`.
- *
- *  @constructor
- *  @template   T
- *  @extends    {OptionBase<T>}
- *
- *  @param  {T}   val
- */
-export function Some(val) {
-    // eslint-disable-next-line no-undef
-    isDeprecated(process, 'new Some()', 'createSome()');
-    const o = createSome(val);
-    return o;
-}
-
-/**
- *  @deprecated
- *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
- *  Instead, please use `createNone()`.
- *
- *  @constructor
- *  @template   T
- *  @extends    {OptionBase<T>}
- */
-export function None() {
-    // eslint-disable-next-line no-undef
-    isDeprecated(process, 'new None()', 'createNone()');
-    const o = createNone();
-    return o;
-}
 
 /**
  *  @template   T

@@ -26,9 +26,7 @@
 
 const assert = require('assert');
 
-const ResultMod = require('../../__dist/cjs/Result');
-const Ok = ResultMod.Ok;
-const Err = ResultMod.Err;
+const { createOk, createErr } = require('../../__dist/cjs/Result');
 
 describe('Result<T, E>.map()', function(){
     describe('Ok<T>', function () {
@@ -47,7 +45,7 @@ describe('Result<T, E>.map()', function(){
             assert.notStrictEqual(result, EXPECTED);
             assert.notStrictEqual(ORIGIN, EXPECTED);
 
-            const original = new Ok(ORIGIN);
+            const original = createOk(ORIGIN);
             result = original.map(op);
         });
 
@@ -79,7 +77,7 @@ describe('Result<T, E>.map()', function(){
             assert.notStrictEqual(opIsCalled, true);
             assert.notStrictEqual(ORIGIN, NOT_EXPECTED);
 
-            const original = new Err(ORIGIN);
+            const original = createErr(ORIGIN);
             result = original.map(op);
         });
 

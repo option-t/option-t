@@ -26,9 +26,7 @@
 
 const assert = require('assert');
 
-const ResultMod = require('../../__dist/cjs/Result');
-const Ok = ResultMod.Ok;
-const Err = ResultMod.Err;
+const { createOk, createErr } = require('../../__dist/cjs/Result');
 
 const EXPECTED_OK = 'expected_ok';
 const EXPECTED_ERR = 'expected_err';
@@ -36,18 +34,18 @@ const EXPECTED_ERR = 'expected_err';
 describe('Result<T, E>.drop()', function(){
     describe('Ok<T>', function () {
         it('is callable', function () {
-            const ok = new Ok(EXPECTED_OK);
+            const ok = createOk(EXPECTED_OK);
             ok.drop();
         });
 
         it('should be freezed', function () {
-            const ok = new Ok(EXPECTED_OK);
+            const ok = createOk(EXPECTED_OK);
             ok.drop();
             assert.strictEqual(Object.isFrozen(ok), true);
         });
 
         it('should be freed', function () {
-            const ok = new Ok(EXPECTED_OK);
+            const ok = createOk(EXPECTED_OK);
             ok.drop();
             assert.strictEqual(ok.unwrap(), null);
         });
@@ -55,18 +53,18 @@ describe('Result<T, E>.drop()', function(){
 
     describe('Err<E>', function () {
         it('is callable', function () {
-            const err = new Err(EXPECTED_ERR);
+            const err = createErr(EXPECTED_ERR);
             err.drop();
         });
 
         it('should be freezed', function () {
-            const err = new Err(EXPECTED_ERR);
+            const err = createErr(EXPECTED_ERR);
             err.drop();
             assert.strictEqual(Object.isFrozen(err), true);
         });
 
         it('should be freed', function () {
-            const err = new Err(EXPECTED_ERR);
+            const err = createErr(EXPECTED_ERR);
             err.drop();
             assert.strictEqual(err.unwrapErr(), null);
         });
@@ -89,7 +87,7 @@ describe('Result<T, E>.drop() with destructors', function(){
         }
 
         before(function () {
-            result = new Ok(EXPECTED_OK);
+            result = createOk(EXPECTED_OK);
             result.drop(okDestructor, errDestructor);
         });
 
@@ -129,7 +127,7 @@ describe('Result<T, E>.drop() with destructors', function(){
         }
 
         before(function () {
-            result = new Err(EXPECTED_ERR);
+            result = createErr(EXPECTED_ERR);
             result.drop(okDestructor, errDestructor);
         });
 

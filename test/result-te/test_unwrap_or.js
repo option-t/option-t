@@ -26,9 +26,7 @@
 
 const assert = require('assert');
 
-const ResultMod = require('../../__dist/cjs/Result');
-const Ok = ResultMod.Ok;
-const Err = ResultMod.Err;
+const { createOk, createErr } = require('../../__dist/cjs/Result');
 
 describe('Result<T, E>.unwrapOr()', function(){
     describe('Ok<T>', function () {
@@ -40,7 +38,7 @@ describe('Result<T, E>.unwrapOr()', function(){
         });
 
         it('should be expected', function () {
-            const result = new Ok(EXPECTED);
+            const result = createOk(EXPECTED);
             assert.strictEqual(result.unwrapOr(NOT_EXPECTED), EXPECTED);
         });
     });
@@ -54,7 +52,7 @@ describe('Result<T, E>.unwrapOr()', function(){
         });
 
         it('should be expected', function () {
-            const result = new Err(NOT_EXPECTED);
+            const result = createErr(NOT_EXPECTED);
             assert.strictEqual(result.unwrapOr(EXPECTED), EXPECTED);
         });
     });

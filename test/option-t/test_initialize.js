@@ -1,8 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const Some = require('../../__dist/cjs/Option').Some;
-const None = require('../../__dist/cjs/Option').None;
+const { createSome, createNone, } = require('../../__dist/cjs/Option');
 
 const primitiveVal = require('../utils').primitiveVal;
 const objectVal = require('../utils').objectVal;
@@ -28,7 +27,7 @@ describe('initialization `Option<T>`', function(){
                 let option = null;
 
                 before(function(){
-                    option = new Some(value);
+                    option = createSome(value);
                 });
 
                 after(function(){
@@ -61,7 +60,7 @@ describe('initialization `Option<T>`', function(){
     describe('`None`', function () {
         let option = null;
         before(function(){
-            option = new None();
+            option = createNone();
         });
 
         it('should be `None`', function() {

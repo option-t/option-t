@@ -26,9 +26,7 @@
 
 const assert = require('assert');
 
-const ResultMod = require('../../__dist/cjs/Result');
-const Ok = ResultMod.Ok;
-const Err = ResultMod.Err;
+const { createOk, createErr } = require('../../__dist/cjs/Result');
 
 const primitiveVal = require('../utils').primitiveVal;
 const objectVal = require('../utils').objectVal;
@@ -48,7 +46,7 @@ describe('initialization `Result<T, E>`', function(){
                 let result = null;
 
                 before(function(){
-                    result = new Ok(value);
+                    result = createOk(value);
                 });
 
                 after(function(){
@@ -88,7 +86,7 @@ describe('initialization `Result<T, E>`', function(){
                 let result = null;
 
                 before(function(){
-                    result = new Err(value);
+                    result = createErr(value);
                 });
 
                 after(function(){

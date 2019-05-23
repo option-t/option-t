@@ -1,8 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const Some = require('../../__dist/cjs/Option').Some;
-const None = require('../../__dist/cjs/Option').None;
+const { createSome, createNone, } = require('../../__dist/cjs/Option');
 
 describe('Option<T>.map()', function(){
     describe('self is `None`', function () {
@@ -10,7 +9,7 @@ describe('Option<T>.map()', function(){
         let isNotCalled = true;
 
         before(function(){
-            const none = new None();
+            const none = createNone();
             option = none.map(function(){ // eslint-disable-line array-callback-return
                 isNotCalled = false;
             });
@@ -34,7 +33,7 @@ describe('Option<T>.map()', function(){
         let option = null;
 
         before(function(){
-            const some = new Some(1);
+            const some = createSome(1);
             option = some.map(function(val){
                 assert.notStrictEqual(val, EXPECTED);
                 return EXPECTED;

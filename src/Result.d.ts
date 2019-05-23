@@ -187,17 +187,6 @@ interface Ok<T, E> extends Resultable<T, E> {
     expect(message: string): T;
 }
 
-/**
- *  @deprecated
- *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
- *  Instead, please use `createOk()`.
- */
-interface OkConstructor {
-    new <T, E>(v: T): Result<T, E>;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    readonly prototype: ResultBase<any, any>;
-}
-
 // XXX:
 // This class intend to represent the container of some error type `E`.
 // So we don't define this as `Error`'s subclass
@@ -211,34 +200,10 @@ interface Err<T, E> extends Resultable<T, E> {
 }
 
 /**
- *  @deprecated
- *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
- *  Instead, please use `createErr()`.
- */
-interface ErrConstructor {
-    new <T, E>(e: E): Result<T, E>;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    readonly prototype: ResultBase<any, any>;
-}
-
-/**
  *  The Result/Either type interface whose APIs are inspired
  *  by Rust's `std::result::Result<T, E>`.
  */
 export type Result<T, E> = Ok<T, E> | Err<T, E>;
-
-/**
- *  @deprecated
- *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
- *  Instead, please use `createOk()`.
- */
-export declare const Ok: OkConstructor;
-/**
- *  @deprecated
- *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
- *  Instead, please use `createErr()`.
- */
-export declare const Err: ErrConstructor;
 
 export declare function createOk<T, E>(val: T): Ok<T, E>;
 export declare function createErr<T, E>(err: E): Err<T, E>;

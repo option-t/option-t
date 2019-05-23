@@ -1,7 +1,5 @@
 import { createSome, createNone } from './Option';
 
-import { isDeprecated } from './shared/deprecation';
-
 /* eslint-enable valid-jsdoc */
 
 /**
@@ -336,42 +334,6 @@ ResultBase.prototype = Object.freeze({
         Object.freeze(this);
     },
 });
-
-/**
- *  @deprecated
- *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
- *  Instead, please use `createOk()`.
- *
- *  @constructor
- *  @template   T, E
- *  @extends    {ResultBase<T, E>}
- *
- *  @param  {T} v
- */
-export function Ok(v) {
-    // eslint-disable-next-line no-undef
-    isDeprecated(process, 'new Ok()', 'createOk()');
-    const r = createOk(v);
-    return r;
-}
-
-/**
- *  @deprecated
- *  We're planning to deprecate this constructor (see https://github.com/karen-irc/option-t/issues/232).
- *  Instead, please use `createErr()`.
- *
- *  @constructor
- *  @template   T, E
- *  @extends    {ResultBase<T, E>}
- *
- *  @param  {E} e
- */
-export function Err(e) {
-    // eslint-disable-next-line no-undef
-    isDeprecated(process, 'new Err()', 'createErr()');
-    const r = createErr(e);
-    return r;
-}
 
 /**
  *  @template   T, E

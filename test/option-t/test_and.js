@@ -1,16 +1,15 @@
 'use strict';
 
 const assert = require('assert');
-const Some = require('../../__dist/cjs/Option').Some;
-const None = require('../../__dist/cjs/Option').None;
+const { createSome, createNone, } = require('../../__dist/cjs/Option');
 
 describe('Option<T>.and()', function(){
     describe('self is `None`, param is `Some<T>`', function () {
         let option = null;
 
         before(function(){
-            const none = new None();
-            option = none.and(new Some(1));
+            const none = createNone();
+            option = none.and(createSome(1));
         });
 
         it('the returned value shoule be `None`', function() {
@@ -22,8 +21,8 @@ describe('Option<T>.and()', function(){
         let option = null;
 
         before(function(){
-            const none = new None();
-            option = none.and(new None());
+            const none = createNone();
+            option = none.and(createNone());
         });
 
         it('the returned value shoule be `None`', function() {
@@ -36,8 +35,8 @@ describe('Option<T>.and()', function(){
         let option = null;
 
         before(function(){
-            const some = new Some(1);
-            option = some.and(new Some(EXPECTED));
+            const some = createSome(1);
+            option = some.and(createSome(EXPECTED));
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {
@@ -53,8 +52,8 @@ describe('Option<T>.and()', function(){
         let option = null;
 
         before(function(){
-            const some = new Some(1);
-            option = some.and(new None());
+            const some = createSome(1);
+            option = some.and(createNone());
         });
 
         it('the returned value shoule be `None`', function() {

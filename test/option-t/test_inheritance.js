@@ -1,32 +1,20 @@
 'use strict';
 
 const assert = require('assert');
-const OptionBase = require('../../__dist/cjs/Option').OptionBase;
-const Some = require('../../__dist/cjs/Option').Some;
-const None = require('../../__dist/cjs/Option').None;
+const { createSome, createNone, OptionBase } = require('../../__dist/cjs/Option');
 
 describe('Inheritance for `Option<T>`', function(){
     describe('`Some<T>`', function () {
         it('should be instanceof `OptionBase`', function() {
-            const option = new Some(1);
+            const option = createSome(1);
             assert.strictEqual(option instanceof OptionBase, true);
-        });
-
-        it('should not be instanceof `Some`', function() {
-            const option = new Some();
-            assert.strictEqual(option instanceof None, false);
         });
     });
 
     describe('`None`', function () {
         it('should be instanceof `OptionBase`', function() {
-            const option = new None();
+            const option = createNone();
             assert.strictEqual(option instanceof OptionBase, true);
-        });
-
-        it('should not be instanceof `None`', function() {
-            const option = new None();
-            assert.strictEqual(option instanceof None, false);
         });
     });
 });

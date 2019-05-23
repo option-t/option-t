@@ -3,8 +3,7 @@
 'use strict';
 
 const assert = require('assert');
-const Some = require('../../__dist/cjs/Option').Some;
-const None = require('../../__dist/cjs/Option').None;
+const { createSome, createNone, } = require('../../__dist/cjs/Option');
 
 const primitiveVal = require('../utils').primitiveVal;
 const objectVal = require('../utils').objectVal;
@@ -23,7 +22,7 @@ describe('JSON serializeation `Option<T>`', function(){
             describe(label, function() {
                 let result = null;
                 before(function(){
-                    const raw = new Some(value);
+                    const raw = createSome(value);
                     result = JSON.parse(JSON.stringify(raw));
                 });
 
@@ -50,7 +49,7 @@ describe('JSON serializeation `Option<T>`', function(){
             describe(label, function () {
                 let result = null;
                 before(function(){
-                    const raw = new Some(value);
+                    const raw = createSome(value);
                     result = JSON.parse(JSON.stringify(raw));
                 });
 
@@ -79,7 +78,7 @@ describe('JSON serializeation `Option<T>`', function(){
             describe(label, function () {
                 let result = null;
                 before(function(){
-                    const raw = new Some(value);
+                    const raw = createSome(value);
                     result = JSON.parse(JSON.stringify(raw));
                 });
 
@@ -107,7 +106,7 @@ describe('JSON serializeation `Option<T>`', function(){
             describe(label, function () {
                 let result = null;
                 before(function(){
-                    const raw = new Some(value);
+                    const raw = createSome(value);
                     result = JSON.parse(JSON.stringify(raw));
                 });
 
@@ -135,7 +134,7 @@ describe('JSON serializeation `Option<T>`', function(){
             describe(label, function () {
                 let result = null;
                 before(function(){
-                    const raw = new Some(value);
+                    const raw = createSome(value);
                     result = JSON.parse(JSON.stringify(raw));
                 });
 
@@ -163,7 +162,7 @@ describe('JSON serializeation `Option<T>`', function(){
             describe(label, function () {
                 let result = null;
                 before(function(){
-                    const raw = new Some(value);
+                    const raw = createSome(value);
                     result = JSON.parse(JSON.stringify(raw));
                 });
 
@@ -188,7 +187,7 @@ describe('JSON serializeation `Option<T>`', function(){
     describe('None', function () {
         let result = null;
         before(function(){
-            const raw = new None();
+            const raw = createNone();
             result = JSON.parse(JSON.stringify(raw));
         });
 

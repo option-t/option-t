@@ -26,9 +26,7 @@
 
 const assert = require('assert');
 
-const ResultMod = require('../../__dist/cjs/Result');
-const Ok = ResultMod.Ok;
-const Err = ResultMod.Err;
+const { createOk, createErr } = require('../../__dist/cjs/Result');
 
 describe('Result<T, E>.andThen()', function(){
     describe('Ok<T>', function () {
@@ -40,7 +38,7 @@ describe('Result<T, E>.andThen()', function(){
             let result = null;
             const op = function (v) {
                 argument = v;
-                return new Ok(EXPECTED);
+                return createOk(EXPECTED);
             };
 
             before(function(){
@@ -48,7 +46,7 @@ describe('Result<T, E>.andThen()', function(){
                 assert.notStrictEqual(result, EXPECTED);
                 assert.notStrictEqual(ORIGIN, EXPECTED);
 
-                const original = new Ok(ORIGIN);
+                const original = createOk(ORIGIN);
                 result = original.andThen(op);
             });
 
@@ -73,7 +71,7 @@ describe('Result<T, E>.andThen()', function(){
             let result = null;
             const op = function (v) {
                 argument = v;
-                return new Err(EXPECTED);
+                return createErr(EXPECTED);
             };
 
             before(function(){
@@ -81,7 +79,7 @@ describe('Result<T, E>.andThen()', function(){
                 assert.notStrictEqual(result, EXPECTED);
                 assert.notStrictEqual(ORIGIN, EXPECTED);
 
-                const original = new Ok(ORIGIN);
+                const original = createOk(ORIGIN);
                 result = original.andThen(op);
             });
 
@@ -103,7 +101,7 @@ describe('Result<T, E>.andThen()', function(){
 
             before(function () {
                 try {
-                    const result = new Ok(1);
+                    const result = createOk(1);
                     result.andThen(function (v) {
                         return v;
                     });
@@ -132,14 +130,14 @@ describe('Result<T, E>.andThen()', function(){
             let result = null;
             const op = function () {
                 opIsCalled = true;
-                return new Ok(NOT_EXPECTED);
+                return createOk(NOT_EXPECTED);
             };
 
             before(function(){
                 assert.notStrictEqual(opIsCalled, true);
                 assert.notStrictEqual(ORIGIN, NOT_EXPECTED);
 
-                const original = new Err(ORIGIN);
+                const original = createErr(ORIGIN);
                 result = original.andThen(op);
             });
 
@@ -164,14 +162,14 @@ describe('Result<T, E>.andThen()', function(){
             let result = null;
             const op = function () {
                 opIsCalled = true;
-                return new Err(NOT_EXPECTED);
+                return createErr(NOT_EXPECTED);
             };
 
             before(function(){
                 assert.notStrictEqual(opIsCalled, true);
                 assert.notStrictEqual(ORIGIN, NOT_EXPECTED);
 
-                const original = new Err(ORIGIN);
+                const original = createErr(ORIGIN);
                 result = original.andThen(op);
             });
 
@@ -193,7 +191,7 @@ describe('Result<T, E>.andThen()', function(){
 
             before(function () {
                 try {
-                    const result = new Err(1);
+                    const result = createErr(1);
                     result.andThen(function (v) {
                         return v;
                     });

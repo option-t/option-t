@@ -1,8 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const Some = require('../../__dist/cjs/Option').Some;
-const None = require('../../__dist/cjs/Option').None;
+const { createSome, createNone, } = require('../../__dist/cjs/Option');
 
 describe('Option<T>.orElse()', function(){
     describe('self is `None`, param returns `Some<T>`', function () {
@@ -10,9 +9,9 @@ describe('Option<T>.orElse()', function(){
         let option = null;
 
         before(function(){
-            const none = new None();
+            const none = createNone();
             option = none.orElse(function(){
-                return new Some(EXPECTED);
+                return createSome(EXPECTED);
             });
         });
 
@@ -29,9 +28,9 @@ describe('Option<T>.orElse()', function(){
         let option = null;
 
         before(function(){
-            const none = new None();
+            const none = createNone();
             option = none.orElse(function(){
-                return new None();
+                return createNone();
             });
         });
 
@@ -44,7 +43,7 @@ describe('Option<T>.orElse()', function(){
         let error = null;
 
         before(function(){
-            const none = new None();
+            const none = createNone();
             try {
                 none.orElse(function(){
                     return 'barfoo';
@@ -74,10 +73,10 @@ describe('Option<T>.orElse()', function(){
         let isNotCalled = true;
 
         before(function(){
-            const some = new Some(EXPECTED);
+            const some = createSome(EXPECTED);
             option = some.orElse(function(){
                 isNotCalled = false;
-                return new Some(3);
+                return createSome(3);
             });
         });
 
@@ -100,10 +99,10 @@ describe('Option<T>.orElse()', function(){
         let isNotCalled = true;
 
         before(function(){
-            const some = new Some(EXPECTED);
+            const some = createSome(EXPECTED);
             option = some.orElse(function(){
                 isNotCalled = false;
-                return new None();
+                return createNone();
             });
         });
 

@@ -26,9 +26,7 @@
 
 const assert = require('assert');
 
-const ResultMod = require('../../__dist/cjs/Result');
-const Ok = ResultMod.Ok;
-const Err = ResultMod.Err;
+const { createOk, createErr } = require('../../__dist/cjs/Result');
 
 describe('Result<T, E>.unwrapOrElse()', function(){
     describe('Ok<T>', function () {
@@ -46,7 +44,7 @@ describe('Result<T, E>.unwrapOrElse()', function(){
             assert.notStrictEqual(opIsCalled, true);
             assert.notStrictEqual(acutual, EXPECTED);
 
-            const result = new Ok(EXPECTED);
+            const result = createOk(EXPECTED);
             acutual = result.unwrapOrElse(op);
         });
 
@@ -75,7 +73,7 @@ describe('Result<T, E>.unwrapOrElse()', function(){
             assert.notStrictEqual(acutual, EXPECTED);
             assert.notStrictEqual(ORIGINAL, EXPECTED);
 
-            const result = new Err(ORIGINAL);
+            const result = createErr(ORIGINAL);
             acutual = result.unwrapOrElse(op);
         });
 

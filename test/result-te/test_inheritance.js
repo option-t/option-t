@@ -26,29 +26,18 @@
 
 const assert = require('assert');
 
-const ResultMod = require('../../__dist/cjs/Result');
-const ResultBase = ResultMod.ResultBase;
-const Ok = ResultMod.Ok;
-const Err = ResultMod.Err;
+const { ResultBase, createOk, createErr } = require('../../__dist/cjs/Result');
 
 describe('Inheritance for `Result<T, E>`', function(){
     describe('Ok<T>', function () {
         let result = null;
 
         before(function(){
-            result = new Ok(1);
+            result = createOk(1);
         });
 
         it('should be instanceof `ResultBase`', function() {
             assert.strictEqual(result instanceof ResultBase, true);
-        });
-
-        it('should be instanceof `Ok`', function() {
-            assert.strictEqual(result instanceof Ok, false);
-        });
-
-        it('should not be instanceof `Err`', function() {
-            assert.strictEqual(result instanceof Err, false);
         });
     });
 
@@ -56,19 +45,11 @@ describe('Inheritance for `Result<T, E>`', function(){
         let result = null;
 
         before(function(){
-            result = new Err(2);
+            result = createErr(2);
         });
 
         it('should be instanceof `ResultBase`', function() {
             assert.strictEqual(result instanceof ResultBase, true);
-        });
-
-        it('should be instanceof `Err`', function() {
-            assert.strictEqual(result instanceof Err, false);
-        });
-
-        it('should not be instanceof `Ok`', function() {
-            assert.strictEqual(result instanceof Ok, false);
         });
     });
 });
