@@ -2,13 +2,21 @@
 
 ## x.y.z
 
+
+## 20.0.0
+
 ### Breaking Changes
 
-* Remove deprecated APIs ([#364](https://github.com/karen-irc/option-t/issues/364)).
+- Remove deprecated APIs ([#364](https://github.com/karen-irc/option-t/issues/364)).
     - `new Some()` for `lib/Option`.
     - `new None()` for `lib/Option`.
     - `new Ok()` for `lib/Result`.
     - `new Err()` for `lib/Result`.
+- Disallow import from 'option-t' ([#365](https://github.com/karen-irc/option-t/issues/365)).
+    - These style importing will no longer work.
+        - `import {} from 'option-t';`
+        - `const OptionT = require('option-t');`
+    - For the future, we might provide all APIs from this entry points.
 
 
 
