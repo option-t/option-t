@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+### Internal Change
+
+* Introduce [dependabot](https://dependabot.com/) ([#370](https://github.com/karen-irc/option-t/issues/370)).
+* Update babel. ([#372](https://github.com/karen-irc/option-t/issues/372)).
+
 
 ## 20.0.1
 
@@ -24,7 +29,7 @@ _`v20.0.0` is a missing number_.
 
 ## 19.3.0
 
-## Deprecations
+### Deprecations
 
 - Mark deprecated APIs. [#361](https://github.com/karen-irc/option-t/pull/361) & [#363](https://github.com/karen-irc/option-t/pull/363)
   These are deprecated for a long time since `v14.1` ([#232](https://github.com/karen-irc/option-t/issues/232)).
