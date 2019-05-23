@@ -24,6 +24,8 @@
 
 /* eslint-enable valid-jsdoc */
 
+import { isDeprecated } from './shared/deprecation';
+
 /**
  *  @constructor
  *  @template   T
@@ -309,6 +311,8 @@ OptionBase.prototype = Object.freeze({
  *  @param  {T}   val
  */
 export function Some(val) {
+    // eslint-disable-next-line no-undef
+    isDeprecated(process, 'new Some()', 'createSome()');
     const o = createSome(val);
     return o;
 }
@@ -323,6 +327,8 @@ export function Some(val) {
  *  @extends    {OptionBase<T>}
  */
 export function None() {
+    // eslint-disable-next-line no-undef
+    isDeprecated(process, 'new None()', 'createNone()');
     const o = createNone();
     return o;
 }
