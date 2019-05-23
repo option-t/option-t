@@ -1,15 +1,14 @@
 'use strict';
 
 const assert = require('assert');
-const Some = require('../../__dist/cjs/Option').Some;
-const None = require('../../__dist/cjs/Option').None;
+const { createSome, createNone, } = require('../../__dist/cjs/Option');
 
 describe('Option<T>.expect()', function(){
 
     describe('unwrap `Some<T>`', function () {
         it('should get the inner', function() {
             const EXPECTED = 1;
-            const option = new Some(EXPECTED);
+            const option = createSome(EXPECTED);
             assert.strictEqual(option.expect(), EXPECTED);
         });
     });
@@ -19,7 +18,7 @@ describe('Option<T>.expect()', function(){
         let error = null;
 
         before(function(){
-            const none = new None();
+            const none = createNone();
             try {
                 none.expect(EXPECTED);
             }

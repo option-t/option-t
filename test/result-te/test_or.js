@@ -26,9 +26,7 @@
 
 const assert = require('assert');
 
-const ResultMod = require('../../__dist/cjs/Result');
-const Ok = ResultMod.Ok;
-const Err = ResultMod.Err;
+const { createOk, createErr } = require('../../__dist/cjs/Result');
 
 describe('Result<T, E>.or()', function(){
     describe('Ok<T>', function () {
@@ -41,8 +39,8 @@ describe('Result<T, E>.or()', function(){
             before(function(){
                 assert.notStrictEqual(EXPECTED, UNEXPECTED);
 
-                const left = new Ok(EXPECTED);
-                const right = new Err(UNEXPECTED);
+                const left = createOk(EXPECTED);
+                const right = createErr(UNEXPECTED);
                 result = left.or(right);
             });
 
@@ -64,8 +62,8 @@ describe('Result<T, E>.or()', function(){
             before(function(){
                 assert.notStrictEqual(EXPECTED, UNEXPECTED);
 
-                const left = new Ok(EXPECTED);
-                const right = new Err(UNEXPECTED);
+                const left = createOk(EXPECTED);
+                const right = createErr(UNEXPECTED);
                 result = left.or(right);
             });
 
@@ -89,8 +87,8 @@ describe('Result<T, E>.or()', function(){
             before(function(){
                 assert.notStrictEqual(EXPECTED, UNEXPECTED);
 
-                const left = new Err(UNEXPECTED);
-                const right = new Ok(EXPECTED);
+                const left = createErr(UNEXPECTED);
+                const right = createOk(EXPECTED);
                 result = left.or(right);
             });
 
@@ -112,8 +110,8 @@ describe('Result<T, E>.or()', function(){
             before(function(){
                 assert.notStrictEqual(EXPECTED, UNEXPECTED);
 
-                const left = new Err(UNEXPECTED);
-                const right = new Err(EXPECTED);
+                const left = createErr(UNEXPECTED);
+                const right = createErr(EXPECTED);
                 result = left.or(right);
             });
 

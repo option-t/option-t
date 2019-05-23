@@ -1,8 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const Some = require('../../__dist/cjs/Option').Some;
-const None = require('../../__dist/cjs/Option').None;
+const { createSome, createNone, } = require('../../__dist/cjs/Option');
 
 describe('Option<T>.flatMap()', function(){
     describe('self is `None`', function () {
@@ -10,7 +9,7 @@ describe('Option<T>.flatMap()', function(){
         let isNotCalled = true;
 
         before(function(){
-            const none = new None();
+            const none = createNone();
             option = none.flatMap(function(){
                 isNotCalled = false;
             });
@@ -31,10 +30,10 @@ describe('Option<T>.flatMap()', function(){
             let option = null;
 
             before(function(){
-                const some = new Some(1);
+                const some = createSome(1);
 
                 option = some.flatMap(function(){
-                    return new None();
+                    return createNone();
                 });
             });
 
@@ -48,11 +47,11 @@ describe('Option<T>.flatMap()', function(){
             let option = null;
 
             before(function(){
-                const some = new Some(1);
+                const some = createSome(1);
 
                 option = some.flatMap(function(val){
                     assert.strictEqual(val !== EXPECTED, true);
-                    return new Some(EXPECTED);
+                    return createSome(EXPECTED);
                 });
             });
 
@@ -69,7 +68,7 @@ describe('Option<T>.flatMap()', function(){
             let error = null;
 
             before(function(){
-                const some = new Some(1);
+                const some = createSome(1);
 
                 try {
                     some.flatMap(function(val){

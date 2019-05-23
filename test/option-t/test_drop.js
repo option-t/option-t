@@ -1,8 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const Some = require('../../__dist/cjs/Option').Some;
-const None = require('../../__dist/cjs/Option').None;
+const { createSome, createNone, } = require('../../__dist/cjs/Option');
 
 describe('Option<T>.drop()', function(){
 
@@ -10,7 +9,7 @@ describe('Option<T>.drop()', function(){
         let option = null;
 
         before(function(){
-            option = new Some(1);
+            option = createSome(1);
             option.drop();
         });
 
@@ -27,7 +26,7 @@ describe('Option<T>.drop()', function(){
         let option = null;
 
         before(function(){
-            option = new None();
+            option = createNone();
             option.drop();
         });
 
@@ -53,7 +52,7 @@ describe('Option<T>.drop() with destructor', function(){
         }
 
         before(function(){
-            option = new Some(EXPECTED);
+            option = createSome(EXPECTED);
             option.drop(destructor);
         });
 
@@ -82,7 +81,7 @@ describe('Option<T>.drop() with destructor', function(){
         }
 
         before(function(){
-            option = new None();
+            option = createNone();
             option.drop(destructor);
         });
 

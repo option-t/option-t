@@ -1,8 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const Some = require('../../__dist/cjs/Option').Some;
-const None = require('../../__dist/cjs/Option').None;
+const { createSome, createNone, } = require('../../__dist/cjs/Option');
 
 describe('Option<T>.or()', function(){
     describe('self is `None`, param is `Some<T>`', function () {
@@ -10,8 +9,8 @@ describe('Option<T>.or()', function(){
         let option = null;
 
         before(function(){
-            const none = new None();
-            option = none.or(new Some(EXPECTED));
+            const none = createNone();
+            option = none.or(createSome(EXPECTED));
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {
@@ -27,8 +26,8 @@ describe('Option<T>.or()', function(){
         let option = null;
 
         before(function(){
-            const none = new None();
-            option = none.or(new None());
+            const none = createNone();
+            option = none.or(createNone());
         });
 
         it('the returned value shoule be `None`', function() {
@@ -41,8 +40,8 @@ describe('Option<T>.or()', function(){
         let option = null;
 
         before(function(){
-            const some = new Some(EXPECTED);
-            option = some.or(new Some(3));
+            const some = createSome(EXPECTED);
+            option = some.or(createSome(3));
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {
@@ -59,8 +58,8 @@ describe('Option<T>.or()', function(){
         let option = null;
 
         before(function(){
-            const some = new Some(EXPECTED);
-            option = some.or(new None());
+            const some = createSome(EXPECTED);
+            option = some.or(createNone());
         });
 
         it('the returned value shoule be `Some<T>`: 1', function() {

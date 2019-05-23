@@ -1,8 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const Some = require('../../__dist/cjs/Option').Some;
-const None = require('../../__dist/cjs/Option').None;
+const { createSome, createNone, } = require('../../__dist/cjs/Option');
 
 describe('Option<T>.mapOr()', function(){
     describe('self is `None`', function () {
@@ -13,7 +12,7 @@ describe('Option<T>.mapOr()', function(){
         before(function(){
             assert.strictEqual(result !== EXPECTED, true);
 
-            const none = new None();
+            const none = createNone();
             result = none.mapOr(EXPECTED, function(){
                 isNotCalled = false;
             });
@@ -37,7 +36,7 @@ describe('Option<T>.mapOr()', function(){
             assert.strictEqual(result !== EXPECTED, true);
             assert.strictEqual(result !== DEFAULT, true);
 
-            const some = new Some('bar');
+            const some = createSome('bar');
             result = some.mapOr(DEFAULT, function(val){
                 assert.notStrictEqual(val, EXPECTED);
                 return EXPECTED;

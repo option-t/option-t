@@ -1,12 +1,12 @@
 // XXX:
 // The type definitions for '--moduleResolution node' is a ES6 format,
 // So it would test it by importing it simply.
-import {Option, Some, None} from '../../__dist/cjs/Option';
-import {Result, Ok, Err, ResultBase, createOk, createErr} from '../../__dist/cjs/Result';
+import {Option} from '../../__dist/cjs/Option';
+import {Result, ResultBase, createOk, createErr} from '../../__dist/cjs/Result';
 
 //  Ok<T>
 (function(){
-    let result: Result<number, void> = new Ok<number, void>(1);
+    let result: Result<number, void> = createOk<number, void>(1);
     result = createOk<number, void>(1);
 
     const isOk: boolean = result.isOk();
@@ -18,15 +18,15 @@ import {Result, Ok, Err, ResultBase, createOk, createErr} from '../../__dist/cjs
     const map: Result<string, void> = result.map<string>((v: number) => String(v));
     const mapErr: Result<number, string> = result.mapErr<string>((_: void) => String(''));
 
-    const and1: Result<string, void> = result.and(new Ok<string, void>(''));
-    const and2: Result<string, void> = result.and(new Err<string, void>(undefined));
-    const andThen1: Result<string, void> = result.andThen<string>((_: number) => new Ok<string, void>(''));
-    const andThen2: Result<string, void> = result.andThen<string>((_: number) => new Err<string, void>(undefined));
+    const and1: Result<string, void> = result.and(createOk<string, void>(''));
+    const and2: Result<string, void> = result.and(createErr<string, void>(undefined));
+    const andThen1: Result<string, void> = result.andThen<string>((_: number) => createOk<string, void>(''));
+    const andThen2: Result<string, void> = result.andThen<string>((_: number) => createErr<string, void>(undefined));
 
-    const or1: Result<number, string> = result.or<string>(new Ok<number, string>(1));
-    const or2: Result<number, string> = result.or<string>(new Err<number, string>(''));
-    const orElse1: Result<number, string> = result.orElse<string>((_: void) => new Ok<number, string>(1));
-    const orElse2: Result<number, string> = result.orElse<string>((_: void) => new Err<number, string>(''));
+    const or1: Result<number, string> = result.or<string>(createOk<number, string>(1));
+    const or2: Result<number, string> = result.or<string>(createErr<number, string>(''));
+    const orElse1: Result<number, string> = result.orElse<string>((_: void) => createOk<number, string>(1));
+    const orElse2: Result<number, string> = result.orElse<string>((_: void) => createErr<number, string>(''));
 
     const unwrap: number = result.unwrap();
     const unwrapErr: void = result.unwrapErr();
@@ -45,7 +45,7 @@ import {Result, Ok, Err, ResultBase, createOk, createErr} from '../../__dist/cjs
 
 //  Err<E>
 (function(){
-    let result: Result<number, void> = new Err<number, void>(undefined);
+    let result: Result<number, void> = createErr<number, void>(undefined);
     result = createErr<number, void>(undefined);
 
     const isOk: boolean = result.isOk();
@@ -57,15 +57,15 @@ import {Result, Ok, Err, ResultBase, createOk, createErr} from '../../__dist/cjs
     const map: Result<string, void> = result.map<string>((v: number) => String(v));
     const mapErr: Result<number, string> = result.mapErr<string>((_: void) => String(''));
 
-    const and1: Result<string, void> = result.and(new Ok<string, void>(''));
-    const and2: Result<string, void> = result.and(new Err<string, void>(undefined));
-    const andThen1: Result<string, void> = result.andThen<string>((_: number) => new Ok<string, void>(''));
-    const andThen2: Result<string, void> = result.andThen<string>((_: number) => new Err<string, void>(undefined));
+    const and1: Result<string, void> = result.and(createOk<string, void>(''));
+    const and2: Result<string, void> = result.and(createErr<string, void>(undefined));
+    const andThen1: Result<string, void> = result.andThen<string>((_: number) => createOk<string, void>(''));
+    const andThen2: Result<string, void> = result.andThen<string>((_: number) => createErr<string, void>(undefined));
 
-    const or1: Result<number, string> = result.or<string>(new Ok<number, string>(1));
-    const or2: Result<number, string> = result.or<string>(new Err<number, string>(''));
-    const orElse1: Result<number, string> = result.orElse<string>((_: void) => new Ok<number, string>(1));
-    const orElse2: Result<number, string> = result.orElse<string>((_: void) => new Err<number, string>(''));
+    const or1: Result<number, string> = result.or<string>(createOk<number, string>(1));
+    const or2: Result<number, string> = result.or<string>(createErr<number, string>(''));
+    const orElse1: Result<number, string> = result.orElse<string>((_: void) => createOk<number, string>(1));
+    const orElse2: Result<number, string> = result.orElse<string>((_: void) => createErr<number, string>(''));
 
     const unwrap: number = result.unwrap();
     const unwrapErr: void = result.unwrapErr();
@@ -84,9 +84,9 @@ import {Result, Ok, Err, ResultBase, createOk, createErr} from '../../__dist/cjs
 
 //  Result<T, E>
 (function(){
-    let option: Result<void, void> = new Err<void, void>(undefined);
-    option = new Ok<void, void>(undefined);
+    let option: Result<void, void> = createErr<void, void>(undefined);
+    option = createOk<void, void>(undefined);
 
-    let option2: Result<void, void> = new Ok<void, void>(undefined);
-    option2 = new Err<void, void>(undefined);
+    let option2: Result<void, void> = createOk<void, void>(undefined);
+    option2 = createErr<void, void>(undefined);
 })();

@@ -26,9 +26,7 @@
 
 const assert = require('assert');
 
-const ResultMod = require('../../__dist/cjs/Result');
-const Ok = ResultMod.Ok;
-const Err = ResultMod.Err;
+const { createOk, createErr } = require('../../__dist/cjs/Result');
 
 const EXPECTED_OK = 'expected_ok';
 const EXPECTED_ERR = 'expected_err';
@@ -36,7 +34,7 @@ const EXPECTED_ERR = 'expected_err';
 describe('Result<T, E>.err()', function(){
     describe('Ok<T>', function () {
         it('return `None<E>`', function () {
-            const ok = new Ok(EXPECTED_OK);
+            const ok = createOk(EXPECTED_OK);
             assert.strictEqual(ok.err().isNone, true);
         });
     });
@@ -45,7 +43,7 @@ describe('Result<T, E>.err()', function(){
         let err = null;
 
         before(function(){
-            err = new Err(EXPECTED_ERR);
+            err = createErr(EXPECTED_ERR);
         });
 
         it('return `Some<E>`', function () {
