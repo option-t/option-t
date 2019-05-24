@@ -73,7 +73,7 @@ describe('Option<T>.flatMap()', function(){
                 try {
                     some.flatMap(function(val){
                         const rv = 'hoge';
-                        assert.notStrictEqual(val !== rv);
+                        assert.notStrictEqual(val, rv);
                         return rv;
                     });
                 }
