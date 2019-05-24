@@ -2,6 +2,14 @@
 
 ## x.y.z
 
+## 20.0.3
+
+### Bug fix
+
+* Fix misusing `assert.notStrictEqual()` in the test for `Option<T>.flatMap()`.
+  ([#373](https://github.com/karen-irc/option-t/pull/373))
+    * This is the bug only for our unit testing, not for our production code.
+
 
 ## 20.0.2
 
