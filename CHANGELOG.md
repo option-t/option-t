@@ -2,6 +2,9 @@
 
 ## x.y.z
 
+
+## 20.0.2
+
 ### Internal Change
 
 * Introduce [dependabot](https://dependabot.com/) ([#370](https://github.com/karen-irc/option-t/issues/370)).
