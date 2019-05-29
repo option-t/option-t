@@ -2,6 +2,14 @@
 
 ## x.y.z
 
+## 20.0.4
+
+### Documentations
+
+* Add comments why we don't recommend to use wrapper objects ([#379](https://github.com/karen-irc/option-t/pull/379)).
+    * We have already written this reason in README.
+
+
 ## 20.0.3
 
 ### Bug fix
