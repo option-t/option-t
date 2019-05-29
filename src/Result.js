@@ -333,6 +333,27 @@ ResultBase.prototype = Object.freeze({
         }
         Object.freeze(this);
     },
+
+    pipe(...operators) {
+        return this._pipe(operators);
+    },
+
+    pipeErr(...operators) {
+        return this._pipe(operators);
+    },
+
+    _pipe(operators) {
+        // eslint-disable-next-line consistent-this,@typescript-eslint/no-this-alias
+        let input = this;
+        let result = null;
+        for (let i = 0, l = operators.length; i < l; ++i) {
+            const fn = operators[i];
+            result = fn(input);
+            input = result;
+        }
+
+        return result;
+    }
 });
 
 /**
