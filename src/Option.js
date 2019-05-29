@@ -24,6 +24,8 @@
 
 /* eslint-enable valid-jsdoc */
 
+import { map as mapOperator } from './Option/operators/map';
+
 /**
  *  @constructor
  *  @template   T
@@ -139,14 +141,10 @@ OptionBase.prototype = Object.freeze({
      *  @return {!Option<U>}
      */
     map: function OptionTMap(fn) {
-        if (!this.ok) {
-            // cheat to escape from a needless allocation.
-            return this;
-        }
-
-        const value = fn(this.val);
-        const option = createSome(value);
-        return option;
+        const r = this.pipe(
+            mapOperator(fn),
+        );
+        return r;
     },
 
     /**
