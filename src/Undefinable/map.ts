@@ -1,7 +1,7 @@
 import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 import { expectNotUndefined } from './expect';
 import { MapFn } from '../shared/Function';
-import { Undefinable } from './Undefinable';
+import { Undefinable, isNotUndefined } from './Undefinable';
 
 /**
  *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is not `undefined`,
@@ -12,7 +12,7 @@ import { Undefinable } from './Undefinable';
  *      * If the result of _selector_ is `undefined`, this throw an `Error`.
  */
 export function mapForUndefinable<T, U>(src: Undefinable<T>, selector: MapFn<T, U>): Undefinable<U> {
-    if (src !== undefined) {
+    if (isNotUndefined(src)) {
         const r = selector(src);
         // XXX:
         // If `U` is `Undefinable<SomeType>`, we think naturally the returned value of this function would be

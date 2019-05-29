@@ -1,5 +1,5 @@
 import { MapFn } from '../shared/Function';
-import { Nullable } from './Nullable';
+import { Nullable, isNotNull } from './Nullable';
 
 export type FlatmapFn<T, U> = MapFn<T, Nullable<U>>;
 
@@ -13,7 +13,7 @@ export type FlatmapFn<T, U> = MapFn<T, Nullable<U>>;
  *  because it's too hard to undarstand that "flatMap" operation for `T | null`
  */
 export function andThenForNullable<T, U>(src: Nullable<T>, selector: FlatmapFn<T, U>): Nullable<U> {
-    if (src !== null) {
+    if (isNotNull(src)) {
         const r = selector(src);
         return r;
     }

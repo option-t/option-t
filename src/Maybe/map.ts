@@ -1,7 +1,7 @@
 import { expectNotNullAndUndefined } from './expect';
 import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';
 import { MapFn } from '../shared/Function';
-import { Maybe } from './Maybe';
+import { Maybe, isNotNullAndUndefined } from './Maybe';
 
 /**
  *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is not `null` and `undefined`.
@@ -12,7 +12,7 @@ import { Maybe } from './Maybe';
  *      * If the result of _selector_ is `null` or `undefined`, this throw an `Error`.
  */
 export function mapForMaybe<T, U>(src: Maybe<T>, selector: MapFn<T, U>): Maybe<U> {
-    if (src !== undefined && src !== null) {
+    if (isNotNullAndUndefined(src)) {
         const r: U = selector(src);
         // XXX:
         // If `U` is `Maybe<SomeType>`, we think naturally the returned value of this function would be
