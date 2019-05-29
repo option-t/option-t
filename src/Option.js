@@ -294,7 +294,19 @@ OptionBase.prototype = Object.freeze({
             is_some: this.ok, // eslint-disable-line camelcase
             value: this.val,
         };
-    }
+    },
+
+    pipe(...operators) {
+        // eslint-disable-next-line consistent-this,@typescript-eslint/no-this-alias
+        let input = this;
+        let result = null;
+        for (let i = 0, l = operators.length; i < l; ++i) {
+            const fn = operators[i];
+            result = fn(input);
+            input = result;
+        }
+        return result;
+    },
 });
 
 /**
