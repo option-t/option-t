@@ -1,5 +1,5 @@
 import { MapFn } from '../shared/Function';
-import { Maybe } from './Maybe';
+import { Maybe, isNotNullAndUndefined } from './Maybe';
 
 export type FlatmapFn<T, U> = MapFn<T, Maybe<U>>;
 
@@ -13,7 +13,7 @@ export type FlatmapFn<T, U> = MapFn<T, Maybe<U>>;
  *  because it's too hard to undarstand that "flatMap" operation for `T | null | undefined`.
  */
 export function andThenForMaybe<T, U>(src: Maybe<T>, selector: FlatmapFn<T, U>): Maybe<U> {
-    if (src !== undefined && src !== null) {
+    if (isNotNullAndUndefined(src)) {
         const r = selector(src);
         return r;
     }

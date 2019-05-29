@@ -1,5 +1,5 @@
 import { MapFn } from '../shared/Function';
-import { Undefinable } from './Undefinable';
+import { Undefinable, isNotUndefined } from './Undefinable';
 
 export type FlatmapFn<T, U> = MapFn<T, Undefinable<U>>;
 
@@ -13,7 +13,7 @@ export type FlatmapFn<T, U> = MapFn<T, Undefinable<U>>;
  *  because it's too hard to undarstand that "flatMap" operation for `T | undefined`
  */
 export function andThenForUndefinable<T, U>(src: Undefinable<T>, selector: FlatmapFn<T, U>): Undefinable<U> {
-    if (src !== undefined) {
+    if (isNotUndefined(src)) {
         const r = selector(src);
         return r;
     }
