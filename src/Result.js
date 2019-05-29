@@ -335,11 +335,15 @@ ResultBase.prototype = Object.freeze({
     },
 
     pipe(...operators) {
-        return this._pipe(operators);
+        return this.pipe(operators);
+    },
+
+    pipeOk(...operators) {
+        return this.pipe(operators);
     },
 
     pipeErr(...operators) {
-        return this._pipe(operators);
+        return this.pipe(operators);
     },
 
     _pipe(operators) {
@@ -353,7 +357,7 @@ ResultBase.prototype = Object.freeze({
         }
 
         return result;
-    }
+    },
 });
 
 /**

@@ -147,7 +147,25 @@ interface Resultable<T, E> {
      *      This would be called with the inner value if self is `Err<E>`.
      */
     drop(destructor?: TapFn<T>, errDestructor?: TapFn<E>): void;
+
+    pipe<U, F>(
+        op1: UnifiedOperatorFunction<T, E, U, F>,
+    ): Result<U, F>;
+    pipe<U, F, T1, E1>(
+        op1: UnifiedOperatorFunction<T, E, T1, E1>,
+        op2: UnifiedOperatorFunction<T1, E1, U, F>,
+    ): Result<U, F>;
+    pipe<U, F, T1, E1, T2, E2>(
+        op1: UnifiedOperatorFunction<T, E, T1, E1>,
+        op2: UnifiedOperatorFunction<T1, E1, T2, E2>,
+        op3: UnifiedOperatorFunction<T2, E2, U, F>,
+    ): Result<U, F>;
 }
+
+export type UnifiedOperatorFunction<T, E, U, F> = (source: Result<T, E>) => Result<U, F>;
+export type OkOperatorFunction<T, E, U> = UnifiedOperatorFunction<T, E, U, E>;
+export type ErrOperatorFunction<T, E, F> = UnifiedOperatorFunction<T, E, T, F>;
+
 
 // XXX:
 // This is only used for the instanceof-basis runtime checking. (e.g. `React.PropTypes.instanceOf()`)
