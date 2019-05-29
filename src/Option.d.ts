@@ -161,7 +161,73 @@ interface Optionable<T> {
      *      This would be called with the inner value if self is `Some<T>`.
      */
     drop(destructor?: TapFn<T>): void;
+
+    pipe<A>(
+        op1: OperatorFunction<T, A>,
+    ): Option<A>;
+    pipe<A, B>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+    ): Option<B>;
+    pipe<A, B, C>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+    ): Option<C>;
+    pipe<A, B, C, D>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+        op4: OperatorFunction<C, D>,
+    ): Option<D>;
+    pipe<A, B, C, D, E>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+        op4: OperatorFunction<C, D>,
+        op5: OperatorFunction<D, E>,
+    ): Option<E>;
+    pipe<A, B, C, D, E, F>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+        op4: OperatorFunction<C, D>,
+        op5: OperatorFunction<D, E>,
+        op6: OperatorFunction<E, F>,
+    ): Option<F>;
+    pipe<A, B, C, D, E, F, G>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+        op4: OperatorFunction<C, D>,
+        op5: OperatorFunction<D, E>,
+        op6: OperatorFunction<E, F>,
+        op7: OperatorFunction<F, G>,
+    ): Option<G>;
+    pipe<A, B, C, D, E, F, G, H>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+        op4: OperatorFunction<C, D>,
+        op5: OperatorFunction<D, E>,
+        op6: OperatorFunction<E, F>,
+        op7: OperatorFunction<F, G>,
+        op8: OperatorFunction<G, H>,
+    ): Option<H>;
+    pipe<A, B, C, D, E, F, G, H, I>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+        op4: OperatorFunction<C, D>,
+        op5: OperatorFunction<D, E>,
+        op6: OperatorFunction<E, F>,
+        op7: OperatorFunction<F, G>,
+        op8: OperatorFunction<G, H>,
+        op9: OperatorFunction<H, I>,
+    ): Option<I>;
 }
+
+export type OperatorFunction<T, U> = (source: Option<T>) => Option<U>;
 
 /**
  *  The base object of `Some<T>` and `None<T>`.
@@ -209,6 +275,72 @@ export abstract class OptionBase<T> implements Optionable<T> {
     // FYI: this is json representation.
     // eslint-disable-next-line @typescript-eslint/camelcase
     toJSON(): { is_some: boolean; value: T | undefined; };
+
+    pipe<A>(
+        op1: OperatorFunction<T, A>,
+    ): Option<A>;
+    /* eslint-disable no-dupe-class-members */
+    pipe<A, B>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+    ): Option<B>;
+    pipe<A, B, C>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+    ): Option<C>;
+    pipe<A, B, C, D>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+        op4: OperatorFunction<C, D>,
+    ): Option<D>;
+    pipe<A, B, C, D, E>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+        op4: OperatorFunction<C, D>,
+        op5: OperatorFunction<D, E>,
+    ): Option<E>;
+    pipe<A, B, C, D, E, F>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+        op4: OperatorFunction<C, D>,
+        op5: OperatorFunction<D, E>,
+        op6: OperatorFunction<E, F>,
+    ): Option<F>;
+    pipe<A, B, C, D, E, F, G>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+        op4: OperatorFunction<C, D>,
+        op5: OperatorFunction<D, E>,
+        op6: OperatorFunction<E, F>,
+        op7: OperatorFunction<F, G>,
+    ): Option<G>;
+    pipe<A, B, C, D, E, F, G, H>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+        op4: OperatorFunction<C, D>,
+        op5: OperatorFunction<D, E>,
+        op6: OperatorFunction<E, F>,
+        op7: OperatorFunction<F, G>,
+        op8: OperatorFunction<G, H>,
+    ): Option<H>;
+    pipe<A, B, C, D, E, F, G, H, I>(
+        op1: OperatorFunction<T, A>,
+        op2: OperatorFunction<A, B>,
+        op3: OperatorFunction<B, C>,
+        op4: OperatorFunction<C, D>,
+        op5: OperatorFunction<D, E>,
+        op6: OperatorFunction<E, F>,
+        op7: OperatorFunction<F, G>,
+        op8: OperatorFunction<G, H>,
+        op9: OperatorFunction<H, I>,
+    ): Option<I>;
+    /* eslint-enable */
 }
 
 interface Some<T> extends Optionable<T> {
