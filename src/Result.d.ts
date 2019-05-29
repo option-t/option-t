@@ -202,6 +202,20 @@ interface Err<T, E> extends Resultable<T, E> {
 /**
  *  The Result/Either type interface whose APIs are inspired
  *  by Rust's `std::result::Result<T, E>`.
+ *
+ *  _We recommend to use utility types & functions (`PlainResult/Result<T, E>`)
+ *  if you don't have to use `instanceof` check and
+ *  you should avoid to expose this object as a public API of your package_
+ *  because `instanceof` checking might not work correctly if a user project has
+ *  multiple version of this package in their dependencies.
+ *  See ([#337](https://github.com/karen-irc/option-t/pull/337)).
+ *
+ *  Furthermore, we don't have a plan to implements a new API aggressively for this object
+ *  because we need to implement it on `.prototype`
+ *  and it might be hard to remove unused methods from `.prototype` on minifying.
+ *  We could resolve this problem for the future release but today is not so.
+ *
+ *  See [#378](https://github.com/karen-irc/option-t/issues/378)
  */
 export type Result<T, E> = Ok<T, E> | Err<T, E>;
 
