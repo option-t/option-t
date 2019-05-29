@@ -149,23 +149,30 @@ interface Resultable<T, E> {
     drop(destructor?: TapFn<T>, errDestructor?: TapFn<E>): void;
 
     pipe<U, F>(
-        op1: UnifiedOperatorFunction<T, E, U, F>,
+        op1: OperatorFunction<T, E, U, F>,
     ): Result<U, F>;
     pipe<U, F, T1, E1>(
-        op1: UnifiedOperatorFunction<T, E, T1, E1>,
-        op2: UnifiedOperatorFunction<T1, E1, U, F>,
+        op1: OperatorFunction<T, E, T1, E1>,
+        op2: OperatorFunction<T1, E1, U, F>,
     ): Result<U, F>;
     pipe<U, F, T1, E1, T2, E2>(
-        op1: UnifiedOperatorFunction<T, E, T1, E1>,
-        op2: UnifiedOperatorFunction<T1, E1, T2, E2>,
-        op3: UnifiedOperatorFunction<T2, E2, U, F>,
+        op1: OperatorFunction<T, E, T1, E1>,
+        op2: OperatorFunction<T1, E1, T2, E2>,
+        op3: OperatorFunction<T2, E2, U, F>,
     ): Result<U, F>;
+
+    pipeOk<U>(
+        op1: OkOperatorFunction<T, E, U>,
+    ): Result<U, E>;
+
+    pipeErr<F>(
+        op1: ErrOperatorFunction<T, E, F>,
+    ): Result<T, F>;
 }
 
-export type UnifiedOperatorFunction<T, E, U, F> = (source: Result<T, E>) => Result<U, F>;
-export type OkOperatorFunction<T, E, U> = UnifiedOperatorFunction<T, E, U, E>;
-export type ErrOperatorFunction<T, E, F> = UnifiedOperatorFunction<T, E, T, F>;
-
+export type OperatorFunction<T, E, U, F> = (source: Result<T, E>) => Result<U, F>;
+export type OkOperatorFunction<T, E, U> = OperatorFunction<T, E, U, E>;
+export type ErrOperatorFunction<T, E, F> = OperatorFunction<T, E, T, F>;
 
 // XXX:
 // This is only used for the instanceof-basis runtime checking. (e.g. `React.PropTypes.instanceOf()`)
