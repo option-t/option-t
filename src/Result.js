@@ -1,4 +1,5 @@
 import { createSome, createNone } from './Option';
+import { map as mapOprator } from './Result/operators/map';
 
 /* eslint-enable valid-jsdoc */
 
@@ -99,14 +100,10 @@ ResultBase.prototype = Object.freeze({
      *  @return {!Result<U, E>}
      */
     map: function ResultBaseMap(op) {
-        if (!this._isOk) {
-            // cheat to escape from a needless allocation.
-            return this;
-        }
-
-        const value = op(this._v);
-        const result = createOk(value);
-        return result;
+        const r = this.pipe(
+            mapOprator(op),
+        );
+        return r;
     },
 
     /**
