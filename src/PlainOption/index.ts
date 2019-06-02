@@ -1,3 +1,16 @@
+/**
+ *  This module provies that the Option type interface whose APIs are inspired
+ *  by Rust's [`std::option::Option<T>`](https://doc.rust-lang.org/std/option/index.html).
+ *
+ *  We don't use a class to provides this module by these reason:
+ *
+ *  - Make treeshaking friendly.
+ *      - Almost minifier cannot remove functions by default on `.prototype` even if they are unused.
+ *  - Relax the incompatible problem by mixing multiple versions of this package
+ *    in module dependency tree.
+ *      - e.g. `instanceof` will be a problem. See ([#337](https://github.com/karen-irc/option-t/pull/337)).
+ */
+
 export {
     Option,
     Some,
