@@ -1,3 +1,15 @@
+/**
+ *  This module provies that the Result/Either type interface whose APIs are inspired
+ *  by Rust's [`std::result::Result<T, E>`](https://doc.rust-lang.org/std/result/index.html).
+ *
+ *  We don't use a class to provides this module by these reason:
+ *
+ *  - Make treeshaking friendly.
+ *      - Almost minifier cannot remove functions by default on `.prototype` even if they are unused.
+ *  - Relax the incompatible problem by mixing multiple versions of this package
+ *    in module dependency tree.
+ *      - e.g. `instanceof` will be a problem. See ([#337](https://github.com/karen-irc/option-t/pull/337)).
+ */
 export {
     Result,
     Ok,
