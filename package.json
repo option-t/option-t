@@ -54,7 +54,7 @@
     "ava": "^1.4.1",
     "babel-preset-power-assert": "^3.0.0",
     "cpx": "^1.5.0",
-    "del-cli": "^1.1.0",
+    "del-cli": "^2.0.0",
     "eslint": "^5.16.0",
     "mocha": "^6.1.4",
     "power-assert": "^1.6.1",
