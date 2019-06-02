@@ -2,6 +2,18 @@
 
 ## x.y.z
 
+## 20.0.5
+
+### Documentations
+
+* Add comments for operators of `PlainOption`/`PlainResult` ([#385](https://github.com/karen-irc/option-t/pull/385)).
+
+### Internals
+
+* Allow to compile with TypeScript 3.5 ([#381](https://github.com/karen-irc/option-t/pull/381)).
+* Updete `devDependencies`.
+
+
 ## 20.0.4
 
 ### Documentations
