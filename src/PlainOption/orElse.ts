@@ -3,12 +3,16 @@ import { Option } from './Option';
 
 export type MayRecoveryFn<T> = RecoveryFn<Option<T>>;
 
-export function orElseForOption<T>(a: Option<T>, b: MayRecoveryFn<T>): Option<T> {
-    if (a.ok) {
-        return a;
+/**
+ *  Return _v_ as `T` if the passed _v_ is `Some(T)`.
+ *  Otherwise, return the result of _def_.
+ */
+export function orElseForOption<T>(v: Option<T>, def: MayRecoveryFn<T>): Option<T> {
+    if (v.ok) {
+        return v;
     }
     else {
-        const r = b();
+        const r = def();
         return r;
     }
 }
