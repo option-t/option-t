@@ -29,9 +29,6 @@ export function createOk<T>(val: T): Ok<T> {
     return r;
 }
 
-/**
- *  This allows to mutate the value to save needless allocation.
- */
 export type Err<E> = {
     readonly ok: false;
 
