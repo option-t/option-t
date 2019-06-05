@@ -22,6 +22,10 @@ type MutErr<E> = Mutable<Err<E>>;
  *      });
  *      isOk(ok); // -> false. This is dangerous.
  *  ```
+ *
+ *  Compared to Rust, JavaScript does not have ownership semantics in language
+ *  and this API is designed to use as a destructor or similar fashions.
+ *  So if you call this for same object more than once, your code might contain "double free" problem.
  */
 export function unsafeDropBothForResult<T, E>(v: Result<T, E>, okMutator: TapFn<MutOk<T>>, errMutator: TapFn<MutErr<E>>): void {
     const mutable = asMutResult(v);
@@ -46,6 +50,10 @@ export function unsafeDropBothForResult<T, E>(v: Result<T, E>, okMutator: TapFn<
  *      });
  *      isOk(ok); // -> false. This is dangerous.
  *  ```
+ *
+ *  Compared to Rust, JavaScript does not have ownership semantics in language
+ *  and this API is designed to use as a destructor or similar fashions.
+ *  So if you call this for same object more than once, your code might contain "double free" problem.
  */
 export function unsafeDropOkForResult<T, E>(v: Result<T, E>, okMutator: TapFn<MutOk<T>>): void {
     return unsafeDropBothForResult(v, okMutator, () => {});
@@ -65,6 +73,10 @@ export function unsafeDropOkForResult<T, E>(v: Result<T, E>, okMutator: TapFn<Mu
  *      });
  *      isErr(err); // -> false. This is dangerous.
  *  ```
+ *
+ *  Compared to Rust, JavaScript does not have ownership semantics in language
+ *  and this API is designed to use as a destructor or similar fashions.
+ *  So if you call this for same object more than once, your code might contain "double free" problem.
  */
 export function unsafeDropErrForResult<T, E>(v: Result<T, E>, errMutator: TapFn<MutErr<E>>): void {
     return unsafeDropBothForResult(v, () => {}, errMutator);
