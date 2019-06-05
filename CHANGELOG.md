@@ -2,6 +2,11 @@
 
 ## x.y.z
 
+### New Features
+
+* Add `flatten()` for `PlainOption` ([#389](https://github.com/karen-irc/option-t/pull/389)).
+
+
 ## 20.0.6
 
 ### Documentations
