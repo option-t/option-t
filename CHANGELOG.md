@@ -5,7 +5,7 @@
 ### New Features
 
 * Add `flatten()` for `PlainOption` ([#389](https://github.com/karen-irc/option-t/pull/389)).
-
+* Add `filter()` for `PlainOption` ([#390](https://github.com/karen-irc/option-t/pull/390)).
 
 ## 20.0.6
 
