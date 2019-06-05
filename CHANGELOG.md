@@ -2,6 +2,13 @@
 
 ## x.y.z
 
+## 20.0.6
+
+### Documentations
+
+* Add comments which explains undocumented design ([#391](https://github.com/karen-irc/option-t/pull/391)).
+
+
 ## 20.0.5
 
 ### Documentations
