@@ -37,6 +37,7 @@ export {
 export { andForOption as and } from './and';
 export { andThenForOption as andThen } from './andThen';
 export { expectIsSome as expect } from './expect';
+export { filterForOption as filter } from './filter';
 export { flattenForOption as flatten } from './flatten';
 export { mapForOption as map } from './map';
 export { mapOrForOption as mapOr } from './mapOr';
