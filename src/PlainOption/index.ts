@@ -9,6 +9,19 @@
  *  - Relax the incompatible problem by mixing multiple versions of this package
  *    in module dependency tree.
  *      - e.g. `instanceof` will be a problem. See ([#337](https://github.com/karen-irc/option-t/pull/337)).
+ *
+ *  And some operators might not return a new object and reuse the input
+ *  to reduce an object allocation. Thus comparing _this `Option<T>`` is meaningless like a following code.
+ *  This is by design because we think this pattern is meaningless.
+ *
+ *  ```typescript
+ *      const a: Option<number> = createSome(1);
+ *      const b: Option<number> = someOperator(a);
+ *
+ *      // Results of these comparison are undefined.
+ *      a === b;
+ *      Object.is(a, b);
+ *  ```
  */
 
 export {

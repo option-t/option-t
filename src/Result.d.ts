@@ -216,6 +216,10 @@ interface Err<T, E> extends Resultable<T, E> {
  *  We could resolve this problem for the future release but today is not so.
  *
  *  See [#378](https://github.com/karen-irc/option-t/issues/378)
+ *
+ *  And some operators might not return a new object and reuse the input
+ *  to reduce an object allocation. Thus comparing _this `Option<T>`` is meaningles.
+ *  This is by design because we think this pattern is meaningless.
  */
 export type Result<T, E> = Ok<T, E> | Err<T, E>;
 
