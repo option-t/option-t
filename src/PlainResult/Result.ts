@@ -13,6 +13,9 @@ export type Ok<T> = {
     // and user will not do their operations for a "container" object like this.
     // Even if user will use `const { ok, err }` = Ok;`, then val will be undefined.
     // It's will not be a problem.
+    //
+    // By these reasons, we don't recommend to create this object without this factory function.
+    // You can create this object by hand. But it's fragile for the future change. We don't recommend it.
     readonly err?: undefined;
 };
 
@@ -41,6 +44,9 @@ export type Err<E> = {
     // and user will not do their operations for a "container" object like this.
     // Even if user will use `const { ok, val }` = Err;`, then val will be undefined.
     // It's will not be a problem.
+    //
+    // By these reasons, we don't recommend to create this typed object without this factory function.
+    // You can create this object by hand. But it's fragile for the future change. We don't recommend it.
     readonly val?: undefined;
 
     readonly err: E;
