@@ -2,6 +2,20 @@
 
 ## x.y.z
 
+### Documentations
+
+* Add comments to not recommend to create `PlainOption`/`PlainResult` without factory functions ([#395](https://github.com/karen-irc/option-t/pull/395)).
+
+### Internals
+
+* Add the test to ensure that required properties exist on objects for `PlainOption`/`PlainResult` ([#395](https://github.com/karen-irc/option-t/pull/395)).
+* Add tests for `PlainOption`/`PlainResult`.
+    * ([#392](https://github.com/karen-irc/option-t/pull/392))
+    * ([#394](https://github.com/karen-irc/option-t/pull/394))
+
+
+## 20.1.0
+
 ### New Features
 
 * Add `flatten()` for `PlainOption` ([#389](https://github.com/karen-irc/option-t/pull/389)).
