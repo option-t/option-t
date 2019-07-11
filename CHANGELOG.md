@@ -12,6 +12,15 @@
 * Add tests for `PlainOption`/`PlainResult`.
     * ([#392](https://github.com/karen-irc/option-t/pull/392))
     * ([#394](https://github.com/karen-irc/option-t/pull/394))
+* Update dependencies.
+    * ([#397](https://github.com/karen-irc/option-t/pull/397))
+    * ([#398](https://github.com/karen-irc/option-t/pull/398))
+    * ([#399](https://github.com/karen-irc/option-t/pull/399))
+    * ([#400](https://github.com/karen-irc/option-t/pull/400))
+    * ([#401](https://github.com/karen-irc/option-t/pull/401))
+    * ([#402](https://github.com/karen-irc/option-t/pull/402))
+    * ([#404](https://github.com/karen-irc/option-t/pull/404))
+    * ([#405](https://github.com/karen-irc/option-t/pull/405))
 
 
 ## 20.1.0
