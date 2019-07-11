@@ -17,7 +17,7 @@ const nonSerializableObjectVal = [
     new Promise((resolve) => resolve()),
 ];
 
-const funcVal = [ function(){} ]; // eslint-disable-line no-empty-function;
+const funcVal = [ function(){} ]; // eslint-disable-line no-empty-function
 const symbolVal = [Symbol('')];
 
 module.exports = Object.freeze({
