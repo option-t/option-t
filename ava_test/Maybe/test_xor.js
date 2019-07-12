@@ -28,7 +28,7 @@ const TABLE = [
 ];
 
 for (const { a, b, expected } of TABLE) {
-    test.skip(`a=${String(a)}, b=${String(b)}`, (t) => {
+    test(`a=${String(a)}, b=${String(b)}`, (t) => {
 
         const actual = xorForMaybe(a, b);
         t.is(actual, expected, 'should be `' + String(expected) + '`');
