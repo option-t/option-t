@@ -57,7 +57,7 @@
     "cpx": "^1.5.0",
     "del-cli": "^2.0.0",
     "eslint": "^6.0.1",
-    "mocha": "^6.1.4",
+    "mocha": "^6.2.0",
     "power-assert": "^1.6.1",
     "rename-cli": "^6.0.0",
     "typescript": "~3.0.1"
