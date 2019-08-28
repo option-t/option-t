@@ -1,4 +1,4 @@
-// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/b7d54b8100028dcb39b809ea9fbdc34a2ce5a2cd/config/eslintrc_typescript.js
+// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/1bb3679af32852aa1355ee409f1be17250cbf59e/config/eslintrc_typescript.js
 
 // MIT License
 //
@@ -24,7 +24,7 @@
 // THE SOFTWARE.
 
 // XXX: To uniform the style of an object literals, we enable `quote-props`
-/*eslint quote-props: [2, "always"] no-magic-numbers: 0 */
+/* eslint quote-props: ['error', "always"] no-magic-numbers: 'off' */
 
 'use strict';
 
@@ -41,7 +41,9 @@ module.exports = {
         // TypeScript allows both forms of `[]` and `Array<T>`.
         // But typescript compiler also supports `ReadonlyArray<T>` builtin type and others.
         // So I seem it's nice to sort with `Array<T>` to decrease impedance mismatch.
-        '@typescript-eslint/array-type': ['warn', 'generic'],
+        '@typescript-eslint/array-type': ['warn', {
+            'default': 'generic',
+        }],
 
         // If you don't have use `await`, then it should be removed to reduce internal works.
         '@typescript-eslint/await-thenable': 'warn',
@@ -61,7 +63,22 @@ module.exports = {
         }],
 
         // A class & interface should be PascalCased
-        '@typescript-eslint/class-name-casing': 'error',
+        '@typescript-eslint/class-name-casing': ['error', {
+            // Don't export make it private.
+            'allowUnderscorePrefix': false,
+        }],
+
+        // Uniform the style.
+        '@typescript-eslint/consistent-type-assertions': ['warn', {
+            // Sort the style in both of ts and tsx.
+            'assertionStyle': 'as',
+            // `const` assertion is ignored by this rule.
+            // I think it's better to sort the type assertion style.
+            'objectLiteralTypeAssertions': 'never',
+        }],
+
+        // Each style has its own pros & cons.
+        '@typescript-eslint/consistent-type-definitions': 'off',
 
         // TODO: (#64) @typescript-eslint/explicit-function-return-type
 
@@ -74,10 +91,17 @@ module.exports = {
             },
         }],
 
-        // If we enable this, this setting only allow either `T` form or `TKey` form.
-        // In our internal codebase, however, enabling this rule increases the time to lint.
-        // We recommend to disable this rule if you'd like to decrease the time to lint.
-        '@typescript-eslint/generic-type-naming': ['error', '(^[A-Z]\\d?$|^T[A-Z][a-zA-Z]+\\d?$)'],
+
+        //  * We accept the style for T , TA , TAbc , TA1Bca , T1 , T2.
+        //      * You seem this style is similar to C# or typescript compiler.
+        //      * This choise is for:
+        //          * future readability
+        //          * expressiveness
+        //          * Our target is an application, not library.
+        //          * Automate code review process and avoid the bike-shedding.
+        //  * We don't allow the style for `R`, `K`, `V`, or other forms which we can see in Java or other many languages.
+        //      * It's short but less information.
+        '@typescript-eslint/generic-type-naming': ['error', '^T([A-Z0-9][a-zA-Z0-9]*){0,1}$'],
 
         // TODO: @typescript-eslint/indent
 
@@ -87,7 +111,11 @@ module.exports = {
         // > Do not use "I" as a prefix for interface names.
         //
         // We follow this.
-        '@typescript-eslint/interface-name-prefix': ['error', 'never'],
+        '@typescript-eslint/interface-name-prefix': ['error', {
+            'prefixWithI': 'never',
+            // Use no-export item to make it private.
+            // 'allowUnderscorePrefix': false,
+        }],
 
         // Sort with the preferred style (`;`) in TypeScript world.
         '@typescript-eslint/member-delimiter-style': ['warn', {
@@ -128,18 +156,23 @@ module.exports = {
             ],
         }],
 
-        // Sort the style in both of ts and tsx.
-        '@typescript-eslint/no-angle-bracket-type-assertion': 'error',
-
         // This should be sorted with ESLint builtin rule.
         'no-array-constructor': 'off',
         '@typescript-eslint/no-array-constructor': 'error',
+
+        // This should be sorted with ESLint builtin rule.
+        // Allow to set a no-op function.
+        'no-empty-function': 'off',
+        '@typescript-eslint/no-empty-function': 'off',
 
         // It works as a marker that to implement some interfaces.
         '@typescript-eslint/no-empty-interface': 'off',
 
         // Please opt-out this rule if you don't have any workarounds.
-        '@typescript-eslint/no-explicit-any': 'warn',
+        '@typescript-eslint/no-explicit-any': ['warn', {
+            // Even if rest arguments, we should mark them explicitly.
+            'ignoreRestArgs': false,
+        }],
 
         '@typescript-eslint/no-extraneous-class': ['warn', {
             'allowConstructorOnly': true,
@@ -148,6 +181,14 @@ module.exports = {
             // then we have a chance to refactoring them to simple module level variables.
             'allowStaticOnly': false,
         }],
+
+        // This should be sorted with ESLint builtin rule.
+        'no-extra-parens': 'off',
+        '@typescript-eslint/no-extra-parens': 'off',
+
+        // Of course, this might be redundant if you set unhandledrejection event handler.
+        // We still have some points which should be under discussion. See: #135
+        '@typescript-eslint/no-floating-promises': 'warn',
 
         // This is common pitfalls for beginners. We must ban.
         '@typescript-eslint/no-for-in-array': 'error',
@@ -160,6 +201,13 @@ module.exports = {
         // Ban the misused style aggressively
         '@typescript-eslint/no-misused-new': 'error',
 
+        '@typescript-eslint/no-misused-promises': ['warn', {
+            // It's nice to detect the part which we expect to use a boolean value.
+            'checksConditionals': true,
+            // We disable this option to allow `await` for event handler callbacks.
+            'checksVoidReturn': false,
+        }],
+
         // Only allow declarations. Use ES Module in almost projects.
         '@typescript-eslint/no-namespace': ['error', {
             'allowDeclarations': true,
@@ -168,9 +216,6 @@ module.exports = {
 
         // Please opt-out this rule if you don't have any workarounds.
         '@typescript-eslint/no-non-null-assertion': 'warn',
-
-        // Uniform the style.
-        '@typescript-eslint/no-object-literal-type-assertion': 'warn',
 
         // This TypeScript syntax is useful to reduce declarations of class properties.
         // However, we feel this syntax has these negative points:
@@ -190,14 +235,14 @@ module.exports = {
             'allowedNames': ['self'],
         }],
 
-        // Basically, use ES Module import. // <reference path="" /> is just special case.
-        '@typescript-eslint/no-triple-slash-reference': 'error',
-
         // Disabling this does not make sense completely.
         '@typescript-eslint/no-type-alias': 'off',
 
         // Try to detect redundant case,
         '@typescript-eslint/no-unnecessary-qualifier': 'warn',
+
+        // It's bad to force to skip to specify.
+        '@typescript-eslint/no-unnecessary-type-arguments': 'off',
 
         // We allow this this kind of redundant code because it sometimes prevents a mistake.
         '@typescript-eslint/no-unnecessary-type-assertion': 'off',
@@ -263,11 +308,15 @@ module.exports = {
         //  * They has same signatures.
         '@typescript-eslint/prefer-includes': 'warn',
 
-        // Each style has its own pros & cons.
-        '@typescript-eslint/prefer-interface': 'off',
-
         // This bans legacy syntax.
         '@typescript-eslint/prefer-namespace-keyword': 'error',
+
+        // This rule is nice for refactoring, but I suspect to enable this at all time.
+        // This only covers `private` property and I don't think that it's pretty useful
+        // to warn private properties' unnecessary mutability.
+        // I suspect it's noisy. Their properties is closed
+        // and their mutability would not be a complex problem in almost case.
+        '@typescript-eslint/prefer-readonly': 'off',
 
         // * We enable this rule to sorting the style in your project.
         // * I'm not sure about that this rule document says as the reason that `RegExp.prototype.exec()` is faster than
@@ -304,9 +353,26 @@ module.exports = {
         // For the future, we might be enable this. But this moment is not so.
         '@typescript-eslint/promise-function-async': 'off',
 
+        // We should sort with builtin rule.
+        'require-await': 'off',
+        '@typescript-eslint/require-await': 'off',
+
         // This detects a common mistake which uses `+` for diffrent types.
         '@typescript-eslint/restrict-plus-operands': 'warn',
 
+        // At v1.12, this rule does not support the idion to convert to boolean value from other type one
+        // like `!!<some non boolean value>`. So we disable this until fixing it.
+        // FIXME: #152
+        '@typescript-eslint/strict-boolean-expressions': 'off',
+
+        // Basically, use ES Module import. // <reference path="" /> is just special case.
+        '@typescript-eslint/triple-slash-reference': ['error', {
+            'path': 'never',
+            'types': 'never',
+            'lib': 'never',
+        }],
+
+        // TODO: @typescript-eslint/typedef
         // TODO: @typescript-eslint/type-annotation-spacing
 
         // In some case, function definition by overloading improves IntelliSense ergonomics.
