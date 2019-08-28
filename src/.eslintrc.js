@@ -15,7 +15,7 @@ module.exports = {
 
     'parserOptions': {
         'sourceType': 'module',
-        'project': path.resolve(__dirname, '../tsconfig.json'),
+        'project': path.resolve(__dirname, '../tsconfig_eslint.json'),
     },
 
     'env': {
@@ -25,5 +25,7 @@ module.exports = {
     },
 
     'rules': {
+        // We allow `K` or `V` forms to avoid to rewrite type parameters.
+        '@typescript-eslint/generic-type-naming': ['error', '(^[A-Z]\\d?$|^T[A-Z][a-zA-Z]+\\d?$)']
     }
 };
