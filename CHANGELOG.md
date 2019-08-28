@@ -2,6 +2,28 @@
 
 ## x.y.z
 
+
+## 20.2.0
+
+### New Feature
+
+* Implement `xor()` [#409](https://github.com/karen-irc/option-t/pull/409)).
+    * We have not completed to implement this for `Maybe<T>`.
+      We added the signature but we don't implement the actual implementation for it
+      because there are considerable options such [Nullish Coalescing Proposal](https://github.com/tc39/proposal-nullish-coalescing)
+      or [Optional Chaining Proposal](https://github.com/TC39/proposal-optional-chaining).
+
+### Internals
+
+* Update dev dependencies.
+    * See [v20.1.1...v20.2.0](https://github.com//karen-irc/option-t/compare/v20.1.1...v20.2.0).
+
+
+## 20.1.1
+
+Fix the changelog we missed to update in v20.1.0.
+
+
 ### Documentations
 
 * Add comments to not recommend to create `PlainOption`/`PlainResult` without factory functions ([#395](https://github.com/karen-irc/option-t/pull/395)).
