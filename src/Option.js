@@ -291,7 +291,7 @@ OptionBase.prototype = Object.freeze({
     toJSON: function OptionTtoJSON() {
         return {
             // eslint-disable-next-line @typescript-eslint/camelcase
-            is_some: this.ok, // eslint-disable-line camelcase
+            is_some: this.ok,
             value: this.val,
         };
     }

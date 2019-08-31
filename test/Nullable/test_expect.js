@@ -11,7 +11,6 @@ describe('Nullable::expect', () => {
             describe(String(value), () => {
                 const EXPECTED = value;
                 const EXPECTED_MSG = 'expected test';
-                // eslint-disable-next-line
                 let result;
                 let e = null;
                 before(() => {
@@ -57,7 +56,6 @@ describe('Nullable::expect', () => {
 
     describe('pass undefined', () => {
         const EXPECTED_MSG = 'expected test';
-        // eslint-disable-next-line
         let result;
         let e = null;
         before(() => {

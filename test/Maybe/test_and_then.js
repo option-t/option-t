@@ -10,7 +10,6 @@ describe('Maybe::andThen', () => {
         for (const value of nonNullableValue) {
             describe(String(value), () => {
                 const EXPECTED = value;
-                // eslint-disable-next-line
                 let result;
                 let called = 0;
 
@@ -34,7 +33,6 @@ describe('Maybe::andThen', () => {
 
     describe('pass null', () => {
         const DEFAULT_VAL = Symbol('');
-        // eslint-disable-next-line
         let result;
         let called = 0;
         before(() => {
@@ -55,7 +53,6 @@ describe('Maybe::andThen', () => {
 
     describe('pass undefined', () => {
         const DEFAULT_VAL = Symbol('');
-        // eslint-disable-next-line
         let result;
         let called = 0;
         before(() => {

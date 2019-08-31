@@ -11,7 +11,6 @@ describe('Maybe::expect', () => {
             describe(String(value), () => {
                 const EXPECTED = value;
                 const EXPECTED_MSG = 'expected test';
-                // eslint-disable-next-line
                 let result;
                 let e = null;
                 before(() => {

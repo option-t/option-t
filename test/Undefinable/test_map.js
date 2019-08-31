@@ -10,7 +10,6 @@ describe('Undefinable::mapForUndefinable', () => {
         for (const value of nonNullableValue) {
             describe(String(value), () => {
                 const EXPECTED = value;
-                // eslint-disable-next-line
                 let result;
                 let called = 0;
 
@@ -33,7 +32,6 @@ describe('Undefinable::mapForUndefinable', () => {
     });
 
     describe('pass null', () => {
-        // eslint-disable-next-line
         let result;
         let called = 0;
         before(() => {
