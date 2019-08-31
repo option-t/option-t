@@ -45,6 +45,8 @@ module.exports = {
         'node': true,
     },
 
+    'reportUnusedDisableDirectives': true,
+
     'rules': {
         'func-name-matching': 'off',
         'no-magic-numbers': 'off',
