@@ -13,7 +13,7 @@ describe('Nullable::isNotNull', () => {
         ['', true],
         [{}, true],
         [[], true],
-        [function(){}, true], // eslint-disable-line no-empty-function
+        [function(){}, true],
         [Symbol(''), true],
         [undefined, true],
         [null, false],
@@ -39,7 +39,7 @@ describe('Nullable::isNull', () => {
         ['', false],
         [{}, false],
         [[], false],
-        [function(){}, false], // eslint-disable-line no-empty-function
+        [function(){}, false],
         [Symbol(''), false],
         [undefined, false],
         [null, true],

@@ -10,7 +10,6 @@ describe('Nullable::unwrapOr', () => {
             describe(String(value), () => {
                 const DEFAULT_VAL = Math.random();
                 const EXPECTED = value;
-                // eslint-disable-next-line
                 let result;
                 let e = null;
                 before(() => {
@@ -35,7 +34,6 @@ describe('Nullable::unwrapOr', () => {
 
     describe('pass null', () => {
         const DEFAULT_VAL = Math.random();
-        // eslint-disable-next-line
         let result;
         before(() => {
             result = unwrapOrFromNullable(null, DEFAULT_VAL);
@@ -48,7 +46,6 @@ describe('Nullable::unwrapOr', () => {
 
     describe('pass undefined', () => {
         const DEFAULT_VAL = Math.random();
-        // eslint-disable-next-line
         let result;
         before(() => {
             result = unwrapOrFromNullable(undefined, DEFAULT_VAL);

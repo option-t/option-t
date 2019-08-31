@@ -10,7 +10,6 @@ describe('Maybe::tap', () => {
         for (const input of nonNullableValue) {
             describe(String(input), () => {
                 let called = 0;
-                // eslint-disable-next-line
                 let result;
 
                 before(() => {
@@ -31,7 +30,6 @@ describe('Maybe::tap', () => {
     });
 
     describe('pass null', () => {
-        // eslint-disable-next-line
         let result;
         let called = 0;
 
@@ -51,7 +49,6 @@ describe('Maybe::tap', () => {
     });
 
     describe('pass undefined', () => {
-        // eslint-disable-next-line
         let result;
         let called = 0;
         before(() => {

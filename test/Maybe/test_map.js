@@ -10,7 +10,6 @@ describe('Maybe::mapForMaybe', () => {
         for (const value of nonNullableValue) {
             describe(String(value), () => {
                 const EXPECTED = value;
-                // eslint-disable-next-line
                 let result;
                 let called = 0;
 

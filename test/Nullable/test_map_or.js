@@ -10,7 +10,6 @@ describe('Nullable::mapOr', () => {
         for (const value of nonNullableValue) {
             describe(String(value), () => {
                 const EXPECTED = value;
-                // eslint-disable-next-line
                 let result;
                 let called = 0;
 
@@ -35,7 +34,6 @@ describe('Nullable::mapOr', () => {
     describe('pass null', () => {
         const DEFAULE_VAL = Symbol('');
         const COMPUTED_VAL = Symbol('');
-        // eslint-disable-next-line
         let result;
         let called = 0;
         before(() => {
@@ -57,7 +55,6 @@ describe('Nullable::mapOr', () => {
     describe('pass undefined', () => {
         const DEFAULE_VAL = Symbol('');
         const COMPUTED_VAL = Symbol('');
-        // eslint-disable-next-line
         let result;
         let called = 0;
         before(() => {

@@ -13,7 +13,7 @@ describe('Undefinable::isNotUndefined', () => {
         ['', true],
         [{}, true],
         [[], true],
-        [function(){}, true], // eslint-disable-line no-empty-function
+        [function(){}, true],
         [Symbol(''), true],
         [undefined, false],
         [null, true],
@@ -39,7 +39,7 @@ describe('Undefinable::isUndefined', () => {
         ['', false],
         [{}, false],
         [[], false],
-        [function(){}, false], // eslint-disable-line no-empty-function
+        [function(){}, false],
         [Symbol(''), false],
         [undefined, true],
         [null, false],

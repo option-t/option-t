@@ -10,7 +10,6 @@ describe('Maybe::mapOr', () => {
         for (const value of nonNullableValue) {
             describe(String(value), () => {
                 const EXPECTED = value;
-                // eslint-disable-next-line
                 let result;
                 let called = 0;
 
@@ -34,7 +33,6 @@ describe('Maybe::mapOr', () => {
 
     describe('pass null', () => {
         const DEFAULE_VAL = Symbol('');
-        // eslint-disable-next-line
         let result;
         let called = 0;
         before(() => {
@@ -54,7 +52,6 @@ describe('Maybe::mapOr', () => {
 
     describe('pass undefined', () => {
         const DEFAULE_VAL = Symbol('');
-        // eslint-disable-next-line
         let result;
         let called = 0;
         before(() => {

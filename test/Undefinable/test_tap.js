@@ -9,7 +9,6 @@ describe('Undefinable::tap', () => {
     describe('pass the value', () => {
         for (const input of nonNullableValue) {
             describe(String(input), () => {
-                // eslint-disable-next-line
                 let result;
                 let called = 0;
 
@@ -31,7 +30,6 @@ describe('Undefinable::tap', () => {
     });
 
     describe('pass null', () => {
-        // eslint-disable-next-line
         let result;
         let called = 0;
         before(() => {
@@ -50,7 +48,6 @@ describe('Undefinable::tap', () => {
     });
 
     describe('pass undefined', () => {
-        // eslint-disable-next-line
         let result;
         let called = 0;
         before(() => {

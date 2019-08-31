@@ -11,7 +11,6 @@ describe('Nullable::orElseForNullable', () => {
             describe(String(value), () => {
                 const DEFAULT_VAL = Math.random();
                 const EXPECTED = value;
-                // eslint-disable-next-line
                 let result;
                 let called = 0;
 
@@ -35,7 +34,6 @@ describe('Nullable::orElseForNullable', () => {
 
     describe('pass null', () => {
         const DEFAULT_VAL = Math.random();
-        // eslint-disable-next-line
         let result;
         let called = 0;
         before(() => {
@@ -56,7 +54,6 @@ describe('Nullable::orElseForNullable', () => {
 
     describe('pass undefined', () => {
         const DEFAULT_VAL = Math.random();
-        // eslint-disable-next-line
         let result;
         let called = 0;
         before(() => {

@@ -10,7 +10,6 @@ describe('Nullable::unwrap', () => {
         for (const value of nonNullableValue) {
             describe(String(value), () => {
                 const EXPECTED = value;
-                // eslint-disable-next-line
                 let result;
                 let e = null;
                 before(() => {
@@ -50,7 +49,6 @@ describe('Nullable::unwrap', () => {
     });
 
     describe('pass undefined', () => {
-        // eslint-disable-next-line
         let result;
         let e = null;
         before(() => {

@@ -9,7 +9,6 @@ const { tapOption } = require('../../__dist/cjs/PlainOption/tap');
 test('input is Some', (t) => {
     const INPUT_INNER = Symbol('input');
 
-    // eslint-disable-next-line
     let arg;
 
     t.plan(3);
