@@ -3,6 +3,13 @@
 ## x.y.z
 
 
+## 20.2.1
+
+### Internals
+
+* Enable `reportUnusedDisableDirectives` to warn unused disable ESLint directives [#428](https://github.com/karen-irc/option-t/pull/428)).
+
+
 ## 20.2.0
 
 ### New Feature
