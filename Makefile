@@ -184,17 +184,9 @@ test: lint build run_ava mocha tscheck test_distribution_contain_all ## Run all 
 tscheck: clean_type_test build ## Test check typing consistency.
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --noEmit
 
-.PHONY: test_preprocess
-test_preprocess: clean_test_cache
-	$(NPM_BIN)/babel $(SRC_TEST_DIR) --out-dir $(TEST_CACHE_DIR) --extensions .js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.power_assert.js
-
 .PHONY: mocha
-mocha: test_preprocess build
-	$(MAKE) run_mocha_with_power_assert -C $(CURDIR)
-
-.PHONY: run_mocha_with_power_assert
-run_mocha_with_power_assert:
-	$(NPM_BIN)/mocha --recursive '$(TEST_CACHE_DIR)/**/test_*.js' --reporter $(MOCHA_REPORTER)
+mocha: build
+	$(MAKE) run_mocha -C $(CURDIR)
 
 .PHONY: run_mocha
 run_mocha: ## Run mocha without any transforms.
