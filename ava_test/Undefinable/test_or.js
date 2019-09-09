@@ -1,11 +1,9 @@
-'use strict';
-
-const assert = require('assert');
+import test from 'ava';
 
 const { orForUndefinable } = require('../../__dist/cjs/Undefinable/or');
 const { nonNullableValue } = require('../utils');
 
-describe('Undefinable::or', () => {
+test('Undefinable::or', (t) => {
     const LEFT = Symbol('a');
     const RIGHT = Symbol('b');
 
@@ -36,8 +34,6 @@ describe('Undefinable::or', () => {
     ];
 
     for (const [a, b, expected] of list) {
-        it(`a=${String(a)}, b=${String(b)}`, () => {
-            assert.strictEqual(orForUndefinable(a, b), expected);
-        });
+        t.is(orForUndefinable(a, b), expected, `a=${String(a)}, b=${String(b)}`);
     }
 });

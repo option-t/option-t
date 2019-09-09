@@ -1,11 +1,9 @@
-'use strict';
+import test from 'ava';
 
-const assert = require('assert');
+import { andForUndefinable } from '../../__dist/cjs/Undefinable/and';
+import { nonNullableValue } from '../utils';
 
-const { andForUndefinable } = require('../../__dist/cjs/Undefinable/and');
-const { nonNullableValue } = require('../utils');
-
-describe('Undefinable::and', () => {
+test('Undefinable::and', (t) => {
     const LEFT = Symbol('a');
     const RIGHT = Symbol('b');
 
@@ -36,8 +34,6 @@ describe('Undefinable::and', () => {
     ];
 
     for (const [a, b, expected] of list) {
-        it(`a=${String(a)}, b=${String(b)}`, () => {
-            assert.strictEqual(andForUndefinable(a, b), expected);
-        });
+        t.is(andForUndefinable(a, b), expected, `a=${String(a)}, b=${String(b)}`);
     }
 });
