@@ -6,6 +6,14 @@ version: 2.1
 workspace_root: &workspace_root
     ~/repo
 
+node_modules_dir: &node_modules_dir
+    # XXX: should use glob?
+    node_modules/
+
+yarnpkg_cache_dir: &yarnpkg_cache_dir
+    # We'd like to use the absolute path, but CircleCI command parser does not allow it.
+    ./.cache/yarn
+
 
 ###########################################
 # Executors Definitions
@@ -15,35 +23,122 @@ executors:
         working_directory: *workspace_root
         docker:
             - image: node:10-buster
+        environment:
+            YARN_CACHE_FOLDER: *yarnpkg_cache_dir
 
     latest_nodejs_executor:
         working_directory: *workspace_root
         docker:
             - image: node:latest
+        environment:
+            YARN_CACHE_FOLDER: *yarnpkg_cache_dir
 
 
 ###########################################
 # Commands Definitions
 ###########################################
 commands:
+    ###########################################
+    # Bootstrap Commands
+    ###########################################
+    install_npm_dependency:
+        description: "Install dependencies for Node.js"
+        steps:
+            - run:
+                command: |
+                    if [ -z "$YARN_CACHE_FOLDER" ]; then
+                        echo '$YARN_CACHE_FOLDER  is undefined or empty string'
+                        exit 1
+                    fi
+                    yarn install
+
+
+###########################################
+# Cache Commands
+###########################################
+cmd_restore_cache: &cmd_restore_cache
+    restore_cache:
+        keys:
+            # By [the document](https://circleci.com/docs/2.0/caching/),
+            # Circle CI 2.0 does not have any interfaces to clear caches which we stored from the past.
+            # And Ciecle CI 2.0's cache system strongly depends on a cache naming.
+            #
+            # So we should (must) add a "version" prefix to enable to clear all old caches.
+            #   * If we'd like to clear caches, then we should increment the prefix. lol
+            #   * The lifecycle is [here](https://circleci.com/docs/2.0/configuration-reference/#attach_workspace).
+            #
+            # By these things, it's not good that construcing strong (macthing widely) cache hierarchy.
+            # If we construct a strong (macthing widely) cache hierarchy,
+            # we need to clean up it periodically by hand.
+            #
+            # Thus we use the check sum of `yarn.lock` as the cache key.
+            # Because:
+            #   1. Even if we use only 1 cache stage which usses the check sum of `yarn.lock`,
+            #      it's not be a serious problem which misses cache hit by modifying yarn.lock frequently.
+            #   2. Today, we don't do dependency gardening every day. It would happens per 1~2 weeks.
+            #      So the cache hit miss rate would be low.
+            #   3. I don't think our code base would scale to gigantic mono-repository
+            #      depending on many npm packages with the order of magnitude.
+            #   4. We cache yarnpkg's cache, not `node_modules/`. This cache is construced by `yarn.lock`.
+            #      If we change `yarn.lock`, then the CircleCI cache would be reconstructed cleanly.
+            - v0-dep-{{ arch }}-{{ checksum "yarn.lock" }}
+
+cmd_save_cache: &cmd_save_cache
+    save_cache:
+        key: v0-dep-{{ arch }}-{{ checksum "yarn.lock" }}-{{ epoch }}
+        paths:
+            # If we include `node_modules`, this step will require a 2min~ to complete this.
+            # So I upload only `~/.cache/yarn`.
+            # There is no problem because yarnpkg would use it to construct each of `node_modules/`.
+            #
+            # Of course, if there is no `node_modules/`,
+            # yarnpkg requires more times to setup it than there is a cache of `node_modules/`.
+            # However, `yarn install` does not take longer time than uploading `node_modules/`.
+            # By this result, I don't upload `node_modules/`.
+            - *yarnpkg_cache_dir
+
+
+###########################################
+# Workspaces Commands
+###########################################
+cmd_attach_workspace: &cmd_attach_workspace
+    attach_workspace:
+        at: *workspace_root
+
+cmd_persist_to_workspace_with_dependency_cache: &cmd_persist_to_workspace_with_dependency_cache
+    persist_to_workspace:
+        root: *workspace_root
+        paths:
+            - *yarnpkg_cache_dir
 
 
 ###########################################
 # Job Definitions
 ###########################################
 jobs:
-   minimum_build_and_test_for_every_change:
-        executor: nodejs_10_executor
-        steps:
-            - checkout
-            - run: yarn install
-            - run: make ci -j 8
-
-   latest_build_and_test_for_every_change:
+    install_dependencies:
         executor: latest_nodejs_executor
         steps:
             - checkout
-            - run: yarn install
+            - *cmd_restore_cache
+            - install_npm_dependency
+            - *cmd_save_cache
+            - *cmd_persist_to_workspace_with_dependency_cache
+
+    minimum_build_and_test_for_every_change:
+        executor: nodejs_10_executor
+        steps:
+            - checkout
+            - *cmd_attach_workspace
+            - install_npm_dependency
+            - run: make ci -j 8
+
+    latest_build_and_test_for_every_change:
+        executor: latest_nodejs_executor
+        steps:
+            - checkout
+            - *cmd_attach_workspace
+            - install_npm_dependency
             - run: make ci -j 8
 
 
@@ -65,9 +160,17 @@ workflows:
     version: 2
     build_and_test:
         jobs:
+            - install_dependencies:
+                filters:
+                    <<: *ignore_branches_for_bors
+
             - minimum_build_and_test_for_every_change:
+                requires:
+                    - install_dependencies
                 filters:
                     <<: *ignore_branches_for_bors
             - latest_build_and_test_for_every_change:
+                requires:
+                    - install_dependencies
                 filters:
                     <<: *ignore_branches_for_bors
