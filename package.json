@@ -64,7 +64,7 @@
   "typings": "./cjs/index.d.ts",
   "ava": {
     "files": [
-      "ava_test/**/test_*.js"
+      "ava_test/**/*.test.js"
     ],
     "babel": {
       "testOptions": {
