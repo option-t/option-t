@@ -5,7 +5,7 @@ NPM_CMD := npm
 
 SRC_DIR := $(CURDIR)/src
 DOCS_DIR := $(CURDIR)/docs
-SRC_TEST_DIR := $(CURDIR)/test
+SRC_TEST_DIR := $(CURDIR)/__tests__
 
 DIST_DIR := $(CURDIR)/__dist
 DIST_DOCS_DIR := $(DIST_DIR)/docs
@@ -190,7 +190,7 @@ mocha: build
 
 .PHONY: run_mocha
 run_mocha: ## Run mocha without any transforms.
-	$(NPM_BIN)/mocha --recursive '$(SRC_TEST_DIR)/**/test_*.js' --reporter $(MOCHA_REPORTER)
+	$(NPM_BIN)/mocha --recursive '$(SRC_TEST_DIR)/**/*.test.js' --reporter $(MOCHA_REPORTER)
 
 .PHONY: run_ava
 run_ava: build

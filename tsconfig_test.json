@@ -6,5 +6,9 @@
             "es2017"
         ],
         "noUnusedLocals": false // for testing
-    }
+    },
+    "include": [
+      "src/**/**.ts",
+      "__tests__/**/**.test.ts"
+  ]
 }
