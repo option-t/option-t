@@ -52,6 +52,16 @@ commands:
                     fi
                     yarn install
 
+    ###########################################
+    # Test Commands
+    ###########################################
+    test_all:
+        description: "Test all required items"
+        steps:
+            - run: make clean -j
+            - run: make test -j
+            - run: make git_diff -j
+
 
 ###########################################
 # Cache Commands
@@ -131,7 +141,7 @@ jobs:
             - checkout
             - *cmd_attach_workspace
             - install_npm_dependency
-            - run: make ci -j 8
+            - test_all
 
     latest_build_and_test_for_every_change:
         executor: latest_nodejs_executor
@@ -139,7 +149,7 @@ jobs:
             - checkout
             - *cmd_attach_workspace
             - install_npm_dependency
-            - run: make ci -j 8
+            - test_all
 
 
 ###########################################
