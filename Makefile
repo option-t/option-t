@@ -214,16 +214,6 @@ run_test_distribution_contain_all:
 
 
 ###########################
-# CI
-###########################
-.PHONY: ci
-ci:
-	$(MAKE) clean
-	$(MAKE) test
-	$(MAKE) git_diff
-
-
-###########################
 # Tools
 ###########################
 .PHONY: fmt

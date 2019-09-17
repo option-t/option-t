@@ -58,7 +58,9 @@ commands:
     test_all:
         description: "Test all required items"
         steps:
-            - run: make ci -j 8
+            - run: make clean -j
+            - run: make test -j
+            - run: make git_diff -j
 
 
 ###########################################
