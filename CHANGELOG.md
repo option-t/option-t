@@ -2,6 +2,13 @@
 
 ## x.y.z
 
+## 20.2.4
+
+* Remove power-assert ([#446](https://github.com/karen-irc/option-t/pull/446)).
+* Rename all tests ([#452](https://github.com/karen-irc/option-t/pull/452)).
+* Update dev dependencies.
+* See more details: [v20.2.1...v20.2.2](https://github.com//karen-irc/option-t/compare/v20.2.3...v20.2.4).
+
 
 ## 20.2.3
 
