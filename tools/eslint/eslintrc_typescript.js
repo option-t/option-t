@@ -1,4 +1,4 @@
-// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/1bb3679af32852aa1355ee409f1be17250cbf59e/config/eslintrc_typescript.js
+// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/a636ef1d226a6ea9004350894318b9cc9ce8f814/config/eslintrc_typescript.js
 
 // MIT License
 //
@@ -55,6 +55,9 @@ module.exports = {
         // It will not be too much warn about it.
         '@typescript-eslint/ban-ts-ignore': 'error',
 
+        // We should sort with builtin rule.
+        '@typescript-eslint/brace-style': 'off',
+
         // This should be sorted with ESLint builtin rule.
         'camelcase': 'off',
         '@typescript-eslint/camelcase': ['error', {
@@ -85,6 +88,7 @@ module.exports = {
         // It's redundant to enforce to supply `public`.
         '@typescript-eslint/explicit-member-accessibility': ['warn', {
             'accessibility': 'no-public',
+            // 'ignoredMethodNames': [],
             'overrides': {
                 // Fro parameter properties, all items should be explicited.
                 'parameterProperties': 'explicit',
@@ -188,7 +192,10 @@ module.exports = {
 
         // Of course, this might be redundant if you set unhandledrejection event handler.
         // We still have some points which should be under discussion. See: #135
-        '@typescript-eslint/no-floating-promises': 'warn',
+        '@typescript-eslint/no-floating-promises': ['warn', {
+            // Promise might reject even if the its returned value is `void`.
+            'ignoreVoid': false,
+        }],
 
         // This is common pitfalls for beginners. We must ban.
         '@typescript-eslint/no-for-in-array': 'error',
@@ -197,6 +204,19 @@ module.exports = {
         // However, over omission would increases compile (type checking) time and
         // lacks the aspect of type annotation benefits as _documentation_.
         '@typescript-eslint/no-inferrable-types': 'off',
+
+        // This should be sorted with ESLint builtin rule.
+        'no-magic-numbers': 'off',
+        '@typescript-eslint/no-magic-numbers': ['warn', {
+            // Allow these values which are used commonly in test, flags, or others.
+            'ignore': [0, 1],
+
+            // Even if we use magic number, it would not be difficult for type & enum...
+            'ignoreNumericLiteralTypes': true,
+            'ignoreReadonlyClassProperties': false, // there is no difference with the case of normal const var.
+            'ignoreEnums': true,
+
+        }],
 
         // Ban the misused style aggressively
         '@typescript-eslint/no-misused-new': 'error',
@@ -237,6 +257,11 @@ module.exports = {
 
         // Disabling this does not make sense completely.
         '@typescript-eslint/no-type-alias': 'off',
+
+        // This would find the possibility which we can unnecessary condition.
+        '@typescript-eslint/no-unnecessary-condition': ['warn', {
+            'ignoreRhs': false,
+        }],
 
         // Try to detect redundant case,
         '@typescript-eslint/no-unnecessary-qualifier': 'warn',
@@ -352,6 +377,13 @@ module.exports = {
         //
         // For the future, we might be enable this. But this moment is not so.
         '@typescript-eslint/promise-function-async': 'off',
+
+        // We should sort with builtin rule.
+        'quotes': 'off',
+        '@typescript-eslint/quotes': ['error', 'single', {
+            'avoidEscape': true,
+            'allowTemplateLiterals': true,
+        }],
 
         // We should sort with builtin rule.
         'require-await': 'off',
