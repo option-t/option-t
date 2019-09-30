@@ -149,14 +149,9 @@ interface Resultable<T, E> {
     drop(destructor?: TapFn<T>, errDestructor?: TapFn<E>): void;
 }
 
-/**
- *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
- *
- * XXX:
- * This is only used for the instanceof-basis runtime checking. (e.g. `React.PropTypes.instanceOf()`)
- * You MUST NOT use for other purpose.
- */
+// XXX:
+// This is only used for the instanceof-basis runtime checking. (e.g. `React.PropTypes.instanceOf()`)
+// You MUST NOT use for other purpose.
 export abstract class ResultBase<T, E> implements Resultable<T, E> {
     private readonly _isOk: boolean;
     private readonly _v: T | undefined;
@@ -205,9 +200,6 @@ interface Err<T, E> extends Resultable<T, E> {
 }
 
 /**
- *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
- *
  *  The Result/Either type interface whose APIs are inspired
  *  by Rust's `std::result::Result<T, E>`.
  *

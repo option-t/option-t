@@ -25,9 +25,6 @@
 /* eslint-enable valid-jsdoc */
 
 /**
- *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
- *
  *  @constructor
  *  @template   T
  *  @param  {boolean}   ok
@@ -301,9 +298,6 @@ OptionBase.prototype = Object.freeze({
 });
 
 /**
- *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
- *
  *  @template   T
  *  @param  {T}   val
  *  @return    {OptionT<T>}
@@ -314,9 +308,6 @@ export function createSome(val) {
 }
 
 /**
- *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
- *
  *  @template   T
  *  @return    {OptionT<T>}
  */
