@@ -3,6 +3,9 @@ import { createSome, createNone } from './Option';
 /* eslint-enable valid-jsdoc */
 
 /**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ *
  *  @constructor
  *  @template   T, E
  *  @param  {boolean}   ok
@@ -336,6 +339,9 @@ ResultBase.prototype = Object.freeze({
 });
 
 /**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ *
  *  @template   T, E
  *  @param  {!T} v
  *  @return    {Result<T, E>}
@@ -346,6 +352,9 @@ export function createOk(v) {
 }
 
 /**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ *
  *  @template   T, E
  *  @param  {!E} e
  *  @return    {Result<T, E>}
