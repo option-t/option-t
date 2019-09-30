@@ -2,12 +2,21 @@
 
 ## x.y.z
 
+
+## 20.3.0
+
+* Mark legacy `Option<T>` and `Result<T, E>` as _deprecated_ ([#462](https://github.com/karen-irc/option-t/pull/462)).
+    * This does mean that we don't recommend to use them in your newer code.
+    * This does not mean that we drop them soon.
+* [See more details](https://github.com//karen-irc/option-t/compare/v20.2.4...v20.3.0).
+
+
 ## 20.2.4
 
 * Remove power-assert ([#446](https://github.com/karen-irc/option-t/pull/446)).
 * Rename all tests ([#452](https://github.com/karen-irc/option-t/pull/452)).
 * Update dev dependencies.
-* See more details: [v20.2.1...v20.2.2](https://github.com//karen-irc/option-t/compare/v20.2.3...v20.2.4).
+* See more details: [v20.2.3...v20.2.4](https://github.com//karen-irc/option-t/compare/v20.2.3...v20.2.4).
 
 
 ## 20.2.3
