@@ -164,6 +164,9 @@ interface Optionable<T> {
 }
 
 /**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ *
  *  The base object of `Some<T>` and `None<T>`.
  *
  *  XXX:
@@ -226,6 +229,9 @@ interface None<T> extends Optionable<T> {
 }
 
 /**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ *
  *  The Option/Maybe type interface whose APIs are inspired
  *  by Rust's `std::option::Option<T>`.
  *
