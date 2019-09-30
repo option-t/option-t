@@ -118,7 +118,7 @@ yarn add option-t --save
     * plain objects
         * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/)
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
-* Wrapper objects ([__*deperecated*__](https://github.com/karen-irc/option-t/issues/459)).
+* Wrapper objects ([__*deprecated*__](https://github.com/karen-irc/option-t/issues/459)).
     * [`Option<T>`](./src/Option.d.ts)
     * [`Result<T, E>`](./src/Result.d.ts)
 

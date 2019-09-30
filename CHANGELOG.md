@@ -285,7 +285,7 @@ _`v20.0.0` is a missing number_.
         * It's hard for almost JS code minifier to minify a property on prototype chain.
 * So we decide to no-recommend _wrapper objects_ without any strong motivation.
     * This does not mean to make them obsolete or deprecate **now**.
-    * We don't have any concrete plan to deperecate these API.
+    * We don't have any concrete plan to deprecate these API.
     * Of course, however, we would lower priorities of them.
 
 
