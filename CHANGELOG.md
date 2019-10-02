@@ -6,9 +6,9 @@
 
 ### Breaking Changes
 
-* Update typescript compiler to v3.6 ([#427](https://github.com/karen-irc/option-t/pull/427)).
+* Update typescript compiler to v3.7 ([#427](https://github.com/karen-irc/option-t/pull/427)).
     * By this change, we would be able to use some new language features for the future change.
-      Then they might make our `d.ts` imcompatible with typescript v3.5 or earlier.
+      Then they might make our `d.ts` imcompatible with typescript v3.6 or earlier.
     * This version is only change the baseline.
 * Replace the minimum support version of Node.js from v10 to v12.
 * [See more details](https://github.com//karen-irc/option-t/compare/v20.3.1...v21.0.0).
