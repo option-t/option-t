@@ -9,6 +9,6 @@
     },
     "include": [
       "src/**/**.ts",
-      "__tests__/**/**.test.ts"
+      "ava_test/**/**.test.ts"
   ]
 }
