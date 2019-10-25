@@ -3,6 +3,12 @@
 ## x.y.z
 
 
+## 20.3.1
+
+* Update a bunch of dependencies.
+* [See more details](https://github.com//karen-irc/option-t/compare/v20.3.0...v20.3.1).
+
+
 ## 20.3.0
 
 * Mark legacy `Option<T>` and `Result<T, E>` as _deprecated_ ([#462](https://github.com/karen-irc/option-t/pull/462)).
