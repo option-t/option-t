@@ -18,9 +18,7 @@ TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
 
 ## In CI environment, we should change some configuration
 ifeq ($(CI),true)
-	MOCHA_REPORTER = spec
 else
-	MOCHA_REPORTER = nyan
 endif
 
 
@@ -178,19 +176,11 @@ eslint:
 # Test
 ###########################
 .PHONY: test
-test: lint build run_ava mocha tscheck test_distribution_contain_all ## Run all tests
+test: lint build run_ava tscheck test_distribution_contain_all ## Run all tests
 
 .PHONY: tscheck
 tscheck: clean_type_test build ## Test check typing consistency.
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --noEmit
-
-.PHONY: mocha
-mocha: build
-	$(MAKE) run_mocha -C $(CURDIR)
-
-.PHONY: run_mocha
-run_mocha: ## Run mocha without any transforms.
-	$(NPM_BIN)/mocha --recursive '$(SRC_TEST_DIR)/**/*.test.js' --reporter $(MOCHA_REPORTER)
 
 .PHONY: run_ava
 run_ava: build

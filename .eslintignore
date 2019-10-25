@@ -8,5 +8,5 @@ node_modules/
 !.eslintrc.js
 
 # FIXME: remove these from here
-__tests__/Option/type_definition.test.ts
-__tests__/Result/type_definition_es6.test.ts
+__tests__/ClassOption/type_definition.test.ts
+__tests__/ClassResult/type_definition_es6.test.ts
