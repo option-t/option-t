@@ -19,10 +19,10 @@ yarnpkg_cache_dir: &yarnpkg_cache_dir
 # Executors Definitions
 ###########################################
 executors:
-    nodejs_10_executor:
+    nodejs_12_executor:
         working_directory: *workspace_root
         docker:
-            - image: node:10-buster
+            - image: node:12-buster
         environment:
             YARN_CACHE_FOLDER: *yarnpkg_cache_dir
 
@@ -136,7 +136,7 @@ jobs:
             - *cmd_persist_to_workspace_with_dependency_cache
 
     minimum_build_and_test_for_every_change:
-        executor: nodejs_10_executor
+        executor: nodejs_12_executor
         steps:
             - checkout
             - *cmd_attach_workspace
