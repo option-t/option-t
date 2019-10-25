@@ -21,35 +21,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+import test from 'ava';
 
-'use strict';
+const {
+    createOk,
+    createErr,
+    ResultBase,
+} = require('../../__dist/cjs/Result');
 
-const assert = require('assert');
+test('Ok<T> should be instanceof `ResultBase`', (t) => {
+    const result = createOk(1);
+    t.true(result instanceof ResultBase);
+});
 
-const { ResultBase, createOk, createErr } = require('../../__dist/cjs/Result');
-
-describe('Inheritance for `Result<T, E>`', function(){
-    describe('Ok<T>', function () {
-        let result = null;
-
-        before(function(){
-            result = createOk(1);
-        });
-
-        it('should be instanceof `ResultBase`', function() {
-            assert.strictEqual(result instanceof ResultBase, true);
-        });
-    });
-
-    describe('Err<E>', function () {
-        let result = null;
-
-        before(function(){
-            result = createErr(2);
-        });
-
-        it('should be instanceof `ResultBase`', function() {
-            assert.strictEqual(result instanceof ResultBase, true);
-        });
-    });
+test('Err<E> should be instanceof `ResultBase`', (t) => {
+    const result = createErr(2);
+    t.true(result instanceof ResultBase);
 });

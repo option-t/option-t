@@ -21,43 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+import test from 'ava';
 
-'use strict';
+const {
+    createOk,
+    createErr,
+} = require('../../__dist/cjs/Result');
+const EXPECTED_OK = Symbol('expected_ok');
+const EXPECTED_ERR = Symbol('expected_err');
 
-const assert = require('assert');
+test('Ok<T>', (t) => {
+    const ok = createOk(EXPECTED_OK);
 
-const { createOk, createErr } = require('../../__dist/cjs/Result');
+    t.true(ok.ok().isSome, 'return `Some<T>`');
+    t.is(ok.ok().unwrap(), EXPECTED_OK, 'the inner value is expected');
+});
 
-const EXPECTED_OK = 'expected_ok';
-const EXPECTED_ERR = 'expected_err';
-
-describe('Result<T, E>.unwrapErr()', function(){
-    describe('Err<E>', function () {
-        let caught = null;
-
-        before(function(){
-            const result = createOk(EXPECTED_OK);
-            try {
-                result.unwrapErr();
-            }
-            catch (e) {
-                caught = e;
-            }
-        });
-
-        it('is instance of `Error`', function () {
-            assert.strictEqual((caught instanceof TypeError), true);
-        });
-
-        it('the error message is expected', function () {
-            assert.strictEqual(caught.message, 'called `unwrapErr()` on a `Ok` value');
-        });
-    });
-
-    describe('Err<E>', function () {
-        it('should be expected value', function () {
-            const ok = createErr(EXPECTED_ERR);
-            assert.strictEqual(ok.unwrapErr(), EXPECTED_ERR);
-        });
-    });
+test('Err<E>', (t) => {
+    const err = createErr(EXPECTED_ERR);
+    t.true(err.ok().isNone, 'return `None<T>`');
 });

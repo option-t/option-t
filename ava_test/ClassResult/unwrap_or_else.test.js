@@ -21,44 +21,53 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+import test from 'ava';
 
-'use strict';
+const {
+    createOk,
+    createErr,
+} = require('../../__dist/cjs/Result');
 
-const assert = require('assert');
+test('Ok<T>', function (t) {
+    t.plan(2);
 
-const { createOk, createErr } = require('../../__dist/cjs/Result');
+    const EXPECTED = Symbol('EXPECTED');
+    const NOT_EXPECTED = Symbol('NOT_EXPECTED');
 
-const EXPECTED_OK = 'expected_ok';
-const EXPECTED_ERR = 'expected_err';
+    let acutual = null;
+    const op = function () {
+        t.fail('the `op` callback should not be called');
+        return NOT_EXPECTED;
+    };
 
-describe('Result<T, E>.unwrap()', function(){
-    describe('Ok<T>', function () {
-        it('should be expected value', function () {
-            const ok = createOk(EXPECTED_OK);
-            assert.strictEqual(ok.unwrap(), EXPECTED_OK);
-        });
-    });
+    t.not(acutual, EXPECTED);
 
-    describe('Err<E>', function () {
-        let caught = null;
-        let err = null;
+    const result = createOk(EXPECTED);
+    acutual = result.unwrapOrElse(op);
 
-        before(function(){
-            err = createErr(EXPECTED_ERR);
-            try {
-                err.unwrap();
-            }
-            catch (e) {
-                caught = e;
-            }
-        });
+    t.is(acutual, EXPECTED, 'the returned is expected');
+});
 
-        it('is instance of `Error`', function () {
-            assert.strictEqual((caught instanceof TypeError), true);
-        });
+test('Err<E>', function (t) {
+    t.plan(5);
 
-        it('the error message is expected', function () {
-            assert.strictEqual(caught.message, 'called `unwrap()` on a `Err` value');
-        });
-    });
+    const ORIGINAL = Symbol('ORIGINAL');
+    const EXPECTED = Symbol('EXPECTED');
+
+    let argument = null;
+    let acutual = null;
+    const op = function (v) {
+        argument = v;
+        t.pass();
+        return EXPECTED;
+    };
+
+    t.not(argument, ORIGINAL);
+    t.not(acutual, EXPECTED);
+
+    const result = createErr(ORIGINAL);
+    acutual = result.unwrapOrElse(op);
+
+    t.is(argument, ORIGINAL, 'the argument of `op` is expeced');
+    t.is(acutual, EXPECTED, 'the returned is expected');
 });
