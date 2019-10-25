@@ -2,6 +2,8 @@
 
 ## x.y.z
 
+* Replace the minimum support version of Node.js from v10 to v12.
+* [See more details](https://github.com//karen-irc/option-t/compare/v20.3.1...).
 
 ## 20.3.1
 
