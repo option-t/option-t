@@ -21,37 +21,44 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+import test from 'ava';
 
-'use strict';
+const {
+    createOk,
+    createErr,
+} = require('../../__dist/cjs/Result');
 
-const assert = require('assert');
+const EXPECTED = Symbol('0');
+const UNEXPECTED = Symbol('1');
 
-const { createOk, createErr } = require('../../__dist/cjs/Result');
+function toLabel(input) {
+    if (input.isOk()) {
+        return 'Ok<T>';
+    } else {
+        return 'Err<E>';
+    }
+}
 
-const EXPECTED_OK = 'expected_ok';
-const EXPECTED_ERR = 'expected_err';
-
-describe('Result<T, E>.err()', function(){
-    describe('Ok<T>', function () {
-        it('return `None<E>`', function () {
-            const ok = createOk(EXPECTED_OK);
-            assert.strictEqual(ok.err().isNone, true);
-        });
+const testcaseList = [
+    [createOk(EXPECTED), createOk(UNEXPECTED)],
+    [createOk(EXPECTED), createErr(UNEXPECTED)],
+    [createErr(UNEXPECTED), createOk(EXPECTED)],
+];
+for (const [lhs, rhs] of testcaseList) {
+    test(`lhs: ${toLabel(lhs)}, rhs: ${toLabel(rhs)}`, (t) => {
+        const result = lhs.or(rhs);
+        t.true(result.isOk(), 'the returned value should be `Ok');
+        t.is(result.unwrap(), EXPECTED, 'the returned value should wrap the expected value');
     });
+}
 
-    describe('Err<E>', function () {
-        let err = null;
-
-        before(function(){
-            err = createErr(EXPECTED_ERR);
-        });
-
-        it('return `Some<E>`', function () {
-            assert.strictEqual(err.err().isSome, true);
-        });
-
-        it('the inner value is expected', function () {
-            assert.strictEqual(err.err().unwrap(), EXPECTED_ERR);
-        });
+const failureTestcaseList = [
+    [createErr(UNEXPECTED), createErr(EXPECTED)],
+];
+for (const [lhs, rhs] of failureTestcaseList) {
+    test(`lhs: ${toLabel(lhs)}, rhs: ${toLabel(rhs)}`, (t) => {
+        const result = lhs.or(rhs);
+        t.true(result.isErr(), 'the returned value should be `Err');
+        t.is(result.unwrapErr(), EXPECTED, 'the returned value should wrap the expected value');
     });
-});
+}

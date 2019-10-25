@@ -22,43 +22,44 @@
  * THE SOFTWARE.
  */
 
-'use strict';
+import test from 'ava';
 
-const assert = require('assert');
+const {
+    createOk,
+    createErr,
+} = require('../../__dist/cjs/Result');
 
-const { createOk, createErr } = require('../../__dist/cjs/Result');
+const EXPECTED = Symbol('EXPECTED');
+const UNEXPECTED = Symbol('UNEXPECTED');
 
-const EXPECTED_OK = 'expected_ok';
-const EXPECTED_ERR = 'expected_err';
+function toLabel(input) {
+    if (input.isOk()) {
+        return 'Ok<T>';
+    } else {
+        return 'Err<E>';
+    }
+}
 
-describe('Result<T, E>.expect()', function(){
-    describe('Ok<T>', function () {
-        it('expect()', function () {
-            const ok = createOk(EXPECTED_OK);
-            assert.strictEqual(ok.expect('not expected message'), EXPECTED_OK);
-        });
+const testcaseList = [
+    [createOk(UNEXPECTED), createOk(EXPECTED)],
+];
+for (const [lhs, rhs] of testcaseList) {
+    test(`lhs: ${toLabel(lhs)}, rhs: ${toLabel(rhs)}`, (t) => {
+        const result = lhs.and(rhs);
+        t.true(result.isOk(), 'the returned value should be `Ok');
+        t.is(result.unwrap(), EXPECTED, 'the returned value should wrap the expected value');
     });
+}
 
-    describe('Err<E>', function () {
-        const UNEXPECTED = 100;
-        let caught = null;
-
-        before(function(){
-            try {
-                const err = createErr(UNEXPECTED);
-                err.expect(EXPECTED_ERR);
-            }
-            catch (e) {
-                caught = e;
-            }
-        });
-
-        it('is instance of `Error`', function () {
-            assert.strictEqual( (caught instanceof TypeError), true);
-        });
-
-        it('the error message is expected', function () {
-            assert.strictEqual(caught.message, EXPECTED_ERR);
-        });
+const failureTestcaseList = [
+    [createOk(UNEXPECTED), createErr(EXPECTED)],
+    [createErr(EXPECTED), createOk(UNEXPECTED)],
+    [createErr(EXPECTED), createErr(UNEXPECTED)],
+];
+for (const [lhs, rhs] of failureTestcaseList) {
+    test(`lhs: ${toLabel(lhs)}, rhs: ${toLabel(rhs)}`, (t) => {
+        const result = lhs.and(rhs);
+        t.true(result.isErr(), 'the returned value should be `Err');
+        t.is(result.unwrapErr(), EXPECTED, 'the returned value should wrap the expected value');
     });
-});
+}

@@ -21,37 +21,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+import test from 'ava';
 
-'use strict';
+const {
+    createOk,
+    createErr,
+} = require('../../__dist/cjs/Result');
 
-const assert = require('assert');
+const EXPECTED_OK = Symbol('expected_ok');
+const EXPECTED_ERR = Symbol('expected_err');
 
-const { createOk, createErr } = require('../../__dist/cjs/Result');
+test('Ok<T>', (t) => {
+    let ok;
+    t.notThrows(() => {
+        ok = createOk(EXPECTED_OK);
+        ok.drop();
+    }, 'is callable');
 
-const EXPECTED_OK = 'expected_ok';
-const EXPECTED_ERR = 'expected_err';
+    t.true(Object.isFrozen(ok), 'should be freezed');
+    t.is(ok.unwrap(), null, 'should be freed');
+});
 
-describe('Result<T, E>.ok()', function(){
-    describe('Ok<T>', function () {
-        let ok = null;
+test('Err<E>', (t) => {
+    let err;
+    t.notThrows(() => {
+        err = createErr(EXPECTED_ERR);
+        err.drop();
+    }, 'is callable');
 
-        before(function(){
-            ok = createOk(EXPECTED_OK);
-        });
-
-        it('return `Some<T>`', function () {
-            assert.strictEqual(ok.ok().isSome, true);
-        });
-
-        it('the inner value is expected', function () {
-            assert.strictEqual(ok.ok().unwrap(), EXPECTED_OK);
-        });
-    });
-
-    describe('Err<E>', function () {
-        it('return `None<T>`', function () {
-            const err = createErr(EXPECTED_ERR);
-            assert.strictEqual(err.ok().isNone, true);
-        });
-    });
+    t.true(Object.isFrozen(err), 'should be freezed');
+    t.is(err.unwrapErr(), null, 'should be freed');
 });
