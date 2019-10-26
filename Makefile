@@ -13,7 +13,6 @@ DIST_ESM_DIR := $(DIST_DIR)/esm
 DIST_COMMONJS_DIR := $(DIST_DIR)/cjs
 DIST_MIXED_LIB_DIR := $(DIST_DIR)/lib
 TEST_CACHE_DIR := $(CURDIR)/__test_cache
-TYPE_TEST_DIR := $(CURDIR)/__type_test
 TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
 
 ## In CI environment, we should change some configuration
@@ -36,7 +35,6 @@ help:
 CLEAN_TARGETS := \
 	dist \
 	test_cache \
-	type_test \
 	tmp_mjs \
 
 .PHONY: clean
@@ -49,10 +47,6 @@ clean_dist:
 .PHONY: clean_test_cache
 clean_test_cache:
 	$(NPM_BIN)/del $(TEST_CACHE_DIR)
-
-.PHONY: clean_type_test
-clean_type_test:
-	$(NPM_BIN)/del $(TYPE_TEST_DIR)
 
 .PHONY: clean_tmp_mjs
 clean_tmp_mjs:
@@ -176,11 +170,7 @@ eslint:
 # Test
 ###########################
 .PHONY: test
-test: lint build run_ava tscheck test_distribution_contain_all ## Run all tests
-
-.PHONY: tscheck
-tscheck: clean_type_test build ## Test check typing consistency.
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --noEmit
+test: lint build run_ava test_distribution_contain_all ## Run all tests
 
 .PHONY: build_test
 build_test: build clean_test_cache
