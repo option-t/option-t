@@ -1,10 +1,10 @@
 import test from 'ava';
 
-const {
+import {
     createSome,
     createNone,
-} = require('../../__dist/cjs/PlainOption/Option');
-const { tapOption } = require('../../__dist/cjs/PlainOption/tap');
+} from '../../__dist/cjs/PlainOption/Option';
+import { tapOption } from '../../__dist/cjs/PlainOption/tap';
 
 test('input is Some', (t) => {
     const INPUT_INNER = Symbol('input');

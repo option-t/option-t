@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const Maybe = require('../../__dist/cjs/Maybe');
+import * as Maybe from '../../__dist/cjs/Maybe';
 
 {
     const testcase = [

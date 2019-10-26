@@ -1,14 +1,8 @@
 import test from 'ava';
 
-const { createSome, createNone, } = require('../../__dist/cjs/Option');
+import { createSome, createNone, } from '../../__dist/cjs/Option';
 
-const primitiveVal = require('../utils').primitiveVal;
-const objectVal = require('../utils').objectVal;
-const nonSerializableObjectVal = require('../utils').nonSerializableObjectVal;
-const funcVal = require('../utils').funcVal;
-const symbolVal = require('../utils').symbolVal;
-const undefinedVal = require('../utils').undefinedVal;
-
+import { primitiveVal, objectVal, nonSerializableObjectVal, funcVal, symbolVal, undefinedVal } from '../utils';
 
 const param = primitiveVal
     .concat(objectVal)

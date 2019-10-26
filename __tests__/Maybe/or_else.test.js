@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { orElseForMaybe } = require('../../__dist/cjs/Maybe/orElse');
-const { nonNullableValue } = require('../utils');
+import { orElseForMaybe } from '../../__dist/cjs/Maybe/orElse';
+import { nonNullableValue } from '../utils';
 
 for (const value of nonNullableValue) {
     test('value:' + String(value), (t) => {

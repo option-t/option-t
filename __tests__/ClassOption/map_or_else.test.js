@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const { createSome, createNone, } = require('../../__dist/cjs/Option');
+import { createSome, createNone, } from '../../__dist/cjs/Option';
 
 test('self is `None`', function (t) {
     t.plan(2);
@@ -23,7 +23,7 @@ test('self is `Some<T>`', function (t) {
 
     const EXPECTED = 1;
     const DEFAULT = 2;
-    t.is(EXPECTED !== DEFAULT, true);
+    t.not(EXPECTED, DEFAULT);
 
     const some = createSome('bar');
     const result = some.mapOrElse(function defaultFn() {

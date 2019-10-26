@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { mapForNullable } = require('../../__dist/cjs/Nullable/map');
-const { nonNullableValue } = require('../utils');
+import { mapForNullable } from '../../__dist/cjs/Nullable/map';
+import { nonNullableValue } from '../utils';
 
 
 for (const value of nonNullableValue) {

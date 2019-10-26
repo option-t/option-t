@@ -1,15 +1,15 @@
 import test from 'ava';
 
-const { createSome, createNone } = require('../../__dist/cjs/Option');
+import { createSome, createNone } from '../../__dist/cjs/Option';
 
-const {
+import {
     primitiveVal,
     objectVal,
     nonSerializableObjectVal,
     funcVal,
     symbolVal,
     undefinedVal,
-} = require('../utils');
+} from '../utils';
 
 const param = primitiveVal
     .concat(objectVal)

@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { andForNullable } = require('../../__dist/cjs/Nullable/and');
-const { nonNullableValue } = require('../utils');
+import { andForNullable } from '../../__dist/cjs/Nullable/and';
+import { nonNullableValue } from '../utils';
 
 const LEFT = Symbol('a');
 const RIGHT = Symbol('b');

@@ -23,10 +23,10 @@
  */
 import test from 'ava';
 
-const {
+import {
     createOk,
     createErr,
-} = require('../../__dist/cjs/Result');
+} from '../../__dist/cjs/Result';
 
 const EXPECTED = Symbol('0');
 const UNEXPECTED = Symbol('1');

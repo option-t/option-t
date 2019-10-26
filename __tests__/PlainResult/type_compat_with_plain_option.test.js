@@ -1,17 +1,17 @@
 import test from 'ava';
 
-const {
+import {
     createSome,
     createNone,
     isSome,
     isNone,
-} = require('../../__dist/cjs/PlainOption/Option');
-const {
+} from '../../__dist/cjs/PlainOption/Option';
+import {
     createOk,
     createErr,
     isOk,
     isErr,
-} = require('../../__dist/cjs/PlainResult/Result');
+} from '../../__dist/cjs/PlainResult/Result';
 
 
 const FUNC_TABLE = [

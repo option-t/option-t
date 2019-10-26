@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const { createSome, createNone, OptionBase } = require('../../__dist/cjs/Option');
+import { createSome, createNone, OptionBase } from '../../__dist/cjs/Option';
 
 test('`Some<T>`', function (t) {
     const option = createSome(1);

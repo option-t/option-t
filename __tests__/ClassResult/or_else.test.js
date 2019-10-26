@@ -23,11 +23,11 @@
  */
 import test from 'ava';
 
-const {
+import {
     createOk,
     createErr,
     ResultBase,
-} = require('../../__dist/cjs/Result');
+} from '../../__dist/cjs/Result';
 
 const ORIGIN = Symbol('ORIGIN');
 const EXPECTED = Symbol('EXPECTED');

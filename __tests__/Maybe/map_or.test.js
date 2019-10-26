@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { mapOrForMaybe } = require('../../__dist/cjs/Maybe/mapOr');
-const { nonNullableValue } = require('../utils');
+import { mapOrForMaybe } from '../../__dist/cjs/Maybe/mapOr';
+import { nonNullableValue } from '../utils';
 
 for (const value of nonNullableValue) {
     test('value:' + String(value), (t) => {

@@ -1,12 +1,12 @@
 import test from 'ava';
 
-const {
+import {
     createSome,
     createNone,
-} = require('../../__dist/cjs/PlainOption/Option');
-const {
+} from '../../__dist/cjs/PlainOption/Option';
+import {
     asMutOption,
-} = require('../../__dist/cjs/PlainOption/asMut');
+} from '../../__dist/cjs/PlainOption/asMut';
 
 const FUNC_LIST = [
     createSome,

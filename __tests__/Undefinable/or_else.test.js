@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { orElseForUndefinable } = require('../../__dist/cjs/Undefinable/orElse');
-const { nonNullableValue } = require('../utils');
+import { orElseForUndefinable } from '../../__dist/cjs/Undefinable/orElse';
+import { nonNullableValue } from '../utils';
 
 for (const value of nonNullableValue) {
     test('pass the value' + String(value), (t) => {

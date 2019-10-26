@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const { createSome, createNone, } = require('../../__dist/cjs/Option');
+import { createSome, createNone, } from '../../__dist/cjs/Option';
 
 test('self is `None`', function (t) {
     const EXPECTED = 1;

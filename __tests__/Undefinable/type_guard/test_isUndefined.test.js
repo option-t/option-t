@@ -1,5 +1,5 @@
 import test from 'ava';
-const Undefinable = require('../../../__dist/cjs/Undefinable');
+import * as Undefinable from '../../../__dist/cjs/Undefinable';
 
 test('Undefinable::isUndefined', (t) => {
     const testcase = [

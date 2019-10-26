@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { tapUndefinable } = require('../../__dist/cjs/Undefinable/tap');
-const { nonNullableValue } = require('../utils');
+import { tapUndefinable } from '../../__dist/cjs/Undefinable/tap';
+import { nonNullableValue } from '../utils';
 
 for (const input of nonNullableValue) {
     test('pass the value' + String(input), (t) => {

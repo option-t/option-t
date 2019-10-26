@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const Nullable = require('../../__dist/cjs/Nullable');
+import * as Nullable from '../../__dist/cjs/Nullable';
 
 {
     const testcase = [

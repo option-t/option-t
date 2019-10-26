@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { unwrapNullable } = require('../../__dist/cjs/Nullable/unwrap');
-const { nonNullableValue } = require('../utils');
+import { unwrapNullable } from '../../__dist/cjs/Nullable/unwrap';
+import { nonNullableValue } from '../utils';
 
 for (const value of nonNullableValue) {
     const EXPECTED = value;

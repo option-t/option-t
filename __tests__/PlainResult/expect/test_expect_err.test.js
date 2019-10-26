@@ -1,12 +1,12 @@
 import test from 'ava';
 
-const {
+import {
     createOk,
     createErr,
-} = require('../../../__dist/cjs/PlainResult/Result');
-const {
+} from '../../../__dist/cjs/PlainResult/Result';
+import {
     expectIsErr,
-} = require('../../../__dist/cjs/PlainResult/expect');
+} from '../../../__dist/cjs/PlainResult/expect';
 
 test('input=Ok(T), expect=Err(E)', (t) => {
     const NOT_EXPECTED = Symbol('not expected');

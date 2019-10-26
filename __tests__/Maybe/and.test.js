@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { andForMaybe } = require('../../__dist/cjs/Maybe/and');
-const { nonNullableValue } = require('../utils');
+import { andForMaybe } from '../../__dist/cjs/Maybe/and';
+import { nonNullableValue } from '../utils';
 
 const LEFT = Symbol('a');
 const RIGHT = Symbol('b');
