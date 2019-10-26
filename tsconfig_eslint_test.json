@@ -5,8 +5,6 @@
   "extends": "./tsconfig.json",
 
   "include": [
-    "src/**/*",
-    "src/**/.eslintrc.js",
     "__tests__/**/*",
     "__tests__/**/.eslintrc.js"
   ],

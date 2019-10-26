@@ -1,13 +1,13 @@
 /* eslint-disable no-param-reassign */
 import test from 'ava';
 
-const {
+import {
     createSome,
     createNone,
-} = require('../../__dist/cjs/PlainOption/Option');
-const {
+} from '../../__dist/cjs/PlainOption/Option';
+import {
     unsafeDropForOption,
-} = require('../../__dist/cjs/PlainOption/drop');
+} from '../../__dist/cjs/PlainOption/drop';
 
 test('unsafeDropForOption() with Some', (t) => {
     const expected = Symbol('');

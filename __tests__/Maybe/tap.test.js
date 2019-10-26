@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { tapMaybe } = require('../../__dist/cjs/Maybe/tap');
-const { nonNullableValue } = require('../utils');
+import { tapMaybe } from '../../__dist/cjs/Maybe/tap';
+import { nonNullableValue } from '../utils';
 
 for (const input of nonNullableValue) {
     test('pass the value: ' + String(input), (t) => {

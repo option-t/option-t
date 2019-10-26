@@ -1,8 +1,8 @@
 import test from 'ava';
 
-const { createSome, createNone } = require('../../__dist/cjs/PlainOption');
-const { okOrElseForPlainOption } = require('../../__dist/cjs/PlainOption/okOrElse');
-const { unwrapErrFromResult, unwrapFromResult } = require('../../__dist/cjs/PlainResult/unwrap');
+import { createSome, createNone } from '../../__dist/cjs/PlainOption';
+import { okOrElseForPlainOption } from '../../__dist/cjs/PlainOption/okOrElse';
+import { unwrapErrFromResult, unwrapFromResult } from '../../__dist/cjs/PlainResult/unwrap';
 
 test('the input is Some', (t) => {
     t.plan(2);

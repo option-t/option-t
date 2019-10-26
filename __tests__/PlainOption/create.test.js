@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const { createSome, createNone, isSome, isNone } = require('../../__dist/cjs/PlainOption');
+import { createSome, createNone, isSome, isNone } from '../../__dist/cjs/PlainOption';
 
 test('createSome', (t) => {
     const EXPECTED = Symbol('');

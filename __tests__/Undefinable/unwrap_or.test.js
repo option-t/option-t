@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { unwrapOrFromUndefinable } = require('../../__dist/cjs/Undefinable/unwrapOr');
-const { nonNullableValue } = require('../utils');
+import { unwrapOrFromUndefinable } from '../../__dist/cjs/Undefinable/unwrapOr';
+import { nonNullableValue } from '../utils';
 
 
 for (const value of nonNullableValue) {

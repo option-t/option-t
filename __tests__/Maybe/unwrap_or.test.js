@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { unwrapOrFromMaybe } = require('../../__dist/cjs/Maybe/unwrapOr');
-const { nonNullableValue } = require('../utils');
+import { unwrapOrFromMaybe } from '../../__dist/cjs/Maybe/unwrapOr';
+import { nonNullableValue } from '../utils';
 
 for (const value of nonNullableValue) {
     test('pass the value: ' + String(value), (t) => {

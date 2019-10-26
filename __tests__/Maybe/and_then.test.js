@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { andThenForMaybe } = require('../../__dist/cjs/Maybe/andThen');
-const { nonNullableValue } = require('../utils');
+import { andThenForMaybe } from '../../__dist/cjs/Maybe/andThen';
+import { nonNullableValue } from '../utils';
 
 for (const value of nonNullableValue) {
     test('pass the value: ' + String(value), (t) => {

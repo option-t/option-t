@@ -1,13 +1,13 @@
 import test from 'ava';
 
-const {
+import {
     createOk,
     createErr,
-} = require('../../__dist/cjs/PlainResult/Result');
+} from '../../__dist/cjs/PlainResult/Result';
 
-const {
+import {
     mapOrElseForResult
-} = require('../../__dist/cjs/PlainResult/mapOrElse');
+} from '../../__dist/cjs/PlainResult/mapOrElse';
 
 const PLAN_COUNT = 2;
 

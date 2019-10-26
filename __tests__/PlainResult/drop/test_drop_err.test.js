@@ -1,13 +1,13 @@
 /* eslint-disable no-param-reassign */
 import test from 'ava';
 
-const {
+import {
     createOk,
     createErr,
-} = require('../../../__dist/cjs/PlainResult/Result');
-const {
+} from '../../../__dist/cjs/PlainResult/Result';
+import {
     unsafeDropErrForResult,
-} = require('../../../__dist/cjs/PlainResult/drop');
+} from '../../../__dist/cjs/PlainResult/drop';
 
 test('with Ok', (t) => {
     const actual = createOk(1);

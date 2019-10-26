@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { orForNullable } = require('../../__dist/cjs/Nullable/or');
-const { nonNullableValue } = require('../utils');
+import { orForNullable } from '../../__dist/cjs/Nullable/or';
+import { nonNullableValue } from '../utils';
 
 const LEFT = Symbol('a');
 const RIGHT = Symbol('b');

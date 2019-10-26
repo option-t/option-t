@@ -1,9 +1,9 @@
 import test from 'ava';
 
-const {
+import {
     createOk,
     createErr,
-} = require('../../__dist/cjs/Result');
+} from '../../__dist/cjs/Result';
 
 const PLAN_COUNT = 2;
 

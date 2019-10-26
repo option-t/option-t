@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const { createSome, createNone, } = require('../../__dist/cjs/Option');
+import { createSome, createNone, } from '../../__dist/cjs/Option';
 
 test('self is `None`', function (t) {
     const EXPECTED = 1;
@@ -14,7 +14,7 @@ test('self is `Some<T>`', function (t) {
     const EXPECTED = 1;
     const DEFAULT = 10;
 
-    t.is(EXPECTED !== DEFAULT, true);
+    t.not(EXPECTED, DEFAULT);
 
     const option = createSome(EXPECTED);
     const result = option.unwrapOr(DEFAULT);

@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { mapOrElseForUndefinable } = require('../../__dist/cjs/Undefinable/mapOrElse');
-const { nonNullableValue } = require('../utils');
+import { mapOrElseForUndefinable } from '../../__dist/cjs/Undefinable/mapOrElse';
+import { nonNullableValue } from '../utils';
 
 for (const value of nonNullableValue) {
     test('pass the value' + String(value), (t) => {

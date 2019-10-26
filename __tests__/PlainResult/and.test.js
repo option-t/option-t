@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { createOk, createErr } = require('../../__dist/cjs/PlainResult/Result');
-const { andForResult } = require('../../__dist/cjs/PlainResult/and');
+import { createOk, createErr } from '../../__dist/cjs/PlainResult/Result';
+import { andForResult } from '../../__dist/cjs/PlainResult/and';
 
 test('a=Ok, b=Ok', (t) => {
     const EXPECTED = Symbol('expected');

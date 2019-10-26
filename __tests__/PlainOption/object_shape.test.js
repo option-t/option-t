@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const { createSome, createNone} = require('../../__dist/cjs/PlainOption');
+import { createSome, createNone} from '../../__dist/cjs/PlainOption';
 
 test('The shape of PlainOption::Some', (t) => {
     const INNER_VAL = Symbol('');

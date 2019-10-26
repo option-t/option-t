@@ -1,12 +1,12 @@
 import test from 'ava';
 
-const {
+import {
     createOk,
     createErr,
-} = require('../../__dist/cjs/PlainResult/Result');
-const {
+} from '../../__dist/cjs/PlainResult/Result';
+import {
     asMutResult,
-} = require('../../__dist/cjs/PlainResult/asMut');
+} from '../../__dist/cjs/PlainResult/asMut';
 
 const FUNC_LIST = [
     createOk,

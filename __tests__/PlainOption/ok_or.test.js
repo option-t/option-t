@@ -1,8 +1,8 @@
 import test from 'ava';
 
-const { createSome, createNone } = require('../../__dist/cjs/PlainOption');
-const { okOrForPlainOption } = require('../../__dist/cjs/PlainOption/okOr');
-const { unwrapErrFromResult, unwrapFromResult } = require('../../__dist/cjs/PlainResult/unwrap');
+import { createSome, createNone } from '../../__dist/cjs/PlainOption';
+import { okOrForPlainOption } from '../../__dist/cjs/PlainOption/okOr';
+import { unwrapErrFromResult, unwrapFromResult } from '../../__dist/cjs/PlainResult/unwrap';
 
 test('the input is Some', (t) => {
     const OK_VAL = Symbol('ok');

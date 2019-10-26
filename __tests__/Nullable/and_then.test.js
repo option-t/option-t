@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { andThenForNullable } = require('../../__dist/cjs/Nullable/andThen');
-const { nonNullableValue } = require('../utils');
+import { andThenForNullable } from '../../__dist/cjs/Nullable/andThen';
+import { nonNullableValue } from '../utils';
 
 for (const value of nonNullableValue) {
     const EXPECTED = value;

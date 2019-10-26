@@ -1,12 +1,12 @@
 import test from 'ava';
 
-const {
+import {
     createSome,
     createNone,
-} = require('../../__dist/cjs/PlainOption/Option');
-const {
+} from '../../__dist/cjs/PlainOption/Option';
+import {
     expectIsSome,
-} = require('../../__dist/cjs/PlainOption/expect');
+} from '../../__dist/cjs/PlainOption/expect';
 
 test('input=Some', (t) => {
     const EXPECTED = Symbol('expected');

@@ -23,19 +23,19 @@
  */
 import test from 'ava';
 
-const {
+import {
     createOk,
     createErr,
-} = require('../../__dist/cjs/Result');
+} from '../../__dist/cjs/Result';
 
-const {
+import {
     primitiveVal,
     objectVal,
     nonSerializableObjectVal,
     funcVal,
     symbolVal,
     undefinedVal,
-} = require('../utils');
+} from '../utils';
 
 const param = primitiveVal.concat(objectVal).concat(nonSerializableObjectVal).concat(funcVal).concat(symbolVal).concat(undefinedVal);
 

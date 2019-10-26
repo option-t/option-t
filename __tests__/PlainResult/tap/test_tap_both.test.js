@@ -1,12 +1,12 @@
 import test from 'ava';
 
-const {
+import {
     createErr,
     createOk,
-} = require('../../../__dist/cjs/PlainResult/Result');
-const {
+} from '../../../__dist/cjs/PlainResult/Result';
+import {
     tapBoth,
-} = require('../../../__dist/cjs/PlainResult/tap');
+} from '../../../__dist/cjs/PlainResult/tap';
 
 test('input is Ok()', (t) => {
     t.plan(3);

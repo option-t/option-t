@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { orForUndefinable } = require('../../__dist/cjs/Undefinable/or');
-const { nonNullableValue } = require('../utils');
+import { orForUndefinable } from '../../__dist/cjs/Undefinable/or';
+import { nonNullableValue } from '../utils';
 
 test('Undefinable::or', (t) => {
     const LEFT = Symbol('a');

@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { orElseForNullable } = require('../../__dist/cjs/Nullable/orElse');
-const { nonNullableValue } = require('../utils');
+import { orElseForNullable } from '../../__dist/cjs/Nullable/orElse';
+import { nonNullableValue } from '../utils';
 
 for (const value of nonNullableValue) {
     test('pass the value ' + String(value), (t) => {

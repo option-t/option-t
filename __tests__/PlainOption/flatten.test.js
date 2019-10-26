@@ -1,10 +1,10 @@
 import test from 'ava';
 
-const {
+import {
     createSome,
     createNone,
-} = require('../../__dist/cjs/PlainOption/Option');
-const { flattenForOption } = require('../../__dist/cjs/PlainOption/flatten');
+} from '../../__dist/cjs/PlainOption/Option';
+import { flattenForOption } from '../../__dist/cjs/PlainOption/flatten';
 
 test('input is Some(Some(T))', (t) => {
     const wrappedValue = Symbol('input');

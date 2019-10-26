@@ -1,7 +1,7 @@
 import test from 'ava';
 
-const { expectNotNull } = require('../../__dist/cjs/Nullable/expect');
-const { nonNullableValue } = require('../utils');
+import { expectNotNull } from '../../__dist/cjs/Nullable/expect';
+import { nonNullableValue } from '../utils';
 
 for (const value of nonNullableValue) {
     test('pass the value ' + String(value), (t) => {
