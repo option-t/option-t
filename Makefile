@@ -182,8 +182,12 @@ test: lint build run_ava tscheck test_distribution_contain_all ## Run all tests
 tscheck: clean_type_test build ## Test check typing consistency.
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --noEmit
 
+.PHONY: build_test
+build_test: build clean_test_cache
+	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --outDir $(TEST_CACHE_DIR)
+
 .PHONY: run_ava
-run_ava: build
+run_ava: build build_test
 	$(MAKE) run_ava_only -C $(CURDIR)
 
 .PHONY: run_ava_only
