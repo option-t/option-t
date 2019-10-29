@@ -2,6 +2,19 @@
 
 ## x.y.z
 
+## 21.0.1
+
+### Internals
+
+* Migrate all tests to ava.
+    * By this change, we removed mocha.
+* We always transform test code via TypeScript compiler.
+
+### Others
+
+* [See more details](https://github.com//karen-irc/option-t/compare/v21.0.0...v21.0.1).
+
+
 ## 21.0.0
 
 ### Breaking Changes
