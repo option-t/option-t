@@ -2,6 +2,16 @@
 
 ## x.y.z
 
+## 21.0.2
+
+* [See more details](https://github.com//karen-irc/option-t/compare/v21.0.1...v21.0.2).
+
+### Internals
+
+* Use TypeScript compiler v3.7 stable. ([#501](https://github.com/karen-irc/option-t/pull/501))
+* Use babel compiler v7.7. ([#499](https://github.com/karen-irc/option-t/pull/499))
+
+
 ## 21.0.1
 
 ### Internals
