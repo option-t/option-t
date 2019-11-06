@@ -57,7 +57,7 @@
     "del-cli": "^3.0.0",
     "eslint": "^6.6.0",
     "rename-cli": "^6.0.0",
-    "typescript": "~3.7.1-rc"
+    "typescript": "~3.7.2"
   },
   "sideEffects": false,
   "typings": "./cjs/index.d.ts",
