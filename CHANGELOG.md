@@ -2,10 +2,18 @@
 
 ## x.y.z
 
+## 22.0.1
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.0.0...v22.0.1).
+
+### Documentation
+
+* Fix dead link in CHANGELOG.md
+
 
 ## 22.0.0 
 
-* [See more details](https://github.com//karen-irc/option-t/compare/v21.1.0...22.0.0).
+[See more details](https://github.com//karen-irc/option-t/compare/v21.1.0...v22.0.0).
 
 ### Breaking Change
 
