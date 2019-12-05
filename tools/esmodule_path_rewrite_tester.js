@@ -49,7 +49,7 @@ async function testAllowToLoadFileAsESM(expectedSet) {
     assert.notStrictEqual(files, null, 'Fail to parse the file list snapshot');
 
     const mjsInEsmDir = files.filter((filename) => {
-        return filename.endsWith('.mjs') && (filename.startsWith('esm/') || filename.startsWith('lib/'));
+        return filename.endsWith('.mjs') && filename.startsWith('esm/');
     });
 
     const EXPECTED_FILE_SET = new Set(mjsInEsmDir.map((filename) => {
