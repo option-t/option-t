@@ -3,7 +3,7 @@
 ## Unwrap, `undefined` or `null`
 
 ```typescript
-import { Option } from 'option-t/lib/Option';
+import { Option } from 'option-t/esm/Option.mjs';
 
 function unwrapOrUndefined<T>(option: Option<T>): T | undefined {
   const result: T | undefined = option.isSome ? option.unwrap() : undefined;
@@ -20,7 +20,7 @@ function unwrapOrNull<T>(option: Option<T>): T | null {
 ## Cast from `T`, `undefined`, or `null`
 
 ```typescript
-import { Option } from 'option-t/lib/Option';
+import { Option } from 'option-t/esm/Option.mjs';
 
 function fromNullable<T>(v: T | null | undefined): Option<T> {
     return (v === undefined || v === null) ? new None<T>() : new Some<T>(v);
@@ -37,7 +37,7 @@ Please define for your usecases.
 ## Cast to `Promise`
 
 ```typescript
-import { Option } from 'option-t/lib/Option';
+import { Option } from 'option-t/esm/Option.mjs';
 
 // This function treats `None` as a `Promise` which is fulfilled with a tagged union object.
 function castToPromise2(option: Option<T>): Promise<{ ok: boolean; value: T }> {
