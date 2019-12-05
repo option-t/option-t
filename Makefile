@@ -82,41 +82,30 @@ build_cjs_ts: clean_dist
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_cjs.json --outDir $(DIST_COMMONJS_DIR)
 
 .PHONY: build_esm
-build_esm: build_esm_js build_esm_ts build_mjs_cp_mjs_to_esm ## Build `esm/`.
-
-.PHONY: build_esm_js
-build_esm_js: build_esm_js_call_cpx build_esm_js_call_babel
-
-.PHONY: build_esm_js_call_cpx
-build_esm_js_call_cpx: clean_dist
-	$(NPM_BIN)/cpx '$(SRC_DIR)/**/*.d.ts' $(DIST_ESM_DIR) --preserve
-
-.PHONY: build_esm_js_call_babel
-build_esm_js_call_babel: clean_dist
-	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(DIST_ESM_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.esm.js
-
-.PHONY: build_esm_ts
-build_esm_ts: clean_dist
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_esm.json --outDir $(DIST_ESM_DIR)
+build_esm: build_mjs_cp_mjs_to_esm ## Build `esm/`.
 
 .PHONY: build_mjs_cp_mjs_to_esm
 build_mjs_cp_mjs_to_esm: build_mjs_rename_js_to_mjs clean_dist
-	$(NPM_BIN)/cpx '$(TMP_MJS_DIR)/**/*.mjs' $(DIST_ESM_DIR) --preserve
+	$(NPM_BIN)/cpx '$(TMP_MJS_DIR)/**/*.{mjs,d.ts}' $(DIST_ESM_DIR) --preserve
 
 .PHONY: build_mjs_rename_js_to_mjs
 build_mjs_rename_js_to_mjs: build_mjs_create_tmp_mjs
 	$(NPM_BIN)/rename '$(TMP_MJS_DIR)/**/*.js' '{{f}}.mjs'
 
 .PHONY: build_mjs_create_tmp_mjs
-build_mjs_create_tmp_mjs: build_mjs_create_tmp_mjs_call_tsc build_mjs_create_tmp_mjs_call_babel
+build_mjs_create_tmp_mjs: build_mjs_create_tmp_mjs_call_tsc build_mjs_create_tmp_mjs_call_babel build_mjs_create_tmp_mjs_cal_cpx
 
 .PHONY: build_mjs_create_tmp_mjs_call_tsc
 build_mjs_create_tmp_mjs_call_tsc: clean_tmp_mjs
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_esm.json --outDir $(TMP_MJS_DIR) --declaration false
+	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_esm.json --outDir $(TMP_MJS_DIR)
 
 .PHONY: build_mjs_create_tmp_mjs_call_babel
 build_mjs_create_tmp_mjs_call_babel: clean_tmp_mjs
 	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(TMP_MJS_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.esm.js
+
+.PHONY: build_mjs_create_tmp_mjs_cal_cpx
+build_mjs_create_tmp_mjs_cal_cpx: clean_tmp_mjs
+	$(NPM_BIN)/cpx '$(SRC_DIR)/**/*.d.ts' $(TMP_MJS_DIR) --preserve
 
 
 .PHONY: build_mixedlib
