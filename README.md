@@ -167,7 +167,7 @@ See ([#337](https://github.com/karen-irc/option-t/pull/337)).
 This can express that there is some values or none.
 
 ```javascript
-import { createSome, createNone, } from 'option-t/esm/Option';
+import { createSome, createNone, } from 'option-t/esm/Option.mjs';
 // or
 const { createSome, createNone, } = require('option-t/cjs/Option');
 
@@ -187,7 +187,7 @@ console.log(none.unwrap()); // this will throw `Error`.
 This can express that there is some values or some error information.
 
 ```javascript
-import { createOk, createErr, } from 'option-t/esm/Result';
+import { createOk, createErr, } from 'option-t/esm/Result.mjs';
 // or
 const { createOk, createErr, } = require('option-t/cjs/Result');
 
@@ -214,9 +214,6 @@ Each of them includes same directoty hierarchy with [under `src`/](./src/).
     - This directory privides commonjs style modules with `.js` extension.
 - `option-t/esm`
     - This directory privides ES modules with `.mjs` extension.
-    - Currently, we provides them with `.js` extension for compatibility.
-      However, we may only release `.mjs` for the future release.
-      If you uses some module bundler (e.g. webpack or rollup), please add the config to prefer `.mjs` file.
 - `option-t/lib`
     - This directory privides both of an ES module and a commonjs style module.
         - ES module has `.mjs` extension.
