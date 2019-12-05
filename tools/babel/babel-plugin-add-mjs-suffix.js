@@ -9,7 +9,7 @@ function withExtension(name) {
 function rewriter(t, path, _state, declarationFactory) {
     const node = path.node;
     const source = node.source;
-    if (t.isStringLiteral(source) && source.value.endsWith(EXTENSION)) {
+    if (!t.isStringLiteral(source) || source.value.endsWith(EXTENSION)) {
         return;
     }
 
