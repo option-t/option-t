@@ -48,7 +48,17 @@ module.exports = {
     'reportUnusedDisableDirectives': true,
 
     'rules': {
-        'func-name-matching': 'off',
-        'no-magic-numbers': 'off',
-    }
+    },
+
+    'overrides': [
+        {
+            'files': ['*.mjs'],
+            'parserOptions': {
+                'sourceType': 'module',
+            },
+
+            'rules': {
+            },
+        },
+    ],
 };

@@ -1,6 +1,7 @@
 import { createSome, createNone } from './Option';
 
 /* eslint-enable valid-jsdoc */
+/* eslint-disable func-name-matching */
 
 /**
  *  @deprecated
