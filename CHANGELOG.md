@@ -2,6 +2,17 @@
 
 ## x.y.z
 
+
+## 22.0.2
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.0.1...v22.0.2).
+
+### Internals
+
+* Fix the custom babel plugin: Early return correctly if import/export declaration does not have StrngLiteral as `source`.
+  ([#523](https://github.com/karen-irc/option-t/pull/523))
+
+
 ## 22.0.1
 
 [See more details](https://github.com//karen-irc/option-t/compare/v22.0.0...v22.0.1).
@@ -9,6 +20,10 @@
 ### Documentation
 
 * Fix dead link in CHANGELOG.md
+
+### Internals
+
+* Clean up the custom babel plugin to rewrite import/export path with `.mjs`. ([#522](https://github.com/karen-irc/option-t/pull/522))
 
 
 ## 22.0.0 
