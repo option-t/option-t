@@ -82,11 +82,15 @@ build_cjs_ts: clean_dist
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_cjs.json --outDir $(DIST_COMMONJS_DIR)
 
 .PHONY: build_esm
-build_esm: build_mjs_cp_mjs_to_esm ## Build `esm/`.
+build_esm: build_mjs_cp_mjs_to_esm build_mjs_cp_dts_to_esm ## Build `esm/`.
 
 .PHONY: build_mjs_cp_mjs_to_esm
 build_mjs_cp_mjs_to_esm: build_mjs_rename_js_to_mjs clean_dist
-	$(NPM_BIN)/cpx '$(TMP_MJS_DIR)/**/*.{mjs,d.ts}' $(DIST_ESM_DIR) --preserve
+	$(NPM_BIN)/babel $(TMP_MJS_DIR) --out-dir $(DIST_ESM_DIR) --extensions=.mjs --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.mjs.pathrewiter.js --keep-file-extension
+
+.PHONY: build_mjs_cp_dts_to_esm
+build_mjs_cp_dts_to_esm: build_mjs_create_tmp_mjs clean_dist
+	$(NPM_BIN)/cpx '$(TMP_MJS_DIR)/**/*.d.ts' $(DIST_ESM_DIR) --preserve
 
 .PHONY: build_mjs_rename_js_to_mjs
 build_mjs_rename_js_to_mjs: build_mjs_create_tmp_mjs
@@ -159,7 +163,7 @@ eslint:
 # Test
 ###########################
 .PHONY: test
-test: lint build run_ava test_distribution_contain_all ## Run all tests
+test: lint build run_ava test_distribution_contain_all test_esmodule_path_rewrite ## Run all tests
 
 .PHONY: build_test
 build_test: build clean_test_cache
@@ -185,6 +189,14 @@ test_distribution_contain_all: distribution
 run_test_distribution_contain_all:
 	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/pkg_files_tester.js
 
+.PHONY: test_esmodule_path_rewrite
+test_esmodule_path_rewrite: distribution
+	$(MAKE) run_test_esmodule_path_rewrite -C $(CURDIR)
+
+.PHONY: run_test_esmodule_path_rewrite
+run_test_esmodule_path_rewrite:
+	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/esmodule_path_rewrite_tester.js
+
 
 ###########################
 # Tools
@@ -202,6 +214,7 @@ prepublish: ## Run some commands for 'npm run prepublish'
 	$(MAKE) clean -C $(CURDIR)
 	$(MAKE) distribution -C $(CURDIR)
 	$(MAKE) test_distribution_contain_all -C $(CURDIR)
+	$(MAKE) run_test_esmodule_path_rewrite -C $(CURDIR)
 
 .PHONY: publish
 publish: prepublish ## Run some commands for 'npm publish'
