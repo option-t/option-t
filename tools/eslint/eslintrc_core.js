@@ -1,4 +1,4 @@
-// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/a636ef1d226a6ea9004350894318b9cc9ce8f814/config/eslintrc_core.js
+// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/22d3ae5fc978cd24239c93fd21f9c8b8a2f8bb5e/config/eslintrc_core.js
 
 // MIT License
 //
@@ -22,7 +22,6 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
 // XXX: To uniform the style of an object literals, we enable `quote-props`
 /* eslint quote-props: ['error', "always"] no-magic-numbers: 0 */
 
@@ -47,6 +46,7 @@ module.exports = {
         'no-control-regex': 2, // https://eslint.org/docs/rules/no-control-regex
         'no-debugger': 1, // debugger statement
         'no-dupe-args': 2, // https://eslint.org/docs/rules/no-dupe-args
+        'no-dupe-else-if': 'warn',
         'no-dupe-keys': 2, // in an object literal.
         'no-duplicate-case': 2, // https://eslint.org/docs/rules/no-duplicate-case
         'no-empty': 2, // https://eslint.org/docs/rules/no-empty
@@ -55,6 +55,7 @@ module.exports = {
         'no-extra-boolean-cast': 0, // Allow to cast to boolean with `!!bar`. This is common idiom.
         'no-extra-parens': [0, 'all', { // We'd like to write extra parens for readability.
             'nestedBinaryExpressions': false,
+            'enforceForNewInMemberExpressions': false,
         }],
         'no-extra-semi': 1,
         'no-func-assign': 2,
@@ -66,12 +67,15 @@ module.exports = {
         'no-obj-calls': 2, // https://eslint.org/docs/rules/no-obj-calls
         'no-prototype-builtins': 2, // https://eslint.org/docs/rules/no-prototype-builtins
         'no-regex-spaces': 2, // https://eslint.org/docs/rules/no-regex-spaces
+        'no-setter-return': 'error', // return in setter would be meaningless.
         'no-sparse-arrays': 2, // Ban `[,,]`
         'no-template-curly-in-string': 2,
         'no-unexpected-multiline': 1,
         'no-unreachable': 1,
         'no-unsafe-finally': 2, // https://eslint.org/docs/rules/no-unsafe-finally
-        'no-unsafe-negation': 2, // https://eslint.org/docs/rules/no-unsafe-negation
+        'no-unsafe-negation': [2, { // https://eslint.org/docs/rules/no-unsafe-negation
+            'enforceForOrderingRelations': true,
+        }],
         // This rule might be useful to detect a typical anti pattern about data race.
         // However, it could not detect the problem if we assign a value into an interim variable
         // because this rule only checks a syntax and ECMA262's semantics without other semantics.
@@ -80,7 +84,10 @@ module.exports = {
         // Thus I doubt that detecting race condition correctly & statically is hard without introducing other semantics.
         // So we regard this rule as meaningless actually and disable this.
         'require-atomic-updates ': 0, // https://eslint.org/docs/rules/require-atomic-updates
-        'use-isnan': 2, // Use `Number.isNaN`
+        'use-isnan': ['error', { // Use `Number.isNaN`
+            'enforceForSwitchCase': true,
+            'enforceForIndexOf': false, // IMO, this kind of rules without any static type information would mis-detect.
+        }],
         'valid-typeof': [1, { 'requireStringLiterals': true }],
 
         // Best Practices
@@ -134,11 +141,13 @@ module.exports = {
         'dot-location': 0, // This is just a stylistic issue.
         'dot-notation': 2, // We hate reflection by strings. It's possible error.
         'eqeqeq': [2, 'always'], // Don't use loosely equality operator.
+        'grouped-accessor-pairs': ['warn', 'getBeforeSet'], // getter/setter should be pairs
         'guard-for-in': 0, // This is an escape hatch to enumerate all members in prototype chain.
         'max-classes-per-file': 0, // We don't have to enable this. https://eslint.org/docs/rules/max-classes-per-file
         'no-alert': 1, // for debugging.
         'no-caller': 2, // Don't touch `arguments` in a normal code.
         'no-case-declarations': 2, // https://eslint.org/docs/rules/no-case-declarations
+        'no-constructor-return': 'error', // Generally, we should not return object from _constructor_.
         'no-div-regex': 2, // https://eslint.org/docs/rules/no-div-regex
         'no-else-return': 0, // `else` branch sometimes means "A or B" explicitly.
         'no-empty-function': 0, // Allow to set a no-op function.
@@ -177,6 +186,7 @@ module.exports = {
         'no-octal-escape': 2, // https://eslint.org/docs/rules/no-octal-escape
         'no-param-reassign': [1, {
             'props': true
+            // 'ignorePropertyModificationsForRegex': [],
         }],
         'no-proto': 2,
         'no-redeclare': ['error', { 'builtinGlobals': true }],
@@ -429,6 +439,7 @@ module.exports = {
             { 'blankLine': 'any', 'prev': 'directive', 'next': 'directive' },
         ],
         'prefer-object-spread': 1, // https://eslint.org/docs/rules/prefer-object-spread
+        'prefer-exponentiation-operator': 0, // There is no reason to enforce `**` instead of Math.pow()
         'quotes': [2, 'single', {
             'avoidEscape': true,
             'allowTemplateLiterals': true,

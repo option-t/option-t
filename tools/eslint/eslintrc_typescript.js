@@ -1,4 +1,4 @@
-// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/a636ef1d226a6ea9004350894318b9cc9ce8f814/config/eslintrc_typescript.js
+// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/22d3ae5fc978cd24239c93fd21f9c8b8a2f8bb5e/config/eslintrc_typescript.js
 
 // MIT License
 //
@@ -22,7 +22,6 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
 // XXX: To uniform the style of an object literals, we enable `quote-props`
 /* eslint quote-props: ['error', "always"] no-magic-numbers: 'off' */
 
@@ -62,6 +61,7 @@ module.exports = {
         'camelcase': 'off',
         '@typescript-eslint/camelcase': ['error', {
             'properties': 'always',
+            'genericType': 'never', // This rule is covered by @typescript-eslint/generic-type-naming
             'ignoreDestructuring': false,
         }],
 
@@ -164,6 +164,11 @@ module.exports = {
         'no-array-constructor': 'off',
         '@typescript-eslint/no-array-constructor': 'error',
 
+        // In a general case, we don't have to do this.
+        // This kind of `delete` operation causes an unnecessary shape transition.
+        // This _shape_ means Shape (SpiderMonkey), Hidden Class (V8), or Structure (JSC).
+        '@typescript-eslint/no-dynamic-delete': 'error',
+
         // This should be sorted with ESLint builtin rule.
         // Allow to set a no-op function.
         'no-empty-function': 'off',
@@ -184,7 +189,12 @@ module.exports = {
             // If there is the class which only have static members,
             // then we have a chance to refactoring them to simple module level variables.
             'allowStaticOnly': false,
+            // TypeScript decorator is still not standardized. We should not touch it.
+            // allowWithDecorator
         }],
+
+        // Detect redundant code
+        '@typescript-eslint/no-extra-non-null-assertion': 'warn',
 
         // This should be sorted with ESLint builtin rule.
         'no-extra-parens': 'off',
@@ -261,6 +271,7 @@ module.exports = {
         // This would find the possibility which we can unnecessary condition.
         '@typescript-eslint/no-unnecessary-condition': ['warn', {
             'ignoreRhs': false,
+            'allowConstantLoopConditions': true,
         }],
 
         // Try to detect redundant case,
@@ -271,6 +282,15 @@ module.exports = {
 
         // We allow this this kind of redundant code because it sometimes prevents a mistake.
         '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+
+        // I think this rule is useful.
+        // But I'm not sure about that the relation with `noImplicitAny` compiler option.
+        // FIXME(#257)
+        '@typescript-eslint/no-untyped-public-signature': 'off',
+
+        // This should be sorted with ESLint builtin rule.
+        'no-unused-expressions': 'off',
+        '@typescript-eslint/no-unused-expressions': 'error',
 
         // This should be sorted with ESLint builtin rule.
         //
@@ -285,6 +305,11 @@ module.exports = {
             'caughtErrors': 'all',
             'caughtErrorsIgnorePattern': '^_', // Allow `catch (_e) {...}`
         }],
+        // Ideally, we should use this rule instead of it for TypeScript code
+        // '@typescript-eslint/no-unused-vars-experimental': ['warn', {
+        //    'ignoredNamesRegex': '^_',
+        //    'ignoreArgsIfArgsAfterAreUsed': false,
+        // }],
 
         // This should be sorted with ESLint builtin rule.
         'no-use-before-define': 'off',
@@ -335,6 +360,14 @@ module.exports = {
 
         // This bans legacy syntax.
         '@typescript-eslint/prefer-namespace-keyword': 'error',
+
+        // Recommend more simple syntax.
+        // XXX: However, without native support, this syntax might be code bloat.
+        '@typescript-eslint/prefer-nullish-coalescing': 'warn',
+
+        // Recommend more simple syntax.
+        // XXX: However, without native support, this syntax might be code bloat.
+        '@typescript-eslint/prefer-optional-chain': 'warn',
 
         // This rule is nice for refactoring, but I suspect to enable this at all time.
         // This only covers `private` property and I don't think that it's pretty useful
@@ -390,7 +423,28 @@ module.exports = {
         '@typescript-eslint/require-await': 'off',
 
         // This detects a common mistake which uses `+` for diffrent types.
-        '@typescript-eslint/restrict-plus-operands': 'warn',
+        '@typescript-eslint/restrict-plus-operands': ['warn', {
+            'checkCompoundAssignments': true,
+        }],
+
+        // I think it's error prone to implicit string conversion.
+        // But I also think this might be a noisy. It might be better to disable this for the future.
+        '@typescript-eslint/restrict-template-expressions': ['warn', {
+            'allowNumber': false,
+            'allowBoolean': false,
+            'allowNullable': false,
+        }],
+
+        // FIXME: #272
+        // '@typescript-eslint/return-await'
+
+        // This should be sorted with ESLint builtin rule.
+        'space-before-function-paren': 'off',
+        '@typescript-eslint/space-before-function-paren': ['warn', {
+            'anonymous': 'ignore',
+            'named': 'never',
+            'asyncArrow': 'ignore',
+        }],
 
         // At v1.12, this rule does not support the idion to convert to boolean value from other type one
         // like `!!<some non boolean value>`. So we disable this until fixing it.
