@@ -2,6 +2,20 @@
 
 ## x.y.z
 
+## 21.1.0
+
+* [See more details](https://github.com//karen-irc/option-t/compare/v21.0.2...v21.1.0).
+
+### Features
+
+*  Implement `xor()` for `Maybe<T>`. ([#411](https://github.com/karen-irc/option-t/pull/411))
+
+### Internals
+
+* Update dependencies.
+* Revendor eslint configs. ([#519](https://github.com/karen-irc/option-t/pull/519))
+
+
 ## 21.0.2
 
 * [See more details](https://github.com//karen-irc/option-t/compare/v21.0.1...v21.0.2).
