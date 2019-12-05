@@ -29,7 +29,7 @@ executors:
     latest_nodejs_executor:
         working_directory: *workspace_root
         docker:
-            - image: node:latest
+            - image: node:13-buster
         environment:
             YARN_CACHE_FOLDER: *yarnpkg_cache_dir
 
