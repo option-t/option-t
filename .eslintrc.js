@@ -48,6 +48,5 @@ module.exports = {
     'reportUnusedDisableDirectives': true,
 
     'rules': {
-        'no-magic-numbers': 'off',
     }
 };
