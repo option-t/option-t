@@ -13,7 +13,7 @@ indent_style = space
 [{*.js,*.jsx,*.ts,*.tsx,*.mjs}]
 indent_size = 4
 
-[tsconfig.json]
+[{tsconfig.json,tsconfig_*.json}]
 indent_size = 4
 
 [*.md]
