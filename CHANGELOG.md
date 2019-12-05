@@ -2,6 +2,29 @@
 
 ## x.y.z
 
+[See more details](https://github.com//karen-irc/option-t/compare/v22.1.0...master).
+
+
+## 22.1.0
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.0.2...v22.1.0).
+
+### Deprecate `option-t/lib/***` ([#527](https://github.com/karen-irc/option-t/pull/527))
+
+* __This does not mean that we will remove `option-t/lib` in the next release.__
+* For the future relase, we will stop to publish `option-t/lib/***`.
+    * This is a preparation for it.
+    * To do this, we need dual (cjs+mjs) package support by Node.js
+* If you depend on it, you should move to `option-t/esm` (recommended) or `option-t/cjs`.
+* [See the PR](https://github.com/karen-irc/option-t/pull/527) to know more details.
+
+
+### Internals
+
+* Add configs to allow to write `.mjs`. ([#525](https://github.com/karen-irc/option-t/pull/525))
+* Lock _latest_ Node.js executor to `node:13-buster`. ([#528](https://github.com/karen-irc/option-t/pull/528))
+
+
 
 ## 22.0.2
 
