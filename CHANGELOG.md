@@ -2,17 +2,20 @@
 
 ## x.y.z
 
-## 
 
-* [See more details](https://github.com//karen-irc/option-t/compare/v21.1.0...master).
+## 22.0.0 
+
+* [See more details](https://github.com//karen-irc/option-t/compare/v21.1.0...22.0.0).
 
 ### Breaking Change
 
-#### We remove files which ES Module but has `.js` from `esm/`.
+#### We remove files which ES Module but has `.js` from either `esm/` or `lib/`.
 
 * We remove `.js` files from `esm/` ([#504](https://github.com/karen-irc/option-t/pull/504))
-  and we supply `.mjs` extension for all import/export declaration ([#520](https://github.com/karen-irc/option-t/pull/520)).
-* By this change, you can import `import 'option-t/esm/Nullable/index.mjs';` after Node.js v13.
+  and we supply `.mjs` extension for all import/export declaration by
+  [#520](https://github.com/karen-irc/option-t/pull/520)/[#521](https://github.com/karen-irc/option-t/pull/521).
+* By this change, you can import `import 'option-t/esm/Nullable/index.mjs';`
+  or `import 'option-t/lib/Nullable/index.mjs';` after Node.js v13.
 * However, this change may cause these problems:
     * If your module bundler does not support `.mjs`, it will raise some errors.
     * If you import files in `esm/` with `.js` extensions, it will raise some errors.
