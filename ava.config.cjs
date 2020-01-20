@@ -7,6 +7,11 @@ module.exports = function resolveAvaConfig() {
     return {
         'files': [
             '__test_cache/**/*.test.js'
-        ]
+        ],
+        'babel': {
+            'testOptions': {
+                'babelrc': false
+            }
+        }
     };
 };
