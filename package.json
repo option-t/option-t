@@ -60,10 +60,5 @@
     "typescript": "~3.7.3"
   },
   "sideEffects": false,
-  "typings": "./cjs/index.d.ts",
-  "ava": {
-    "files": [
-      "__test_cache/**/*.test.js"
-    ]
-  }
+  "typings": "./cjs/index.d.ts"
 }

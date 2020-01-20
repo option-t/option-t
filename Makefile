@@ -175,7 +175,7 @@ run_ava: build build_test
 
 .PHONY: run_ava_only
 run_ava_only: ## Run ava only.
-	$(NPM_BIN)/ava
+	$(NPM_BIN)/ava --config $(CURDIR)/ava.config.cjs
 
 .PHONY: git_diff
 git_diff: ## Test whether there is no committed changes.
