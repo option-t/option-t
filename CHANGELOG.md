@@ -2,7 +2,17 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.1.0...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.1.1...master).
+
+
+## 22.1.1
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.1.0...v22.1.1).
+
+### Internals
+
+* Update dependencies.
+* Stop to use Reviewable. ([#544](https://github.com/karen-irc/option-t/pull/544))
 
 
 ## 22.1.0
