@@ -40,7 +40,7 @@ test('pass undefined', (t) => {
         test(`should not accept Maybe<*> as default, v = ${String(src)}, def = ${String(def)}`, (t) => {
             t.throws(() => {
                 unwrapOrFromMaybe(src, def);
-            }, TypeError);
+            }, { instanceOf: TypeError, });
         });
     }
 }

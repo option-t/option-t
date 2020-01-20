@@ -34,6 +34,6 @@ for (const [src, def] of testcases) {
     test(`should not accept null for both, v = ${String(src)}, def = ${String(def)}`, (t) => {
         t.throws(() => {
             unwrapOrFromNullable(src, def);
-        }, TypeError);
+        }, { instanceOf: TypeError, });
     });
 }

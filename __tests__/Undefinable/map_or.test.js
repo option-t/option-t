@@ -52,7 +52,7 @@ test('assert that do not return Undefinable<*> as the selector\'s result', (t) =
     for (const [src, def, selectorResult] of testcases) {
         t.throws(() => {
             mapOrForUndefinable(src, def, (_v) => selectorResult);
-        }, TypeError, `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`);
+        }, { instanceOf: TypeError, }, `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`);
     }
 });
 
@@ -63,6 +63,6 @@ test('assert that def is not Undefinable<*>', (t) => {
     for (const [src, def, selectorResult] of testcases) {
         t.throws(() => {
             mapOrForUndefinable(src, def, (_v) => selectorResult);
-        }, TypeError, `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`);
+        }, { instanceOf: TypeError, }, `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`);
     }
 });

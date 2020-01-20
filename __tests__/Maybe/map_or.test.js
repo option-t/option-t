@@ -45,7 +45,7 @@ test('pass undefined', (t) => {
         test(`assert that do not return Maybe<*> as the selector's result v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`, (t) => {
             t.throws(() => {
                 mapOrForMaybe(src, def, (_v) => selectorResult);
-            }, TypeError);
+            }, { instanceOf: TypeError, });
         });
     }
 }
@@ -61,7 +61,7 @@ test('pass undefined', (t) => {
         test(`assert that def is not Maybe<*> v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`, (t) => {
             t.throws(() => {
                 mapOrForMaybe(src, def, (_v) => selectorResult);
-            }, TypeError);
+            }, { instanceOf: TypeError, });
         });
     }
 }

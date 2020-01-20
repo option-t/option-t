@@ -42,6 +42,6 @@ test('should not accept Maybe<*> as default', (t) => {
     for (const [src, def] of testcases) {
         t.throws(() => {
             unwrapOrFromUndefinable(src, def);
-        }, TypeError, `v = ${String(src)}, def = ${String(def)}`);
+        }, { instanceOf: TypeError, }, `v = ${String(src)}, def = ${String(def)}`);
     }
 });

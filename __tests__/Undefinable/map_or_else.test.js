@@ -57,7 +57,7 @@ test('assert that do not return Undefinable<*> as the selector\'s result', (t) =
 
         t.throws(() => {
             mapOrElseForUndefinable(src, () => def, (_v) => selectorResult);
-        }, TypeError, LABEL);
+        }, { instanceOf: TypeError, }, LABEL);
     }
 });
 
@@ -69,6 +69,6 @@ test('assert that def is not Undefinable<*>', (t) => {
         const LABEL = `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`;
         t.throws(() => {
             mapOrElseForUndefinable(src, () => def, (_v) => selectorResult);
-        }, TypeError, LABEL);
+        }, { instanceOf: TypeError, }, LABEL);
     }
 });

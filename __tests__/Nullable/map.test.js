@@ -46,6 +46,6 @@ for (const [src, def] of testcases) {
     test(`assert that do not return Nullable<*> as the selector's result, v = ${String(src)}, def = ${String(def)}`, (t) => {
         t.throws(() => {
             mapForNullable(src, (_v) => def);
-        }, TypeError);
+        }, { instanceOf: TypeError, });
     });
 }

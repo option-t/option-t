@@ -20,7 +20,7 @@ for (const value of nonNullableValue) {
 test('pass null', (t) => {
     t.throws(() => {
         unwrapNullable(null);
-    }, TypeError);
+    }, { instanceOf: TypeError, });
 });
 
 test('pass undefined', (t) => {

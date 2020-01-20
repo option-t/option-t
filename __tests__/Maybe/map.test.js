@@ -41,7 +41,7 @@ test('pass undefined', (t) => {
         test(`assert that do not return Maybe<*> as the selector's resultv = ${String(src)}, def = ${String(def)}`, (t) => {
             t.throws(() => {
                 mapForMaybe(src, (_v) => def);
-            }, TypeError);
+            }, { instanceOf: TypeError, });
         });
     }
 }
