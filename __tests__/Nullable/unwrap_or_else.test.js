@@ -53,6 +53,6 @@ for (const [src, def] of testcases) {
     test(`should not accept Maybe<*> as default, v = ${String(src)}, def = ${String(def)}`, (t) => {
         t.throws(() => {
             unwrapOrElseFromNullable(src, () => def);
-        }, TypeError);
+        }, { instanceOf: TypeError, });
     });
 }

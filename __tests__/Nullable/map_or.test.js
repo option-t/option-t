@@ -54,7 +54,7 @@ test('pass undefined', (t) => {
         test(`assert that do not return Nullable<*> as the selector's result, v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`, (t) => {
             t.throws(() => {
                 mapOrForNullable(src, def, (_v) => selectorResult);
-            }, TypeError);
+            }, { instanceOf: TypeError, });
         });
     }
 }
@@ -67,7 +67,7 @@ test('pass undefined', (t) => {
         test(`assert that def is not Nullable<*>', v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`, (t) => {
             t.throws(() => {
                 mapOrForNullable(src, def, (_v) => selectorResult);
-            }, TypeError);
+            }, { instanceOf: TypeError, });
         });
     }
 }
