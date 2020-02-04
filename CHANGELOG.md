@@ -2,7 +2,28 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.1.1...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.1.2...master).
+
+
+## 22.1.2
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.1.1...v22.1.2).
+
+## Not recommend to use `tap()` for `Nullable`/`Undefinable`/`Maybe` generally ([#571](https://github.com/karen-irc/option-t/pull/571)).
+
+* We added these functions to
+    * Sort with other types.
+    * Future enhancement for pipelining functions.
+* But in generally, simple `if` statement or similar way would be readable and efficient.
+    * `if (!!v) { ... }` or `if (v) { }` are completely same behavior, more straight way, and the standard way.
+* We'll continue to provide these functions including for `PlainOption`/`PlainResult`.
+    * For `PlainOption`/`PlainResult`, we think that this kind of functions are useful
+      because `tap()` can hide to touch their properties.
+
+
+## Internals
+
+* Update dependencies.
 
 
 ## 22.1.1
