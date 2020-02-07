@@ -2,14 +2,27 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.1.2...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.2.0...master).
+
+
+## 22.2.0
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.1.2...v22.2.0).
+
+### New Features
+
+* Add `mapOr()` for `PlainResult<T, E>`. ([#572](https://github.com/karen-irc/option-t/pull/572))
+
+### Documentations
+
+* Fix changelog outline.
 
 
 ## 22.1.2
 
 [See more details](https://github.com//karen-irc/option-t/compare/v22.1.1...v22.1.2).
 
-## Not recommend to use `tap()` for `Nullable`/`Undefinable`/`Maybe` generally ([#571](https://github.com/karen-irc/option-t/pull/571)).
+### Not recommend to use `tap()` for `Nullable`/`Undefinable`/`Maybe` generally ([#571](https://github.com/karen-irc/option-t/pull/571)).
 
 * We added these functions to
     * Sort with other types.
@@ -21,7 +34,7 @@
       because `tap()` can hide to touch their properties.
 
 
-## Internals
+### Internals
 
 * Update dependencies.
 
