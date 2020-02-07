@@ -40,6 +40,7 @@ export {
     expectIsErr as expectErr,
 } from './expect';
 export { mapForResult as map } from './map';
+export { mapOrForResult as mapOr } from './mapOr';
 export { mapOrElseForResult as mapOrElse } from './mapOrElse';
 export { mapErrForResult as mapErr } from './mapErr';
 export { orForResult as or } from './or';
