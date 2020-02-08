@@ -57,7 +57,7 @@ clean_tmp_mjs:
 # Build
 ###########################
 .PHONY: distribution
-distribution: build cp_docs cp_changelog cp_license cp_readme cp_manifest
+distribution: build cp_docs cp_changelog cp_license cp_readme generate_manifest
 
 .PHONY: build
 build: build_cjs build_esm build_mixedlib ## Build all targets.
@@ -143,9 +143,11 @@ cp_license: clean_dist
 cp_readme: clean_dist
 	$(NPM_BIN)/cpx '$(CURDIR)/README.md' $(DIST_DIR)
 
-.PHONY: cp_manifest
-cp_manifest: clean_dist
-	$(NPM_BIN)/cpx '$(CURDIR)/package.json' $(DIST_DIR)
+.PHONY: generate_manifest
+generate_manifest: clean_dist
+	INPUT_MANIFEST_PATH=$(CURDIR)/package.json \
+    OUTDIR=$(DIST_DIR) \
+    $(NODE_BIN) $(CURDIR)/tools/package_json_rewriter/main.js
 
 
 ###########################
@@ -163,7 +165,7 @@ eslint:
 # Test
 ###########################
 .PHONY: test
-test: lint build run_ava test_distribution_contain_all test_esmodule_path_rewrite ## Run all tests
+test: lint build run_ava test_distribution_contain_all test_esmodule_path_rewrite test_package_json_rewrite ## Run all tests
 
 .PHONY: build_test
 build_test: build clean_test_cache
@@ -196,6 +198,14 @@ test_esmodule_path_rewrite: distribution
 .PHONY: run_test_esmodule_path_rewrite
 run_test_esmodule_path_rewrite:
 	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/esmodule_path_rewrite_tester.js
+
+.PHONY: test_package_json_rewrite
+test_package_json_rewrite: distribution
+	$(MAKE) run_test_package_json_rewrite -C $(CURDIR)
+
+.PHONY: run_test_package_json_rewrite
+run_test_package_json_rewrite:
+	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/package_json_rewriter/tester.js
 
 
 ###########################
