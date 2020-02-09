@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const { loadPackageJSON } = require('./json');
+const { loadJSON } = require('./json');
 
 const BASE_DIR = __dirname;
 
@@ -38,7 +38,7 @@ async function loadJSFileAsModule(outDir, file) {
     const OUTDIR = process.env.OUTDIR;
     assert.strictEqual(typeof OUTDIR, 'string', '$OUTDIR envvar should be string');
 
-    const json = await loadPackageJSON(BASE_DIR, '../pkg_files.json');
+    const json = await loadJSON(BASE_DIR, '../pkg_files.json');
     assert.strictEqual(Array.isArray(json), true, '`json` should be Array');
 
     const cjsFileList = [];

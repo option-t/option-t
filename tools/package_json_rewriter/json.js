@@ -22,12 +22,12 @@ function parseJSON(text) {
     }
 }
 
-async function loadPackageJSON(baseDir, filepath) {
+async function loadJSON(baseDir, filepath) {
     const text = await loadFileAsText(baseDir, filepath);
     const json = parseJSON(text);
     return json;
 }
 
 module.exports = Object.freeze({
-    loadPackageJSON,
+    loadJSON,
 });
