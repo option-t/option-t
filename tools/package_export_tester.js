@@ -2,32 +2,33 @@
 
 const assert = require('assert');
 
-const { loadPackageJSON } = require('./json');
+const { loadJSON } = require('./package_json_rewriter/json');
 
 const BASE_DIR = __dirname;
+const PACKAGE_NAME = 'option-t';
 
-function loadCJS(outDir, file) {
-    const modulepath = `${outDir}/${file}`;
+function loadCJS(file) {
+    const modulepath = (file === '.') ? PACKAGE_NAME : `${PACKAGE_NAME}/${file}`;
     // eslint-disable-next-line global-require
     require(modulepath);
 }
 
-async function loadESM(outDir, file) {
+async function loadESM(file) {
     // XXX: Node v12 does not support `import()` by default
     if (/^v12\.\d+\.\d+$/u.test(process.version)) {
         return;
     }
 
-    const modulepath = `${outDir}/${file}`;
+    const modulepath = (file === '.') ? PACKAGE_NAME : `${PACKAGE_NAME}/${file}`;
     await import(modulepath);
 }
 
-async function loadJSFileAsModule(outDir, file) {
+async function loadJSFileAsModule(file) {
     if (file.endsWith('.js')) {
-        loadCJS(outDir, file);
+        loadCJS(file);
     }
     else if (file.endsWith('.mjs')) {
-        await loadESM(outDir, file);
+        await loadESM(file);
     }
     else {
         throw Error(`${file} is not unknown module type`);
@@ -35,14 +36,15 @@ async function loadJSFileAsModule(outDir, file) {
 }
 
 (async function main() {
-    const OUTDIR = process.env.OUTDIR;
-    assert.strictEqual(typeof OUTDIR, 'string', '$OUTDIR envvar should be string');
-
-    const json = await loadPackageJSON(BASE_DIR, '../pkg_files.json');
+    const json = await loadJSON(BASE_DIR, './pkg_files.json');
     assert.strictEqual(Array.isArray(json), true, '`json` should be Array');
 
-    const cjsFileList = [];
-    const esmFileList = [];
+    const cjsFileList = [
+        '.',
+    ];
+    const esmFileList = [
+        '.',
+    ];
     const libFileList = [];
     for (const file of json) {
         if (file.endsWith('.d.ts')) {
@@ -64,17 +66,17 @@ async function loadJSFileAsModule(outDir, file) {
     }
 
     for (const file of cjsFileList) {
-        loadCJS(OUTDIR, file);
+        loadCJS(file);
     }
 
     for (const file of esmFileList) {
         // eslint-disable-next-line no-await-in-loop
-        await loadESM(OUTDIR, file);
+        await loadESM(file);
     }
 
     for (const file of libFileList) {
         // eslint-disable-next-line no-await-in-loop
-        await loadJSFileAsModule(OUTDIR, file);
+        await loadJSFileAsModule(file);
     }
 })().catch((e) => {
     console.error(e);

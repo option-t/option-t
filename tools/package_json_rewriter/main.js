@@ -4,7 +4,7 @@ const assert = require('assert');
 const fs = require('fs').promises;
 const path = require('path');
 
-const { loadPackageJSON } = require('./json');
+const { loadJSON } = require('./json');
 
 const BASE_DIR = __dirname;
 
@@ -32,7 +32,7 @@ async function writePackageJSON(baseDir, outputPath, content) {
     const INPUT_MANIFEST_PATH = process.env.INPUT_MANIFEST_PATH;
     assert.strictEqual(typeof INPUT_MANIFEST_PATH, 'string', '$MANIFEST_PATH envvar should be string');
 
-    const json = await loadPackageJSON(BASE_DIR, INPUT_MANIFEST_PATH);
+    const json = await loadJSON(BASE_DIR, INPUT_MANIFEST_PATH);
     assert.notStrictEqual(json, null, 'Fail to parse the file list snapshot');
 
     const TRANSFORMERS = [];

@@ -164,8 +164,16 @@ eslint:
 ###########################
 # Test
 ###########################
+TEST_TARGETS := \
+  lint \
+  build \
+  run_ava \
+  test_distribution_contain_all \
+  test_esmodule_path_rewrite \
+  test_package_install
+
 .PHONY: test
-test: lint build run_ava test_distribution_contain_all test_esmodule_path_rewrite test_package_json_rewrite ## Run all tests
+test: $(TEST_TARGETS) ## Run all tests
 
 .PHONY: build_test
 build_test: build clean_test_cache
@@ -199,13 +207,22 @@ test_esmodule_path_rewrite: distribution
 run_test_esmodule_path_rewrite:
 	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/esmodule_path_rewrite_tester.js
 
-.PHONY: test_package_json_rewrite
-test_package_json_rewrite: distribution
-	$(MAKE) run_test_package_json_rewrite -C $(CURDIR)
+.PHONY: test_package_install
+test_package_install: distribution __run_install_package
+	$(MAKE) run_test_package_install -C $(CURDIR)
+	$(MAKE) post_cleanup_to_test_package_install -C $(CURDIR)
 
-.PHONY: run_test_package_json_rewrite
-run_test_package_json_rewrite:
-	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/package_json_rewriter/tester.js
+.PHONY: __run_install_package
+__run_install_package: distribution
+	yarn add --dev $(DIST_DIR)
+
+.PHONY: run_test_package_install
+run_test_package_install:
+	$(NODE_BIN) $(CURDIR)/tools/package_export_tester.js
+
+.PHONY: post_cleanup_to_test_package_install
+post_cleanup_to_test_package_install:
+	$(MAKE) git_reset_to_head -C $(CURDIR)
 
 
 ###########################
@@ -217,6 +234,14 @@ fmt: eslint_fmt ## Apply all formatters
 .PHONY: eslint_fmt
 eslint_fmt: 
 	$(NPM_BIN)/eslint $(CURDIR) $(CURDIR)/**/.eslintrc.js --ext .js --fix
+
+TARGETS_SHOULD_BE_RESET_AFTER_TEST_TO_INSTALL := \
+  package.json \
+  yarn.lock
+
+.PHONY: git_reset_to_head
+git_reset_to_head: $(TARGETS_SHOULD_BE_RESET_AFTER_TEST_TO_INSTALL)
+	git checkout HEAD -- $(addprefix $(CURDIR)/, $^)
 
 
 .PHONY: prepublish
