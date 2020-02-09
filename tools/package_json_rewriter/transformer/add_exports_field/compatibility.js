@@ -34,10 +34,37 @@ function addHistoricalPathToExportsFields(o, histricalJSPathList) {
         // eslint-disable-next-line no-param-reassign
         o[filepath] = filepath;
 
+        // Use cjs for lib/
+        if (filepath.startsWith('./lib/') && filepath.endsWith('.mjs')) {
+            continue;
+        }
+
         const filepathWithoutExtension = filepath.replace(/\.(js|mjs|cjs)$/u, '');
         // eslint-disable-next-line no-param-reassign
-        o[filepathWithoutExtension] = filepathWithoutExtension;
+        o[filepathWithoutExtension] = filepath;
     }
+
+    const DIR_SUBPATH = [
+        'Maybe',
+        'Nullable',
+        'PlainOption',
+        'PlainResult',
+        'Undefinable',
+    ];
+
+    const handleSpecialCaseOfNodeModuleResolution = (list, extension) => {
+        for (const dirpath of list) {
+            const key = `./${dirpath}`;
+
+            // eslint-disable-next-line no-param-reassign
+            o[key] = `${key}/index.${extension}`;
+        }
+    };
+
+    handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH.map((path) => `cjs/${path}`), 'js');
+    handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH.map((path) => `esm/${path}`), 'mjs');
+    // Our defult is still commonjs. For lib/, we should use `.js`.
+    handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH.map((path) => `lib/${path}`), 'js');
 }
 
 module.exports = Object.freeze({

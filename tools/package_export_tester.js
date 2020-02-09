@@ -35,6 +35,41 @@ async function loadJSFileAsModule(file) {
     }
 }
 
+async function testSpecialCaseLoadIndexJS(installedPackageJSON) {
+    const DIR_SUBPATH = [
+        'Maybe',
+        'Nullable',
+        'PlainOption',
+        'PlainResult',
+        'Undefinable',
+    ];
+    const NODE_MODULE_RESOLUTION_SPECIAL_CASE_CJS = [
+        ...DIR_SUBPATH.map((path) => `cjs/${path}`),
+        ...DIR_SUBPATH.map((path) => `lib/${path}`),
+    ];
+
+    // `require()` can load `./index.js` with a parent directry name.
+    // This behavior is not supported by Node.js' ESM implementation.
+    // But it might be supported by webpack or other bundlers. It's sad for package developer.
+
+    for (const file of NODE_MODULE_RESOLUTION_SPECIAL_CASE_CJS) {
+        loadCJS(file);
+    }
+
+    const NODE_MODULE_RESOLUTION_SPECIAL_CASE_ESM = DIR_SUBPATH.map((path) => `./esm/${path}`);
+    for (const name of NODE_MODULE_RESOLUTION_SPECIAL_CASE_ESM) {
+        const filename = `${name}/index.mjs`;
+        testPackageJSONHasExportsEntry(installedPackageJSON, name, filename);
+    }
+}
+
+function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
+    const exports = pkgObj.exports;
+    const actual = exports[entryName];
+
+    assert.strictEqual(actual, entryFileName, `${entryName} should specify ${entryFileName}, but ${actual}`);
+}
+
 (async function main() {
     const json = await loadJSON(BASE_DIR, './pkg_files.json');
     assert.strictEqual(Array.isArray(json), true, '`json` should be Array');
@@ -65,19 +100,47 @@ async function loadJSFileAsModule(file) {
         }
     }
 
+    const installedPackageJSON = await loadJSON(BASE_DIR, `../node_modules/${PACKAGE_NAME}/package.json`);
+
+    const EXTENSION_PATTERN = /\.(js|mjs|cjs)$/u;
+
     for (const file of cjsFileList) {
         loadCJS(file);
+
+        // With classic Node.js Module resolution support without extension.
+        loadCJS(file.replace(EXTENSION_PATTERN, ''));
     }
+
+    const testSpecialCaseESMWithoutExtension = (file) => {
+        // Out package type is not module. Let's return.
+        if (file === '.') {
+            return;
+        }
+
+        // With classic Node.js Module resolution support without extension.
+        // It's supported by various bundlers (webpack, rollup, and more).
+        // But Node.js does not support its style.
+        // Instead of loading a module, we'll test by checking a value in package.json.
+
+        const fileValue = `./${file}`;
+        const classicPath = fileValue.replace(EXTENSION_PATTERN, '');
+        testPackageJSONHasExportsEntry(installedPackageJSON, classicPath, fileValue);
+    };
 
     for (const file of esmFileList) {
         // eslint-disable-next-line no-await-in-loop
         await loadESM(file);
+
+        testSpecialCaseESMWithoutExtension(file);
     }
 
     for (const file of libFileList) {
         // eslint-disable-next-line no-await-in-loop
         await loadJSFileAsModule(file);
+        loadCJS(file.replace(EXTENSION_PATTERN, ''));
     }
+
+    await testSpecialCaseLoadIndexJS(installedPackageJSON);
 })().catch((e) => {
     console.error(e);
     process.exit(1);
