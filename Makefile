@@ -170,7 +170,6 @@ TEST_TARGETS := \
   run_ava \
   test_distribution_contain_all \
   test_esmodule_path_rewrite \
-  test_package_json_rewrite \
   test_package_install
 
 .PHONY: test
@@ -207,14 +206,6 @@ test_esmodule_path_rewrite: distribution
 .PHONY: run_test_esmodule_path_rewrite
 run_test_esmodule_path_rewrite:
 	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/esmodule_path_rewrite_tester.js
-
-.PHONY: test_package_json_rewrite
-test_package_json_rewrite: distribution
-	$(MAKE) run_test_package_json_rewrite -C $(CURDIR)
-
-.PHONY: run_test_package_json_rewrite
-run_test_package_json_rewrite:
-	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/package_json_rewriter/tester.js
 
 .PHONY: test_package_install
 test_package_install: distribution __run_install_package
