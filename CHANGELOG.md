@@ -2,7 +2,17 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.2.0...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.2.1...master).
+
+
+## 22.2.1
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.2.0...v22.2.1).
+
+### Internals
+
+* Generate package.json to allow to transform it. ([#573](https://github.com/karen-irc/option-t/pull/573), [#574](https://github.com/karen-irc/option-t/pull/574))
+* Update dependencies.
 
 
 ## 22.2.0
