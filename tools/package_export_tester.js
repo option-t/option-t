@@ -10,12 +10,14 @@ const PACKAGE_NAME = 'option-t';
 function loadCJS(file) {
     const modulepath = (file === '.') ? PACKAGE_NAME : `${PACKAGE_NAME}/${file}`;
     // eslint-disable-next-line global-require
-    require(modulepath);
+    const mod = require(modulepath);
+    return mod;
 }
 
 async function loadESM(file) {
     const modulepath = (file === '.') ? PACKAGE_NAME : `${PACKAGE_NAME}/${file}`;
-    await import(modulepath);
+    const mod = await import(modulepath);
+    return mod;
 }
 
 async function loadJSFileAsModule(file) {
@@ -136,6 +138,23 @@ function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
     }
 
     await testSpecialCaseLoadIndexJS(installedPackageJSON);
+
+    const publicApiTestCases = await import(`${__dirname}/public_api.mjs`).then((obj) => obj.default);
+
+    const matcher = (packagePath, recods, list) => {
+        const actual = Object.keys(recods).sort();
+        const expected = list.sort();
+        assert.deepStrictEqual(actual, expected, `all exported symbols should be actual exported: ${packagePath}`);
+    };
+
+    for (const [key, { exports: expected }] of Object.entries(publicApiTestCases)) {
+        // eslint-disable-next-line no-await-in-loop
+        const importESMObj = await loadESM(key);
+        matcher(`mjs:${key}`, importESMObj, expected);
+
+        const importCJSObj = loadCJS(key);
+        matcher(`cjs:${key}`, importCJSObj, expected);
+    }
 })().catch((e) => {
     console.error(e);
     process.exit(1);

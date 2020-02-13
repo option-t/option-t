@@ -6,6 +6,10 @@ const {
     loadHistoricalPathInfo,
     addHistoricalPathToExportsFields,
 } = require('./compatibility');
+const {
+    loadPublicAPIDefinitions,
+    addPublicAPIToExportsFields,
+} = require('./public_api');
 
 const BASE_DIR = __dirname;
 
@@ -23,6 +27,9 @@ async function addExportsFields(json) {
 
     const histricalJSPathList = await loadHistoricalPathInfo(BASE_DIR, '../../../pkg_files.json');
     addHistoricalPathToExportsFields(o, histricalJSPathList);
+
+    const publicApiList = await loadPublicAPIDefinitions(BASE_DIR, '../../../public_api.mjs');
+    await addPublicAPIToExportsFields(o, publicApiList);
 
     // For the future, we may have a chance to remove this
     // when https://github.com/nodejs/node/issues/32107/ has been fixed.
