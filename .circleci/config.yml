@@ -22,7 +22,7 @@ executors:
     nodejs_12_executor:
         working_directory: *workspace_root
         docker:
-            - image: node:12-buster
+            - image: node:12.16-buster
         environment:
             YARN_CACHE_FOLDER: *yarnpkg_cache_dir
 
