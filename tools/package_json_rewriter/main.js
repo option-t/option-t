@@ -4,6 +4,7 @@ const assert = require('assert');
 const fs = require('fs').promises;
 const path = require('path');
 
+const { addExportsFields } = require('./transformer/add_exports_field/main');
 const { loadJSON } = require('./json');
 
 const BASE_DIR = __dirname;
@@ -35,7 +36,9 @@ async function writePackageJSON(baseDir, outputPath, content) {
     const json = await loadJSON(BASE_DIR, INPUT_MANIFEST_PATH);
     assert.notStrictEqual(json, null, 'Fail to parse the file list snapshot');
 
-    const TRANSFORMERS = [];
+    const TRANSFORMERS = [
+        addExportsFields,
+    ];
     for (const transforer of TRANSFORMERS) {
         // eslint-disable-next-line no-await-in-loop
         await transforer(json);
