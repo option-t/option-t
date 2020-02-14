@@ -2,7 +2,20 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.2.1...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.2.2...master).
+
+
+## 22.2.2
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.2.1...v22.2.2).
+
+## Internals
+
+* Add exist paths to 'exports' fields in package.json. ([#579](https://github.com/karen-irc/option-t/pull/579))
+    * By the behavior of Node.js v13.8,
+      if we add `exports` field once even if its object is empty `{}`,
+      user could not load all subpaths by `option-t/esm/Bar/Foo`.
+      This causes a breaking change. So I added these entries to keep the backward compatibility.
 
 
 ## 22.2.1
