@@ -3,7 +3,7 @@
   "version": "22.2.2",
   "description": "Option type implementation whose APIs are inspired by Rust's `Option<T>`.",
   "type": "commonjs",
-  "main": "cjs/index.js",
+  "main": "./cjs/index.js",
   "files": [
     "CHANGELOG.md",
     "cjs/",
