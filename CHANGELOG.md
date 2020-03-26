@@ -2,7 +2,17 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.2.2...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.2.4...master).
+
+
+## 22.2.4
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.2.3...v22.2.4).
+
+### Internals
+
+* Update dependencies.
+* Fix the order of arguments for eslint-cli. ([#606](https://github.com/karen-irc/option-t/pull/606))
 
 
 ## 22.2.3
