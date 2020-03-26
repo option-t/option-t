@@ -5,6 +5,16 @@
 [See more details](https://github.com//karen-irc/option-t/compare/v22.2.2...master).
 
 
+## 22.2.3
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.2.2...v22.2.3).
+
+### Bug Fix
+
+* Fix `ERR_PACKAGE_PATH_NOT_EXPORTED` error on loading `option-t`. ([#602](https://github.com/karen-irc/option-t/pull/602))
+    * This problem was reproducible with Node.js v13.10 or later.
+
+
 ## 22.2.2
 
 [See more details](https://github.com//karen-irc/option-t/compare/v22.2.1...v22.2.2).
