@@ -158,7 +158,7 @@ lint: eslint ## Run all lints
 
 .PHONY: eslint
 eslint:
-	$(NPM_BIN)/eslint $(CURDIR) '$(CURDIR)/**/.eslintrc.js' --ext=.js,.jsx,.mjs,.ts,.tsx
+	$(NPM_BIN)/eslint $(CURDIR) --ext=.js,.jsx,.mjs,.ts,.tsx
 
 
 ###########################
@@ -233,7 +233,7 @@ fmt: eslint_fmt ## Apply all formatters
 
 .PHONY: eslint_fmt
 eslint_fmt: 
-	$(NPM_BIN)/eslint $(CURDIR) $(CURDIR)/**/.eslintrc.js --ext .js --fix
+	$(NPM_BIN)/eslint $(CURDIR) --ext .js --fix
 
 TARGETS_SHOULD_BE_RESET_AFTER_TEST_TO_INSTALL := \
   package.json \
