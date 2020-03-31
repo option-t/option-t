@@ -1,0 +1,14 @@
+# See
+#   - https://prettier.io/docs/en/options.html
+#   - https://prettier.io/docs/en/configuration.html
+
+# sort with values in .editorconfig
+arrowParens = 'always'
+bracketSpacing = true
+printWidth = 100
+quoteProps = 'consistent'
+semi = true
+singleQuote = true
+tabWidth = 4
+trailingComma = 'es5'
+useTabs = false

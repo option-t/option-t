@@ -218,18 +218,23 @@ post_cleanup_to_test_package_install:
 ###########################
 # Tools
 ###########################
-.PHONY: fmt
-fmt: eslint_fmt ## Apply all formatters
+.PHONY: format
+format: ## Apply formatters
+	$(NPM_BIN)/prettier --write $(CURDIR)
+
+.PHONY: format_check
+format_check: ## Check code formatting
+	$(NPM_BIN)/prettier --check $(CURDIR)
+
+.PHONY: eslint_fix
+eslint_fix: ## Apply ESLint's `--fix` mode
+	$(NPM_BIN)/eslint --ext .js,.cjs,.mjs,.jsx,.ts,.tsx --fix $(CURDIR)/
 
 .PHONY: generate_import_path_list_md
 generate_import_path_list_md: ## Generate all public import paths to docs/import_path.md
 	OUT_DIR=${DOCS_DIR} \
     SRC_DIR=${SRC_DIR} \
     $(NODE_BIN) $(CURDIR)/tools/generate_import_path_list_markdown.mjs
-
-.PHONY: eslint_fmt
-eslint_fmt: 
-	$(NPM_BIN)/eslint --ext .js --fix $(CURDIR)/
 
 TARGETS_SHOULD_BE_RESET_AFTER_TEST_TO_INSTALL := \
   package.json \
