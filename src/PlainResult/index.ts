@@ -39,6 +39,7 @@ export {
     expectIsOk as expect,
     expectIsErr as expectErr,
 } from './expect';
+export { flattenForResult as flatten } from './flatten';
 export { mapForResult as map } from './map';
 export { mapOrForResult as mapOr } from './mapOr';
 export { mapOrElseForResult as mapOrElse } from './mapOrElse';
