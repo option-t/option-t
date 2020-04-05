@@ -2,7 +2,22 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.2.4...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.3.0...master).
+
+
+## 22.3.0
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.2.4...v22.3.0).
+
+### New Feature
+
+* Implement `flatten()` for PlainResult. ([#608](https://github.com/karen-irc/option-t/pull/608))
+
+
+### Internals
+
+* Update dependencies.
+* Add more test cases. ([#609](https://github.com/karen-irc/option-t/pull/609))
 
 
 ## 22.2.4
