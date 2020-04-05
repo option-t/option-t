@@ -14,6 +14,9 @@ yarnpkg_cache_dir: &yarnpkg_cache_dir
     # We'd like to use the absolute path, but CircleCI command parser does not allow it.
     ./.cache/yarn
 
+distributable_dir: &distributable_dir
+    ./__dist
+
 
 ###########################################
 # Executors Definitions
@@ -55,12 +58,30 @@ commands:
     ###########################################
     # Test Commands
     ###########################################
-    test_all:
+    build_distribution:
+        ## TODO description
         description: "Test all required items"
         steps:
             - run: make clean -j
-            - run: make test -j
+            - run: make distribution -j
             - run: make git_diff -j
+
+    run_unit_tests:
+        ## TODO description
+        description: "Test all required items"
+        steps:
+            - run: make clean -j
+            - run: make run_ava -j
+            - run: make git_diff -j
+
+    run_package_test:
+        ## TODO description
+        description: "Test all required items"
+        steps:
+            - run: make clean -j
+            - run: make test_distribution_contain_all -j
+            - run: make test_esmodule_path_rewrite -j
+            - run: make test_package_install -j
 
 
 ###########################################
@@ -135,21 +156,66 @@ jobs:
             - *cmd_save_cache
             - *cmd_persist_to_workspace_with_dependency_cache
 
-    minimum_build_and_test_for_every_change:
+    ###########################################
+    # Minimum Supported
+    ###########################################
+    minimum_build_distribution:
         executor: nodejs_12_executor
         steps:
             - checkout
             - *cmd_attach_workspace
             - install_npm_dependency
-            - test_all
+            ## TODO: Save dependencies and the artifact
+            - build_distribution
 
-    latest_build_and_test_for_every_change:
+    minimum_run_unit_tests:
+        executor: nodejs_12_executor
+        steps:
+            - checkout
+            - *cmd_attach_workspace
+            ## TODO: Remove install dependency
+            - install_npm_dependency
+            - run_unit_tests
+
+    minimum_run_package_tests:
+        executor: nodejs_12_executor
+        steps:
+            - checkout
+            - *cmd_attach_workspace
+            ## TODO: Remove install dependency
+            - install_npm_dependency
+            - run_package_test
+        
+    ###########################################
+    # Latest Supported
+    ###########################################
+    latest_build_distribution:
         executor: latest_nodejs_executor
         steps:
             - checkout
             - *cmd_attach_workspace
             - install_npm_dependency
-            - test_all
+            ## TODO: Save dependencies and the artifact
+            - build_distribution
+
+
+    latest_run_unit_tests:
+        executor: latest_nodejs_executor
+        steps:
+            - checkout
+            - *cmd_attach_workspace
+            ## TODO: Remove install dependency
+            - install_npm_dependency
+            - run_unit_tests
+
+    latest_run_package_tests:
+        executor: latest_nodejs_executor
+        steps:
+            - checkout
+            - *cmd_attach_workspace
+            ## TODO: Remove install dependency
+            - install_npm_dependency
+            - run_package_test
 
 
 ###########################################
@@ -174,13 +240,45 @@ workflows:
                 filters:
                     <<: *ignore_branches_for_bors
 
-            - minimum_build_and_test_for_every_change:
+            ###########################################
+            # Minimum Supported
+            ###########################################
+            - minimum_build_distribution:
                 requires:
                     - install_dependencies
                 filters:
                     <<: *ignore_branches_for_bors
-            - latest_build_and_test_for_every_change:
+
+            - minimum_run_unit_tests:
+                ## TODO should we use the artifacts built on latest executor?
+                requires:
+                    - minimum_build_distribution
+                filters:
+                    <<: *ignore_branches_for_bors
+
+            - minimum_run_package_tests:
+                requires:
+                    - minimum_build_distribution
+                filters:
+                    <<: *ignore_branches_for_bors
+
+            ###########################################
+            # Latest Supported
+            ###########################################
+            - latest_build_distribution:
                 requires:
                     - install_dependencies
+                filters:
+                    <<: *ignore_branches_for_bors
+
+            - latest_run_unit_tests:
+                requires:
+                    - latest_build_distribution
+                filters:
+                    <<: *ignore_branches_for_bors
+
+            - latest_run_package_tests:
+                requires:
+                    - latest_build_distribution
                 filters:
                     <<: *ignore_branches_for_bors
