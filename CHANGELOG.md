@@ -2,7 +2,16 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.3.0...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.3.1...master).
+
+
+## 22.3.1
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.3.0...v22.3.1).
+
+### Internals
+
+*  Remove renamer-cli from depdendencies. ([#610](https://github.com/karen-irc/option-t/pull/610)) 
 
 
 ## 22.3.0
