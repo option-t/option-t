@@ -2,7 +2,17 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.3.1...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.3.2...master).
+
+
+## 22.3.2
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.3.1...v22.3.2).
+
+### Bugfix
+
+* Export `flatten()` from PlainResult/index. ([#611](https://github.com/karen-irc/option-t/pull/611))
+    * This follow up [#608](https://github.com/karen-irc/option-t/pull/608)
 
 
 ## 22.3.1
