@@ -57,7 +57,6 @@
     "cpx": "^1.5.0",
     "del-cli": "^3.0.0",
     "eslint": "^6.8.0",
-    "rename-cli": "^6.0.0",
     "typescript": "~3.7.3"
   },
   "sideEffects": false,
