@@ -78,9 +78,9 @@ commands:
         ## TODO description
         description: "Test all required items"
         steps:
-            - run: make clean -j
-            - run: make test_distribution_contain_all -j
-            - run: make test_esmodule_path_rewrite -j
+            - run: make run_test_distribution_contain_all -j
+            - run: make run_test_esmodule_path_rewrite -j
+            ## TODO: Should we make this separate job?
             - run: make test_package_install -j
 
 
@@ -142,6 +142,12 @@ cmd_persist_to_workspace_with_dependency_cache: &cmd_persist_to_workspace_with_d
         paths:
             - *yarnpkg_cache_dir
 
+cmd_persist_distributable_dir_to_workspace: &cmd_persist_distributable_dir_to_workspace
+    persist_to_workspace:
+        root: *workspace_root
+        paths:
+            - *distributable_dir
+
 
 ###########################################
 # Job Definitions
@@ -165,8 +171,8 @@ jobs:
             - checkout
             - *cmd_attach_workspace
             - install_npm_dependency
-            ## TODO: Save dependencies and the artifact
             - build_distribution
+            - *cmd_persist_distributable_dir_to_workspace
 
     minimum_run_unit_tests:
         executor: nodejs_12_executor
@@ -185,7 +191,8 @@ jobs:
             ## TODO: Remove install dependency
             - install_npm_dependency
             - run_package_test
-        
+
+
     ###########################################
     # Latest Supported
     ###########################################
@@ -195,9 +202,8 @@ jobs:
             - checkout
             - *cmd_attach_workspace
             - install_npm_dependency
-            ## TODO: Save dependencies and the artifact
             - build_distribution
-
+            - *cmd_persist_distributable_dir_to_workspace
 
     latest_run_unit_tests:
         executor: latest_nodejs_executor
