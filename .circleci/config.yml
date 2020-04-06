@@ -173,14 +173,13 @@ jobs:
             - install_npm_dependency
             - build_distribution
             - *cmd_persist_distributable_dir_to_workspace
+            - *cmd_persist_to_workspace_with_dependency_cache
 
     minimum_run_unit_tests:
         executor: nodejs_12_executor
         steps:
             - checkout
             - *cmd_attach_workspace
-            ## TODO: Remove install dependency
-            - install_npm_dependency
             - run_unit_tests
 
     minimum_run_package_tests:
@@ -188,8 +187,6 @@ jobs:
         steps:
             - checkout
             - *cmd_attach_workspace
-            ## TODO: Remove install dependency
-            - install_npm_dependency
             - run_package_test
 
 
@@ -204,14 +201,13 @@ jobs:
             - install_npm_dependency
             - build_distribution
             - *cmd_persist_distributable_dir_to_workspace
+            - *cmd_persist_to_workspace_with_dependency_cache
 
     latest_run_unit_tests:
         executor: latest_nodejs_executor
         steps:
             - checkout
             - *cmd_attach_workspace
-            ## TODO: Remove install dependency
-            - install_npm_dependency
             - run_unit_tests
 
     latest_run_package_tests:
@@ -219,8 +215,6 @@ jobs:
         steps:
             - checkout
             - *cmd_attach_workspace
-            ## TODO: Remove install dependency
-            - install_npm_dependency
             - run_package_test
 
 
