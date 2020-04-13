@@ -52,7 +52,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
-    "@typescript-eslint/parser": "^2.25.0",
+    "@typescript-eslint/parser": "^2.27.0",
     "ava": "^3.5.2",
     "cpx": "^1.5.0",
     "del-cli": "^3.0.0",
