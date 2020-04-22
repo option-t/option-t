@@ -22,8 +22,5 @@ indent_size = 4
 [.circleci/**.yml]
 indent_size = 4
 
-[.github/workflows/**.yml]
-indent_size = 2
-
 [Makefile]
 indent_style = tab
