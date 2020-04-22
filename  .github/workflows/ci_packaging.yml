@@ -1,6 +1,9 @@
 name: Test for 'exports' field in package.json
 on:
   push:
+    # If we only specify `branches`, this will not run.
+    branches:
+      - *
     branches-ignore:
       # These branches are used by bors-n
       - staging.tmp
@@ -8,6 +11,9 @@ on:
     tags-ignore:
       - v*.*.*
   pull_request:
+    # If we only specify `branches`, this will not run.
+    branches:
+      - *
     branches-ignore:
       # These branches are used by bors-n
       - staging.tmp
@@ -15,7 +21,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
