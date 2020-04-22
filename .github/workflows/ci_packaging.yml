@@ -1,0 +1,48 @@
+name: Test for 'exports' field in package.json
+on:
+  push:
+    branches:
+      # To supress this action launches twice on conditions which fulfills all of follwings:
+      #   - On pushing a new change to a branch.
+      #   - The branch is opening a pull request
+      #   - The branch is origin repository.
+      # We limits for push events for `master`.
+      # By [this link](https://github.community/t5/GitHub-Actions/How-to-trigger-a-single-build-on-either-push-or-pull-request/m-p/32469#M1144), 
+      # we seem that we need to add `branches` for `pull_request` event.
+      # However, actually, we don't have to limit a target branch for pull requests to suppress this problem.
+      # Even if we don't specify it, it triggers this action that pushing to the branch for pull request.
+      - master
+      # These branches are used by bors-ng.
+      - staging
+      - trying
+    tags-ignore:
+      # Ignore for release/
+      - v*.*.*
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version:
+          # As my observations, Node.js 12 does not supports `exports` field.
+          # This is nice to contrast.
+          - 12.x
+          - 14.x
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+  
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Test to import by path names
+      run: make test_package_install -j
+      env:
+        CI: true
