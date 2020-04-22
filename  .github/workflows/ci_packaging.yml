@@ -4,20 +4,10 @@ on:
     # If we only specify `branches`, this will not run.
     branches:
       - *
-    branches-ignore:
-      # These branches are used by bors-n
-      - staging.tmp
-      - trying.tmp
-    tags-ignore:
-      - v*.*.*
   pull_request:
     # If we only specify `branches`, this will not run.
     branches:
       - *
-    branches-ignore:
-      # These branches are used by bors-n
-      - staging.tmp
-      - trying.tmp
 
 jobs:
   build:
