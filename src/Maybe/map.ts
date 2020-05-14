@@ -1,7 +1,7 @@
-import { expectNotNullAndUndefined } from './expect';
-import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';
-import { MapFn } from '../shared/Function';
-import { Maybe, isNotNullAndUndefined } from './Maybe';
+import { expectNotNullAndUndefined } from './expect.ts';
+import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage.ts';
+import { MapFn } from '../shared/Function.ts';
+import { Maybe, isNotNullAndUndefined } from './Maybe.ts';
 
 /**
  *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is not `null` and `undefined`.

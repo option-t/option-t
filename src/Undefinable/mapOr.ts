@@ -1,7 +1,7 @@
-import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE, ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
-import { expectNotUndefined } from './expect';
-import { MapFn } from '../shared/Function';
-import { Undefinable } from './Undefinable';
+import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE, ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage.ts';
+import { expectNotUndefined } from './expect.ts';
+import { MapFn } from '../shared/Function.ts';
+import { Undefinable } from './Undefinable.ts';
 
 /**
  *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is not `undefined`.
@@ -16,7 +16,7 @@ import { Undefinable } from './Undefinable';
  */
 export function mapOrForUndefinable<T, U>(src: Undefinable<T>, def: U, selector: MapFn<T, U>): U {
     let r: U;
-    let msg = '';
+    let msg = '.ts';
     if (src !== undefined) {
         r = selector(src);
         msg = ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE;

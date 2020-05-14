@@ -1,4 +1,4 @@
-import { Result } from './Result';
+import { Result } from './Result.ts';
 
 /**
  *  Unwraps a result _v_, returns the content of an `Ok(T)`.

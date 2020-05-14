@@ -1,7 +1,7 @@
-import { RecoveryFn } from '../shared/Function';
-import { Maybe } from './Maybe';
-import { expectNotNullAndUndefined } from './expect';
-import { ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';
+import { RecoveryFn } from '../shared/Function.ts';
+import { Maybe } from './Maybe.ts';
+import { expectNotNullAndUndefined } from './expect.ts';
+import { ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage.ts';
 
 /**
  *  Return _v_ as `T` if the passed _v_ is not `null` and `undefined`.

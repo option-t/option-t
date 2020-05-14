@@ -1,5 +1,5 @@
-import { TapFn } from '../shared/Function';
-import { Nullable } from './Nullable';
+import { TapFn } from '../shared/Function.ts';
+import { Nullable } from './Nullable.ts';
 
 /**
  *  * Return _v_ directly.

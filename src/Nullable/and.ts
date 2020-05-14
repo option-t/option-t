@@ -1,4 +1,4 @@
-import { Nullable, isNotNull } from './Nullable';
+import { Nullable, isNotNull } from './Nullable.ts';
 
 /**
  *  Return _b_ if _a_ is not `null`.

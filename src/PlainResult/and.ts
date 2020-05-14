@@ -1,4 +1,4 @@
-import { Result } from './Result';
+import { Result } from './Result.ts';
 
 /**
  *  Return _b_ if _a_ is `Ok(T)`.

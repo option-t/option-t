@@ -1,5 +1,5 @@
-import { Option } from './Option';
-import { andThenForOption } from './andThen';
+import { Option } from './Option.ts';
+import { andThenForOption } from './andThen.ts';
 
 function flatten<T>(input: Option<T>): Option<T> {
     return input;

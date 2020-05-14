@@ -1,5 +1,5 @@
-import { Option, createNone, createSome } from '../PlainOption/Option';
-import { Result } from './Result';
+import { Option, createNone, createSome } from '../PlainOption/Option.ts';
+import { Result } from './Result.ts';
 
 /**
  *  Convert to `Some(T)` if _v_ is `Ok(T)`.

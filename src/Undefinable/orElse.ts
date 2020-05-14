@@ -1,5 +1,5 @@
-import { RecoveryFn } from '../shared/Function';
-import { Undefinable } from './Undefinable';
+import { RecoveryFn } from '../shared/Function.ts';
+import { Undefinable } from './Undefinable.ts';
 
 export type MayRecoveryFn<T> = RecoveryFn<Undefinable<T>>;
 

@@ -1,5 +1,5 @@
-import { expectIsSome } from './expect';
-import { Option } from './Option';
+import { expectIsSome } from './expect.ts';
+import { Option } from './Option.ts';
 
 /**
  *  Return the inner `T` of a `Some(T)`.

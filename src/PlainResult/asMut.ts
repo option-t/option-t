@@ -1,4 +1,4 @@
-import { Result } from './Result';
+import { Result } from './Result.ts';
 
 /**
  *  This allows to mutate the value to save needless allocation.

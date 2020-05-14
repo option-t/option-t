@@ -32,20 +32,20 @@ export {
     createNone,
     isSome,
     isNone,
-} from './Option';
+} from './Option.ts';
 
-export { andForOption as and } from './and';
-export { andThenForOption as andThen } from './andThen';
-export { expectIsSome as expect } from './expect';
-export { filterForOption as filter } from './filter';
-export { flattenForOption as flatten } from './flatten';
-export { mapForOption as map } from './map';
-export { mapOrForOption as mapOr } from './mapOr';
-export { mapOrElseForOption as mapOrElse } from './mapOrElse';
-export { orForOption as or } from './or';
-export { orElseForOption as orElse } from './orElse';
-export { transposeForOption as transpose } from './transpose';
-export { tapOption as tap } from './tap';
-export { unwrapOption as unwrap } from './unwrap';
-export { unwrapOrFromOption as unwrapOr } from './unwrapOr';
-export { unwrapOrElseFromOption as unwrapOrElse } from './unwrapOrElse';
+export { andForOption as and } from './and.ts';
+export { andThenForOption as andThen } from './andThen.ts';
+export { expectIsSome as expect } from './expect.ts';
+export { filterForOption as filter } from './filter.ts';
+export { flattenForOption as flatten } from './flatten.ts';
+export { mapForOption as map } from './map.ts';
+export { mapOrForOption as mapOr } from './mapOr.ts';
+export { mapOrElseForOption as mapOrElse } from './mapOrElse.ts';
+export { orForOption as or } from './or.ts';
+export { orElseForOption as orElse } from './orElse.ts';
+export { transposeForOption as transpose } from './transpose.ts';
+export { tapOption as tap } from './tap.ts';
+export { unwrapOption as unwrap } from './unwrap.ts';
+export { unwrapOrFromOption as unwrapOr } from './unwrapOr.ts';
+export { unwrapOrElseFromOption as unwrapOrElse } from './unwrapOrElse.ts';

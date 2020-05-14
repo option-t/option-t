@@ -1,5 +1,5 @@
-import { Result } from './Result';
-import { MapFn } from '../shared/Function';
+import { Result } from './Result.ts';
+import { MapFn } from '../shared/Function.ts';
 
 /**
  *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is `Ok(T)`.

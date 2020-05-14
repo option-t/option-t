@@ -1,5 +1,5 @@
-import { MapFn } from '../shared/Function';
-import { Option } from './Option';
+import { MapFn } from '../shared/Function.ts';
+import { Option } from './Option.ts';
 
 export type FlatmapFn<T, U> = MapFn<T, Option<U>>;
 

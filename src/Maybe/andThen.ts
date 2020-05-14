@@ -1,5 +1,5 @@
-import { MapFn } from '../shared/Function';
-import { Maybe, isNotNullAndUndefined } from './Maybe';
+import { MapFn } from '../shared/Function.ts';
+import { Maybe, isNotNullAndUndefined } from './Maybe.ts';
 
 export type FlatmapFn<T, U> = MapFn<T, Maybe<U>>;
 

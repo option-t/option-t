@@ -1,4 +1,4 @@
-import { Nullable } from './Nullable';
+import { Nullable } from './Nullable.ts';
 
 /**
  *  Return _v_ as `T` if the passed _v_ is not `null`.

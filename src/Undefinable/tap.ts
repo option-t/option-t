@@ -1,5 +1,5 @@
-import { TapFn } from '../shared/Function';
-import { Undefinable } from './Undefinable';
+import { TapFn } from '../shared/Function.ts';
+import { Undefinable } from './Undefinable.ts';
 
 /**
  *  * Return _v_ directly.

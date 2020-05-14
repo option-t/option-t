@@ -1,5 +1,5 @@
-import { Result, createOk, createErr, Ok, Err, isErr } from '../PlainResult/Result';
-import { Option, isNone, createSome, createNone, None, Some } from './Option';
+import { Result, createOk, createErr, Ok, Err, isErr } from '../PlainResult/Result.ts';
+import { Option, isNone, createSome, createNone, None, Some } from './Option.ts';
 
 /**
  *  Transposes an `Option` of a `Result` into a `Result` of an `Option`.

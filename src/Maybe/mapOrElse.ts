@@ -1,10 +1,10 @@
-import { expectNotNullAndUndefined } from './expect';
+import { expectNotNullAndUndefined } from './expect.ts';
 import {
     ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
-} from './ErrorMessage';
-import { MapFn, RecoveryFn } from '../shared/Function';
-import { Maybe } from './Maybe';
+} from './ErrorMessage.ts';
+import { MapFn, RecoveryFn } from '../shared/Function.ts';
+import { Maybe } from './Maybe.ts';
 
 /**
  *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is not `null` and `undefined`.
@@ -19,7 +19,7 @@ import { Maybe } from './Maybe';
  */
 export function mapOrElseForMaybe<T, U>(src: Maybe<T>, def: RecoveryFn<U>, selector: MapFn<T, U>): U {
     let r: U;
-    let msg = '';
+    let msg = '.ts';
     if (src !== undefined && src !== null) {
         r = selector(src);
         msg = ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE;

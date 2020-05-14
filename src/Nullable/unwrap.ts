@@ -1,6 +1,6 @@
-import { expectNotNull } from './expect';
-import { Nullable } from './Nullable';
-import { ERR_MSG_UNWRAP_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
+import { expectNotNull } from './expect.ts';
+import { Nullable } from './Nullable.ts';
+import { ERR_MSG_UNWRAP_NO_VAL_FOR_NULLABLE } from './ErrorMessage.ts';
 
 /**
  *  Return _v_ as `T` if the passed _v_ is not `null`.

@@ -1,7 +1,7 @@
-import { Mutable } from '../shared/Mutable';
-import { TapFn } from '../shared/Function';
-import { Result, Ok, Err } from './Result';
-import { asMutResult } from './asMut';
+import { Mutable } from '../shared/Mutable.ts';
+import { TapFn } from '../shared/Function.ts';
+import { Result, Ok, Err } from './Result.ts';
+import { asMutResult } from './asMut.ts';
 
 type MutOk<T> = Mutable<Ok<T>>;
 type MutErr<E> = Mutable<Err<E>>;

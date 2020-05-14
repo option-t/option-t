@@ -1,6 +1,6 @@
-import { Undefinable } from './Undefinable';
-import { expectNotUndefined } from './expect';
-import { ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
+import { Undefinable } from './Undefinable.ts';
+import { expectNotUndefined } from './expect.ts';
+import { ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage.ts';
 
 /**
  *  Return _v_ as `T` if the passed _v_ is not `undefined`.

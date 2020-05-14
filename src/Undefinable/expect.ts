@@ -1,4 +1,4 @@
-import { Undefinable } from './Undefinable';
+import { Undefinable } from './Undefinable.ts';
 
 /**
  *  Return _v_ as `T` if the passed _v_ is not `undefined`.

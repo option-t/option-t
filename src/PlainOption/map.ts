@@ -1,5 +1,5 @@
-import { MapFn } from '../shared/Function';
-import { Option, createSome } from './Option';
+import { MapFn } from '../shared/Function.ts';
+import { Option, createSome } from './Option.ts';
 
 /**
  *  Maps a `Option<T>` to `Option<U>` by applying a _selector_ function

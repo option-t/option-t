@@ -1,4 +1,4 @@
-import { Option, isSome, createNone } from './Option';
+import { Option, isSome, createNone } from './Option.ts';
 
 /**
  *  Return one of this pattern:

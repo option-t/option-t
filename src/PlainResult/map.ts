@@ -1,5 +1,5 @@
-import { MapFn } from '../shared/Function';
-import { Result, Err, createOk } from './Result';
+import { MapFn } from '../shared/Function.ts';
+import { Result, Err, createOk } from './Result.ts';
 
 /**
  *  Maps a `Result<T, E>` to `Result<U, E>` by applying a _selector_ function

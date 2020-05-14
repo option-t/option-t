@@ -1,4 +1,4 @@
-import { Nullable, isNull } from './Nullable';
+import { Nullable, isNull } from './Nullable.ts';
 
 /**
  *  Return one of this pattern:

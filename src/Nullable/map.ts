@@ -1,7 +1,7 @@
-import { expectNotNull } from './expect';
-import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
-import { MapFn } from '../shared/Function';
-import { Nullable, isNotNull } from './Nullable';
+import { expectNotNull } from './expect.ts';
+import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage.ts';
+import { MapFn } from '../shared/Function.ts';
+import { Nullable, isNotNull } from './Nullable.ts';
 
 /**
  *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is not `null`,

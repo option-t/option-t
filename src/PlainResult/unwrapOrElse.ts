@@ -1,5 +1,5 @@
-import { RecoveryWithErrorFn } from '../shared/Function';
-import { Result } from './Result';
+import { RecoveryWithErrorFn } from '../shared/Function.ts';
+import { Result } from './Result.ts';
 
 /**
  *  Unwraps a result _v_, returns the content of an `Ok(T)`.

@@ -1,5 +1,5 @@
-import { RecoveryFn } from '../shared/Function';
-import { Nullable } from './Nullable';
+import { RecoveryFn } from '../shared/Function.ts';
+import { Nullable } from './Nullable.ts';
 
 export type MayRecoveryFn<T> = RecoveryFn<Nullable<T>>;
 

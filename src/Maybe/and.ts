@@ -1,4 +1,4 @@
-import { Maybe, isNotNullAndUndefined } from './Maybe';
+import { Maybe, isNotNullAndUndefined } from './Maybe.ts';
 
 /**
  *  Return _b_ if _a_ is not `null` and `undefined`.

@@ -1,5 +1,5 @@
-import { MapFn, RecoveryWithErrorFn } from '../shared/Function';
-import { Result } from './Result';
+import { MapFn, RecoveryWithErrorFn } from '../shared/Function.ts';
+import { Result } from './Result.ts';
 
 /**
  *  Maps a `Result<T, E>` to `U` by applying _selector_ to a contained `Ok(T)` value in _src_,

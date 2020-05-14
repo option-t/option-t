@@ -1,4 +1,4 @@
-import { Option } from './Option';
+import { Option } from './Option.ts';
 
 /**
  *  Unwraps a result _v_, returns the content of an `Some(T)`.

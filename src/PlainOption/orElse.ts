@@ -1,5 +1,5 @@
-import { RecoveryFn } from '../shared/Function';
-import { Option } from './Option';
+import { RecoveryFn } from '../shared/Function.ts';
+import { Option } from './Option.ts';
 
 export type MayRecoveryFn<T> = RecoveryFn<Option<T>>;
 

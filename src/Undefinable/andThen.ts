@@ -1,5 +1,5 @@
-import { MapFn } from '../shared/Function';
-import { Undefinable, isNotUndefined } from './Undefinable';
+import { MapFn } from '../shared/Function.ts';
+import { Undefinable, isNotUndefined } from './Undefinable.ts';
 
 export type FlatmapFn<T, U> = MapFn<T, Undefinable<U>>;
 

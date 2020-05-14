@@ -1,5 +1,5 @@
-import { TapFn } from '../shared/Function';
-import { Result } from './Result';
+import { TapFn } from '../shared/Function.ts';
+import { Result } from './Result.ts';
 
 function noop<T>(_v: T) {}
 

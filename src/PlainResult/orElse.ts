@@ -1,5 +1,5 @@
-import { MapFn } from '../shared/Function';
-import { Result } from './Result';
+import { MapFn } from '../shared/Function.ts';
+import { Result } from './Result.ts';
 
 export type FlatmapErrFn<T, E, F> = MapFn<E, Result<T, F>>;
 

@@ -31,36 +31,36 @@ export {
     createErr,
     isOk,
     isErr,
-} from './Result';
+} from './Result.ts';
 
-export { andForResult as and } from './and';
-export { andThenForResult as andThen } from './andThen';
+export { andForResult as and } from './and.ts';
+export { andThenForResult as andThen } from './andThen.ts';
 export {
     expectIsOk as expect,
     expectIsErr as expectErr,
-} from './expect';
-export { flattenForResult as flatten } from './flatten';
-export { mapForResult as map } from './map';
-export { mapOrForResult as mapOr } from './mapOr';
-export { mapOrElseForResult as mapOrElse } from './mapOrElse';
-export { mapErrForResult as mapErr } from './mapErr';
-export { orForResult as or } from './or';
-export { orElseForResult as orElse } from './orElse';
+} from './expect.ts';
+export { flattenForResult as flatten } from './flatten.ts';
+export { mapForResult as map } from './map.ts';
+export { mapOrForResult as mapOr } from './mapOr.ts';
+export { mapOrElseForResult as mapOrElse } from './mapOrElse.ts';
+export { mapErrForResult as mapErr } from './mapErr.ts';
+export { orForResult as or } from './or.ts';
+export { orElseForResult as orElse } from './orElse.ts';
 export {
     tapOk,
     tapErr,
     tapBoth,
-} from './tap';
-export { transposeForResult as transpose } from './transpose';
+} from './tap.ts';
+export { transposeForResult as transpose } from './transpose.ts';
 export {
     toOptionFromOk,
     toOptionFromErr,
     toOptionFromOk as ok,
     toOptionFromErr as err,
-} from './toOption';
+} from './toOption.ts';
 export {
     unwrapFromResult as unwrap,
     unwrapErrFromResult as unwrapErr,
-} from './unwrap';
-export { unwrapOrFromResult as unwrapOr } from './unwrapOr';
-export { unwrapOrElseFromResult as unwrapOrElse } from './unwrapOrElse';
+} from './unwrap.ts';
+export { unwrapOrFromResult as unwrapOr } from './unwrapOr.ts';
+export { unwrapOrElseFromResult as unwrapOrElse } from './unwrapOrElse.ts';

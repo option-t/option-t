@@ -1,5 +1,5 @@
-import { MapFn } from '../shared/Function';
-import { Nullable, isNotNull } from './Nullable';
+import { MapFn } from '../shared/Function.ts';
+import { Nullable, isNotNull } from './Nullable.ts';
 
 export type FlatmapFn<T, U> = MapFn<T, Nullable<U>>;
 

@@ -1,5 +1,5 @@
-import { expectIsOk, expectIsErr } from './expect';
-import { Result } from './Result';
+import { expectIsOk, expectIsErr } from './expect.ts';
+import { Result } from './Result.ts';
 
 /**
  *  Return the inner `T` of a `Ok(T)`.

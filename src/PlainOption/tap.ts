@@ -1,5 +1,5 @@
-import { TapFn } from '../shared/Function';
-import { Option } from './Option';
+import { TapFn } from '../shared/Function.ts';
+import { Option } from './Option.ts';
 
 /**
  *  * Return _v_ directly.

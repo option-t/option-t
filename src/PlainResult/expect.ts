@@ -1,4 +1,4 @@
-import { Result } from './Result';
+import { Result } from './Result.ts';
 
 /**
  *  Return _v_ as `T` if the passed _v_ is `Ok(T)`.

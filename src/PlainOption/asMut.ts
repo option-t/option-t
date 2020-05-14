@@ -1,5 +1,5 @@
-import { Mutable } from '../shared/Mutable';
-import { Option } from './Option';
+import { Mutable } from '../shared/Mutable.ts';
+import { Option } from './Option.ts';
 
 /**
  *  This allows to mutate the value to save needless allocation.

@@ -1,4 +1,4 @@
-import { Option } from './Option';
+import { Option } from './Option.ts';
 
 /**
  *  Return _v_ as `T` if the passed _v_ is `Some(T)`.

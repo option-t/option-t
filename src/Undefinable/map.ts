@@ -1,7 +1,7 @@
-import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
-import { expectNotUndefined } from './expect';
-import { MapFn } from '../shared/Function';
-import { Undefinable, isNotUndefined } from './Undefinable';
+import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage.ts';
+import { expectNotUndefined } from './expect.ts';
+import { MapFn } from '../shared/Function.ts';
+import { Undefinable, isNotUndefined } from './Undefinable.ts';
 
 /**
  *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is not `undefined`,

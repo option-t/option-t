@@ -1,5 +1,5 @@
-import { Option, isNone, createNone } from './Option';
-import { FilterFn } from '../shared/Function';
+import { Option, isNone, createNone } from './Option.ts';
+import { FilterFn } from '../shared/Function.ts';
 
 /**
  *  Returns `None` if the option is `None`,

@@ -1,7 +1,7 @@
-import { Mutable } from '../shared/Mutable';
-import { TapFn } from '../shared/Function';
-import { Option, Some } from './Option';
-import { asMutOption } from './asMut';
+import { Mutable } from '../shared/Mutable.ts';
+import { TapFn } from '../shared/Function.ts';
+import { Option, Some } from './Option.ts';
+import { asMutOption } from './asMut.ts';
 
 type MutSome<T> = Mutable<Some<T>>;
 

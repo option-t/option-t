@@ -1,5 +1,5 @@
-import { MapFn, RecoveryFn } from '../shared/Function';
-import { Option } from './Option';
+import { MapFn, RecoveryFn } from '../shared/Function.ts';
+import { Option } from './Option.ts';
 
 /**
  *  Maps a `Option<T>` to `U` by applying _selector_ to a contained `Some(T)` value in _src_,
