@@ -1,4 +1,4 @@
-# option-t
+# option-t (Deno port)
 
 [![npm version](https://badge.fury.io/js/option-t.svg)](http://badge.fury.io/js/option-t)
 [![Build Status (CircleCI)](https://circleci.com/gh/karen-irc/option-t.svg?style=svg)](https://circleci.com/gh/karen-irc/option-t)
