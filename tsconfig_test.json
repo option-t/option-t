@@ -13,6 +13,6 @@
         "noUnusedLocals": false // for testing
     },
     "include": [
-      "__tests__/**/*"
+        "__tests__/**/*"
     ]
 }
