@@ -14,11 +14,6 @@ function loadCJS(file) {
 }
 
 async function loadESM(file) {
-    // XXX: Node v12 does not support `import()` by default
-    if (/^v12\.\d+\.\d+$/u.test(process.version)) {
-        return;
-    }
-
     const modulepath = (file === '.') ? PACKAGE_NAME : `${PACKAGE_NAME}/${file}`;
     await import(modulepath);
 }
