@@ -1,10 +1,16 @@
-'use strict';
+import * as assert from 'assert';
+import { createRequire } from 'module';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-const assert = require('assert');
+const require = createRequire(import.meta.url);
 
-const { loadJSON } = require('./package_json_rewriter/json');
+import { loadJSON } from './package_json_rewriter/json.mjs';
 
-const BASE_DIR = __dirname;
+const THIS_FILENAME = fileURLToPath(import.meta.url);
+const THIS_DIRNAME = dirname(THIS_FILENAME);
+
+const BASE_DIR = THIS_DIRNAME;
 const PACKAGE_NAME = 'option-t';
 
 function loadCJS(file) {
@@ -138,7 +144,7 @@ function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
 
     await testSpecialCaseLoadIndexJS(installedPackageJSON);
 
-    const publicApiTestCases = await import(`${__dirname}/public_api.mjs`).then((obj) => obj.default);
+    const publicApiTestCases = await import(`${THIS_DIRNAME}/public_api.mjs`).then((obj) => obj.default);
 
     const matcher = (packagePath, recods, list) => {
         const actual = Object.keys(recods).sort();

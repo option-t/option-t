@@ -1,8 +1,10 @@
-'use strict';
+import * as assert from 'assert';
+import { promises as fs } from 'fs';
+import * as path from 'path';
+import { fileURLToPath } from 'url';
 
-const assert = require('assert');
-const fs = require('fs').promises;
-const path = require('path');
+const THIS_FILENAME = fileURLToPath(import.meta.url);
+const THIS_DIRNAME = path.dirname(THIS_FILENAME);
 
 async function* getAllDescendantFiles(subrootDir) {
     const children = await fs.readdir(subrootDir, {
@@ -55,7 +57,7 @@ async function testExpectedFilesInDistDir(expectedSet, fileIter) {
     const OUTDIR = process.env.OUTDIR;
     assert.strictEqual(typeof OUTDIR, 'string', '$OUTDIR envvar should be string');
 
-    const json = await fs.readFile(path.resolve(__dirname, './pkg_files.json'), {
+    const json = await fs.readFile(path.resolve(THIS_DIRNAME, './pkg_files.json'), {
         encoding: 'utf8',
         flag: 'r',
     });

@@ -1,7 +1,5 @@
-'use strict';
-
-const assert = require('assert');
-const path = require('path');
+import * as assert from 'assert';
+import * as path from 'path';
 
 class ExportEntity {
     constructor(key, path = undefined) {
@@ -36,7 +34,7 @@ class ExportEntity {
     }
 }
 
-async function loadPublicAPIDefinitions(baseDir, filepath) {
+export async function loadPublicAPIDefinitions(baseDir, filepath) {
     const p = path.resolve(baseDir, filepath);
     const publicApiTestCases = await import(p).then((obj) => obj.default);
     const EXPORT_ENTRIES = [];
@@ -49,7 +47,7 @@ async function loadPublicAPIDefinitions(baseDir, filepath) {
     return EXPORT_ENTRIES;
 }
 
-async function addPublicAPIToExportsFields(o, publicApiList) {
+export async function addPublicAPIToExportsFields(o, publicApiList) {
     // https://nodejs.org/api/esm.html
     for (const entry of publicApiList) {
         const key = entry.key();
@@ -58,8 +56,3 @@ async function addPublicAPIToExportsFields(o, publicApiList) {
         o[key] = entry;
     }
 }
-
-module.exports = Object.freeze({
-    loadPublicAPIDefinitions,
-    addPublicAPIToExportsFields,
-});

@@ -22,16 +22,10 @@
  * THE SOFTWARE.
  */
 
-'use strict';
+import * as os from 'os';
 
-const os = require('os');
-
-function getSuffixedCommandName(command) {
+export function getSuffixedCommandName(command) {
     const suffix = (os.platform() === 'win32') ? '.cmd' : '';
     const name = command + suffix;
     return name;
 }
-
-module.exports = Object.freeze({
-    getSuffixedCommandName,
-});
