@@ -33,11 +33,6 @@ async function testAllowToLoadFileAsESM(expectedSet) {
 }
 
 (async function main() {
-    // XXX: Node v12 does not support `import()` by default
-    if (/^v12\.\d+\.\d+$/u.test(process.version)) {
-        return;
-    }
-
     const OUTDIR = process.env.OUTDIR;
     assert.strictEqual(typeof OUTDIR, 'string', '$OUTDIR envvar should be string');
 
