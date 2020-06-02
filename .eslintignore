@@ -4,9 +4,6 @@ __tmp_mjs/
 __type_test/
 node_modules/
 
-# include .eslintrc.js as eslint's target.
-!.eslintrc.js
-
 # FIXME: remove these from here
 __tests__/ClassOption/type_definition.ts
 __tests__/ClassResult/type_definition_es6.ts

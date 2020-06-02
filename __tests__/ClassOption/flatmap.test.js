@@ -6,6 +6,7 @@ test('self is `None`', function (t) {
     const none = createNone();
     const option = none.flatMap(function () {
         t.fail('the passed function should not be called');
+        return undefined;
     });
     t.is(option.isNone, true);
 });
