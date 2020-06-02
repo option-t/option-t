@@ -2,7 +2,115 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.3.2...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.4.0...master).
+
+## 22.4.0
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.3.2...v22.4.0).
+
+### New Feature
+
+#### Support conditional exports for public API paths. [#575](https://github.com/karen-irc/option-t/pull/575).
+
+* If toolchains support [conditional exports](https://nodejs.org/api/esm.html#esm_conditional_exports),
+  you can load modules with a same path from both commonjs and ES Module. 
+* We tested this feature on Node.js v12.7 or v14.
+* Some legacy APIs have not marked for this yet.
+* The following list is all:
+
+<details>
+* `option-t/Maybe`
+* `option-t/Maybe/and`
+* `option-t/Maybe/andThen`
+* `option-t/Maybe/expect`
+* `option-t/Maybe/map`
+* `option-t/Maybe/Maybe`
+* `option-t/Maybe/mapOr`
+* `option-t/Maybe/mapOrElse`
+* `option-t/Maybe/or`
+* `option-t/Maybe/orElse`
+* `option-t/Maybe/tap`
+* `option-t/Maybe/unwrap`
+* `option-t/Maybe/unwrapOr`
+* `option-t/Maybe/unwrapOrElse`
+* `option-t/Maybe/xor`
+* `option-t/Nullable`
+* `option-t/Nullable/and`
+* `option-t/Nullable/andThen`
+* `option-t/Nullable/expect`
+* `option-t/Nullable/map`
+* `option-t/Nullable/mapOr`
+* `option-t/Nullable/mapOrElse`
+* `option-t/Nullable/Nullable`
+* `option-t/Nullable/or`
+* `option-t/Nullable/orElse`
+* `option-t/Nullable/tap`
+* `option-t/Nullable/unwrap`
+* `option-t/Nullable/unwrapOr`
+* `option-t/Nullable/unwrapOrElse`
+* `option-t/Nullable/xor`
+* `option-t/PlainOption`
+* `option-t/PlainOption/and`
+* `option-t/PlainOption/andThen`
+* `option-t/PlainOption/asMut`
+* `option-t/PlainOption/drop`
+* `option-t/PlainOption/expect`
+* `option-t/PlainOption/filter`
+* `option-t/PlainOption/flatten`
+* `option-t/PlainOption/map`
+* `option-t/PlainOption/mapOr`
+* `option-t/PlainOption/mapOrElse`
+* `option-t/PlainOption/okOr`
+* `option-t/PlainOption/okOrElse`
+* `option-t/PlainOption/Option`
+* `option-t/PlainOption/or`
+* `option-t/PlainOption/orElse`
+* `option-t/PlainOption/transpose`
+* `option-t/PlainOption/tap`
+* `option-t/PlainOption/unwrap`
+* `option-t/PlainOption/unwrapOr`
+* `option-t/PlainOption/unwrapOrElse`
+* `option-t/PlainOption/xor`
+* `option-t/PlainResult`
+* `option-t/PlainResult/and`
+* `option-t/PlainResult/andThen`
+* `option-t/PlainResult/asMut`
+* `option-t/PlainResult/drop`
+* `option-t/PlainResult/expect`
+* `option-t/PlainResult/flatten`
+* `option-t/PlainResult/map`
+* `option-t/PlainResult/mapErr`
+* `option-t/PlainResult/mapOr`
+* `option-t/PlainResult/mapOrElse`
+* `option-t/PlainResult/or`
+* `option-t/PlainResult/orElse`
+* `option-t/PlainResult/Result`
+* `option-t/PlainResult/tap`
+* `option-t/PlainResult/toOption`
+* `option-t/PlainResult/transpose`
+* `option-t/PlainResult/unwrap`
+* `option-t/PlainResult/unwrapOr`
+* `option-t/PlainResult/unwrapOrElse`
+* `option-t/Undefinable`
+* `option-t/Undefinable/and`
+* `option-t/Undefinable/andThen`
+* `option-t/Undefinable/expect`
+* `option-t/Undefinable/map`
+* `option-t/Undefinable/mapOr`
+* `option-t/Undefinable/mapOrElse`
+* `option-t/Undefinable/or`
+* `option-t/Undefinable/orElse`
+* `option-t/Undefinable/tap`
+* `option-t/Undefinable/Undefinable`
+* `option-t/Undefinable/unwrap`
+* `option-t/Undefinable/unwrapOr`
+* `option-t/Undefinable/unwrapOrElse`
+* `option-t/Undefinable/xor`
+</details>
+
+### Internals
+
+* Update dependencies.
 
 
 ## 22.3.2
