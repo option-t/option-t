@@ -3,6 +3,9 @@
 * you can import these paths from both `require()` and `import()`.
 * To import these, your toolchain must support [conditional exports](https://nodejs.org/api/esm.html#esm_conditional_exports).
 
+
+## Maybe
+
 - [option-t/Maybe](../src/Maybe/index.ts)
 - [option-t/Maybe/and](../src/Maybe/and.ts)
 - [option-t/Maybe/andThen](../src/Maybe/andThen.ts)
@@ -18,6 +21,10 @@
 - [option-t/Maybe/unwrapOr](../src/Maybe/unwrapOr.ts)
 - [option-t/Maybe/unwrapOrElse](../src/Maybe/unwrapOrElse.ts)
 - [option-t/Maybe/xor](../src/Maybe/xor.ts)
+
+
+## Nullable
+
 - [option-t/Nullable](../src/Nullable/index.ts)
 - [option-t/Nullable/and](../src/Nullable/and.ts)
 - [option-t/Nullable/andThen](../src/Nullable/andThen.ts)
@@ -33,6 +40,10 @@
 - [option-t/Nullable/unwrapOr](../src/Nullable/unwrapOr.ts)
 - [option-t/Nullable/unwrapOrElse](../src/Nullable/unwrapOrElse.ts)
 - [option-t/Nullable/xor](../src/Nullable/xor.ts)
+
+
+## PlainOption
+
 - [option-t/PlainOption](../src/PlainOption/index.ts)
 - [option-t/PlainOption/and](../src/PlainOption/and.ts)
 - [option-t/PlainOption/andThen](../src/PlainOption/andThen.ts)
@@ -55,6 +66,10 @@
 - [option-t/PlainOption/unwrapOr](../src/PlainOption/unwrapOr.ts)
 - [option-t/PlainOption/unwrapOrElse](../src/PlainOption/unwrapOrElse.ts)
 - [option-t/PlainOption/xor](../src/PlainOption/xor.ts)
+
+
+## PlainResult
+
 - [option-t/PlainResult](../src/PlainResult/index.ts)
 - [option-t/PlainResult/and](../src/PlainResult/and.ts)
 - [option-t/PlainResult/andThen](../src/PlainResult/andThen.ts)
@@ -75,6 +90,10 @@
 - [option-t/PlainResult/unwrap](../src/PlainResult/unwrap.ts)
 - [option-t/PlainResult/unwrapOr](../src/PlainResult/unwrapOr.ts)
 - [option-t/PlainResult/unwrapOrElse](../src/PlainResult/unwrapOrElse.ts)
+
+
+## Undefinable
+
 - [option-t/Undefinable](../src/Undefinable/index.ts)
 - [option-t/Undefinable/and](../src/Undefinable/and.ts)
 - [option-t/Undefinable/andThen](../src/Undefinable/andThen.ts)
@@ -90,3 +109,4 @@
 - [option-t/Undefinable/unwrapOr](../src/Undefinable/unwrapOr.ts)
 - [option-t/Undefinable/unwrapOrElse](../src/Undefinable/unwrapOrElse.ts)
 - [option-t/Undefinable/xor](../src/Undefinable/xor.ts)
+
