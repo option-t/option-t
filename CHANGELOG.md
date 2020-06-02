@@ -19,6 +19,7 @@
 * The following list is all:
 
 <details>
+
 * `option-t/Maybe`
 * `option-t/Maybe/and`
 * `option-t/Maybe/andThen`
@@ -106,6 +107,7 @@
 * `option-t/Undefinable/unwrapOr`
 * `option-t/Undefinable/unwrapOrElse`
 * `option-t/Undefinable/xor`
+
 </details>
 
 ### Internals
