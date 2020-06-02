@@ -23,21 +23,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: node:${{ matrix.node-version }}-buster
 
     strategy:
       matrix:
         node-version:
           # As my observations, Node.js 12 does not supports `exports` field.
           # This is nice to contrast.
-          - 12.x
-          - 14.x
+          - 12
+          - 14
 
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
   
     - name: Install dependencies
       run: yarn install
