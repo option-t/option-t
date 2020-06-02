@@ -232,6 +232,12 @@ post_cleanup_to_test_package_install:
 .PHONY: fmt
 fmt: eslint_fmt ## Apply all formatters
 
+.PHONY: generate_import_path_list_md
+generate_import_path_list_md: ## Generate all public import paths to docs/import_path.md
+	OUT_DIR=${DOCS_DIR} \
+    SRC_DIR=${SRC_DIR} \
+    $(NODE_BIN) $(CURDIR)/tools/generate_import_path_list_markdown.mjs
+
 .PHONY: eslint_fmt
 eslint_fmt: 
 	$(NPM_BIN)/eslint --ext .js --fix $(CURDIR)/

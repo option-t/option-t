@@ -2,7 +2,18 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.4.0...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.4.1...master).
+
+
+## 22.4.1
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.4.0...v22.4.1).
+
+### Documentation
+
+* Add [docs/public_api_list.md](./docs/public_api_list.md) to list all public API paths
+  for conditional exports [#655](https://github.com/karen-irc/option-t/pull/655).
+
 
 ## 22.4.0
 
@@ -19,6 +30,7 @@
 * The following list is all:
 
 <details>
+
 * `option-t/Maybe`
 * `option-t/Maybe/and`
 * `option-t/Maybe/andThen`
@@ -106,6 +118,7 @@
 * `option-t/Undefinable/unwrapOr`
 * `option-t/Undefinable/unwrapOrElse`
 * `option-t/Undefinable/xor`
+
 </details>
 
 ### Internals

@@ -198,6 +198,7 @@
   "docs/idiom/Option.md",
   "docs/idiom/README.md",
   "docs/JSON.md",
+  "docs/public_api_list.md",
   "esm/Maybe/ErrorMessage.d.ts",
   "esm/Maybe/ErrorMessage.mjs",
   "esm/Maybe/Maybe.d.ts",
