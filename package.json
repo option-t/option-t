@@ -49,7 +49,7 @@
   "devDependencies": {
     "@ava/babel": "^1.0.1",
     "@babel/cli": "^7.10.1",
-    "@babel/core": "^7.10.2",
+    "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.10.2",
     "@typescript-eslint/eslint-plugin": "v2",
     "@typescript-eslint/parser": "v2",
