@@ -9,7 +9,6 @@ const PACKAGE_NAME = 'option-t';
 
 function loadCJS(file) {
     const modulepath = (file === '.') ? PACKAGE_NAME : `${PACKAGE_NAME}/${file}`;
-    // eslint-disable-next-line global-require
     const mod = require(modulepath);
     return mod;
 }
