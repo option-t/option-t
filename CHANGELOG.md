@@ -2,7 +2,23 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.4.1...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.4.2...master).
+
+## 22.4.2
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.4.1...v22.4.2).
+
+### Bug Fix
+
+* Fix the return type of `asMutResult()` as `Mutable`. [#670](https://github.com/karen-irc/option-t/pull/670).
+
+### Documentation
+
+* Add sections to docs/public_apis.md. [#656](https://github.com/karen-irc/option-t/pull/656).
+
+### Internals
+
+* Update dependencies.
 
 
 ## 22.4.1
