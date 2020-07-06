@@ -1,4 +1,4 @@
-// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/22d3ae5fc978cd24239c93fd21f9c8b8a2f8bb5e/config/eslintrc_typescript.js
+// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/832add9307d1c1a82c212a9096a867d8de12d00b/config/eslintrc_typescript.js
 
 // MIT License
 //
@@ -47,28 +47,27 @@ module.exports = {
         // If you don't have use `await`, then it should be removed to reduce internal works.
         '@typescript-eslint/await-thenable': 'warn',
 
+        // At almost case, ts-blahblah comment is explicit and it works well as an escape hatch.
+        '@typescript-eslint/ban-ts-comment': ['error', {
+            'ts-expect-error': false,
+            // `@ts-ignore` violates all static type checkings for _all expressions_ in the next line.
+            // It will not be too much warn about it.
+            'ts-ignore': true,
+            'ts-nocheck': false,
+            'ts-check': false,
+        }],
+
         // We cannot define this. User project should enable this.
         '@typescript-eslint/ban-types': 'off',
-
-        // `@ts-ignore` violates all static type checkings for _all expressions_ in the next line.
-        // It will not be too much warn about it.
-        '@typescript-eslint/ban-ts-ignore': 'error',
 
         // We should sort with builtin rule.
         '@typescript-eslint/brace-style': 'off',
 
         // This should be sorted with ESLint builtin rule.
-        'camelcase': 'off',
-        '@typescript-eslint/camelcase': ['error', {
-            'properties': 'always',
-            'genericType': 'never', // This rule is covered by @typescript-eslint/generic-type-naming
-            'ignoreDestructuring': false,
-        }],
-
-        // A class & interface should be PascalCased
-        '@typescript-eslint/class-name-casing': ['error', {
-            // Don't export make it private.
-            'allowUnderscorePrefix': false,
+        'comma-spacing': 'off',
+        '@typescript-eslint/comma-spacing': ['error', {
+            'before': false,
+            'after': true
         }],
 
         // Uniform the style.
@@ -83,6 +82,9 @@ module.exports = {
         // Each style has its own pros & cons.
         '@typescript-eslint/consistent-type-definitions': 'off',
 
+        // This avoid misusing functions
+        '@typescript-eslint/default-param-last': 'error',
+
         // TODO: (#64) @typescript-eslint/explicit-function-return-type
 
         // It's redundant to enforce to supply `public`.
@@ -95,31 +97,10 @@ module.exports = {
             },
         }],
 
-
-        //  * We accept the style for T , TA , TAbc , TA1Bca , T1 , T2.
-        //      * You seem this style is similar to C# or typescript compiler.
-        //      * This choise is for:
-        //          * future readability
-        //          * expressiveness
-        //          * Our target is an application, not library.
-        //          * Automate code review process and avoid the bike-shedding.
-        //  * We don't allow the style for `R`, `K`, `V`, or other forms which we can see in Java or other many languages.
-        //      * It's short but less information.
-        '@typescript-eslint/generic-type-naming': ['error', '^T([A-Z0-9][a-zA-Z0-9]*){0,1}$'],
+        // TODO: #301
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
 
         // TODO: @typescript-eslint/indent
-
-        // [By TypeScript coding guidelines](https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines),
-        // This rule is banned.
-        //
-        // > Do not use "I" as a prefix for interface names.
-        //
-        // We follow this.
-        '@typescript-eslint/interface-name-prefix': ['error', {
-            'prefixWithI': 'never',
-            // Use no-export item to make it private.
-            // 'allowUnderscorePrefix': false,
-        }],
 
         // Sort with the preferred style (`;`) in TypeScript world.
         '@typescript-eslint/member-delimiter-style': ['warn', {
@@ -133,25 +114,13 @@ module.exports = {
             }
         }],
 
-        // By these reasons, I think we recommend to add `_` prefix to private fields.
-        //
-        //  * Historically, JavaScript wolrd use `_` prefix to mark fields as _private_.
-        //  * Until coming [private fields of class field declarations proposal](https://github.com/tc39/proposal-class-fields),
-        //    there is no true private fields in JavaScript.
-        //      * If TypeScript compiler supports it, it might be better to relax this rule.
-        //  * TypeScript will be transformed into plain JavaScript and plain JavaScript does not any informations
-        //    to express whether a field is private or not.
-        '@typescript-eslint/member-naming': ['warn', {
-            'private': '^_',
-            'protected': '^_',
-        }],
-
         // I don't think it's not efffective to sort the order by public/private/protected.
         '@typescript-eslint/member-ordering': ['warn', {
             // * I'd like to aggregate instance fields
             //   to know what we should initialize in the constructor to stabilize the object shape.
             // * It's the time to refactor the object if we'd like to mix the order of static fields & methods.
             'default': [
+                'signature',
                 'static-field',
                 'static-method',
                 'instance-field',
@@ -161,8 +130,110 @@ module.exports = {
         }],
 
         // This should be sorted with ESLint builtin rule.
+        'camelcase': 'off',
+        '@typescript-eslint/naming-convention': ['warn',
+            {
+                'selector': 'default',
+                'format': ['camelCase'],
+                // FIXME(#378): we intent this as workaround.
+                'leadingUnderscore': 'allow',
+            },
+
+            {
+                'selector': 'variable',
+                'format': ['camelCase', 'UPPER_CASE']
+            },
+
+            {
+                'selector': 'function',
+                // For React's Function Component, we need allow `PascalCase`.
+                'format': ['camelCase', 'PascalCase'],
+            },
+
+            {
+                'selector': 'parameter',
+                'format': ['camelCase'],
+                'leadingUnderscore': 'allow'
+            },
+
+            // Enforce that private members are prefixed with an underscore
+            // By these reasons, I think we recommend to add `_` prefix to private fields.
+            //
+            //  * Historically, JavaScript wolrd use `_` prefix to mark fields as _private_.
+            //  * Until coming [private fields of class field declarations proposal](https://github.com/tc39/proposal-class-fields),
+            //    there is no true private fields in JavaScript.
+            //      * If TypeScript compiler supports it, it might be better to relax this rule.
+            //  * TypeScript will be transformed into plain JavaScript and plain JavaScript does not any informations
+            //    to express whether a field is private or not.
+            {
+                'selector': 'memberLike',
+                'modifiers': ['private', 'protected'],
+                'format': ['camelCase'],
+                // FIXME: Does this option really work?
+                // See #378
+                'leadingUnderscore': 'require',
+            },
+            {
+                'selector': 'enumMember',
+                'format': ['PascalCase'],
+            },
+
+            {
+                'selector': 'typeLike',
+                'format': ['PascalCase']
+            },
+            // A class & interface should be PascalCased
+            {
+                'selector': 'class',
+                // Don't export to make it private.
+                'leadingUnderscore': 'forbid',
+                'format': ['PascalCase']
+            },
+
+            // Enforce that interface names do not begin with an I
+            // [By TypeScript coding guidelines](https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines),
+            // This rule is banned.
+            // > Do not use "I" as a prefix for interface names.
+            // We follow this.
+            {
+                'selector': 'interface',
+                'format': ['PascalCase'],
+                // Don't export to make it private.
+                'leadingUnderscore': 'forbid',
+                'custom': {
+                    'regex': '^I[A-Z]',
+                    'match': false
+                }
+            },
+
+            //  * We accept the style for T , TA , TAbc , TA1Bca , T1 , T2.
+            //      * You seem this style is similar to C# or typescript compiler.
+            //      * This choise is for:
+            //          * future readability
+            //          * expressiveness
+            //          * Our target is an application, not library.
+            //          * Automate code review process and avoid the bike-shedding.
+            //  * We don't allow the style for `R`, `K`, `V`, or other forms which we can see in Java or other many languages.
+            //      * It's short but less information.
+            {
+                'selector': 'typeParameter',
+                'format': ['PascalCase'],
+                'prefix': ['T'],
+                // For more strictly, we should use this regexp, but I don't feel we don't have to do it now.
+                //'custom': {
+                //    'regex': '^T([A-Z0-9][a-zA-Z0-9]*){0,1}$',
+                //    'match': true,
+                //},
+            },
+        ],
+
+        // This should be sorted with ESLint builtin rule.
         'no-array-constructor': 'off',
         '@typescript-eslint/no-array-constructor': 'error',
+
+        // This should be sorted with ESLint builtin rule.
+        'no-dupe-class-members': 'off',
+        '@typescript-eslint/no-dupe-class-members': 'error',
 
         // In a general case, we don't have to do this.
         // This kind of `delete` operation causes an unnecessary shape transition.
@@ -200,6 +271,10 @@ module.exports = {
         'no-extra-parens': 'off',
         '@typescript-eslint/no-extra-parens': 'off',
 
+        // This should be sorted with ESLint builtin rule.
+        'no-extra-semi': 'off',
+        '@typescript-eslint/no-extra-semi': 'warn',
+
         // Of course, this might be redundant if you set unhandledrejection event handler.
         // We still have some points which should be under discussion. See: #135
         '@typescript-eslint/no-floating-promises': ['warn', {
@@ -209,6 +284,10 @@ module.exports = {
 
         // This is common pitfalls for beginners. We must ban.
         '@typescript-eslint/no-for-in-array': 'error',
+
+        // Basically, we should ban this kind of idioms.
+        // However, if you need to use `new Function`, then you can opt-out this rule.
+        '@typescript-eslint/no-implied-eval': 'error',
 
         // Type inference is useful feature for Gradual Typing and other static typing system.
         // However, over omission would increases compile (type checking) time and
@@ -244,6 +323,9 @@ module.exports = {
             'allowDefinitionFiles': true,
         }],
 
+        // Ban this pattern to keep type safety
+        '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
+
         // Please opt-out this rule if you don't have any workarounds.
         '@typescript-eslint/no-non-null-assertion': 'warn',
 
@@ -265,12 +347,17 @@ module.exports = {
             'allowedNames': ['self'],
         }],
 
+        // Should throw only Error or derived classes.
+        '@typescript-eslint/no-throw-literal': 'error',
+
         // Disabling this does not make sense completely.
         '@typescript-eslint/no-type-alias': 'off',
 
+        // For self-evident case, we don't have to write to compare.
+        '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'warn',
+
         // This would find the possibility which we can unnecessary condition.
         '@typescript-eslint/no-unnecessary-condition': ['warn', {
-            'ignoreRhs': false,
             'allowConstantLoopConditions': true,
         }],
 
@@ -327,6 +414,9 @@ module.exports = {
         // Thus it's emergency case if user disable its rule explicitly and we hasitate to stop it
         // because then user would know what they are doing.
         '@typescript-eslint/no-var-requires': 'off',
+
+        // I think this rule should be enabled.
+        '@typescript-eslint/prefer-as-const': 'warn',
 
         // I seem almost user would use simple function type.
         // A person who uses an interface to express callbable signature is
@@ -432,7 +522,7 @@ module.exports = {
         '@typescript-eslint/restrict-template-expressions': ['warn', {
             'allowNumber': false,
             'allowBoolean': false,
-            'allowNullable': false,
+            'allowNullish': false,
         }],
 
         // FIXME: #272
@@ -450,6 +540,9 @@ module.exports = {
         // like `!!<some non boolean value>`. So we disable this until fixing it.
         // FIXME: #152
         '@typescript-eslint/strict-boolean-expressions': 'off',
+
+        // This is nice to work with union.
+        '@typescript-eslint/switch-exhaustiveness-check': 'error',
 
         // Basically, use ES Module import. // <reference path="" /> is just special case.
         '@typescript-eslint/triple-slash-reference': ['error', {

@@ -1,4 +1,4 @@
-// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/22d3ae5fc978cd24239c93fd21f9c8b8a2f8bb5e/config/eslintrc_core.js
+// Copied from https://raw.githubusercontent.com/cats-oss/eslint-config-abema/832add9307d1c1a82c212a9096a867d8de12d00b/config/eslintrc_core.js
 
 // MIT License
 //
@@ -63,6 +63,7 @@ module.exports = {
         'no-inner-declarations': [2, 'functions'], // https://eslint.org/docs/rules/no-inner-declarations
         'no-invalid-regexp': 2, //https://eslint.org/docs/rules/no-invalid-regexp
         'no-irregular-whitespace': 2, // https://eslint.org/docs/rules/no-irregular-whitespace
+        'no-loss-of-precision': 'error',
         'no-misleading-character-class': 2, // https://eslint.org/docs/rules/no-misleading-character-class
         'no-obj-calls': 2, // https://eslint.org/docs/rules/no-obj-calls
         'no-prototype-builtins': 2, // https://eslint.org/docs/rules/no-prototype-builtins
@@ -278,21 +279,6 @@ module.exports = {
             'functions': false, //  Function declarations are hoisted.
             'classes': true, // Class declarations are not hoisted. We should warn it.
         }],
-
-        // Node.js & CommonJS
-        'callback-return': 0, // https://eslint.org/docs/rules/callback-return
-        'global-require': 2,
-        'handle-callback-err': 0, // We does not always write for nodejs.
-        'no-buffer-constructor': 2,
-        'no-mixed-requires': [2, {
-            'grouping': true,
-        }],
-        'no-new-require': 2,
-        'no-path-concat': 2,
-        'no-process-env': 0,
-        'no-process-exit': 0,
-        'no-restricted-modules': 0, // https://eslint.org/docs/rules/no-restricted-modules
-        'no-sync': 1,
 
         // Stylistic Issues
         'array-bracket-newline ': 0,

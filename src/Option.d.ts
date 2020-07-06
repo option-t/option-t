@@ -186,9 +186,7 @@ interface Optionable<T> {
  *  https://github.com/karen-irc/option-t/pull/77
  */
 export abstract class OptionBase<T> implements Optionable<T> {
-    // eslint-disable-next-line @typescript-eslint/member-naming
     private readonly ok: boolean;
-    // eslint-disable-next-line @typescript-eslint/member-naming
     private readonly val: T | undefined;
 
     readonly isSome: boolean;
@@ -210,7 +208,7 @@ export abstract class OptionBase<T> implements Optionable<T> {
     orElse(fn: MayRecoveryFn<T>): Option<T>;
     drop(destructor?: TapFn<T>): void;
     // FYI: this is json representation.
-    // eslint-disable-next-line @typescript-eslint/camelcase
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     toJSON(): { is_some: boolean; value: T | undefined; };
 }
 
