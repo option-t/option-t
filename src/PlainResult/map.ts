@@ -7,13 +7,13 @@ import { Result, Err, createOk } from './Result';
  *
  *  This function can be used to compose the results of two functions.
  */
-export function mapForResult<T, U, E>(src: Result<T, E>, selector: MapFn<T, U>): Result<U, E> {
+export function mapForResult<T, U, TError>(src: Result<T, TError>, selector: MapFn<T, U>): Result<U, TError> {
     if (src.ok) {
         const r: U = selector(src.val);
         return createOk(r);
     }
     else {
-        const s: Err<E> = src;
+        const s: Err<TError> = src;
         return s;
     }
 }

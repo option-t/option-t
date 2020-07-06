@@ -1,10 +1,10 @@
 import { MapFn } from '../shared/Function';
 import { Result } from './Result';
 
-export type FlatmapOkFn<T, U, E> = MapFn<T, Result<U, E>>;
+export type FlatmapOkFn<T, U, TError> = MapFn<T, Result<U, TError>>;
 
 /**
- *  Returns `Err(E)` if the _src_ is `Err(E)`,
+ *  Returns `Err(TError)` if the _src_ is `Err(TError)`,
  *  otherwise calls _selector_ with the value and returns the result.
  *
  *  XXX:
@@ -12,7 +12,7 @@ export type FlatmapOkFn<T, U, E> = MapFn<T, Result<U, E>>;
  *  But we don't provide `flatMap()` as alias of this function
  *  to sort with other APIs.
  */
-export function andThenForResult<T, U, E>(src: Result<T, E>, selector: FlatmapOkFn<T, U, E>): Result<U, E> {
+export function andThenForResult<T, U, TError>(src: Result<T, TError>, selector: FlatmapOkFn<T, U, TError>): Result<U, TError> {
     if (src.ok) {
         const r = selector(src.val);
         return r;

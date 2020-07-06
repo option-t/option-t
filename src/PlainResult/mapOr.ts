@@ -7,7 +7,7 @@ import { MapFn } from '../shared/Function';
  *
  *  Basically, this operation is a combination `map()` and `unwrapOr()`.
  */
-export function mapOrForResult<T, E, U>(src: Result<T, E>, def: U, selector: MapFn<T, U>): U {
+export function mapOrForResult<T, TError, U>(src: Result<T, TError>, def: U, selector: MapFn<T, U>): U {
     let r: U;
     if (src.ok) {
         r = selector(src.val);
