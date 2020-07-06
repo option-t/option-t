@@ -1,6 +1,6 @@
 {
   "name": "option-t",
-  "version": "22.4.1",
+  "version": "22.4.2",
   "description": "Option type implementation whose APIs are inspired by Rust's `Option<T>`.",
   "type": "commonjs",
   "main": "./cjs/index.js",
