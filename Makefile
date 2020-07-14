@@ -165,17 +165,6 @@ eslint:
 ###########################
 # Test
 ###########################
-TEST_TARGETS := \
-  lint \
-  build \
-  run_ava \
-  test_distribution_contain_all \
-  test_esmodule_path_rewrite \
-  test_package_install
-
-.PHONY: test
-test: $(TEST_TARGETS) ## Run all tests
-
 .PHONY: build_test
 build_test: build clean_test_cache
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --outDir $(TEST_CACHE_DIR)
