@@ -2,7 +2,18 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.4.2...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.4.3...master).
+
+## 22.4.3
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.4.2...v22.4.3).
+
+### Internals
+
+* Use dependabot v2 configuration. [#672](https://github.com/karen-irc/option-t/pull/672).
+* Move to GitHub Actions from CircleCI. [#443](https://github.com/karen-irc/option-t/issues/443).
+* Refactor CI workflow.
+
 
 ## 22.4.2
 
