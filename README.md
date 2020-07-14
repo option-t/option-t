@@ -1,7 +1,7 @@
 # option-t
 
 [![npm version](https://badge.fury.io/js/option-t.svg)](http://badge.fury.io/js/option-t)
-![CI Status (GitHub Actions)](https://github.com/karen-irc/option-t/workflows/CI/badge.svg)
+[![CI Status (GitHub Actions)](https://github.com/karen-irc/option-t/workflows/CI/badge.svg)](https://github.com/karen-irc/option-t/actions?query=workflow%3ACI)
 
 * This library represents [Option type](http://en.wikipedia.org/wiki/Option_type) in ECMAScript.
     * You can sort "nullable" convention in your project.
