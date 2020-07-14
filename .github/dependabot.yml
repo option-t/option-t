@@ -14,7 +14,7 @@ updates:
     versions:
     - ">3.7"
 
-  - package-ecosystem: github-actions
-    directory: "/"
-    schedule:
-      interval: "daily"
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: "daily"
