@@ -51,6 +51,40 @@ jobs:
       # if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install
 
+  lint:
+    needs: [install_dependencies]
+    runs-on: ubuntu-latest
+    container: node:${{ matrix.node-version }}-buster
+
+    strategy:
+      matrix:
+        node-version:
+          # As my observations, Node.js 12 does not supports `exports` field.
+          # This is nice to contrast.
+          - 12
+          - 14
+
+    steps:
+    - uses: actions/checkout@v2.3.1
+
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - name: Restore dependencies from cache
+      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      uses: actions/cache@v2
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          v0-${{ runner.os }}-yarn-
+    - name: Install dependencies
+      run: yarn install
+
+    - run: make lint -j
+      env:
+        CI: true
+
   build:
     needs: [install_dependencies]
     runs-on: ubuntu-latest
@@ -66,7 +100,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2.3.1
-  
+
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -81,12 +115,11 @@ jobs:
     - name: Install dependencies
       run: yarn install
 
-    - name: Test
-      run: make test -j
+    - run: make build -j
       env:
         CI: true
 
-  test_packaging:
+  unittest:
     needs: [install_dependencies]
     runs-on: ubuntu-latest
     container: node:${{ matrix.node-version }}-buster
@@ -101,7 +134,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2.3.1
-  
+
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -116,7 +149,108 @@ jobs:
     - name: Install dependencies
       run: yarn install
 
-    - name: Test to import by path names
-      run: make test_package_install -j
+    - run: make run_ava -j
+      env:
+        CI: true
+
+  test_distribution_contain_all:
+    needs: [install_dependencies]
+    runs-on: ubuntu-latest
+    container: node:${{ matrix.node-version }}-buster
+
+    strategy:
+      matrix:
+        node-version:
+          # As my observations, Node.js 12 does not supports `exports` field.
+          # This is nice to contrast.
+          - 12
+          - 14
+
+    steps:
+    - uses: actions/checkout@v2.3.1
+
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - name: Restore dependencies from cache
+      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      uses: actions/cache@v2
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          v0-${{ runner.os }}-yarn-
+    - name: Install dependencies
+      run: yarn install
+
+    - run: make test_distribution_contain_all -j
+      env:
+        CI: true
+
+  test_esmodule_path_rewrite:
+    needs: [install_dependencies]
+    runs-on: ubuntu-latest
+    container: node:${{ matrix.node-version }}-buster
+
+    strategy:
+      matrix:
+        node-version:
+          # As my observations, Node.js 12 does not supports `exports` field.
+          # This is nice to contrast.
+          - 12
+          - 14
+
+    steps:
+    - uses: actions/checkout@v2.3.1
+
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - name: Restore dependencies from cache
+      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      uses: actions/cache@v2
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          v0-${{ runner.os }}-yarn-
+    - name: Install dependencies
+      run: yarn install
+
+    - run: make test_esmodule_path_rewrite -j
+      env:
+        CI: true
+
+  test_package_install:
+    needs: [install_dependencies]
+    runs-on: ubuntu-latest
+    container: node:${{ matrix.node-version }}-buster
+
+    strategy:
+      matrix:
+        node-version:
+          # As my observations, Node.js 12 does not supports `exports` field.
+          # This is nice to contrast.
+          - 12
+          - 14
+
+    steps:
+    - uses: actions/checkout@v2.3.1
+
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - name: Restore dependencies from cache
+      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      uses: actions/cache@v2
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          v0-${{ runner.os }}-yarn-
+    - name: Install dependencies
+      run: yarn install
+
+    - run: make test_package_install -j
       env:
         CI: true
