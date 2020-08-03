@@ -56,7 +56,7 @@
     "ava": "^3.10.1",
     "cpx": "^1.5.0",
     "del-cli": "^3.0.1",
-    "eslint": "^7.4.0",
+    "eslint": "^7.6.0",
     "typescript": "~3.7.3"
   },
   "sideEffects": false,
