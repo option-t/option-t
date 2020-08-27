@@ -3,13 +3,19 @@ import test from 'ava';
 import * as PlainOption from '../../../__dist/cjs/PlainOption';
 
 const testcase = [
-    [{
-        ok: true,
-        value: 1
-    }, true],
-    [{
-        ok: false,
-    }, false],
+    [
+        {
+            ok: true,
+            value: 1,
+        },
+        true,
+    ],
+    [
+        {
+            ok: false,
+        },
+        false,
+    ],
 ];
 
 for (const [input, expected] of testcase) {

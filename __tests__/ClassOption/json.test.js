@@ -2,9 +2,16 @@
 
 import test from 'ava';
 
-import { createSome, createNone, } from '../../__dist/cjs/Option';
+import { createSome, createNone } from '../../__dist/cjs/Option';
 
-import { primitiveVal, objectVal, nonSerializableObjectVal, funcVal, symbolVal, undefinedVal } from '../utils';
+import {
+    primitiveVal,
+    objectVal,
+    nonSerializableObjectVal,
+    funcVal,
+    symbolVal,
+    undefinedVal,
+} from '../utils';
 
 primitiveVal.forEach(function (value) {
     const type = typeof value;

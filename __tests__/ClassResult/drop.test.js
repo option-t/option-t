@@ -23,10 +23,7 @@
  */
 import test from 'ava';
 
-import {
-    createOk,
-    createErr,
-} from '../../__dist/cjs/Result';
+import { createOk, createErr } from '../../__dist/cjs/Result';
 
 const EXPECTED_OK = Symbol('expected_ok');
 const EXPECTED_ERR = Symbol('expected_err');

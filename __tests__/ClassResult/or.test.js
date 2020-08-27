@@ -23,10 +23,7 @@
  */
 import test from 'ava';
 
-import {
-    createOk,
-    createErr,
-} from '../../__dist/cjs/Result';
+import { createOk, createErr } from '../../__dist/cjs/Result';
 
 const EXPECTED = Symbol('0');
 const UNEXPECTED = Symbol('1');
@@ -52,9 +49,7 @@ for (const [lhs, rhs] of testcaseList) {
     });
 }
 
-const failureTestcaseList = [
-    [createErr(UNEXPECTED), createErr(EXPECTED)],
-];
+const failureTestcaseList = [[createErr(UNEXPECTED), createErr(EXPECTED)]];
 for (const [lhs, rhs] of failureTestcaseList) {
     test(`lhs: ${toLabel(lhs)}, rhs: ${toLabel(rhs)}`, (t) => {
         const result = lhs.or(rhs);

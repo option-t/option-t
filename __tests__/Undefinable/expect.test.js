@@ -11,8 +11,7 @@ for (const value of nonNullableValue) {
         let e = null;
         try {
             result = expectNotUndefined(EXPECTED, EXPECTED_MSG);
-        }
-        catch (expected) {
+        } catch (expected) {
             e = expected;
         }
 
@@ -28,8 +27,7 @@ test('pass null', (t) => {
 
     try {
         result = expectNotUndefined(null, EXPECTED_MSG);
-    }
-    catch (expected) {
+    } catch (expected) {
         e = expected;
     }
 
@@ -42,8 +40,7 @@ test('pass undefined', (t) => {
     let e = null;
     try {
         expectNotUndefined(undefined, EXPECTED_MSG);
-    }
-    catch (expected) {
+    } catch (expected) {
         e = expected;
     }
 

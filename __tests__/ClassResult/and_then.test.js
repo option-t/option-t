@@ -23,11 +23,7 @@
  */
 import test from 'ava';
 
-import {
-    createOk,
-    createErr,
-    ResultBase,
-} from '../../__dist/cjs/Result';
+import { createOk, createErr, ResultBase } from '../../__dist/cjs/Result';
 
 const ORIGIN = Symbol('ORIGIN');
 const EXPECTED = Symbol('EXPECTED');
@@ -62,10 +58,7 @@ test(`Ok(T), return Err(F)`, (t) => {
     t.is(result.unwrapErr(), EXPECTED);
 });
 
-const errTestcaseList = [
-    createOk,
-    createErr,
-];
+const errTestcaseList = [createOk, createErr];
 for (const innerfn of errTestcaseList) {
     test(`Err(E), return ${innerfn.name}`, (t) => {
         t.plan(2);
@@ -87,22 +80,25 @@ test('Ok(T): return non Result type', (t) => {
     t.plan(2);
 
     const input = createOk(ORIGIN);
-    t.throws(() => {
-        input.andThen(function (v) {
-            t.false(v instanceof ResultBase);
-            return v;
-        });
-    }, {
-        instanceOf: TypeError,
-        message: 'Result<T, E>.andThen()\' param `op` should return `Result<U, E>`.',
-    });
+    t.throws(
+        () => {
+            input.andThen(function (v) {
+                t.false(v instanceof ResultBase);
+                return v;
+            });
+        },
+        {
+            instanceOf: TypeError,
+            message: "Result<T, E>.andThen()' param `op` should return `Result<U, E>`.",
+        }
+    );
 });
 
 test('Err(E): return non Result type', (t) => {
     const input = createErr(ORIGIN);
     t.notThrows(() => {
         input.andThen(function (v) {
-            t.fail('don\'t call');
+            t.fail("don't call");
             return v;
         });
     });

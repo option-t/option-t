@@ -52,4 +52,3 @@ test('a=None, b=None', (t) => {
     t.is(actual, b, 'should return b');
     t.false(actual.ok, 'should be None');
 });
-

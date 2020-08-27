@@ -3,7 +3,6 @@ import test from 'ava';
 import { unwrapOrFromUndefinable } from '../../__dist/cjs/Undefinable/unwrapOr';
 import { nonNullableValue } from '../utils';
 
-
 for (const value of nonNullableValue) {
     test('pass the value' + String(value), (t) => {
         const DEFAULT_VAL = Math.random();
@@ -12,8 +11,7 @@ for (const value of nonNullableValue) {
         let e = null;
         try {
             result = unwrapOrFromUndefinable(EXPECTED, DEFAULT_VAL);
-        }
-        catch (expected) {
+        } catch (expected) {
             e = expected;
         }
 
@@ -36,12 +34,14 @@ test('pass undefined', (t) => {
 });
 
 test('should not accept Maybe<*> as default', (t) => {
-    const testcases = [
-        [undefined, undefined],
-    ];
+    const testcases = [[undefined, undefined]];
     for (const [src, def] of testcases) {
-        t.throws(() => {
-            unwrapOrFromUndefinable(src, def);
-        }, { instanceOf: TypeError, }, `v = ${String(src)}, def = ${String(def)}`);
+        t.throws(
+            () => {
+                unwrapOrFromUndefinable(src, def);
+            },
+            { instanceOf: TypeError },
+            `v = ${String(src)}, def = ${String(def)}`
+        );
     }
 });

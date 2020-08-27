@@ -17,13 +17,19 @@ for (const value of nonNullableValue) {
 }
 
 test('pass null', (t) => {
-    t.throws(() => {
-        unwrapMaybe(null);
-    }, { instanceOf: TypeError, });
+    t.throws(
+        () => {
+            unwrapMaybe(null);
+        },
+        { instanceOf: TypeError }
+    );
 });
 
 test('pass undefined', (t) => {
-    t.throws(() => {
-        unwrapMaybe(undefined);
-    }, { instanceOf: TypeError, });
+    t.throws(
+        () => {
+            unwrapMaybe(undefined);
+        },
+        { instanceOf: TypeError }
+    );
 });

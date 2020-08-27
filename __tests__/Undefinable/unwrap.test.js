@@ -10,8 +10,7 @@ for (const value of nonNullableValue) {
         let e = null;
         try {
             result = unwrapUndefinable(EXPECTED);
-        }
-        catch (expected) {
+        } catch (expected) {
             e = expected;
         }
 
@@ -25,8 +24,7 @@ test('pass null', (t) => {
     let e = null;
     try {
         result = unwrapUndefinable(null);
-    }
-    catch (expected) {
+    } catch (expected) {
         e = expected;
     }
 
@@ -38,8 +36,7 @@ test('pass undefined', (t) => {
     let e;
     try {
         unwrapUndefinable(undefined);
-    }
-    catch (expected) {
+    } catch (expected) {
         e = expected;
     }
 

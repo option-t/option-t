@@ -6,10 +6,7 @@ const numeric = [-1, 0, 1];
 const boolean = [true, false];
 const str = ['', 'bar'];
 
-const objectVal = [
-    { bar: 1},
-    [1, 2, 3],
-];
+const objectVal = [{ bar: 1 }, [1, 2, 3]];
 
 const nonSerializableObjectVal = [
     new Set(),
@@ -19,7 +16,7 @@ const nonSerializableObjectVal = [
     new Promise((resolve) => resolve()),
 ];
 
-const funcVal = [ function(){} ];
+const funcVal = [function () {}];
 const symbolVal = [Symbol('')];
 
 module.exports = Object.freeze({

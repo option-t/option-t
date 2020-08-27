@@ -1,9 +1,6 @@
 import test from 'ava';
 
-import {
-    createOk,
-    createErr,
-} from '../../__dist/cjs/PlainResult/Result';
+import { createOk, createErr } from '../../__dist/cjs/PlainResult/Result';
 import { flattenForResult } from '../../__dist/cjs/PlainResult/flatten';
 
 test('input is Ok(Ok(T))', (t) => {

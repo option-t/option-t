@@ -1,7 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone, } from '../../__dist/cjs/Option';
-
+import { createSome, createNone } from '../../__dist/cjs/Option';
 
 test('drop `Some<T>`', function (t) {
     const option = createSome(1);

@@ -45,7 +45,7 @@ test('src is `Some<T>`, callback returns `Some<T>`', (t) => {
     t.is(unwrapOption(result), EXPECTED);
 });
 
-test('src is `Some<T>`, callback don\'t returns `Option<T>`', (t) => {
+test("src is `Some<T>`, callback don't returns `Option<T>`", (t) => {
     t.plan(2);
 
     const EXPECTED = Symbol('expected');

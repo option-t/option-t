@@ -47,27 +47,33 @@ test('pass undefined', (t) => {
 });
 
 {
-    const testcases = [
-        [1, 2, null],
-    ];
+    const testcases = [[1, 2, null]];
     for (const [src, def, selectorResult] of testcases) {
-        test(`assert that do not return Nullable<*> as the selector's result, v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`, (t) => {
-            t.throws(() => {
-                mapOrForNullable(src, def, (_v) => selectorResult);
-            }, { instanceOf: TypeError, });
+        test(`assert that do not return Nullable<*> as the selector's result, v = ${String(
+            src
+        )}, def = ${String(def)}, selectorResult=${String(selectorResult)}`, (t) => {
+            t.throws(
+                () => {
+                    mapOrForNullable(src, def, (_v) => selectorResult);
+                },
+                { instanceOf: TypeError }
+            );
         });
     }
 }
 
 {
-    const testcases = [
-        [null, null, ''],
-    ];
+    const testcases = [[null, null, '']];
     for (const [src, def, selectorResult] of testcases) {
-        test(`assert that def is not Nullable<*>', v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`, (t) => {
-            t.throws(() => {
-                mapOrForNullable(src, def, (_v) => selectorResult);
-            }, { instanceOf: TypeError, });
+        test(`assert that def is not Nullable<*>', v = ${String(src)}, def = ${String(
+            def
+        )}, selectorResult=${String(selectorResult)}`, (t) => {
+            t.throws(
+                () => {
+                    mapOrForNullable(src, def, (_v) => selectorResult);
+                },
+                { instanceOf: TypeError }
+            );
         });
     }
 }

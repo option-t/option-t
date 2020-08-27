@@ -12,14 +12,16 @@ import * as Maybe from '../../__dist/cjs/Maybe';
         ['', true],
         [{}, true],
         [[], true],
-        [function () { }, true],
+        [function () {}, true],
         [Symbol(''), true],
         [undefined, false],
         [null, false],
     ];
 
     testcase.forEach(([input, expected]) => {
-        test(`isSomeActual() \`${String(input)} (typeof ${typeof input})\` should be \`${String(expected)}\``, (t) => {
+        test(`isSomeActual() \`${String(input)} (typeof ${typeof input})\` should be \`${String(
+            expected
+        )}\``, (t) => {
             t.is(Maybe.isNotNullAndUndefined(input), expected);
         });
     });
@@ -35,14 +37,16 @@ import * as Maybe from '../../__dist/cjs/Maybe';
         ['', false],
         [{}, false],
         [[], false],
-        [function () { }, false],
+        [function () {}, false],
         [Symbol(''), false],
         [undefined, true],
         [null, true],
     ];
 
     testcase.forEach(([input, expected]) => {
-        test(`isUndefinedOrNull() \`${String(input)} (typeof ${typeof input})\` should be \`${String(expected)}\``, (t) => {
+        test(`isUndefinedOrNull() \`${String(
+            input
+        )} (typeof ${typeof input})\` should be \`${String(expected)}\``, (t) => {
             t.is(Maybe.isNullOrUndefined(input), expected);
         });
     });

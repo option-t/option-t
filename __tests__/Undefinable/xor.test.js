@@ -26,7 +26,6 @@ const TABLE = [
 
 for (const { a, b, expected } of TABLE) {
     test(`a=${String(a)}, b=${String(b)}`, (t) => {
-
         const actual = xorForUndefinable(a, b);
         t.is(actual, expected, 'should be `' + String(expected) + '`');
     });

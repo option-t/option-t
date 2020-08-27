@@ -35,13 +35,15 @@ test('pass undefined', (t) => {
     });
 });
 
-test('assert that do not return Undefinable<*> as the selector\'s result', (t) => {
-    const testcases = [
-        [1, undefined],
-    ];
+test("assert that do not return Undefinable<*> as the selector's result", (t) => {
+    const testcases = [[1, undefined]];
     for (const [src, def] of testcases) {
-        t.throws(() => {
-            mapForUndefinable(src, (_v) => def);
-        }, { instanceOf: TypeError, }, `v = ${String(src)}, def = ${String(def)}`);
+        t.throws(
+            () => {
+                mapForUndefinable(src, (_v) => def);
+            },
+            { instanceOf: TypeError },
+            `v = ${String(src)}, def = ${String(def)}`
+        );
     }
 });

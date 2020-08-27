@@ -10,10 +10,14 @@ for (const value of nonNullableValue) {
 
         t.plan(2);
 
-        const result = mapOrElseForUndefinable(EXPECTED, () => DEFAULT_VAL, (v) => {
-            t.pass('should call selector fn');
-            return v;
-        });
+        const result = mapOrElseForUndefinable(
+            EXPECTED,
+            () => DEFAULT_VAL,
+            (v) => {
+                t.pass('should call selector fn');
+                return v;
+            }
+        );
 
         t.is(result, EXPECTED, 'should the expected result');
     });
@@ -25,10 +29,14 @@ test('pass null', (t) => {
 
     t.plan(2);
 
-    const result = mapOrElseForUndefinable(null, () => DEFAULE_VAL, (_v) => {
-        t.pass('should call selector fn');
-        return COMPUTED_VAL;
-    });
+    const result = mapOrElseForUndefinable(
+        null,
+        () => DEFAULE_VAL,
+        (_v) => {
+            t.pass('should call selector fn');
+            return COMPUTED_VAL;
+        }
+    );
 
     t.is(result, COMPUTED_VAL, 'should be the expected');
 });
@@ -39,36 +47,56 @@ test('pass undefined', (t) => {
 
     t.plan(1);
 
-    const result = mapOrElseForUndefinable(undefined, () => DEFAULE_VAL, (_v) => {
-        t.pass('should not call selector fn');
+    const result = mapOrElseForUndefinable(
+        undefined,
+        () => DEFAULE_VAL,
+        (_v) => {
+            t.pass('should not call selector fn');
 
-        return COMPUTED_VAL;
-    });
+            return COMPUTED_VAL;
+        }
+    );
 
     t.is(result, DEFAULE_VAL, 'should be the expected');
 });
 
-test('assert that do not return Undefinable<*> as the selector\'s result', (t) => {
-    const testcases = [
-        [1, 2, undefined],
-    ];
+test("assert that do not return Undefinable<*> as the selector's result", (t) => {
+    const testcases = [[1, 2, undefined]];
     for (const [src, def, selectorResult] of testcases) {
-        const LABEL = `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`;
+        const LABEL = `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(
+            selectorResult
+        )}`;
 
-        t.throws(() => {
-            mapOrElseForUndefinable(src, () => def, (_v) => selectorResult);
-        }, { instanceOf: TypeError, }, LABEL);
+        t.throws(
+            () => {
+                mapOrElseForUndefinable(
+                    src,
+                    () => def,
+                    (_v) => selectorResult
+                );
+            },
+            { instanceOf: TypeError },
+            LABEL
+        );
     }
 });
 
 test('assert that def is not Undefinable<*>', (t) => {
-    const testcases = [
-        [undefined, undefined, ''],
-    ];
+    const testcases = [[undefined, undefined, '']];
     for (const [src, def, selectorResult] of testcases) {
-        const LABEL = `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`;
-        t.throws(() => {
-            mapOrElseForUndefinable(src, () => def, (_v) => selectorResult);
-        }, { instanceOf: TypeError, }, LABEL);
+        const LABEL = `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(
+            selectorResult
+        )}`;
+        t.throws(
+            () => {
+                mapOrElseForUndefinable(
+                    src,
+                    () => def,
+                    (_v) => selectorResult
+                );
+            },
+            { instanceOf: TypeError },
+            LABEL
+        );
     }
 });

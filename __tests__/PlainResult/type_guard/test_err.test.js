@@ -3,14 +3,20 @@ import test from 'ava';
 import * as PlainResult from '../../../__dist/cjs/PlainResult';
 
 const testcase = [
-    [{
-        ok: true,
-        value: 1
-    }, false],
-    [{
-        ok: false,
-        err: '',
-    }, true],
+    [
+        {
+            ok: true,
+            value: 1,
+        },
+        false,
+    ],
+    [
+        {
+            ok: false,
+            err: '',
+        },
+        true,
+    ],
 ];
 
 for (const [input, expected] of testcase) {

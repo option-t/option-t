@@ -1,8 +1,15 @@
 import test from 'ava';
 
-import { createSome, createNone, } from '../../__dist/cjs/Option';
+import { createSome, createNone } from '../../__dist/cjs/Option';
 
-import { primitiveVal, objectVal, nonSerializableObjectVal, funcVal, symbolVal, undefinedVal } from '../utils';
+import {
+    primitiveVal,
+    objectVal,
+    nonSerializableObjectVal,
+    funcVal,
+    symbolVal,
+    undefinedVal,
+} from '../utils';
 
 const param = primitiveVal
     .concat(objectVal)

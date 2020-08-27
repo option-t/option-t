@@ -23,10 +23,7 @@
  */
 import test from 'ava';
 
-import {
-    createOk,
-    createErr,
-} from '../../__dist/cjs/Result';
+import { createOk, createErr } from '../../__dist/cjs/Result';
 
 import {
     primitiveVal,
@@ -37,7 +34,12 @@ import {
     undefinedVal,
 } from '../utils';
 
-const param = primitiveVal.concat(objectVal).concat(nonSerializableObjectVal).concat(funcVal).concat(symbolVal).concat(undefinedVal);
+const param = primitiveVal
+    .concat(objectVal)
+    .concat(nonSerializableObjectVal)
+    .concat(funcVal)
+    .concat(symbolVal)
+    .concat(undefinedVal);
 
 for (const value of param) {
     const type = typeof value;

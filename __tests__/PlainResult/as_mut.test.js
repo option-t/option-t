@@ -1,17 +1,9 @@
 import test from 'ava';
 
-import {
-    createOk,
-    createErr,
-} from '../../__dist/cjs/PlainResult/Result';
-import {
-    asMutResult,
-} from '../../__dist/cjs/PlainResult/asMut';
+import { createOk, createErr } from '../../__dist/cjs/PlainResult/Result';
+import { asMutResult } from '../../__dist/cjs/PlainResult/asMut';
 
-const FUNC_LIST = [
-    createOk,
-    createErr,
-];
+const FUNC_LIST = [createOk, createErr];
 
 for (const factory of FUNC_LIST) {
     const funcname = factory.name;
@@ -24,5 +16,3 @@ for (const factory of FUNC_LIST) {
         t.deepEqual(actual, original, 'should be the same shape');
     });
 }
-
-

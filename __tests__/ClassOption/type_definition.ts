@@ -1,10 +1,10 @@
 // XXX:
 // The type definitions for '--moduleResolution node' is a ES6 format,
 // So it would test it by importing it simply.
-import {Option, OptionBase, createSome, createNone} from '../../__dist/cjs/Option';
+import { Option, OptionBase, createSome, createNone } from '../../__dist/cjs/Option';
 
 // `Some<T>`
-(function(){
+(function () {
     var option: Option<number> = createSome(1);
     option = createSome<number>(1);
     var isSome: boolean = option.isSome;
@@ -14,20 +14,32 @@ import {Option, OptionBase, createSome, createNone} from '../../__dist/cjs/Optio
     var unwrapOrElse: number = option.unwrapOrElse((): number => 10);
     var expect: number = option.expect('barfoo');
     var map: Option<string> = option.map((val: number): string => String(val));
-    var flatMap: Option<string> = option.flatMap((val: number): Option<string> => {
-        return createSome( String(val) );
-    });
-    var mapOr: string = option.mapOr("bar", (val: number): string => String(val));
-    var mapOrElse: string = option.mapOrElse((): string => { return String(10); },
-                                             (v: number) => { return String(v); });
-    var and: Option<string> = option.and(createSome<string>("bar"));
-    var andThen: Option<string> = option.andThen((_: number): Option<string> => {
-        return createNone<string>();
-    });
+    var flatMap: Option<string> = option.flatMap(
+        (val: number): Option<string> => {
+            return createSome(String(val));
+        }
+    );
+    var mapOr: string = option.mapOr('bar', (val: number): string => String(val));
+    var mapOrElse: string = option.mapOrElse(
+        (): string => {
+            return String(10);
+        },
+        (v: number) => {
+            return String(v);
+        }
+    );
+    var and: Option<string> = option.and(createSome<string>('bar'));
+    var andThen: Option<string> = option.andThen(
+        (_: number): Option<string> => {
+            return createNone<string>();
+        }
+    );
     var or: Option<number> = option.or(createSome<number>(10));
-    var orElse: Option<number> = option.orElse((): Option<number> => {
-        return createSome<number>(2);
-    });
+    var orElse: Option<number> = option.orElse(
+        (): Option<number> => {
+            return createSome<number>(2);
+        }
+    );
     option.drop();
     option.drop((_: number) => {});
 
@@ -37,7 +49,7 @@ import {Option, OptionBase, createSome, createNone} from '../../__dist/cjs/Optio
 })();
 
 // `None<T>`
-(function(){
+(function () {
     var option: Option<number> = createNone<number>();
     option = createNone<number>();
     var isSome: boolean = option.isSome;
@@ -47,20 +59,32 @@ import {Option, OptionBase, createSome, createNone} from '../../__dist/cjs/Optio
     var unwrapOrElse: number = option.unwrapOrElse((): number => 10);
     var expect: number = option.expect('barfoo');
     var map: Option<string> = option.map((val: number): string => String(val));
-    var flatMap: Option<string> = option.flatMap((_: number): Option<string> => {
-        return createNone<string>();
-    });
-    var mapOr: string = option.mapOr("bar", (val: number): string => String(val));
-    var mapOrElse: string = option.mapOrElse((): string => { return String(10); },
-                                             (v: number) => { return String(v); });
-    var and: Option<string> = option.and(createSome<string>("bar"));
-    var andThen: Option<string> = option.andThen((_: number): Option<string> => {
-        return createNone<string>();
-    });
+    var flatMap: Option<string> = option.flatMap(
+        (_: number): Option<string> => {
+            return createNone<string>();
+        }
+    );
+    var mapOr: string = option.mapOr('bar', (val: number): string => String(val));
+    var mapOrElse: string = option.mapOrElse(
+        (): string => {
+            return String(10);
+        },
+        (v: number) => {
+            return String(v);
+        }
+    );
+    var and: Option<string> = option.and(createSome<string>('bar'));
+    var andThen: Option<string> = option.andThen(
+        (_: number): Option<string> => {
+            return createNone<string>();
+        }
+    );
     var or: Option<number> = option.or(createSome<number>(10));
-    var orElse: Option<number> = option.orElse((): Option<number> => {
-        return createSome<number>(2);
-    });
+    var orElse: Option<number> = option.orElse(
+        (): Option<number> => {
+            return createSome<number>(2);
+        }
+    );
     option.drop();
     option.drop((_: number) => {});
 
@@ -70,7 +94,7 @@ import {Option, OptionBase, createSome, createNone} from '../../__dist/cjs/Optio
 })();
 
 // `Option<T>`
-(function(){
+(function () {
     var option: Option<number> = createNone<number>();
     option = createSome(1);
 

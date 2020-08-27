@@ -58,4 +58,3 @@ test('a=Err, b=Err', (t) => {
     t.false(actual.ok, 'should be Err');
     t.is(actual.err, EXPECTED, 'should be the inner value');
 });
-

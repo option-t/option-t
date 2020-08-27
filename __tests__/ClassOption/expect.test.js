@@ -1,7 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone, } from '../../__dist/cjs/Option';
-
+import { createSome, createNone } from '../../__dist/cjs/Option';
 
 test('unwrap `Some<T>`', function (t) {
     const EXPECTED = 1;
@@ -13,10 +12,13 @@ test('unwrap `None`', function (t) {
     const EXPECTED = 'barfoo';
 
     const none = createNone();
-    t.throws(() => {
-        none.expect(EXPECTED);
-    }, {
-        instanceOf: TypeError,
-        message: EXPECTED,
-    });
+    t.throws(
+        () => {
+            none.expect(EXPECTED);
+        },
+        {
+            instanceOf: TypeError,
+            message: EXPECTED,
+        }
+    );
 });

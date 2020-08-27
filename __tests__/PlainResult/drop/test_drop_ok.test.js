@@ -1,13 +1,8 @@
 /* eslint-disable no-param-reassign */
 import test from 'ava';
 
-import {
-    createOk,
-    createErr,
-} from '../../../__dist/cjs/PlainResult/Result';
-import {
-    unsafeDropOkForResult,
-} from '../../../__dist/cjs/PlainResult/drop';
+import { createOk, createErr } from '../../../__dist/cjs/PlainResult/Result';
+import { unsafeDropOkForResult } from '../../../__dist/cjs/PlainResult/drop';
 
 test('with Ok', (t) => {
     const expected = Symbol('');

@@ -12,14 +12,16 @@ import * as Nullable from '../../__dist/cjs/Nullable';
         ['', true],
         [{}, true],
         [[], true],
-        [function () { }, true],
+        [function () {}, true],
         [Symbol(''), true],
         [undefined, true],
         [null, false],
     ];
 
     testcase.forEach(([input, expected]) => {
-        test(`isNotNull(): \`${String(input)} (typeof ${typeof input})\` should be \`${String(expected)}\``, (t) => {
+        test(`isNotNull(): \`${String(input)} (typeof ${typeof input})\` should be \`${String(
+            expected
+        )}\``, (t) => {
             t.is(Nullable.isNotNull(input), expected);
         });
     });
@@ -35,14 +37,16 @@ import * as Nullable from '../../__dist/cjs/Nullable';
         ['', false],
         [{}, false],
         [[], false],
-        [function () { }, false],
+        [function () {}, false],
         [Symbol(''), false],
         [undefined, false],
         [null, true],
     ];
 
     testcase.forEach(([input, expected]) => {
-        test(`isNull(): \`${String(input)} (typeof ${typeof input})\` should be \`${String(expected)}\``, (t) => {
+        test(`isNull(): \`${String(input)} (typeof ${typeof input})\` should be \`${String(
+            expected
+        )}\``, (t) => {
             t.is(Nullable.isNull(input), expected);
         });
     });
