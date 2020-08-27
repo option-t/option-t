@@ -8,6 +8,6 @@
         "outDir": "./cjs/"
     },
     "exclude": [
-        "test"
+        "__tests__/**/*"
     ]
 }

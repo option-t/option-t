@@ -8,6 +8,6 @@
         "outDir": "./esm/"
     },
     "exclude": [
-        "test"
+        "__tests__/**/*"
     ]
 }
