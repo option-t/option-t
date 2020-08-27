@@ -1,14 +1,12 @@
 /* eslint-env node */
-// eslint-disable-next-line strict
-'use strict';
 
 const numeric = [-1, 0, 1];
 const boolean = [true, false];
 const str = ['', 'bar'];
 
-const objectVal = [{ bar: 1 }, [1, 2, 3]];
+export const objectVal = [{ bar: 1 }, [1, 2, 3]];
 
-const nonSerializableObjectVal = [
+export const nonSerializableObjectVal = [
     new Set(),
     new Map(),
     new WeakSet(),
@@ -16,29 +14,19 @@ const nonSerializableObjectVal = [
     new Promise((resolve) => resolve()),
 ];
 
-const funcVal = [function () {}];
-const symbolVal = [Symbol('')];
+export const funcVal = [function () {}];
+export const symbolVal = [Symbol('')];
 
-module.exports = Object.freeze({
-    primitiveVal: [...numeric, ...boolean, ...str, null],
+export const primitiveVal = [...numeric, ...boolean, ...str, null];
 
-    objectVal,
+export const undefinedVal = [undefined];
 
-    nonSerializableObjectVal,
-
-    funcVal,
-
-    symbolVal,
-
-    undefinedVal: [undefined],
-
-    nonNullableValue: [
-        ...numeric,
-        ...boolean,
-        ...str,
-        ...objectVal,
-        ...nonSerializableObjectVal,
-        ...funcVal,
-        ...symbolVal,
-    ],
-});
+export const nonNullableValue = [
+    ...numeric,
+    ...boolean,
+    ...str,
+    ...objectVal,
+    ...nonSerializableObjectVal,
+    ...funcVal,
+    ...symbolVal,
+];
