@@ -2,7 +2,17 @@
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.4.3...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v22.4.4...master).
+
+## 22.2.4
+
+[See more details](https://github.com//karen-irc/option-t/compare/v22.4.3...v22.4.4).
+
+### Internals
+
+* Use prettier to format codes. [#714](https://github.com/karen-irc/option-t/pull/714)
+* Update dependencies.
+
 
 ## 22.4.3
 
