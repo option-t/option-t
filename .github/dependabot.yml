@@ -14,7 +14,7 @@ updates:
       ignore:
           - dependency-name: typescript
             versions:
-                - ">3.7"
+                - ">=4.1"
 
     - package-ecosystem: github-actions
       directory: "/"
