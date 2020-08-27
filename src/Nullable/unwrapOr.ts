@@ -12,8 +12,7 @@ import { ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 export function unwrapOrFromNullable<T>(v: Nullable<T>, def: T): T {
     if (v !== null) {
         return v;
-    }
-    else {
+    } else {
         return expectNotNull(def, ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_NULLABLE);
     }
 }

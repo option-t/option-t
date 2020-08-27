@@ -20,8 +20,7 @@ export function mapForMaybe<T, U>(src: Maybe<T>, selector: MapFn<T, U>): Maybe<U
         // So a type checker would recognize this type as `SomeType | null | undefined`. So it's flattened.
         // Then the user should call `andThen` (_flatmap_) operation instead of this.
         return expectNotNullAndUndefined(r, ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE);
-    }
-    else {
+    } else {
         return src;
     }
 }

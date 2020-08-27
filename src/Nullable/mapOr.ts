@@ -1,6 +1,9 @@
 import { Nullable } from './Nullable';
 import { expectNotNull } from './expect';
-import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE, ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
+import {
+    ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
+    ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_NULLABLE,
+} from './ErrorMessage';
 import { MapFn } from '../shared/Function';
 
 /**
@@ -20,8 +23,7 @@ export function mapOrForNullable<T, U>(src: Nullable<T>, def: U, selector: MapFn
     if (src !== null) {
         r = selector(src);
         msg = ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE;
-    }
-    else {
+    } else {
         r = def;
         msg = ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_NULLABLE;
     }

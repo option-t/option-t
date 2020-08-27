@@ -22,11 +22,7 @@
  * THE SOFTWARE.
  */
 
-import {
-    MapFn,
-    RecoveryFn,
-    TapFn,
-} from './shared/Function';
+import { MapFn, RecoveryFn, TapFn } from './shared/Function';
 
 export type FlatmapFn<T, U> = MapFn<T, Option<U>>;
 export type MayRecoveryFn<T> = RecoveryFn<Option<T>>;
@@ -209,7 +205,7 @@ export abstract class OptionBase<T> implements Optionable<T> {
     drop(destructor?: TapFn<T>): void;
     // FYI: this is json representation.
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    toJSON(): { is_some: boolean; value: T | undefined; };
+    toJSON(): { is_some: boolean; value: T | undefined };
 }
 
 interface Some<T> extends Optionable<T> {

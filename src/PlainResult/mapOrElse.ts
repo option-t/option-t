@@ -6,12 +6,15 @@ import { Result } from './Result';
  *  or a _fallback_ function to a contained `Err(E)` value in _src_.
  *  This function can be used to unpack a successful result while handling an error.
  */
-export function mapOrElseForResult<T, E, U>(src: Result<T, E>, fallback: RecoveryWithErrorFn<E, U>, selector: MapFn<T, U>): U {
+export function mapOrElseForResult<T, E, U>(
+    src: Result<T, E>,
+    fallback: RecoveryWithErrorFn<E, U>,
+    selector: MapFn<T, U>
+): U {
     if (src.ok) {
         const r: U = selector(src.val);
         return r;
-    }
-    else {
+    } else {
         const r: U = fallback(src.err);
         return r;
     }

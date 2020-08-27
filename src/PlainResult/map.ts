@@ -11,8 +11,7 @@ export function mapForResult<T, U, E>(src: Result<T, E>, selector: MapFn<T, U>):
     if (src.ok) {
         const r: U = selector(src.val);
         return createOk(r);
-    }
-    else {
+    } else {
         const s: Err<E> = src;
         return s;
     }

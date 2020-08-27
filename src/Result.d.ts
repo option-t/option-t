@@ -23,11 +23,7 @@
  */
 
 import { Option, Some, None } from './Option';
-import {
-    MapFn,
-    RecoveryWithErrorFn,
-    TapFn
-} from './shared/Function';
+import { MapFn, RecoveryWithErrorFn, TapFn } from './shared/Function';
 
 export type FlatmapOkFn<T, U, E> = MapFn<T, Result<U, E>>;
 export type FlatmapErrFn<T, E, F> = MapFn<E, Result<T, F>>;

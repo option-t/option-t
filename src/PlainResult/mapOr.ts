@@ -11,8 +11,7 @@ export function mapOrForResult<T, E, U>(src: Result<T, E>, def: U, selector: Map
     let r: U;
     if (src.ok) {
         r = selector(src.val);
-    }
-    else {
+    } else {
         r = def;
     }
     return r;

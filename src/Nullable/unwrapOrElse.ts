@@ -14,8 +14,7 @@ import { ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage'
 export function unwrapOrElseFromNullable<T>(v: Nullable<T>, def: RecoveryFn<T>): T {
     if (v !== null) {
         return v;
-    }
-    else {
+    } else {
         const r = def();
         return expectNotNull(r, ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
     }

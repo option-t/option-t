@@ -27,7 +27,11 @@ type MutErr<E> = Mutable<Err<E>>;
  *  and this API is designed to use as a destructor or similar fashions.
  *  So if you call this for same object more than once, your code might contain "double free" problem.
  */
-export function unsafeDropBothForResult<T, E>(v: Result<T, E>, okMutator: TapFn<MutOk<T>>, errMutator: TapFn<MutErr<E>>): void {
+export function unsafeDropBothForResult<T, E>(
+    v: Result<T, E>,
+    okMutator: TapFn<MutOk<T>>,
+    errMutator: TapFn<MutErr<E>>
+): void {
     const mutable = asMutResult(v);
     if (mutable.ok) {
         okMutator(mutable);

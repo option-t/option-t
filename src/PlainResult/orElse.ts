@@ -8,11 +8,13 @@ export type FlatmapErrFn<T, E, F> = MapFn<E, Result<T, F>>;
  *  if the result is `Err(E)`, otherwise returns the `Ok(T)` value of self.
  *  This function can be used for control flow based on result values.
  */
-export function orElseForResult<T, E, F>(a: Result<T, E>, errSelector: FlatmapErrFn<T, E, F>): Result<T, F> {
+export function orElseForResult<T, E, F>(
+    a: Result<T, E>,
+    errSelector: FlatmapErrFn<T, E, F>
+): Result<T, F> {
     if (a.ok) {
         return a;
-    }
-    else {
+    } else {
         const r = errSelector(a.err);
         return r;
     }

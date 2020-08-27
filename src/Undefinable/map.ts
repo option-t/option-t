@@ -11,7 +11,10 @@ import { Undefinable, isNotUndefined } from './Undefinable';
  *      * If you'd like return `Undefinable<*>` as `U`, use `andThen()`.
  *      * If the result of _selector_ is `undefined`, this throw an `Error`.
  */
-export function mapForUndefinable<T, U>(src: Undefinable<T>, selector: MapFn<T, U>): Undefinable<U> {
+export function mapForUndefinable<T, U>(
+    src: Undefinable<T>,
+    selector: MapFn<T, U>
+): Undefinable<U> {
     if (isNotUndefined(src)) {
         const r = selector(src);
         // XXX:
@@ -20,8 +23,7 @@ export function mapForUndefinable<T, U>(src: Undefinable<T>, selector: MapFn<T, 
         // So a type checker would recognize this type as `SomeType | undefined`. So it's flattened.
         // Then the user should call `andThen` (_flatmap_) operation instead of this.
         return expectNotUndefined(r, ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE);
-    }
-    else {
+    } else {
         return src;
     }
 }

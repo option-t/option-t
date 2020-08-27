@@ -13,11 +13,9 @@ export function xorForUndefinable<T>(a: Undefinable<T>, b: Undefinable<T>): Unde
 
     if (aIsSome && !bIsSome) {
         return a;
-    }
-    else if (!aIsSome && bIsSome) {
+    } else if (!aIsSome && bIsSome) {
         return b;
-    }
-    else {
+    } else {
         return undefined;
     }
 }

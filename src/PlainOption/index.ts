@@ -24,15 +24,7 @@
  *  ```
  */
 
-export {
-    Option,
-    Some,
-    None,
-    createSome,
-    createNone,
-    isSome,
-    isNone,
-} from './Option';
+export { Option, Some, None, createSome, createNone, isSome, isNone } from './Option';
 
 export { andForOption as and } from './and';
 export { andThenForOption as andThen } from './andThen';

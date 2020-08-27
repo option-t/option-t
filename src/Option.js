@@ -169,9 +169,9 @@ OptionBase.prototype = Object.freeze({
         }
 
         const mapped = fn(this.val);
-        const isOption = (mapped instanceof OptionBase);
+        const isOption = mapped instanceof OptionBase;
         if (!isOption) {
-            throw new TypeError('Option<T>.flatMap()\' param `fn` should return `Option<T>`.');
+            throw new TypeError("Option<T>.flatMap()' param `fn` should return `Option<T>`.");
         }
 
         return mapped;
@@ -189,8 +189,7 @@ OptionBase.prototype = Object.freeze({
     mapOr: function OptionTMapOr(def, fn) {
         if (this.ok) {
             return fn(this.val);
-        }
-        else {
+        } else {
             return def;
         }
     },
@@ -207,8 +206,7 @@ OptionBase.prototype = Object.freeze({
     mapOrElse: function OptionTMapOrElse(defFn, fn) {
         if (this.ok) {
             return fn(this.val);
-        }
-        else {
+        } else {
             return defFn();
         }
     },
@@ -261,14 +259,13 @@ OptionBase.prototype = Object.freeze({
     orElse: function OptionTOr(fn) {
         if (this.ok) {
             return this;
-        }
-        else {
+        } else {
             const value = fn();
             if (value instanceof OptionBase) {
                 return value;
             }
 
-            throw new TypeError('Option<T>.orElse()\' param `fn` should return `Option<T>`.');
+            throw new TypeError("Option<T>.orElse()' param `fn` should return `Option<T>`.");
         }
     },
 
@@ -298,7 +295,7 @@ OptionBase.prototype = Object.freeze({
             is_some: this.ok,
             value: this.val,
         };
-    }
+    },
 });
 
 /**

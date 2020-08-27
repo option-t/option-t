@@ -12,12 +12,14 @@ export type FlatmapFn<T, U> = MapFn<T, Undefinable<U>>;
  *  But we don't provide `flatMap()` as alias of this function.
  *  because it's too hard to undarstand that "flatMap" operation for `T | undefined`
  */
-export function andThenForUndefinable<T, U>(src: Undefinable<T>, selector: FlatmapFn<T, U>): Undefinable<U> {
+export function andThenForUndefinable<T, U>(
+    src: Undefinable<T>,
+    selector: FlatmapFn<T, U>
+): Undefinable<U> {
     if (isNotUndefined(src)) {
         const r = selector(src);
         return r;
-    }
-    else {
+    } else {
         return src;
     }
 }
