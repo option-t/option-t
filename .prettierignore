@@ -9,7 +9,6 @@ __tmp_mjs/
 ## TODO
 *.json
 *.md
-__tests__/
 tools/
 /.eslintrc.js
 ava.config.cjs
