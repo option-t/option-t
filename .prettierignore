@@ -10,7 +10,6 @@ __tmp_mjs/
 ## TODO
 *.json
 *.md
-*.yml
 __tests__/
 src/
 tools/
