@@ -95,7 +95,7 @@ build_mjs_cp_dts_to_esm: build_mjs_create_tmp_mjs clean_dist
 .PHONY: build_mjs_rename_js_to_mjs
 build_mjs_rename_js_to_mjs: build_mjs_create_tmp_mjs
 	TARGET_DIR=$(TMP_MJS_DIR) \
-    $(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs
+    $(NODE_BIN) $(CURDIR)/tools/extension_renamer/to_mjs.mjs
 
 .PHONY: build_mjs_create_tmp_mjs
 build_mjs_create_tmp_mjs: build_mjs_create_tmp_mjs_call_tsc build_mjs_create_tmp_mjs_call_babel build_mjs_create_tmp_mjs_cal_cpx
