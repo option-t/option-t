@@ -51,6 +51,37 @@ jobs:
       # if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install
 
+  format_check:
+    needs: [install_dependencies]
+    runs-on: ubuntu-latest
+    container: node:${{ matrix.node-version }}-buster
+
+    strategy:
+      matrix:
+        node-version:
+          - 14
+
+    steps:
+    - uses: actions/checkout@v2.3.2
+
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - name: Restore dependencies from cache
+      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      uses: actions/cache@v2
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          v0-${{ runner.os }}-yarn-
+    - name: Install dependencies
+      run: yarn install
+
+    - run: make format_check -j
+      env:
+        CI: true
+
   lint:
     needs: [install_dependencies]
     runs-on: ubuntu-latest
