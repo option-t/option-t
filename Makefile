@@ -147,7 +147,7 @@ build_mixedlib_cp_mjs: build_esm clean_dist
 
 .PHONY: build_mixedlib_cp_cjs
 build_mixedlib_cp_cjs: build_cjs clean_dist
-	$(NPM_BIN)/cpx '$(DIST_COMMONJS_DIR)/**/*.js' $(DIST_MIXED_LIB_DIR) --preserve
+	$(NPM_BIN)/cpx '$(DIST_COMMONJS_DIR)/**/*.cjs' $(DIST_MIXED_LIB_DIR) --preserve
 
 .PHONY: build_mixedlib_cp_dts
 build_mixedlib_cp_dts: build_esm clean_dist
