@@ -5,6 +5,22 @@ If you see more details, please compare each tags by [GitHub's release page](htt
 ## x.y.z
 
 
+## 23.0.0
+
+### Breaking Changes
+
+* Update typescript compiler to v4.0 ([#716](https://github.com/karen-irc/option-t/pull/716)).
+    * By this change, we would be able to use some new language features for the future change.
+      Then they might make our `d.ts` imcompatible with typescript v3.9 or earlier.
+    * This version is only change the baseline.
+
+
+### Documentation
+
+* Stop to update the link to compare each tags in this file.
+    * We can compare them by  [GitHub's release page](https://github.com/karen-irc/option-t/releases) now.
+
+
 ## 22.2.4
 
 [See more details](https://github.com//karen-irc/option-t/compare/v22.4.3...v22.4.4).
