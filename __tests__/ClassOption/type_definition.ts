@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 // XXX:
 // The type definitions for '--moduleResolution node' is a ES6 format,
 // So it would test it by importing it simply.
@@ -59,7 +61,7 @@ import { Option, OptionBase, createSome, createNone } from '../../__dist/cjs/Opt
 
     if (option instanceof OptionBase) {
         // @ts-expect-error ts-migrate(6133) FIXME: 'bar' is declared but its value is never read.
-        const bar: any = null;
+        const bar: unknown = null;
     }
 })();
 
@@ -119,7 +121,7 @@ import { Option, OptionBase, createSome, createNone } from '../../__dist/cjs/Opt
 
     if (option instanceof OptionBase) {
         // @ts-expect-error ts-migrate(6133) FIXME: 'bar' is declared but its value is never read.
-        const bar: any = null;
+        const bar: unknown = null;
     }
 })();
 
