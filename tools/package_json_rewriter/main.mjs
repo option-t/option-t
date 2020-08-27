@@ -1,13 +1,15 @@
-'use strict';
+import * as assert from 'assert';
+import { promises as fs } from 'fs';
+import * as path from 'path';
+import { fileURLToPath } from 'url';
 
-const assert = require('assert');
-const fs = require('fs').promises;
-const path = require('path');
+import { addExportsFields } from './transformer/add_exports_field/main.mjs';
+import { loadJSON } from './json.mjs';
 
-const { addExportsFields } = require('./transformer/add_exports_field/main');
-const { loadJSON } = require('./json');
+const THIS_FILENAME = fileURLToPath(import.meta.url);
+const THIS_DIRNAME = path.dirname(THIS_FILENAME);
 
-const BASE_DIR = __dirname;
+const BASE_DIR = THIS_DIRNAME;
 
 async function writePackageJSON(baseDir, outputPath, content) {
     assert.strictEqual(outputPath.endsWith('/'), false, 'outputPath should not be end with `/`');

@@ -1,7 +1,5 @@
-'use strict';
-
-const fs = require('fs').promises;
-const path = require('path');
+import { promises as fs } from 'fs';
+import * as path from 'path';
 
 async function loadFileAsText(baseDir, filepath) {
     const p = path.resolve(baseDir, filepath);
@@ -22,12 +20,8 @@ function parseJSON(text) {
     }
 }
 
-async function loadJSON(baseDir, filepath) {
+export async function loadJSON(baseDir, filepath) {
     const text = await loadFileAsText(baseDir, filepath);
     const json = parseJSON(text);
     return json;
 }
-
-module.exports = Object.freeze({
-    loadJSON,
-});

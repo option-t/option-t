@@ -1,14 +1,14 @@
-'use strict';
-
-const assert = require('assert');
-const fs = require('fs').promises;
-const path = require('path');
+import * as assert from 'assert';
+import { promises as fs } from 'fs';
+import * as path from 'path';
+import { fileURLToPath } from 'url';
 
 const FROM_EXTENSION = 'js';
 const TO_EXTENSION = 'mjs';
 
 function debug(input) {
-    console.log(`${__filename}: ${input}`);
+    const filename = fileURLToPath(import.meta.url);
+    console.log(`${filename}: ${input}`);
 }
 
 async function* getAllDescendantFiles(subrootDir) {

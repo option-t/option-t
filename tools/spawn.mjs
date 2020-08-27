@@ -21,9 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-'use strict';
-
-const childProcess = require('child_process');
+import * as childProcess from 'child_process';
 
 /**
  *  Spawn a child process.
@@ -37,7 +35,7 @@ const childProcess = require('child_process');
  *
  *  @return {!PromiseLike<number>}
  */
-function spawnChildProcess(bin, args, option) {
+export function spawnChildProcess(bin, args, option) {
     const result = spawnCancelableChild(bin, args, option);
     return result.process;
 }
@@ -58,7 +56,7 @@ function spawnChildProcess(bin, args, option) {
  *      - `process`: This is fulfilled with the process's exit status.
  *      - `canceller`: try to cancel the process if you call this.
  */
-function spawnCancelableChild(bin, args, option) {
+export function spawnCancelableChild(bin, args, option) {
     let innerCancel = null;
     let isCanceled = false;
     const canceller = function () {
@@ -72,7 +70,7 @@ function spawnCancelableChild(bin, args, option) {
         }
     };
 
-    const process = new Promise(function(resolve, reject){
+    const process = new Promise(function (resolve, reject) {
         if (isCanceled) {
             reject();
             return;
@@ -84,7 +82,7 @@ function spawnCancelableChild(bin, args, option) {
             proc.kill('SIGINT');
         };
 
-        proc.on('exit', function(status) {
+        proc.on('exit', function (status) {
             resolve(status);
         });
     });
@@ -100,14 +98,8 @@ function spawnCancelableChild(bin, args, option) {
  *      the process's exit status.
  *  @return {!PromiseLike<number>}
  */
-function assertReturnCode(status) {
+export function assertReturnCode(status) {
     return (status === 0) ?
         Promise.resolve(status) :
         Promise.reject(status);
 }
-
-module.exports = {
-    spawnChildProcess,
-    spawnCancelableChild,
-    assertReturnCode,
-};

@@ -1,17 +1,20 @@
-'use strict';
+import * as assert from 'assert';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-const assert = require('assert');
-
-const {
+import {
     loadHistoricalPathInfo,
     addHistoricalPathToExportsFields,
-} = require('./compatibility');
-const {
+} from './compatibility.mjs';
+import {
     loadPublicAPIDefinitions,
     addPublicAPIToExportsFields,
-} = require('./public_api');
+} from './public_api.mjs';
 
-const BASE_DIR = __dirname;
+const THIS_FILENAME = fileURLToPath(import.meta.url);
+const THIS_DIRNAME = dirname(THIS_FILENAME);
+
+const BASE_DIR = THIS_DIRNAME;
 
 function addMainFieldFromPackageJSON(targetObject, manifestInfo) {
     const mainPath = manifestInfo.main;
@@ -22,7 +25,7 @@ function addMainFieldFromPackageJSON(targetObject, manifestInfo) {
     targetObject['.'] = mainPath;
 }
 
-async function addExportsFields(json) {
+export async function addExportsFields(json) {
     const o = Object.create(null);
 
     const histricalJSPathList = await loadHistoricalPathInfo(BASE_DIR, '../../../pkg_files.json');
@@ -38,7 +41,3 @@ async function addExportsFields(json) {
     // eslint-disable-next-line no-param-reassign
     json.exports = o;
 }
-
-module.exports = Object.freeze({
-    addExportsFields,
-});

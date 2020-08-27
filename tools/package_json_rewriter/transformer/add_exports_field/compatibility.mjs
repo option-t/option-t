@@ -1,8 +1,6 @@
-'use strict';
+import * as assert from 'assert';
 
-const assert = require('assert');
-
-const { loadJSON } = require('../../json');
+import { loadJSON } from '../../json.mjs';
 
 function filterJSDir(histricalPathInfo) {
     assert.ok(Array.isArray(histricalPathInfo));
@@ -21,13 +19,13 @@ function filterJSDir(histricalPathInfo) {
     return jsDir;
 }
 
-async function loadHistoricalPathInfo(baseDir, filename) {
+export async function loadHistoricalPathInfo(baseDir, filename) {
     const histricalPathInfo = await loadJSON(baseDir, filename);
     const histricalJSPathList = filterJSDir(histricalPathInfo);
     return histricalJSPathList;
 }
 
-function addHistoricalPathToExportsFields(o, histricalJSPathList) {
+export function addHistoricalPathToExportsFields(o, histricalJSPathList) {
     // https://nodejs.org/api/esm.html
     for (const file of histricalJSPathList) {
         const filepath = `./${file}`;
@@ -66,8 +64,3 @@ function addHistoricalPathToExportsFields(o, histricalJSPathList) {
     // Our defult is still commonjs. For lib/, we should use `.js`.
     handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH.map((path) => `lib/${path}`), 'js');
 }
-
-module.exports = Object.freeze({
-    loadHistoricalPathInfo,
-    addHistoricalPathToExportsFields,
-});

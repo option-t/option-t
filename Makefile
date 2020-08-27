@@ -95,7 +95,7 @@ build_mjs_cp_dts_to_esm: build_mjs_create_tmp_mjs clean_dist
 .PHONY: build_mjs_rename_js_to_mjs
 build_mjs_rename_js_to_mjs: build_mjs_create_tmp_mjs
 	TARGET_DIR=$(TMP_MJS_DIR) \
-    $(NODE_BIN) $(CURDIR)/tools/extension_renamer.js
+    $(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs
 
 .PHONY: build_mjs_create_tmp_mjs
 build_mjs_create_tmp_mjs: build_mjs_create_tmp_mjs_call_tsc build_mjs_create_tmp_mjs_call_babel build_mjs_create_tmp_mjs_cal_cpx
@@ -148,7 +148,7 @@ cp_readme: clean_dist
 generate_manifest: clean_dist
 	INPUT_MANIFEST_PATH=$(CURDIR)/package.json \
     OUTDIR=$(DIST_DIR) \
-    $(NODE_BIN) $(CURDIR)/tools/package_json_rewriter/main.js
+    $(NODE_BIN) $(CURDIR)/tools/package_json_rewriter/main.mjs
 
 
 ###########################
@@ -187,7 +187,7 @@ test_distribution_contain_all: distribution
 
 .PHONY: run_test_distribution_contain_all
 run_test_distribution_contain_all:
-	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/pkg_files_tester.js
+	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/pkg_files_tester.mjs
 
 .PHONY: test_esmodule_path_rewrite
 test_esmodule_path_rewrite: distribution
@@ -195,7 +195,7 @@ test_esmodule_path_rewrite: distribution
 
 .PHONY: run_test_esmodule_path_rewrite
 run_test_esmodule_path_rewrite:
-	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/esmodule_path_rewrite_tester.js
+	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/esmodule_path_rewrite_tester.mjs
 
 .PHONY: test_package_install
 test_package_install: distribution __run_install_package
@@ -208,7 +208,7 @@ __run_install_package: distribution
 
 .PHONY: run_test_package_install
 run_test_package_install:
-	$(NODE_BIN) $(CURDIR)/tools/package_export_tester.js
+	$(NODE_BIN) $(CURDIR)/tools/package_export_tester.mjs
 
 .PHONY: post_cleanup_to_test_package_install
 post_cleanup_to_test_package_install:
