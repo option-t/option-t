@@ -9,6 +9,7 @@ test('src is `None`', (t) => {
 
     const src = createNone();
 
+    // @ts-expect-error ts-migrate(2345) FIXME: Type 'void' is not assignable to type 'Option<unkn... Remove this comment to see the full error message
     const result = andThenForOption(src, (_) => {
         t.fail('the passed function should not be called');
     });
@@ -51,6 +52,7 @@ test("src is `Some<T>`, callback don't returns `Option<T>`", (t) => {
     const EXPECTED = Symbol('expected');
     const src = createSome(EXPECTED);
 
+    // @ts-expect-error ts-migrate(2345) FIXME: Type 'number' is not assignable to type 'Option<un... Remove this comment to see the full error message
     const result = andThenForOption(src, (s) => {
         t.is(s, EXPECTED);
 
@@ -58,5 +60,6 @@ test("src is `Some<T>`, callback don't returns `Option<T>`", (t) => {
     });
 
     // This is design and we recommend to use TypeScript or other static type checking.
+    // @ts-expect-error ts-migrate(2345) FIXME: Argument of type '1' is not assignable to paramete... Remove this comment to see the full error message
     t.is(result, 1, `At this moment, we don't do run-time checking for the return value`);
 });

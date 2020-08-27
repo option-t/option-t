@@ -28,7 +28,7 @@ import { createOk, createErr } from '../../__dist/cjs/Result';
 const EXPECTED = Symbol('0');
 const UNEXPECTED = Symbol('1');
 
-function toLabel(input) {
+function toLabel(input: any) {
     if (input.isOk()) {
         return 'Ok<T>';
     } else {
@@ -43,6 +43,7 @@ const testcaseList = [
 ];
 for (const [lhs, rhs] of testcaseList) {
     test(`lhs: ${toLabel(lhs)}, rhs: ${toLabel(rhs)}`, (t) => {
+        // @ts-expect-error ts-migrate(2349) FIXME: Each member of the union type '(<F>(res: Result<un... Remove this comment to see the full error message
         const result = lhs.or(rhs);
         t.true(result.isOk(), 'the returned value should be `Ok');
         t.is(result.unwrap(), EXPECTED, 'the returned value should wrap the expected value');
@@ -52,8 +53,10 @@ for (const [lhs, rhs] of testcaseList) {
 const failureTestcaseList = [[createErr(UNEXPECTED), createErr(EXPECTED)]];
 for (const [lhs, rhs] of failureTestcaseList) {
     test(`lhs: ${toLabel(lhs)}, rhs: ${toLabel(rhs)}`, (t) => {
+        // @ts-expect-error ts-migrate(2345) FIXME: Type 'typeof EXPECTED' is not assignable to type '... Remove this comment to see the full error message
         const result = lhs.or(rhs);
         t.true(result.isErr(), 'the returned value should be `Err');
+        // @ts-expect-error ts-migrate(2345) FIXME: Argument of type 'typeof EXPECTED' is not assignab... Remove this comment to see the full error message
         t.is(result.unwrapErr(), EXPECTED, 'the returned value should wrap the expected value');
     });
 }

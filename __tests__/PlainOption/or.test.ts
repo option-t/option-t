@@ -10,6 +10,7 @@ test('a=Some, b=Some', (t) => {
     const a = createSome(EXPECTED);
     const b = createSome(NOT_EXPECTED);
 
+    // @ts-expect-error ts-migrate(2345) FIXME: Type 'typeof NOT_EXPECTED' is not assignable to ty... Remove this comment to see the full error message
     const actual = orForOption(a, b);
 
     t.is(actual, a, 'should return a');

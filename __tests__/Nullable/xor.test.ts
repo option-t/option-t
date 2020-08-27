@@ -5,7 +5,7 @@ import { xorForNullable } from '../../__dist/cjs/Nullable/xor';
 const SOME_VAL_A = Symbol('some_val_a');
 const SOME_VAL_B = Symbol('some_val_b');
 
-function testCase(a, b, expected) {
+function testCase(a: any, b: any, expected: any) {
     return {
         a,
         b,

@@ -13,6 +13,7 @@ test('self is `None`', function (t) {
             t.pass('`defaultFn` function should be called');
             return EXPECTED;
         },
+        // @ts-expect-error ts-migrate(2345) FIXME: Type 'void' is not assignable to type 'number'.
         function mapFn() {
             t.fail('`mapFn` should not be called');
         }
@@ -36,6 +37,7 @@ test('self is `Some<T>`', function (t) {
         },
         function (val) {
             t.pass('`mapFn` should be called');
+            // @ts-expect-error ts-migrate(2345) FIXME: Argument of type '1' is not assignable to paramete... Remove this comment to see the full error message
             t.not(val, EXPECTED);
             return EXPECTED;
         }

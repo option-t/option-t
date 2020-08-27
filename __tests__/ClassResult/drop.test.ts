@@ -36,6 +36,7 @@ test('Ok<T>', (t) => {
     }, 'is callable');
 
     t.true(Object.isFrozen(ok), 'should be freezed');
+    // @ts-expect-error ts-migrate(2532) FIXME: Object is possibly 'undefined'.
     t.is(ok.unwrap(), null, 'should be freed');
 });
 
@@ -47,5 +48,6 @@ test('Err<E>', (t) => {
     }, 'is callable');
 
     t.true(Object.isFrozen(err), 'should be freezed');
+    // @ts-expect-error ts-migrate(2532) FIXME: Object is possibly 'undefined'.
     t.is(err.unwrapErr(), null, 'should be freed');
 });

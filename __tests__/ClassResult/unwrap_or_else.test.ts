@@ -40,6 +40,7 @@ test('Ok<T>', function (t) {
     t.not(acutual, EXPECTED);
 
     const result = createOk(EXPECTED);
+    // @ts-expect-error ts-migrate(2345) FIXME: Type 'symbol' is not assignable to type 'unique sy... Remove this comment to see the full error message
     acutual = result.unwrapOrElse(op);
 
     t.is(acutual, EXPECTED, 'the returned is expected');
@@ -53,7 +54,7 @@ test('Err<E>', function (t) {
 
     let argument = null;
     let acutual = null;
-    const op = function (v) {
+    const op = function (v: any) {
         argument = v;
         t.pass();
         return EXPECTED;

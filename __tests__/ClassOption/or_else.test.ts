@@ -27,6 +27,7 @@ test("self is `None`, param don't return `Option<T>`", function (t) {
 
     t.throws(
         () => {
+            // @ts-expect-error ts-migrate(2345) FIXME: Type 'string' is not assignable to type 'Option<un... Remove this comment to see the full error message
             none.orElse(function () {
                 return 'barfoo';
             });

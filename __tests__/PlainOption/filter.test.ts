@@ -21,6 +21,7 @@ test('input is Some, and predicate return false', (t) => {
 
 test('input is None', (t) => {
     const input = createNone();
+    // @ts-expect-error ts-migrate(2554) FIXME: Expected 2 arguments, but got 1.
     const actual = filterForOption(input);
 
     t.false(actual.ok, 'should be None');

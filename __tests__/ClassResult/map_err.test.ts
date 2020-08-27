@@ -57,7 +57,7 @@ test('Err<E>', function (t) {
 
     let argument = null;
     let result = null;
-    const op = function (v) {
+    const op = function (v: any) {
         argument = v;
         t.pass();
         return EXPECTED;

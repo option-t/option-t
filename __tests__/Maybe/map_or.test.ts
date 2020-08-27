@@ -21,6 +21,7 @@ for (const value of nonNullableValue) {
 test('pass null', (t) => {
     const DEFAULE_VAL = Symbol('');
 
+    // @ts-expect-error ts-migrate(2345) FIXME: Type 'void' is not assignable to type 'unique symb... Remove this comment to see the full error message
     const result = mapOrForMaybe(null, DEFAULE_VAL, (_v) => {
         t.fail('should not call selector fn');
     });
@@ -30,6 +31,7 @@ test('pass null', (t) => {
 test('pass undefined', (t) => {
     const DEFAULE_VAL = Symbol('');
 
+    // @ts-expect-error ts-migrate(2345) FIXME: Type 'void' is not assignable to type 'unique symb... Remove this comment to see the full error message
     const result = mapOrForMaybe(undefined, DEFAULE_VAL, (_v) => {
         t.fail('should not call selector fn');
     });

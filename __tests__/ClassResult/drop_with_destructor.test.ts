@@ -33,11 +33,11 @@ test('Ok<T>', (t) => {
 
     let args = null;
 
-    function okDestructor(v) {
+    function okDestructor(v: any) {
         args = v;
         t.pass('call okDestructor');
     }
-    function errDestructor(e) {
+    function errDestructor(e: any) {
         args = e;
         t.fail('call errDestructor');
     }
@@ -55,11 +55,11 @@ test('Err<E>', (t) => {
 
     let args = null;
 
-    function okDestructor(v) {
+    function okDestructor(v: any) {
         args = v;
         t.fail('call okDestructor');
     }
-    function errDestructor(e) {
+    function errDestructor(e: any) {
         args = e;
         t.pass('call errDestructor');
     }

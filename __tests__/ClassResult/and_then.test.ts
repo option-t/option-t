@@ -31,7 +31,7 @@ const EXPECTED = Symbol('EXPECTED');
 test(`OK(T), return Ok(U)`, (t) => {
     t.plan(3);
 
-    const op = function (v) {
+    const op = function (v: any) {
         t.is(v, ORIGIN, 'the argument of `op` should be the expected value');
         return createOk(EXPECTED);
     };
@@ -46,7 +46,7 @@ test(`OK(T), return Ok(U)`, (t) => {
 test(`Ok(T), return Err(F)`, (t) => {
     t.plan(3);
 
-    const op = function (v) {
+    const op = function (v: any) {
         t.is(v, ORIGIN, 'the argument of `op` should be the expected value');
         return createErr(EXPECTED);
     };
@@ -63,8 +63,9 @@ for (const innerfn of errTestcaseList) {
     test(`Err(E), return ${innerfn.name}`, (t) => {
         t.plan(2);
 
-        const op = function (_v) {
+        const op = function (_v: any) {
             t.fail();
+            // @ts-expect-error ts-migrate(2349) FIXME: Each member of the union type '(<T, E>(val: T) => ... Remove this comment to see the full error message
             return innerfn(EXPECTED);
         };
 
@@ -82,7 +83,9 @@ test('Ok(T): return non Result type', (t) => {
     const input = createOk(ORIGIN);
     t.throws(
         () => {
+            // @ts-expect-error ts-migrate(2345) FIXME: Type 'symbol' is not assignable to type 'Result<un... Remove this comment to see the full error message
             input.andThen(function (v) {
+                // @ts-expect-error ts-migrate(2358) FIXME: The left-hand side of an 'instanceof' expression m... Remove this comment to see the full error message
                 t.false(v instanceof ResultBase);
                 return v;
             });
@@ -97,6 +100,7 @@ test('Ok(T): return non Result type', (t) => {
 test('Err(E): return non Result type', (t) => {
     const input = createErr(ORIGIN);
     t.notThrows(() => {
+        // @ts-expect-error ts-migrate(2345) FIXME: Type 'unknown' is not assignable to type 'Ok<unkno... Remove this comment to see the full error message
         input.andThen(function (v) {
             t.fail("don't call");
             return v;

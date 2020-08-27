@@ -10,6 +10,7 @@ for (const factory of FUNC_LIST) {
 
     test(`asMutResult does not change the shape & object created by ${funcname}`, (t) => {
         const INT = Symbol('');
+        // @ts-expect-error ts-migrate(2349) FIXME: Each member of the union type '(<T>(val: T) => Ok<... Remove this comment to see the full error message
         const original = factory(INT);
         const actual = asMutResult(original);
         t.is(actual, original, 'should be same object');

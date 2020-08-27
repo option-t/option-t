@@ -10,6 +10,7 @@ test('a=Some, b=Some', (t) => {
     const a = createSome(valA);
     const b = createSome(valB);
 
+    // @ts-expect-error ts-migrate(2345) FIXME: Type 'typeof valB' is not assignable to type 'type... Remove this comment to see the full error message
     const actual = xorForOption(a, b);
     t.true(isNone(actual), 'should be none');
 });

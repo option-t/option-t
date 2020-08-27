@@ -18,6 +18,7 @@ test('self is `Some<T>`', function (t) {
 
     const some = createSome(1);
     const option = some.map(function (val) {
+        // @ts-expect-error ts-migrate(2345) FIXME: Argument of type '"1"' is not assignable to parame... Remove this comment to see the full error message
         t.not(val, EXPECTED);
         return EXPECTED;
     });

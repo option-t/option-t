@@ -34,7 +34,7 @@ test('Ok<T>', (t) => {
     let argument = null;
     let result = null;
 
-    const op = function (v) {
+    const op = function (v: any) {
         argument = v;
         t.pass();
         return EXPECTED;
@@ -63,6 +63,7 @@ test('Err<E>', (t) => {
         return NOT_EXPECTED;
     };
 
+    // @ts-expect-error ts-migrate(2345) FIXME: Argument of type 'typeof NOT_EXPECTED' is not assi... Remove this comment to see the full error message
     t.not(ORIGIN, NOT_EXPECTED);
 
     const original = createErr(ORIGIN);

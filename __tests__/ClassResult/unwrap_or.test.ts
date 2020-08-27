@@ -31,6 +31,7 @@ test('Ok<T>', (t) => {
     const NOT_EXPECTED = Symbol('NOT_EXPECTED');
 
     const result = createOk(EXPECTED);
+    // @ts-expect-error ts-migrate(2345) FIXME: Argument of type 'typeof NOT_EXPECTED' is not assi... Remove this comment to see the full error message
     t.is(result.unwrapOr(NOT_EXPECTED), EXPECTED);
 });
 

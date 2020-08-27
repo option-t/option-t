@@ -31,8 +31,9 @@ const EXPECTED = Symbol('EXPECTED');
 const okTestcase = [createOk, createErr];
 for (const innerFn of okTestcase) {
     test(`Ok(T), return ${innerFn.name}`, (t) => {
-        const op = function (_v) {
+        const op = function (_v: any) {
             t.fail();
+            // @ts-expect-error ts-migrate(2349) FIXME: Each member of the union type '(<T, E>(val: T) => ... Remove this comment to see the full error message
             return innerFn(EXPECTED);
         };
 
@@ -47,7 +48,7 @@ for (const innerFn of okTestcase) {
 test(`Err(E), return Ok`, (t) => {
     t.plan(3);
 
-    const op = function (v) {
+    const op = function (v: any) {
         t.is(v, ORIGIN, 'the argument of `op` should be the expected value');
         return createOk(EXPECTED);
     };
@@ -62,7 +63,7 @@ test(`Err(E), return Ok`, (t) => {
 test(`Err(E), return Err`, (t) => {
     t.plan(3);
 
-    const op = function (v) {
+    const op = function (v: any) {
         t.is(v, ORIGIN, 'the argument of `op` should be the expected value');
         return createErr(EXPECTED);
     };
@@ -77,6 +78,7 @@ test(`Err(E), return Err`, (t) => {
 test('Ok(T): return non Result type', (t) => {
     const input = createOk(1);
     t.notThrows(() => {
+        // @ts-expect-error ts-migrate(2345) FIXME: Type 'unknown' is not assignable to type 'Err<numb... Remove this comment to see the full error message
         input.orElse(function (v) {
             t.fail("don't call");
             return v;
@@ -90,7 +92,9 @@ test('Err(E): return non Result type', (t) => {
     const input = createErr(1);
     t.throws(
         () => {
+            // @ts-expect-error ts-migrate(2345) FIXME: Type 'number' is not assignable to type 'Result<un... Remove this comment to see the full error message
             input.orElse(function (v) {
+                // @ts-expect-error ts-migrate(2358) FIXME: The left-hand side of an 'instanceof' expression m... Remove this comment to see the full error message
                 t.false(v instanceof ResultBase);
                 return v;
             });

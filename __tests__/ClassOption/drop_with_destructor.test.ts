@@ -6,13 +6,14 @@ test('Some<T>', function (t) {
     t.plan(3);
 
     const EXPECTED = 1;
-    function destructor(v) {
+    function destructor(v: any) {
         t.pass('should be called with the destructor');
         t.is(v, EXPECTED, 'should be called with the argument');
     }
 
     const option = createSome(EXPECTED);
     option.drop(destructor);
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'toJSON' does not exist on type 'Some<num... Remove this comment to see the full error message
     t.is(option.toJSON().value, null, 'the inner should be freed');
 });
 
@@ -23,5 +24,6 @@ test('None', function (t) {
 
     const option = createNone();
     option.drop(destructor);
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'toJSON' does not exist on type 'None<unk... Remove this comment to see the full error message
     t.is(option.toJSON().value, null, 'the inner should be freed');
 });

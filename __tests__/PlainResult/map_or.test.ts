@@ -27,6 +27,7 @@ test('Err<E>', (t) => {
     t.plan(1);
 
     const input = createErr(INITIAL);
+    // @ts-expect-error ts-migrate(2345) FIXME: Type 'void' is not assignable to type '3'.
     const r = mapOrForResult(input, EXPECTED, (_v) => {
         t.fail(`don't enter this path`);
     });

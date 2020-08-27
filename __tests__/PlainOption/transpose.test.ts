@@ -13,10 +13,14 @@ test('input is Some<Ok<T>>, the result should be Ok(Some(x))', (t) => {
     const actualInner = actual.val;
 
     t.true(isOk(actual), 'the outer should be Ok<Some<T>>');
+    // @ts-expect-error ts-migrate(2345) FIXME: Type 'undefined' is not assignable to type 'Option... Remove this comment to see the full error message
     t.true(isSome(actualInner), 'the inner should be Some<T>');
+    // @ts-expect-error ts-migrate(2532) FIXME: Object is possibly 'undefined'.
     t.is(actualInner.val, val, "the inner's inner should T");
     t.not(actual, input, 'the outer should be different from the input');
+    // @ts-expect-error ts-migrate(2345) FIXME: Type 'unique symbol' is not assignable to type 'Op... Remove this comment to see the full error message
     t.not(actual, inner, "the outer should be different from the input's inner");
+    // @ts-expect-error ts-migrate(2345) FIXME: Type 'Ok<unique symbol>' is not assignable to type... Remove this comment to see the full error message
     t.not(actualInner, input, 'the inner should be different from the input');
     t.not(actualInner, inner, "the inner should be different from the input' inner");
 });
@@ -39,6 +43,7 @@ test('input is None, the result should be Ok(None)', (t) => {
     const actualInner = actual.val;
 
     t.true(isOk(actual), 'the outer should Ok(None)');
+    // @ts-expect-error ts-migrate(2345) FIXME: Type 'undefined' is not assignable to type 'Option... Remove this comment to see the full error message
     t.true(isNone(actualInner), 'the inner should be None');
     t.not(actualInner, input, 'the inner should be different from the input');
 });

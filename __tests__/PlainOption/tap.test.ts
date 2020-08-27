@@ -25,6 +25,7 @@ test('input is None', (t) => {
 
     t.plan(1);
 
+    // @ts-expect-error ts-migrate(2554) FIXME: Expected 0 arguments, but got 1.
     const input = createNone(INPUT_INNER);
     const actual = tapOption(input, (_v) => {
         t.pass('should not call the tap fn');

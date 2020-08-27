@@ -35,10 +35,15 @@ import {
 } from '../utils';
 
 const param = primitiveVal
+    // @ts-expect-error ts-migrate(2769) FIXME: Type '(number[] | { bar: number; })[]' is not assi... Remove this comment to see the full error message
     .concat(objectVal)
+    // @ts-expect-error ts-migrate(2769) FIXME: Type '(WeakSet<object> | WeakMap<object, any> | Pr... Remove this comment to see the full error message
     .concat(nonSerializableObjectVal)
+    // @ts-expect-error ts-migrate(2769) FIXME: Type '(() => void)[]' is not assignable to type 's... Remove this comment to see the full error message
     .concat(funcVal)
+    // @ts-expect-error ts-migrate(2769) FIXME: Type 'symbol[]' is not assignable to type 'string'... Remove this comment to see the full error message
     .concat(symbolVal)
+    // @ts-expect-error ts-migrate(2769) FIXME: Type 'undefined[]' is not assignable to type 'stri... Remove this comment to see the full error message
     .concat(undefinedVal);
 
 for (const value of param) {

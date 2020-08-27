@@ -24,6 +24,7 @@ test('Ok<T>', (t) => {
         }
     );
 
+    // @ts-expect-error ts-migrate(2345) FIXME: Argument of type '3' is not assignable to paramete... Remove this comment to see the full error message
     t.is(r, 3, 'the return value');
 });
 
@@ -40,6 +41,7 @@ test('Err<E>', (t) => {
             t.is(e, INITIAL, 'the argument');
             return EXPECTED;
         },
+        // @ts-expect-error ts-migrate(2345) FIXME: Type 'void' is not assignable to type 'number'.
         (_v) => {
             t.fail(`don't enter this path`);
         }

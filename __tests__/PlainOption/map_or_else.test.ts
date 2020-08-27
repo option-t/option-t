@@ -19,6 +19,7 @@ test('Some(T)', function (t) {
         },
         function (val) {
             t.pass('`mapFn` should be called');
+            // @ts-expect-error ts-migrate(2345) FIXME: Argument of type 'typeof EXPECTED' is not assignab... Remove this comment to see the full error message
             t.not(val, EXPECTED);
             return EXPECTED;
         }
@@ -38,6 +39,7 @@ test('None', function (t) {
             t.pass('`defaultFn` function should be called');
             return EXPECTED;
         },
+        // @ts-expect-error ts-migrate(2345) FIXME: Type 'void' is not assignable to type 'symbol'.
         function mapFn() {
             t.fail('`mapFn` should not be called');
         }
