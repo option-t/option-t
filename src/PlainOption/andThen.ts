@@ -16,8 +16,7 @@ export function andThenForOption<T, U>(src: Option<T>, selector: FlatmapFn<T, U>
     if (src.ok) {
         const r = selector(src.val);
         return r;
-    }
-    else {
+    } else {
         return src;
     }
 }

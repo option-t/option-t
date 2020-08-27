@@ -13,11 +13,9 @@ export function xorForNullable<T>(a: Nullable<T>, b: Nullable<T>): Nullable<T> {
 
     if (!aIsNull && bIsNull) {
         return a;
-    }
-    else if (aIsNull && !bIsNull) {
+    } else if (aIsNull && !bIsNull) {
         return b;
-    }
-    else {
+    } else {
         return null;
     }
 }

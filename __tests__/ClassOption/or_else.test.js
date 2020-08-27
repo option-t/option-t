@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone, } from '../../__dist/cjs/Option';
+import { createSome, createNone } from '../../__dist/cjs/Option';
 
 test('self is `None`, param returns `Some<T>`', function (t) {
     const EXPECTED = 1;
@@ -22,17 +22,20 @@ test('self is `None`, param returns `None`', function (t) {
     t.is(option.isNone, true);
 });
 
-test('self is `None`, param don\'t return `Option<T>`', function (t) {
+test("self is `None`, param don't return `Option<T>`", function (t) {
     const none = createNone();
 
-    t.throws(() => {
-        none.orElse(function () {
-            return 'barfoo';
-        });
-    }, {
-        instanceOf: TypeError,
-        message: 'Option<T>.orElse()\' param `fn` should return `Option<T>`.',
-    });
+    t.throws(
+        () => {
+            none.orElse(function () {
+                return 'barfoo';
+            });
+        },
+        {
+            instanceOf: TypeError,
+            message: "Option<T>.orElse()' param `fn` should return `Option<T>`.",
+        }
+    );
 });
 
 test('self is `Some<T>`, param returns `Some<T>`', function (t) {

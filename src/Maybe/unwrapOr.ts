@@ -12,8 +12,7 @@ import { ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './ErrorMessage';
 export function unwrapOrFromMaybe<T>(v: Maybe<T>, def: T): T {
     if (v !== undefined && v !== null) {
         return v;
-    }
-    else {
+    } else {
         return expectNotNullAndUndefined(def, ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_MAYBE);
     }
 }

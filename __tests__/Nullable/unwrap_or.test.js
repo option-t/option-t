@@ -27,13 +27,14 @@ test('pass undefined', (t) => {
     t.is(result, undefined);
 });
 
-const testcases = [
-    [null, null],
-];
+const testcases = [[null, null]];
 for (const [src, def] of testcases) {
     test(`should not accept null for both, v = ${String(src)}, def = ${String(def)}`, (t) => {
-        t.throws(() => {
-            unwrapOrFromNullable(src, def);
-        }, { instanceOf: TypeError, });
+        t.throws(
+            () => {
+                unwrapOrFromNullable(src, def);
+            },
+            { instanceOf: TypeError }
+        );
     });
 }

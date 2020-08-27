@@ -11,8 +11,7 @@ export function mapForOption<T, U>(src: Option<T>, selector: MapFn<T, U>): Optio
     if (src.ok) {
         const r: U = selector(src.val);
         return createSome(r);
-    }
-    else {
+    } else {
         return src;
     }
 }

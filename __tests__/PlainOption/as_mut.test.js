@@ -1,17 +1,9 @@
 import test from 'ava';
 
-import {
-    createSome,
-    createNone,
-} from '../../__dist/cjs/PlainOption/Option';
-import {
-    asMutOption,
-} from '../../__dist/cjs/PlainOption/asMut';
+import { createSome, createNone } from '../../__dist/cjs/PlainOption/Option';
+import { asMutOption } from '../../__dist/cjs/PlainOption/asMut';
 
-const FUNC_LIST = [
-    createSome,
-    createNone,
-];
+const FUNC_LIST = [createSome, createNone];
 
 for (const factory of FUNC_LIST) {
     const funcname = factory.name;
@@ -24,5 +16,3 @@ for (const factory of FUNC_LIST) {
         t.deepEqual(actual, original, 'should be the same shape');
     });
 }
-
-

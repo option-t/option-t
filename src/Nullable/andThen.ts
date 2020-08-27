@@ -16,8 +16,7 @@ export function andThenForNullable<T, U>(src: Nullable<T>, selector: FlatmapFn<T
     if (isNotNull(src)) {
         const r = selector(src);
         return r;
-    }
-    else {
+    } else {
         return src;
     }
 }

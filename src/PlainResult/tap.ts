@@ -39,8 +39,7 @@ export function tapErr<T, E>(v: Result<T, E>, fn: TapFn<E>): Result<T, E> {
 export function tapBoth<T, E>(src: Result<T, E>, okFn: TapFn<T>, errFn: TapFn<E>): Result<T, E> {
     if (src.ok) {
         okFn(src.val);
-    }
-    else {
+    } else {
         errFn(src.err);
     }
     return src;

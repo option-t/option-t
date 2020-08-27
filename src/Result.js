@@ -41,7 +41,6 @@ export function ResultBase(ok, val, err) {
     Object.seal(this);
 }
 ResultBase.prototype = Object.freeze({
-
     /**
      *  Returns true if the result is `Ok`.
      *
@@ -70,8 +69,7 @@ ResultBase.prototype = Object.freeze({
     ok: function ResultBaseOk() {
         if (this._isOk) {
             return createSome(this._v);
-        }
-        else {
+        } else {
             return createNone();
         }
     },
@@ -86,8 +84,7 @@ ResultBase.prototype = Object.freeze({
     err: function ResultBaseErr() {
         if (!this._isOk) {
             return createSome(this._e);
-        }
-        else {
+        } else {
             return createNone();
         }
     },
@@ -164,8 +161,7 @@ ResultBase.prototype = Object.freeze({
     and: function ResultBaseAnd(res) {
         if (this._isOk) {
             return res;
-        }
-        else {
+        } else {
             // cheat to escape from a needless allocation.
             return this;
         }
@@ -186,9 +182,9 @@ ResultBase.prototype = Object.freeze({
         }
 
         const mapped = op(this._v);
-        const isResult = (mapped instanceof ResultBase);
+        const isResult = mapped instanceof ResultBase;
         if (!isResult) {
-            throw new TypeError('Result<T, E>.andThen()\' param `op` should return `Result<U, E>`.');
+            throw new TypeError("Result<T, E>.andThen()' param `op` should return `Result<U, E>`.");
         }
 
         return mapped;
@@ -205,8 +201,7 @@ ResultBase.prototype = Object.freeze({
         if (this._isOk) {
             // cheat to escape from a needless allocation.
             return this;
-        }
-        else {
+        } else {
             return res;
         }
     },
@@ -226,9 +221,9 @@ ResultBase.prototype = Object.freeze({
         }
 
         const mapped = op(this._e);
-        const isResult = (mapped instanceof ResultBase);
+        const isResult = mapped instanceof ResultBase;
         if (!isResult) {
-            throw new TypeError('Result<T, E>.orElse()\' param `op` should return `Result<T, F>`.');
+            throw new TypeError("Result<T, E>.orElse()' param `op` should return `Result<T, F>`.");
         }
 
         return mapped;
@@ -257,8 +252,7 @@ ResultBase.prototype = Object.freeze({
     unwrapErr: function ResultBaseUnwrapErr() {
         if (this._isOk) {
             throw new TypeError('called `unwrapErr()` on a `Ok` value');
-        }
-        else {
+        } else {
             return this._e;
         }
     },
@@ -272,8 +266,7 @@ ResultBase.prototype = Object.freeze({
     unwrapOr: function ResultBaseUnwrapOr(optb) {
         if (this._isOk) {
             return this._v;
-        }
-        else {
+        } else {
             return optb;
         }
     },
@@ -306,8 +299,7 @@ ResultBase.prototype = Object.freeze({
     expect: function ResultBaseExpect(message) {
         if (this._isOk) {
             return this._v;
-        }
-        else {
+        } else {
             throw new TypeError(message);
         }
     },
@@ -328,8 +320,7 @@ ResultBase.prototype = Object.freeze({
                 destructor(this._v);
             }
             this._v = null;
-        }
-        else {
+        } else {
             if (typeof errDestructor === 'function') {
                 errDestructor(this._e);
             }

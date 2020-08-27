@@ -64,4 +64,3 @@ export function createErr<E>(err: E): Err<E> {
     };
     return r;
 }
-

@@ -1,0 +1,14 @@
+# out of scope
+node_modules/
+
+# generated files
+__dist/
+__test_cache/
+__tmp_mjs/
+
+## TODO
+*.json
+*.md
+tools/
+/.eslintrc.js
+ava.config.cjs

@@ -11,8 +11,7 @@ export function mapOrForOption<T, U>(src: Option<T>, def: U, selector: MapFn<T, 
     let r: U;
     if (src.ok) {
         r = selector(src.val);
-    }
-    else {
+    } else {
         r = def;
     }
     return r;

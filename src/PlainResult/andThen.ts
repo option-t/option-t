@@ -12,12 +12,14 @@ export type FlatmapOkFn<T, U, E> = MapFn<T, Result<U, E>>;
  *  But we don't provide `flatMap()` as alias of this function
  *  to sort with other APIs.
  */
-export function andThenForResult<T, U, E>(src: Result<T, E>, selector: FlatmapOkFn<T, U, E>): Result<U, E> {
+export function andThenForResult<T, U, E>(
+    src: Result<T, E>,
+    selector: FlatmapOkFn<T, U, E>
+): Result<U, E> {
     if (src.ok) {
         const r = selector(src.val);
         return r;
-    }
-    else {
+    } else {
         return src;
     }
 }

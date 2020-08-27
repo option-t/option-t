@@ -24,10 +24,7 @@
 
 import test from 'ava';
 
-import {
-    createOk,
-    createErr,
-} from '../../__dist/cjs/Result';
+import { createOk, createErr } from '../../__dist/cjs/Result';
 
 const EXPECTED_OK = 'expected_ok';
 const EXPECTED_ERR = 'expected_err';
@@ -38,11 +35,14 @@ test('Ok<T>', (t) => {
 });
 
 test('Err<E>', (t) => {
-    t.throws(() => {
-        const err = createErr(EXPECTED_ERR);
-        err.unwrap();
-    }, {
-        instanceOf: TypeError,
-        message: 'called `unwrap()` on a `Err` value',
-    });
+    t.throws(
+        () => {
+            const err = createErr(EXPECTED_ERR);
+            err.unwrap();
+        },
+        {
+            instanceOf: TypeError,
+            message: 'called `unwrap()` on a `Err` value',
+        }
+    );
 });

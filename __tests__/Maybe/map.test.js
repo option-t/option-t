@@ -38,10 +38,15 @@ test('pass undefined', (t) => {
         [1, null],
     ];
     for (const [src, def] of testcases) {
-        test(`assert that do not return Maybe<*> as the selector's resultv = ${String(src)}, def = ${String(def)}`, (t) => {
-            t.throws(() => {
-                mapForMaybe(src, (_v) => def);
-            }, { instanceOf: TypeError, });
+        test(`assert that do not return Maybe<*> as the selector's resultv = ${String(
+            src
+        )}, def = ${String(def)}`, (t) => {
+            t.throws(
+                () => {
+                    mapForMaybe(src, (_v) => def);
+                },
+                { instanceOf: TypeError }
+            );
         });
     }
 }

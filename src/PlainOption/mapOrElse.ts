@@ -6,12 +6,15 @@ import { Option } from './Option';
  *  or a _def_ function to a contained `None` value in _src_.
  *  This function can be used to unpack a successful result while handling an error.
  */
-export function mapOrElseForOption<T, U>(src: Option<T>, def: RecoveryFn<U>, selector: MapFn<T, U>): U {
+export function mapOrElseForOption<T, U>(
+    src: Option<T>,
+    def: RecoveryFn<U>,
+    selector: MapFn<T, U>
+): U {
     let r: U;
     if (src.ok) {
         r = selector(src.val);
-    }
-    else {
+    } else {
         r = def();
     }
     return r;

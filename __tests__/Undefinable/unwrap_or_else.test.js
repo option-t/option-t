@@ -16,11 +16,9 @@ for (const value of nonNullableValue) {
                 t.pass('should not call recover fn');
                 return DEFAULT_VAL;
             });
-        }
-        catch (expected) {
+        } catch (expected) {
             e = expected;
         }
-
 
         t.is(result, EXPECTED, 'should the expected result');
         t.is(e, null, 'should not throw error');
@@ -54,12 +52,14 @@ test('pass undefined', (t) => {
 });
 
 test('should not accept Maybe<*> as default', (t) => {
-    const testcases = [
-        [undefined, undefined],
-    ];
+    const testcases = [[undefined, undefined]];
     for (const [src, def] of testcases) {
-        t.throws(() => {
-            unwrapOrElseFromUndefinable(src, () => def);
-        }, { instanceOf: TypeError, }, `v = ${String(src)}, def = ${String(def)}`);
+        t.throws(
+            () => {
+                unwrapOrElseFromUndefinable(src, () => def);
+            },
+            { instanceOf: TypeError },
+            `v = ${String(src)}, def = ${String(def)}`
+        );
     }
 });

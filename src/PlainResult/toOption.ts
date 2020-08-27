@@ -8,8 +8,7 @@ import { Result } from './Result';
 export function toOptionFromOk<T, E>(v: Result<T, E>): Option<T> {
     if (v.ok) {
         return createSome<T>(v.val);
-    }
-    else {
+    } else {
         return createNone();
     }
 }
@@ -21,8 +20,7 @@ export function toOptionFromOk<T, E>(v: Result<T, E>): Option<T> {
 export function toOptionFromErr<T, E>(v: Result<T, E>): Option<E> {
     if (!v.ok) {
         return createSome<E>(v.err);
-    }
-    else {
+    } else {
         return createNone();
     }
 }

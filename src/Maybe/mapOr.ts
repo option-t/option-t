@@ -1,6 +1,9 @@
 import { Maybe } from './Maybe';
 import { expectNotNullAndUndefined } from './expect';
-import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE, ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './ErrorMessage';
+import {
+    ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
+    ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_MAYBE,
+} from './ErrorMessage';
 import { MapFn } from '../shared/Function';
 
 /**
@@ -20,8 +23,7 @@ export function mapOrForMaybe<T, U>(src: Maybe<T>, def: U, selector: MapFn<T, U>
     if (src !== undefined && src !== null) {
         r = selector(src);
         msg = ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE;
-    }
-    else {
+    } else {
         r = def;
         msg = ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_MAYBE;
     }

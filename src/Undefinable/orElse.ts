@@ -10,8 +10,7 @@ export type MayRecoveryFn<T> = RecoveryFn<Undefinable<T>>;
 export function orElseForUndefinable<T>(v: Undefinable<T>, def: MayRecoveryFn<T>): Undefinable<T> {
     if (v !== undefined) {
         return v;
-    }
-    else {
+    } else {
         const r = def();
         return r;
     }

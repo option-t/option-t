@@ -16,8 +16,7 @@ export function andThenForMaybe<T, U>(src: Maybe<T>, selector: FlatmapFn<T, U>):
     if (isNotNullAndUndefined(src)) {
         const r = selector(src);
         return r;
-    }
-    else {
+    } else {
         return src;
     }
 }

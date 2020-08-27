@@ -45,24 +45,28 @@ test('pass undefined', (t) => {
     t.is(result, DEFAULE_VAL, 'should be the expected');
 });
 
-test('assert that do not return Undefinable<*> as the selector\'s result', (t) => {
-    const testcases = [
-        [1, 2, undefined],
-    ];
+test("assert that do not return Undefinable<*> as the selector's result", (t) => {
+    const testcases = [[1, 2, undefined]];
     for (const [src, def, selectorResult] of testcases) {
-        t.throws(() => {
-            mapOrForUndefinable(src, def, (_v) => selectorResult);
-        }, { instanceOf: TypeError, }, `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`);
+        t.throws(
+            () => {
+                mapOrForUndefinable(src, def, (_v) => selectorResult);
+            },
+            { instanceOf: TypeError },
+            `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`
+        );
     }
 });
 
 test('assert that def is not Undefinable<*>', (t) => {
-    const testcases = [
-        [undefined, undefined, ''],
-    ];
+    const testcases = [[undefined, undefined, '']];
     for (const [src, def, selectorResult] of testcases) {
-        t.throws(() => {
-            mapOrForUndefinable(src, def, (_v) => selectorResult);
-        }, { instanceOf: TypeError, }, `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`);
+        t.throws(
+            () => {
+                mapOrForUndefinable(src, def, (_v) => selectorResult);
+            },
+            { instanceOf: TypeError },
+            `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`
+        );
     }
 });

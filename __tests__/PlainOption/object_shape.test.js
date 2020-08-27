@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone} from '../../__dist/cjs/PlainOption';
+import { createSome, createNone } from '../../__dist/cjs/PlainOption';
 
 test('The shape of PlainOption::Some', (t) => {
     const INNER_VAL = Symbol('');
@@ -14,6 +14,10 @@ test('The shape of PlainOption::None', (t) => {
     const actual = createNone();
     t.false(actual.ok, 'None.ok');
     t.is(actual.val, undefined, 'None.val');
-    // eslint-disable-next-line no-prototype-builtins
-    t.true(actual.hasOwnProperty('val'), '`val` should be added on creating this object to stabilize object\'s Shape/Structure/Hidden Class');
+
+    t.true(
+        // eslint-disable-next-line no-prototype-builtins
+        actual.hasOwnProperty('val'),
+        "`val` should be added on creating this object to stabilize object's Shape/Structure/Hidden Class"
+    );
 });

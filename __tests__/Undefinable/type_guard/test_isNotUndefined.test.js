@@ -11,7 +11,7 @@ test('Undefinable::isNotUndefined', (t) => {
         ['', true],
         [{}, true],
         [[], true],
-        [function () { }, true],
+        [function () {}, true],
         [Symbol(''), true],
         [undefined, false],
         [null, true],
@@ -21,6 +21,10 @@ test('Undefinable::isNotUndefined', (t) => {
         const input = test[0];
         const expected = test[1];
 
-        t.is(Undefinable.isNotUndefined(input), expected, `\`${String(input)}\` should be \`${String(expected)}\``);
+        t.is(
+            Undefinable.isNotUndefined(input),
+            expected,
+            `\`${String(input)}\` should be \`${String(expected)}\``
+        );
     });
 });

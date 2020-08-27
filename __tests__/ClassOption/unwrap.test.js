@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone, } from '../../__dist/cjs/Option';
+import { createSome, createNone } from '../../__dist/cjs/Option';
 
 test('unwrap `Some<T>`', function (t) {
     const EXPECTED = 1;
@@ -10,10 +10,13 @@ test('unwrap `Some<T>`', function (t) {
 
 test('unwrap `None`', function (t) {
     const none = createNone();
-    t.throws(() => {
-        none.unwrap();
-    }, {
-        instanceOf: TypeError,
-        message: 'called `unwrap()` on a `None` value',
-    });
+    t.throws(
+        () => {
+            none.unwrap();
+        },
+        {
+            instanceOf: TypeError,
+            message: 'called `unwrap()` on a `None` value',
+        }
+    );
 });

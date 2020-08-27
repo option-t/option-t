@@ -52,10 +52,15 @@ test('pass undefined', (t) => {
         [null, null],
     ];
     for (const [src, def] of testcases) {
-        test(`should not accept Maybe<*> as default, v = ${String(src)}, def = ${String(def)}`, (t) => {
-            t.throws(() => {
-                unwrapOrElseFromMaybe(src, () => def);
-            }, { instanceOf: TypeError, });
+        test(`should not accept Maybe<*> as default, v = ${String(src)}, def = ${String(
+            def
+        )}`, (t) => {
+            t.throws(
+                () => {
+                    unwrapOrElseFromMaybe(src, () => def);
+                },
+                { instanceOf: TypeError }
+            );
         });
     }
 }

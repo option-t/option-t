@@ -12,8 +12,7 @@ import { ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 export function unwrapOrFromUndefinable<T>(v: Undefinable<T>, def: T): T {
     if (v !== undefined) {
         return v;
-    }
-    else {
+    } else {
         return expectNotUndefined(def, ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE);
     }
 }

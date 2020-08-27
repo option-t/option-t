@@ -1,9 +1,6 @@
 import test from 'ava';
 
-import {
-    createSome,
-    createNone,
-} from '../../__dist/cjs/PlainOption/Option';
+import { createSome, createNone } from '../../__dist/cjs/PlainOption/Option';
 import { flattenForOption } from '../../__dist/cjs/PlainOption/flatten';
 
 test('input is Some(Some(T))', (t) => {

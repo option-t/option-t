@@ -24,10 +24,7 @@
 
 import test from 'ava';
 
-import {
-    createOk,
-    createErr,
-} from '../../__dist/cjs/Result';
+import { createOk, createErr } from '../../__dist/cjs/Result';
 
 const EXPECTED = Symbol('EXPECTED');
 const UNEXPECTED = Symbol('UNEXPECTED');
@@ -40,9 +37,7 @@ function toLabel(input) {
     }
 }
 
-const testcaseList = [
-    [createOk(UNEXPECTED), createOk(EXPECTED)],
-];
+const testcaseList = [[createOk(UNEXPECTED), createOk(EXPECTED)]];
 for (const [lhs, rhs] of testcaseList) {
     test(`lhs: ${toLabel(lhs)}, rhs: ${toLabel(rhs)}`, (t) => {
         const result = lhs.and(rhs);

@@ -1,4 +1,4 @@
-export type NotNullAndUndefined<T> = T extends (null | undefined) ? never : T;
+export type NotNullAndUndefined<T> = T extends null | undefined ? never : T;
 
 export type Maybe<T> = T | null | undefined;
 

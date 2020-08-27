@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone, } from '../../__dist/cjs/Option';
+import { createSome, createNone } from '../../__dist/cjs/Option';
 
 test('self is `None`', function (t) {
     const none = createNone();
@@ -33,16 +33,19 @@ test('self is `Some<T>`, callback returns `Some<T>`', function (t) {
     t.is(option.unwrap(), EXPECTED);
 });
 
-test('self is `Some<T>`, `fn` don\'t returns `Option<T>`', function (t) {
+test("self is `Some<T>`, `fn` don't returns `Option<T>`", function (t) {
     const some = createSome(1);
-    t.throws(() => {
-        some.flatMap(function (val) {
-            const rv = 'hoge';
-            t.not(val, rv);
-            return rv;
-        });
-    }, {
-        instanceOf: TypeError,
-        message: 'Option<T>.flatMap()\' param `fn` should return `Option<T>`.'
-    });
+    t.throws(
+        () => {
+            some.flatMap(function (val) {
+                const rv = 'hoge';
+                t.not(val, rv);
+                return rv;
+            });
+        },
+        {
+            instanceOf: TypeError,
+            message: "Option<T>.flatMap()' param `fn` should return `Option<T>`.",
+        }
+    );
 });

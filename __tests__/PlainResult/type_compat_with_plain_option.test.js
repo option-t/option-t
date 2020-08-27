@@ -1,18 +1,7 @@
 import test from 'ava';
 
-import {
-    createSome,
-    createNone,
-    isSome,
-    isNone,
-} from '../../__dist/cjs/PlainOption/Option';
-import {
-    createOk,
-    createErr,
-    isOk,
-    isErr,
-} from '../../__dist/cjs/PlainResult/Result';
-
+import { createSome, createNone, isSome, isNone } from '../../__dist/cjs/PlainOption/Option';
+import { createOk, createErr, isOk, isErr } from '../../__dist/cjs/PlainResult/Result';
 
 const FUNC_TABLE = [
     [createSome, isOk],

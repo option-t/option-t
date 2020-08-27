@@ -10,8 +10,7 @@ export type MayRecoveryFn<T> = RecoveryFn<Nullable<T>>;
 export function orElseForNullable<T>(v: Nullable<T>, def: MayRecoveryFn<T>): Nullable<T> {
     if (v !== null) {
         return v;
-    }
-    else {
+    } else {
         const r = def();
         return r;
     }

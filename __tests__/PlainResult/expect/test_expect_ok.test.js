@@ -1,12 +1,7 @@
 import test from 'ava';
 
-import {
-    createOk,
-    createErr,
-} from '../../../__dist/cjs/PlainResult/Result';
-import {
-    expectIsOk,
-} from '../../../__dist/cjs/PlainResult/expect';
+import { createOk, createErr } from '../../../__dist/cjs/PlainResult/Result';
+import { expectIsOk } from '../../../__dist/cjs/PlainResult/expect';
 
 test('input=Ok(T), expect=Ok(T)', (t) => {
     const EXPECTED = Symbol('expected');
@@ -27,10 +22,13 @@ test('input=Err(E), expect=Ok(T)', (t) => {
     const input = createErr(NOT_EXPECTED);
 
     const MSG = 'throw if the input is not expected';
-    t.throws(() => {
-        expectIsOk(input, MSG);
-    }, {
-        instanceOf: TypeError,
-        message: MSG,
-    });
+    t.throws(
+        () => {
+            expectIsOk(input, MSG);
+        },
+        {
+            instanceOf: TypeError,
+            message: MSG,
+        }
+    );
 });

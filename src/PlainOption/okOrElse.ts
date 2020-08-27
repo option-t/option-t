@@ -9,8 +9,7 @@ export function okOrElseForPlainOption<T, E>(input: Option<T>, err: RecoveryFn<E
     if (input.ok) {
         const v = createOk<T>(input.val);
         return v;
-    }
-    else {
+    } else {
         const e: E = err();
         const v = createErr<E>(e);
         return v;

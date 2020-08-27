@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone, } from '../../__dist/cjs/Option';
+import { createSome, createNone } from '../../__dist/cjs/Option';
 
 test('self is `None`, param is `Some<T>`', function (t) {
     const EXPECTED = 1;

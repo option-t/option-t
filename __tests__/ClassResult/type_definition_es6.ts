@@ -3,11 +3,11 @@
 // XXX:
 // The type definitions for '--moduleResolution node' is a ES6 format,
 // So it would test it by importing it simply.
-import {Option} from '../../__dist/cjs/Option';
-import {Result, ResultBase, createOk, createErr} from '../../__dist/cjs/Result';
+import { Option } from '../../__dist/cjs/Option';
+import { Result, ResultBase, createOk, createErr } from '../../__dist/cjs/Result';
 
 //  Ok<T>
-(function(){
+(function () {
     let result: Result<number, void> = createOk<number, void>(1);
     result = createOk<number, void>(1);
 
@@ -22,13 +22,21 @@ import {Result, ResultBase, createOk, createErr} from '../../__dist/cjs/Result';
 
     const and1: Result<string, void> = result.and(createOk<string, void>(''));
     const and2: Result<string, void> = result.and(createErr<string, void>(undefined));
-    const andThen1: Result<string, void> = result.andThen<string>((_: number) => createOk<string, void>(''));
-    const andThen2: Result<string, void> = result.andThen<string>((_: number) => createErr<string, void>(undefined));
+    const andThen1: Result<string, void> = result.andThen<string>((_: number) =>
+        createOk<string, void>('')
+    );
+    const andThen2: Result<string, void> = result.andThen<string>((_: number) =>
+        createErr<string, void>(undefined)
+    );
 
     const or1: Result<number, string> = result.or<string>(createOk<number, string>(1));
     const or2: Result<number, string> = result.or<string>(createErr<number, string>(''));
-    const orElse1: Result<number, string> = result.orElse<string>((_: void) => createOk<number, string>(1));
-    const orElse2: Result<number, string> = result.orElse<string>((_: void) => createErr<number, string>(''));
+    const orElse1: Result<number, string> = result.orElse<string>((_: void) =>
+        createOk<number, string>(1)
+    );
+    const orElse2: Result<number, string> = result.orElse<string>((_: void) =>
+        createErr<number, string>('')
+    );
 
     const unwrap: number = result.unwrap();
     const unwrapErr: void = result.unwrapErr();
@@ -38,7 +46,10 @@ import {Result, ResultBase, createOk, createErr} from '../../__dist/cjs/Result';
 
     result.drop();
     result.drop((_: number) => {});
-    result.drop((_: number) => {}, (_: void) => {});
+    result.drop(
+        (_: number) => {},
+        (_: void) => {}
+    );
 
     if (result instanceof ResultBase) {
         const bar: any = null;
@@ -46,7 +57,7 @@ import {Result, ResultBase, createOk, createErr} from '../../__dist/cjs/Result';
 })();
 
 //  Err<E>
-(function(){
+(function () {
     let result: Result<number, void> = createErr<number, void>(undefined);
     result = createErr<number, void>(undefined);
 
@@ -61,13 +72,21 @@ import {Result, ResultBase, createOk, createErr} from '../../__dist/cjs/Result';
 
     const and1: Result<string, void> = result.and(createOk<string, void>(''));
     const and2: Result<string, void> = result.and(createErr<string, void>(undefined));
-    const andThen1: Result<string, void> = result.andThen<string>((_: number) => createOk<string, void>(''));
-    const andThen2: Result<string, void> = result.andThen<string>((_: number) => createErr<string, void>(undefined));
+    const andThen1: Result<string, void> = result.andThen<string>((_: number) =>
+        createOk<string, void>('')
+    );
+    const andThen2: Result<string, void> = result.andThen<string>((_: number) =>
+        createErr<string, void>(undefined)
+    );
 
     const or1: Result<number, string> = result.or<string>(createOk<number, string>(1));
     const or2: Result<number, string> = result.or<string>(createErr<number, string>(''));
-    const orElse1: Result<number, string> = result.orElse<string>((_: void) => createOk<number, string>(1));
-    const orElse2: Result<number, string> = result.orElse<string>((_: void) => createErr<number, string>(''));
+    const orElse1: Result<number, string> = result.orElse<string>((_: void) =>
+        createOk<number, string>(1)
+    );
+    const orElse2: Result<number, string> = result.orElse<string>((_: void) =>
+        createErr<number, string>('')
+    );
 
     const unwrap: number = result.unwrap();
     const unwrapErr: void = result.unwrapErr();
@@ -77,7 +96,10 @@ import {Result, ResultBase, createOk, createErr} from '../../__dist/cjs/Result';
 
     result.drop();
     result.drop((_: number) => {});
-    result.drop((_: number) => {}, (_: void) => {});
+    result.drop(
+        (_: number) => {},
+        (_: void) => {}
+    );
 
     if (result instanceof ResultBase) {
         const bar: any = null;
@@ -85,7 +107,7 @@ import {Result, ResultBase, createOk, createErr} from '../../__dist/cjs/Result';
 })();
 
 //  Result<T, E>
-(function(){
+(function () {
     let option: Result<void, void> = createErr<void, void>(undefined);
     option = createOk<void, void>(undefined);
 

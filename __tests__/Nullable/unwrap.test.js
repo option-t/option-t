@@ -18,9 +18,12 @@ for (const value of nonNullableValue) {
 }
 
 test('pass null', (t) => {
-    t.throws(() => {
-        unwrapNullable(null);
-    }, { instanceOf: TypeError, });
+    t.throws(
+        () => {
+            unwrapNullable(null);
+        },
+        { instanceOf: TypeError }
+    );
 });
 
 test('pass undefined', (t) => {

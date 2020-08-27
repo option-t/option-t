@@ -20,8 +20,7 @@ export function mapForNullable<T, U>(src: Nullable<T>, selector: MapFn<T, U>): N
         // So a type checker would recognize this type as `SomeType | null`. So it's flattened.
         // Then the user should call `andThen` (_flatmap_) operation instead of this.
         return expectNotNull(r, ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
-    }
-    else {
+    } else {
         return src;
     }
 }

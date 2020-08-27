@@ -23,11 +23,7 @@
  */
 import test from 'ava';
 
-import {
-    createOk,
-    createErr,
-    ResultBase,
-} from '../../__dist/cjs/Result';
+import { createOk, createErr, ResultBase } from '../../__dist/cjs/Result';
 
 test('Ok<T> should be instanceof `ResultBase`', (t) => {
     const result = createOk(1);

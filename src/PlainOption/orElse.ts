@@ -10,8 +10,7 @@ export type MayRecoveryFn<T> = RecoveryFn<Option<T>>;
 export function orElseForOption<T>(v: Option<T>, def: MayRecoveryFn<T>): Option<T> {
     if (v.ok) {
         return v;
-    }
-    else {
+    } else {
         const r = def();
         return r;
     }

@@ -1,9 +1,6 @@
 import test from 'ava';
 
-import {
-    createSome,
-    createNone,
-} from '../../__dist/cjs/PlainOption/Option';
+import { createSome, createNone } from '../../__dist/cjs/PlainOption/Option';
 import { tapOption } from '../../__dist/cjs/PlainOption/tap';
 
 test('input is Some', (t) => {

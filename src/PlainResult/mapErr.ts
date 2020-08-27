@@ -11,8 +11,7 @@ export function mapErrForResult<T, E, F>(src: Result<T, E>, selector: MapFn<E, F
     if (!src.ok) {
         const r: F = selector(src.err);
         return createErr<F>(r);
-    }
-    else {
+    } else {
         return src;
     }
 }

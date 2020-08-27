@@ -1,11 +1,12 @@
 import test from 'ava';
 
-import { createSome, createNone, } from '../../__dist/cjs/Option';
+import { createSome, createNone } from '../../__dist/cjs/Option';
 
 test('self is `None`', function (t) {
     const none = createNone();
-    const option = none.map(function () { // eslint-disable-line array-callback-return
+    const option = none.map(function (v) {
         t.fail('the passed function should not be called');
+        return v;
     });
 
     t.is(option.isSome, false);
