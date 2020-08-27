@@ -1,8 +1,9 @@
 # Changelog
 
+If you see more details, please compare each tags by [GitHub's release page](https://github.com/karen-irc/option-t/releases).
+
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v22.4.4...master).
 
 ## 22.2.4
 
