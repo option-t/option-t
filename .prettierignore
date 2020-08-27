@@ -1,6 +1,5 @@
 # out of scope
 node_modules/
-.eslintrc.js
 
 # generated files
 __dist/
@@ -11,6 +10,6 @@ __tmp_mjs/
 *.json
 *.md
 __tests__/
-src/
 tools/
+/.eslintrc.js
 ava.config.cjs
