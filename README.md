@@ -185,6 +185,10 @@ console.log(none.isSome); // false
 console.log(none.unwrap()); // this will throw `Error`.
 ```
 
+And this type is defined JSON representations if you serialize them by `JSON.stringify()`.
+See [`OptionBase.prototype.toJSON()`](./src/Option.js).
+
+
 #### [`Result<T, E>`](./src/Result.d.ts)
 
 This can express that there is some values or some error information.
@@ -227,11 +231,6 @@ Each of them includes the same directory hierarchy with [under `src`/](./src/).
          your project runs unit-tests for transformed code with plain Node.js which only use `require()`.
    - _Please don't use this path if you don't have to use this_.
        - After Node.js v13.2, we recommend to use ES Module supported natively.
-
-
-### JSON Representation
-
-Some types defines [JSON representations](./docs/JSON.md) if you serialize them by `JSON.stringify()`.
 
 
 ### Idioms
