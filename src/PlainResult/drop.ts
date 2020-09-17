@@ -5,6 +5,9 @@ import { asMutResult } from './asMut';
 
 type MutOk<T> = Mutable<Ok<T>>;
 type MutErr<E> = Mutable<Err<E>>;
+type MutResult<T, E> = MutOk<T> | MutErr<E>;
+
+function noop<T, E>(_input: MutResult<T, E>): void {}
 
 /**
  *  mutators ared called for the inputted _v_.
@@ -60,7 +63,7 @@ export function unsafeDropBothForResult<T, E>(
  *  So if you call this for same object more than once, your code might contain "double free" problem.
  */
 export function unsafeDropOkForResult<T, E>(v: Result<T, E>, okMutator: TapFn<MutOk<T>>): void {
-    return unsafeDropBothForResult(v, okMutator, () => {});
+    return unsafeDropBothForResult(v, okMutator, noop);
 }
 
 /**
@@ -83,5 +86,5 @@ export function unsafeDropOkForResult<T, E>(v: Result<T, E>, okMutator: TapFn<Mu
  *  So if you call this for same object more than once, your code might contain "double free" problem.
  */
 export function unsafeDropErrForResult<T, E>(v: Result<T, E>, errMutator: TapFn<MutErr<E>>): void {
-    return unsafeDropBothForResult(v, () => {}, errMutator);
+    return unsafeDropBothForResult(v, noop, errMutator);
 }
