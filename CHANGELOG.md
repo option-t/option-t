@@ -4,6 +4,18 @@ If you see more details, please compare each tags by [GitHub's release page](htt
 
 ## x.y.z
 
+## 23.0.1
+
+### Documentation
+
+* Clean up some documents. [#723](https://github.com/karen-irc/option-t/pull/723)
+
+### Internals
+
+* Update dependencies.
+* Avoid to create a function object for each calling `drop()` for `PlainResult`. [#727](https://github.com/karen-irc/option-t/pull/727)
+* Convert scripts to ESM in `tools/` [#652](https://github.com/karen-irc/option-t/pull/652)
+
 
 ## 23.0.0
 
