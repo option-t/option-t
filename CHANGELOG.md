@@ -4,6 +4,12 @@ If you see more details, please compare each tags by [GitHub's release page](htt
 
 ## x.y.z
 
+### Documentation
+
+* Add the guide level document about `null` vs `undefined`. [#TODO](https://github.com/karen-irc/option-t/pull/TODO)
+    * See [`docs/null_vs_undefined.md`](./docs/null_vs_undefined.md).
+
+
 ## 23.0.1
 
 ### Documentation
