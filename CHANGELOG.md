@@ -4,6 +4,16 @@ If you see more details, please compare each tags by [GitHub's release page](htt
 
 ## x.y.z
 
+## 23.0.2
+
+* Update dependencies.
+
+### Documentation
+
+* Add some memories about why we use same shape for PlainResult. [#753](https://github.com/karen-irc/option-t/pull/753)
+* Add some note why we deprecated a wrapper object. [#754](https://github.com/karen-irc/option-t/pull/754)
+
+
 ## 23.0.1
 
 ### Documentation
