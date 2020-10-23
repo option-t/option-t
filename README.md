@@ -155,14 +155,25 @@ This can express that there is some values or some error information _as a plain
 This does not have any property method on its prototype. But this allows no including unused methods of them.
 
 
-### Wrapper objects
+### Wrapper objects (deprecated)
 
 This is a wrapper object which have utility methods on its prototype.
 
 _We recommend to use utility types & functions if you don't have to use `instanceof` check and
-you should avoid to expose this object as a public API of your package_ 
-because `instanceof` checking might not work correctly if a user project has multiple versions of this package in their dependencies.
-See ([#337](https://github.com/karen-irc/option-t/pull/337)).
+you should avoid to expose this object as a public API of your package_  because:
+
+1. `instanceof` checking might not work correctly if a user project has multiple versions of this package in their dependencies.
+    - See ([#337](https://github.com/karen-irc/option-t/pull/337)).
+2. We cannot extend more utility functions without increasing a code size.
+    - Adding a property or a function to _prototype_ will increase a code size
+      but it's hard to remove unused them if an user project does not use all of them.
+      This means that we need hesitate to extend this package
+      and it's hard to introduce a new found powerful pettern as a part of this.
+    - We considered to relax this project by introduce `.pipe()` and operator functions model like rxjs.
+      But its model would not match with this package because this package does not always return a wrapper object.
+      Rather, we tend to add a way to unwrap a contained value.
+      This mean we cannot keep an API signature simple or prevents some kinds of optimizations by JSVM.
+      So we would not like to do this.
 
 
 #### [`Option<T>`](./src/Option.d.ts)
