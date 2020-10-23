@@ -4,18 +4,34 @@ export type Ok<T> = {
     readonly ok: true;
     readonly val: T;
 
-    // To keep the same shape (hidden class or structure) with Err<E>,
+    // To keep the same shape (hidden class or structure) with the other.
     // we should initialize this property.
-    // If user use `Object.hasOwnProperty` or `for-in` statement fot this object,
-    // this property will be leaked accidentally.
-    // However, we don't think it is not comment operation for user
-    // Because we provide `is~~()` function
-    // and user will not do their operations for a "container" object like this.
-    // Even if user will use `const { ok, err }` = Ok;`, then val will be undefined.
-    // It's will not be a problem.
     //
-    // By these reasons, we don't recommend to create this object without this factory function.
-    // You can create this object by hand. But it's fragile for the future change. We don't recommend it.
+    // As I remembered, when I had introduced this property in early 2018,
+    // I tested a shape transition for some engines. By their results,
+    // I concluded `Ok` and `Err` should have same properties to make to use the same shape.
+    //
+    //  - V8 used an another hidden class if `val` is `number` or others.
+    //      - Inline cache for an object taking this type would be polymorphic.
+    //      - But we can assume that it will not be megamorphic by the observation.
+    //  - JavaScriptCore used single structure, not like as V8.
+    //      - Inline cache would be monomorphic.
+    //  - SpiderMonkey, I did not test it. But I assumed it would behave similary with other engines.
+    //      - I had not known how I trace for SM casually...
+    //
+    // Of course, this decision has some drawbacks for users of this package.
+    //
+    //  1. If user use `Object.hasOwnProperty` or `for-in` statement fot this object,
+    //     this property will be leaked accidentally.
+    //     However, we don't think it is a common operation for user because we provide `is~~()` function
+    //     and user will not do their operations generally for a "container" object like this type.
+    //
+    //  2. If user will use `const { ok, err }` = Ok;`, then val will be `undefined`.
+    //     it's will not be a problem because `err` would be `undefined` if this type is `Ok`.
+    //     We can say same thing for `Err`.
+    //
+    // By these reasons, we should not recommend to create this object without this factory function.
+    // User can create this object by hand. But it's fragile for the future change. So We should not recommend it.
     readonly err?: undefined;
 };
 
@@ -35,18 +51,34 @@ export function createOk<T>(val: T): Ok<T> {
 export type Err<E> = {
     readonly ok: false;
 
-    // To keep the same shape (hidden class or structure) with Ok<T>,
+    // To keep the same shape (hidden class or structure) with the other.
     // we should initialize this property.
-    // If user use `Object.hasOwnProperty` or `for-in` statement fot this object,
-    // this property will be leaked accidentally.
-    // However, we don't think it is not comment operation for user
-    // Because we provide `is~~()` function
-    // and user will not do their operations for a "container" object like this.
-    // Even if user will use `const { ok, val }` = Err;`, then val will be undefined.
-    // It's will not be a problem.
     //
-    // By these reasons, we don't recommend to create this typed object without this factory function.
-    // You can create this object by hand. But it's fragile for the future change. We don't recommend it.
+    // As I remembered, when I had introduced this property in early 2018,
+    // I tested a shape transition for some engines. By their results,
+    // I concluded `Ok` and `Err` should have same properties to make to use the same shape.
+    //
+    //  - V8 used an another hidden class if `val` is `number` or others.
+    //      - Inline cache for an object taking this type would be polymorphic.
+    //      - But we can assume that it will not be megamorphic by the observation.
+    //  - JavaScriptCore used a single structure, not like as V8.
+    //      - Inline cache would be monomorphic.
+    //  - SpiderMonkey, I did not test it. But I assumed it would behave similary with other engines.
+    //      - I had not known how I trace for SM casually...
+    //
+    // Of course, this decision has some drawbacks for users of this package.
+    //
+    //  1. If user use `Object.hasOwnProperty` or `for-in` statement fot this object,
+    //     this property will be leaked accidentally.
+    //     However, we don't think it is a common operation for user because we provide `is~~()` function
+    //     and user will not do their operations generally for a "container" object like this type.
+    //
+    //  2. If user will use `const { ok, err }` = Ok;`, then val will be `undefined`.
+    //     it's will not be a problem because `err` would be `undefined` if this type is `Ok`.
+    //     We can say same thing for `Err`.
+    //
+    // By these reasons, we should not recommend to create this object without this factory function.
+    // User can create this object by hand. But it's fragile for the future change. So We should not recommend it.
     readonly val?: undefined;
 
     readonly err: E;
