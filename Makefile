@@ -170,7 +170,7 @@ build_test: build clean_test_cache
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --outDir $(TEST_CACHE_DIR)
 
 .PHONY: run_ava
-run_ava: build build_test
+run_ava: build
 	$(MAKE) run_ava_only -C $(CURDIR)
 
 .PHONY: run_ava_only
