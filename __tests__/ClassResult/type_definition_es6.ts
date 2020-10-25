@@ -3,8 +3,8 @@
 // XXX:
 // The type definitions for '--moduleResolution node' is a ES6 format,
 // So it would test it by importing it simply.
-import { Option } from '../../__dist/cjs/Option';
-import { Result, ResultBase, createOk, createErr } from '../../__dist/cjs/Result';
+import { Option } from '../../__dist/esm/Option';
+import { Result, ResultBase, createOk, createErr } from '../../__dist/esm/Result';
 
 //  Ok<T>
 (function () {

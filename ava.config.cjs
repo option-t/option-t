@@ -6,7 +6,7 @@
 module.exports = function resolveAvaConfig() {
     return {
         'files': [
-            '__test_cache/**/*.test.js'
+            '__tests__/**/*.test.mjs'
         ],
         'babel': {
             'testOptions': {

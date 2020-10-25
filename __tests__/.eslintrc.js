@@ -1,6 +1,6 @@
 /* eslint-env node */
 
-'use strict'; // eslint-disable-line strict
+'use strict';
 
 const path = require('path');
 
@@ -8,10 +8,6 @@ const path = require('path');
 // http://eslint.org/docs/configuring/#comments-in-configuration-files
 module.exports = {
     extends: ['prettier', 'prettier/@typescript-eslint'],
-
-    parserOptions: {
-        sourceType: 'module',
-    },
 
     env: {
         es6: true,
