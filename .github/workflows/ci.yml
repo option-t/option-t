@@ -90,9 +90,6 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    # As my observations, Node.js 12 does not supports `exports` field.
-                    # This is nice to contrast.
-                    - 12
                     - 14
 
         steps:
@@ -124,9 +121,6 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    # As my observations, Node.js 12 does not supports `exports` field.
-                    # This is nice to contrast.
-                    - 12
                     - 14
 
         steps:
@@ -158,9 +152,6 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    # As my observations, Node.js 12 does not supports `exports` field.
-                    # This is nice to contrast.
-                    - 12
                     - 14
 
         steps:
@@ -192,9 +183,6 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    # As my observations, Node.js 12 does not supports `exports` field.
-                    # This is nice to contrast.
-                    - 12
                     - 14
 
         steps:
@@ -226,9 +214,6 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    # As my observations, Node.js 12 does not supports `exports` field.
-                    # This is nice to contrast.
-                    - 12
                     - 14
 
         steps:
@@ -260,9 +245,6 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    # As my observations, Node.js 12 does not supports `exports` field.
-                    # This is nice to contrast.
-                    - 12
                     - 14
 
         steps:
