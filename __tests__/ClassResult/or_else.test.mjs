@@ -23,7 +23,7 @@
  */
 import test from 'ava';
 
-import { createOk, createErr, ResultBase } from '../../__dist/cjs/Result.js';
+import { createOk, createErr, ResultBase } from '../../__dist/esm/Result.mjs';
 
 const ORIGIN = Symbol('ORIGIN');
 const EXPECTED = Symbol('EXPECTED');

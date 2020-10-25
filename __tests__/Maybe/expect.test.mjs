@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { expectNotNullAndUndefined } from '../../__dist/cjs/Maybe/expect.js';
+import { expectNotNullAndUndefined } from '../../__dist/esm/Maybe/expect.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {

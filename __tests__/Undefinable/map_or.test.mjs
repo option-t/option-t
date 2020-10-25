@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { mapOrForUndefinable } from '../../__dist/cjs/Undefinable/mapOr.js';
+import { mapOrForUndefinable } from '../../__dist/esm/Undefinable/mapOr.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { mapOrElseForNullable } from '../../__dist/cjs/Nullable/mapOrElse.js';
+import { mapOrElseForNullable } from '../../__dist/esm/Nullable/mapOrElse.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {

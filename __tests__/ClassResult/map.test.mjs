@@ -23,7 +23,7 @@
  */
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/cjs/Result.js';
+import { createOk, createErr } from '../../__dist/esm/Result.mjs';
 
 test('Ok<T>', (t) => {
     t.plan(6);

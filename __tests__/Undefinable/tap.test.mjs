@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { tapUndefinable } from '../../__dist/cjs/Undefinable/tap.js';
+import { tapUndefinable } from '../../__dist/esm/Undefinable/tap.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 for (const input of nonNullableValue) {

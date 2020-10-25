@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/cjs/PlainResult/Result.js';
-import { orForResult } from '../../__dist/cjs/PlainResult/or.js';
+import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.mjs';
+import { orForResult } from '../../__dist/esm/PlainResult/or.mjs';
 
 test('a=Ok, b=Ok', (t) => {
     const EXPECTED = Symbol('expected');

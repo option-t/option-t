@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { orElseForUndefinable } from '../../__dist/cjs/Undefinable/orElse.js';
+import { orElseForUndefinable } from '../../__dist/esm/Undefinable/orElse.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {

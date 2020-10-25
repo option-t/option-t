@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { andThenForMaybe } from '../../__dist/cjs/Maybe/andThen.js';
+import { andThenForMaybe } from '../../__dist/esm/Maybe/andThen.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {

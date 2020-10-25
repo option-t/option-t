@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createSome, createNone, isSome, isNone } from '../../__dist/cjs/PlainOption/Option.js';
-import { createOk, createErr, isOk, isErr } from '../../__dist/cjs/PlainResult/Result.js';
-import { transposeForResult } from '../../__dist/cjs/PlainResult/transpose.js';
+import { createSome, createNone, isSome, isNone } from '../../__dist/esm/PlainOption/Option.mjs';
+import { createOk, createErr, isOk, isErr } from '../../__dist/esm/PlainResult/Result.mjs';
+import { transposeForResult } from '../../__dist/esm/PlainResult/transpose.mjs';
 
 test('input is Ok<Some<T>>, the result should be Some(Ok(v))', (t) => {
     const val = Symbol('val');

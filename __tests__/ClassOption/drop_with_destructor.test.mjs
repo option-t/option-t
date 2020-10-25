@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/cjs/Option.js';
+import { createSome, createNone } from '../../__dist/esm/Option.mjs';
 
 test('Some<T>', function (t) {
     t.plan(3);

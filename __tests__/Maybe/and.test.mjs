@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { andForMaybe } from '../../__dist/cjs/Maybe/and.js';
+import { andForMaybe } from '../../__dist/esm/Maybe/and.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 const LEFT = Symbol('a');

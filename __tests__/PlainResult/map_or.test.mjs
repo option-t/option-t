@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/cjs/PlainResult/Result.js';
+import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.mjs';
 
-import { mapOrForResult } from '../../__dist/cjs/PlainResult/mapOr.js';
+import { mapOrForResult } from '../../__dist/esm/PlainResult/mapOr.mjs';
 
 test('Ok<T>', (t) => {
     const INITIAL = 1;

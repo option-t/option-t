@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/cjs/PlainOption/Option.js';
-import { andForOption } from '../../__dist/cjs/PlainOption/and.js';
+import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.mjs';
+import { andForOption } from '../../__dist/esm/PlainOption/and.mjs';
 
 test('a=Some, b=Some', (t) => {
     const EXPECTED = Symbol('expected');

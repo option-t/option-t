@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/cjs/PlainOption/Option.js';
-import { unwrapOption } from '../../__dist/cjs/PlainOption/unwrap.js';
+import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.mjs';
+import { unwrapOption } from '../../__dist/esm/PlainOption/unwrap.mjs';
 
 const EXPECTED = Symbol('some_value');
 

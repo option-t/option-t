@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { unwrapOrFromMaybe } from '../../__dist/cjs/Maybe/unwrapOr.js';
+import { unwrapOrFromMaybe } from '../../__dist/esm/Maybe/unwrapOr.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {

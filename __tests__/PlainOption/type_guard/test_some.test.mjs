@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as PlainOption from '../../../__dist/cjs/PlainOption/index.js';
+import * as PlainOption from '../../../__dist/esm/PlainOption/index.mjs';
 
 const testcase = [
     [

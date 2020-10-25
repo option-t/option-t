@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as Nullable from '../../__dist/cjs/Nullable/index.js';
+import * as Nullable from '../../__dist/esm/Nullable/index.mjs';
 
 {
     const testcase = [

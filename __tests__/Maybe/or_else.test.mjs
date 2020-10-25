@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { orElseForMaybe } from '../../__dist/cjs/Maybe/orElse.js';
+import { orElseForMaybe } from '../../__dist/esm/Maybe/orElse.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {

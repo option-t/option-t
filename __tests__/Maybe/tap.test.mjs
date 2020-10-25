@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { tapMaybe } from '../../__dist/cjs/Maybe/tap.js';
+import { tapMaybe } from '../../__dist/esm/Maybe/tap.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 for (const input of nonNullableValue) {

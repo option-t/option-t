@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/cjs/PlainOption/Option.js';
-import { orForOption } from '../../__dist/cjs/PlainOption/or.js';
+import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.mjs';
+import { orForOption } from '../../__dist/esm/PlainOption/or.mjs';
 
 test('a=Some, b=Some', (t) => {
     const EXPECTED = Symbol('expected');

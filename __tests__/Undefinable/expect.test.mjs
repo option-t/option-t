@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { expectNotUndefined } from '../../__dist/cjs/Undefinable/expect.js';
+import { expectNotUndefined } from '../../__dist/esm/Undefinable/expect.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {

@@ -24,7 +24,7 @@
 
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/cjs/Result.js';
+import { createOk, createErr } from '../../__dist/esm/Result.mjs';
 
 const EXPECTED = Symbol('EXPECTED');
 const UNEXPECTED = Symbol('UNEXPECTED');

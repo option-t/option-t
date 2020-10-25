@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { unwrapUndefinable } from '../../__dist/cjs/Undefinable/unwrap.js';
+import { unwrapUndefinable } from '../../__dist/esm/Undefinable/unwrap.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {

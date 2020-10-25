@@ -2,7 +2,7 @@
 
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/cjs/Option.js';
+import { createSome, createNone } from '../../__dist/esm/Option.mjs';
 
 import {
     primitiveVal,

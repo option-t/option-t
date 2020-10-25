@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { andThenForUndefinable } from '../../__dist/cjs/Undefinable/andThen.js';
+import { andThenForUndefinable } from '../../__dist/esm/Undefinable/andThen.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 const RESULT_VAL = Symbol('result val');

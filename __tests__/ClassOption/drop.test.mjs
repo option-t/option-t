@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/cjs/Option.js';
+import { createSome, createNone } from '../../__dist/esm/Option.mjs';
 
 test('drop `Some<T>`', function (t) {
     const option = createSome(1);

@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../../__dist/cjs/PlainResult/Result.js';
-import { expectIsErr } from '../../../__dist/cjs/PlainResult/expect.js';
+import { createOk, createErr } from '../../../__dist/esm/PlainResult/Result.mjs';
+import { expectIsErr } from '../../../__dist/esm/PlainResult/expect.mjs';
 
 test('input=Ok(T), expect=Err(E)', (t) => {
     const NOT_EXPECTED = Symbol('not expected');

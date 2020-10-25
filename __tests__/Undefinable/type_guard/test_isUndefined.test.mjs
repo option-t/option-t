@@ -1,5 +1,5 @@
 import test from 'ava';
-import * as Undefinable from '../../../__dist/cjs/Undefinable/index.js';
+import * as Undefinable from '../../../__dist/esm/Undefinable/index.mjs';
 
 test('Undefinable::isUndefined', (t) => {
     const testcase = [

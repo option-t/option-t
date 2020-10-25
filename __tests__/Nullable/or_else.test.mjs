@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { orElseForNullable } from '../../__dist/cjs/Nullable/orElse.js';
+import { orElseForNullable } from '../../__dist/esm/Nullable/orElse.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {

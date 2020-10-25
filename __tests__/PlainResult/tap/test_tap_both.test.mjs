@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createErr, createOk } from '../../../__dist/cjs/PlainResult/Result.js';
-import { tapBoth } from '../../../__dist/cjs/PlainResult/tap.js';
+import { createErr, createOk } from '../../../__dist/esm/PlainResult/Result.mjs';
+import { tapBoth } from '../../../__dist/esm/PlainResult/tap.mjs';
 
 test('input is Ok()', (t) => {
     t.plan(3);

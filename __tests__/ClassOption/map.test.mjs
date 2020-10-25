@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/cjs/Option.js';
+import { createSome, createNone } from '../../__dist/esm/Option.mjs';
 
 test('self is `None`', function (t) {
     const none = createNone();

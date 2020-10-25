@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { mapOrElseForMaybe } from '../../__dist/cjs/Maybe/mapOrElse.js';
+import { mapOrElseForMaybe } from '../../__dist/esm/Maybe/mapOrElse.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {
