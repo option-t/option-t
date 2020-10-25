@@ -12,7 +12,6 @@ DIST_DOCS_DIR := $(DIST_DIR)/docs
 DIST_ESM_DIR := $(DIST_DIR)/esm
 DIST_COMMONJS_DIR := $(DIST_DIR)/cjs
 DIST_MIXED_LIB_DIR := $(DIST_DIR)/lib
-TEST_CACHE_DIR := $(CURDIR)/__test_cache
 TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
 
 ## In CI environment, we should change some configuration
@@ -34,7 +33,6 @@ help:
 ###########################
 CLEAN_TARGETS := \
 	dist \
-	test_cache \
 	tmp_mjs \
 
 .PHONY: clean
@@ -43,10 +41,6 @@ clean: $(addprefix clean_, $(CLEAN_TARGETS))
 .PHONY: clean_dist
 clean_dist:
 	$(NPM_BIN)/del $(DIST_DIR)
-
-.PHONY: clean_test_cache
-clean_test_cache:
-	$(NPM_BIN)/del $(TEST_CACHE_DIR)
 
 .PHONY: clean_tmp_mjs
 clean_tmp_mjs:
@@ -166,8 +160,8 @@ eslint:
 # Test
 ###########################
 .PHONY: build_test
-build_test: build clean_test_cache
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --outDir $(TEST_CACHE_DIR)
+build_test: build
+	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --noEmit
 
 .PHONY: run_ava
 run_ava: build
