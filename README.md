@@ -121,7 +121,7 @@ yarn add option-t --save
     * plain objects
         * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/)
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
-* Wrapper objects ([__*deprecated*__](https://github.com/karen-irc/option-t/issues/459)).
+* [Wrapper objects](./docs/wrapper_objects.md) ([__*deprecated*__](https://github.com/karen-irc/option-t/issues/459)).
     * [`Option<T>`](./src/Option.d.ts)
     * [`Result<T, E>`](./src/Result.d.ts)
 
@@ -157,77 +157,20 @@ This does not have any property method on its prototype. But this allows no incl
 
 ### Wrapper objects (deprecated)
 
-This is a wrapper object which have utility methods on its prototype.
-
-_We recommend to use utility types & functions if you don't have to use `instanceof` check and
-you should avoid to expose this object as a public API of your package_  because:
-
-1. `instanceof` checking might not work correctly if a user project has multiple versions of this package in their dependencies.
-    - See ([#337](https://github.com/karen-irc/option-t/pull/337)).
-2. We cannot extend more utility functions without increasing a code size.
-    - Adding a property or a function to _prototype_ will increase a code size
-      but it's hard to remove unused them if an user project does not use all of them.
-      This means that we need hesitate to extend this package
-      and it's hard to introduce a new found powerful pettern as a part of this.
-    - We considered to relax this project by introduce `.pipe()` and operator functions model like rxjs.
-      But its model would not match with this package because this package does not always return a wrapper object.
-      Rather, we tend to add a way to unwrap a contained value.
-      This mean we cannot keep an API signature simple or prevents some kinds of optimizations by JSVM.
-      So we would not like to do this.
-
-
-#### [`Option<T>`](./src/Option.d.ts)
-
-This can express that there are some values or none.
-
-```javascript
-import { createSome, createNone, } from 'option-t/esm/Option.mjs';
-// or
-const { createSome, createNone, } = require('option-t/cjs/Option');
-
-// `Some<T>`
-const some = createSome(1);
-console.log(some.isSome); // true
-console.log(some.unwrap()); // 1
-
-// `None`
-const none = createNone();
-console.log(none.isSome); // false
-console.log(none.unwrap()); // this will throw `Error`.
-```
-
-And this type is defined JSON representations if you serialize them by `JSON.stringify()`.
-See [`OptionBase.prototype.toJSON()`](./src/Option.js).
-
-
-#### [`Result<T, E>`](./src/Result.d.ts)
-
-This can express that there is some values or some error information.
-
-```javascript
-import { createOk, createErr, } from 'option-t/esm/Result.mjs';
-// or
-const { createOk, createErr, } = require('option-t/cjs/Result');
-
-// `Ok<T, E>`
-const some = createOk(1);
-console.log(some.isOk()); // true
-console.log(some.unwrap()); // 1
-console.log(none.unwrapErr()); // this will throw `Error`.
-
-// `Err<T, E>`
-const none = createErr('some error info');
-console.log(none.isOk()); // false
-console.log(none.unwrap()); // this will throw `Error`.
-console.log(none.unwrapErr()); // 'some error info'
-```
+[See this guide](./docs/wrapper_objects.md).
 
 
 ### How to import
 
 This package provides some sub directories to import various functions.
 Each of them includes the same directory hierarchy with [under `src`/](./src/).
- 
+
+#### If your toolchain supports `exports` field in package.json...
+
+You can use [these paths](./docs/public_api_list.md).
+
+#### Otherwise...
+
 - `option-t/cjs`
    - This directory provides commonjs style modules with `.js` extension.
 - `option-t/esm`
@@ -246,10 +189,10 @@ Each of them includes the same directory hierarchy with [under `src`/](./src/).
 
 ### Idioms
 
-- You can see [some idioms](./docs/IDIOM.md) of this library for the interoperability to JavaScript world.
+- You can see [some idioms](./docs/idiom/) of this library for the interoperability to JavaScript world.
+
 
 ### See also
-
 
 These documents would provide more information about `Option<T>` and `Result<T, E>`.
 These are written for Rust, but the essence is just same.
