@@ -30,7 +30,7 @@ jobs:
                 node-version:
                     # We think that we don't have to specify all versions which we'd like to test
                     # because almost npm packages cares about platform but don't care about node's version.
-                    - 14
+                    - 15
 
         steps:
             - uses: actions/checkout@v2.3.3
@@ -59,7 +59,7 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    - 14
+                    - 15
 
         steps:
             - uses: actions/checkout@v2.3.3
@@ -90,10 +90,7 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    # As my observations, Node.js 12 does not supports `exports` field.
-                    # This is nice to contrast.
-                    - 12
-                    - 14
+                    - 15
 
         steps:
             - uses: actions/checkout@v2.3.3
@@ -124,10 +121,7 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    # As my observations, Node.js 12 does not supports `exports` field.
-                    # This is nice to contrast.
-                    - 12
-                    - 14
+                    - 15
 
         steps:
             - uses: actions/checkout@v2.3.3
@@ -158,10 +152,8 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    # As my observations, Node.js 12 does not supports `exports` field.
-                    # This is nice to contrast.
-                    - 12
                     - 14
+                    - 15
 
         steps:
             - uses: actions/checkout@v2.3.3
@@ -192,10 +184,8 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    # As my observations, Node.js 12 does not supports `exports` field.
-                    # This is nice to contrast.
-                    - 12
                     - 14
+                    - 15
 
         steps:
             - uses: actions/checkout@v2.3.3
@@ -226,10 +216,8 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    # As my observations, Node.js 12 does not supports `exports` field.
-                    # This is nice to contrast.
-                    - 12
                     - 14
+                    - 15
 
         steps:
             - uses: actions/checkout@v2.3.3
@@ -260,10 +248,8 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    # As my observations, Node.js 12 does not supports `exports` field.
-                    # This is nice to contrast.
-                    - 12
                     - 14
+                    - 15
 
         steps:
             - uses: actions/checkout@v2.3.3
