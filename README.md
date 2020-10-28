@@ -164,7 +164,13 @@ This does not have any property method on its prototype. But this allows no incl
 
 This package provides some sub directories to import various functions.
 Each of them includes the same directory hierarchy with [under `src`/](./src/).
- 
+
+#### If your toolchain supports `exports` field in package.json...
+
+You can use [these paths](./docs/public_api_list.md).
+
+#### Otherwise...
+
 - `option-t/cjs`
    - This directory provides commonjs style modules with `.js` extension.
 - `option-t/esm`
