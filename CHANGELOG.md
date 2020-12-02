@@ -4,6 +4,33 @@ If you see more details, please compare each tags by [GitHub's release page](htt
 
 ## x.y.z
 
+[See more details](https://github.com//karen-irc/option-t/compare/v24.0.0...master).
+
+## 24.0.0
+
+### Breaking Change
+
+* Update typescript compiler to v4.1 ([#792](https://github.com/karen-irc/option-t/pull/792)).
+    * By this change, we would be able to use some new language features for the future change.
+      Then they might make our `d.ts` imcompatible with typescript v3.9 or earlier.
+    * This version is only change the baseline.
+* Drop Node.js v12 from CI. [#762](https://github.com/karen-irc/option-t/pull/762)
+* Omit unused generic type parameters from `unwrap()`/`unwrapErr()`/`unwrapOr()` for PlainResult. [#793](https://github.com/karen-irc/option-t/pull/793)
+    * This would cause some compile error if you specify type parameters for them explicitly.
+
+### Documentation
+
+* Add some memories about why we use same shape. [#765](https://github.com/karen-irc/option-t/pull/765)
+* Move the document related to wrapper objects to `docs/`. [#764](https://github.com/karen-irc/option-t/pull/764)
+
+
+### Internals
+
+* Update dependencies.
+* Add Node.js v15 to CI [#762](https://github.com/karen-irc/option-t/pull/762)
+* Run tests directly from ava. [#758](https://github.com/karen-irc/option-t/pull/758)
+
+
 ## 23.0.2
 
 * Update dependencies.
