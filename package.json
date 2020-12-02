@@ -50,7 +50,7 @@
     "@ava/babel": "^1.0.1",
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.9",
-    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.8.2",
     "ava": "^3.13.0",
