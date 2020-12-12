@@ -6,7 +6,7 @@
 const path = require('path');
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const { rules } = require('../tools/eslint/eslintrc_typescript');
+const { rules } = require('../tools/eslint/eslintrc_typescript.cjs');
 const KEY_NAMING_CONVENTION = '@typescript-eslint/naming-convention';
 
 // We allow `K` or `V` forms to avoid to rewrite type parameters.
@@ -32,7 +32,7 @@ const newNamingConventionRule = [...rules[KEY_NAMING_CONVENTION]].map((item) => 
 // ESLint Configuration Files enables to include comments.
 // http://eslint.org/docs/configuring/#comments-in-configuration-files
 module.exports = {
-    extends: ['../tools/eslint/eslintrc_typescript.js', 'prettier', 'prettier/@typescript-eslint'],
+    extends: ['../tools/eslint/eslintrc_typescript.cjs', 'prettier', 'prettier/@typescript-eslint'],
 
     parserOptions: {
         sourceType: 'module',

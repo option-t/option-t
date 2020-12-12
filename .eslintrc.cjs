@@ -33,7 +33,7 @@ module.exports = {
     'root': true,
 
     'extends': [
-        './tools/eslint/eslintrc_core.js',
+        './tools/eslint/eslintrc_core.cjs',
         "prettier",
         "prettier/@typescript-eslint",
     ],

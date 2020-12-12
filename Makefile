@@ -65,7 +65,7 @@ build_cjs_js: clean_dist
     --out-dir $(DIST_COMMONJS_DIR) \
     --extensions .js \
     --no-babelrc \
-    --config-file $(CURDIR)/tools/babel/babelrc.cjs.js
+    --config-file $(CURDIR)/tools/babel/babelrc.cjs.cjs
 
 .PHONY: build_cjs_type_definition
 build_cjs_type_definition: clean_dist
@@ -80,7 +80,7 @@ build_esm: build_mjs_cp_mjs_to_esm build_mjs_cp_dts_to_esm ## Build `esm/`.
 
 .PHONY: build_mjs_cp_mjs_to_esm
 build_mjs_cp_mjs_to_esm: build_mjs_rename_js_to_mjs clean_dist
-	$(NPM_BIN)/babel $(TMP_MJS_DIR) --out-dir $(DIST_ESM_DIR) --extensions=.mjs --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.mjs.pathrewiter.js --keep-file-extension
+	$(NPM_BIN)/babel $(TMP_MJS_DIR) --out-dir $(DIST_ESM_DIR) --extensions=.mjs --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.mjs.pathrewiter.cjs --keep-file-extension
 
 .PHONY: build_mjs_cp_dts_to_esm
 build_mjs_cp_dts_to_esm: build_mjs_create_tmp_mjs clean_dist
@@ -100,7 +100,7 @@ build_mjs_create_tmp_mjs_call_tsc: clean_tmp_mjs
 
 .PHONY: build_mjs_create_tmp_mjs_call_babel
 build_mjs_create_tmp_mjs_call_babel: clean_tmp_mjs
-	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(TMP_MJS_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.esm.js
+	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(TMP_MJS_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.esm.cjs
 
 .PHONY: build_mjs_create_tmp_mjs_cal_cpx
 build_mjs_create_tmp_mjs_cal_cpx: clean_tmp_mjs

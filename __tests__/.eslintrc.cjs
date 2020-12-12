@@ -23,7 +23,7 @@ module.exports = {
         {
             files: ['*.ts'],
 
-            extends: ['../tools/eslint/eslintrc_typescript.js'],
+            extends: ['../tools/eslint/eslintrc_typescript.cjs'],
 
             parserOptions: {
                 sourceType: 'module',
