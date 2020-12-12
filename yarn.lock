@@ -34,10 +34,10 @@
   resolved "https://registry.yarnpkg.com/@ava/require-precompiled/-/require-precompiled-1.0.0.tgz#6f4a48b75904a753eadff020bbfca81d3bbc0357"
   integrity sha512-N7w4g+P/SUL8SF+HC4Z4e/ctV6nQ5AERC90K90r4xZQ8WVrJux9albvfyYAzygyU47CSqMWh6yJwFs8DYaeWmg==
 
-"@babel/cli@^7.12.8":
-  version "7.12.8"
-  resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.12.8.tgz#3b24ed2fd5da353ee6f19e8935ff8c93b5fe8430"
-  integrity sha512-/6nQj11oaGhLmZiuRUfxsujiPDc9BBReemiXgIbxc+M5W+MIiFKYwvNDJvBfnGKNsJTKbUfEheKc9cwoPHAVQA==
+"@babel/cli@^7.12.10":
+  version "7.12.10"
+  resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.12.10.tgz#67a1015b1cd505bde1696196febf910c4c339a48"
+  integrity sha512-+y4ZnePpvWs1fc/LhZRTHkTesbXkyBYuOB+5CyodZqrEuETXi3zOVfpAQIdgC3lXbHLTDG9dQosxR9BhvLKDLQ==
   dependencies:
     commander "^4.0.1"
     convert-source-map "^1.1.0"
@@ -63,7 +63,28 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.12.7.tgz#9329b4782a7d6bbd7eef57e11addf91ee3ef1e41"
   integrity sha512-YaxPMGs/XIWtYqrdEOZOCPsVWfEoriXopnsz3/i7apYPXQ3698UFhS6dVT1KN5qOsWmVgw/FOrmQgpRaZayGsw==
 
-"@babel/core@^7.12.9", "@babel/core@^7.8.4":
+"@babel/core@^7.12.10":
+  version "7.12.10"
+  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.12.10.tgz#b79a2e1b9f70ed3d84bbfb6d8c4ef825f606bccd"
+  integrity sha512-eTAlQKq65zHfkHZV0sIVODCPGVgoo1HdBlbSLi9CqOzuZanMv2ihzY+4paiKr1mH+XmYESMAmJ/dpZ68eN6d8w==
+  dependencies:
+    "@babel/code-frame" "^7.10.4"
+    "@babel/generator" "^7.12.10"
+    "@babel/helper-module-transforms" "^7.12.1"
+    "@babel/helpers" "^7.12.5"
+    "@babel/parser" "^7.12.10"
+    "@babel/template" "^7.12.7"
+    "@babel/traverse" "^7.12.10"
+    "@babel/types" "^7.12.10"
+    convert-source-map "^1.7.0"
+    debug "^4.1.0"
+    gensync "^1.0.0-beta.1"
+    json5 "^2.1.2"
+    lodash "^4.17.19"
+    semver "^5.4.1"
+    source-map "^0.5.0"
+
+"@babel/core@^7.8.4":
   version "7.12.9"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.12.9.tgz#fd450c4ec10cdbb980e2928b7aa7a28484593fc8"
   integrity sha512-gTXYh3M5wb7FRXQy+FErKFAv90BnlOuNn1QkCK2lREoPAjrQCO49+HVSrFoe5uakFAF5eenS75KbO2vQiLrTMQ==
@@ -91,6 +112,15 @@
   integrity sha512-m16TQQJ8hPt7E+OS/XVQg/7U184MLXtvuGbCdA7na61vha+ImkyyNM/9DDA0unYCVZn3ZOhng+qz48/KBOT96A==
   dependencies:
     "@babel/types" "^7.12.5"
+    jsesc "^2.5.1"
+    source-map "^0.5.0"
+
+"@babel/generator@^7.12.10":
+  version "7.12.10"
+  resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.12.10.tgz#2b188fc329fb8e4f762181703beffc0fe6df3460"
+  integrity sha512-6mCdfhWgmqLdtTkhXjnIz0LcdVCd26wS2JXRtj2XY0u5klDsXBREA/pG5NVOuVnF2LUrBGNFtQkIqqTbblg0ww==
+  dependencies:
+    "@babel/types" "^7.12.10"
     jsesc "^2.5.1"
     source-map "^0.5.0"
 
@@ -316,6 +346,11 @@
   version "7.12.7"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.12.7.tgz#fee7b39fe809d0e73e5b25eecaf5780ef3d73056"
   integrity sha512-oWR02Ubp4xTLCAqPRiNIuMVgNO5Aif/xpXtabhzW2HWUD47XJsAB4Zd/Rg30+XeQA3juXigV7hlquOTmwqLiwg==
+
+"@babel/parser@^7.12.10":
+  version "7.12.10"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.12.10.tgz#824600d59e96aea26a5a2af5a9d812af05c3ae81"
+  integrity sha512-PJdRPwyoOqFAWfLytxrWwGrAxghCgh/yTNCYciOz8QgjflA7aZhECPZAa2VUedKg2+QMWkI0L9lynh2SNmNEgA==
 
 "@babel/plugin-proposal-async-generator-functions@^7.12.1":
   version "7.12.1"
@@ -867,6 +902,21 @@
     "@babel/helper-split-export-declaration" "^7.11.0"
     "@babel/parser" "^7.12.7"
     "@babel/types" "^7.12.7"
+    debug "^4.1.0"
+    globals "^11.1.0"
+    lodash "^4.17.19"
+
+"@babel/traverse@^7.12.10":
+  version "7.12.10"
+  resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.12.10.tgz#2d1f4041e8bf42ea099e5b2dc48d6a594c00017a"
+  integrity sha512-6aEtf0IeRgbYWzta29lePeYSk+YAFIC3kyqESeft8o5CkFlYIMX+EQDDWEiAQ9LHOA3d0oHdgrSsID/CKqXJlg==
+  dependencies:
+    "@babel/code-frame" "^7.10.4"
+    "@babel/generator" "^7.12.10"
+    "@babel/helper-function-name" "^7.10.4"
+    "@babel/helper-split-export-declaration" "^7.11.0"
+    "@babel/parser" "^7.12.10"
+    "@babel/types" "^7.12.10"
     debug "^4.1.0"
     globals "^11.1.0"
     lodash "^4.17.19"
