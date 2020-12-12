@@ -2,6 +2,6 @@
 
 module.exports = {
     'plugins': [
-        './babel-plugin-add-mjs-suffix.js'
+        './babel-plugin-add-mjs-suffix.cjs'
     ],
 };
