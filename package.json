@@ -1,7 +1,7 @@
 {
   "name": "option-t",
   "version": "24.0.0",
-  "description": "Option type implementation whose APIs are inspired by Rust's `Option<T>`.",
+  "description": "Types and implementations whose APIs are inspired by Rust's `Option<T>` and `Result<T, E>`.",
   "type": "commonjs",
   "files": [
     "CHANGELOG.md",
