@@ -6,7 +6,7 @@ If you see more details, please compare each tags by [GitHub's release page](htt
 
 [See more details](https://github.com//karen-irc/option-t/compare/v24.0.0...master).
 
-##
+## 24.1.0
 
 This is an empty release to announce that `option-t/lib` will be remove in near ,future major releases.
 
