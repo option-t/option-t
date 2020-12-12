@@ -14,6 +14,8 @@ DIST_COMMONJS_DIR := $(DIST_DIR)/cjs
 DIST_MIXED_LIB_DIR := $(DIST_DIR)/lib
 TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
 
+ESLINT_APPLIED_EXTENSIONS := .js,.jsx,cjs,.mjs,.ts,.tsx
+
 ## In CI environment, we should change some configuration
 ifeq ($(CI),true)
 else
@@ -153,7 +155,7 @@ lint: eslint ## Run all lints
 
 .PHONY: eslint
 eslint:
-	$(NPM_BIN)/eslint --ext=.js,.jsx,.mjs,.ts,.tsx $(CURDIR)/
+	$(NPM_BIN)/eslint --ext $(ESLINT_APPLIED_EXTENSIONS) $(CURDIR)/
 
 
 ###########################
@@ -222,7 +224,7 @@ format_check: ## Check code formatting
 
 .PHONY: eslint_fix
 eslint_fix: ## Apply ESLint's `--fix` mode
-	$(NPM_BIN)/eslint --ext .js,.cjs,.mjs,.jsx,.ts,.tsx --fix $(CURDIR)/
+	$(NPM_BIN)/eslint --ext $(ESLINT_APPLIED_EXTENSIONS) --fix $(CURDIR)/
 
 .PHONY: generate_import_path_list_md
 generate_import_path_list_md: ## Generate all public import paths to docs/import_path.md

@@ -54,6 +54,15 @@ module.exports = {
 
     'overrides': [
         {
+            'files': ['*.cjs'],
+            'parserOptions': {
+                'sourceType': 'script',
+            },
+
+            'rules': {
+            },
+        },
+        {
             'files': ['*.mjs'],
             'parserOptions': {
                 'sourceType': 'module',

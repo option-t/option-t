@@ -5,9 +5,9 @@
     "extends": "./tsconfig.json",
     "include": [
         "src/**/*",
-        "src/**/.eslintrc.js",
+        "src/**/.eslintrc.cjs",
         "__tests__/**/*",
-        "__tests__/**/.eslintrc.js"
+        "__tests__/**/.eslintrc.cjs"
     ],
     // We need to turn on to lint `.eslintrc.js` X(
     "compilerOptions": {
