@@ -2,10 +2,18 @@ import * as assert from 'assert';
 
 import { loadJSON } from '../../json.mjs';
 
+const SHOULD_EXPOSE_LIB = true;
+
 function filterJSDir(histricalPathInfo) {
     assert.ok(Array.isArray(histricalPathInfo));
 
     const jsDir = histricalPathInfo.filter((filepath) => {
+        if (!SHOULD_EXPOSE_LIB) {
+            if ((/^lib\//u).test(filepath)) {
+                return false;
+            }
+        }
+
         if (!(/^(cjs|esm|lib)\//u).test(filepath)) {
             return false;
         }
@@ -33,7 +41,7 @@ export function addHistoricalPathToExportsFields(o, histricalJSPathList) {
         o[filepath] = filepath;
 
         // Use cjs for lib/
-        if (filepath.startsWith('./lib/') && filepath.endsWith('.mjs')) {
+        if (SHOULD_EXPOSE_LIB && filepath.startsWith('./lib/') && filepath.endsWith('.mjs')) {
             continue;
         }
 
@@ -62,5 +70,7 @@ export function addHistoricalPathToExportsFields(o, histricalJSPathList) {
     handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH.map((path) => `cjs/${path}`), 'js');
     handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH.map((path) => `esm/${path}`), 'mjs');
     // Our defult is still commonjs. For lib/, we should use `.js`.
-    handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH.map((path) => `lib/${path}`), 'js');
+    if (SHOULD_EXPOSE_LIB) {
+        handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH.map((path) => `lib/${path}`), 'js');
+    }
 }

@@ -13,6 +13,8 @@ const THIS_DIRNAME = dirname(THIS_FILENAME);
 const BASE_DIR = THIS_DIRNAME;
 const PACKAGE_NAME = 'option-t';
 
+const SHOULD_EXPOSE_LIB = true;
+
 function loadCJS(file) {
     const modulepath = (file === '.') ? PACKAGE_NAME : `${PACKAGE_NAME}/${file}`;
     const mod = require(modulepath);
@@ -45,10 +47,16 @@ async function testSpecialCaseLoadIndexJS(installedPackageJSON) {
         'PlainResult',
         'Undefinable',
     ];
-    const NODE_MODULE_RESOLUTION_SPECIAL_CASE_CJS = [
+    let NODE_MODULE_RESOLUTION_SPECIAL_CASE_CJS = [
         ...DIR_SUBPATH.map((path) => `cjs/${path}`),
-        ...DIR_SUBPATH.map((path) => `lib/${path}`),
     ];
+
+    if (SHOULD_EXPOSE_LIB) {
+        NODE_MODULE_RESOLUTION_SPECIAL_CASE_CJS = [
+            ...NODE_MODULE_RESOLUTION_SPECIAL_CASE_CJS,
+            ...DIR_SUBPATH.map((path) => `lib/${path}`),
+        ];
+    }
 
     // `require()` can load `./index.js` with a parent directry name.
     // This behavior is not supported by Node.js' ESM implementation.
@@ -94,7 +102,7 @@ function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
         else if (file.startsWith('esm/')) {
             esmFileList.push(file);
         }
-        else if (file.startsWith('lib/')) {
+        else if (SHOULD_EXPOSE_LIB && file.startsWith('lib/')) {
             libFileList.push(file);
         }
         else {
