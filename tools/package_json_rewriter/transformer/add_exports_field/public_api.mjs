@@ -11,6 +11,12 @@ class ExportEntity {
     }
 
     key() {
+        const key = this._key;
+        // For `main` field
+        if (key === '.') {
+            return key;
+        }
+
         const k = `./${this._key}`;
         return k;
     }
