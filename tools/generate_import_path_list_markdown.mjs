@@ -11,6 +11,8 @@ const RELATIVE_PATH_TO_SRC_DIR = '../src';
 const FILENAME = 'public_api_list.md';
 const API_DEFINITIONS_PATH = './public_api.mjs';
 
+const PKG_NAME = 'option-t';
+
 
 class ListItem {
     constructor(key, subpath, extension = 'ts') {
@@ -32,8 +34,17 @@ class ListItem {
         return subpath;
     }
 
+    _pathname() {
+        const key = this._key;
+        if (key === '.') {
+            return PKG_NAME;
+        }
+
+        return `${PKG_NAME}/${key}`;
+    }
+
     toString() {
-        const name = `option-t/${this._key}`;
+        const name = this._pathname();
         const href = `${RELATIVE_PATH_TO_SRC_DIR}/${this.href()}.${this._extension}`;
 
         return `- [${name}](${href})`;
