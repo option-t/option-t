@@ -42,9 +42,14 @@
     "url": "https://github.com/karen-irc/option-t.git"
   },
   "keywords": [
-    "monads",
+    "either",
     "maybe",
-    "option"
+    "maybe-type",
+    "nullable",
+    "option",
+    "option-type",
+    "result",
+    "result-type"
   ],
   "devDependencies": {
     "@ava/babel": "^1.0.1",
