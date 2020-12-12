@@ -6,6 +6,32 @@ If you see more details, please compare each tags by [GitHub's release page](htt
 
 [See more details](https://github.com//karen-irc/option-t/compare/v24.0.0...master).
 
+##
+
+This is an empty release to announce that `option-t/lib` will be remove in near ,future major releases.
+
+`option-t/lib/***` has been deprecated in v22.1
+but we think some people still continue to use it by some reasons.
+
+Finally, webpack v5 and rollup supports `exports` field in their latest stable version. So we think we remove this feature in near future major releases.
+
+If you are still using them,
+
+1. Please start to try to migrate them.
+    - Please file an issue as a new issue and link to [the tracking issue](https://github.com/karen-irc/option-t/issues/808).
+2. Please file your issue if you cannot migrate by some reasons.
+    - We're not planning to provide an alternative for deprecated APIs.
+      But your problem is serious, we need to resolve it.
+
+#### Migration
+
+- If you're using this, please migrate by following steps:
+
+- `option-t/lib/Option`: Use `option-t/esm/Option` or `option-t/cjs/Option`.
+- `option-t/lib/Result`: Use `option-t/esm/Result` or `option-t/cjs/Result`.
+- Otherwise, replase `option-t/lib/***` to `option-t/**`.
+
+
 ## 24.0.2
 
 ### Documentation 

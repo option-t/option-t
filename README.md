@@ -185,6 +185,11 @@ You can use [these paths](./docs/public_api_list.md).
          your project runs unit-tests for transformed code with plain Node.js which only use `require()`.
    - _Please don't use this path if you don't have to use this_.
        - After Node.js v13.2, we recommend to use ES Module supported natively.
+    - ⚠️ **This will be removed in the future major release** (tracking issue is [#808](https://github.com/karen-irc/option-t/issues/808)).
+        - If you're using this, please migrate by following steps.
+            - `option-t/lib/Option`: Use `option-t/esm/Option` or `option-t/cjs/Option`.
+            - `option-t/lib/Result`: Use `option-t/esm/Result` or `option-t/cjs/Result`.
+            - Otherwise, replase `option-t/lib/***` to `option-t/**`.
 
 
 ### Idioms
