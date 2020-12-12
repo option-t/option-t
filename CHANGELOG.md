@@ -6,6 +6,16 @@ If you see more details, please compare each tags by [GitHub's release page](htt
 
 [See more details](https://github.com//karen-irc/option-t/compare/v24.0.0...master).
 
+## 24.0.1
+
+### Internals
+* Update dependencies.
+* Update 'description' in package.json to clarfy the stance of this package #806
+* Update keywords in package.json #805 
+* Remove 'main' field from package.json #804 
+* Use .cjs extension for all commonjs files #798, #801
+
+
 ## 24.0.0
 
 ### Breaking Change
