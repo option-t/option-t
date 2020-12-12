@@ -1,4 +1,9 @@
 export default {
+    '.': {
+        'path': 'index',
+        'exports': []
+    },
+
     'Maybe': {
         'path': 'Maybe/index',
         'exports': [
