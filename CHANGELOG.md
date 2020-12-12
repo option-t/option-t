@@ -6,6 +6,13 @@ If you see more details, please compare each tags by [GitHub's release page](htt
 
 [See more details](https://github.com//karen-irc/option-t/compare/v24.0.0...master).
 
+## 24.0.2
+
+### Documentation 
+
+ Handle '.' by tools/generate_import_path_list_markdown #807 
+
+
 ## 24.0.1
 
 ### Internals
