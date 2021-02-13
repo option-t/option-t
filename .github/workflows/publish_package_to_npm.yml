@@ -12,7 +12,6 @@ jobs:
             - run: yarn install
             - run: make clean
             - run: make prepublish -j
-            - run: make copy_npmrc_to_project_root
             - run: make publish -j
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
