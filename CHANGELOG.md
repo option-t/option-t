@@ -4,7 +4,14 @@ If you see more details, please compare each tags by [GitHub's release page](htt
 
 ## x.y.z
 
-[See more details](https://github.com//karen-irc/option-t/compare/v24.0.0...master).
+[See more details](https://github.com//karen-irc/option-t/compare/v24.1.1...master).
+
+## 24.1.1
+
+### Internals
+
+* Update dependencies.
+
 
 ## 24.1.0
 
