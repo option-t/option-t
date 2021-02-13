@@ -1,9 +1,9 @@
 export type Option<T> = Some<T> | None;
 
-export type Some<T> = {
+export interface Some<T> {
     readonly ok: true;
     readonly val: T;
-};
+}
 
 export function isSome<T>(v: Option<T>): v is Some<T> {
     return v.ok;
@@ -17,7 +17,7 @@ export function createSome<T>(val: T): Some<T> {
     return r;
 }
 
-export type None = {
+export interface None {
     readonly ok: false;
 
     // To keep the same shape (hidden class or structure) with the other.
@@ -48,7 +48,7 @@ export type None = {
     // By these reasons, we should not recommend to create this object without this factory function.
     // User can create this object by hand. But it's fragile for the future change. So We should not recommend it.
     readonly val?: undefined;
-};
+}
 
 export function isNone<T>(v: Option<T>): v is None {
     return !v.ok;
