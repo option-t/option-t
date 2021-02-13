@@ -34,8 +34,6 @@ module.exports = {
 
     'extends': [
         './tools/eslint/eslintrc_core.cjs',
-        "prettier",
-        "prettier/@typescript-eslint",
     ],
 
     'parserOptions': {
