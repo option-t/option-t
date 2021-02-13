@@ -14,6 +14,8 @@ DIST_COMMONJS_DIR := $(DIST_DIR)/cjs
 DIST_MIXED_LIB_DIR := $(DIST_DIR)/lib
 TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
 
+PROJECT_NPMRC := $(CURDIR)/.npmrc
+
 ESLINT_APPLIED_EXTENSIONS := .js,.jsx,cjs,.mjs,.ts,.tsx
 
 ## In CI environment, we should change some configuration
@@ -36,6 +38,7 @@ help:
 CLEAN_TARGETS := \
 	dist \
 	tmp_mjs \
+	npmrc \
 
 .PHONY: clean
 clean: $(addprefix clean_, $(CLEAN_TARGETS))
@@ -48,6 +51,9 @@ clean_dist:
 clean_tmp_mjs:
 	$(NPM_BIN)/del $(TMP_MJS_DIR)
 
+.PHONY: clean_npmrc
+clean_npmrc:
+	$(NPM_BIN)/del $(PROJECT_NPMRC)
 
 ###########################
 # Build
@@ -249,9 +255,9 @@ prepublish: ## Run some commands for 'npm run prepublish'
 	$(MAKE) run_test_esmodule_path_rewrite -C $(CURDIR)
 
 .PHONY: publish
-publish: ## Run some commands for 'npm publish'
+publish: copy_npmrc_to_project_root ## Run some commands for 'npm publish'
 	npm publish $(DIST_DIR)/
 
 .PHONY: copy_npmrc_to_project_root
-copy_npmrc_to_project_root:
-	cp $(CURDIR)/tools/publish/.npmrc $(CURDIR)/.npmrc
+copy_npmrc_to_project_root: clean_npmrc
+	cp $(CURDIR)/tools/publish/.npmrc $(PROJECT_NPMRC)
