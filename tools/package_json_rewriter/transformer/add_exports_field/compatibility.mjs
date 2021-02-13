@@ -2,7 +2,7 @@ import * as assert from 'assert';
 
 import { CompatExportEntry, constructDualPackagePathValue } from './ExportEntry.mjs';
 
-const SHOULD_EXPOSE_LIB = true;
+const SHOULD_EXPOSE_LIB = false;
 
 export function addHistoricalPathToExportsFields(o, histricalJSPathSeq) {
     // https://nodejs.org/api/esm.html
