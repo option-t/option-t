@@ -5,6 +5,7 @@
   "type": "commonjs",
   "files": [
     "CHANGELOG.md",
+    "CHANGELOG_OLD.md",
     "cjs/",
     "docs/",
     "esm/",
