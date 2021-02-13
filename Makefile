@@ -251,3 +251,7 @@ prepublish: ## Run some commands for 'npm run prepublish'
 .PHONY: publish
 publish: ## Run some commands for 'npm publish'
 	npm publish $(DIST_DIR)/
+
+.PHONY: copy_npmrc_to_project_root
+copy_npmrc_to_project_root:
+	cp $(CURDIR)/tools/publish/.npmrc $(CURDIR)/.npmrc

@@ -5,14 +5,11 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        container: node:15-buster
 
         steps:
             - uses: actions/checkout@v2
-            # Setup .npmrc file to publish to npm
-            - uses: actions/setup-node@v2
-              with:
-                  node-version: "15.x"
-                  registry-url: "https://registry.npmjs.org"
+            - run: make copy_npmrc_to_project_root
             - run: yarn install
             - run: make clean
             - run: make prepublish -j
