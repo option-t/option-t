@@ -1,10 +1,6 @@
 # Changelog
 
-If you see more details, please compare each tags by [GitHub's release page](https://github.com/karen-irc/option-t/releases).
-
-## x.y.z
-
-[See more details](https://github.com//karen-irc/option-t/compare/v24.1.1...master).
+Changelogs are moved to [GitHub's release page](https://github.com/karen-irc/option-t/releases).
 
 ## 24.1.1
 
