@@ -69,6 +69,7 @@
         "plugins": []
     },
     "include": [
-        "src/**/**.ts"
+        "src/**/*",
+        "__tests__/**/*"
     ]
 }
