@@ -1,5 +1,3 @@
-# Changelog
-
 Changelogs are moved to [GitHub's release page](https://github.com/karen-irc/option-t/releases).
 
 ## 24.1.1
