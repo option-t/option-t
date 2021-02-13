@@ -10,4 +10,4 @@ __tmp_mjs/
 *.md
 tools/
 /.eslintrc.cjs
-ava.config.cjs
+ava.config.mjs
