@@ -1,6 +1,6 @@
 export type Result<T, E> = Ok<T> | Err<E>;
 
-export type Ok<T> = {
+export interface Ok<T> {
     readonly ok: true;
     readonly val: T;
 
@@ -33,7 +33,7 @@ export type Ok<T> = {
     // By these reasons, we should not recommend to create this object without this factory function.
     // User can create this object by hand. But it's fragile for the future change. So We should not recommend it.
     readonly err?: undefined;
-};
+}
 
 export function isOk<T, E>(v: Result<T, E>): v is Ok<T> {
     return v.ok;
@@ -48,7 +48,7 @@ export function createOk<T>(val: T): Ok<T> {
     return r;
 }
 
-export type Err<E> = {
+export interface Err<E> {
     readonly ok: false;
 
     // To keep the same shape (hidden class or structure) with the other.
@@ -82,7 +82,7 @@ export type Err<E> = {
     readonly val?: undefined;
 
     readonly err: E;
-};
+}
 
 export function isErr<T, E>(v: Result<T, E>): v is Err<E> {
     return !v.ok;
