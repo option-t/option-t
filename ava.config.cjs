@@ -1,16 +1,15 @@
 /*eslint-env commonjs*/
-/*eslint quote-props: [2, "always"] */
 
 'use strict';
 
 module.exports = function resolveAvaConfig() {
     return {
-        'files': [
+        files: [
             '__tests__/**/*.test.mjs'
         ],
-        'babel': {
-            'testOptions': {
-                'babelrc': false
+        babel: {
+            testOptions: {
+                babelrc: false
             }
         }
     };
