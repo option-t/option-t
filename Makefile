@@ -136,7 +136,7 @@ cp_docs: clean_dist
 
 .PHONY: cp_changelog
 cp_changelog: clean_dist
-	$(NPM_BIN)/cpx '$(CURDIR)/CHANGELOG.md' $(DIST_DIR)
+	$(NPM_BIN)/cpx '$(CURDIR)/{CHANGELOG.md,CHANGELOG_OLD.md}' $(DIST_DIR)
 
 .PHONY: cp_license
 cp_license: clean_dist

@@ -1,5 +1,6 @@
 [
   "CHANGELOG.md",
+  "CHANGELOG_OLD.md",
   "LICENSE.MIT",
   "README.md",
   "cjs/Maybe/ErrorMessage.d.ts",
