@@ -57,7 +57,7 @@
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
     "@typescript-eslint/eslint-plugin": "^4.15.0",
-    "@typescript-eslint/parser": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.1",
     "ava": "^3.15.0",
     "cpx": "^1.5.0",
     "del-cli": "^3.0.1",
