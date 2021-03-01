@@ -32,7 +32,7 @@ const newNamingConventionRule = [...rules[KEY_NAMING_CONVENTION]].map((item) => 
 // ESLint Configuration Files enables to include comments.
 // http://eslint.org/docs/configuring/#comments-in-configuration-files
 module.exports = {
-    extends: ['../tools/eslint/eslintrc_typescript.cjs', 'prettier', 'prettier/@typescript-eslint'],
+    extends: ['../tools/eslint/eslintrc_typescript.cjs', 'prettier'],
 
     parserOptions: {
         sourceType: 'module',

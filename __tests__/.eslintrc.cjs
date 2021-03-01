@@ -7,7 +7,7 @@ const path = require('path');
 // ESLint Configuration Files enables to include comments.
 // http://eslint.org/docs/configuring/#comments-in-configuration-files
 module.exports = {
-    extends: ['prettier', 'prettier/@typescript-eslint'],
+    extends: ['prettier'],
 
     env: {
         es6: true,
@@ -23,7 +23,7 @@ module.exports = {
         {
             files: ['*.ts'],
 
-            extends: ['../tools/eslint/eslintrc_typescript.cjs'],
+            extends: ['../tools/eslint/eslintrc_typescript.cjs', 'prettier'],
 
             parserOptions: {
                 sourceType: 'module',
