@@ -81,7 +81,7 @@ build_cjs_type_definition: clean_dist
 
 .PHONY: build_cjs_ts
 build_cjs_ts: clean_dist
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_cjs.json --outDir $(DIST_COMMONJS_DIR)
+	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.cjs.json --outDir $(DIST_COMMONJS_DIR)
 
 .PHONY: build_esm
 build_esm: build_mjs_cp_mjs_to_esm build_mjs_cp_dts_to_esm ## Build `esm/`.
@@ -104,7 +104,7 @@ build_mjs_create_tmp_mjs: build_mjs_create_tmp_mjs_call_tsc build_mjs_create_tmp
 
 .PHONY: build_mjs_create_tmp_mjs_call_tsc
 build_mjs_create_tmp_mjs_call_tsc: clean_tmp_mjs
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_esm.json --outDir $(TMP_MJS_DIR)
+	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.esm.json --outDir $(TMP_MJS_DIR)
 
 .PHONY: build_mjs_create_tmp_mjs_call_babel
 build_mjs_create_tmp_mjs_call_babel: clean_tmp_mjs
@@ -173,7 +173,7 @@ tscheck: ## Check static types
 ###########################
 .PHONY: build_test
 build_test: build
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig_test.json --noEmit
+	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.test.json --noEmit
 
 .PHONY: run_ava
 run_ava: build

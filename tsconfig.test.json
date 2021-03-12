@@ -1,5 +1,5 @@
 {
-    "extends": "./tsconfig.json",
+    "extends": "./tsconfig.base.json",
     "compilerOptions": {
         "target": "es2020",
         "module": "commonjs",
@@ -13,6 +13,7 @@
         "noUnusedLocals": false // for testing
     },
     "include": [
+        "src/**/*",
         "__tests__/**/*"
     ]
 }

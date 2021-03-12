@@ -2,12 +2,10 @@
     // We need to specify target files for typescript-eslint
     // to imptove the lint performance.
     // This is recommended way since [v2](https://github.com/typescript-eslint/typescript-eslint/releases/tag/v2.0.0).
-    "extends": "./tsconfig.json",
+    "extends": "./tsconfig.base.json",
     "include": [
-        "src/**/*",
-        "src/**/.eslintrc.cjs",
         "__tests__/**/*",
-        "__tests__/**/.eslintrc.cjs"
+        "__tests__/**/.eslintrc.js"
     ],
     // We need to turn on to lint `.eslintrc.js` X(
     "compilerOptions": {

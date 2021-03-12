@@ -1,5 +1,5 @@
 {
-    "extends": "./tsconfig.json",
+    "extends": "./tsconfig.base.json",
     "compilerOptions": {
         "diagnostics": true,
         "module": "commonjs",
@@ -7,6 +7,9 @@
         "noEmitOnError": true,
         "outDir": "./cjs/"
     },
+    "include": [
+        "src/**/*",
+    ],
     "exclude": [
         "__tests__/**/*"
     ]
