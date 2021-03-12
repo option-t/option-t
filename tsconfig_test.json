@@ -13,6 +13,7 @@
         "noUnusedLocals": false // for testing
     },
     "include": [
+        "src/**/*",
         "__tests__/**/*"
     ]
 }

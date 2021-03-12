@@ -7,6 +7,9 @@
         "noEmitOnError": true,
         "outDir": "./esm/"
     },
+    "include": [
+        "src/**/*",
+    ],
     "exclude": [
         "__tests__/**/*"
     ]

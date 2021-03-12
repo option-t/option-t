@@ -67,9 +67,5 @@
         "preserveConstEnums": true,
         "newLine": "LF",
         "plugins": []
-    },
-    "include": [
-        "src/**/*",
-        "__tests__/**/*"
-    ]
+    }
 }
