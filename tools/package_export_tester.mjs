@@ -82,7 +82,8 @@ function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
 
 (async function main() {
     const json = await loadJSON(BASE_DIR, './pkg_files.json');
-    assert.strictEqual(Array.isArray(json), true, '`json` should be Array');
+    const fileList = Object.keys(json);
+    assert.strictEqual(Array.isArray(fileList), true, '`json` should be Array');
 
     const cjsFileList = [
         '.',
@@ -91,7 +92,7 @@ function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
         '.',
     ];
     const libFileList = [];
-    for (const file of json) {
+    for (const file of fileList) {
         if (file.endsWith('.d.ts')) {
             continue;
         }

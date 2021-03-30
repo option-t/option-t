@@ -64,7 +64,7 @@ async function testExpectedFilesInDistDir(expectedSet, fileIter) {
     const files = parseJSON(json);
     assert.notStrictEqual(files, null, 'Fail to parse the file list snapshot');
 
-    const EXPECTED_FILE_SET = new Set(files.map((filename) => {
+    const EXPECTED_FILE_SET = new Set(Object.keys(files).map((filename) => {
         const fullpath = path.resolve(OUTDIR, filename);
         return fullpath;
     }));
