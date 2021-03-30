@@ -11,7 +11,7 @@ export const babelEnvPresetConfig = {
         'node': '8',
     },
     'spec': false,
-    'loose': false,
+    'loose': true,
     'debug': false,
     'useBuiltIns':false,
     'shippedProposals': false,
