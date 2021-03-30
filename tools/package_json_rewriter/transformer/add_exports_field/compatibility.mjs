@@ -1,35 +1,37 @@
-import * as assert from 'assert';
-
 import { loadJSON } from '../../json.mjs';
 
 const SHOULD_EXPOSE_LIB = true;
 
 function filterJSDir(histricalPathInfo) {
-    assert.ok(Array.isArray(histricalPathInfo));
-
-    const jsDir = histricalPathInfo.filter((filepath) => {
+    const result = [];
+    for (const [filepath, info] of Object.entries(histricalPathInfo)) {
         if (!SHOULD_EXPOSE_LIB) {
             if ((/^lib\//u).test(filepath)) {
-                return false;
+                continue;
             }
         }
 
+        if (!!info && info.private) {
+            continue;
+        }
+
         if (!(/^(cjs|esm|lib)\//u).test(filepath)) {
-            return false;
+            continue;
         }
 
         if (!(/^.+\.(js|mjs|cjs)$/u).test(filepath)) {
-            return false;
+            continue;
         }
 
-        return true;
-    });
-    return jsDir;
+        result.push(filepath);
+    }
+
+    return result;
 }
 
 export async function loadHistoricalPathInfo(baseDir, filename) {
     const histricalPathInfo = await loadJSON(baseDir, filename);
-    const histricalJSPathList = filterJSDir(Object.keys(histricalPathInfo));
+    const histricalJSPathList = filterJSDir(histricalPathInfo);
     return histricalJSPathList;
 }
 
