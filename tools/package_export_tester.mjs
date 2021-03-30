@@ -84,29 +84,28 @@ function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
     console.log('====== This script tests whether the path is exported or not by the list ======');
 
     const json = await loadJSON(BASE_DIR, './pkg_files.json');
-    const fileList = Object.keys(json);
-    assert.strictEqual(Array.isArray(fileList), true, '`json` should be Array');
+    const fileList = new Map(Object.entries(json));
 
-    const cjsFileList = [
-        '.',
-    ];
-    const esmFileList = [
-        '.',
-    ];
-    const libFileList = [];
-    for (const file of fileList) {
+    const cjsFileSet = new Map([
+        ['.', null],
+    ]);
+    const esmFileSet = new Map([
+        ['.', null],
+    ]);
+    const libFileSet = new Map();
+    for (const [file] of fileList) {
         if (file.endsWith('.d.ts')) {
             continue;
         }
 
         if (file.startsWith('cjs/')) {
-            cjsFileList.push(file);
+            cjsFileSet.set(file, null);
         }
         else if (file.startsWith('esm/')) {
-            esmFileList.push(file);
+            esmFileSet.set(file, null);
         }
         else if (SHOULD_EXPOSE_LIB && file.startsWith('lib/')) {
-            libFileList.push(file);
+            libFileSet.set(file, null);
         }
         else {
             continue;
@@ -117,7 +116,7 @@ function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
 
     const EXTENSION_PATTERN = /\.(js|mjs|cjs)$/u;
 
-    for (const file of cjsFileList) {
+    for (const [file] of cjsFileSet) {
         testLoadCJS(file);
 
         // With classic Node.js Module resolution support without extension.
@@ -140,14 +139,14 @@ function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
         testPackageJSONHasExportsEntry(installedPackageJSON, classicPath, fileValue);
     };
 
-    for (const file of esmFileList) {
+    for (const [file] of esmFileSet) {
         // eslint-disable-next-line no-await-in-loop
         await testLoadESM(file);
 
         testSpecialCaseESMWithoutExtension(file);
     }
 
-    for (const file of libFileList) {
+    for (const [file] of libFileSet) {
         // eslint-disable-next-line no-await-in-loop
         await testLoadJSFileAsModule(file);
         testLoadCJS(file.replace(EXTENSION_PATTERN, ''));
