@@ -1,4 +1,4 @@
-import { MapFn, RecoveryFn, TapFn } from './shared/Function';
+import type { MapFn, RecoveryFn, TapFn } from '../shared/Function';
 
 /**
  *  @deprecated

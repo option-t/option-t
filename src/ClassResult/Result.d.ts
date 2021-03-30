@@ -1,5 +1,5 @@
-import { Option, Some, None } from './Option';
-import { MapFn, RecoveryWithErrorFn, TapFn } from './shared/Function';
+import type { Option, Some, None } from '../ClassOption/Option';
+import type { MapFn, RecoveryWithErrorFn, TapFn } from '../shared/Function';
 
 /**
  *  @deprecated

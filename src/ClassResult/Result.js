@@ -1,4 +1,4 @@
-import { createSome, createNone } from './Option';
+import { createSome, createNone } from '../ClassOption/Option';
 
 /* eslint-enable valid-jsdoc */
 
