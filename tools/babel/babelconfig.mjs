@@ -1,6 +1,4 @@
-'use strict';
-
-const babelEnvPresetConfig = {
+export const babelEnvPresetConfig = {
     'targets': {
         // Our targeted low-end environment is still IE11.
         // But this is simple that we only requires ES5 and our package does not require post ES6 features at now.
@@ -18,7 +16,3 @@ const babelEnvPresetConfig = {
     'useBuiltIns':false,
     'shippedProposals': false,
 };
-
-module.exports = Object.freeze({
-    babelEnvPresetConfig,
-});
