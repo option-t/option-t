@@ -29,6 +29,7 @@ for (const value of param) {
         t.is(result.isErr(), false, 'should not be `Err<E>`');
         t.is(result.isOk(), true, '`isOk` should be expected');
         t.is(result.isErr(), false, '`isErr` should be expected');
+        t.true(Object.isSealed(result), 'the object should be sealed');
     });
 }
 
@@ -43,5 +44,6 @@ for (const value of param) {
         t.is(result.isErr(), true, 'should not be `Ok<T>`');
         t.is(result.isOk(), false, '`isOk` should be expected');
         t.is(result.isErr(), true, '`isErr` should be expected');
+        t.true(Object.isSealed(result), 'the object should be sealed');
     });
 }

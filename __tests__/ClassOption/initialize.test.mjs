@@ -29,6 +29,7 @@ param.forEach(function (value) {
         t.is(option.isSome, true, '`isSome` should be expected');
         t.is(option.isNone, false, '`isNone` should be expected');
         t.is(option.toJSON().value, value, 'the wrapped value should be expected');
+        t.true(Object.isSealed(option), 'the object should be sealed');
     });
 });
 
@@ -40,4 +41,5 @@ test('`None`', function (t) {
     t.is(option.isSome, false, '`isSome` should be expected');
     t.is(option.isNone, true, '`isNone` should be expected');
     t.is(option.toJSON().value, undefined, '`value` should be expected');
+    t.true(Object.isSealed(option), 'the object should be sealed');
 });

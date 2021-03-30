@@ -11,3 +11,7 @@ test('Err<E> should be instanceof `ResultBase`', (t) => {
     const result = createErr(2);
     t.true(result instanceof ResultBase);
 });
+
+test('prototype should be frozen', (t) => {
+    t.true(Object.isFrozen(ResultBase.prototype));
+});

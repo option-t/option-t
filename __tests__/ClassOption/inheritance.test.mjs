@@ -11,3 +11,7 @@ test('`None`', function (t) {
     const option = createNone();
     t.is(option instanceof OptionBase, true);
 });
+
+test('prototype should be frozen', (t) => {
+    t.true(Object.isFrozen(OptionBase.prototype));
+});
