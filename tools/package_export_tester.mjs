@@ -81,6 +81,8 @@ function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
 }
 
 (async function main() {
+    console.log('====== This script tests whether the path is exported or not by the list ======');
+
     const json = await loadJSON(BASE_DIR, './pkg_files.json');
     const fileList = Object.keys(json);
     assert.strictEqual(Array.isArray(fileList), true, '`json` should be Array');

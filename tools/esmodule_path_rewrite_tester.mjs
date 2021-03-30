@@ -35,6 +35,8 @@ async function testAllowToLoadFileAsESM(expectedSet) {
 }
 
 (async function main() {
+    console.log(`====== This script tests whether the mjs' import path is correctly ======`);
+
     const OUTDIR = process.env.OUTDIR;
     assert.strictEqual(typeof OUTDIR, 'string', '$OUTDIR envvar should be string');
 

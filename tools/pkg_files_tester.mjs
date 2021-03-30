@@ -54,6 +54,8 @@ async function testExpectedFilesInDistDir(expectedSet, fileIter) {
 }
 
 (async function main() {
+    console.log('====== This script tests whether there is a file defined by the list ======');
+
     const OUTDIR = process.env.OUTDIR;
     assert.strictEqual(typeof OUTDIR, 'string', '$OUTDIR envvar should be string');
 
