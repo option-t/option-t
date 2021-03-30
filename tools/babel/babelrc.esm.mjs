@@ -1,8 +1,6 @@
-'use strict';
+import { babelEnvPresetConfig } from './babelconfig.mjs';
 
-const { babelEnvPresetConfig } = require('./babelconfig.cjs');
-
-module.exports = {
+export default {
     'presets': [
         ['@babel/preset-env', {
             ...babelEnvPresetConfig,

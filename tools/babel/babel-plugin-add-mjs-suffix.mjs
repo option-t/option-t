@@ -1,5 +1,3 @@
-'use strict';
-
 const EXTENSION = '.mjs';
 
 function withExtension(name) {
@@ -25,7 +23,7 @@ function rewriter(t, path, _state, declarationFactory) {
     path.replaceWith(declaration);
 }
 
-function babelAddMjsSuffixPlugin({ types: t }) {
+export default function babelAddMjsSuffixPlugin({ types: t }) {
     return {
         visitor: {
             ImportDeclaration(path, state) {
@@ -46,5 +44,3 @@ function babelAddMjsSuffixPlugin({ types: t }) {
         },
     };
 }
-
-module.exports = babelAddMjsSuffixPlugin;
