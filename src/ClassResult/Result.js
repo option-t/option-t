@@ -1,4 +1,4 @@
-import { createSome, createNone } from '../ClassOption/Option';
+import { createClassicSome, createClassicNone } from '../ClassOption/Option';
 
 /* eslint-enable valid-jsdoc */
 
@@ -18,7 +18,7 @@ import { createSome, createNone } from '../ClassOption/Option';
  *
  *  The usecase example is a `React.PropTypes`.
  */
-export class ResultBase {
+export class ClassicResultBase {
     constructor(ok, val, err) {
         /**
          *  @private
@@ -38,7 +38,7 @@ export class ResultBase {
         Object.seal(this);
     }
 }
-ResultBase.prototype = Object.freeze({
+ClassicResultBase.prototype = Object.freeze({
     /**
      *  Returns true if the result is `Ok`.
      *
@@ -66,9 +66,9 @@ ResultBase.prototype = Object.freeze({
      */
     ok() {
         if (this._isOk) {
-            return createSome(this._v);
+            return createClassicSome(this._v);
         } else {
-            return createNone();
+            return createClassicNone();
         }
     },
 
@@ -81,9 +81,9 @@ ResultBase.prototype = Object.freeze({
      */
     err() {
         if (!this._isOk) {
-            return createSome(this._e);
+            return createClassicSome(this._e);
         } else {
-            return createNone();
+            return createClassicNone();
         }
     },
 
@@ -104,7 +104,7 @@ ResultBase.prototype = Object.freeze({
         }
 
         const value = op(this._v);
-        const result = createOk(value);
+        const result = createClassicOk(value);
         return result;
     },
 
@@ -145,7 +145,7 @@ ResultBase.prototype = Object.freeze({
         }
 
         const value = op(this._e);
-        const result = createErr(value);
+        const result = createClassicErr(value);
         return result;
     },
 
@@ -180,7 +180,7 @@ ResultBase.prototype = Object.freeze({
         }
 
         const mapped = op(this._v);
-        const isResult = mapped instanceof ResultBase;
+        const isResult = mapped instanceof ClassicResultBase;
         if (!isResult) {
             throw new TypeError("Result<T, E>.andThen()' param `op` should return `Result<U, E>`.");
         }
@@ -219,7 +219,7 @@ ResultBase.prototype = Object.freeze({
         }
 
         const mapped = op(this._e);
-        const isResult = mapped instanceof ResultBase;
+        const isResult = mapped instanceof ClassicResultBase;
         if (!isResult) {
             throw new TypeError("Result<T, E>.orElse()' param `op` should return `Result<T, F>`.");
         }
@@ -336,8 +336,8 @@ ResultBase.prototype = Object.freeze({
  *  @param  {!T} v
  *  @return    {Result<T, E>}
  */
-export function createOk(v) {
-    const o = new ResultBase(true, v, undefined);
+export function createClassicOk(v) {
+    const o = new ClassicResultBase(true, v, undefined);
     return o;
 }
 
@@ -349,7 +349,7 @@ export function createOk(v) {
  *  @param  {!E} e
  *  @return    {Result<T, E>}
  */
-export function createErr(e) {
-    const o = new ResultBase(false, undefined, e);
+export function createClassicErr(e) {
+    const o = new ClassicResultBase(false, undefined, e);
     return o;
 }

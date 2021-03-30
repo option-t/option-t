@@ -15,7 +15,7 @@
  *
  *  The usecase example is a `React.PropTypes.
  */
-export class OptionBase {
+export class ClassicOptionBase {
     constructor(ok, val) {
         /**
          *  @private
@@ -32,7 +32,7 @@ export class OptionBase {
         Object.seal(this);
     }
 }
-OptionBase.prototype = Object.freeze({
+ClassicOptionBase.prototype = Object.freeze({
     /**
      *  Return whether this is `Some<T>` or not.
      *
@@ -126,7 +126,7 @@ OptionBase.prototype = Object.freeze({
         }
 
         const value = fn(this.val);
-        const option = createSome(value);
+        const option = createClassicSome(value);
         return option;
     },
 
@@ -146,7 +146,7 @@ OptionBase.prototype = Object.freeze({
         }
 
         const mapped = fn(this.val);
-        const isOption = mapped instanceof OptionBase;
+        const isOption = mapped instanceof ClassicOptionBase;
         if (!isOption) {
             throw new TypeError("Option<T>.flatMap()' param `fn` should return `Option<T>`.");
         }
@@ -238,7 +238,7 @@ OptionBase.prototype = Object.freeze({
             return this;
         } else {
             const value = fn();
-            if (value instanceof OptionBase) {
+            if (value instanceof ClassicOptionBase) {
                 return value;
             }
 
@@ -283,8 +283,8 @@ OptionBase.prototype = Object.freeze({
  *  @param  {T}   val
  *  @return    {OptionT<T>}
  */
-export function createSome(val) {
-    const o = new OptionBase(true, val);
+export function createClassicSome(val) {
+    const o = new ClassicOptionBase(true, val);
     return o;
 }
 
@@ -295,7 +295,7 @@ export function createSome(val) {
  *  @template   T
  *  @return    {OptionT<T>}
  */
-export function createNone() {
-    const o = new OptionBase(false, undefined);
+export function createClassicNone() {
+    const o = new ClassicOptionBase(false, undefined);
     return o;
 }

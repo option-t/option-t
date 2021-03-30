@@ -1,42 +1,42 @@
-import type { Option, Some, None } from '../ClassOption/Option';
+import type { ClassicOption, Some, None } from '../ClassOption/Option';
 import type { MapFn, RecoveryWithErrorFn, TapFn } from '../shared/Function';
 
 /**
  *  @deprecated
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export type FlatmapOkFn<T, U, E> = MapFn<T, Result<U, E>>;
+export type ClassicFlatmapOkFn<T, U, E> = MapFn<T, ClassicResult<U, E>>;
 
 /**
  *  @deprecated
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export type FlatmapErrFn<T, E, F> = MapFn<E, Result<T, F>>;
+export type ClassicFlatmapErrFn<T, E, F> = MapFn<E, ClassicResult<T, F>>;
 
-interface Resultable<T, E> {
+interface ClassicResultable<T, E> {
     /**
      *  Returns true if the result is `Ok`.
      */
-    isOk(): this is Ok<T, E>;
+    isOk(): this is ClassicOk<T, E>;
 
     /**
      *  Returns true if the result is `Err`.
      */
-    isErr(): this is Err<T, E>;
+    isErr(): this is ClassicErr<T, E>;
 
     /**
      *  Converts from `Result<T, E>` to `Option<T>`.
      *  If the self is `Ok`, returns `Some<T>`.
      *  Otherwise, returns `None<T>`.
      */
-    ok(): Option<T>;
+    ok(): ClassicOption<T>;
 
     /**
      *  Converts from `Result<T, E>` to `Option<E>`.
      *  If the self is `Err`, returns `Some<E>`.
      *  Otherwise, returns `None<E>`.
      */
-    err(): Option<E>;
+    err(): ClassicOption<E>;
 
     /**
      *  Maps a `Result<T, E>` to `Result<U, E>` by applying a function `mapFn<T, U>`
@@ -44,7 +44,7 @@ interface Resultable<T, E> {
      *
      *  This function can be used to compose the results of two functions.
      */
-    map<U>(op: MapFn<T, U>): Result<U, E>;
+    map<U>(op: MapFn<T, U>): ClassicResult<U, E>;
 
     /**
      *  Maps a `Result<T, E>` to `U` by applying a function to a contained `Ok` value,
@@ -59,29 +59,29 @@ interface Resultable<T, E> {
      *
      *  This function can be used to pass through a successful result while handling an error.
      */
-    mapErr<F>(op: MapFn<E, F>): Result<T, F>;
+    mapErr<F>(op: MapFn<E, F>): ClassicResult<T, F>;
 
     /**
      *  Returns `res` if the result is `Ok`, otherwise returns the `Err` value of self.
      */
-    and<U>(res: Result<U, E>): Result<U, E>;
+    and<U>(res: ClassicResult<U, E>): ClassicResult<U, E>;
 
     /**
      *  Calls `op` if the result is `Ok`, otherwise returns the `Err` value of self.
      *  This function can be used for control flow based on result values.
      */
-    andThen<U>(op: FlatmapOkFn<T, U, E>): Result<U, E>;
+    andThen<U>(op: ClassicFlatmapOkFn<T, U, E>): ClassicResult<U, E>;
 
     /**
      *  Returns `res` if the result is `Err`, otherwise returns the `Ok` value of self.
      */
-    or<F>(res: Result<T, F>): Result<T, F>;
+    or<F>(res: ClassicResult<T, F>): ClassicResult<T, F>;
 
     /**
      *  Calls `op` if the result is `Err`, otherwise returns the `Ok` value of self.
      *  This function can be used for control flow based on result values.
      */
-    orElse<F>(op: FlatmapErrFn<T, E, F>): Result<T, F>;
+    orElse<F>(op: ClassicFlatmapErrFn<T, E, F>): ClassicResult<T, F>;
 
     /**
      *  Return the inner `T` of a `Ok(T)`.
@@ -138,24 +138,24 @@ interface Resultable<T, E> {
  * This is only used for the instanceof-basis runtime checking. (e.g. `React.PropTypes.instanceOf()`)
  * You MUST NOT use for other purpose.
  */
-export abstract class ResultBase<T, E> implements Resultable<T, E> {
+export abstract class ClassicResultBase<T, E> implements ClassicResultable<T, E> {
     private readonly _isOk: boolean;
     private readonly _v: T | undefined;
     private readonly _e: E | undefined;
 
     protected constructor(ok: boolean, val: T | undefined, err: E | undefined);
 
-    isOk(): this is Ok<T, E>;
-    isErr(): this is Err<T, E>;
-    ok(): Option<T>;
-    err(): Option<E>;
-    map<U>(op: MapFn<T, U>): Result<U, E>;
+    isOk(): this is ClassicOk<T, E>;
+    isErr(): this is ClassicErr<T, E>;
+    ok(): ClassicOption<T>;
+    err(): ClassicOption<E>;
+    map<U>(op: MapFn<T, U>): ClassicResult<U, E>;
     mapOrElse<U>(fallback: RecoveryWithErrorFn<E, U>, selector: MapFn<T, U>): U;
-    mapErr<F>(op: MapFn<E, F>): Result<T, F>;
-    and<U>(res: Result<U, E>): Result<U, E>;
-    andThen<U>(op: FlatmapOkFn<T, U, E>): Result<U, E>;
-    or<F>(res: Result<T, F>): Result<T, F>;
-    orElse<F>(op: FlatmapErrFn<T, E, F>): Result<T, F>;
+    mapErr<F>(op: MapFn<E, F>): ClassicResult<T, F>;
+    and<U>(res: ClassicResult<U, E>): ClassicResult<U, E>;
+    andThen<U>(op: ClassicFlatmapOkFn<T, U, E>): ClassicResult<U, E>;
+    or<F>(res: ClassicResult<T, F>): ClassicResult<T, F>;
+    orElse<F>(op: ClassicFlatmapErrFn<T, E, F>): ClassicResult<T, F>;
     unwrap(): T | never;
     unwrapErr(): E | never;
     unwrapOr(optb: T): T;
@@ -164,7 +164,7 @@ export abstract class ResultBase<T, E> implements Resultable<T, E> {
     drop(destructor?: TapFn<T>, errDestructor?: TapFn<E>): void;
 }
 
-interface Ok<T, E> extends Resultable<T, E> {
+interface ClassicOk<T, E> extends ClassicResultable<T, E> {
     ok(): Some<T>;
     err(): None<E>;
     unwrap(): T;
@@ -177,7 +177,7 @@ interface Ok<T, E> extends Resultable<T, E> {
 // This class intend to represent the container of some error type `E`.
 // So we don't define this as `Error`'s subclass
 // or don't restrict type parameter `E`'s upper bound to `Error`.
-interface Err<T, E> extends Resultable<T, E> {
+interface ClassicErr<T, E> extends ClassicResultable<T, E> {
     ok(): None<T>;
     err(): Some<E>;
     unwrap(): never;
@@ -210,16 +210,16 @@ interface Err<T, E> extends Resultable<T, E> {
  *  to reduce an object allocation. Thus comparing _this `Option<T>`` is meaningles.
  *  This is by design because we think this pattern is meaningless.
  */
-export type Result<T, E> = Ok<T, E> | Err<T, E>;
+export type ClassicResult<T, E> = ClassicOk<T, E> | ClassicErr<T, E>;
 
 /**
  *  @deprecated
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export declare function createOk<T, E>(val: T): Ok<T, E>;
+export declare function createClassicOk<T, E>(val: T): ClassicOk<T, E>;
 
 /**
  *  @deprecated
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export declare function createErr<T, E>(err: E): Err<T, E>;
+export declare function createClassicErr<T, E>(err: E): ClassicErr<T, E>;

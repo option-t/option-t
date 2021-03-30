@@ -4,15 +4,15 @@ import type { MapFn, RecoveryFn, TapFn } from '../shared/Function';
  *  @deprecated
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export type FlatmapFn<T, U> = MapFn<T, Option<U>>;
+export type ClassicFlatmapFn<T, U> = MapFn<T, ClassicOption<U>>;
 
 /**
  *  @deprecated
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export type MayRecoveryFn<T> = RecoveryFn<Option<T>>;
+export type ClassicMayRecoveryFn<T> = RecoveryFn<ClassicOption<T>>;
 
-interface Optionable<T> {
+interface ClassicOptionable<T> {
     /**
      *  Return whether the self is `Some<T>` or not.
      */
@@ -65,7 +65,7 @@ interface Optionable<T> {
      *      The function which is applied to the contained value and return the result
      *      if the self is a `Some<T>`.
      */
-    map<U>(fn: MapFn<T, U>): Option<U>;
+    map<U>(fn: MapFn<T, U>): ClassicOption<U>;
 
     /**
      *  Return `None` if the self is `None`,
@@ -75,7 +75,7 @@ interface Optionable<T> {
      *      The function which is applied to the contained value and return the result
      *      if the self is a `Some<T>`. This result will be flattened once.
      */
-    flatMap<U>(fn: FlatmapFn<T, U>): Option<U>;
+    flatMap<U>(fn: ClassicFlatmapFn<T, U>): ClassicOption<U>;
 
     /**
      *  Apply a function `fn` to the contained value or return a default `def`.
@@ -106,14 +106,14 @@ interface Optionable<T> {
      *  @param  optb
      *      The value which is returned if the self is a `Some<T>`.
      */
-    and<U>(optb: Option<U>): Option<U>;
+    and<U>(optb: ClassicOption<U>): ClassicOption<U>;
 
     /**
      *  The alias of `Option<T>.flatMap()`.
      *
      *  @param  fn
      */
-    andThen<U>(fn: FlatmapFn<T, U>): Option<U>;
+    andThen<U>(fn: ClassicFlatmapFn<T, U>): ClassicOption<U>;
 
     /**
      *  Return the self if it contains a value, otherwise return `optb`.
@@ -121,7 +121,7 @@ interface Optionable<T> {
      *  @param  optb
      *      The default value which is used if the self is a `None`.
      */
-    or(optb: Option<T>): Option<T>;
+    or(optb: ClassicOption<T>): ClassicOption<T>;
 
     /**
      *  Return the self if it contains a value,
@@ -130,7 +130,7 @@ interface Optionable<T> {
      *  @param  fn
      *      The function which produces a default value which is used if the self is a `None`.
      */
-    orElse(fn: MayRecoveryFn<T>): Option<T>;
+    orElse(fn: ClassicMayRecoveryFn<T>): ClassicOption<T>;
 
     /**
      *  Finalize the self.
@@ -166,7 +166,7 @@ interface Optionable<T> {
  *  See also:
  *  https://github.com/karen-irc/option-t/pull/77
  */
-export abstract class OptionBase<T> implements Optionable<T> {
+export abstract class ClassicOptionBase<T> implements ClassicOptionable<T> {
     private readonly ok: boolean;
     private readonly val: T | undefined;
 
@@ -179,28 +179,28 @@ export abstract class OptionBase<T> implements Optionable<T> {
     unwrapOr(def: T): T;
     unwrapOrElse(fn: RecoveryFn<T>): T;
     expect(msg: string): T | never;
-    map<U>(fn: MapFn<T, U>): Option<U>;
-    flatMap<U>(fn: FlatmapFn<T, U>): Option<U>;
+    map<U>(fn: MapFn<T, U>): ClassicOption<U>;
+    flatMap<U>(fn: ClassicFlatmapFn<T, U>): ClassicOption<U>;
     mapOr<U>(def: U, fn: MapFn<T, U>): U;
     mapOrElse<U>(def: RecoveryFn<U>, fn: MapFn<T, U>): U;
-    and<U>(optb: Option<U>): Option<U>;
-    andThen<U>(fn: FlatmapFn<T, U>): Option<U>;
-    or(optb: Option<T>): Option<T>;
-    orElse(fn: MayRecoveryFn<T>): Option<T>;
+    and<U>(optb: ClassicOption<U>): ClassicOption<U>;
+    andThen<U>(fn: ClassicFlatmapFn<T, U>): ClassicOption<U>;
+    or(optb: ClassicOption<T>): ClassicOption<T>;
+    orElse(fn: ClassicMayRecoveryFn<T>): ClassicOption<T>;
     drop(destructor?: TapFn<T>): void;
     // FYI: this is json representation.
     // eslint-disable-next-line @typescript-eslint/naming-convention
     toJSON(): { is_some: boolean; value: T | undefined };
 }
 
-interface Some<T> extends Optionable<T> {
+interface ClassicSome<T> extends ClassicOptionable<T> {
     readonly isSome: true;
     readonly isNone: false;
     unwrap(): T;
     expect(msg: string): T;
 }
 
-interface None<T> extends Optionable<T> {
+interface ClassicNone<T> extends ClassicOptionable<T> {
     readonly isSome: false;
     readonly isNone: true;
     unwrap(): never;
@@ -232,16 +232,16 @@ interface None<T> extends Optionable<T> {
  *  to reduce an object allocation. Thus comparing _this `Option<T>`` is meaningles.
  *  This is by design because we think this pattern is meaningless.
  */
-export type Option<T> = Some<T> | None<T>;
+export type ClassicOption<T> = ClassicSome<T> | ClassicNone<T>;
 
 /**
  *  @deprecated
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export declare function createSome<T>(val: T): Some<T>;
+export declare function createClassicSome<T>(val: T): ClassicSome<T>;
 
 /**
  *  @deprecated
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export declare function createNone<T>(): None<T>;
+export declare function createClassicNone<T>(): ClassicNone<T>;
