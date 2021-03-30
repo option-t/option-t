@@ -1,5 +1,4 @@
 /* eslint-enable valid-jsdoc */
-/* eslint-disable func-name-matching */
 
 /**
  *  @deprecated
@@ -16,20 +15,22 @@
  *
  *  The usecase example is a `React.PropTypes.
  */
-export function OptionBase(ok, val) {
-    /**
-     *  @private
-     *  @type   {boolean}
-     */
-    this.ok = ok;
+export class OptionBase {
+    constructor(ok, val) {
+        /**
+         *  @private
+         *  @type   {boolean}
+         */
+        this.ok = ok;
 
-    /**
-     *  @private
-     *  @type   {T|undefined}
-     */
-    this.val = val;
+        /**
+         *  @private
+         *  @type   {T|undefined}
+         */
+        this.val = val;
 
-    Object.seal(this);
+        Object.seal(this);
+    }
 }
 OptionBase.prototype = Object.freeze({
     /**
@@ -59,7 +60,7 @@ OptionBase.prototype = Object.freeze({
      *  @throws {TypeError}
      *      Throws if the self value equals `None`.
      */
-    unwrap: function OptionTUnwrap() {
+    unwrap() {
         if (!this.ok) {
             throw new TypeError('called `unwrap()` on a `None` value');
         }
@@ -75,7 +76,7 @@ OptionBase.prototype = Object.freeze({
      *  @param  {T} def
      *  @return {T}
      */
-    unwrapOr: function OptionTUnwrapOr(def) {
+    unwrapOr(def) {
         return this.ok ? this.val : def;
     },
 
@@ -87,7 +88,7 @@ OptionBase.prototype = Object.freeze({
      *  @param  {function(): T} fn
      *  @return {T}
      */
-    unwrapOrElse: function OptionTUnwrapOrElse(fn) {
+    unwrapOrElse(fn) {
         return this.ok ? this.val : fn();
     },
 
@@ -102,7 +103,7 @@ OptionBase.prototype = Object.freeze({
      *      Throws a custom error with provided `msg`
      *      if the self value equals `None`.
      */
-    expect: function OptionTExpect(msg) {
+    expect(msg) {
         if (!this.ok) {
             throw new TypeError(msg);
         }
@@ -118,7 +119,7 @@ OptionBase.prototype = Object.freeze({
      *  @param  {function(T):U}    fn
      *  @return {!Option<U>}
      */
-    map: function OptionTMap(fn) {
+    map(fn) {
         if (!this.ok) {
             // cheat to escape from a needless allocation.
             return this;
@@ -138,7 +139,7 @@ OptionBase.prototype = Object.freeze({
      *  @param  {function(T): !Option<U>}    fn
      *  @return {!Option<U>}
      */
-    flatMap: function OptionTFlatMap(fn) {
+    flatMap(fn) {
         if (!this.ok) {
             // cheat to escape from a needless allocation.
             return this;
@@ -162,7 +163,7 @@ OptionBase.prototype = Object.freeze({
      *  @param  {function(T):U} fn
      *  @return {U}
      */
-    mapOr: function OptionTMapOr(def, fn) {
+    mapOr(def, fn) {
         if (this.ok) {
             return fn(this.val);
         } else {
@@ -179,7 +180,7 @@ OptionBase.prototype = Object.freeze({
      *  @param  {function(T):U} fn
      *  @return {U}
      */
-    mapOrElse: function OptionTMapOrElse(defFn, fn) {
+    mapOrElse(defFn, fn) {
         if (this.ok) {
             return fn(this.val);
         } else {
@@ -195,7 +196,7 @@ OptionBase.prototype = Object.freeze({
      *  @param  {!Option<U>} optb
      *  @return {!Option<U>}
      */
-    and: function OptionTAnd(optb) {
+    and(optb) {
         return this.ok ? optb : this;
     },
 
@@ -207,7 +208,7 @@ OptionBase.prototype = Object.freeze({
      *  @param  {function(T): !Option<U>}    fn
      *  @return {!Option<U>}
      */
-    andThen: function OptionTAndThen(fn) {
+    andThen(fn) {
         return this.flatMap(fn);
     },
 
@@ -219,7 +220,7 @@ OptionBase.prototype = Object.freeze({
      *  @param  {!Option<T>} optb
      *  @return {!Option<T>}
      */
-    or: function OptionTOr(optb) {
+    or(optb) {
         return this.ok ? this : optb;
     },
 
@@ -232,7 +233,7 @@ OptionBase.prototype = Object.freeze({
      *  @param  {function(): !Option<T>} fn
      *  @return {!Option<T>}
      */
-    orElse: function OptionTOr(fn) {
+    orElse(fn) {
         if (this.ok) {
             return this;
         } else {
@@ -253,7 +254,7 @@ OptionBase.prototype = Object.freeze({
      *      This would be called with the inner value if self is `Some<T>`.
      *  @return {void}
      */
-    drop: function OptionTDrop(destructor) {
+    drop(destructor) {
         if (this.ok && typeof destructor === 'function') {
             destructor(this.val);
         }
@@ -265,7 +266,7 @@ OptionBase.prototype = Object.freeze({
     /**
      *  @return {*}
      */
-    toJSON: function OptionTtoJSON() {
+    toJSON() {
         return {
             // eslint-disable-next-line @typescript-eslint/naming-convention
             is_some: this.ok,
