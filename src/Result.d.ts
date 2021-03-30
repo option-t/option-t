@@ -1,7 +1,16 @@
 import { Option, Some, None } from './Option';
 import { MapFn, RecoveryWithErrorFn, TapFn } from './shared/Function';
 
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
 export type FlatmapOkFn<T, U, E> = MapFn<T, Result<U, E>>;
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
 export type FlatmapErrFn<T, E, F> = MapFn<E, Result<T, F>>;
 
 interface Resultable<T, E> {
@@ -203,5 +212,14 @@ interface Err<T, E> extends Resultable<T, E> {
  */
 export type Result<T, E> = Ok<T, E> | Err<T, E>;
 
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
 export declare function createOk<T, E>(val: T): Ok<T, E>;
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
 export declare function createErr<T, E>(err: E): Err<T, E>;
