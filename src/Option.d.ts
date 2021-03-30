@@ -1,6 +1,15 @@
 import { MapFn, RecoveryFn, TapFn } from './shared/Function';
 
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
 export type FlatmapFn<T, U> = MapFn<T, Option<U>>;
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
 export type MayRecoveryFn<T> = RecoveryFn<Option<T>>;
 
 interface Optionable<T> {
@@ -225,5 +234,14 @@ interface None<T> extends Optionable<T> {
  */
 export type Option<T> = Some<T> | None<T>;
 
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
 export declare function createSome<T>(val: T): Some<T>;
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
 export declare function createNone<T>(): None<T>;
