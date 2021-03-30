@@ -15,24 +15,24 @@ const PACKAGE_NAME = 'option-t';
 
 const SHOULD_EXPOSE_LIB = true;
 
-function loadCJS(file) {
+function testLoadCJS(file) {
     const modulepath = (file === '.') ? PACKAGE_NAME : `${PACKAGE_NAME}/${file}`;
     const mod = require(modulepath);
     return mod;
 }
 
-async function loadESM(file) {
+async function testLoadESM(file) {
     const modulepath = (file === '.') ? PACKAGE_NAME : `${PACKAGE_NAME}/${file}`;
     const mod = await import(modulepath);
     return mod;
 }
 
-async function loadJSFileAsModule(file) {
+async function testLoadJSFileAsModule(file) {
     if (file.endsWith('.js')) {
-        loadCJS(file);
+        testLoadCJS(file);
     }
     else if (file.endsWith('.mjs')) {
-        await loadESM(file);
+        await testLoadESM(file);
     }
     else {
         throw Error(`${file} is not unknown module type`);
@@ -63,7 +63,7 @@ async function testSpecialCaseLoadIndexJS(installedPackageJSON) {
     // But it might be supported by webpack or other bundlers. It's sad for package developer.
 
     for (const file of NODE_MODULE_RESOLUTION_SPECIAL_CASE_CJS) {
-        loadCJS(file);
+        testLoadCJS(file);
     }
 
     const NODE_MODULE_RESOLUTION_SPECIAL_CASE_ESM = DIR_SUBPATH.map((path) => `./esm/${path}`);
@@ -81,29 +81,31 @@ function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
 }
 
 (async function main() {
-    const json = await loadJSON(BASE_DIR, './pkg_files.json');
-    assert.strictEqual(Array.isArray(json), true, '`json` should be Array');
+    console.log('====== This script tests whether the path is exported or not by the list ======');
 
-    const cjsFileList = [
-        '.',
-    ];
-    const esmFileList = [
-        '.',
-    ];
-    const libFileList = [];
-    for (const file of json) {
+    const json = await loadJSON(BASE_DIR, './pkg_files.json');
+    const fileList = new Map(Object.entries(json));
+
+    const cjsFileSet = new Map([
+        ['.', null],
+    ]);
+    const esmFileSet = new Map([
+        ['.', null],
+    ]);
+    const libFileSet = new Map();
+    for (const [file] of fileList) {
         if (file.endsWith('.d.ts')) {
             continue;
         }
 
         if (file.startsWith('cjs/')) {
-            cjsFileList.push(file);
+            cjsFileSet.set(file, null);
         }
         else if (file.startsWith('esm/')) {
-            esmFileList.push(file);
+            esmFileSet.set(file, null);
         }
         else if (SHOULD_EXPOSE_LIB && file.startsWith('lib/')) {
-            libFileList.push(file);
+            libFileSet.set(file, null);
         }
         else {
             continue;
@@ -114,11 +116,11 @@ function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
 
     const EXTENSION_PATTERN = /\.(js|mjs|cjs)$/u;
 
-    for (const file of cjsFileList) {
-        loadCJS(file);
+    for (const [file] of cjsFileSet) {
+        testLoadCJS(file);
 
         // With classic Node.js Module resolution support without extension.
-        loadCJS(file.replace(EXTENSION_PATTERN, ''));
+        testLoadCJS(file.replace(EXTENSION_PATTERN, ''));
     }
 
     const testSpecialCaseESMWithoutExtension = (file) => {
@@ -137,17 +139,17 @@ function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
         testPackageJSONHasExportsEntry(installedPackageJSON, classicPath, fileValue);
     };
 
-    for (const file of esmFileList) {
+    for (const [file] of esmFileSet) {
         // eslint-disable-next-line no-await-in-loop
-        await loadESM(file);
+        await testLoadESM(file);
 
         testSpecialCaseESMWithoutExtension(file);
     }
 
-    for (const file of libFileList) {
+    for (const [file] of libFileSet) {
         // eslint-disable-next-line no-await-in-loop
-        await loadJSFileAsModule(file);
-        loadCJS(file.replace(EXTENSION_PATTERN, ''));
+        await testLoadJSFileAsModule(file);
+        testLoadCJS(file.replace(EXTENSION_PATTERN, ''));
     }
 
     await testSpecialCaseLoadIndexJS(installedPackageJSON);
@@ -162,10 +164,10 @@ function testPackageJSONHasExportsEntry(pkgObj, entryName, entryFileName) {
 
     for (const [key, { exports: expected }] of Object.entries(publicApiTestCases)) {
         // eslint-disable-next-line no-await-in-loop
-        const importESMObj = await loadESM(key);
+        const importESMObj = await testLoadESM(key);
         matcher(`mjs:${key}`, importESMObj, expected);
 
-        const importCJSObj = loadCJS(key);
+        const importCJSObj = testLoadCJS(key);
         matcher(`cjs:${key}`, importCJSObj, expected);
     }
 })().catch((e) => {

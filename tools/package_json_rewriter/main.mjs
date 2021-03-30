@@ -29,6 +29,8 @@ async function writePackageJSON(baseDir, outputPath, content) {
 }
 
 (async function main() {
+    console.log('====== This script generates `exports` field for `package.json` ======');
+
     const OUTDIR = process.env.OUTDIR;
     assert.strictEqual(typeof OUTDIR, 'string', '$OUTDIR envvar should be string');
 

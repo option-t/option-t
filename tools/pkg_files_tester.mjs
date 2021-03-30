@@ -54,6 +54,8 @@ async function testExpectedFilesInDistDir(expectedSet, fileIter) {
 }
 
 (async function main() {
+    console.log('====== This script tests whether there is a file defined by the list ======');
+
     const OUTDIR = process.env.OUTDIR;
     assert.strictEqual(typeof OUTDIR, 'string', '$OUTDIR envvar should be string');
 
@@ -64,7 +66,7 @@ async function testExpectedFilesInDistDir(expectedSet, fileIter) {
     const files = parseJSON(json);
     assert.notStrictEqual(files, null, 'Fail to parse the file list snapshot');
 
-    const EXPECTED_FILE_SET = new Set(files.map((filename) => {
+    const EXPECTED_FILE_SET = new Set(Object.keys(files).map((filename) => {
         const fullpath = path.resolve(OUTDIR, filename);
         return fullpath;
     }));

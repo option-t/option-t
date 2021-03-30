@@ -29,7 +29,7 @@ function filterJSDir(histricalPathInfo) {
 
 export async function loadHistoricalPathInfo(baseDir, filename) {
     const histricalPathInfo = await loadJSON(baseDir, filename);
-    const histricalJSPathList = filterJSDir(histricalPathInfo);
+    const histricalJSPathList = filterJSDir(Object.keys(histricalPathInfo));
     return histricalJSPathList;
 }
 

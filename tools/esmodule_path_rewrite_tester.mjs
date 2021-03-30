@@ -35,6 +35,8 @@ async function testAllowToLoadFileAsESM(expectedSet) {
 }
 
 (async function main() {
+    console.log(`====== This script tests whether the mjs' import path is correctly ======`);
+
     const OUTDIR = process.env.OUTDIR;
     assert.strictEqual(typeof OUTDIR, 'string', '$OUTDIR envvar should be string');
 
@@ -45,7 +47,7 @@ async function testAllowToLoadFileAsESM(expectedSet) {
     const files = parseJSON(json);
     assert.notStrictEqual(files, null, 'Fail to parse the file list snapshot');
 
-    const mjsInEsmDir = files.filter((filename) => {
+    const mjsInEsmDir = Object.keys(files).filter((filename) => {
         return filename.endsWith('.mjs') && (filename.startsWith('esm/') || filename.startsWith('lib/'));
     });
 
