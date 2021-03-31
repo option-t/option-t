@@ -11,3 +11,5 @@ export {
     createClassicOk as createOk,
     createClassicErr as createErr,
 } from './ClassResult/ClassicResult';
+
+export { compatToClassicResult, compatToPlainResult } from './ClassResult/compat';
