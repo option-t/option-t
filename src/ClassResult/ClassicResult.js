@@ -1,4 +1,4 @@
-import { createClassicSome, createClassicNone } from '../ClassOption/Option';
+import { createClassicSome, createClassicNone } from '../ClassOption/ClassicOption';
 
 /* eslint-enable valid-jsdoc */
 

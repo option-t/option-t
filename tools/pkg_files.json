@@ -3,16 +3,16 @@
     "CHANGELOG_OLD.md": null,
     "LICENSE.MIT": null,
     "README.md": null,
-    "cjs/ClassOption/Option.d.ts": {
+    "cjs/ClassOption/ClassicOption.d.ts": {
         "private": true
     },
-    "cjs/ClassOption/Option.js": {
+    "cjs/ClassOption/ClassicOption.js": {
         "private": true
     },
-    "cjs/ClassResult/Result.d.ts": {
+    "cjs/ClassResult/ClassicResult.d.ts": {
         "private": true
     },
-    "cjs/ClassResult/Result.js": {
+    "cjs/ClassResult/ClassicResult.js": {
         "private": true
     },
     "cjs/Maybe/ErrorMessage.d.ts": null,
@@ -211,16 +211,16 @@
     "docs/idiom/README.md": null,
     "docs/public_api_list.md": null,
     "docs/wrapper_objects.md": null,
-    "esm/ClassOption/Option.d.ts": {
+    "esm/ClassOption/ClassicOption.d.ts": {
         "private": true
     },
-    "esm/ClassOption/Option.mjs": {
+    "esm/ClassOption/ClassicOption.mjs": {
         "private": true
     },
-    "esm/ClassResult/Result.d.ts": {
+    "esm/ClassResult/ClassicResult.d.ts": {
         "private": true
     },
-    "esm/ClassResult/Result.mjs": {
+    "esm/ClassResult/ClassicResult.mjs": {
         "private": true
     },
     "esm/Maybe/ErrorMessage.d.ts": null,
@@ -415,22 +415,22 @@
     "esm/shared/Function.mjs": null,
     "esm/shared/Mutable.d.ts": null,
     "esm/shared/Mutable.mjs": null,
-    "lib/ClassOption/Option.d.ts": {
+    "lib/ClassOption/ClassicOption.d.ts": {
         "private": true
     },
-    "lib/ClassOption/Option.js": {
+    "lib/ClassOption/ClassicOption.js": {
         "private": true
     },
-    "lib/ClassOption/Option.mjs": {
+    "lib/ClassOption/ClassicOption.mjs": {
         "private": true
     },
-    "lib/ClassResult/Result.d.ts": {
+    "lib/ClassResult/ClassicResult.d.ts": {
         "private": true
     },
-    "lib/ClassResult/Result.js": {
+    "lib/ClassResult/ClassicResult.js": {
         "private": true
     },
-    "lib/ClassResult/Result.mjs": {
+    "lib/ClassResult/ClassicResult.mjs": {
         "private": true
     },
     "lib/Maybe/ErrorMessage.d.ts": null,

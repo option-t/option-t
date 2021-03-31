@@ -1,4 +1,4 @@
-import type { ClassicOption, Some, None } from '../ClassOption/Option';
+import type { ClassicOption, Some, None } from '../ClassOption/ClassicOption';
 import type { MapFn, RecoveryWithErrorFn, TapFn } from '../shared/Function';
 
 /**

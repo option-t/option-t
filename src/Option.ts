@@ -5,4 +5,4 @@ export {
     ClassicOption as Option,
     createClassicSome as createSome,
     createClassicNone as createNone,
-} from './ClassOption/Option';
+} from './ClassOption/ClassicOption';

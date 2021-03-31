@@ -5,4 +5,4 @@ export {
     ClassicResult as Result,
     createClassicOk as createOk,
     createClassicErr as createErr,
-} from './ClassResult/Result';
+} from './ClassResult/ClassicResult';
