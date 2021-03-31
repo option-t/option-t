@@ -9,10 +9,22 @@
     "cjs/ClassOption/ClassicOption.js": {
         "private": true
     },
+    "cjs/ClassOption/compat.d.ts": {
+        "private": true
+    },
+    "cjs/ClassOption/compat.js": {
+        "private": true
+    },
     "cjs/ClassResult/ClassicResult.d.ts": {
         "private": true
     },
     "cjs/ClassResult/ClassicResult.js": {
+        "private": true
+    },
+    "cjs/ClassResult/compat.d.ts": {
+        "private": true
+    },
+    "cjs/ClassResult/compat.js": {
         "private": true
     },
     "cjs/Maybe/ErrorMessage.d.ts": null,
@@ -217,10 +229,22 @@
     "esm/ClassOption/ClassicOption.mjs": {
         "private": true
     },
+    "esm/ClassOption/compat.d.ts": {
+        "private": true
+    },
+    "esm/ClassOption/compat.mjs": {
+        "private": true
+    },
     "esm/ClassResult/ClassicResult.d.ts": {
         "private": true
     },
     "esm/ClassResult/ClassicResult.mjs": {
+        "private": true
+    },
+    "esm/ClassResult/compat.d.ts": {
+        "private": true
+    },
+    "esm/ClassResult/compat.mjs": {
         "private": true
     },
     "esm/Maybe/ErrorMessage.d.ts": null,
@@ -424,6 +448,15 @@
     "lib/ClassOption/ClassicOption.mjs": {
         "private": true
     },
+    "lib/ClassOption/compat.d.ts": {
+        "private": true
+    },
+    "lib/ClassOption/compat.js": {
+        "private": true
+    },
+    "lib/ClassOption/compat.mjs": {
+        "private": true
+    },
     "lib/ClassResult/ClassicResult.d.ts": {
         "private": true
     },
@@ -431,6 +464,15 @@
         "private": true
     },
     "lib/ClassResult/ClassicResult.mjs": {
+        "private": true
+    },
+    "lib/ClassResult/compat.d.ts": {
+        "private": true
+    },
+    "lib/ClassResult/compat.js": {
+        "private": true
+    },
+    "lib/ClassResult/compat.mjs": {
         "private": true
     },
     "lib/Maybe/ErrorMessage.d.ts": null,

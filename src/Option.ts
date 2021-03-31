@@ -11,3 +11,5 @@ export {
     createClassicSome as createSome,
     createClassicNone as createNone,
 } from './ClassOption/ClassicOption';
+
+export { compatToClassicOption, compatToPlainOption } from './ClassOption/compat';
