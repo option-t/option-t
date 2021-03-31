@@ -2,6 +2,7 @@
 
 /**
  *  @deprecated
+ *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  @constructor
@@ -15,7 +16,7 @@
  *
  *  The usecase example is a `React.PropTypes.
  */
-export class OptionBase {
+export class ClassicOptionBase {
     constructor(ok, val) {
         /**
          *  @private
@@ -32,8 +33,12 @@ export class OptionBase {
         Object.seal(this);
     }
 }
-OptionBase.prototype = Object.freeze({
+ClassicOptionBase.prototype = Object.freeze({
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return whether this is `Some<T>` or not.
      *
      *  @return {boolean}
@@ -43,6 +48,10 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return whether this is `None` or not.
      *
      *  @return {boolean}
@@ -52,6 +61,10 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Returns the inner `T` of a `Some<T>`.
      *
      *  @template   T
@@ -69,6 +82,10 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Returns the contained value or a default value `def`.
      *
      *  @template   T
@@ -81,6 +98,14 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Returns the contained value or computes it from a closure `fn`.
      *
      *  @template   T
@@ -93,6 +118,10 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Returns the inner `T` of a `Some<T>`.
      *
      *  @template   T
@@ -112,6 +141,10 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Maps an `Option<T>` to `Option<U>` by applying a function to a contained value.
      *
      *  @template   T, U
@@ -126,11 +159,15 @@ OptionBase.prototype = Object.freeze({
         }
 
         const value = fn(this.val);
-        const option = createSome(value);
+        const option = createClassicSome(value);
         return option;
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Returns `None` if the self is `None`,
      *  otherwise calls `fn` with the wrapped value and returns the result.
      *
@@ -146,7 +183,7 @@ OptionBase.prototype = Object.freeze({
         }
 
         const mapped = fn(this.val);
-        const isOption = mapped instanceof OptionBase;
+        const isOption = mapped instanceof ClassicOptionBase;
         if (!isOption) {
             throw new TypeError("Option<T>.flatMap()' param `fn` should return `Option<T>`.");
         }
@@ -155,6 +192,10 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Applies a function `fn` to the contained value or returns a default `def`.
      *
      *  @template   T, U
@@ -172,6 +213,10 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Applies a function `fn` to the contained value or computes a default result by `defFn`.
      *
      *  @template   T, U
@@ -189,6 +234,10 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Returns `None` if the self is `None`, otherwise returns `optb`.
      *
      *  @template   U
@@ -201,6 +250,10 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  The alias of `Option<T>.flatMap()`.
      *
      *  @template   T, U
@@ -213,6 +266,10 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Returns the self if it contains a value, otherwise returns `optb`.
      *
      *  @template   T
@@ -225,6 +282,10 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Returns the self if it contains a value,
      *  otherwise calls `fn` and returns the result.
      *
@@ -238,7 +299,7 @@ OptionBase.prototype = Object.freeze({
             return this;
         } else {
             const value = fn();
-            if (value instanceof OptionBase) {
+            if (value instanceof ClassicOptionBase) {
                 return value;
             }
 
@@ -247,6 +308,10 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Finalize the self.
      *  After this is called, the object's behavior is not defined.
      *
@@ -264,6 +329,10 @@ OptionBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  @return {*}
      */
     toJSON() {
@@ -277,25 +346,27 @@ OptionBase.prototype = Object.freeze({
 
 /**
  *  @deprecated
+ *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  @template   T
  *  @param  {T}   val
  *  @return    {OptionT<T>}
  */
-export function createSome(val) {
-    const o = new OptionBase(true, val);
+export function createClassicSome(val) {
+    const o = new ClassicOptionBase(true, val);
     return o;
 }
 
 /**
  *  @deprecated
+ *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  @template   T
  *  @return    {OptionT<T>}
  */
-export function createNone() {
-    const o = new OptionBase(false, undefined);
+export function createClassicNone() {
+    const o = new ClassicOptionBase(false, undefined);
     return o;
 }

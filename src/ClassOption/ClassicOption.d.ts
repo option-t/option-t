@@ -1,29 +1,43 @@
-import { MapFn, RecoveryFn, TapFn } from './shared/Function';
+import type { MapFn, RecoveryFn, TapFn } from '../shared/Function';
 
 /**
  *  @deprecated
+ *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export type FlatmapFn<T, U> = MapFn<T, Option<U>>;
+export type ClassicFlatmapFn<T, U> = MapFn<T, ClassicOption<U>>;
 
 /**
  *  @deprecated
+ *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export type MayRecoveryFn<T> = RecoveryFn<Option<T>>;
+export type ClassicMayRecoveryFn<T> = RecoveryFn<ClassicOption<T>>;
 
-interface Optionable<T> {
+interface ClassicOptionable<T> {
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return whether the self is `Some<T>` or not.
      */
     readonly isSome: boolean;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return whether the self is `None` or not.
      */
     readonly isNone: boolean;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return the inner `T` of a `Some<T>`.
      *
      *  @throws {Error}
@@ -32,6 +46,10 @@ interface Optionable<T> {
     unwrap(): T | never;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return the contained value or a default value `def`.
      *
      *  @param  def
@@ -40,6 +58,10 @@ interface Optionable<T> {
     unwrapOr(def: T): T;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return the contained value or compute it from a closure `fn`.
      *
      *  @param fn
@@ -48,6 +70,10 @@ interface Optionable<T> {
     unwrapOrElse(fn: RecoveryFn<T>): T;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return the inner `T` of a `Some<T>`.
      *
      *  @param  msg
@@ -59,15 +85,23 @@ interface Optionable<T> {
     expect(msg: string): T | never;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Map an `Option<T>` to `Option<U>` by applying a function to the contained value.
      *
      *  @param  fn
      *      The function which is applied to the contained value and return the result
      *      if the self is a `Some<T>`.
      */
-    map<U>(fn: MapFn<T, U>): Option<U>;
+    map<U>(fn: MapFn<T, U>): ClassicOption<U>;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return `None` if the self is `None`,
      *  otherwise call `fn` with the wrapped value and return the result.
      *
@@ -75,9 +109,13 @@ interface Optionable<T> {
      *      The function which is applied to the contained value and return the result
      *      if the self is a `Some<T>`. This result will be flattened once.
      */
-    flatMap<U>(fn: FlatmapFn<T, U>): Option<U>;
+    flatMap<U>(fn: ClassicFlatmapFn<T, U>): ClassicOption<U>;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Apply a function `fn` to the contained value or return a default `def`.
      *
      *  @param  def
@@ -89,6 +127,10 @@ interface Optionable<T> {
     mapOr<U>(def: U, fn: MapFn<T, U>): U;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Apply a function `fn` to the contained value or produce a default result by `defFn`.
      *
      *  @param  defFn
@@ -100,39 +142,59 @@ interface Optionable<T> {
     mapOrElse<U>(def: RecoveryFn<U>, fn: MapFn<T, U>): U;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return the passed value if the self is `Some<T>`,
      *  otherwise return `None`.
      *
      *  @param  optb
      *      The value which is returned if the self is a `Some<T>`.
      */
-    and<U>(optb: Option<U>): Option<U>;
+    and<U>(optb: ClassicOption<U>): ClassicOption<U>;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  The alias of `Option<T>.flatMap()`.
      *
      *  @param  fn
      */
-    andThen<U>(fn: FlatmapFn<T, U>): Option<U>;
+    andThen<U>(fn: ClassicFlatmapFn<T, U>): ClassicOption<U>;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return the self if it contains a value, otherwise return `optb`.
      *
      *  @param  optb
      *      The default value which is used if the self is a `None`.
      */
-    or(optb: Option<T>): Option<T>;
+    or(optb: ClassicOption<T>): ClassicOption<T>;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return the self if it contains a value,
      *  otherwise call `fn` and returns the result.
      *
      *  @param  fn
      *      The function which produces a default value which is used if the self is a `None`.
      */
-    orElse(fn: MayRecoveryFn<T>): Option<T>;
+    orElse(fn: ClassicMayRecoveryFn<T>): ClassicOption<T>;
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Finalize the self.
      *  After this is called, the object's behavior is not defined.
      *
@@ -146,6 +208,7 @@ interface Optionable<T> {
 
 /**
  *  @deprecated
+ *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  The base object of `Some<T>` and `None<T>`.
@@ -166,7 +229,7 @@ interface Optionable<T> {
  *  See also:
  *  https://github.com/karen-irc/option-t/pull/77
  */
-export abstract class OptionBase<T> implements Optionable<T> {
+export abstract class ClassicOptionBase<T> implements ClassicOptionable<T> {
     private readonly ok: boolean;
     private readonly val: T | undefined;
 
@@ -179,36 +242,77 @@ export abstract class OptionBase<T> implements Optionable<T> {
     unwrapOr(def: T): T;
     unwrapOrElse(fn: RecoveryFn<T>): T;
     expect(msg: string): T | never;
-    map<U>(fn: MapFn<T, U>): Option<U>;
-    flatMap<U>(fn: FlatmapFn<T, U>): Option<U>;
+    map<U>(fn: MapFn<T, U>): ClassicOption<U>;
+    flatMap<U>(fn: ClassicFlatmapFn<T, U>): ClassicOption<U>;
     mapOr<U>(def: U, fn: MapFn<T, U>): U;
     mapOrElse<U>(def: RecoveryFn<U>, fn: MapFn<T, U>): U;
-    and<U>(optb: Option<U>): Option<U>;
-    andThen<U>(fn: FlatmapFn<T, U>): Option<U>;
-    or(optb: Option<T>): Option<T>;
-    orElse(fn: MayRecoveryFn<T>): Option<T>;
+    and<U>(optb: ClassicOption<U>): ClassicOption<U>;
+    andThen<U>(fn: ClassicFlatmapFn<T, U>): ClassicOption<U>;
+    or(optb: ClassicOption<T>): ClassicOption<T>;
+    orElse(fn: ClassicMayRecoveryFn<T>): ClassicOption<T>;
     drop(destructor?: TapFn<T>): void;
     // FYI: this is json representation.
     // eslint-disable-next-line @typescript-eslint/naming-convention
     toJSON(): { is_some: boolean; value: T | undefined };
 }
 
-interface Some<T> extends Optionable<T> {
+interface ClassicSome<T> extends ClassicOptionable<T> {
+    /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     */
     readonly isSome: true;
+    /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     */
     readonly isNone: false;
+    /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     */
     unwrap(): T;
+    /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     */
     expect(msg: string): T;
 }
 
-interface None<T> extends Optionable<T> {
+interface ClassicNone<T> extends ClassicOptionable<T> {
+    /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     */
     readonly isSome: false;
+    /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     */
     readonly isNone: true;
+    /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     */
     unwrap(): never;
+    /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     */
     expect(msg: string): never;
 }
 
 /**
  *  @deprecated
+ *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  The Option/Maybe type interface whose APIs are inspired
@@ -232,16 +336,18 @@ interface None<T> extends Optionable<T> {
  *  to reduce an object allocation. Thus comparing _this `Option<T>`` is meaningles.
  *  This is by design because we think this pattern is meaningless.
  */
-export type Option<T> = Some<T> | None<T>;
+export type ClassicOption<T> = ClassicSome<T> | ClassicNone<T>;
 
 /**
  *  @deprecated
+ *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export declare function createSome<T>(val: T): Some<T>;
+export declare function createClassicSome<T>(val: T): ClassicSome<T>;
 
 /**
  *  @deprecated
+ *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export declare function createNone<T>(): None<T>;
+export declare function createClassicNone<T>(): ClassicNone<T>;

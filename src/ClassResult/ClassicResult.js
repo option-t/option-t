@@ -1,9 +1,10 @@
-import { createSome, createNone } from './Option';
+import { createClassicSome, createClassicNone } from '../ClassOption/ClassicOption';
 
 /* eslint-enable valid-jsdoc */
 
 /**
  *  @deprecated
+ *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  @constructor
@@ -18,7 +19,7 @@ import { createSome, createNone } from './Option';
  *
  *  The usecase example is a `React.PropTypes`.
  */
-export class ResultBase {
+export class ClassicResultBase {
     constructor(ok, val, err) {
         /**
          *  @private
@@ -38,8 +39,12 @@ export class ResultBase {
         Object.seal(this);
     }
 }
-ResultBase.prototype = Object.freeze({
+ClassicResultBase.prototype = Object.freeze({
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Returns true if the result is `Ok`.
      *
      *  @return {boolean}
@@ -49,6 +54,10 @@ ResultBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Returns true if the result is `Err`.
      *
      *  @return {boolean}
@@ -58,6 +67,10 @@ ResultBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Converts from `Result<T, E>` to `Option<T>`.
      *  If the self is `Ok`, returns `Some<T>`.
      *  Otherwise, returns `None<T>`.
@@ -66,13 +79,17 @@ ResultBase.prototype = Object.freeze({
      */
     ok() {
         if (this._isOk) {
-            return createSome(this._v);
+            return createClassicSome(this._v);
         } else {
-            return createNone();
+            return createClassicNone();
         }
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Converts from `Result<T, E>` to `Option<E>`.
      *  If the self is `Err`, returns `Some<E>`.
      *  Otherwise, returns `None<E>`.
@@ -81,13 +98,17 @@ ResultBase.prototype = Object.freeze({
      */
     err() {
         if (!this._isOk) {
-            return createSome(this._e);
+            return createClassicSome(this._e);
         } else {
-            return createNone();
+            return createClassicNone();
         }
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Maps a `Result<T, E>` to `Result<U, E>` by applying a function `mapFn<T, U>`
      *  to an contained `Ok` value, leaving an `Err` value untouched.
      *
@@ -104,11 +125,15 @@ ResultBase.prototype = Object.freeze({
         }
 
         const value = op(this._v);
-        const result = createOk(value);
+        const result = createClassicOk(value);
         return result;
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Maps a `Result<T, E>` to `U` by applying a function to a contained `Ok` value,
      *  or a `fallback` function to a contained `Err` value.
      *  This function can be used to unpack a successful result while handling an error.
@@ -129,6 +154,10 @@ ResultBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Maps a `Result<T, E>` to `Result<T, F>` by applying a function `mapFn<E, F>`
      *  to an contained `Err` value, leaving an `Ok` value untouched.
      *
@@ -145,11 +174,15 @@ ResultBase.prototype = Object.freeze({
         }
 
         const value = op(this._e);
-        const result = createErr(value);
+        const result = createClassicErr(value);
         return result;
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Returns `res` if the result is `Ok`, otherwise returns the `Err` value of self.
      *
      *  @template   U
@@ -166,6 +199,10 @@ ResultBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Calls `op` if the result is `Ok`, otherwise returns the `Err` value of self.
      *  This function can be used for control flow based on result values.
      *
@@ -180,7 +217,7 @@ ResultBase.prototype = Object.freeze({
         }
 
         const mapped = op(this._v);
-        const isResult = mapped instanceof ResultBase;
+        const isResult = mapped instanceof ClassicResultBase;
         if (!isResult) {
             throw new TypeError("Result<T, E>.andThen()' param `op` should return `Result<U, E>`.");
         }
@@ -189,6 +226,10 @@ ResultBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Returns `res` if the result is `Err`, otherwise returns the `Ok` value of self.
      *
      *  @template   F
@@ -205,6 +246,10 @@ ResultBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Calls `op` if the result is `Err`, otherwise returns the `Ok` value of self.
      *  This function can be used for control flow based on result values.
      *
@@ -219,7 +264,7 @@ ResultBase.prototype = Object.freeze({
         }
 
         const mapped = op(this._e);
-        const isResult = mapped instanceof ResultBase;
+        const isResult = mapped instanceof ClassicResultBase;
         if (!isResult) {
             throw new TypeError("Result<T, E>.orElse()' param `op` should return `Result<T, F>`.");
         }
@@ -228,6 +273,10 @@ ResultBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return the inner `T` of a `Ok(T)`.
      *
      *  @return {T}
@@ -240,6 +289,10 @@ ResultBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return the inner `E` of a `Err(E)`.
      *
      *  @return {E}
@@ -256,6 +309,10 @@ ResultBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Unwraps a result, return the content of an `Ok`. Else it returns `optb`.
      *
      *  @param  {T} optb
@@ -270,6 +327,10 @@ ResultBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Unwraps a result, returns the content of an `Ok`.
      *  If the value is an `Err` then it calls `op` with its value.
      *
@@ -286,6 +347,10 @@ ResultBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  Return the inner `T` of a `Ok(T)`.
      *
      *  @param  {string}    message
@@ -303,6 +368,10 @@ ResultBase.prototype = Object.freeze({
     },
 
     /**
+     *  @deprecated
+     *      We keep this only for backward compatibility.
+     *      See https://github.com/karen-irc/option-t/issues/459
+     *
      *  The destructor method inspired by Rust's `Drop` trait.
      *  We don't define the object's behavior after calling this.
      *
@@ -330,26 +399,28 @@ ResultBase.prototype = Object.freeze({
 
 /**
  *  @deprecated
+ *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  @template   T, E
  *  @param  {!T} v
  *  @return    {Result<T, E>}
  */
-export function createOk(v) {
-    const o = new ResultBase(true, v, undefined);
+export function createClassicOk(v) {
+    const o = new ClassicResultBase(true, v, undefined);
     return o;
 }
 
 /**
  *  @deprecated
+ *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  @template   T, E
  *  @param  {!E} e
  *  @return    {Result<T, E>}
  */
-export function createErr(e) {
-    const o = new ResultBase(false, undefined, e);
+export function createClassicErr(e) {
+    const o = new ClassicResultBase(false, undefined, e);
     return o;
 }

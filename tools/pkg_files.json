@@ -3,6 +3,18 @@
     "CHANGELOG_OLD.md": null,
     "LICENSE.MIT": null,
     "README.md": null,
+    "cjs/ClassOption/ClassicOption.d.ts": {
+        "private": true
+    },
+    "cjs/ClassOption/ClassicOption.js": {
+        "private": true
+    },
+    "cjs/ClassResult/ClassicResult.d.ts": {
+        "private": true
+    },
+    "cjs/ClassResult/ClassicResult.js": {
+        "private": true
+    },
     "cjs/Maybe/ErrorMessage.d.ts": null,
     "cjs/Maybe/ErrorMessage.js": null,
     "cjs/Maybe/Maybe.d.ts": null,
@@ -199,6 +211,18 @@
     "docs/idiom/README.md": null,
     "docs/public_api_list.md": null,
     "docs/wrapper_objects.md": null,
+    "esm/ClassOption/ClassicOption.d.ts": {
+        "private": true
+    },
+    "esm/ClassOption/ClassicOption.mjs": {
+        "private": true
+    },
+    "esm/ClassResult/ClassicResult.d.ts": {
+        "private": true
+    },
+    "esm/ClassResult/ClassicResult.mjs": {
+        "private": true
+    },
     "esm/Maybe/ErrorMessage.d.ts": null,
     "esm/Maybe/ErrorMessage.mjs": null,
     "esm/Maybe/Maybe.d.ts": null,
@@ -391,6 +415,24 @@
     "esm/shared/Function.mjs": null,
     "esm/shared/Mutable.d.ts": null,
     "esm/shared/Mutable.mjs": null,
+    "lib/ClassOption/ClassicOption.d.ts": {
+        "private": true
+    },
+    "lib/ClassOption/ClassicOption.js": {
+        "private": true
+    },
+    "lib/ClassOption/ClassicOption.mjs": {
+        "private": true
+    },
+    "lib/ClassResult/ClassicResult.d.ts": {
+        "private": true
+    },
+    "lib/ClassResult/ClassicResult.js": {
+        "private": true
+    },
+    "lib/ClassResult/ClassicResult.mjs": {
+        "private": true
+    },
     "lib/Maybe/ErrorMessage.d.ts": null,
     "lib/Maybe/ErrorMessage.js": null,
     "lib/Maybe/ErrorMessage.mjs": null,
