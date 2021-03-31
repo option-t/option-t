@@ -1,3 +1,8 @@
+/**
+ *  @deprecated
+ *      We keep this file only for backward compatibility.
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
 export {
     ClassicFlatmapOkFn as FlatmapOkFn,
     ClassicFlatmapErrFn as FlatmapErrFn,
