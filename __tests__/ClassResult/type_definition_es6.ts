@@ -4,11 +4,12 @@
 // The type definitions for '--moduleResolution node' is a ES6 format,
 // So it would test it by importing it simply.
 import { Option } from '../../__dist/esm/Option';
-import { Result, ResultBase, createOk, createErr } from '../../__dist/esm/Result';
+import { Result, ResultBase, createOk, createErr, Ok, Err } from '../../__dist/esm/Result';
 
 //  Ok<T>
 (function () {
     let result: Result<number, void> = createOk<number, void>(1);
+    result = new Ok<number, void>(1);
     result = createOk<number, void>(1);
 
     const isOk: boolean = result.isOk();
@@ -59,6 +60,7 @@ import { Result, ResultBase, createOk, createErr } from '../../__dist/esm/Result
 //  Err<E>
 (function () {
     let result: Result<number, void> = createErr<number, void>(undefined);
+    result = new Err<number, void>(undefined);
     result = createErr<number, void>(undefined);
 
     const isOk: boolean = result.isOk();

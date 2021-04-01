@@ -2,7 +2,6 @@
 
 /**
  *  @deprecated
- *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  @constructor
@@ -35,10 +34,6 @@ export class ClassicOptionBase {
 }
 ClassicOptionBase.prototype = Object.freeze({
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Return whether this is `Some<T>` or not.
      *
      *  @return {boolean}
@@ -48,10 +43,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Return whether this is `None` or not.
      *
      *  @return {boolean}
@@ -61,10 +52,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns the inner `T` of a `Some<T>`.
      *
      *  @template   T
@@ -82,10 +69,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns the contained value or a default value `def`.
      *
      *  @template   T
@@ -98,14 +81,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns the contained value or computes it from a closure `fn`.
      *
      *  @template   T
@@ -118,10 +93,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns the inner `T` of a `Some<T>`.
      *
      *  @template   T
@@ -141,10 +112,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Maps an `Option<T>` to `Option<U>` by applying a function to a contained value.
      *
      *  @template   T, U
@@ -164,10 +131,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns `None` if the self is `None`,
      *  otherwise calls `fn` with the wrapped value and returns the result.
      *
@@ -192,10 +155,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Applies a function `fn` to the contained value or returns a default `def`.
      *
      *  @template   T, U
@@ -213,10 +172,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Applies a function `fn` to the contained value or computes a default result by `defFn`.
      *
      *  @template   T, U
@@ -234,10 +189,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns `None` if the self is `None`, otherwise returns `optb`.
      *
      *  @template   U
@@ -250,10 +201,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  The alias of `Option<T>.flatMap()`.
      *
      *  @template   T, U
@@ -266,10 +213,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns the self if it contains a value, otherwise returns `optb`.
      *
      *  @template   T
@@ -282,10 +225,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns the self if it contains a value,
      *  otherwise calls `fn` and returns the result.
      *
@@ -308,10 +247,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Finalize the self.
      *  After this is called, the object's behavior is not defined.
      *
@@ -329,10 +264,6 @@ ClassicOptionBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  @return {*}
      */
     toJSON() {
@@ -346,7 +277,6 @@ ClassicOptionBase.prototype = Object.freeze({
 
 /**
  *  @deprecated
- *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  @template   T
@@ -360,7 +290,6 @@ export function createClassicSome(val) {
 
 /**
  *  @deprecated
- *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  @template   T
@@ -369,4 +298,20 @@ export function createClassicSome(val) {
 export function createClassicNone() {
     const o = new ClassicOptionBase(false, undefined);
     return o;
+}
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
+export function ClassicSomeConstructor(val) {
+    return createClassicSome(val);
+}
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
+export function ClassicNoneConstructor() {
+    return createClassicNone();
 }

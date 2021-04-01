@@ -10,6 +10,8 @@ export {
     ClassicResult as Result,
     createClassicOk as createOk,
     createClassicErr as createErr,
+    ClassicOkConstructor as Ok,
+    ClassicErrConstructor as Err,
 } from './ClassResult/ClassicResult';
 
 export { compatToClassicResult, compatToPlainResult } from './ClassResult/compat';

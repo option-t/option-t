@@ -1,11 +1,12 @@
 // XXX:
 // The type definitions for '--moduleResolution node' is a ES6 format,
 // So it would test it by importing it simply.
-import { Option, OptionBase, createSome, createNone } from '../../__dist/esm/Option.mjs';
+import { Option, OptionBase, createSome, createNone, Some, None } from '../../__dist/esm/Option';
 
 // `Some<T>`
 (function () {
     var option: Option<number> = createSome(1);
+    option = new Some<number>(1);
     option = createSome<number>(1);
     var isSome: boolean = option.isSome;
     var isNone: boolean = option.isNone;
@@ -51,6 +52,7 @@ import { Option, OptionBase, createSome, createNone } from '../../__dist/esm/Opt
 // `None<T>`
 (function () {
     var option: Option<number> = createNone<number>();
+    option = new None<number>();
     option = createNone<number>();
     var isSome: boolean = option.isSome;
     var isNone: boolean = option.isNone;

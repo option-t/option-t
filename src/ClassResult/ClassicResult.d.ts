@@ -3,42 +3,33 @@ import type { MapFn, RecoveryWithErrorFn, TapFn } from '../shared/Function';
 
 /**
  *  @deprecated
- *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  */
 export type ClassicFlatmapOkFn<T, U, E> = MapFn<T, ClassicResult<U, E>>;
 
 /**
  *  @deprecated
- *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  */
 export type ClassicFlatmapErrFn<T, E, F> = MapFn<E, ClassicResult<T, F>>;
 
+/**
+ *  @deprecated
+ *      We keep this only for backward compatibility.
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
 interface ClassicResultable<T, E> {
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns true if the result is `Ok`.
      */
     isOk(): this is ClassicOk<T, E>;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns true if the result is `Err`.
      */
     isErr(): this is ClassicErr<T, E>;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Converts from `Result<T, E>` to `Option<T>`.
      *  If the self is `Ok`, returns `Some<T>`.
      *  Otherwise, returns `None<T>`.
@@ -46,10 +37,6 @@ interface ClassicResultable<T, E> {
     ok(): ClassicOption<T>;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Converts from `Result<T, E>` to `Option<E>`.
      *  If the self is `Err`, returns `Some<E>`.
      *  Otherwise, returns `None<E>`.
@@ -57,10 +44,6 @@ interface ClassicResultable<T, E> {
     err(): ClassicOption<E>;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Maps a `Result<T, E>` to `Result<U, E>` by applying a function `mapFn<T, U>`
      *  to an contained `Ok` value, leaving an `Err` value untouched.
      *
@@ -69,10 +52,6 @@ interface ClassicResultable<T, E> {
     map<U>(op: MapFn<T, U>): ClassicResult<U, E>;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Maps a `Result<T, E>` to `U` by applying a function to a contained `Ok` value,
      *  or a `fallback` function to a contained `Err` value.
      *  This function can be used to unpack a successful result while handling an error.
@@ -80,10 +59,6 @@ interface ClassicResultable<T, E> {
     mapOrElse<U>(fallback: RecoveryWithErrorFn<E, U>, selector: MapFn<T, U>): U;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Maps a `Result<T, E>` to `Result<T, F>` by applying a function `mapFn<E, F>`
      *  to an contained `Err` value, leaving an `Ok` value untouched.
      *
@@ -92,48 +67,28 @@ interface ClassicResultable<T, E> {
     mapErr<F>(op: MapFn<E, F>): ClassicResult<T, F>;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns `res` if the result is `Ok`, otherwise returns the `Err` value of self.
      */
     and<U>(res: ClassicResult<U, E>): ClassicResult<U, E>;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Calls `op` if the result is `Ok`, otherwise returns the `Err` value of self.
      *  This function can be used for control flow based on result values.
      */
     andThen<U>(op: ClassicFlatmapOkFn<T, U, E>): ClassicResult<U, E>;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns `res` if the result is `Err`, otherwise returns the `Ok` value of self.
      */
     or<F>(res: ClassicResult<T, F>): ClassicResult<T, F>;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Calls `op` if the result is `Err`, otherwise returns the `Ok` value of self.
      *  This function can be used for control flow based on result values.
      */
     orElse<F>(op: ClassicFlatmapErrFn<T, E, F>): ClassicResult<T, F>;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Return the inner `T` of a `Ok(T)`.
      *
      *  @throws {Error}
@@ -142,10 +97,6 @@ interface ClassicResultable<T, E> {
     unwrap(): T | never;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Return the inner `E` of a `Err(E)`.
      *
      *  @throws {Error}
@@ -154,29 +105,17 @@ interface ClassicResultable<T, E> {
     unwrapErr(): E | never;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Unwraps a result, return the content of an `Ok`. Else it returns `optb`.
      */
     unwrapOr(optb: T): T;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Unwraps a result, returns the content of an `Ok`.
      *  If the value is an `Err` then it calls `op` with its value.
      */
     unwrapOrElse(op: RecoveryWithErrorFn<E, T>): T;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Return the inner `T` of a `Ok(T)`.
      *
      *  @throws {Error}
@@ -185,10 +124,6 @@ interface ClassicResultable<T, E> {
     expect(message: string): T | never;
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  The destructor method inspired by Rust's `Drop` trait.
      *  We don't define the object's behavior after calling this.
      *
@@ -202,7 +137,6 @@ interface ClassicResultable<T, E> {
 
 /**
  *  @deprecated
- *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  * XXX:
@@ -235,85 +169,40 @@ export abstract class ClassicResultBase<T, E> implements ClassicResultable<T, E>
     drop(destructor?: TapFn<T>, errDestructor?: TapFn<E>): void;
 }
 
+/**
+ *  @deprecated
+ *      We keep this only for backward compatibility.
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
 interface ClassicOk<T, E> extends ClassicResultable<T, E> {
-    /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     */
     ok(): Some<T>;
-    /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     */
     err(): None<E>;
-    /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     */
     unwrap(): T;
-    /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     */
     unwrapErr(): never;
-    /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     */
     unwrapOr(optb: T): T;
-    /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     */
     expect(message: string): T;
-}
-
-// XXX:
-// This class intend to represent the container of some error type `E`.
-// So we don't define this as `Error`'s subclass
-// or don't restrict type parameter `E`'s upper bound to `Error`.
-interface ClassicErr<T, E> extends ClassicResultable<T, E> {
-    /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     */
-    ok(): None<T>;
-    /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     */
-    err(): Some<E>;
-    /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     */
-    unwrap(): never;
-    /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     */
-    unwrapErr(): E;
-    /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     */
-    expect(message: string): never;
 }
 
 /**
  *  @deprecated
  *      We keep this only for backward compatibility.
+ *      See https://github.com/karen-irc/option-t/issues/459
+ *
+ *  XXX:
+ *  This class intend to represent the container of some error type `E`.
+ *  So we don't define this as `Error`'s subclass
+ *  or don't restrict type parameter `E`'s upper bound to `Error`.
+ */
+interface ClassicErr<T, E> extends ClassicResultable<T, E> {
+    ok(): None<T>;
+    err(): Some<E>;
+    unwrap(): never;
+    unwrapErr(): E;
+    expect(message: string): never;
+}
+
+/**
+ *  @deprecated
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  The Result/Either type interface whose APIs are inspired
@@ -341,14 +230,26 @@ export type ClassicResult<T, E> = ClassicOk<T, E> | ClassicErr<T, E>;
 
 /**
  *  @deprecated
- *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  */
 export declare function createClassicOk<T, E>(val: T): ClassicOk<T, E>;
 
 /**
  *  @deprecated
- *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  */
 export declare function createClassicErr<T, E>(err: E): ClassicErr<T, E>;
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export declare const ClassicOkConstructor: new <T, E>(val: T) => ClassicOk<T, E>;
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export declare const ClassicErrConstructor: new <T, E>(err: E) => ClassicErr<T, E>;
