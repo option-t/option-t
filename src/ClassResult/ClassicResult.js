@@ -4,7 +4,6 @@ import { createClassicSome, createClassicNone } from '../ClassOption/ClassicOpti
 
 /**
  *  @deprecated
- *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  @constructor
@@ -41,10 +40,6 @@ export class ClassicResultBase {
 }
 ClassicResultBase.prototype = Object.freeze({
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns true if the result is `Ok`.
      *
      *  @return {boolean}
@@ -54,10 +49,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns true if the result is `Err`.
      *
      *  @return {boolean}
@@ -67,10 +58,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Converts from `Result<T, E>` to `Option<T>`.
      *  If the self is `Ok`, returns `Some<T>`.
      *  Otherwise, returns `None<T>`.
@@ -86,10 +73,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Converts from `Result<T, E>` to `Option<E>`.
      *  If the self is `Err`, returns `Some<E>`.
      *  Otherwise, returns `None<E>`.
@@ -105,10 +88,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Maps a `Result<T, E>` to `Result<U, E>` by applying a function `mapFn<T, U>`
      *  to an contained `Ok` value, leaving an `Err` value untouched.
      *
@@ -130,10 +109,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Maps a `Result<T, E>` to `U` by applying a function to a contained `Ok` value,
      *  or a `fallback` function to a contained `Err` value.
      *  This function can be used to unpack a successful result while handling an error.
@@ -154,10 +129,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Maps a `Result<T, E>` to `Result<T, F>` by applying a function `mapFn<E, F>`
      *  to an contained `Err` value, leaving an `Ok` value untouched.
      *
@@ -179,10 +150,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns `res` if the result is `Ok`, otherwise returns the `Err` value of self.
      *
      *  @template   U
@@ -199,10 +166,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Calls `op` if the result is `Ok`, otherwise returns the `Err` value of self.
      *  This function can be used for control flow based on result values.
      *
@@ -226,10 +189,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Returns `res` if the result is `Err`, otherwise returns the `Ok` value of self.
      *
      *  @template   F
@@ -246,10 +205,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Calls `op` if the result is `Err`, otherwise returns the `Ok` value of self.
      *  This function can be used for control flow based on result values.
      *
@@ -273,10 +228,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Return the inner `T` of a `Ok(T)`.
      *
      *  @return {T}
@@ -289,10 +240,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Return the inner `E` of a `Err(E)`.
      *
      *  @return {E}
@@ -309,10 +256,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Unwraps a result, return the content of an `Ok`. Else it returns `optb`.
      *
      *  @param  {T} optb
@@ -327,10 +270,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Unwraps a result, returns the content of an `Ok`.
      *  If the value is an `Err` then it calls `op` with its value.
      *
@@ -347,10 +286,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  Return the inner `T` of a `Ok(T)`.
      *
      *  @param  {string}    message
@@ -368,10 +303,6 @@ ClassicResultBase.prototype = Object.freeze({
     },
 
     /**
-     *  @deprecated
-     *      We keep this only for backward compatibility.
-     *      See https://github.com/karen-irc/option-t/issues/459
-     *
      *  The destructor method inspired by Rust's `Drop` trait.
      *  We don't define the object's behavior after calling this.
      *
@@ -399,7 +330,6 @@ ClassicResultBase.prototype = Object.freeze({
 
 /**
  *  @deprecated
- *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  @template   T, E
@@ -413,7 +343,6 @@ export function createClassicOk(v) {
 
 /**
  *  @deprecated
- *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  *
  *  @template   T, E
