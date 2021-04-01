@@ -123,7 +123,7 @@ yarn add option-t --save
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
 * [Wrapper objects](./docs/wrapper_objects.md) ([__*deprecated*__](https://github.com/karen-irc/option-t/issues/459)).
     * [`ClassicOption<T>`](./src/ClassOption/ClassicOption.d.ts)
-    * [`ClassicOption<T, E>`](./src/ClassResult/ClassicResult.d.ts)
+    * [`ClassicResult<T, E>`](./src/ClassResult/ClassicResult.d.ts)
 
 
 ### Utility functions for some types.
