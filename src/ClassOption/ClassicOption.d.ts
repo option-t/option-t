@@ -260,3 +260,17 @@ export declare function createClassicSome<T>(val: T): ClassicSome<T>;
  *      See https://github.com/karen-irc/option-t/issues/459
  */
 export declare function createClassicNone<T>(): ClassicNone<T>;
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export declare const ClassicSomeConstructor: new <T>(val: T) => ClassicSome<T>;
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export declare const ClassicNoneConstructor: new <T>() => ClassicNone<T>;

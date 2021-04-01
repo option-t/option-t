@@ -10,6 +10,8 @@ export {
     ClassicOption as Option,
     createClassicSome as createSome,
     createClassicNone as createNone,
+    ClassicSomeConstructor as Some,
+    ClassicNoneConstructor as None,
 } from './ClassOption/ClassicOption';
 
 export { compatToClassicOption, compatToPlainOption } from './ClassOption/compat';

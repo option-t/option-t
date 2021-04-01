@@ -239,3 +239,17 @@ export declare function createClassicOk<T, E>(val: T): ClassicOk<T, E>;
  *      See https://github.com/karen-irc/option-t/issues/459
  */
 export declare function createClassicErr<T, E>(err: E): ClassicErr<T, E>;
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export declare const ClassicOkConstructor: new <T, E>(val: T) => ClassicOk<T, E>;
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export declare const ClassicErrConstructor: new <T, E>(err: E) => ClassicErr<T, E>;

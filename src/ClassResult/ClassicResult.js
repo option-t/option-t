@@ -353,3 +353,19 @@ export function createClassicErr(e) {
     const o = new ClassicResultBase(false, undefined, e);
     return o;
 }
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
+export function ClassicOkConstructor(val) {
+    return createClassicOk(val);
+}
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
+export function ClassicErrConstructor(e) {
+    return createClassicErr(e);
+}

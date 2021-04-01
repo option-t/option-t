@@ -299,3 +299,19 @@ export function createClassicNone() {
     const o = new ClassicOptionBase(false, undefined);
     return o;
 }
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
+export function ClassicSomeConstructor(val) {
+    return createClassicSome(val);
+}
+
+/**
+ *  @deprecated
+ *      See https://github.com/karen-irc/option-t/issues/459
+ */
+export function ClassicNoneConstructor() {
+    return createClassicNone();
+}
