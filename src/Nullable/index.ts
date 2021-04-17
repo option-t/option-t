@@ -11,6 +11,7 @@ export { mapOrElseForNullable as mapOrElse } from './mapOrElse';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
 // export { orForNullable as or } from './or';
 export { orElseForNullable as orElse } from './orElse';
+export { orElseAsyncForNullable as orElseAsync } from './orElseAsync';
 export { tapNullable as tap } from './tap';
 export { unwrapNullable as unwrap } from './unwrap';
 export { unwrapOrFromNullable as unwrapOr } from './unwrapOr';
