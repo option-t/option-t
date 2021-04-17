@@ -84,6 +84,7 @@
 - [option-t/PlainResult/expect](../src/PlainResult/expect.ts)
 - [option-t/PlainResult/flatten](../src/PlainResult/flatten.ts)
 - [option-t/PlainResult/map](../src/PlainResult/map.ts)
+- [option-t/PlainResult/mapAsync](../src/PlainResult/mapAsync.ts)
 - [option-t/PlainResult/mapErr](../src/PlainResult/mapErr.ts)
 - [option-t/PlainResult/mapOr](../src/PlainResult/mapOr.ts)
 - [option-t/PlainResult/mapOrElse](../src/PlainResult/mapOrElse.ts)

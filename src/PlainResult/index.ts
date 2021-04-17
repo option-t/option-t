@@ -31,6 +31,7 @@ export { andThenAsyncForResult as andThenAsync } from './andThenAsync';
 export { expectIsOk as expect, expectIsErr as expectErr } from './expect';
 export { flattenForResult as flatten } from './flatten';
 export { mapForResult as map } from './map';
+export { mapAsyncForResult as mapAsync } from './mapAsync';
 export { mapOrForResult as mapOr } from './mapOr';
 export { mapOrElseForResult as mapOrElse } from './mapOrElse';
 export { mapOrElseAsyncForResult as mapOrElseAsync } from './mapOrElseAsync';

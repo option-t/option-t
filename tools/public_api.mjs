@@ -330,6 +330,7 @@ export default {
             'expectErr',
             'flatten',
             'map',
+            'mapAsync',
             'mapOr',
             'mapOrElse',
             'mapOrElseAsync',
@@ -395,6 +396,11 @@ export default {
     'PlainResult/map': {
         'exports': [
             'mapForResult'
+        ]
+    },
+    'PlainResult/mapAsync': {
+        'exports': [
+            'mapAsyncForResult'
         ]
     },
     'PlainResult/mapErr': {
