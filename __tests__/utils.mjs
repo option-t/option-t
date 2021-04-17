@@ -11,7 +11,7 @@ export const nonSerializableObjectVal = [
     new Map(),
     new WeakSet(),
     new WeakMap(),
-    new Promise((resolve) => resolve()),
+    new Promise((resolve) => resolve('this is promise')),
 ];
 
 export const funcVal = [function () {}];

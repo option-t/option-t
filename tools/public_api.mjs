@@ -108,6 +108,7 @@ export default {
             'unwrap',
             'unwrapOr',
             'unwrapOrElse',
+            'unwrapOrElseAsync',
         ]
     },
     'Nullable/and': {
@@ -174,6 +175,11 @@ export default {
     'Nullable/unwrapOrElse': {
         'exports': [
             'unwrapOrElseFromNullable'
+        ]
+    },
+    'Nullable/unwrapOrElseAsync': {
+        'exports': [
+            'unwrapOrElseAsyncFromNullable'
         ]
     },
     'Nullable/xor': {
