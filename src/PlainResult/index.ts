@@ -33,6 +33,7 @@ export { flattenForResult as flatten } from './flatten';
 export { mapForResult as map } from './map';
 export { mapOrForResult as mapOr } from './mapOr';
 export { mapOrElseForResult as mapOrElse } from './mapOrElse';
+export { mapOrElseAsyncForResult as mapOrElseAsync } from './mapOrElseAsync';
 export { mapErrForResult as mapErr } from './mapErr';
 export { orForResult as or } from './or';
 export { orElseForResult as orElse } from './orElse';

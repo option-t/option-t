@@ -87,6 +87,7 @@
 - [option-t/PlainResult/mapErr](../src/PlainResult/mapErr.ts)
 - [option-t/PlainResult/mapOr](../src/PlainResult/mapOr.ts)
 - [option-t/PlainResult/mapOrElse](../src/PlainResult/mapOrElse.ts)
+- [option-t/PlainResult/mapOrElseAsync](../src/PlainResult/mapOrElseAsync.ts)
 - [option-t/PlainResult/or](../src/PlainResult/or.ts)
 - [option-t/PlainResult/orElse](../src/PlainResult/orElse.ts)
 - [option-t/PlainResult/orElseAsync](../src/PlainResult/orElseAsync.ts)

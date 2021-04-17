@@ -332,6 +332,7 @@ export default {
             'map',
             'mapOr',
             'mapOrElse',
+            'mapOrElseAsync',
             'mapErr',
             'or',
             'orElse',
@@ -409,6 +410,11 @@ export default {
     'PlainResult/mapOrElse': {
         'exports': [
             'mapOrElseForResult'
+        ]
+    },
+    'PlainResult/mapOrElseAsync': {
+        'exports': [
+            'mapOrElseAsyncForResult'
         ]
     },
     'PlainResult/or': {
