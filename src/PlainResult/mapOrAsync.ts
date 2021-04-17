@@ -1,7 +1,6 @@
 import type { MapFn } from '../shared/Function';
-import type { Result } from './Result';
-import { mapAsyncForResult } from './mapAsync';
-import { unwrapOrFromResult } from './unwrapOr';
+import { isErr, Result } from './Result';
+import { unwrapFromResult } from './unwrap';
 
 /**
  *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is `Ok(T)`.
@@ -14,10 +13,12 @@ export function mapOrAsyncForResult<T, E, U>(
     def: U,
     selector: MapFn<T, Promise<U>>
 ): Promise<U> {
-    const transformed = mapAsyncForResult(src, selector)
-    const result = transformed.then((transformed) => {
-        return unwrapOrFromResult(transformed, def);
-    });
-    
-    return result;
+    if (isErr(src)) {
+        const result: Promise<U> = Promise.resolve(def);
+        return result;
+    }
+
+    const source: T = unwrapFromResult(src);
+    const transformed: Promise<U> = selector(source);
+    return transformed;
 }
