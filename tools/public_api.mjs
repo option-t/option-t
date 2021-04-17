@@ -348,6 +348,7 @@ export default {
             'unwrapErr',
             'unwrapOr',
             'unwrapOrElse',
+            'unwrapOrElseAsync',
         ]
     },
 
@@ -465,6 +466,11 @@ export default {
     'PlainResult/unwrapOrElse': {
         'exports': [
             'unwrapOrElseFromResult'
+        ]
+    },
+    'PlainResult/unwrapOrElseAsync': {
+        'exports': [
+            'unwrapOrElseAsyncFromResult'
         ]
     },
 

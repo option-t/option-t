@@ -48,3 +48,4 @@ export {
 export { unwrapFromResult as unwrap, unwrapErrFromResult as unwrapErr } from './unwrap';
 export { unwrapOrFromResult as unwrapOr } from './unwrapOr';
 export { unwrapOrElseFromResult as unwrapOrElse } from './unwrapOrElse';
+export { unwrapOrElseAsyncFromResult as unwrapOrElseAsync } from './unwrapOrElseAsync';
