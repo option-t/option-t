@@ -78,6 +78,7 @@
 - [option-t/PlainResult](../src/PlainResult/index.ts)
 - [option-t/PlainResult/and](../src/PlainResult/and.ts)
 - [option-t/PlainResult/andThen](../src/PlainResult/andThen.ts)
+- [option-t/PlainResult/andThenAsync](../src/PlainResult/andThenAsync.ts)
 - [option-t/PlainResult/asMut](../src/PlainResult/asMut.ts)
 - [option-t/PlainResult/drop](../src/PlainResult/drop.ts)
 - [option-t/PlainResult/expect](../src/PlainResult/expect.ts)
