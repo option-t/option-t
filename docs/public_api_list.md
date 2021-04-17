@@ -33,6 +33,7 @@
 - [option-t/Nullable](../src/Nullable/index.ts)
 - [option-t/Nullable/and](../src/Nullable/and.ts)
 - [option-t/Nullable/andThen](../src/Nullable/andThen.ts)
+- [option-t/Nullable/andThenAsync](../src/Nullable/andThenAsync.ts)
 - [option-t/Nullable/expect](../src/Nullable/expect.ts)
 - [option-t/Nullable/map](../src/Nullable/map.ts)
 - [option-t/Nullable/mapOr](../src/Nullable/mapOr.ts)

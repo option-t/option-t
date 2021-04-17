@@ -99,6 +99,7 @@ export default {
             'isNotNull',
             'isNull',
             'andThen',
+            'andThenAsync',
             'expect',
             'map',
             'mapOr',
@@ -119,6 +120,11 @@ export default {
     'Nullable/andThen': {
         'exports': [
             'andThenForNullable'
+        ]
+    },
+    'Nullable/andThenAsync': {
+        'exports': [
+            'andThenAsyncForNullable'
         ]
     },
     'Nullable/expect': {
