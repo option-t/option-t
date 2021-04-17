@@ -36,6 +36,7 @@ export { mapOrElseForResult as mapOrElse } from './mapOrElse';
 export { mapErrForResult as mapErr } from './mapErr';
 export { orForResult as or } from './or';
 export { orElseForResult as orElse } from './orElse';
+export { orElseAsyncForResult as orElseAsync } from './orElseAsync';
 export { tapOk, tapErr, tapBoth } from './tap';
 export { transposeForResult as transpose } from './transpose';
 export {

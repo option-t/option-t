@@ -335,6 +335,7 @@ export default {
             'mapErr',
             'or',
             'orElse',
+            'orElseAsync',
             'tapOk',
             'tapErr',
             'tapBoth',
@@ -417,6 +418,11 @@ export default {
     'PlainResult/orElse': {
         'exports': [
             'orElseForResult'
+        ]
+    },
+    'PlainResult/orElseAsync': {
+        'exports': [
+            'orElseAsyncForResult'
         ]
     },
     'PlainResult/Result': {
