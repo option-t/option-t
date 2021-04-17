@@ -52,7 +52,7 @@ test('input is Err(E)', async (t) => {
     t.true(result instanceof Promise, 'result should be Promise');
 
     const actual = await result;
-    t.is.skip(actual, input);
+    t.is(actual, input);
     t.false(actual.ok);
     t.is(actual.err, ERROR_E);
 });

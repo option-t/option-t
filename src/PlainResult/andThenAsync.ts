@@ -1,13 +1,8 @@
 import type { MapFn } from '../shared/Function';
-import { mapOrElseForResult } from './mapOrElse';
-import { Result, createErr, Err } from './Result';
+import { Result, isErr } from './Result';
+import { unwrapFromResult } from './unwrap';
 
 export type AsyncFlatmapOkFn<T, U, E> = MapFn<T, Promise<Result<U, E>>>;
-
-function crateErrPromise<E>(e: E): Promise<Err<E>> {
-    const err = createErr(e);
-    return Promise.resolve(err);
-}
 
 /**
  *  Returns `Promise<Err(E)>` if the _src_ is `Err(E)`,
@@ -20,8 +15,13 @@ function crateErrPromise<E>(e: E): Promise<Err<E>> {
  */
 export function andThenAsyncForResult<T, U, E>(
     src: Result<T, E>,
-    selector: AsyncFlatmapOkFn<T, U, E>
+    transformer: AsyncFlatmapOkFn<T, U, E>
 ): Promise<Result<U, E>> {
-    const result: Promise<Result<U, E>> = mapOrElseForResult(src, crateErrPromise, selector);
+    if (isErr(src)) {
+        return Promise.resolve(src);
+    }
+
+    const source: T = unwrapFromResult(src);
+    const result: Promise<Result<U, E>> = transformer(source);
     return result;
 }
