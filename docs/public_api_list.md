@@ -97,6 +97,7 @@
 - [option-t/PlainResult/unwrap](../src/PlainResult/unwrap.ts)
 - [option-t/PlainResult/unwrapOr](../src/PlainResult/unwrapOr.ts)
 - [option-t/PlainResult/unwrapOrElse](../src/PlainResult/unwrapOrElse.ts)
+- [option-t/PlainResult/unwrapOrElseAsync](../src/PlainResult/unwrapOrElseAsync.ts)
 
 
 ## Undefinable
