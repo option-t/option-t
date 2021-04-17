@@ -4,9 +4,9 @@ import { Result, createErr, Err } from './Result';
 
 export type AsyncFlatmapOkFn<T, U, E> = MapFn<T, Promise<Result<U, E>>>;
 
-async function crateErrPromise<E>(e: E): Promise<Err<E>> {
+function crateErrPromise<E>(e: E): Promise<Err<E>> {
     const err = createErr(e);
-    return err;
+    return Promise.resolve(err);
 }
 
 /**
