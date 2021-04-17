@@ -325,6 +325,7 @@ export default {
             'isErr',
             'and',
             'andThen',
+            'andThenAsync',
             'expect',
             'expectErr',
             'flatten',
@@ -358,6 +359,11 @@ export default {
     'PlainResult/andThen': {
         'exports': [
             'andThenForResult'
+        ]
+    },
+    'PlainResult/andThenAsync': {
+        'exports': [
+            'andThenAsyncForResult'
         ]
     },
     'PlainResult/asMut': {

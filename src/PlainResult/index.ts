@@ -27,6 +27,7 @@ export { Result, Ok, Err, createOk, createErr, isOk, isErr } from './Result';
 
 export { andForResult as and } from './and';
 export { andThenForResult as andThen } from './andThen';
+export { andThenAsyncForResult as andThenAsync } from './andThenAsync';
 export { expectIsOk as expect, expectIsErr as expectErr } from './expect';
 export { flattenForResult as flatten } from './flatten';
 export { mapForResult as map } from './map';
