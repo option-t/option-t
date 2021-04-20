@@ -30,7 +30,7 @@ jobs:
                 node-version:
                     # We think that we don't have to specify all versions which we'd like to test
                     # because almost npm packages cares about platform but don't care about node's version.
-                    - 15
+                    - 16
 
         steps:
             - uses: actions/checkout@v2.3.4
@@ -59,7 +59,7 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    - 15
+                    - 16
 
         steps:
             - uses: actions/checkout@v2.3.4
@@ -90,7 +90,7 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    - 15
+                    - 16
 
         steps:
             - uses: actions/checkout@v2.3.4
@@ -121,7 +121,7 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    - 15
+                    - 16
 
         steps:
             - uses: actions/checkout@v2.3.4
@@ -153,7 +153,7 @@ jobs:
             matrix:
                 node-version:
                     - 14
-                    - 15
+                    - 16
 
         steps:
             - uses: actions/checkout@v2.3.4
@@ -185,7 +185,7 @@ jobs:
             matrix:
                 node-version:
                     - 14
-                    - 15
+                    - 16
 
         steps:
             - uses: actions/checkout@v2.3.4
@@ -217,7 +217,7 @@ jobs:
             matrix:
                 node-version:
                     - 14
-                    - 15
+                    - 16
 
         steps:
             - uses: actions/checkout@v2.3.4
@@ -249,7 +249,7 @@ jobs:
             matrix:
                 node-version:
                     - 14
-                    - 15
+                    - 16
 
         steps:
             - uses: actions/checkout@v2.3.4
