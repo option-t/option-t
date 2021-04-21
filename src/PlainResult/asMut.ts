@@ -9,6 +9,6 @@ import { Result } from './Result';
  */
 export type MutResult<T, E> = Mutable<Result<T, E>>;
 
-export function asMutResult<T, E>(v: Result<T, E>): MutResult<T, E> {
-    return v as MutResult<T, E>;
+export function asMutResult<T, E>(input: Result<T, E>): MutResult<T, E> {
+    return input as MutResult<T, E>;
 }

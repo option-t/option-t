@@ -1,18 +1,21 @@
 import { Maybe } from './Maybe';
 import { expectNotNullAndUndefined } from './expect';
-import { ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './ErrorMessage';
+import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './ErrorMessage';
 
 /**
- *  Return _v_ as `T` if the passed _v_ is not `null` and `undefined`.
- *  Otherwise, return _def_.
+ *  Return _input_ as `T` if the passed _input_ is not `null` and `undefined`.
+ *  Otherwise, return _defaultValue_.
  *
- *  * _def_ must not be `Maybe<*>`.
- *  * If the _def_ is `null` or `undefined`, throw `TypeError`.
+ *  * _defaultValue_ must not be `Maybe<*>`.
+ *  * If the _defaultValue_ is `null` or `undefined`, throw `TypeError`.
  */
-export function unwrapOrFromMaybe<T>(v: Maybe<T>, def: T): T {
-    if (v !== undefined && v !== null) {
-        return v;
+export function unwrapOrFromMaybe<T>(input: Maybe<T>, defaultValue: T): T {
+    if (input !== undefined && input !== null) {
+        return input;
     } else {
-        return expectNotNullAndUndefined(def, ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_MAYBE);
+        return expectNotNullAndUndefined(
+            defaultValue,
+            ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE
+        );
     }
 }

@@ -4,14 +4,14 @@ import { Maybe } from './Maybe';
 export type MaybeRecoveryFn<T> = RecoveryFn<Maybe<T>>;
 
 /**
- *  Return _v_ as `T` if the passed _v_ is not `null` and `undefined`.
- *  Otherwise, return the result of _def_.
+ *  Return _input_ as `T` if the passed _input_ is not `null` and `undefined`.
+ *  Otherwise, return the result of _recoverer_.
  */
-export function orElseForMaybe<T>(v: Maybe<T>, def: MaybeRecoveryFn<T>): Maybe<T> {
-    if (v !== undefined && v !== null) {
-        return v;
+export function orElseForMaybe<T>(input: Maybe<T>, recoverer: MaybeRecoveryFn<T>): Maybe<T> {
+    if (input !== undefined && input !== null) {
+        return input;
     } else {
-        const r = def();
+        const r = recoverer();
         return r;
     }
 }

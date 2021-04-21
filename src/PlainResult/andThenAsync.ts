@@ -12,7 +12,7 @@ export type ResultAsyncTryTransformFn<T, U, E> = AsyncTransformFn<T, Result<U, E
 export type AsyncFlatmapOkFn<T, U, E> = ResultAsyncTryTransformFn<T, U, E>;
 
 /**
- *  Returns `Promise<Err(E)>` if the _src_ is `Err(E)`,
+ *  Returns `Promise<Err(E)>` if the _input_ is `Err(E)`,
  *  otherwise calls _transformer_ with the value and returns the result.
  *
  *  XXX:
@@ -21,14 +21,14 @@ export type AsyncFlatmapOkFn<T, U, E> = ResultAsyncTryTransformFn<T, U, E>;
  *  to sort with other APIs.
  */
 export function andThenAsyncForResult<T, U, E>(
-    src: Result<T, E>,
+    input: Result<T, E>,
     transformer: ResultAsyncTryTransformFn<T, U, E>
 ): Promise<Result<U, E>> {
-    if (isErr(src)) {
-        return Promise.resolve(src);
+    if (isErr(input)) {
+        return Promise.resolve(input);
     }
 
-    const source: T = unwrapFromResult(src);
+    const source: T = unwrapFromResult(input);
     const transformed: Promise<Result<U, E>> = transformer(source);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js

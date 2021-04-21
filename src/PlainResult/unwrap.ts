@@ -7,8 +7,8 @@ import { Result } from './Result';
  *  @throws {TypeError}
  *      Throws if the self is a `Err`.
  */
-export function unwrapFromResult<T>(v: Result<T, unknown>): T | never {
-    return expectIsOk(v, 'called with `Err`');
+export function unwrapFromResult<T>(input: Result<T, unknown>): T | never {
+    return expectIsOk(input, 'called with `Err`');
 }
 
 /**
@@ -17,6 +17,6 @@ export function unwrapFromResult<T>(v: Result<T, unknown>): T | never {
  *  @throws {TypeError}
  *      Throws if the self is a `Ok`.
  */
-export function unwrapErrFromResult<E>(v: Result<unknown, E>): E | never {
-    return expectIsErr(v, 'called with `Ok`');
+export function unwrapErrFromResult<E>(input: Result<unknown, E>): E | never {
+    return expectIsErr(input, 'called with `Ok`');
 }

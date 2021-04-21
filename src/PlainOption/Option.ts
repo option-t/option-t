@@ -5,8 +5,8 @@ export interface Some<T> {
     readonly val: T;
 }
 
-export function isSome<T>(v: Option<T>): v is Some<T> {
-    return v.ok;
+export function isSome<T>(input: Option<T>): input is Some<T> {
+    return input.ok;
 }
 
 export function createSome<T>(val: T): Some<T> {
@@ -50,8 +50,8 @@ export interface None {
     readonly val?: undefined;
 }
 
-export function isNone<T>(v: Option<T>): v is None {
-    return !v.ok;
+export function isNone<T>(input: Option<T>): input is None {
+    return !input.ok;
 }
 
 export function createNone(): None {

@@ -2,24 +2,24 @@ import { Option, createNone, createSome } from '../PlainOption/Option';
 import { Result } from './Result';
 
 /**
- *  Convert to `Some(T)` if _v_ is `Ok(T)`.
+ *  Convert to `Some(T)` if _input_ is `Ok(T)`.
  *  Otherwise, return `None`.
  */
-export function toOptionFromOk<T, E>(v: Result<T, E>): Option<T> {
-    if (v.ok) {
-        return createSome<T>(v.val);
+export function toOptionFromOk<T, E>(input: Result<T, E>): Option<T> {
+    if (input.ok) {
+        return createSome<T>(input.val);
     } else {
         return createNone();
     }
 }
 
 /**
- *  Convert to `Some(E)` if _v_ is `Err(E)`.
+ *  Convert to `Some(E)` if _input_ is `Err(E)`.
  *  Otherwise, return `None`.
  */
-export function toOptionFromErr<T, E>(v: Result<T, E>): Option<E> {
-    if (!v.ok) {
-        return createSome<E>(v.err);
+export function toOptionFromErr<T, E>(input: Result<T, E>): Option<E> {
+    if (!input.ok) {
+        return createSome<E>(input.err);
     } else {
         return createNone();
     }

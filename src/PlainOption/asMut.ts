@@ -9,6 +9,6 @@ import { Option } from './Option';
  */
 export type MutOption<T> = Mutable<Option<T>>;
 
-export function asMutOption<T>(v: Option<T>): MutOption<T> {
-    return v as MutOption<T>;
+export function asMutOption<T>(input: Option<T>): MutOption<T> {
+    return input as MutOption<T>;
 }

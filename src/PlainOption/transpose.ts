@@ -8,22 +8,22 @@ import { Option, isNone, createSome, createNone, None, Some } from './Option';
  *  - `Some(Err(e))` -> `Err(e)`
  *  - `None` => `Ok(None)`
  */
-export function transposeForOption<T, E>(self: Option<Result<T, E>>): Result<Option<T>, E> {
-    if (isNone(self)) {
+export function transposeForOption<T, E>(input: Option<Result<T, E>>): Result<Option<T>, E> {
+    if (isNone(input)) {
         const inner: None = createNone();
         const r: Ok<None> = createOk(inner);
         return r;
     }
 
-    const inner: Result<T, E> = self.val;
+    const inner: Result<T, E> = input.val;
     if (isErr(inner)) {
         const e: E = inner.err;
         const r: Err<E> = createErr(e);
         return r;
     }
 
-    const v: T = inner.val;
-    const some: Some<T> = createSome(v);
+    const innerInner: T = inner.val;
+    const some: Some<T> = createSome(innerInner);
     const r: Ok<Some<T>> = createOk(some);
     return r;
 }

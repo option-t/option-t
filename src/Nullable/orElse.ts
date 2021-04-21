@@ -9,14 +9,17 @@ export type NullableTryRecoveryFn<T> = RecoveryFn<Nullable<T>>;
 export type MayRecoveryFn<T> = NullableTryRecoveryFn<T>;
 
 /**
- *  Return _v_ as `T` if the passed _v_ is not `null`.
- *  Otherwise, return the result of _def_.
+ *  Return _input_ as `T` if the passed _input_ is not `null`.
+ *  Otherwise, return the result of _recoverer_.
  */
-export function orElseForNullable<T>(v: Nullable<T>, def: NullableTryRecoveryFn<T>): Nullable<T> {
-    if (v !== null) {
-        return v;
+export function orElseForNullable<T>(
+    input: Nullable<T>,
+    recoverer: NullableTryRecoveryFn<T>
+): Nullable<T> {
+    if (input !== null) {
+        return input;
     } else {
-        const r = def();
+        const r = recoverer();
         return r;
     }
 }
