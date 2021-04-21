@@ -36,3 +36,21 @@ test('input is Err(E)', async (t) => {
     const actual = await result;
     t.is(actual, DEFAULT_VAL);
 });
+
+test('callback should return Promise', async (t) => {
+    t.plan(2);
+
+    await t.throwsAsync(
+        async () => {
+            const input = createErr(ERROR_E);
+            await unwrapOrElseAsyncFromResult(input, () => {
+                t.pass();
+                return 1;
+            });
+        },
+        {
+            instanceOf: TypeError,
+            message: '`recoverer` must return Promise',
+        }
+    );
+});
