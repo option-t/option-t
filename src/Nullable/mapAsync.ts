@@ -5,6 +5,11 @@ import { expectNotNull } from './expect';
 import { assertIsPromise } from '../shared/assert';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
 
+function check<T>(value: Nullable<T>): T {
+    const result = expectNotNull(value, ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
+    return result;
+}
+
 /**
  *  Return the result of _transformer_ with using _src_ as an argument for it if _src_ is not `null`,
  *  Otherwise, return `null`.
@@ -32,9 +37,7 @@ export function mapAsyncForNullable<T, U>(
     // the nested type `Nullable<Nullable<SomeType>>`. But this type means `(SomeType | null) | null`.
     // So a type checker would recognize this type as `SomeType | null`. So it's flattened.
     // Then the user should call `andThen` (_flatmap_) operation instead of this.
-    const result = transformed.then((transformed) => {
-        return expectNotNull(transformed, ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
-    });
+    const result = transformed.then(check);
 
     return result;
 }
