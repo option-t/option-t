@@ -44,6 +44,7 @@
 - [option-t/Nullable/unwrap](../src/Nullable/unwrap.ts)
 - [option-t/Nullable/unwrapOr](../src/Nullable/unwrapOr.ts)
 - [option-t/Nullable/unwrapOrElse](../src/Nullable/unwrapOrElse.ts)
+- [option-t/Nullable/unwrapOrElseAsync](../src/Nullable/unwrapOrElseAsync.ts)
 - [option-t/Nullable/xor](../src/Nullable/xor.ts)
 
 

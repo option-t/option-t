@@ -13,3 +13,4 @@ export { tapNullable as tap } from './tap';
 export { unwrapNullable as unwrap } from './unwrap';
 export { unwrapOrFromNullable as unwrapOr } from './unwrapOr';
 export { unwrapOrElseFromNullable as unwrapOrElse } from './unwrapOrElse';
+export { unwrapOrElseAsyncFromNullable as unwrapOrElseAsync } from './unwrapOrElseAsync';
