@@ -1,9 +1,14 @@
 import { assertIsPromise } from '../shared/assert';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
-import type { MapFn } from '../shared/Function';
+import type { AsyncTransformFn } from '../shared/Function';
 import { Nullable, isNull } from './Nullable';
 
-export type AsyncFlatmapFn<T, U> = MapFn<T, Promise<Nullable<U>>>;
+export type NullableAsyncTryTransformFn<T, U> = AsyncTransformFn<T, Nullable<U>>;
+
+/**
+ *  @deprecated Use NullableAsyncTryTransformFn in the same module.
+ */
+export type AsyncFlatmapFn<T, U> = NullableAsyncTryTransformFn<T, U>;
 
 /**
  *  Returns `null` if the _src_ is `null`,
@@ -16,7 +21,7 @@ export type AsyncFlatmapFn<T, U> = MapFn<T, Promise<Nullable<U>>>;
  */
 export function andThenAsyncForNullable<T, U>(
     src: Nullable<T>,
-    transformer: AsyncFlatmapFn<T, U>
+    transformer: NullableAsyncTryTransformFn<T, U>
 ): Promise<Nullable<U>> {
     if (isNull(src)) {
         return Promise.resolve<Nullable<U>>(src);

@@ -1,4 +1,4 @@
-import { TapFn } from '../shared/Function';
+import { EffectFn } from '../shared/Function';
 import { Nullable } from './Nullable';
 
 /**
@@ -9,7 +9,7 @@ import { Nullable } from './Nullable';
  *  * This was added to sort with others or future enhancement to accept chaining functions.
  *    We recommend to use simple `if` statement or similar way and they would be more efficient.
  */
-export function tapNullable<T>(v: Nullable<T>, fn: TapFn<T>): Nullable<T> {
+export function tapNullable<T>(v: Nullable<T>, fn: EffectFn<T>): Nullable<T> {
     if (v !== null) {
         fn(v);
     }

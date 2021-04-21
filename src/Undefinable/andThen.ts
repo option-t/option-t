@@ -1,7 +1,12 @@
-import { MapFn } from '../shared/Function';
+import { TransformFn } from '../shared/Function';
 import { Undefinable, isNotUndefined } from './Undefinable';
 
-export type FlatmapFn<T, U> = MapFn<T, Undefinable<U>>;
+export type UndefinableTryTransformFn<T, U> = TransformFn<T, Undefinable<U>>;
+
+/**
+ *  @deprecated Use UndefinableTryTransformFn in the same module.
+ */
+export type FlatmapFn<T, U> = UndefinableTryTransformFn<T, U>;
 
 /**
  *  Returns `undefined` if the _src_ is `undefined`,
@@ -14,7 +19,7 @@ export type FlatmapFn<T, U> = MapFn<T, Undefinable<U>>;
  */
 export function andThenForUndefinable<T, U>(
     src: Undefinable<T>,
-    selector: FlatmapFn<T, U>
+    selector: UndefinableTryTransformFn<T, U>
 ): Undefinable<U> {
     if (isNotUndefined(src)) {
         const r = selector(src);

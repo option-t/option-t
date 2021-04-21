@@ -1,6 +1,6 @@
 import { assertIsPromise } from '../shared/assert';
 import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
-import { RecoveryWithErrorFn } from '../shared/Function';
+import type { AsyncRecoveryFromErrorFn } from '../shared/Function';
 import { Result, isOk } from './Result';
 import { unwrapFromResult, unwrapErrFromResult } from './unwrap';
 
@@ -10,7 +10,7 @@ import { unwrapFromResult, unwrapErrFromResult } from './unwrap';
  */
 export function unwrapOrElseAsyncFromResult<T, E>(
     src: Result<T, E>,
-    recoverer: RecoveryWithErrorFn<E, Promise<T>>
+    recoverer: AsyncRecoveryFromErrorFn<E, T>
 ): Promise<T> {
     if (isOk(src)) {
         const value = unwrapFromResult(src);

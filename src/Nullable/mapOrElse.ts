@@ -3,7 +3,7 @@ import {
     ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
     ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
 } from './ErrorMessage';
-import { MapFn, RecoveryFn } from '../shared/Function';
+import { TransformFn, RecoveryFn } from '../shared/Function';
 import { Nullable } from './Nullable';
 
 /**
@@ -20,7 +20,7 @@ import { Nullable } from './Nullable';
 export function mapOrElseForNullable<T, U>(
     src: Nullable<T>,
     def: RecoveryFn<U>,
-    selector: MapFn<T, U>
+    selector: TransformFn<T, U>
 ): U {
     let r: U;
     let msg = '';

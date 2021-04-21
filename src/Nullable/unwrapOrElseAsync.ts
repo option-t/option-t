@@ -1,6 +1,6 @@
 import { assertIsPromise } from '../shared/assert';
 import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
-import type { RecoveryFn } from '../shared/Function';
+import type { AsyncRecoveryFn } from '../shared/Function';
 import type { Nullable } from './Nullable';
 import { expectNotNull } from './expect';
 import { ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
@@ -20,7 +20,7 @@ function check<T>(value: Nullable<T>): T {
  */
 export function unwrapOrElseAsyncFromNullable<T>(
     v: Nullable<T>,
-    recoverer: RecoveryFn<Promise<T>>
+    recoverer: AsyncRecoveryFn<T>
 ): Promise<T> {
     if (v !== null) {
         return Promise.resolve<T>(v);

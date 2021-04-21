@@ -1,4 +1,4 @@
-import { TapFn } from '../shared/Function';
+import { EffectFn } from '../shared/Function';
 import { Option } from './Option';
 
 /**
@@ -9,7 +9,7 @@ import { Option } from './Option';
  *    If you don't have to do it, you should not mutate the inner value.
  *    if-else statement might be sufficient to mutate the inner value instead of calling this function.
  */
-export function tapOption<T>(v: Option<T>, fn: TapFn<T>): Option<T> {
+export function tapOption<T>(v: Option<T>, fn: EffectFn<T>): Option<T> {
     if (v.ok) {
         fn(v.val);
     }

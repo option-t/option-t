@@ -3,7 +3,7 @@ import {
     ERR_MSG_RECOVERER_MUST_RETURN_PROMISE,
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
 } from '../shared/ErrorMessage';
-import { MapFn, RecoveryWithErrorFn } from '../shared/Function';
+import type { AsyncTransformFn, AsyncRecoveryFromErrorFn } from '../shared/Function';
 import { Result, isOk } from './Result';
 import { unwrapFromResult, unwrapErrFromResult } from './unwrap';
 
@@ -14,8 +14,8 @@ import { unwrapFromResult, unwrapErrFromResult } from './unwrap';
  */
 export function mapOrElseAsyncForResult<T, E, U>(
     src: Result<T, E>,
-    recoverer: RecoveryWithErrorFn<E, Promise<U>>,
-    transformer: MapFn<T, Promise<U>>
+    recoverer: AsyncRecoveryFromErrorFn<E, U>,
+    transformer: AsyncTransformFn<T, U>
 ): Promise<U> {
     if (isOk(src)) {
         const inner: T = unwrapFromResult(src);

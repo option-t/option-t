@@ -1,7 +1,12 @@
-import { MapFn } from '../shared/Function';
+import { TransformFn } from '../shared/Function';
 import { Maybe, isNotNullAndUndefined } from './Maybe';
 
-export type FlatmapFn<T, U> = MapFn<T, Maybe<U>>;
+export type MaybeTryTransformFn<T, U> = TransformFn<T, Maybe<U>>;
+
+/**
+ *  @deprecated Use MaybeTryTransformFn in the same module.
+ */
+export type FlatmapFn<T, U> = MaybeTryTransformFn<T, U>;
 
 /**
  *  Returns `null` or `undefined` if the _src_ is `null` or `undefined`,
@@ -12,7 +17,10 @@ export type FlatmapFn<T, U> = MapFn<T, Maybe<U>>;
  *  But we don't provide `flatMap()` as alias of this function.
  *  because it's too hard to undarstand that "flatMap" operation for `T | null | undefined`.
  */
-export function andThenForMaybe<T, U>(src: Maybe<T>, selector: FlatmapFn<T, U>): Maybe<U> {
+export function andThenForMaybe<T, U>(
+    src: Maybe<T>,
+    selector: MaybeTryTransformFn<T, U>
+): Maybe<U> {
     if (isNotNullAndUndefined(src)) {
         const r = selector(src);
         return r;

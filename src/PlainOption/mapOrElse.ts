@@ -1,4 +1,4 @@
-import { MapFn, RecoveryFn } from '../shared/Function';
+import { TransformFn, RecoveryFn } from '../shared/Function';
 import { Option } from './Option';
 
 /**
@@ -9,7 +9,7 @@ import { Option } from './Option';
 export function mapOrElseForOption<T, U>(
     src: Option<T>,
     def: RecoveryFn<U>,
-    selector: MapFn<T, U>
+    selector: TransformFn<T, U>
 ): U {
     let r: U;
     if (src.ok) {

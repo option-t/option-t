@@ -1,7 +1,12 @@
-import { MapFn } from '../shared/Function';
+import { TransformFn } from '../shared/Function';
 import { Option } from './Option';
 
-export type FlatmapFn<T, U> = MapFn<T, Option<U>>;
+export type OptionTryTransformFn<T, U> = TransformFn<T, Option<U>>;
+
+/**
+ *  @deprecated Use OptionTryTransformFn in the same module.
+ */
+export type FlatmapFn<T, U> = OptionTryTransformFn<T, U>;
 
 /**
  *  Returns `None` if the _src_ is `None`,
@@ -12,7 +17,10 @@ export type FlatmapFn<T, U> = MapFn<T, Option<U>>;
  *  But we don't provide `flatMap()` as alias of this function
  *  to sort with other APIs.
  */
-export function andThenForOption<T, U>(src: Option<T>, selector: FlatmapFn<T, U>): Option<U> {
+export function andThenForOption<T, U>(
+    src: Option<T>,
+    selector: OptionTryTransformFn<T, U>
+): Option<U> {
     if (src.ok) {
         const r = selector(src.val);
         return r;

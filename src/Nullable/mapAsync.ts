@@ -1,4 +1,4 @@
-import type { MapFn } from '../shared/Function';
+import type { AsyncTransformFn } from '../shared/Function';
 import { Nullable, isNull } from './Nullable';
 import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 import { expectNotNull } from './expect';
@@ -20,7 +20,7 @@ function check<T>(value: Nullable<T>): T {
  */
 export function mapAsyncForNullable<T, U>(
     src: Nullable<T>,
-    transformer: MapFn<T, Promise<U>>
+    transformer: AsyncTransformFn<T, U>
 ): Promise<Nullable<U>> {
     if (isNull(src)) {
         return Promise.resolve(src);

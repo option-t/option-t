@@ -1,10 +1,15 @@
 import { assertIsPromise } from '../shared/assert';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
-import type { MapFn } from '../shared/Function';
+import type { AsyncTransformFn } from '../shared/Function';
 import { Result, isErr } from './Result';
 import { unwrapFromResult } from './unwrap';
 
-export type AsyncFlatmapOkFn<T, U, E> = MapFn<T, Promise<Result<U, E>>>;
+export type ResultAsyncTryTransformFn<T, U, E> = AsyncTransformFn<T, Result<U, E>>;
+
+/**
+ *  @deprecated Use ResultAsyncTryTransformFn in the same module.
+ */
+export type AsyncFlatmapOkFn<T, U, E> = ResultAsyncTryTransformFn<T, U, E>;
 
 /**
  *  Returns `Promise<Err(E)>` if the _src_ is `Err(E)`,
@@ -17,7 +22,7 @@ export type AsyncFlatmapOkFn<T, U, E> = MapFn<T, Promise<Result<U, E>>>;
  */
 export function andThenAsyncForResult<T, U, E>(
     src: Result<T, E>,
-    transformer: AsyncFlatmapOkFn<T, U, E>
+    transformer: ResultAsyncTryTransformFn<T, U, E>
 ): Promise<Result<U, E>> {
     if (isErr(src)) {
         return Promise.resolve(src);
