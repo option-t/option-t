@@ -1,17 +1,17 @@
 import type { ClassicOption, Some, None } from '../ClassOption/ClassicOption';
-import type { MapFn, RecoveryWithErrorFn, TapFn } from '../shared/Function';
+import type { TransformFn, RecoveryFromErrorFn, EffectFn } from '../shared/Function';
 
 /**
  *  @deprecated
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export type ClassicFlatmapOkFn<T, U, E> = MapFn<T, ClassicResult<U, E>>;
+export type ClassicTryTransformFn<T, U, E> = TransformFn<T, ClassicResult<U, E>>;
 
 /**
  *  @deprecated
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export type ClassicFlatmapErrFn<T, E, F> = MapFn<E, ClassicResult<T, F>>;
+export type ClassicTryRecoverFromErrorFn<T, E, F> = RecoveryFromErrorFn<E, ClassicResult<T, F>>;
 
 /**
  *  @deprecated
@@ -49,14 +49,14 @@ interface ClassicResultable<T, E> {
      *
      *  This function can be used to compose the results of two functions.
      */
-    map<U>(op: MapFn<T, U>): ClassicResult<U, E>;
+    map<U>(op: TransformFn<T, U>): ClassicResult<U, E>;
 
     /**
      *  Maps a `Result<T, E>` to `U` by applying a function to a contained `Ok` value,
      *  or a `fallback` function to a contained `Err` value.
      *  This function can be used to unpack a successful result while handling an error.
      */
-    mapOrElse<U>(fallback: RecoveryWithErrorFn<E, U>, selector: MapFn<T, U>): U;
+    mapOrElse<U>(fallback: RecoveryFromErrorFn<E, U>, selector: TransformFn<T, U>): U;
 
     /**
      *  Maps a `Result<T, E>` to `Result<T, F>` by applying a function `mapFn<E, F>`
@@ -64,7 +64,7 @@ interface ClassicResultable<T, E> {
      *
      *  This function can be used to pass through a successful result while handling an error.
      */
-    mapErr<F>(op: MapFn<E, F>): ClassicResult<T, F>;
+    mapErr<F>(op: TransformFn<E, F>): ClassicResult<T, F>;
 
     /**
      *  Returns `res` if the result is `Ok`, otherwise returns the `Err` value of self.
@@ -75,7 +75,7 @@ interface ClassicResultable<T, E> {
      *  Calls `op` if the result is `Ok`, otherwise returns the `Err` value of self.
      *  This function can be used for control flow based on result values.
      */
-    andThen<U>(op: ClassicFlatmapOkFn<T, U, E>): ClassicResult<U, E>;
+    andThen<U>(op: ClassicTryTransformFn<T, U, E>): ClassicResult<U, E>;
 
     /**
      *  Returns `res` if the result is `Err`, otherwise returns the `Ok` value of self.
@@ -86,7 +86,7 @@ interface ClassicResultable<T, E> {
      *  Calls `op` if the result is `Err`, otherwise returns the `Ok` value of self.
      *  This function can be used for control flow based on result values.
      */
-    orElse<F>(op: ClassicFlatmapErrFn<T, E, F>): ClassicResult<T, F>;
+    orElse<F>(op: ClassicTryRecoverFromErrorFn<T, E, F>): ClassicResult<T, F>;
 
     /**
      *  Return the inner `T` of a `Ok(T)`.
@@ -113,7 +113,7 @@ interface ClassicResultable<T, E> {
      *  Unwraps a result, returns the content of an `Ok`.
      *  If the value is an `Err` then it calls `op` with its value.
      */
-    unwrapOrElse(op: RecoveryWithErrorFn<E, T>): T;
+    unwrapOrElse(op: RecoveryFromErrorFn<E, T>): T;
 
     /**
      *  Return the inner `T` of a `Ok(T)`.
@@ -132,7 +132,7 @@ interface ClassicResultable<T, E> {
      *  @param  errDestructor
      *      This would be called with the inner value if self is `Err<E>`.
      */
-    drop(destructor?: TapFn<T>, errDestructor?: TapFn<E>): void;
+    drop(destructor?: EffectFn<T>, errDestructor?: EffectFn<E>): void;
 }
 
 /**
@@ -154,19 +154,19 @@ export abstract class ClassicResultBase<T, E> implements ClassicResultable<T, E>
     isErr(): this is ClassicErr<T, E>;
     ok(): ClassicOption<T>;
     err(): ClassicOption<E>;
-    map<U>(op: MapFn<T, U>): ClassicResult<U, E>;
-    mapOrElse<U>(fallback: RecoveryWithErrorFn<E, U>, selector: MapFn<T, U>): U;
-    mapErr<F>(op: MapFn<E, F>): ClassicResult<T, F>;
+    map<U>(op: TransformFn<T, U>): ClassicResult<U, E>;
+    mapOrElse<U>(fallback: RecoveryFromErrorFn<E, U>, selector: TransformFn<T, U>): U;
+    mapErr<F>(op: TransformFn<E, F>): ClassicResult<T, F>;
     and<U>(res: ClassicResult<U, E>): ClassicResult<U, E>;
-    andThen<U>(op: ClassicFlatmapOkFn<T, U, E>): ClassicResult<U, E>;
+    andThen<U>(op: ClassicTryTransformFn<T, U, E>): ClassicResult<U, E>;
     or<F>(res: ClassicResult<T, F>): ClassicResult<T, F>;
-    orElse<F>(op: ClassicFlatmapErrFn<T, E, F>): ClassicResult<T, F>;
+    orElse<F>(op: ClassicTryRecoverFromErrorFn<T, E, F>): ClassicResult<T, F>;
     unwrap(): T | never;
     unwrapErr(): E | never;
     unwrapOr(optb: T): T;
-    unwrapOrElse(op: RecoveryWithErrorFn<E, T>): T;
+    unwrapOrElse(op: RecoveryFromErrorFn<E, T>): T;
     expect(message: string): T | never;
-    drop(destructor?: TapFn<T>, errDestructor?: TapFn<E>): void;
+    drop(destructor?: EffectFn<T>, errDestructor?: EffectFn<E>): void;
 }
 
 /**

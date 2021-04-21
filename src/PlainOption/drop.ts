@@ -1,5 +1,5 @@
 import { Mutable } from '../shared/Mutable';
-import { TapFn } from '../shared/Function';
+import { EffectFn } from '../shared/Function';
 import { Option, Some } from './Option';
 import { asMutOption } from './asMut';
 
@@ -24,7 +24,7 @@ type MutSome<T> = Mutable<Some<T>>;
  *  and this API is designed to use as a destructor or similar fashions.
  *  So if you call this for same object more than once, your code might contain "double free" problem.
  */
-export function unsafeDropForOption<T>(v: Option<T>, mutator: TapFn<MutSome<T>>): void {
+export function unsafeDropForOption<T>(v: Option<T>, mutator: EffectFn<MutSome<T>>): void {
     const mutable = asMutOption(v);
     if (mutable.ok) {
         mutator(mutable);

@@ -1,4 +1,4 @@
-import { MapFn } from '../shared/Function';
+import { TransformFn } from '../shared/Function';
 import { Result, Err, createOk } from './Result';
 
 /**
@@ -7,7 +7,10 @@ import { Result, Err, createOk } from './Result';
  *
  *  This function can be used to compose the results of two functions.
  */
-export function mapForResult<T, U, E>(src: Result<T, E>, selector: MapFn<T, U>): Result<U, E> {
+export function mapForResult<T, U, E>(
+    src: Result<T, E>,
+    selector: TransformFn<T, U>
+): Result<U, E> {
     if (src.ok) {
         const r: U = selector(src.val);
         return createOk(r);

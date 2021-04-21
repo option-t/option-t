@@ -1,9 +1,9 @@
 import { assertIsPromise } from '../shared/assert';
 import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
-import { RecoveryFn } from '../shared/Function';
+import type { AsyncRecoveryFn } from '../shared/Function';
 import { Nullable, isNotNull } from './Nullable';
 
-export type AsyncMayRecoveryFn<T> = RecoveryFn<Promise<Nullable<T>>>;
+export type NullableAsyncTryRecoveryFn<T> = AsyncRecoveryFn<Nullable<T>>;
 
 /**
  *  Return _v_ as `T` if the passed _src_ is not `null`.
@@ -11,7 +11,7 @@ export type AsyncMayRecoveryFn<T> = RecoveryFn<Promise<Nullable<T>>>;
  */
 export function orElseAsyncForNullable<T>(
     src: Nullable<T>,
-    recoverer: AsyncMayRecoveryFn<T>
+    recoverer: NullableAsyncTryRecoveryFn<T>
 ): Promise<Nullable<T>> {
     if (isNotNull(src)) {
         return Promise.resolve(src);

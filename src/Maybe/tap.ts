@@ -1,4 +1,4 @@
-import { TapFn } from '../shared/Function';
+import { EffectFn } from '../shared/Function';
 import { Maybe } from './Maybe';
 
 /**
@@ -9,7 +9,7 @@ import { Maybe } from './Maybe';
  *  * This was added to sort with others or future enhancement to accept chaining functions.
  *    We recommend to use simple `if` statement or similar way and they would be more efficient.
  */
-export function tapMaybe<T>(v: Maybe<T>, fn: TapFn<T>): Maybe<T> {
+export function tapMaybe<T>(v: Maybe<T>, fn: EffectFn<T>): Maybe<T> {
     if (v !== undefined && v !== null) {
         fn(v);
     }

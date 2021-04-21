@@ -4,8 +4,8 @@
  *      See https://github.com/karen-irc/option-t/issues/459
  */
 export {
-    ClassicFlatmapFn as FlatmapFn,
-    ClassicMayRecoveryFn as MayRecoveryFn,
+    ClassicTryTransformFn as FlatmapFn,
+    ClassicTryRecoveryFn as MayRecoveryFn,
     ClassicOptionBase as OptionBase,
     ClassicOption as Option,
     createClassicSome as createSome,

@@ -4,8 +4,8 @@
  *      See https://github.com/karen-irc/option-t/issues/459
  */
 export {
-    ClassicFlatmapOkFn as FlatmapOkFn,
-    ClassicFlatmapErrFn as FlatmapErrFn,
+    ClassicTryTransformFn as FlatmapOkFn,
+    ClassicTryRecoverFromErrorFn as FlatmapErrFn,
     ClassicResultBase as ResultBase,
     ClassicResult as Result,
     createClassicOk as createOk,

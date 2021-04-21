@@ -3,7 +3,7 @@ import {
     ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
 } from './ErrorMessage';
-import { MapFn, RecoveryFn } from '../shared/Function';
+import { TransformFn, RecoveryFn } from '../shared/Function';
 import { Maybe } from './Maybe';
 
 /**
@@ -20,7 +20,7 @@ import { Maybe } from './Maybe';
 export function mapOrElseForMaybe<T, U>(
     src: Maybe<T>,
     def: RecoveryFn<U>,
-    selector: MapFn<T, U>
+    selector: TransformFn<T, U>
 ): U {
     let r: U;
     let msg = '';

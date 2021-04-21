@@ -1,4 +1,4 @@
-import { TapFn } from '../shared/Function';
+import { EffectFn } from '../shared/Function';
 import { Undefinable } from './Undefinable';
 
 /**
@@ -9,7 +9,7 @@ import { Undefinable } from './Undefinable';
  *  * This was added to sort with others or future enhancement to accept chaining functions.
  *    We recommend to use simple `if` statement or similar way and they would be more efficient.
  */
-export function tapUndefinable<T>(v: Undefinable<T>, fn: TapFn<T>): Undefinable<T> {
+export function tapUndefinable<T>(v: Undefinable<T>, fn: EffectFn<T>): Undefinable<T> {
     if (v !== undefined) {
         fn(v);
     }

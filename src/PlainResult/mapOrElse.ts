@@ -1,4 +1,4 @@
-import { MapFn, RecoveryWithErrorFn } from '../shared/Function';
+import { TransformFn, RecoveryFromErrorFn } from '../shared/Function';
 import { Result } from './Result';
 
 /**
@@ -8,8 +8,8 @@ import { Result } from './Result';
  */
 export function mapOrElseForResult<T, E, U>(
     src: Result<T, E>,
-    fallback: RecoveryWithErrorFn<E, U>,
-    selector: MapFn<T, U>
+    fallback: RecoveryFromErrorFn<E, U>,
+    selector: TransformFn<T, U>
 ): U {
     if (src.ok) {
         const r: U = selector(src.val);

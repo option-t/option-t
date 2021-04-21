@@ -1,7 +1,12 @@
-import { MapFn } from '../shared/Function';
+import { TransformFn } from '../shared/Function';
 import { Result } from './Result';
 
-export type FlatmapOkFn<T, U, E> = MapFn<T, Result<U, E>>;
+export type ResultTryTransformFn<T, U, E> = TransformFn<T, Result<U, E>>;
+
+/**
+ *  @deprecated Use ResultTryTransformFn in the same module.
+ */
+export type FlatmapOkFn<T, U, E> = ResultTryTransformFn<T, U, E>;
 
 /**
  *  Returns `Err(E)` if the _src_ is `Err(E)`,
@@ -14,7 +19,7 @@ export type FlatmapOkFn<T, U, E> = MapFn<T, Result<U, E>>;
  */
 export function andThenForResult<T, U, E>(
     src: Result<T, E>,
-    selector: FlatmapOkFn<T, U, E>
+    selector: ResultTryTransformFn<T, U, E>
 ): Result<U, E> {
     if (src.ok) {
         const r = selector(src.val);

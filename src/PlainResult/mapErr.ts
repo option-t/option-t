@@ -1,4 +1,4 @@
-import { MapFn } from '../shared/Function';
+import { TransformFn } from '../shared/Function';
 import { Result, createErr } from './Result';
 
 /**
@@ -7,7 +7,10 @@ import { Result, createErr } from './Result';
  *
  *  This function can be used to pass through a successful result while handling an error.
  */
-export function mapErrForResult<T, E, F>(src: Result<T, E>, selector: MapFn<E, F>): Result<T, F> {
+export function mapErrForResult<T, E, F>(
+    src: Result<T, E>,
+    selector: TransformFn<E, F>
+): Result<T, F> {
     if (!src.ok) {
         const r: F = selector(src.err);
         return createErr<F>(r);

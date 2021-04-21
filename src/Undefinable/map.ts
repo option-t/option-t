@@ -1,6 +1,6 @@
 import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 import { expectNotUndefined } from './expect';
-import { MapFn } from '../shared/Function';
+import { TransformFn } from '../shared/Function';
 import { Undefinable, isNotUndefined } from './Undefinable';
 
 /**
@@ -13,7 +13,7 @@ import { Undefinable, isNotUndefined } from './Undefinable';
  */
 export function mapForUndefinable<T, U>(
     src: Undefinable<T>,
-    selector: MapFn<T, U>
+    selector: TransformFn<T, U>
 ): Undefinable<U> {
     if (isNotUndefined(src)) {
         const r = selector(src);

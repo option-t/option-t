@@ -1,7 +1,12 @@
-import { MapFn } from '../shared/Function';
+import type { RecoveryFromErrorFn } from '../shared/Function';
 import { Result } from './Result';
 
-export type FlatmapErrFn<T, E, F> = MapFn<E, Result<T, F>>;
+export type ResultTryRecoveryFromErrorFn<T, E, F> = RecoveryFromErrorFn<E, Result<T, F>>;
+
+/**
+ *  @deprecated Use ResultTryRecoveryFromErrorFn in the same module.
+ */
+export type FlatmapErrFn<T, E, F> = ResultTryRecoveryFromErrorFn<T, E, F>;
 
 /**
  *  Calls _recoverer_  and return its returned value if the result is `Err(E)`,
@@ -10,7 +15,7 @@ export type FlatmapErrFn<T, E, F> = MapFn<E, Result<T, F>>;
  */
 export function orElseForResult<T, E, F>(
     a: Result<T, E>,
-    recoverer: FlatmapErrFn<T, E, F>
+    recoverer: ResultTryRecoveryFromErrorFn<T, E, F>
 ): Result<T, F> {
     if (a.ok) {
         return a;

@@ -1,6 +1,6 @@
 import { assertIsPromise } from '../shared/assert';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
-import type { MapFn } from '../shared/Function';
+import type { AsyncTransformFn } from '../shared/Function';
 import { Result, Err, createOk, isErr } from './Result';
 import { unwrapFromResult } from './unwrap';
 
@@ -12,7 +12,7 @@ import { unwrapFromResult } from './unwrap';
  */
 export function mapAsyncForResult<T, U, E>(
     src: Result<T, E>,
-    transformer: MapFn<T, Promise<U>>
+    transformer: AsyncTransformFn<T, U>
 ): Promise<Result<U, E>> {
     if (isErr(src)) {
         const s: Err<E> = src;

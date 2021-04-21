@@ -1,4 +1,4 @@
-import { MapFn } from '../shared/Function';
+import { TransformFn } from '../shared/Function';
 import { Option, createSome } from './Option';
 
 /**
@@ -7,7 +7,7 @@ import { Option, createSome } from './Option';
  *
  *  This function can be used to compose the results of two functions.
  */
-export function mapForOption<T, U>(src: Option<T>, selector: MapFn<T, U>): Option<U> {
+export function mapForOption<T, U>(src: Option<T>, selector: TransformFn<T, U>): Option<U> {
     if (src.ok) {
         const r: U = selector(src.val);
         return createSome(r);

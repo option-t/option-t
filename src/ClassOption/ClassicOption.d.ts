@@ -1,16 +1,16 @@
-import type { MapFn, RecoveryFn, TapFn } from '../shared/Function';
+import type { TransformFn, RecoveryFn, EffectFn } from '../shared/Function';
 
 /**
  *  @deprecated
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export type ClassicFlatmapFn<T, U> = MapFn<T, ClassicOption<U>>;
+export type ClassicTryTransformFn<T, U> = TransformFn<T, ClassicOption<U>>;
 
 /**
  *  @deprecated
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-export type ClassicMayRecoveryFn<T> = RecoveryFn<ClassicOption<T>>;
+export type ClassicTryRecoveryFn<T> = RecoveryFn<ClassicOption<T>>;
 
 /**
  *  @deprecated
@@ -70,7 +70,7 @@ interface ClassicOptionable<T> {
      *      The function which is applied to the contained value and return the result
      *      if the self is a `Some<T>`.
      */
-    map<U>(fn: MapFn<T, U>): ClassicOption<U>;
+    map<U>(fn: TransformFn<T, U>): ClassicOption<U>;
 
     /**
      *  Return `None` if the self is `None`,
@@ -80,7 +80,7 @@ interface ClassicOptionable<T> {
      *      The function which is applied to the contained value and return the result
      *      if the self is a `Some<T>`. This result will be flattened once.
      */
-    flatMap<U>(fn: ClassicFlatmapFn<T, U>): ClassicOption<U>;
+    flatMap<U>(fn: ClassicTryTransformFn<T, U>): ClassicOption<U>;
 
     /**
      *  Apply a function `fn` to the contained value or return a default `def`.
@@ -91,7 +91,7 @@ interface ClassicOptionable<T> {
      *      The function which is applied to the contained value and return the result
      *      if the self is a `Some<T>`.
      */
-    mapOr<U>(def: U, fn: MapFn<T, U>): U;
+    mapOr<U>(def: U, fn: TransformFn<T, U>): U;
 
     /**
      *  Apply a function `fn` to the contained value or produce a default result by `defFn`.
@@ -102,7 +102,7 @@ interface ClassicOptionable<T> {
      *      The function which is applied to the contained value and return the result
      *      if the self is a `Some<T>`.
      */
-    mapOrElse<U>(def: RecoveryFn<U>, fn: MapFn<T, U>): U;
+    mapOrElse<U>(def: RecoveryFn<U>, fn: TransformFn<T, U>): U;
 
     /**
      *  Return the passed value if the self is `Some<T>`,
@@ -118,7 +118,7 @@ interface ClassicOptionable<T> {
      *
      *  @param  fn
      */
-    andThen<U>(fn: ClassicFlatmapFn<T, U>): ClassicOption<U>;
+    andThen<U>(fn: ClassicTryTransformFn<T, U>): ClassicOption<U>;
 
     /**
      *  Return the self if it contains a value, otherwise return `optb`.
@@ -135,7 +135,7 @@ interface ClassicOptionable<T> {
      *  @param  fn
      *      The function which produces a default value which is used if the self is a `None`.
      */
-    orElse(fn: ClassicMayRecoveryFn<T>): ClassicOption<T>;
+    orElse(fn: ClassicTryRecoveryFn<T>): ClassicOption<T>;
 
     /**
      *  Finalize the self.
@@ -146,7 +146,7 @@ interface ClassicOptionable<T> {
      *  @param  destructor
      *      This would be called with the inner value if self is `Some<T>`.
      */
-    drop(destructor?: TapFn<T>): void;
+    drop(destructor?: EffectFn<T>): void;
 }
 
 /**
@@ -184,15 +184,15 @@ export abstract class ClassicOptionBase<T> implements ClassicOptionable<T> {
     unwrapOr(def: T): T;
     unwrapOrElse(fn: RecoveryFn<T>): T;
     expect(msg: string): T | never;
-    map<U>(fn: MapFn<T, U>): ClassicOption<U>;
-    flatMap<U>(fn: ClassicFlatmapFn<T, U>): ClassicOption<U>;
-    mapOr<U>(def: U, fn: MapFn<T, U>): U;
-    mapOrElse<U>(def: RecoveryFn<U>, fn: MapFn<T, U>): U;
+    map<U>(fn: TransformFn<T, U>): ClassicOption<U>;
+    flatMap<U>(fn: ClassicTryTransformFn<T, U>): ClassicOption<U>;
+    mapOr<U>(def: U, fn: TransformFn<T, U>): U;
+    mapOrElse<U>(def: RecoveryFn<U>, fn: TransformFn<T, U>): U;
     and<U>(optb: ClassicOption<U>): ClassicOption<U>;
-    andThen<U>(fn: ClassicFlatmapFn<T, U>): ClassicOption<U>;
+    andThen<U>(fn: ClassicTryTransformFn<T, U>): ClassicOption<U>;
     or(optb: ClassicOption<T>): ClassicOption<T>;
-    orElse(fn: ClassicMayRecoveryFn<T>): ClassicOption<T>;
-    drop(destructor?: TapFn<T>): void;
+    orElse(fn: ClassicTryRecoveryFn<T>): ClassicOption<T>;
+    drop(destructor?: EffectFn<T>): void;
     // FYI: this is json representation.
     // eslint-disable-next-line @typescript-eslint/naming-convention
     toJSON(): { is_some: boolean; value: T | undefined };
