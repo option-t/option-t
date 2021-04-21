@@ -1,3 +1,5 @@
+import { assertIsPromise } from '../shared/assert';
+import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
 import type { MapFn } from '../shared/Function';
 import { Result, Err, createOk, isErr } from './Result';
 import { unwrapFromResult } from './unwrap';
@@ -10,7 +12,7 @@ import { unwrapFromResult } from './unwrap';
  */
 export function mapAsyncForResult<T, U, E>(
     src: Result<T, E>,
-    selector: MapFn<T, Promise<U>>
+    transformer: MapFn<T, Promise<U>>
 ): Promise<Result<U, E>> {
     if (isErr(src)) {
         const s: Err<E> = src;
@@ -18,7 +20,11 @@ export function mapAsyncForResult<T, U, E>(
     }
 
     const inner: T = unwrapFromResult(src);
-    const transformed: Promise<U> = selector(inner);
+    const transformed: Promise<U> = transformer(inner);
+    // If this is async function, this always return Promise, but not.
+    // We should check to clarify the error case if user call this function from plain js
+    // and they mistake to use this.
+    assertIsPromise(transformed, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
     const result: Promise<Result<U, E>> = transformed.then(createOk);
     return result;
 }

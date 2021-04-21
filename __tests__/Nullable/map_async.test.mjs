@@ -69,3 +69,20 @@ for (const [src, def] of testcases) {
         );
     });
 }
+
+test('callback should return Promise', async (t) => {
+    t.plan(2);
+
+    await t.throwsAsync(
+        async () => {
+            await mapAsyncForNullable(undefined, () => {
+                t.pass();
+                return 1;
+            });
+        },
+        {
+            instanceOf: TypeError,
+            message: '`transformer` must return Promise',
+        }
+    );
+});

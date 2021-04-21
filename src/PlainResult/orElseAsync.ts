@@ -1,3 +1,5 @@
+import { assertIsPromise } from '../shared/assert';
+import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
 import type { MapFn } from '../shared/Function';
 import { Result, isOk } from './Result';
 import { unwrapErrFromResult } from './unwrap';
@@ -17,6 +19,10 @@ export function orElseAsyncForResult<T, E, F>(
     }
 
     const inner = unwrapErrFromResult(src);
-    const result: Promise<Result<T, F>> = recoverer(inner);
-    return result;
+    const defaultValue: Promise<Result<T, F>> = recoverer(inner);
+    // If this is async function, this always return Promise, but not.
+    // We should check to clarify the error case if user call this function from plain js
+    // and they mistake to use this.
+    assertIsPromise(defaultValue, ERR_MSG_RECOVERER_MUST_RETURN_PROMISE);
+    return defaultValue;
 }

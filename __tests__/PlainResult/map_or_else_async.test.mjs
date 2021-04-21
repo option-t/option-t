@@ -53,3 +53,53 @@ test('Err<E>', async (t) => {
     const actual = await result;
     t.is(actual, 3, 'the return value');
 });
+
+test('input is Ok, callback should return Promise', async (t) => {
+    t.plan(2);
+
+    await t.throwsAsync(
+        async () => {
+            const input = createOk(Math.random);
+            await mapOrElseAsyncForResult(
+                input,
+                (_e) => {
+                    t.fail(`don't enter this path`);
+                    return Math.random();
+                },
+                (_v) => {
+                    t.pass();
+                    return Math.random();
+                }
+            );
+        },
+        {
+            instanceOf: TypeError,
+            message: '`transformer` must return Promise',
+        }
+    );
+});
+
+test('input is Err, callback should return Promise', async (t) => {
+    t.plan(2);
+
+    await t.throwsAsync(
+        async () => {
+            const input = createErr(Math.random);
+            await mapOrElseAsyncForResult(
+                input,
+                (_e) => {
+                    t.pass();
+                    return Math.random();
+                },
+                (_v) => {
+                    t.fail(`don't enter this path`);
+                    return Math.random();
+                }
+            );
+        },
+        {
+            instanceOf: TypeError,
+            message: '`recoverer` must return Promise',
+        }
+    );
+});

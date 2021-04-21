@@ -55,3 +55,21 @@ test('input is Err(E), callback return Err(F)', async (t) => {
     const actual = await result;
     t.is(actual, expected);
 });
+
+test('callback should return Promise', async (t) => {
+    t.plan(2);
+
+    await t.throwsAsync(
+        async () => {
+            const input = createErr(ERROR_E);
+            await orElseAsyncForResult(input, () => {
+                t.pass();
+                return 1;
+            });
+        },
+        {
+            instanceOf: TypeError,
+            message: '`recoverer` must return Promise',
+        }
+    );
+});

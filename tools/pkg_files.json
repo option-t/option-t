@@ -233,6 +233,12 @@
     "cjs/Undefinable/xor.js": null,
     "cjs/index.d.ts": null,
     "cjs/index.js": null,
+    "cjs/shared/assert.d.ts": {
+        "private": true
+    },
+    "cjs/shared/assert.js": {
+        "private": true
+    },
     "cjs/shared/ErrorMessage.d.ts": null,
     "cjs/shared/ErrorMessage.js": null,
     "cjs/shared/Function.d.ts": null,
@@ -473,6 +479,12 @@
     "esm/Undefinable/xor.mjs": null,
     "esm/index.d.ts": null,
     "esm/index.mjs": null,
+    "esm/shared/assert.d.ts": {
+        "private": true
+    },
+    "esm/shared/assert.mjs": {
+        "private": true
+    },
     "esm/shared/ErrorMessage.d.ts": null,
     "esm/shared/ErrorMessage.mjs": null,
     "esm/shared/Function.d.ts": null,
@@ -824,6 +836,15 @@
     "lib/index.d.ts": null,
     "lib/index.js": null,
     "lib/index.mjs": null,
+    "lib/shared/assert.d.ts": {
+        "private": true
+    },
+    "lib/shared/assert.js": {
+        "private": true
+    },
+    "lib/shared/assert.mjs": {
+        "private": true
+    },
     "lib/shared/ErrorMessage.d.ts": null,
     "lib/shared/ErrorMessage.js": null,
     "lib/shared/ErrorMessage.mjs": null,
