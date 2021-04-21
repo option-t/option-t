@@ -5,6 +5,11 @@ import type { Nullable } from './Nullable';
 import { expectNotNull } from './expect';
 import { ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 
+function check<T>(value: Nullable<T>): T {
+    const result = expectNotNull(value, ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
+    return result;
+}
+
 /**
  *  Return _v_ as `T` if the passed _v_ is not `null`.
  *  Otherwise, return the result of _recoverer_.
@@ -28,9 +33,6 @@ export function unwrapOrElseAsyncFromNullable<T>(
     // and they mistake to use this.
     assertIsPromise(defaultValue, ERR_MSG_RECOVERER_MUST_RETURN_PROMISE);
 
-    const result = defaultValue.then((value: T) => {
-        expectNotNull(value, ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
-        return value;
-    });
+    const result = defaultValue.then(check);
     return result;
 }
