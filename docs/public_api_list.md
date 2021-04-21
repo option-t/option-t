@@ -36,6 +36,7 @@
 - [option-t/Nullable/andThenAsync](../src/Nullable/andThenAsync.ts)
 - [option-t/Nullable/expect](../src/Nullable/expect.ts)
 - [option-t/Nullable/map](../src/Nullable/map.ts)
+- [option-t/Nullable/mapAsync](../src/Nullable/mapAsync.ts)
 - [option-t/Nullable/mapOr](../src/Nullable/mapOr.ts)
 - [option-t/Nullable/mapOrElse](../src/Nullable/mapOrElse.ts)
 - [option-t/Nullable/Nullable](../src/Nullable/Nullable.ts)

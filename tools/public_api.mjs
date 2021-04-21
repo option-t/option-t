@@ -102,6 +102,7 @@ export default {
             'andThenAsync',
             'expect',
             'map',
+            'mapAsync',
             'mapOr',
             'mapOrElse',
             'orElse',
@@ -135,6 +136,11 @@ export default {
     'Nullable/map': {
         'exports': [
             'mapForNullable'
+        ]
+    },
+    'Nullable/mapAsync': {
+        'exports': [
+            'mapAsyncForNullable'
         ]
     },
     'Nullable/mapOr': {
