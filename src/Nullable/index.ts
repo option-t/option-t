@@ -9,6 +9,7 @@ export { mapAsyncForNullable as mapAsync } from './mapAsync';
 export { mapOrForNullable as mapOr } from './mapOr';
 export { mapOrAsyncForNullable as mapOrAsync } from './mapOrAsync';
 export { mapOrElseForNullable as mapOrElse } from './mapOrElse';
+export { mapOrElseAsyncForNullable as mapOrElseAsync } from './mapOrElseAsync';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
 // export { orForNullable as or } from './or';
 export { orElseForNullable as orElse } from './orElse';
