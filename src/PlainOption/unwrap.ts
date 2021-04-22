@@ -7,6 +7,6 @@ import { Option } from './Option';
  *  @throws {TypeError}
  *      Throws if the self is a `None`.
  */
-export function unwrapOption<T>(v: Option<T>): T | never {
-    return expectIsSome(v, 'called with `None`');
+export function unwrapOption<T>(input: Option<T>): T | never {
+    return expectIsSome(input, 'called with `None`');
 }

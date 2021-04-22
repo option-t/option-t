@@ -1,21 +1,21 @@
 import { RecoveryFn } from '../shared/Function';
 import { Undefinable } from './Undefinable';
 import { expectNotUndefined } from './expect';
-import { ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
+import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 
 /**
- *  Return _v_ as `T` if the passed _v_ is not `undefined`.
- *  Otherwise, return the result of _def_.
+ *  Return _input_ as `T` if the passed _input_ is not `undefined`.
+ *  Otherwise, return the result of _recoverer_.
  *
- *  * The result of _def_ must not be `Undefinable<*>`.
+ *  * The result of _recoverer_ must not be `Undefinable<*>`.
  *      * If you try to recover the value, use `orElse()`
- *  * If the result of _def_ is `undefined`, throw `TypeError`.
+ *  * If the result of _recoverer_ is `undefined`, throw `TypeError`.
  */
-export function unwrapOrElseFromUndefinable<T>(v: Undefinable<T>, def: RecoveryFn<T>): T {
-    if (v !== undefined) {
-        return v;
+export function unwrapOrElseFromUndefinable<T>(input: Undefinable<T>, recoverer: RecoveryFn<T>): T {
+    if (input !== undefined) {
+        return input;
     } else {
-        const r = def();
-        return expectNotUndefined(r, ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE);
+        const r = recoverer();
+        return expectNotUndefined(r, ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE);
     }
 }

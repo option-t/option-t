@@ -2,17 +2,21 @@ import { Result } from './Result';
 import { TransformFn } from '../shared/Function';
 
 /**
- *  Return the result of _selector_ with using _src_ as an argument for it if _src_ is `Ok(T)`.
- *  Otherwise, return _def_.
+ *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is `Ok(T)`.
+ *  Otherwise, return _defaultValue_.
  *
  *  Basically, this operation is a combination `map()` and `unwrapOr()`.
  */
-export function mapOrForResult<T, E, U>(src: Result<T, E>, def: U, selector: TransformFn<T, U>): U {
+export function mapOrForResult<T, E, U>(
+    input: Result<T, E>,
+    defaultValue: U,
+    transformer: TransformFn<T, U>
+): U {
     let r: U;
-    if (src.ok) {
-        r = selector(src.val);
+    if (input.ok) {
+        r = transformer(input.val);
     } else {
-        r = def;
+        r = defaultValue;
     }
     return r;
 }

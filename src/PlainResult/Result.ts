@@ -35,8 +35,8 @@ export interface Ok<T> {
     readonly err?: undefined;
 }
 
-export function isOk<T, E>(v: Result<T, E>): v is Ok<T> {
-    return v.ok;
+export function isOk<T, E>(input: Result<T, E>): input is Ok<T> {
+    return input.ok;
 }
 
 export function createOk<T>(val: T): Ok<T> {
@@ -84,8 +84,8 @@ export interface Err<E> {
     readonly err: E;
 }
 
-export function isErr<T, E>(v: Result<T, E>): v is Err<E> {
-    return !v.ok;
+export function isErr<T, E>(input: Result<T, E>): input is Err<E> {
+    return !input.ok;
 }
 
 export function createErr<E>(err: E): Err<E> {

@@ -6,15 +6,15 @@ import { Nullable, isNotNull } from './Nullable';
 export type NullableAsyncTryRecoveryFn<T> = AsyncRecoveryFn<Nullable<T>>;
 
 /**
- *  Return _v_ as `T` if the passed _src_ is not `null`.
+ *  Return _input_ as `T` if the passed _input_ is not `null`.
  *  Otherwise, return the result of _recoverer_.
  */
 export function orElseAsyncForNullable<T>(
-    src: Nullable<T>,
+    input: Nullable<T>,
     recoverer: NullableAsyncTryRecoveryFn<T>
 ): Promise<Nullable<T>> {
-    if (isNotNull(src)) {
-        return Promise.resolve(src);
+    if (isNotNull(input)) {
+        return Promise.resolve(input);
     }
 
     const defaultValue: Promise<Nullable<T>> = recoverer();

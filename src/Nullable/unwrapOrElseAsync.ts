@@ -3,15 +3,15 @@ import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
 import type { AsyncRecoveryFn } from '../shared/Function';
 import type { Nullable } from './Nullable';
 import { expectNotNull } from './expect';
-import { ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
+import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 
 function check<T>(value: Nullable<T>): T {
-    const result = expectNotNull(value, ERR_MSG_DEF_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
+    const result = expectNotNull(value, ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
     return result;
 }
 
 /**
- *  Return _v_ as `T` if the passed _v_ is not `null`.
+ *  Return _input_ as `T` if the passed _input_ is not `null`.
  *  Otherwise, return the result of _recoverer_.
  *
  *  * The result of _recoverer_ must not be `Nullable<*>`.
@@ -19,11 +19,11 @@ function check<T>(value: Nullable<T>): T {
  *  * If the result of _recoverer_ is `null`, throw `TypeError`.
  */
 export function unwrapOrElseAsyncFromNullable<T>(
-    v: Nullable<T>,
+    input: Nullable<T>,
     recoverer: AsyncRecoveryFn<T>
 ): Promise<T> {
-    if (v !== null) {
-        return Promise.resolve<T>(v);
+    if (input !== null) {
+        return Promise.resolve<T>(input);
     }
 
     const defaultValue: Promise<T> = recoverer();

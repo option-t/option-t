@@ -9,8 +9,8 @@ export type NullableTryTransformFn<T, U> = TransformFn<T, Nullable<U>>;
 export type FlatmapFn<T, U> = NullableTryTransformFn<T, U>;
 
 /**
- *  Returns `null` if the _src_ is `null`,
- *  otherwise calls _selector_ with the value and returns the result.
+ *  Returns `null` if the _input_ is `null`,
+ *  otherwise calls _transformer_ with the value and returns the result.
  *
  *  XXX:
  *  Some languages call this operation flatmap.
@@ -18,13 +18,13 @@ export type FlatmapFn<T, U> = NullableTryTransformFn<T, U>;
  *  because it's too hard to undarstand that "flatMap" operation for `T | null`
  */
 export function andThenForNullable<T, U>(
-    src: Nullable<T>,
-    selector: NullableTryTransformFn<T, U>
+    input: Nullable<T>,
+    transformer: NullableTryTransformFn<T, U>
 ): Nullable<U> {
-    if (isNotNull(src)) {
-        const r = selector(src);
+    if (isNotNull(input)) {
+        const r = transformer(input);
         return r;
     } else {
-        return src;
+        return input;
     }
 }

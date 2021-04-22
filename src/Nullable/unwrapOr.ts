@@ -1,18 +1,18 @@
 import { Nullable } from './Nullable';
 import { expectNotNull } from './expect';
-import { ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
+import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 
 /**
- *  Return _v_ as `T` if the passed _v_ is not `null`.
- *  Otherwise, return _def_.
+ *  Return _input_ as `T` if the passed _input_ is not `null`.
+ *  Otherwise, return _defaultValue_.
  *
- *  * _def_ must not be `Nullable<*>`.
- *  * If the _def_ is `null`, throw `TypeError`.
+ *  * _defaultValue_ must not be `Nullable<*>`.
+ *  * If the _defaultValue_ is `null`, throw `TypeError`.
  */
-export function unwrapOrFromNullable<T>(v: Nullable<T>, def: T): T {
-    if (v !== null) {
-        return v;
+export function unwrapOrFromNullable<T>(input: Nullable<T>, defaultValue: T): T {
+    if (input !== null) {
+        return input;
     } else {
-        return expectNotNull(def, ERR_MSG_DEF_MUST_NOT_BE_NO_VAL_FOR_NULLABLE);
+        return expectNotNull(defaultValue, ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE);
     }
 }

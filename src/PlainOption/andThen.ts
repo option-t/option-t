@@ -9,8 +9,8 @@ export type OptionTryTransformFn<T, U> = TransformFn<T, Option<U>>;
 export type FlatmapFn<T, U> = OptionTryTransformFn<T, U>;
 
 /**
- *  Returns `None` if the _src_ is `None`,
- *  otherwise calls _selector_ with the value and returns the result.
+ *  Returns `None` if the _input_ is `None`,
+ *  otherwise calls _transformer_ with the value and returns the result.
  *
  *  XXX:
  *  Some languages call this operation flatmap.
@@ -18,13 +18,13 @@ export type FlatmapFn<T, U> = OptionTryTransformFn<T, U>;
  *  to sort with other APIs.
  */
 export function andThenForOption<T, U>(
-    src: Option<T>,
-    selector: OptionTryTransformFn<T, U>
+    input: Option<T>,
+    transformer: OptionTryTransformFn<T, U>
 ): Option<U> {
-    if (src.ok) {
-        const r = selector(src.val);
+    if (input.ok) {
+        const r = transformer(input.val);
         return r;
     } else {
-        return src;
+        return input;
     }
 }

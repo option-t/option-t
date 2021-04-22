@@ -9,8 +9,8 @@ export type UndefinableTryTransformFn<T, U> = TransformFn<T, Undefinable<U>>;
 export type FlatmapFn<T, U> = UndefinableTryTransformFn<T, U>;
 
 /**
- *  Returns `undefined` if the _src_ is `undefined`,
- *  otherwise calls _selector_ with the value and returns the result.
+ *  Returns `undefined` if the _input_ is `undefined`,
+ *  otherwise calls _transformer_ with the value and returns the result.
  *
  *  XXX:
  *  Some languages call this operation flatmap.
@@ -18,13 +18,13 @@ export type FlatmapFn<T, U> = UndefinableTryTransformFn<T, U>;
  *  because it's too hard to undarstand that "flatMap" operation for `T | undefined`
  */
 export function andThenForUndefinable<T, U>(
-    src: Undefinable<T>,
-    selector: UndefinableTryTransformFn<T, U>
+    input: Undefinable<T>,
+    transformer: UndefinableTryTransformFn<T, U>
 ): Undefinable<U> {
-    if (isNotUndefined(src)) {
-        const r = selector(src);
+    if (isNotUndefined(input)) {
+        const r = transformer(input);
         return r;
     } else {
-        return src;
+        return input;
     }
 }

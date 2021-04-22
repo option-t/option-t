@@ -9,17 +9,17 @@ export type UndefinableTryRecoveryFn<T> = RecoveryFn<Undefinable<T>>;
 export type MayRecoveryFn<T> = UndefinableTryRecoveryFn<T>;
 
 /**
- *  Return _v_ as `T` if the passed _v_ is not `undefined`.
- *  Otherwise, return the result of _def_.
+ *  Return _input_ as `T` if the passed _input_ is not `undefined`.
+ *  Otherwise, return the result of _recoverer_.
  */
 export function orElseForUndefinable<T>(
-    v: Undefinable<T>,
-    def: UndefinableTryRecoveryFn<T>
+    input: Undefinable<T>,
+    recoverer: UndefinableTryRecoveryFn<T>
 ): Undefinable<T> {
-    if (v !== undefined) {
-        return v;
+    if (input !== undefined) {
+        return input;
     } else {
-        const r = def();
+        const r = recoverer();
         return r;
     }
 }

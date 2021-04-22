@@ -1,17 +1,17 @@
 import type { AsyncTransformFn } from '../shared/Function';
 import { Nullable, isNull } from './Nullable';
-import { ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
+import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 import { expectNotNull } from './expect';
 import { assertIsPromise } from '../shared/assert';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
 
 function check<T>(value: Nullable<T>): T {
-    const result = expectNotNull(value, ERR_MSG_SELECTOR_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
+    const result = expectNotNull(value, ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
     return result;
 }
 
 /**
- *  Return the result of _transformer_ with using _src_ as an argument for it if _src_ is not `null`,
+ *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null`,
  *  Otherwise, return `null`.
  *
  *  * `U` must not be `Nullable<*>`.
@@ -19,14 +19,14 @@ function check<T>(value: Nullable<T>): T {
  *      * If the result of _transformer_ is `null`, this throw an `Error`.
  */
 export function mapAsyncForNullable<T, U>(
-    src: Nullable<T>,
+    input: Nullable<T>,
     transformer: AsyncTransformFn<T, U>
 ): Promise<Nullable<U>> {
-    if (isNull(src)) {
-        return Promise.resolve(src);
+    if (isNull(input)) {
+        return Promise.resolve(input);
     }
 
-    const transformed = transformer(src);
+    const transformed = transformer(input);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
     // and they mistake to use this.
