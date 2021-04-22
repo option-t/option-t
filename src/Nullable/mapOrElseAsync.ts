@@ -1,7 +1,15 @@
 import type { AsyncTransformFn, AsyncRecoveryFn } from '../shared/Function';
-import type { Nullable } from './Nullable';
-import { mapAsyncForNullable } from './mapAsync';
-import { unwrapOrElseAsyncFromNullable } from './unwrapOrElseAsync';
+import { Nullable, isNotNull } from './Nullable';
+import { assertIsPromise } from '../shared/assert';
+import {
+    ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
+    ERR_MSG_RECOVERER_MUST_RETURN_PROMISE,
+} from '../shared/ErrorMessage';
+import {
+    ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
+    ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
+} from './ErrorMessage';
+import { expectNotNull } from './expect';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null`.
@@ -19,10 +27,28 @@ export function mapOrElseAsyncForNullable<T, U>(
     recoverer: AsyncRecoveryFn<U>,
     transformer: AsyncTransformFn<T, U>
 ): Promise<U> {
-    const transformed = mapAsyncForNullable(input, transformer);
-    const result = transformed.then((transformed) => {
-        const result = unwrapOrElseAsyncFromNullable(transformed, recoverer);
-        return result;
+    let result: Nullable<Promise<U>> = null;
+    let messageForPromiseCheck = '';
+    let messageForExpect = '';
+
+    if (isNotNull(input)) {
+        result = transformer(input);
+        messageForPromiseCheck = ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE;
+        messageForExpect = ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE;
+    } else {
+        result = recoverer();
+        messageForPromiseCheck = ERR_MSG_RECOVERER_MUST_RETURN_PROMISE;
+        messageForExpect = ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE;
+    }
+
+    // If this is async function, this always return Promise, but not.
+    // We should check to clarify the error case if user call this function from plain js
+    // and they mistake to use this.
+    assertIsPromise(result, messageForPromiseCheck);
+
+    const unwrappedResult = result.then((result) => {
+        const unwrappedResult = expectNotNull(result, messageForExpect);
+        return unwrappedResult;
     });
-    return result;
+    return unwrappedResult;
 }
