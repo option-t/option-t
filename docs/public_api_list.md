@@ -40,6 +40,7 @@
 - [option-t/Nullable/mapOr](../src/Nullable/mapOr.ts)
 - [option-t/Nullable/mapOrAsync](../src/Nullable/mapOrAsync.ts)
 - [option-t/Nullable/mapOrElse](../src/Nullable/mapOrElse.ts)
+- [option-t/Nullable/mapOrElseAsync](../src/Nullable/mapOrElseAsync.ts)
 - [option-t/Nullable/Nullable](../src/Nullable/Nullable.ts)
 - [option-t/Nullable/or](../src/Nullable/or.ts)
 - [option-t/Nullable/orElse](../src/Nullable/orElse.ts)
