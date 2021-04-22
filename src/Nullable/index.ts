@@ -7,6 +7,7 @@ export { expectNotNull as expect } from './expect';
 export { mapForNullable as map } from './map';
 export { mapAsyncForNullable as mapAsync } from './mapAsync';
 export { mapOrForNullable as mapOr } from './mapOr';
+export { mapOrAsyncForNullable as mapOrAsync } from './mapOrAsync';
 export { mapOrElseForNullable as mapOrElse } from './mapOrElse';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
 // export { orForNullable as or } from './or';
