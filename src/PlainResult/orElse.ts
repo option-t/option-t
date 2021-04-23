@@ -9,18 +9,18 @@ export type ResultTryRecoveryFromErrorFn<T, E, F> = RecoveryFromErrorFn<E, Resul
 export type FlatmapErrFn<T, E, F> = ResultTryRecoveryFromErrorFn<T, E, F>;
 
 /**
- *  Calls _recoverer_  and return its returned value if the result is `Err(E)`,
- *  otherwise returns the `Ok(T)` value of self.
+ *  Calls _recoverer_ and return its returned value if _input_ is `Err(E)`,
+ *  otherwise returns _input_ as `Ok(T)`.
  *  This function can be used for control flow based on result values.
  */
 export function orElseForResult<T, E, F>(
-    a: Result<T, E>,
+    input: Result<T, E>,
     recoverer: ResultTryRecoveryFromErrorFn<T, E, F>
 ): Result<T, F> {
-    if (a.ok) {
-        return a;
+    if (input.ok) {
+        return input;
     } else {
-        const r = recoverer(a.err);
+        const r = recoverer(input.err);
         return r;
     }
 }
