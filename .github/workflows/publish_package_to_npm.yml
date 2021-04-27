@@ -5,7 +5,7 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
-        container: node:15-buster
+        container: node:16-buster
 
         steps:
             - uses: actions/checkout@v2
