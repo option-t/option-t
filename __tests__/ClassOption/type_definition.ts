@@ -15,11 +15,9 @@ import { Option, OptionBase, createSome, createNone, Some, None } from '../../__
     var unwrapOrElse: number = option.unwrapOrElse((): number => 10);
     var expect: number = option.expect('barfoo');
     var map: Option<string> = option.map((val: number): string => String(val));
-    var flatMap: Option<string> = option.flatMap(
-        (val: number): Option<string> => {
-            return createSome(String(val));
-        }
-    );
+    var flatMap: Option<string> = option.flatMap((val: number): Option<string> => {
+        return createSome(String(val));
+    });
     var mapOr: string = option.mapOr('bar', (val: number): string => String(val));
     var mapOrElse: string = option.mapOrElse(
         (): string => {
@@ -30,17 +28,13 @@ import { Option, OptionBase, createSome, createNone, Some, None } from '../../__
         }
     );
     var and: Option<string> = option.and(createSome<string>('bar'));
-    var andThen: Option<string> = option.andThen(
-        (_: number): Option<string> => {
-            return createNone<string>();
-        }
-    );
+    var andThen: Option<string> = option.andThen((_: number): Option<string> => {
+        return createNone<string>();
+    });
     var or: Option<number> = option.or(createSome<number>(10));
-    var orElse: Option<number> = option.orElse(
-        (): Option<number> => {
-            return createSome<number>(2);
-        }
-    );
+    var orElse: Option<number> = option.orElse((): Option<number> => {
+        return createSome<number>(2);
+    });
     option.drop();
     option.drop((_: number) => {});
 
@@ -61,11 +55,9 @@ import { Option, OptionBase, createSome, createNone, Some, None } from '../../__
     var unwrapOrElse: number = option.unwrapOrElse((): number => 10);
     var expect: number = option.expect('barfoo');
     var map: Option<string> = option.map((val: number): string => String(val));
-    var flatMap: Option<string> = option.flatMap(
-        (_: number): Option<string> => {
-            return createNone<string>();
-        }
-    );
+    var flatMap: Option<string> = option.flatMap((_: number): Option<string> => {
+        return createNone<string>();
+    });
     var mapOr: string = option.mapOr('bar', (val: number): string => String(val));
     var mapOrElse: string = option.mapOrElse(
         (): string => {
@@ -76,17 +68,13 @@ import { Option, OptionBase, createSome, createNone, Some, None } from '../../__
         }
     );
     var and: Option<string> = option.and(createSome<string>('bar'));
-    var andThen: Option<string> = option.andThen(
-        (_: number): Option<string> => {
-            return createNone<string>();
-        }
-    );
+    var andThen: Option<string> = option.andThen((_: number): Option<string> => {
+        return createNone<string>();
+    });
     var or: Option<number> = option.or(createSome<number>(10));
-    var orElse: Option<number> = option.orElse(
-        (): Option<number> => {
-            return createSome<number>(2);
-        }
-    );
+    var orElse: Option<number> = option.orElse((): Option<number> => {
+        return createSome<number>(2);
+    });
     option.drop();
     option.drop((_: number) => {});
 
