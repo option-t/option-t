@@ -47,7 +47,15 @@ export { transposeForResult as transpose } from './transpose';
 export {
     toOptionFromOk,
     toOptionFromErr,
+    /**
+     *  @deprecated
+     *  Use `toOptionFromOk` instead.
+     */
     toOptionFromOk as ok,
+    /**
+     *  @deprecated
+     *  Use `toOptionFromErr` instead.
+     */
     toOptionFromErr as err,
 } from './toOption';
 export { unwrapFromResult as unwrap, unwrapErrFromResult as unwrapErr } from './unwrap';
