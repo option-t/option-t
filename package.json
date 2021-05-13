@@ -1,6 +1,6 @@
 {
   "name": "option-t",
-  "version": "25.5.1",
+  "version": "25.6.0",
   "description": "Types and implementations whose APIs are inspired by Rust's `Option<T>` and `Result<T, E>`.",
   "type": "commonjs",
   "files": [
