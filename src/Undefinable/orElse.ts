@@ -1,4 +1,4 @@
-import { RecoveryFn } from '../shared/Function';
+import { RecoveryFn } from '../internal/Function';
 import { Undefinable } from './Undefinable';
 
 export type UndefinableTryRecoveryFn<T> = RecoveryFn<Undefinable<T>>;

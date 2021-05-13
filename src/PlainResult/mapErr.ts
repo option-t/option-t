@@ -1,4 +1,4 @@
-import { TransformFn } from '../shared/Function';
+import { TransformFn } from '../internal/Function';
 import { Result, createErr } from './Result';
 
 /**

@@ -1,9 +1,9 @@
-import type { AsyncTransformFn } from '../shared/Function';
+import type { AsyncTransformFn } from '../internal/Function';
 import { Nullable, isNull } from './Nullable';
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 import { expectNotNull } from './expect';
-import { assertIsPromise } from '../shared/assert';
-import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
+import { assertIsPromise } from '../internal/assert';
+import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
 
 function check<T>(value: Nullable<T>): T {
     const result = expectNotNull(value, ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);

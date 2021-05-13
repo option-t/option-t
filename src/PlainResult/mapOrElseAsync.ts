@@ -1,9 +1,9 @@
-import { assertIsPromise } from '../shared/assert';
+import { assertIsPromise } from '../internal/assert';
 import {
     ERR_MSG_RECOVERER_MUST_RETURN_PROMISE,
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
-} from '../shared/ErrorMessage';
-import type { AsyncTransformFn, AsyncRecoveryFromErrorFn } from '../shared/Function';
+} from '../internal/ErrorMessage';
+import type { AsyncTransformFn, AsyncRecoveryFromErrorFn } from '../internal/Function';
 import { Result, isOk } from './Result';
 import { unwrapFromResult, unwrapErrFromResult } from './unwrap';
 

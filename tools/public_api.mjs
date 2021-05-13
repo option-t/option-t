@@ -649,10 +649,5 @@ export default {
         // 'Undefinable/ErrorMessage': [],
         // TODO:
         // 'index': [],
-        // TODO:
-        // shared/assert': [],
-        // 'shared/ErrorMessage': [],
-        // 'shared/Function': [],
-        // 'shared/Mutable': []
     */
 };

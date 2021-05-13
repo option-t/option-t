@@ -3,7 +3,7 @@ import {
     ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE,
 } from './ErrorMessage';
 import { expectNotUndefined } from './expect';
-import { TransformFn } from '../shared/Function';
+import { TransformFn } from '../internal/Function';
 import { Undefinable } from './Undefinable';
 
 /**

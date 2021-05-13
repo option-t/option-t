@@ -1,4 +1,4 @@
-import { RecoveryFn } from '../shared/Function';
+import { RecoveryFn } from '../internal/Function';
 import { Maybe } from './Maybe';
 import { expectNotNullAndUndefined } from './expect';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';

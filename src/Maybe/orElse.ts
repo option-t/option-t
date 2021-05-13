@@ -1,4 +1,4 @@
-import { RecoveryFn } from '../shared/Function';
+import { RecoveryFn } from '../internal/Function';
 import { Maybe } from './Maybe';
 
 export type MaybeRecoveryFn<T> = RecoveryFn<Maybe<T>>;

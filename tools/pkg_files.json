@@ -27,6 +27,30 @@
     "cjs/ClassResult/compat.js": {
         "private": true
     },
+    "cjs/internal/assert.d.ts": {
+        "private": true
+    },
+    "cjs/internal/assert.js": {
+        "private": true
+    },
+    "cjs/internal/ErrorMessage.d.ts": {
+        "private": true
+    },
+    "cjs/internal/ErrorMessage.js": {
+        "private": true
+    },
+    "cjs/internal/Function.d.ts": {
+        "private": true
+    },
+    "cjs/internal/Function.js": {
+        "private": true
+    },
+    "cjs/internal/Mutable.d.ts": {
+        "private": true
+    },
+    "cjs/internal/Mutable.js": {
+        "private": true
+    },
     "cjs/Maybe/ErrorMessage.d.ts": null,
     "cjs/Maybe/ErrorMessage.js": null,
     "cjs/Maybe/Maybe.d.ts": null,
@@ -243,12 +267,6 @@
     "cjs/Undefinable/xor.js": null,
     "cjs/index.d.ts": null,
     "cjs/index.js": null,
-    "cjs/shared/assert.d.ts": {
-        "private": true
-    },
-    "cjs/shared/assert.js": {
-        "private": true
-    },
     "cjs/shared/ErrorMessage.d.ts": null,
     "cjs/shared/ErrorMessage.js": null,
     "cjs/shared/Function.d.ts": null,
@@ -281,6 +299,30 @@
         "private": true
     },
     "esm/ClassResult/compat.mjs": {
+        "private": true
+    },
+    "esm/internal/assert.d.ts": {
+        "private": true
+    },
+    "esm/internal/assert.mjs": {
+        "private": true
+    },
+    "esm/internal/ErrorMessage.d.ts": {
+        "private": true
+    },
+    "esm/internal/ErrorMessage.mjs": {
+        "private": true
+    },
+    "esm/internal/Function.d.ts": {
+        "private": true
+    },
+    "esm/internal/Function.mjs": {
+        "private": true
+    },
+    "esm/internal/Mutable.d.ts": {
+        "private": true
+    },
+    "esm/internal/Mutable.mjs": {
         "private": true
     },
     "esm/Maybe/ErrorMessage.d.ts": null,
@@ -499,12 +541,6 @@
     "esm/Undefinable/xor.mjs": null,
     "esm/index.d.ts": null,
     "esm/index.mjs": null,
-    "esm/shared/assert.d.ts": {
-        "private": true
-    },
-    "esm/shared/assert.mjs": {
-        "private": true
-    },
     "esm/shared/ErrorMessage.d.ts": null,
     "esm/shared/ErrorMessage.mjs": null,
     "esm/shared/Function.d.ts": null,
@@ -545,6 +581,42 @@
         "private": true
     },
     "lib/ClassResult/compat.mjs": {
+        "private": true
+    },
+    "lib/internal/assert.d.ts": {
+        "private": true
+    },
+    "lib/internal/assert.js": {
+        "private": true
+    },
+    "lib/internal/assert.mjs": {
+        "private": true
+    },
+    "lib/internal/ErrorMessage.d.ts": {
+        "private": true
+    },
+    "lib/internal/ErrorMessage.js": {
+        "private": true
+    },
+    "lib/internal/ErrorMessage.mjs": {
+        "private": true
+    },
+    "lib/internal/Function.d.ts": {
+        "private": true
+    },
+    "lib/internal/Function.js": {
+        "private": true
+    },
+    "lib/internal/Function.mjs": {
+        "private": true
+    },
+    "lib/internal/Mutable.d.ts": {
+        "private": true
+    },
+    "lib/internal/Mutable.js": {
+        "private": true
+    },
+    "lib/internal/Mutable.mjs": {
         "private": true
     },
     "lib/Maybe/ErrorMessage.d.ts": null,
@@ -871,15 +943,6 @@
     "lib/index.d.ts": null,
     "lib/index.js": null,
     "lib/index.mjs": null,
-    "lib/shared/assert.d.ts": {
-        "private": true
-    },
-    "lib/shared/assert.js": {
-        "private": true
-    },
-    "lib/shared/assert.mjs": {
-        "private": true
-    },
     "lib/shared/ErrorMessage.d.ts": null,
     "lib/shared/ErrorMessage.js": null,
     "lib/shared/ErrorMessage.mjs": null,

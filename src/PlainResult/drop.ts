@@ -1,5 +1,5 @@
-import { Mutable } from '../shared/Mutable';
-import { EffectFn } from '../shared/Function';
+import { Mutable } from '../internal/Mutable';
+import { EffectFn } from '../internal/Function';
 import { Result, Ok, Err } from './Result';
 import { asMutResult } from './asMut';
 

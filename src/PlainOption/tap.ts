@@ -1,4 +1,4 @@
-import { EffectFn } from '../shared/Function';
+import { EffectFn } from '../internal/Function';
 import { Option } from './Option';
 
 /**

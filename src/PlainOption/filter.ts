@@ -1,5 +1,5 @@
 import { Option, isNone, createNone } from './Option';
-import { FilterFn } from '../shared/Function';
+import { FilterFn } from '../internal/Function';
 
 /**
  *  Returns `None` if the option is `None`,

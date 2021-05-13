@@ -1,4 +1,4 @@
-import { Mutable } from '../shared/Mutable';
+import { Mutable } from '../internal/Mutable';
 import { Result } from './Result';
 
 /**

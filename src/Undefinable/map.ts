@@ -1,6 +1,6 @@
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 import { expectNotUndefined } from './expect';
-import { TransformFn } from '../shared/Function';
+import { TransformFn } from '../internal/Function';
 import { Undefinable, isNotUndefined } from './Undefinable';
 
 /**
