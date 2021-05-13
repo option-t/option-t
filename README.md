@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/option-t.svg)](http://badge.fury.io/js/option-t)
 [![CI Status (GitHub Actions)](https://github.com/karen-irc/option-t/workflows/CI/badge.svg)](https://github.com/karen-irc/option-t/actions?query=workflow%3ACI)
 
-* This library represents [Option type](http://en.wikipedia.org/wiki/Option_type) in ECMAScript.
+* This library represents [Option type](https://en.wikipedia.org/wiki/Option_type) in ECMAScript.
     * You can sort the "nullable" convention in your project.
 * APIs are inspired by Rust Language's [`Option<T>`](https://doc.rust-lang.org/std/option/) and [`Result<T, E>`](https://doc.rust-lang.org/std/result/).
 * TypeScript friendly APIs.
@@ -84,7 +84,7 @@ This convention is clear as error handling style and it's static typing friendly
 
 Some static type checking tools also provide a way to check nullability and provide these conventions.
  
-- Flowtype's semantics has [a built-in "Maybe" types](http://flowtype.org/docs/nullable-types.html),
+- Flowtype's semantics has [a built-in "Maybe" types](https://flow.org/en/docs/types/maybe/),
 - TypeScript has [a non-nullable type check](https://github.com/Microsoft/TypeScript/issues/185),
 - Google Closure Compiler also can check a non-nullable type via JSDoc style annotations in some compilation mode.
  
