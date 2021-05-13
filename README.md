@@ -191,6 +191,10 @@ You can use [these paths](./docs/public_api_list.md).
             - `option-t/lib/Result`: Use `option-t/esm/Result` or `option-t/cjs/Result`.
             - Otherwise, replase `option-t/lib/***` to `option-t/**`.
 
+##### Deprecation: Don't add `.js`, `.cjs`, `.mjs` extension for import path of this package
+
+We're keeping their import path for backward compatibility.
+But we're plan to remove them for future releases to switch this package's `type=module`. 
 
 ### Idioms
 
