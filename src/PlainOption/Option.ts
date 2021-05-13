@@ -11,7 +11,8 @@
  *  Operators for this type sometimes return the inputted object directly
  *  to avoid an unnecessary objecti allocation.
  *
- *  We use this design by the assumption that we would not compare `a` and `b` usually in the following case:
+ *  We use this design by the assumption that we would not compare `a` and `b` usually in the following case.
+ *  It usually suggest some design problems if you would like to compare these `a` and `b`.
  *
  *  ```typescript
  *  const a = createSome(val);
