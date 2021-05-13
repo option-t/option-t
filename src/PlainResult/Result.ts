@@ -1,3 +1,23 @@
+/**
+ *
+ *  This is [_result type_](https://en.wikipedia.org/wiki/Result_type).
+ *
+ *  ## CAUTION:
+ *
+ *  ### Be careful to use `===` or `Object.is()` to compare the equality of this type
+ *
+ *  You should use `equal` operator to check the equality for two objects of this type
+ *  instead of `===` or `Object.is()`.
+ *  Operators for this type sometimes return the inputted object directly
+ *  to avoid an unnecessary objecti allocation.
+ *
+ *  We use this design by the assumption that we would not compare `a` and `b` usually in the following case:
+ *
+ *  ```typescript
+ *  const a = createOk(val);
+ *  const b = andThen(a, someOperation);
+ *  ```
+ */
 export type Result<T, E> = Ok<T> | Err<E>;
 
 export interface Ok<T> {

@@ -227,6 +227,7 @@ export default {
             'isNone',
             'and',
             'andThen',
+            'equal',
             'expect',
             'filter',
             'flatten',
@@ -261,6 +262,11 @@ export default {
     'PlainOption/drop': {
         'exports': [
             'unsafeDropForOption'
+        ]
+    },
+    'PlainOption/equal': {
+        'exports': [
+            'equalForOption'
         ]
     },
     'PlainOption/expect': {
@@ -362,6 +368,7 @@ export default {
             'and',
             'andThen',
             'andThenAsync',
+            'equal',
             'expect',
             'expectErr',
             'flatten',
@@ -418,6 +425,11 @@ export default {
             'unsafeDropBothForResult',
             'unsafeDropOkForResult',
             'unsafeDropErrForResult',
+        ]
+    },
+    'PlainResult/equal': {
+        'exports': [
+            'equalForResult',
         ]
     },
     'PlainResult/expect': {
