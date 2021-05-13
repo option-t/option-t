@@ -3,7 +3,7 @@
 'use strict';
 
 // ESLint Configuration Files enables to include comments.
-// http://eslint.org/docs/configuring/#comments-in-configuration-files
+// https://eslint.org/docs/user-guide/configuring/
 module.exports = {
 
     'root': true,
