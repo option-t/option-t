@@ -1,5 +1,5 @@
 import { Option } from './Option';
-import { TransformFn } from '../shared/Function';
+import { TransformFn } from '../internal/Function';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is `Some(T)`.

@@ -1,10 +1,10 @@
-import type { AsyncTransformFn, AsyncRecoveryFn } from '../shared/Function';
+import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/Function';
 import { Nullable, isNotNull } from './Nullable';
-import { assertIsPromise } from '../shared/assert';
+import { assertIsPromise } from '../internal/assert';
 import {
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
     ERR_MSG_RECOVERER_MUST_RETURN_PROMISE,
-} from '../shared/ErrorMessage';
+} from '../internal/ErrorMessage';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,

@@ -1,4 +1,4 @@
-import { RecoveryFn } from '../shared/Function';
+import { RecoveryFn } from '../internal/Function';
 import { Nullable } from './Nullable';
 import { expectNotNull } from './expect';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';

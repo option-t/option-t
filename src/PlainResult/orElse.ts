@@ -1,4 +1,4 @@
-import type { RecoveryFromErrorFn } from '../shared/Function';
+import type { RecoveryFromErrorFn } from '../internal/Function';
 import { Result } from './Result';
 
 export type ResultTryRecoveryFromErrorFn<T, E, F> = RecoveryFromErrorFn<E, Result<T, F>>;

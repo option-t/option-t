@@ -1,6 +1,6 @@
-import { assertIsPromise } from '../shared/assert';
-import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
-import type { AsyncTransformFn } from '../shared/Function';
+import { assertIsPromise } from '../internal/assert';
+import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
+import type { AsyncTransformFn } from '../internal/Function';
 import { isErr, Result } from './Result';
 import { unwrapFromResult } from './unwrap';
 

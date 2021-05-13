@@ -3,7 +3,7 @@ import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
 } from './ErrorMessage';
-import { TransformFn, RecoveryFn } from '../shared/Function';
+import { TransformFn, RecoveryFn } from '../internal/Function';
 import { Nullable } from './Nullable';
 
 /**

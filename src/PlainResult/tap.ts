@@ -1,4 +1,4 @@
-import { EffectFn } from '../shared/Function';
+import { EffectFn } from '../internal/Function';
 import { Result } from './Result';
 
 function noop<T>(_v: T) {}

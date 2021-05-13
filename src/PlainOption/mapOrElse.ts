@@ -1,4 +1,4 @@
-import { TransformFn, RecoveryFn } from '../shared/Function';
+import { TransformFn, RecoveryFn } from '../internal/Function';
 import { Option } from './Option';
 
 /**

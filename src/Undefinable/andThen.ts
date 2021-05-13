@@ -1,4 +1,4 @@
-import { TransformFn } from '../shared/Function';
+import { TransformFn } from '../internal/Function';
 import { Undefinable, isNotUndefined } from './Undefinable';
 
 export type UndefinableTryTransformFn<T, U> = TransformFn<T, Undefinable<U>>;

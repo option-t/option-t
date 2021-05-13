@@ -1,4 +1,4 @@
-import { TransformFn } from '../shared/Function';
+import { TransformFn } from '../internal/Function';
 import { Result } from './Result';
 
 export type ResultTryTransformFn<T, U, E> = TransformFn<T, Result<U, E>>;

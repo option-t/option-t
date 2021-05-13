@@ -1,5 +1,5 @@
 import type { ClassicOption, Some, None } from '../ClassOption/ClassicOption';
-import type { TransformFn, RecoveryFromErrorFn, EffectFn } from '../shared/Function';
+import type { TransformFn, RecoveryFromErrorFn, EffectFn } from '../internal/Function';
 
 /**
  *  @deprecated

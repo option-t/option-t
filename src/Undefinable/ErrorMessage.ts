@@ -3,7 +3,7 @@ import {
     ERR_MSG_CALLED_WITH,
     ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN,
-} from '../shared/ErrorMessage';
+} from '../internal/ErrorMessage';
 
 const NO_VALUE_TYPE_STR = '`undefined`';
 

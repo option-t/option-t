@@ -1,6 +1,6 @@
-import { assertIsPromise } from '../shared/assert';
-import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
-import type { AsyncRecoveryFn } from '../shared/Function';
+import { assertIsPromise } from '../internal/assert';
+import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
+import type { AsyncRecoveryFn } from '../internal/Function';
 import type { Nullable } from './Nullable';
 import { expectNotNull } from './expect';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';

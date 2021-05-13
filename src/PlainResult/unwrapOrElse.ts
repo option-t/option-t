@@ -1,4 +1,4 @@
-import { RecoveryFromErrorFn } from '../shared/Function';
+import { RecoveryFromErrorFn } from '../internal/Function';
 import { Result } from './Result';
 
 /**

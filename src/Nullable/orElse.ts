@@ -1,4 +1,4 @@
-import { RecoveryFn } from '../shared/Function';
+import { RecoveryFn } from '../internal/Function';
 import { Nullable } from './Nullable';
 
 export type NullableTryRecoveryFn<T> = RecoveryFn<Nullable<T>>;

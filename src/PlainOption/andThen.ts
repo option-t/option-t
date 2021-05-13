@@ -1,4 +1,4 @@
-import { TransformFn } from '../shared/Function';
+import { TransformFn } from '../internal/Function';
 import { Option } from './Option';
 
 export type OptionTryTransformFn<T, U> = TransformFn<T, Option<U>>;

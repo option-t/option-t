@@ -1,6 +1,6 @@
 import { expectNotNull } from './expect';
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
-import { TransformFn } from '../shared/Function';
+import { TransformFn } from '../internal/Function';
 import { Nullable, isNotNull } from './Nullable';
 
 /**

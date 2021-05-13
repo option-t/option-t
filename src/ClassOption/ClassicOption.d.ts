@@ -1,4 +1,4 @@
-import type { TransformFn, RecoveryFn, EffectFn } from '../shared/Function';
+import type { TransformFn, RecoveryFn, EffectFn } from '../internal/Function';
 
 /**
  *  @deprecated

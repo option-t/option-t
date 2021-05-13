@@ -1,4 +1,4 @@
-import { TransformFn } from '../shared/Function';
+import { TransformFn } from '../internal/Function';
 import { Maybe, isNotNullAndUndefined } from './Maybe';
 
 export type MaybeTryTransformFn<T, U> = TransformFn<T, Maybe<U>>;

@@ -1,6 +1,6 @@
-import { assertIsPromise } from '../shared/assert';
-import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../shared/ErrorMessage';
-import type { AsyncRecoveryFromErrorFn } from '../shared/Function';
+import { assertIsPromise } from '../internal/assert';
+import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
+import type { AsyncRecoveryFromErrorFn } from '../internal/Function';
 import { Result, isOk } from './Result';
 import { unwrapErrFromResult } from './unwrap';
 

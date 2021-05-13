@@ -1,4 +1,4 @@
-import { TransformFn } from '../shared/Function';
+import { TransformFn } from '../internal/Function';
 import { Nullable, isNotNull } from './Nullable';
 
 export type NullableTryTransformFn<T, U> = TransformFn<T, Nullable<U>>;

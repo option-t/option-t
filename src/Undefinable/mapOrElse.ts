@@ -3,7 +3,7 @@ import {
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
 } from './ErrorMessage';
 import { expectNotUndefined } from './expect';
-import { RecoveryFn, TransformFn } from '../shared/Function';
+import { RecoveryFn, TransformFn } from '../internal/Function';
 import { Undefinable } from './Undefinable';
 
 /**
