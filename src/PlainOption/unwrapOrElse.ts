@@ -6,5 +6,11 @@ import { Option } from './Option';
  *  If the value is an `None` then it calls `def` with its value.
  */
 export function unwrapOrElseFromOption<T>(input: Option<T>, recoverer: RecoveryFn<T>): T {
-    return input.ok ? input.val : recoverer();
+    if (input.ok) {
+        const val: T = input.val;
+        return val;
+    }
+
+    const fallback = recoverer();
+    return fallback;
 }

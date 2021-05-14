@@ -5,5 +5,9 @@ import { Result } from './Result';
  *  Otherwise, return _b_.
  */
 export function orForResult<T, E, F>(a: Result<T, E>, b: Result<T, F>): Result<T, F> {
-    return a.ok ? a : b;
+    if (a.ok) {
+        return a;
+    }
+
+    return b;
 }

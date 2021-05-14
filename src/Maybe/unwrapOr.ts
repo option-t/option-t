@@ -12,10 +12,11 @@ import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './ErrorMessa
 export function unwrapOrFromMaybe<T>(input: Maybe<T>, defaultValue: T): T {
     if (input !== undefined && input !== null) {
         return input;
-    } else {
-        return expectNotNullAndUndefined(
-            defaultValue,
-            ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE
-        );
     }
+
+    const passed = expectNotNullAndUndefined(
+        defaultValue,
+        ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE
+    );
+    return passed;
 }

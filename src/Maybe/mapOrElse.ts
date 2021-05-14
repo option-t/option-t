@@ -22,14 +22,15 @@ export function mapOrElseForMaybe<T, U>(
     recoverer: RecoveryFn<U>,
     transformer: TransformFn<T, U>
 ): U {
-    let r: U;
+    let result: U;
     let msg = '';
     if (input !== undefined && input !== null) {
-        r = transformer(input);
+        result = transformer(input);
         msg = ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE;
     } else {
-        r = recoverer();
+        result = recoverer();
         msg = ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE;
     }
-    return expectNotNullAndUndefined(r, msg);
+    const passed = expectNotNullAndUndefined(result, msg);
+    return passed;
 }

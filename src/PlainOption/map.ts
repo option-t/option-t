@@ -8,10 +8,10 @@ import { Option, createSome } from './Option';
  *  This function can be used to compose the results of two functions.
  */
 export function mapForOption<T, U>(input: Option<T>, transformer: TransformFn<T, U>): Option<U> {
-    if (input.ok) {
-        const r: U = transformer(input.val);
-        return createSome(r);
-    } else {
+    if (!input.ok) {
         return input;
     }
+
+    const transformed: U = transformer(input.val);
+    return createSome(transformed);
 }

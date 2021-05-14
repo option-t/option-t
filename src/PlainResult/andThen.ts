@@ -21,10 +21,10 @@ export function andThenForResult<T, U, E>(
     input: Result<T, E>,
     transformer: ResultTryTransformFn<T, U, E>
 ): Result<U, E> {
-    if (input.ok) {
-        const r = transformer(input.val);
-        return r;
-    } else {
+    if (!input.ok) {
         return input;
     }
+
+    const transformed = transformer(input.val);
+    return transformed;
 }

@@ -5,5 +5,9 @@ import { Result } from './Result';
  *  Otherwise, return _a_.
  */
 export function andForResult<T, U, E>(a: Result<T, E>, b: Result<U, E>): Result<U, E> {
-    return a.ok ? b : a;
+    if (a.ok) {
+        return b;
+    }
+
+    return a;
 }

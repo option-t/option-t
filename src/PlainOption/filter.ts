@@ -18,6 +18,6 @@ export function filterForOption<T>(input: Option<T>, predicate: FilterFn<T>): Op
         return createNone();
     }
 
-    const r: Option<T> = input;
-    return r;
+    const result: Option<T> = input;
+    return result;
 }

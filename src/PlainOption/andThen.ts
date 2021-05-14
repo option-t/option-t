@@ -21,10 +21,10 @@ export function andThenForOption<T, U>(
     input: Option<T>,
     transformer: OptionTryTransformFn<T, U>
 ): Option<U> {
-    if (input.ok) {
-        const r = transformer(input.val);
-        return r;
-    } else {
+    if (!input.ok) {
         return input;
     }
+
+    const transformed = transformer(input.val);
+    return transformed;
 }

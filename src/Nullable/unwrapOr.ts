@@ -12,7 +12,11 @@ import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE } from './ErrorMe
 export function unwrapOrFromNullable<T>(input: Nullable<T>, defaultValue: T): T {
     if (input !== null) {
         return input;
-    } else {
-        return expectNotNull(defaultValue, ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE);
     }
+
+    const passed = expectNotNull(
+        defaultValue,
+        ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE
+    );
+    return passed;
 }

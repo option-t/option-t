@@ -13,11 +13,13 @@ export function xorForMaybe<T>(a: Maybe<T>, b: Maybe<T>): Maybe<T> {
 
     if (aIsSome && !bIsSome) {
         return a;
-    } else if (!aIsSome && bIsSome) {
-        return b;
-    } else {
-        // XXX: We can choose both `null` and `undefined`.
-        // But we return `undefined` to sort with [Optional Chaining](https://github.com/TC39/proposal-optional-chaining)
-        return undefined;
     }
+
+    if (!aIsSome && bIsSome) {
+        return b;
+    }
+
+    // XXX: We can choose both `null` and `undefined`.
+    // But we return `undefined` to sort with [Optional Chaining](https://github.com/TC39/proposal-optional-chaining)
+    return undefined;
 }

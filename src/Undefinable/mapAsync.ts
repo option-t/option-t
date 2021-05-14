@@ -6,11 +6,11 @@ import { assertIsPromise } from '../internal/assert';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
 
 function check<T>(value: Undefinable<T>): T {
-    const result = expectNotUndefined(
+    const passed = expectNotUndefined(
         value,
         ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE
     );
-    return result;
+    return passed;
 }
 
 /**
@@ -29,18 +29,18 @@ export function mapAsyncForUndefinable<T, U>(
         return Promise.resolve(input);
     }
 
-    const transformed = transformer(input);
+    const result = transformer(input);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
     // and they mistake to use this.
-    assertIsPromise(transformed, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
+    assertIsPromise(result, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
 
     // XXX:
     // If `U` is `Undefinable<SomeType>`, we think naturally the returned value of this function would be
     // the nested type `Undefinable<Undefinable<SomeType>>`. But this type means `(SomeType | undefined) | undefined`.
     // So a type checker would recognize this type as `SomeType | undefined`. So it's flattened.
     // Then the user should call `andThen` (_flatmap_) operation instead of this.
-    const result = transformed.then(check);
+    const passed = result.then(check);
 
-    return result;
+    return passed;
 }

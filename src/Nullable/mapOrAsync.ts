@@ -9,8 +9,8 @@ import {
 import { expectNotNull } from './expect';
 
 function check<T>(value: Nullable<T>): T {
-    const result = expectNotNull(value, ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
-    return result;
+    const passed = expectNotNull(value, ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
+    return passed;
 }
 
 /**
@@ -37,12 +37,12 @@ export function mapOrAsyncForNullable<T, U>(
         return Promise.resolve(nonNullDefault);
     }
 
-    const transformed: Promise<U> = transformer(input);
+    const result: Promise<U> = transformer(input);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
     // and they mistake to use this.
-    assertIsPromise(transformed, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
+    assertIsPromise(result, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
 
-    const result: Promise<U> = transformed.then(check);
-    return result;
+    const passed: Promise<U> = result.then(check);
+    return passed;
 }

@@ -12,9 +12,9 @@ export function okOrElseForPlainOption<T, E>(
     if (input.ok) {
         const v = createOk<T>(input.val);
         return v;
-    } else {
-        const e: E = recoverer();
-        const v = createErr<E>(e);
-        return v;
     }
+
+    const e: E = recoverer();
+    const v = createErr<E>(e);
+    return v;
 }

@@ -1,5 +1,5 @@
 import { TransformFn } from '../internal/Function';
-import { Result, Err, createOk } from './Result';
+import { Result, createOk } from './Result';
 
 /**
  *  Maps a `Result<T, E>` to `Result<U, E>` by applying a _transformer_ function
@@ -11,11 +11,10 @@ export function mapForResult<T, U, E>(
     input: Result<T, E>,
     transformer: TransformFn<T, U>
 ): Result<U, E> {
-    if (input.ok) {
-        const r: U = transformer(input.val);
-        return createOk(r);
-    } else {
-        const s: Err<E> = input;
-        return s;
+    if (!input.ok) {
+        return input;
     }
+
+    const transformed: U = transformer(input.val);
+    return createOk(transformed);
 }

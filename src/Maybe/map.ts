@@ -1,7 +1,7 @@
 import { expectNotNullAndUndefined } from './expect';
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';
 import { TransformFn } from '../internal/Function';
-import { Maybe, isNotNullAndUndefined } from './Maybe';
+import { Maybe, isNullOrUndefined } from './Maybe';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null` and `undefined`.
@@ -12,15 +12,19 @@ import { Maybe, isNotNullAndUndefined } from './Maybe';
  *      * If the result of _transformer_ is `null` or `undefined`, this throw an `Error`.
  */
 export function mapForMaybe<T, U>(input: Maybe<T>, transformer: TransformFn<T, U>): Maybe<U> {
-    if (isNotNullAndUndefined(input)) {
-        const r: U = transformer(input);
-        // XXX:
-        // If `U` is `Maybe<SomeType>`, we think naturally the returned value of this function would be
-        // the nested type `Maybe<Maybe<SomeType>>`. But this type means `(SomeType | null | undefined) | null | undefined`.
-        // So a type checker would recognize this type as `SomeType | null | undefined`. So it's flattened.
-        // Then the user should call `andThen` (_flatmap_) operation instead of this.
-        return expectNotNullAndUndefined(r, ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE);
-    } else {
+    if (isNullOrUndefined(input)) {
         return input;
     }
+
+    const result: U = transformer(input);
+    // XXX:
+    // If `U` is `Maybe<SomeType>`, we think naturally the returned value of this function would be
+    // the nested type `Maybe<Maybe<SomeType>>`. But this type means `(SomeType | null | undefined) | null | undefined`.
+    // So a type checker would recognize this type as `SomeType | null | undefined`. So it's flattened.
+    // Then the user should call `andThen` (_flatmap_) operation instead of this.
+    const passed = expectNotNullAndUndefined(
+        result,
+        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE
+    );
+    return passed;
 }

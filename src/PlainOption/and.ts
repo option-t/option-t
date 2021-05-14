@@ -5,5 +5,9 @@ import { Option } from './Option';
  *  Otherwise, return _a_.
  */
 export function andForOption<T, U>(a: Option<T>, b: Option<U>): Option<U> {
-    return a.ok ? b : a;
+    if (a.ok) {
+        return b;
+    }
+
+    return a;
 }

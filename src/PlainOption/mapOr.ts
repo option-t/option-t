@@ -12,11 +12,10 @@ export function mapOrForOption<T, U>(
     defaultValue: U,
     transformer: TransformFn<T, U>
 ): U {
-    let r: U;
-    if (input.ok) {
-        r = transformer(input.val);
-    } else {
-        r = defaultValue;
+    if (!input.ok) {
+        return defaultValue;
     }
-    return r;
+
+    const result: U = transformer(input.val);
+    return result;
 }

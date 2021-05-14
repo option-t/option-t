@@ -17,10 +17,10 @@ export function orElseAsyncForNullable<T>(
         return Promise.resolve(input);
     }
 
-    const defaultValue: Promise<Nullable<T>> = recoverer();
+    const fallback: Promise<Nullable<T>> = recoverer();
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
     // and they mistake to use this.
-    assertIsPromise(defaultValue, ERR_MSG_RECOVERER_MUST_RETURN_PROMISE);
-    return defaultValue;
+    assertIsPromise(fallback, ERR_MSG_RECOVERER_MUST_RETURN_PROMISE);
+    return fallback;
 }

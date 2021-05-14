@@ -5,5 +5,9 @@ import { Undefinable } from './Undefinable';
  *  Otherwise, return _b_.
  */
 export function orForUndefinable<T>(a: Undefinable<T>, b: Undefinable<T>): Undefinable<T> {
-    return a !== undefined ? a : b;
+    if (a !== undefined) {
+        return a;
+    }
+
+    return b;
 }

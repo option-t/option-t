@@ -46,9 +46,9 @@ export function mapOrElseAsyncForNullable<T, U>(
     // and they mistake to use this.
     assertIsPromise(result, messageForPromiseCheck);
 
-    const unwrappedResult = result.then((result) => {
+    const passed = result.then((result) => {
         const unwrappedResult = expectNotNull(result, messageForExpect);
         return unwrappedResult;
     });
-    return unwrappedResult;
+    return passed;
 }
