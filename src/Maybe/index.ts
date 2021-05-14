@@ -4,6 +4,7 @@ export { NotNullAndUndefined, Maybe, isNotNullAndUndefined, isNullOrUndefined } 
 export { andThenForMaybe as andThen } from './andThen';
 export { expectNotNullAndUndefined as expect } from './expect';
 export { mapForMaybe as map } from './map';
+export { mapAsyncForMaybe as mapAsync } from './mapAsync';
 export { mapOrForMaybe as mapOr } from './mapOr';
 export { mapOrElseForMaybe as mapOrElse } from './mapOrElse';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
