@@ -44,7 +44,10 @@ test('pass undefined', (t) => {
                 () => {
                     unwrapOrFromMaybe(src, def);
                 },
-                { instanceOf: TypeError }
+                {
+                    instanceOf: TypeError,
+                    message: '`defaultValue` must not be `null` or `undefined`',
+                }
             );
         });
     }

@@ -68,10 +68,13 @@ for (const [src, def] of testcases) {
     )}, def = ${String(def)}`, async (t) => {
         await t.throwsAsync(
             async () => {
-                mapAsyncForUndefinable(src, (_v) => def);
+                await mapAsyncForUndefinable(src, async (_v) => def);
                 t.fail('do not reach to here');
             },
-            { instanceOf: TypeError }
+            {
+                instanceOf: TypeError,
+                message: '`transformer` must not return `undefined`',
+            }
         );
     });
 }

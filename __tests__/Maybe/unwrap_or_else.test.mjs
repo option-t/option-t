@@ -59,7 +59,10 @@ test('pass undefined', (t) => {
                 () => {
                     unwrapOrElseFromMaybe(src, () => def);
                 },
-                { instanceOf: TypeError }
+                {
+                    instanceOf: TypeError,
+                    message: '`recoverer` must not return `null` or `undefined`',
+                }
             );
         });
     }

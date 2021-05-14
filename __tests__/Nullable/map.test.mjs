@@ -47,7 +47,7 @@ for (const [src, def] of testcases) {
             () => {
                 mapForNullable(src, (_v) => def);
             },
-            { instanceOf: TypeError }
+            { instanceOf: TypeError, message: '`transformer` must not return `null`' }
         );
     });
 }

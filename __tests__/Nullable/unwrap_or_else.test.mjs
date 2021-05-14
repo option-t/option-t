@@ -53,7 +53,7 @@ for (const [src, def] of testcases) {
             () => {
                 unwrapOrElseFromNullable(src, () => def);
             },
-            { instanceOf: TypeError }
+            { instanceOf: TypeError, message: '`recoverer` must not return `null`' }
         );
     });
 }

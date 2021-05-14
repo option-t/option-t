@@ -36,14 +36,16 @@ test('pass null', (t) => {
 });
 
 test('pass undefined', (t) => {
-    const EXPECTED_MSG = 'expected test';
-    let e = null;
-    try {
-        expectNotUndefined(undefined, EXPECTED_MSG);
-    } catch (expected) {
-        e = expected;
-    }
+    t.plan(1);
 
-    t.is(e instanceof TypeError, true, 'should throw error');
-    t.is(e.message.includes(EXPECTED_MSG), true, 'the error contains expected message');
+    const EXPECTED_MSG = 'expected test';
+    t.throws(
+        () => {
+            expectNotUndefined(undefined, EXPECTED_MSG);
+        },
+        {
+            instanceOf: TypeError,
+            message: EXPECTED_MSG,
+        }
+    );
 });

@@ -62,10 +62,13 @@ for (const [src, def] of testcases) {
     )}, def = ${String(def)}`, async (t) => {
         await t.throwsAsync(
             async () => {
-                mapAsyncForNullable(src, (_v) => def);
+                await mapAsyncForNullable(src, async (_v) => def);
                 t.fail('do not reach to here');
             },
-            { instanceOf: TypeError }
+            {
+                instanceOf: TypeError,
+                message: '`transformer` must not return `null`',
+            }
         );
     });
 }

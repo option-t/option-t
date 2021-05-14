@@ -42,7 +42,7 @@ test("assert that do not return Undefinable<*> as the selector's result", (t) =>
             () => {
                 mapForUndefinable(src, (_v) => def);
             },
-            { instanceOf: TypeError },
+            { instanceOf: TypeError, message: '`transformer` must not return `undefined`' },
             `v = ${String(src)}, def = ${String(def)}`
         );
     }

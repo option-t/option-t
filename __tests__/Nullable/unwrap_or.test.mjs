@@ -34,7 +34,7 @@ for (const [src, def] of testcases) {
             () => {
                 unwrapOrFromNullable(src, def);
             },
-            { instanceOf: TypeError }
+            { instanceOf: TypeError, message: '`defaultValue` must not be `null`' }
         );
     });
 }

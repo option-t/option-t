@@ -45,7 +45,10 @@ test('pass undefined', (t) => {
                 () => {
                     mapForMaybe(src, (_v) => def);
                 },
-                { instanceOf: TypeError }
+                {
+                    instanceOf: TypeError,
+                    message: '`transformer` must not return `null` or `undefined`',
+                }
             );
         });
     }
