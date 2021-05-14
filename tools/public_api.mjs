@@ -584,6 +584,11 @@ export default {
             'mapForUndefinable'
         ]
     },
+    'Undefinable/mapAsync': {
+        'exports': [
+            'mapAsyncForUndefinable'
+        ]
+    },
     'Undefinable/mapOr': {
         'exports': [
             'mapOrForUndefinable'
