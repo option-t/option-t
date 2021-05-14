@@ -558,6 +558,7 @@ export default {
             'isNotUndefined',
             'isUndefined',
             'andThen',
+            'andThenAsync',
             'expect',
             'map',
             'mapAsync',
@@ -579,6 +580,11 @@ export default {
     'Undefinable/andThen': {
         'exports': [
             'andThenForUndefinable'
+        ]
+    },
+    'Undefinable/andThenAsync': {
+        'exports': [
+            'andThenAsyncForUndefinable'
         ]
     },
     'Undefinable/expect': {
