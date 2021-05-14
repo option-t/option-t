@@ -21,7 +21,7 @@ test('pass null', (t) => {
         () => {
             unwrapMaybe(null);
         },
-        { instanceOf: TypeError }
+        { instanceOf: TypeError, message: 'called with `null` or `undefined`' }
     );
 });
 
@@ -30,6 +30,6 @@ test('pass undefined', (t) => {
         () => {
             unwrapMaybe(undefined);
         },
-        { instanceOf: TypeError }
+        { instanceOf: TypeError, message: 'called with `null` or `undefined`' }
     );
 });

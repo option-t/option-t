@@ -74,7 +74,7 @@ for (const [src, def] of testcases) {
             async () => {
                 await unwrapOrElseAsyncFromNullable(src, async () => def);
             },
-            { instanceOf: TypeError }
+            { instanceOf: TypeError, message: '`recoverer` must not return `null`' }
         );
     });
 }

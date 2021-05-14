@@ -33,15 +33,17 @@ test('pass undefined', (t) => {
     t.is(result, DEFAULT_VAL, 'should be the default');
 });
 
-test('should not accept Maybe<*> as default', (t) => {
+{
     const testcases = [[undefined, undefined]];
     for (const [src, def] of testcases) {
-        t.throws(
-            () => {
-                unwrapOrFromUndefinable(src, def);
-            },
-            { instanceOf: TypeError },
-            `v = ${String(src)}, def = ${String(def)}`
-        );
+        const label = `v = ${String(src)}, def = ${String(def)}`;
+        test('should not accept undefined as default: ' + label, (t) => {
+            t.throws(
+                () => {
+                    unwrapOrFromUndefinable(src, def);
+                },
+                { instanceOf: TypeError, message: '`defaultValue` must not be `undefined`' }
+            );
+        });
     }
-});
+}

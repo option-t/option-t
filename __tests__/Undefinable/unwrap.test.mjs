@@ -20,25 +20,26 @@ for (const value of nonNullableValue) {
 }
 
 test('pass null', (t) => {
-    let result;
-    let e = null;
-    try {
+    t.plan(2);
+
+    let result = Math.random();
+    t.notThrows(() => {
         result = unwrapUndefinable(null);
-    } catch (expected) {
-        e = expected;
-    }
+    }, 'should not throw error');
 
     t.is(result, null, 'should the expected result');
-    t.is(e, null, 'should not throw error');
 });
 
 test('pass undefined', (t) => {
-    let e;
-    try {
-        unwrapUndefinable(undefined);
-    } catch (expected) {
-        e = expected;
-    }
+    t.plan(1);
 
-    t.true(e instanceof TypeError, 'should throw error');
+    t.throws(
+        () => {
+            unwrapUndefinable(undefined);
+        },
+        {
+            instanceOf: TypeError,
+            message: 'called with `undefined`',
+        }
+    );
 });

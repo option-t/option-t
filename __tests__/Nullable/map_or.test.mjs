@@ -56,7 +56,7 @@ test('pass undefined', (t) => {
                 () => {
                     mapOrForNullable(src, def, (_v) => selectorResult);
                 },
-                { instanceOf: TypeError }
+                { instanceOf: TypeError, message: '`transformer` must not return `null`' }
             );
         });
     }
@@ -72,7 +72,7 @@ test('pass undefined', (t) => {
                 () => {
                     mapOrForNullable(src, def, (_v) => selectorResult);
                 },
-                { instanceOf: TypeError }
+                { instanceOf: TypeError, message: '`defaultValue` must not be `null`' }
             );
         });
     }

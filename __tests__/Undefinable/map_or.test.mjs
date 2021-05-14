@@ -52,7 +52,7 @@ test("assert that do not return Undefinable<*> as the selector's result", (t) =>
             () => {
                 mapOrForUndefinable(src, def, (_v) => selectorResult);
             },
-            { instanceOf: TypeError },
+            { instanceOf: TypeError, message: '`transformer` must not return `undefined`' },
             `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`
         );
     }
@@ -65,7 +65,7 @@ test('assert that def is not Undefinable<*>', (t) => {
             () => {
                 mapOrForUndefinable(src, def, (_v) => selectorResult);
             },
-            { instanceOf: TypeError },
+            { instanceOf: TypeError, message: '`defaultValue` must not be `undefined`' },
             `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(selectorResult)}`
         );
     }

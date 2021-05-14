@@ -22,11 +22,13 @@ test('pass null', (t) => {
         () => {
             unwrapNullable(null);
         },
-        { instanceOf: TypeError }
+        { instanceOf: TypeError, message: 'called with `null`' }
     );
 });
 
 test('pass undefined', (t) => {
+    t.plan(2);
+
     let result = null;
     t.notThrows(() => {
         result = unwrapNullable(undefined);
