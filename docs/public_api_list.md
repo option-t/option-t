@@ -118,6 +118,7 @@
 - [option-t/Undefinable](../src/Undefinable/index.ts)
 - [option-t/Undefinable/and](../src/Undefinable/and.ts)
 - [option-t/Undefinable/andThen](../src/Undefinable/andThen.ts)
+- [option-t/Undefinable/andThenAsync](../src/Undefinable/andThenAsync.ts)
 - [option-t/Undefinable/expect](../src/Undefinable/expect.ts)
 - [option-t/Undefinable/map](../src/Undefinable/map.ts)
 - [option-t/Undefinable/mapAsync](../src/Undefinable/mapAsync.ts)
