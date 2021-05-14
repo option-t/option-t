@@ -15,8 +15,8 @@ export type MayRecoveryFn<T> = OptionTryRecoveryFn<T>;
 export function orElseForOption<T>(input: Option<T>, recoverer: OptionTryRecoveryFn<T>): Option<T> {
     if (input.ok) {
         return input;
-    } else {
-        const r = recoverer();
-        return r;
     }
+
+    const fallback = recoverer();
+    return fallback;
 }

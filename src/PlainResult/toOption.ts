@@ -8,9 +8,9 @@ import { Result } from './Result';
 export function toOptionFromOk<T, E>(input: Result<T, E>): Option<T> {
     if (input.ok) {
         return createSome<T>(input.val);
-    } else {
-        return createNone();
     }
+
+    return createNone();
 }
 
 /**
@@ -20,7 +20,7 @@ export function toOptionFromOk<T, E>(input: Result<T, E>): Option<T> {
 export function toOptionFromErr<T, E>(input: Result<T, E>): Option<E> {
     if (!input.ok) {
         return createSome<E>(input.err);
-    } else {
-        return createNone();
     }
+
+    return createNone();
 }

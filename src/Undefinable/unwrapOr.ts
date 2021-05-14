@@ -12,10 +12,11 @@ import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './Erro
 export function unwrapOrFromUndefinable<T>(input: Undefinable<T>, defaultValue: T): T {
     if (input !== undefined) {
         return input;
-    } else {
-        return expectNotUndefined(
-            defaultValue,
-            ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE
-        );
     }
+
+    const passed: T = expectNotUndefined(
+        defaultValue,
+        ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE
+    );
+    return passed;
 }

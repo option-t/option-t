@@ -18,8 +18,8 @@ export function orElseForNullable<T>(
 ): Nullable<T> {
     if (input !== null) {
         return input;
-    } else {
-        const r = recoverer();
-        return r;
     }
+
+    const fallback = recoverer();
+    return fallback;
 }

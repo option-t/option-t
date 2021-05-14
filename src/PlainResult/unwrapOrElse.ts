@@ -9,5 +9,11 @@ export function unwrapOrElseFromResult<T, E>(
     input: Result<T, E>,
     recoverer: RecoveryFromErrorFn<E, T>
 ): T {
-    return input.ok ? input.val : recoverer(input.err);
+    if (input.ok) {
+        const val: T = input.val;
+        return val;
+    }
+
+    const fallback: T = recoverer(input.err);
+    return fallback;
 }

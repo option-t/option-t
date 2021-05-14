@@ -12,18 +12,18 @@ export function transposeForResult<T, E>(input: Result<Option<T>, E>): Option<Re
     if (isErr(input)) {
         const e: E = input.err;
         const newErr: Err<E> = createErr(e);
-        const r: Some<Err<E>> = createSome<Err<E>>(newErr);
-        return r;
+        const result: Some<Err<E>> = createSome<Err<E>>(newErr);
+        return result;
     }
 
     const inner: Option<T> = input.val;
     if (isNone(inner)) {
-        const r = createNone();
-        return r;
+        const result = createNone();
+        return result;
     }
 
     const innerInner: T = inner.val;
     const innerV: Ok<T> = createOk(innerInner);
-    const r: Option<Ok<T>> = createSome(innerV);
-    return r;
+    const result: Option<Ok<T>> = createSome(innerV);
+    return result;
 }

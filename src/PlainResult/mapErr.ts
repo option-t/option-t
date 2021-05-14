@@ -11,10 +11,10 @@ export function mapErrForResult<T, E, F>(
     input: Result<T, E>,
     transformer: TransformFn<E, F>
 ): Result<T, F> {
-    if (!input.ok) {
-        const r: F = transformer(input.err);
-        return createErr<F>(r);
-    } else {
+    if (input.ok) {
         return input;
     }
+
+    const transformed: F = transformer(input.err);
+    return createErr<F>(transformed);
 }

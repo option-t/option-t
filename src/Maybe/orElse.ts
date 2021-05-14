@@ -10,8 +10,8 @@ export type MaybeRecoveryFn<T> = RecoveryFn<Maybe<T>>;
 export function orElseForMaybe<T>(input: Maybe<T>, recoverer: MaybeRecoveryFn<T>): Maybe<T> {
     if (input !== undefined && input !== null) {
         return input;
-    } else {
-        const r = recoverer();
-        return r;
     }
+
+    const fallback = recoverer();
+    return fallback;
 }

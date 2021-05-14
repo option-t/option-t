@@ -9,6 +9,6 @@ function flatten<T>(input: Option<T>): Option<T> {
  *  Flatten the inner value of _input_.
  */
 export function flattenForOption<T>(input: Option<Option<T>>): Option<T> {
-    const r: Option<T> = andThenForOption(input, flatten);
-    return r;
+    const result: Option<T> = andThenForOption(input, flatten);
+    return result;
 }

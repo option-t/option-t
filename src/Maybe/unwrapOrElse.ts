@@ -13,8 +13,12 @@ import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessa
 export function unwrapOrElseFromMaybe<T>(input: Maybe<T>, recoverer: RecoveryFn<T>): T {
     if (input !== undefined && input !== null) {
         return input;
-    } else {
-        const r = recoverer();
-        return expectNotNullAndUndefined(r, ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE);
     }
+
+    const fallback: T = recoverer();
+    const passed: T = expectNotNullAndUndefined(
+        fallback,
+        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE
+    );
+    return passed;
 }

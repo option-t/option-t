@@ -14,8 +14,12 @@ import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMe
 export function unwrapOrElseFromNullable<T>(input: Nullable<T>, recoverer: RecoveryFn<T>): T {
     if (input !== null) {
         return input;
-    } else {
-        const r = recoverer();
-        return expectNotNull(r, ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
     }
+
+    const fallback: T = recoverer();
+    const passed: T = expectNotNull(
+        fallback,
+        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE
+    );
+    return passed;
 }

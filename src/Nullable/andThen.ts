@@ -1,5 +1,5 @@
 import { TransformFn } from '../internal/Function';
-import { Nullable, isNotNull } from './Nullable';
+import { Nullable, isNull } from './Nullable';
 
 export type NullableTryTransformFn<T, U> = TransformFn<T, Nullable<U>>;
 
@@ -21,10 +21,10 @@ export function andThenForNullable<T, U>(
     input: Nullable<T>,
     transformer: NullableTryTransformFn<T, U>
 ): Nullable<U> {
-    if (isNotNull(input)) {
-        const r = transformer(input);
-        return r;
-    } else {
+    if (isNull(input)) {
         return input;
     }
+
+    const result = transformer(input);
+    return result;
 }

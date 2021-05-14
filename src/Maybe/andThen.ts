@@ -1,5 +1,5 @@
 import { TransformFn } from '../internal/Function';
-import { Maybe, isNotNullAndUndefined } from './Maybe';
+import { Maybe, isNullOrUndefined } from './Maybe';
 
 export type MaybeTryTransformFn<T, U> = TransformFn<T, Maybe<U>>;
 
@@ -21,10 +21,10 @@ export function andThenForMaybe<T, U>(
     input: Maybe<T>,
     transformer: MaybeTryTransformFn<T, U>
 ): Maybe<U> {
-    if (isNotNullAndUndefined(input)) {
-        const r = transformer(input);
-        return r;
-    } else {
+    if (isNullOrUndefined(input)) {
         return input;
     }
+
+    const result = transformer(input);
+    return result;
 }

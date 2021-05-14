@@ -1,5 +1,5 @@
 import { TransformFn } from '../internal/Function';
-import { Undefinable, isNotUndefined } from './Undefinable';
+import { Undefinable, isUndefined } from './Undefinable';
 
 export type UndefinableTryTransformFn<T, U> = TransformFn<T, Undefinable<U>>;
 
@@ -21,10 +21,10 @@ export function andThenForUndefinable<T, U>(
     input: Undefinable<T>,
     transformer: UndefinableTryTransformFn<T, U>
 ): Undefinable<U> {
-    if (isNotUndefined(input)) {
-        const r = transformer(input);
-        return r;
-    } else {
+    if (isUndefined(input)) {
         return input;
     }
+
+    const result = transformer(input);
+    return result;
 }

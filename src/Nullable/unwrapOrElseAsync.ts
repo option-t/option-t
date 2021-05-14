@@ -6,8 +6,8 @@ import { expectNotNull } from './expect';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 
 function check<T>(value: Nullable<T>): T {
-    const result = expectNotNull(value, ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
-    return result;
+    const passed = expectNotNull(value, ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
+    return passed;
 }
 
 /**
@@ -26,13 +26,13 @@ export function unwrapOrElseAsyncFromNullable<T>(
         return Promise.resolve<T>(input);
     }
 
-    const defaultValue: Promise<T> = recoverer();
+    const fallback: Promise<T> = recoverer();
 
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
     // and they mistake to use this.
-    assertIsPromise(defaultValue, ERR_MSG_RECOVERER_MUST_RETURN_PROMISE);
+    assertIsPromise(fallback, ERR_MSG_RECOVERER_MUST_RETURN_PROMISE);
 
-    const result = defaultValue.then(check);
-    return result;
+    const passed = fallback.then(check);
+    return passed;
 }

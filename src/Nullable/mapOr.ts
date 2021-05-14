@@ -22,14 +22,15 @@ export function mapOrForNullable<T, U>(
     defaultValue: U,
     transformer: TransformFn<T, U>
 ): U {
-    let r: U;
+    let result: U;
     let msg = '';
     if (input !== null) {
-        r = transformer(input);
+        result = transformer(input);
         msg = ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE;
     } else {
-        r = defaultValue;
+        result = defaultValue;
         msg = ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE;
     }
-    return expectNotNull(r, msg);
+    const passed: U = expectNotNull(result, msg);
+    return passed;
 }

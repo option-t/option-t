@@ -22,14 +22,15 @@ export function mapOrElseForUndefinable<T, U>(
     recoverer: RecoveryFn<U>,
     transformer: TransformFn<T, U>
 ): U {
-    let r: U;
+    let result: U;
     let msg = '';
     if (input !== undefined) {
-        r = transformer(input);
+        result = transformer(input);
         msg = ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE;
     } else {
-        r = recoverer();
+        result = recoverer();
         msg = ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE;
     }
-    return expectNotUndefined(r, msg);
+    const passed: U = expectNotUndefined(result, msg);
+    return passed;
 }

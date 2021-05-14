@@ -19,8 +19,8 @@ export function orElseForResult<T, E, F>(
 ): Result<T, F> {
     if (input.ok) {
         return input;
-    } else {
-        const r = recoverer(input.err);
-        return r;
     }
+
+    const fallback = recoverer(input.err);
+    return fallback;
 }

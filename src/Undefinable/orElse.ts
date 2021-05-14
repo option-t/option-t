@@ -18,8 +18,8 @@ export function orElseForUndefinable<T>(
 ): Undefinable<T> {
     if (input !== undefined) {
         return input;
-    } else {
-        const r = recoverer();
-        return r;
     }
+
+    const fallback = recoverer();
+    return fallback;
 }

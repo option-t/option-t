@@ -13,9 +13,11 @@ export function xorForOption<T>(a: Option<T>, b: Option<T>): Option<T> {
 
     if (aIsSome && !bIsSome) {
         return a;
-    } else if (!aIsSome && bIsSome) {
-        return b;
-    } else {
-        return createNone();
     }
+
+    if (!aIsSome && bIsSome) {
+        return b;
+    }
+
+    return createNone();
 }

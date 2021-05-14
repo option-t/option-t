@@ -5,5 +5,9 @@ import { Nullable, isNotNull } from './Nullable';
  *  Otherwise, return _a_.
  */
 export function andForNullable<T, U>(a: Nullable<T>, b: Nullable<U>): Nullable<U> {
-    return isNotNull(a) ? b : a;
+    if (isNotNull(a)) {
+        return b;
+    }
+
+    return a;
 }

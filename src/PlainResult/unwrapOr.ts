@@ -5,5 +5,10 @@ import { Result } from './Result';
  *  If the value is an `Err(E)` then return _defaultValue_.
  */
 export function unwrapOrFromResult<T>(input: Result<T, unknown>, defaultValue: T): T {
-    return input.ok ? input.val : defaultValue;
+    if (input.ok) {
+        const val: T = input.val;
+        return val;
+    }
+
+    return defaultValue;
 }

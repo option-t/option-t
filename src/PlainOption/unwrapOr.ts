@@ -5,5 +5,10 @@ import { Option } from './Option';
  *  If the value is an `None` then return _defaultValue_.
  */
 export function unwrapOrFromOption<T>(input: Option<T>, defaultValue: T): T {
-    return input.ok ? input.val : defaultValue;
+    if (input.ok) {
+        const val: T = input.val;
+        return val;
+    }
+
+    return defaultValue;
 }

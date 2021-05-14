@@ -11,11 +11,11 @@ export function mapOrElseForOption<T, U>(
     recoverer: RecoveryFn<U>,
     transformer: TransformFn<T, U>
 ): U {
-    let r: U;
-    if (input.ok) {
-        r = transformer(input.val);
-    } else {
-        r = recoverer();
+    if (!input.ok) {
+        const fallback = recoverer();
+        return fallback;
     }
-    return r;
+
+    const result = transformer(input.val);
+    return result;
 }

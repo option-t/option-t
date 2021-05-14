@@ -12,11 +12,10 @@ export function mapOrForResult<T, E, U>(
     defaultValue: U,
     transformer: TransformFn<T, U>
 ): U {
-    let r: U;
     if (input.ok) {
-        r = transformer(input.val);
-    } else {
-        r = defaultValue;
+        const transformed: U = transformer(input.val);
+        return transformed;
     }
-    return r;
+
+    return defaultValue;
 }
