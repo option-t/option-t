@@ -41,6 +41,11 @@ export default {
             'mapForMaybe'
         ]
     },
+    'Maybe/mapAsync': {
+        'exports': [
+            'mapAsyncForMaybe'
+        ]
+    },
     'Maybe/Maybe': {
         'exports': [
             'isNotNullAndUndefined',
