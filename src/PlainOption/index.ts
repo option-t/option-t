@@ -33,6 +33,7 @@ export { expectIsSome as expect } from './expect';
 export { filterForOption as filter } from './filter';
 export { flattenForOption as flatten } from './flatten';
 export { mapForOption as map } from './map';
+export { mapAsyncForOption as mapAsync } from './mapAsync';
 export { mapOrForOption as mapOr } from './mapOr';
 export { mapOrElseForOption as mapOrElse } from './mapOrElse';
 export { orForOption as or } from './or';

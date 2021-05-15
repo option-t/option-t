@@ -71,6 +71,7 @@
 - [option-t/PlainOption/filter](../src/PlainOption/filter.ts)
 - [option-t/PlainOption/flatten](../src/PlainOption/flatten.ts)
 - [option-t/PlainOption/map](../src/PlainOption/map.ts)
+- [option-t/PlainOption/mapAsync](../src/PlainOption/mapAsync.ts)
 - [option-t/PlainOption/mapOr](../src/PlainOption/mapOr.ts)
 - [option-t/PlainOption/mapOrElse](../src/PlainOption/mapOrElse.ts)
 - [option-t/PlainOption/okOr](../src/PlainOption/okOr.ts)
