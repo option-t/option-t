@@ -8,6 +8,7 @@ export { mapForMaybe as map } from './map';
 export { mapAsyncForMaybe as mapAsync } from './mapAsync';
 export { mapOrForMaybe as mapOr } from './mapOr';
 export { mapOrElseForMaybe as mapOrElse } from './mapOrElse';
+export { mapOrElseAsyncForMaybe as mapOrElseAsync } from './mapOrElseAsync';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
 // export { orForMaybe as or } from './or';
 export { orElseForMaybe as orElse } from './orElse';

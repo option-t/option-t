@@ -3,7 +3,7 @@ import test from 'ava';
 import { mapOrElseForMaybe } from '../../__dist/esm/Maybe/mapOrElse.mjs';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
-for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
+for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
     test('value:' + String(INPUT), (t) => {
         t.plan(3);
 
@@ -17,7 +17,7 @@ for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
             },
             (v) => {
                 t.pass('should call selector fn');
-                t.is(v, EXPECTED, 'the arg is the input');
+                t.is(v, PASSED_VALUE, 'the arg is the input');
                 return v;
             }
         );
@@ -46,53 +46,49 @@ for (const NULL_VALUE of [undefined, null]) {
         );
         t.is(result, DEFAULE_VAL);
     });
-}
 
-{
-    const testcases = [
-        [1, 2, undefined],
-        [1, 2, null],
-    ];
-    for (const [src, def, selectorResult] of testcases) {
-        test(`assert that do not return Maybe<*> as the selector's result. v = ${String(
-            src
-        )}, def = ${String(def)}, selectorResult=${String(selectorResult)}`, (t) => {
-            t.plan(1);
+    test(`assert that do not return Maybe<*> as the transformer's result. transformer's result=${String(
+        NULL_VALUE
+    )}`, (t) => {
+        t.plan(2);
+
+        t.throws(
+            () => {
+                const INPUT = Math.random();
+                mapOrElseForMaybe(
+                    INPUT,
+                    () => {
+                        t.fail('do not call this');
+                        return Math.random();
+                    },
+                    (_v) => {
+                        t.pass('call here');
+                        return NULL_VALUE;
+                    }
+                );
+            },
+            {
+                instanceOf: TypeError,
+                message: '`transformer` must not return `null` or `undefined`',
+            }
+        );
+    });
+
+    for (const FALLBACK_VALUE of [undefined, null]) {
+        test(`v = ${String(NULL_VALUE)}, def = ${String(FALLBACK_VALUE)}`, (t) => {
+            t.plan(2);
             t.throws(
                 () => {
                     mapOrElseForMaybe(
-                        src,
-                        () => def,
-                        (_v) => selectorResult
-                    );
-                },
-                {
-                    instanceOf: TypeError,
-                    message: '`transformer` must not return `null` or `undefined`',
-                }
-            );
-        });
-    }
-}
-
-{
-    const testcases = [
-        [null, undefined, ''],
-        [null, null, ''],
-        [undefined, undefined, ''],
-        [undefined, null, ''],
-    ];
-    for (const [src, def, selectorResult] of testcases) {
-        test(`v = ${String(src)}, def = ${String(def)}, selectorResult=${String(
-            selectorResult
-        )}`, (t) => {
-            t.plan(1);
-            t.throws(
-                () => {
-                    mapOrElseForMaybe(
-                        src,
-                        () => def,
-                        (_v) => selectorResult
+                        NULL_VALUE,
+                        () => {
+                            t.pass('call this');
+                            return FALLBACK_VALUE;
+                        },
+                        (_v) => {
+                            t.fail('do not call this');
+                            return Math.random();
+                        }
                     );
                 },
                 {

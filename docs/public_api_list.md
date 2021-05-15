@@ -21,6 +21,7 @@
 - [option-t/Maybe/Maybe](../src/Maybe/Maybe.ts)
 - [option-t/Maybe/mapOr](../src/Maybe/mapOr.ts)
 - [option-t/Maybe/mapOrElse](../src/Maybe/mapOrElse.ts)
+- [option-t/Maybe/mapOrElseAsync](../src/Maybe/mapOrElseAsync.ts)
 - [option-t/Maybe/or](../src/Maybe/or.ts)
 - [option-t/Maybe/orElse](../src/Maybe/orElse.ts)
 - [option-t/Maybe/orElseAsync](../src/Maybe/orElseAsync.ts)
