@@ -15,6 +15,7 @@ export default {
             'map',
             'mapAsync',
             'mapOr',
+            'mapOrAsync',
             'mapOrElse',
             'mapOrElseAsync',
             'orElse',
@@ -65,6 +66,11 @@ export default {
     'Maybe/mapOr': {
         'exports': [
             'mapOrForMaybe'
+        ]
+    },
+    'Maybe/mapOrAsync': {
+        'exports': [
+            'mapOrAsyncForMaybe'
         ]
     },
     'Maybe/mapOrElse': {
