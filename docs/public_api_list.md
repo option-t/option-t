@@ -23,6 +23,7 @@
 - [option-t/Maybe/mapOrElse](../src/Maybe/mapOrElse.ts)
 - [option-t/Maybe/or](../src/Maybe/or.ts)
 - [option-t/Maybe/orElse](../src/Maybe/orElse.ts)
+- [option-t/Maybe/orElseAsync](../src/Maybe/orElseAsync.ts)
 - [option-t/Maybe/tap](../src/Maybe/tap.ts)
 - [option-t/Maybe/unwrap](../src/Maybe/unwrap.ts)
 - [option-t/Maybe/unwrapOr](../src/Maybe/unwrapOr.ts)

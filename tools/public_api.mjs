@@ -17,6 +17,7 @@ export default {
             'mapOr',
             'mapOrElse',
             'orElse',
+            'orElseAsync',
             'tap',
             'unwrap',
             'unwrapOr',
@@ -77,6 +78,11 @@ export default {
     'Maybe/orElse': {
         'exports': [
             'orElseForMaybe'
+        ]
+    },
+    'Maybe/orElseAsync': {
+        'exports': [
+            'orElseAsyncForMaybe'
         ]
     },
     'Maybe/tap': {
