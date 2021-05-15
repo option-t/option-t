@@ -16,3 +16,4 @@ export { tapUndefinable as tap } from './tap';
 export { unwrapUndefinable as unwrap } from './unwrap';
 export { unwrapOrFromUndefinable as unwrapOr } from './unwrapOr';
 export { unwrapOrElseFromUndefinable as unwrapOrElse } from './unwrapOrElse';
+export { unwrapOrElseAsyncFromUndefinable as unwrapOrElseAsync } from './unwrapOrElseAsync';

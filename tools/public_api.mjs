@@ -568,6 +568,7 @@ export default {
             'unwrap',
             'unwrapOr',
             'unwrapOrElse',
+            'unwrapOrElseAsync',
         ]
     },
 
@@ -650,6 +651,11 @@ export default {
     'Undefinable/unwrapOrElse': {
         'exports': [
             'unwrapOrElseFromUndefinable'
+        ]
+    },
+    'Undefinable/unwrapOrElseAsync': {
+        'exports': [
+            'unwrapOrElseAsyncFromUndefinable'
         ]
     },
     'Undefinable/xor': {
