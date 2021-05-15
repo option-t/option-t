@@ -16,3 +16,4 @@ export { tapMaybe as tap } from './tap';
 export { unwrapMaybe as unwrap } from './unwrap';
 export { unwrapOrFromMaybe as unwrapOr } from './unwrapOr';
 export { unwrapOrElseFromMaybe as unwrapOrElse } from './unwrapOrElse';
+export { unwrapOrElseAsyncFromMaybe as unwrapOrElseAsync } from './unwrapOrElseAsync';

@@ -28,6 +28,7 @@
 - [option-t/Maybe/unwrap](../src/Maybe/unwrap.ts)
 - [option-t/Maybe/unwrapOr](../src/Maybe/unwrapOr.ts)
 - [option-t/Maybe/unwrapOrElse](../src/Maybe/unwrapOrElse.ts)
+- [option-t/Maybe/unwrapOrElseAsync](../src/Maybe/unwrapOrElseAsync.ts)
 - [option-t/Maybe/xor](../src/Maybe/xor.ts)
 
 
