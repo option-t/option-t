@@ -28,5 +28,13 @@ export function unsafeDropForOption<T>(input: Option<T>, mutator: EffectFn<MutSo
     const mutable = asMutOption(input);
     if (mutable.ok) {
         mutator(mutable);
+        mutable.val = undefined as never;
     }
+
+    // By this freezing, if this function is called to the _input_ again,
+    // then this will throw a mutation error on releasing the value.
+    //
+    // We can do similar thing with `WeakSet`.
+    // But we did not choose it way to avoid a side effect to initialize `WeakSet`.
+    Object.freeze(mutable);
 }
