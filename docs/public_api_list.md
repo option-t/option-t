@@ -132,5 +132,6 @@
 - [option-t/Undefinable/unwrap](../src/Undefinable/unwrap.ts)
 - [option-t/Undefinable/unwrapOr](../src/Undefinable/unwrapOr.ts)
 - [option-t/Undefinable/unwrapOrElse](../src/Undefinable/unwrapOrElse.ts)
+- [option-t/Undefinable/unwrapOrElseAsync](../src/Undefinable/unwrapOrElseAsync.ts)
 - [option-t/Undefinable/xor](../src/Undefinable/xor.ts)
 
