@@ -1,20 +1,18 @@
 import test from 'ava';
 
 import { mapOrForNullable } from '../../__dist/esm/Nullable/mapOr.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 
-for (const value of nonNullableValue) {
-    test('pass the value: ' + String(value), (t) => {
+for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
+    test('pass the value: ' + String(INPUT), (t) => {
         t.plan(3);
 
-        const EXPECTED = value;
-
-        const result = mapOrForNullable(EXPECTED, Symbol('def'), (v) => {
+        const result = mapOrForNullable(INPUT, Symbol('def'), (v) => {
             t.pass('should call selector fn');
-            t.is(v, EXPECTED);
+            t.is(v, PASSED_VALUE);
             return v;
         });
 

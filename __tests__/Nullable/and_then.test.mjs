@@ -1,24 +1,22 @@
 import test from 'ava';
 
 import { andThenForNullable } from '../../__dist/esm/Nullable/andThen.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 
-for (const value of nonNullableValue) {
-    const EXPECTED = value;
-
-    test(`pass : ${String(value)}`, (t) => {
+for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
+    test(`pass : ${String(INPUT)}`, (t) => {
         t.plan(3);
 
-        const result = andThenForNullable(EXPECTED, (v) => {
+        const actual = andThenForNullable(INPUT, (v) => {
             t.pass();
-            t.is(v, EXPECTED);
+            t.is(v, PASSED_VALUE);
             return v;
         });
 
-        t.is(result, EXPECTED);
+        t.is(actual, EXPECTED);
     });
 }
 

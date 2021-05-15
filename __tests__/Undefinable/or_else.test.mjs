@@ -1,21 +1,17 @@
 import test from 'ava';
 
 import { orElseForUndefinable } from '../../__dist/esm/Undefinable/orElse.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = null;
 
-for (const value of nonNullableValue) {
-    test('pass the value' + String(value), (t) => {
-        const DEFAULT_VAL = Math.random();
-        const EXPECTED = value;
-
+for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
+    test('pass the value' + String(INPUT), (t) => {
         t.plan(1);
 
         const result = orElseForUndefinable(EXPECTED, () => {
-            t.pass('should not call recover fn');
-            return DEFAULT_VAL;
+            t.fail('should not call recover fn');
         });
 
         t.is(result, EXPECTED, 'should the expected result');

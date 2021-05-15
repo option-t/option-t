@@ -1,23 +1,12 @@
 import test from 'ava';
 
 import { andThenAsyncForNullable } from '../../__dist/esm/Nullable/andThenAsync.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForAsync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 
-const nonNullableValueCaseList = nonNullableValue.map((input) => {
-    if (input instanceof Promise) {
-        // Promise will be unwrap recursively automatically.
-        // There is no ways to unwrap single level now.
-        // So we need to care that.
-        return [input, input, 'this is promise'];
-    }
-
-    return [input, input, input];
-});
-
-for (const [INPUT, PASSED_EXPECTED, FINAL_EXPECTED] of nonNullableValueCaseList) {
+for (const [INPUT, PASSED_EXPECTED, FINAL_EXPECTED] of nonNullableValueCaseListForAsync) {
     test(`pass : ${String(INPUT)}`, async (t) => {
         t.plan(4);
 

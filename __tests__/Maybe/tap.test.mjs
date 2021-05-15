@@ -1,18 +1,18 @@
 import test from 'ava';
 
 import { tapMaybe } from '../../__dist/esm/Maybe/tap.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
-for (const input of nonNullableValue) {
-    test('pass the value: ' + String(input), (t) => {
+for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
+    test('pass the value: ' + String(INPUT), (t) => {
         t.plan(3);
 
-        const result = tapMaybe(input, (v) => {
+        const actual = tapMaybe(INPUT, (v) => {
             t.pass('should call the selector');
-            t.is(v, input, 'the arg is the input');
+            t.is(v, PASSED_VALUE, 'the arg is the input');
         });
 
-        t.is(result, input);
+        t.is(actual, EXPECTED);
     });
 }
 

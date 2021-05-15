@@ -1,20 +1,9 @@
 import test from 'ava';
 
 import { orElseAsyncForMaybe } from '../../__dist/esm/Maybe/orElseAsync.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForAsync } from '../utils.mjs';
 
-const nonNullableValueCaseList = nonNullableValue.map((input) => {
-    if (input instanceof Promise) {
-        // Promise will be unwrap recursively automatically.
-        // There is no ways to unwrap single level now.
-        // So we need to care that.
-        return [input, 'this is promise'];
-    }
-
-    return [input, input];
-});
-
-for (const [INPUT, EXPECTED] of nonNullableValueCaseList) {
+for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForAsync) {
     test('pass the value ' + String(INPUT), async (t) => {
         t.plan(2);
 

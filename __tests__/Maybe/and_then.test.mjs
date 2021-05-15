@@ -1,15 +1,15 @@
 import test from 'ava';
 
 import { andThenForMaybe } from '../../__dist/esm/Maybe/andThen.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
-for (const value of nonNullableValue) {
-    test('pass the value: ' + String(value), (t) => {
-        t.plan(2);
+for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
+    test('pass the value: ' + String(INPUT), (t) => {
+        t.plan(3);
 
-        const EXPECTED = value;
-        const result = andThenForMaybe(EXPECTED, (v) => {
+        const result = andThenForMaybe(INPUT, (v) => {
             t.pass('should call selector fn');
+            t.is(v, PASSED_VALUE);
             return v;
         });
 

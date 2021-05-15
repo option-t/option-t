@@ -1,21 +1,23 @@
 import test from 'ava';
 
 import { mapOrElseForNullable } from '../../__dist/esm/Nullable/mapOrElse.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 
-for (const value of nonNullableValue) {
-    test('pass the value: ' + String(value), (t) => {
+for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
+    test('pass the value: ' + String(INPUT), (t) => {
         t.plan(2);
 
         const DEFAULT_VAL = Symbol('def');
-        const EXPECTED = value;
 
         const result = mapOrElseForNullable(
-            EXPECTED,
-            () => DEFAULT_VAL,
+            INPUT,
+            () => {
+                t.fail('do not call here');
+                return DEFAULT_VAL;
+            },
             (v) => {
                 t.is(v, EXPECTED, 'the arg is the input');
                 return v;

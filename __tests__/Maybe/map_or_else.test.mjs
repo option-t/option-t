@@ -1,18 +1,20 @@
 import test from 'ava';
 
 import { mapOrElseForMaybe } from '../../__dist/esm/Maybe/mapOrElse.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
-for (const value of nonNullableValue) {
-    test('value:' + String(value), (t) => {
+for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
+    test('value:' + String(INPUT), (t) => {
         t.plan(3);
 
         const DEFAULT_VAL = Symbol('def');
-        const EXPECTED = value;
 
         const result = mapOrElseForMaybe(
-            EXPECTED,
-            () => DEFAULT_VAL,
+            INPUT,
+            () => {
+                t.fail('do not call here');
+                return DEFAULT_VAL;
+            },
             (v) => {
                 t.pass('should call selector fn');
                 t.is(v, EXPECTED, 'the arg is the input');

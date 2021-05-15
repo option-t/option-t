@@ -1,20 +1,18 @@
 import test from 'ava';
 
 import { unwrapMaybe } from '../../__dist/esm/Maybe/unwrap.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
-for (const value of nonNullableValue) {
-    test('value:' + String(value), (t) => {
+for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
+    test('value:' + String(INPUT), (t) => {
         t.plan(2);
 
-        const EXPECTED = value;
-
-        let result;
+        let actual;
         t.notThrows(() => {
-            result = unwrapMaybe(EXPECTED);
+            actual = unwrapMaybe(INPUT);
         });
 
-        t.is(result, EXPECTED);
+        t.is(actual, EXPECTED);
     });
 }
 

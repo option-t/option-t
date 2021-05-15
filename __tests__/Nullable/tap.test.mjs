@@ -1,21 +1,21 @@
 import test from 'ava';
 
 import { tapNullable } from '../../__dist/esm/Nullable/tap.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 
-for (const input of nonNullableValue) {
-    test('pass the value: ' + String(input), (t) => {
+for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
+    test('pass the value: ' + String(INPUT), (t) => {
         t.plan(3);
 
-        const result = tapNullable(input, (v) => {
+        const actual = tapNullable(INPUT, (v) => {
             t.pass();
-            t.is(v, input, 'the arg is input');
+            t.is(v, PASSED_VALUE, 'the arg is input');
         });
 
-        t.is(result, input);
+        t.is(actual, EXPECTED);
     });
 }
 
