@@ -11,6 +11,7 @@ export { mapOrElseForMaybe as mapOrElse } from './mapOrElse';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
 // export { orForMaybe as or } from './or';
 export { orElseForMaybe as orElse } from './orElse';
+export { orElseAsyncForMaybe as orElseAsync } from './orElseAsync';
 export { tapMaybe as tap } from './tap';
 export { unwrapMaybe as unwrap } from './unwrap';
 export { unwrapOrFromMaybe as unwrapOr } from './unwrapOr';
