@@ -11,7 +11,8 @@ test('with Ok', (t) => {
         t.fail('Do not enter this path.');
     });
 
-    t.is(actual.ok, true);
+    t.is(actual.ok, true, 'should not be modified');
+    t.true(Object.isFrozen(actual), 'should be frozen');
 });
 
 test('with Err', (t) => {
@@ -23,6 +24,7 @@ test('with Err', (t) => {
         err.err = expected;
     });
 
-    t.is(actual.ok, true);
-    t.is(actual.err, expected);
+    t.is(actual.ok, true, 'should be modified');
+    t.is(actual.err, undefined, 'should be released');
+    t.true(Object.isFrozen(actual), 'should be frozen');
 });

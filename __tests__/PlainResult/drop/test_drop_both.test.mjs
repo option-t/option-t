@@ -19,8 +19,9 @@ test('with Ok', (t) => {
         }
     );
 
-    t.is(actual.ok, false);
-    t.is(actual.val, expected);
+    t.is(actual.ok, false, 'should be modified');
+    t.is(actual.val, undefined, 'should be released');
+    t.true(Object.isFrozen(actual), 'should be frozen');
 });
 
 test('with Err', (t) => {
@@ -38,6 +39,7 @@ test('with Err', (t) => {
         }
     );
 
-    t.is(actual.ok, true);
-    t.is(actual.err, expected);
+    t.is(actual.ok, true, 'should be modified');
+    t.is(actual.err, undefined, 'should be released');
+    t.true(Object.isFrozen(actual), 'should be frozen');
 });

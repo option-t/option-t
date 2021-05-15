@@ -38,9 +38,18 @@ export function unsafeDropBothForResult<T, E>(
     const mutable = asMutResult(input);
     if (mutable.ok) {
         okMutator(mutable);
+        mutable.val = undefined as never;
     } else {
         errMutator(mutable);
+        mutable.err = undefined as never;
     }
+
+    // By this freezing, if this function is called to the _input_ again,
+    // then this will throw a mutation error on releasing the value.
+    //
+    // We can do similar thing with `WeakSet`.
+    // But we did not choose it way to avoid a side effect to initialize `WeakSet`.
+    Object.freeze(mutable);
 }
 
 /**
