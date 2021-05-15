@@ -563,6 +563,7 @@ export default {
             'mapOr',
             'mapOrElse',
             'orElse',
+            'orElseAsync',
             'tap',
             'unwrap',
             'unwrapOr',
@@ -618,6 +619,11 @@ export default {
     'Undefinable/orElse': {
         'exports': [
             'orElseForUndefinable'
+        ]
+    },
+    'Undefinable/orElseAsync': {
+        'exports': [
+            'orElseAsyncForUndefinable'
         ]
     },
     'Undefinable/tap': {
