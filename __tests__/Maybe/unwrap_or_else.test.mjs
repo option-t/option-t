@@ -31,23 +31,18 @@ for (const NULL_VALUE of [undefined, null]) {
 
         t.is(result, DEFAULT_VAL);
     });
-}
 
-{
-    const testcases = [
-        [undefined, undefined],
-        [undefined, null],
-        [null, undefined],
-        [null, null],
-    ];
-    for (const [src, def] of testcases) {
-        test(`should not accept Maybe<*> as default, v = ${String(src)}, def = ${String(
-            def
+    for (const FALLBACK_VALUE of [undefined, null]) {
+        test(`should not accept Maybe<*> as default, v = ${String(NULL_VALUE)}, def = ${String(
+            FALLBACK_VALUE
         )}`, (t) => {
-            t.plan(1);
+            t.plan(2);
             t.throws(
                 () => {
-                    unwrapOrElseFromMaybe(src, () => def);
+                    unwrapOrElseFromMaybe(NULL_VALUE, () => {
+                        t.pass('should be called');
+                        return FALLBACK_VALUE;
+                    });
                 },
                 {
                     instanceOf: TypeError,

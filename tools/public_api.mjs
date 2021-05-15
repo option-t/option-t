@@ -22,6 +22,7 @@ export default {
             'unwrap',
             'unwrapOr',
             'unwrapOrElse',
+            'unwrapOrElseAsync',
         ]
     },
     'Maybe/and': {
@@ -103,6 +104,11 @@ export default {
     'Maybe/unwrapOrElse': {
         'exports': [
             'unwrapOrElseFromMaybe'
+        ]
+    },
+    'Maybe/unwrapOrElseAsync': {
+        'exports': [
+            'unwrapOrElseAsyncFromMaybe'
         ]
     },
     'Maybe/xor': {
