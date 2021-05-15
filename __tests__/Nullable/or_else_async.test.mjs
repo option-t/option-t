@@ -3,6 +3,9 @@ import test from 'ava';
 import { orElseAsyncForNullable } from '../../__dist/esm/Nullable/orElseAsync.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
+const NULL_VALUE_IN_THIS_TEST_CASE = null;
+const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
+
 const nonNullableValueCaseList = nonNullableValue.map((input) => {
     if (input instanceof Promise) {
         // Promise will be unwrap recursively automatically.
@@ -30,12 +33,12 @@ for (const [INPUT, EXPECTED] of nonNullableValueCaseList) {
     });
 }
 
-test('pass null', async (t) => {
+test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.plan(3);
 
     const DEFAULT_VAL = Math.random();
 
-    const result = orElseAsyncForNullable(null, async () => {
+    const result = orElseAsyncForNullable(NULL_VALUE_IN_THIS_TEST_CASE, async () => {
         t.pass();
         return DEFAULT_VAL;
     });
@@ -45,19 +48,22 @@ test('pass null', async (t) => {
     t.is(actual, DEFAULT_VAL);
 });
 
-test('pass undefined', async (t) => {
+test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.plan(2);
 
     const DEFAULT_VAL = Math.random();
 
-    const result = orElseAsyncForNullable(undefined, async () => {
-        t.fail();
-        return DEFAULT_VAL;
-    });
+    const result = orElseAsyncForNullable(
+        NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
+        async () => {
+            t.fail();
+            return DEFAULT_VAL;
+        }
+    );
 
     t.true(result instanceof Promise, 'result should be Promise');
     const actual = await result;
-    t.is(actual, undefined);
+    t.is(actual, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
 });
 
 test('callback should return Promise', async (t) => {
@@ -65,7 +71,7 @@ test('callback should return Promise', async (t) => {
 
     await t.throwsAsync(
         async () => {
-            await orElseAsyncForNullable(null, () => {
+            await orElseAsyncForNullable(NULL_VALUE_IN_THIS_TEST_CASE, () => {
                 t.pass();
                 return 1;
             });

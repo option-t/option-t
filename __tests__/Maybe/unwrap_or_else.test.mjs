@@ -5,6 +5,8 @@ import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {
     test('pass the value: ' + String(value), (t) => {
+        t.plan(2);
+
         const DEFAULT_VAL = Math.random();
         const EXPECTED = value;
         let result;
@@ -55,6 +57,7 @@ test('pass undefined', (t) => {
         test(`should not accept Maybe<*> as default, v = ${String(src)}, def = ${String(
             def
         )}`, (t) => {
+            t.plan(1);
             t.throws(
                 () => {
                     unwrapOrElseFromMaybe(src, () => def);

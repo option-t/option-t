@@ -3,6 +3,9 @@ import test from 'ava';
 import { tapUndefinable } from '../../__dist/esm/Undefinable/tap.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
+const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
+const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = null;
+
 for (const input of nonNullableValue) {
     test('pass the value' + String(input), (t) => {
         t.plan(2);
@@ -15,22 +18,22 @@ for (const input of nonNullableValue) {
     });
 }
 
-test('pass null', (t) => {
+test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     t.plan(2);
 
-    const result = tapUndefinable(null, (_v) => {
+    const result = tapUndefinable(NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE, (_v) => {
         t.pass('should call selector fn');
     });
 
-    t.is(result, null, 'should be input');
+    t.is(result, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE, 'should be input');
 });
 
-test('pass undefined', (t) => {
+test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     t.plan(1);
 
-    const result = tapUndefinable(undefined, (_v) => {
+    const result = tapUndefinable(NULL_VALUE_IN_THIS_TEST_CASE, (_v) => {
         t.pass('should not call selector fn');
     });
 
-    t.is(result, undefined, 'should be input');
+    t.is(result, NULL_VALUE_IN_THIS_TEST_CASE, 'should be input');
 });

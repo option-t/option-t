@@ -3,6 +3,9 @@ import test from 'ava';
 import { mapOrElseForNullable } from '../../__dist/esm/Nullable/mapOrElse.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
+const NULL_VALUE_IN_THIS_TEST_CASE = null;
+const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
+
 for (const value of nonNullableValue) {
     test('pass the value: ' + String(value), (t) => {
         t.plan(2);
@@ -29,7 +32,7 @@ test('pass null', (t) => {
     const DEFAULE_VAL = Symbol('');
     const COMPUTED_VAL = Symbol('');
     const result = mapOrElseForNullable(
-        null,
+        NULL_VALUE_IN_THIS_TEST_CASE,
         () => DEFAULE_VAL,
         (_v) => {
             t.fail('do not call this');
@@ -47,10 +50,10 @@ test('pass undefined', (t) => {
     const COMPUTED_VAL = Symbol('');
 
     const result = mapOrElseForNullable(
-        undefined,
+        NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
         () => DEFAULE_VAL,
         (v) => {
-            t.is(v, undefined);
+            t.is(v, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
             return COMPUTED_VAL;
         }
     );
@@ -59,7 +62,7 @@ test('pass undefined', (t) => {
 });
 
 {
-    const testcases = [[1, 2, null]];
+    const testcases = [[1, 2, NULL_VALUE_IN_THIS_TEST_CASE]];
     for (const [src, def, selectorResult] of testcases) {
         test(`assert that do not return Nullable<*> as the selector's result: v = ${String(
             src
@@ -79,7 +82,7 @@ test('pass undefined', (t) => {
 }
 
 {
-    const testcases = [[null, null, '']];
+    const testcases = [[NULL_VALUE_IN_THIS_TEST_CASE, NULL_VALUE_IN_THIS_TEST_CASE, '']];
     for (const [src, def, selectorResult] of testcases) {
         test(`assert that def is not Nullable<*>: v = ${String(src)}, def = ${String(
             def

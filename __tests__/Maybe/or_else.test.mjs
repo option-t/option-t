@@ -5,6 +5,8 @@ import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {
     test('value:' + String(value), (t) => {
+        t.plan(1);
+
         const DEFAULT_VAL = Math.random();
         const EXPECTED = value;
 

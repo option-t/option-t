@@ -18,6 +18,8 @@ for (const value of nonNullableValue) {
 }
 
 test('pass null', (t) => {
+    t.plan(1);
+
     const DEFAULT_VAL = Symbol('');
     const result = andThenForMaybe(null, (_v) => {
         t.fail('should not call selector fn');
@@ -28,6 +30,8 @@ test('pass null', (t) => {
 });
 
 test('pass undefined', (t) => {
+    t.plan(1);
+
     const DEFAULT_VAL = Symbol('');
     const result = andThenForMaybe(undefined, (_v) => {
         t.fail('should not call selector fn');

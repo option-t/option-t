@@ -3,6 +3,9 @@ import test from 'ava';
 import { andThenAsyncForNullable } from '../../__dist/esm/Nullable/andThenAsync.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
+const NULL_VALUE_IN_THIS_TEST_CASE = null;
+const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
+
 const nonNullableValueCaseList = nonNullableValue.map((input) => {
     if (input instanceof Promise) {
         // Promise will be unwrap recursively automatically.
@@ -31,11 +34,11 @@ for (const [INPUT, PASSED_EXPECTED, FINAL_EXPECTED] of nonNullableValueCaseList)
     });
 }
 
-test('pass null', async (t) => {
+test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.plan(2);
 
     const DEFAULT_VAL = Symbol('');
-    const result = andThenAsyncForNullable(null, async (_v) => {
+    const result = andThenAsyncForNullable(NULL_VALUE_IN_THIS_TEST_CASE, async (_v) => {
         t.fail();
         return DEFAULT_VAL;
     });
@@ -46,17 +49,20 @@ test('pass null', async (t) => {
     t.is(actual, null);
 });
 
-test('pass undefined', async (t) => {
+test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.plan(3);
 
-    const result = andThenAsyncForNullable(undefined, async (v) => {
-        t.pass();
-        return v;
-    });
+    const result = andThenAsyncForNullable(
+        NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
+        async (v) => {
+            t.pass();
+            return v;
+        }
+    );
 
     t.true(result instanceof Promise, 'result should be Promise');
     const actual = await result;
-    t.is(actual, undefined);
+    t.is(actual, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
 });
 
 test('callback should return Promise', async (t) => {
@@ -64,7 +70,7 @@ test('callback should return Promise', async (t) => {
 
     await t.throwsAsync(
         async () => {
-            await andThenAsyncForNullable(undefined, () => {
+            await andThenAsyncForNullable(NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE, () => {
                 t.pass();
                 return 1;
             });

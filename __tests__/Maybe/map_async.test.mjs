@@ -31,6 +31,8 @@ for (const [INPUT, PASSED_EXPECTED, FINAL_EXPECTED] of nonNullableValueCaseList)
 }
 
 test('pass null', async (t) => {
+    t.plan(2);
+
     const result = mapAsyncForMaybe(null, async (_v) => {
         t.fail('should not call selector fn');
     });
@@ -41,6 +43,8 @@ test('pass null', async (t) => {
 });
 
 test('pass undefined', async (t) => {
+    t.plan(2);
+
     const result = mapAsyncForMaybe(undefined, async (_v) => {
         t.fail('should not call selector fn');
     });
@@ -59,6 +63,8 @@ test('pass undefined', async (t) => {
         test(`assert that do not return Maybe<*> as the selector's result, v = ${String(
             src
         )}, def = ${String(def)}`, async (t) => {
+            t.plan(1);
+
             await t.throwsAsync(
                 async () => {
                     await mapAsyncForMaybe(src, async (_v) => def);

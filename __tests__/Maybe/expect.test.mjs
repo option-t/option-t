@@ -16,6 +16,8 @@ for (const value of nonNullableValue) {
 }
 
 test('pass null', (t) => {
+    t.plan(1);
+
     const EXPECTED_MSG = 'expected test';
     t.throws(
         () => {
@@ -29,6 +31,8 @@ test('pass null', (t) => {
 });
 
 test('pass undefined', (t) => {
+    t.plan(1);
+
     const EXPECTED_MSG = 'expected test';
     t.throws(
         () => {

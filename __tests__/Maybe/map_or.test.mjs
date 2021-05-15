@@ -19,6 +19,7 @@ for (const value of nonNullableValue) {
 }
 
 test('pass null', (t) => {
+    t.plan(1);
     const DEFAULE_VAL = Symbol('');
 
     const result = mapOrForMaybe(null, DEFAULE_VAL, (_v) => {
@@ -28,6 +29,7 @@ test('pass null', (t) => {
 });
 
 test('pass undefined', (t) => {
+    t.plan(1);
     const DEFAULE_VAL = Symbol('');
 
     const result = mapOrForMaybe(undefined, DEFAULE_VAL, (_v) => {
@@ -45,6 +47,7 @@ test('pass undefined', (t) => {
         test(`assert that do not return Maybe<*> as the selector's result v = ${String(
             src
         )}, def = ${String(def)}, selectorResult=${String(selectorResult)}`, (t) => {
+            t.plan(1);
             t.throws(
                 () => {
                     mapOrForMaybe(src, def, (_v) => selectorResult);
@@ -69,6 +72,7 @@ test('pass undefined', (t) => {
         test(`assert that def is not Maybe<*> v = ${String(src)}, def = ${String(
             def
         )}, selectorResult=${String(selectorResult)}`, (t) => {
+            t.plan(1);
             t.throws(
                 () => {
                     mapOrForMaybe(src, def, (_v) => selectorResult);
