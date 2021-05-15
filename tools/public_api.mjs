@@ -395,8 +395,6 @@ export default {
             'transpose',
             'toOptionFromOk',
             'toOptionFromErr',
-            'ok',
-            'err',
             'unwrap',
             'unwrapErr',
             'unwrapOr',
