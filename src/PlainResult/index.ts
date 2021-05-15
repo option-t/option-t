@@ -44,20 +44,7 @@ export { orElseForResult as orElse } from './orElse';
 export { orElseAsyncForResult as orElseAsync } from './orElseAsync';
 export { tapOk, tapErr, tapBoth } from './tap';
 export { transposeForResult as transpose } from './transpose';
-export {
-    toOptionFromOk,
-    toOptionFromErr,
-    /**
-     *  @deprecated
-     *  Use `toOptionFromOk` instead.
-     */
-    toOptionFromOk as ok,
-    /**
-     *  @deprecated
-     *  Use `toOptionFromErr` instead.
-     */
-    toOptionFromErr as err,
-} from './toOption';
+export { toOptionFromOk, toOptionFromErr } from './toOption';
 export { unwrapFromResult as unwrap, unwrapErrFromResult as unwrapErr } from './unwrap';
 export { unwrapOrFromResult as unwrapOr } from './unwrapOr';
 export { unwrapOrElseFromResult as unwrapOrElse } from './unwrapOrElse';
