@@ -268,6 +268,7 @@ export default {
             'filter',
             'flatten',
             'map',
+            'mapAsync',
             'mapOr',
             'mapOrElse',
             'or',
@@ -323,6 +324,11 @@ export default {
     'PlainOption/map': {
         'exports': [
             'mapForOption'
+        ]
+    },
+    'PlainOption/mapAsync': {
+        'exports': [
+            'mapAsyncForOption'
         ]
     },
     'PlainOption/mapOr': {
