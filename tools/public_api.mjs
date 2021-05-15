@@ -10,6 +10,7 @@ export default {
             'isNotNullAndUndefined',
             'isNullOrUndefined',
             'andThen',
+            'andThenAsync',
             'expect',
             'map',
             'mapAsync',
@@ -30,6 +31,11 @@ export default {
     'Maybe/andThen': {
         'exports': [
             'andThenForMaybe'
+        ]
+    },
+    'Maybe/andThenAsync': {
+        'exports': [
+            'andThenAsyncForMaybe'
         ]
     },
     'Maybe/expect': {
