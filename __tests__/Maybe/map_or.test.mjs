@@ -26,46 +26,37 @@ for (const NULL_VALUE of [undefined, null]) {
         });
         t.is(result, DEFAULE_VAL);
     });
-}
 
-{
-    const testcases = [
-        [1, 2, undefined],
-        [1, 2, null],
-    ];
-    for (const [src, def, selectorResult] of testcases) {
-        test(`assert that do not return Maybe<*> as the selector's result v = ${String(
-            src
-        )}, def = ${String(def)}, selectorResult=${String(selectorResult)}`, (t) => {
+    test(`assert that do not return Maybe<*> as the selector's result (${NULL_VALUE})`, (t) => {
+        t.plan(3);
+
+        const INPUT = Symbol('input');
+        const DEFAULT_VALUE = Math.random();
+        t.throws(
+            () => {
+                mapOrForMaybe(INPUT, DEFAULT_VALUE, (v) => {
+                    t.pass('call this');
+                    t.is(v, INPUT);
+                    return NULL_VALUE;
+                });
+            },
+            {
+                instanceOf: TypeError,
+                message: '`transformer` must not return `null` or `undefined`',
+            }
+        );
+    });
+
+    for (const DEFAULT_VALUE of [null, undefined]) {
+        test(`assert that def is not Maybe<*>, input: ${NULL_VALUE}, def = ${DEFAULT_VALUE}`, (t) => {
             t.plan(1);
+
             t.throws(
                 () => {
-                    mapOrForMaybe(src, def, (_v) => selectorResult);
-                },
-                {
-                    instanceOf: TypeError,
-                    message: '`transformer` must not return `null` or `undefined`',
-                }
-            );
-        });
-    }
-}
-
-{
-    const testcases = [
-        [null, undefined, ''],
-        [null, null, ''],
-        [undefined, undefined, ''],
-        [undefined, null, ''],
-    ];
-    for (const [src, def, selectorResult] of testcases) {
-        test(`assert that def is not Maybe<*> v = ${String(src)}, def = ${String(
-            def
-        )}, selectorResult=${String(selectorResult)}`, (t) => {
-            t.plan(1);
-            t.throws(
-                () => {
-                    mapOrForMaybe(src, def, (_v) => selectorResult);
+                    mapOrForMaybe(NULL_VALUE, DEFAULT_VALUE, (_v) => {
+                        t.fail('do not call');
+                        return Math.random();
+                    });
                 },
                 {
                     instanceOf: TypeError,
