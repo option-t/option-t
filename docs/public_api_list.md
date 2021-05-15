@@ -125,6 +125,7 @@
 - [option-t/Undefinable/mapOr](../src/Undefinable/mapOr.ts)
 - [option-t/Undefinable/mapOrAsync](../src/Undefinable/mapOrAsync.ts)
 - [option-t/Undefinable/mapOrElse](../src/Undefinable/mapOrElse.ts)
+- [option-t/Undefinable/mapOrElseAsync](../src/Undefinable/mapOrElseAsync.ts)
 - [option-t/Undefinable/or](../src/Undefinable/or.ts)
 - [option-t/Undefinable/orElse](../src/Undefinable/orElse.ts)
 - [option-t/Undefinable/orElseAsync](../src/Undefinable/orElseAsync.ts)
