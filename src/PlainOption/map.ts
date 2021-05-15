@@ -12,6 +12,6 @@ export function mapForOption<T, U>(input: Option<T>, transformer: TransformFn<T,
         return input;
     }
 
-    const transformed: U = transformer(input.val);
-    return createSome(transformed);
+    const result: U = transformer(input.val);
+    return createSome(result);
 }

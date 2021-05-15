@@ -13,8 +13,8 @@ export function mapOrForResult<T, E, U>(
     transformer: TransformFn<T, U>
 ): U {
     if (input.ok) {
-        const transformed: U = transformer(input.val);
-        return transformed;
+        const result: U = transformer(input.val);
+        return result;
     }
 
     return defaultValue;
