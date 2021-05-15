@@ -2,6 +2,7 @@ export { NotNullAndUndefined, Maybe, isNotNullAndUndefined, isNullOrUndefined } 
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
 //export { andForMaybe as and } from './and';
 export { andThenForMaybe as andThen } from './andThen';
+export { andThenAsyncForMaybe as andThenAsync } from './andThenAsync';
 export { expectNotNullAndUndefined as expect } from './expect';
 export { mapForMaybe as map } from './map';
 export { mapAsyncForMaybe as mapAsync } from './mapAsync';

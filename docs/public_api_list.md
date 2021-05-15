@@ -14,6 +14,7 @@
 - [option-t/Maybe](../src/Maybe/index.ts)
 - [option-t/Maybe/and](../src/Maybe/and.ts)
 - [option-t/Maybe/andThen](../src/Maybe/andThen.ts)
+- [option-t/Maybe/andThenAsync](../src/Maybe/andThenAsync.ts)
 - [option-t/Maybe/expect](../src/Maybe/expect.ts)
 - [option-t/Maybe/map](../src/Maybe/map.ts)
 - [option-t/Maybe/mapAsync](../src/Maybe/mapAsync.ts)
