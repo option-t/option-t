@@ -1,24 +1,21 @@
 import test from 'ava';
 
 import { unwrapOrElseFromMaybe } from '../../__dist/esm/Maybe/unwrapOrElse.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
-for (const value of nonNullableValue) {
-    test('pass the value: ' + String(value), (t) => {
+for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
+    test('pass the value: ' + String(INPUT), (t) => {
         t.plan(2);
 
-        const DEFAULT_VAL = Math.random();
-        const EXPECTED = value;
-        let result;
-
+        let actual;
         t.notThrows(() => {
-            result = unwrapOrElseFromMaybe(EXPECTED, () => {
+            actual = unwrapOrElseFromMaybe(INPUT, () => {
                 t.fail('should not call recover fn');
-                return DEFAULT_VAL;
+                return Math.random();
             });
         });
 
-        t.is(result, EXPECTED);
+        t.is(actual, EXPECTED);
     });
 }
 

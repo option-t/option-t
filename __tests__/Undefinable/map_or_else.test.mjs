@@ -1,23 +1,26 @@
 import test from 'ava';
 
 import { mapOrElseForUndefinable } from '../../__dist/esm/Undefinable/mapOrElse.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = null;
 
-for (const value of nonNullableValue) {
-    test('pass the value' + String(value), (t) => {
+for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
+    test('pass the value' + String(INPUT), (t) => {
         const DEFAULT_VAL = Symbol('def');
-        const EXPECTED = value;
 
-        t.plan(2);
+        t.plan(3);
 
         const result = mapOrElseForUndefinable(
-            EXPECTED,
-            () => DEFAULT_VAL,
+            INPUT,
+            () => {
+                t.fail('do not enter here');
+                return DEFAULT_VAL;
+            },
             (v) => {
                 t.pass('should call selector fn');
+                t.is(v, PASSED_VALUE);
                 return v;
             }
         );

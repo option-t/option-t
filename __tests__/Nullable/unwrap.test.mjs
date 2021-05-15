@@ -1,23 +1,15 @@
 import test from 'ava';
 
 import { unwrapNullable } from '../../__dist/esm/Nullable/unwrap.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 
-for (const value of nonNullableValue) {
-    const EXPECTED = value;
-    test('pass the value: ' + String(value), (t) => {
-        t.plan(3);
-
-        let result;
-        t.not(result, EXPECTED);
-
-        t.notThrows(() => {
-            result = unwrapNullable(EXPECTED);
-        });
-
+for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
+    test('pass the value: ' + String(INPUT), (t) => {
+        t.plan(1);
+        const result = unwrapNullable(INPUT);
         t.is(result, EXPECTED);
     });
 }

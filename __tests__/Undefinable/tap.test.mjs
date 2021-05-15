@@ -1,20 +1,21 @@
 import test from 'ava';
 
 import { tapUndefinable } from '../../__dist/esm/Undefinable/tap.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = null;
 
-for (const input of nonNullableValue) {
-    test('pass the value' + String(input), (t) => {
-        t.plan(2);
+for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
+    test('pass the value' + String(INPUT), (t) => {
+        t.plan(3);
 
-        const result = tapUndefinable(input, (_v) => {
+        const result = tapUndefinable(INPUT, (v) => {
             t.pass('should call selector fn');
+            t.is(v, PASSED_VALUE);
         });
 
-        t.is(result, input, 'should be input');
+        t.is(result, EXPECTED, 'should be input');
     });
 }
 

@@ -1,20 +1,19 @@
 import test from 'ava';
 
 import { expectNotUndefined } from '../../__dist/esm/Undefinable/expect.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = null;
 
-for (const value of nonNullableValue) {
-    test('pass the value' + String(value), (t) => {
+for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
+    test('pass the value' + String(INPUT), (t) => {
         t.plan(2);
 
-        const EXPECTED = value;
         const EXPECTED_MSG = 'expected test';
         let result;
         t.notThrows(() => {
-            result = expectNotUndefined(EXPECTED, EXPECTED_MSG);
+            result = expectNotUndefined(INPUT, EXPECTED_MSG);
         });
 
         t.is(result, EXPECTED, 'should the expected result');

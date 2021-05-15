@@ -1,18 +1,17 @@
 import test from 'ava';
 
 import { orElseForNullable } from '../../__dist/esm/Nullable/orElse.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 
-for (const value of nonNullableValue) {
-    test('pass the value ' + String(value), (t) => {
+for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
+    test('pass the value ' + String(INPUT), (t) => {
         t.plan(1);
 
         const DEFAULT_VAL = Math.random();
-        const EXPECTED = value;
-        const result = orElseForNullable(EXPECTED, () => {
+        const result = orElseForNullable(INPUT, () => {
             t.fail();
             return DEFAULT_VAL;
         });

@@ -1,26 +1,25 @@
 import test from 'ava';
 
 import { unwrapOrElseFromUndefinable } from '../../__dist/esm/Undefinable/unwrapOrElse.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = null;
 
-for (const value of nonNullableValue) {
-    test('pass the value' + String(value), (t) => {
+for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
+    test('pass the value' + String(INPUT), (t) => {
         t.plan(2);
 
         const DEFAULT_VAL = Math.random();
-        const EXPECTED = value;
-        let result;
+        let actual;
         t.notThrows(() => {
-            result = unwrapOrElseFromUndefinable(EXPECTED, () => {
+            actual = unwrapOrElseFromUndefinable(INPUT, () => {
                 t.pass('should not call recover fn');
                 return DEFAULT_VAL;
             });
         }, 'should not throw error');
 
-        t.is(result, EXPECTED, 'should the expected result');
+        t.is(actual, EXPECTED, 'should the expected result');
     });
 }
 

@@ -1,18 +1,14 @@
 import test from 'ava';
 
 import { orElseForMaybe } from '../../__dist/esm/Maybe/orElse.mjs';
-import { nonNullableValue } from '../utils.mjs';
+import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
-for (const value of nonNullableValue) {
-    test('value:' + String(value), (t) => {
+for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
+    test('value:' + String(INPUT), (t) => {
         t.plan(1);
-
-        const DEFAULT_VAL = Math.random();
-        const EXPECTED = value;
-
-        const result = orElseForMaybe(EXPECTED, () => {
+        const result = orElseForMaybe(INPUT, () => {
             t.fail('should not call recover fn');
-            return DEFAULT_VAL;
+            return Math.random();
         });
         t.is(result, EXPECTED);
     });
