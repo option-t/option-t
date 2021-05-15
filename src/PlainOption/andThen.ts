@@ -25,6 +25,6 @@ export function andThenForOption<T, U>(
         return input;
     }
 
-    const transformed = transformer(input.val);
-    return transformed;
+    const result = transformer(input.val);
+    return result;
 }

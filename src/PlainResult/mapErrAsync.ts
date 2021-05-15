@@ -18,11 +18,11 @@ export function mapErrAsyncForResult<T, E, F>(
         return Promise.resolve(s);
     }
 
-    const transformed: Promise<F> = transformer(input.err);
+    const result: Promise<F> = transformer(input.err);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
     // and they mistake to use this.
-    assertIsPromise(transformed, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
-    const result: Promise<Result<T, F>> = transformed.then(createErr);
-    return result;
+    assertIsPromise(result, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
+    const passed: Promise<Result<T, F>> = result.then(createErr);
+    return passed;
 }

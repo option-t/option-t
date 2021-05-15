@@ -27,10 +27,10 @@ export function andThenAsyncForNullable<T, U>(
         return Promise.resolve<Nullable<U>>(input);
     }
 
-    const transformed: Promise<Nullable<U>> = transformer(input);
+    const result: Promise<Nullable<U>> = transformer(input);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
     // and they mistake to use this.
-    assertIsPromise(transformed, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
-    return transformed;
+    assertIsPromise(result, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
+    return result;
 }

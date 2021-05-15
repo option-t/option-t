@@ -25,6 +25,6 @@ export function andThenForResult<T, U, E>(
         return input;
     }
 
-    const transformed = transformer(input.val);
-    return transformed;
+    const result = transformer(input.val);
+    return result;
 }

@@ -19,19 +19,19 @@ export function mapOrElseAsyncForResult<T, E, U>(
 ): Promise<U> {
     if (isOk(input)) {
         const inner: T = unwrapFromResult(input);
-        const transformed: Promise<U> = transformer(inner);
+        const result: Promise<U> = transformer(inner);
         // If this is async function, this always return Promise, but not.
         // We should check to clarify the error case if user call this function from plain js
         // and they mistake to use this.
-        assertIsPromise(transformed, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
-        return transformed;
+        assertIsPromise(result, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
+        return result;
     }
 
     const err: E = unwrapErrFromResult(input);
-    const defaultValue: Promise<U> = recoverer(err);
+    const fallback: Promise<U> = recoverer(err);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
     // and they mistake to use this.
-    assertIsPromise(defaultValue, ERR_MSG_RECOVERER_MUST_RETURN_PROMISE);
-    return defaultValue;
+    assertIsPromise(fallback, ERR_MSG_RECOVERER_MUST_RETURN_PROMISE);
+    return fallback;
 }

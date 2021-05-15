@@ -15,6 +15,6 @@ export function mapErrForResult<T, E, F>(
         return input;
     }
 
-    const transformed: F = transformer(input.err);
-    return createErr<F>(transformed);
+    const result: F = transformer(input.err);
+    return createErr<F>(result);
 }

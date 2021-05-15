@@ -15,6 +15,6 @@ export function mapForResult<T, U, E>(
         return input;
     }
 
-    const transformed: U = transformer(input.val);
-    return createOk(transformed);
+    const result: U = transformer(input.val);
+    return createOk(result);
 }

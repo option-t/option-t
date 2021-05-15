@@ -17,26 +17,16 @@ for (const value of nonNullableValue) {
     });
 }
 
-test('pass null', (t) => {
-    t.plan(1);
+for (const NULL_VALUE of [undefined, null]) {
+    test(`pass ${NULL_VALUE}`, (t) => {
+        t.plan(1);
 
-    const DEFAULT_VAL = Symbol('');
-    const result = andThenForMaybe(null, (_v) => {
-        t.fail('should not call selector fn');
-        return DEFAULT_VAL;
+        const DEFAULT_VAL = Symbol('');
+        const result = andThenForMaybe(NULL_VALUE, (_v) => {
+            t.fail('should not call selector fn');
+            return DEFAULT_VAL;
+        });
+
+        t.is(result, NULL_VALUE);
     });
-
-    t.is(result, null);
-});
-
-test('pass undefined', (t) => {
-    t.plan(1);
-
-    const DEFAULT_VAL = Symbol('');
-    const result = andThenForMaybe(undefined, (_v) => {
-        t.fail('should not call selector fn');
-        return DEFAULT_VAL;
-    });
-
-    t.is(result, undefined);
-});
+}

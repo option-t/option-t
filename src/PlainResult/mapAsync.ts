@@ -20,11 +20,11 @@ export function mapAsyncForResult<T, U, E>(
     }
 
     const inner: T = unwrapFromResult(input);
-    const transformed: Promise<U> = transformer(inner);
+    const result: Promise<U> = transformer(inner);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
     // and they mistake to use this.
-    assertIsPromise(transformed, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
-    const result: Promise<Result<U, E>> = transformed.then(createOk);
-    return result;
+    assertIsPromise(result, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
+    const passed: Promise<Result<U, E>> = result.then(createOk);
+    return passed;
 }
