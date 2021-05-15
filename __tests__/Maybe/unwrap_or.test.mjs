@@ -18,18 +18,14 @@ for (const value of nonNullableValue) {
     });
 }
 
-test('pass null', (t) => {
-    const DEFAULT_VAL = Math.random();
-    const result = unwrapOrFromMaybe(null, DEFAULT_VAL);
+for (const NULL_VALUE of [undefined, null]) {
+    test(`pass ${NULL_VALUE}`, (t) => {
+        const DEFAULT_VAL = Math.random();
+        const result = unwrapOrFromMaybe(NULL_VALUE, DEFAULT_VAL);
 
-    t.is(result, DEFAULT_VAL);
-});
-
-test('pass undefined', (t) => {
-    const DEFAULT_VAL = Math.random();
-    const result = unwrapOrFromMaybe(undefined, DEFAULT_VAL);
-    t.is(result, DEFAULT_VAL);
-});
+        t.is(result, DEFAULT_VAL);
+    });
+}
 
 {
     const testcases = [

@@ -16,18 +16,12 @@ for (const input of nonNullableValue) {
     });
 }
 
-test('pass null', (t) => {
-    const result = tapMaybe(null, (_v) => {
-        t.fail('should not call selector fn');
+for (const NULL_VALUE of [undefined, null]) {
+    test(`pass ${NULL_VALUE}`, (t) => {
+        const result = tapMaybe(NULL_VALUE, (_v) => {
+            t.fail('should not call selector fn');
+        });
+
+        t.is(result, NULL_VALUE);
     });
-
-    t.is(result, null);
-});
-
-test('pass undefined', (t) => {
-    const result = tapMaybe(undefined, (_v) => {
-        t.fail('should not call selector fn');
-    });
-
-    t.is(result, undefined);
-});
+}

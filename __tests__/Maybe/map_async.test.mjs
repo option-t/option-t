@@ -30,29 +30,19 @@ for (const [INPUT, PASSED_EXPECTED, FINAL_EXPECTED] of nonNullableValueCaseList)
     });
 }
 
-test('pass null', async (t) => {
-    t.plan(2);
+for (const NULL_VALUE of [undefined, null]) {
+    test(`pass ${NULL_VALUE}`, async (t) => {
+        t.plan(2);
 
-    const result = mapAsyncForMaybe(null, async (_v) => {
-        t.fail('should not call selector fn');
+        const result = mapAsyncForMaybe(NULL_VALUE, async (_v) => {
+            t.fail('should not call selector fn');
+        });
+
+        t.true(result instanceof Promise, 'result should be Promise');
+        const actual = await result;
+        t.is(actual, NULL_VALUE);
     });
-
-    t.true(result instanceof Promise, 'result should be Promise');
-    const actual = await result;
-    t.is(actual, null);
-});
-
-test('pass undefined', async (t) => {
-    t.plan(2);
-
-    const result = mapAsyncForMaybe(undefined, async (_v) => {
-        t.fail('should not call selector fn');
-    });
-
-    t.true(result instanceof Promise, 'result should be Promise');
-    const actual = await result;
-    t.is(actual, undefined);
-});
+}
 
 {
     const testcases = [

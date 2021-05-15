@@ -18,21 +18,15 @@ for (const value of nonNullableValue) {
     });
 }
 
-test('pass null', (t) => {
-    t.plan(1);
-    const result = mapForMaybe(null, (_v) => {
-        t.fail('should not call selector fn');
+for (const NULL_VALUE of [undefined, null]) {
+    test(`pass ${NULL_VALUE}`, (t) => {
+        t.plan(1);
+        const result = mapForMaybe(NULL_VALUE, (_v) => {
+            t.fail('should not call selector fn');
+        });
+        t.is(result, NULL_VALUE);
     });
-    t.is(result, null);
-});
-
-test('pass undefined', (t) => {
-    t.plan(1);
-    const result = mapForMaybe(undefined, (_v) => {
-        t.fail('should not call selector fn');
-    });
-    t.is(result, undefined);
-});
+}
 
 {
     const testcases = [

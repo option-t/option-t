@@ -15,32 +15,19 @@ for (const value of nonNullableValue) {
     });
 }
 
-test('pass null', (t) => {
-    t.plan(1);
+for (const NULL_VALUE of [undefined, null]) {
+    test(`pass ${NULL_VALUE}`, (t) => {
+        t.plan(1);
 
-    const EXPECTED_MSG = 'expected test';
-    t.throws(
-        () => {
-            expectNotNullAndUndefined(null, EXPECTED_MSG);
-        },
-        {
-            instanceOf: TypeError,
-            message: EXPECTED_MSG,
-        }
-    );
-});
-
-test('pass undefined', (t) => {
-    t.plan(1);
-
-    const EXPECTED_MSG = 'expected test';
-    t.throws(
-        () => {
-            expectNotNullAndUndefined(undefined, EXPECTED_MSG);
-        },
-        {
-            instanceOf: TypeError,
-            message: EXPECTED_MSG,
-        }
-    );
-});
+        const EXPECTED_MSG = 'expected test';
+        t.throws(
+            () => {
+                expectNotNullAndUndefined(NULL_VALUE, EXPECTED_MSG);
+            },
+            {
+                instanceOf: TypeError,
+                message: EXPECTED_MSG,
+            }
+        );
+    });
+}

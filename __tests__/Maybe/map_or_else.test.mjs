@@ -24,39 +24,27 @@ for (const value of nonNullableValue) {
     });
 }
 
-test('pass null', (t) => {
-    t.plan(1);
+for (const NULL_VALUE of [undefined, null]) {
+    test(`pass ${NULL_VALUE}`, (t) => {
+        t.plan(2);
 
-    const DEFAULE_VAL = Symbol('');
-    const COMPUTED_VAL = Symbol('');
+        const DEFAULE_VAL = Symbol('default');
+        const COMPUTED_VAL = Symbol('computed');
 
-    const result = mapOrElseForMaybe(
-        null,
-        () => DEFAULE_VAL,
-        (_v) => {
-            t.fail('should not call selector fn');
-            return COMPUTED_VAL;
-        }
-    );
-    t.is(result, DEFAULE_VAL);
-});
-
-test('pass undefined', (t) => {
-    t.plan(1);
-
-    const DEFAULE_VAL = Symbol('');
-    const COMPUTED_VAL = Symbol('');
-
-    const result = mapOrElseForMaybe(
-        undefined,
-        () => DEFAULE_VAL,
-        (_v) => {
-            t.fail('should not call selector fn');
-            return COMPUTED_VAL;
-        }
-    );
-    t.is(result, DEFAULE_VAL);
-});
+        const result = mapOrElseForMaybe(
+            NULL_VALUE,
+            () => {
+                t.pass('should be called');
+                return DEFAULE_VAL;
+            },
+            (_v) => {
+                t.fail('should not call selector fn');
+                return COMPUTED_VAL;
+            }
+        );
+        t.is(result, DEFAULE_VAL);
+    });
+}
 
 {
     const testcases = [

@@ -18,24 +18,15 @@ for (const value of nonNullableValue) {
     });
 }
 
-test('pass null', (t) => {
-    t.plan(1);
+for (const NULL_VALUE of [undefined, null]) {
+    test(`pass ${NULL_VALUE}`, (t) => {
+        t.plan(1);
 
-    t.throws(
-        () => {
-            unwrapMaybe(null);
-        },
-        { instanceOf: TypeError, message: 'called with `null` or `undefined`' }
-    );
-});
-
-test('pass undefined', (t) => {
-    t.plan(1);
-
-    t.throws(
-        () => {
-            unwrapMaybe(undefined);
-        },
-        { instanceOf: TypeError, message: 'called with `null` or `undefined`' }
-    );
-});
+        t.throws(
+            () => {
+                unwrapMaybe(NULL_VALUE);
+            },
+            { instanceOf: TypeError, message: 'called with `null` or `undefined`' }
+        );
+    });
+}
