@@ -3,6 +3,9 @@ import test from 'ava';
 import { mapOrAsyncForNullable } from '../../__dist/esm/Nullable/mapOrAsync.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
+const NULL_VALUE_IN_THIS_TEST_CASE = null;
+const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
+
 const nonNullableValueCaseList = nonNullableValue.map((input) => {
     if (input instanceof Promise) {
         // Promise will be unwrap recursively automatically.
@@ -35,7 +38,7 @@ test('pass null', async (t) => {
 
     const DEFAULE_VAL = Symbol('');
     const COMPUTED_VAL = Symbol('');
-    const result = mapOrAsyncForNullable(null, DEFAULE_VAL, async (_v) => {
+    const result = mapOrAsyncForNullable(NULL_VALUE_IN_THIS_TEST_CASE, DEFAULE_VAL, async (_v) => {
         t.fail('should not call selector fn');
         return COMPUTED_VAL;
     });
@@ -50,11 +53,15 @@ test('pass undefined', async (t) => {
 
     const DEFAULE_VAL = Symbol('');
     const COMPUTED_VAL = Symbol('');
-    const result = mapOrAsyncForNullable(undefined, DEFAULE_VAL, async (v) => {
-        t.pass('should call selector fn');
-        t.is(v, undefined);
-        return COMPUTED_VAL;
-    });
+    const result = mapOrAsyncForNullable(
+        NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
+        DEFAULE_VAL,
+        async (v) => {
+            t.pass('should call selector fn');
+            t.is(v, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
+            return COMPUTED_VAL;
+        }
+    );
 
     t.true(result instanceof Promise, 'result should be Promise');
     const actual = await result;
@@ -62,7 +69,7 @@ test('pass undefined', async (t) => {
 });
 
 {
-    const testcases = [[1, 2, null]];
+    const testcases = [[1, 2, NULL_VALUE_IN_THIS_TEST_CASE]];
     for (const [src, def, selectorResult] of testcases) {
         test(`assert that do not return Nullable<*> as the selector's result, v = ${String(
             src
@@ -87,7 +94,7 @@ test('pass undefined', async (t) => {
 }
 
 {
-    const testcases = [[null, null, '']];
+    const testcases = [[NULL_VALUE_IN_THIS_TEST_CASE, NULL_VALUE_IN_THIS_TEST_CASE, '']];
     for (const [src, def, selectorResult] of testcases) {
         test(`assert that def is not Nullable<*>', v = ${String(src)}, def = ${String(
             def

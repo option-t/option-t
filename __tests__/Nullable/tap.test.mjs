@@ -3,6 +3,9 @@ import test from 'ava';
 import { tapNullable } from '../../__dist/esm/Nullable/tap.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
+const NULL_VALUE_IN_THIS_TEST_CASE = null;
+const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
+
 for (const input of nonNullableValue) {
     test('pass the value: ' + String(input), (t) => {
         t.plan(3);
@@ -16,20 +19,19 @@ for (const input of nonNullableValue) {
     });
 }
 
-test('pass null', (t) => {
+test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     t.plan(1);
 
-    const result = tapNullable(null, (_v) => {
+    const result = tapNullable(NULL_VALUE_IN_THIS_TEST_CASE, (_v) => {
         t.fail();
     });
-    t.is(result, null);
+    t.is(result, NULL_VALUE_IN_THIS_TEST_CASE);
 });
 
-test('pass undefined', (t) => {
+test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     t.plan(3);
 
-    const INPUT = undefined;
-
+    const INPUT = NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE;
     const result = tapNullable(INPUT, (v) => {
         t.pass();
         t.is(v, INPUT, 'the arg is INPUT');

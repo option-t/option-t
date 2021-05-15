@@ -3,6 +3,9 @@ import test from 'ava';
 import { unwrapOrElseAsyncFromNullable } from '../../__dist/esm/Nullable/unwrapOrElseAsync.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
+const NULL_VALUE_IN_THIS_TEST_CASE = null;
+const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
+
 const nonNullableValueCaseList = nonNullableValue.map((input) => {
     if (input instanceof Promise) {
         // Promise will be unwrap recursively automatically.
@@ -35,11 +38,11 @@ for (const [INPUT, EXPECTED] of nonNullableValueCaseList) {
     });
 }
 
-test('pass null', async (t) => {
+test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.plan(3);
 
     const DEFAULT_VAL = Math.random();
-    const result = unwrapOrElseAsyncFromNullable(null, async () => {
+    const result = unwrapOrElseAsyncFromNullable(NULL_VALUE_IN_THIS_TEST_CASE, async () => {
         t.pass('should call recover fn');
         return DEFAULT_VAL;
     });
@@ -50,22 +53,25 @@ test('pass null', async (t) => {
     t.is(actual, DEFAULT_VAL);
 });
 
-test('pass undefined', async (t) => {
+test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.plan(2);
 
     const DEFAULT_VAL = Math.random();
-    const result = unwrapOrElseAsyncFromNullable(undefined, async () => {
-        t.fail('should not call recover fn');
-        return DEFAULT_VAL;
-    });
+    const result = unwrapOrElseAsyncFromNullable(
+        NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
+        async () => {
+            t.fail('should not call recover fn');
+            return DEFAULT_VAL;
+        }
+    );
 
     t.true(result instanceof Promise, 'result should be Promise');
 
     const actual = await result;
-    t.is(actual, undefined);
+    t.is(actual, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
 });
 
-const testcases = [[null, null]];
+const testcases = [[NULL_VALUE_IN_THIS_TEST_CASE, NULL_VALUE_IN_THIS_TEST_CASE]];
 for (const [src, def] of testcases) {
     test(`should not accept null as default value, v = ${String(src)}, def = ${String(
         def
@@ -84,7 +90,7 @@ test('callback should return Promise', async (t) => {
 
     await t.throwsAsync(
         async () => {
-            await unwrapOrElseAsyncFromNullable(null, () => {
+            await unwrapOrElseAsyncFromNullable(NULL_VALUE_IN_THIS_TEST_CASE, () => {
                 t.pass();
                 return 1;
             });

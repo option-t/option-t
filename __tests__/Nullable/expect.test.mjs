@@ -3,6 +3,9 @@ import test from 'ava';
 import { expectNotNull } from '../../__dist/esm/Nullable/expect.mjs';
 import { nonNullableValue } from '../utils.mjs';
 
+const NULL_VALUE_IN_THIS_TEST_CASE = null;
+const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
+
 for (const value of nonNullableValue) {
     test('pass the value ' + String(value), (t) => {
         const EXPECTED = value;
@@ -14,11 +17,13 @@ for (const value of nonNullableValue) {
 }
 
 test('pass null', (t) => {
+    t.plan(1);
+
     const EXPECTED_MSG = 'expected test';
 
     t.throws(
         () => {
-            expectNotNull(null, EXPECTED_MSG);
+            expectNotNull(NULL_VALUE_IN_THIS_TEST_CASE, EXPECTED_MSG);
         },
         {
             instanceOf: TypeError,
@@ -28,11 +33,13 @@ test('pass null', (t) => {
 });
 
 test('pass undefined', (t) => {
+    t.plan(2);
+
     const EXPECTED_MSG = 'expected test';
 
     let result;
     t.notThrows(() => {
-        result = expectNotNull(undefined, EXPECTED_MSG);
+        result = expectNotNull(NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE, EXPECTED_MSG);
     });
-    t.is(result, undefined);
+    t.is(result, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
 });

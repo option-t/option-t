@@ -5,6 +5,8 @@ import { nonNullableValue } from '../utils.mjs';
 
 for (const value of nonNullableValue) {
     test('value:' + String(value), (t) => {
+        t.plan(2);
+
         const EXPECTED = value;
 
         let result;
@@ -17,6 +19,8 @@ for (const value of nonNullableValue) {
 }
 
 test('pass null', (t) => {
+    t.plan(1);
+
     t.throws(
         () => {
             unwrapMaybe(null);
@@ -26,6 +30,8 @@ test('pass null', (t) => {
 });
 
 test('pass undefined', (t) => {
+    t.plan(1);
+
     t.throws(
         () => {
             unwrapMaybe(undefined);

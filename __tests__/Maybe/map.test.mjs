@@ -19,6 +19,7 @@ for (const value of nonNullableValue) {
 }
 
 test('pass null', (t) => {
+    t.plan(1);
     const result = mapForMaybe(null, (_v) => {
         t.fail('should not call selector fn');
     });
@@ -26,6 +27,7 @@ test('pass null', (t) => {
 });
 
 test('pass undefined', (t) => {
+    t.plan(1);
     const result = mapForMaybe(undefined, (_v) => {
         t.fail('should not call selector fn');
     });
@@ -41,6 +43,7 @@ test('pass undefined', (t) => {
         test(`assert that do not return Maybe<*> as the selector's resultv = ${String(
             src
         )}, def = ${String(def)}`, (t) => {
+            t.plan(1);
             t.throws(
                 () => {
                     mapForMaybe(src, (_v) => def);
