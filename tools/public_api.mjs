@@ -561,6 +561,7 @@ export default {
             'map',
             'mapAsync',
             'mapOr',
+            'mapOrAsync',
             'mapOrElse',
             'orElse',
             'orElseAsync',
@@ -605,6 +606,11 @@ export default {
     'Undefinable/mapOr': {
         'exports': [
             'mapOrForUndefinable'
+        ]
+    },
+    'Undefinable/mapOrAsync': {
+        'exports': [
+            'mapOrAsyncForUndefinable'
         ]
     },
     'Undefinable/mapOrElse': {

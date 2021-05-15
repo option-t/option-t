@@ -7,6 +7,7 @@ export { expectNotUndefined as expect } from './expect';
 export { mapForUndefinable as map } from './map';
 export { mapAsyncForUndefinable as mapAsync } from './mapAsync';
 export { mapOrForUndefinable as mapOr } from './mapOr';
+export { mapOrAsyncForUndefinable as mapOrAsync } from './mapOrAsync';
 export { mapOrElseForUndefinable as mapOrElse } from './mapOrElse';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
 // export { orForUndefinable as or} from './or';
