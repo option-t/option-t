@@ -1,14 +1,14 @@
-import type { Nullable } from '../../Nullable/Nullable';
+import type { Maybe } from '../../Maybe/Maybe';
 import { Result, isOk } from '../../PlainResult/Result';
 import { mapOrForResult } from '../../PlainResult/mapOr';
 import { unwrapErrFromResult } from '../../PlainResult/unwrap';
 
-export function fromPlainResultOkToNullable<T, E>(input: Result<T, E>): Nullable<T> {
-    const result: Nullable<T> = mapOrForResult<T, E, Nullable<T>>(input, null, (val) => val);
+export function fromPlainResultOkToMaybe<T, E>(input: Result<T, E>): Maybe<T> {
+    const result: Maybe<T> = mapOrForResult<T, E, Maybe<T>>(input, null, (val) => val);
     return result;
 }
 
-export function fromPlainResultErrToNullable<T, E>(input: Result<T, E>): Nullable<E> {
+export function fromPlainResultErrToMaybe<T, E>(input: Result<T, E>): Maybe<E> {
     if (isOk(input)) {
         return null;
     }
