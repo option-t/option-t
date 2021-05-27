@@ -13,8 +13,7 @@ updates:
       versioning-strategy: increase
       ignore:
           - dependency-name: typescript
-            versions:
-                - ">=4.2"
+            update-types: ["version-update:semver-major", "version-update:semver-minor"]
 
     - package-ecosystem: github-actions
       directory: "/"
