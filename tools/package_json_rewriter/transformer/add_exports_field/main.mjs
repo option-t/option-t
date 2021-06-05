@@ -2,7 +2,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 import {
-    buildExposedPathList,
+    generateExposedPathSequence,
 } from '../../../public_api/mod.mjs';
 
 import {
@@ -25,7 +25,7 @@ export async function addExportsFields(json) {
     const histricalJSPathList = await loadHistoricalPathInfo(BASE_DIR, '../../../pkg_files.json');
     addHistoricalPathToExportsFields(o, histricalJSPathList);
 
-    const publicApiSourceList = await buildExposedPathList();
+    const publicApiSourceList = generateExposedPathSequence();
     const publicApiList = await loadPublicAPIDefinitions(publicApiSourceList);
     await addPublicAPIToExportsFields(o, publicApiList);
 

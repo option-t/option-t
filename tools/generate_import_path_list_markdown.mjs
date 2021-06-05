@@ -4,7 +4,7 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 
 import {
-    buildExposedPathList,
+    generateExposedPathSequence,
 } from './public_api/mod.mjs';
 
 
@@ -123,9 +123,8 @@ ${str}
         assert.strictEqual(actual, expected, `SRC_DIR (${actual}) should be ${expected}`);
     }
 
-    const apiList = await buildExposedPathList();
-    const list = apiList
-        .filter((pathItem) => !pathItem.isForCompat())
+    const apiList = generateExposedPathSequence();
+    const list = Array.from(apiList)
         .map((pathItem) => {
             const key = pathItem.name();
             const path = pathItem.path();

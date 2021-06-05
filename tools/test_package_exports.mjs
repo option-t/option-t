@@ -2,7 +2,7 @@ import * as assert from 'assert';
 import { createRequire } from 'module';
 
 import {
-    buildExposedPathList,
+    generateAllExposedPathSequence,
     ExposedPath,
     QuirksLegacyExposedPath,
 } from './public_api/mod.mjs';
@@ -74,7 +74,7 @@ async function tryImportPath(pathItem) {
 (async function main() {
     console.log('====== This script tests whether the path is exported or not by the list ======');
 
-    const list = await buildExposedPathList();
+    const list = generateAllExposedPathSequence();
 
     const testingItems = [];
     for (const item of list) {

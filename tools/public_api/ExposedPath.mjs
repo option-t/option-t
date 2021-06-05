@@ -1,4 +1,4 @@
-import ApiTable from './table.mjs';
+import { apiTable, legacyApiTable } from './table.mjs';
 
 const PKG_NAME = 'option-t';
 
@@ -60,18 +60,21 @@ export class QuirksLegacyExposedPath extends ExposedPath {
     }
 }
 
-export async function buildExposedPathList() {
-    const raw = ApiTable;
-    const list = [];
-    for (const [key, value] of Object.entries(raw)) {
-        let o = null;
-        if (!!value.isForCompat) {
-            o = new QuirksLegacyExposedPath(key, value);
-        }
-        else {
-            o = new ExposedPath(key, value);
-        }
-        list.push(o);
+export function* generateExposedPathSequence() {
+    for (const [key, value] of Object.entries(apiTable)) {
+        const o = new ExposedPath(key, value);
+        yield o;
     }
-    return list;
+}
+
+export function* generateLegacyExposedPathSequence() {
+    for (const [key, value] of Object.entries(legacyApiTable)) {
+        const o = new QuirksLegacyExposedPath(key, value);
+        yield o;
+    }
+}
+
+export function* generateAllExposedPathSequence() {
+    yield* generateExposedPathSequence();
+    yield* generateLegacyExposedPathSequence();
 }

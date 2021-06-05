@@ -1,8 +1,4 @@
-const COMPAT_DESCRIPTOR = Object.freeze({
-    isForCompat: true,
-});
-
-export default {
+export const apiTable = Object.freeze({
     '.': {
         'path': 'index',
         'exports': []
@@ -730,7 +726,13 @@ export default {
         // TODO:
         // 'index': [],
     */
+});
 
+const COMPAT_DESCRIPTOR = Object.freeze({
+    isForCompat: true,
+});
+
+export const legacyApiTable = Object.freeze({
     'cjs/Maybe/ErrorMessage.js': COMPAT_DESCRIPTOR,
     'cjs/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
     'cjs/Maybe/Maybe.js': COMPAT_DESCRIPTOR,
@@ -1607,4 +1609,4 @@ export default {
     'lib/shared/Mutable.js': COMPAT_DESCRIPTOR,
     'lib/shared/Mutable': COMPAT_DESCRIPTOR,
     'lib/shared/Mutable.mjs': COMPAT_DESCRIPTOR,
-};
+});
