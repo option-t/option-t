@@ -1,34 +1,24 @@
 import * as assert from 'assert';
 
+import { CompatExportEntry } from './ExportEntry.mjs';
+
 const SHOULD_EXPOSE_LIB = true;
 
 export function addHistoricalPathToExportsFields(o, histricalJSPathSeq) {
     // https://nodejs.org/api/esm.html
-    for (const entry of histricalJSPathSeq) {
-        assert.ok(entry.isForCompat());
-        if (entry.isLib()) {
+    for (const original of histricalJSPathSeq) {
+        assert.ok(original.isForCompat());
+        if (original.isLib()) {
             if (!SHOULD_EXPOSE_LIB) {
                 continue;
             }
         }
 
-        if (!entry.hasExtension()) {
-            continue;
-        }
-
-        const file = entry.name();
-        const filepath = `./${file}`;
+        const entry = new CompatExportEntry(original);
+        const key = entry.key();
+        const filepath = entry.path();
         // eslint-disable-next-line no-param-reassign
-        o[filepath] = filepath;
-
-        // Use cjs for lib/
-        if (SHOULD_EXPOSE_LIB && filepath.startsWith('./lib/') && filepath.endsWith('.mjs')) {
-            continue;
-        }
-
-        const filepathWithoutExtension = filepath.replace(/\.(js|mjs|cjs)$/u, '');
-        // eslint-disable-next-line no-param-reassign
-        o[filepathWithoutExtension] = filepath;
+        o[key] = filepath;
     }
 
     const DIR_SUBPATH = [

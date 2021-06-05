@@ -1,43 +1,6 @@
 import * as assert from 'assert';
 
-class ExportEntity {
-    constructor(key, path) {
-        assert.strictEqual(key.startsWith('/'), false, `key (${key}) should not start with /`);
-        assert.strictEqual(key.endsWith('/'), false, `key (${key}) should not end with /`);
-
-        this._key = key;
-        this._path = path;
-    }
-
-    key() {
-        const key = this._key;
-        // For `main` field
-        if (key === '.') {
-            return key;
-        }
-
-        const k = `./${this._key}`;
-        return k;
-    }
-
-    toJSON() {
-        const p = this._path !== null ? this._path : this._key;
-
-        const esm = `./esm/${p}.mjs`;
-        const cjs = `./cjs/${p}.js`;
-
-        // [By the document of Node.js v14.2](https://nodejs.org/api/esm.html#esm_resolution_algorithm),
-        //  * Condition matching is applied in object order from first to last within the "exports" object.
-        //  * `["node", "import"]` is used as _defaultEnv_ for its ES Module resolver.
-        //
-        // see also https://nodejs.org/api/esm.html#esm_conditional_exports
-        return {
-            'import': esm,
-            'require': cjs,
-            // 'default'
-        };
-    }
-}
+import { ExportEntry } from './ExportEntry.mjs';
 
 export function loadPublicAPIDefinitions(seq) {
     const EXPORT_ENTRIES = [];
@@ -46,7 +9,7 @@ export function loadPublicAPIDefinitions(seq) {
 
         const name = item.name();
         const path = item.path();
-        const entry = new ExportEntity(name, path);
+        const entry = new ExportEntry(name, path);
         EXPORT_ENTRIES.push(entry);
     }
 
