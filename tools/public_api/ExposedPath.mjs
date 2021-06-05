@@ -15,6 +15,10 @@ export class ExposedPath {
         return this._key;
     }
 
+    path() {
+        return this._raw.path ?? null;
+    }
+
     getCalcPath() {
         const raw = this.name();
         if (raw === '.') {
