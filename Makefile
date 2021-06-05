@@ -214,7 +214,7 @@ __run_install_package: distribution
 
 .PHONY: run_test_package_install
 run_test_package_install:
-	$(NODE_BIN) $(CURDIR)/tools/package_export_tester.mjs
+	$(NODE_BIN) $(CURDIR)/tools/test_package_exports.mjs
 
 .PHONY: post_cleanup_to_test_package_install
 post_cleanup_to_test_package_install:
