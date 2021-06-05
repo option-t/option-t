@@ -3,54 +3,22 @@
     "CHANGELOG_OLD.md": null,
     "LICENSE.MIT": null,
     "README.md": null,
-    "cjs/ClassOption/ClassicOption.d.ts": {
-        "private": true
-    },
-    "cjs/ClassOption/ClassicOption.js": {
-        "private": true
-    },
-    "cjs/ClassOption/compat.d.ts": {
-        "private": true
-    },
-    "cjs/ClassOption/compat.js": {
-        "private": true
-    },
-    "cjs/ClassResult/ClassicResult.d.ts": {
-        "private": true
-    },
-    "cjs/ClassResult/ClassicResult.js": {
-        "private": true
-    },
-    "cjs/ClassResult/compat.d.ts": {
-        "private": true
-    },
-    "cjs/ClassResult/compat.js": {
-        "private": true
-    },
-    "cjs/internal/assert.d.ts": {
-        "private": true
-    },
-    "cjs/internal/assert.js": {
-        "private": true
-    },
-    "cjs/internal/ErrorMessage.d.ts": {
-        "private": true
-    },
-    "cjs/internal/ErrorMessage.js": {
-        "private": true
-    },
-    "cjs/internal/Function.d.ts": {
-        "private": true
-    },
-    "cjs/internal/Function.js": {
-        "private": true
-    },
-    "cjs/internal/Mutable.d.ts": {
-        "private": true
-    },
-    "cjs/internal/Mutable.js": {
-        "private": true
-    },
+    "cjs/ClassOption/ClassicOption.d.ts": null,
+    "cjs/ClassOption/ClassicOption.js": null,
+    "cjs/ClassOption/compat.d.ts": null,
+    "cjs/ClassOption/compat.js": null,
+    "cjs/ClassResult/ClassicResult.d.ts": null,
+    "cjs/ClassResult/ClassicResult.js": null,
+    "cjs/ClassResult/compat.d.ts": null,
+    "cjs/ClassResult/compat.js": null,
+    "cjs/internal/assert.d.ts": null,
+    "cjs/internal/assert.js": null,
+    "cjs/internal/ErrorMessage.d.ts": null,
+    "cjs/internal/ErrorMessage.js": null,
+    "cjs/internal/Function.d.ts": null,
+    "cjs/internal/Function.js": null,
+    "cjs/internal/Mutable.d.ts": null,
+    "cjs/internal/Mutable.js": null,
     "cjs/Maybe/ErrorMessage.d.ts": null,
     "cjs/Maybe/ErrorMessage.js": null,
     "cjs/Maybe/Maybe.d.ts": null,
@@ -301,54 +269,22 @@
     "docs/idiom/README.md": null,
     "docs/public_api_list.md": null,
     "docs/wrapper_objects.md": null,
-    "esm/ClassOption/ClassicOption.d.ts": {
-        "private": true
-    },
-    "esm/ClassOption/ClassicOption.mjs": {
-        "private": true
-    },
-    "esm/ClassOption/compat.d.ts": {
-        "private": true
-    },
-    "esm/ClassOption/compat.mjs": {
-        "private": true
-    },
-    "esm/ClassResult/ClassicResult.d.ts": {
-        "private": true
-    },
-    "esm/ClassResult/ClassicResult.mjs": {
-        "private": true
-    },
-    "esm/ClassResult/compat.d.ts": {
-        "private": true
-    },
-    "esm/ClassResult/compat.mjs": {
-        "private": true
-    },
-    "esm/internal/assert.d.ts": {
-        "private": true
-    },
-    "esm/internal/assert.mjs": {
-        "private": true
-    },
-    "esm/internal/ErrorMessage.d.ts": {
-        "private": true
-    },
-    "esm/internal/ErrorMessage.mjs": {
-        "private": true
-    },
-    "esm/internal/Function.d.ts": {
-        "private": true
-    },
-    "esm/internal/Function.mjs": {
-        "private": true
-    },
-    "esm/internal/Mutable.d.ts": {
-        "private": true
-    },
-    "esm/internal/Mutable.mjs": {
-        "private": true
-    },
+    "esm/ClassOption/ClassicOption.d.ts": null,
+    "esm/ClassOption/ClassicOption.mjs": null,
+    "esm/ClassOption/compat.d.ts": null,
+    "esm/ClassOption/compat.mjs": null,
+    "esm/ClassResult/ClassicResult.d.ts": null,
+    "esm/ClassResult/ClassicResult.mjs": null,
+    "esm/ClassResult/compat.d.ts": null,
+    "esm/ClassResult/compat.mjs": null,
+    "esm/internal/assert.d.ts": null,
+    "esm/internal/assert.mjs": null,
+    "esm/internal/ErrorMessage.d.ts": null,
+    "esm/internal/ErrorMessage.mjs": null,
+    "esm/internal/Function.d.ts": null,
+    "esm/internal/Function.mjs": null,
+    "esm/internal/Mutable.d.ts": null,
+    "esm/internal/Mutable.mjs": null,
     "esm/Maybe/ErrorMessage.d.ts": null,
     "esm/Maybe/ErrorMessage.mjs": null,
     "esm/Maybe/Maybe.d.ts": null,
@@ -595,78 +531,30 @@
     "esm/shared/Function.mjs": null,
     "esm/shared/Mutable.d.ts": null,
     "esm/shared/Mutable.mjs": null,
-    "lib/ClassOption/ClassicOption.d.ts": {
-        "private": true
-    },
-    "lib/ClassOption/ClassicOption.js": {
-        "private": true
-    },
-    "lib/ClassOption/ClassicOption.mjs": {
-        "private": true
-    },
-    "lib/ClassOption/compat.d.ts": {
-        "private": true
-    },
-    "lib/ClassOption/compat.js": {
-        "private": true
-    },
-    "lib/ClassOption/compat.mjs": {
-        "private": true
-    },
-    "lib/ClassResult/ClassicResult.d.ts": {
-        "private": true
-    },
-    "lib/ClassResult/ClassicResult.js": {
-        "private": true
-    },
-    "lib/ClassResult/ClassicResult.mjs": {
-        "private": true
-    },
-    "lib/ClassResult/compat.d.ts": {
-        "private": true
-    },
-    "lib/ClassResult/compat.js": {
-        "private": true
-    },
-    "lib/ClassResult/compat.mjs": {
-        "private": true
-    },
-    "lib/internal/assert.d.ts": {
-        "private": true
-    },
-    "lib/internal/assert.js": {
-        "private": true
-    },
-    "lib/internal/assert.mjs": {
-        "private": true
-    },
-    "lib/internal/ErrorMessage.d.ts": {
-        "private": true
-    },
-    "lib/internal/ErrorMessage.js": {
-        "private": true
-    },
-    "lib/internal/ErrorMessage.mjs": {
-        "private": true
-    },
-    "lib/internal/Function.d.ts": {
-        "private": true
-    },
-    "lib/internal/Function.js": {
-        "private": true
-    },
-    "lib/internal/Function.mjs": {
-        "private": true
-    },
-    "lib/internal/Mutable.d.ts": {
-        "private": true
-    },
-    "lib/internal/Mutable.js": {
-        "private": true
-    },
-    "lib/internal/Mutable.mjs": {
-        "private": true
-    },
+    "lib/ClassOption/ClassicOption.d.ts": null,
+    "lib/ClassOption/ClassicOption.js": null,
+    "lib/ClassOption/ClassicOption.mjs": null,
+    "lib/ClassOption/compat.d.ts": null,
+    "lib/ClassOption/compat.js": null,
+    "lib/ClassOption/compat.mjs": null,
+    "lib/ClassResult/ClassicResult.d.ts": null,
+    "lib/ClassResult/ClassicResult.js": null,
+    "lib/ClassResult/ClassicResult.mjs": null,
+    "lib/ClassResult/compat.d.ts": null,
+    "lib/ClassResult/compat.js": null,
+    "lib/ClassResult/compat.mjs": null,
+    "lib/internal/assert.d.ts": null,
+    "lib/internal/assert.js": null,
+    "lib/internal/assert.mjs": null,
+    "lib/internal/ErrorMessage.d.ts": null,
+    "lib/internal/ErrorMessage.js": null,
+    "lib/internal/ErrorMessage.mjs": null,
+    "lib/internal/Function.d.ts": null,
+    "lib/internal/Function.js": null,
+    "lib/internal/Function.mjs": null,
+    "lib/internal/Mutable.d.ts": null,
+    "lib/internal/Mutable.js": null,
+    "lib/internal/Mutable.mjs": null,
     "lib/Maybe/ErrorMessage.d.ts": null,
     "lib/Maybe/ErrorMessage.js": null,
     "lib/Maybe/ErrorMessage.mjs": null,

@@ -1,8 +1,7 @@
 import * as assert from 'assert';
-import * as path from 'path';
 
 class ExportEntity {
-    constructor(key, path = undefined) {
+    constructor(key, path) {
         assert.strictEqual(key.startsWith('/'), false, `key (${key}) should not start with /`);
         assert.strictEqual(key.endsWith('/'), false, `key (${key}) should not end with /`);
 
@@ -22,7 +21,7 @@ class ExportEntity {
     }
 
     toJSON() {
-        const p = this._path !== undefined ? this._path : this._key;
+        const p = this._path !== null ? this._path : this._key;
 
         const esm = `./esm/${p}.mjs`;
         const cjs = `./cjs/${p}.js`;
@@ -40,13 +39,14 @@ class ExportEntity {
     }
 }
 
-export async function loadPublicAPIDefinitions(baseDir, filepath) {
-    const p = path.resolve(baseDir, filepath);
-    const publicApiTestCases = await import(p).then((obj) => obj.default);
+export function loadPublicAPIDefinitions(seq) {
     const EXPORT_ENTRIES = [];
-    for (const [key, value] of Object.entries(publicApiTestCases)) {
-        const path = value.path;
-        const entry = new ExportEntity(key, path);
+    for (const item of seq) {
+        assert.ok(!item.isForCompat());
+
+        const name = item.name();
+        const path = item.path();
+        const entry = new ExportEntity(name, path);
         EXPORT_ENTRIES.push(entry);
     }
 

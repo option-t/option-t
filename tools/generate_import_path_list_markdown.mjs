@@ -3,16 +3,19 @@ import { promises as fs } from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 
+import {
+    generateExposedPathSequence,
+} from './public_api/mod.mjs';
+
+
 const THIS_FILE_NAME = fileURLToPath(import.meta.url);
 const THIS_DIR_NAME = path.dirname(THIS_FILE_NAME);
 
 const RELATIVE_PATH_TO_SRC_DIR = '../src';
 
 const FILENAME = 'public_api_list.md';
-const API_DEFINITIONS_PATH = './public_api.mjs';
 
 const PKG_NAME = 'option-t';
-
 
 class ListItem {
     constructor(key, subpath, extension = 'ts') {
@@ -27,7 +30,7 @@ class ListItem {
 
     href() {
         const subpath = this._subpath;
-        if (subpath === undefined) {
+        if (!subpath) {
             return this._key;
         }
 
@@ -120,8 +123,14 @@ ${str}
         assert.strictEqual(actual, expected, `SRC_DIR (${actual}) should be ${expected}`);
     }
 
-    const table = await import(API_DEFINITIONS_PATH).then((mod) => mod.default);
-    const list = Object.entries(table).map(([key, { path }]) => new ListItem(key, path));
+    const apiList = generateExposedPathSequence();
+    const list = Array.from(apiList)
+        .map((pathItem) => {
+            const key = pathItem.name();
+            const path = pathItem.path();
+            const item = new ListItem(key, path);
+            return item;
+        });
 
     const sectionList = categorize(list);
 
