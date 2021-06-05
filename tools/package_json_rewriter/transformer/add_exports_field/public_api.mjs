@@ -39,12 +39,10 @@ class ExportEntity {
     }
 }
 
-export async function loadPublicAPIDefinitions(list) {
+export function loadPublicAPIDefinitions(seq) {
     const EXPORT_ENTRIES = [];
-    for (const item of list) {
-        if (item.isForCompat()) {
-            continue;
-        }
+    for (const item of seq) {
+        assert.ok(!item.isForCompat());
 
         const name = item.name();
         const path = item.path();

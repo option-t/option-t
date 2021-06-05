@@ -1,43 +1,22 @@
-import { loadJSON } from '../../json.mjs';
+import * as assert from 'assert';
 
 const SHOULD_EXPOSE_LIB = true;
 
-function filterJSDir(histricalPathInfo) {
-    const result = [];
-    for (const [filepath, info] of Object.entries(histricalPathInfo)) {
-        if (!SHOULD_EXPOSE_LIB) {
-            if ((/^lib\//u).test(filepath)) {
+export function addHistoricalPathToExportsFields(o, histricalJSPathSeq) {
+    // https://nodejs.org/api/esm.html
+    for (const entry of histricalJSPathSeq) {
+        assert.ok(entry.isForCompat());
+        if (entry.isLib()) {
+            if (!SHOULD_EXPOSE_LIB) {
                 continue;
             }
         }
 
-        if (!!info && info.private) {
+        if (!entry.hasExtension()) {
             continue;
         }
 
-        if (!(/^(cjs|esm|lib)\//u).test(filepath)) {
-            continue;
-        }
-
-        if (!(/^.+\.(js|mjs|cjs)$/u).test(filepath)) {
-            continue;
-        }
-
-        result.push(filepath);
-    }
-
-    return result;
-}
-
-export async function loadHistoricalPathInfo(baseDir, filename) {
-    const histricalPathInfo = await loadJSON(baseDir, filename);
-    const histricalJSPathList = filterJSDir(histricalPathInfo);
-    return histricalJSPathList;
-}
-
-export function addHistoricalPathToExportsFields(o, histricalJSPathList) {
-    // https://nodejs.org/api/esm.html
-    for (const file of histricalJSPathList) {
+        const file = entry.name();
         const filepath = `./${file}`;
         // eslint-disable-next-line no-param-reassign
         o[filepath] = filepath;
