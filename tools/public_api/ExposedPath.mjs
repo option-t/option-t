@@ -1,5 +1,3 @@
-import * as assert from 'assert';
-
 import ApiTable from './table.mjs';
 
 const PKG_NAME = 'option-t';
@@ -34,27 +32,28 @@ export class ExposedPath {
     }
 
     isForCompat() {
-        return this._raw.isForCompat ?? false;
+        return false;
+    }
+}
+
+export class QuirksLegacyExposedPath extends ExposedPath {
+    isForCompat() {
+        return true;
     }
 
     isESM() {
-        assert.ok(this.isForCompat(), `don't call this for non quirks path`);
-
         const name = this.name();
         const isESM = /^esm/u.test(name) || /\.mjs$/u.test(name);
         return isESM;
     }
 
     isCJS() {
-        assert.ok(this.isForCompat(), `don't call this for non quirks path`);
-
         const name = this.name();
         const isCJS = /^cjs/u.test(name) || /\.js$/u.test(name);
         return isCJS;
     }
 
     isLibButWithoutExtension() {
-        assert.ok(this.isForCompat(), `don't call this for non quirks path`);
         const name = this.name();
         const ok = /^lib/u.test(name);
         return ok;
@@ -65,7 +64,13 @@ export async function buildExposedPathList() {
     const raw = ApiTable;
     const list = [];
     for (const [key, value] of Object.entries(raw)) {
-        const o = new ExposedPath(key, value);
+        let o = null;
+        if (!!value.isForCompat) {
+            o = new QuirksLegacyExposedPath(key, value);
+        }
+        else {
+            o = new ExposedPath(key, value);
+        }
         list.push(o);
     }
     return list;

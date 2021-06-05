@@ -4,6 +4,7 @@ import { createRequire } from 'module';
 import {
     buildExposedPathList,
     ExposedPath,
+    QuirksLegacyExposedPath,
 } from './public_api/mod.mjs';
 
 const require = createRequire(import.meta.url);
@@ -46,7 +47,7 @@ function checkExportedItems(actualExportedObj, pathItem) {
 }
 
 async function tryImportPathForCompat(pathItem) {
-    assert.ok(pathItem instanceof ExposedPath);
+    assert.ok(pathItem instanceof QuirksLegacyExposedPath);
     assert.ok(pathItem.isForCompat());
 
     if (pathItem.isESM()) {
