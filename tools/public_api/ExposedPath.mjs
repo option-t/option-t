@@ -17,7 +17,7 @@ export class ExposedPath {
         return this._raw.path ?? null;
     }
 
-    getCalcPath() {
+    resolvedName() {
         const raw = this.name();
         if (raw === '.') {
             return PKG_NAME;
