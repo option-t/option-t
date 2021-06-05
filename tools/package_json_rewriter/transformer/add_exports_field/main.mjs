@@ -2,6 +2,10 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 import {
+    buildExposedPathList,
+} from '../../../public_api/mod.mjs';
+
+import {
     loadHistoricalPathInfo,
     addHistoricalPathToExportsFields,
 } from './compatibility.mjs';
@@ -21,7 +25,8 @@ export async function addExportsFields(json) {
     const histricalJSPathList = await loadHistoricalPathInfo(BASE_DIR, '../../../pkg_files.json');
     addHistoricalPathToExportsFields(o, histricalJSPathList);
 
-    const publicApiList = await loadPublicAPIDefinitions(BASE_DIR, '../../../public_api.mjs');
+    const publicApiSourceList = await buildExposedPathList();
+    const publicApiList = await loadPublicAPIDefinitions(publicApiSourceList);
     await addPublicAPIToExportsFields(o, publicApiList);
 
     // eslint-disable-next-line no-param-reassign
