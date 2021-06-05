@@ -193,7 +193,7 @@ test_distribution_contain_all: distribution
 
 .PHONY: run_test_distribution_contain_all
 run_test_distribution_contain_all:
-	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/pkg_files_tester.mjs
+	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/test_package_contains_expected_all.mjs
 
 .PHONY: test_esmodule_path_rewrite
 test_esmodule_path_rewrite: distribution
@@ -201,7 +201,7 @@ test_esmodule_path_rewrite: distribution
 
 .PHONY: run_test_esmodule_path_rewrite
 run_test_esmodule_path_rewrite:
-	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/esmodule_path_rewrite_tester.mjs
+	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/test_esmodule_path_rewrite.mjs
 
 .PHONY: test_package_install
 test_package_install: distribution __run_install_package
