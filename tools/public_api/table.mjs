@@ -729,7 +729,6 @@ export const apiTable = Object.freeze({
 });
 
 const COMPAT_DESCRIPTOR = Object.freeze({
-    isForCompat: true,
 });
 
 export const legacyApiTable = Object.freeze({
