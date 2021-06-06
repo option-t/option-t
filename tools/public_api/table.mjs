@@ -272,6 +272,7 @@ export const apiTable = Object.freeze({
             'mapAsync',
             'mapOr',
             'mapOrElse',
+            'mapOrElseAsync',
             'or',
             'orElse',
             'orElseAsync',
@@ -347,6 +348,11 @@ export const apiTable = Object.freeze({
     'PlainOption/mapOrElse': {
         'exports': [
             'mapOrElseForOption'
+        ]
+    },
+    'PlainOption/mapOrElseAsync': {
+        'exports': [
+            'mapOrElseAsyncForOption'
         ]
     },
     'PlainOption/okOr': {
@@ -813,6 +819,7 @@ export const legacyApiTable = Object.freeze({
     'cjs/PlainOption/mapAsync': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/mapOr': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/mapOrElse': COMPAT_DESCRIPTOR,
+    'cjs/PlainOption/mapOrElseAsync': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/okOr': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/okOrElse': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/or': COMPAT_DESCRIPTOR,
@@ -944,6 +951,7 @@ export const legacyApiTable = Object.freeze({
     'esm/PlainOption/mapAsync': COMPAT_DESCRIPTOR,
     'esm/PlainOption/mapOr': COMPAT_DESCRIPTOR,
     'esm/PlainOption/mapOrElse': COMPAT_DESCRIPTOR,
+    'esm/PlainOption/mapOrElseAsync': COMPAT_DESCRIPTOR,
     'esm/PlainOption/okOr': COMPAT_DESCRIPTOR,
     'esm/PlainOption/okOrElse': COMPAT_DESCRIPTOR,
     'esm/PlainOption/or': COMPAT_DESCRIPTOR,
@@ -1075,6 +1083,7 @@ export const legacyApiTable = Object.freeze({
     'lib/PlainOption/mapAsync': COMPAT_DESCRIPTOR,
     'lib/PlainOption/mapOr': COMPAT_DESCRIPTOR,
     'lib/PlainOption/mapOrElse': COMPAT_DESCRIPTOR,
+    'lib/PlainOption/mapOrElseAsync': COMPAT_DESCRIPTOR,
     'lib/PlainOption/okOr': COMPAT_DESCRIPTOR,
     'lib/PlainOption/okOrElse': COMPAT_DESCRIPTOR,
     'lib/PlainOption/or': COMPAT_DESCRIPTOR,

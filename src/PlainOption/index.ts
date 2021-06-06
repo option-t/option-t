@@ -37,6 +37,7 @@ export { mapForOption as map } from './map';
 export { mapAsyncForOption as mapAsync } from './mapAsync';
 export { mapOrForOption as mapOr } from './mapOr';
 export { mapOrElseForOption as mapOrElse } from './mapOrElse';
+export { mapOrElseAsyncForOption as mapOrElseAsync } from './mapOrElseAsync';
 export { orForOption as or } from './or';
 export { orElseForOption as orElse } from './orElse';
 export { orElseAsyncForOption as orElseAsync } from './orElseAsync';
