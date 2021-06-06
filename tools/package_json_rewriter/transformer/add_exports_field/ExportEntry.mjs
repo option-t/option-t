@@ -62,18 +62,7 @@ export class CompatExportEntry extends AbstractExportEntry {
         return k;
     }
 
-    path() {
-        const original = this._original;
-        const hasExtension = original.hasExtension();
-        if (!hasExtension) {
-            return this._pathForNoExtension();
-        }
-
-        const p = this.key();
-        return p;
-    }
-
-    _pathForNoExtension() {
+    filepath() {
         const original = this._original;
         const key = this.key();
         if (original.isESM()) {

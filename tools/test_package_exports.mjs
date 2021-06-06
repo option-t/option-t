@@ -56,7 +56,7 @@ async function tryImportPathForCompat(pathItem) {
     else if (pathItem.isCJS()) {
         tryImportPathAsCJS(pathItem);
     }
-    else if (pathItem.isLibButWithoutExtension()) {
+    else if (pathItem.isLib()) {
         tryImportPathAsCJS(pathItem);
         await tryImportPathAsESM(pathItem);
     }
