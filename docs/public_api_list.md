@@ -80,6 +80,7 @@
 - [option-t/PlainOption/Option](../src/PlainOption/Option.ts)
 - [option-t/PlainOption/or](../src/PlainOption/or.ts)
 - [option-t/PlainOption/orElse](../src/PlainOption/orElse.ts)
+- [option-t/PlainOption/orElseAsync](../src/PlainOption/orElseAsync.ts)
 - [option-t/PlainOption/transpose](../src/PlainOption/transpose.ts)
 - [option-t/PlainOption/tap](../src/PlainOption/tap.ts)
 - [option-t/PlainOption/unwrap](../src/PlainOption/unwrap.ts)
