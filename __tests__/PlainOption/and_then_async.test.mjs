@@ -5,7 +5,6 @@ import { andThenAsyncForOption } from '../../__dist/esm/PlainOption/andThenAsync
 
 const VALUE_T = Math.random();
 const VALUE_U = Math.random();
-const ERROR_E = new Error('e');
 
 test('input is Some(T), callback return Some(U)', async (t) => {
     t.plan(5);
