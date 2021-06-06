@@ -263,6 +263,7 @@ export const apiTable = Object.freeze({
             'isNone',
             'and',
             'andThen',
+            'andThenAsync',
             'equal',
             'expect',
             'filter',
@@ -289,6 +290,11 @@ export const apiTable = Object.freeze({
     'PlainOption/andThen': {
         'exports': [
             'andThenForOption'
+        ]
+    },
+    'PlainOption/andThenAsync': {
+        'exports': [
+            'andThenAsyncForOption'
         ]
     },
     'PlainOption/asMut': {
@@ -782,6 +788,7 @@ export const legacyApiTable = Object.freeze({
     'cjs/PlainOption/Option': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/and': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/andThen': COMPAT_DESCRIPTOR,
+    'cjs/PlainOption/andThenAsync': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/asMut': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/drop': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/equal': COMPAT_DESCRIPTOR,
@@ -910,6 +917,7 @@ export const legacyApiTable = Object.freeze({
     'esm/PlainOption/Option': COMPAT_DESCRIPTOR,
     'esm/PlainOption/and': COMPAT_DESCRIPTOR,
     'esm/PlainOption/andThen': COMPAT_DESCRIPTOR,
+    'esm/PlainOption/andThenAsync': COMPAT_DESCRIPTOR,
     'esm/PlainOption/asMut': COMPAT_DESCRIPTOR,
     'esm/PlainOption/drop': COMPAT_DESCRIPTOR,
     'esm/PlainOption/equal': COMPAT_DESCRIPTOR,
@@ -1038,6 +1046,7 @@ export const legacyApiTable = Object.freeze({
     'lib/PlainOption/Option': COMPAT_DESCRIPTOR,
     'lib/PlainOption/and': COMPAT_DESCRIPTOR,
     'lib/PlainOption/andThen': COMPAT_DESCRIPTOR,
+    'lib/PlainOption/andThenAsync': COMPAT_DESCRIPTOR,
     'lib/PlainOption/asMut': COMPAT_DESCRIPTOR,
     'lib/PlainOption/drop': COMPAT_DESCRIPTOR,
     'lib/PlainOption/expect': COMPAT_DESCRIPTOR,
