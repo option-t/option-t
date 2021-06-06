@@ -36,6 +36,7 @@ export { flattenForOption as flatten } from './flatten';
 export { mapForOption as map } from './map';
 export { mapAsyncForOption as mapAsync } from './mapAsync';
 export { mapOrForOption as mapOr } from './mapOr';
+export { mapOrAsyncForOption as mapOrAsync } from './mapOrAsync';
 export { mapOrElseForOption as mapOrElse } from './mapOrElse';
 export { mapOrElseAsyncForOption as mapOrElseAsync } from './mapOrElseAsync';
 export { orForOption as or } from './or';
