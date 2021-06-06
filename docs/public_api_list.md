@@ -64,6 +64,7 @@
 - [option-t/PlainOption](../src/PlainOption/index.ts)
 - [option-t/PlainOption/and](../src/PlainOption/and.ts)
 - [option-t/PlainOption/andThen](../src/PlainOption/andThen.ts)
+- [option-t/PlainOption/andThenAsync](../src/PlainOption/andThenAsync.ts)
 - [option-t/PlainOption/asMut](../src/PlainOption/asMut.ts)
 - [option-t/PlainOption/drop](../src/PlainOption/drop.ts)
 - [option-t/PlainOption/equal](../src/PlainOption/equal.ts)

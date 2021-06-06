@@ -28,6 +28,7 @@ export { Option, Some, None, createSome, createNone, isSome, isNone } from './Op
 
 export { andForOption as and } from './and';
 export { andThenForOption as andThen } from './andThen';
+export { andThenAsyncForOption as andThenAsync } from './andThenAsync';
 export { equalForOption as equal } from './equal';
 export { expectIsSome as expect } from './expect';
 export { filterForOption as filter } from './filter';
