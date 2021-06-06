@@ -43,13 +43,13 @@ export class QuirksLegacyExposedPath extends ExposedPath {
 
     isESM() {
         const name = this.name();
-        const isESM = /^esm\//u.test(name) || /\.mjs$/u.test(name);
+        const isESM = /^esm\//u.test(name);
         return isESM;
     }
 
     isCJS() {
         const name = this.name();
-        const isCJS = /^cjs\//u.test(name) || /\.js$/u.test(name);
+        const isCJS = /^cjs\//u.test(name);
         return isCJS;
     }
 
@@ -57,16 +57,6 @@ export class QuirksLegacyExposedPath extends ExposedPath {
         const name = this.name();
         const ok = /^lib\//u.test(name);
         return ok;
-    }
-
-    isLibButWithoutExtension() {
-        return this.isLib() && !this.hasExtension();
-    }
-
-    hasExtension() {
-        const name = this.name();
-        const has = /\.(js|mjs|cjs)$/u.test(name);
-        return has;
     }
 }
 

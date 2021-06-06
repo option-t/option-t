@@ -64,17 +64,6 @@ export class CompatExportEntry extends AbstractExportEntry {
 
     path() {
         const original = this._original;
-        const hasExtension = original.hasExtension();
-        if (!hasExtension) {
-            return this._pathForNoExtension();
-        }
-
-        const p = this.key();
-        return p;
-    }
-
-    _pathForNoExtension() {
-        const original = this._original;
         const key = this.key();
         if (original.isESM()) {
             const p = `${key}.mjs`;
