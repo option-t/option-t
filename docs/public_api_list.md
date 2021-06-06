@@ -86,6 +86,7 @@
 - [option-t/PlainOption/unwrap](../src/PlainOption/unwrap.ts)
 - [option-t/PlainOption/unwrapOr](../src/PlainOption/unwrapOr.ts)
 - [option-t/PlainOption/unwrapOrElse](../src/PlainOption/unwrapOrElse.ts)
+- [option-t/PlainOption/unwrapOrElseAsync](../src/PlainOption/unwrapOrElseAsync.ts)
 - [option-t/PlainOption/xor](../src/PlainOption/xor.ts)
 
 
