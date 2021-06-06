@@ -1,6 +1,6 @@
 import * as assert from 'assert';
 
-import { CompatExportEntry } from './ExportEntry.mjs';
+import { CompatExportEntry, constructDualPackagePathValue } from './ExportEntry.mjs';
 
 const SHOULD_EXPOSE_LIB = true;
 
@@ -42,6 +42,18 @@ export function addHistoricalPathToExportsFields(o, histricalJSPathSeq) {
     handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH.map((path) => `esm/${path}`), 'mjs');
     // Our defult is still commonjs. For lib/, we should use `.js`.
     if (SHOULD_EXPOSE_LIB) {
-        handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH.map((path) => `lib/${path}`), 'js');
+        const list = DIR_SUBPATH.map((path) => `lib/${path}`);
+        for (const dirpath of list) {
+            const key = `./${dirpath}`;
+            const actualPath = `${key}/index`;
+            const cjs = `${actualPath}.js`;
+            const mjs = `${actualPath}.mjs`;
+            const value = constructDualPackagePathValue({
+                cjs,
+                esm: mjs,
+            });
+            // eslint-disable-next-line no-param-reassign
+            o[key] = value;
+        }
     }
 }
