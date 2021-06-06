@@ -12,7 +12,7 @@ const require = createRequire(import.meta.url);
 async function tryImportPathAsESM(pathItem) {
     assert.ok(pathItem instanceof ExposedPath);
 
-    const targetPath = pathItem.getCalcPath();
+    const targetPath = pathItem.resolvedName();
     let actualExportedObj;
     await assert.doesNotReject(async () => {
         actualExportedObj = await import(targetPath);
@@ -24,7 +24,7 @@ async function tryImportPathAsESM(pathItem) {
 function tryImportPathAsCJS(pathItem) {
     assert.ok(pathItem instanceof ExposedPath);
 
-    const targetPath = pathItem.getCalcPath();
+    const targetPath = pathItem.resolvedName();
 
     let actualExportedObj;
     assert.doesNotThrow(() => {
@@ -37,7 +37,7 @@ function tryImportPathAsCJS(pathItem) {
 function checkExportedItems(actualExportedObj, pathItem) {
     assert.ok(pathItem instanceof ExposedPath);
 
-    const targetPath = pathItem.getCalcPath();
+    const targetPath = pathItem.resolvedName();
     const rawExpected = pathItem.exports();
     if (!!rawExpected) {
         const expected = rawExpected.sort();
@@ -60,7 +60,7 @@ async function tryImportPathForCompat(pathItem) {
         tryImportPathAsCJS(pathItem);
     }
     else {
-        throw new RangeError(`unreachable, but ${pathItem.getCalcPath()} reach to here`);
+        throw new RangeError(`unreachable, but ${pathItem.resolvedName()} reach to here`);
     }
 }
 
