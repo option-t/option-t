@@ -16,7 +16,7 @@ export function addHistoricalPathToExportsFields(o, histricalJSPathSeq) {
 
         const entry = new CompatExportEntry(original);
         const key = entry.key();
-        const filepath = entry.path();
+        const filepath = entry.filepath();
         // eslint-disable-next-line no-param-reassign
         o[key] = filepath;
     }

@@ -13,7 +13,7 @@ export class ExposedPath {
         return this._key;
     }
 
-    path() {
+    filepath() {
         return this._raw.path ?? null;
     }
 

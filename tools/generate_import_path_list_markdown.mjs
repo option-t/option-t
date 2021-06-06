@@ -127,7 +127,7 @@ ${str}
     const list = Array.from(apiList)
         .map((pathItem) => {
             const key = pathItem.name();
-            const path = pathItem.path();
+            const path = pathItem.filepath();
             const item = new ListItem(key, path);
             return item;
         });

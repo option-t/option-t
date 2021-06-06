@@ -8,7 +8,7 @@ export function loadPublicAPIDefinitions(seq) {
         assert.ok(!item.isForCompat());
 
         const name = item.name();
-        const path = item.path();
+        const path = item.filepath();
         const entry = new ExportEntry(name, path);
         EXPORT_ENTRIES.push(entry);
     }
