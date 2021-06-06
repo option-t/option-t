@@ -9,8 +9,6 @@ import {
 
 const require = createRequire(import.meta.url);
 
-const SHOULD_EXPOSE_LIB = false;
-
 async function tryImportPathAsESM(pathItem) {
     assert.ok(pathItem instanceof ExposedPath);
 
@@ -57,10 +55,6 @@ async function tryImportPathForCompat(pathItem) {
     }
     else if (pathItem.isCJS()) {
         tryImportPathAsCJS(pathItem);
-    }
-    else if (SHOULD_EXPOSE_LIB && pathItem.isLib()) {
-        tryImportPathAsCJS(pathItem);
-        await tryImportPathAsESM(pathItem);
     }
     else {
         throw new RangeError(`unreachable, but ${pathItem.resolvedName()} reach to here`);
