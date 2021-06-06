@@ -45,3 +45,4 @@ export { tapOption as tap } from './tap';
 export { unwrapOption as unwrap } from './unwrap';
 export { unwrapOrFromOption as unwrapOr } from './unwrapOr';
 export { unwrapOrElseFromOption as unwrapOrElse } from './unwrapOrElse';
+export { unwrapOrElseAsyncFromOption as unwrapOrElseAsync } from './unwrapOrElseAsync';
