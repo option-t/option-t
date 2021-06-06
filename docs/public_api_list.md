@@ -75,6 +75,7 @@
 - [option-t/PlainOption/mapAsync](../src/PlainOption/mapAsync.ts)
 - [option-t/PlainOption/mapOr](../src/PlainOption/mapOr.ts)
 - [option-t/PlainOption/mapOrElse](../src/PlainOption/mapOrElse.ts)
+- [option-t/PlainOption/mapOrElseAsync](../src/PlainOption/mapOrElseAsync.ts)
 - [option-t/PlainOption/okOr](../src/PlainOption/okOr.ts)
 - [option-t/PlainOption/okOrElse](../src/PlainOption/okOrElse.ts)
 - [option-t/PlainOption/Option](../src/PlainOption/Option.ts)
