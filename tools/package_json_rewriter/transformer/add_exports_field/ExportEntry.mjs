@@ -40,17 +40,11 @@ export class ExportEntry extends AbstractExportEntry {
 
         const esm = `./esm/${p}.mjs`;
         const cjs = `./cjs/${p}.js`;
-
-        // [By the document of Node.js v14.2](https://nodejs.org/api/esm.html#esm_resolution_algorithm),
-        //  * Condition matching is applied in object order from first to last within the "exports" object.
-        //  * `["node", "import"]` is used as _defaultEnv_ for its ES Module resolver.
-        //
-        // see also https://nodejs.org/api/esm.html#esm_conditional_exports
-        return {
-            'import': esm,
-            'require': cjs,
-            // 'default'
-        };
+        const entry = constructDualPackagePathValue({
+            esm,
+            cjs,
+        });
+        return entry;
     }
 }
 
@@ -93,10 +87,27 @@ export class CompatExportEntry extends AbstractExportEntry {
         }
 
         if (original.isLib()) {
-            const p = `${key}.js`;
+            const esm = `${key}.mjs`;
+            const cjs = `${key}.js`;
+            const p = constructDualPackagePathValue({
+                cjs,
+                esm,
+            });
             return p;
         }
 
         throw new RangeError('not here');
     }
+}
+
+export function constructDualPackagePathValue({ cjs, esm, }) {
+    // [By the document of Node.js v14.2](https://nodejs.org/api/esm.html#esm_resolution_algorithm),
+    //  * Condition matching is applied in object order from first to last within the "exports" object.
+    //  * `["node", "import"]` is used as _defaultEnv_ for its ES Module resolver.
+    //
+    // see also https://nodejs.org/api/esm.html#esm_conditional_exports
+    return {
+        'import': esm,
+        'require': cjs,
+    };
 }
