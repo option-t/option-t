@@ -77,7 +77,7 @@ build_cjs_js: clean_dist
 
 .PHONY: build_cjs_type_definition
 build_cjs_type_definition: clean_dist
-	$(NPM_BIN)/cpx '$(SRC_DIR)/**/*.d.ts' $(DIST_COMMONJS_DIR) --preserve
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(SRC_DIR) --source '$(SRC_DIR)/**/*.d.ts' --destination $(DIST_COMMONJS_DIR)
 
 .PHONY: build_cjs_ts
 build_cjs_ts: clean_dist
@@ -92,7 +92,7 @@ build_mjs_cp_mjs_to_esm: build_mjs_rename_js_to_mjs clean_dist
 
 .PHONY: build_mjs_cp_dts_to_esm
 build_mjs_cp_dts_to_esm: build_mjs_create_tmp_mjs clean_dist
-	$(NPM_BIN)/cpx '$(TMP_MJS_DIR)/**/*.d.ts' $(DIST_ESM_DIR) --preserve
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_MJS_DIR) --source '$(TMP_MJS_DIR)/**/*.d.ts' --destination $(DIST_ESM_DIR)
 
 .PHONY: build_mjs_rename_js_to_mjs
 build_mjs_rename_js_to_mjs: build_mjs_create_tmp_mjs
@@ -112,7 +112,7 @@ build_mjs_create_tmp_mjs_call_babel: clean_tmp_mjs
 
 .PHONY: build_mjs_create_tmp_mjs_cal_cpx
 build_mjs_create_tmp_mjs_cal_cpx: clean_tmp_mjs
-	$(NPM_BIN)/cpx '$(SRC_DIR)/**/*.d.ts' $(TMP_MJS_DIR) --preserve
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(SRC_DIR) --source '$(SRC_DIR)/**/*.d.ts' --destination $(TMP_MJS_DIR)
 
 
 .PHONY: build_mixedlib
@@ -120,31 +120,31 @@ build_mixedlib: build_mixedlib_cp_mjs build_mixedlib_cp_cjs build_mixedlib_cp_dt
 
 .PHONY: build_mixedlib_cp_mjs
 build_mixedlib_cp_mjs: build_esm clean_dist
-	$(NPM_BIN)/cpx '$(DIST_ESM_DIR)/**/*.mjs' $(DIST_MIXED_LIB_DIR) --preserve
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(DIST_ESM_DIR) --source '$(DIST_ESM_DIR)/**/*.mjs' --destination $(DIST_MIXED_LIB_DIR)
 
 .PHONY: build_mixedlib_cp_cjs
 build_mixedlib_cp_cjs: build_cjs clean_dist
-	$(NPM_BIN)/cpx '$(DIST_COMMONJS_DIR)/**/*.js' $(DIST_MIXED_LIB_DIR) --preserve
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(DIST_COMMONJS_DIR) --source '$(DIST_COMMONJS_DIR)/**/*.js' --destination $(DIST_MIXED_LIB_DIR)
 
 .PHONY: build_mixedlib_cp_dts
 build_mixedlib_cp_dts: build_esm clean_dist
-	$(NPM_BIN)/cpx '$(DIST_ESM_DIR)/**/*.d.ts' $(DIST_MIXED_LIB_DIR) --preserve
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(DIST_ESM_DIR) --source '$(DIST_ESM_DIR)/**/*.d.ts' --destination $(DIST_MIXED_LIB_DIR)
 
 .PHONY: cp_docs
 cp_docs: clean_dist
-	$(NPM_BIN)/cpx '$(DOCS_DIR)/**/*' $(DIST_DOCS_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(DOCS_DIR) --source '$(DOCS_DIR)/**/*' --destination $(DIST_DOCS_DIR)
 
 .PHONY: cp_changelog
 cp_changelog: clean_dist
-	$(NPM_BIN)/cpx '$(CURDIR)/{CHANGELOG.md,CHANGELOG_OLD.md}' $(DIST_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(CURDIR) --source '$(CURDIR)/{CHANGELOG.md,CHANGELOG_OLD.md}' --destination $(DIST_DIR)
 
 .PHONY: cp_license
 cp_license: clean_dist
-	$(NPM_BIN)/cpx '$(CURDIR)/LICENSE.MIT' $(DIST_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(CURDIR) --source '$(CURDIR)/LICENSE.MIT' --destination $(DIST_DIR)
 
 .PHONY: cp_readme
 cp_readme: clean_dist
-	$(NPM_BIN)/cpx '$(CURDIR)/README.md' $(DIST_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(CURDIR) --source '$(CURDIR)/README.md' --destination $(DIST_DIR)
 
 .PHONY: generate_manifest
 generate_manifest: clean_dist
