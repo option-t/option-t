@@ -8,16 +8,39 @@ import { parseArgs } from './parse_argv.mjs';
 
 const glob = util.promisify(globOriginal);
 
+async function createSourceToDestinationMapList(baseDir, sourceList, destinationDir) {
+    const normalizedDest = path.normalize(destinationDir);
+    const candidate = sourceList.map(async (source) => {
+        const normalizedSource = path.normalize(source);
+        const actualSourcePath = path.resolve(baseDir, normalizedSource);
+
+        const sourceStat = await fs.stat(actualSourcePath);
+        if (sourceStat.isDirectory()) {
+            return null;
+        }
+
+        const relativePath = normalizedSource.replace(baseDir, '');
+        const dest = path.join(normalizedDest, relativePath);
+
+        const entry = {
+            source: actualSourcePath,
+            dest,
+        };
+
+        return entry;
+    });
+
+    const candidateItems = await Promise.all(candidate);
+    const fileList = candidateItems.filter((entry) => entry !== null);
+    return fileList;
+}
+
+
 async function copyFile(
     source,
     dest,
     { isDebug: _isDebug, isVerbose: _isVerbose }
 ) {
-    const sourceStat = await fs.stat(source);
-    if (sourceStat.isDirectory()) {
-        return null;
-    }
-
     const dirname = path.dirname(dest);
 
     try {
@@ -59,8 +82,8 @@ const CLI_FLAG_DESTINATION = '--destination';
         throw new Error('no source');
     }
 
-    const targetDir = argv.get(CLI_FLAG_DESTINATION);
-    if (!targetDir) {
+    const destinationDir = argv.get(CLI_FLAG_DESTINATION);
+    if (!destinationDir) {
         throw new Error('no target');
     }
 
@@ -71,23 +94,13 @@ const CLI_FLAG_DESTINATION = '--destination';
         console.dir(sourceList);
     }
 
-    const normalizedDest = path.normalize(targetDir);
-
-    const pairList = [];
-    for (const source of sourceList) {
-        const normalizedSource = path.normalize(source);
-        const actualSourcePath = path.resolve(baseDir, normalizedSource);
-
-        const relativePath = normalizedSource.replace(baseDir, '');
-        const dest = path.join(normalizedDest, relativePath);
-
-        const entry = {
-            source: actualSourcePath,
-            dest,
-        };
-        pairList.push(entry);
+    const pairList = await createSourceToDestinationMapList(baseDir, sourceList, destinationDir);
+    if (isVerbose) {
+        const debug = pairList.map(({ source, dest }) => {
+            return `${source} -> ${dest}`;
+        });
+        console.log(debug.join('\n'));
     }
-
     if (isVerbose) {
         const debug = pairList.map(({ source, dest }) => {
             return `${source} -> ${dest}`;
