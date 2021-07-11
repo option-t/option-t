@@ -62,7 +62,7 @@
     "del-cli": "^4.0.0",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
-    "glob": "^7.1.7",
+    "picomatch": "^2.3.0",
     "prettier": "^2.3.2",
     "typescript": "^4.3.5"
   },
