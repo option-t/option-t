@@ -62,7 +62,7 @@ export class CompatExportEntry extends AbstractExportEntry {
         return k;
     }
 
-    filepath() {
+    _filepath() {
         const original = this._original;
         const key = this.key();
         if (original.isESM()) {
@@ -87,9 +87,87 @@ export class CompatExportEntry extends AbstractExportEntry {
 
         throw new RangeError('not here');
     }
+
+    _toExportEntry() {
+        const p = this._filepath();
+        return p;
+    }
+
+    toJSON() {
+        return this._toExportEntry();
+    }
 }
 
-export function constructDualPackagePathValue({ cjs, esm, }) {
+class AbstractCompatDirExport extends AbstractExportEntry {
+    constructor(dirpath, ext) {
+        super();
+        this._dirpath = dirpath;
+        this._extension = ext;
+        Object.freeze(this);
+    }
+
+    key() {
+        const key = `./${this._dirpath}`;
+        return key;
+    }
+
+    _toExportEntry() {
+        const key = this.key();
+        const ext = this._extension;
+        const fullpath = `${key}/index.${ext}`;
+        return fullpath;
+    }
+
+    toJSON() {
+        return this._toExportEntry();
+    }
+}
+
+export class CommonJSCompatDirExport extends AbstractCompatDirExport {
+    constructor(dirpath) {
+        const p = `cjs/${dirpath}`;
+        super(p, 'js');
+    }
+}
+
+export class ESModuleCompatDirExport extends AbstractCompatDirExport {
+    constructor(dirpath) {
+        const p = `esm/${dirpath}`;
+        super(p, 'mjs');
+    }
+}
+
+export class LibCompatDirExport extends AbstractExportEntry {
+    constructor(path) {
+        super();
+        const dirpath = `lib/${path}`;
+        this._dirpath = dirpath;
+        Object.freeze(this);
+    }
+
+    key() {
+        const key = `./${this._dirpath}`;
+        return key;
+    }
+
+    _toExportEntry() {
+        const key = this.key();
+        const actualPath = `${key}/index`;
+        const cjs = `${actualPath}.js`;
+        const mjs = `${actualPath}.mjs`;
+        const value = constructDualPackagePathValue({
+            cjs,
+            esm: mjs,
+        });
+        return value;
+    }
+
+    toJSON() {
+        return this._toExportEntry();
+    }
+}
+
+function constructDualPackagePathValue({ cjs, esm, }) {
     // [By the document of Node.js v14.2](https://nodejs.org/api/esm.html#esm_resolution_algorithm),
     //  * Condition matching is applied in object order from first to last within the "exports" object.
     //  * `["node", "import"]` is used as _defaultEnv_ for its ES Module resolver.

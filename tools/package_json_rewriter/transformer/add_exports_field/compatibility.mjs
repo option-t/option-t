@@ -1,6 +1,11 @@
 import * as assert from 'assert';
 
-import { CompatExportEntry, constructDualPackagePathValue } from './ExportEntry.mjs';
+import {
+    CompatExportEntry,
+    CommonJSCompatDirExport,
+    ESModuleCompatDirExport,
+    LibCompatDirExport,
+} from './ExportEntry.mjs';
 
 const SHOULD_EXPOSE_LIB = true;
 
@@ -16,9 +21,8 @@ export function addHistoricalPathToExportsFields(o, histricalJSPathSeq) {
 
         const entry = new CompatExportEntry(original);
         const key = entry.key();
-        const filepath = entry.filepath();
         // eslint-disable-next-line no-param-reassign
-        o[key] = filepath;
+        o[key] = entry;
     }
 
     const DIR_SUBPATH = [
@@ -29,31 +33,25 @@ export function addHistoricalPathToExportsFields(o, histricalJSPathSeq) {
         'Undefinable',
     ];
 
-    const handleSpecialCaseOfNodeModuleResolution = (list, extension) => {
-        for (const dirpath of list) {
-            const key = `./${dirpath}`;
-
+    const handleSpecialCaseOfNodeModuleResolution = (list, aCtor) => {
+        for (const item of list) {
+            // eslint-disable-next-line new-cap
+            const entry = new aCtor(item);
+            const key = entry.key();
             // eslint-disable-next-line no-param-reassign
-            o[key] = `${key}/index.${extension}`;
+            o[key] = entry;
         }
     };
 
-    handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH.map((path) => `cjs/${path}`), 'js');
-    handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH.map((path) => `esm/${path}`), 'mjs');
+    handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH, CommonJSCompatDirExport);
+    handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH, ESModuleCompatDirExport);
     // Our defult is still commonjs. For lib/, we should use `.js`.
     if (SHOULD_EXPOSE_LIB) {
-        const list = DIR_SUBPATH.map((path) => `lib/${path}`);
-        for (const dirpath of list) {
-            const key = `./${dirpath}`;
-            const actualPath = `${key}/index`;
-            const cjs = `${actualPath}.js`;
-            const mjs = `${actualPath}.mjs`;
-            const value = constructDualPackagePathValue({
-                cjs,
-                esm: mjs,
-            });
+        for (const dirpath of DIR_SUBPATH) {
+            const entry = new LibCompatDirExport(dirpath);
+            const key = entry.key();
             // eslint-disable-next-line no-param-reassign
-            o[key] = value;
+            o[key] = entry;
         }
     }
 }
