@@ -40,9 +40,11 @@ export class ExportEntry extends AbstractExportEntry {
 
         const esm = `./esm/${p}.mjs`;
         const cjs = `./cjs/${p}.js`;
+        const dts = `./esm/${p}.d.ts`;
         const entry = constructDualPackagePathValue({
             esm,
             cjs,
+            dts,
         });
         return entry;
     }
@@ -62,17 +64,27 @@ export class CompatExportEntry extends AbstractExportEntry {
         return k;
     }
 
-    _filepath() {
+    _toExportEntry() {
         const original = this._original;
         const key = this.key();
+        const dts = `${key}.d.ts`;
+
         if (original.isESM()) {
             const p = `${key}.mjs`;
-            return p;
+            const value = constructPathValue({
+                dts,
+                filepath: p,
+            });
+            return value;
         }
 
         if (original.isCJS()) {
             const p = `${key}.js`;
-            return p;
+            const value = constructPathValue({
+                dts,
+                filepath: p,
+            });
+            return value;
         }
 
         if (original.isLib()) {
@@ -81,16 +93,12 @@ export class CompatExportEntry extends AbstractExportEntry {
             const p = constructDualPackagePathValue({
                 cjs,
                 esm,
+                dts,
             });
             return p;
         }
 
         throw new RangeError('not here');
-    }
-
-    _toExportEntry() {
-        const p = this._filepath();
-        return p;
     }
 
     toJSON() {
@@ -113,9 +121,16 @@ class AbstractCompatDirExport extends AbstractExportEntry {
 
     _toExportEntry() {
         const key = this.key();
+        const filepath = `${key}/index`;
         const ext = this._extension;
-        const fullpath = `${key}/index.${ext}`;
-        return fullpath;
+        const fullpath = `${filepath}.${ext}`;
+        const dts = `${filepath}.d.ts`;
+
+        const value = constructPathValue({
+            dts,
+            filepath: fullpath,
+        });
+        return value;
     }
 
     toJSON() {
@@ -155,9 +170,11 @@ export class LibCompatDirExport extends AbstractExportEntry {
         const actualPath = `${key}/index`;
         const cjs = `${actualPath}.js`;
         const mjs = `${actualPath}.mjs`;
+        const dts = `${actualPath}.d.ts`;
         const value = constructDualPackagePathValue({
             cjs,
             esm: mjs,
+            dts,
         });
         return value;
     }
@@ -167,7 +184,11 @@ export class LibCompatDirExport extends AbstractExportEntry {
     }
 }
 
-function constructDualPackagePathValue({ cjs, esm, }) {
+function constructDualPackagePathValue({ cjs, esm, dts }) {
+    assert.strictEqual(typeof cjs, 'string', 'cjs should be string');
+    assert.strictEqual(typeof esm, 'string', 'esm should be string');
+    assert.strictEqual(typeof dts, 'string', 'dts should be string');
+
     // [By the document of Node.js v14.2](https://nodejs.org/api/esm.html#esm_resolution_algorithm),
     //  * Condition matching is applied in object order from first to last within the "exports" object.
     //  * `["node", "import"]` is used as _defaultEnv_ for its ES Module resolver.
@@ -176,5 +197,25 @@ function constructDualPackagePathValue({ cjs, esm, }) {
     return {
         'import': esm,
         'require': cjs,
+        // https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#packagejson-exports-imports-and-self-referencing
+        'types': dts,
+    };
+}
+
+function constructPathValue({ filepath, dts }) {
+    assert.strictEqual(typeof filepath, 'string', 'filepath should be string');
+    assert.strictEqual(typeof dts, 'string', 'dts should be string');
+
+    // [By the document of Node.js v14.2](https://nodejs.org/api/esm.html#esm_resolution_algorithm),
+    //  * Condition matching is applied in object order from first to last within the "exports" object.
+    //  * `["node", "import"]` is used as _defaultEnv_ for its ES Module resolver.
+    //
+    // see also https://nodejs.org/api/esm.html#esm_conditional_exports
+    return {
+        // https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#packagejson-exports-imports-and-self-referencing
+        'types': dts,
+        // _default_ should be placed to the last.
+        // https://nodejs.org/api/esm.html#esm_conditional_exports
+        'default': filepath,
     };
 }
