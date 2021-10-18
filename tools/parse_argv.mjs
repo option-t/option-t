@@ -5,32 +5,35 @@ function isFlagKey(str) {
 }
 
 class SimpleArgvParser {
+    #argv;
+    #currentIndex = 0;
+
     constructor(argv) {
-        this._argv = argv;
-        this._currentIndex = 0;
+        this.#argv = argv;
+        Object.seal(this);
     }
 
-    _get(idx) {
-        const item = this._argv[idx];
+    #get(idx) {
+        const item = this.#argv[idx];
         const result = item === undefined ? null : item;
         return result;
     }
 
     current() {
-        const idx = this._currentIndex;
-        const item = this._get(idx);
+        const idx = this.#currentIndex;
+        const item = this.#get(idx);
         return item;
     }
 
     lookahead() {
-        const idx = this._currentIndex + 1;
-        const item = this._get(idx);
+        const idx = this.#currentIndex + 1;
+        const item = this.#get(idx);
         return item;
     }
 
     forwardCurrentIndexTo(num) {
         assert.ok(typeof num === 'number');
-        this._currentIndex = this._currentIndex + num;
+        this.#currentIndex = this.#currentIndex + num;
     }
 
     next() {
