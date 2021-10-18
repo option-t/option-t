@@ -14,29 +14,33 @@ class AbstractExportEntry {
 }
 
 export class ExportEntry extends AbstractExportEntry {
+    #key;
+    #path;
+
     constructor(key, path) {
         super();
 
         assert.strictEqual(key.startsWith('/'), false, `key (${key}) should not start with /`);
         assert.strictEqual(key.endsWith('/'), false, `key (${key}) should not end with /`);
 
-        this._key = key;
-        this._path = path;
+        this.#key = key;
+        this.#path = path;
+        Object.freeze(this);
     }
 
     key() {
-        const key = this._key;
+        const key = this.#key;
         // For `main` field
         if (key === '.') {
             return key;
         }
 
-        const k = `./${this._key}`;
+        const k = `./${this.#key}`;
         return k;
     }
 
     toJSON() {
-        const p = this._path !== null ? this._path : this._key;
+        const p = this.#path !== null ? this.#path : this.#key;
 
         const esm = `./esm/${p}.mjs`;
         const cjs = `./cjs/${p}.js`;
@@ -71,15 +75,17 @@ export class CompatExportEntry extends AbstractExportEntry {
         throw new RangeError('not here');
     }
 
+    #original;
+
     constructor(entry) {
         super();
         assert.ok(entry instanceof QuirksLegacyExposedPath);
 
-        this._original = entry;
+        this.#original = entry;
     }
 
     key() {
-        const key = this._original.name();
+        const key = this.#original.name();
         const k = `./${key}`;
         return k;
     }
@@ -96,6 +102,8 @@ export class CompatExportEntry extends AbstractExportEntry {
 class CommonJSCompatFileExport extends CompatExportEntry {
     constructor(entry) {
         super(entry);
+
+        Object.freeze(this);
         assert.ok(entry.isCJS());
     }
 
@@ -115,6 +123,8 @@ class CommonJSCompatFileExport extends CompatExportEntry {
 class ESModuleCompatFileExport extends CompatExportEntry {
     constructor(entry) {
         super(entry);
+
+        Object.freeze(this);
         assert.ok(entry.isESM());
     }
 
@@ -134,6 +144,8 @@ class ESModuleCompatFileExport extends CompatExportEntry {
 class LibCompatFileExport extends CompatExportEntry {
     constructor(entry) {
         super(entry);
+
+        Object.freeze(this);
         assert.ok(entry.isLib());
     }
 
@@ -153,22 +165,24 @@ class LibCompatFileExport extends CompatExportEntry {
 }
 
 class AbstractCompatDirExport extends AbstractExportEntry {
+    #dirpath;
+    #extension;
+
     constructor(dirpath, ext) {
         super();
-        this._dirpath = dirpath;
-        this._extension = ext;
-        Object.freeze(this);
+        this.#dirpath = dirpath;
+        this.#extension = ext;
     }
 
     key() {
-        const key = `./${this._dirpath}`;
+        const key = `./${this.#dirpath}`;
         return key;
     }
 
-    _toExportEntry() {
+    #toExportEntry() {
         const key = this.key();
         const filepath = `${key}/index`;
-        const ext = this._extension;
+        const ext = this.#extension;
         const fullpath = `${filepath}.${ext}`;
         const dts = `${filepath}.d.ts`;
 
@@ -180,7 +194,7 @@ class AbstractCompatDirExport extends AbstractExportEntry {
     }
 
     toJSON() {
-        return this._toExportEntry();
+        return this.#toExportEntry();
     }
 }
 
@@ -188,6 +202,7 @@ export class CommonJSCompatDirExport extends AbstractCompatDirExport {
     constructor(dirpath) {
         const p = `cjs/${dirpath}`;
         super(p, 'js');
+        Object.freeze(this);
     }
 }
 
@@ -195,23 +210,27 @@ export class ESModuleCompatDirExport extends AbstractCompatDirExport {
     constructor(dirpath) {
         const p = `esm/${dirpath}`;
         super(p, 'mjs');
+        Object.freeze(this);
     }
 }
 
 export class LibCompatDirExport extends AbstractExportEntry {
+    #dirpath;
+
     constructor(path) {
         super();
         const dirpath = `lib/${path}`;
-        this._dirpath = dirpath;
+        this.#dirpath = dirpath;
+
         Object.freeze(this);
     }
 
     key() {
-        const key = `./${this._dirpath}`;
+        const key = `./${this.#dirpath}`;
         return key;
     }
 
-    _toExportEntry() {
+    #toExportEntry() {
         const key = this.key();
         const actualPath = `${key}/index`;
         const cjs = `${actualPath}.js`;
@@ -226,7 +245,7 @@ export class LibCompatDirExport extends AbstractExportEntry {
     }
 
     toJSON() {
-        return this._toExportEntry();
+        return this.#toExportEntry();
     }
 }
 
