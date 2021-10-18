@@ -171,7 +171,7 @@ Each of them includes the same directory hierarchy with [under `src`/](./src/).
 
 For example, 
 
-- If your project uses TypeScript `moduleResolution=node12`.
+- If your project uses TypeScript `moduleResolution=node`.
 - If your project uses a classic bundler which does not support `exports` field.
 
 you need to use these paths
