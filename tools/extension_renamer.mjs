@@ -1,7 +1,7 @@
-import * as assert from 'assert';
-import { promises as fs } from 'fs';
-import * as path from 'path';
-import { fileURLToPath } from 'url';
+import * as assert from 'node:assert/strict';
+import { promises as fs } from 'node:fs';
+import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const FROM_EXTENSION = 'js';
 const TO_EXTENSION = 'mjs';
