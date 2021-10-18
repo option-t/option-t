@@ -51,6 +51,26 @@ export class ExportEntry extends AbstractExportEntry {
 }
 
 export class CompatExportEntry extends AbstractExportEntry {
+    static create(entry) {
+        assert.ok(entry instanceof QuirksLegacyExposedPath);
+        if (entry.isCJS()) {
+            // eslint-disable-next-line no-use-before-define
+            return new CommonJSCompatFileExport(entry);
+        }
+
+        if (entry.isESM()) {
+            // eslint-disable-next-line no-use-before-define
+            return new ESModuleCompatFileExport(entry);
+        }
+
+        if (entry.isLib()) {
+            // eslint-disable-next-line no-use-before-define
+            return new LibCompatFileExport(entry);
+        }
+
+        throw new RangeError('not here');
+    }
+
     constructor(entry) {
         super();
         assert.ok(entry instanceof QuirksLegacyExposedPath);
@@ -65,44 +85,70 @@ export class CompatExportEntry extends AbstractExportEntry {
     }
 
     _toExportEntry() {
-        const original = this._original;
-        const key = this.key();
-        const dts = `${key}.d.ts`;
-
-        if (original.isESM()) {
-            const p = `${key}.mjs`;
-            const value = constructPathValue({
-                dts,
-                filepath: p,
-            });
-            return value;
-        }
-
-        if (original.isCJS()) {
-            const p = `${key}.js`;
-            const value = constructPathValue({
-                dts,
-                filepath: p,
-            });
-            return value;
-        }
-
-        if (original.isLib()) {
-            const esm = `${key}.mjs`;
-            const cjs = `${key}.js`;
-            const p = constructDualPackagePathValue({
-                cjs,
-                esm,
-                dts,
-            });
-            return p;
-        }
-
-        throw new RangeError('not here');
+        throw new EvalError(`please override on ${this.constructor.name}`);
     }
 
     toJSON() {
         return this._toExportEntry();
+    }
+}
+
+class CommonJSCompatFileExport extends CompatExportEntry {
+    constructor(entry) {
+        super(entry);
+        assert.ok(entry.isCJS());
+    }
+
+    _toExportEntry() {
+        const key = this.key();
+        const dts = `${key}.d.ts`;
+
+        const p = `${key}.js`;
+        const value = constructPathValue({
+            dts,
+            filepath: p,
+        });
+        return value;
+    }
+}
+
+class ESModuleCompatFileExport extends CompatExportEntry {
+    constructor(entry) {
+        super(entry);
+        assert.ok(entry.isESM());
+    }
+
+    _toExportEntry() {
+        const key = this.key();
+        const dts = `${key}.d.ts`;
+
+        const p = `${key}.mjs`;
+        const value = constructPathValue({
+            dts,
+            filepath: p,
+        });
+        return value;
+    }
+}
+
+class LibCompatFileExport extends CompatExportEntry {
+    constructor(entry) {
+        super(entry);
+        assert.ok(entry.isLib());
+    }
+
+    _toExportEntry() {
+        const key = this.key();
+        const dts = `${key}.d.ts`;
+
+        const esm = `${key}.mjs`;
+        const cjs = `${key}.js`;
+        const p = constructDualPackagePathValue({
+            cjs,
+            esm,
+            dts,
+        });
+        return p;
     }
 }
 

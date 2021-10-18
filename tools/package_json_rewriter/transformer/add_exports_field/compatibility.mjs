@@ -12,7 +12,7 @@ export function addHistoricalPathToExportsFields(o, histricalJSPathSeq) {
     for (const original of histricalJSPathSeq) {
         assert.ok(original.isForCompat());
 
-        const entry = new CompatExportEntry(original);
+        const entry = CompatExportEntry.create(original);
         const key = entry.key();
         // eslint-disable-next-line no-param-reassign
         o[key] = entry;
