@@ -53,6 +53,7 @@ class SimpleArgvParser {
             };
         }
 
+        // eslint-disable-next-line no-magic-numbers
         this.forwardCurrentIndexTo(2);
         return {
             done: false,
