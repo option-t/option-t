@@ -162,14 +162,19 @@ This does not have any property method on its prototype. But this allows no incl
 
 ### How to import
 
-This package provides some sub directories to import various functions.
+**You can use [these paths](./docs/public_api_list.md).**
+
+This package provides some sub directories to import various functions (e.g. `option-t/PlainResult`).
 Each of them includes the same directory hierarchy with [under `src`/](./src/).
 
-#### If your toolchain supports `exports` field in package.json...
+#### If your toolchain _does not_ support `exports` field in package.json...
 
-You can use [these paths](./docs/public_api_list.md).
+For example, 
 
-#### Otherwise...
+- If your project uses TypeScript `moduleResolution=node12`.
+- If your project uses a classic bundler which does not support `exports` field.
+
+you need to use these paths
 
 - `option-t/cjs`
    - This directory provides only commonjs style modules.
