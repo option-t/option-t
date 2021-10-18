@@ -7,19 +7,12 @@ import {
     LibCompatDirExport,
 } from './ExportEntry.mjs';
 
-const SHOULD_EXPOSE_LIB = true;
-
 export function addHistoricalPathToExportsFields(o, histricalJSPathSeq) {
     // https://nodejs.org/api/esm.html
     for (const original of histricalJSPathSeq) {
         assert.ok(original.isForCompat());
-        if (original.isLib()) {
-            if (!SHOULD_EXPOSE_LIB) {
-                continue;
-            }
-        }
 
-        const entry = new CompatExportEntry(original);
+        const entry = CompatExportEntry.create(original);
         const key = entry.key();
         // eslint-disable-next-line no-param-reassign
         o[key] = entry;
@@ -46,12 +39,10 @@ export function addHistoricalPathToExportsFields(o, histricalJSPathSeq) {
     handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH, CommonJSCompatDirExport);
     handleSpecialCaseOfNodeModuleResolution(DIR_SUBPATH, ESModuleCompatDirExport);
     // Our defult is still commonjs. For lib/, we should use `.js`.
-    if (SHOULD_EXPOSE_LIB) {
-        for (const dirpath of DIR_SUBPATH) {
-            const entry = new LibCompatDirExport(dirpath);
-            const key = entry.key();
-            // eslint-disable-next-line no-param-reassign
-            o[key] = entry;
-        }
+    for (const dirpath of DIR_SUBPATH) {
+        const entry = new LibCompatDirExport(dirpath);
+        const key = entry.key();
+        // eslint-disable-next-line no-param-reassign
+        o[key] = entry;
     }
 }
