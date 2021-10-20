@@ -23,7 +23,7 @@ on:
 jobs:
     install_dependencies:
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-buster
+        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -54,7 +54,7 @@ jobs:
     format_check:
         needs: [install_dependencies]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-buster
+        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -85,7 +85,7 @@ jobs:
     lint:
         needs: [install_dependencies]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-buster
+        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -116,7 +116,7 @@ jobs:
     build:
         needs: [install_dependencies]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-buster
+        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -147,7 +147,7 @@ jobs:
     unittest:
         needs: [install_dependencies]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-buster
+        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -179,7 +179,7 @@ jobs:
     test_distribution_contain_all:
         needs: [install_dependencies]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-buster
+        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -211,7 +211,7 @@ jobs:
     test_esmodule_path_rewrite:
         needs: [install_dependencies]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-buster
+        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -243,7 +243,7 @@ jobs:
     test_package_install:
         needs: [install_dependencies]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-buster
+        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
