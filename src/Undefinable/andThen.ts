@@ -4,7 +4,7 @@ import { Undefinable, isUndefined } from './Undefinable';
 export type UndefinableTryTransformFn<T, U> = TransformFn<T, Undefinable<U>>;
 
 /**
- *  @deprecated Use UndefinableTryTransformFn in the same module.
+ *  @deprecated Use {@link UndefinableTryTransformFn} in the same module.
  */
 export type FlatmapFn<T, U> = UndefinableTryTransformFn<T, U>;
 

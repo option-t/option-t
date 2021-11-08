@@ -2,4 +2,9 @@
  *  @deprecated
  *  This module is for backward compatibility.
  */
-export type { Mutable } from '../internal/Mutable';
+import type { Mutable as InternalMutable } from '../internal/Mutable';
+
+/**
+ *  @deprecated This type is provided for backward compatibility.
+ */
+export type Mutable<T> = InternalMutable<T>;

@@ -4,7 +4,7 @@ import { Result } from './Result';
 export type ResultTryRecoveryFromErrorFn<T, E, F> = RecoveryFromErrorFn<E, Result<T, F>>;
 
 /**
- *  @deprecated Use ResultTryRecoveryFromErrorFn in the same module.
+ *  @deprecated Use {@link ResultTryRecoveryFromErrorFn} in the same module.
  */
 export type FlatmapErrFn<T, E, F> = ResultTryRecoveryFromErrorFn<T, E, F>;
 

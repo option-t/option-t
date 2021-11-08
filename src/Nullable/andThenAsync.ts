@@ -6,7 +6,7 @@ import { Nullable, isNull } from './Nullable';
 export type NullableAsyncTryTransformFn<T, U> = AsyncTransformFn<T, Nullable<U>>;
 
 /**
- *  @deprecated Use NullableAsyncTryTransformFn in the same module.
+ *  @deprecated Use {@link NullableAsyncTryTransformFn} in the same module.
  */
 export type AsyncFlatmapFn<T, U> = NullableAsyncTryTransformFn<T, U>;
 

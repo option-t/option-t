@@ -4,7 +4,7 @@ import { Nullable, isNull } from './Nullable';
 export type NullableTryTransformFn<T, U> = TransformFn<T, Nullable<U>>;
 
 /**
- *  @deprecated Use NullableTryTransformFn in the same module.
+ *  @deprecated Use {@link NullableTryTransformFn} in the same module.
  */
 export type FlatmapFn<T, U> = NullableTryTransformFn<T, U>;
 

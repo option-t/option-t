@@ -4,7 +4,7 @@ import { Option } from './Option';
 export type OptionTryRecoveryFn<T> = RecoveryFn<Option<T>>;
 
 /**
- *  @deprecated Use OptionTryRecoveryFn in the same module.
+ *  @deprecated Use {@link OptionTryRecoveryFn} in the same module.
  */
 export type MayRecoveryFn<T> = OptionTryRecoveryFn<T>;
 

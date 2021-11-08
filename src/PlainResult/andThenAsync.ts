@@ -7,7 +7,7 @@ import { unwrapFromResult } from './unwrap';
 export type ResultAsyncTryTransformFn<T, U, E> = AsyncTransformFn<T, Result<U, E>>;
 
 /**
- *  @deprecated Use ResultAsyncTryTransformFn in the same module.
+ *  @deprecated Use {@link ResultAsyncTryTransformFn} in the same module.
  */
 export type AsyncFlatmapOkFn<T, U, E> = ResultAsyncTryTransformFn<T, U, E>;
 

@@ -7,7 +7,7 @@ import { unwrapErrFromResult } from './unwrap';
 export type ResultAsyncTryRecoveryFromErrorFn<T, E, F> = AsyncRecoveryFromErrorFn<E, Result<T, F>>;
 
 /**
- *  @deprecated Use ResultAsyncTryRecoveryFromErrorFn in the same module.
+ *  @deprecated Use {@link ResultAsyncTryRecoveryFromErrorFn} in the same module.
  */
 export type AsyncFlatmapErrFn<T, E, F> = ResultAsyncTryRecoveryFromErrorFn<T, E, F>;
 
