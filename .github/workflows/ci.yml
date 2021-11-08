@@ -152,7 +152,6 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    - 14
                     - 16
                     - 17
 
@@ -185,7 +184,6 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    - 14
                     - 16
                     - 17
 
@@ -218,7 +216,6 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    - 14
                     - 16
                     - 17
 
@@ -251,7 +248,6 @@ jobs:
         strategy:
             matrix:
                 node-version:
-                    - 14
                     - 16
                     - 17
 
