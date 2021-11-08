@@ -59,7 +59,7 @@ export type AsyncRecoveryFromErrorFn<E, T> = InternalAsyncRecoveryFromErrorFn<E,
 export type MapFn<T, U> = TransformFn<T, U>;
 
 /**
- *  @deprecated Use {@link RecoveryWithErrorFn} in the same module.
+ *  @deprecated Use {@link RecoveryFromErrorFn} in the same module.
  */
 export type RecoveryWithErrorFn<E, T> = RecoveryFromErrorFn<E, T>;
 
