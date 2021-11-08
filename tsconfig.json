@@ -3,9 +3,5 @@
     "include": [
         "src/**/*",
         "__tests__/**/*"
-    ],
-    "exclude": [
-        "__tests__/ClassOption/type_definition.ts",
-        "__tests__/ClassResult/type_definition_es6.ts"
     ]
 }
