@@ -5,7 +5,7 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
-        container: node:16-buster
+        container: node:16-bullseye
 
         steps:
             - uses: actions/checkout@v2.4.0
