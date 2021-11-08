@@ -4,7 +4,7 @@ import { Maybe, isNullOrUndefined } from './Maybe';
 export type MaybeTryTransformFn<T, U> = TransformFn<T, Maybe<U>>;
 
 /**
- *  @deprecated Use MaybeTryTransformFn in the same module.
+ *  @deprecated Use {@link MaybeTryTransformFn} in the same module.
  */
 export type FlatmapFn<T, U> = MaybeTryTransformFn<T, U>;
 

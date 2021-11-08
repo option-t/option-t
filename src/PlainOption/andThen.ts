@@ -4,7 +4,7 @@ import { Option } from './Option';
 export type OptionTryTransformFn<T, U> = TransformFn<T, Option<U>>;
 
 /**
- *  @deprecated Use OptionTryTransformFn in the same module.
+ *  @deprecated Use {@link OptionTryTransformFn} in the same module.
  */
 export type FlatmapFn<T, U> = OptionTryTransformFn<T, U>;
 

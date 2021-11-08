@@ -4,7 +4,7 @@ import { Result } from './Result';
 export type ResultTryTransformFn<T, U, E> = TransformFn<T, Result<U, E>>;
 
 /**
- *  @deprecated Use ResultTryTransformFn in the same module.
+ *  @deprecated Use {@link ResultTryTransformFn} in the same module.
  */
 export type FlatmapOkFn<T, U, E> = ResultTryTransformFn<T, U, E>;
 

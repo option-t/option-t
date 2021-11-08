@@ -4,7 +4,7 @@ import { Nullable } from './Nullable';
 export type NullableTryRecoveryFn<T> = RecoveryFn<Nullable<T>>;
 
 /**
- *  @deprecated Use NullableTryRecoveryFn in the same module.
+ *  @deprecated Use {@link NullableTryRecoveryFn} in the same module.
  */
 export type MayRecoveryFn<T> = NullableTryRecoveryFn<T>;
 

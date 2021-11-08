@@ -4,7 +4,7 @@ import { Undefinable } from './Undefinable';
 export type UndefinableTryRecoveryFn<T> = RecoveryFn<Undefinable<T>>;
 
 /**
- *  @deprecated Use TryRecoveryFn in the same module.
+ *  @deprecated Use {@link UndefinableTryRecoveryFn} in the same module.
  */
 export type MayRecoveryFn<T> = UndefinableTryRecoveryFn<T>;
 
