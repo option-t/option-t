@@ -1,9 +1,9 @@
-import { Mutable } from '../internal/Mutable';
-import { EffectFn } from '../internal/Function';
-import { Option, Some } from './Option';
+import type { Mutable } from '../internal/Mutable';
+import type { EffectFn } from '../internal/Function';
+import type { Option, Some } from './Option';
 import { asMutOption } from './asMut';
 
-type MutSome<T> = Mutable<Some<T>>;
+export type MutSome<T> = Mutable<Some<T>>;
 
 export type UnsafeSomeDestructorFn<T> = EffectFn<MutSome<T>>;
 
