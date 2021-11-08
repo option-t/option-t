@@ -1,10 +1,10 @@
-import { Mutable } from '../internal/Mutable';
-import { EffectFn } from '../internal/Function';
-import { Result, Ok, Err } from './Result';
+import type { Mutable } from '../internal/Mutable';
+import type { EffectFn } from '../internal/Function';
+import type { Result, Ok, Err } from './Result';
 import { asMutResult } from './asMut';
 
-type MutOk<T> = Mutable<Ok<T>>;
-type MutErr<E> = Mutable<Err<E>>;
+export type MutOk<T> = Mutable<Ok<T>>;
+export type MutErr<E> = Mutable<Err<E>>;
 type MutResult<T, E> = MutOk<T> | MutErr<E>;
 
 export type UnsafeOkDestructorFn<T> = EffectFn<MutOk<T>>;
