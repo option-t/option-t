@@ -4,11 +4,6 @@ import { Result } from './Result';
 export type ResultTryTransformFn<T, U, E> = TransformFn<T, Result<U, E>>;
 
 /**
- *  @deprecated Use {@link ResultTryTransformFn} in the same module.
- */
-export type FlatmapOkFn<T, U, E> = ResultTryTransformFn<T, U, E>;
-
-/**
  *  Returns `Err(E)` if the _input_ is `Err(E)`,
  *  otherwise calls _transformer_ with the value and returns the result.
  *

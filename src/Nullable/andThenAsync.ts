@@ -6,11 +6,6 @@ import { Nullable, isNull } from './Nullable';
 export type NullableAsyncTryTransformFn<T, U> = AsyncTransformFn<T, Nullable<U>>;
 
 /**
- *  @deprecated Use {@link NullableAsyncTryTransformFn} in the same module.
- */
-export type AsyncFlatmapFn<T, U> = NullableAsyncTryTransformFn<T, U>;
-
-/**
  *  Returns `null` if the _input_ is `null`,
  *  otherwise calls _transformer_ with the value and returns the result.
  *

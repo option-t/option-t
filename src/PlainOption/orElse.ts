@@ -4,11 +4,6 @@ import { Option } from './Option';
 export type OptionTryRecoveryFn<T> = RecoveryFn<Option<T>>;
 
 /**
- *  @deprecated Use {@link OptionTryRecoveryFn} in the same module.
- */
-export type MayRecoveryFn<T> = OptionTryRecoveryFn<T>;
-
-/**
  *  Return _input_ as `T` if the passed _input_ is `Some(T)`.
  *  Otherwise, return the result of _recoverer_.
  */
