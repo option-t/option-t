@@ -1,5 +1,5 @@
-import { promises as fs } from 'fs';
-import * as path from 'path';
+import { promises as fs } from 'node:fs';
+import * as path from 'node:path';
 
 async function loadFileAsText(baseDir, filepath) {
     const p = path.resolve(baseDir, filepath);

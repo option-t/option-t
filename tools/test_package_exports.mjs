@@ -1,5 +1,5 @@
-import * as assert from 'assert';
-import { createRequire } from 'module';
+import * as assert from 'node:assert/strict';
+import { createRequire } from 'node:module';
 
 import {
     generateAllExposedPathSequence,
