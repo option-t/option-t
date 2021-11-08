@@ -5,6 +5,8 @@ import { asMutOption } from './asMut';
 
 type MutSome<T> = Mutable<Some<T>>;
 
+export type UnsafeSomeDestructorFn<T> = EffectFn<MutSome<T>>;
+
 /**
  *  The _mutator_ is called if _input_ is `Some<T>`.
  *
@@ -24,7 +26,7 @@ type MutSome<T> = Mutable<Some<T>>;
  *  and this API is designed to use as a destructor or similar fashions.
  *  So if you call this for same object more than once, your code might contain "double free" problem.
  */
-export function unsafeDropForOption<T>(input: Option<T>, mutator: EffectFn<MutSome<T>>): void {
+export function unsafeDropForOption<T>(input: Option<T>, mutator: UnsafeSomeDestructorFn<T>): void {
     const mutable = asMutOption(input);
     if (mutable.ok) {
         mutator(mutable);

@@ -7,6 +7,9 @@ type MutOk<T> = Mutable<Ok<T>>;
 type MutErr<E> = Mutable<Err<E>>;
 type MutResult<T, E> = MutOk<T> | MutErr<E>;
 
+export type UnsafeOkDestructorFn<T> = EffectFn<MutOk<T>>;
+export type UnsafeErrDestructorFn<E> = EffectFn<MutErr<E>>;
+
 function noop<T, E>(_input: MutResult<T, E>): void {}
 
 /**
@@ -32,8 +35,8 @@ function noop<T, E>(_input: MutResult<T, E>): void {}
  */
 export function unsafeDropBothForResult<T, E>(
     input: Result<T, E>,
-    okMutator: EffectFn<MutOk<T>>,
-    errMutator: EffectFn<MutErr<E>>
+    okMutator: UnsafeOkDestructorFn<T>,
+    errMutator: UnsafeErrDestructorFn<E>
 ): void {
     const mutable = asMutResult(input);
     if (mutable.ok) {
@@ -73,7 +76,7 @@ export function unsafeDropBothForResult<T, E>(
  */
 export function unsafeDropOkForResult<T, E>(
     input: Result<T, E>,
-    okMutator: EffectFn<MutOk<T>>
+    okMutator: UnsafeOkDestructorFn<T>
 ): void {
     return unsafeDropBothForResult(input, okMutator, noop);
 }
@@ -99,7 +102,7 @@ export function unsafeDropOkForResult<T, E>(
  */
 export function unsafeDropErrForResult<T, E>(
     input: Result<T, E>,
-    errMutator: EffectFn<MutErr<E>>
+    errMutator: UnsafeErrDestructorFn<E>
 ): void {
     return unsafeDropBothForResult(input, noop, errMutator);
 }
