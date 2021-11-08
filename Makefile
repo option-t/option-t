@@ -171,10 +171,6 @@ typecheck: ## Check static types
 ###########################
 # Test
 ###########################
-.PHONY: build_test
-build_test: build
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.test.json --noEmit
-
 .PHONY: run_ava
 run_ava: build
 	$(MAKE) run_ava_only -C $(CURDIR)
