@@ -33,7 +33,7 @@ jobs:
                     - 16
 
         steps:
-            - uses: actions/checkout@v2.3.5
+            - uses: actions/checkout@v2.4.0
             - name: Get yarn cache directory path
               id: yarn-cache-dir-path
               run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -62,7 +62,7 @@ jobs:
                     - 16
 
         steps:
-            - uses: actions/checkout@v2.3.5
+            - uses: actions/checkout@v2.4.0
 
             - name: Get yarn cache directory path
               id: yarn-cache-dir-path
@@ -93,7 +93,7 @@ jobs:
                     - 16
 
         steps:
-            - uses: actions/checkout@v2.3.5
+            - uses: actions/checkout@v2.4.0
 
             - name: Get yarn cache directory path
               id: yarn-cache-dir-path
@@ -124,7 +124,7 @@ jobs:
                     - 16
 
         steps:
-            - uses: actions/checkout@v2.3.5
+            - uses: actions/checkout@v2.4.0
 
             - name: Get yarn cache directory path
               id: yarn-cache-dir-path
@@ -157,7 +157,7 @@ jobs:
                     - 17
 
         steps:
-            - uses: actions/checkout@v2.3.5
+            - uses: actions/checkout@v2.4.0
 
             - name: Get yarn cache directory path
               id: yarn-cache-dir-path
@@ -190,7 +190,7 @@ jobs:
                     - 17
 
         steps:
-            - uses: actions/checkout@v2.3.5
+            - uses: actions/checkout@v2.4.0
 
             - name: Get yarn cache directory path
               id: yarn-cache-dir-path
@@ -223,7 +223,7 @@ jobs:
                     - 17
 
         steps:
-            - uses: actions/checkout@v2.3.5
+            - uses: actions/checkout@v2.4.0
 
             - name: Get yarn cache directory path
               id: yarn-cache-dir-path
@@ -256,7 +256,7 @@ jobs:
                     - 17
 
         steps:
-            - uses: actions/checkout@v2.3.5
+            - uses: actions/checkout@v2.4.0
 
             - name: Get yarn cache directory path
               id: yarn-cache-dir-path
