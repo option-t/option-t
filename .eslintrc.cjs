@@ -24,6 +24,7 @@ module.exports = {
     'reportUnusedDisableDirectives': true,
 
     'rules': {
+        'no-unused-private-class-members': 'warn',
     },
 
     'overrides': [
