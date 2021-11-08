@@ -3,18 +3,21 @@ import { apiTable, legacyApiTable } from './table.mjs';
 const PKG_NAME = 'option-t';
 
 export class ExposedPath {
+    #key;
+    #raw;
+
     constructor(key, raw) {
-        this._key = key;
-        this._raw = raw;
+        this.#key = key;
+        this.#raw = raw;
         Object.freeze(this);
     }
 
     name() {
-        return this._key;
+        return this.#key;
     }
 
     filepath() {
-        return this._raw.path ?? null;
+        return this.#raw.path ?? null;
     }
 
     resolvedName() {
@@ -28,7 +31,7 @@ export class ExposedPath {
     }
 
     exports() {
-        return this._raw.exports ?? null;
+        return this.#raw.exports ?? null;
     }
 
     isForCompat() {

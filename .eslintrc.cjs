@@ -13,17 +13,18 @@ module.exports = {
     ],
 
     'parserOptions': {
-        'ecmaVersion': 2020,
+        'ecmaVersion': 2022,
     },
 
     'env': {
-        'es6': true,
+        'es2021': true,
         'node': true,
     },
 
     'reportUnusedDisableDirectives': true,
 
     'rules': {
+        'no-unused-private-class-members': 'warn',
     },
 
     'overrides': [

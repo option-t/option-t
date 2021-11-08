@@ -18,27 +18,32 @@ const FILENAME = 'public_api_list.md';
 const PKG_NAME = 'option-t';
 
 class ListItem {
+    #key;
+    #subpath;
+    #extension;
+
     constructor(key, subpath, extension = 'ts') {
-        this._key = key;
-        this._subpath = subpath;
-        this._extension = extension;
+        this.#key = key;
+        this.#subpath = subpath;
+        this.#extension = extension;
+        Object.freeze(this);
     }
 
     key() {
-        return this._key;
+        return this.#key;
     }
 
     href() {
-        const subpath = this._subpath;
+        const subpath = this.#subpath;
         if (!subpath) {
-            return this._key;
+            return this.#key;
         }
 
         return subpath;
     }
 
-    _pathname() {
-        const key = this._key;
+    #pathname() {
+        const key = this.#key;
         if (key === '.') {
             return PKG_NAME;
         }
@@ -47,25 +52,28 @@ class ListItem {
     }
 
     toString() {
-        const name = this._pathname();
-        const href = `${RELATIVE_PATH_TO_SRC_DIR}/${this.href()}.${this._extension}`;
+        const name = this.#pathname();
+        const href = `${RELATIVE_PATH_TO_SRC_DIR}/${this.href()}.${this.#extension}`;
 
         return `- [${name}](${href})`;
     }
 }
 
 class Section {
+    #headline;
+    #list;
 
     constructor(headline, list) {
-        this._headline = headline;
-        this._list = list;
+        this.#headline = headline;
+        this.#list = list;
+        Object.freeze(this);
     }
 
     toString() {
-        const str = this._list.map(String).join('\n');
+        const str = this.#list.map(String).join('\n');
 
         return `
-## ${this._headline}
+## ${this.#headline}
 
 ${str}
 `;
