@@ -8,9 +8,11 @@
 * APIs are inspired by Rust Language's [`Option<T>`](https://doc.rust-lang.org/std/option/) and [`Result<T, E>`](https://doc.rust-lang.org/std/result/).
 * TypeScript friendly APIs.
     * We recommend to use this with some static type systems like TypeScript.
-
-
-
+* Zero dependency.
+* Tree shakable completely.
+* ES Module compatbile.
+    * Support Node.js' ES Module.
+    * Of course, we provides CommonJS.
 
 
 
