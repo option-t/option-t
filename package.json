@@ -63,7 +63,7 @@
     "eslint-config-prettier": "^8.3.0",
     "picomatch": "^2.3.0",
     "prettier": "^2.4.1",
-    "typescript": "^4.5.1-rc"
+    "typescript": "^4.5.2"
   },
   "sideEffects": false,
   "typings": "./cjs/index.d.ts"
