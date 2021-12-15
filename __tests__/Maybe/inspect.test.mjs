@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { tapMaybe } from '../../__dist/esm/Maybe/tap.mjs';
+import { tapMaybe } from '../../__dist/esm/Maybe/inspect.mjs';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {

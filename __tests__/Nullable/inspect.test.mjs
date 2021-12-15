@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { tapNullable } from '../../__dist/esm/Nullable/tap.mjs';
+import { tapNullable } from '../../__dist/esm/Nullable/inspect.mjs';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;

@@ -14,7 +14,7 @@ export { mapOrElseAsyncForUndefinable as mapOrElseAsync } from './mapOrElseAsync
 // export { orForUndefinable as or} from './or';
 export { orElseForUndefinable as orElse } from './orElse';
 export { orElseAsyncForUndefinable as orElseAsync } from './orElseAsync';
-export { tapUndefinable as tap } from './tap';
+export { tapUndefinable as tap } from './inspect';
 export { unwrapUndefinable as unwrap } from './unwrap';
 export { unwrapOrFromUndefinable as unwrapOr } from './unwrapOr';
 export { unwrapOrElseFromUndefinable as unwrapOrElse } from './unwrapOrElse';

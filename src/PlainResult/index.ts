@@ -42,7 +42,7 @@ export { mapErrAsyncForResult as mapErrAsync } from './mapErrAsync';
 export { orForResult as or } from './or';
 export { orElseForResult as orElse } from './orElse';
 export { orElseAsyncForResult as orElseAsync } from './orElseAsync';
-export { tapOk, tapErr, tapBoth } from './tap';
+export { tapOk, tapErr, tapBoth } from './inspect';
 export { transposeForResult as transpose } from './transpose';
 export { toOptionFromOk, toOptionFromErr } from './toOption';
 export { unwrapFromResult as unwrap, unwrapErrFromResult as unwrapErr } from './unwrap';

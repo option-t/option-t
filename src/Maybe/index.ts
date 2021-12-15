@@ -14,7 +14,7 @@ export { mapOrElseAsyncForMaybe as mapOrElseAsync } from './mapOrElseAsync';
 // export { orForMaybe as or } from './or';
 export { orElseForMaybe as orElse } from './orElse';
 export { orElseAsyncForMaybe as orElseAsync } from './orElseAsync';
-export { tapMaybe as tap } from './tap';
+export { tapMaybe as tap } from './inspect';
 export { unwrapMaybe as unwrap } from './unwrap';
 export { unwrapOrFromMaybe as unwrapOr } from './unwrapOr';
 export { unwrapOrElseFromMaybe as unwrapOrElse } from './unwrapOrElse';

@@ -43,7 +43,7 @@ export { orForOption as or } from './or';
 export { orElseForOption as orElse } from './orElse';
 export { orElseAsyncForOption as orElseAsync } from './orElseAsync';
 export { transposeForOption as transpose } from './transpose';
-export { tapOption as tap } from './tap';
+export { tapOption as tap } from './inspect';
 export { unwrapOption as unwrap } from './unwrap';
 export { unwrapOrFromOption as unwrapOr } from './unwrapOr';
 export { unwrapOrElseFromOption as unwrapOrElse } from './unwrapOrElse';
