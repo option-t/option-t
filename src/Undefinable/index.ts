@@ -4,6 +4,7 @@ export { NotUndefined, Undefinable, isNotUndefined, isUndefined } from './Undefi
 export { andThenForUndefinable as andThen } from './andThen';
 export { andThenAsyncForUndefinable as andThenAsync } from './andThenAsync';
 export { expectNotUndefined as expect } from './expect';
+export { inspectUndefinable as inspect } from './inspect';
 export { mapForUndefinable as map } from './map';
 export { mapAsyncForUndefinable as mapAsync } from './mapAsync';
 export { mapOrForUndefinable as mapOr } from './mapOr';
@@ -14,7 +15,7 @@ export { mapOrElseAsyncForUndefinable as mapOrElseAsync } from './mapOrElseAsync
 // export { orForUndefinable as or} from './or';
 export { orElseForUndefinable as orElse } from './orElse';
 export { orElseAsyncForUndefinable as orElseAsync } from './orElseAsync';
-export { inspectUndefinable as inspect } from './inspect';
+export { tapUndefinable as tap } from './tap';
 export { unwrapUndefinable as unwrap } from './unwrap';
 export { unwrapOrFromUndefinable as unwrapOr } from './unwrapOr';
 export { unwrapOrElseFromUndefinable as unwrapOrElse } from './unwrapOrElse';

@@ -4,6 +4,7 @@ export { NotNullAndUndefined, Maybe, isNotNullAndUndefined, isNullOrUndefined } 
 export { andThenForMaybe as andThen } from './andThen';
 export { andThenAsyncForMaybe as andThenAsync } from './andThenAsync';
 export { expectNotNullAndUndefined as expect } from './expect';
+export { inspectMaybe as inspect } from './inspect';
 export { mapForMaybe as map } from './map';
 export { mapAsyncForMaybe as mapAsync } from './mapAsync';
 export { mapOrForMaybe as mapOr } from './mapOr';
@@ -14,7 +15,7 @@ export { mapOrElseAsyncForMaybe as mapOrElseAsync } from './mapOrElseAsync';
 // export { orForMaybe as or } from './or';
 export { orElseForMaybe as orElse } from './orElse';
 export { orElseAsyncForMaybe as orElseAsync } from './orElseAsync';
-export { inspectMaybe as inspect } from './inspect';
+export { tapMaybe as tap } from './tap';
 export { unwrapMaybe as unwrap } from './unwrap';
 export { unwrapOrFromMaybe as unwrapOr } from './unwrapOr';
 export { unwrapOrElseFromMaybe as unwrapOrElse } from './unwrapOrElse';
