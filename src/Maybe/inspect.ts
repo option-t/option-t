@@ -9,7 +9,7 @@ import { Maybe } from './Maybe';
  *  * This was added to sort with others or future enhancement to accept chaining functions.
  *    We recommend to use simple `if` statement or similar way and they would be more efficient.
  */
-export function tapMaybe<T>(input: Maybe<T>, effector: EffectFn<T>): Maybe<T> {
+export function inspectMaybe<T>(input: Maybe<T>, effector: EffectFn<T>): Maybe<T> {
     if (input !== undefined && input !== null) {
         effector(input);
     }

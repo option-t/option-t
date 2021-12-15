@@ -9,7 +9,7 @@ import { Option } from './Option';
  *    If you don't have to do it, you should not mutate the inner value.
  *    if-else statement might be sufficient to mutate the inner value instead of calling this function.
  */
-export function tapOption<T>(input: Option<T>, effector: EffectFn<T>): Option<T> {
+export function inspectOption<T>(input: Option<T>, effector: EffectFn<T>): Option<T> {
     if (input.ok) {
         effector(input.val);
     }

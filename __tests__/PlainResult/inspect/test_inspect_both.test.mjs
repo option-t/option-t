@@ -1,14 +1,14 @@
 import test from 'ava';
 
 import { createErr, createOk } from '../../../__dist/esm/PlainResult/Result.mjs';
-import { tapBoth } from '../../../__dist/esm/PlainResult/inspect.mjs';
+import { inspectBoth } from '../../../__dist/esm/PlainResult/inspect.mjs';
 
 test('input is Ok()', (t) => {
     t.plan(3);
     const INPUT_INNER = Symbol('input');
 
     const input = createOk(INPUT_INNER);
-    const actual = tapBoth(
+    const actual = inspectBoth(
         input,
         (v) => {
             t.pass('should call the tap ok fn');
@@ -27,7 +27,7 @@ test('input is Err()', (t) => {
     const INPUT_INNER = Symbol('input');
 
     const input = createErr(INPUT_INNER);
-    const actual = tapBoth(
+    const actual = inspectBoth(
         input,
         (_v) => {
             t.fail('should not call this path');

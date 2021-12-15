@@ -1,13 +1,13 @@
 import test from 'ava';
 
-import { tapMaybe } from '../../__dist/esm/Maybe/inspect.mjs';
+import { inspectMaybe } from '../../__dist/esm/Maybe/inspect.mjs';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
     test('pass the value: ' + String(INPUT), (t) => {
         t.plan(3);
 
-        const actual = tapMaybe(INPUT, (v) => {
+        const actual = inspectMaybe(INPUT, (v) => {
             t.pass('should call the selector');
             t.is(v, PASSED_VALUE, 'the arg is the input');
         });
@@ -18,7 +18,7 @@ for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
 
 for (const NULL_VALUE of [undefined, null]) {
     test(`pass ${NULL_VALUE}`, (t) => {
-        const result = tapMaybe(NULL_VALUE, (_v) => {
+        const result = inspectMaybe(NULL_VALUE, (_v) => {
             t.fail('should not call selector fn');
         });
 

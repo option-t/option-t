@@ -1,14 +1,14 @@
 import test from 'ava';
 
 import { createErr, createOk } from '../../../__dist/esm/PlainResult/Result.mjs';
-import { tapOk } from '../../../__dist/esm/PlainResult/inspect.mjs';
+import { inspectOk } from '../../../__dist/esm/PlainResult/inspect.mjs';
 
 test('input is Ok()', (t) => {
     t.plan(3);
     const INPUT_INNER = Symbol('input');
 
     const input = createOk(INPUT_INNER);
-    const actual = tapOk(input, (v) => {
+    const actual = inspectOk(input, (v) => {
         t.pass('should call the tap fn');
         t.is(v, INPUT_INNER, 'should be the expected arg');
     });
@@ -21,7 +21,7 @@ test('input is Err()', (t) => {
     const INPUT_INNER = Symbol('input');
 
     const input = createErr(INPUT_INNER);
-    const actual = tapOk(input, (_v) => {
+    const actual = inspectOk(input, (_v) => {
         t.pass('should not call the tap fn');
     });
 

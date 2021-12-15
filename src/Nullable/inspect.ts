@@ -9,7 +9,7 @@ import { Nullable } from './Nullable';
  *  * This was added to sort with others or future enhancement to accept chaining functions.
  *    We recommend to use simple `if` statement or similar way and they would be more efficient.
  */
-export function tapNullable<T>(input: Nullable<T>, effector: EffectFn<T>): Nullable<T> {
+export function inspectNullable<T>(input: Nullable<T>, effector: EffectFn<T>): Nullable<T> {
     if (input !== null) {
         effector(input);
     }

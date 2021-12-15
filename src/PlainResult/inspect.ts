@@ -11,8 +11,8 @@ function noop<T>(_v: T) {}
  *    If you don't have to do it, you should not mutate the inner value.
  *    if-else statement might be sufficient to mutate the inner value instead of calling this function.
  */
-export function tapOk<T, E>(input: Result<T, E>, effector: EffectFn<T>): Result<T, E> {
-    return tapBoth(input, effector, noop);
+export function inspectOk<T, E>(input: Result<T, E>, effector: EffectFn<T>): Result<T, E> {
+    return inspectBoth(input, effector, noop);
 }
 
 /**
@@ -23,8 +23,8 @@ export function tapOk<T, E>(input: Result<T, E>, effector: EffectFn<T>): Result<
  *    If you don't have to do it, you should not mutate the inner value.
  *    if-else statement might be sufficient to mutate the inner value instead of calling this function.
  */
-export function tapErr<T, E>(input: Result<T, E>, effector: EffectFn<E>): Result<T, E> {
-    return tapBoth(input, noop, effector);
+export function inspectErr<T, E>(input: Result<T, E>, effector: EffectFn<E>): Result<T, E> {
+    return inspectBoth(input, noop, effector);
 }
 
 /**
@@ -36,7 +36,7 @@ export function tapErr<T, E>(input: Result<T, E>, effector: EffectFn<E>): Result
  *    If you don't have to do it, you should not mutate the inner value.
  *    if-else statement might be sufficient to mutate the inner value instead of calling this function.
  */
-export function tapBoth<T, E>(
+export function inspectBoth<T, E>(
     input: Result<T, E>,
     okEffector: EffectFn<T>,
     errEffector: EffectFn<E>

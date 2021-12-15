@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { tapNullable } from '../../__dist/esm/Nullable/inspect.mjs';
+import { inspectNullable } from '../../__dist/esm/Nullable/inspect.mjs';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;
@@ -10,7 +10,7 @@ for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
     test('pass the value: ' + String(INPUT), (t) => {
         t.plan(3);
 
-        const actual = tapNullable(INPUT, (v) => {
+        const actual = inspectNullable(INPUT, (v) => {
             t.pass();
             t.is(v, PASSED_VALUE, 'the arg is input');
         });
@@ -22,7 +22,7 @@ for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
 test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     t.plan(1);
 
-    const result = tapNullable(NULL_VALUE_IN_THIS_TEST_CASE, (_v) => {
+    const result = inspectNullable(NULL_VALUE_IN_THIS_TEST_CASE, (_v) => {
         t.fail();
     });
     t.is(result, NULL_VALUE_IN_THIS_TEST_CASE);
@@ -32,7 +32,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     t.plan(3);
 
     const INPUT = NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE;
-    const result = tapNullable(INPUT, (v) => {
+    const result = inspectNullable(INPUT, (v) => {
         t.pass();
         t.is(v, INPUT, 'the arg is INPUT');
     });

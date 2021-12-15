@@ -9,7 +9,10 @@ import { Undefinable } from './Undefinable';
  *  * This was added to sort with others or future enhancement to accept chaining functions.
  *    We recommend to use simple `if` statement or similar way and they would be more efficient.
  */
-export function tapUndefinable<T>(input: Undefinable<T>, effector: EffectFn<T>): Undefinable<T> {
+export function inspectUndefinable<T>(
+    input: Undefinable<T>,
+    effector: EffectFn<T>
+): Undefinable<T> {
     if (input !== undefined) {
         effector(input);
     }
