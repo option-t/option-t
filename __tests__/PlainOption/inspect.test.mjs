@@ -1,7 +1,7 @@
 import test from 'ava';
 
 import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.mjs';
-import { tapOption } from '../../__dist/esm/PlainOption/tap.mjs';
+import { inspectOption } from '../../__dist/esm/PlainOption/inspect.mjs';
 
 test('input is Some', (t) => {
     const INPUT_INNER = Symbol('input');
@@ -11,7 +11,7 @@ test('input is Some', (t) => {
     t.plan(3);
 
     const input = createSome(INPUT_INNER);
-    const actual = tapOption(input, (v) => {
+    const actual = inspectOption(input, (v) => {
         t.pass('should call the tap fn');
         arg = v;
     });
@@ -26,7 +26,7 @@ test('input is None', (t) => {
     t.plan(1);
 
     const input = createNone(INPUT_INNER);
-    const actual = tapOption(input, (_v) => {
+    const actual = inspectOption(input, (_v) => {
         t.pass('should not call the tap fn');
     });
 

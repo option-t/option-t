@@ -4,6 +4,7 @@ export { NotNull, Nullable, isNotNull, isNull } from './Nullable';
 export { andThenForNullable as andThen } from './andThen';
 export { andThenAsyncForNullable as andThenAsync } from './andThenAsync';
 export { expectNotNull as expect } from './expect';
+export { inspectNullable as inspect } from './inspect';
 export { mapForNullable as map } from './map';
 export { mapAsyncForNullable as mapAsync } from './mapAsync';
 export { mapOrForNullable as mapOr } from './mapOr';
