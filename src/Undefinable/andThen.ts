@@ -4,11 +4,6 @@ import { Undefinable, isUndefined } from './Undefinable';
 export type UndefinableTryTransformFn<T, U> = TransformFn<T, Undefinable<U>>;
 
 /**
- *  @deprecated Use {@link UndefinableTryTransformFn} in the same module.
- */
-export type FlatmapFn<T, U> = UndefinableTryTransformFn<T, U>;
-
-/**
  *  Returns `undefined` if the _input_ is `undefined`,
  *  otherwise calls _transformer_ with the value and returns the result.
  *

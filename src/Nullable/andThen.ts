@@ -4,11 +4,6 @@ import { Nullable, isNull } from './Nullable';
 export type NullableTryTransformFn<T, U> = TransformFn<T, Nullable<U>>;
 
 /**
- *  @deprecated Use {@link NullableTryTransformFn} in the same module.
- */
-export type FlatmapFn<T, U> = NullableTryTransformFn<T, U>;
-
-/**
  *  Returns `null` if the _input_ is `null`,
  *  otherwise calls _transformer_ with the value and returns the result.
  *

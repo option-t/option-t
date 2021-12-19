@@ -4,11 +4,6 @@ import { Maybe, isNullOrUndefined } from './Maybe';
 export type MaybeTryTransformFn<T, U> = TransformFn<T, Maybe<U>>;
 
 /**
- *  @deprecated Use {@link MaybeTryTransformFn} in the same module.
- */
-export type FlatmapFn<T, U> = MaybeTryTransformFn<T, U>;
-
-/**
  *  Returns `null` or `undefined` if the _input_ is `null` or `undefined`,
  *  otherwise calls _transformer_ with the value and returns the result.
  *

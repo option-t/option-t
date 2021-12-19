@@ -4,11 +4,6 @@ import { Option } from './Option';
 export type OptionTryTransformFn<T, U> = TransformFn<T, Option<U>>;
 
 /**
- *  @deprecated Use {@link OptionTryTransformFn} in the same module.
- */
-export type FlatmapFn<T, U> = OptionTryTransformFn<T, U>;
-
-/**
  *  Returns `None` if the _input_ is `None`,
  *  otherwise calls _transformer_ with the value and returns the result.
  *
