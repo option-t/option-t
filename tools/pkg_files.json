@@ -283,8 +283,6 @@
     "cjs/index.js": null,
     "cjs/shared/Function.d.ts": null,
     "cjs/shared/Function.js": null,
-    "cjs/shared/Mutable.d.ts": null,
-    "cjs/shared/Mutable.js": null,
     "docs/idiom/express_progress.md": null,
     "docs/idiom/README.md": null,
     "docs/public_api_list.md": null,
@@ -569,8 +567,6 @@
     "esm/index.mjs": null,
     "esm/shared/Function.d.ts": null,
     "esm/shared/Function.mjs": null,
-    "esm/shared/Mutable.d.ts": null,
-    "esm/shared/Mutable.mjs": null,
     "lib/ClassOption/ClassicOption.d.ts": null,
     "lib/ClassOption/ClassicOption.js": null,
     "lib/ClassOption/ClassicOption.mjs": null,
@@ -991,8 +987,5 @@
     "lib/shared/Function.d.ts": null,
     "lib/shared/Function.js": null,
     "lib/shared/Function.mjs": null,
-    "lib/shared/Mutable.d.ts": null,
-    "lib/shared/Mutable.js": null,
-    "lib/shared/Mutable.mjs": null,
     "package.json": null
 }

@@ -933,7 +933,6 @@ export const legacyApiTable = Object.freeze({
     'cjs/Undefinable/xor': COMPAT_DESCRIPTOR,
     'cjs/index': COMPAT_DESCRIPTOR,
     'cjs/shared/Function': COMPAT_DESCRIPTOR,
-    'cjs/shared/Mutable': COMPAT_DESCRIPTOR,
     'esm/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
     'esm/Maybe/Maybe': COMPAT_DESCRIPTOR,
     'esm/Maybe/and': COMPAT_DESCRIPTOR,
@@ -1071,7 +1070,6 @@ export const legacyApiTable = Object.freeze({
     'esm/Undefinable/xor': COMPAT_DESCRIPTOR,
     'esm/index': COMPAT_DESCRIPTOR,
     'esm/shared/Function': COMPAT_DESCRIPTOR,
-    'esm/shared/Mutable': COMPAT_DESCRIPTOR,
     'lib/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
     'lib/Maybe/Maybe': COMPAT_DESCRIPTOR,
     'lib/Maybe/and': COMPAT_DESCRIPTOR,
@@ -1209,5 +1207,4 @@ export const legacyApiTable = Object.freeze({
     'lib/Undefinable/xor': COMPAT_DESCRIPTOR,
     'lib/index': COMPAT_DESCRIPTOR,
     'lib/shared/Function': COMPAT_DESCRIPTOR,
-    'lib/shared/Mutable': COMPAT_DESCRIPTOR,
 });
