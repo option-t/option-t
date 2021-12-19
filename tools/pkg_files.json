@@ -281,8 +281,6 @@
     "cjs/Undefinable/xor.js": null,
     "cjs/index.d.ts": null,
     "cjs/index.js": null,
-    "cjs/shared/Function.d.ts": null,
-    "cjs/shared/Function.js": null,
     "docs/idiom/express_progress.md": null,
     "docs/idiom/README.md": null,
     "docs/public_api_list.md": null,
@@ -565,8 +563,6 @@
     "esm/Undefinable/xor.mjs": null,
     "esm/index.d.ts": null,
     "esm/index.mjs": null,
-    "esm/shared/Function.d.ts": null,
-    "esm/shared/Function.mjs": null,
     "lib/ClassOption/ClassicOption.d.ts": null,
     "lib/ClassOption/ClassicOption.js": null,
     "lib/ClassOption/ClassicOption.mjs": null,
@@ -984,8 +980,5 @@
     "lib/index.d.ts": null,
     "lib/index.js": null,
     "lib/index.mjs": null,
-    "lib/shared/Function.d.ts": null,
-    "lib/shared/Function.js": null,
-    "lib/shared/Function.mjs": null,
     "package.json": null
 }
