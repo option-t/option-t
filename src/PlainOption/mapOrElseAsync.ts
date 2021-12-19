@@ -7,6 +7,8 @@ import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/Function';
 import { Option, isNone } from './Option';
 import { unwrapOption } from './unwrap';
 
+export type { AsyncTransformFn, AsyncRecoveryFn };
+
 /**
  *  Maps a `Option<T>` to `U` by applying _transformer_ to a contained `Some(T)` value in _input_,
  *  or a _recoverer_ function to a contained `None` value in _input_.

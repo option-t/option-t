@@ -9,6 +9,8 @@ import {
 import { expectNotNullAndUndefined } from './expect';
 import { Maybe, isNullOrUndefined } from './Maybe';
 
+export type { AsyncTransformFn };
+
 function check<T>(value: Maybe<T>): T {
     const passed = expectNotNullAndUndefined(
         value,

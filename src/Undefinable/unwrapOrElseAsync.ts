@@ -6,6 +6,8 @@ import { Undefinable, isNotUndefined } from './Undefinable';
 import { expectNotUndefined } from './expect';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 
+export type { AsyncRecoveryFn };
+
 function check<T>(value: Undefinable<T>): T {
     const passed = expectNotUndefined(
         value,

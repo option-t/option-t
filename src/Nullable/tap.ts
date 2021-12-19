@@ -1,4 +1,6 @@
-import { inspectNullable } from './inspect';
+import { inspectNullable, type EffectFn } from './inspect';
+
+export type { EffectFn };
 
 /**
  *  @deprecated

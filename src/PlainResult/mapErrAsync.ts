@@ -3,6 +3,8 @@ import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessag
 import type { AsyncTransformFn } from '../internal/Function';
 import { Result, createErr, isOk, Ok } from './Result';
 
+export type { AsyncTransformFn };
+
 /**
  *  Maps a `Result<T, E>` to `Result<T, F>` by applying a _transformer_ function `mapFn<E, F>`
  *  to an contained `Err(E)` value, leaving an `Ok(T)` value untouched.

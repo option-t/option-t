@@ -6,6 +6,8 @@ import {
 import { TransformFn, RecoveryFn } from '../internal/Function';
 import { Nullable } from './Nullable';
 
+export type { TransformFn, RecoveryFn };
+
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null`.
  *  Otherwise, return the result of _recoverer_.

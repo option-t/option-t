@@ -4,6 +4,8 @@ import type { AsyncTransformFn } from '../internal/Function';
 import { Result, Err, createOk, isErr } from './Result';
 import { unwrapFromResult } from './unwrap';
 
+export type { AsyncTransformFn };
+
 /**
  *  Maps a `Result<T, E>` to `Result<U, E>` by applying a _transformer_ function
  *  to an contained `Ok(T)` value, leaving an `Err(E)` value untouched.

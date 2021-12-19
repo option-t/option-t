@@ -11,6 +11,8 @@ import {
 } from './ErrorMessage';
 import { expectNotNull } from './expect';
 
+export type { AsyncTransformFn, AsyncRecoveryFn };
+
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null`.
  *  Otherwise, return the result of _recoverer_.

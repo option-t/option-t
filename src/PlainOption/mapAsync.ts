@@ -5,6 +5,8 @@ import type { AsyncTransformFn } from '../internal/Function';
 import { Option, createSome, isNone } from './Option';
 import { unwrapOption } from './unwrap';
 
+export type { AsyncTransformFn };
+
 /**
  *  Maps a `Option<T>` to `Option<U>` by applying a _transformer_ function
  *  to an contained `Some(T)` value, leaving an `None` value untouched.

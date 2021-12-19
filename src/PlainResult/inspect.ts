@@ -1,6 +1,8 @@
 import { EffectFn } from '../internal/Function';
 import { Result } from './Result';
 
+export type { EffectFn };
+
 function noop<T>(_v: T) {}
 
 /**

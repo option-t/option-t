@@ -1,6 +1,8 @@
 import { Option, isNone, createNone } from './Option';
 import { FilterFn } from '../internal/Function';
 
+export type { FilterFn };
+
 /**
  *  Returns `None` if the option is `None`,
  *  otherwise the result should be resolved by the result of _predicate_ with the wrapped value as the arguments:

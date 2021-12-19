@@ -1,6 +1,8 @@
 import { TransformFn, RecoveryFromErrorFn } from '../internal/Function';
 import { Result } from './Result';
 
+export type { TransformFn, RecoveryFromErrorFn };
+
 /**
  *  Maps a `Result<T, E>` to `U` by applying _transformer_ to a contained `Ok(T)` value in _input_,
  *  or a _recoverer_ function to a contained `Err(E)` value in _input_.

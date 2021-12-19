@@ -5,6 +5,8 @@ import type { Nullable } from './Nullable';
 import { expectNotNull } from './expect';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 
+export type { AsyncRecoveryFn };
+
 function check<T>(value: Nullable<T>): T {
     const passed = expectNotNull(value, ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
     return passed;

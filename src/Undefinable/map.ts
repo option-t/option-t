@@ -3,6 +3,8 @@ import { expectNotUndefined } from './expect';
 import { TransformFn } from '../internal/Function';
 import { Undefinable, isUndefined } from './Undefinable';
 
+export type { TransformFn };
+
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `undefined`,
  *  Otherwise, return `undefined`.

@@ -8,6 +8,8 @@ import {
 } from './ErrorMessage';
 import { expectNotNull } from './expect';
 
+export type { AsyncTransformFn };
+
 function check<T>(value: Nullable<T>): T {
     const passed = expectNotNull(value, ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
     return passed;

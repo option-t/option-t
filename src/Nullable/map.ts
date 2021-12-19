@@ -3,6 +3,8 @@ import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './Error
 import { TransformFn } from '../internal/Function';
 import { Nullable, isNull } from './Nullable';
 
+export type { TransformFn };
+
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null`,
  *  Otherwise, return `null`.

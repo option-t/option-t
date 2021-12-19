@@ -1,6 +1,8 @@
 import { Option } from './Option';
 import { TransformFn } from '../internal/Function';
 
+export type { TransformFn };
+
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is `Some(T)`.
  *  Otherwise, return _defaultValue_.

@@ -1,4 +1,6 @@
-import { inspectBoth, inspectErr, inspectOk } from './inspect';
+import { inspectBoth, inspectErr, inspectOk, type EffectFn } from './inspect';
+
+export type { EffectFn };
 
 /**
  *  @deprecated

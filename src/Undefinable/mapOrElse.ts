@@ -6,6 +6,8 @@ import { expectNotUndefined } from './expect';
 import { RecoveryFn, TransformFn } from '../internal/Function';
 import { Undefinable } from './Undefinable';
 
+export type { RecoveryFn, TransformFn };
+
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `undefined`.
  *  Otherwise, return the result of _recoverer_.

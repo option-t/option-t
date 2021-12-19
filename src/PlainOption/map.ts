@@ -1,6 +1,8 @@
 import { TransformFn } from '../internal/Function';
 import { Option, createSome } from './Option';
 
+export type { TransformFn };
+
 /**
  *  Maps a `Option<T>` to `Option<U>` by applying a _transformer_ function
  *  to an contained `Some(T)` value, leaving an `None` value untouched.

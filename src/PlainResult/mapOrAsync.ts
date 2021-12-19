@@ -4,6 +4,8 @@ import type { AsyncTransformFn } from '../internal/Function';
 import { isErr, Result } from './Result';
 import { unwrapFromResult } from './unwrap';
 
+export type { AsyncTransformFn };
+
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is `Ok(T)`.
  *  Otherwise, return _defaultValue_.

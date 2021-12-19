@@ -1,6 +1,8 @@
 import { RecoveryFromErrorFn } from '../internal/Function';
 import { Result } from './Result';
 
+export type { RecoveryFromErrorFn };
+
 /**
  *  Unwraps a result _input_, returns the content of an `Ok(T)`.
  *  If the value is an `Err(E)` then it calls `def` with its value.
