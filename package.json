@@ -59,7 +59,7 @@
     "@typescript-eslint/parser": "^5.7.0",
     "ava": "^4.0.0-rc.1",
     "del-cli": "^4.0.1",
-    "eslint": "^8.5.0",
+    "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "picomatch": "^2.3.0",
     "prettier": "^2.5.1",
