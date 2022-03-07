@@ -8,7 +8,7 @@ jobs:
         container: node:16-bullseye
 
         steps:
-            - uses: actions/checkout@v2.4.0
+            - uses: actions/checkout@v3
             - run: yarn install
             - run: make clean
             - run: make prepublish -j
