@@ -23,13 +23,13 @@
  *      Object.is(a, b);
  *  ```
  */
-export { Result, Ok, Err, createOk, createErr, isOk, isErr } from './Result';
+export { type Result, type Ok, type Err, createOk, createErr, isOk, isErr } from './Result';
 
 export { andForResult as and } from './and';
 export { andThenForResult as andThen } from './andThen';
 export { andThenAsyncForResult as andThenAsync } from './andThenAsync';
 export { equalForResult as equal } from './equal';
-export { expectIsOk as expect, expectIsErr as expectErr } from './expect';
+export { expectIsOk, expectIsErr, expectIsOk as expect, expectIsErr as expectErr } from './expect';
 export { flattenForResult as flatten } from './flatten';
 export { inspectOk, inspectErr, inspectBoth } from './inspect';
 export { mapForResult as map } from './map';

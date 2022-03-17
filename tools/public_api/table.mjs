@@ -460,7 +460,9 @@ export const apiTable = Object.freeze({
             'andThenAsync',
             'equal',
             'expect',
+            'expectIsOk',
             'expectErr',
+            'expectIsErr',
             'inspectOk',
             'inspectErr',
             'inspectBoth',
@@ -489,7 +491,6 @@ export const apiTable = Object.freeze({
             'unwrapOrElseAsync',
         ]
     },
-
 
     'PlainResult/and': {
         'exports': [
