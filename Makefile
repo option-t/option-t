@@ -117,15 +117,7 @@ build_mjs_create_tmp_mjs_cal_cpx: clean_tmp_mjs
 
 # We need to keep this directory to continue to support TypeScript moduleResolution=node..
 .PHONY: build_mixedlib
-build_mixedlib: build_mixedlib_cp_mjs build_mixedlib_cp_cjs build_mixedlib_cp_dts ## Build `lib/`.
-
-.PHONY: build_mixedlib_cp_mjs
-build_mixedlib_cp_mjs: build_esm clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(DIST_ESM_DIR) --source '$(DIST_ESM_DIR)/**/*.mjs' --destination $(DIST_MIXED_LIB_DIR)
-
-.PHONY: build_mixedlib_cp_cjs
-build_mixedlib_cp_cjs: build_cjs clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(DIST_COMMONJS_DIR) --source '$(DIST_COMMONJS_DIR)/**/*.js' --destination $(DIST_MIXED_LIB_DIR)
+build_mixedlib: build_mixedlib_cp_dts ## Build `lib/`.
 
 .PHONY: build_mixedlib_cp_dts
 build_mixedlib_cp_dts: build_esm clean_dist
