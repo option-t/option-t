@@ -115,6 +115,7 @@ build_mjs_create_tmp_mjs_cal_cpx: clean_tmp_mjs
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(SRC_DIR) --source '$(SRC_DIR)/**/*.d.ts' --destination $(TMP_MJS_DIR)
 
 
+# We need to keep this directory to continue to support TypeScript moduleResolution=node..
 .PHONY: build_mixedlib
 build_mixedlib: build_mixedlib_cp_mjs build_mixedlib_cp_cjs build_mixedlib_cp_dts ## Build `lib/`.
 
