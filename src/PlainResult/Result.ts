@@ -32,13 +32,12 @@ export interface Ok<T> {
     // I tested a shape transition for some engines. By their results,
     // I concluded `Ok` and `Err` should have same properties to make to use the same shape.
     //
-    //  - V8 used an another hidden class if `val` is `number` or others.
+    //  - Modern JSVMs in web engines used a single shape.
+    //      - Inline cache would be monomorphic.
+    //      - I tested JavaScriptCore (for Safari 15.4), SpiderMonkey (for Firefox v99), and V8 9.9.
+    //  - Old V8 used an another hidden class if `val` is `number` or others.
     //      - Inline cache for an object taking this type would be polymorphic.
     //      - But we can assume that it will not be megamorphic by the observation.
-    //  - JavaScriptCore used single structure, not like as V8.
-    //      - Inline cache would be monomorphic.
-    //  - SpiderMonkey, I did not test it. But I assumed it would behave similary with other engines.
-    //      - I had not known how I trace for SM casually...
     //
     // Of course, this decision has some drawbacks for users of this package.
     //
@@ -47,13 +46,12 @@ export interface Ok<T> {
     //     However, we don't think it is a common operation for user because we provide `is~~()` function
     //     and user will not do their operations generally for a "container" object like this type.
     //
-    //  2. If user will use `const { ok, err }` = Ok;`, then val will be `undefined`.
-    //     it's will not be a problem because `err` would be `undefined` if this type is `Ok`.
+    //  2. If user will use `const { ok, err }` = Ok;`, then val will be `null`.
     //     We can say same thing for `Err`.
     //
     // By these reasons, we should not recommend to create this object without this factory function.
     // User can create this object by hand. But it's fragile for the future change. So We should not recommend it.
-    readonly err?: undefined;
+    readonly err?: null;
 }
 
 export function isOk<T, E>(input: Result<T, E>): input is Ok<T> {
@@ -64,7 +62,7 @@ export function createOk<T>(val: T): Ok<T> {
     const r: Ok<T> = {
         ok: true,
         val,
-        err: undefined,
+        err: null,
     };
     return r;
 }
@@ -79,13 +77,12 @@ export interface Err<E> {
     // I tested a shape transition for some engines. By their results,
     // I concluded `Ok` and `Err` should have same properties to make to use the same shape.
     //
-    //  - V8 used an another hidden class if `val` is `number` or others.
+    //  - Modern JSVMs in web engines used a single shape.
+    //      - Inline cache would be monomorphic.
+    //      - I tested JavaScriptCore (for Safari 15.4), SpiderMonkey (for Firefox v99), and V8 9.9.
+    //  - Old V8 used an another hidden class if `val` is `number` or others.
     //      - Inline cache for an object taking this type would be polymorphic.
     //      - But we can assume that it will not be megamorphic by the observation.
-    //  - JavaScriptCore used a single structure, not like as V8.
-    //      - Inline cache would be monomorphic.
-    //  - SpiderMonkey, I did not test it. But I assumed it would behave similary with other engines.
-    //      - I had not known how I trace for SM casually...
     //
     // Of course, this decision has some drawbacks for users of this package.
     //
@@ -94,13 +91,12 @@ export interface Err<E> {
     //     However, we don't think it is a common operation for user because we provide `is~~()` function
     //     and user will not do their operations generally for a "container" object like this type.
     //
-    //  2. If user will use `const { ok, err }` = Ok;`, then val will be `undefined`.
-    //     it's will not be a problem because `err` would be `undefined` if this type is `Ok`.
+    //  2. If user will use `const { ok, err }` = Ok;`, then val will be `null`.
     //     We can say same thing for `Err`.
     //
     // By these reasons, we should not recommend to create this object without this factory function.
     // User can create this object by hand. But it's fragile for the future change. So We should not recommend it.
-    readonly val?: undefined;
+    readonly val?: null;
 
     readonly err: E;
 }
@@ -112,8 +108,8 @@ export function isErr<T, E>(input: Result<T, E>): input is Err<E> {
 export function createErr<E>(err: E): Err<E> {
     const r: Err<E> = {
         ok: false,
-        val: undefined,
-        err: err,
+        val: null,
+        err,
     };
     return r;
 }

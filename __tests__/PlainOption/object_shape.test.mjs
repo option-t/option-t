@@ -13,7 +13,7 @@ test('The shape of PlainOption::Some', (t) => {
 test('The shape of PlainOption::None', (t) => {
     const actual = createNone();
     t.false(actual.ok, 'None.ok');
-    t.is(actual.val, undefined, 'None.val');
+    t.is(actual.val, null, 'None.val');
 
     t.true(
         // eslint-disable-next-line no-prototype-builtins
