@@ -9,7 +9,7 @@ test('The shape of PlainResult::Ok', (t) => {
 
     t.true(actual.ok, 'Ok.ok');
     t.is(actual.val, INNER_VAL, 'Ok.val');
-    t.is(actual.err, undefined, 'Ok.err');
+    t.is(actual.err, null, 'Ok.err');
 
     t.true(
         // eslint-disable-next-line no-prototype-builtins
@@ -24,7 +24,7 @@ test('The shape of PlainResult::Err', (t) => {
     const actual = createErr(INNER_VAL);
 
     t.false(actual.ok, 'Err.ok');
-    t.is(actual.val, undefined, 'Err.val');
+    t.is(actual.val, null, 'Err.val');
 
     t.true(
         // eslint-disable-next-line no-prototype-builtins

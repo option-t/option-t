@@ -48,13 +48,12 @@ export interface None {
     // I tested a shape transition for some engines. By their results,
     // I concluded `Some` and `None` should have same properties to make to use the same shape.
     //
-    //  - V8 used an another hidden class if `val` is `number` or others.
+    //  - Modern JSVMs in web engines used a single shape.
+    //      - Inline cache would be monomorphic.
+    //      - I tested JavaScriptCore (for Safari 15.4), SpiderMonkey (for Firefox v99), and V8 9.9.
+    //  - Old V8 used an another hidden class if `val` is `number` or others.
     //      - Inline cache for an object taking this type would be polymorphic.
     //      - But we can assume that it will not be megamorphic by the observation.
-    //  - JavaScriptCore used single structure, not like as V8.
-    //      - Inline cache would be monomorphic.
-    //  - SpiderMonkey, I did not test it. But I assumed it would behave similary with other engines.
-    //      - I had not known how I trace for SM casually...
     //
     // Of course, this decision has some drawbacks for users of this package.
     //
@@ -63,12 +62,11 @@ export interface None {
     //     However, we don't think it is a common operation for user because we provide `is~~()` function
     //     and user will not do their operations generally for a "container" object like this type.
     //
-    //  2. If user will use `const { ok, val }` = None;`, then val will be `undefined`.
-    //     it's will not be a problem because `val` would be `undefined` if this type is `None`.
+    //  2. If user will use `const { ok, val }` = None;`, then val will be `null`.
     //
     // By these reasons, we should not recommend to create this object without this factory function.
     // User can create this object by hand. But it's fragile for the future change. So We should not recommend it.
-    readonly val?: undefined;
+    readonly val?: null;
 }
 
 export function isNone<T>(input: Option<T>): input is None {
@@ -78,7 +76,7 @@ export function isNone<T>(input: Option<T>): input is None {
 export function createNone(): None {
     const r: None = {
         ok: false,
-        val: undefined,
+        val: null,
     };
     return r;
 }
