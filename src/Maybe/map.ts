@@ -3,6 +3,8 @@ import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMes
 import { TransformFn } from '../internal/Function';
 import { Maybe, isNullOrUndefined } from './Maybe';
 
+export type { TransformFn };
+
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null` and `undefined`.
  *  Otherwise, return `null` or `undefined` inputted as _input_.

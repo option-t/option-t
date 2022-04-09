@@ -5,6 +5,8 @@ import { expectNotNull } from './expect';
 import { assertIsPromise } from '../internal/assert';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
 
+export type { AsyncTransformFn };
+
 function check<T>(value: Nullable<T>): T {
     const passed = expectNotNull(value, ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
     return passed;

@@ -9,6 +9,8 @@ import {
 } from './ErrorMessage';
 import { expectNotUndefined } from './expect';
 
+export type { AsyncTransformFn };
+
 function check<T>(value: Undefinable<T>): T {
     const passed = expectNotUndefined(
         value,

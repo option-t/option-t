@@ -1,6 +1,8 @@
 import { EffectFn } from '../internal/Function';
 import { Nullable } from './Nullable';
 
+export type { EffectFn };
+
 /**
  *  * Return _input_ directly.
  *      * This value is passed as the input. But it maybe mutated by calling _effector_.

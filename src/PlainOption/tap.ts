@@ -1,4 +1,6 @@
-import { inspectOption } from './inspect';
+import { inspectOption, type EffectFn } from './inspect';
+
+export type { EffectFn };
 
 /**
  *  @deprecated

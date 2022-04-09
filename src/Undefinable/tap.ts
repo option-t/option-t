@@ -1,4 +1,6 @@
-import { inspectUndefinable } from './inspect';
+import { inspectUndefinable, type EffectFn } from './inspect';
+
+export type { EffectFn };
 
 /**
  *  @deprecated

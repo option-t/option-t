@@ -4,6 +4,8 @@ import type { AsyncRecoveryFn } from '../internal/Function';
 import { Option, isSome } from './Option';
 import { unwrapOption } from './unwrap';
 
+export type { AsyncRecoveryFn };
+
 /**
  *  Unwraps a result _input_, returns the content of an `Some(T)`.
  *  If the value is an `None` then it calls `def` with its value.

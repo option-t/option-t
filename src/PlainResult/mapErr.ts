@@ -1,6 +1,8 @@
 import { TransformFn } from '../internal/Function';
 import { Result, createErr } from './Result';
 
+export type { TransformFn };
+
 /**
  *  Maps a `Result<T, E>` to `Result<T, F>` by applying a _transformer_ function `mapFn<E, F>`
  *  to an contained `Err(E)` value, leaving an `Ok(T)` value untouched.

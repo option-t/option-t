@@ -6,6 +6,8 @@ import { Maybe, isNullOrUndefined } from './Maybe';
 import { expectNotNullAndUndefined } from './expect';
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';
 
+export type { AsyncTransformFn };
+
 function check<T>(value: Maybe<T>): T {
     const passed = expectNotNullAndUndefined(
         value,

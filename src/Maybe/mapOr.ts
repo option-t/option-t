@@ -6,6 +6,8 @@ import {
 } from './ErrorMessage';
 import { TransformFn } from '../internal/Function';
 
+export type { TransformFn };
+
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null` and `undefined`.
  *  Otherwise, return _defaultValue_.

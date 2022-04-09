@@ -5,6 +5,8 @@ import { expectNotUndefined } from './expect';
 import { assertIsPromise } from '../internal/assert';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
 
+export type { AsyncTransformFn };
+
 function check<T>(value: Undefinable<T>): T {
     const passed = expectNotUndefined(
         value,

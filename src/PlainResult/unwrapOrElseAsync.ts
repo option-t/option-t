@@ -4,6 +4,8 @@ import type { AsyncRecoveryFromErrorFn } from '../internal/Function';
 import { Result, isOk } from './Result';
 import { unwrapFromResult, unwrapErrFromResult } from './unwrap';
 
+export type { AsyncRecoveryFromErrorFn };
+
 /**
  *  Unwraps _input_, returns the content of an `Ok(T)`.
  *  If the value is an `Err(E)` then it calls `recoverer` with its value.

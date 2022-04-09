@@ -1,6 +1,8 @@
 import { RecoveryFn } from '../internal/Function';
 import { Option } from './Option';
 
+export type { RecoveryFn };
+
 /**
  *  Unwraps a result _input_, returns the content of an `Some(T)`.
  *  If the value is an `None` then it calls `def` with its value.

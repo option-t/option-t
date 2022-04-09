@@ -3,6 +3,8 @@ import { Maybe } from './Maybe';
 import { expectNotNullAndUndefined } from './expect';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';
 
+export type { RecoveryFn };
+
 /**
  *  Return _input_ as `T` if the passed _input_ is not `null` and `undefined`.
  *  Otherwise, return the result of _recoverer_.
