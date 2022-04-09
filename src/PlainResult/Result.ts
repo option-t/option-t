@@ -21,6 +21,18 @@
  */
 export type Result<T, E> = Ok<T> | Err<E>;
 
+/**
+ *  This type contain a success value _T_.
+ *
+ *  You can create this type value and get an inner value in this type by hand.
+ *  But we recommend to use factory and utility functions for forward compatibility.
+ *
+ *      - `createOk()` to create a value of `Ok(T)`.
+ *      - `isOk()` to check whether the value is `Ok(T)`.
+ *      - `unwrap()` to get an inner value in `Ok(T)`.
+ *      - `unwrapOr()` to get either an inner value in `Ok(T)` or a fallback default value.
+ *      - ...and more.
+ */
 export interface Ok<T> {
     readonly ok: true;
     readonly val: T;
@@ -67,6 +79,17 @@ export function createOk<T>(val: T): Ok<T> {
     return r;
 }
 
+/**
+ *  This type contain a failure information _E_.
+ *
+ *  You can create this type value and get an inner value in this type by hand.
+ *  But we recommend to use factory and utility functions for forward compatibility.
+ *
+ *      - `createErr()` to create a value of `Err(E)`.
+ *      - `isErr()` to check whether the value is `Err(E)`.
+ *      - `unwrapErr()` to get an inner failure information in `Err(E)`.
+ *      - ...and more.
+ */
 export interface Err<E> {
     readonly ok: false;
 
