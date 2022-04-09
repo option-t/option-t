@@ -18,9 +18,33 @@
  *  const a = createSome(val);
  *  const b = andThen(a, someOperation);
  *  ```
+ *
+ *  ## Remarks
+ *  In almost of cases of JavaScript, it's more ergonomic to use `Nullable<T>`, `Undefinable<T>`, or `Maybe<T>`
+ *  to represent that either there is some value or not.
+ *  We also recommend to use them instead of this type generally.
+ *
+ *  However, this type is usefil in following case:
+ *
+ *      1. Migration solution from `PlainResult<T, void>` to `Nullable<T>`, `Undefinable<T>`, or `Maybe<T>`.
+ *      2. You need to treat `null` or `undefined` as some value rather than absence of value.
+ *
+ *  Then this tagged type helps you powerfully.
  */
 export type Option<T> = Some<T> | None;
 
+/**
+ *  This type contain some value of _T_.
+ *
+ *  You can create this type value and get an inner value in this type by hand.
+ *  But we recommend to use factory and utility functions for forward compatibility.
+ *
+ *      - `createSome()` to create a value of `Some(T)`.
+ *      - `isSome()` to check whether the value is `Some(T)`.
+ *      - `unwrap()` to get an inner value in `Some(T)`.
+ *      - `unwrapOr()` to get either an inner value in `Some(T)` or a fallback default value.
+ *      - ...and more.
+ */
 export interface Some<T> {
     readonly ok: true;
     readonly val: T;
@@ -38,6 +62,17 @@ export function createSome<T>(val: T): Some<T> {
     return r;
 }
 
+/**
+ *  This type represents no value.
+ *  This is a pair of `Some(T)`.
+ *
+ *  You can create this type value and get an inner value in this type by hand.
+ *  But we recommend to use factory and utility functions for forward compatibility.
+ *
+ *      - `createNone()` to create a value of `None`.
+ *      - `isNone()` to check whether the value is `None`.
+ *      - ...and more.
+ */
 export interface None {
     readonly ok: false;
 
