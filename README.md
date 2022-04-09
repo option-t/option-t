@@ -3,14 +3,19 @@
 [![npm](https://img.shields.io/npm/v/option-t.svg?style=flat)](https://www.npmjs.com/package/option-t)
 [![CI Status (GitHub Actions)](https://github.com/karen-irc/option-t/workflows/CI/badge.svg)](https://github.com/karen-irc/option-t/actions?query=workflow%3ACI)
 
-* This library represents [Option type](https://en.wikipedia.org/wiki/Option_type) in ECMAScript.
-    * You can sort the "nullable" convention in your project.
-* APIs are inspired by Rust Language's [`Option<T>`](https://doc.rust-lang.org/std/option/) and [`Result<T, E>`](https://doc.rust-lang.org/std/result/).
-* TypeScript friendly APIs.
+* This library provides a **toolkit for _nullable_ types in ECMAScript**
+    - `T | null`
+    - `T | undefined`
+    - `T | null | undefined`
+    - [_Result type_](https://en.wikipedia.org/wiki/Result_type)
+    - Tagged [_Option type_](https://en.wikipedia.org/wiki/Option_type)
+* **APIs are inspired by Rust Language's [`Option<T>`](https://doc.rust-lang.org/std/option/) and [`Result<T, E>`](https://doc.rust-lang.org/std/result/)**.
+* This library **helps to sort the "nullable" convention** in your project.
+* **TypeScript friendly APIs**.
     * We recommend to use this with some static type systems like TypeScript.
-* Zero dependency.
-* Tree shakable completely.
-* ES Module compatbile.
+* **Zero dependency**.
+* **Tree shakable completely**.
+* **ES Module fully compatbile**.
     * Support Node.js' ES Module.
     * Of course, we provides CommonJS.
 
