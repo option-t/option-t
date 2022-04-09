@@ -141,6 +141,10 @@ class ESModuleCompatFileExport extends CompatExportEntry {
     }
 }
 
+const LIB_PATH_PREFIX = './lib/';
+const ESM_PATH_PREFIX = './esm/';
+const CJS_PATH_PREFIX = './cjs/';
+
 class LibCompatFileExport extends CompatExportEntry {
     constructor(entry) {
         super(entry);
@@ -151,10 +155,16 @@ class LibCompatFileExport extends CompatExportEntry {
 
     _toExportEntry() {
         const key = this.key();
-        const dts = `${key}.d.ts`;
 
-        const esm = `${key}.mjs`;
-        const cjs = `${key}.js`;
+        const esmKey = key.replace(LIB_PATH_PREFIX, ESM_PATH_PREFIX);
+        assert.ok(esmKey.startsWith(ESM_PATH_PREFIX));
+        const esm = `${esmKey}.mjs`;
+        const dts = `${esmKey}.d.ts`;
+
+        const cjsKey = key.replace(LIB_PATH_PREFIX, CJS_PATH_PREFIX);
+        assert.ok(cjsKey.startsWith(CJS_PATH_PREFIX));
+        const cjs = `${cjsKey}.js`;
+
         const p = constructDualPackagePathValue({
             cjs,
             esm,
@@ -233,9 +243,16 @@ export class LibCompatDirExport extends AbstractExportEntry {
     #toExportEntry() {
         const key = this.key();
         const actualPath = `${key}/index`;
-        const cjs = `${actualPath}.js`;
-        const mjs = `${actualPath}.mjs`;
-        const dts = `${actualPath}.d.ts`;
+
+        const esmKey = actualPath.replace(LIB_PATH_PREFIX, ESM_PATH_PREFIX);
+        assert.ok(esmKey.startsWith(ESM_PATH_PREFIX));
+        const mjs = `${esmKey}.mjs`;
+        const dts = `${esmKey}.d.ts`;
+
+        const cjsKey = actualPath.replace(LIB_PATH_PREFIX, CJS_PATH_PREFIX);
+        assert.ok(cjsKey.startsWith(CJS_PATH_PREFIX));
+        const cjs = `${cjsKey}.js`;
+
         const value = constructDualPackagePathValue({
             cjs,
             esm: mjs,
