@@ -1,7 +1,7 @@
 import test from 'ava';
 
 import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.mjs';
-import { expectIsSome } from '../../__dist/esm/PlainOption/expect.mjs';
+import { expectSomeForOption } from '../../__dist/esm/PlainOption/expect.mjs';
 
 test('input=Some', (t) => {
     const EXPECTED = Symbol('expected');
@@ -10,7 +10,7 @@ test('input=Some', (t) => {
 
     let actual;
     t.notThrows(() => {
-        actual = expectIsSome(input, 'do not throw any errors');
+        actual = expectSomeForOption(input, 'do not throw any errors');
     });
 
     t.is(actual, EXPECTED);
@@ -22,7 +22,7 @@ test('input=None', (t) => {
     const MSG = 'throw if the input is None';
     t.throws(
         () => {
-            expectIsSome(input, MSG);
+            expectSomeForOption(input, MSG);
         },
         {
             instanceOf: TypeError,
