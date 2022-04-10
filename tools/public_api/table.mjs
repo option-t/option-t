@@ -278,6 +278,7 @@ export const apiTable = Object.freeze({
             'andThenAsync',
             'equal',
             'expect',
+            'expectSome',
             'inspect',
             'filter',
             'flatten',
@@ -293,6 +294,7 @@ export const apiTable = Object.freeze({
             'transpose',
             'tap',
             'unwrap',
+            'unwrapSome',
             'unwrapOr',
             'unwrapOrElse',
             'unwrapOrElseAsync',
@@ -331,6 +333,7 @@ export const apiTable = Object.freeze({
     },
     'PlainOption/expect': {
         'exports': [
+            'expectSomeForOption',
             'expectIsSome'
         ]
     },
@@ -424,7 +427,8 @@ export const apiTable = Object.freeze({
     },
     'PlainOption/unwrap': {
         'exports': [
-            'unwrapOption'
+            'unwrapOption',
+            'unwrapSomeFromOption',
         ]
     },
     'PlainOption/unwrapOr': {
