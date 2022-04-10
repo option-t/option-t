@@ -13,12 +13,6 @@ export function expectOkForResult<T, E>(input: Result<T, E>, msg: string): T | n
 }
 
 /**
- *  @deprecated
- *  Please use {@link expectOkForResult}
- */
-export const expectIsOk: typeof expectOkForResult = expectOkForResult;
-
-/**
  *  Return _input_ as `E` if the passed _input_ is `Err(E)`.
  *  Otherwise, throw `TypeError` with the passed `msg`.
  */
@@ -29,6 +23,12 @@ export function expectErrForResult<T, E>(input: Result<T, E>, msg: string): E | 
 
     return input.err;
 }
+
+/**
+ *  @deprecated
+ *  Please use {@link expectOkForResult}
+ */
+export const expectIsOk: typeof expectOkForResult = expectOkForResult;
 
 /**
  *  @deprecated
