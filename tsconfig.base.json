@@ -8,7 +8,8 @@
         "module": "es2015",                           /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
         "lib": [                                   /* Specify library files to be included in the compilation. */
             "ES5",
-            "ES2015.Promise"
+            "ES2015.Promise",
+            "ES2020.Promise",
         ],
         // "allowJs": true,                             /* Allow javascript files to be compiled. */
         // "checkJs": true,                             /* Report errors in .js files. */
