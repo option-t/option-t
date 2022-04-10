@@ -164,12 +164,12 @@ typecheck: ## Check static types
 ###########################
 # Test
 ###########################
-.PHONY: run_ava
-run_ava: build
-	$(MAKE) run_ava_only -C $(CURDIR)
+.PHONY: test_unittest
+test_unittest: build ## Build and run unit tests
+	$(MAKE) run_test_unittest -C $(CURDIR)
 
-.PHONY: run_ava_only
-run_ava_only: ## Run ava only.
+.PHONY: run_test_unittest
+run_test_unittest: ## Run unit tests only.
 	$(NPM_BIN)/ava --config $(CURDIR)/ava.config.mjs
 
 .PHONY: git_diff
