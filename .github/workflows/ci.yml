@@ -172,7 +172,7 @@ jobs:
             - name: Install dependencies
               run: yarn install
 
-            - run: make run_ava -j
+            - run: make test_unittest -j
               env:
                   CI: true
 
