@@ -12,12 +12,6 @@ export function unwrapOkFromResult<T>(input: Result<T, unknown>): T | never {
 }
 
 /**
- *  @deprecated
- *  Use {@link unwrapOkFromResult}
- */
-export const unwrapFromResult: typeof unwrapOkFromResult = unwrapOkFromResult;
-
-/**
  *  Return the inner `E` of a `Err(E)`.
  *
  *  @throws {TypeError}
@@ -26,3 +20,9 @@ export const unwrapFromResult: typeof unwrapOkFromResult = unwrapOkFromResult;
 export function unwrapErrFromResult<E>(input: Result<unknown, E>): E | never {
     return expectErrForResult(input, 'called with `Ok`');
 }
+
+/**
+ *  @deprecated
+ *  Use {@link unwrapOkFromResult}
+ */
+export const unwrapFromResult: typeof unwrapOkFromResult = unwrapOkFromResult;
