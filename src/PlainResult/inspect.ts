@@ -11,8 +11,8 @@ function noop<T>(_v: T) {}
  *    If you don't have to do it, you should not mutate the inner value.
  *    if-else statement might be sufficient to mutate the inner value instead of calling this function.
  */
-export function inspectOk<T, E>(input: Result<T, E>, effector: EffectFn<T>): Result<T, E> {
-    return inspectBoth(input, effector, noop);
+export function inspectOkOfResult<T, E>(input: Result<T, E>, effector: EffectFn<T>): Result<T, E> {
+    return inspectBothOfResult(input, effector, noop);
 }
 
 /**
@@ -23,8 +23,8 @@ export function inspectOk<T, E>(input: Result<T, E>, effector: EffectFn<T>): Res
  *    If you don't have to do it, you should not mutate the inner value.
  *    if-else statement might be sufficient to mutate the inner value instead of calling this function.
  */
-export function inspectErr<T, E>(input: Result<T, E>, effector: EffectFn<E>): Result<T, E> {
-    return inspectBoth(input, noop, effector);
+export function inspectErrOfResult<T, E>(input: Result<T, E>, effector: EffectFn<E>): Result<T, E> {
+    return inspectBothOfResult(input, noop, effector);
 }
 
 /**
@@ -36,7 +36,7 @@ export function inspectErr<T, E>(input: Result<T, E>, effector: EffectFn<E>): Re
  *    If you don't have to do it, you should not mutate the inner value.
  *    if-else statement might be sufficient to mutate the inner value instead of calling this function.
  */
-export function inspectBoth<T, E>(
+export function inspectBothOfResult<T, E>(
     input: Result<T, E>,
     okEffector: EffectFn<T>,
     errEffector: EffectFn<E>
@@ -48,3 +48,21 @@ export function inspectBoth<T, E>(
     }
     return input;
 }
+
+/**
+ *  @deprecated
+ *  Use {@link inspectOkOfResult}
+ */
+export const inspectOk: typeof inspectOkOfResult = inspectOkOfResult;
+
+/**
+ *  @deprecated
+ *  Use {@link inspectErrOfResult}
+ */
+export const inspectErr: typeof inspectErrOfResult = inspectErrOfResult;
+
+/**
+ *  @deprecated
+ *  Use {@link inspectBothOfResult}
+ */
+export const inspectBoth: typeof inspectBothOfResult = inspectBothOfResult;

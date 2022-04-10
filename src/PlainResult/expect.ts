@@ -4,7 +4,7 @@ import { Result } from './Result';
  *  Return _input_ as `T` if the passed _input_ is `Ok(T)`.
  *  Otherwise, throw `TypeError` with the passed `msg`.
  */
-export function expectIsOk<T, E>(input: Result<T, E>, msg: string): T | never {
+export function expectOkForResult<T, E>(input: Result<T, E>, msg: string): T | never {
     if (!input.ok) {
         throw new TypeError(msg);
     }
@@ -13,13 +13,25 @@ export function expectIsOk<T, E>(input: Result<T, E>, msg: string): T | never {
 }
 
 /**
+ *  @deprecated
+ *  Please use {@link expectOkForResult}
+ */
+export const expectIsOk: typeof expectOkForResult = expectOkForResult;
+
+/**
  *  Return _input_ as `E` if the passed _input_ is `Err(E)`.
  *  Otherwise, throw `TypeError` with the passed `msg`.
  */
-export function expectIsErr<T, E>(input: Result<T, E>, msg: string): E | never {
+export function expectErrForResult<T, E>(input: Result<T, E>, msg: string): E | never {
     if (input.ok) {
         throw new TypeError(msg);
     }
 
     return input.err;
 }
+
+/**
+ *  @deprecated
+ *  Please use {@link expectErrForResult}
+ */
+export const expectIsErr: typeof expectErrForResult = expectErrForResult;

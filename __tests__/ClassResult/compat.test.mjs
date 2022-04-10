@@ -1,7 +1,7 @@
 import test from 'ava';
 
 import { createOk, createErr, isOk, isErr } from '../../__dist/esm/PlainResult/Result.mjs';
-import { unwrapFromResult, unwrapErrFromResult } from '../../__dist/esm/PlainResult/unwrap.mjs';
+import { unwrapOkFromResult, unwrapErrFromResult } from '../../__dist/esm/PlainResult/unwrap.mjs';
 import {
     createOk as createClassicOk,
     createErr as createClassicErr,
@@ -33,7 +33,7 @@ test(`input is Classic's Ok`, (t) => {
     const actual = compatToPlainResult(input);
 
     t.true(isOk(actual), 'isOk');
-    t.is(unwrapFromResult(actual), expected, 'inner value');
+    t.is(unwrapOkFromResult(actual), expected, 'inner value');
 });
 
 test(`input is Classic's Err`, (t) => {

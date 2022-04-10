@@ -1,7 +1,7 @@
 import test from 'ava';
 
 import { createOk, createErr } from '../../../__dist/esm/PlainResult/Result.mjs';
-import { expectIsErr } from '../../../__dist/esm/PlainResult/expect.mjs';
+import { expectErrForResult } from '../../../__dist/esm/PlainResult/expect.mjs';
 
 test('input=Ok(T), expect=Err(E)', (t) => {
     const NOT_EXPECTED = Symbol('not expected');
@@ -11,7 +11,7 @@ test('input=Ok(T), expect=Err(E)', (t) => {
     const MSG = 'throw if the input is not expected';
     t.throws(
         () => {
-            expectIsErr(input, MSG);
+            expectErrForResult(input, MSG);
         },
         {
             instanceOf: TypeError,
@@ -27,7 +27,7 @@ test('input=Err(E), expect=Err(E)', (t) => {
 
     let actual;
     t.notThrows(() => {
-        actual = expectIsErr(input, 'do not throw any errors');
+        actual = expectErrForResult(input, 'do not throw any errors');
     });
 
     t.is(actual, EXPECTED);

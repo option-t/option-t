@@ -2,14 +2,14 @@ import test from 'ava';
 
 import { createOk, createErr, isOk, isErr } from '../../__dist/esm/PlainResult/Result.mjs';
 import { equalForResult } from '../../__dist/esm/PlainResult/equal.mjs';
-import { unwrapFromResult, unwrapErrFromResult } from '../../__dist/esm/PlainResult/unwrap.mjs';
+import { unwrapOkFromResult, unwrapErrFromResult } from '../../__dist/esm/PlainResult/unwrap.mjs';
 
 const INNER_VALUE_A = Symbol('A');
 const INNER_VALUE_B = Symbol('B');
 
 function toString(result) {
     if (isOk(result)) {
-        return `Ok<${String(unwrapFromResult(result))}>`;
+        return `Ok<${String(unwrapOkFromResult(result))}>`;
     } else if (isErr(result)) {
         return `Err<${String(unwrapErrFromResult(result))}>`;
     } else {

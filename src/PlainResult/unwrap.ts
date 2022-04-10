@@ -1,4 +1,4 @@
-import { expectIsOk, expectIsErr } from './expect';
+import { expectOkForResult, expectErrForResult } from './expect';
 import { Result } from './Result';
 
 /**
@@ -7,9 +7,15 @@ import { Result } from './Result';
  *  @throws {TypeError}
  *      Throws if the self is a `Err`.
  */
-export function unwrapFromResult<T>(input: Result<T, unknown>): T | never {
-    return expectIsOk(input, 'called with `Err`');
+export function unwrapOkFromResult<T>(input: Result<T, unknown>): T | never {
+    return expectOkForResult(input, 'called with `Err`');
 }
+
+/**
+ *  @deprecated
+ *  Use {@link unwrapOkFromResult}
+ */
+export const unwrapFromResult: typeof unwrapOkFromResult = unwrapOkFromResult;
 
 /**
  *  Return the inner `E` of a `Err(E)`.
@@ -18,5 +24,5 @@ export function unwrapFromResult<T>(input: Result<T, unknown>): T | never {
  *      Throws if the self is a `Ok`.
  */
 export function unwrapErrFromResult<E>(input: Result<unknown, E>): E | never {
-    return expectIsErr(input, 'called with `Ok`');
+    return expectErrForResult(input, 'called with `Ok`');
 }
