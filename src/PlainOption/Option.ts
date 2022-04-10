@@ -101,7 +101,10 @@ export interface None {
     //
     // By these reasons, we should not recommend to create this object without this factory function.
     // User can create this object by hand. But it's fragile for the future change. So We should not recommend it.
-    readonly val?: null;
+    //
+    // We use `null | undefined` as more widen type rather than `null` for the backward compatibility.
+    // This definition allows to accept a value created by the old version of this library.
+    readonly val?: null | undefined;
 }
 
 export function isNone<T>(input: Option<T>): input is None {
@@ -111,6 +114,8 @@ export function isNone<T>(input: Option<T>): input is None {
 export function createNone(): None {
     const r: None = {
         ok: false,
+        // XXX: We need to fill with `null` to improve the compatibility with Next.js
+        // see https://github.com/karen-irc/option-t/pull/1256
         val: null,
     };
     return r;

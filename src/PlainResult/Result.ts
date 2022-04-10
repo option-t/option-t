@@ -63,7 +63,10 @@ export interface Ok<T> {
     //
     // By these reasons, we should not recommend to create this object without this factory function.
     // User can create this object by hand. But it's fragile for the future change. So We should not recommend it.
-    readonly err?: null;
+    //
+    // We use `null | undefined` as more widen type rather than `null` for the backward compatibility.
+    // This definition allows to accept a value created by the old version of this library.
+    readonly err?: null | undefined;
 }
 
 export function isOk<T, E>(input: Result<T, E>): input is Ok<T> {
@@ -74,6 +77,8 @@ export function createOk<T>(val: T): Ok<T> {
     const r: Ok<T> = {
         ok: true,
         val,
+        // XXX: We need to fill with `null` to improve the compatibility with Next.js
+        // see https://github.com/karen-irc/option-t/pull/1256
         err: null,
     };
     return r;
@@ -119,7 +124,10 @@ export interface Err<E> {
     //
     // By these reasons, we should not recommend to create this object without this factory function.
     // User can create this object by hand. But it's fragile for the future change. So We should not recommend it.
-    readonly val?: null;
+    //
+    // We use `null | undefined` as more widen type rather than `null` for the backward compatibility.
+    // This definition allows to accept a value created by the old version of this library.
+    readonly val?: null | undefined;
 
     readonly err: E;
 }
@@ -131,6 +139,8 @@ export function isErr<T, E>(input: Result<T, E>): input is Err<E> {
 export function createErr<E>(err: E): Err<E> {
     const r: Err<E> = {
         ok: false,
+        // XXX: We need to fill with `null` to improve the compatibility with Next.js
+        // see https://github.com/karen-irc/option-t/pull/1256
         val: null,
         err,
     };
