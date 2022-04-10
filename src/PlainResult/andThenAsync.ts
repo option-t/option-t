@@ -2,7 +2,7 @@ import { assertIsPromise } from '../internal/assert';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
 import type { AsyncTransformFn } from '../internal/Function';
 import { Result, isErr } from './Result';
-import { unwrapFromResult } from './unwrap';
+import { unwrapOkFromResult } from './unwrap';
 
 export type ResultAsyncTryTransformFn<T, U, E> = AsyncTransformFn<T, Result<U, E>>;
 
@@ -23,7 +23,7 @@ export function andThenAsyncForResult<T, U, E>(
         return Promise.resolve(input);
     }
 
-    const source: T = unwrapFromResult(input);
+    const source: T = unwrapOkFromResult(input);
     const result: Promise<Result<U, E>> = transformer(source);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js

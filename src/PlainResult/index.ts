@@ -29,9 +29,19 @@ export { andForResult as and } from './and';
 export { andThenForResult as andThen } from './andThen';
 export { andThenAsyncForResult as andThenAsync } from './andThenAsync';
 export { equalForResult as equal } from './equal';
-export { expectIsOk, expectIsErr, expectIsOk as expect, expectIsErr as expectErr } from './expect';
+export {
+    expectOkForResult as expect,
+    expectOkForResult as expectOk,
+    expectErrForResult as expectErr,
+    expectIsOk,
+    expectIsErr,
+} from './expect';
 export { flattenForResult as flatten } from './flatten';
-export { inspectOk, inspectErr, inspectBoth } from './inspect';
+export {
+    inspectOkOfResult as inspectOk,
+    inspectErrOfResult as inspectErr,
+    inspectBothOfResult as inspectBoth,
+} from './inspect';
 export { mapForResult as map } from './map';
 export { mapAsyncForResult as mapAsync } from './mapAsync';
 export { mapOrForResult as mapOr } from './mapOr';
@@ -46,7 +56,11 @@ export { orElseAsyncForResult as orElseAsync } from './orElseAsync';
 export { tapOk, tapErr, tapBoth } from './tap';
 export { transposeForResult as transpose } from './transpose';
 export { toOptionFromOk, toOptionFromErr } from './toOption';
-export { unwrapFromResult as unwrap, unwrapErrFromResult as unwrapErr } from './unwrap';
+export {
+    unwrapOkFromResult as unwrap,
+    unwrapOkFromResult as unwrapOk,
+    unwrapErrFromResult as unwrapErr,
+} from './unwrap';
 export { unwrapOrFromResult as unwrapOr } from './unwrapOr';
 export { unwrapOrElseFromResult as unwrapOrElse } from './unwrapOrElse';
 export { unwrapOrElseAsyncFromResult as unwrapOrElseAsync } from './unwrapOrElseAsync';

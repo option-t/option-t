@@ -2,7 +2,7 @@ import { assertIsPromise } from '../internal/assert';
 import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
 import type { AsyncRecoveryFromErrorFn } from '../internal/Function';
 import { Result, isOk } from './Result';
-import { unwrapFromResult, unwrapErrFromResult } from './unwrap';
+import { unwrapOkFromResult, unwrapErrFromResult } from './unwrap';
 
 /**
  *  Unwraps _input_, returns the content of an `Ok(T)`.
@@ -13,7 +13,7 @@ export function unwrapOrElseAsyncFromResult<T, E>(
     recoverer: AsyncRecoveryFromErrorFn<E, T>
 ): Promise<T> {
     if (isOk(input)) {
-        const value = unwrapFromResult(input);
+        const value = unwrapOkFromResult(input);
         return Promise.resolve(value);
     }
 

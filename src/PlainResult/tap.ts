@@ -1,22 +1,22 @@
-import { inspectBoth, inspectErr, inspectOk } from './inspect';
+import { inspectBothOfResult, inspectErrOfResult, inspectOkOfResult } from './inspect';
 
 /**
  *  @deprecated
  *  This will be removed in a future release.
- *  Use {@link inspectOk}
+ *  Use {@link inspectOkOfResult}
  */
-export const tapOk: typeof inspectOk = inspectOk;
+export const tapOk: typeof inspectOkOfResult = inspectOkOfResult;
 
 /**
  *  @deprecated
  *  This will be removed in a future release.
- *  Use {@link inspectErr}
+ *  Use {@link inspectErrOfResult}
  */
-export const tapErr: typeof inspectErr = inspectErr;
+export const tapErr: typeof inspectErrOfResult = inspectErrOfResult;
 
 /**
  *  @deprecated
  *  This will be removed in a future release.
- *  Use {@link inspectBoth}
+ *  Use {@link inspectBothOfResult}
  */
-export const tapBoth: typeof inspectBoth = inspectBoth;
+export const tapBoth: typeof inspectBothOfResult = inspectBothOfResult;

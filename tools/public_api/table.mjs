@@ -460,6 +460,7 @@ export const apiTable = Object.freeze({
             'andThenAsync',
             'equal',
             'expect',
+            'expectOk',
             'expectIsOk',
             'expectErr',
             'expectIsErr',
@@ -485,6 +486,7 @@ export const apiTable = Object.freeze({
             'toOptionFromOk',
             'toOptionFromErr',
             'unwrap',
+            'unwrapOk',
             'unwrapErr',
             'unwrapOr',
             'unwrapOrElse',
@@ -526,6 +528,8 @@ export const apiTable = Object.freeze({
     },
     'PlainResult/expect': {
         'exports': [
+            'expectOkForResult',
+            'expectErrForResult',
             'expectIsOk',
             'expectIsErr',
         ]
@@ -537,6 +541,9 @@ export const apiTable = Object.freeze({
     },
     'PlainResult/inspect': {
         'exports': [
+            'inspectOkOfResult',
+            'inspectErrOfResult',
+            'inspectBothOfResult',
             'inspectOk',
             'inspectErr',
             'inspectBoth',
@@ -626,6 +633,7 @@ export const apiTable = Object.freeze({
     'PlainResult/unwrap': {
         'exports': [
             'unwrapFromResult',
+            'unwrapOkFromResult',
             'unwrapErrFromResult',
         ]
     },

@@ -2,7 +2,7 @@ import { assertIsPromise } from '../internal/assert';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
 import type { AsyncTransformFn } from '../internal/Function';
 import { Result, Err, createOk, isErr } from './Result';
-import { unwrapFromResult } from './unwrap';
+import { unwrapOkFromResult } from './unwrap';
 
 /**
  *  Maps a `Result<T, E>` to `Result<U, E>` by applying a _transformer_ function
@@ -19,7 +19,7 @@ export function mapAsyncForResult<T, U, E>(
         return Promise.resolve(s);
     }
 
-    const inner: T = unwrapFromResult(input);
+    const inner: T = unwrapOkFromResult(input);
     const result: Promise<U> = transformer(inner);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js

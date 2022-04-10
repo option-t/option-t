@@ -2,7 +2,7 @@ import test from 'ava';
 
 import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.mjs';
 import { okOrForPlainOption } from '../../__dist/esm/PlainOption/okOr.mjs';
-import { unwrapErrFromResult, unwrapFromResult } from '../../__dist/esm/PlainResult/unwrap.mjs';
+import { unwrapErrFromResult, unwrapOkFromResult } from '../../__dist/esm/PlainResult/unwrap.mjs';
 
 test('the input is Some', (t) => {
     const OK_VAL = Symbol('ok');
@@ -12,7 +12,7 @@ test('the input is Some', (t) => {
     const actual = okOrForPlainOption(input, ERR_VAL);
 
     t.true(actual.ok, 'the actual should be Ok');
-    t.is(unwrapFromResult(actual), OK_VAL, 'the actual should be wrap the expect');
+    t.is(unwrapOkFromResult(actual), OK_VAL, 'the actual should be wrap the expect');
 });
 
 test('the input is None', (t) => {
