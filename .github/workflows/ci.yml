@@ -154,6 +154,7 @@ jobs:
                 node-version:
                     - 16
                     - 17
+                    - 18
 
         steps:
             - uses: actions/checkout@v3
@@ -186,6 +187,7 @@ jobs:
                 node-version:
                     - 16
                     - 17
+                    - 18
 
         steps:
             - uses: actions/checkout@v3
@@ -218,6 +220,7 @@ jobs:
                 node-version:
                     - 16
                     - 17
+                    - 18
 
         steps:
             - uses: actions/checkout@v3
@@ -250,6 +253,7 @@ jobs:
                 node-version:
                     - 16
                     - 17
+                    - 18
 
         steps:
             - uses: actions/checkout@v3
