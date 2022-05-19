@@ -20,6 +20,11 @@ on:
             - v*.*.*
     pull_request:
 
+# see https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-only-cancel-in-progress-jobs-or-runs-for-the-current-workflow
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
 jobs:
     install_dependencies:
         runs-on: ubuntu-latest
