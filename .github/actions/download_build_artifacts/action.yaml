@@ -14,4 +14,8 @@ runs:
         - uses: actions/download-artifact@v3
           with:
               name: artifacts-${{ inputs.git-sha }}
-              path: ${{ inputs.working-directory }}/__dist
+              path: ${{ inputs.working-directory }}
+        - name: Extract tarball
+          shell: bash
+          run: tar --extract --gzip --verbose --file ./artifact.tgz
+          working-directory: ${{ inputs.working-directory }}
