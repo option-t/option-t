@@ -39,22 +39,7 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
-            - name: Get yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
-            - name: Restore dependencies from cache
-              id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-              uses: actions/cache@v3.0.2
-              with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      v0-${{ runner.os }}-yarn-
-            - name: Install dependencies
-              # We only cache `yarn cache dir`, not including `node_modules/`.
-              # thus we need to do `yarn install` to restore `node_modules/` so we need run always this step.
-              # if: steps.yarn-cache.outputs.cache-hit != 'true'
-              run: yarn install
+            - uses: ./.github/actions/prepare_ci
 
     format_check:
         needs: [install_dependencies]
@@ -68,20 +53,7 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
-
-            - name: Get yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
-            - name: Restore dependencies from cache
-              id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-              uses: actions/cache@v3.0.2
-              with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      v0-${{ runner.os }}-yarn-
-            - name: Install dependencies
-              run: yarn install
+            - uses: ./.github/actions/prepare_ci
 
             - run: make format_check -j
               env:
@@ -99,20 +71,7 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
-
-            - name: Get yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
-            - name: Restore dependencies from cache
-              id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-              uses: actions/cache@v3.0.2
-              with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      v0-${{ runner.os }}-yarn-
-            - name: Install dependencies
-              run: yarn install
+            - uses: ./.github/actions/prepare_ci
 
             - run: make lint -j
               env:
@@ -130,20 +89,7 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
-
-            - name: Get yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
-            - name: Restore dependencies from cache
-              id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-              uses: actions/cache@v3.0.2
-              with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      v0-${{ runner.os }}-yarn-
-            - name: Install dependencies
-              run: yarn install
+            - uses: ./.github/actions/prepare_ci
 
             - run: make build -j
               env:
@@ -163,20 +109,7 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
-
-            - name: Get yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
-            - name: Restore dependencies from cache
-              id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-              uses: actions/cache@v3.0.2
-              with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      v0-${{ runner.os }}-yarn-
-            - name: Install dependencies
-              run: yarn install
+            - uses: ./.github/actions/prepare_ci
 
             - run: make test_unittest -j
               env:
@@ -196,20 +129,7 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
-
-            - name: Get yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
-            - name: Restore dependencies from cache
-              id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-              uses: actions/cache@v3.0.2
-              with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      v0-${{ runner.os }}-yarn-
-            - name: Install dependencies
-              run: yarn install
+            - uses: ./.github/actions/prepare_ci
 
             - run: make test_distribution_contain_all -j
               env:
@@ -229,20 +149,7 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
-
-            - name: Get yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
-            - name: Restore dependencies from cache
-              id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-              uses: actions/cache@v3.0.2
-              with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      v0-${{ runner.os }}-yarn-
-            - name: Install dependencies
-              run: yarn install
+            - uses: ./.github/actions/prepare_ci
 
             - run: make test_esmodule_path_rewrite -j
               env:
@@ -262,20 +169,7 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
-
-            - name: Get yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
-            - name: Restore dependencies from cache
-              id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-              uses: actions/cache@v3.0.2
-              with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      v0-${{ runner.os }}-yarn-
-            - name: Install dependencies
-              run: yarn install
+            - uses: ./.github/actions/prepare_ci
 
             - run: make test_package_install -j
               env:

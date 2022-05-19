@@ -1,0 +1,24 @@
+name: Prepare CI
+description: This action prepare CI that restore cachable items
+
+runs:
+    using: composite
+    steps:
+        - name: Get yarn cache directory path
+          shell: bash
+          id: yarn-cache-dir-path
+          run: echo "::set-output name=dir::$(yarn cache dir)"
+        - name: Restore dependencies from cache
+          id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+          uses: actions/cache@v3.0.2
+          with:
+              path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+              key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+              restore-keys: |
+                  v0-${{ runner.os }}-yarn-
+        - name: Install dependencies
+          shell: bash
+          # We only cache `yarn cache dir`, not including `node_modules/`.
+          # thus we need to do `yarn install` to restore `node_modules/` so we need run always this step.
+          # if: steps.yarn-cache.outputs.cache-hit != 'true'
+          run: yarn install
