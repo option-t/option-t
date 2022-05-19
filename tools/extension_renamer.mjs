@@ -1,5 +1,5 @@
 import * as assert from 'node:assert/strict';
-import { promises as fs } from 'node:fs';
+import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
