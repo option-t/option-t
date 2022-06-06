@@ -58,11 +58,11 @@ clean_npmrc:
 ###########################
 # Build
 ###########################
-.PHONY: distribution
-distribution: build cp_docs cp_changelog cp_license cp_readme generate_manifest
-
 .PHONY: build
-build: build_cjs build_esm build_mixedlib ## Build all targets.
+build: __build cp_docs cp_changelog cp_license cp_readme generate_manifest
+
+.PHONY: __build
+__build: build_cjs build_esm build_mixedlib ## Build all targets.
 
 .PHONY: build_cjs
 build_cjs: build_cjs_js build_cjs_type_definition build_cjs_ts ## Build `cjs/`.
@@ -165,7 +165,7 @@ typecheck: ## Check static types
 # Test
 ###########################
 .PHONY: test_unittest
-test_unittest: build ## Build and run unit tests
+test_unittest: __build ## Build and run unit tests
 	$(MAKE) run_test_unittest -C $(CURDIR)
 
 .PHONY: run_test_unittest
@@ -177,7 +177,7 @@ git_diff: ## Test whether there is no committed changes.
 	git diff --exit-code
 
 .PHONY: test_distribution_contain_all
-test_distribution_contain_all: distribution
+test_distribution_contain_all: build
 	$(MAKE) run_test_distribution_contain_all
 
 .PHONY: run_test_distribution_contain_all
@@ -185,7 +185,7 @@ run_test_distribution_contain_all:
 	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/test_package_contains_expected_all.mjs
 
 .PHONY: test_esmodule_path_rewrite
-test_esmodule_path_rewrite: distribution
+test_esmodule_path_rewrite: build
 	$(MAKE) run_test_esmodule_path_rewrite -C $(CURDIR)
 
 .PHONY: run_test_esmodule_path_rewrite
@@ -193,12 +193,12 @@ run_test_esmodule_path_rewrite:
 	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/test_esmodule_path_rewrite.mjs
 
 .PHONY: test_package_install
-test_package_install: distribution __run_install_package
+test_package_install: build __run_install_package
 	$(MAKE) run_test_package_install -C $(CURDIR)
 	$(MAKE) post_cleanup_to_test_package_install -C $(CURDIR)
 
 .PHONY: __run_install_package
-__run_install_package: distribution
+__run_install_package: build
 	yarn add --dev $(DIST_DIR)
 
 .PHONY: run_test_package_install
@@ -243,7 +243,7 @@ git_reset_to_head: $(TARGETS_SHOULD_BE_RESET_AFTER_TEST_TO_INSTALL)
 .PHONY: prepublish
 prepublish: ## Run some commands for 'npm run prepublish'
 	$(MAKE) clean -C $(CURDIR)
-	$(MAKE) distribution -C $(CURDIR)
+	$(MAKE) build -C $(CURDIR)
 	$(MAKE) test_distribution_contain_all -C $(CURDIR)
 	$(MAKE) run_test_esmodule_path_rewrite -C $(CURDIR)
 
