@@ -2,6 +2,7 @@ import * as assert from 'node:assert/strict';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseArgs } from '@pkgjs/parseargs';
 
 import {
     generateExposedPathSequence,
@@ -117,12 +118,38 @@ ${str}
 `;
 }
 
-(async function main() {
-    const OUT_DIR = process.env.OUT_DIR;
-    assert.strictEqual(typeof OUT_DIR, 'string', '$OUTDIR envvar should be string');
+function parseCliOptions() {
+    const options = {
+        source: {
+            type: 'string',
+        },
+        destination: {
+            type: 'string',
+        },
+    };
 
-    const SRC_DIR = process.env.SRC_DIR;
-    assert.strictEqual(typeof SRC_DIR, 'string', '$SRC_DIR envvar should be string');
+    const { values } = parseArgs({
+        options,
+        strict: true,
+    });
+
+    const sourceDir = values.source;
+    assert.ok(!!sourceDir, 'no source');
+
+    const destinationDir = values.destination;
+    assert.ok(!!destinationDir, 'no destinationDir');
+
+    return {
+        sourceDir,
+        destinationDir,
+    };
+}
+
+(async function main() {
+    const {
+        destinationDir: OUT_DIR,
+        sourceDir: SRC_DIR,
+    } = parseCliOptions();
 
     // check SRC_DIR is src/
     {

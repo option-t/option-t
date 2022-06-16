@@ -227,9 +227,7 @@ eslint_fix: ## Apply ESLint's `--fix` mode
 
 .PHONY: generate_import_path_list_md
 generate_import_path_list_md: ## Generate all public import paths to docs/import_path.md
-	OUT_DIR=${DOCS_DIR} \
-    SRC_DIR=${SRC_DIR} \
-    $(NODE_BIN) $(CURDIR)/tools/generate_import_path_list_markdown.mjs
+	$(NODE_BIN) $(CURDIR)/tools/generate_import_path_list_markdown.mjs --source ${SRC_DIR} --destination ${DOCS_DIR}
 
 TARGETS_SHOULD_BE_RESET_AFTER_TEST_TO_INSTALL := \
   package.json \
