@@ -187,7 +187,7 @@ test_esmodule_path_rewrite: build
 
 .PHONY: run_test_esmodule_path_rewrite
 run_test_esmodule_path_rewrite:
-	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/test_esmodule_path_rewrite.mjs
+	$(NODE_BIN) $(CURDIR)/tools/test_esmodule_path_rewrite.mjs --target $(DIST_DIR)
 
 .PHONY: test_package_install
 test_package_install: build __run_install_package
