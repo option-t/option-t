@@ -2,6 +2,7 @@ import * as assert from 'node:assert/strict';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseArgs } from '@pkgjs/parseargs';
 
 const THIS_FILENAME = fileURLToPath(import.meta.url);
 const THIS_DIRNAME = path.dirname(THIS_FILENAME);
@@ -34,11 +35,30 @@ async function testAllowToLoadFileAsESM(expectedSet) {
     assert.deepStrictEqual([], hasError, 'Unexpected files which could not load as ES Module');
 }
 
+function parseCliOptions() {
+    const options = {
+        target: {
+            type: 'string',
+        },
+    };
+
+    const { values } = parseArgs({
+        options,
+        strict: true,
+    });
+
+    const targetDir = values.target;
+    assert.ok(!!targetDir, 'no targetDir');
+
+    return {
+        targetDir,
+    };
+}
+
 (async function main() {
     console.log(`====== This script tests whether the mjs' import path is correctly ======`);
 
-    const OUTDIR = process.env.OUTDIR;
-    assert.strictEqual(typeof OUTDIR, 'string', '$OUTDIR envvar should be string');
+    const { targetDir: OUTDIR } = parseCliOptions();
 
     const json = await fs.readFile(path.resolve(THIS_DIRNAME, './pkg_files.json'), {
         encoding: 'utf8',

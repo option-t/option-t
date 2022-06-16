@@ -2,6 +2,7 @@ import * as assert from 'node:assert/strict';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseArgs } from '@pkgjs/parseargs';
 
 import { addExportsFields } from './transformer/add_exports_field/main.mjs';
 import { loadJSON } from './json.mjs';
@@ -28,14 +29,42 @@ async function writePackageJSON(baseDir, outputPath, content) {
     });
 }
 
+function parseCliOptions() {
+    const CLI_OPTIONS_INPUT_MANIFEST_PATH = 'input-manifest-path';
+
+    const options = {
+        [CLI_OPTIONS_INPUT_MANIFEST_PATH]: {
+            type: 'string',
+        },
+        destination: {
+            type: 'string',
+        },
+    };
+
+    const { values } = parseArgs({
+        options,
+        strict: true,
+    });
+
+    const sourceManifestPath = values[CLI_OPTIONS_INPUT_MANIFEST_PATH];
+    assert.ok(!!sourceManifestPath, 'no source');
+
+    const destinationDir = values.destination;
+    assert.ok(!!destinationDir, 'no destinationDir');
+
+    return {
+        sourceManifestPath,
+        destinationDir,
+    };
+}
+
 (async function main() {
     console.log('====== This script generates `exports` field for `package.json` ======');
 
-    const OUTDIR = process.env.OUTDIR;
-    assert.strictEqual(typeof OUTDIR, 'string', '$OUTDIR envvar should be string');
-
-    const INPUT_MANIFEST_PATH = process.env.INPUT_MANIFEST_PATH;
-    assert.strictEqual(typeof INPUT_MANIFEST_PATH, 'string', '$MANIFEST_PATH envvar should be string');
+    const {
+        sourceManifestPath: INPUT_MANIFEST_PATH,
+        destinationDir: OUTDIR,
+    } = parseCliOptions();
 
     const json = await loadJSON(BASE_DIR, INPUT_MANIFEST_PATH);
     assert.notStrictEqual(json, null, 'Fail to parse the file list snapshot');

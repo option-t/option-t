@@ -1,8 +1,9 @@
+import * as assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { parseArgs } from '@pkgjs/parseargs';
 
 import { getAllGlobMatchedFiles } from './glob.mjs';
-import { parseArgs } from './parse_argv.mjs';
 
 async function createSourceToDestinationMapList(baseDir, sourceList, destinationDir) {
     const normalizedDest = path.normalize(destinationDir);
@@ -51,37 +52,59 @@ async function copyFile(
     return copying;
 }
 
-const CLI_FLAG_VERBOSE = '--verbose';
-const CLI_FLAG_DEBUG = '--debug';
-const CLI_FLAG_BASE_DIR = '--basedir';
-const CLI_FLAG_SOURCE = '--source';
-const CLI_FLAG_DESTINATION = '--destination';
+function parseCliOptions() {
+    const options = {
+        verbose: {
+            type: 'boolean',
+        },
+        debug: {
+            type: 'boolean',
+        },
+        basedir: {
+            type: 'string',
+        },
+        source: {
+            type: 'string',
+        },
+        destination: {
+            type: 'string',
+        },
+    };
+
+    const { values } = parseArgs({
+        options,
+        strict: true,
+    });
+
+    const isVerbose = !!values.verbose;
+    const isDebug = !!values.debug;
+
+    const baseDir = values.basedir;
+    assert.ok(!!baseDir, 'no baseDir');
+
+    const source = values.source;
+    assert.ok(!!source, 'no source');
+
+    const destinationDir = values.destination;
+    assert.ok(!!destinationDir, 'no destinationDir');
+
+    return {
+        isVerbose,
+        isDebug,
+        baseDir,
+        source,
+        destinationDir,
+    };
+}
 
 (async function main() {
-    const argSet = new Set(process.argv);
-    // eslint-disable-next-line no-magic-numbers
-    const argv = parseArgs(process.argv.slice(2));
-
-    const isVerbose = argSet.has(CLI_FLAG_VERBOSE);
-    const isDebug = argSet.has(CLI_FLAG_DEBUG);
-    if (isDebug) {
-        console.log(`process.argv: ${JSON.stringify(argv)}`);
-    }
-
-    const baseDir = argv.get(CLI_FLAG_BASE_DIR);
-    if (!baseDir) {
-        throw new Error('no baseDir');
-    }
-
-    const source = argv.get(CLI_FLAG_SOURCE);
-    if (!source) {
-        throw new Error('no source');
-    }
-
-    const destinationDir = argv.get(CLI_FLAG_DESTINATION);
-    if (!destinationDir) {
-        throw new Error('no target');
-    }
+    const {
+        isVerbose,
+        isDebug,
+        baseDir,
+        source,
+        destinationDir,
+    } = parseCliOptions();
 
     const baseDirFullPath = path.resolve(process.cwd(), baseDir);
     const sourceList = await getAllGlobMatchedFiles(baseDirFullPath, source);

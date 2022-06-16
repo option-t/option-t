@@ -2,6 +2,7 @@ import * as assert from 'node:assert/strict';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseArgs } from '@pkgjs/parseargs';
 
 const FROM_EXTENSION = 'js';
 const TO_EXTENSION = 'mjs';
@@ -55,9 +56,32 @@ function bulkRename(filePathList, targetPattern, replaceValue) {
     return Promise.all(result);
 }
 
+function parseCliOptions() {
+    const CLI_OPTION_TARGET_DIR = 'target-dir';
+
+    const options = {
+        [CLI_OPTION_TARGET_DIR]: {
+            type: 'string',
+        },
+    };
+
+    const { values } = parseArgs({
+        options,
+        strict: true,
+    });
+
+    const targetDir = values[CLI_OPTION_TARGET_DIR];
+    assert.ok(!!targetDir, 'no targetDir');
+
+    return {
+        targetDir,
+    };
+}
+
 (async function main() {
-    const TARGET_DIR = process.env.TARGET_DIR;
-    assert.ok(typeof TARGET_DIR === 'string', 'TARGET_DIR should be string');
+    const {
+        targetDir: TARGET_DIR,
+    } = parseCliOptions();
 
     const cwd = process.cwd();
     const subrootDir = path.resolve(cwd, TARGET_DIR);

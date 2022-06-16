@@ -96,8 +96,7 @@ build_mjs_cp_dts_to_esm: build_mjs_create_tmp_mjs clean_dist
 
 .PHONY: build_mjs_rename_js_to_mjs
 build_mjs_rename_js_to_mjs: build_mjs_create_tmp_mjs
-	TARGET_DIR=$(TMP_MJS_DIR) \
-    $(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs
+	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_MJS_DIR)
 
 .PHONY: build_mjs_create_tmp_mjs
 build_mjs_create_tmp_mjs: build_mjs_create_tmp_mjs_call_tsc build_mjs_create_tmp_mjs_call_babel build_mjs_create_tmp_mjs_cal_cpx
@@ -141,9 +140,7 @@ cp_readme: clean_dist
 
 .PHONY: generate_manifest
 generate_manifest: clean_dist
-	INPUT_MANIFEST_PATH=$(CURDIR)/package.json \
-    OUTDIR=$(DIST_DIR) \
-    $(NODE_BIN) $(CURDIR)/tools/package_json_rewriter/main.mjs
+	$(NODE_BIN) $(CURDIR)/tools/package_json_rewriter/main.mjs --input-manifest-path $(CURDIR)/package.json --destination $(DIST_DIR)
 
 
 ###########################
@@ -182,7 +179,7 @@ test_distribution_contain_all: build
 
 .PHONY: run_test_distribution_contain_all
 run_test_distribution_contain_all:
-	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/test_package_contains_expected_all.mjs
+	$(NODE_BIN) $(CURDIR)/tools/test_package_contains_expected_all.mjs --target $(DIST_DIR)
 
 .PHONY: test_esmodule_path_rewrite
 test_esmodule_path_rewrite: build
@@ -190,7 +187,7 @@ test_esmodule_path_rewrite: build
 
 .PHONY: run_test_esmodule_path_rewrite
 run_test_esmodule_path_rewrite:
-	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/test_esmodule_path_rewrite.mjs
+	$(NODE_BIN) $(CURDIR)/tools/test_esmodule_path_rewrite.mjs --target $(DIST_DIR)
 
 .PHONY: test_package_install
 test_package_install: build __run_install_package
@@ -227,9 +224,7 @@ eslint_fix: ## Apply ESLint's `--fix` mode
 
 .PHONY: generate_import_path_list_md
 generate_import_path_list_md: ## Generate all public import paths to docs/import_path.md
-	OUT_DIR=${DOCS_DIR} \
-    SRC_DIR=${SRC_DIR} \
-    $(NODE_BIN) $(CURDIR)/tools/generate_import_path_list_markdown.mjs
+	$(NODE_BIN) $(CURDIR)/tools/generate_import_path_list_markdown.mjs --source ${SRC_DIR} --destination ${DOCS_DIR}
 
 TARGETS_SHOULD_BE_RESET_AFTER_TEST_TO_INSTALL := \
   package.json \
