@@ -181,9 +181,9 @@ For example,
 
 you need to use these paths:
 
-- `option-t/cjs`
+- `option-t/cjs` (__*Deprecated*__)
    - This directory provides only commonjs style modules.
-- `option-t/esm`
+- `option-t/esm` (__*Deprecated*__)
    - This directory privides only ES Modules.
 - `option-t/lib` (__*Deprecated*__)
     - This directory provides both of an ES Module and a CommonJS style module.
