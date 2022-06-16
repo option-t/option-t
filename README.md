@@ -3,14 +3,14 @@
 [![npm](https://img.shields.io/npm/v/option-t.svg?style=flat)](https://www.npmjs.com/package/option-t)
 [![CI Status (GitHub Actions)](https://github.com/karen-irc/option-t/workflows/CI/badge.svg)](https://github.com/karen-irc/option-t/actions?query=workflow%3ACI)
 
-* This library provides a **toolkit for _nullable_ types in ECMAScript**
+* **This library provides a toolkit for _nullable_ types in ECMAScript**.
     - `T | null`
     - `T | undefined`
     - `T | null | undefined`
     - [_Result type_](https://en.wikipedia.org/wiki/Result_type)
     - Tagged [_Option type_](https://en.wikipedia.org/wiki/Option_type)
 * **APIs are inspired by Rust Language's [`Option<T>`](https://doc.rust-lang.org/std/option/) and [`Result<T, E>`](https://doc.rust-lang.org/std/result/)**.
-* This library **helps to sort the "nullable" convention** in your project.
+* **This library helps to sort the "nullable" convention in your project**.
 * **TypeScript friendly APIs**.
     * We recommend to use this with some static type systems like TypeScript.
 * **Zero dependency**.
@@ -25,9 +25,9 @@
 
 This library provides these conventions for your project:
 
-1. Uniform an expression of "none" value in JavaScript
-2. Uniform a way to carry error information instead of throwing an error.
-3. Provide a utility function to handle _1_ and _2_ easily.
+1. Uniform an expression of _"none"_ value in JavaScript.
+2. Uniform a way to carry error information instead of throwing an error by _result type_.
+3. Provide various utility functions to handle _1_ and _2_ easily.
 
 And Rust's [`std::option`](https://doc.rust-lang.org/std/option/) and [`std::result`](https://doc.rust-lang.org/std/result/) are
 suggestive to achieve these conventions in practice. Thus this package is inspired by their design.
@@ -129,8 +129,6 @@ yarn add option-t --save
         * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/)
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
 * [Wrapper objects](./docs/wrapper_objects.md) ([__*deprecated*__](https://github.com/karen-irc/option-t/issues/459)).
-    * [`ClassicOption<T>`](./src/ClassOption/ClassicOption.d.ts)
-    * [`ClassicResult<T, E>`](./src/ClassResult/ClassicResult.d.ts)
 
 
 ### Utility functions for some types.
@@ -169,7 +167,7 @@ This does not have any property method on its prototype. But this allows no incl
 
 ### How to import
 
-**You can use [these paths](./docs/public_api_list.md).**
+**You can use [these paths](./docs/public_api_list.md) in both of CommonJS style and ES Module style.**
 
 This package provides some sub directories to import various functions (e.g. `option-t/PlainResult`).
 Each of them includes the same directory hierarchy with [under `src`/](./src/).
@@ -181,23 +179,15 @@ For example,
 - If your project uses TypeScript `moduleResolution=node`.
 - If your project uses a classic bundler which does not support `exports` field.
 
-you need to use these paths
+you need to use these paths:
 
-- `option-t/cjs`
+- `option-t/cjs` (__*Deprecated*__)
    - This directory provides only commonjs style modules.
-- `option-t/esm`
+- `option-t/esm` (__*Deprecated*__)
    - This directory privides only ES Modules.
 - `option-t/lib` (__*Deprecated*__)
-   - This directory provides both of an ES module and a commonjs style module.
-   - This directory is provided for a bit of a tricky purpose.
-       - For example, your project distributes a bundled file with some module bundlers that can handle ES module
-         (e.g. rollup or webpack),
-         But your project also use babel or TypeScript compiler's downlevel transform
-         to transform your code from ES module to Commonjs and
-         your project runs unit-tests for transformed code with plain Node.js which only use `require()`.
-   - _Please don't use this path if you don't have to use this_.
-       - After Node.js v13.2, we recommend to use ES Module supported natively.
-    - ⚠️ **This will be removed in the future major release** (tracking issue is [#808](https://github.com/karen-irc/option-t/issues/808)).
+    - This directory provides both of an ES Module and a CommonJS style module.
+    - _This is just for backward compatibility and for a smooth migration. Basically, you should switch to `option-t/BarFoo` style path_.
         - If you're using this, please migrate by following steps.
             - `option-t/lib/Option`: Use `option-t/esm/Option` or `option-t/cjs/Option`.
             - `option-t/lib/Result`: Use `option-t/esm/Result` or `option-t/cjs/Result`.
