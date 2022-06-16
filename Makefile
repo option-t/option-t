@@ -140,9 +140,7 @@ cp_readme: clean_dist
 
 .PHONY: generate_manifest
 generate_manifest: clean_dist
-	INPUT_MANIFEST_PATH=$(CURDIR)/package.json \
-    OUTDIR=$(DIST_DIR) \
-    $(NODE_BIN) $(CURDIR)/tools/package_json_rewriter/main.mjs
+	$(NODE_BIN) $(CURDIR)/tools/package_json_rewriter/main.mjs --input-manifest-path $(CURDIR)/package.json --destination $(DIST_DIR)
 
 
 ###########################
