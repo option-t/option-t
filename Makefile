@@ -179,7 +179,7 @@ test_distribution_contain_all: build
 
 .PHONY: run_test_distribution_contain_all
 run_test_distribution_contain_all:
-	OUTDIR=$(DIST_DIR) $(NODE_BIN) $(CURDIR)/tools/test_package_contains_expected_all.mjs
+	$(NODE_BIN) $(CURDIR)/tools/test_package_contains_expected_all.mjs --target $(DIST_DIR)
 
 .PHONY: test_esmodule_path_rewrite
 test_esmodule_path_rewrite: build
