@@ -59,7 +59,7 @@ clean_npmrc:
 # Build
 ###########################
 .PHONY: build
-build: __build cp_docs cp_changelog cp_license cp_readme generate_manifest
+build: __build cp_docs cp_changelog cp_license cp_readme generate_manifest ## Build artifacts required to publish packages.
 
 .PHONY: __build
 __build: build_cjs build_esm build_mixedlib ## Build all targets.
