@@ -2,7 +2,7 @@ export type NotNullAndUndefined<T> = T extends null | undefined ? never : T;
 
 export type Maybe<T> = T | null | undefined;
 
-export function isNotNullAndUndefined<T>(input: Maybe<T>): input is T {
+export function isNotNullAndUndefined<T>(input: Maybe<T>): input is NotNullAndUndefined<T> {
     return input !== undefined && input !== null;
 }
 

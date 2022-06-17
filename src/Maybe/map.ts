@@ -1,7 +1,7 @@
 import { expectNotNullAndUndefined } from './expect';
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';
 import { TransformFn } from '../internal/Function';
-import { Maybe, isNullOrUndefined } from './Maybe';
+import { Maybe, isNullOrUndefined, NotNullAndUndefined } from './Maybe';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null` and `undefined`.
@@ -11,7 +11,10 @@ import { Maybe, isNullOrUndefined } from './Maybe';
  *      * If you'd like return `Maybe<*>` as `U`, use `andThen()`.
  *      * If the result of _transformer_ is `null` or `undefined`, this throw an `Error`.
  */
-export function mapForMaybe<T, U>(input: Maybe<T>, transformer: TransformFn<T, U>): Maybe<U> {
+export function mapForMaybe<T, U>(
+    input: Maybe<T>,
+    transformer: TransformFn<T, NotNullAndUndefined<U>>
+): Maybe<U> {
     if (isNullOrUndefined(input)) {
         return input;
     }

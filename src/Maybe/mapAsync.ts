@@ -2,7 +2,7 @@ import { assertIsPromise } from '../internal/assert';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
 import type { AsyncTransformFn } from '../internal/Function';
 
-import { Maybe, isNullOrUndefined } from './Maybe';
+import { Maybe, isNullOrUndefined, NotNullAndUndefined } from './Maybe';
 import { expectNotNullAndUndefined } from './expect';
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';
 
@@ -24,7 +24,7 @@ function check<T>(value: Maybe<T>): T {
  */
 export function mapAsyncForMaybe<T, U>(
     input: Maybe<T>,
-    transformer: AsyncTransformFn<T, U>
+    transformer: AsyncTransformFn<T, NotNullAndUndefined<U>>
 ): Promise<Maybe<U>> {
     if (isNullOrUndefined(input)) {
         return Promise.resolve(input);

@@ -1,5 +1,5 @@
 import { EffectFn } from '../internal/Function';
-import { Maybe } from './Maybe';
+import { isNotNullAndUndefined, Maybe, NotNullAndUndefined } from './Maybe';
 
 /**
  *  * Return _input_ directly.
@@ -9,8 +9,11 @@ import { Maybe } from './Maybe';
  *  * This was added to sort with others or future enhancement to accept chaining functions.
  *    We recommend to use simple `if` statement or similar way and they would be more efficient.
  */
-export function inspectMaybe<T>(input: Maybe<T>, effector: EffectFn<T>): Maybe<T> {
-    if (input !== undefined && input !== null) {
+export function inspectMaybe<T>(
+    input: Maybe<T>,
+    effector: EffectFn<NotNullAndUndefined<T>>
+): Maybe<T> {
+    if (isNotNullAndUndefined(input)) {
         effector(input);
     }
 

@@ -1,4 +1,4 @@
-import { Maybe } from './Maybe';
+import { Maybe, NotNullAndUndefined } from './Maybe';
 import { expectNotNullAndUndefined } from './expect';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
@@ -19,9 +19,9 @@ import { TransformFn } from '../internal/Function';
  */
 export function mapOrForMaybe<T, U>(
     input: Maybe<T>,
-    defaultValue: U,
-    transformer: TransformFn<T, U>
-): U {
+    defaultValue: NotNullAndUndefined<U>,
+    transformer: TransformFn<T, NotNullAndUndefined<U>>
+): NotNullAndUndefined<U> {
     let result: U;
     let msg = '';
     if (input !== undefined && input !== null) {

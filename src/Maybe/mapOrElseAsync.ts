@@ -9,7 +9,7 @@ import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
 } from './ErrorMessage';
-import { Maybe, isNotNullAndUndefined } from './Maybe';
+import { Maybe, isNotNullAndUndefined, NotNullAndUndefined } from './Maybe';
 import { expectNotNullAndUndefined } from './expect';
 
 /**
@@ -25,9 +25,9 @@ import { expectNotNullAndUndefined } from './expect';
  */
 export function mapOrElseAsyncForMaybe<T, U>(
     input: Maybe<T>,
-    recoverer: AsyncRecoveryFn<U>,
-    transformer: AsyncTransformFn<T, U>
-): Promise<U> {
+    recoverer: AsyncRecoveryFn<NotNullAndUndefined<U>>,
+    transformer: AsyncTransformFn<T, NotNullAndUndefined<U>>
+): Promise<NotNullAndUndefined<U>> {
     let result: Promise<U>;
     let messageForPromiseCheck = '';
     let messageForExpect = '';
