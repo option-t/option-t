@@ -1,4 +1,4 @@
-import { Nullable } from './Nullable';
+import { type Nullable, type NotNull, isNotNull } from './Nullable';
 import { expectNotNull } from './expect';
 import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 
@@ -9,8 +9,8 @@ import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE } from './ErrorMe
  *  * _defaultValue_ must not be `Nullable<*>`.
  *  * If the _defaultValue_ is `null`, throw `TypeError`.
  */
-export function unwrapOrFromNullable<T>(input: Nullable<T>, defaultValue: T): T {
-    if (input !== null) {
+export function unwrapOrFromNullable<T>(input: Nullable<T>, defaultValue: NotNull<T>): NotNull<T> {
+    if (isNotNull(input)) {
         return input;
     }
 

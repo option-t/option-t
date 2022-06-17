@@ -1,5 +1,5 @@
 import type { AsyncTransformFn } from '../internal/Function';
-import { Nullable, isNull } from './Nullable';
+import { type Nullable, isNull, type NotNull } from './Nullable';
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 import { expectNotNull } from './expect';
 import { assertIsPromise } from '../internal/assert';
@@ -20,7 +20,7 @@ function check<T>(value: Nullable<T>): T {
  */
 export function mapAsyncForNullable<T, U>(
     input: Nullable<T>,
-    transformer: AsyncTransformFn<T, U>
+    transformer: AsyncTransformFn<T, NotNull<U>>
 ): Promise<Nullable<U>> {
     if (isNull(input)) {
         return Promise.resolve(input);

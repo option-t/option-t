@@ -1,7 +1,7 @@
 import { assertIsPromise } from '../internal/assert';
 import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
 import type { AsyncRecoveryFn } from '../internal/Function';
-import type { Nullable } from './Nullable';
+import { isNotNull, type NotNull, type Nullable } from './Nullable';
 import { expectNotNull } from './expect';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 
@@ -20,13 +20,13 @@ function check<T>(value: Nullable<T>): T {
  */
 export function unwrapOrElseAsyncFromNullable<T>(
     input: Nullable<T>,
-    recoverer: AsyncRecoveryFn<T>
-): Promise<T> {
-    if (input !== null) {
-        return Promise.resolve<T>(input);
+    recoverer: AsyncRecoveryFn<NotNull<T>>
+): Promise<NotNull<T>> {
+    if (isNotNull(input)) {
+        return Promise.resolve<NotNull<T>>(input);
     }
 
-    const fallback: Promise<T> = recoverer();
+    const fallback: Promise<NotNull<T>> = recoverer();
 
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
