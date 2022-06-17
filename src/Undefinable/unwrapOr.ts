@@ -1,4 +1,4 @@
-import { Undefinable } from './Undefinable';
+import { isNotUndefined, NotUndefined, Undefinable } from './Undefinable';
 import { expectNotUndefined } from './expect';
 import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 
@@ -9,12 +9,15 @@ import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './Erro
  *  * _defaultValue_ must not be `Undefinable<*>`.
  *  * If the result of _defaultValue_ is `undefined`, throw `TypeError`.
  */
-export function unwrapOrFromUndefinable<T>(input: Undefinable<T>, defaultValue: T): T {
-    if (input !== undefined) {
+export function unwrapOrFromUndefinable<T>(
+    input: Undefinable<T>,
+    defaultValue: NotUndefined<T>
+): NotUndefined<T> {
+    if (isNotUndefined(input)) {
         return input;
     }
 
-    const passed: T = expectNotUndefined(
+    const passed = expectNotUndefined(
         defaultValue,
         ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE
     );

@@ -1,5 +1,5 @@
 import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/Function';
-import { Undefinable, isNotUndefined } from './Undefinable';
+import { Undefinable, isNotUndefined, NotUndefined } from './Undefinable';
 import { assertIsPromise } from '../internal/assert';
 import {
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
@@ -24,9 +24,9 @@ import { expectNotUndefined } from './expect';
  */
 export function mapOrElseAsyncForUndefinable<T, U>(
     input: Undefinable<T>,
-    recoverer: AsyncRecoveryFn<U>,
-    transformer: AsyncTransformFn<T, U>
-): Promise<U> {
+    recoverer: AsyncRecoveryFn<NotUndefined<U>>,
+    transformer: AsyncTransformFn<T, NotUndefined<U>>
+): Promise<NotUndefined<U>> {
     let result: Promise<U>;
     let messageForPromiseCheck = '';
     let messageForExpect = '';

@@ -9,5 +9,5 @@ export function andForUndefinable<T, U>(a: Undefinable<T>, b: Undefinable<U>): U
         return b;
     }
 
-    return a;
+    return undefined;
 }

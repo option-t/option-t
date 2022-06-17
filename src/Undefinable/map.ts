@@ -1,7 +1,7 @@
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 import { expectNotUndefined } from './expect';
 import { TransformFn } from '../internal/Function';
-import { Undefinable, isUndefined } from './Undefinable';
+import { Undefinable, isUndefined, NotUndefined } from './Undefinable';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `undefined`,
@@ -13,7 +13,7 @@ import { Undefinable, isUndefined } from './Undefinable';
  */
 export function mapForUndefinable<T, U>(
     input: Undefinable<T>,
-    transformer: TransformFn<T, U>
+    transformer: TransformFn<T, NotUndefined<U>>
 ): Undefinable<U> {
     if (isUndefined(input)) {
         return input;

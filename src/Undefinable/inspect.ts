@@ -1,5 +1,5 @@
 import { EffectFn } from '../internal/Function';
-import { Undefinable } from './Undefinable';
+import { isNotUndefined, NotUndefined, Undefinable } from './Undefinable';
 
 /**
  *  * Return _input_ directly.
@@ -11,9 +11,9 @@ import { Undefinable } from './Undefinable';
  */
 export function inspectUndefinable<T>(
     input: Undefinable<T>,
-    effector: EffectFn<T>
+    effector: EffectFn<NotUndefined<T>>
 ): Undefinable<T> {
-    if (input !== undefined) {
+    if (isNotUndefined(input)) {
         effector(input);
     }
     return input;
