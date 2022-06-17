@@ -17,7 +17,7 @@
 * **Tree shakable completely**.
 * **ES Module fully compatbile**.
     * Support Node.js' ES Module.
-    * Of course, we provides CommonJS.
+    * Of course, we provides CommonJS too.
 
 
 
@@ -121,7 +121,9 @@ yarn add option-t --save
 
 ## Usage & APIs
 
-* Utility functions for these types (TypeScript ready).
+All APIs are TypeScript ready.
+
+* Utility functions for these types.
     * [`Nullable<T>` (`T | null`)](./src/Nullable/)
     * [`Undefinable<T>` (`T | undefined`)](./src/Undefinable/)
     * [`Maybe<T>` (`T | null | undefined`)](./src/Maybe/)
@@ -160,7 +162,7 @@ This can express that there is some values or some error information _as a plain
 This does not have any property method on its prototype. But this allows no including unused methods of them.
 
 
-### Wrapper objects (deprecated)
+#### Wrapper objects (deprecated)
 
 [See this guide](./docs/wrapper_objects.md).
 
@@ -181,11 +183,11 @@ For example,
 
 you need to use these paths:
 
-- `option-t/cjs` (__*Deprecated*__)
+- `option-t/cjs/**` (__*Deprecated*__)
    - This directory provides only commonjs style modules.
-- `option-t/esm` (__*Deprecated*__)
+- `option-t/esm/**` (__*Deprecated*__)
    - This directory privides only ES Modules.
-- `option-t/lib` (__*Deprecated*__)
+- `option-t/lib/**` (__*Deprecated*__)
     - This directory provides both of an ES Module and a CommonJS style module.
     - _This is just for backward compatibility and for a smooth migration. Basically, you should switch to `option-t/BarFoo` style path_.
         - If you're using this, please migrate by following steps.
