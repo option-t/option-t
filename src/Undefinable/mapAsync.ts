@@ -1,5 +1,5 @@
 import type { AsyncTransformFn } from '../internal/Function';
-import { Undefinable, isUndefined } from './Undefinable';
+import { Undefinable, isUndefined, NotUndefined } from './Undefinable';
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
 import { expectNotUndefined } from './expect';
 import { assertIsPromise } from '../internal/assert';
@@ -23,7 +23,7 @@ function check<T>(value: Undefinable<T>): T {
  */
 export function mapAsyncForUndefinable<T, U>(
     input: Undefinable<T>,
-    transformer: AsyncTransformFn<T, U>
+    transformer: AsyncTransformFn<T, NotUndefined<U>>
 ): Promise<Undefinable<U>> {
     if (isUndefined(input)) {
         return Promise.resolve(input);

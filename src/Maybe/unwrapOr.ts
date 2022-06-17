@@ -1,4 +1,4 @@
-import { Maybe } from './Maybe';
+import { isNotNullAndUndefined, Maybe, NotNullAndUndefined } from './Maybe';
 import { expectNotNullAndUndefined } from './expect';
 import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './ErrorMessage';
 
@@ -9,8 +9,11 @@ import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './ErrorMessa
  *  * _defaultValue_ must not be `Maybe<*>`.
  *  * If the _defaultValue_ is `null` or `undefined`, throw `TypeError`.
  */
-export function unwrapOrFromMaybe<T>(input: Maybe<T>, defaultValue: T): T {
-    if (input !== undefined && input !== null) {
+export function unwrapOrFromMaybe<T>(
+    input: Maybe<T>,
+    defaultValue: NotNullAndUndefined<T>
+): NotNullAndUndefined<T> {
+    if (isNotNullAndUndefined(input)) {
         return input;
     }
 

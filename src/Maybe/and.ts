@@ -1,13 +1,17 @@
-import { Maybe, isNotNullAndUndefined } from './Maybe';
+import { Maybe, isNotNullAndUndefined, isNullOrUndefined } from './Maybe';
 
 /**
  *  Return _b_ if _a_ is not `null` and `undefined`.
  *  Otherwise, return _a_.
  */
 export function andForMaybe<T, U>(a: Maybe<T>, b: Maybe<U>): Maybe<U> {
+    if (isNullOrUndefined(a)) {
+        return a;
+    }
+
     if (isNotNullAndUndefined(a)) {
         return b;
     }
 
-    return a;
+    throw new EvalError('here should be unreachable');
 }

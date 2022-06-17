@@ -1,5 +1,5 @@
 import { RecoveryFn } from '../internal/Function';
-import { Nullable } from './Nullable';
+import { isNotNull, type NotNull, type Nullable } from './Nullable';
 import { expectNotNull } from './expect';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
 
@@ -11,13 +11,16 @@ import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMe
  *      * If you try to recover the value, use `orElse()`
  *  * If the result of _recoverer_ is `null`, throw `TypeError`.
  */
-export function unwrapOrElseFromNullable<T>(input: Nullable<T>, recoverer: RecoveryFn<T>): T {
-    if (input !== null) {
+export function unwrapOrElseFromNullable<T>(
+    input: Nullable<T>,
+    recoverer: RecoveryFn<NotNull<T>>
+): NotNull<T> {
+    if (isNotNull(input)) {
         return input;
     }
 
     const fallback: T = recoverer();
-    const passed: T = expectNotNull(
+    const passed: NotNull<T> = expectNotNull(
         fallback,
         ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE
     );

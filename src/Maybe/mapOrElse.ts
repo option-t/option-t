@@ -4,7 +4,7 @@ import {
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
 } from './ErrorMessage';
 import { TransformFn, RecoveryFn } from '../internal/Function';
-import { Maybe } from './Maybe';
+import { Maybe, NotNullAndUndefined } from './Maybe';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null` and `undefined`.
@@ -19,9 +19,9 @@ import { Maybe } from './Maybe';
  */
 export function mapOrElseForMaybe<T, U>(
     input: Maybe<T>,
-    recoverer: RecoveryFn<U>,
-    transformer: TransformFn<T, U>
-): U {
+    recoverer: RecoveryFn<NotNullAndUndefined<U>>,
+    transformer: TransformFn<T, NotNullAndUndefined<U>>
+): NotNullAndUndefined<U> {
     let result: U;
     let msg = '';
     if (input !== undefined && input !== null) {

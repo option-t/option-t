@@ -7,7 +7,7 @@ import {
     ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE,
 } from './ErrorMessage';
 import { expectNotNullAndUndefined } from './expect';
-import { Maybe, isNullOrUndefined } from './Maybe';
+import { Maybe, isNullOrUndefined, NotNullAndUndefined } from './Maybe';
 
 function check<T>(value: Maybe<T>): T {
     const passed = expectNotNullAndUndefined(
@@ -30,9 +30,9 @@ function check<T>(value: Maybe<T>): T {
  */
 export function mapOrAsyncForMaybe<T, U>(
     input: Maybe<T>,
-    defaultValue: U,
-    transformer: AsyncTransformFn<T, U>
-): Promise<U> {
+    defaultValue: NotNullAndUndefined<U>,
+    transformer: AsyncTransformFn<T, NotNullAndUndefined<U>>
+): Promise<NotNullAndUndefined<U>> {
     if (isNullOrUndefined(input)) {
         const nonNullDefault = expectNotNullAndUndefined(
             defaultValue,
@@ -41,12 +41,12 @@ export function mapOrAsyncForMaybe<T, U>(
         return Promise.resolve(nonNullDefault);
     }
 
-    const result: Promise<U> = transformer(input);
+    const result = transformer(input);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
     // and they mistake to use this.
     assertIsPromise(result, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
 
-    const passed: Promise<U> = result.then(check);
+    const passed = result.then(check);
     return passed;
 }

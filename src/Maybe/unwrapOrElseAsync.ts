@@ -2,7 +2,7 @@ import { assertIsPromise } from '../internal/assert';
 import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
 import type { AsyncRecoveryFn } from '../internal/Function';
 
-import { Maybe, isNotNullAndUndefined } from './Maybe';
+import { Maybe, isNotNullAndUndefined, NotNullAndUndefined } from './Maybe';
 import { expectNotNullAndUndefined } from './expect';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';
 
@@ -23,13 +23,13 @@ function check<T>(value: Maybe<T>): T {
  */
 export function unwrapOrElseAsyncFromMaybe<T>(
     input: Maybe<T>,
-    recoverer: AsyncRecoveryFn<T>
-): Promise<T> {
+    recoverer: AsyncRecoveryFn<NotNullAndUndefined<T>>
+): Promise<NotNullAndUndefined<T>> {
     if (isNotNullAndUndefined(input)) {
         return Promise.resolve(input);
     }
 
-    const fallback: Promise<T> = recoverer();
+    const fallback = recoverer();
 
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js

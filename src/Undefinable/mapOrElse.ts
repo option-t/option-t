@@ -4,7 +4,7 @@ import {
 } from './ErrorMessage';
 import { expectNotUndefined } from './expect';
 import { RecoveryFn, TransformFn } from '../internal/Function';
-import { Undefinable } from './Undefinable';
+import { NotUndefined, Undefinable } from './Undefinable';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `undefined`.
@@ -19,9 +19,9 @@ import { Undefinable } from './Undefinable';
  */
 export function mapOrElseForUndefinable<T, U>(
     input: Undefinable<T>,
-    recoverer: RecoveryFn<U>,
-    transformer: TransformFn<T, U>
-): U {
+    recoverer: RecoveryFn<NotUndefined<U>>,
+    transformer: TransformFn<T, NotUndefined<U>>
+): NotUndefined<U> {
     let result: U;
     let msg = '';
     if (input !== undefined) {
@@ -31,6 +31,6 @@ export function mapOrElseForUndefinable<T, U>(
         result = recoverer();
         msg = ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE;
     }
-    const passed: U = expectNotUndefined(result, msg);
+    const passed = expectNotUndefined(result, msg);
     return passed;
 }

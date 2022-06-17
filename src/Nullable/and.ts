@@ -9,5 +9,5 @@ export function andForNullable<T, U>(a: Nullable<T>, b: Nullable<U>): Nullable<U
         return b;
     }
 
-    return a;
+    return null;
 }

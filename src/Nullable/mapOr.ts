@@ -1,4 +1,4 @@
-import { Nullable } from './Nullable';
+import { NotNull, Nullable } from './Nullable';
 import { expectNotNull } from './expect';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
@@ -19,9 +19,9 @@ import { TransformFn } from '../internal/Function';
  */
 export function mapOrForNullable<T, U>(
     input: Nullable<T>,
-    defaultValue: U,
-    transformer: TransformFn<T, U>
-): U {
+    defaultValue: NotNull<U>,
+    transformer: TransformFn<T, NotNull<U>>
+): NotNull<U> {
     let result: U;
     let msg = '';
     if (input !== null) {
@@ -31,6 +31,6 @@ export function mapOrForNullable<T, U>(
         result = defaultValue;
         msg = ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE;
     }
-    const passed: U = expectNotNull(result, msg);
+    const passed = expectNotNull(result, msg);
     return passed;
 }

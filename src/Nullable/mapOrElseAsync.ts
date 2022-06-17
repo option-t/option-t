@@ -1,5 +1,5 @@
 import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/Function';
-import { Nullable, isNotNull } from './Nullable';
+import { Nullable, isNotNull, NotNull } from './Nullable';
 import { assertIsPromise } from '../internal/assert';
 import {
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
@@ -24,9 +24,9 @@ import { expectNotNull } from './expect';
  */
 export function mapOrElseAsyncForNullable<T, U>(
     input: Nullable<T>,
-    recoverer: AsyncRecoveryFn<U>,
-    transformer: AsyncTransformFn<T, U>
-): Promise<U> {
+    recoverer: AsyncRecoveryFn<NotNull<U>>,
+    transformer: AsyncTransformFn<T, NotNull<U>>
+): Promise<NotNull<U>> {
     let result: Nullable<Promise<U>> = null;
     let messageForPromiseCheck = '';
     let messageForExpect = '';

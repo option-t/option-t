@@ -2,7 +2,7 @@ import { assertIsPromise } from '../internal/assert';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
 import type { AsyncTransformFn } from '../internal/Function';
 
-import { Undefinable, isUndefined } from './Undefinable';
+import { Undefinable, isUndefined, NotUndefined } from './Undefinable';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
     ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE,
@@ -30,9 +30,9 @@ function check<T>(value: Undefinable<T>): T {
  */
 export function mapOrAsyncForUndefinable<T, U>(
     input: Undefinable<T>,
-    defaultValue: U,
-    transformer: AsyncTransformFn<T, U>
-): Promise<U> {
+    defaultValue: NotUndefined<U>,
+    transformer: AsyncTransformFn<T, NotUndefined<U>>
+): Promise<NotUndefined<U>> {
     if (isUndefined(input)) {
         const nonNullDefault = expectNotUndefined(
             defaultValue,
@@ -41,12 +41,12 @@ export function mapOrAsyncForUndefinable<T, U>(
         return Promise.resolve(nonNullDefault);
     }
 
-    const result: Promise<U> = transformer(input);
+    const result = transformer(input);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
     // and they mistake to use this.
     assertIsPromise(result, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
 
-    const passed: Promise<U> = result.then(check);
+    const passed = result.then(check);
     return passed;
 }

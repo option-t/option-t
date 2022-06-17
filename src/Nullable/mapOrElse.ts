@@ -4,7 +4,7 @@ import {
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
 } from './ErrorMessage';
 import { TransformFn, RecoveryFn } from '../internal/Function';
-import { Nullable } from './Nullable';
+import { isNotNull, NotNull, Nullable } from './Nullable';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null`.
@@ -19,18 +19,18 @@ import { Nullable } from './Nullable';
  */
 export function mapOrElseForNullable<T, U>(
     input: Nullable<T>,
-    recoverer: RecoveryFn<U>,
-    transformer: TransformFn<T, U>
-): U {
+    recoverer: RecoveryFn<NotNull<U>>,
+    transformer: TransformFn<T, NotNull<U>>
+): NotNull<U> {
     let result: U;
     let msg = '';
-    if (input !== null) {
+    if (isNotNull(input)) {
         result = transformer(input);
         msg = ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE;
     } else {
         result = recoverer();
         msg = ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE;
     }
-    const passed: U = expectNotNull(result, msg);
+    const passed = expectNotNull(result, msg);
     return passed;
 }
