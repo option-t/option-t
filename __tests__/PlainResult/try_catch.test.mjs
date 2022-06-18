@@ -5,8 +5,11 @@ import { tryCatchIntoResult } from '../../__dist/esm/PlainResult/tryCatch.mjs';
 import { unwrapErrFromResult, unwrapOkFromResult } from '../../__dist/esm/PlainResult/unwrap.mjs';
 
 test('output=Ok(T)', (t) => {
+    t.plan(3);
+
     const EXPECTED = Math.random();
     const actual = tryCatchIntoResult(() => {
+        t.pass();
         return EXPECTED;
     });
 
@@ -15,8 +18,11 @@ test('output=Ok(T)', (t) => {
 });
 
 test('output=Err(unknown)', (t) => {
+    t.plan(3);
+
     const EXPECTED = new Error(Math.random());
     const actual = tryCatchIntoResult(() => {
+        t.pass();
         throw EXPECTED;
     });
 

@@ -5,8 +5,11 @@ import { tryCatchIntoResultAsync } from '../../__dist/esm/PlainResult/tryCatchAs
 import { unwrapErrFromResult, unwrapOkFromResult } from '../../__dist/esm/PlainResult/unwrap.mjs';
 
 test('output=Ok(T)', async (t) => {
+    t.plan(4);
+
     const EXPECTED = Math.random();
     const result = tryCatchIntoResultAsync(async () => {
+        t.pass();
         return EXPECTED;
     });
 
@@ -18,8 +21,11 @@ test('output=Ok(T)', async (t) => {
 });
 
 test('output=Err(unknown)', async (t) => {
+    t.plan(4);
+
     const EXPECTED = new Error(Math.random());
     const result = tryCatchIntoResultAsync(async () => {
+        t.pass();
         throw EXPECTED;
     });
 
