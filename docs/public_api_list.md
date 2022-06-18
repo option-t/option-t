@@ -148,6 +148,7 @@
 - [option-t/Undefinable/orElse](../src/Undefinable/orElse.ts)
 - [option-t/Undefinable/orElseAsync](../src/Undefinable/orElseAsync.ts)
 - [option-t/Undefinable/tap](../src/Undefinable/tap.ts)
+- [option-t/Undefinable/toNullable](../src/Undefinable/toNullable.ts)
 - [option-t/Undefinable/Undefinable](../src/Undefinable/Undefinable.ts)
 - [option-t/Undefinable/unwrap](../src/Undefinable/unwrap.ts)
 - [option-t/Undefinable/unwrapOr](../src/Undefinable/unwrapOr.ts)
