@@ -109,6 +109,16 @@ export const apiTable = Object.freeze({
             'tapMaybe'
         ]
     },
+    'Maybe/toNullable': {
+        'exports': [
+            'toNullableFromMaybe'
+        ]
+    },
+    'Maybe/toUndefinable': {
+        'exports': [
+            'toUndefinableFromMaybe'
+        ]
+    },
     'Maybe/unwrap': {
         'exports': [
             'unwrapMaybe'
@@ -238,6 +248,11 @@ export const apiTable = Object.freeze({
     'Nullable/tap': {
         'exports': [
             'tapNullable'
+        ]
+    },
+    'Nullable/toUndefinable': {
+        'exports': [
+            'toUndefinableFromNullable'
         ]
     },
     'Nullable/unwrap': {
@@ -767,6 +782,11 @@ export const apiTable = Object.freeze({
             'tapUndefinable'
         ]
     },
+    'Undefinable/toNullable': {
+        'exports': [
+            'toNullableFromUndefinable'
+        ]
+    },
     'Undefinable/Undefinable': {
         'exports': [
             'isNotUndefined',
@@ -838,6 +858,8 @@ export const legacyApiTable = Object.freeze({
     'cjs/Maybe/orElse': COMPAT_DESCRIPTOR,
     'cjs/Maybe/orElseAsync': COMPAT_DESCRIPTOR,
     'cjs/Maybe/tap': COMPAT_DESCRIPTOR,
+    'cjs/Maybe/toNullable': COMPAT_DESCRIPTOR,
+    'cjs/Maybe/toUndefinable': COMPAT_DESCRIPTOR,
     'cjs/Maybe/unwrap': COMPAT_DESCRIPTOR,
     'cjs/Maybe/unwrapOr': COMPAT_DESCRIPTOR,
     'cjs/Maybe/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -862,6 +884,7 @@ export const legacyApiTable = Object.freeze({
     'cjs/Nullable/orElse': COMPAT_DESCRIPTOR,
     'cjs/Nullable/orElseAsync': COMPAT_DESCRIPTOR,
     'cjs/Nullable/tap': COMPAT_DESCRIPTOR,
+    'cjs/Nullable/toUndefinable': COMPAT_DESCRIPTOR,
     'cjs/Nullable/unwrap': COMPAT_DESCRIPTOR,
     'cjs/Nullable/unwrapOr': COMPAT_DESCRIPTOR,
     'cjs/Nullable/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -951,6 +974,7 @@ export const legacyApiTable = Object.freeze({
     'cjs/Undefinable/orElse': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/orElseAsync': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/tap': COMPAT_DESCRIPTOR,
+    'cjs/Undefinable/toNullable': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/unwrap': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/unwrapOr': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -976,6 +1000,8 @@ export const legacyApiTable = Object.freeze({
     'esm/Maybe/orElse': COMPAT_DESCRIPTOR,
     'esm/Maybe/orElseAsync': COMPAT_DESCRIPTOR,
     'esm/Maybe/tap': COMPAT_DESCRIPTOR,
+    'esm/Maybe/toNullable': COMPAT_DESCRIPTOR,
+    'esm/Maybe/toUndefinable': COMPAT_DESCRIPTOR,
     'esm/Maybe/unwrap': COMPAT_DESCRIPTOR,
     'esm/Maybe/unwrapOr': COMPAT_DESCRIPTOR,
     'esm/Maybe/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -1000,6 +1026,7 @@ export const legacyApiTable = Object.freeze({
     'esm/Nullable/orElse': COMPAT_DESCRIPTOR,
     'esm/Nullable/orElseAsync': COMPAT_DESCRIPTOR,
     'esm/Nullable/tap': COMPAT_DESCRIPTOR,
+    'esm/Nullable/toUndefinable': COMPAT_DESCRIPTOR,
     'esm/Nullable/unwrap': COMPAT_DESCRIPTOR,
     'esm/Nullable/unwrapOr': COMPAT_DESCRIPTOR,
     'esm/Nullable/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -1089,6 +1116,7 @@ export const legacyApiTable = Object.freeze({
     'esm/Undefinable/orElse': COMPAT_DESCRIPTOR,
     'esm/Undefinable/orElseAsync': COMPAT_DESCRIPTOR,
     'esm/Undefinable/tap': COMPAT_DESCRIPTOR,
+    'esm/Undefinable/toNullable': COMPAT_DESCRIPTOR,
     'esm/Undefinable/unwrap': COMPAT_DESCRIPTOR,
     'esm/Undefinable/unwrapOr': COMPAT_DESCRIPTOR,
     'esm/Undefinable/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -1114,6 +1142,8 @@ export const legacyApiTable = Object.freeze({
     'lib/Maybe/orElse': COMPAT_DESCRIPTOR,
     'lib/Maybe/orElseAsync': COMPAT_DESCRIPTOR,
     'lib/Maybe/tap': COMPAT_DESCRIPTOR,
+    'lib/Maybe/toNullable': COMPAT_DESCRIPTOR,
+    'lib/Maybe/toUndefinable': COMPAT_DESCRIPTOR,
     'lib/Maybe/unwrap': COMPAT_DESCRIPTOR,
     'lib/Maybe/unwrapOr': COMPAT_DESCRIPTOR,
     'lib/Maybe/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -1138,6 +1168,7 @@ export const legacyApiTable = Object.freeze({
     'lib/Nullable/orElse': COMPAT_DESCRIPTOR,
     'lib/Nullable/orElseAsync': COMPAT_DESCRIPTOR,
     'lib/Nullable/tap': COMPAT_DESCRIPTOR,
+    'lib/Nullable/toUndefinable': COMPAT_DESCRIPTOR,
     'lib/Nullable/unwrap': COMPAT_DESCRIPTOR,
     'lib/Nullable/unwrapOr': COMPAT_DESCRIPTOR,
     'lib/Nullable/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -1227,6 +1258,7 @@ export const legacyApiTable = Object.freeze({
     'lib/Undefinable/orElse': COMPAT_DESCRIPTOR,
     'lib/Undefinable/orElseAsync': COMPAT_DESCRIPTOR,
     'lib/Undefinable/tap': COMPAT_DESCRIPTOR,
+    'lib/Undefinable/toNullable': COMPAT_DESCRIPTOR,
     'lib/Undefinable/unwrap': COMPAT_DESCRIPTOR,
     'lib/Undefinable/unwrapOr': COMPAT_DESCRIPTOR,
     'lib/Undefinable/unwrapOrElse': COMPAT_DESCRIPTOR,
