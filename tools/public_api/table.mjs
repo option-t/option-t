@@ -440,6 +440,16 @@ export const apiTable = Object.freeze({
             'tapOption'
         ]
     },
+    'PlainOption/toNullable': {
+        'exports': [
+            'toNullableFromOption'
+        ]
+    },
+    'PlainOption/toUndefinable': {
+        'exports': [
+            'toUndefinableFromOption'
+        ]
+    },
     'PlainOption/unwrap': {
         'exports': [
             'unwrapOption',
@@ -917,6 +927,8 @@ export const legacyApiTable = Object.freeze({
     'cjs/PlainOption/orElseAsync': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/transpose': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/tap': COMPAT_DESCRIPTOR,
+    'cjs/PlainOption/toNullable': COMPAT_DESCRIPTOR,
+    'cjs/PlainOption/toUndefinable': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/unwrap': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/unwrapOr': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -1059,6 +1071,8 @@ export const legacyApiTable = Object.freeze({
     'esm/PlainOption/orElseAsync': COMPAT_DESCRIPTOR,
     'esm/PlainOption/transpose': COMPAT_DESCRIPTOR,
     'esm/PlainOption/tap': COMPAT_DESCRIPTOR,
+    'esm/PlainOption/toNullable': COMPAT_DESCRIPTOR,
+    'esm/PlainOption/toUndefinable': COMPAT_DESCRIPTOR,
     'esm/PlainOption/unwrap': COMPAT_DESCRIPTOR,
     'esm/PlainOption/unwrapOr': COMPAT_DESCRIPTOR,
     'esm/PlainOption/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -1201,6 +1215,8 @@ export const legacyApiTable = Object.freeze({
     'lib/PlainOption/orElseAsync': COMPAT_DESCRIPTOR,
     'lib/PlainOption/transpose': COMPAT_DESCRIPTOR,
     'lib/PlainOption/tap': COMPAT_DESCRIPTOR,
+    'lib/PlainOption/toNullable': COMPAT_DESCRIPTOR,
+    'lib/PlainOption/toUndefinable': COMPAT_DESCRIPTOR,
     'lib/PlainOption/unwrap': COMPAT_DESCRIPTOR,
     'lib/PlainOption/unwrapOr': COMPAT_DESCRIPTOR,
     'lib/PlainOption/unwrapOrElse': COMPAT_DESCRIPTOR,
