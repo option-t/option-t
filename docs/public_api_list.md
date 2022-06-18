@@ -54,6 +54,7 @@
 - [option-t/Nullable/orElse](../src/Nullable/orElse.ts)
 - [option-t/Nullable/orElseAsync](../src/Nullable/orElseAsync.ts)
 - [option-t/Nullable/tap](../src/Nullable/tap.ts)
+- [option-t/Nullable/toUndefinable](../src/Nullable/toUndefinable.ts)
 - [option-t/Nullable/unwrap](../src/Nullable/unwrap.ts)
 - [option-t/Nullable/unwrapOr](../src/Nullable/unwrapOr.ts)
 - [option-t/Nullable/unwrapOrElse](../src/Nullable/unwrapOrElse.ts)

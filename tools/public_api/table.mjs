@@ -240,6 +240,11 @@ export const apiTable = Object.freeze({
             'tapNullable'
         ]
     },
+    'Nullable/toUndefinable': {
+        'exports': [
+            'toUndefinableFromNullable'
+        ]
+    },
     'Nullable/unwrap': {
         'exports': [
             'unwrapNullable'
@@ -867,6 +872,7 @@ export const legacyApiTable = Object.freeze({
     'cjs/Nullable/orElse': COMPAT_DESCRIPTOR,
     'cjs/Nullable/orElseAsync': COMPAT_DESCRIPTOR,
     'cjs/Nullable/tap': COMPAT_DESCRIPTOR,
+    'cjs/Nullable/toUndefinable': COMPAT_DESCRIPTOR,
     'cjs/Nullable/unwrap': COMPAT_DESCRIPTOR,
     'cjs/Nullable/unwrapOr': COMPAT_DESCRIPTOR,
     'cjs/Nullable/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -1006,6 +1012,7 @@ export const legacyApiTable = Object.freeze({
     'esm/Nullable/orElse': COMPAT_DESCRIPTOR,
     'esm/Nullable/orElseAsync': COMPAT_DESCRIPTOR,
     'esm/Nullable/tap': COMPAT_DESCRIPTOR,
+    'esm/Nullable/toUndefinable': COMPAT_DESCRIPTOR,
     'esm/Nullable/unwrap': COMPAT_DESCRIPTOR,
     'esm/Nullable/unwrapOr': COMPAT_DESCRIPTOR,
     'esm/Nullable/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -1145,6 +1152,7 @@ export const legacyApiTable = Object.freeze({
     'lib/Nullable/orElse': COMPAT_DESCRIPTOR,
     'lib/Nullable/orElseAsync': COMPAT_DESCRIPTOR,
     'lib/Nullable/tap': COMPAT_DESCRIPTOR,
+    'lib/Nullable/toUndefinable': COMPAT_DESCRIPTOR,
     'lib/Nullable/unwrap': COMPAT_DESCRIPTOR,
     'lib/Nullable/unwrapOr': COMPAT_DESCRIPTOR,
     'lib/Nullable/unwrapOrElse': COMPAT_DESCRIPTOR,
