@@ -287,6 +287,7 @@
     "cjs/index.js": null,
     "docs/idiom/express_progress.md": null,
     "docs/idiom/from_promise_settled_result.md": null,
+    "docs/idiom/unwrap_ok_or_throw_err.md": null,
     "docs/idiom/README.md": null,
     "docs/operators_reverse_index.md": null,
     "docs/public_api_list.md": null,
