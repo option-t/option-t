@@ -1,4 +1,4 @@
-import type { Nullable } from '../Nullable';
+import type { Nullable } from '../Nullable/Nullable';
 import { type Maybe, isNullOrUndefined } from './Maybe';
 
 export function toNullableFromMaybe<T>(input: Maybe<T>): Nullable<T> {

@@ -1,4 +1,4 @@
-import type { Nullable } from '../Nullable';
+import type { Nullable } from '../Nullable/Nullable';
 import { isUndefined, type Undefinable } from './Undefinable';
 
 export function toNullableFromUndefinable<T>(input: Undefinable<T>): Nullable<T> {
