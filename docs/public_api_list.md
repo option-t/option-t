@@ -28,6 +28,8 @@
 - [option-t/Maybe/orElse](../src/Maybe/orElse.ts)
 - [option-t/Maybe/orElseAsync](../src/Maybe/orElseAsync.ts)
 - [option-t/Maybe/tap](../src/Maybe/tap.ts)
+- [option-t/Maybe/toNullable](../src/Maybe/toNullable.ts)
+- [option-t/Maybe/toUndefinable](../src/Maybe/toUndefinable.ts)
 - [option-t/Maybe/unwrap](../src/Maybe/unwrap.ts)
 - [option-t/Maybe/unwrapOr](../src/Maybe/unwrapOr.ts)
 - [option-t/Maybe/unwrapOrElse](../src/Maybe/unwrapOrElse.ts)
