@@ -629,6 +629,16 @@ export const apiTable = Object.freeze({
             'toOptionFromErr'
         ]
     },
+    'PlainResult/tryCatch': {
+        'exports': [
+            'tryCatchIntoResult',
+        ]
+    },
+    'PlainResult/tryCatchAsync': {
+        'exports': [
+            'tryCatchIntoResultAsync',
+        ]
+    },
     'PlainResult/transpose': {
         'exports': [
             'transposeForResult',
@@ -915,6 +925,8 @@ export const legacyApiTable = Object.freeze({
     'cjs/PlainResult/tap': COMPAT_DESCRIPTOR,
     'cjs/PlainResult/transpose': COMPAT_DESCRIPTOR,
     'cjs/PlainResult/toOption': COMPAT_DESCRIPTOR,
+    'cjs/PlainResult/tryCatch': COMPAT_DESCRIPTOR,
+    'cjs/PlainResult/tryCatchAsync': COMPAT_DESCRIPTOR,
     'cjs/PlainResult/unwrap': COMPAT_DESCRIPTOR,
     'cjs/PlainResult/unwrapOr': COMPAT_DESCRIPTOR,
     'cjs/PlainResult/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -1051,6 +1063,8 @@ export const legacyApiTable = Object.freeze({
     'esm/PlainResult/transpose': COMPAT_DESCRIPTOR,
     'esm/PlainResult/tap': COMPAT_DESCRIPTOR,
     'esm/PlainResult/toOption': COMPAT_DESCRIPTOR,
+    'esm/PlainResult/tryCatch': COMPAT_DESCRIPTOR,
+    'esm/PlainResult/tryCatchAsync': COMPAT_DESCRIPTOR,
     'esm/PlainResult/unwrap': COMPAT_DESCRIPTOR,
     'esm/PlainResult/unwrapOr': COMPAT_DESCRIPTOR,
     'esm/PlainResult/unwrapOrElse': COMPAT_DESCRIPTOR,
@@ -1187,6 +1201,8 @@ export const legacyApiTable = Object.freeze({
     'lib/PlainResult/transpose': COMPAT_DESCRIPTOR,
     'lib/PlainResult/tap': COMPAT_DESCRIPTOR,
     'lib/PlainResult/toOption': COMPAT_DESCRIPTOR,
+    'lib/PlainResult/tryCatch': COMPAT_DESCRIPTOR,
+    'lib/PlainResult/tryCatchAsync': COMPAT_DESCRIPTOR,
     'lib/PlainResult/unwrap': COMPAT_DESCRIPTOR,
     'lib/PlainResult/unwrapOr': COMPAT_DESCRIPTOR,
     'lib/PlainResult/unwrapOrElse': COMPAT_DESCRIPTOR,

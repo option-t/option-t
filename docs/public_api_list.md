@@ -121,6 +121,8 @@
 - [option-t/PlainResult/Result](../src/PlainResult/Result.ts)
 - [option-t/PlainResult/tap](../src/PlainResult/tap.ts)
 - [option-t/PlainResult/toOption](../src/PlainResult/toOption.ts)
+- [option-t/PlainResult/tryCatch](../src/PlainResult/tryCatch.ts)
+- [option-t/PlainResult/tryCatchAsync](../src/PlainResult/tryCatchAsync.ts)
 - [option-t/PlainResult/transpose](../src/PlainResult/transpose.ts)
 - [option-t/PlainResult/unwrap](../src/PlainResult/unwrap.ts)
 - [option-t/PlainResult/unwrapOr](../src/PlainResult/unwrapOr.ts)
