@@ -2,13 +2,22 @@ name: CI
 on:
     push:
         branches:
+            # To supress this action launches twice on conditions which fulfills all of follwings:
+            #   - On pushing a new change to a branch.
+            #   - The branch is opening a pull request
+            #   - The branch is origin repository.
+            # We limits for push events for `main`.
+            # By [this link](https://github.community/t5/GitHub-Actions/How-to-trigger-a-single-build-on-either-push-or-pull-request/m-p/32469#M1144),
+            # we seem that we need to add `branches` for `pull_request` event.
+            # However, actually, we don't have to limit a target branch for pull requests to suppress this problem.
+            # Even if we don't specify it, it triggers this action that pushing to the branch for pull request.
+            - main
             # These branches are used by bors-ng.
             - staging
             - trying
         tags-ignore:
             # Ignore for release/
             - v*.*.*
-    workflow_call:
     pull_request:
 
 # see https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-only-cancel-in-progress-jobs-or-runs-for-the-current-workflow
