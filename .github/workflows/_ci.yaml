@@ -1,20 +1,10 @@
-name: CI
+name: CI workflow template
+# we need separate CI workflow template to achieve that a CI
+# for each of PRs cancellable and one for default branch should run on every commits
+# because the runner will use `concurrency.group` in the callee worfklow which is
+# configured as cancellable if we don't set `concurrency.group` to caller workflow.
 on:
-    push:
-        branches:
-            # These branches are used by bors-ng.
-            - staging
-            - trying
-        tags-ignore:
-            # Ignore for release/
-            - v*.*.*
     workflow_call:
-    pull_request:
-
-# see https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-only-cancel-in-progress-jobs-or-runs-for-the-current-workflow
-concurrency:
-    group: ${{ github.workflow }}-${{ github.ref }}
-    cancel-in-progress: true
 
 jobs:
     install_dependencies:
