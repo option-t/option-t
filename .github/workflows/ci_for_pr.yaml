@@ -1,0 +1,21 @@
+name: CI for each of Pull Requests
+
+on:
+    push:
+        branches:
+            # These branches are used by bors-ng.
+            - staging
+            - trying
+        tags-ignore:
+            # Ignore for release/
+            - v*.*.*
+    pull_request:
+
+# see https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-only-cancel-in-progress-jobs-or-runs-for-the-current-workflow
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    ci:
+        uses: ./.github/workflows/_ci.yaml
