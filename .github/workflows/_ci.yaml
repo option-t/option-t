@@ -6,6 +6,9 @@ name: CI workflow template
 on:
     workflow_call:
 
+permissions:
+    contents: read
+
 jobs:
     install_dependencies:
         runs-on: ubuntu-latest
