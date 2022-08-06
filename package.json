@@ -57,7 +57,7 @@
     "@babel/preset-env": "^7.18.9",
     "@pkgjs/parseargs": "^0.10.0",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
-    "@typescript-eslint/parser": "^5.31.0",
+    "@typescript-eslint/parser": "^5.32.0",
     "ava": "^4.3.1",
     "del-cli": "^5.0.0",
     "eslint": "^8.20.0",
