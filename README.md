@@ -217,12 +217,3 @@ These are written for Rust, but the essence is just same.
 ## License
 
 [MIT License](./LICENSE.MIT)
-
-
-
-
-
-
-## Contribution
-
-- Use [`yarn`](https://yarnpkg.com/) to install dev-dependency toolchains.

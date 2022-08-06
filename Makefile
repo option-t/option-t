@@ -196,7 +196,7 @@ test_package_install: build __run_install_package
 
 .PHONY: __run_install_package
 __run_install_package: build
-	yarn add --dev $(DIST_DIR)
+	$(NPM_CMD) install --save-dev $(DIST_DIR)
 
 .PHONY: run_test_package_install
 run_test_package_install:
@@ -228,7 +228,7 @@ generate_import_path_list_md: ## Generate all public import paths to docs/import
 
 TARGETS_SHOULD_BE_RESET_AFTER_TEST_TO_INSTALL := \
   package.json \
-  yarn.lock
+  package-lock.json
 
 .PHONY: git_reset_to_head
 git_reset_to_head: $(TARGETS_SHOULD_BE_RESET_AFTER_TEST_TO_INSTALL)

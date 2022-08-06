@@ -4,21 +4,21 @@ description: This action prepare CI that restore cachable items
 runs:
     using: composite
     steps:
-        - name: Get yarn cache directory path
+        - name: Get npm cache directory
+          id: npm-cache-dir
           shell: bash
-          id: yarn-cache-dir-path
-          run: echo "::set-output name=dir::$(yarn cache dir)"
+          run: echo "::set-output name=dir::$(npm config get cache)"
         - name: Restore dependencies from cache
-          id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-          uses: actions/cache@v3.0.2
+          uses: actions/cache@v3
+          id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
           with:
-              path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-              key: v0-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+              path: ${{ steps.npm-cache-dir.outputs.dir }}
+              key: v0-${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
               restore-keys: |
-                  v0-${{ runner.os }}-yarn-
+                  v0-${{ runner.os }}-npm-
         - name: Install dependencies
           shell: bash
-          # We only cache `yarn cache dir`, not including `node_modules/`.
-          # thus we need to do `yarn install` to restore `node_modules/` so we need run always this step.
-          # if: steps.yarn-cache.outputs.cache-hit != 'true'
-          run: yarn install
+          # We only cache `npm config get cache`, not including `node_modules/`.
+          # thus we need to do `npm ci` to restore `node_modules/` so we need run always this step.
+          # if: steps.npm-cache.outputs.cache-hit != 'true'
+          run: npm ci
