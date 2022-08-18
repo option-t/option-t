@@ -55,7 +55,6 @@
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
-    "@pkgjs/parseargs": "^0.10.0",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
     "ava": "^4.3.1",

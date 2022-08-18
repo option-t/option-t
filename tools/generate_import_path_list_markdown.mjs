@@ -2,7 +2,7 @@ import * as assert from 'node:assert/strict';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { parseArgs } from '@pkgjs/parseargs';
+import { parseArgs } from 'node:util';
 
 import {
     generateExposedPathSequence,
