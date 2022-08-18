@@ -1060,11 +1060,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@pkgjs/parseargs@^0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.10.0.tgz#02605e33f8bc4d76efae9b660edc67902f9a0396"
-  integrity sha512-gcLFrTC3mgIWeDk+eJySEz9unk8XNKi0i2lyppi36qOrW54wBEtOVdGle71ssm5E+vauNwyGKQuWJ2psgTYRVQ==
-
 "@types/json-schema@^7.0.9":
   version "7.0.9"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
