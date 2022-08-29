@@ -1,6 +1,6 @@
 export default {
     'plugins': [
-        ['./babel-plugin-add-mjs-suffix.mjs', {
+        ['./babel-plugin-add-ext-suffix.mjs', {
             extension: '.mjs',
         }],
     ],
