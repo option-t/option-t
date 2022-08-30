@@ -9,7 +9,7 @@ export default {
     ],
     'plugins': [
         ['./babel-plugin-add-ext-suffix.mjs', {
-            extension: '.js',
+            extension: '.cjs',
         }],
         ['@babel/plugin-transform-modules-commonjs', {
             importInterop: 'none',

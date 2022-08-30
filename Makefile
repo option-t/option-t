@@ -81,7 +81,7 @@ build_cjs: __build_cjs__cp_cjs_to_cjsdir __build_cjs__cp_dts_to_cjsdir ## Build 
 
 .PHONY: __build_cjs__cp_cjs_to_cjsdir
 __build_cjs__cp_cjs_to_cjsdir: __build_cjs__rename_js_to_cjs clean_dist
-	$(NPM_BIN)/babel $(TMP_CJS_DIR) --out-dir $(DIST_COMMONJS_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.cjs.mjs --keep-file-extension
+	$(NPM_BIN)/babel $(TMP_CJS_DIR) --out-dir $(DIST_COMMONJS_DIR) --extensions=.cjs --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.cjs.mjs --keep-file-extension
 
 .PHONY: build_mjs__cp_dts_to_cjsdir
 __build_cjs__cp_dts_to_cjsdir: __build_cjs__create_tmp_cjs clean_dist
@@ -89,7 +89,7 @@ __build_cjs__cp_dts_to_cjsdir: __build_cjs__create_tmp_cjs clean_dist
 
 .PHONY: __build_cjs__rename_js_to_cjs
 __build_cjs__rename_js_to_cjs: __build_cjs__create_tmp_cjs
-	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_CJS_DIR) --to-extension 'js'
+	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_CJS_DIR) --to-extension 'cjs'
 
 .PHONY: __build_cjs__create_tmp_cjs
 __build_cjs__create_tmp_cjs: __build_tmp_base clean_tmp_cjs
