@@ -1,5 +1,7 @@
 __dist/
+__tmp_base/
 __tmp_mjs/
+__tmp_cjs/
 node_modules/
 
 # FIXME: remove these from here

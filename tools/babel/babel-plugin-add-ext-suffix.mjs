@@ -1,13 +1,18 @@
-const EXTENSION = '.mjs';
+import * as assert from 'node:assert/strict';
 
-function withExtension(name) {
-    return `${name}${EXTENSION}`;
+function withExtension(extension, name) {
+    return `${name}${extension}`;
 }
 
-function rewriter(t, path, _state, declarationFactory) {
+function rewriter(t, path, state, declarationFactory) {
+    const option = state.opts;
+    const extension = option.extension;
+    assert.ok(typeof extension === 'string', 'opts.extension must be set');
+    assert.ok(extension.startsWith('.'), 'opts.extension must start with `.`');
+
     const node = path.node;
     const source = node.source;
-    if (!t.isStringLiteral(source) || source.value.endsWith(EXTENSION)) {
+    if (!t.isStringLiteral(source) || source.value.endsWith(extension)) {
         return;
     }
 
@@ -17,7 +22,7 @@ function rewriter(t, path, _state, declarationFactory) {
 
     const specifiers = node.specifiers;
 
-    const newSource = t.stringLiteral(withExtension(source.value));
+    const newSource = t.stringLiteral(withExtension(extension, source.value));
     const declaration = declarationFactory(specifiers, newSource);
 
     path.replaceWith(declaration);
