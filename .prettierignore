@@ -3,7 +3,9 @@ node_modules/
 
 # generated files
 __dist/
+__tmp_base/
 __tmp_mjs/
+__tmp_cjs/
 
 ## TODO
 *.json

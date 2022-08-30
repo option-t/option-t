@@ -12,7 +12,9 @@ DIST_DOCS_DIR := $(DIST_DIR)/docs
 DIST_ESM_DIR := $(DIST_DIR)/esm
 DIST_COMMONJS_DIR := $(DIST_DIR)/cjs
 DIST_MIXED_LIB_DIR := $(DIST_DIR)/lib
+TMP_BASE_DIR := $(CURDIR)/__tmp_base
 TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
+TMP_CJS_DIR := $(CURDIR)/__tmp_cjs
 
 PROJECT_NPMRC := $(CURDIR)/.npmrc
 
@@ -37,7 +39,9 @@ help:
 ###########################
 CLEAN_TARGETS := \
 	dist \
+	tmp_base \
 	tmp_mjs \
+	tmp_cjs \
 	npmrc \
 
 .PHONY: clean
@@ -47,9 +51,17 @@ clean: $(addprefix clean_, $(CLEAN_TARGETS))
 clean_dist:
 	$(NPM_BIN)/del $(DIST_DIR)
 
+.PHONY: clean_tmp_base
+clean_tmp_base:
+	$(NPM_BIN)/del $(TMP_BASE_DIR)
+
 .PHONY: clean_tmp_mjs
 clean_tmp_mjs:
 	$(NPM_BIN)/del $(TMP_MJS_DIR)
+
+.PHONY: clean_tmp_cjs
+clean_tmp_cjs:
+	$(NPM_BIN)/del $(TMP_CJS_DIR)
 
 .PHONY: clean_npmrc
 clean_npmrc:
@@ -65,23 +77,24 @@ build: __build cp_docs cp_changelog cp_license cp_readme generate_manifest ## Bu
 __build: build_cjs build_esm build_mixedlib ## Build all targets.
 
 .PHONY: build_cjs
-build_cjs: build_cjs_js build_cjs_type_definition build_cjs_ts ## Build `cjs/`.
+build_cjs: __build_cjs__cp_cjs_to_cjsdir __build_cjs__cp_dts_to_cjsdir ## Build `cjs/`.
 
-.PHONY: build_cjs_js
-build_cjs_js: clean_dist
-	$(NPM_BIN)/babel $(SRC_DIR) \
-    --out-dir $(DIST_COMMONJS_DIR) \
-    --extensions .js \
-    --no-babelrc \
-    --config-file $(CURDIR)/tools/babel/babelrc.cjs.mjs
+.PHONY: __build_cjs__cp_cjs_to_cjsdir
+__build_cjs__cp_cjs_to_cjsdir: __build_cjs__rename_js_to_cjs clean_dist
+	$(NPM_BIN)/babel $(TMP_CJS_DIR) --out-dir $(DIST_COMMONJS_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.cjs.mjs --keep-file-extension
 
-.PHONY: build_cjs_type_definition
-build_cjs_type_definition: clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(SRC_DIR) --source '$(SRC_DIR)/**/*.d.ts' --destination $(DIST_COMMONJS_DIR)
+.PHONY: build_mjs__cp_dts_to_cjsdir
+__build_cjs__cp_dts_to_cjsdir: __build_cjs__create_tmp_cjs clean_dist
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_CJS_DIR) --source '$(TMP_CJS_DIR)/**/*.d.ts' --destination $(DIST_COMMONJS_DIR)
 
-.PHONY: build_cjs_ts
-build_cjs_ts: clean_dist
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.cjs.json --outDir $(DIST_COMMONJS_DIR)
+.PHONY: __build_cjs__rename_js_to_cjs
+__build_cjs__rename_js_to_cjs: __build_cjs__create_tmp_cjs
+	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_CJS_DIR) --to-extension 'js'
+
+.PHONY: __build_cjs__create_tmp_cjs
+__build_cjs__create_tmp_cjs: __build_tmp_base clean_tmp_cjs
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_BASE_DIR) --source '$(TMP_BASE_DIR)/**/*' --destination $(TMP_CJS_DIR)
+
 
 .PHONY: build_esm
 build_esm: build_mjs_cp_mjs_to_esm build_mjs_cp_dts_to_esm ## Build `esm/`.
@@ -99,19 +112,23 @@ build_mjs_rename_js_to_mjs: build_mjs_create_tmp_mjs
 	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_MJS_DIR) --to-extension 'mjs'
 
 .PHONY: build_mjs_create_tmp_mjs
-build_mjs_create_tmp_mjs: build_mjs_create_tmp_mjs_call_tsc build_mjs_create_tmp_mjs_call_babel build_mjs_create_tmp_mjs_cal_cpx
+build_mjs_create_tmp_mjs: __build_tmp_base clean_tmp_mjs
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_BASE_DIR) --source '$(TMP_BASE_DIR)/**/*' --destination $(TMP_MJS_DIR)
 
-.PHONY: build_mjs_create_tmp_mjs_call_tsc
-build_mjs_create_tmp_mjs_call_tsc: clean_tmp_mjs
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.esm.json --outDir $(TMP_MJS_DIR)
+.PHONY: __build_tmp_base
+__build_tmp_base: __build_tmp_base__call_tsc __build_tmp_base__call_babel __build_tmp_base__call_cpx
 
-.PHONY: build_mjs_create_tmp_mjs_call_babel
-build_mjs_create_tmp_mjs_call_babel: clean_tmp_mjs
-	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(TMP_MJS_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.esm.mjs
+.PHONY: __build_tmp_base__call_tsc
+__build_tmp_base__call_tsc: clean_tmp_base
+	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.esm.json --outDir $(TMP_BASE_DIR)
 
-.PHONY: build_mjs_create_tmp_mjs_cal_cpx
-build_mjs_create_tmp_mjs_cal_cpx: clean_tmp_mjs
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(SRC_DIR) --source '$(SRC_DIR)/**/*.d.ts' --destination $(TMP_MJS_DIR)
+.PHONY: __build_tmp_base__call_babel
+__build_tmp_base__call_babel: clean_tmp_base
+	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(TMP_BASE_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.esm.mjs
+
+.PHONY: __build_tmp_base__call_cpx
+__build_tmp_base__call_cpx: clean_tmp_base
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(SRC_DIR) --source '$(SRC_DIR)/**/*.d.ts' --destination $(TMP_BASE_DIR)
 
 
 # We need to keep this directory to continue to support TypeScript moduleResolution=node..
