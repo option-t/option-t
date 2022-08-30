@@ -38,7 +38,7 @@ module.exports = {
             },
         },
         {
-            'files': ['*.mjs'],
+            'files': ['*.js', '*.mjs'],
             'parserOptions': {
                 'sourceType': 'module',
             },
@@ -46,5 +46,11 @@ module.exports = {
             'rules': {
             },
         },
+        {
+            'files': ['./__tests__/**/*'],
+            'rules': {
+                'no-magic-numbers': 'off',
+            },
+        }
     ],
 };
