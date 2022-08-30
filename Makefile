@@ -97,22 +97,22 @@ __build_cjs__create_tmp_cjs: __build_tmp_base clean_tmp_cjs
 
 
 .PHONY: build_esm
-build_esm: build_mjs_cp_mjs_to_esm build_mjs_cp_dts_to_esm ## Build `esm/`.
+build_esm: __build_mjs_cp_mjs_to_esm __build_mjs_cp_dts_to_esm ## Build `esm/`.
 
-.PHONY: build_mjs_cp_mjs_to_esm
-build_mjs_cp_mjs_to_esm: build_mjs_rename_js_to_mjs clean_dist
+.PHONY: __build_mjs_cp_mjs_to_esm
+__build_mjs_cp_mjs_to_esm: __build_mjs_rename_js_to_mjs clean_dist
 	$(NPM_BIN)/babel $(TMP_MJS_DIR) --out-dir $(DIST_ESM_DIR) --extensions=.mjs --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.mjs.pathrewiter.mjs --keep-file-extension
 
-.PHONY: build_mjs_cp_dts_to_esm
-build_mjs_cp_dts_to_esm: build_mjs_create_tmp_mjs clean_dist
+.PHONY: __build_mjs_cp_dts_to_esm
+__build_mjs_cp_dts_to_esm: __build_mjs_create_tmp_mjs clean_dist
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_MJS_DIR) --source '$(TMP_MJS_DIR)/**/*.d.ts' --destination $(DIST_ESM_DIR)
 
-.PHONY: build_mjs_rename_js_to_mjs
-build_mjs_rename_js_to_mjs: build_mjs_create_tmp_mjs
+.PHONY: __build_mjs_rename_js_to_mjs
+__build_mjs_rename_js_to_mjs: __build_mjs_create_tmp_mjs
 	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_MJS_DIR) --to-extension 'mjs'
 
-.PHONY: build_mjs_create_tmp_mjs
-build_mjs_create_tmp_mjs: __build_tmp_base clean_tmp_mjs
+.PHONY: __build_mjs_create_tmp_mjs
+__build_mjs_create_tmp_mjs: __build_tmp_base clean_tmp_mjs
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_BASE_DIR) --source '$(TMP_BASE_DIR)/**/*' --destination $(TMP_MJS_DIR)
 
 .PHONY: __build_tmp_base
