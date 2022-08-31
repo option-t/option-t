@@ -18,7 +18,8 @@ TMP_CJS_DIR := $(CURDIR)/__tmp_cjs
 
 PROJECT_NPMRC := $(CURDIR)/.npmrc
 
-ESLINT_APPLIED_EXTENSIONS := .js,.jsx,cjs,.mjs,.ts,.tsx
+ESLINT_APPLIED_EXTENSIONS := .js,.jsx,cjs,.mjs,.ts,.tsx,.cts,.mts
+DTS_EXTENSION_GLOB := d.{ts,cts,mts}
 
 ## In CI environment, we should change some configuration
 ifeq ($(CI),true)
@@ -85,7 +86,7 @@ __build_cjs__cp_cjs_to_cjsdir: __build_cjs__rename_js_to_cjs clean_dist
 
 .PHONY: build_mjs__cp_dts_to_cjsdir
 __build_cjs__cp_dts_to_cjsdir: __build_cjs__create_tmp_cjs clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_CJS_DIR) --source '$(TMP_CJS_DIR)/**/*.d.ts' --destination $(DIST_COMMONJS_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_CJS_DIR) --source '$(TMP_CJS_DIR)/**/*.$(DTS_EXTENSION_GLOB)' --destination $(DIST_COMMONJS_DIR)
 
 .PHONY: __build_cjs__rename_js_to_cjs
 __build_cjs__rename_js_to_cjs: __build_cjs__create_tmp_cjs
@@ -105,7 +106,7 @@ __build_mjs_cp_mjs_to_esm: __build_mjs_rename_js_to_mjs clean_dist
 
 .PHONY: __build_mjs_cp_dts_to_esm
 __build_mjs_cp_dts_to_esm: __build_mjs_create_tmp_mjs clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_MJS_DIR) --source '$(TMP_MJS_DIR)/**/*.d.ts' --destination $(DIST_ESM_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_MJS_DIR) --source '$(TMP_MJS_DIR)/**/*.$(DTS_EXTENSION_GLOB)' --destination $(DIST_ESM_DIR)
 
 .PHONY: __build_mjs_rename_js_to_mjs
 __build_mjs_rename_js_to_mjs: __build_mjs_create_tmp_mjs
@@ -128,7 +129,7 @@ __build_tmp_base__call_babel: clean_tmp_base
 
 .PHONY: __build_tmp_base__call_cpx
 __build_tmp_base__call_cpx: clean_tmp_base
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(SRC_DIR) --source '$(SRC_DIR)/**/*.d.ts' --destination $(TMP_BASE_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(SRC_DIR) --source '$(SRC_DIR)/**/*.$(DTS_EXTENSION_GLOB)' --destination $(TMP_BASE_DIR)
 
 
 # We need to keep this directory to continue to support TypeScript moduleResolution=node..
@@ -137,7 +138,7 @@ build_mixedlib: build_mixedlib_cp_dts ## Build `lib/`.
 
 .PHONY: build_mixedlib_cp_dts
 build_mixedlib_cp_dts: build_esm clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(DIST_ESM_DIR) --source '$(DIST_ESM_DIR)/**/*.d.ts' --destination $(DIST_MIXED_LIB_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(DIST_ESM_DIR) --source '$(DIST_ESM_DIR)/**/*.${DTS_EXTENSION_GLOB}' --destination $(DIST_MIXED_LIB_DIR)
 
 .PHONY: cp_docs
 cp_docs: clean_dist
