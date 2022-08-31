@@ -2,6 +2,7 @@ import * as assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
+import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 
@@ -19,41 +20,28 @@ function parseJSON(text) {
 }
 
 async function testAllowToLoadFileAsESM(expectedSet) {
-    const hasError = [];
-    const susccess = [];
-    for await (const filename of expectedSet) {
-        try {
-            await import(filename);
-            expectedSet.delete(filename);
-        }
-        catch (e) {
-            hasError.push(filename);
-            console.error(e);
-        }
+    const testResult = [];
+    for (const filename of expectedSet) {
+        const result = test(`import ESM: ${filename}`, async () => {
+            await assert.doesNotReject(async () => {
+                await import(filename);
+            }, `failure to import ${filename} via import()`);
+        });
+        testResult.push(result);
     }
-
-    assert.deepStrictEqual([], susccess, 'Should be success to load all ES Modules');
-    assert.deepStrictEqual([], hasError, 'Unexpected files which could not load as ES Module');
+    await Promise.all(testResult);
 }
 
 async function testAllowToLoadFileAsCommonJs(expectedSet) {
     const require = createRequire(THIS_FILENAME);
 
-    const hasError = [];
-    const susccess = [];
     for (const filename of expectedSet) {
-        try {
-            require(filename);
-            expectedSet.delete(filename);
-        }
-        catch (e) {
-            hasError.push(filename);
-            console.error(e);
-        }
+        test(`import CJS: ${filename}`, () => {
+            assert.doesNotThrow(() => {
+                require(filename);
+            }, `failure to import ${filename} via require()`);
+        });
     }
-
-    assert.deepStrictEqual([], susccess, 'Should be success to load all CommonJS');
-    assert.deepStrictEqual([], hasError, 'Unexpected files which could not load as CommonJS');
 }
 
 function parseCliOptions() {
