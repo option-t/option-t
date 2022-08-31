@@ -117,7 +117,7 @@ jobs:
               env:
                   CI: true
 
-    test_esmodule_path_rewrite:
+    test_module_path_rewrite:
         needs: [install_dependencies]
         runs-on: ubuntu-latest
         container: node:${{ matrix.node-version }}-bullseye
@@ -132,7 +132,7 @@ jobs:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/prepare_ci
 
-            - run: make test_esmodule_path_rewrite -j
+            - run: make test_module_path_rewrite -j
               env:
                   CI: true
 
