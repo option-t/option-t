@@ -1,4 +1,5 @@
 import * as assert from 'node:assert/strict';
+import { createRequire } from 'node:module';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -35,6 +36,26 @@ async function testAllowToLoadFileAsESM(expectedSet) {
     assert.deepStrictEqual([], hasError, 'Unexpected files which could not load as ES Module');
 }
 
+async function testAllowToLoadFileAsCommonJs(expectedSet) {
+    const require = createRequire(THIS_FILENAME);
+
+    const hasError = [];
+    const susccess = [];
+    for (const filename of expectedSet) {
+        try {
+            require(filename);
+            expectedSet.delete(filename);
+        }
+        catch (e) {
+            hasError.push(filename);
+            console.error(e);
+        }
+    }
+
+    assert.deepStrictEqual([], susccess, 'Should be success to load all CommonJS');
+    assert.deepStrictEqual([], hasError, 'Unexpected files which could not load as CommonJS');
+}
+
 function parseCliOptions() {
     const options = {
         target: {
@@ -67,17 +88,34 @@ function parseCliOptions() {
     const files = parseJSON(json);
     assert.notStrictEqual(files, null, 'Fail to parse the file list snapshot');
 
-    const mjsInEsmDir = Object.keys(files).filter((filename) => {
-        return filename.endsWith('.mjs') && (filename.startsWith('esm/') || filename.startsWith('lib/'));
-    });
+    {
+        const mjsInEsmDir = Object.keys(files).filter((filename) => {
+            return filename.endsWith('.mjs') && filename.startsWith('esm/');
+        });
 
-    const EXPECTED_FILE_SET = new Set(mjsInEsmDir.map((filename) => {
-        const fullpath = path.resolve(OUTDIR, filename);
-        return fullpath;
-    }));
-    assert.notStrictEqual(EXPECTED_FILE_SET.size, 0, 'The expected file list must not be empty');
+        const EXPECTED_FILE_SET = new Set(mjsInEsmDir.map((filename) => {
+            const fullpath = path.resolve(OUTDIR, filename);
+            return fullpath;
+        }));
+        assert.notStrictEqual(EXPECTED_FILE_SET.size, 0, 'The expected file list must not be empty');
 
-    await testAllowToLoadFileAsESM(EXPECTED_FILE_SET);
+        await testAllowToLoadFileAsESM(EXPECTED_FILE_SET);
+    }
+
+    {
+        const cjsInCjsDir = Object.keys(files).filter((filename) => {
+            return filename.endsWith('.cjs') && filename.startsWith('cjs/');
+        });
+
+        const EXPECTED_FILE_SET = new Set(cjsInCjsDir.map((filename) => {
+            const fullpath = path.resolve(OUTDIR, filename);
+            return fullpath;
+        }));
+        assert.notStrictEqual(EXPECTED_FILE_SET.size, 0, 'The expected file list must not be empty');
+
+        await testAllowToLoadFileAsCommonJs(EXPECTED_FILE_SET);
+    }
+
 })().catch((e) => {
     console.error(e);
     process.exit(1);
