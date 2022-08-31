@@ -1,12 +1,12 @@
-import { assertIsPromise } from '../internal/assert';
-import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
-import type { AsyncTransformFn } from '../internal/Function';
-import { Nullable } from './Nullable';
+import { assertIsPromise } from '../internal/assert.js';
+import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
+import type { AsyncTransformFn } from '../internal/Function.js';
+import { Nullable } from './Nullable.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
     ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE,
-} from './ErrorMessage';
-import { expectNotNull } from './expect';
+} from './ErrorMessage.js';
+import { expectNotNull } from './expect.js';
 
 function check<T>(value: Nullable<T>): T {
     const passed = expectNotNull(value, ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);

@@ -1,4 +1,4 @@
-import { isNotNullAndUndefined, Maybe, NotNullAndUndefined } from './Maybe';
+import { isNotNullAndUndefined, Maybe, NotNullAndUndefined } from './Maybe.js';
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `null` and `undefined`.

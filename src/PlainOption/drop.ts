@@ -1,7 +1,7 @@
-import type { Mutable } from '../internal/Mutable';
-import type { EffectFn } from '../internal/Function';
-import type { Option, Some } from './Option';
-import { asMutOption } from './asMut';
+import type { Mutable } from '../internal/Mutable.js';
+import type { EffectFn } from '../internal/Function.js';
+import type { Option, Some } from './Option.js';
+import { asMutOption } from './asMut.js';
 
 export type MutSome<T> = Mutable<Some<T>>;
 

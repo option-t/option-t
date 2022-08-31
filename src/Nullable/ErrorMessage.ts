@@ -3,7 +3,7 @@ import {
     ERR_MSG_CALLED_WITH,
     ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN,
-} from '../internal/ErrorMessage';
+} from '../internal/ErrorMessage.js';
 
 const NO_VAL_VALUE_TYPE_STR = '`null`';
 

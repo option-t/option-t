@@ -1,4 +1,4 @@
-import { Result } from './Result';
+import { Result } from './Result.js';
 
 /**
  *  Unwraps a result _input_, returns the content of an `Ok(T)`.

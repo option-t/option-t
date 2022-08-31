@@ -1,5 +1,5 @@
-import { Mutable } from '../internal/Mutable';
-import { Option } from './Option';
+import { Mutable } from '../internal/Mutable.js';
+import { Option } from './Option.js';
 
 /**
  *  This allows to mutate the value to save needless allocation.

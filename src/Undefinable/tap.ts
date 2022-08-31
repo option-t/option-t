@@ -1,4 +1,4 @@
-import { inspectUndefinable } from './inspect';
+import { inspectUndefinable } from './inspect.js';
 
 /**
  *  @deprecated

@@ -1,4 +1,4 @@
-import { Result } from './Result';
+import { Result } from './Result.js';
 
 /**
  *  Return _input_ as `T` if the passed _input_ is `Ok(T)`.

@@ -1,7 +1,7 @@
-import { RecoveryFn } from '../internal/Function';
-import { isNotNullAndUndefined, Maybe, NotNullAndUndefined } from './Maybe';
-import { expectNotNullAndUndefined } from './expect';
-import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage';
+import { RecoveryFn } from '../internal/Function.js';
+import { isNotNullAndUndefined, Maybe, NotNullAndUndefined } from './Maybe.js';
+import { expectNotNullAndUndefined } from './expect.js';
+import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage.js';
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `null` and `undefined`.

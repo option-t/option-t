@@ -1,13 +1,13 @@
-import { assertIsPromise } from '../internal/assert';
-import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
-import type { AsyncTransformFn } from '../internal/Function';
+import { assertIsPromise } from '../internal/assert.js';
+import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
+import type { AsyncTransformFn } from '../internal/Function.js';
 
-import { Undefinable, isUndefined, NotUndefined } from './Undefinable';
+import { Undefinable, isUndefined, NotUndefined } from './Undefinable.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
     ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE,
-} from './ErrorMessage';
-import { expectNotUndefined } from './expect';
+} from './ErrorMessage.js';
+import { expectNotUndefined } from './expect.js';
 
 function check<T>(value: Undefinable<T>): T {
     const passed = expectNotUndefined(

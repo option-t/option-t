@@ -1,6 +1,6 @@
-import { type Nullable, type NotNull, isNotNull } from './Nullable';
-import { expectNotNull } from './expect';
-import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
+import { type Nullable, type NotNull, isNotNull } from './Nullable.js';
+import { expectNotNull } from './expect.js';
+import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE } from './ErrorMessage.js';
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `null`.

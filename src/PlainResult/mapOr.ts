@@ -1,5 +1,5 @@
-import { Result } from './Result';
-import { TransformFn } from '../internal/Function';
+import { Result } from './Result.js';
+import { TransformFn } from '../internal/Function.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is `Ok(T)`.

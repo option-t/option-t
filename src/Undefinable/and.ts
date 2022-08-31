@@ -1,4 +1,4 @@
-import { Undefinable, isNotUndefined } from './Undefinable';
+import { Undefinable, isNotUndefined } from './Undefinable.js';
 
 /**
  *  Return _b_ if _a_ is not `undefined`.

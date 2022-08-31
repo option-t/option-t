@@ -1,8 +1,8 @@
-import { assertIsPromise } from '../internal/assert';
-import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
-import type { AsyncRecoveryFromErrorFn } from '../internal/Function';
-import { Result, isOk } from './Result';
-import { unwrapOkFromResult, unwrapErrFromResult } from './unwrap';
+import { assertIsPromise } from '../internal/assert.js';
+import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
+import type { AsyncRecoveryFromErrorFn } from '../internal/Function.js';
+import { Result, isOk } from './Result.js';
+import { unwrapOkFromResult, unwrapErrFromResult } from './unwrap.js';
 
 /**
  *  Unwraps _input_, returns the content of an `Ok(T)`.

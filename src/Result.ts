@@ -12,6 +12,6 @@ export {
     createClassicErr as createErr,
     ClassicOkConstructor as Ok,
     ClassicErrConstructor as Err,
-} from './ClassResult/ClassicResult';
+} from './ClassResult/ClassicResult.js';
 
-export { compatToClassicResult, compatToPlainResult } from './ClassResult/compat';
+export { compatToClassicResult, compatToPlainResult } from './ClassResult/compat.js';

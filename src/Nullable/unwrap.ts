@@ -1,6 +1,6 @@
-import { expectNotNull } from './expect';
-import { NotNull, Nullable } from './Nullable';
-import { ERR_MSG_UNWRAP_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
+import { expectNotNull } from './expect.js';
+import { NotNull, Nullable } from './Nullable.js';
+import { ERR_MSG_UNWRAP_NO_VAL_FOR_NULLABLE } from './ErrorMessage.js';
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `null`.

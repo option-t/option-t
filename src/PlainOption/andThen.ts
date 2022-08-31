@@ -1,5 +1,5 @@
-import { TransformFn } from '../internal/Function';
-import { Option } from './Option';
+import { TransformFn } from '../internal/Function.js';
+import { Option } from './Option.js';
 
 export type OptionTryTransformFn<T, U> = TransformFn<T, Option<U>>;
 

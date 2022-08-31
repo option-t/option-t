@@ -1,5 +1,5 @@
-import { Mutable } from '../internal/Mutable';
-import { Result } from './Result';
+import { Mutable } from '../internal/Mutable.js';
+import { Result } from './Result.js';
 
 /**
  *  This allows to mutate the value to save needless allocation.

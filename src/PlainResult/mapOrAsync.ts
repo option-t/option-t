@@ -1,8 +1,8 @@
-import { assertIsPromise } from '../internal/assert';
-import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
-import type { AsyncTransformFn } from '../internal/Function';
-import { isErr, Result } from './Result';
-import { unwrapOkFromResult } from './unwrap';
+import { assertIsPromise } from '../internal/assert.js';
+import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
+import type { AsyncTransformFn } from '../internal/Function.js';
+import { isErr, Result } from './Result.js';
+import { unwrapOkFromResult } from './unwrap.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is `Ok(T)`.

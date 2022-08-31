@@ -1,8 +1,8 @@
-import { assertIsPromise } from '../internal/assert';
-import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
-import type { AsyncTransformFn } from '../internal/Function';
+import { assertIsPromise } from '../internal/assert.js';
+import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
+import type { AsyncTransformFn } from '../internal/Function.js';
 
-import { Undefinable, isUndefined } from './Undefinable';
+import { Undefinable, isUndefined } from './Undefinable.js';
 
 export type UndefinableAsyncTryTransformFn<T, U> = AsyncTransformFn<T, Undefinable<U>>;
 

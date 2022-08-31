@@ -1,5 +1,5 @@
-import { EffectFn } from '../internal/Function';
-import { isNotUndefined, NotUndefined, Undefinable } from './Undefinable';
+import { EffectFn } from '../internal/Function.js';
+import { isNotUndefined, NotUndefined, Undefinable } from './Undefinable.js';
 
 /**
  *  * Return _input_ directly.

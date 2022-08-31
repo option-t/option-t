@@ -1,16 +1,16 @@
-import { assertIsPromise } from '../internal/assert';
+import { assertIsPromise } from '../internal/assert.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
     ERR_MSG_RECOVERER_MUST_RETURN_PROMISE,
-} from '../internal/ErrorMessage';
-import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/Function';
+} from '../internal/ErrorMessage.js';
+import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/Function.js';
 
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
-} from './ErrorMessage';
-import { Maybe, isNotNullAndUndefined, NotNullAndUndefined } from './Maybe';
-import { expectNotNullAndUndefined } from './expect';
+} from './ErrorMessage.js';
+import { Maybe, isNotNullAndUndefined, NotNullAndUndefined } from './Maybe.js';
+import { expectNotNullAndUndefined } from './expect.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null` and `undefined`.

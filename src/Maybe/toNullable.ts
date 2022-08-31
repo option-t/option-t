@@ -1,5 +1,5 @@
-import type { Nullable } from '../Nullable/Nullable';
-import { type Maybe, isNullOrUndefined } from './Maybe';
+import type { Nullable } from '../Nullable/Nullable.js';
+import { type Maybe, isNullOrUndefined } from './Maybe.js';
 
 /**
  *  Return `null` if _input_ is `null` or `undfined`.

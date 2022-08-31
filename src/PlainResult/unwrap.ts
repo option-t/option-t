@@ -1,5 +1,5 @@
-import { expectOkForResult, expectErrForResult } from './expect';
-import { Result } from './Result';
+import { expectOkForResult, expectErrForResult } from './expect.js';
+import { Result } from './Result.js';
 
 /**
  *  Return the inner `T` of a `Ok(T)`.

@@ -1,6 +1,6 @@
-import { expectNotUndefined } from './expect';
-import { NotUndefined, Undefinable } from './Undefinable';
-import { ERR_MSG_UNWRAP_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
+import { expectNotUndefined } from './expect.js';
+import { NotUndefined, Undefinable } from './Undefinable.js';
+import { ERR_MSG_UNWRAP_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage.js';
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `undefined`.

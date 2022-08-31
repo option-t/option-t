@@ -1,7 +1,7 @@
-import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage';
-import { expectNotUndefined } from './expect';
-import { TransformFn } from '../internal/Function';
-import { Undefinable, isUndefined, NotUndefined } from './Undefinable';
+import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage.js';
+import { expectNotUndefined } from './expect.js';
+import { TransformFn } from '../internal/Function.js';
+import { Undefinable, isUndefined, NotUndefined } from './Undefinable.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `undefined`,
