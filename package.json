@@ -2,7 +2,7 @@
   "name": "option-t",
   "version": "32.6.4",
   "description": "Types and implementations whose APIs are inspired by Rust's `Option<T>` and `Result<T, E>`.",
-  "type": "commonjs",
+  "type": "module",
   "files": [
     "CHANGELOG.md",
     "CHANGELOG_OLD.md",
