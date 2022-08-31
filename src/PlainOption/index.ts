@@ -44,7 +44,6 @@ export { orForOption as or } from './or.js';
 export { orElseForOption as orElse } from './orElse.js';
 export { orElseAsyncForOption as orElseAsync } from './orElseAsync.js';
 export { transposeForOption as transpose } from './transpose.js';
-export { tapOption as tap } from './tap.js';
 export { unwrapOption as unwrap, unwrapOption as unwrapSome } from './unwrap.js';
 export { unwrapOrFromOption as unwrapOr } from './unwrapOr.js';
 export { unwrapOrElseFromOption as unwrapOrElse } from './unwrapOrElse.js';

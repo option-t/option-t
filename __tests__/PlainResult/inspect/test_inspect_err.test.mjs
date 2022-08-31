@@ -9,7 +9,7 @@ test('input is Ok()', (t) => {
 
     const input = createOk(INPUT_INNER);
     const actual = inspectErrOfResult(input, (_v) => {
-        t.pass('should not call the tap fn');
+        t.pass('should not call the inspect fn');
     });
     t.is(input, actual, 'should be the expect returned');
 });
@@ -20,7 +20,7 @@ test('input is Err()', (t) => {
 
     const input = createErr(INPUT_INNER);
     const actual = inspectErrOfResult(input, (v) => {
-        t.pass('should call the tap fn');
+        t.pass('should call the inspect fn');
         t.is(v, INPUT_INNER, 'should be the expected arg');
     });
 

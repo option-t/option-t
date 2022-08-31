@@ -12,7 +12,7 @@ test('input is Some', (t) => {
 
     const input = createSome(INPUT_INNER);
     const actual = inspectOption(input, (v) => {
-        t.pass('should call the tap fn');
+        t.pass('should call the inspect fn');
         arg = v;
     });
 
@@ -27,7 +27,7 @@ test('input is None', (t) => {
 
     const input = createNone(INPUT_INNER);
     const actual = inspectOption(input, (_v) => {
-        t.pass('should not call the tap fn');
+        t.pass('should not call the inspect fn');
     });
 
     t.is(input, actual, 'should be the expect returned');

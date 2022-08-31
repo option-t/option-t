@@ -15,7 +15,6 @@ export { mapOrElseAsyncForNullable as mapOrElseAsync } from './mapOrElseAsync.js
 // export { orForNullable as or } from './or.js';
 export { orElseForNullable as orElse } from './orElse.js';
 export { orElseAsyncForNullable as orElseAsync } from './orElseAsync.js';
-export { tapNullable as tap } from './tap.js';
 export { unwrapNullable as unwrap } from './unwrap.js';
 export { unwrapOrFromNullable as unwrapOr } from './unwrapOr.js';
 export { unwrapOrElseFromNullable as unwrapOrElse } from './unwrapOrElse.js';

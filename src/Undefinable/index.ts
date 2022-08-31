@@ -15,7 +15,6 @@ export { mapOrElseAsyncForUndefinable as mapOrElseAsync } from './mapOrElseAsync
 // export { orForUndefinable as or} from './or.js';
 export { orElseForUndefinable as orElse } from './orElse.js';
 export { orElseAsyncForUndefinable as orElseAsync } from './orElseAsync.js';
-export { tapUndefinable as tap } from './tap.js';
 export { unwrapUndefinable as unwrap } from './unwrap.js';
 export { unwrapOrFromUndefinable as unwrapOr } from './unwrapOr.js';
 export { unwrapOrElseFromUndefinable as unwrapOrElse } from './unwrapOrElse.js';
