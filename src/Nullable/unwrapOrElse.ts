@@ -1,7 +1,7 @@
-import { RecoveryFn } from '../internal/Function';
-import { isNotNull, type NotNull, type Nullable } from './Nullable';
-import { expectNotNull } from './expect';
-import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage';
+import { RecoveryFn } from '../internal/Function.js';
+import { isNotNull, type NotNull, type Nullable } from './Nullable.js';
+import { expectNotNull } from './expect.js';
+import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage.js';
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `null`.

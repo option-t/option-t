@@ -1,5 +1,5 @@
-import type { ProducerFn } from '../internal/Function';
-import { type Result, createOk, createErr } from './Result';
+import type { ProducerFn } from '../internal/Function.js';
+import { type Result, createOk, createErr } from './Result.js';
 
 /**
  *  This function converts the returend value from _producer_ into `Ok(TValue)`.

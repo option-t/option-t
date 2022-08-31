@@ -1,5 +1,5 @@
-import { Result } from './Result';
-import { andThenForResult } from './andThen';
+import { Result } from './Result.js';
+import { andThenForResult } from './andThen.js';
 
 function flatten<T, E>(input: Result<T, E>): Result<T, E> {
     return input;

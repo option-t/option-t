@@ -1,7 +1,7 @@
-import { assertIsPromise } from '../internal/assert';
-import { ERR_MSG_PRODUCER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
-import type { AsyncProducerFn } from '../internal/Function';
-import { type Result, createOk, createErr } from './Result';
+import { assertIsPromise } from '../internal/assert.js';
+import { ERR_MSG_PRODUCER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
+import type { AsyncProducerFn } from '../internal/Function.js';
+import { type Result, createOk, createErr } from './Result.js';
 
 /**
  *  This function converts the returend value from _producer_ into `Ok(TValue)`.

@@ -1,4 +1,4 @@
-import { inspectBothOfResult, inspectErrOfResult, inspectOkOfResult } from './inspect';
+import { inspectBothOfResult, inspectErrOfResult, inspectOkOfResult } from './inspect.js';
 
 /**
  *  @deprecated

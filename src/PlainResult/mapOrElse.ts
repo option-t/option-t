@@ -1,5 +1,5 @@
-import { TransformFn, RecoveryFromErrorFn } from '../internal/Function';
-import { Result } from './Result';
+import { TransformFn, RecoveryFromErrorFn } from '../internal/Function.js';
+import { Result } from './Result.js';
 
 /**
  *  Maps a `Result<T, E>` to `U` by applying _transformer_ to a contained `Ok(T)` value in _input_,

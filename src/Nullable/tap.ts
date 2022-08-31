@@ -1,4 +1,4 @@
-import { inspectNullable } from './inspect';
+import { inspectNullable } from './inspect.js';
 
 /**
  *  @deprecated

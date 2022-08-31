@@ -1,4 +1,4 @@
-import { Option } from './Option';
+import { Option } from './Option.js';
 
 /**
  *  Return _a_ if _a_ is `Some(T)`.

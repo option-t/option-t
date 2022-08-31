@@ -1,6 +1,6 @@
-import type { Nullable } from '../Nullable/Nullable';
-import { type Option } from './Option';
-import { mapOrForOption } from './mapOr';
+import type { Nullable } from '../Nullable/Nullable.js';
+import { type Option } from './Option.js';
+import { mapOrForOption } from './mapOr.js';
 
 /**
  *  Return `T` if _input_ is `Some(T)`.

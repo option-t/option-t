@@ -24,28 +24,28 @@
  *  ```
  */
 
-export { Option, Some, None, createSome, createNone, isSome, isNone } from './Option';
+export { Option, Some, None, createSome, createNone, isSome, isNone } from './Option.js';
 
-export { andForOption as and } from './and';
-export { andThenForOption as andThen } from './andThen';
-export { andThenAsyncForOption as andThenAsync } from './andThenAsync';
-export { equalForOption as equal } from './equal';
-export { expectSomeForOption as expect, expectSomeForOption as expectSome } from './expect';
-export { filterForOption as filter } from './filter';
-export { flattenForOption as flatten } from './flatten';
-export { inspectOption as inspect } from './inspect';
-export { mapForOption as map } from './map';
-export { mapAsyncForOption as mapAsync } from './mapAsync';
-export { mapOrForOption as mapOr } from './mapOr';
-export { mapOrAsyncForOption as mapOrAsync } from './mapOrAsync';
-export { mapOrElseForOption as mapOrElse } from './mapOrElse';
-export { mapOrElseAsyncForOption as mapOrElseAsync } from './mapOrElseAsync';
-export { orForOption as or } from './or';
-export { orElseForOption as orElse } from './orElse';
-export { orElseAsyncForOption as orElseAsync } from './orElseAsync';
-export { transposeForOption as transpose } from './transpose';
-export { tapOption as tap } from './tap';
-export { unwrapOption as unwrap, unwrapOption as unwrapSome } from './unwrap';
-export { unwrapOrFromOption as unwrapOr } from './unwrapOr';
-export { unwrapOrElseFromOption as unwrapOrElse } from './unwrapOrElse';
-export { unwrapOrElseAsyncFromOption as unwrapOrElseAsync } from './unwrapOrElseAsync';
+export { andForOption as and } from './and.js';
+export { andThenForOption as andThen } from './andThen.js';
+export { andThenAsyncForOption as andThenAsync } from './andThenAsync.js';
+export { equalForOption as equal } from './equal.js';
+export { expectSomeForOption as expect, expectSomeForOption as expectSome } from './expect.js';
+export { filterForOption as filter } from './filter.js';
+export { flattenForOption as flatten } from './flatten.js';
+export { inspectOption as inspect } from './inspect.js';
+export { mapForOption as map } from './map.js';
+export { mapAsyncForOption as mapAsync } from './mapAsync.js';
+export { mapOrForOption as mapOr } from './mapOr.js';
+export { mapOrAsyncForOption as mapOrAsync } from './mapOrAsync.js';
+export { mapOrElseForOption as mapOrElse } from './mapOrElse.js';
+export { mapOrElseAsyncForOption as mapOrElseAsync } from './mapOrElseAsync.js';
+export { orForOption as or } from './or.js';
+export { orElseForOption as orElse } from './orElse.js';
+export { orElseAsyncForOption as orElseAsync } from './orElseAsync.js';
+export { transposeForOption as transpose } from './transpose.js';
+export { tapOption as tap } from './tap.js';
+export { unwrapOption as unwrap, unwrapOption as unwrapSome } from './unwrap.js';
+export { unwrapOrFromOption as unwrapOr } from './unwrapOr.js';
+export { unwrapOrElseFromOption as unwrapOrElse } from './unwrapOrElse.js';
+export { unwrapOrElseAsyncFromOption as unwrapOrElseAsync } from './unwrapOrElseAsync.js';

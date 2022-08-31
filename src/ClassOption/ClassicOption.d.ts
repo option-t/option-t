@@ -1,4 +1,4 @@
-import type { TransformFn, RecoveryFn, EffectFn } from '../internal/Function';
+import type { TransformFn, RecoveryFn, EffectFn } from '../internal/Function.js';
 
 /**
  *  @deprecated

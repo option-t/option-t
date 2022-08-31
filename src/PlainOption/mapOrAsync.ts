@@ -1,8 +1,8 @@
-import { assertIsPromise } from '../internal/assert';
-import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage';
-import type { AsyncTransformFn } from '../internal/Function';
-import { Option, isNone } from './Option';
-import { unwrapOption } from './unwrap';
+import { assertIsPromise } from '../internal/assert.js';
+import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
+import type { AsyncTransformFn } from '../internal/Function.js';
+import { Option, isNone } from './Option.js';
+import { unwrapOption } from './unwrap.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is `Some(T)`.

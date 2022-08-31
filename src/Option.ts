@@ -12,6 +12,6 @@ export {
     createClassicNone as createNone,
     ClassicSomeConstructor as Some,
     ClassicNoneConstructor as None,
-} from './ClassOption/ClassicOption';
+} from './ClassOption/ClassicOption.js';
 
-export { compatToClassicOption, compatToPlainOption } from './ClassOption/compat';
+export { compatToClassicOption, compatToPlainOption } from './ClassOption/compat.js';

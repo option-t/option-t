@@ -1,5 +1,5 @@
-import { RecoveryFn } from '../internal/Function';
-import { Option } from './Option';
+import { RecoveryFn } from '../internal/Function.js';
+import { Option } from './Option.js';
 
 export type OptionTryRecoveryFn<T> = RecoveryFn<Option<T>>;
 

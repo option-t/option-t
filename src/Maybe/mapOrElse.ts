@@ -1,10 +1,10 @@
-import { expectNotNullAndUndefined } from './expect';
+import { expectNotNullAndUndefined } from './expect.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
-} from './ErrorMessage';
-import { TransformFn, RecoveryFn } from '../internal/Function';
-import { Maybe, NotNullAndUndefined } from './Maybe';
+} from './ErrorMessage.js';
+import { TransformFn, RecoveryFn } from '../internal/Function.js';
+import { Maybe, NotNullAndUndefined } from './Maybe.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null` and `undefined`.

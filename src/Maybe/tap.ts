@@ -1,4 +1,4 @@
-import { inspectMaybe } from './inspect';
+import { inspectMaybe } from './inspect.js';
 
 /**
  *  @deprecated

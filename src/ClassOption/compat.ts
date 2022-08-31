@@ -1,7 +1,7 @@
-import { createSome, createNone, Option as PlainOption, isSome } from '../PlainOption/Option';
-import { unwrapOption } from '../PlainOption/unwrap';
+import { createSome, createNone, Option as PlainOption, isSome } from '../PlainOption/Option.js';
+import { unwrapOption } from '../PlainOption/unwrap.js';
 
-import { ClassicOption, createClassicNone, createClassicSome } from './ClassicOption';
+import { ClassicOption, createClassicNone, createClassicSome } from './ClassicOption.js';
 
 export function compatToPlainOption<T>(classic: ClassicOption<T>): PlainOption<T> {
     if (classic.isSome) {

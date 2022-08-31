@@ -1,5 +1,5 @@
-import { RecoveryFn } from '../internal/Function';
-import { Nullable } from './Nullable';
+import { RecoveryFn } from '../internal/Function.js';
+import { Nullable } from './Nullable.js';
 
 export type NullableTryRecoveryFn<T> = RecoveryFn<Nullable<T>>;
 

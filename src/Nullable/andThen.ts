@@ -1,5 +1,5 @@
-import { TransformFn } from '../internal/Function';
-import { Nullable, isNull } from './Nullable';
+import { TransformFn } from '../internal/Function.js';
+import { Nullable, isNull } from './Nullable.js';
 
 export type NullableTryTransformFn<T, U> = TransformFn<T, Nullable<U>>;
 

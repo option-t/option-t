@@ -1,5 +1,5 @@
-import { EffectFn } from '../internal/Function';
-import { Result } from './Result';
+import { EffectFn } from '../internal/Function.js';
+import { Result } from './Result.js';
 
 function noop<T>(_v: T) {}
 
