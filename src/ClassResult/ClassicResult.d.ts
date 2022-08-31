@@ -1,4 +1,8 @@
-import type { ClassicOption, Some, None } from '../ClassOption/ClassicOption.js';
+import type {
+    ClassicOption,
+    ClassicSome as Some,
+    ClassicNone as None,
+} from '../ClassOption/ClassicOption.js';
 import type { TransformFn, RecoveryFromErrorFn, EffectFn } from '../internal/Function.js';
 
 /**

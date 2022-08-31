@@ -203,7 +203,7 @@ export abstract class ClassicOptionBase<T> implements ClassicOptionable<T> {
  *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-interface ClassicSome<T> extends ClassicOptionable<T> {
+export interface ClassicSome<T> extends ClassicOptionable<T> {
     readonly isSome: true;
     readonly isNone: false;
     unwrap(): T;
@@ -215,7 +215,7 @@ interface ClassicSome<T> extends ClassicOptionable<T> {
  *      We keep this only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  */
-interface ClassicNone<T> extends ClassicOptionable<T> {
+export interface ClassicNone<T> extends ClassicOptionable<T> {
     readonly isSome: false;
     readonly isNone: true;
     unwrap(): never;
