@@ -8,7 +8,7 @@ export default {
         }],
     ],
     'plugins': [
-        ['./babel-plugin-add-ext-suffix.mjs', {
+        ['./babel-plugin-modify-ext.mjs', {
             extension: '.cjs',
         }],
         ['@babel/plugin-transform-modules-commonjs', {
