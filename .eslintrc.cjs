@@ -63,7 +63,7 @@ module.exports = {
             },
         },
         {
-            'files': ['*.mjs'],
+            'files': ['*.js', '*.mjs'],
             'parserOptions': {
                 'sourceType': 'module',
             },
