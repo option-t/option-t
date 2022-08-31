@@ -1,7 +1,17 @@
 import * as assert from 'node:assert/strict';
+import * as nodePath from 'node:path';
 
 function withExtension(extension, name) {
     return `${name}${extension}`;
+}
+
+function replaceLastExtensionWith(oldExtension, newExtension, name) {
+    assert.ok(oldExtension.startsWith('.'));
+    assert.ok(newExtension.startsWith('.'));
+
+    const pattern = new RegExp(`${oldExtension}$`, 'u');
+    const replaced = name.replace(pattern, newExtension);
+    return replaced;
 }
 
 function rewriter(t, path, state, declarationFactory) {
@@ -21,10 +31,19 @@ function rewriter(t, path, state, declarationFactory) {
     }
 
     const specifiers = node.specifiers;
+    const filepathValue = source.value;
+    const currentExt = nodePath.extname(filepathValue);
 
-    const newSource = t.stringLiteral(withExtension(extension, source.value));
+    let newLiteral;
+    if (currentExt === '') {
+        // this file path value does not have any extension.
+        newLiteral = withExtension(extension, filepathValue);
+    } else {
+        newLiteral = replaceLastExtensionWith(currentExt, extension, filepathValue);
+    }
+
+    const newSource = t.stringLiteral(newLiteral);
     const declaration = declarationFactory(specifiers, newSource);
-
     path.replaceWith(declaration);
 }
 
