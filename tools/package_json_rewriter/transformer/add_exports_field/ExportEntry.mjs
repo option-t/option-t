@@ -285,6 +285,9 @@ function constructDualPackagePathValue({ cjs, esm, dts }) {
         'require': cjs,
         // https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#packagejson-exports-imports-and-self-referencing
         'types': dts,
+        // _default_ should be placed to the last.
+        // https://nodejs.org/api/esm.html#esm_conditional_exports
+        'default': esm,
     };
 }
 
