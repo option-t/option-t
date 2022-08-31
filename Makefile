@@ -198,13 +198,13 @@ test_distribution_contain_all: build
 run_test_distribution_contain_all:
 	$(NODE_BIN) $(CURDIR)/tools/test_package_contains_expected_all.mjs --target $(DIST_DIR)
 
-.PHONY: test_esmodule_path_rewrite
-test_esmodule_path_rewrite: build
-	$(MAKE) run_test_esmodule_path_rewrite -C $(CURDIR)
+.PHONY: test_module_path_rewrite
+test_module_path_rewrite: build
+	$(MAKE) run_test_module_path_rewrite -C $(CURDIR)
 
-.PHONY: run_test_esmodule_path_rewrite
-run_test_esmodule_path_rewrite:
-	$(NODE_BIN) $(CURDIR)/tools/test_esmodule_path_rewrite.mjs --target $(DIST_DIR)
+.PHONY: run_test_module_path_rewrite
+run_test_module_path_rewrite:
+	$(NODE_BIN) $(CURDIR)/tools/test_path_rewrite.mjs --target $(DIST_DIR)
 
 .PHONY: test_package_install
 test_package_install: build __run_install_package
@@ -257,7 +257,7 @@ prepublish: ## Run some commands for 'npm run prepublish'
 	$(MAKE) clean -C $(CURDIR)
 	$(MAKE) build -C $(CURDIR)
 	$(MAKE) test_distribution_contain_all -C $(CURDIR)
-	$(MAKE) run_test_esmodule_path_rewrite -C $(CURDIR)
+	$(MAKE) run_test_module_path_rewrite -C $(CURDIR)
 
 .PHONY: publish
 publish: copy_npmrc_to_project_root ## Run some commands for 'npm publish'
