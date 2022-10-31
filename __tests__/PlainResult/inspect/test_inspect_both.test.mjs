@@ -11,7 +11,7 @@ test('input is Ok()', (t) => {
     const actual = inspectBothOfResult(
         input,
         (v) => {
-            t.pass('should call the tap ok fn');
+            t.pass('should call the inspect ok fn');
             t.is(v, INPUT_INNER, 'should be the expected arg');
         },
         (_e) => {
@@ -33,7 +33,7 @@ test('input is Err()', (t) => {
             t.fail('should not call this path');
         },
         (e) => {
-            t.pass('should call the tap err fn');
+            t.pass('should call the inspect err fn');
             t.is(e, INPUT_INNER, 'should be the expected arg');
         }
     );

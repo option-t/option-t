@@ -53,7 +53,6 @@ export { mapErrAsyncForResult as mapErrAsync } from './mapErrAsync.js';
 export { orForResult as or } from './or.js';
 export { orElseForResult as orElse } from './orElse.js';
 export { orElseAsyncForResult as orElseAsync } from './orElseAsync.js';
-export { tapOk, tapErr, tapBoth } from './tap.js';
 export { transposeForResult as transpose } from './transpose.js';
 export { toOptionFromOk, toOptionFromErr } from './toOption.js';
 export {
