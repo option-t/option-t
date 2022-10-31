@@ -2,7 +2,7 @@
     "extends": "./tsconfig.base.json",
     "compilerOptions": {
         "diagnostics": true,
-        "module": "es2015",
+        "module": "ES2020",
         "noEmit": false,
         "noEmitOnError": true,
         "outDir": "./esm/"
