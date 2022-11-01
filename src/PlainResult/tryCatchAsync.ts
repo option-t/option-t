@@ -13,7 +13,13 @@ import { type Result, createOk, createErr } from './Result.js';
 export function tryCatchIntoResultAsync<T>(
     producer: AsyncProducerFn<T>
 ): Promise<Result<T, unknown>> {
-    const value = producer();
+    let value: Promise<T>;
+    try {
+        value = producer();
+    } catch (e: unknown) {
+        const err = createErr<unknown>(e);
+        return Promise.resolve(err);
+    }
 
     assertIsPromise(value, ERR_MSG_PRODUCER_MUST_RETURN_PROMISE);
 
