@@ -1,4 +1,5 @@
-import { assertIsError } from '../internal/assert.js';
+import { assertIsErrorInstance } from '../internal/assert.js';
+import { ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE } from '../internal/ErrorMessage.js';
 import type { ProducerFn } from '../internal/Function.js';
 import { type Result, createOk, createErr } from './Result.js';
 
@@ -35,7 +36,7 @@ export function tryCatchIntoResultWithEnsureError<T>(producer: ProducerFn<T>): R
         const ok = createOk<T>(value);
         return ok;
     } catch (e: unknown) {
-        assertIsError(e);
+        assertIsErrorInstance(e, ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE);
         const err = createErr<Error>(e);
         return err;
     }

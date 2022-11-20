@@ -1,3 +1,5 @@
+import { assertIsErrorInstance } from '../internal/assert.js';
+import { ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE } from '../internal/ErrorMessage.js';
 import { type Result, isOk } from './Result.js';
 import { unwrapErrFromResult, unwrapOkFromResult } from './unwrap.js';
 
@@ -20,14 +22,6 @@ export function unwrapOrThrowErrorFromResult<T>(input: Result<T, Error>): T {
     }
 
     const e: unknown = unwrapErrFromResult(input);
-    if (!(e instanceof Error)) {
-        throw new TypeError(
-            `The contained E should be \`Error\` instance but that was \`${String(e)}\``,
-            {
-                cause: e,
-            }
-        );
-    }
-
+    assertIsErrorInstance(e, ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE);
     throw e;
 }

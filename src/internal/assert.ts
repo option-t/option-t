@@ -10,12 +10,13 @@ export function assertIsPromise(
     }
 }
 
-export function assertIsError(input: unknown): asserts input is Error {
-    if (!(input instanceof Error)) {
+export function assertIsErrorInstance(input: unknown, message: string): asserts input is Error {
+    const ok = input instanceof Error;
+    if (!ok) {
         const stringified = String(input);
-        const message = `The input is not an \`Error\` instance. The actual is \`${stringified}\``;
+        const msg = `${message} The actual is \`${stringified}\``;
         // We don't throw Node's AssertionError because the code size will be larger.
-        throw new TypeError(message, {
+        throw new TypeError(msg, {
             cause: input,
         });
     }
