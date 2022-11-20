@@ -663,6 +663,11 @@ export const apiTable = Object.freeze({
             'unwrapOrElseAsyncFromResult'
         ]
     },
+    'PlainResult/unwrapOrThrowError': {
+        'exports': [
+            'unwrapOrThrowErrorFromResult'
+        ]
+    },
 
     'Undefinable': {
         'path': 'Undefinable/index',
