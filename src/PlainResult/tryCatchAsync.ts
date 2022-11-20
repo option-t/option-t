@@ -1,5 +1,8 @@
-import { assertIsError, assertIsPromise } from '../internal/assert.js';
-import { ERR_MSG_PRODUCER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
+import { assertIsErrorInstance, assertIsPromise } from '../internal/assert.js';
+import {
+    ERR_MSG_PRODUCER_MUST_RETURN_PROMISE,
+    ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE,
+} from '../internal/ErrorMessage.js';
 import type { AsyncProducerFn } from '../internal/Function.js';
 import { mapErrForResult } from './mapErr.js';
 import { type Result, createOk, createErr } from './Result.js';
@@ -51,6 +54,6 @@ function ensureErrorInResultErr<T>(input: Result<T, unknown>): Result<T, Error> 
 }
 
 function checkThrownIsError(thrown: unknown): Error {
-    assertIsError(thrown);
+    assertIsErrorInstance(thrown, ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE);
     return thrown;
 }

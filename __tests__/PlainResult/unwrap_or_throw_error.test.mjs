@@ -41,7 +41,7 @@ test('input is Err, but the contained value is not Error', (t) => {
         },
         {
             instanceOf: TypeError,
-            message: `The contained E should be \`Error\` instance but that was \`${String(
+            message: `The contained E should be \`Error\` instance. The actual is \`${String(
                 ERROR_E
             )}\``,
         }
