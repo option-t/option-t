@@ -104,6 +104,7 @@
 - [option-t/PlainResult/equal](../src/PlainResult/equal.ts)
 - [option-t/PlainResult/expect](../src/PlainResult/expect.ts)
 - [option-t/PlainResult/flatten](../src/PlainResult/flatten.ts)
+- [option-t/PlainResult/fromPromiseSettledResult](../src/PlainResult/fromPromiseSettledResult.ts)
 - [option-t/PlainResult/inspect](../src/PlainResult/inspect.ts)
 - [option-t/PlainResult/map](../src/PlainResult/map.ts)
 - [option-t/PlainResult/mapAsync](../src/PlainResult/mapAsync.ts)
