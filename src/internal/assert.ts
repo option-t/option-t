@@ -4,6 +4,8 @@ export function assertIsPromise(
 ): asserts input is Promise<unknown> {
     if (!(input instanceof Promise)) {
         // We don't throw Node's AssertionError because the code size will be larger.
-        throw new TypeError(message);
+        throw new TypeError(message, {
+            cause: input,
+        });
     }
 }
