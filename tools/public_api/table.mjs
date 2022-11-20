@@ -635,6 +635,7 @@ export const apiTable = Object.freeze({
     'PlainResult/tryCatchAsync': {
         'exports': [
             'tryCatchIntoResultAsync',
+            'tryCatchIntoResultWithEnsureErrorAsync',
         ]
     },
     'PlainResult/transpose': {
