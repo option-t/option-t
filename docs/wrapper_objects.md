@@ -24,7 +24,7 @@ you should avoid to expose this object as a public API of your package_  because
 This can express that there are some values or none.
 
 ```javascript
-import { createSome, createNone, } from 'option-t/esm/Option.mjs';
+import { createSome, createNone, } from 'option-t/esm/Option';
 // or
 const { createSome, createNone, } = require('option-t/cjs/Option');
 
@@ -48,7 +48,7 @@ See [`OptionBase.prototype.toJSON()`](./src/Option.js).
 This can express that there is some values or some error information.
 
 ```javascript
-import { createOk, createErr, } from 'option-t/esm/Result.mjs';
+import { createOk, createErr, } from 'option-t/esm/Result';
 // or
 const { createOk, createErr, } = require('option-t/cjs/Result');
 
@@ -70,7 +70,7 @@ console.log(none.unwrapErr()); // 'some error info'
 ## Unwrap, `undefined` or `null`
 
 ```typescript
-import { Option } from 'option-t/esm/Option.mjs';
+import { Option } from 'option-t/esm/Option';
 
 function unwrapOrUndefined<T>(option: Option<T>): T | undefined {
   const result: T | undefined = option.isSome ? option.unwrap() : undefined;
@@ -87,7 +87,7 @@ function unwrapOrNull<T>(option: Option<T>): T | null {
 ## Cast from `T`, `undefined`, or `null`
 
 ```typescript
-import { Option } from 'option-t/esm/Option.mjs';
+import { Option } from 'option-t/esm/Option';
 
 function fromNullable<T>(v: T | null | undefined): Option<T> {
     return (v === undefined || v === null) ? new None<T>() : new Some<T>(v);
@@ -104,7 +104,7 @@ Please define for your usecases.
 ## Cast to `Promise`
 
 ```typescript
-import { Option } from 'option-t/esm/Option.mjs';
+import { Option } from 'option-t/esm/Option';
 
 // This function treats `None` as a `Promise` which is fulfilled with a tagged union object.
 function castToPromise2(option: Option<T>): Promise<{ ok: boolean; value: T }> {
