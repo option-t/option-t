@@ -15,7 +15,7 @@ class AbstractExportEntry {
 
 const EXTENSION_CJS = 'cjs';
 const EXTENSION_MJS = 'js';
-const EXTENSION_DTS = 'd.ts';
+const EXTENSION_DMTS = 'd.ts';
 const EXTENSION_DCTS = 'd.cts';
 
 export class ExportEntry extends AbstractExportEntry {
@@ -49,11 +49,13 @@ export class ExportEntry extends AbstractExportEntry {
 
         const esm = `./esm/${p}.${EXTENSION_MJS}`;
         const cjs = `./cjs/${p}.${EXTENSION_CJS}`;
-        const dts = `./esm/${p}.${EXTENSION_DTS}`;
+        const dmts = `./esm/${p}.${EXTENSION_DMTS}`;
+        const dcts = `./cjs/${p}.${EXTENSION_DCTS}`;
         const entry = constructDualPackagePathValue({
             esm,
             cjs,
-            dts,
+            dmts,
+            dcts,
         });
         return entry;
     }
@@ -135,7 +137,7 @@ class ESModuleCompatFileExport extends CompatExportEntry {
 
     _toExportEntry() {
         const key = this.key();
-        const dts = `${key}.${EXTENSION_DTS}`;
+        const dts = `${key}.${EXTENSION_DMTS}`;
 
         const p = `${key}.${EXTENSION_MJS}`;
         const value = constructPathValue({
@@ -164,16 +166,18 @@ class LibCompatFileExport extends CompatExportEntry {
         const esmKey = key.replace(LIB_PATH_PREFIX, ESM_PATH_PREFIX);
         assert.ok(esmKey.startsWith(ESM_PATH_PREFIX));
         const esm = `${esmKey}.${EXTENSION_MJS}`;
-        const dts = `${esmKey}.${EXTENSION_DTS}`;
+        const dmts = `${esmKey}.${EXTENSION_DMTS}`;
 
         const cjsKey = key.replace(LIB_PATH_PREFIX, CJS_PATH_PREFIX);
         assert.ok(cjsKey.startsWith(CJS_PATH_PREFIX));
         const cjs = `${cjsKey}.cjs`;
+        const dcts = `${cjsKey}.${EXTENSION_DCTS}`;
 
         const p = constructDualPackagePathValue({
             cjs,
             esm,
-            dts,
+            dmts,
+            dcts,
         });
         return p;
     }
@@ -227,7 +231,7 @@ export class CommonJSCompatDirExport extends AbstractCompatDirExport {
 export class ESModuleCompatDirExport extends AbstractCompatDirExport {
     constructor(dirpath) {
         const p = `esm/${dirpath}`;
-        super(p, EXTENSION_MJS, EXTENSION_DTS);
+        super(p, EXTENSION_MJS, EXTENSION_DMTS);
         Object.freeze(this);
     }
 }
@@ -255,16 +259,18 @@ export class LibCompatDirExport extends AbstractExportEntry {
         const esmKey = actualPath.replace(LIB_PATH_PREFIX, ESM_PATH_PREFIX);
         assert.ok(esmKey.startsWith(ESM_PATH_PREFIX));
         const mjs = `${esmKey}.${EXTENSION_MJS}`;
-        const dts = `${esmKey}.${EXTENSION_DTS}`;
+        const dmts = `${esmKey}.${EXTENSION_DMTS}`;
 
         const cjsKey = actualPath.replace(LIB_PATH_PREFIX, CJS_PATH_PREFIX);
         assert.ok(cjsKey.startsWith(CJS_PATH_PREFIX));
         const cjs = `${cjsKey}.${EXTENSION_CJS}`;
+        const dcts = `${cjsKey}.${EXTENSION_DCTS}`;
 
         const value = constructDualPackagePathValue({
             cjs,
             esm: mjs,
-            dts,
+            dmts,
+            dcts
         });
         return value;
     }
@@ -274,10 +280,21 @@ export class LibCompatDirExport extends AbstractExportEntry {
     }
 }
 
-function constructDualPackagePathValue({ cjs, esm, dts }) {
+function constructDualPackagePathValue({ cjs, esm, dmts, dcts }) {
     assert.strictEqual(typeof cjs, 'string', 'cjs should be string');
     assert.strictEqual(typeof esm, 'string', 'esm should be string');
-    assert.strictEqual(typeof dts, 'string', 'dts should be string');
+    assert.strictEqual(typeof dmts, 'string', 'dmts should be string');
+    assert.strictEqual(typeof dcts, 'string', 'dcts should be string');
+
+    const importCondition = constructPathValue({
+        filepath: esm,
+        dts: dmts,
+    });
+
+    const requireCondition = constructPathValue({
+        filepath: cjs,
+        dts: dcts,
+    });
 
     // [By the document of Node.js v14.2](https://nodejs.org/api/esm.html#esm_resolution_algorithm),
     //  * Condition matching is applied in object order from first to last within the "exports" object.
@@ -285,10 +302,8 @@ function constructDualPackagePathValue({ cjs, esm, dts }) {
     //
     // see also https://nodejs.org/api/esm.html#esm_conditional_exports
     return Object.freeze({
-        'import': esm,
-        'require': cjs,
-        // https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#packagejson-exports-imports-and-self-referencing
-        'types': dts,
+        'import': importCondition,
+        'require':  requireCondition,
         // _default_ should be placed to the last.
         // https://nodejs.org/api/esm.html#esm_conditional_exports
         'default': esm,
@@ -305,7 +320,8 @@ function constructPathValue({ filepath, dts }) {
     //
     // see also https://nodejs.org/api/esm.html#esm_conditional_exports
     return Object.freeze({
-        // https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#packagejson-exports-imports-and-self-referencing
+        // > Note that the "types" condition should always come first in "exports".
+        // https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/#package-json-exports-imports-and-self-referencing
         'types': dts,
         // _default_ should be placed to the last.
         // https://nodejs.org/api/esm.html#esm_conditional_exports

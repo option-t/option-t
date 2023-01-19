@@ -63,6 +63,72 @@ async function checkWhetherFileExist(parentDir, filename) {
     assert.ok(stat.isFile(), `${filename} must be file`);
 }
 
+const TestMode = Object.freeze({
+    CJS: 'commonjs',
+    ESM: 'es_module',
+});
+
+const EXT_ES_MODULE = '.js';
+const EXT_COMMONJS = '.cjs';
+const EX_D_TS = '.d.ts';
+const EX_D_CTS = '.d.cts';
+
+async function testBasicConditionObject(mode, t, conditionValue) {
+    await t.test('should be condition object', (_t) => {
+        assert.strictEqual(typeof conditionValue, 'object');
+        assert.notStrictEqual(conditionValue, null);
+    });
+
+    await t.test('contains expected fields', (_t) => {
+        const keys = Object.keys(conditionValue);
+        assert.deepStrictEqual(keys, ['types', 'default']);
+    });
+
+    const valueDefault = conditionValue.default;
+    const valueTypes = conditionValue.types;
+
+    switch (mode) {
+        case TestMode.ESM:
+            await t.test(`check 'default' file name style is ${EXT_ES_MODULE}`, (_t) => {
+                assert.ok(valueDefault.endsWith(EXT_ES_MODULE));
+            });
+            await t.test(`check 'types' file name style is ${EX_D_TS}`, (_t) => {
+                assert.ok(valueTypes.endsWith(EX_D_TS));
+            });
+            break;
+        case TestMode.CJS:
+            await t.test(`check 'default' file name style is ${EXT_COMMONJS}`, (_t) => {
+                assert.ok(valueDefault.endsWith(EXT_COMMONJS));
+            });
+            await t.test(`check 'types' file name style is ${EX_D_CTS}`, (_t) => {
+                assert.ok(valueTypes.endsWith(EX_D_CTS));
+            });
+            break;
+        default:
+            throw new RangeError(`unknown mode: ${mode}`);
+    }
+}
+
+async function testComplexConditionObject(t, conditionValue) {
+    await t.test('should be condition object', (_t) => {
+        assert.strictEqual(typeof conditionValue, 'object');
+        assert.notStrictEqual(conditionValue, null);
+    });
+
+    await t.test('`import` field is condition', async (t) => {
+        await testBasicConditionObject(TestMode.ESM, t, conditionValue.import);
+    });
+
+    await t.test('`require` field is condition', async (t) => {
+        await testBasicConditionObject(TestMode.CJS, t, conditionValue.require);
+    });
+
+    await t.test('contains expected fields', (_t) => {
+        const keys = Object.keys(conditionValue);
+        assert.deepStrictEqual(keys, ['import', 'require', 'default']);
+    });
+}
+
 await test(`Check package.json's 'exports' field format`, async (t) => {
     const targetDir = process.env.TARGET_DIR;
     assert.ok(!!targetDir, 'TARGET_DIR envvar should be set');
@@ -78,6 +144,24 @@ await test(`Check package.json's 'exports' field format`, async (t) => {
             const running = t.test(route, async (_t) => {
                 await assetion(value);
             });
+            runningTests.push(running);
+        }
+        await Promise.all(runningTests);
+    });
+
+    await t.test(`check condition object's format`, async (t) => {
+        const runningTests = [];
+        for (const [exportedPath, value] of Object.entries(exports)) {
+            const running = t.test(exportedPath, async (t) => {
+                if (exportedPath.startsWith('./cjs/')) {
+                    await testBasicConditionObject(TestMode.CJS, t, value);
+                } else if (exportedPath.startsWith('./esm/')) {
+                    await testBasicConditionObject(TestMode.ESM, t, value);
+                } else {
+                    await testComplexConditionObject(t, value);
+                }
+            });
+
             runningTests.push(running);
         }
         await Promise.all(runningTests);
