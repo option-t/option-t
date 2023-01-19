@@ -284,7 +284,7 @@ function constructDualPackagePathValue({ cjs, esm, dts }) {
     //  * `["node", "import"]` is used as _defaultEnv_ for its ES Module resolver.
     //
     // see also https://nodejs.org/api/esm.html#esm_conditional_exports
-    return {
+    return Object.freeze({
         'import': esm,
         'require': cjs,
         // https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#packagejson-exports-imports-and-self-referencing
@@ -292,7 +292,7 @@ function constructDualPackagePathValue({ cjs, esm, dts }) {
         // _default_ should be placed to the last.
         // https://nodejs.org/api/esm.html#esm_conditional_exports
         'default': esm,
-    };
+    });
 }
 
 function constructPathValue({ filepath, dts }) {
@@ -304,11 +304,11 @@ function constructPathValue({ filepath, dts }) {
     //  * `["node", "import"]` is used as _defaultEnv_ for its ES Module resolver.
     //
     // see also https://nodejs.org/api/esm.html#esm_conditional_exports
-    return {
+    return Object.freeze({
         // https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#packagejson-exports-imports-and-self-referencing
         'types': dts,
         // _default_ should be placed to the last.
         // https://nodejs.org/api/esm.html#esm_conditional_exports
         'default': filepath,
-    };
+    });
 }
