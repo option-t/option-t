@@ -7,7 +7,7 @@ runs:
         - name: Get yarn cache directory path
           shell: bash
           id: yarn-cache-dir-path
-          run: echo "::set-output name=dir::$(yarn cache dir)"
+          run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
         - name: Restore dependencies from cache
           id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
           uses: actions/cache@v3
