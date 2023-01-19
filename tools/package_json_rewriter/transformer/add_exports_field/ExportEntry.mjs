@@ -16,6 +16,7 @@ class AbstractExportEntry {
 const EXTENSION_CJS = 'cjs';
 const EXTENSION_MJS = 'mjs';
 const EXTENSION_DTS = 'd.ts';
+const EXTENSION_DCTS = 'd.cts';
 
 export class ExportEntry extends AbstractExportEntry {
     #key;
@@ -113,7 +114,7 @@ class CommonJSCompatFileExport extends CompatExportEntry {
 
     _toExportEntry() {
         const key = this.key();
-        const dts = `${key}.${EXTENSION_DTS}`;
+        const dts = `${key}.${EXTENSION_DCTS}`;
 
         const p = `${key}.${EXTENSION_CJS}`;
         const value = constructPathValue({
@@ -181,11 +182,13 @@ class LibCompatFileExport extends CompatExportEntry {
 class AbstractCompatDirExport extends AbstractExportEntry {
     #dirpath;
     #extension;
+    #dtsExtension;
 
-    constructor(dirpath, ext) {
+    constructor(dirpath, ext, dtsExt) {
         super();
         this.#dirpath = dirpath;
         this.#extension = ext;
+        this.#dtsExtension = dtsExt;
     }
 
     key() {
@@ -198,7 +201,8 @@ class AbstractCompatDirExport extends AbstractExportEntry {
         const filepath = `${key}/index`;
         const ext = this.#extension;
         const fullpath = `${filepath}.${ext}`;
-        const dts = `${filepath}.${EXTENSION_DTS}`;
+        const dtsExt = this.#dtsExtension;
+        const dts = `${filepath}.${dtsExt}`;
 
         const value = constructPathValue({
             dts,
@@ -215,7 +219,7 @@ class AbstractCompatDirExport extends AbstractExportEntry {
 export class CommonJSCompatDirExport extends AbstractCompatDirExport {
     constructor(dirpath) {
         const p = `cjs/${dirpath}`;
-        super(p, EXTENSION_CJS);
+        super(p, EXTENSION_CJS, EXTENSION_DCTS);
         Object.freeze(this);
     }
 }
@@ -223,7 +227,7 @@ export class CommonJSCompatDirExport extends AbstractCompatDirExport {
 export class ESModuleCompatDirExport extends AbstractCompatDirExport {
     constructor(dirpath) {
         const p = `esm/${dirpath}`;
-        super(p, EXTENSION_MJS);
+        super(p, EXTENSION_MJS, EXTENSION_DTS);
         Object.freeze(this);
     }
 }

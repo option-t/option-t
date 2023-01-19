@@ -78,15 +78,19 @@ build: __build cp_docs cp_changelog cp_license cp_readme generate_manifest ## Bu
 __build: build_cjs build_esm build_mixedlib ## Build all targets.
 
 .PHONY: build_cjs
-build_cjs: __build_cjs__cp_cjs_to_cjsdir __build_cjs__cp_dts_to_cjsdir ## Build `cjs/`.
+build_cjs: __build_cjs__cp_cjs_to_cjsdir __build_cjs__cp_dcts_to_cjsdir ## Build `cjs/`.
 
 .PHONY: __build_cjs__cp_cjs_to_cjsdir
 __build_cjs__cp_cjs_to_cjsdir: __build_cjs__rename_js_to_cjs clean_dist
 	$(NPM_BIN)/babel $(TMP_CJS_DIR) --out-dir $(DIST_COMMONJS_DIR) --extensions=.cjs --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.cjs.mjs --keep-file-extension
 
-.PHONY: build_mjs__cp_dts_to_cjsdir
-__build_cjs__cp_dts_to_cjsdir: __build_cjs__create_tmp_cjs clean_dist
+.PHONY: __build_cjs__cp_dcts_to_cjsdir
+__build_cjs__cp_dcts_to_cjsdir: __build_cjs_rename_dts_to_dcts clean_dist
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_CJS_DIR) --source '$(TMP_CJS_DIR)/**/*.$(DTS_EXTENSION_GLOB)' --destination $(DIST_COMMONJS_DIR)
+
+.PHONY: __build_cjs_rename_dts_to_dcts
+__build_cjs_rename_dts_to_dcts: __build_cjs__create_tmp_cjs
+	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_CJS_DIR) --to-extension 'cts' --from-extension 'ts'
 
 .PHONY: __build_cjs__rename_js_to_cjs
 __build_cjs__rename_js_to_cjs: __build_cjs__create_tmp_cjs
