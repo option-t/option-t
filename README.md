@@ -176,24 +176,29 @@ Each of them includes the same directory hierarchy with [under `src`/](./src/).
 
 #### If your toolchain _does not_ support `exports` field in package.json...
 
-For example, 
+We provides some backward compatible styles. __They are *deprecated* but we're no plan to drop them.__
 
-- If your project uses TypeScript `moduleResolution=node`.
-- If your project uses a classic bundler which does not support `exports` field.
 
-you need to use these paths:
+_These styles are kept for backward compatibility. You should switch to `option-t/BarFoo` style path_.
+
+##### Case: Your project is still use TypeScript compiler which lacks to support `moduleResolution=node16`.
+
+Use `option-t/lib/**`.
+
+This directory provides both of an ES Module and a CommonJS style module by [conditional exports](https://nodejs.org/api/packages.html#conditional-exports)
+and host an actual `d.ts` file for legacy TypeScript compiler.
+
+This is a most easy path for migrations (e.g. switch to `option-t/BarFoo` style, or switch to ES Module from CommonJS).
+
+
+##### Case: Your project uses a classic bundler which does not support `exports` field.
+
+you can use these paths:
 
 - `option-t/cjs/**` (__*Deprecated*__)
    - This directory provides only commonjs style modules.
 - `option-t/esm/**` (__*Deprecated*__)
    - This directory privides only ES Modules.
-- `option-t/lib/**` (__*Deprecated*__)
-    - This directory provides both of an ES Module and a CommonJS style module.
-    - _This is just for backward compatibility and for a smooth migration. Basically, you should switch to `option-t/BarFoo` style path_.
-        - If you're using this, please migrate by following steps.
-            - `option-t/lib/Option`: Use `option-t/esm/Option` or `option-t/cjs/Option`.
-            - `option-t/lib/Result`: Use `option-t/esm/Result` or `option-t/cjs/Result`.
-            - Otherwise, replase `option-t/lib/***` to `option-t/**`.
 
 
 ### Idioms
