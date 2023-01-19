@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { unwrapOrFromNullable } from '../../__dist/esm/Nullable/unwrapOr.mjs';
+import { unwrapOrFromNullable } from '../../__dist/esm/Nullable/unwrapOr.js';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;

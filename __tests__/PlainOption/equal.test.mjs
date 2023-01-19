@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createSome, createNone, isSome, isNone } from '../../__dist/esm/PlainOption/Option.mjs';
-import { equalForOption } from '../../__dist/esm/PlainOption/equal.mjs';
-import { unwrapOption } from '../../__dist/esm/PlainOption/unwrap.mjs';
+import { createSome, createNone, isSome, isNone } from '../../__dist/esm/PlainOption/Option.js';
+import { equalForOption } from '../../__dist/esm/PlainOption/equal.js';
+import { unwrapOption } from '../../__dist/esm/PlainOption/unwrap.js';
 
 const INNER_VALUE_A = Symbol('A');
 const INNER_VALUE_B = Symbol('B');

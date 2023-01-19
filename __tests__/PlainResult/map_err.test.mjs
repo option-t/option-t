@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.mjs';
-import { mapErrForResult } from '../../__dist/esm/PlainResult/mapErr.mjs';
+import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.js';
+import { mapErrForResult } from '../../__dist/esm/PlainResult/mapErr.js';
 
 const VALUE_T = Math.random();
 const ERROR_E = new Error('e');

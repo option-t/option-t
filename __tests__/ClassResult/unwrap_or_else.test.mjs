@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/esm/Result.mjs';
+import { createOk, createErr } from '../../__dist/esm/Result.js';
 
 test('Ok<T>', function (t) {
     t.plan(2);

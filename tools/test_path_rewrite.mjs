@@ -78,7 +78,7 @@ function parseCliOptions() {
 
     {
         const mjsInEsmDir = Object.keys(files).filter((filename) => {
-            return filename.endsWith('.mjs') && filename.startsWith('esm/');
+            return filename.endsWith('.js') && filename.startsWith('esm/');
         });
 
         const EXPECTED_FILE_SET = new Set(mjsInEsmDir.map((filename) => {

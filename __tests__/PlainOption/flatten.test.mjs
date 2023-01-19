@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.mjs';
-import { flattenForOption } from '../../__dist/esm/PlainOption/flatten.mjs';
+import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.js';
+import { flattenForOption } from '../../__dist/esm/PlainOption/flatten.js';
 
 test('input is Some(Some(T))', (t) => {
     const wrappedValue = Symbol('input');

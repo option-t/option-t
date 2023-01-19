@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { orElseForMaybe } from '../../__dist/esm/Maybe/orElse.mjs';
+import { orElseForMaybe } from '../../__dist/esm/Maybe/orElse.js';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { expectNotNull } from '../../__dist/esm/Nullable/expect.mjs';
+import { expectNotNull } from '../../__dist/esm/Nullable/expect.js';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;

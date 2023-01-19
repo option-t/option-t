@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.mjs';
-import { mapOrForOption } from '../../__dist/esm/PlainOption/mapOr.mjs';
+import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.js';
+import { mapOrForOption } from '../../__dist/esm/PlainOption/mapOr.js';
 
 const VALUE_T = Math.random();
 const VALUE_U = Math.random();

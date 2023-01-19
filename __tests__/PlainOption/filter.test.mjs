@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.mjs';
-import { filterForOption } from '../../__dist/esm/PlainOption/filter.mjs';
+import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.js';
+import { filterForOption } from '../../__dist/esm/PlainOption/filter.js';
 
 test('input is Some, and predicate return true', (t) => {
     const expected = Symbol('input');

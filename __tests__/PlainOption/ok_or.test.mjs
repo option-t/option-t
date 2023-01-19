@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.mjs';
-import { okOrForPlainOption } from '../../__dist/esm/PlainOption/okOr.mjs';
-import { unwrapErrFromResult, unwrapOkFromResult } from '../../__dist/esm/PlainResult/unwrap.mjs';
+import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.js';
+import { okOrForPlainOption } from '../../__dist/esm/PlainOption/okOr.js';
+import { unwrapErrFromResult, unwrapOkFromResult } from '../../__dist/esm/PlainResult/unwrap.js';
 
 test('the input is Some', (t) => {
     const OK_VAL = Symbol('ok');

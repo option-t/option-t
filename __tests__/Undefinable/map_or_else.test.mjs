@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { mapOrElseForUndefinable } from '../../__dist/esm/Undefinable/mapOrElse.mjs';
+import { mapOrElseForUndefinable } from '../../__dist/esm/Undefinable/mapOrElse.js';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;

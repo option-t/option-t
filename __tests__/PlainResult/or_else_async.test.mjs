@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.mjs';
-import { orElseAsyncForResult } from '../../__dist/esm/PlainResult/orElseAsync.mjs';
+import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.js';
+import { orElseAsyncForResult } from '../../__dist/esm/PlainResult/orElseAsync.js';
 
 const VALUE_T = Math.random();
 const ERROR_E = new Error('e');

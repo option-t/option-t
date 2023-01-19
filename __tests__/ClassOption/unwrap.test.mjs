@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/esm/Option.mjs';
+import { createSome, createNone } from '../../__dist/esm/Option.js';
 
 test('unwrap `Some<T>`', function (t) {
     const EXPECTED = 1;

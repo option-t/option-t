@@ -1,11 +1,8 @@
 import test from 'ava';
 
-import { isOk, isErr } from '../../../__dist/esm/PlainResult/Result.mjs';
-import { tryCatchIntoResultWithEnsureErrorAsync } from '../../../__dist/esm/PlainResult/tryCatchAsync.mjs';
-import {
-    unwrapErrFromResult,
-    unwrapOkFromResult,
-} from '../../../__dist/esm/PlainResult/unwrap.mjs';
+import { isOk, isErr } from '../../../__dist/esm/PlainResult/Result.js';
+import { tryCatchIntoResultWithEnsureErrorAsync } from '../../../__dist/esm/PlainResult/tryCatchAsync.js';
+import { unwrapErrFromResult, unwrapOkFromResult } from '../../../__dist/esm/PlainResult/unwrap.js';
 
 test('output=Ok(T): producer is async fn', async (t) => {
     t.plan(4);

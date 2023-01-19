@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { andThenForUndefinable } from '../../__dist/esm/Undefinable/andThen.mjs';
+import { andThenForUndefinable } from '../../__dist/esm/Undefinable/andThen.js';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;

@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.mjs';
-import { mapAsyncForOption } from '../../__dist/esm/PlainOption/mapAsync.mjs';
+import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.js';
+import { mapAsyncForOption } from '../../__dist/esm/PlainOption/mapAsync.js';
 
 const VALUE_T = Math.random();
 const VALUE_U = Math.random();

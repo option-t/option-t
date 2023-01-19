@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as PlainResult from '../../../__dist/esm/PlainResult/index.mjs';
+import * as PlainResult from '../../../__dist/esm/PlainResult/index.js';
 
 const testcase = [
     [

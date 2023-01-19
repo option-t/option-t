@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.mjs';
-import { flattenForResult } from '../../__dist/esm/PlainResult/flatten.mjs';
+import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.js';
+import { flattenForResult } from '../../__dist/esm/PlainResult/flatten.js';
 
 test('input is Ok(Ok(T))', (t) => {
     const VALUE_T = Symbol('value');

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { orElseAsyncForNullable } from '../../__dist/esm/Nullable/orElseAsync.mjs';
+import { orElseAsyncForNullable } from '../../__dist/esm/Nullable/orElseAsync.js';
 import { nonNullableValueCaseListForAsync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;

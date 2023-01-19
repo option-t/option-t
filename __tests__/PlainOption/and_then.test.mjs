@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createSome, createNone, isNone, isSome } from '../../__dist/esm/PlainOption/Option.mjs';
-import { andThenForOption } from '../../__dist/esm/PlainOption/andThen.mjs';
-import { unwrapOption } from '../../__dist/esm/PlainOption/unwrap.mjs';
+import { createSome, createNone, isNone, isSome } from '../../__dist/esm/PlainOption/Option.js';
+import { andThenForOption } from '../../__dist/esm/PlainOption/andThen.js';
+import { unwrapOption } from '../../__dist/esm/PlainOption/unwrap.js';
 
 test('src is `None`', (t) => {
     t.plan(1);

@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone, isNone, isSome } from '../../__dist/esm/PlainOption/Option.mjs';
-import { xorForOption } from '../../__dist/esm/PlainOption/xor.mjs';
+import { createSome, createNone, isNone, isSome } from '../../__dist/esm/PlainOption/Option.js';
+import { xorForOption } from '../../__dist/esm/PlainOption/xor.js';
 
 const valA = Symbol('a');
 const valB = Symbol('b');

@@ -14,7 +14,7 @@ class AbstractExportEntry {
 }
 
 const EXTENSION_CJS = 'cjs';
-const EXTENSION_MJS = 'mjs';
+const EXTENSION_MJS = 'js';
 const EXTENSION_DTS = 'd.ts';
 const EXTENSION_DCTS = 'd.cts';
 

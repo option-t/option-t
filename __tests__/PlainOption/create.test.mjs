@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone, isSome, isNone } from '../../__dist/esm/PlainOption/index.mjs';
+import { createSome, createNone, isSome, isNone } from '../../__dist/esm/PlainOption/index.js';
 
 test('createSome', (t) => {
     const EXPECTED = Symbol('');

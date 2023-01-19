@@ -1,11 +1,8 @@
 import test from 'ava';
 
-import { isOk, isErr } from '../../../__dist/esm/PlainResult/Result.mjs';
-import { tryCatchIntoResult } from '../../../__dist/esm/PlainResult/tryCatch.mjs';
-import {
-    unwrapErrFromResult,
-    unwrapOkFromResult,
-} from '../../../__dist/esm/PlainResult/unwrap.mjs';
+import { isOk, isErr } from '../../../__dist/esm/PlainResult/Result.js';
+import { tryCatchIntoResult } from '../../../__dist/esm/PlainResult/tryCatch.js';
+import { unwrapErrFromResult, unwrapOkFromResult } from '../../../__dist/esm/PlainResult/unwrap.js';
 
 test('output=Ok(T)', (t) => {
     t.plan(3);

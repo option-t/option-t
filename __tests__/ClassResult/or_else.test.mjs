@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createOk, createErr, ResultBase } from '../../__dist/esm/Result.mjs';
+import { createOk, createErr, ResultBase } from '../../__dist/esm/Result.js';
 
 const ORIGIN = Symbol('ORIGIN');
 const EXPECTED = Symbol('EXPECTED');
