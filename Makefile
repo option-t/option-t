@@ -90,7 +90,7 @@ __build_cjs__cp_dts_to_cjsdir: __build_cjs__create_tmp_cjs clean_dist
 
 .PHONY: __build_cjs__rename_js_to_cjs
 __build_cjs__rename_js_to_cjs: __build_cjs__create_tmp_cjs
-	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_CJS_DIR) --to-extension 'cjs'
+	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_CJS_DIR) --to-extension 'cjs' --from-extension 'js'
 
 .PHONY: __build_cjs__create_tmp_cjs
 __build_cjs__create_tmp_cjs: __build_tmp_base clean_tmp_cjs
@@ -110,7 +110,7 @@ __build_mjs_cp_dts_to_esm: __build_mjs_create_tmp_mjs clean_dist
 
 .PHONY: __build_mjs_rename_js_to_mjs
 __build_mjs_rename_js_to_mjs: __build_mjs_create_tmp_mjs
-	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_MJS_DIR) --to-extension 'mjs'
+	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_MJS_DIR) --to-extension 'mjs' --from-extension 'js'
 
 .PHONY: __build_mjs_create_tmp_mjs
 __build_mjs_create_tmp_mjs: __build_tmp_base clean_tmp_mjs
