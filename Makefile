@@ -219,7 +219,7 @@ __run_install_package: build
 
 .PHONY: run_test_package_install
 run_test_package_install:
-	$(NODE_BIN) $(CURDIR)/tools/test_package_exports.mjs
+	$(NODE_BIN) --test $(CURDIR)/tools/test_package_exports.mjs
 
 .PHONY: post_cleanup_to_test_package_install
 post_cleanup_to_test_package_install:

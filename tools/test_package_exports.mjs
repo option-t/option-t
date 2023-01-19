@@ -1,5 +1,6 @@
 import * as assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
+import test from 'node:test';
 
 import {
     generateAllExposedPathSequence,
@@ -77,18 +78,19 @@ async function tryImportPath(pathItem) {
 
     const list = generateAllExposedPathSequence();
 
-    const testingItems = [];
     for (const item of list) {
-        let testing = null;
+        const name = item.name();
+        const testLabel = `try to import \`${name}\``;
+
         if (item.isForCompat()) {
-            testing = tryImportPathForCompat(item);
+            test(testLabel, async (_t) => {
+                await tryImportPathForCompat(item);
+            });
         }
         else {
-            testing = tryImportPath(item);
+            test(testLabel, async (_t) => {
+                await tryImportPath(item);
+            });
         }
-
-        testingItems.push(testing);
     }
-
-    await Promise.all(testingItems);
 })();
