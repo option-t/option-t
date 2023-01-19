@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import test from 'ava';
 
-import { createOk, createErr } from '../../../__dist/esm/PlainResult/Result.mjs';
-import { unsafeDropErrForResult } from '../../../__dist/esm/PlainResult/drop.mjs';
+import { createOk, createErr } from '../../../__dist/esm/PlainResult/Result.js';
+import { unsafeDropErrForResult } from '../../../__dist/esm/PlainResult/drop.js';
 
 test('with Ok', (t) => {
     const actual = createOk(1);

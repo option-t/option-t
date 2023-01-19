@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.mjs';
+import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.js';
 
-import { mapOrElseForResult } from '../../__dist/esm/PlainResult/mapOrElse.mjs';
+import { mapOrElseForResult } from '../../__dist/esm/PlainResult/mapOrElse.js';
 
 const PLAN_COUNT = 2;
 

@@ -1,13 +1,13 @@
 import test from 'ava';
 
-import { createSome, createNone, isSome, isNone } from '../../__dist/esm/PlainOption/Option.mjs';
-import { unwrapOption } from '../../__dist/esm/PlainOption/unwrap.mjs';
+import { createSome, createNone, isSome, isNone } from '../../__dist/esm/PlainOption/Option.js';
+import { unwrapOption } from '../../__dist/esm/PlainOption/unwrap.js';
 import {
     createSome as createClassicSome,
     createNone as createClassicNone,
     compatToClassicOption,
     compatToPlainOption,
-} from '../../__dist/esm/Option.mjs';
+} from '../../__dist/esm/Option.js';
 
 test(`input is Plain's Some`, (t) => {
     const expected = Math.random();

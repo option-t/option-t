@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createSome, createNone, isSome, isNone } from '../../__dist/esm/PlainOption/Option.mjs';
-import { orElseAsyncForOption } from '../../__dist/esm/PlainOption/orElseAsync.mjs';
-import { unwrapOption } from '../../__dist/esm/PlainOption/unwrap.mjs';
+import { createSome, createNone, isSome, isNone } from '../../__dist/esm/PlainOption/Option.js';
+import { orElseAsyncForOption } from '../../__dist/esm/PlainOption/orElseAsync.js';
+import { unwrapOption } from '../../__dist/esm/PlainOption/unwrap.js';
 
 const VALUE_T = Math.random();
 const VALUE_U = Math.random();

@@ -1,13 +1,13 @@
 import test from 'ava';
 
-import { createOk, createErr, isOk, isErr } from '../../__dist/esm/PlainResult/Result.mjs';
-import { unwrapOkFromResult, unwrapErrFromResult } from '../../__dist/esm/PlainResult/unwrap.mjs';
+import { createOk, createErr, isOk, isErr } from '../../__dist/esm/PlainResult/Result.js';
+import { unwrapOkFromResult, unwrapErrFromResult } from '../../__dist/esm/PlainResult/unwrap.js';
 import {
     createOk as createClassicOk,
     createErr as createClassicErr,
     compatToClassicResult,
     compatToPlainResult,
-} from '../../__dist/esm/Result.mjs';
+} from '../../__dist/esm/Result.js';
 
 test(`input is Plain's Ok`, (t) => {
     const expected = Math.random();

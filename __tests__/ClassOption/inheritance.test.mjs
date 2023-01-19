@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone, OptionBase, Some, None } from '../../__dist/esm/Option.mjs';
+import { createSome, createNone, OptionBase, Some, None } from '../../__dist/esm/Option.js';
 
 test('`Some<T>`', function (t) {
     const option = createSome(1);

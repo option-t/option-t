@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.mjs';
-import { mapAsyncForResult } from '../../__dist/esm/PlainResult/mapAsync.mjs';
+import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.js';
+import { mapAsyncForResult } from '../../__dist/esm/PlainResult/mapAsync.js';
 
 const VALUE_T = Math.random();
 const VALUE_U = Math.random();

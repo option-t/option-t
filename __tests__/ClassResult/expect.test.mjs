@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/esm/Result.mjs';
+import { createOk, createErr } from '../../__dist/esm/Result.js';
 
 const EXPECTED_OK = 'expected_ok';
 const EXPECTED_ERR = 'expected_err';

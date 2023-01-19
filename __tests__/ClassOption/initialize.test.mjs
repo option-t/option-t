@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone, Some, None } from '../../__dist/esm/Option.mjs';
+import { createSome, createNone, Some, None } from '../../__dist/esm/Option.js';
 
 import {
     primitiveVal,

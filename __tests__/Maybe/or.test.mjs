@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { orForMaybe } from '../../__dist/esm/Maybe/or.mjs';
+import { orForMaybe } from '../../__dist/esm/Maybe/or.js';
 import { nonNullableValue } from '../utils.mjs';
 
 const LEFT = Symbol('a');

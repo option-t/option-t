@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createOk, createErr, ResultBase, Ok, Err } from '../../__dist/esm/Result.mjs';
+import { createOk, createErr, ResultBase, Ok, Err } from '../../__dist/esm/Result.js';
 
 test('Ok<T> should be instanceof `ResultBase`', (t) => {
     const result = createOk(1);

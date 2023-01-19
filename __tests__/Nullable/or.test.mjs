@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { orForNullable } from '../../__dist/esm/Nullable/or.mjs';
+import { orForNullable } from '../../__dist/esm/Nullable/or.js';
 import { nonNullableValue } from '../utils.mjs';
 
 const LEFT = Symbol('a');

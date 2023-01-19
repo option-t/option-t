@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.mjs';
+import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.js';
 
-import { mapOrAsyncForResult } from '../../__dist/esm/PlainResult/mapOrAsync.mjs';
+import { mapOrAsyncForResult } from '../../__dist/esm/PlainResult/mapOrAsync.js';
 
 test('Ok<T>', async (t) => {
     const INITIAL = `Initial: ${String(Math.random())}`;

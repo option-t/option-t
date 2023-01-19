@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createOk, createErr, isOk, isErr } from '../../__dist/esm/PlainResult/Result.mjs';
-import { equalForResult } from '../../__dist/esm/PlainResult/equal.mjs';
-import { unwrapOkFromResult, unwrapErrFromResult } from '../../__dist/esm/PlainResult/unwrap.mjs';
+import { createOk, createErr, isOk, isErr } from '../../__dist/esm/PlainResult/Result.js';
+import { equalForResult } from '../../__dist/esm/PlainResult/equal.js';
+import { unwrapOkFromResult, unwrapErrFromResult } from '../../__dist/esm/PlainResult/unwrap.js';
 
 const INNER_VALUE_A = Symbol('A');
 const INNER_VALUE_B = Symbol('B');

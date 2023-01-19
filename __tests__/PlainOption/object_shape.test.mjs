@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/esm/PlainOption/index.mjs';
+import { createSome, createNone } from '../../__dist/esm/PlainOption/index.js';
 
 test('The shape of PlainOption::Some', (t) => {
     const INNER_VAL = Symbol('');

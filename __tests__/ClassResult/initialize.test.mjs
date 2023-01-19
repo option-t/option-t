@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createOk, createErr, Ok, Err } from '../../__dist/esm/Result.mjs';
+import { createOk, createErr, Ok, Err } from '../../__dist/esm/Result.js';
 
 import {
     primitiveVal,

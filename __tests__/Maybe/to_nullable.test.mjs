@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { toNullableFromMaybe } from '../../__dist/esm/Maybe/toNullable.mjs';
+import { toNullableFromMaybe } from '../../__dist/esm/Maybe/toNullable.js';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {

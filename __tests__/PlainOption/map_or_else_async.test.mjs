@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.mjs';
-import { mapOrElseAsyncForOption } from '../../__dist/esm/PlainOption/mapOrElseAsync.mjs';
+import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.js';
+import { mapOrElseAsyncForOption } from '../../__dist/esm/PlainOption/mapOrElseAsync.js';
 
 const PLAN_COUNT = 3;
 

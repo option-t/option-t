@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/esm/Result.mjs';
+import { createOk, createErr } from '../../__dist/esm/Result.js';
 
 const PLAN_COUNT = 2;
 

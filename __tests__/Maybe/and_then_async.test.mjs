@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { andThenAsyncForMaybe } from '../../__dist/esm/Maybe/andThenAsync.mjs';
+import { andThenAsyncForMaybe } from '../../__dist/esm/Maybe/andThenAsync.js';
 import { nonNullableValueCaseListForAsync } from '../utils.mjs';
 
 for (const [INPUT, PASSED_EXPECTED, FINAL_EXPECTED] of nonNullableValueCaseListForAsync) {

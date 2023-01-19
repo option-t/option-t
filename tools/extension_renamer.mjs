@@ -4,8 +4,6 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 
-const FROM_EXTENSION = 'js';
-
 function debug(input) {
     const filename = fileURLToPath(import.meta.url);
     console.log(`${filename}: ${input}`);
@@ -58,12 +56,16 @@ function bulkRename(filePathList, targetPattern, replaceValue) {
 function parseCliOptions() {
     const CLI_OPTION_TARGET_DIR = 'target-dir';
     const CLI_OPTION_TO_EXT = 'to-extension';
+    const CLI_OPTION_FROM_EXT = 'from-extension';
 
     const options = {
         [CLI_OPTION_TARGET_DIR]: {
             type: 'string',
         },
         [CLI_OPTION_TO_EXT]: {
+            type: 'string',
+        },
+        [CLI_OPTION_FROM_EXT]: {
             type: 'string',
         },
     };
@@ -80,9 +82,14 @@ function parseCliOptions() {
     assert.ok(!!toExtension, `no --${CLI_OPTION_TO_EXT}`);
     assert.ok(!toExtension.startsWith('.'), `--${CLI_OPTION_TO_EXT} must not start with '.'`);
 
+    const fromExtension = values[CLI_OPTION_FROM_EXT];
+    assert.ok(!!toExtension, `no --${CLI_OPTION_FROM_EXT}`);
+    assert.ok(!toExtension.startsWith('.'), `--${CLI_OPTION_FROM_EXT} must not start with '.'`);
+
     return {
         targetDir,
         toExtension,
+        fromExtension,
     };
 }
 
@@ -90,6 +97,7 @@ function parseCliOptions() {
     const {
         targetDir: TARGET_DIR,
         toExtension: TO_EXTENSION,
+        fromExtension: FROM_EXTENSION,
     } = parseCliOptions();
 
     const cwd = process.cwd();
