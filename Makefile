@@ -268,7 +268,7 @@ prepublish: ## Run some commands for 'npm run prepublish'
 	$(MAKE) build -C $(CURDIR)
 	$(MAKE) test_distribution_contain_all -C $(CURDIR)
 	$(MAKE) run_test_module_path_rewrite -C $(CURDIR)
-	$(MAKE) run_test_check_whether_exports_filed_file_exist -C $(CURDIR)
+	$(MAKE) run_test_package_json_exports_field_format -C $(CURDIR)
 
 .PHONY: publish
 publish: copy_npmrc_to_project_root ## Run some commands for 'npm publish'
