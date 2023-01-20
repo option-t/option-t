@@ -3,17 +3,25 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
 
+import * as babel from '@babel/core';
+
 import { getAllGlobMatchedFiles } from './glob.mjs';
 import { createSourceToDestinationMapList, prepareToCreateFile } from './fs_helper.mjs';
 
-async function copyFile(
+async function transformFile(
+    config,
     source,
     dest,
     { isDebug: _isDebug, isVerbose: _isVerbose }
 ) {
+    const transformed = await babel.transformFileAsync(source, {
+        babelrc: false,
+        ...config,
+    });
+    assert.ok(!!transformed, `fail to transform ${source}`);
+
     await prepareToCreateFile(dest);
-    const copying = fs.copyFile(source, dest);
-    return copying;
+    await fs.writeFile(dest, transformed.code);
 }
 
 function parseCliOptions() {
@@ -31,6 +39,9 @@ function parseCliOptions() {
             type: 'string',
         },
         destination: {
+            type: 'string',
+        },
+        config: {
             type: 'string',
         },
     };
@@ -52,12 +63,16 @@ function parseCliOptions() {
     const destinationDir = values.destination;
     assert.ok(!!destinationDir, 'no destinationDir');
 
+    const configPath = values.config;
+    assert.ok(!!configPath, 'no destinationDir');
+
     return {
         isVerbose,
         isDebug,
         baseDir,
         source,
         destinationDir,
+        configPath,
     };
 }
 
@@ -68,9 +83,14 @@ function parseCliOptions() {
         baseDir,
         source,
         destinationDir,
+        configPath,
     } = parseCliOptions();
 
-    const baseDirFullPath = path.resolve(process.cwd(), baseDir);
+    const cwd = process.cwd();
+    const configFullPath = path.resolve(cwd, configPath);
+    const loadingConfig = import(configFullPath);
+
+    const baseDirFullPath = path.resolve(cwd, baseDir);
     const sourceList = await getAllGlobMatchedFiles(baseDirFullPath, source);
     if (isDebug) {
         console.dir(sourceList);
@@ -90,9 +110,10 @@ function parseCliOptions() {
         console.log(debug.join('\n'));
     }
 
+    const { default: config } = await loadingConfig;
     const result = [];
     for (const { source, dest } of pairList) {
-        const processing = copyFile(source, dest, {
+        const processing = transformFile(config, source, dest, {
             isDebug,
             isVerbose,
         });
