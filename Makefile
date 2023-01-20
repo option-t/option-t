@@ -87,7 +87,7 @@ __build_cjs__cp_cjs_to_cjsdir: __build_cjs__rename_js_to_cjs clean_dist
 
 .PHONY: __build_cjs__cp_dcts_to_cjsdir
 __build_cjs__cp_dcts_to_cjsdir: __build_cjs_rename_dts_to_dcts clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_CJS_DIR) --source '$(TMP_CJS_DIR)/**/*.$(DTS_EXTENSION_GLOB)' --destination $(DIST_COMMONJS_DIR)
+	$(NPM_BIN)/babel $(TMP_CJS_DIR) --out-dir $(DIST_COMMONJS_DIR) --extensions=.cts --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.d.cts.mjs --keep-file-extension
 
 .PHONY: __build_cjs_rename_dts_to_dcts
 __build_cjs_rename_dts_to_dcts: __build_cjs__create_tmp_cjs
