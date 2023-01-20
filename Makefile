@@ -19,7 +19,9 @@ TMP_CJS_DIR := $(CURDIR)/__tmp_cjs
 PROJECT_NPMRC := $(CURDIR)/.npmrc
 
 ESLINT_APPLIED_EXTENSIONS := .js,.jsx,cjs,.mjs,.ts,.tsx,.cts,.mts
+CJS_EXTENSION_GLOB := cjs
 MJS_EXTENSION_GLOB := {js,mjs}
+D_CTS_EXTENSION_GLOB := d.cts
 DTS_EXTENSION_GLOB := d.{ts,cts,mts}
 
 ## In CI environment, we should change some configuration
@@ -83,11 +85,19 @@ build_cjs: __build_cjs__cp_cjs_to_cjsdir __build_cjs__cp_dcts_to_cjsdir ## Build
 
 .PHONY: __build_cjs__cp_cjs_to_cjsdir
 __build_cjs__cp_cjs_to_cjsdir: __build_cjs__rename_js_to_cjs clean_dist
-	$(NPM_BIN)/babel $(TMP_CJS_DIR) --out-dir $(DIST_COMMONJS_DIR) --extensions=.cjs --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.cjs.mjs --keep-file-extension
+	$(NODE_BIN) $(CURDIR)/tools/transform_files_by_babel.mjs \
+		--basedir $(TMP_CJS_DIR) \
+		--source '$(TMP_CJS_DIR)/**/*.$(CJS_EXTENSION_GLOB)' \
+		--destination $(DIST_COMMONJS_DIR) \
+		--config $(CURDIR)/tools/babel/babelrc.cjs.mjs
 
 .PHONY: __build_cjs__cp_dcts_to_cjsdir
 __build_cjs__cp_dcts_to_cjsdir: __build_cjs_rename_dts_to_dcts clean_dist
-	$(NPM_BIN)/babel $(TMP_CJS_DIR) --out-dir $(DIST_COMMONJS_DIR) --extensions=.cts --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.d.cts.mjs --keep-file-extension
+	$(NODE_BIN) $(CURDIR)/tools/transform_files_by_babel.mjs \
+		--basedir $(TMP_CJS_DIR) \
+		--source '$(TMP_CJS_DIR)/**/*.$(D_CTS_EXTENSION_GLOB)' \
+		--destination $(DIST_COMMONJS_DIR) \
+		--config $(CURDIR)/tools/babel/babelrc.d.cts.mjs
 
 .PHONY: __build_cjs_rename_dts_to_dcts
 __build_cjs_rename_dts_to_dcts: __build_cjs__create_tmp_cjs
@@ -126,7 +136,11 @@ __build_tmp_base__call_tsc: clean_tmp_base
 
 .PHONY: __build_tmp_base__call_babel
 __build_tmp_base__call_babel: clean_tmp_base
-	$(NPM_BIN)/babel $(SRC_DIR) --out-dir $(TMP_BASE_DIR) --extensions=.js --no-babelrc --config-file $(CURDIR)/tools/babel/babelrc.esm.mjs
+	$(NODE_BIN) $(CURDIR)/tools/transform_files_by_babel.mjs \
+		--basedir $(SRC_DIR) \
+		--source '$(SRC_DIR)/**/*.$(MJS_EXTENSION_GLOB)' \
+		--destination $(TMP_BASE_DIR) \
+		--config $(CURDIR)/tools/babel/babelrc.esm.mjs
 
 .PHONY: __build_tmp_base__call_cpx
 __build_tmp_base__call_cpx: clean_tmp_base
