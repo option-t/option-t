@@ -56,7 +56,7 @@ export { orElseAsyncForResult as orElseAsync } from './orElseAsync.js';
 export { transposeForResult as transpose } from './transpose.js';
 export { toOptionFromOk, toOptionFromErr } from './toOption.js';
 export {
-    unwrapOkFromResult as unwrap,
+    unwrapFromResult as unwrap,
     unwrapOkFromResult as unwrapOk,
     unwrapErrFromResult as unwrapErr,
 } from './unwrap.js';
