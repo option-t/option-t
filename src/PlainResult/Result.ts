@@ -35,6 +35,15 @@ export type Result<T, E> = Ok<T> | Err<E>;
  */
 export interface Ok<T> {
     readonly ok: true;
+    /**
+     *  @deprecated
+     *  Don't touch this property directly from an user project.
+     *  Instead, use `unwrapOk()` operator to get an inner value.
+     *
+     *  Historically, this type was created to target a JSVM that supports ES5.
+     *  Then there was no well optimized `Symbol` to achieve a private property.
+     *  We don't have a plan to change this into private property keep the backward compatibility.
+     */
     readonly val: T;
 
     // To keep the same shape (hidden class or structure) with the other.
@@ -66,6 +75,15 @@ export interface Ok<T> {
     //
     // We use `null | undefined` as more widen type rather than `null` for the backward compatibility.
     // This definition allows to accept a value created by the old version of this library.
+    /**
+     *  @deprecated
+     *  Don't touch this property directly from an user project.
+     *  Instead, use `unwrapErr()` operator to get an inner value.
+     *
+     *  Historically, this type was created to target a JSVM that supports ES5.
+     *  Then there was no well optimized `Symbol` to achieve a private property.
+     *  We don't have a plan to change this into private property keep the backward compatibility.
+     */
     readonly err?: null | undefined;
 }
 
@@ -127,8 +145,26 @@ export interface Err<E> {
     //
     // We use `null | undefined` as more widen type rather than `null` for the backward compatibility.
     // This definition allows to accept a value created by the old version of this library.
+    /**
+     *  @deprecated
+     *  Don't touch this property directly from an user project.
+     *  Instead, use `unwrapOk()` operator to get an inner value.
+     *
+     *  Historically, this type was created to target a JSVM that supports ES5.
+     *  Then there was no well optimized `Symbol` to achieve a private property.
+     *  We don't have a plan to change this into private property keep the backward compatibility.
+     */
     readonly val?: null | undefined;
 
+    /**
+     *  @deprecated
+     *  Don't touch this property directly from an user project.
+     *  Instead, use `unwrapErr()` operator to get an inner value.
+     *
+     *  Historically, this type was created to target a JSVM that supports ES5.
+     *  Then there was no well optimized `Symbol` to achieve a private property.
+     *  We don't have a plan to change this into private property keep the backward compatibility.
+     */
     readonly err: E;
 }
 
