@@ -128,8 +128,8 @@ All APIs are TypeScript ready.
     * [`Undefinable<T>` (`T | undefined`)](./src/Undefinable/)
     * [`Maybe<T>` (`T | null | undefined`)](./src/Maybe/)
     * plain objects
-        * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/)
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
+        * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/) (_weak deprecated_)
 * [Wrapper objects](./docs/wrapper_objects.md) ([__*deprecated*__](https://github.com/karen-irc/option-t/issues/459)).
 
 
@@ -151,20 +151,10 @@ This can express a value of `T` type or `undefined`.
 
 This can express a value of `T` type, `null`, or `undefined`.
 
-####  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/)
-
-This can express that there is some values or none _as a plain object_.
-This does not have any property method on its prototype. But this allows no including unused methods of them.
-
 #### [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
 
 This can express that there is some values or some error information _as a plain object_.
 This does not have any property method on its prototype. But this allows no including unused methods of them.
-
-
-#### Wrapper objects (deprecated)
-
-[See this guide](./docs/wrapper_objects.md).
 
 
 ### How to import
@@ -204,6 +194,24 @@ you can use these paths:
 ### Idioms
 
 - You can see [some idioms](./docs/idiom/) of this library for the interoperability to JavaScript world.
+
+
+### Deprecated APIs
+
+We don't have any concrete plan to remove followings but do not recommend to use them in almost cases.
+
+####  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/) (weak deprecated)
+
+**Basically, we don't recommend to use this type. Use `Nullable`, `Undefinable<T>`, or `Maybe<T>` to express an absence of a value instead. In JavaScript, they would cover almost usecases. Probably, you might not have to use this type.**
+
+This can express that there is some values or none _as a plain object_.
+This does not have any property method on its prototype. But this allows no including unused methods of them.
+
+
+#### Wrapper objects (deprecated)
+
+[See this guide](./docs/wrapper_objects.md).
+
 
 
 ### See also
