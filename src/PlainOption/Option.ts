@@ -50,6 +50,15 @@ export type Option<T> = Some<T> | None;
  *      - ...and more.
  */
 export interface Some<T> {
+    /**
+     *  @deprecated
+     *  Don't touch this property directly from an user project.
+     *  Instead, use {@link isSome()} or {@link isNone()} operator to get an inner value.
+     *
+     *  Historically, this type was created to target a JSVM that supports ES5.
+     *  Then there was no well optimized `Symbol` to achieve a private property.
+     *  We don't have a plan to change this into private property keep the backward compatibility.
+     */
     readonly ok: true;
     /**
      *  @deprecated
@@ -87,6 +96,15 @@ export function createSome<T>(val: T): Some<T> {
  *      - ...and more.
  */
 export interface None {
+    /**
+     *  @deprecated
+     *  Don't touch this property directly from an user project.
+     *  Instead, use {@link isSome()} or {@link isNone()} operator to get an inner value.
+     *
+     *  Historically, this type was created to target a JSVM that supports ES5.
+     *  Then there was no well optimized `Symbol` to achieve a private property.
+     *  We don't have a plan to change this into private property keep the backward compatibility.
+     */
     readonly ok: false;
 
     // To keep the same shape (hidden class or structure) with the other.
