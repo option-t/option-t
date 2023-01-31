@@ -34,6 +34,15 @@ export type Result<T, E> = Ok<T> | Err<E>;
  *      - ...and more.
  */
 export interface Ok<T> {
+    /**
+     *  @deprecated
+     *  Don't touch this property directly from an user project.
+     *  Instead, use {@link isOk()} or {@link isErr()} operator to get an inner value.
+     *
+     *  Historically, this type was created to target a JSVM that supports ES5.
+     *  Then there was no well optimized `Symbol` to achieve a private property.
+     *  We don't have a plan to change this into private property keep the backward compatibility.
+     */
     readonly ok: true;
     /**
      *  @deprecated
@@ -114,6 +123,15 @@ export function createOk<T>(val: T): Ok<T> {
  *      - ...and more.
  */
 export interface Err<E> {
+    /**
+     *  @deprecated
+     *  Don't touch this property directly from an user project.
+     *  Instead, use {@link isOk()} or {@link isErr()} operator to get an inner value.
+     *
+     *  Historically, this type was created to target a JSVM that supports ES5.
+     *  Then there was no well optimized `Symbol` to achieve a private property.
+     *  We don't have a plan to change this into private property keep the backward compatibility.
+     */
     readonly ok: false;
 
     // To keep the same shape (hidden class or structure) with the other.
