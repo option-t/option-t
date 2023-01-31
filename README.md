@@ -162,11 +162,6 @@ This can express that there is some values or some error information _as a plain
 This does not have any property method on its prototype. But this allows no including unused methods of them.
 
 
-#### Wrapper objects (deprecated)
-
-[See this guide](./docs/wrapper_objects.md).
-
-
 ### How to import
 
 **You can use [these paths](./docs/public_api_list.md) in both of CommonJS style and ES Module style.**
@@ -204,6 +199,17 @@ you can use these paths:
 ### Idioms
 
 - You can see [some idioms](./docs/idiom/) of this library for the interoperability to JavaScript world.
+
+
+### Deprecated APIs
+
+We don't have any concrete plan to remove followings but do not recommend to use them in almost cases.
+
+
+#### Wrapper objects (deprecated)
+
+[See this guide](./docs/wrapper_objects.md).
+
 
 
 ### See also
