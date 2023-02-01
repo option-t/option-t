@@ -4,11 +4,6 @@
 * To import these, your toolchain must support [conditional exports](https://nodejs.org/api/esm.html#esm_conditional_exports).
 
 
-## .
-
-- [option-t](../src/index.ts)
-
-
 ## Maybe
 
 - [option-t/Maybe](../src/Maybe/index.ts)

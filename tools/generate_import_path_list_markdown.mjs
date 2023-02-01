@@ -17,6 +17,7 @@ const RELATIVE_PATH_TO_SRC_DIR = '../src';
 const FILENAME = 'public_api_list.md';
 
 const PKG_NAME = 'option-t';
+const PKG_ROOT_ENTRY_POINT = '.';
 
 class ListItem {
     #key;
@@ -160,6 +161,10 @@ function parseCliOptions() {
 
     const apiList = generateExposedPathSequence();
     const list = Array.from(apiList)
+        .filter((pathItem) => {
+            const ok = pathItem.name() !== PKG_ROOT_ENTRY_POINT;
+            return ok;
+        })
         .map((pathItem) => {
             const key = pathItem.name();
             const path = pathItem.filepath();
