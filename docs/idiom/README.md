@@ -11,4 +11,3 @@ This document provides some idioms of this library for the interoperability to J
 
 * [Express Progressive data](./express_progress.md)
 * [Convert from PromiseSettledResult<T>) to `PlainResult`](./from_promise_settled_result.md)
-* [Unwrap if _result_ is `Ok(T)`, otherwise throw an inner value of `Err(E)`](./unwrap_ok_or_throw_err.md)

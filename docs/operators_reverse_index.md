@@ -5,6 +5,8 @@ This document provides a reverse index for operators by your purpose.
 
 Furthermore, operators may not be implemented for all types this package provides but we use same semantics whole of this package.
 
+[All public operators list is here](./public_api_list.md)
+
 
 ## Create a container type _Bar_ value.
 
