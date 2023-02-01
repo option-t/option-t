@@ -122,8 +122,9 @@ yarn add option-t --save
 ## Usage & APIs
 
 All APIs are TypeScript ready.
+Additional documents are in [`docs/`](./docs/).
 
-* Utility functions for these types.
+* _Utility functions for these types_. These are designed for more tree shaking friendly and more usable for JavaScript common world.
     * [`Nullable<T>` (`T | null`)](./src/Nullable/)
     * [`Undefinable<T>` (`T | undefined`)](./src/Undefinable/)
     * [`Maybe<T>` (`T | null | undefined`)](./src/Maybe/)
@@ -131,30 +132,6 @@ All APIs are TypeScript ready.
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
         * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/) (_weak deprecated_)
 * [Wrapper objects](./docs/wrapper_objects.md) ([__*deprecated*__](https://github.com/karen-irc/option-t/issues/459)).
-
-
-### Utility functions for some types.
-
-These are designed for more tree shaking friendly and more usable for JavaScript common world.
-
-_We recommend to use these in almost case._
-
-#### [`Nullable<T>` (`T | null`)](./src/Nullable/)
-
-This can express a value of `T` type or `null`.
-
-#### [`Undefinable<T>` (`T | undefined`)](./src/Undefinable/)
-
-This can express a value of `T` type or `undefined`.
-
-#### [`Maybe<T>` (`T | null | undefined`)](./src/Maybe/)
-
-This can express a value of `T` type, `null`, or `undefined`.
-
-#### [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
-
-This can express that there is some values or some error information _as a plain object_.
-This does not have any property method on its prototype. But this allows no including unused methods of them.
 
 
 ### How to import
@@ -168,7 +145,6 @@ Each of them includes the same directory hierarchy with [under `src`/](./src/).
 
 We provides some backward compatible styles. __They are *deprecated* but we're no plan to drop them.__
 
-
 _These styles are kept for backward compatibility. You should switch to `option-t/BarFoo` style path_.
 
 ##### Case: Your project is still use TypeScript compiler which lacks to support `moduleResolution=node16`.
@@ -180,7 +156,6 @@ and host an actual `d.ts` file for legacy TypeScript compiler.
 
 This is a most easy path for migrations (e.g. switch to `option-t/BarFoo` style, or switch to ES Module from CommonJS).
 
-
 ##### Case: Your project uses a classic bundler which does not support `exports` field.
 
 you can use these paths:
@@ -191,30 +166,13 @@ you can use these paths:
    - This directory privides only ES Modules.
 
 
-### Idioms
+### Deprecation
 
-- You can see [some idioms](./docs/idiom/) of this library for the interoperability to JavaScript world.
-
-
-### Deprecated APIs
-
-We don't have any concrete plan to remove followings but do not recommend to use them in almost cases.
-
-####  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/) (weak deprecated)
-
-**Basically, we don't recommend to use this type. Use `Nullable`, `Undefinable<T>`, or `Maybe<T>` to express an absence of a value instead. In JavaScript, they would cover almost usecases. Probably, you might not have to use this type.**
-
-This can express that there is some values or none _as a plain object_.
-This does not have any property method on its prototype. But this allows no including unused methods of them.
+All deprecated items are marked as `@deprecated` in JSDoc.
+Please read [the guide](./docs/deprecated_apis.md) to know more details.
 
 
-#### Wrapper objects (deprecated)
-
-[See this guide](./docs/wrapper_objects.md).
-
-
-
-### See also
+## See also
 
 These documents would provide more information about `Option<T>` and `Result<T, E>`.
 These are written for Rust, but the essence is just same.
