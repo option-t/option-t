@@ -206,7 +206,7 @@ Our design goal is that we provide more specialized tools to handle an absence o
 
 ### [neverthrow (v6.0.0)](https://github.com/supermacro/neverthrow/tree/v6.0.0)
 
-neverthrow is a package that provides _Result_ type implementation.
+_neverthrow_ is a package that provides _Result_ type implementation.
 At this point, we think that we and they share the same spirits.
 
 However, we think there some different design decision between neverthrow and us.
