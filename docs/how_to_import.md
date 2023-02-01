@@ -12,7 +12,8 @@ import { isNotNull } from 'option-t/Nullable';
 import { unwrapNullable } from 'option-t/Nullable/unwrap';
 import { createOk, isOk } from 'option-t/PlainResult';
 
-// If your toolchains supports package.json's exports field (if you fail to import by the above style)
+// If your toolchains supports package.json's exports field
+// (if you fail to import by the above style)
 import { isNotNull } from 'option-t/lib/Nullable';
 import { unwrapNullable } from 'option-t/lib/Nullable/unwrap';
 import { createOk, isOk } from 'option-t/lib/PlainResult';
