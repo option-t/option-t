@@ -188,3 +188,105 @@ These are written for Rust, but the essence is just same.
 ## Contribution
 
 - Use [`yarn`](https://yarnpkg.com/) to install dev-dependency toolchains.
+
+
+
+## Related works: Comparison with other similar packages
+
+### [fp-ts (v2.13.1)](https://github.com/gcanti/fp-ts/tree/2.13.1)
+
+_fp-ts_ is a packages that provides various tools to write a functional programming style code including _Either_ and _Option_ type.
+
+our design’ origin is Rust language, so we also contains an essence of functional programming style which Rust language contains.
+In this point, features that we provides would be similar to fp-ts’ one.
+
+However, we do not aim to achieve to provides a feature to write a functional programming language code unlike fp-ts.
+Our design goal is that we provide more specialized tools to handle an absence of a values.
+
+
+### [neverthrow (v6.0.0)](https://github.com/supermacro/neverthrow/tree/v6.0.0)
+
+neverthrow is a package that provides _Result_ type implementation.
+At this point, we think that we and they share the same spirits.
+
+However, we think there some different design decision between neverthrow and us.
+
+
+#### option-t does not provide a method chain style but have a perfect "tree-shakability"
+
+We does not provide class based implementation and method chaining style.
+Historically, we had provided a method-chain style APIs and data types as tier 1.
+
+- [`ClassOption`](./src/ClassOption/)
+- [`ClassResult`](./src/ClassResult/)
+
+But we gave up method chain style as primary style and switched our primary APIs
+to current simple functions combination style by various reasons.
+
+First, there was a problem with [dead code elimination](https://en.wikipedia.org/wiki/Dead-code_elimination).
+Dead code elimination (as known as DCE or “tree shaking” in JavaScript toolchain context) is important optimization.
+It reduces a final bundled code size after linking codes by a module bundler (linker).
+
+However, it’s hard to remove unused an object property method in JavaScript.
+To remove them _safely_, an optimizer should know weather a object property is used or not over a whole of programs.
+But this kind of optimization requires perfect call graph information too.
+This kind of optimization is easy relatively with a static language like C++ or Rust
+but JavaScript is a dynamic language essentially.
+JavaScript have a multiple way to prevent a this kind of optimization like a reflection (e.g. `Object.keys(obj)`).
+So it’s hard.
+
+Under this condition, we cannot add a feature as property methods without increase a final code size.
+We would like to add a popular feature as a part of this package to reuse it or would like to fill a gap with Rust's original feature set.
+But an user project does not use all features at every time.
+They use a partial of this package generally. Even if an user project does not use them,
+features provided as a object property method are not removed, so it increases a final application size. 
+This might be a big problem for client-side application, especially to implement SDK libraries.
+Thus we would like to avoid it sincerely.
+
+Exceptionally, as our memory, Google Closure Compiler’s advanced optimization mode can do such aggressive dead code elimination
+about an unused object property as a part of static optimization.
+But it’s not a popular toolchain choice in 2010s later.
+We could not expect that a user project accept it as a popular choice rather than UglyfyJS, terser,
+or other code minifier lacking an analysis whole of programs statically.
+
+Second, there was a problem with TypeScript’s type inference.
+In 2016~2018, our method chain style implementation sometimes fall into that
+a type parameter for generics fallback to `any` or `unknown`
+in mid of a long (relatively complex) method chains in our user project.
+This causes to break a type integrity whole of a project and causes a bad developer experience.
+
+Third, there was a problem to make hard to keep a consistent behavior with mixing multiple version in a project dependency.
+A class based object implementation often supports `instanceof` check naturally as a part of APIs implicitly.
+However, if there are multiple versions of same name package in a project dependencies
+by aggregating them with semantic versioning, `instanceof` behavior might be inconsistent as contrary to expectations of a developer.
+
+For example,  the following code will be result as `false`. This is just unsound.
+
+```js
+// This is some_package@v2 actually.
+import { SomeClass } from 'some_package';
+// This package uses some_package@v1 as dependency.
+import { getBar } from 'other_package';
+
+// This value is some_package@v1's instance
+// that having same type shape with some_package@v2's same named class instance.
+const bar = getBar();
+// Developer think this should be `true`, but the actual is `false`.
+console.log(bar instanceof SomeClass); // false
+```
+
+You may think TypeScript’s static type system can fix this problem,
+but it cannot do. TypeScript’s type system uses structural subtyping.
+This example is valid if the `bar`  and `SomeClass`  (instance) have a same type shape.
+As a result, it’s bad behavior. To fix above problems,
+we gave up method chain style and make it deprecated.
+
+Finally, we shifted to provide a set of minimum types and various standalone "operator" functions.
+This design allows us to "tree-shaking" perfectly to remove unused functions.
+
+Of course, we know this design style is boring programming style.
+If [pipeline operator proposal](https://github.com/tc39/proposal-pipeline-operator) advance to the part of ECMA262 spec,
+this boring style problem might be relaxed.
+
+Furthermore, we think that it happens many times reading the code but writing one is fewer than it.
+We believe that this style is tired but not a problem in actually as a long term.
