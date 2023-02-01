@@ -122,7 +122,6 @@ yarn add option-t --save
 ## Usage & APIs
 
 All APIs are TypeScript ready.
-Additional documents are in [`docs/`](./docs/).
 
 * _Utility functions for these types_. These are designed for more tree shaking friendly and more usable for JavaScript common world.
     * [`Nullable<T>` (`T | null`)](./src/Nullable/)
@@ -132,6 +131,8 @@ Additional documents are in [`docs/`](./docs/).
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
         * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/) (_weak deprecated_)
 * [Wrapper objects](./docs/wrapper_objects.md) ([__*deprecated*__](https://github.com/karen-irc/option-t/issues/459)).
+
+Additional documents are in [`docs/`](./docs/).
 
 
 ### How to import
