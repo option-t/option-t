@@ -14,4 +14,4 @@ export {
     ClassicErrConstructor as Err,
     compatToClassicResult,
     compatToPlainResult,
-} from './ClassResult/index.js';
+} from './ClassicResult/index.js';

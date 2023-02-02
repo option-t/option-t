@@ -14,4 +14,4 @@ export {
     ClassicNoneConstructor as None,
     compatToClassicOption,
     compatToPlainOption,
-} from './ClassOption/index.js';
+} from './ClassicOption/index.js';
