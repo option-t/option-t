@@ -827,6 +827,8 @@ const COMPAT_DESCRIPTOR = Object.freeze({
 });
 
 export const legacyApiTable = Object.freeze({
+    'cjs/ClassicOption': COMPAT_DESCRIPTOR,
+    'cjs/ClassicResult': COMPAT_DESCRIPTOR,
     'cjs/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
     'cjs/Maybe/Maybe': COMPAT_DESCRIPTOR,
     'cjs/Maybe/and': COMPAT_DESCRIPTOR,
@@ -967,6 +969,8 @@ export const legacyApiTable = Object.freeze({
     'cjs/Undefinable/unwrapOrElseAsync': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/xor': COMPAT_DESCRIPTOR,
     'cjs/index': COMPAT_DESCRIPTOR,
+    'esm/ClassicOption': COMPAT_DESCRIPTOR,
+    'esm/ClassicResult': COMPAT_DESCRIPTOR,
     'esm/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
     'esm/Maybe/Maybe': COMPAT_DESCRIPTOR,
     'esm/Maybe/and': COMPAT_DESCRIPTOR,
@@ -1107,6 +1111,8 @@ export const legacyApiTable = Object.freeze({
     'esm/Undefinable/unwrapOrElseAsync': COMPAT_DESCRIPTOR,
     'esm/Undefinable/xor': COMPAT_DESCRIPTOR,
     'esm/index': COMPAT_DESCRIPTOR,
+    'lib/ClassicOption': COMPAT_DESCRIPTOR,
+    'lib/ClassicResult': COMPAT_DESCRIPTOR,
     'lib/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
     'lib/Maybe/Maybe': COMPAT_DESCRIPTOR,
     'lib/Maybe/and': COMPAT_DESCRIPTOR,
