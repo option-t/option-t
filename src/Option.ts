@@ -6,10 +6,10 @@
  *      See https://github.com/karen-irc/option-t/issues/459
  */
 export {
-    ClassicTryTransformFn as FlatmapFn,
-    ClassicTryRecoveryFn as MayRecoveryFn,
+    type ClassicTryTransformFn as FlatmapFn,
+    type ClassicTryRecoveryFn as MayRecoveryFn,
     ClassicOptionBase as OptionBase,
-    ClassicOption as Option,
+    type ClassicOption as Option,
     createClassicSome as createSome,
     createClassicNone as createNone,
     ClassicSomeConstructor as Some,
