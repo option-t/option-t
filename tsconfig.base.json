@@ -9,6 +9,7 @@
         "lib": [                                   /* Specify library files to be included in the compilation. */
             "ES5",
             "ES2015.Promise",
+            "ES2020.Promise",
             "ES2022.Error",
         ],
         // "allowJs": true,                             /* Allow javascript files to be compiled. */

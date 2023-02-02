@@ -10,4 +10,3 @@ But we often need a glue code for the interoperability to JavaScript world.
 This document provides some idioms of this library for the interoperability to JavaScript world.
 
 * [Express Progressive data](./express_progress.md)
-* [Convert from PromiseSettledResult<T>) to `PlainResult`](./from_promise_settled_result.md)

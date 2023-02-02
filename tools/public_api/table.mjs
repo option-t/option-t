@@ -547,6 +547,11 @@ export const apiTable = Object.freeze({
             'flattenForResult'
         ]
     },
+    'PlainResult/fromPromiseSettledResult': {
+        'exports': [
+            'fromPromiseSettledResultToResult'
+        ]
+    },
     'PlainResult/inspect': {
         'exports': [
             'inspectOkOfResult',
