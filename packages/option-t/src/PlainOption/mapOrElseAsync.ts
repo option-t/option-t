@@ -12,7 +12,7 @@ import { unwrapOption } from './unwrap.js';
  *  or a _recoverer_ function to a contained `None` value in _input_.
  *  This function can be used to unpack a successful result while handling an error.
  */
-export function mapOrElseAsyncForOption<T, U>(
+export async function mapOrElseAsyncForOption<T, U>(
     input: Option<T>,
     recoverer: AsyncRecoveryFn<U>,
     transformer: AsyncTransformFn<T, U>

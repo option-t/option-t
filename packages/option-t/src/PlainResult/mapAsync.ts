@@ -10,13 +10,13 @@ import { unwrapOkFromResult } from './unwrap.js';
  *
  *  This function can be used to compose the results of two functions.
  */
-export function mapAsyncForResult<T, U, E>(
+export async function mapAsyncForResult<T, U, E>(
     input: Result<T, E>,
     transformer: AsyncTransformFn<T, U>
 ): Promise<Result<U, E>> {
     if (isErr(input)) {
         const s: Err<E> = input;
-        return Promise.resolve(s);
+        return s;
     }
 
     const inner: T = unwrapOkFromResult(input);

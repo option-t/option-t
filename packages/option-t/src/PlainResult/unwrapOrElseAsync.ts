@@ -8,13 +8,13 @@ import { unwrapOkFromResult, unwrapErrFromResult } from './unwrap.js';
  *  Unwraps _input_, returns the content of an `Ok(T)`.
  *  If the value is an `Err(E)` then it calls `recoverer` with its value.
  */
-export function unwrapOrElseAsyncFromResult<T, E>(
+export async function unwrapOrElseAsyncFromResult<T, E>(
     input: Result<T, E>,
     recoverer: AsyncRecoveryFromErrorFn<E, T>
 ): Promise<T> {
     if (isOk(input)) {
         const value = unwrapOkFromResult(input);
-        return Promise.resolve(value);
+        return value;
     }
 
     const error: E = unwrapErrFromResult(input);

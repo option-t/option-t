@@ -26,12 +26,12 @@ function check<T>(value: Maybe<T>): T {
  *      * If you'd like return `Maybe<*>` as `U`, use `andThen()`.
  *      * If the result of _transformer_ is `null` or `undefined`, this throw an `Error`.
  */
-export function mapAsyncForMaybe<T, U>(
+export async function mapAsyncForMaybe<T, U>(
     input: Maybe<T>,
     transformer: AsyncTransformFn<T, NotNullOrUndefined<U>>
 ): Promise<Maybe<U>> {
     if (isNullOrUndefined(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const result = transformer(input);

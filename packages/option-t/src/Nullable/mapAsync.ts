@@ -18,12 +18,12 @@ function check<T>(value: Nullable<T>): T {
  *      * If you'd like return `Nullable<*>` as `U`, use `andThen()`.
  *      * If the result of _transformer_ is `null`, this throw an `Error`.
  */
-export function mapAsyncForNullable<T, U>(
+export async function mapAsyncForNullable<T, U>(
     input: Nullable<T>,
     transformer: AsyncTransformFn<T, NotNull<U>>
 ): Promise<Nullable<U>> {
     if (isNull(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const result = transformer(input);

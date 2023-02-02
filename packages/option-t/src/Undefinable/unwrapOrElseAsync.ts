@@ -22,12 +22,12 @@ function check<T>(value: Undefinable<T>): T {
  *      * If you try to recover the value, use `orElse()`
  *  * If the result of _recoverer_ is `undefined`, throw `TypeError`.
  */
-export function unwrapOrElseAsyncFromUndefinable<T>(
+export async function unwrapOrElseAsyncFromUndefinable<T>(
     input: Undefinable<T>,
     recoverer: AsyncRecoveryFn<NotUndefined<T>>
 ): Promise<NotUndefined<T>> {
     if (isNotUndefined(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const fallback: Promise<NotUndefined<T>> = recoverer();

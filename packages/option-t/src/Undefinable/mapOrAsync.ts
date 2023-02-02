@@ -28,7 +28,7 @@ function check<T>(value: Undefinable<T>): T {
  *      * If the result of _defaultValue_ is `undefined`, this throw an `Error`.
  *  * If you'd like to accept `Undefinable<*>` as `U`, use a combination `andThen()` and `or()`.
  */
-export function mapOrAsyncForUndefinable<T, U>(
+export async function mapOrAsyncForUndefinable<T, U>(
     input: Undefinable<T>,
     defaultValue: NotUndefined<U>,
     transformer: AsyncTransformFn<T, NotUndefined<U>>
@@ -38,7 +38,7 @@ export function mapOrAsyncForUndefinable<T, U>(
             defaultValue,
             ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE
         );
-        return Promise.resolve(nonNullDefault);
+        return nonNullDefault;
     }
 
     const result = transformer(input);

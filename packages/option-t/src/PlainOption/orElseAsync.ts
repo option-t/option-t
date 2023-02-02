@@ -9,12 +9,12 @@ export type OptionAsyncTryRecoveryFn<T> = AsyncRecoveryFn<Option<T>>;
  *  Return _input_ as `T` if the passed _input_ is `Some(T)`.
  *  Otherwise, return the result of _recoverer_.
  */
-export function orElseAsyncForOption<T>(
+export async function orElseAsyncForOption<T>(
     input: Option<T>,
     recoverer: OptionAsyncTryRecoveryFn<T>
 ): Promise<Option<T>> {
     if (isSome(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const defaultValue = recoverer();

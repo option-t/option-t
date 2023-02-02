@@ -15,12 +15,12 @@ export type MaybeAsyncTryTransformFn<T, U> = AsyncTransformFn<T, Maybe<U>>;
  *  But we don't provide `flatMap()` as alias of this function.
  *  because it's too hard to undarstand that "flatMap" operation for `T | null | undefined`.
  */
-export function andThenAsyncForMaybe<T, U>(
+export async function andThenAsyncForMaybe<T, U>(
     input: Maybe<T>,
     transformer: MaybeAsyncTryTransformFn<T, U>
 ): Promise<Maybe<U>> {
     if (isNullOrUndefined(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const result: Promise<Maybe<U>> = transformer(input);

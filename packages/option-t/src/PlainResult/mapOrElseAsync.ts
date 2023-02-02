@@ -12,7 +12,7 @@ import { unwrapOkFromResult, unwrapErrFromResult } from './unwrap.js';
  *  or a _recoverer_ function to a contained `Err(E)` value in _input_.
  *  This function can be used to unpack a successful result while handling an error.
  */
-export function mapOrElseAsyncForResult<T, E, U>(
+export async function mapOrElseAsyncForResult<T, E, U>(
     input: Result<T, E>,
     recoverer: AsyncRecoveryFromErrorFn<E, U>,
     transformer: AsyncTransformFn<T, U>

@@ -10,13 +10,13 @@ import { unwrapOption } from './unwrap.js';
  *
  *  Basically, this operation is a combination `map()` and `unwrapOr()`.
  */
-export function mapOrAsyncForOption<T, U>(
+export async function mapOrAsyncForOption<T, U>(
     input: Option<T>,
     defaultValue: U,
     transformer: AsyncTransformFn<T, U>
 ): Promise<U> {
     if (isNone(input)) {
-        return Promise.resolve(defaultValue);
+        return defaultValue;
     }
 
     const inner: T = unwrapOption(input);

@@ -14,12 +14,12 @@ export type NullableAsyncTryTransformFn<T, U> = AsyncTransformFn<T, Nullable<U>>
  *  But we don't provide `flatMap()` as alias of this function.
  *  because it's too hard to undarstand that "flatMap" operation for `T | null`
  */
-export function andThenAsyncForNullable<T, U>(
+export async function andThenAsyncForNullable<T, U>(
     input: Nullable<T>,
     transformer: NullableAsyncTryTransformFn<T, U>
 ): Promise<Nullable<U>> {
     if (isNull(input)) {
-        return Promise.resolve<Nullable<U>>(input);
+        return input;
     }
 
     const result: Promise<Nullable<U>> = transformer(input);

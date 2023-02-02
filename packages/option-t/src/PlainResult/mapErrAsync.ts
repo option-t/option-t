@@ -9,13 +9,13 @@ import { type Result, createErr, isOk, type Ok } from './Result.js';
  *
  *  This function can be used to pass through a successful result while handling an error.
  */
-export function mapErrAsyncForResult<T, E, F>(
+export async function mapErrAsyncForResult<T, E, F>(
     input: Result<T, E>,
     transformer: AsyncTransformFn<E, F>
 ): Promise<Result<T, F>> {
     if (isOk(input)) {
         const s: Ok<T> = input;
-        return Promise.resolve(s);
+        return s;
     }
 
     const result: Promise<F> = transformer(input.err);

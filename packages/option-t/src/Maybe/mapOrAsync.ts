@@ -32,7 +32,7 @@ function check<T>(value: Maybe<T>): T {
  *      * If the result of _defaultValue_ is `null` or `undefined`, this throw an `Error`.
  *  * If you'd like to accept `Maybe<*>` as `U`, use a combination `andThen()` and `or()`.
  */
-export function mapOrAsyncForMaybe<T, U>(
+export async function mapOrAsyncForMaybe<T, U>(
     input: Maybe<T>,
     defaultValue: NotNullOrUndefined<U>,
     transformer: AsyncTransformFn<T, NotNullOrUndefined<U>>
@@ -42,7 +42,7 @@ export function mapOrAsyncForMaybe<T, U>(
             defaultValue,
             ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE
         );
-        return Promise.resolve(nonNullDefault);
+        return nonNullDefault;
     }
 
     const result = transformer(input);

@@ -8,13 +8,13 @@ import { unwrapOption } from './unwrap.js';
  *  Unwraps a result _input_, returns the content of an `Some(T)`.
  *  If the value is an `None` then it calls `def` with its value.
  */
-export function unwrapOrElseAsyncFromOption<T>(
+export async function unwrapOrElseAsyncFromOption<T>(
     input: Option<T>,
     recoverer: AsyncRecoveryFn<T>
 ): Promise<T> {
     if (isSome(input)) {
         const val: T = unwrapOption(input);
-        return Promise.resolve(val);
+        return val;
     }
 
     const defaultValue: Promise<T> = recoverer();

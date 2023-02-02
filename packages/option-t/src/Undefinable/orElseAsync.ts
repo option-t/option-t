@@ -10,12 +10,12 @@ export type UndefinableAsyncTryRecoveryFn<T> = AsyncRecoveryFn<Undefinable<T>>;
  *  Return _input_ as `T` if the passed _input_ is not `undefined`.
  *  Otherwise, return the result of _recoverer_.
  */
-export function orElseAsyncForUndefinable<T>(
+export async function orElseAsyncForUndefinable<T>(
     input: Undefinable<T>,
     recoverer: UndefinableAsyncTryRecoveryFn<T>
 ): Promise<Undefinable<T>> {
     if (isNotUndefined(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const fallback = recoverer();

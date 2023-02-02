@@ -10,12 +10,12 @@ export type ResultAsyncTryRecoveryFromErrorFn<T, E, F> = AsyncRecoveryFromErrorF
  *  Calls _recoverer_ and return its returned value if the result is `Err(E)`,
  *  otherwise returns the `Ok(T)` value of self.
  */
-export function orElseAsyncForResult<T, E, F>(
+export async function orElseAsyncForResult<T, E, F>(
     input: Result<T, E>,
     recoverer: ResultAsyncTryRecoveryFromErrorFn<T, E, F>
 ): Promise<Result<T, F>> {
     if (isOk(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const inner = unwrapErrFromResult(input);

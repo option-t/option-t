@@ -22,7 +22,7 @@ import { expectNotNull } from './expect.js';
  *      * If the result of _recoverer_ is null`, this throw an `Error`.
  *  * If you'd like to accept `Nullable<*>` as `U`, use a combination `andThenAsync()` and `orElseAsync()`.
  */
-export function mapOrElseAsyncForNullable<T, U>(
+export async function mapOrElseAsyncForNullable<T, U>(
     input: Nullable<T>,
     recoverer: AsyncRecoveryFn<NotNull<U>>,
     transformer: AsyncTransformFn<T, NotNull<U>>

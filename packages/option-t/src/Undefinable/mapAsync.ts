@@ -21,12 +21,12 @@ function check<T>(value: Undefinable<T>): T {
  *      * If you'd like return `Undefinable<*>` as `U`, use `andThen()`.
  *      * If the result of _transformer_ is `undefined`, this throw an `Error`.
  */
-export function mapAsyncForUndefinable<T, U>(
+export async function mapAsyncForUndefinable<T, U>(
     input: Undefinable<T>,
     transformer: AsyncTransformFn<T, NotUndefined<U>>
 ): Promise<Undefinable<U>> {
     if (isUndefined(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const result = transformer(input);

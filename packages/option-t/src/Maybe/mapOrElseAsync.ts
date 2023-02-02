@@ -27,7 +27,7 @@ import {
  *      * If the result of _recoverer_ is `null` or `undefined`, this throw an `Error`.
  *  * If you'd like to accept `Maybe<*>` as `U`, use a combination `andThen()` and `orElse()`.
  */
-export function mapOrElseAsyncForMaybe<T, U>(
+export async function mapOrElseAsyncForMaybe<T, U>(
     input: Maybe<T>,
     recoverer: AsyncRecoveryFn<NotNullOrUndefined<U>>,
     transformer: AsyncTransformFn<T, NotNullOrUndefined<U>>

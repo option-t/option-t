@@ -10,14 +10,13 @@ import { unwrapOkFromResult } from './unwrap.js';
  *
  *  Basically, this operation is a combination `mapAsync()` and `unwrapOr()`.
  */
-export function mapOrAsyncForResult<T, E, U>(
+export async function mapOrAsyncForResult<T, E, U>(
     input: Result<T, E>,
     defaultValue: U,
     transformer: AsyncTransformFn<T, U>
 ): Promise<U> {
     if (isErr(input)) {
-        const result: Promise<U> = Promise.resolve(defaultValue);
-        return result;
+        return defaultValue;
     }
 
     const source: T = unwrapOkFromResult(input);

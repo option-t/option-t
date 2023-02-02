@@ -24,7 +24,7 @@ function check<T>(value: Nullable<T>): T {
  *      * If the result of _defaultValue_ is `null`, this throw an `Error`.
  *  * If you'd like to accept `Nullable<*>` as `U`, use a combination `andThen()` and `or()`.
  */
-export function mapOrAsyncForNullable<T, U>(
+export async function mapOrAsyncForNullable<T, U>(
     input: Nullable<T>,
     defaultValue: U,
     transformer: AsyncTransformFn<T, U>
@@ -34,7 +34,7 @@ export function mapOrAsyncForNullable<T, U>(
             defaultValue,
             ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE
         );
-        return Promise.resolve(nonNullDefault);
+        return nonNullDefault;
     }
 
     const result: Promise<U> = transformer(input);

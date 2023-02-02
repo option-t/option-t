@@ -11,12 +11,12 @@ import { unwrapOption } from './unwrap.js';
  *
  *  This function can be used to compose the results of two functions.
  */
-export function mapAsyncForOption<T, U>(
+export async function mapAsyncForOption<T, U>(
     input: Option<T>,
     transformer: AsyncTransformFn<T, U>
 ): Promise<Option<U>> {
     if (isNone(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const inner = unwrapOption(input);

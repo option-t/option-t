@@ -22,7 +22,7 @@ import { expectNotUndefined } from './expect.js';
  *      * If the result of _recoverer_ is undefined`, this throw an `Error`.
  *  * If you'd like to accept `Undefinable<*>` as `U`, use a combination `andThen()` and `orElse()`.
  */
-export function mapOrElseAsyncForUndefinable<T, U>(
+export async function mapOrElseAsyncForUndefinable<T, U>(
     input: Undefinable<T>,
     recoverer: AsyncRecoveryFn<NotUndefined<U>>,
     transformer: AsyncTransformFn<T, NotUndefined<U>>

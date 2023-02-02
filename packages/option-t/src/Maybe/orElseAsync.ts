@@ -10,12 +10,12 @@ export type MaybeAsyncRecoveryFn<T> = AsyncRecoveryFn<Maybe<T>>;
  *  Return _input_ as `T` if the passed _input_ is not `null` and `undefined`.
  *  Otherwise, return the result of _recoverer_.
  */
-export function orElseAsyncForMaybe<T>(
+export async function orElseAsyncForMaybe<T>(
     input: Maybe<T>,
     recoverer: MaybeAsyncRecoveryFn<T>
 ): Promise<Maybe<T>> {
     if (isNotNullOrUndefined(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const fallback = recoverer();

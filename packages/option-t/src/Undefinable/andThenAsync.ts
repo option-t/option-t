@@ -15,12 +15,12 @@ export type UndefinableAsyncTryTransformFn<T, U> = AsyncTransformFn<T, Undefinab
  *  But we don't provide `flatMap()` as alias of this function.
  *  because it's too hard to undarstand that "flatMap" operation for `T | undefined`
  */
-export function andThenAsyncForUndefinable<T, U>(
+export async function andThenAsyncForUndefinable<T, U>(
     input: Undefinable<T>,
     transformer: UndefinableAsyncTryTransformFn<T, U>
 ): Promise<Undefinable<U>> {
     if (isUndefined(input)) {
-        return Promise.resolve<Undefinable<U>>(input);
+        return input;
     }
 
     const result: Promise<Undefinable<U>> = transformer(input);

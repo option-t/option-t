@@ -25,12 +25,12 @@ function check<T>(value: Maybe<T>): T {
  *  * The result of _recoverer_ must not be `Maybe<*>`.
  *  * If the result of _recoverer_ is `null` or `undefined`, throw `TypeError`.
  */
-export function unwrapOrElseAsyncFromMaybe<T>(
+export async function unwrapOrElseAsyncFromMaybe<T>(
     input: Maybe<T>,
     recoverer: AsyncRecoveryFn<NotNullOrUndefined<T>>
 ): Promise<NotNullOrUndefined<T>> {
     if (isNotNullOrUndefined(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const fallback = recoverer();

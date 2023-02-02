@@ -15,12 +15,12 @@ export type ResultAsyncTryTransformFn<T, U, E> = AsyncTransformFn<T, Result<U, E
  *  But we don't provide `flatMap()` as alias of this function
  *  to sort with other APIs.
  */
-export function andThenAsyncForResult<T, U, E>(
+export async function andThenAsyncForResult<T, U, E>(
     input: Result<T, E>,
     transformer: ResultAsyncTryTransformFn<T, U, E>
 ): Promise<Result<U, E>> {
     if (isErr(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const source: T = unwrapOkFromResult(input);

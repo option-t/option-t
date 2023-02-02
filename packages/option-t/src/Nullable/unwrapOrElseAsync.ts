@@ -18,12 +18,12 @@ function check<T>(value: Nullable<T>): T {
  *      * If you try to recover the value, use `orElse()`
  *  * If the result of _recoverer_ is `null`, throw `TypeError`.
  */
-export function unwrapOrElseAsyncFromNullable<T>(
+export async function unwrapOrElseAsyncFromNullable<T>(
     input: Nullable<T>,
     recoverer: AsyncRecoveryFn<NotNull<T>>
 ): Promise<NotNull<T>> {
     if (isNotNull(input)) {
-        return Promise.resolve<NotNull<T>>(input);
+        return input;
     }
 
     const fallback: Promise<NotNull<T>> = recoverer();

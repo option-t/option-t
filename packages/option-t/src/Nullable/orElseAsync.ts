@@ -9,12 +9,12 @@ export type NullableAsyncTryRecoveryFn<T> = AsyncRecoveryFn<Nullable<T>>;
  *  Return _input_ as `T` if the passed _input_ is not `null`.
  *  Otherwise, return the result of _recoverer_.
  */
-export function orElseAsyncForNullable<T>(
+export async function orElseAsyncForNullable<T>(
     input: Nullable<T>,
     recoverer: NullableAsyncTryRecoveryFn<T>
 ): Promise<Nullable<T>> {
     if (isNotNull(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const fallback: Promise<Nullable<T>> = recoverer();

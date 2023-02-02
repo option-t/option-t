@@ -15,12 +15,12 @@ export type OptionAsyncTryTransformFn<T, U> = AsyncTransformFn<T, Option<U>>;
  *  But we don't provide `flatMap()` as alias of this function
  *  to sort with other APIs.
  */
-export function andThenAsyncForOption<T, U>(
+export async function andThenAsyncForOption<T, U>(
     input: Option<T>,
     transformer: OptionAsyncTryTransformFn<T, U>
 ): Promise<Option<U>> {
     if (isNone(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const inner: T = unwrapOption(input);
