@@ -19,6 +19,8 @@ export function addHistoricalPathToExportsFields(o, histricalJSPathSeq) {
     }
 
     const DIR_SUBPATH = [
+        'ClassicOption',
+        'ClassicResult',
         'Maybe',
         'Nullable',
         'PlainOption',

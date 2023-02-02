@@ -1,5 +1,7 @@
 /**
  *  @deprecated
+ *      Use `option-t/lib/ClassicOption` instead.
+ *
  *      We keep this file only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  */
