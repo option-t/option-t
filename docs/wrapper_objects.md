@@ -19,7 +19,7 @@ you should avoid to expose this object as a public API of your package_  because
       So we would not like to do this.
 
 
-## [`ClassicOption<T>`](../src/ClassOption/ClassicOption.d.ts) (sometimes call `ClassOption` internally)
+## [`ClassicOption<T>`](../src/ClassicOption/ClassicOption.d.ts)
 
 This can express that there are some values or none.
 
@@ -43,7 +43,7 @@ And this type is defined JSON representations if you serialize them by `JSON.str
 See [`OptionBase.prototype.toJSON()`](./src/Option.js).
 
 
-## [`ClassicResult<T, E>`](./src/ClassResult/ClassicResult.d.ts) (sometimes call `ClassResult` internally)
+## [`ClassicResult<T, E>`](./src/ClassicResult/ClassicResult.d.ts)
 
 This can express that there is some values or some error information.
 

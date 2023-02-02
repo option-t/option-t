@@ -217,8 +217,8 @@ However, we think there some different design decision between neverthrow and us
 We does not provide class based implementation and method chaining style.
 Historically, we had provided a method-chain style APIs and data types as tier 1.
 
-- [`ClassOption`](./src/ClassOption/)
-- [`ClassResult`](./src/ClassResult/)
+- [`ClassicOption`](./src/ClassicOption/)
+- [`ClassicResult`](./src/ClassicResult/)
 
 But we gave up method chain style as primary style and switched our primary APIs
 to current simple functions combination style by various reasons.
