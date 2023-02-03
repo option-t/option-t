@@ -1,15 +1,19 @@
-import { expectSomeForOption } from './expect.js';
-import { ERR_MSG_UNWRAP_SOME_BUT_INPUT_IS_NONE } from './internal/ErrorMessage.js';
-import { Option } from './Option.js';
+/**
+ *  @deprecated
+ *  This module is kept for backward compatibility.
+ *  Please use `option-t/PlainOption/Option` directly.
+ */
+import { unwrapSome } from './Option.js';
 
 /**
- *  Return the inner `T` of a `Some(T)`.
- *
- *  @throws {TypeError}
- *      Throws if the self is a `None`.
+ *  This is an alias for backward compatibility.
+ *  Please use {@link unwrapSome} instead.
  */
-export function unwrapOption<T>(input: Option<T>): T | never {
-    return expectSomeForOption(input, ERR_MSG_UNWRAP_SOME_BUT_INPUT_IS_NONE);
-}
+export const unwrapOption: typeof unwrapSome = unwrapSome;
 
-export { unwrapOption as unwrapSomeFromOption };
+/**
+ *  @deprecated
+ *  This is an alias for backward compatibility.
+ *  Please use {@link unwrapSome} instead.
+ */
+export const unwrapSomeFromOption: typeof unwrapSome = unwrapSome;

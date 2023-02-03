@@ -400,6 +400,7 @@ export const apiTable = Object.freeze({
             'isNone',
             'createSome',
             'createNone',
+            'unwrapSome',
             'expectSome',
         ]
     },
