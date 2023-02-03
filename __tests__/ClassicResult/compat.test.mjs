@@ -1,7 +1,13 @@
 import test from 'ava';
 
-import { createOk, createErr, isOk, isErr } from '../../__dist/esm/PlainResult/Result.js';
-import { unwrapOkFromResult, unwrapErrFromResult } from '../../__dist/esm/PlainResult/unwrap.js';
+import {
+    createOk,
+    createErr,
+    isOk,
+    isErr,
+    unwrapOk as unwrapOkFromResult,
+    unwrapErr as unwrapErrFromResult,
+} from '../../__dist/esm/PlainResult/Result.js';
 import {
     createClassicOk,
     createClassicErr,

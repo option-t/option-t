@@ -1,8 +1,12 @@
 import test from 'ava';
 
-import { isOk, isErr } from '../../__dist/esm/PlainResult/Result.js';
+import {
+    isOk,
+    isErr,
+    unwrapOk as unwrapOkFromResult,
+    unwrapErr as unwrapErrFromResult,
+} from '../../__dist/esm/PlainResult/Result.js';
 import { fromPromiseSettledResultToResult } from '../../__dist/esm/PlainResult/fromPromiseSettledResult.js';
-import { unwrapOkFromResult, unwrapErrFromResult } from '../../__dist/esm/PlainResult/unwrap.js';
 
 test('should be Ok(T)', async (t) => {
     const VALUE_T = Symbol('value');
