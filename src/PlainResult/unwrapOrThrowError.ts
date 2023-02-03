@@ -7,10 +7,7 @@ import { unwrapErrFromResult, unwrapOkFromResult } from './unwrap.js';
  *  Unwraps _input_, returns the content of an `Ok(T)`.
  *  Otherwise, this function throw the contained `Error` in `Err(Error)`.
  *
- *  @deprecated
- *  This function is marked as _deprecated_ as meaning of __not recommend to use__.
- *
- *  This marking displays this function usages with strikethrough line decolation on an editor.
+ *  __We DO NOT RECCOMEND TO USE THIS function generally__.
  *
  *  This function is provided only to improve an interoperability with the world using "throw error" convention.
  *  __We do not recommend to use this function__.
