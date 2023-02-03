@@ -33,19 +33,15 @@ export {
     isErr,
     unwrapOk,
     unwrapErr,
+    expectOk,
+    expectErr,
 } from './Result.js';
 
 export { andForResult as and } from './and.js';
 export { andThenForResult as andThen } from './andThen.js';
 export { andThenAsyncForResult as andThenAsync } from './andThenAsync.js';
 export { equalForResult as equal } from './equal.js';
-export {
-    expectOkForResult as expect,
-    expectOkForResult as expectOk,
-    expectErrForResult as expectErr,
-    expectIsOk,
-    expectIsErr,
-} from './expect.js';
+export { expectIsOk as expect, expectIsOk, expectIsErr } from './expect.js';
 export { flattenForResult as flatten } from './flatten.js';
 export {
     inspectOkOfResult as inspectOk,

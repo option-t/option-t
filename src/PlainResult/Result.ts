@@ -2,7 +2,6 @@ import {
     ERR_MSG_UNWRAP_ERR_BUT_INPUT_IS_OK,
     ERR_MSG_UNWRAP_OK_BUT_INPUT_IS_ERR,
 } from './internal/ErrorMessage.js';
-import { expectErrForResult, expectOkForResult } from './expect.js';
 
 /**
  *
@@ -213,7 +212,7 @@ export function createErr<E>(err: E): Err<E> {
  *      Throws if the self is a `Err`.
  */
 export function unwrapOk<T>(input: Result<T, unknown>): T {
-    return expectOkForResult(input, ERR_MSG_UNWRAP_OK_BUT_INPUT_IS_ERR);
+    return expectOk(input, ERR_MSG_UNWRAP_OK_BUT_INPUT_IS_ERR);
 }
 
 /**
@@ -223,5 +222,35 @@ export function unwrapOk<T>(input: Result<T, unknown>): T {
  *      Throws if the self is a `Ok`.
  */
 export function unwrapErr<E>(input: Result<unknown, E>): E {
-    return expectErrForResult(input, ERR_MSG_UNWRAP_ERR_BUT_INPUT_IS_OK);
+    return expectErr(input, ERR_MSG_UNWRAP_ERR_BUT_INPUT_IS_OK);
+}
+
+/**
+ *  Return _input_ as `T` if the passed _input_ is `Ok(T)`.
+ *  Otherwise, throw `TypeError` with the passed `msg`.
+ *
+ *  @throws {TypeError}
+ *      Throws if the self is a `Err`.
+ */
+export function expectOk<T, E>(input: Result<T, E>, msg: string): T | never {
+    if (!input.ok) {
+        throw new TypeError(msg);
+    }
+
+    return input.val;
+}
+
+/**
+ *  Return _input_ as `E` if the passed _input_ is `Err(E)`.
+ *  Otherwise, throw `TypeError` with the passed `msg`.
+ *
+ *  @throws {TypeError}
+ *      Throws if the self is a `Ok`.
+ */
+export function expectErr<T, E>(input: Result<T, E>, msg: string): E | never {
+    if (input.ok) {
+        throw new TypeError(msg);
+    }
+
+    return input.err;
 }

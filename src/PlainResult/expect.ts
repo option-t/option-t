@@ -1,43 +1,15 @@
-import type { Result } from './Result.js';
+import { expectOk, expectErr } from './Result.js';
 
-/**
- *  Return _input_ as `T` if the passed _input_ is `Ok(T)`.
- *  Otherwise, throw `TypeError` with the passed `msg`.
- *
- *  @throws {TypeError}
- *      Throws if the self is a `Err`.
- */
-export function expectOkForResult<T, E>(input: Result<T, E>, msg: string): T | never {
-    if (!input.ok) {
-        throw new TypeError(msg);
-    }
-
-    return input.val;
-}
-
-/**
- *  Return _input_ as `E` if the passed _input_ is `Err(E)`.
- *  Otherwise, throw `TypeError` with the passed `msg`.
- *
- *  @throws {TypeError}
- *      Throws if the self is a `Ok`.
- */
-export function expectErrForResult<T, E>(input: Result<T, E>, msg: string): E | never {
-    if (input.ok) {
-        throw new TypeError(msg);
-    }
-
-    return input.err;
-}
+export { expectOk as expectOkForResult, expectErr as expectErrForResult };
 
 /**
  *  @deprecated
- *  Please use {@link expectOkForResult}
+ *  Please use {@link expectOk}
  */
-export const expectIsOk: typeof expectOkForResult = expectOkForResult;
+export const expectIsOk: typeof expectOk = expectOk;
 
 /**
  *  @deprecated
- *  Please use {@link expectErrForResult}
+ *  Please use {@link expectErr}
  */
-export const expectIsErr: typeof expectErrForResult = expectErrForResult;
+export const expectIsErr: typeof expectErr = expectErr;

@@ -625,6 +625,8 @@ export const apiTable = Object.freeze({
             'createErr',
             'unwrapOk',
             'unwrapErr',
+            'expectOk',
+            'expectErr',
         ]
     },
     'PlainResult/toOption': {
