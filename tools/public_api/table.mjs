@@ -147,6 +147,7 @@ export const apiTable = Object.freeze({
             'andThen',
             'andThenAsync',
             'expect',
+            'expectNotNull',
             'inspect',
             'map',
             'mapAsync',
@@ -157,6 +158,7 @@ export const apiTable = Object.freeze({
             'orElse',
             'orElseAsync',
             'unwrap',
+            'unwrapNullable',
             'unwrapOr',
             'unwrapOrElse',
             'unwrapOrElseAsync',
@@ -221,6 +223,8 @@ export const apiTable = Object.freeze({
         'exports': [
             'isNotNull',
             'isNull',
+            'expectNotNull',
+            'unwrapNullable',
         ]
     },
     'Nullable/or': {
