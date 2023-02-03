@@ -1,3 +1,5 @@
+import { ERR_MSG_INPUT_IS_FROZEN_NOT_CAST_TO_MUTABLE } from './ErrorMessage.js';
+
 export function assertIsPromise(
     input: unknown,
     message: string
@@ -19,5 +21,11 @@ export function assertIsErrorInstance(input: unknown, message: string): asserts 
         throw new TypeError(msg, {
             cause: input,
         });
+    }
+}
+
+export function assertIsFrozen(input: unknown): void {
+    if (Object.isFrozen(input)) {
+        throw new TypeError(ERR_MSG_INPUT_IS_FROZEN_NOT_CAST_TO_MUTABLE);
     }
 }

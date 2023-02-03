@@ -43,3 +43,47 @@ test('with Err', (t) => {
     t.is(actual.err, undefined, 'should be released');
     t.true(Object.isFrozen(actual), 'should be frozen');
 });
+
+test('should throw if the passed value is frozen: Ok', (t) => {
+    const input = createOk(Math.random());
+    const actual = Object.freeze(input);
+    t.throws(
+        () => {
+            unsafeDropBothForResult(
+                actual,
+                (_ok) => {
+                    t.fail('Do not enter this path. _ok callback');
+                },
+                (_err) => {
+                    t.fail('Do not enter this path. _err callback');
+                }
+            );
+        },
+        {
+            instanceOf: TypeError,
+            message: `input is frozen, cannot cast to mutable`,
+        }
+    );
+});
+
+test('should throw if the passed value is frozen: Err', (t) => {
+    const input = createErr(Math.random());
+    const actual = Object.freeze(input);
+    t.throws(
+        () => {
+            unsafeDropBothForResult(
+                actual,
+                (_ok) => {
+                    t.fail('Do not enter this path. _ok callback');
+                },
+                (_err) => {
+                    t.fail('Do not enter this path. _err callback');
+                }
+            );
+        },
+        {
+            instanceOf: TypeError,
+            message: `input is frozen, cannot cast to mutable`,
+        }
+    );
+});
