@@ -1,7 +1,10 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.js';
-import { expectSomeForOption } from '../../__dist/esm/PlainOption/expect.js';
+import {
+    createSome,
+    createNone,
+    expectSome as expectSomeForOption,
+} from '../../__dist/esm/PlainOption/Option.js';
 
 test('input=Some', (t) => {
     const EXPECTED = Symbol('expected');
