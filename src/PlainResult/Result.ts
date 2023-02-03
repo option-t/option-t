@@ -232,7 +232,7 @@ export function unwrapErr<E>(input: Result<unknown, E>): E {
  *  @throws {TypeError}
  *      Throws if the self is a `Err`.
  */
-export function expectOk<T, E>(input: Result<T, E>, msg: string): T | never {
+export function expectOk<T, E>(input: Result<T, E>, msg: string): T {
     if (!input.ok) {
         throw new TypeError(msg);
     }
@@ -247,7 +247,7 @@ export function expectOk<T, E>(input: Result<T, E>, msg: string): T | never {
  *  @throws {TypeError}
  *      Throws if the self is a `Ok`.
  */
-export function expectErr<T, E>(input: Result<T, E>, msg: string): E | never {
+export function expectErr<T, E>(input: Result<T, E>, msg: string): E {
     if (input.ok) {
         throw new TypeError(msg);
     }
