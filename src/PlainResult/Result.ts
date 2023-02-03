@@ -27,15 +27,16 @@ export type Result<T, E> = Ok<T> | Err<E>;
  *  You can create this type value and get an inner value in this type by hand.
  *  But we recommend to use the factory {@link createOk()} and utility functions for forward compatibility.
  *
- *      - `createOk()` to create a value of `Ok(T)`.
- *      - `isOk()` to check whether the value is `Ok(T)`.
- *      - `unwrap()` to get an inner value in `Ok(T)`.
- *      - `unwrapOr()` to get either an inner value in `Ok(T)` or a fallback default value.
- *      - ...and more.
+ *  - {@link createOk()} to create a value of `Ok(T)`.
+ *  - {@link isOk()} to check whether the value is `Ok(T)`.
+ *  - `unwrapOk()` to get an inner value in `Ok(T)`.
+ *  - `unwrapOr()` to get either an inner value in `Ok(T)` or a fallback default value.
+ *  - ...and more.
  */
 export interface Ok<T> {
     /**
-     *  Don't touch this property directly from an user project.
+     *  Don't touch this property directly from an user project
+     *  except 3rd party project that does not install this package but uses a value returned from an other project.
      *  Instead, use {@link isOk()} or {@link isErr()} operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
@@ -44,7 +45,8 @@ export interface Ok<T> {
      */
     readonly ok: true;
     /**
-     *  Don't touch this property directly from an user project.
+     *  Don't touch this property directly from an user project
+     *  except 3rd party project that does not install this package but uses a value returned from an other project.
      *  Instead, use `unwrapOk()` operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
@@ -114,14 +116,15 @@ export function createOk<T>(val: T): Ok<T> {
  *  You can create this type value and get an inner value in this type by hand.
  *  But we recommend to use the factory {@link createErr()} and utility functions for forward compatibility.
  *
- *      - `createErr()` to create a value of `Err(E)`.
- *      - `isErr()` to check whether the value is `Err(E)`.
- *      - `unwrapErr()` to get an inner failure information in `Err(E)`.
- *      - ...and more.
+ *  - {@link createErr()} to create a value of `Err(E)`.
+ *  - {@link isErr()} to check whether the value is `Err(E)`.
+ *  - `unwrapErr()` to get an inner failure information in `Err(E)`.
+ *  - ...and more.
  */
 export interface Err<E> {
     /**
-     *  Don't touch this property directly from an user project.
+     *  Don't touch this property directly from an user project
+     *  except 3rd party project that does not install this package but uses a value returned from an other project.
      *  Instead, use {@link isOk()} or {@link isErr()} operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
@@ -160,7 +163,8 @@ export interface Err<E> {
     // We use `null | undefined` as more widen type rather than `null` for the backward compatibility.
     // This definition allows to accept a value created by the old version of this library.
     /**
-     *  Don't touch this property directly from an user project.
+     *  Don't touch this property directly from an user project
+     *  except 3rd party project that does not install this package but uses a value returned from an other project.
      *  Instead, use `unwrapOk()` operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
@@ -170,7 +174,8 @@ export interface Err<E> {
     readonly val?: null | undefined;
 
     /**
-     *  Don't touch this property directly from an user project.
+     *  Don't touch this property directly from an user project
+     *  except 3rd party project that does not install this package but uses a value returned from an other project.
      *  Instead, use `unwrapErr()` operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
