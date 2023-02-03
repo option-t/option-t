@@ -1,7 +1,12 @@
 import test from 'ava';
 
-import { createSome, createNone, isSome, isNone } from '../../__dist/esm/PlainOption/Option.js';
-import { unwrapOption } from '../../__dist/esm/PlainOption/unwrap.js';
+import {
+    createSome,
+    createNone,
+    isSome,
+    isNone,
+    unwrapSome as unwrapOption,
+} from '../../__dist/esm/PlainOption/Option.js';
 import {
     createClassicSome,
     createClassicNone,
