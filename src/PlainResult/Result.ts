@@ -1,3 +1,8 @@
+import {
+    ERR_MSG_UNWRAP_ERR_BUT_INPUT_IS_OK,
+    ERR_MSG_UNWRAP_OK_BUT_INPUT_IS_ERR,
+} from './internal/ErrorMessage.js';
+
 /**
  *
  *  This is [_result type_](https://en.wikipedia.org/wiki/Result_type).
@@ -29,7 +34,7 @@ export type Result<T, E> = Ok<T> | Err<E>;
  *
  *  - {@link createOk()} to create a value of `Ok(T)`.
  *  - {@link isOk()} to check whether the value is `Ok(T)`.
- *  - `unwrapOk()` to get an inner value in `Ok(T)`.
+ *  - {@link unwrapOk()} to get an inner value in `Ok(T)`.
  *  - `unwrapOr()` to get either an inner value in `Ok(T)` or a fallback default value.
  *  - ...and more.
  */
@@ -47,7 +52,7 @@ export interface Ok<T> {
     /**
      *  Don't touch this property directly from an user project
      *  except 3rd party project that does not install this package but uses a value returned from an other project.
-     *  Instead, use `unwrapOk()` operator to get an inner value.
+     *  Instead, use {@link unwrapOk()} operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
      *  Then there was no well optimized `Symbol` to achieve a private property.
@@ -86,7 +91,7 @@ export interface Ok<T> {
     // This definition allows to accept a value created by the old version of this library.
     /**
      *  Don't touch this property directly from an user project.
-     *  Instead, use `unwrapErr()` operator to get an inner value.
+     *  Instead, use {@link unwrapErr()} operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
      *  Then there was no well optimized `Symbol` to achieve a private property.
@@ -118,7 +123,7 @@ export function createOk<T>(val: T): Ok<T> {
  *
  *  - {@link createErr()} to create a value of `Err(E)`.
  *  - {@link isErr()} to check whether the value is `Err(E)`.
- *  - `unwrapErr()` to get an inner failure information in `Err(E)`.
+ *  - {@link unwrapErr()} to get an inner failure information in `Err(E)`.
  *  - ...and more.
  */
 export interface Err<E> {
@@ -165,7 +170,7 @@ export interface Err<E> {
     /**
      *  Don't touch this property directly from an user project
      *  except 3rd party project that does not install this package but uses a value returned from an other project.
-     *  Instead, use `unwrapOk()` operator to get an inner value.
+     *  Instead, use {@link unwrapOk()} operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
      *  Then there was no well optimized `Symbol` to achieve a private property.
@@ -176,7 +181,7 @@ export interface Err<E> {
     /**
      *  Don't touch this property directly from an user project
      *  except 3rd party project that does not install this package but uses a value returned from an other project.
-     *  Instead, use `unwrapErr()` operator to get an inner value.
+     *  Instead, use {@link unwrapErr()} operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
      *  Then there was no well optimized `Symbol` to achieve a private property.
@@ -198,4 +203,54 @@ export function createErr<E>(err: E): Err<E> {
         err,
     };
     return r;
+}
+
+/**
+ *  Return the inner `T` of a `Ok(T)`.
+ *
+ *  @throws {TypeError}
+ *      Throws if the self is a `Err`.
+ */
+export function unwrapOk<T>(input: Result<T, unknown>): T {
+    return expectOk(input, ERR_MSG_UNWRAP_OK_BUT_INPUT_IS_ERR);
+}
+
+/**
+ *  Return the inner `E` of a `Err(E)`.
+ *
+ *  @throws {TypeError}
+ *      Throws if the self is a `Ok`.
+ */
+export function unwrapErr<E>(input: Result<unknown, E>): E {
+    return expectErr(input, ERR_MSG_UNWRAP_ERR_BUT_INPUT_IS_OK);
+}
+
+/**
+ *  Return _input_ as `T` if the passed _input_ is `Ok(T)`.
+ *  Otherwise, throw `TypeError` with the passed `msg`.
+ *
+ *  @throws {TypeError}
+ *      Throws if the self is a `Err`.
+ */
+export function expectOk<T, E>(input: Result<T, E>, msg: string): T | never {
+    if (!input.ok) {
+        throw new TypeError(msg);
+    }
+
+    return input.val;
+}
+
+/**
+ *  Return _input_ as `E` if the passed _input_ is `Err(E)`.
+ *  Otherwise, throw `TypeError` with the passed `msg`.
+ *
+ *  @throws {TypeError}
+ *      Throws if the self is a `Ok`.
+ */
+export function expectErr<T, E>(input: Result<T, E>, msg: string): E | never {
+    if (input.ok) {
+        throw new TypeError(msg);
+    }
+
+    return input.err;
 }

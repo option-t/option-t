@@ -1,37 +1,36 @@
-import { Result } from './Result.js';
+/**
+ *  @deprecated
+ *  This module is kept for backward compatibility.
+ *  Please use `option-t/PlainResult/Result` directly.
+ */
+import { expectOk, expectErr } from './Result.js';
 
 /**
- *  Return _input_ as `T` if the passed _input_ is `Ok(T)`.
- *  Otherwise, throw `TypeError` with the passed `msg`.
+ *  This is an alias for backward compatibility.
+ *  Please use {@link expectOk} instead.
+ *
+ *  @see {@link expectOk}
  */
-export function expectOkForResult<T, E>(input: Result<T, E>, msg: string): T | never {
-    if (!input.ok) {
-        throw new TypeError(msg);
-    }
-
-    return input.val;
-}
+export const expectOkForResult: typeof expectOk = expectOk;
 
 /**
- *  Return _input_ as `E` if the passed _input_ is `Err(E)`.
- *  Otherwise, throw `TypeError` with the passed `msg`.
+ *  This is an alias for backward compatibility.
+ *  Please use {@link expectErr} instead.
+ *
+ *  @see {@link expectErr}
  */
-export function expectErrForResult<T, E>(input: Result<T, E>, msg: string): E | never {
-    if (input.ok) {
-        throw new TypeError(msg);
-    }
-
-    return input.err;
-}
+export const expectErrForResult: typeof expectErr = expectErr;
 
 /**
  *  @deprecated
- *  Please use {@link expectOkForResult}
+ *  This is an alias for backward compatibility.
+ *  Please use {@link expectOk} instead.
  */
-export const expectIsOk: typeof expectOkForResult = expectOkForResult;
+export const expectIsOk: typeof expectOk = expectOk;
 
 /**
  *  @deprecated
- *  Please use {@link expectErrForResult}
+ *  This is an alias for backward compatibility.
+ *  Please use {@link expectErr} instead.
  */
-export const expectIsErr: typeof expectErrForResult = expectErrForResult;
+export const expectIsErr: typeof expectErr = expectErr;

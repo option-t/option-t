@@ -1,28 +1,29 @@
-import { expectOkForResult, expectErrForResult } from './expect.js';
-import { Result } from './Result.js';
+/**
+ *  @deprecated
+ *  This module is kept for backward compatibility.
+ *  Please use `option-t/PlainResult/Result` directly.
+ */
+import { unwrapOk, unwrapErr } from './Result.js';
 
 /**
- *  Return the inner `T` of a `Ok(T)`.
+ *  This is an alias for backward compatibility.
+ *  Please use {@link unwrapOk} instead.
  *
- *  @throws {TypeError}
- *      Throws if the self is a `Err`.
+ *  @see {@link unwrapOk}
  */
-export function unwrapOkFromResult<T>(input: Result<T, unknown>): T | never {
-    return expectOkForResult(input, 'called with `Err`');
-}
+export const unwrapOkFromResult: typeof unwrapOk = unwrapOk;
 
 /**
- *  Return the inner `E` of a `Err(E)`.
+ *  This is an alias for backward compatibility.
+ *  Please use {@link unwrapOk} instead.
  *
- *  @throws {TypeError}
- *      Throws if the self is a `Ok`.
+ *  @see {@link unwrapErr}
  */
-export function unwrapErrFromResult<E>(input: Result<unknown, E>): E | never {
-    return expectErrForResult(input, 'called with `Ok`');
-}
+export const unwrapErrFromResult: typeof unwrapErr = unwrapErr;
 
 /**
  *  @deprecated
- *  Use {@link unwrapOkFromResult}
+ *  This is an alias for backward compatibility.
+ *  Please use {@link unwrapOk} instead.
  */
-export const unwrapFromResult: typeof unwrapOkFromResult = unwrapOkFromResult;
+export const unwrapFromResult: typeof unwrapOk = unwrapOk;
