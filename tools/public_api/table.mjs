@@ -694,6 +694,7 @@ export const apiTable = Object.freeze({
             'andThen',
             'andThenAsync',
             'expect',
+            'expectNotUndefined',
             'inspect',
             'map',
             'mapAsync',
@@ -707,6 +708,7 @@ export const apiTable = Object.freeze({
             'unwrapOr',
             'unwrapOrElse',
             'unwrapOrElseAsync',
+            'unwrapUndefinable',
         ]
     },
 
@@ -789,6 +791,8 @@ export const apiTable = Object.freeze({
         'exports': [
             'isNotUndefined',
             'isUndefined',
+            'expectNotUndefined',
+            'unwrapUndefinable',
         ]
     },
     'Undefinable/unwrap': {
