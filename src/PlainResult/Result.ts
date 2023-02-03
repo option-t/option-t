@@ -25,7 +25,7 @@ export type Result<T, E> = Ok<T> | Err<E>;
  *  This type contain a success value _T_.
  *
  *  You can create this type value and get an inner value in this type by hand.
- *  But we recommend to use factory and utility functions for forward compatibility.
+ *  But we recommend to use the factory {@link createOk()} and utility functions for forward compatibility.
  *
  *      - `createOk()` to create a value of `Ok(T)`.
  *      - `isOk()` to check whether the value is `Ok(T)`.
@@ -112,7 +112,7 @@ export function createOk<T>(val: T): Ok<T> {
  *  This type contain a failure information _E_.
  *
  *  You can create this type value and get an inner value in this type by hand.
- *  But we recommend to use factory and utility functions for forward compatibility.
+ *  But we recommend to use the factory {@link createErr()} and utility functions for forward compatibility.
  *
  *      - `createErr()` to create a value of `Err(E)`.
  *      - `isErr()` to check whether the value is `Err(E)`.
