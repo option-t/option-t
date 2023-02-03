@@ -24,13 +24,22 @@
  *  ```
  */
 
-export { Option, Some, None, createSome, createNone, isSome, isNone } from './Option.js';
+export {
+    Option,
+    Some,
+    None,
+    createSome,
+    createNone,
+    isSome,
+    isNone,
+    expectSome,
+} from './Option.js';
 
 export { andForOption as and } from './and.js';
 export { andThenForOption as andThen } from './andThen.js';
 export { andThenAsyncForOption as andThenAsync } from './andThenAsync.js';
 export { equalForOption as equal } from './equal.js';
-export { expectSomeForOption as expect, expectSomeForOption as expectSome } from './expect.js';
+export { expectIsSome as expect } from './expect.js';
 export { filterForOption as filter } from './filter.js';
 export { flattenForOption as flatten } from './flatten.js';
 export { inspectOption as inspect } from './inspect.js';

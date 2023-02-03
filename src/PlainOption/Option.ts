@@ -160,3 +160,18 @@ export function createNone(): None {
     };
     return r;
 }
+
+/**
+ *  Return _input_ as `T` if the passed _input_ is `Some(T)`.
+ *  Otherwise, throw `TypeError` with the passed `msg`.
+ *
+ *  @throws {TypeError}
+ *      Throws if the self is a `None`.
+ */
+export function expectSome<T>(input: Option<T>, msg: string): T {
+    if (!input.ok) {
+        throw new TypeError(msg);
+    }
+
+    return input.val;
+}

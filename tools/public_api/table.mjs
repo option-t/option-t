@@ -399,7 +399,8 @@ export const apiTable = Object.freeze({
             'isSome',
             'isNone',
             'createSome',
-            'createNone'
+            'createNone',
+            'expectSome',
         ]
     },
     'PlainOption/or': {
