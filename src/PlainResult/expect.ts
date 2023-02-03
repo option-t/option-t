@@ -3,6 +3,9 @@ import type { Result } from './Result.js';
 /**
  *  Return _input_ as `T` if the passed _input_ is `Ok(T)`.
  *  Otherwise, throw `TypeError` with the passed `msg`.
+ *
+ *  @throws {TypeError}
+ *      Throws if the self is a `Err`.
  */
 export function expectOkForResult<T, E>(input: Result<T, E>, msg: string): T | never {
     if (!input.ok) {
@@ -15,6 +18,9 @@ export function expectOkForResult<T, E>(input: Result<T, E>, msg: string): T | n
 /**
  *  Return _input_ as `E` if the passed _input_ is `Err(E)`.
  *  Otherwise, throw `TypeError` with the passed `msg`.
+ *
+ *  @throws {TypeError}
+ *      Throws if the self is a `Ok`.
  */
 export function expectErrForResult<T, E>(input: Result<T, E>, msg: string): E | never {
     if (input.ok) {
