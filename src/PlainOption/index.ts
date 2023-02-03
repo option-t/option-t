@@ -25,9 +25,9 @@
  */
 
 export {
-    Option,
-    Some,
-    None,
+    type Option,
+    type Some,
+    type None,
     createSome,
     createNone,
     isSome,
@@ -40,7 +40,6 @@ export { andForOption as and } from './and.js';
 export { andThenForOption as andThen } from './andThen.js';
 export { andThenAsyncForOption as andThenAsync } from './andThenAsync.js';
 export { equalForOption as equal } from './equal.js';
-export { expectIsSome as expect } from './expect.js';
 export { filterForOption as filter } from './filter.js';
 export { flattenForOption as flatten } from './flatten.js';
 export { inspectOption as inspect } from './inspect.js';
@@ -54,7 +53,22 @@ export { orForOption as or } from './or.js';
 export { orElseForOption as orElse } from './orElse.js';
 export { orElseAsyncForOption as orElseAsync } from './orElseAsync.js';
 export { transposeForOption as transpose } from './transpose.js';
-export { unwrapSomeFromOption as unwrap } from './unwrap.js';
 export { unwrapOrFromOption as unwrapOr } from './unwrapOr.js';
 export { unwrapOrElseFromOption as unwrapOrElse } from './unwrapOrElse.js';
 export { unwrapOrElseAsyncFromOption as unwrapOrElseAsync } from './unwrapOrElseAsync.js';
+
+import { expectSome, unwrapSome } from './Option.js';
+
+/**
+ *  @deprecated
+ *  This is an alias for backward compatibility.
+ *  Please use {@link expectSome} instead.
+ */
+export const expect: typeof expectSome = expectSome;
+
+/**
+ *  @deprecated
+ *  This is an alias for backward compatibility.
+ *  Please use {@link unwrapSome} instead.
+ */
+export const unwrap: typeof unwrapSome = unwrapSome;

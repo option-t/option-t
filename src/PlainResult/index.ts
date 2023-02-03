@@ -41,7 +41,6 @@ export { andForResult as and } from './and.js';
 export { andThenForResult as andThen } from './andThen.js';
 export { andThenAsyncForResult as andThenAsync } from './andThenAsync.js';
 export { equalForResult as equal } from './equal.js';
-export { expectIsOk as expect, expectIsOk, expectIsErr } from './expect.js';
 export { flattenForResult as flatten } from './flatten.js';
 export {
     inspectOkOfResult as inspectOk,
@@ -61,7 +60,36 @@ export { orElseForResult as orElse } from './orElse.js';
 export { orElseAsyncForResult as orElseAsync } from './orElseAsync.js';
 export { transposeForResult as transpose } from './transpose.js';
 export { toOptionFromOk, toOptionFromErr } from './toOption.js';
-export { unwrapFromResult as unwrap } from './unwrap.js';
 export { unwrapOrFromResult as unwrapOr } from './unwrapOr.js';
 export { unwrapOrElseFromResult as unwrapOrElse } from './unwrapOrElse.js';
 export { unwrapOrElseAsyncFromResult as unwrapOrElseAsync } from './unwrapOrElseAsync.js';
+
+import { expectOk, expectErr, unwrapOk } from './Result.js';
+
+/**
+ *  @deprecated
+ *  This is an alias for backward compatibility.
+ *  Please use {@link expectOk} instead.
+ */
+export const expect: typeof expectOk = expectOk;
+
+/**
+ *  @deprecated
+ *  This is an alias for backward compatibility.
+ *  Please use {@link expectOk} instead.
+ */
+export const expectIsOk: typeof expectOk = expectOk;
+
+/**
+ *  @deprecated
+ *  This is an alias for backward compatibility.
+ *  Please use {@link expectErr} instead.
+ */
+export const expectIsErr: typeof expectErr = expectErr;
+
+/**
+ *  @deprecated
+ *  This is an alias for backward compatibility.
+ *  Please use {@link unwrapOk} instead.
+ */
+export const unwrap: typeof unwrapOk = unwrapOk;
