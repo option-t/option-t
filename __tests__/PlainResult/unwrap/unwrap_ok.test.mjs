@@ -1,7 +1,10 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../../__dist/esm/PlainResult/Result.js';
-import { unwrapOkFromResult } from '../../../__dist/esm/PlainResult/unwrap.js';
+import {
+    createOk,
+    createErr,
+    unwrapOk as unwrapOkFromResult,
+} from '../../../__dist/esm/PlainResult/Result.js';
 
 const EXPECTED_OK = Symbol('expected_ok');
 const EXPECTED_ERR = Symbol('expected_err');

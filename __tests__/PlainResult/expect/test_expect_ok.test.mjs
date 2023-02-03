@@ -1,7 +1,10 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../../__dist/esm/PlainResult/Result.js';
-import { expectOkForResult } from '../../../__dist/esm/PlainResult/expect.js';
+import {
+    createOk,
+    createErr,
+    expectOk as expectOkForResult,
+} from '../../../__dist/esm/PlainResult/Result.js';
 
 test('input=Ok(T), expect=Ok(T)', (t) => {
     const EXPECTED = Symbol('expected');
