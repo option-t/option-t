@@ -51,7 +51,6 @@ export type Option<T> = Some<T> | None;
  */
 export interface Some<T> {
     /**
-     *  @deprecated
      *  Don't touch this property directly from an user project.
      *  Instead, use {@link isSome()} or {@link isNone()} operator to get an inner value.
      *
@@ -61,7 +60,6 @@ export interface Some<T> {
      */
     readonly ok: true;
     /**
-     *  @deprecated
      *  Don't touch this property directly from an user project.
      *  Instead, use `unwrap()` operator to get an inner value.
      *
@@ -97,7 +95,6 @@ export function createSome<T>(val: T): Some<T> {
  */
 export interface None {
     /**
-     *  @deprecated
      *  Don't touch this property directly from an user project.
      *  Instead, use {@link isSome()} or {@link isNone()} operator to get an inner value.
      *
@@ -136,7 +133,6 @@ export interface None {
     // We use `null | undefined` as more widen type rather than `null` for the backward compatibility.
     // This definition allows to accept a value created by the old version of this library.
     /**
-     *  @deprecated
      *  Don't touch this property directly from an user project.
      *  Instead, use `unwrap()` operator to get an inner value.
      *

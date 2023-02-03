@@ -25,7 +25,7 @@ export type Result<T, E> = Ok<T> | Err<E>;
  *  This type contain a success value _T_.
  *
  *  You can create this type value and get an inner value in this type by hand.
- *  But we recommend to use factory and utility functions for forward compatibility.
+ *  But we recommend to use the factory {@link createOk()} and utility functions for forward compatibility.
  *
  *      - `createOk()` to create a value of `Ok(T)`.
  *      - `isOk()` to check whether the value is `Ok(T)`.
@@ -35,7 +35,6 @@ export type Result<T, E> = Ok<T> | Err<E>;
  */
 export interface Ok<T> {
     /**
-     *  @deprecated
      *  Don't touch this property directly from an user project.
      *  Instead, use {@link isOk()} or {@link isErr()} operator to get an inner value.
      *
@@ -45,7 +44,6 @@ export interface Ok<T> {
      */
     readonly ok: true;
     /**
-     *  @deprecated
      *  Don't touch this property directly from an user project.
      *  Instead, use `unwrapOk()` operator to get an inner value.
      *
@@ -85,7 +83,6 @@ export interface Ok<T> {
     // We use `null | undefined` as more widen type rather than `null` for the backward compatibility.
     // This definition allows to accept a value created by the old version of this library.
     /**
-     *  @deprecated
      *  Don't touch this property directly from an user project.
      *  Instead, use `unwrapErr()` operator to get an inner value.
      *
@@ -115,7 +112,7 @@ export function createOk<T>(val: T): Ok<T> {
  *  This type contain a failure information _E_.
  *
  *  You can create this type value and get an inner value in this type by hand.
- *  But we recommend to use factory and utility functions for forward compatibility.
+ *  But we recommend to use the factory {@link createErr()} and utility functions for forward compatibility.
  *
  *      - `createErr()` to create a value of `Err(E)`.
  *      - `isErr()` to check whether the value is `Err(E)`.
@@ -124,7 +121,6 @@ export function createOk<T>(val: T): Ok<T> {
  */
 export interface Err<E> {
     /**
-     *  @deprecated
      *  Don't touch this property directly from an user project.
      *  Instead, use {@link isOk()} or {@link isErr()} operator to get an inner value.
      *
@@ -164,7 +160,6 @@ export interface Err<E> {
     // We use `null | undefined` as more widen type rather than `null` for the backward compatibility.
     // This definition allows to accept a value created by the old version of this library.
     /**
-     *  @deprecated
      *  Don't touch this property directly from an user project.
      *  Instead, use `unwrapOk()` operator to get an inner value.
      *
@@ -175,7 +170,6 @@ export interface Err<E> {
     readonly val?: null | undefined;
 
     /**
-     *  @deprecated
      *  Don't touch this property directly from an user project.
      *  Instead, use `unwrapErr()` operator to get an inner value.
      *
