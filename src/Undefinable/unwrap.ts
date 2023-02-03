@@ -1,11 +1,6 @@
-import { expectNotUndefined } from './expect.js';
-import { NotUndefined, Undefinable } from './Undefinable.js';
-import { ERR_MSG_UNWRAP_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage.js';
-
 /**
- *  Return _input_ as `T` if the passed _input_ is not `undefined`.
- *  Otherwise, throw `TypeError`.
+ *  @deprecated
+ *  This module is kept for backward compatibility.
+ *  Please use `option-t/Undefinable/Undefinable` directly.
  */
-export function unwrapUndefinable<T>(input: Undefinable<T>): NotUndefined<T> {
-    return expectNotUndefined(input, ERR_MSG_UNWRAP_NO_VAL_FOR_UNDEFINABLE);
-}
+export { unwrapUndefinable } from './Undefinable.js';

@@ -1,13 +1,6 @@
-import { isNotUndefined, NotUndefined, Undefinable } from './Undefinable.js';
-
 /**
- *  Return _input_ as `T` if the passed _input_ is not `undefined`.
- *  Otherwise, throw `TypeError` with the passed `msg`.
+ *  @deprecated
+ *  This module is kept for backward compatibility.
+ *  Please use `option-t/Undefinable/Undefinable` directly.
  */
-export function expectNotUndefined<T>(input: Undefinable<T>, msg: string): NotUndefined<T> {
-    if (isNotUndefined(input)) {
-        return input;
-    }
-
-    throw new TypeError(msg);
-}
+export { expectNotUndefined } from './Undefinable.js';

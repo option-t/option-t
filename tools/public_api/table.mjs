@@ -12,6 +12,7 @@ export const apiTable = Object.freeze({
             'andThen',
             'andThenAsync',
             'expect',
+            'expectNotNullAndUndefined',
             'inspect',
             'map',
             'mapAsync',
@@ -22,6 +23,7 @@ export const apiTable = Object.freeze({
             'orElse',
             'orElseAsync',
             'unwrap',
+            'unwrapMaybe',
             'unwrapOr',
             'unwrapOrElse',
             'unwrapOrElseAsync',
@@ -66,6 +68,8 @@ export const apiTable = Object.freeze({
         'exports': [
             'isNotNullAndUndefined',
             'isNullOrUndefined',
+            'expectNotNullAndUndefined',
+            'unwrapMaybe',
         ]
     },
     'Maybe/mapOr': {
@@ -147,6 +151,7 @@ export const apiTable = Object.freeze({
             'andThen',
             'andThenAsync',
             'expect',
+            'expectNotNull',
             'inspect',
             'map',
             'mapAsync',
@@ -157,6 +162,7 @@ export const apiTable = Object.freeze({
             'orElse',
             'orElseAsync',
             'unwrap',
+            'unwrapNullable',
             'unwrapOr',
             'unwrapOrElse',
             'unwrapOrElseAsync',
@@ -221,6 +227,8 @@ export const apiTable = Object.freeze({
         'exports': [
             'isNotNull',
             'isNull',
+            'expectNotNull',
+            'unwrapNullable',
         ]
     },
     'Nullable/or': {
@@ -690,6 +698,7 @@ export const apiTable = Object.freeze({
             'andThen',
             'andThenAsync',
             'expect',
+            'expectNotUndefined',
             'inspect',
             'map',
             'mapAsync',
@@ -703,6 +712,7 @@ export const apiTable = Object.freeze({
             'unwrapOr',
             'unwrapOrElse',
             'unwrapOrElseAsync',
+            'unwrapUndefinable',
         ]
     },
 
@@ -785,6 +795,8 @@ export const apiTable = Object.freeze({
         'exports': [
             'isNotUndefined',
             'isUndefined',
+            'expectNotUndefined',
+            'unwrapUndefinable',
         ]
     },
     'Undefinable/unwrap': {
