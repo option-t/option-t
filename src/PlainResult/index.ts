@@ -23,7 +23,17 @@
  *      Object.is(a, b);
  *  ```
  */
-export { type Result, type Ok, type Err, createOk, createErr, isOk, isErr } from './Result.js';
+export {
+    type Result,
+    type Ok,
+    type Err,
+    createOk,
+    createErr,
+    isOk,
+    isErr,
+    unwrapOk,
+    unwrapErr,
+} from './Result.js';
 
 export { andForResult as and } from './and.js';
 export { andThenForResult as andThen } from './andThen.js';
@@ -55,11 +65,7 @@ export { orElseForResult as orElse } from './orElse.js';
 export { orElseAsyncForResult as orElseAsync } from './orElseAsync.js';
 export { transposeForResult as transpose } from './transpose.js';
 export { toOptionFromOk, toOptionFromErr } from './toOption.js';
-export {
-    unwrapFromResult as unwrap,
-    unwrapOkFromResult as unwrapOk,
-    unwrapErrFromResult as unwrapErr,
-} from './unwrap.js';
+export { unwrapFromResult as unwrap } from './unwrap.js';
 export { unwrapOrFromResult as unwrapOr } from './unwrapOr.js';
 export { unwrapOrElseFromResult as unwrapOrElse } from './unwrapOrElse.js';
 export { unwrapOrElseAsyncFromResult as unwrapOrElseAsync } from './unwrapOrElseAsync.js';

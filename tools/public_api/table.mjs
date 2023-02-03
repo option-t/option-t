@@ -622,7 +622,9 @@ export const apiTable = Object.freeze({
             'isOk',
             'createOk',
             'isErr',
-            'createErr'
+            'createErr',
+            'unwrapOk',
+            'unwrapErr',
         ]
     },
     'PlainResult/toOption': {
