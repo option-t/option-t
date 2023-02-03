@@ -43,15 +43,16 @@ export type Option<T> = Some<T> | None;
  *  You can create this type value and get an inner value in this type by hand.
  *  But we recommend to use factory and utility functions for forward compatibility.
  *
- *      - `createSome()` to create a value of `Some(T)`.
- *      - `isSome()` to check whether the value is `Some(T)`.
- *      - `unwrap()` to get an inner value in `Some(T)`.
- *      - `unwrapOr()` to get either an inner value in `Some(T)` or a fallback default value.
- *      - ...and more.
+ *  - {@link createSome()} to create a value of `Some(T)`.
+ *  - {@link isSome} to check whether the value is `Some(T)`.
+ *  - `unwrap()` to get an inner value in `Some(T)`.
+ *  - `unwrapOr()` to get either an inner value in `Some(T)` or a fallback default value.
+ *  - ...and more.
  */
 export interface Some<T> {
     /**
-     *  Don't touch this property directly from an user project.
+     *  Don't touch this property directly from an user project
+     *  except 3rd party project that does not install this package but uses a value returned from an other project.
      *  Instead, use {@link isSome()} or {@link isNone()} operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
@@ -60,7 +61,8 @@ export interface Some<T> {
      */
     readonly ok: true;
     /**
-     *  Don't touch this property directly from an user project.
+     *  Don't touch this property directly from an user project
+     *  except 3rd party project that does not install this package but uses a value returned from an other project.
      *  Instead, use `unwrap()` operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
@@ -89,13 +91,14 @@ export function createSome<T>(val: T): Some<T> {
  *  You can create this type value and get an inner value in this type by hand.
  *  But we recommend to use factory and utility functions for forward compatibility.
  *
- *      - `createNone()` to create a value of `None`.
- *      - `isNone()` to check whether the value is `None`.
- *      - ...and more.
+ *  - {@link createNone()} to create a value of `None`.
+ *  - {@link isNone()} to check whether the value is `None`.
+ *  - ...and more.
  */
 export interface None {
     /**
-     *  Don't touch this property directly from an user project.
+     *  Don't touch this property directly from an user project
+     *  except 3rd party project that does not install this package but uses a value returned from an other project.
      *  Instead, use {@link isSome()} or {@link isNone()} operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
@@ -133,7 +136,8 @@ export interface None {
     // We use `null | undefined` as more widen type rather than `null` for the backward compatibility.
     // This definition allows to accept a value created by the old version of this library.
     /**
-     *  Don't touch this property directly from an user project.
+     *  Don't touch this property directly from an user project
+     *  except 3rd party project that does not install this package but uses a value returned from an other project.
      *  Instead, use `unwrap()` operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
