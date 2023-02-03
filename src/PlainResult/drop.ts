@@ -1,6 +1,6 @@
 import type { Mutable } from '../internal/Mutable.js';
 import type { EffectFn } from '../internal/Function.js';
-import type { Result, Ok, Err } from './Result.js';
+import { type Result, type Ok, type Err, isOk } from './Result.js';
 import { asMutResult } from './asMut.js';
 
 export type MutOk<T> = Mutable<Ok<T>>;
@@ -32,6 +32,9 @@ function noop<T, E>(_input: MutResult<T, E>): void {}
  *  Compared to Rust, JavaScript does not have ownership semantics in language
  *  and this API is designed to use as a destructor or similar fashions.
  *  So if you call this for same object more than once, your code might contain "double free" problem.
+ *
+ *  @throws
+ *  This throw an `Error` instance if the _input_ is frozen.
  */
 export function unsafeDropBothForResult<T, E>(
     input: Result<T, E>,
@@ -39,7 +42,7 @@ export function unsafeDropBothForResult<T, E>(
     errMutator: UnsafeErrDestructorFn<E>
 ): void {
     const mutable = asMutResult(input);
-    if (mutable.ok) {
+    if (isOk(mutable)) {
         okMutator(mutable);
         mutable.val = undefined as never;
     } else {
@@ -73,6 +76,9 @@ export function unsafeDropBothForResult<T, E>(
  *  Compared to Rust, JavaScript does not have ownership semantics in language
  *  and this API is designed to use as a destructor or similar fashions.
  *  So if you call this for same object more than once, your code might contain "double free" problem.
+ *
+ *  @throws
+ *  This throw an `Error` instance if the _input_ is frozen.
  */
 export function unsafeDropOkForResult<T, E>(
     input: Result<T, E>,
@@ -99,6 +105,9 @@ export function unsafeDropOkForResult<T, E>(
  *  Compared to Rust, JavaScript does not have ownership semantics in language
  *  and this API is designed to use as a destructor or similar fashions.
  *  So if you call this for same object more than once, your code might contain "double free" problem.
+ *
+ *  @throws
+ *  This throw an `Error` instance if the _input_ is frozen.
  */
 export function unsafeDropErrForResult<T, E>(
     input: Result<T, E>,

@@ -1,6 +1,6 @@
 import type { Mutable } from '../internal/Mutable.js';
 import type { EffectFn } from '../internal/Function.js';
-import type { Option, Some } from './Option.js';
+import { type Option, type Some, isSome } from './Option.js';
 import { asMutOption } from './asMut.js';
 
 export type MutSome<T> = Mutable<Some<T>>;
@@ -25,10 +25,13 @@ export type UnsafeSomeDestructorFn<T> = EffectFn<MutSome<T>>;
  *  Compared to Rust, JavaScript does not have ownership semantics in language
  *  and this API is designed to use as a destructor or similar fashions.
  *  So if you call this for same object more than once, your code might contain "double free" problem.
+ *
+ *  @throws
+ *  This throw an `Error` instance if the _input_ is frozen.
  */
 export function unsafeDropForOption<T>(input: Option<T>, mutator: UnsafeSomeDestructorFn<T>): void {
     const mutable = asMutOption(input);
-    if (mutable.ok) {
+    if (isSome(mutable)) {
         mutator(mutable);
         mutable.val = undefined as never;
     }

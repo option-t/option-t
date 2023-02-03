@@ -16,3 +16,22 @@ for (const factory of FUNC_LIST) {
         t.deepEqual(actual, original, 'should be the same shape');
     });
 }
+
+const TEST_CASE_LIST = [
+    ['Ok', createOk(Math.random())],
+    ['Err', createErr(new Error())],
+];
+for (const [typename, inputValue] of TEST_CASE_LIST) {
+    test(`should throw if the passed value is frozen: ${typename}`, (t) => {
+        const input = Object.freeze(inputValue);
+        t.throws(
+            () => {
+                asMutResult(input);
+            },
+            {
+                instanceOf: TypeError,
+                message: `input is frozen, cannot cast to mutable`,
+            }
+        );
+    });
+}
