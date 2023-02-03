@@ -1,3 +1,5 @@
+import { ERR_MSG_UNWRAP_SOME_BUT_INPUT_IS_NONE } from './internal/ErrorMessage.js';
+
 /**
  *  @deprecated
  *  Consider to use `Nullable<T>`, `Undefinable<T>`, or `Maybe<T>` to express an absence of a value.
@@ -44,8 +46,8 @@ export type Option<T> = Some<T> | None;
  *  But we recommend to use factory and utility functions for forward compatibility.
  *
  *  - {@link createSome()} to create a value of `Some(T)`.
- *  - {@link isSome} to check whether the value is `Some(T)`.
- *  - `unwrap()` to get an inner value in `Some(T)`.
+ *  - {@link isSome()} to check whether the value is `Some(T)`.
+ *  - {@link unwrapSome()} to get an inner value in `Some(T)`.
  *  - `unwrapOr()` to get either an inner value in `Some(T)` or a fallback default value.
  *  - ...and more.
  */
@@ -63,7 +65,7 @@ export interface Some<T> {
     /**
      *  Don't touch this property directly from an user project
      *  except 3rd party project that does not install this package but uses a value returned from an other project.
-     *  Instead, use `unwrap()` operator to get an inner value.
+     *  Instead, use {@link unwrapSome()} operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
      *  Then there was no well optimized `Symbol` to achieve a private property.
@@ -138,7 +140,7 @@ export interface None {
     /**
      *  Don't touch this property directly from an user project
      *  except 3rd party project that does not install this package but uses a value returned from an other project.
-     *  Instead, use `unwrap()` operator to get an inner value.
+     *  Instead, use {@link unwrapSome()} operator to get an inner value.
      *
      *  Historically, this type was created to target a JSVM that supports ES5.
      *  Then there was no well optimized `Symbol` to achieve a private property.
@@ -159,4 +161,29 @@ export function createNone(): None {
         val: null,
     };
     return r;
+}
+
+/**
+ *  Return the inner `T` of a `Some(T)`.
+ *
+ *  @throws {TypeError}
+ *      Throws if the self is a `None`.
+ */
+export function unwrapSome<T>(input: Option<T>): T {
+    return expectSome(input, ERR_MSG_UNWRAP_SOME_BUT_INPUT_IS_NONE);
+}
+
+/**
+ *  Return _input_ as `T` if the passed _input_ is `Some(T)`.
+ *  Otherwise, throw `TypeError` with the passed `msg`.
+ *
+ *  @throws {TypeError}
+ *      Throws if the self is a `None`.
+ */
+export function expectSome<T>(input: Option<T>, msg: string): T {
+    if (!input.ok) {
+        throw new TypeError(msg);
+    }
+
+    return input.val;
 }

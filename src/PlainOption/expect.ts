@@ -1,19 +1,21 @@
-import { Option } from './Option.js';
+/**
+ *  @deprecated
+ *  This module is kept for backward compatibility.
+ *  Please use `option-t/PlainOption/Option` directly.
+ */
+import { expectSome } from './Option.js';
 
 /**
- *  Return _input_ as `T` if the passed _input_ is `Some(T)`.
- *  Otherwise, throw `TypeError` with the passed `msg`.
+ *  This is an alias for backward compatibility.
+ *  Please use {@link expectSome} instead.
+ *
+ *  @see {@link expectSome}
  */
-export function expectSomeForOption<T>(input: Option<T>, msg: string): T | never {
-    if (!input.ok) {
-        throw new TypeError(msg);
-    }
-
-    return input.val;
-}
+export const expectSomeForOption: typeof expectSome = expectSome;
 
 /**
  *  @deprecated
- *  Use {@link expectSomeForOption}
+ *  This is an alias for backward compatibility.
+ *  Please use {@link expectSome} instead.
  */
-export const expectIsSome: typeof expectSomeForOption = expectSomeForOption;
+export const expectIsSome: typeof expectSome = expectSome;
