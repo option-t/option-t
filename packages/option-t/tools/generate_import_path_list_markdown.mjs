@@ -13,6 +13,7 @@ const THIS_FILE_NAME = fileURLToPath(import.meta.url);
 const THIS_DIR_NAME = path.dirname(THIS_FILE_NAME);
 
 const RELATIVE_PATH_TO_SRC_DIR = '../src';
+const RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO = '../packages/option-t/src';
 
 const FILENAME = 'public_api_list.md';
 
@@ -55,7 +56,7 @@ class ListItem {
 
     toString() {
         const name = this.#pathname();
-        const href = `${RELATIVE_PATH_TO_SRC_DIR}/${this.href()}.${this.#extension}`;
+        const href = `${RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO}/${this.href()}.${this.#extension}`;
 
         return `- [${name}](${href})`;
     }

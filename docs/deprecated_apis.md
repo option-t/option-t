@@ -14,7 +14,7 @@ They are marked as `@deprecated` but there are not in the next "As Not Recommend
 We don't have any concrete plan to remove followings but do not recommend to use them in almost cases.
 
 
-###  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](../src/PlainOption/) (weak deprecated)
+###  [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](../packages/option-t/src/PlainOption/) (weak deprecated)
 
 **Basically, we don't recommend to use this type. Use `Nullable`, `Undefinable<T>`, or `Maybe<T>` to express an absence of a value instead. In JavaScript, they would cover almost usecases. Probably, you might not have to use this type.**
 
