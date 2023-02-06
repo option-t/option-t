@@ -21,7 +21,6 @@ TMP_CJS_DIR := $(CURDIR)/__tmp_cjs
 
 PROJECT_NPMRC := $(CURDIR)/.npmrc
 
-ESLINT_APPLIED_EXTENSIONS := .js,.jsx,cjs,.mjs,.ts,.tsx,.cts,.mts
 CJS_EXTENSION_GLOB := cjs
 MJS_EXTENSION_GLOB := {js,mjs}
 D_CTS_EXTENSION_GLOB := d.cts
@@ -182,13 +181,6 @@ generate_manifest: clean_dist
 ###########################
 # Lint
 ###########################
-.PHONY: lint
-lint: eslint ## Run all lints
-
-.PHONY: eslint
-eslint:
-	$(NPM_BIN)/eslint --ext $(ESLINT_APPLIED_EXTENSIONS) $(CURDIR)/
-
 .PHONY: typecheck
 typecheck: ## Check static types
 	$(NPM_BIN)/tsc -p $(CURDIR)/tsconfig.json --noEmit
@@ -254,10 +246,6 @@ post_cleanup_to_test_package_install:
 ###########################
 # Tools
 ###########################
-.PHONY: eslint_fix
-eslint_fix: ## Apply ESLint's `--fix` mode
-	$(NPM_BIN)/eslint --ext $(ESLINT_APPLIED_EXTENSIONS) --fix $(CURDIR)/
-
 .PHONY: generate_import_path_list_md
 generate_import_path_list_md: ## Generate all public import paths to docs/import_path.md
 	$(NODE_BIN) $(CURDIR)/tools/generate_import_path_list_markdown.mjs --source ${SRC_DIR} --destination ${DOCS_DIR}

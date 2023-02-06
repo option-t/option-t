@@ -7,6 +7,8 @@ NPM_MOD_DIR := $(CURDIR)/node_modules
 NPM_BIN := $(NPM_MOD_DIR)/.bin
 NPM_CMD := npm
 
+ESLINT_APPLIED_EXTENSIONS := .js,.jsx,cjs,.mjs,.ts,.tsx,.cts,.mts
+
 all: help
 
 help:
@@ -35,8 +37,15 @@ build:
 # Lint
 ###########################
 .PHONY: lint
-lint:
-	$(MAKE) $@ -C $(MAIN_PKG)
+lint: eslint ## Run all lints
+
+.PHONY: eslint
+eslint:
+	$(NPM_BIN)/eslint --ext $(ESLINT_APPLIED_EXTENSIONS) $(CURDIR)/
+
+.PHONY: eslint_fix
+eslint_fix: ## Apply ESLint's `--fix` mode
+	$(NPM_BIN)/eslint --ext $(ESLINT_APPLIED_EXTENSIONS) --fix $(CURDIR)/
 
 
 ###########################
