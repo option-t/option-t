@@ -2,10 +2,7 @@
 
 import test from 'ava';
 
-import {
-    createClassicSome,
-    createClassicNone,
-} from 'option-t/__dist/esm/ClassicOption/ClassicOption.js';
+import { createClassicSome, createClassicNone } from 'option-t/esm/ClassicOption';
 
 import {
     primitiveVal,

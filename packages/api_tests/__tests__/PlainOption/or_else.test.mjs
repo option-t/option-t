@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/__dist/esm/PlainOption/Option.js';
-import { orElseForOption } from 'option-t/__dist/esm/PlainOption/orElse.js';
+import { createSome, createNone } from 'option-t/esm/PlainOption/Option';
+import { orElseForOption } from 'option-t/esm/PlainOption/orElse';
 
 const VALUE_T = Math.random();
 const VALUE_U = Math.random();

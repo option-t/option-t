@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createOk, createErr } from 'option-t/__dist/esm/PlainResult/Result.js';
-import { asMutResult } from 'option-t/__dist/esm/PlainResult/asMut.js';
+import { createOk, createErr } from 'option-t/esm/PlainResult/Result';
+import { asMutResult } from 'option-t/esm/PlainResult/asMut';
 
 const FUNC_LIST = [createOk, createErr];
 

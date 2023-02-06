@@ -1,11 +1,11 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/__dist/esm/PlainOption/Option.js';
-import { okOrElseForPlainOption } from 'option-t/__dist/esm/PlainOption/okOrElse.js';
+import { createSome, createNone } from 'option-t/esm/PlainOption/Option';
+import { okOrElseForPlainOption } from 'option-t/esm/PlainOption/okOrElse';
 import {
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
-} from 'option-t/__dist/esm/PlainResult/Result.js';
+} from 'option-t/esm/PlainResult/Result';
 
 test('the input is Some', (t) => {
     t.plan(2);

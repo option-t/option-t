@@ -5,8 +5,8 @@ import {
     isErr,
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
-} from 'option-t/__dist/esm/PlainResult/Result.js';
-import { fromPromiseSettledResultToResult } from 'option-t/__dist/esm/PlainResult/fromPromiseSettledResult.js';
+} from 'option-t/esm/PlainResult/Result';
+import { fromPromiseSettledResultToResult } from 'option-t/PlainResult/fromPromiseSettledResult';
 
 test('should be Ok(T)', async (t) => {
     const VALUE_T = Symbol('value');

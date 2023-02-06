@@ -1,10 +1,6 @@
 import test from 'ava';
 
-import {
-    createClassicOk,
-    createClassicErr,
-    ClassicResultBase,
-} from 'option-t/__dist/esm/ClassicResult/ClassicResult.js';
+import { createClassicOk, createClassicErr, ClassicResultBase } from 'option-t/esm/ClassicResult';
 
 const ORIGIN = Symbol('ORIGIN');
 const EXPECTED = Symbol('EXPECTED');

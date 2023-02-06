@@ -4,7 +4,7 @@ import {
     createOk,
     createErr,
     unwrapErr as unwrapErrFromResult,
-} from 'option-t/__dist/esm/PlainResult/Result.js';
+} from 'option-t/esm/PlainResult/Result';
 
 const EXPECTED_OK = Symbol('expected_ok');
 const EXPECTED_ERR = Symbol('expected_err');

@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/__dist/esm/PlainOption/Option.js';
-import { asMutOption } from 'option-t/__dist/esm/PlainOption/asMut.js';
+import { createSome, createNone } from 'option-t/esm/PlainOption/Option';
+import { asMutOption } from 'option-t/esm/PlainOption/asMut';
 
 const FUNC_LIST = [createSome, createNone];
 

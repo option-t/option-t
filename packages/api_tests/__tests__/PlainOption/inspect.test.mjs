@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/__dist/esm/PlainOption/Option.js';
-import { inspectOption } from 'option-t/__dist/esm/PlainOption/inspect.js';
+import { createSome, createNone } from 'option-t/esm/PlainOption/Option';
+import { inspectOption } from 'option-t/esm/PlainOption/inspect';
 
 test('input is Some', (t) => {
     const INPUT_INNER = Symbol('input');

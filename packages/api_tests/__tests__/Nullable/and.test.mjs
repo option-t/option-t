@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { andForNullable } from 'option-t/__dist/esm/Nullable/and.js';
+import { andForNullable } from 'option-t/esm/Nullable/and';
 import { nonNullableValue } from '../utils.mjs';
 
 const LEFT = Symbol('a');

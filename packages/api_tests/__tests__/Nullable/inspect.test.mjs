@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { inspectNullable } from 'option-t/__dist/esm/Nullable/inspect.js';
+import { inspectNullable } from 'option-t/esm/Nullable/inspect';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;

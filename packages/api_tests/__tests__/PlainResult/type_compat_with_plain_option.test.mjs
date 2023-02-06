@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone, isSome, isNone } from 'option-t/__dist/esm/PlainOption/Option.js';
-import { createOk, createErr, isOk, isErr } from 'option-t/__dist/esm/PlainResult/Result.js';
+import { createSome, createNone, isSome, isNone } from 'option-t/esm/PlainOption/Option';
+import { createOk, createErr, isOk, isErr } from 'option-t/esm/PlainResult/Result';
 
 const FUNC_TABLE = [
     [createSome, isOk],

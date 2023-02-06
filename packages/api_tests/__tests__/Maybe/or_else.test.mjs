@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { orElseForMaybe } from 'option-t/__dist/esm/Maybe/orElse.js';
+import { orElseForMaybe } from 'option-t/esm/Maybe/orElse';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {

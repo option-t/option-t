@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createClassicOk, createClassicErr } from 'option-t/__dist/esm/ClassicResult/ClassicResult.js';
+import { createClassicOk, createClassicErr } from 'option-t/esm/ClassicResult';
 
 const PLAN_COUNT = 2;
 

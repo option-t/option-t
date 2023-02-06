@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/__dist/esm/PlainOption/Option.js';
-import { unwrapOrElseFromOption } from 'option-t/__dist/esm/PlainOption/unwrapOrElse.js';
+import { createSome, createNone } from 'option-t/esm/PlainOption/Option';
+import { unwrapOrElseFromOption } from 'option-t/esm/PlainOption/unwrapOrElse';
 
 const VALUE_T = Math.random();
 const DEFAULT_VAL = Math.random();

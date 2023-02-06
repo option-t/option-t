@@ -1,9 +1,6 @@
 import test from 'ava';
 
-import {
-    createClassicSome,
-    createClassicNone,
-} from 'option-t/__dist/esm/ClassicOption/ClassicOption.js';
+import { createClassicSome, createClassicNone } from 'option-t/esm/ClassicOption';
 
 test('self is `None`, param is `Some<T>`', function (t) {
     const EXPECTED = 1;
