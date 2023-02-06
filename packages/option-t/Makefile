@@ -1,8 +1,5 @@
 REPO_ROOT_DIR := $(CURDIR)/../..
 
-INNER_PACKAGES_DIR := $(CURDIR)/..
-API_TEST_PKG := $(INNER_PACKAGES_DIR)/api_tests
-
 NODE_BIN := node
 NPM_MOD_DIR := $(REPO_ROOT_DIR)/node_modules
 NPM_BIN := $(NPM_MOD_DIR)/.bin
@@ -216,14 +213,6 @@ typecheck: ## Check static types
 ###########################
 # Test
 ###########################
-.PHONY: test_unittest
-test_unittest: __build ## Build and run unit tests
-	$(MAKE) run_test_unittest -C $(CURDIR)
-
-.PHONY: run_test_unittest
-run_test_unittest: ## Run unit tests only.
-	$(MAKE) test -C $(API_TEST_PKG)
-
 .PHONY: test_distribution_contain_all
 test_distribution_contain_all: build
 	$(MAKE) run_test_distribution_contain_all

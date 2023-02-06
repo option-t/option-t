@@ -68,8 +68,12 @@ eslint_fix: ## Apply ESLint's `--fix` mode
 # Test
 ###########################
 .PHONY: test_unittest
-test_unittest:
-	$(MAKE) $@ -C $(MAIN_PKG)
+test_unittest: build ## Build and run unit tests
+	$(MAKE) run_test_unittest -C $(CURDIR)
+
+.PHONY: run_test_unittest
+run_test_unittest: ## Run unit tests only.
+	$(MAKE) test -C $(API_TEST_PKG)
 
 .PHONY: test_distribution_contain_all
 test_distribution_contain_all:
