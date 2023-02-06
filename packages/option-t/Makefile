@@ -156,7 +156,7 @@ __build_tmp_base: __build_tmp_base__call_tsc __build_tmp_base__call_babel __buil
 
 .PHONY: __build_tmp_base__call_tsc
 __build_tmp_base__call_tsc: clean_tmp_base
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.esm.json --outDir $(TMP_BASE_DIR)
+	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.json
 
 .PHONY: __build_tmp_base__call_babel
 __build_tmp_base__call_babel: clean_tmp_base
