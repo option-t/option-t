@@ -17,6 +17,9 @@ DIST_DOCS_DIR := $(DIST_DIR)/docs
 DIST_ESM_DIR := $(DIST_DIR)/esm
 DIST_COMMONJS_DIR := $(DIST_DIR)/cjs
 DIST_MIXED_LIB_DIR := $(DIST_DIR)/lib
+GENERATED_ESM_DIR := $(CURDIR)/esm
+GENERATED_COMMONJS_DIR := $(CURDIR)/cjs
+GENERATED_MIXED_LIB_DIR := $(CURDIR)/lib
 TMP_BASE_DIR := $(CURDIR)/__tmp_base
 TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
 TMP_CJS_DIR := $(CURDIR)/__tmp_cjs
@@ -45,9 +48,12 @@ help:
 ###########################
 CLEAN_TARGETS := \
 	dist \
+	generated_cjs \
+	generated_esm \
+	generated_mixedlib \
 	tmp_base \
 	tmp_mjs \
-	tmp_cjs \
+	tmp_cjs
 
 .PHONY: clean
 clean: $(addprefix clean_, $(CLEAN_TARGETS))
@@ -55,6 +61,18 @@ clean: $(addprefix clean_, $(CLEAN_TARGETS))
 .PHONY: clean_dist
 clean_dist:
 	$(NPM_BIN)/del $(DIST_DIR)
+
+.PHONY: clean_generated_cjs
+clean_generated_cjs:
+	$(NPM_BIN)/del $(GENERATED_COMMONJS_DIR)
+
+.PHONY: clean_generated_esm
+clean_generated_esm:
+	$(NPM_BIN)/del $(GENERATED_ESM_DIR)
+
+.PHONY: clean_generated_mixedlib
+clean_generated_mixedlib:
+	$(NPM_BIN)/del $(GENERATED_MIXED_LIB_DIR)
 
 .PHONY: clean_tmp_base
 clean_tmp_base:
@@ -80,13 +98,17 @@ __build: build_cjs build_esm build_mixedlib ## Build all targets.
 
 .PHONY: build_cjs
 build_cjs: __build_cjs__cp_cjs_to_cjsdir __build_cjs__cp_dcts_to_cjsdir ## Build `cjs/`.
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs \
+        --basedir $(GENERATED_COMMONJS_DIR) \
+        --source '$(GENERATED_COMMONJS_DIR)/**/*' \
+        --destination $(DIST_COMMONJS_DIR)
 
 .PHONY: __build_cjs__cp_cjs_to_cjsdir
 __build_cjs__cp_cjs_to_cjsdir: __build_cjs__rename_js_to_cjs clean_dist
 	$(NODE_BIN) $(CURDIR)/tools/transform_files_by_babel.mjs \
 		--basedir $(TMP_CJS_DIR) \
 		--source '$(TMP_CJS_DIR)/**/*.$(CJS_EXTENSION_GLOB)' \
-		--destination $(DIST_COMMONJS_DIR) \
+		--destination $(GENERATED_COMMONJS_DIR) \
 		--config $(CURDIR)/tools/babel/babelrc.cjs.mjs
 
 .PHONY: __build_cjs__cp_dcts_to_cjsdir
@@ -94,7 +116,7 @@ __build_cjs__cp_dcts_to_cjsdir: __build_cjs_rename_dts_to_dcts clean_dist
 	$(NODE_BIN) $(CURDIR)/tools/transform_files_by_babel.mjs \
 		--basedir $(TMP_CJS_DIR) \
 		--source '$(TMP_CJS_DIR)/**/*.$(D_CTS_EXTENSION_GLOB)' \
-		--destination $(DIST_COMMONJS_DIR) \
+		--destination $(GENERATED_COMMONJS_DIR) \
 		--config $(CURDIR)/tools/babel/babelrc.d.cts.mjs
 
 .PHONY: __build_cjs_rename_dts_to_dcts
@@ -112,14 +134,18 @@ __build_cjs__create_tmp_cjs: __build_tmp_base clean_tmp_cjs
 
 .PHONY: build_esm
 build_esm: __build_mjs_cp_mjs_to_esm __build_mjs_cp_dts_to_esm ## Build `esm/`.
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs \
+        --basedir $(GENERATED_ESM_DIR) \
+        --source '$(GENERATED_ESM_DIR)/**/*' \
+        --destination $(DIST_ESM_DIR)
 
 .PHONY: __build_mjs_cp_mjs_to_esm
 __build_mjs_cp_mjs_to_esm: __build_mjs_create_tmp_mjs clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_MJS_DIR) --source '$(TMP_MJS_DIR)/**/*.$(MJS_EXTENSION_GLOB)' --destination $(DIST_ESM_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_MJS_DIR) --source '$(TMP_MJS_DIR)/**/*.$(MJS_EXTENSION_GLOB)' --destination $(GENERATED_ESM_DIR)
 
 .PHONY: __build_mjs_cp_dts_to_esm
 __build_mjs_cp_dts_to_esm: __build_mjs_create_tmp_mjs clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_MJS_DIR) --source '$(TMP_MJS_DIR)/**/*.$(DTS_EXTENSION_GLOB)' --destination $(DIST_ESM_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_MJS_DIR) --source '$(TMP_MJS_DIR)/**/*.$(DTS_EXTENSION_GLOB)' --destination $(GENERATED_ESM_DIR)
 
 .PHONY: __build_mjs_create_tmp_mjs
 __build_mjs_create_tmp_mjs: __build_tmp_base clean_tmp_mjs
@@ -148,10 +174,14 @@ __build_tmp_base__call_cpx: clean_tmp_base
 # We need to keep this directory to continue to support TypeScript moduleResolution=node..
 .PHONY: build_mixedlib
 build_mixedlib: build_mixedlib_cp_dts ## Build `lib/`.
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs \
+        --basedir $(GENERATED_MIXED_LIB_DIR) \
+        --source '$(GENERATED_MIXED_LIB_DIR)/**/*' \
+        --destination $(DIST_MIXED_LIB_DIR)
 
 .PHONY: build_mixedlib_cp_dts
 build_mixedlib_cp_dts: build_esm clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(DIST_ESM_DIR) --source '$(DIST_ESM_DIR)/**/*.${DTS_EXTENSION_GLOB}' --destination $(DIST_MIXED_LIB_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(GENERATED_ESM_DIR) --source '$(GENERATED_ESM_DIR)/**/*.${DTS_EXTENSION_GLOB}' --destination $(GENERATED_MIXED_LIB_DIR)
 
 .PHONY: cp_docs
 cp_docs: clean_dist
@@ -171,7 +201,8 @@ cp_readme: clean_dist
 
 .PHONY: generate_manifest
 generate_manifest: clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/package_json_rewriter/main.mjs --input-manifest-path $(CURDIR)/package.json --destination $(DIST_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/package_json_rewriter/main.mjs --input-manifest-path $(CURDIR)/package.json --destination $(CURDIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(CURDIR) --source '$(CURDIR)/package.json' --destination $(DIST_DIR)
 
 
 ###########################

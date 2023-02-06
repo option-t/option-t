@@ -24,7 +24,7 @@ async function writePackageJSON(baseDir, outputPath, content) {
         recursive: true,
     });
 
-    await fs.appendFile(p, text, {
+    await fs.writeFile(p, text, {
         encoding: 'utf8',
     });
 }
