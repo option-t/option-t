@@ -2,12 +2,14 @@ INNER_PACKAGES_DIR := $(CURDIR)/packages
 MAIN_PKG := $(INNER_PACKAGES_DIR)/option-t
 API_TEST_PKG := $(INNER_PACKAGES_DIR)/api_tests
 
+DIST_DIR := $(MAIN_PKG)/__dist
+
 NODE_BIN := node
 NPM_MOD_DIR := $(CURDIR)/node_modules
 NPM_BIN := $(NPM_MOD_DIR)/.bin
 NPM_CMD := npm
 
-PROJECT_NPMRC := $(CURDIR)/.npmrc
+PROJECT_NPMRC := $(DIST_DIR)/.npmrc
 
 ESLINT_APPLIED_EXTENSIONS := .js,.jsx,cjs,.mjs,.ts,.tsx,.cts,.mts
 
