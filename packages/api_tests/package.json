@@ -9,6 +9,6 @@
     },
     "dependencies": {
         "ava": "^5.1.1",
-        "option-t": "*"
+        "option-t": "../option-t"
     }
 }
