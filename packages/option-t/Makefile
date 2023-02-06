@@ -1,8 +1,10 @@
+REPO_ROOT_DIR := $(CURDIR)/../..
+
 INNER_PACKAGES_DIR := $(CURDIR)/..
 API_TEST_PKG := $(INNER_PACKAGES_DIR)/api_tests
 
 NODE_BIN := node
-NPM_MOD_DIR := $(CURDIR)/node_modules
+NPM_MOD_DIR := $(REPO_ROOT_DIR)/node_modules
 NPM_BIN := $(NPM_MOD_DIR)/.bin
 NPM_CMD := npm
 
