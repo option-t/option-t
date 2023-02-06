@@ -1,4 +1,5 @@
-REPO_ROOT_DIR := $(CURDIR)/../..
+REPO_ROOT_DIR := $(abspath $(CURDIR)/../..)
+INNER_PACKAGES_DIR := $(abspath $(CURDIR)/..)
 
 NODE_BIN := node
 NPM_MOD_DIR := $(REPO_ROOT_DIR)/node_modules
@@ -6,7 +7,7 @@ NPM_BIN := $(NPM_MOD_DIR)/.bin
 NPM_CMD := npm
 
 SRC_DIR := $(CURDIR)/src
-DOCS_DIR := $(CURDIR)/docs
+DOCS_DIR := $(REPO_ROOT_DIR)/docs
 SRC_TEST_DIR := $(CURDIR)/__tests__
 
 DIST_DIR := $(CURDIR)/__dist
@@ -186,15 +187,15 @@ cp_docs: clean_dist
 
 .PHONY: cp_changelog
 cp_changelog: clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(CURDIR) --source '$(CURDIR)/{CHANGELOG.md,CHANGELOG_OLD.md}' --destination $(DIST_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(REPO_ROOT_DIR) --source '$(REPO_ROOT_DIR)/{CHANGELOG.md,CHANGELOG_OLD.md}' --destination $(DIST_DIR)
 
 .PHONY: cp_license
 cp_license: clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(CURDIR) --source '$(CURDIR)/LICENSE.MIT' --destination $(DIST_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(REPO_ROOT_DIR) --source '$(REPO_ROOT_DIR)/LICENSE.MIT' --destination $(DIST_DIR)
 
 .PHONY: cp_readme
 cp_readme: clean_dist
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(CURDIR) --source '$(CURDIR)/README.md' --destination $(DIST_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(REPO_ROOT_DIR) --source '$(REPO_ROOT_DIR)/README.md' --destination $(DIST_DIR)
 
 .PHONY: generate_manifest
 generate_manifest: clean_dist
