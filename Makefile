@@ -1,6 +1,11 @@
 INNER_PACKAGES_DIR := $(CURDIR)/packages
 MAIN_PKG := $(INNER_PACKAGES_DIR)/option-t
 
+NODE_BIN := node
+NPM_MOD_DIR := $(CURDIR)/node_modules
+NPM_BIN := $(NPM_MOD_DIR)/.bin
+NPM_CMD := npm
+
 all: help
 
 help:
@@ -60,9 +65,13 @@ test_package_install:
 ###########################
 # Tools
 ###########################
+.PHONY: format
+format: ## Apply formatters
+	$(NPM_BIN)/prettier --write $(CURDIR)
+
 .PHONY: format_check
-format_check:
-	$(MAKE) $@ -C $(MAIN_PKG)
+format_check: ## Check code formatting
+	$(NPM_BIN)/prettier --check $(CURDIR)
 
 .PHONY: prepublish
 prepublish:

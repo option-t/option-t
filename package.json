@@ -3,5 +3,8 @@
     "license": "MIT",
     "workspaces": [
         "packages/*"
-    ]
+    ],
+    "dependencies": {
+        "prettier": "^2.8.3"
+    }
 }

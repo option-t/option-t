@@ -251,14 +251,6 @@ post_cleanup_to_test_package_install:
 ###########################
 # Tools
 ###########################
-.PHONY: format
-format: ## Apply formatters
-	$(NPM_BIN)/prettier --write $(CURDIR)
-
-.PHONY: format_check
-format_check: ## Check code formatting
-	$(NPM_BIN)/prettier --check $(CURDIR)
-
 .PHONY: eslint_fix
 eslint_fix: ## Apply ESLint's `--fix` mode
 	$(NPM_BIN)/eslint --ext $(ESLINT_APPLIED_EXTENSIONS) --fix $(CURDIR)/

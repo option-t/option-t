@@ -11,5 +11,5 @@ __tmp_cjs/
 *.json
 *.md
 tools/
-/.eslintrc.cjs
+.eslintrc.cjs
 ava.config.mjs
