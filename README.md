@@ -187,7 +187,7 @@ These are written for Rust, but the essence is just same.
 
 ## Contribution
 
-- Use [`yarn`](https://yarnpkg.com/) to install dev-dependency toolchains.
+- Use npm v9 or later to install dev-dependency toolchains.
 
 
 
