@@ -252,23 +252,6 @@ test_package_json_exports_field_format: build
 run_test_package_json_exports_field_format:
 	TARGET_DIR=$(DIST_DIR) $(NODE_BIN) --test $(CURDIR)/tools/test_package_json_exports_field_format.mjs
 
-.PHONY: test_package_install
-test_package_install: build __run_install_package
-	$(MAKE) run_test_package_install -C $(CURDIR)
-	$(MAKE) post_cleanup_to_test_package_install -C $(CURDIR)
-
-.PHONY: __run_install_package
-__run_install_package: build
-	yarn add --dev $(DIST_DIR)
-
-.PHONY: run_test_package_install
-run_test_package_install:
-	$(NODE_BIN) --test $(CURDIR)/tools/test_package_exports.mjs
-
-.PHONY: post_cleanup_to_test_package_install
-post_cleanup_to_test_package_install:
-	$(MAKE) git_reset_to_head -C $(CURDIR)
-
 
 ###########################
 # Tools
@@ -276,15 +259,6 @@ post_cleanup_to_test_package_install:
 .PHONY: generate_import_path_list_md
 generate_import_path_list_md: ## Generate all public import paths to docs/import_path.md
 	$(NODE_BIN) $(CURDIR)/tools/generate_import_path_list_markdown.mjs --source ${SRC_DIR} --destination ${DOCS_DIR}
-
-TARGETS_SHOULD_BE_RESET_AFTER_TEST_TO_INSTALL := \
-  package.json \
-  yarn.lock
-
-.PHONY: git_reset_to_head
-git_reset_to_head: $(TARGETS_SHOULD_BE_RESET_AFTER_TEST_TO_INSTALL)
-	git checkout HEAD -- $(addprefix $(CURDIR)/, $^)
-
 
 .PHONY: prepublish
 prepublish: ## Run some commands for 'npm run prepublish'

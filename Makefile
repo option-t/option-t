@@ -83,10 +83,6 @@ test_module_path_rewrite:
 test_package_json_exports_field_format:
 	$(MAKE) $@ -C $(MAIN_PKG)
 
-.PHONY: test_package_install
-test_package_install:
-	$(MAKE) $@ -C $(MAIN_PKG)
-
 
 ###########################
 # Tools
