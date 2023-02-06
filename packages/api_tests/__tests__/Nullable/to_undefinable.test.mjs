@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { toUndefinableFromNullable } from '../../__dist/esm/Nullable/toUndefinable.js';
+import { toUndefinableFromNullable } from 'option-t/__dist/esm/Nullable/toUndefinable.js';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {

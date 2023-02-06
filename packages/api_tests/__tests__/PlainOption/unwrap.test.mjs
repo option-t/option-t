@@ -4,7 +4,7 @@ import {
     createSome,
     createNone,
     unwrapSome as unwrapOption,
-} from '../../__dist/esm/PlainOption/Option.js';
+} from 'option-t/__dist/esm/PlainOption/Option.js';
 
 const EXPECTED = Symbol('some_value');
 

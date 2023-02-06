@@ -4,7 +4,7 @@ import {
     createOk,
     createErr,
     expectErr as expectErrForResult,
-} from '../../../__dist/esm/PlainResult/Result.js';
+} from 'option-t/__dist/esm/PlainResult/Result.js';
 
 test('input=Ok(T), expect=Err(E)', (t) => {
     const NOT_EXPECTED = Symbol('not expected');

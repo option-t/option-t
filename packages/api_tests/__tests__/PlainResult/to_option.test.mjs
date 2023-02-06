@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { isSome, isNone } from '../../__dist/esm/PlainOption/Option.js';
-import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.js';
-import { toOptionFromOk, toOptionFromErr } from '../../__dist/esm/PlainResult/toOption.js';
+import { isSome, isNone } from 'option-t/__dist/esm/PlainOption/Option.js';
+import { createOk, createErr } from 'option-t/__dist/esm/PlainResult/Result.js';
+import { toOptionFromOk, toOptionFromErr } from 'option-t/__dist/esm/PlainResult/toOption.js';
 
 test('input=Ok(T), output=Some(T)', (t) => {
     const EXPECTED = Symbol('expected');

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as Nullable from '../../__dist/esm/Nullable/index.js';
+import * as Nullable from 'option-t/__dist/esm/Nullable/index.js';
 
 {
     const testcase = [

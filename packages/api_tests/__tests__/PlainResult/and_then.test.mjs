@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.js';
-import { andThenForResult } from '../../__dist/esm/PlainResult/andThen.js';
+import { createOk, createErr } from 'option-t/__dist/esm/PlainResult/Result.js';
+import { andThenForResult } from 'option-t/__dist/esm/PlainResult/andThen.js';
 
 const VALUE_T = Math.random();
 const VALUE_U = Math.random();

@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createSome, createNone, isSome, isNone } from '../../__dist/esm/PlainOption/Option.js';
-import { transposeForOption } from '../../__dist/esm/PlainOption/transpose.js';
-import { createOk, createErr, isOk, isErr } from '../../__dist/esm/PlainResult/Result.js';
+import { createSome, createNone, isSome, isNone } from 'option-t/__dist/esm/PlainOption/Option.js';
+import { transposeForOption } from 'option-t/__dist/esm/PlainOption/transpose.js';
+import { createOk, createErr, isOk, isErr } from 'option-t/__dist/esm/PlainResult/Result.js';
 
 test('input is Some<Ok<T>>, the result should be Ok(Some(x))', (t) => {
     const val = Symbol('val');

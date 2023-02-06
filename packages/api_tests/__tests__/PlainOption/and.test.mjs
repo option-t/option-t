@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from '../../__dist/esm/PlainOption/Option.js';
-import { andForOption } from '../../__dist/esm/PlainOption/and.js';
+import { createSome, createNone } from 'option-t/__dist/esm/PlainOption/Option.js';
+import { andForOption } from 'option-t/__dist/esm/PlainOption/and.js';
 
 test('a=Some, b=Some', (t) => {
     const EXPECTED = Symbol('expected');

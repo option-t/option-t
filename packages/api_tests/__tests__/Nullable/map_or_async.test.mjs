@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { mapOrAsyncForNullable } from '../../__dist/esm/Nullable/mapOrAsync.js';
+import { mapOrAsyncForNullable } from 'option-t/__dist/esm/Nullable/mapOrAsync.js';
 import { nonNullableValueCaseListForAsync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;

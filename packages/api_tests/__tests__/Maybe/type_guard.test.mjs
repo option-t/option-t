@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as Maybe from '../../__dist/esm/Maybe/Maybe.js';
+import * as Maybe from 'option-t/__dist/esm/Maybe/Maybe.js';
 
 {
     const testcase = [

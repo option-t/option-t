@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { xorForUndefinable } from '../../__dist/esm/Undefinable/xor.js';
+import { xorForUndefinable } from 'option-t/__dist/esm/Undefinable/xor.js';
 
 const SOME_VAL_A = Symbol('some_val_a');
 const SOME_VAL_B = Symbol('some_val_b');

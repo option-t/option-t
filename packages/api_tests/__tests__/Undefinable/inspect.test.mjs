@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { inspectUndefinable } from '../../__dist/esm/Undefinable/inspect.js';
+import { inspectUndefinable } from 'option-t/__dist/esm/Undefinable/inspect.js';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;

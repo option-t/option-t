@@ -1,8 +1,8 @@
 import test from 'ava';
 import { webcrypto } from 'node:crypto';
 
-import { createOk, createErr } from '../../__dist/esm/PlainResult/Result.js';
-import { unwrapOrThrowErrorFromResult } from '../../__dist/esm/PlainResult/unwrapOrThrowError.js';
+import { createOk, createErr } from 'option-t/__dist/esm/PlainResult/Result.js';
+import { unwrapOrThrowErrorFromResult } from 'option-t/__dist/esm/PlainResult/unwrapOrThrowError.js';
 
 test('input is Ok(T)', (t) => {
     const VALUE_T = Math.random();

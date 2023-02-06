@@ -6,8 +6,8 @@ import {
     isSome,
     isNone,
     unwrapSome as unwrapOption,
-} from '../../__dist/esm/PlainOption/Option.js';
-import { orElseAsyncForOption } from '../../__dist/esm/PlainOption/orElseAsync.js';
+} from 'option-t/__dist/esm/PlainOption/Option.js';
+import { orElseAsyncForOption } from 'option-t/__dist/esm/PlainOption/orElseAsync.js';
 
 const VALUE_T = Math.random();
 const VALUE_U = Math.random();

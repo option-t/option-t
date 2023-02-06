@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { andForUndefinable } from '../../__dist/esm/Undefinable/and.js';
+import { andForUndefinable } from 'option-t/__dist/esm/Undefinable/and.js';
 import { nonNullableValue } from '../utils.mjs';
 
 test('Undefinable::and', (t) => {

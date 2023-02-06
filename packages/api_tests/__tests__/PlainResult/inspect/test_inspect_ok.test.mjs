@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createErr, createOk } from '../../../__dist/esm/PlainResult/Result.js';
-import { inspectOkOfResult } from '../../../__dist/esm/PlainResult/inspect.js';
+import { createErr, createOk } from 'option-t/__dist/esm/PlainResult/Result.js';
+import { inspectOkOfResult } from 'option-t/__dist/esm/PlainResult/inspect.js';
 
 test('input is Ok()', (t) => {
     t.plan(3);

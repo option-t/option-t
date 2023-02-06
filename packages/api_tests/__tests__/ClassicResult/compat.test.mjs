@@ -7,13 +7,13 @@ import {
     isErr,
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
-} from '../../__dist/esm/PlainResult/Result.js';
+} from 'option-t/__dist/esm/PlainResult/Result.js';
 import {
     createClassicOk,
     createClassicErr,
     compatToClassicResult,
     compatToPlainResult,
-} from '../../__dist/esm/ClassicResult/index.js';
+} from 'option-t/__dist/esm/ClassicResult/index.js';
 
 test(`input is Plain's Ok`, (t) => {
     const expected = Math.random();

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { mapForMaybe } from '../../__dist/esm/Maybe/map.js';
+import { mapForMaybe } from 'option-t/__dist/esm/Maybe/map.js';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {

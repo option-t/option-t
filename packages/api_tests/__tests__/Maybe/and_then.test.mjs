@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { andThenForMaybe } from '../../__dist/esm/Maybe/andThen.js';
+import { andThenForMaybe } from 'option-t/__dist/esm/Maybe/andThen.js';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {

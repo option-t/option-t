@@ -6,13 +6,13 @@ import {
     isSome,
     isNone,
     unwrapSome as unwrapOption,
-} from '../../__dist/esm/PlainOption/Option.js';
+} from 'option-t/__dist/esm/PlainOption/Option.js';
 import {
     createClassicSome,
     createClassicNone,
     compatToClassicOption,
     compatToPlainOption,
-} from '../../__dist/esm/ClassicOption/index.js';
+} from 'option-t/__dist/esm/ClassicOption/index.js';
 
 test(`input is Plain's Some`, (t) => {
     const expected = Math.random();

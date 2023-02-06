@@ -6,8 +6,8 @@ import {
     isSome,
     isNone,
     unwrapSome as unwrapOption,
-} from '../../__dist/esm/PlainOption/Option.js';
-import { equalForOption } from '../../__dist/esm/PlainOption/equal.js';
+} from 'option-t/__dist/esm/PlainOption/Option.js';
+import { equalForOption } from 'option-t/__dist/esm/PlainOption/equal.js';
 
 const INNER_VALUE_A = Symbol('A');
 const INNER_VALUE_B = Symbol('B');

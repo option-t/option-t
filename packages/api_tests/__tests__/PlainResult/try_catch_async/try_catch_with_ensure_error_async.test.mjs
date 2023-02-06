@@ -5,8 +5,8 @@ import {
     isErr,
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
-} from '../../../__dist/esm/PlainResult/Result.js';
-import { tryCatchIntoResultWithEnsureErrorAsync } from '../../../__dist/esm/PlainResult/tryCatchAsync.js';
+} from 'option-t/__dist/esm/PlainResult/Result.js';
+import { tryCatchIntoResultWithEnsureErrorAsync } from 'option-t/__dist/esm/PlainResult/tryCatchAsync.js';
 
 test('output=Ok(T): producer is async fn', async (t) => {
     t.plan(4);

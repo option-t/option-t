@@ -4,7 +4,7 @@ import {
     createClassicOk,
     createClassicErr,
     ClassicResultBase,
-} from '../../__dist/esm/ClassicResult/ClassicResult.js';
+} from 'option-t/__dist/esm/ClassicResult/ClassicResult.js';
 
 const ORIGIN = Symbol('ORIGIN');
 const EXPECTED = Symbol('EXPECTED');

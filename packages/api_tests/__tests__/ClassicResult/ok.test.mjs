@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createClassicOk, createClassicErr } from '../../__dist/esm/ClassicResult/ClassicResult.js';
+import { createClassicOk, createClassicErr } from 'option-t/__dist/esm/ClassicResult/ClassicResult.js';
 const EXPECTED_OK = Symbol('expected_ok');
 const EXPECTED_ERR = Symbol('expected_err');
 

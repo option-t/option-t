@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createOk, createErr } from '../../__dist/esm/PlainResult/index.js';
+import { createOk, createErr } from 'option-t/__dist/esm/PlainResult/index.js';
 
 test('The shape of PlainResult::Ok', (t) => {
     const INNER_VAL = 10;

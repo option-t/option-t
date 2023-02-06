@@ -6,8 +6,8 @@ import {
     isNone,
     isSome,
     unwrapSome as unwrapOption,
-} from '../../__dist/esm/PlainOption/Option.js';
-import { andThenForOption } from '../../__dist/esm/PlainOption/andThen.js';
+} from 'option-t/__dist/esm/PlainOption/Option.js';
+import { andThenForOption } from 'option-t/__dist/esm/PlainOption/andThen.js';
 
 test('src is `None`', (t) => {
     t.plan(1);

@@ -5,7 +5,7 @@ import {
     createClassicNone,
     ClassicSomeConstructor as Some,
     ClassicNoneConstructor as None,
-} from '../../__dist/esm/ClassicOption/ClassicOption.js';
+} from 'option-t/__dist/esm/ClassicOption/ClassicOption.js';
 
 import {
     primitiveVal,

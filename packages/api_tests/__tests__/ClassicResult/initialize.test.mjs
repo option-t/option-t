@@ -5,7 +5,7 @@ import {
     createClassicErr,
     ClassicOkConstructor as Ok,
     ClassicErrConstructor as Err,
-} from '../../__dist/esm/ClassicResult/ClassicResult.js';
+} from 'option-t/__dist/esm/ClassicResult/ClassicResult.js';
 
 import {
     primitiveVal,

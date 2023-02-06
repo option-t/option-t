@@ -5,7 +5,7 @@ import test from 'ava';
 import {
     createClassicSome,
     createClassicNone,
-} from '../../__dist/esm/ClassicOption/ClassicOption.js';
+} from 'option-t/__dist/esm/ClassicOption/ClassicOption.js';
 
 import {
     primitiveVal,
