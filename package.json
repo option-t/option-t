@@ -1,69 +1,20 @@
 {
-  "name": "option-t",
-  "version": "33.5.1",
-  "description": "Types and implementations whose APIs are inspired by Rust's `Option<T>` and `Result<T, E>`.",
-  "type": "module",
-  "files": [
-    "CHANGELOG.md",
-    "CHANGELOG_OLD.md",
-    "cjs/",
-    "docs/",
-    "esm/",
-    "lib/",
-    "LICENSE.MIT",
-    "package.json",
-    "README.md"
-  ],
-  "scripts": {
-    "clean": "make clean -j",
-    "build": "make build -j",
-    "test": "make test -j"
-  },
-  "author": {
-    "name": "Tetsuharu OHZEKI",
-    "email": "tetsuharu.ohzeki@gmail.com",
-    "url": "https://github.com/tetsuharuohzeki/"
-  },
-  "contributors": [
-    {
-      "name": "NAKASHIMA, Makoto",
-      "email": "makoto.nksm+github@gmail.com",
-      "url": "https://github.com/gifnksm"
-    },
-    {
-      "name": "AMEMIYA, Satoshi",
-      "email": "amemiya@protonmail.com",
-      "url": "https://github.com/rail44"
+    "private": true,
+    "license": "MIT",
+    "workspaces": [
+        "packages/*"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.20.12",
+        "@babel/plugin-syntax-typescript": "^7.20.0",
+        "@babel/preset-env": "^7.20.2",
+        "@typescript-eslint/eslint-plugin": "^5.49.0",
+        "@typescript-eslint/parser": "^5.50.0",
+        "del-cli": "^5.0.0",
+        "eslint": "^8.33.0",
+        "eslint-config-prettier": "^8.6.0",
+        "picomatch": "^2.3.1",
+        "prettier": "^2.8.3",
+        "typescript": "^4.9.4"
     }
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/karen-irc/option-t.git"
-  },
-  "keywords": [
-    "either",
-    "maybe",
-    "maybe-type",
-    "nullable",
-    "option",
-    "option-type",
-    "result",
-    "result-type"
-  ],
-  "devDependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/plugin-syntax-typescript": "^7.20.0",
-    "@babel/preset-env": "^7.20.2",
-    "@typescript-eslint/eslint-plugin": "^5.49.0",
-    "@typescript-eslint/parser": "^5.50.0",
-    "ava": "^5.1.1",
-    "del-cli": "^5.0.0",
-    "eslint": "^8.33.0",
-    "eslint-config-prettier": "^8.6.0",
-    "picomatch": "^2.3.1",
-    "prettier": "^2.8.3",
-    "typescript": "^4.9.4"
-  },
-  "sideEffects": false
 }

@@ -19,7 +19,7 @@ you should avoid to expose this object as a public API of your package_  because
       So we would not like to do this.
 
 
-## [`ClassicOption<T>`](../src/ClassicOption/ClassicOption.d.ts)
+## [`ClassicOption<T>`](../packages/option-t/src/ClassicOption/ClassicOption.d.ts)
 
 This can express that there are some values or none.
 

@@ -1,0 +1,14 @@
+{
+    "private": true,
+    "name": "@option-t/api_tests",
+    "version": "33.5.1",
+    "license": "MIT",
+    "scripts": {
+        "test": "ava --config ./ava.config.mjs",
+        "test:update-snapshots": "npm run test -- --update-snapshots"
+    },
+    "dependencies": {
+        "ava": "^5.1.1",
+        "option-t": "*"
+    }
+}
