@@ -425,6 +425,10 @@
             "types": "./cjs/PlainResult/flatten.d.cts",
             "default": "./cjs/PlainResult/flatten.cjs"
         },
+        "./cjs/PlainResult/fromPromiseSettledResult": {
+            "types": "./cjs/PlainResult/fromPromiseSettledResult.d.cts",
+            "default": "./cjs/PlainResult/fromPromiseSettledResult.cjs"
+        },
         "./cjs/PlainResult/index": {
             "types": "./cjs/PlainResult/index.d.cts",
             "default": "./cjs/PlainResult/index.cjs"
@@ -992,6 +996,10 @@
         "./esm/PlainResult/flatten": {
             "types": "./esm/PlainResult/flatten.d.ts",
             "default": "./esm/PlainResult/flatten.js"
+        },
+        "./esm/PlainResult/fromPromiseSettledResult": {
+            "types": "./esm/PlainResult/fromPromiseSettledResult.d.ts",
+            "default": "./esm/PlainResult/fromPromiseSettledResult.js"
         },
         "./esm/PlainResult/index": {
             "types": "./esm/PlainResult/index.d.ts",
@@ -2211,6 +2219,17 @@
                 "default": "./cjs/PlainResult/flatten.cjs"
             },
             "default": "./esm/PlainResult/flatten.js"
+        },
+        "./lib/PlainResult/fromPromiseSettledResult": {
+            "import": {
+                "types": "./esm/PlainResult/fromPromiseSettledResult.d.ts",
+                "default": "./esm/PlainResult/fromPromiseSettledResult.js"
+            },
+            "require": {
+                "types": "./cjs/PlainResult/fromPromiseSettledResult.d.cts",
+                "default": "./cjs/PlainResult/fromPromiseSettledResult.cjs"
+            },
+            "default": "./esm/PlainResult/fromPromiseSettledResult.js"
         },
         "./lib/PlainResult/index": {
             "import": {
