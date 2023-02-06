@@ -2,5 +2,11 @@
     "private": true,
     "name": "@option-t/api_tests",
     "version": "33.5.1",
-    "license": "MIT"
+    "license": "MIT",
+    "scripts": {
+        "test": "ava --config ./ava.config.mjs"
+    },
+    "dependencies": {
+        "option-t": "*"
+    }
 }
