@@ -114,3 +114,15 @@ copy_npmrc_to_project_root: clean_npmrc
 .PHONY: git_diff
 git_diff: ## Test whether there is no committed changes.
 	git diff --exit-code
+
+.PHONY: version_major
+version_major: ## Alias to run `npm version major -ws`.
+	$(NPM_CMD) version major --workspaces
+
+.PHONY: version_minor
+version_minor: ## Alias to run `npm version minor -ws`.
+	$(NPM_CMD) version minor --workspaces
+
+.PHONY: version_patch
+version_patch: ## Alias to run `npm version patch -ws`.
+	$(NPM_CMD) version patch --workspaces
