@@ -1,3 +1,6 @@
+INNER_PACKAGES_DIR := $(CURDIR)/..
+API_TEST_PKG := $(INNER_PACKAGES_DIR)/api_tests
+
 NODE_BIN := node
 NPM_MOD_DIR := $(CURDIR)/node_modules
 NPM_BIN := $(NPM_MOD_DIR)/.bin
@@ -200,7 +203,7 @@ test_unittest: __build ## Build and run unit tests
 
 .PHONY: run_test_unittest
 run_test_unittest: ## Run unit tests only.
-	$(NPM_BIN)/ava --config $(CURDIR)/ava.config.mjs
+	$(MAKE) test -C $(API_TEST_PKG)
 
 .PHONY: git_diff
 git_diff: ## Test whether there is no committed changes.

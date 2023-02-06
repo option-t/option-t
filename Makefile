@@ -1,5 +1,6 @@
 INNER_PACKAGES_DIR := $(CURDIR)/packages
 MAIN_PKG := $(INNER_PACKAGES_DIR)/option-t
+API_TEST_PKG := $(INNER_PACKAGES_DIR)/api_tests
 
 NODE_BIN := node
 NPM_MOD_DIR := $(CURDIR)/node_modules

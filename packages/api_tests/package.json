@@ -7,6 +7,7 @@
         "test": "ava --config ./ava.config.mjs"
     },
     "dependencies": {
+        "ava": "^5.1.1",
         "option-t": "*"
     }
 }
