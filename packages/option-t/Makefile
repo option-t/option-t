@@ -256,4 +256,4 @@ prepublish: ## Run some commands for 'npm run prepublish'
 
 .PHONY: publish
 publish: ## Run some commands for 'npm publish'
-	npm publish $(DIST_DIR)/
+	cd $(DIST_DIR) && npm publish
