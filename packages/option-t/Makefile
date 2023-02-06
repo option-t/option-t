@@ -19,8 +19,6 @@ TMP_BASE_DIR := $(CURDIR)/__tmp_base
 TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
 TMP_CJS_DIR := $(CURDIR)/__tmp_cjs
 
-PROJECT_NPMRC := $(CURDIR)/.npmrc
-
 CJS_EXTENSION_GLOB := cjs
 MJS_EXTENSION_GLOB := {js,mjs}
 D_CTS_EXTENSION_GLOB := d.cts
@@ -48,7 +46,6 @@ CLEAN_TARGETS := \
 	tmp_base \
 	tmp_mjs \
 	tmp_cjs \
-	npmrc \
 
 .PHONY: clean
 clean: $(addprefix clean_, $(CLEAN_TARGETS))
@@ -69,9 +66,6 @@ clean_tmp_mjs:
 clean_tmp_cjs:
 	$(NPM_BIN)/del $(TMP_CJS_DIR)
 
-.PHONY: clean_npmrc
-clean_npmrc:
-	$(NPM_BIN)/del $(PROJECT_NPMRC)
 
 ###########################
 # Build
@@ -268,9 +262,5 @@ prepublish: ## Run some commands for 'npm run prepublish'
 	$(MAKE) run_test_package_json_exports_field_format -C $(CURDIR)
 
 .PHONY: publish
-publish: copy_npmrc_to_project_root ## Run some commands for 'npm publish'
+publish: ## Run some commands for 'npm publish'
 	npm publish $(DIST_DIR)/
-
-.PHONY: copy_npmrc_to_project_root
-copy_npmrc_to_project_root: clean_npmrc
-	cp $(CURDIR)/tools/publish/.npmrc $(PROJECT_NPMRC)

@@ -7,6 +7,8 @@ NPM_MOD_DIR := $(CURDIR)/node_modules
 NPM_BIN := $(NPM_MOD_DIR)/.bin
 NPM_CMD := npm
 
+PROJECT_NPMRC := $(CURDIR)/.npmrc
+
 ESLINT_APPLIED_EXTENSIONS := .js,.jsx,cjs,.mjs,.ts,.tsx,.cts,.mts
 
 all: help
@@ -20,9 +22,23 @@ help:
 ###########################
 # Clean
 ###########################
+CLEAN_TARGETS := \
+	repo_root \
+    main_pkg \
+
 .PHONY: clean
-clean:
-	$(MAKE) $@ -C $(MAIN_PKG)
+clean: $(addprefix clean_, $(CLEAN_TARGETS)) ## Clean up generated items.
+
+.PHONY: clean_main_pkg
+clean_main_pkg:
+	$(MAKE) clean -C $(MAIN_PKG)
+
+.PHONY: clean_repo_root
+clean_repo_root: clean_npmrc
+
+.PHONY: clean_npmrc
+clean_npmrc:
+	$(NPM_BIN)/del $(PROJECT_NPMRC)
 
 
 ###########################
@@ -88,5 +104,9 @@ prepublish:
 	$(MAKE) $@ -C $(MAIN_PKG)
 
 .PHONY: publish
-publish:
+publish: copy_npmrc_to_project_root ## Run some commands for 'npm publish'
 	$(MAKE) $@ -C $(MAIN_PKG)
+
+.PHONY: copy_npmrc_to_project_root
+copy_npmrc_to_project_root: clean_npmrc
+	cp $(CURDIR)/tools/publish/.npmrc $(PROJECT_NPMRC)
