@@ -224,10 +224,6 @@ test_unittest: __build ## Build and run unit tests
 run_test_unittest: ## Run unit tests only.
 	$(MAKE) test -C $(API_TEST_PKG)
 
-.PHONY: git_diff
-git_diff: ## Test whether there is no committed changes.
-	git diff --exit-code
-
 .PHONY: test_distribution_contain_all
 test_distribution_contain_all: build
 	$(MAKE) run_test_distribution_contain_all

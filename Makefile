@@ -106,3 +106,7 @@ publish: copy_npmrc_to_project_root ## Run some commands for 'npm publish'
 .PHONY: copy_npmrc_to_project_root
 copy_npmrc_to_project_root: clean_npmrc
 	cp $(CURDIR)/tools/publish/.npmrc $(PROJECT_NPMRC)
+
+.PHONY: git_diff
+git_diff: ## Test whether there is no committed changes.
+	git diff --exit-code
