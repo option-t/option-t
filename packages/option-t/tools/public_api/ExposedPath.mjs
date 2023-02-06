@@ -20,6 +20,11 @@ export class ExposedPath {
         return this.#raw.path ?? null;
     }
 
+    hasPathOverride() {
+        const ok = this.filepath() !== null;
+        return ok;
+    }
+
     resolvedName() {
         const raw = this.name();
         if (raw === '.') {

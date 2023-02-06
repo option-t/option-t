@@ -845,8 +845,12 @@ const COMPAT_DESCRIPTOR = Object.freeze({
 });
 
 export const legacyApiTable = Object.freeze({
-    'cjs/ClassicOption': COMPAT_DESCRIPTOR,
-    'cjs/ClassicResult': COMPAT_DESCRIPTOR,
+    'cjs/ClassicOption': {
+        path: 'cjs/ClassicOption/index',
+    },
+    'cjs/ClassicResult': {
+        path: 'cjs/ClassicResult/index',
+    },
     'cjs/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
     'cjs/Maybe/Maybe': COMPAT_DESCRIPTOR,
     'cjs/Maybe/and': COMPAT_DESCRIPTOR,
@@ -855,7 +859,9 @@ export const legacyApiTable = Object.freeze({
     'cjs/Maybe/expect': COMPAT_DESCRIPTOR,
     'cjs/Maybe/index': COMPAT_DESCRIPTOR,
     'cjs/Maybe/inspect': COMPAT_DESCRIPTOR,
-    'cjs/Maybe': COMPAT_DESCRIPTOR,
+    'cjs/Maybe': {
+        path: 'cjs/Maybe/index',
+    },
     'cjs/Maybe/map': COMPAT_DESCRIPTOR,
     'cjs/Maybe/mapAsync': COMPAT_DESCRIPTOR,
     'cjs/Maybe/mapOr': COMPAT_DESCRIPTOR,
@@ -880,7 +886,9 @@ export const legacyApiTable = Object.freeze({
     'cjs/Nullable/expect': COMPAT_DESCRIPTOR,
     'cjs/Nullable/index': COMPAT_DESCRIPTOR,
     'cjs/Nullable/inspect': COMPAT_DESCRIPTOR,
-    'cjs/Nullable': COMPAT_DESCRIPTOR,
+    'cjs/Nullable': {
+        path: 'cjs/Nullable/index',
+    },
     'cjs/Nullable/map': COMPAT_DESCRIPTOR,
     'cjs/Nullable/mapAsync': COMPAT_DESCRIPTOR,
     'cjs/Nullable/mapOr': COMPAT_DESCRIPTOR,
@@ -909,7 +917,9 @@ export const legacyApiTable = Object.freeze({
     'cjs/PlainOption/flatten': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/index': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/inspect': COMPAT_DESCRIPTOR,
-    'cjs/PlainOption': COMPAT_DESCRIPTOR,
+    'cjs/PlainOption': {
+        path: 'cjs/PlainOption/index',
+    },
     'cjs/PlainOption/map': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/mapAsync': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/mapOr': COMPAT_DESCRIPTOR,
@@ -941,7 +951,9 @@ export const legacyApiTable = Object.freeze({
     'cjs/PlainResult/fromPromiseSettledResult': COMPAT_DESCRIPTOR,
     'cjs/PlainResult/index': COMPAT_DESCRIPTOR,
     'cjs/PlainResult/inspect': COMPAT_DESCRIPTOR,
-    'cjs/PlainResult': COMPAT_DESCRIPTOR,
+    'cjs/PlainResult': {
+        path: 'cjs/PlainResult/index',
+    },
     'cjs/PlainResult/map': COMPAT_DESCRIPTOR,
     'cjs/PlainResult/mapAsync': COMPAT_DESCRIPTOR,
     'cjs/PlainResult/mapErr': COMPAT_DESCRIPTOR,
@@ -971,7 +983,9 @@ export const legacyApiTable = Object.freeze({
     'cjs/Undefinable/expect': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/index': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/inspect': COMPAT_DESCRIPTOR,
-    'cjs/Undefinable': COMPAT_DESCRIPTOR,
+    'cjs/Undefinable': {
+        path: 'cjs/Undefinable/index',
+    },
     'cjs/Undefinable/map': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/mapAsync': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/mapOr': COMPAT_DESCRIPTOR,
@@ -988,8 +1002,12 @@ export const legacyApiTable = Object.freeze({
     'cjs/Undefinable/unwrapOrElseAsync': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/xor': COMPAT_DESCRIPTOR,
     'cjs/index': COMPAT_DESCRIPTOR,
-    'esm/ClassicOption': COMPAT_DESCRIPTOR,
-    'esm/ClassicResult': COMPAT_DESCRIPTOR,
+    'esm/ClassicOption': {
+        path: 'esm/ClassicOption/index',
+    },
+    'esm/ClassicResult': {
+        path: 'esm/ClassicResult/index',
+    },
     'esm/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
     'esm/Maybe/Maybe': COMPAT_DESCRIPTOR,
     'esm/Maybe/and': COMPAT_DESCRIPTOR,
@@ -998,7 +1016,9 @@ export const legacyApiTable = Object.freeze({
     'esm/Maybe/expect': COMPAT_DESCRIPTOR,
     'esm/Maybe/index': COMPAT_DESCRIPTOR,
     'esm/Maybe/inspect': COMPAT_DESCRIPTOR,
-    'esm/Maybe': COMPAT_DESCRIPTOR,
+    'esm/Maybe': {
+        path: 'esm/Maybe/index',
+    },
     'esm/Maybe/map': COMPAT_DESCRIPTOR,
     'esm/Maybe/mapAsync': COMPAT_DESCRIPTOR,
     'esm/Maybe/mapOr': COMPAT_DESCRIPTOR,
@@ -1023,7 +1043,9 @@ export const legacyApiTable = Object.freeze({
     'esm/Nullable/expect': COMPAT_DESCRIPTOR,
     'esm/Nullable/index': COMPAT_DESCRIPTOR,
     'esm/Nullable/inspect': COMPAT_DESCRIPTOR,
-    'esm/Nullable': COMPAT_DESCRIPTOR,
+    'esm/Nullable': {
+        path: 'esm/Nullable/index',
+    },
     'esm/Nullable/map': COMPAT_DESCRIPTOR,
     'esm/Nullable/mapAsync': COMPAT_DESCRIPTOR,
     'esm/Nullable/mapOr': COMPAT_DESCRIPTOR,
@@ -1052,7 +1074,9 @@ export const legacyApiTable = Object.freeze({
     'esm/PlainOption/flatten': COMPAT_DESCRIPTOR,
     'esm/PlainOption/index': COMPAT_DESCRIPTOR,
     'esm/PlainOption/inspect': COMPAT_DESCRIPTOR,
-    'esm/PlainOption': COMPAT_DESCRIPTOR,
+    'esm/PlainOption': {
+        path: 'esm/PlainOption/index',
+    },
     'esm/PlainOption/map': COMPAT_DESCRIPTOR,
     'esm/PlainOption/mapAsync': COMPAT_DESCRIPTOR,
     'esm/PlainOption/mapOr': COMPAT_DESCRIPTOR,
@@ -1084,7 +1108,9 @@ export const legacyApiTable = Object.freeze({
     'esm/PlainResult/fromPromiseSettledResult': COMPAT_DESCRIPTOR,
     'esm/PlainResult/index': COMPAT_DESCRIPTOR,
     'esm/PlainResult/inspect': COMPAT_DESCRIPTOR,
-    'esm/PlainResult': COMPAT_DESCRIPTOR,
+    'esm/PlainResult': {
+        path: 'esm/PlainResult/index',
+    },
     'esm/PlainResult/map': COMPAT_DESCRIPTOR,
     'esm/PlainResult/mapAsync': COMPAT_DESCRIPTOR,
     'esm/PlainResult/mapErr': COMPAT_DESCRIPTOR,
@@ -1114,7 +1140,9 @@ export const legacyApiTable = Object.freeze({
     'esm/Undefinable/expect': COMPAT_DESCRIPTOR,
     'esm/Undefinable/index': COMPAT_DESCRIPTOR,
     'esm/Undefinable/inspect': COMPAT_DESCRIPTOR,
-    'esm/Undefinable': COMPAT_DESCRIPTOR,
+    'esm/Undefinable': {
+        path: 'esm/Undefinable/index',
+    },
     'esm/Undefinable/map': COMPAT_DESCRIPTOR,
     'esm/Undefinable/mapAsync': COMPAT_DESCRIPTOR,
     'esm/Undefinable/mapOr': COMPAT_DESCRIPTOR,
@@ -1131,8 +1159,12 @@ export const legacyApiTable = Object.freeze({
     'esm/Undefinable/unwrapOrElseAsync': COMPAT_DESCRIPTOR,
     'esm/Undefinable/xor': COMPAT_DESCRIPTOR,
     'esm/index': COMPAT_DESCRIPTOR,
-    'lib/ClassicOption': COMPAT_DESCRIPTOR,
-    'lib/ClassicResult': COMPAT_DESCRIPTOR,
+    'lib/ClassicOption': {
+        path: 'lib/ClassicOption/index',
+    },
+    'lib/ClassicResult': {
+        path: 'lib/ClassicResult/index',
+    },
     'lib/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
     'lib/Maybe/Maybe': COMPAT_DESCRIPTOR,
     'lib/Maybe/and': COMPAT_DESCRIPTOR,
@@ -1141,7 +1173,9 @@ export const legacyApiTable = Object.freeze({
     'lib/Maybe/expect': COMPAT_DESCRIPTOR,
     'lib/Maybe/index': COMPAT_DESCRIPTOR,
     'lib/Maybe/inspect': COMPAT_DESCRIPTOR,
-    'lib/Maybe': COMPAT_DESCRIPTOR,
+    'lib/Maybe': {
+        path: 'lib/Maybe/index',
+    },
     'lib/Maybe/map': COMPAT_DESCRIPTOR,
     'lib/Maybe/mapAsync': COMPAT_DESCRIPTOR,
     'lib/Maybe/mapOr': COMPAT_DESCRIPTOR,
@@ -1166,7 +1200,9 @@ export const legacyApiTable = Object.freeze({
     'lib/Nullable/expect': COMPAT_DESCRIPTOR,
     'lib/Nullable/index': COMPAT_DESCRIPTOR,
     'lib/Nullable/inspect': COMPAT_DESCRIPTOR,
-    'lib/Nullable': COMPAT_DESCRIPTOR,
+    'lib/Nullable': {
+        path: 'lib/Nullable/index',
+    },
     'lib/Nullable/map': COMPAT_DESCRIPTOR,
     'lib/Nullable/mapAsync': COMPAT_DESCRIPTOR,
     'lib/Nullable/mapOr': COMPAT_DESCRIPTOR,
@@ -1195,7 +1231,9 @@ export const legacyApiTable = Object.freeze({
     'lib/PlainOption/filter': COMPAT_DESCRIPTOR,
     'lib/PlainOption/index': COMPAT_DESCRIPTOR,
     'lib/PlainOption/inspect': COMPAT_DESCRIPTOR,
-    'lib/PlainOption': COMPAT_DESCRIPTOR,
+    'lib/PlainOption': {
+        path: 'lib/PlainOption/index',
+    },
     'lib/PlainOption/map': COMPAT_DESCRIPTOR,
     'lib/PlainOption/mapAsync': COMPAT_DESCRIPTOR,
     'lib/PlainOption/mapOr': COMPAT_DESCRIPTOR,
@@ -1227,7 +1265,9 @@ export const legacyApiTable = Object.freeze({
     'lib/PlainResult/fromPromiseSettledResult': COMPAT_DESCRIPTOR,
     'lib/PlainResult/index': COMPAT_DESCRIPTOR,
     'lib/PlainResult/inspect': COMPAT_DESCRIPTOR,
-    'lib/PlainResult': COMPAT_DESCRIPTOR,
+    'lib/PlainResult': {
+        path: 'lib/PlainResult/index',
+    },
     'lib/PlainResult/map': COMPAT_DESCRIPTOR,
     'lib/PlainResult/mapAsync': COMPAT_DESCRIPTOR,
     'lib/PlainResult/mapErr': COMPAT_DESCRIPTOR,
@@ -1257,7 +1297,9 @@ export const legacyApiTable = Object.freeze({
     'lib/Undefinable/expect': COMPAT_DESCRIPTOR,
     'lib/Undefinable/index': COMPAT_DESCRIPTOR,
     'lib/Undefinable/inspect': COMPAT_DESCRIPTOR,
-    'lib/Undefinable': COMPAT_DESCRIPTOR,
+    'lib/Undefinable': {
+        path: 'lib/Undefinable/index',
+    },
     'lib/Undefinable/map': COMPAT_DESCRIPTOR,
     'lib/Undefinable/mapAsync': COMPAT_DESCRIPTOR,
     'lib/Undefinable/mapOr': COMPAT_DESCRIPTOR,

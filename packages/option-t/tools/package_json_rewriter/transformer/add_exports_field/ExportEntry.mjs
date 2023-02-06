@@ -97,6 +97,18 @@ export class CompatExportEntry extends AbstractExportEntry {
         return k;
     }
 
+    pathValue() {
+        const original = this.#original;
+        if (original.hasPathOverride()) {
+            const p = original.filepath();
+            const k = `./${p}`;
+            return k;
+        }
+
+        const k = this.key();
+        return k;
+    }
+
     _toExportEntry() {
         throw new EvalError(`please override on ${this.constructor.name}`);
     }
@@ -115,7 +127,7 @@ class CommonJSCompatFileExport extends CompatExportEntry {
     }
 
     _toExportEntry() {
-        const key = this.key();
+        const key = this.pathValue();
         const dts = `${key}.${EXTENSION_DCTS}`;
 
         const p = `${key}.${EXTENSION_CJS}`;
@@ -136,7 +148,7 @@ class ESModuleCompatFileExport extends CompatExportEntry {
     }
 
     _toExportEntry() {
-        const key = this.key();
+        const key = this.pathValue();
         const dts = `${key}.${EXTENSION_DMTS}`;
 
         const p = `${key}.${EXTENSION_MJS}`;
@@ -161,7 +173,7 @@ class LibCompatFileExport extends CompatExportEntry {
     }
 
     _toExportEntry() {
-        const key = this.key();
+        const key = this.pathValue();
 
         const esmKey = key.replace(LIB_PATH_PREFIX, ESM_PATH_PREFIX);
         assert.ok(esmKey.startsWith(ESM_PATH_PREFIX));
@@ -180,103 +192,6 @@ class LibCompatFileExport extends CompatExportEntry {
             dcts,
         });
         return p;
-    }
-}
-
-class AbstractCompatDirExport extends AbstractExportEntry {
-    #dirpath;
-    #extension;
-    #dtsExtension;
-
-    constructor(dirpath, ext, dtsExt) {
-        super();
-        this.#dirpath = dirpath;
-        this.#extension = ext;
-        this.#dtsExtension = dtsExt;
-    }
-
-    key() {
-        const key = `./${this.#dirpath}`;
-        return key;
-    }
-
-    #toExportEntry() {
-        const key = this.key();
-        const filepath = `${key}/index`;
-        const ext = this.#extension;
-        const fullpath = `${filepath}.${ext}`;
-        const dtsExt = this.#dtsExtension;
-        const dts = `${filepath}.${dtsExt}`;
-
-        const value = constructPathValue({
-            dts,
-            filepath: fullpath,
-        });
-        return value;
-    }
-
-    toJSON() {
-        return this.#toExportEntry();
-    }
-}
-
-export class CommonJSCompatDirExport extends AbstractCompatDirExport {
-    constructor(dirpath) {
-        const p = `cjs/${dirpath}`;
-        super(p, EXTENSION_CJS, EXTENSION_DCTS);
-        Object.freeze(this);
-    }
-}
-
-export class ESModuleCompatDirExport extends AbstractCompatDirExport {
-    constructor(dirpath) {
-        const p = `esm/${dirpath}`;
-        super(p, EXTENSION_MJS, EXTENSION_DMTS);
-        Object.freeze(this);
-    }
-}
-
-export class LibCompatDirExport extends AbstractExportEntry {
-    #dirpath;
-
-    constructor(path) {
-        super();
-        const dirpath = `lib/${path}`;
-        this.#dirpath = dirpath;
-
-        Object.freeze(this);
-    }
-
-    key() {
-        const key = `./${this.#dirpath}`;
-        return key;
-    }
-
-    #toExportEntry() {
-        const key = this.key();
-        const actualPath = `${key}/index`;
-
-        const esmKey = actualPath.replace(LIB_PATH_PREFIX, ESM_PATH_PREFIX);
-        assert.ok(esmKey.startsWith(ESM_PATH_PREFIX));
-        const mjs = `${esmKey}.${EXTENSION_MJS}`;
-        const dmts = `${esmKey}.${EXTENSION_DMTS}`;
-
-        const cjsKey = actualPath.replace(LIB_PATH_PREFIX, CJS_PATH_PREFIX);
-        assert.ok(cjsKey.startsWith(CJS_PATH_PREFIX));
-        const cjs = `${cjsKey}.${EXTENSION_CJS}`;
-        const dcts = `${cjsKey}.${EXTENSION_DCTS}`;
-
-        const value = constructDualPackagePathValue({
-            cjs,
-            esm: mjs,
-            dmts,
-            dcts
-        });
-        return value;
-    }
-
-    toJSON() {
-        return this.#toExportEntry();
     }
 }
 
