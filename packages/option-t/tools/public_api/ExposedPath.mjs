@@ -17,7 +17,7 @@ export class ExposedPath {
     }
 
     filepath() {
-        return this.#raw.path ?? null;
+        return this.#raw.actualFilePath ?? null;
     }
 
     hasPathOverride() {
@@ -33,10 +33,6 @@ export class ExposedPath {
 
         const concat = `${PKG_NAME}/${raw}`;
         return concat;
-    }
-
-    exports() {
-        return this.#raw.exports ?? null;
     }
 
     isForCompat() {

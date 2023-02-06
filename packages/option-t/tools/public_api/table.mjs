@@ -1,856 +1,161 @@
+function pathRedirectionTo(actualFilePath) {
+    return Object.freeze({
+        actualFilePath,
+    });
+}
+
+const API_DESCRIPTOR = Object.freeze({});
+
 export const apiTable = Object.freeze({
-    '.': {
-        'path': 'index',
-        'exports': []
-    },
+    '.': pathRedirectionTo('index'),
 
-    'Maybe': {
-        'path': 'Maybe/index',
-        'exports': [
-            'isNotNullAndUndefined',
-            'isNullOrUndefined',
-            'andThen',
-            'andThenAsync',
-            'expect',
-            'expectNotNullAndUndefined',
-            'inspect',
-            'map',
-            'mapAsync',
-            'mapOr',
-            'mapOrAsync',
-            'mapOrElse',
-            'mapOrElseAsync',
-            'orElse',
-            'orElseAsync',
-            'unwrap',
-            'unwrapMaybe',
-            'unwrapOr',
-            'unwrapOrElse',
-            'unwrapOrElseAsync',
-        ]
-    },
-    'Maybe/and': {
-        'exports': [
-            'andForMaybe'
-        ]
-    },
-    'Maybe/andThen': {
-        'exports': [
-            'andThenForMaybe'
-        ]
-    },
-    'Maybe/andThenAsync': {
-        'exports': [
-            'andThenAsyncForMaybe'
-        ]
-    },
-    'Maybe/expect': {
-        'exports': [
-            'expectNotNullAndUndefined'
-        ]
-    },
-    'Maybe/inspect': {
-        'exports': [
-            'inspectMaybe'
-        ]
-    },
-    'Maybe/map': {
-        'exports': [
-            'mapForMaybe'
-        ]
-    },
-    'Maybe/mapAsync': {
-        'exports': [
-            'mapAsyncForMaybe'
-        ]
-    },
-    'Maybe/Maybe': {
-        'exports': [
-            'isNotNullAndUndefined',
-            'isNullOrUndefined',
-            'expectNotNullAndUndefined',
-            'unwrapMaybe',
-        ]
-    },
-    'Maybe/mapOr': {
-        'exports': [
-            'mapOrForMaybe'
-        ]
-    },
-    'Maybe/mapOrAsync': {
-        'exports': [
-            'mapOrAsyncForMaybe'
-        ]
-    },
-    'Maybe/mapOrElse': {
-        'exports': [
-            'mapOrElseForMaybe'
-        ]
-    },
-    'Maybe/mapOrElseAsync': {
-        'exports': [
-            'mapOrElseAsyncForMaybe'
-        ]
-    },
-    'Maybe/or': {
-        'exports': [
-            'orForMaybe'
-        ]
-    },
-    'Maybe/orElse': {
-        'exports': [
-            'orElseForMaybe'
-        ]
-    },
-    'Maybe/orElseAsync': {
-        'exports': [
-            'orElseAsyncForMaybe'
-        ]
-    },
-    'Maybe/toNullable': {
-        'exports': [
-            'toNullableFromMaybe'
-        ]
-    },
-    'Maybe/toUndefinable': {
-        'exports': [
-            'toUndefinableFromMaybe'
-        ]
-    },
-    'Maybe/unwrap': {
-        'exports': [
-            'unwrapMaybe'
-        ]
-    },
-    'Maybe/unwrapOr': {
-        'exports': [
-            'unwrapOrFromMaybe'
-        ]
-    },
-    'Maybe/unwrapOrElse': {
-        'exports': [
-            'unwrapOrElseFromMaybe'
-        ]
-    },
-    'Maybe/unwrapOrElseAsync': {
-        'exports': [
-            'unwrapOrElseAsyncFromMaybe'
-        ]
-    },
-    'Maybe/xor': {
-        'exports': [
-            'xorForMaybe'
-        ]
-    },
+    'Maybe': pathRedirectionTo('Maybe/index'),
 
-    'Nullable': {
-        'path': 'Nullable/index',
-        'exports': [
-            'isNotNull',
-            'isNull',
-            'andThen',
-            'andThenAsync',
-            'expect',
-            'expectNotNull',
-            'inspect',
-            'map',
-            'mapAsync',
-            'mapOr',
-            'mapOrAsync',
-            'mapOrElse',
-            'mapOrElseAsync',
-            'orElse',
-            'orElseAsync',
-            'unwrap',
-            'unwrapNullable',
-            'unwrapOr',
-            'unwrapOrElse',
-            'unwrapOrElseAsync',
-        ]
-    },
-    'Nullable/and': {
-        'exports': [
-            'andForNullable',
-        ]
-    },
-    'Nullable/andThen': {
-        'exports': [
-            'andThenForNullable'
-        ]
-    },
-    'Nullable/andThenAsync': {
-        'exports': [
-            'andThenAsyncForNullable'
-        ]
-    },
-    'Nullable/expect': {
-        'exports': [
-            'expectNotNull',
-        ]
-    },
-    'Nullable/inspect': {
-        'exports': [
-            'inspectNullable'
-        ]
-    },
-    'Nullable/map': {
-        'exports': [
-            'mapForNullable'
-        ]
-    },
-    'Nullable/mapAsync': {
-        'exports': [
-            'mapAsyncForNullable'
-        ]
-    },
-    'Nullable/mapOr': {
-        'exports': [
-            'mapOrForNullable',
-        ]
-    },
-    'Nullable/mapOrAsync': {
-        'exports': [
-            'mapOrAsyncForNullable',
-        ]
-    },
-    'Nullable/mapOrElse': {
-        'exports': [
-            'mapOrElseForNullable'
-        ]
-    },
-    'Nullable/mapOrElseAsync': {
-        'exports': [
-            'mapOrElseAsyncForNullable'
-        ]
-    },
-    'Nullable/Nullable': {
-        'exports': [
-            'isNotNull',
-            'isNull',
-            'expectNotNull',
-            'unwrapNullable',
-        ]
-    },
-    'Nullable/or': {
-        'exports': [
-            'orForNullable'
-        ]
-    },
-    'Nullable/orElse': {
-        'exports': [
-            'orElseForNullable'
-        ]
-    },
-    'Nullable/orElseAsync': {
-        'exports': [
-            'orElseAsyncForNullable'
-        ]
-    },
-    'Nullable/toUndefinable': {
-        'exports': [
-            'toUndefinableFromNullable'
-        ]
-    },
-    'Nullable/unwrap': {
-        'exports': [
-            'unwrapNullable'
-        ]
-    },
-    'Nullable/unwrapOr': {
-        'exports': [
-            'unwrapOrFromNullable'
-        ]
-    },
-    'Nullable/unwrapOrElse': {
-        'exports': [
-            'unwrapOrElseFromNullable'
-        ]
-    },
-    'Nullable/unwrapOrElseAsync': {
-        'exports': [
-            'unwrapOrElseAsyncFromNullable'
-        ]
-    },
-    'Nullable/xor': {
-        'exports': [
-            'xorForNullable'
-        ]
-    },
+    'Maybe/and': API_DESCRIPTOR,
+    'Maybe/andThen': API_DESCRIPTOR,
+    'Maybe/andThenAsync': API_DESCRIPTOR,
+    'Maybe/expect': API_DESCRIPTOR,
+    'Maybe/inspect': API_DESCRIPTOR,
+    'Maybe/map': API_DESCRIPTOR,
+    'Maybe/mapAsync': API_DESCRIPTOR,
+    'Maybe/Maybe': API_DESCRIPTOR,
+    'Maybe/mapOr': API_DESCRIPTOR,
+    'Maybe/mapOrAsync': API_DESCRIPTOR,
+    'Maybe/mapOrElse': API_DESCRIPTOR,
+    'Maybe/mapOrElseAsync': API_DESCRIPTOR,
+    'Maybe/or': API_DESCRIPTOR,
+    'Maybe/orElse': API_DESCRIPTOR,
+    'Maybe/orElseAsync': API_DESCRIPTOR,
+    'Maybe/toNullable': API_DESCRIPTOR,
+    'Maybe/toUndefinable': API_DESCRIPTOR,
+    'Maybe/unwrap': API_DESCRIPTOR,
+    'Maybe/unwrapOr': API_DESCRIPTOR,
+    'Maybe/unwrapOrElse': API_DESCRIPTOR,
+    'Maybe/unwrapOrElseAsync': API_DESCRIPTOR,
+    'Maybe/xor': API_DESCRIPTOR,
 
-    'PlainOption': {
-        'path': 'PlainOption/index',
-        'exports': [
-            'createSome',
-            'createNone',
-            'isSome',
-            'isNone',
-            'and',
-            'andThen',
-            'andThenAsync',
-            'equal',
-            'expect',
-            'expectSome',
-            'inspect',
-            'filter',
-            'flatten',
-            'map',
-            'mapAsync',
-            'mapOr',
-            'mapOrAsync',
-            'mapOrElse',
-            'mapOrElseAsync',
-            'or',
-            'orElse',
-            'orElseAsync',
-            'transpose',
-            'unwrap',
-            'unwrapSome',
-            'unwrapOr',
-            'unwrapOrElse',
-            'unwrapOrElseAsync',
-        ]
-    },
+    'Nullable': pathRedirectionTo('Nullable/index'),
 
-    'PlainOption/and': {
-        'exports': [
-            'andForOption'
-        ]
-    },
-    'PlainOption/andThen': {
-        'exports': [
-            'andThenForOption'
-        ]
-    },
-    'PlainOption/andThenAsync': {
-        'exports': [
-            'andThenAsyncForOption'
-        ]
-    },
-    'PlainOption/asMut': {
-        'exports': [
-            'asMutOption'
-        ]
-    },
-    'PlainOption/drop': {
-        'exports': [
-            'unsafeDropForOption'
-        ]
-    },
-    'PlainOption/equal': {
-        'exports': [
-            'equalForOption'
-        ]
-    },
-    'PlainOption/expect': {
-        'exports': [
-            'expectSomeForOption',
-            'expectIsSome'
-        ]
-    },
-    'PlainOption/filter': {
-        'exports': [
-            'filterForOption',
-        ]
-    },
-    'PlainOption/flatten': {
-        'exports': [
-            'flattenForOption'
-        ]
-    },
-    'PlainOption/inspect': {
-        'exports': [
-            'inspectOption'
-        ]
-    },
-    'PlainOption/map': {
-        'exports': [
-            'mapForOption'
-        ]
-    },
-    'PlainOption/mapAsync': {
-        'exports': [
-            'mapAsyncForOption'
-        ]
-    },
-    'PlainOption/mapOr': {
-        'exports': [
-            'mapOrForOption'
-        ]
-    },
-    'PlainOption/mapOrAsync': {
-        'exports': [
-            'mapOrAsyncForOption'
-        ]
-    },
-    'PlainOption/mapOrElse': {
-        'exports': [
-            'mapOrElseForOption'
-        ]
-    },
-    'PlainOption/mapOrElseAsync': {
-        'exports': [
-            'mapOrElseAsyncForOption'
-        ]
-    },
-    'PlainOption/okOr': {
-        'exports': [
-            'okOrForPlainOption'
-        ]
-    },
-    'PlainOption/okOrElse': {
-        'exports': [
-            'okOrElseForPlainOption'
-        ]
-    },
-    'PlainOption/Option': {
-        'exports': [
-            'isSome',
-            'isNone',
-            'createSome',
-            'createNone',
-            'unwrapSome',
-            'expectSome',
-        ]
-    },
-    'PlainOption/or': {
-        'exports': [
-            'orForOption'
-        ]
-    },
-    'PlainOption/orElse': {
-        'exports': [
-            'orElseForOption'
-        ]
-    },
-    'PlainOption/orElseAsync': {
-        'exports': [
-            'orElseAsyncForOption'
-        ]
-    },
-    'PlainOption/transpose': {
-        'exports': [
-            'transposeForOption'
-        ]
-    },
-    'PlainOption/toNullable': {
-        'exports': [
-            'toNullableFromOption'
-        ]
-    },
-    'PlainOption/toUndefinable': {
-        'exports': [
-            'toUndefinableFromOption'
-        ]
-    },
-    'PlainOption/unwrap': {
-        'exports': [
-            'unwrapOption',
-            'unwrapSomeFromOption',
-        ]
-    },
-    'PlainOption/unwrapOr': {
-        'exports': [
-            'unwrapOrFromOption'
-        ]
-    },
-    'PlainOption/unwrapOrElse': {
-        'exports': [
-            'unwrapOrElseFromOption'
-        ]
-    },
-    'PlainOption/unwrapOrElseAsync': {
-        'exports': [
-            'unwrapOrElseAsyncFromOption'
-        ]
-    },
-    'PlainOption/xor': {
-        'exports': [
-            'xorForOption'
-        ]
-    },
+    'Nullable/and': API_DESCRIPTOR,
+    'Nullable/andThen': API_DESCRIPTOR,
+    'Nullable/andThenAsync': API_DESCRIPTOR,
+    'Nullable/expect': API_DESCRIPTOR,
+    'Nullable/inspect': API_DESCRIPTOR,
+    'Nullable/map': API_DESCRIPTOR,
+    'Nullable/mapAsync': API_DESCRIPTOR,
+    'Nullable/mapOr': API_DESCRIPTOR,
+    'Nullable/mapOrAsync': API_DESCRIPTOR,
+    'Nullable/mapOrElse': API_DESCRIPTOR,
+    'Nullable/mapOrElseAsync': API_DESCRIPTOR,
+    'Nullable/Nullable': API_DESCRIPTOR,
+    'Nullable/or': API_DESCRIPTOR,
+    'Nullable/orElse': API_DESCRIPTOR,
+    'Nullable/orElseAsync': API_DESCRIPTOR,
+    'Nullable/toUndefinable': API_DESCRIPTOR,
+    'Nullable/unwrap': API_DESCRIPTOR,
+    'Nullable/unwrapOr': API_DESCRIPTOR,
+    'Nullable/unwrapOrElse': API_DESCRIPTOR,
+    'Nullable/unwrapOrElseAsync': API_DESCRIPTOR,
+    'Nullable/xor': API_DESCRIPTOR,
 
-    'PlainResult': {
-        'path': 'PlainResult/index',
-        'exports': [
-            'createOk',
-            'createErr',
-            'isOk',
-            'isErr',
-            'and',
-            'andThen',
-            'andThenAsync',
-            'equal',
-            'expect',
-            'expectOk',
-            'expectIsOk',
-            'expectErr',
-            'expectIsErr',
-            'inspectOk',
-            'inspectErr',
-            'inspectBoth',
-            'flatten',
-            'map',
-            'mapAsync',
-            'mapOr',
-            'mapOrAsync',
-            'mapOrElse',
-            'mapOrElseAsync',
-            'mapErr',
-            'mapErrAsync',
-            'or',
-            'orElse',
-            'orElseAsync',
-            'transpose',
-            'toOptionFromOk',
-            'toOptionFromErr',
-            'unwrap',
-            'unwrapOk',
-            'unwrapErr',
-            'unwrapOr',
-            'unwrapOrElse',
-            'unwrapOrElseAsync',
-        ]
-    },
+    'PlainOption': pathRedirectionTo('PlainOption/index'),
 
-    'PlainResult/and': {
-        'exports': [
-            'andForResult'
-        ]
-    },
-    'PlainResult/andThen': {
-        'exports': [
-            'andThenForResult'
-        ]
-    },
-    'PlainResult/andThenAsync': {
-        'exports': [
-            'andThenAsyncForResult'
-        ]
-    },
-    'PlainResult/asMut': {
-        'exports': [
-            'asMutResult'
-        ]
-    },
-    'PlainResult/drop': {
-        'exports': [
-            'unsafeDropBothForResult',
-            'unsafeDropOkForResult',
-            'unsafeDropErrForResult',
-        ]
-    },
-    'PlainResult/equal': {
-        'exports': [
-            'equalForResult',
-        ]
-    },
-    'PlainResult/expect': {
-        'exports': [
-            'expectOkForResult',
-            'expectErrForResult',
-            'expectIsOk',
-            'expectIsErr',
-        ]
-    },
-    'PlainResult/flatten': {
-        'exports': [
-            'flattenForResult'
-        ]
-    },
-    'PlainResult/fromPromiseSettledResult': {
-        'exports': [
-            'fromPromiseSettledResultToResult'
-        ]
-    },
-    'PlainResult/inspect': {
-        'exports': [
-            'inspectOkOfResult',
-            'inspectErrOfResult',
-            'inspectBothOfResult',
-            'inspectOk',
-            'inspectErr',
-            'inspectBoth',
-        ]
-    },
-    'PlainResult/map': {
-        'exports': [
-            'mapForResult'
-        ]
-    },
-    'PlainResult/mapAsync': {
-        'exports': [
-            'mapAsyncForResult'
-        ]
-    },
-    'PlainResult/mapErr': {
-        'exports': [
-            'mapErrForResult',
-        ]
-    },
-    'PlainResult/mapErrAsync': {
-        'exports': [
-            'mapErrAsyncForResult',
-        ]
-    },
-    'PlainResult/mapOr': {
-        'exports': [
-            'mapOrForResult'
-        ]
-    },
-    'PlainResult/mapOrAsync': {
-        'exports': [
-            'mapOrAsyncForResult'
-        ]
-    },
-    'PlainResult/mapOrElse': {
-        'exports': [
-            'mapOrElseForResult'
-        ]
-    },
-    'PlainResult/mapOrElseAsync': {
-        'exports': [
-            'mapOrElseAsyncForResult'
-        ]
-    },
-    'PlainResult/or': {
-        'exports': [
-            'orForResult'
-        ]
-    },
-    'PlainResult/orElse': {
-        'exports': [
-            'orElseForResult'
-        ]
-    },
-    'PlainResult/orElseAsync': {
-        'exports': [
-            'orElseAsyncForResult'
-        ]
-    },
-    'PlainResult/Result': {
-        'exports': [
-            'isOk',
-            'createOk',
-            'isErr',
-            'createErr',
-            'unwrapOk',
-            'unwrapErr',
-            'expectOk',
-            'expectErr',
-        ]
-    },
-    'PlainResult/toOption': {
-        'exports': [
-            'toOptionFromOk',
-            'toOptionFromErr'
-        ]
-    },
-    'PlainResult/tryCatch': {
-        'exports': [
-            'tryCatchIntoResult',
-            'tryCatchIntoResultWithEnsureError',
-        ]
-    },
-    'PlainResult/tryCatchAsync': {
-        'exports': [
-            'tryCatchIntoResultAsync',
-            'tryCatchIntoResultWithEnsureErrorAsync',
-        ]
-    },
-    'PlainResult/transpose': {
-        'exports': [
-            'transposeForResult',
-        ]
-    },
-    'PlainResult/unwrap': {
-        'exports': [
-            'unwrapFromResult',
-            'unwrapOkFromResult',
-            'unwrapErrFromResult',
-        ]
-    },
-    'PlainResult/unwrapOr': {
-        'exports': [
-            'unwrapOrFromResult'
-        ]
-    },
-    'PlainResult/unwrapOrElse': {
-        'exports': [
-            'unwrapOrElseFromResult'
-        ]
-    },
-    'PlainResult/unwrapOrElseAsync': {
-        'exports': [
-            'unwrapOrElseAsyncFromResult'
-        ]
-    },
-    'PlainResult/unwrapOrThrowError': {
-        'exports': [
-            'unwrapOrThrowErrorFromResult'
-        ]
-    },
+    'PlainOption/and': API_DESCRIPTOR,
+    'PlainOption/andThen': API_DESCRIPTOR,
+    'PlainOption/andThenAsync': API_DESCRIPTOR,
+    'PlainOption/asMut': API_DESCRIPTOR,
+    'PlainOption/drop': API_DESCRIPTOR,
+    'PlainOption/equal': API_DESCRIPTOR,
+    'PlainOption/expect': API_DESCRIPTOR,
+    'PlainOption/filter': API_DESCRIPTOR,
+    'PlainOption/flatten': API_DESCRIPTOR,
+    'PlainOption/inspect': API_DESCRIPTOR,
+    'PlainOption/map': API_DESCRIPTOR,
+    'PlainOption/mapAsync': API_DESCRIPTOR,
+    'PlainOption/mapOr': API_DESCRIPTOR,
+    'PlainOption/mapOrAsync': API_DESCRIPTOR,
+    'PlainOption/mapOrElse': API_DESCRIPTOR,
+    'PlainOption/mapOrElseAsync': API_DESCRIPTOR,
+    'PlainOption/okOr': API_DESCRIPTOR,
+    'PlainOption/okOrElse': API_DESCRIPTOR,
+    'PlainOption/Option': API_DESCRIPTOR,
+    'PlainOption/or': API_DESCRIPTOR,
+    'PlainOption/orElse': API_DESCRIPTOR,
+    'PlainOption/orElseAsync': API_DESCRIPTOR,
+    'PlainOption/transpose': API_DESCRIPTOR,
+    'PlainOption/toNullable': API_DESCRIPTOR,
+    'PlainOption/toUndefinable': API_DESCRIPTOR,
+    'PlainOption/unwrap': API_DESCRIPTOR,
+    'PlainOption/unwrapOr': API_DESCRIPTOR,
+    'PlainOption/unwrapOrElse': API_DESCRIPTOR,
+    'PlainOption/unwrapOrElseAsync': API_DESCRIPTOR,
+    'PlainOption/xor': API_DESCRIPTOR,
 
-    'Undefinable': {
-        'path': 'Undefinable/index',
-        'exports': [
-            'isNotUndefined',
-            'isUndefined',
-            'andThen',
-            'andThenAsync',
-            'expect',
-            'expectNotUndefined',
-            'inspect',
-            'map',
-            'mapAsync',
-            'mapOr',
-            'mapOrAsync',
-            'mapOrElse',
-            'mapOrElseAsync',
-            'orElse',
-            'orElseAsync',
-            'unwrap',
-            'unwrapOr',
-            'unwrapOrElse',
-            'unwrapOrElseAsync',
-            'unwrapUndefinable',
-        ]
-    },
+    'PlainResult': pathRedirectionTo('PlainResult/index'),
 
-    'Undefinable/and': {
-        'exports': [
-            'andForUndefinable',
-        ]
-    },
-    'Undefinable/andThen': {
-        'exports': [
-            'andThenForUndefinable'
-        ]
-    },
-    'Undefinable/andThenAsync': {
-        'exports': [
-            'andThenAsyncForUndefinable'
-        ]
-    },
-    'Undefinable/expect': {
-        'exports': [
-            'expectNotUndefined'
-        ]
-    },
-    'Undefinable/inspect': {
-        'exports': [
-            'inspectUndefinable'
-        ]
-    },
-    'Undefinable/map': {
-        'exports': [
-            'mapForUndefinable'
-        ]
-    },
-    'Undefinable/mapAsync': {
-        'exports': [
-            'mapAsyncForUndefinable'
-        ]
-    },
-    'Undefinable/mapOr': {
-        'exports': [
-            'mapOrForUndefinable'
-        ]
-    },
-    'Undefinable/mapOrAsync': {
-        'exports': [
-            'mapOrAsyncForUndefinable'
-        ]
-    },
-    'Undefinable/mapOrElse': {
-        'exports': [
-            'mapOrElseForUndefinable'
-        ]
-    },
-    'Undefinable/mapOrElseAsync': {
-        'exports': [
-            'mapOrElseAsyncForUndefinable'
-        ]
-    },
-    'Undefinable/or': {
-        'exports': [
-            'orForUndefinable'
-        ]
-    },
-    'Undefinable/orElse': {
-        'exports': [
-            'orElseForUndefinable'
-        ]
-    },
-    'Undefinable/orElseAsync': {
-        'exports': [
-            'orElseAsyncForUndefinable'
-        ]
-    },
-    'Undefinable/toNullable': {
-        'exports': [
-            'toNullableFromUndefinable'
-        ]
-    },
-    'Undefinable/Undefinable': {
-        'exports': [
-            'isNotUndefined',
-            'isUndefined',
-            'expectNotUndefined',
-            'unwrapUndefinable',
-        ]
-    },
-    'Undefinable/unwrap': {
-        'exports': [
-            'unwrapUndefinable'
-        ]
-    },
-    'Undefinable/unwrapOr': {
-        'exports': [
-            'unwrapOrFromUndefinable'
-        ]
-    },
-    'Undefinable/unwrapOrElse': {
-        'exports': [
-            'unwrapOrElseFromUndefinable'
-        ]
-    },
-    'Undefinable/unwrapOrElseAsync': {
-        'exports': [
-            'unwrapOrElseAsyncFromUndefinable'
-        ]
-    },
-    'Undefinable/xor': {
-        'exports': [
-            'xorForUndefinable'
-        ]
-    },
+    'PlainResult/and': API_DESCRIPTOR,
+    'PlainResult/andThen': API_DESCRIPTOR,
+    'PlainResult/andThenAsync': API_DESCRIPTOR,
+    'PlainResult/asMut': API_DESCRIPTOR,
+    'PlainResult/drop': API_DESCRIPTOR,
+    'PlainResult/equal': API_DESCRIPTOR,
+    'PlainResult/expect': API_DESCRIPTOR,
+    'PlainResult/flatten': API_DESCRIPTOR,
+    'PlainResult/fromPromiseSettledResult': API_DESCRIPTOR,
+    'PlainResult/inspect': API_DESCRIPTOR,
+    'PlainResult/map': API_DESCRIPTOR,
+    'PlainResult/mapAsync': API_DESCRIPTOR,
+    'PlainResult/mapErr': API_DESCRIPTOR,
+    'PlainResult/mapErrAsync': API_DESCRIPTOR,
+    'PlainResult/mapOr': API_DESCRIPTOR,
+    'PlainResult/mapOrAsync': API_DESCRIPTOR,
+    'PlainResult/mapOrElse': API_DESCRIPTOR,
+    'PlainResult/mapOrElseAsync': API_DESCRIPTOR,
+    'PlainResult/or': API_DESCRIPTOR,
+    'PlainResult/orElse': API_DESCRIPTOR,
+    'PlainResult/orElseAsync': API_DESCRIPTOR,
+    'PlainResult/Result': API_DESCRIPTOR,
+    'PlainResult/toOption': API_DESCRIPTOR,
+    'PlainResult/tryCatch': API_DESCRIPTOR,
+    'PlainResult/tryCatchAsync': API_DESCRIPTOR,
+    'PlainResult/transpose': API_DESCRIPTOR,
+    'PlainResult/unwrap': API_DESCRIPTOR,
+    'PlainResult/unwrapOr': API_DESCRIPTOR,
+    'PlainResult/unwrapOrElse': API_DESCRIPTOR,
+    'PlainResult/unwrapOrElseAsync': API_DESCRIPTOR,
+    'PlainResult/unwrapOrThrowError': API_DESCRIPTOR,
 
-    /*
-        // TODO:
-        // 'Maybe/ErrorMessage': [],
-        // TODO:
-        // 'Nullable/ErrorMessage': [],
-        // TODO:
-        // 'Option': [],
-        // TODO:
-        // 'Result': [],
-        // TODO:
-        // 'Undefinable/ErrorMessage': [],
-        // TODO:
-        // 'index': [],
-    */
+    'Undefinable': pathRedirectionTo('Undefinable/index'),
+
+    'Undefinable/and': API_DESCRIPTOR,
+    'Undefinable/andThen': API_DESCRIPTOR,
+    'Undefinable/andThenAsync': API_DESCRIPTOR,
+    'Undefinable/expect': API_DESCRIPTOR,
+    'Undefinable/inspect': API_DESCRIPTOR,
+    'Undefinable/map': API_DESCRIPTOR,
+    'Undefinable/mapAsync': API_DESCRIPTOR,
+    'Undefinable/mapOr': API_DESCRIPTOR,
+    'Undefinable/mapOrAsync': API_DESCRIPTOR,
+    'Undefinable/mapOrElse': API_DESCRIPTOR,
+    'Undefinable/mapOrElseAsync': API_DESCRIPTOR,
+    'Undefinable/or': API_DESCRIPTOR,
+    'Undefinable/orElse': API_DESCRIPTOR,
+    'Undefinable/orElseAsync': API_DESCRIPTOR,
+    'Undefinable/toNullable': API_DESCRIPTOR,
+    'Undefinable/Undefinable': API_DESCRIPTOR,
+    'Undefinable/unwrap': API_DESCRIPTOR,
+    'Undefinable/unwrapOr': API_DESCRIPTOR,
+    'Undefinable/unwrapOrElse': API_DESCRIPTOR,
+    'Undefinable/unwrapOrElseAsync': API_DESCRIPTOR,
+    'Undefinable/xor': API_DESCRIPTOR,
 });
 
 const COMPAT_DESCRIPTOR = Object.freeze({
 });
 
 export const legacyApiTable = Object.freeze({
-    'cjs/ClassicOption': {
-        path: 'cjs/ClassicOption/index',
-    },
-    'cjs/ClassicResult': {
-        path: 'cjs/ClassicResult/index',
-    },
+    'cjs/ClassicOption': pathRedirectionTo('cjs/ClassicOption/index'),
+    'cjs/ClassicResult': pathRedirectionTo('cjs/ClassicResult/index'),
     'cjs/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
     'cjs/Maybe/Maybe': COMPAT_DESCRIPTOR,
     'cjs/Maybe/and': COMPAT_DESCRIPTOR,
@@ -859,9 +164,7 @@ export const legacyApiTable = Object.freeze({
     'cjs/Maybe/expect': COMPAT_DESCRIPTOR,
     'cjs/Maybe/index': COMPAT_DESCRIPTOR,
     'cjs/Maybe/inspect': COMPAT_DESCRIPTOR,
-    'cjs/Maybe': {
-        path: 'cjs/Maybe/index',
-    },
+    'cjs/Maybe': pathRedirectionTo('cjs/Maybe/index'),
     'cjs/Maybe/map': COMPAT_DESCRIPTOR,
     'cjs/Maybe/mapAsync': COMPAT_DESCRIPTOR,
     'cjs/Maybe/mapOr': COMPAT_DESCRIPTOR,
@@ -886,9 +189,7 @@ export const legacyApiTable = Object.freeze({
     'cjs/Nullable/expect': COMPAT_DESCRIPTOR,
     'cjs/Nullable/index': COMPAT_DESCRIPTOR,
     'cjs/Nullable/inspect': COMPAT_DESCRIPTOR,
-    'cjs/Nullable': {
-        path: 'cjs/Nullable/index',
-    },
+    'cjs/Nullable': pathRedirectionTo('cjs/Nullable/index'),
     'cjs/Nullable/map': COMPAT_DESCRIPTOR,
     'cjs/Nullable/mapAsync': COMPAT_DESCRIPTOR,
     'cjs/Nullable/mapOr': COMPAT_DESCRIPTOR,
@@ -917,9 +218,7 @@ export const legacyApiTable = Object.freeze({
     'cjs/PlainOption/flatten': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/index': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/inspect': COMPAT_DESCRIPTOR,
-    'cjs/PlainOption': {
-        path: 'cjs/PlainOption/index',
-    },
+    'cjs/PlainOption': pathRedirectionTo('cjs/PlainOption/index'),
     'cjs/PlainOption/map': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/mapAsync': COMPAT_DESCRIPTOR,
     'cjs/PlainOption/mapOr': COMPAT_DESCRIPTOR,
@@ -951,9 +250,7 @@ export const legacyApiTable = Object.freeze({
     'cjs/PlainResult/fromPromiseSettledResult': COMPAT_DESCRIPTOR,
     'cjs/PlainResult/index': COMPAT_DESCRIPTOR,
     'cjs/PlainResult/inspect': COMPAT_DESCRIPTOR,
-    'cjs/PlainResult': {
-        path: 'cjs/PlainResult/index',
-    },
+    'cjs/PlainResult': pathRedirectionTo('cjs/PlainResult/index'),
     'cjs/PlainResult/map': COMPAT_DESCRIPTOR,
     'cjs/PlainResult/mapAsync': COMPAT_DESCRIPTOR,
     'cjs/PlainResult/mapErr': COMPAT_DESCRIPTOR,
@@ -983,9 +280,7 @@ export const legacyApiTable = Object.freeze({
     'cjs/Undefinable/expect': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/index': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/inspect': COMPAT_DESCRIPTOR,
-    'cjs/Undefinable': {
-        path: 'cjs/Undefinable/index',
-    },
+    'cjs/Undefinable': pathRedirectionTo('cjs/Undefinable/index'),
     'cjs/Undefinable/map': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/mapAsync': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/mapOr': COMPAT_DESCRIPTOR,
@@ -1002,12 +297,8 @@ export const legacyApiTable = Object.freeze({
     'cjs/Undefinable/unwrapOrElseAsync': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/xor': COMPAT_DESCRIPTOR,
     'cjs/index': COMPAT_DESCRIPTOR,
-    'esm/ClassicOption': {
-        path: 'esm/ClassicOption/index',
-    },
-    'esm/ClassicResult': {
-        path: 'esm/ClassicResult/index',
-    },
+    'esm/ClassicOption': pathRedirectionTo('esm/ClassicOption/index'),
+    'esm/ClassicResult': pathRedirectionTo('esm/ClassicResult/index'),
     'esm/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
     'esm/Maybe/Maybe': COMPAT_DESCRIPTOR,
     'esm/Maybe/and': COMPAT_DESCRIPTOR,
@@ -1016,9 +307,7 @@ export const legacyApiTable = Object.freeze({
     'esm/Maybe/expect': COMPAT_DESCRIPTOR,
     'esm/Maybe/index': COMPAT_DESCRIPTOR,
     'esm/Maybe/inspect': COMPAT_DESCRIPTOR,
-    'esm/Maybe': {
-        path: 'esm/Maybe/index',
-    },
+    'esm/Maybe': pathRedirectionTo('esm/Maybe/index'),
     'esm/Maybe/map': COMPAT_DESCRIPTOR,
     'esm/Maybe/mapAsync': COMPAT_DESCRIPTOR,
     'esm/Maybe/mapOr': COMPAT_DESCRIPTOR,
@@ -1043,9 +332,7 @@ export const legacyApiTable = Object.freeze({
     'esm/Nullable/expect': COMPAT_DESCRIPTOR,
     'esm/Nullable/index': COMPAT_DESCRIPTOR,
     'esm/Nullable/inspect': COMPAT_DESCRIPTOR,
-    'esm/Nullable': {
-        path: 'esm/Nullable/index',
-    },
+    'esm/Nullable': pathRedirectionTo('esm/Nullable/index'),
     'esm/Nullable/map': COMPAT_DESCRIPTOR,
     'esm/Nullable/mapAsync': COMPAT_DESCRIPTOR,
     'esm/Nullable/mapOr': COMPAT_DESCRIPTOR,
@@ -1074,9 +361,7 @@ export const legacyApiTable = Object.freeze({
     'esm/PlainOption/flatten': COMPAT_DESCRIPTOR,
     'esm/PlainOption/index': COMPAT_DESCRIPTOR,
     'esm/PlainOption/inspect': COMPAT_DESCRIPTOR,
-    'esm/PlainOption': {
-        path: 'esm/PlainOption/index',
-    },
+    'esm/PlainOption': pathRedirectionTo('esm/PlainOption/index'),
     'esm/PlainOption/map': COMPAT_DESCRIPTOR,
     'esm/PlainOption/mapAsync': COMPAT_DESCRIPTOR,
     'esm/PlainOption/mapOr': COMPAT_DESCRIPTOR,
@@ -1108,9 +393,7 @@ export const legacyApiTable = Object.freeze({
     'esm/PlainResult/fromPromiseSettledResult': COMPAT_DESCRIPTOR,
     'esm/PlainResult/index': COMPAT_DESCRIPTOR,
     'esm/PlainResult/inspect': COMPAT_DESCRIPTOR,
-    'esm/PlainResult': {
-        path: 'esm/PlainResult/index',
-    },
+    'esm/PlainResult': pathRedirectionTo('esm/PlainResult/index'),
     'esm/PlainResult/map': COMPAT_DESCRIPTOR,
     'esm/PlainResult/mapAsync': COMPAT_DESCRIPTOR,
     'esm/PlainResult/mapErr': COMPAT_DESCRIPTOR,
@@ -1140,9 +423,7 @@ export const legacyApiTable = Object.freeze({
     'esm/Undefinable/expect': COMPAT_DESCRIPTOR,
     'esm/Undefinable/index': COMPAT_DESCRIPTOR,
     'esm/Undefinable/inspect': COMPAT_DESCRIPTOR,
-    'esm/Undefinable': {
-        path: 'esm/Undefinable/index',
-    },
+    'esm/Undefinable': pathRedirectionTo('esm/Undefinable/index'),
     'esm/Undefinable/map': COMPAT_DESCRIPTOR,
     'esm/Undefinable/mapAsync': COMPAT_DESCRIPTOR,
     'esm/Undefinable/mapOr': COMPAT_DESCRIPTOR,
@@ -1159,12 +440,8 @@ export const legacyApiTable = Object.freeze({
     'esm/Undefinable/unwrapOrElseAsync': COMPAT_DESCRIPTOR,
     'esm/Undefinable/xor': COMPAT_DESCRIPTOR,
     'esm/index': COMPAT_DESCRIPTOR,
-    'lib/ClassicOption': {
-        path: 'lib/ClassicOption/index',
-    },
-    'lib/ClassicResult': {
-        path: 'lib/ClassicResult/index',
-    },
+    'lib/ClassicOption': pathRedirectionTo('lib/ClassicOption/index'),
+    'lib/ClassicResult': pathRedirectionTo('lib/ClassicResult/index'),
     'lib/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
     'lib/Maybe/Maybe': COMPAT_DESCRIPTOR,
     'lib/Maybe/and': COMPAT_DESCRIPTOR,
@@ -1173,9 +450,7 @@ export const legacyApiTable = Object.freeze({
     'lib/Maybe/expect': COMPAT_DESCRIPTOR,
     'lib/Maybe/index': COMPAT_DESCRIPTOR,
     'lib/Maybe/inspect': COMPAT_DESCRIPTOR,
-    'lib/Maybe': {
-        path: 'lib/Maybe/index',
-    },
+    'lib/Maybe': pathRedirectionTo('lib/Maybe/index'),
     'lib/Maybe/map': COMPAT_DESCRIPTOR,
     'lib/Maybe/mapAsync': COMPAT_DESCRIPTOR,
     'lib/Maybe/mapOr': COMPAT_DESCRIPTOR,
@@ -1200,9 +475,7 @@ export const legacyApiTable = Object.freeze({
     'lib/Nullable/expect': COMPAT_DESCRIPTOR,
     'lib/Nullable/index': COMPAT_DESCRIPTOR,
     'lib/Nullable/inspect': COMPAT_DESCRIPTOR,
-    'lib/Nullable': {
-        path: 'lib/Nullable/index',
-    },
+    'lib/Nullable': pathRedirectionTo('lib/Nullable/index'),
     'lib/Nullable/map': COMPAT_DESCRIPTOR,
     'lib/Nullable/mapAsync': COMPAT_DESCRIPTOR,
     'lib/Nullable/mapOr': COMPAT_DESCRIPTOR,
@@ -1231,9 +504,7 @@ export const legacyApiTable = Object.freeze({
     'lib/PlainOption/filter': COMPAT_DESCRIPTOR,
     'lib/PlainOption/index': COMPAT_DESCRIPTOR,
     'lib/PlainOption/inspect': COMPAT_DESCRIPTOR,
-    'lib/PlainOption': {
-        path: 'lib/PlainOption/index',
-    },
+    'lib/PlainOption': pathRedirectionTo('lib/PlainOption/index'),
     'lib/PlainOption/map': COMPAT_DESCRIPTOR,
     'lib/PlainOption/mapAsync': COMPAT_DESCRIPTOR,
     'lib/PlainOption/mapOr': COMPAT_DESCRIPTOR,
@@ -1265,9 +536,7 @@ export const legacyApiTable = Object.freeze({
     'lib/PlainResult/fromPromiseSettledResult': COMPAT_DESCRIPTOR,
     'lib/PlainResult/index': COMPAT_DESCRIPTOR,
     'lib/PlainResult/inspect': COMPAT_DESCRIPTOR,
-    'lib/PlainResult': {
-        path: 'lib/PlainResult/index',
-    },
+    'lib/PlainResult': pathRedirectionTo('lib/PlainResult/index'),
     'lib/PlainResult/map': COMPAT_DESCRIPTOR,
     'lib/PlainResult/mapAsync': COMPAT_DESCRIPTOR,
     'lib/PlainResult/mapErr': COMPAT_DESCRIPTOR,
@@ -1297,9 +566,7 @@ export const legacyApiTable = Object.freeze({
     'lib/Undefinable/expect': COMPAT_DESCRIPTOR,
     'lib/Undefinable/index': COMPAT_DESCRIPTOR,
     'lib/Undefinable/inspect': COMPAT_DESCRIPTOR,
-    'lib/Undefinable': {
-        path: 'lib/Undefinable/index',
-    },
+    'lib/Undefinable': pathRedirectionTo('lib/Undefinable/index'),
     'lib/Undefinable/map': COMPAT_DESCRIPTOR,
     'lib/Undefinable/mapAsync': COMPAT_DESCRIPTOR,
     'lib/Undefinable/mapOr': COMPAT_DESCRIPTOR,
