@@ -15,22 +15,20 @@
  *
  *  The usecase example is a `React.PropTypes.
  */
-export class ClassicOptionBase {
-    constructor(ok, val) {
-        /**
-         *  @private
-         *  @type   {boolean}
-         */
-        this.ok = ok;
+export function ClassicOptionBase(ok, val) {
+    /**
+     *  @private
+     *  @type   {boolean}
+     */
+    this.ok = ok;
 
-        /**
-         *  @private
-         *  @type   {T|undefined}
-         */
-        this.val = val;
+    /**
+     *  @private
+     *  @type   {T|undefined}
+     */
+    this.val = val;
 
-        Object.seal(this);
-    }
+    Object.seal(this);
 }
 ClassicOptionBase.prototype = Object.freeze({
     /**

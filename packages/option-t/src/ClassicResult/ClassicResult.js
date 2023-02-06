@@ -18,25 +18,23 @@ import { createClassicSome, createClassicNone } from '../ClassicOption/ClassicOp
  *
  *  The usecase example is a `React.PropTypes`.
  */
-export class ClassicResultBase {
-    constructor(ok, val, err) {
-        /**
-         *  @private
-         *  @type   {boolean}
-         */
-        this._isOk = ok;
-        /**
-         *  @private
-         *  @type   {T}
-         */
-        this._v = val;
-        /**
-         *  @private
-         *  @type   {E}
-         */
-        this._e = err;
-        Object.seal(this);
-    }
+export function ClassicResultBase(ok, val, err) {
+    /**
+     *  @private
+     *  @type   {boolean}
+     */
+    this._isOk = ok;
+    /**
+     *  @private
+     *  @type   {T}
+     */
+    this._v = val;
+    /**
+     *  @private
+     *  @type   {E}
+     */
+    this._e = err;
+    Object.seal(this);
 }
 ClassicResultBase.prototype = Object.freeze({
     /**
