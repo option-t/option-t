@@ -58,7 +58,11 @@ export { mapErrAsyncForResult as mapErrAsync } from './mapErrAsync.js';
 export { orForResult as or } from './or.js';
 export { orElseForResult as orElse } from './orElse.js';
 export { orElseAsyncForResult as orElseAsync } from './orElseAsync.js';
-export { transposeForResult as transpose } from './transpose.js';
+export {
+    transposeForResult as transpose,
+    transposeNullableForResult as transposeNullable,
+    transposeUndefinableForResult as transposeUndefinable,
+} from './transpose.js';
 export { unwrapOrFromResult as unwrapOr } from './unwrapOr.js';
 export { unwrapOrElseFromResult as unwrapOrElse } from './unwrapOrElse.js';
 export { unwrapOrElseAsyncFromResult as unwrapOrElseAsync } from './unwrapOrElseAsync.js';

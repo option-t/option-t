@@ -1,5 +1,7 @@
+import { type Nullable, isNull } from '../Nullable/Nullable.js';
 import { type Option, createSome, createNone, isNone, type Some } from '../PlainOption/Option.js';
-import { type Result, type Ok, type Err, isErr, createOk, createErr } from './Result.js';
+import { isUndefined, type Undefinable } from '../Undefinable/Undefinable.js';
+import { type Result, type Ok, type Err, isErr, createOk, createErr, unwrapOk } from './Result.js';
 
 /**
  *  Transposes a `Result` of an `Option` into an `Option` of a `Result`.
@@ -26,4 +28,48 @@ export function transposeForResult<T, E>(input: Result<Option<T>, E>): Option<Re
     const innerV: Ok<T> = createOk(innerInner);
     const result: Option<Ok<T>> = createSome(innerV);
     return result;
+}
+
+/**
+ *  Transposes a `Result` of an `Nullable<T>` into an `Nullable<T>` of a `Result`.
+ *
+ *  - `Ok(T)` -> `Ok(T)`
+ *  - `Ok(null)` -> `null`
+ *  - `Err(E)` -> `Err(E)`
+ */
+export function transposeNullableForResult<T, E>(
+    input: Result<Nullable<T>, E>
+): Nullable<Result<T, E>> {
+    if (isErr(input)) {
+        return input;
+    }
+
+    const inner: Nullable<T> = unwrapOk(input);
+    if (isNull(inner)) {
+        return null;
+    }
+
+    return createOk<T>(inner);
+}
+
+/**
+ *  Transposes a `Result` of an `Undefinable<T>` into an `Undefinable<T>` of a `Result`.
+ *
+ *  - `Ok(T)` -> `Ok(T)`
+ *  - `Ok(undefined)` -> `undefined`
+ *  - `Err(E)` -> `Err(E)`
+ */
+export function transposeUndefinableForResult<T, E>(
+    input: Result<Undefinable<T>, E>
+): Undefinable<Result<T, E>> {
+    if (isErr(input)) {
+        return input;
+    }
+
+    const inner: Undefinable<T> = unwrapOk(input);
+    if (isUndefined(inner)) {
+        return undefined;
+    }
+
+    return createOk<T>(inner);
 }
