@@ -7,7 +7,7 @@ import { unwrapOrFromResult } from './unwrapOr.js';
  *  Unwrap `T` if _input_ is `Ok(T)`.
  *  Otherwise, return `null`.
  */
-export function fromOkToNullable<T>(input: Result<T, unknown>): Nullable<T> {
+export function toNullableFromOk<T>(input: Result<T, unknown>): Nullable<T> {
     const val: Nullable<T> = unwrapOrFromResult<Nullable<T>>(input, null);
     return val;
 }
@@ -16,7 +16,7 @@ export function fromOkToNullable<T>(input: Result<T, unknown>): Nullable<T> {
  *  Unwrap `E` if _input_ is `Err(E)`.
  *  Otherwise, return `null`.
  */
-export function fromErrToNullable<E>(input: Result<unknown, E>): Nullable<E> {
+export function toNullableFromErr<E>(input: Result<unknown, E>): Nullable<E> {
     const err: Nullable<E> = unwrapErrOrFromResult<Nullable<E>>(input, null);
     return err;
 }
