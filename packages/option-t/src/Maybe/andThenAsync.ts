@@ -2,7 +2,7 @@ import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
 import type { AsyncTransformFn } from '../internal/Function.js';
 
-import { Maybe, isNullOrUndefined } from './Maybe.js';
+import { type Maybe, isNullOrUndefined } from './Maybe.js';
 
 export type MaybeAsyncTryTransformFn<T, U> = AsyncTransformFn<T, Maybe<U>>;
 

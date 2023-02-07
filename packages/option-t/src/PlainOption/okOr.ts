@@ -1,5 +1,5 @@
-import { Option } from './Option.js';
-import { Result, createErr, createOk } from '../PlainResult/Result.js';
+import { type Option } from './Option.js';
+import { type Result, createErr, createOk } from '../PlainResult/Result.js';
 
 /**
  * Transforms the `Option<T>` into a `Result<T, E>`,

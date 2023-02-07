@@ -1,5 +1,5 @@
-import { Option, isNone, createNone } from './Option.js';
-import { FilterFn } from '../internal/Function.js';
+import { type Option, isNone, createNone } from './Option.js';
+import type { FilterFn } from '../internal/Function.js';
 
 /**
  *  Returns `None` if the option is `None`,

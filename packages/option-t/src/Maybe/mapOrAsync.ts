@@ -7,7 +7,7 @@ import {
     ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE,
 } from './ErrorMessage.js';
 import { expectNotNullAndUndefined } from './expect.js';
-import { Maybe, isNullOrUndefined, NotNullAndUndefined } from './Maybe.js';
+import { type Maybe, isNullOrUndefined, type NotNullAndUndefined } from './Maybe.js';
 
 function check<T>(value: Maybe<T>): T {
     const passed = expectNotNullAndUndefined(

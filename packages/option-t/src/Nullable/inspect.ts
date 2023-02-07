@@ -1,4 +1,4 @@
-import { EffectFn } from '../internal/Function.js';
+import type { EffectFn } from '../internal/Function.js';
 import { type NotNull, type Nullable, isNotNull } from './Nullable.js';
 
 /**

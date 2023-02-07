@@ -1,7 +1,7 @@
 import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
 import type { AsyncTransformFn } from '../internal/Function.js';
-import { Option, isNone } from './Option.js';
+import { type Option, isNone } from './Option.js';
 import { unwrapOption } from './unwrap.js';
 
 /**

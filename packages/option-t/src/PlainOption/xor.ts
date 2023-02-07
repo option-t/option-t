@@ -1,4 +1,4 @@
-import { Option, isSome, createNone } from './Option.js';
+import { type Option, isSome, createNone } from './Option.js';
 
 /**
  *  Return one of this pattern:

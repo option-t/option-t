@@ -1,5 +1,5 @@
-import { TransformFn } from '../internal/Function.js';
-import { Result, createErr } from './Result.js';
+import type { TransformFn } from '../internal/Function.js';
+import { type Result, createErr } from './Result.js';
 
 /**
  *  Maps a `Result<T, E>` to `Result<T, F>` by applying a _transformer_ function `mapFn<E, F>`

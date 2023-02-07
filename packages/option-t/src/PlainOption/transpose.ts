@@ -1,5 +1,12 @@
-import { Result, createOk, createErr, Ok, Err, isErr } from '../PlainResult/Result.js';
-import { Option, isNone, createSome, createNone, None, Some } from './Option.js';
+import {
+    type Result,
+    createOk,
+    createErr,
+    type Ok,
+    type Err,
+    isErr,
+} from '../PlainResult/Result.js';
+import { type Option, isNone, createSome, createNone, type None, type Some } from './Option.js';
 
 /**
  *  Transposes an `Option` of a `Result` into a `Result` of an `Option`.

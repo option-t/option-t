@@ -14,7 +14,7 @@ import {
     isNotUndefined,
 } from '../Undefinable/Undefinable.js';
 
-import { ClassicOption, createClassicNone, createClassicSome } from './ClassicOption.js';
+import { type ClassicOption, createClassicNone, createClassicSome } from './ClassicOption.js';
 
 /**
  *  Return `PlainOption`'s `Some(T)` with the inner T if _classic_ is `ClassicSome(T)`.

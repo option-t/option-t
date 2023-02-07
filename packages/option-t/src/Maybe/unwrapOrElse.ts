@@ -1,5 +1,5 @@
-import { RecoveryFn } from '../internal/Function.js';
-import { isNotNullAndUndefined, Maybe, NotNullAndUndefined } from './Maybe.js';
+import type { RecoveryFn } from '../internal/Function.js';
+import { isNotNullAndUndefined, type Maybe, type NotNullAndUndefined } from './Maybe.js';
 import { expectNotNullAndUndefined } from './expect.js';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage.js';
 
