@@ -95,14 +95,14 @@ build: __build cp_docs cp_changelog cp_license cp_readme generate_manifest ## Bu
 __build: build_cjs build_esm build_mixedlib ## Build all targets.
 
 .PHONY: build_cjs
-build_cjs: __build_cjs__cp_cjs_to_cjsdir __build_cjs__cp_dcts_to_cjsdir ## Build `cjs/`.
+build_cjs: __build_cjs__cp_cjs_to_cjsdir __build_cjs__cp_dcts_to_cjsdir generate_manifest ## Build `cjs/`.
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs \
         --basedir $(GENERATED_COMMONJS_DIR) \
         --source '$(GENERATED_COMMONJS_DIR)/**/*' \
         --destination $(DIST_COMMONJS_DIR)
 
 .PHONY: __build_cjs__cp_cjs_to_cjsdir
-__build_cjs__cp_cjs_to_cjsdir: __build_cjs__rename_js_to_cjs clean_dist
+__build_cjs__cp_cjs_to_cjsdir: __build_cjs__rename_js_to_cjs clean_dist generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/transform_files_by_babel.mjs \
 		--basedir $(TMP_CJS_DIR) \
 		--source '$(TMP_CJS_DIR)/**/*.$(CJS_EXTENSION_GLOB)' \
@@ -110,7 +110,7 @@ __build_cjs__cp_cjs_to_cjsdir: __build_cjs__rename_js_to_cjs clean_dist
 		--config $(CURDIR)/tools/babel/babelrc.cjs.mjs
 
 .PHONY: __build_cjs__cp_dcts_to_cjsdir
-__build_cjs__cp_dcts_to_cjsdir: __build_cjs_rename_dts_to_dcts clean_dist
+__build_cjs__cp_dcts_to_cjsdir: __build_cjs_rename_dts_to_dcts clean_dist generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/transform_files_by_babel.mjs \
 		--basedir $(TMP_CJS_DIR) \
 		--source '$(TMP_CJS_DIR)/**/*.$(D_CTS_EXTENSION_GLOB)' \
@@ -118,31 +118,31 @@ __build_cjs__cp_dcts_to_cjsdir: __build_cjs_rename_dts_to_dcts clean_dist
 		--config $(CURDIR)/tools/babel/babelrc.d.cts.mjs
 
 .PHONY: __build_cjs_rename_dts_to_dcts
-__build_cjs_rename_dts_to_dcts: __build_cjs__create_tmp_cjs
+__build_cjs_rename_dts_to_dcts: __build_cjs__create_tmp_cjs generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_CJS_DIR) --to-extension 'cts' --from-extension 'ts'
 
 .PHONY: __build_cjs__rename_js_to_cjs
-__build_cjs__rename_js_to_cjs: __build_cjs__create_tmp_cjs
+__build_cjs__rename_js_to_cjs: __build_cjs__create_tmp_cjs generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_CJS_DIR) --to-extension 'cjs' --from-extension 'js'
 
 .PHONY: __build_cjs__create_tmp_cjs
-__build_cjs__create_tmp_cjs: __build_tmp_base clean_tmp_cjs
+__build_cjs__create_tmp_cjs: __build_tmp_base clean_tmp_cjs generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_BASE_DIR) --source '$(TMP_BASE_DIR)/**/*' --destination $(TMP_CJS_DIR)
 
 
 .PHONY: build_esm
-build_esm: __build_mjs_cp_mjs_to_esm __build_mjs_cp_dts_to_esm ## Build `esm/`.
+build_esm: __build_mjs_cp_mjs_to_esm __build_mjs_cp_dts_to_esm generate_manifest ## Build `esm/`.
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs \
         --basedir $(GENERATED_ESM_DIR) \
         --source '$(GENERATED_ESM_DIR)/**/*' \
         --destination $(DIST_ESM_DIR)
 
 .PHONY: __build_mjs_cp_mjs_to_esm
-__build_mjs_cp_mjs_to_esm: __build_mjs_create_tmp_mjs clean_dist
+__build_mjs_cp_mjs_to_esm: __build_mjs_create_tmp_mjs clean_dist generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_MJS_DIR) --source '$(TMP_MJS_DIR)/**/*.$(MJS_EXTENSION_GLOB)' --destination $(GENERATED_ESM_DIR)
 
 .PHONY: __build_mjs_cp_dts_to_esm
-__build_mjs_cp_dts_to_esm: __build_mjs_create_tmp_mjs clean_dist
+__build_mjs_cp_dts_to_esm: __build_mjs_create_tmp_mjs clean_dist generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_MJS_DIR) --source '$(TMP_MJS_DIR)/**/*.$(DTS_EXTENSION_GLOB)' --destination $(GENERATED_ESM_DIR)
 
 .PHONY: __build_mjs_create_tmp_mjs
@@ -153,11 +153,11 @@ __build_mjs_create_tmp_mjs: __build_tmp_base clean_tmp_mjs
 __build_tmp_base: __build_tmp_base__call_tsc __build_tmp_base__call_babel __build_tmp_base__call_cpx
 
 .PHONY: __build_tmp_base__call_tsc
-__build_tmp_base__call_tsc: clean_tmp_base
+__build_tmp_base__call_tsc: clean_tmp_base generate_manifest
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.json
 
 .PHONY: __build_tmp_base__call_babel
-__build_tmp_base__call_babel: clean_tmp_base
+__build_tmp_base__call_babel: clean_tmp_base generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/transform_files_by_babel.mjs \
 		--basedir $(SRC_DIR) \
 		--source '$(SRC_DIR)/**/*.$(MJS_EXTENSION_GLOB)' \
@@ -165,36 +165,36 @@ __build_tmp_base__call_babel: clean_tmp_base
 		--config $(CURDIR)/tools/babel/babelrc.esm.mjs
 
 .PHONY: __build_tmp_base__call_cpx
-__build_tmp_base__call_cpx: clean_tmp_base
+__build_tmp_base__call_cpx: clean_tmp_base generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(SRC_DIR) --source '$(SRC_DIR)/**/*.$(DTS_EXTENSION_GLOB)' --destination $(TMP_BASE_DIR)
 
 
 # We need to keep this directory to continue to support TypeScript moduleResolution=node..
 .PHONY: build_mixedlib
-build_mixedlib: build_mixedlib_cp_dts ## Build `lib/`.
+build_mixedlib: build_mixedlib_cp_dts generate_manifest ## Build `lib/`.
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs \
         --basedir $(GENERATED_MIXED_LIB_DIR) \
         --source '$(GENERATED_MIXED_LIB_DIR)/**/*' \
         --destination $(DIST_MIXED_LIB_DIR)
 
 .PHONY: build_mixedlib_cp_dts
-build_mixedlib_cp_dts: build_esm clean_dist
+build_mixedlib_cp_dts: build_esm clean_dist generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(GENERATED_ESM_DIR) --source '$(GENERATED_ESM_DIR)/**/*.${DTS_EXTENSION_GLOB}' --destination $(GENERATED_MIXED_LIB_DIR)
 
 .PHONY: cp_docs
-cp_docs: clean_dist
+cp_docs: clean_dist generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(DOCS_DIR) --source '$(DOCS_DIR)/**/*' --destination $(DIST_DOCS_DIR)
 
 .PHONY: cp_changelog
-cp_changelog: clean_dist
+cp_changelog: clean_dist generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(REPO_ROOT_DIR) --source '$(REPO_ROOT_DIR)/{CHANGELOG.md,CHANGELOG_OLD.md}' --destination $(DIST_DIR)
 
 .PHONY: cp_license
-cp_license: clean_dist
+cp_license: clean_dist generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(REPO_ROOT_DIR) --source '$(REPO_ROOT_DIR)/LICENSE.MIT' --destination $(DIST_DIR)
 
 .PHONY: cp_readme
-cp_readme: clean_dist
+cp_readme: clean_dist generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(REPO_ROOT_DIR) --source '$(REPO_ROOT_DIR)/README.md' --destination $(DIST_DIR)
 
 .PHONY: generate_manifest
