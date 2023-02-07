@@ -24,6 +24,7 @@
 - [option-t/Maybe/orElse](../packages/option-t/src/Maybe/orElse.ts)
 - [option-t/Maybe/orElseAsync](../packages/option-t/src/Maybe/orElseAsync.ts)
 - [option-t/Maybe/toNullable](../packages/option-t/src/Maybe/toNullable.ts)
+- [option-t/Maybe/toPlainResult](../packages/option-t/src/Maybe/toPlainResult.ts)
 - [option-t/Maybe/toUndefinable](../packages/option-t/src/Maybe/toUndefinable.ts)
 - [option-t/Maybe/unwrap](../packages/option-t/src/Maybe/unwrap.ts)
 - [option-t/Maybe/unwrapOr](../packages/option-t/src/Maybe/unwrapOr.ts)

@@ -137,6 +137,10 @@
             "types": "./cjs/Maybe/toNullable.d.cts",
             "default": "./cjs/Maybe/toNullable.cjs"
         },
+        "./cjs/Maybe/toPlainResult": {
+            "types": "./cjs/Maybe/toPlainResult.d.cts",
+            "default": "./cjs/Maybe/toPlainResult.cjs"
+        },
         "./cjs/Maybe/toUndefinable": {
             "types": "./cjs/Maybe/toUndefinable.d.cts",
             "default": "./cjs/Maybe/toUndefinable.cjs"
@@ -720,6 +724,10 @@
         "./esm/Maybe/toNullable": {
             "types": "./esm/Maybe/toNullable.d.ts",
             "default": "./esm/Maybe/toNullable.js"
+        },
+        "./esm/Maybe/toPlainResult": {
+            "types": "./esm/Maybe/toPlainResult.d.ts",
+            "default": "./esm/Maybe/toPlainResult.js"
         },
         "./esm/Maybe/toUndefinable": {
             "types": "./esm/Maybe/toUndefinable.d.ts",
@@ -1451,6 +1459,17 @@
                 "default": "./cjs/Maybe/toNullable.cjs"
             },
             "default": "./esm/Maybe/toNullable.js"
+        },
+        "./lib/Maybe/toPlainResult": {
+            "import": {
+                "types": "./esm/Maybe/toPlainResult.d.ts",
+                "default": "./esm/Maybe/toPlainResult.js"
+            },
+            "require": {
+                "types": "./cjs/Maybe/toPlainResult.d.cts",
+                "default": "./cjs/Maybe/toPlainResult.cjs"
+            },
+            "default": "./esm/Maybe/toPlainResult.js"
         },
         "./lib/Maybe/toUndefinable": {
             "import": {
@@ -3024,6 +3043,17 @@
                 "default": "./cjs/Maybe/toNullable.cjs"
             },
             "default": "./esm/Maybe/toNullable.js"
+        },
+        "./Maybe/toPlainResult": {
+            "import": {
+                "types": "./esm/Maybe/toPlainResult.d.ts",
+                "default": "./esm/Maybe/toPlainResult.js"
+            },
+            "require": {
+                "types": "./cjs/Maybe/toPlainResult.d.cts",
+                "default": "./cjs/Maybe/toPlainResult.cjs"
+            },
+            "default": "./esm/Maybe/toPlainResult.js"
         },
         "./Maybe/toUndefinable": {
             "import": {
