@@ -1,8 +1,7 @@
 {
-    "extends": "./tsconfig.base.json",
+    "extends": "../../tsconfig.json",
     "compilerOptions": {
         "diagnostics": true,
-        "module": "es2015",
         "noEmit": false,
         "outDir": "./__tmp_base"
     },

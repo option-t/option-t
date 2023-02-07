@@ -72,6 +72,10 @@ eslint:
 eslint_fix: ## Apply ESLint's `--fix` mode
 	$(NPM_BIN)/eslint --ext $(ESLINT_APPLIED_EXTENSIONS) --fix $(CURDIR)/
 
+.PHONY: typecheck
+typecheck: ## Check static types.
+	$(MAKE) $@ -C $(MAIN_PKG)
+
 
 ###########################
 # Test
