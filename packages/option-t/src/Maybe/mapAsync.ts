@@ -2,12 +2,16 @@ import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
 import type { AsyncTransformFn } from '../internal/Function.js';
 
-import { type Maybe, isNullOrUndefined, type NotNullAndUndefined } from './Maybe.js';
-import { expectNotNullAndUndefined } from './expect.js';
+import {
+    type Maybe,
+    isNullOrUndefined,
+    type NotNullOrUndefined,
+    expectNotNullOrUndefined,
+} from './Maybe.js';
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage.js';
 
 function check<T>(value: Maybe<T>): T {
-    const passed = expectNotNullAndUndefined(
+    const passed = expectNotNullOrUndefined(
         value,
         ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE
     );
@@ -24,7 +28,7 @@ function check<T>(value: Maybe<T>): T {
  */
 export function mapAsyncForMaybe<T, U>(
     input: Maybe<T>,
-    transformer: AsyncTransformFn<T, NotNullAndUndefined<U>>
+    transformer: AsyncTransformFn<T, NotNullOrUndefined<U>>
 ): Promise<Maybe<U>> {
     if (isNullOrUndefined(input)) {
         return Promise.resolve(input);

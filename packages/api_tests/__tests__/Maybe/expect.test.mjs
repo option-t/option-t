@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { expectNotNullAndUndefined } from 'option-t/esm/Maybe/expect';
+import { expectNotNullOrUndefined } from 'option-t/Maybe';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
@@ -8,7 +8,7 @@ for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
         const EXPECTED_MSG = 'expected test';
         let result;
         t.notThrows(() => {
-            result = expectNotNullAndUndefined(INPUT, EXPECTED_MSG);
+            result = expectNotNullOrUndefined(INPUT, EXPECTED_MSG);
         });
         t.is(result, EXPECTED);
     });
@@ -21,7 +21,7 @@ for (const NULL_VALUE of [undefined, null]) {
         const EXPECTED_MSG = 'expected test';
         t.throws(
             () => {
-                expectNotNullAndUndefined(NULL_VALUE, EXPECTED_MSG);
+                expectNotNullOrUndefined(NULL_VALUE, EXPECTED_MSG);
             },
             {
                 instanceOf: TypeError,

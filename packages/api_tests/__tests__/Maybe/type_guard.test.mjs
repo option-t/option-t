@@ -22,7 +22,7 @@ import * as Maybe from 'option-t/esm/Maybe/Maybe';
         test(`isSomeActual() \`${String(input)} (typeof ${typeof input})\` should be \`${String(
             expected
         )}\``, (t) => {
-            t.is(Maybe.isNotNullAndUndefined(input), expected);
+            t.is(Maybe.isNotNullOrUndefined(input), expected);
         });
     });
 }

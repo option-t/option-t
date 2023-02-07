@@ -9,8 +9,12 @@ import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
 } from './ErrorMessage.js';
-import { type Maybe, isNotNullAndUndefined, type NotNullAndUndefined } from './Maybe.js';
-import { expectNotNullAndUndefined } from './expect.js';
+import {
+    type Maybe,
+    isNotNullOrUndefined,
+    type NotNullOrUndefined,
+    expectNotNullOrUndefined,
+} from './Maybe.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null` and `undefined`.
@@ -25,14 +29,14 @@ import { expectNotNullAndUndefined } from './expect.js';
  */
 export function mapOrElseAsyncForMaybe<T, U>(
     input: Maybe<T>,
-    recoverer: AsyncRecoveryFn<NotNullAndUndefined<U>>,
-    transformer: AsyncTransformFn<T, NotNullAndUndefined<U>>
-): Promise<NotNullAndUndefined<U>> {
+    recoverer: AsyncRecoveryFn<NotNullOrUndefined<U>>,
+    transformer: AsyncTransformFn<T, NotNullOrUndefined<U>>
+): Promise<NotNullOrUndefined<U>> {
     let result: Promise<U>;
     let messageForPromiseCheck = '';
     let messageForExpect = '';
 
-    if (isNotNullAndUndefined(input)) {
+    if (isNotNullOrUndefined(input)) {
         result = transformer(input);
         messageForPromiseCheck = ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE;
         messageForExpect = ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE;
@@ -48,7 +52,7 @@ export function mapOrElseAsyncForMaybe<T, U>(
     assertIsPromise(result, messageForPromiseCheck);
 
     const passed = result.then((result) => {
-        const unwrappedResult = expectNotNullAndUndefined(result, messageForExpect);
+        const unwrappedResult = expectNotNullOrUndefined(result, messageForExpect);
         return unwrappedResult;
     });
     return passed;

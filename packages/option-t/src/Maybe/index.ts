@@ -1,9 +1,9 @@
 export {
-    type NotNullAndUndefined,
+    type NotNullOrUndefined,
     type Maybe,
-    isNotNullAndUndefined,
+    isNotNullOrUndefined,
     isNullOrUndefined,
-    expectNotNullAndUndefined,
+    expectNotNullOrUndefined,
     unwrapMaybe,
 } from './Maybe.js';
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
@@ -25,14 +25,39 @@ export { unwrapOrFromMaybe as unwrapOr } from './unwrapOr.js';
 export { unwrapOrElseFromMaybe as unwrapOrElse } from './unwrapOrElse.js';
 export { unwrapOrElseAsyncFromMaybe as unwrapOrElseAsync } from './unwrapOrElseAsync.js';
 
-import { expectNotNullAndUndefined, unwrapMaybe } from './Maybe.js';
+import {
+    expectNotNullOrUndefined,
+    unwrapMaybe,
+    isNotNullOrUndefined,
+    type NotNullOrUndefined,
+} from './Maybe.js';
+
+/**
+ *  @deprecated
+ *  Use {@link NotNullOrUndefined} instead.
+ */
+export type NotNullAndUndefined<T> = NotNullOrUndefined<T>;
 
 /**
  *  @deprecated
  *  This is an alias for backward compatibility.
- *  Please use {@link expectNotNullAndUndefined} instead.
+ *  Use {@link isNotNullOrUndefined} instead.
  */
-export const expect: typeof expectNotNullAndUndefined = expectNotNullAndUndefined;
+export const isNotNullAndUndefined: typeof isNotNullOrUndefined = isNotNullOrUndefined;
+
+/**
+ *  @deprecated
+ *  This is an alias for backward compatibility.
+ *  Please use {@link expectNotNullOrUndefined} instead.
+ */
+export const expectNotNullAndUndefined: typeof expectNotNullOrUndefined = expectNotNullOrUndefined;
+
+/**
+ *  @deprecated
+ *  This is an alias for backward compatibility.
+ *  Please use {@link expectNotNullOrUndefined} instead.
+ */
+export const expect: typeof expectNotNullOrUndefined = expectNotNullOrUndefined;
 
 /**
  *  @deprecated

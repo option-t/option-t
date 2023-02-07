@@ -1,5 +1,5 @@
 import type { EffectFn } from '../internal/Function.js';
-import { isNotNullAndUndefined, type Maybe, type NotNullAndUndefined } from './Maybe.js';
+import { isNotNullOrUndefined, type Maybe, type NotNullOrUndefined } from './Maybe.js';
 
 /**
  *  * Return _input_ directly.
@@ -11,9 +11,9 @@ import { isNotNullAndUndefined, type Maybe, type NotNullAndUndefined } from './M
  */
 export function inspectMaybe<T>(
     input: Maybe<T>,
-    effector: EffectFn<NotNullAndUndefined<T>>
+    effector: EffectFn<NotNullOrUndefined<T>>
 ): Maybe<T> {
-    if (isNotNullAndUndefined(input)) {
+    if (isNotNullOrUndefined(input)) {
         effector(input);
     }
 
