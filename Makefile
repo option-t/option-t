@@ -84,6 +84,10 @@ test_unittest: build ## Build and run unit tests
 run_test_unittest: ## Run unit tests only.
 	$(MAKE) test -C $(API_TEST_PKG)
 
+.PHONY: run_test_unittest_with_update_snapshots
+run_test_unittest_with_update_snapshots: ## Run uni tests only with updating snapshots.
+	$(MAKE) test_with_update_snapshots -C $(API_TEST_PKG)
+
 .PHONY: test_distribution_contain_all
 test_distribution_contain_all:
 	$(MAKE) $@ -C $(MAIN_PKG)
