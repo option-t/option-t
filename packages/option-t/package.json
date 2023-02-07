@@ -233,6 +233,10 @@
             "types": "./cjs/Nullable/orElseAsync.d.cts",
             "default": "./cjs/Nullable/orElseAsync.cjs"
         },
+        "./cjs/Nullable/toPlainResult": {
+            "types": "./cjs/Nullable/toPlainResult.d.cts",
+            "default": "./cjs/Nullable/toPlainResult.cjs"
+        },
         "./cjs/Nullable/toUndefinable": {
             "types": "./cjs/Nullable/toUndefinable.d.cts",
             "default": "./cjs/Nullable/toUndefinable.cjs"
@@ -812,6 +816,10 @@
         "./esm/Nullable/orElseAsync": {
             "types": "./esm/Nullable/orElseAsync.d.ts",
             "default": "./esm/Nullable/orElseAsync.js"
+        },
+        "./esm/Nullable/toPlainResult": {
+            "types": "./esm/Nullable/toPlainResult.d.ts",
+            "default": "./esm/Nullable/toPlainResult.js"
         },
         "./esm/Nullable/toUndefinable": {
             "types": "./esm/Nullable/toUndefinable.d.ts",
@@ -1707,6 +1715,17 @@
                 "default": "./cjs/Nullable/orElseAsync.cjs"
             },
             "default": "./esm/Nullable/orElseAsync.js"
+        },
+        "./lib/Nullable/toPlainResult": {
+            "import": {
+                "types": "./esm/Nullable/toPlainResult.d.ts",
+                "default": "./esm/Nullable/toPlainResult.js"
+            },
+            "require": {
+                "types": "./cjs/Nullable/toPlainResult.d.cts",
+                "default": "./cjs/Nullable/toPlainResult.cjs"
+            },
+            "default": "./esm/Nullable/toPlainResult.js"
         },
         "./lib/Nullable/toUndefinable": {
             "import": {
@@ -3247,6 +3266,17 @@
                 "default": "./cjs/Nullable/orElseAsync.cjs"
             },
             "default": "./esm/Nullable/orElseAsync.js"
+        },
+        "./Nullable/toPlainResult": {
+            "import": {
+                "types": "./esm/Nullable/toPlainResult.d.ts",
+                "default": "./esm/Nullable/toPlainResult.js"
+            },
+            "require": {
+                "types": "./cjs/Nullable/toPlainResult.d.cts",
+                "default": "./cjs/Nullable/toPlainResult.cjs"
+            },
+            "default": "./esm/Nullable/toPlainResult.js"
         },
         "./Nullable/toUndefinable": {
             "import": {
