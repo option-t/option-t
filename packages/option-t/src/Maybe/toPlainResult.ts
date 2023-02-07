@@ -1,12 +1,12 @@
 import { type Result, type Ok, type Err, createOk, createErr } from '../PlainResult/Result.js';
-import { isNull, type Nullable } from './Nullable.js';
+import { type Maybe, isNullOrUndefined } from './Maybe.js';
 
 /**
- *  Return `Err<void>` if _input_ is `null`.
+ *  Return `Err<void>` if _input_ is `null` or `undefined`.
  *  Otherwise, return `Ok<T>` directly.
  */
-export function toResultOkFromNullable<T>(input: Nullable<T>): Result<T, void> {
-    if (isNull(input)) {
+export function toResultOkFromMaybe<T>(input: Maybe<T>): Result<T, void> {
+    if (isNullOrUndefined(input)) {
         return createErr(undefined);
     }
 
@@ -15,11 +15,11 @@ export function toResultOkFromNullable<T>(input: Nullable<T>): Result<T, void> {
 }
 
 /**
- *  Return `Ok<void>` if _input_ is `null`.
+ *  Return `Ok<void>` if _input_ is `null` or `undefined`.
  *  Otherwise, return `Err<E>` directly.
  */
-export function toResultErrFromNullable<E>(input: Nullable<E>): Result<void, E> {
-    if (isNull(input)) {
+export function toResultErrFromMaybe<E>(input: Maybe<E>): Result<void, E> {
+    if (isNullOrUndefined(input)) {
         return createOk(undefined);
     }
 
