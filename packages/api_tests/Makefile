@@ -13,3 +13,7 @@ help:
 .PHONY: test
 test:
 	$(NPM_CMD) run test
+
+.PHONY: test_with_update_snapshots
+test_with_update_snapshots:
+	$(NPM_CMD) run test:update-snapshots
