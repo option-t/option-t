@@ -617,6 +617,10 @@
             "types": "./cjs/Undefinable/toNullable.d.cts",
             "default": "./cjs/Undefinable/toNullable.cjs"
         },
+        "./cjs/Undefinable/toPlainResult": {
+            "types": "./cjs/Undefinable/toPlainResult.d.cts",
+            "default": "./cjs/Undefinable/toPlainResult.cjs"
+        },
         "./cjs/Undefinable/unwrap": {
             "types": "./cjs/Undefinable/unwrap.d.cts",
             "default": "./cjs/Undefinable/unwrap.cjs"
@@ -1204,6 +1208,10 @@
         "./esm/Undefinable/toNullable": {
             "types": "./esm/Undefinable/toNullable.d.ts",
             "default": "./esm/Undefinable/toNullable.js"
+        },
+        "./esm/Undefinable/toPlainResult": {
+            "types": "./esm/Undefinable/toPlainResult.d.ts",
+            "default": "./esm/Undefinable/toPlainResult.js"
         },
         "./esm/Undefinable/unwrap": {
             "types": "./esm/Undefinable/unwrap.d.ts",
@@ -2780,6 +2788,17 @@
             },
             "default": "./esm/Undefinable/toNullable.js"
         },
+        "./lib/Undefinable/toPlainResult": {
+            "import": {
+                "types": "./esm/Undefinable/toPlainResult.d.ts",
+                "default": "./esm/Undefinable/toPlainResult.js"
+            },
+            "require": {
+                "types": "./cjs/Undefinable/toPlainResult.d.cts",
+                "default": "./cjs/Undefinable/toPlainResult.cjs"
+            },
+            "default": "./esm/Undefinable/toPlainResult.js"
+        },
         "./lib/Undefinable/unwrap": {
             "import": {
                 "types": "./esm/Undefinable/unwrap.d.ts",
@@ -4264,6 +4283,17 @@
                 "default": "./cjs/Undefinable/toNullable.cjs"
             },
             "default": "./esm/Undefinable/toNullable.js"
+        },
+        "./Undefinable/toPlainResult": {
+            "import": {
+                "types": "./esm/Undefinable/toPlainResult.d.ts",
+                "default": "./esm/Undefinable/toPlainResult.js"
+            },
+            "require": {
+                "types": "./cjs/Undefinable/toPlainResult.d.cts",
+                "default": "./cjs/Undefinable/toPlainResult.cjs"
+            },
+            "default": "./esm/Undefinable/toPlainResult.js"
         },
         "./Undefinable/Undefinable": {
             "import": {

@@ -151,6 +151,7 @@
 - [option-t/Undefinable/orElse](../packages/option-t/src/Undefinable/orElse.ts)
 - [option-t/Undefinable/orElseAsync](../packages/option-t/src/Undefinable/orElseAsync.ts)
 - [option-t/Undefinable/toNullable](../packages/option-t/src/Undefinable/toNullable.ts)
+- [option-t/Undefinable/toPlainResult](../packages/option-t/src/Undefinable/toPlainResult.ts)
 - [option-t/Undefinable/Undefinable](../packages/option-t/src/Undefinable/Undefinable.ts)
 - [option-t/Undefinable/unwrap](../packages/option-t/src/Undefinable/unwrap.ts)
 - [option-t/Undefinable/unwrapOr](../packages/option-t/src/Undefinable/unwrapOr.ts)
