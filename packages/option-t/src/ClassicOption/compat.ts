@@ -1,4 +1,4 @@
-import { type Maybe, type NotNullAndUndefined, isNotNullAndUndefined } from '../Maybe/Maybe.js';
+import { type Maybe, type NotNullOrUndefined, isNotNullOrUndefined } from '../Maybe/Maybe.js';
 import { type Nullable, type NotNull, isNotNull, expectNotNull } from '../Nullable/Nullable.js';
 import {
     createSome,
@@ -115,11 +115,11 @@ export function compatToClassicOptionFromUndefinable<T>(input: Undefinable<T>): 
  *  Otherwise, return `ClassicSome(T)` with _input_ `T`.
  */
 export function compatToClassicOptionFromMaybe<T>(input: Maybe<T>): ClassicOption<T> {
-    if (isNotNullAndUndefined(input)) {
-        const result = createClassicSome<NotNullAndUndefined<T>>(input);
+    if (isNotNullOrUndefined(input)) {
+        const result = createClassicSome<NotNullOrUndefined<T>>(input);
         return result;
     }
 
-    const result = createClassicNone<NotNullAndUndefined<T>>();
+    const result = createClassicNone<NotNullOrUndefined<T>>();
     return result;
 }

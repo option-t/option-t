@@ -1,4 +1,4 @@
-import { type Maybe, isNotNullAndUndefined, isNullOrUndefined } from './Maybe.js';
+import { type Maybe, isNotNullOrUndefined, isNullOrUndefined } from './Maybe.js';
 
 /**
  *  Return _b_ if _a_ is not `null` and `undefined`.
@@ -9,7 +9,7 @@ export function andForMaybe<T, U>(a: Maybe<T>, b: Maybe<U>): Maybe<U> {
         return a;
     }
 
-    if (isNotNullAndUndefined(a)) {
+    if (isNotNullOrUndefined(a)) {
         return b;
     }
 

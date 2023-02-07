@@ -1,6 +1,10 @@
 import type { RecoveryFn } from '../internal/Function.js';
-import { isNotNullAndUndefined, type Maybe, type NotNullAndUndefined } from './Maybe.js';
-import { expectNotNullAndUndefined } from './expect.js';
+import {
+    isNotNullOrUndefined,
+    type Maybe,
+    type NotNullOrUndefined,
+    expectNotNullOrUndefined,
+} from './Maybe.js';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage.js';
 
 /**
@@ -12,14 +16,14 @@ import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessa
  */
 export function unwrapOrElseFromMaybe<T>(
     input: Maybe<T>,
-    recoverer: RecoveryFn<NotNullAndUndefined<T>>
-): NotNullAndUndefined<T> {
-    if (isNotNullAndUndefined(input)) {
+    recoverer: RecoveryFn<NotNullOrUndefined<T>>
+): NotNullOrUndefined<T> {
+    if (isNotNullOrUndefined(input)) {
         return input;
     }
 
     const fallback: T = recoverer();
-    const passed = expectNotNullAndUndefined(
+    const passed = expectNotNullOrUndefined(
         fallback,
         ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE
     );

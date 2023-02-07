@@ -1,4 +1,4 @@
-import { type Maybe, isNotNullAndUndefined } from './Maybe.js';
+import { type Maybe, isNotNullOrUndefined } from './Maybe.js';
 
 /**
  *  Return one of this pattern:
@@ -8,8 +8,8 @@ import { type Maybe, isNotNullAndUndefined } from './Maybe.js';
  *  3. Others => `undefined`
  */
 export function xorForMaybe<T>(a: Maybe<T>, b: Maybe<T>): Maybe<T> {
-    const aIsSome = isNotNullAndUndefined(a);
-    const bIsSome = isNotNullAndUndefined(b);
+    const aIsSome = isNotNullOrUndefined(a);
+    const bIsSome = isNotNullOrUndefined(b);
 
     if (aIsSome && !bIsSome) {
         return a;

@@ -6,11 +6,15 @@ import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE,
 } from './ErrorMessage.js';
-import { expectNotNullAndUndefined } from './expect.js';
-import { type Maybe, isNullOrUndefined, type NotNullAndUndefined } from './Maybe.js';
+import {
+    type Maybe,
+    isNullOrUndefined,
+    type NotNullOrUndefined,
+    expectNotNullOrUndefined,
+} from './Maybe.js';
 
 function check<T>(value: Maybe<T>): T {
-    const passed = expectNotNullAndUndefined(
+    const passed = expectNotNullOrUndefined(
         value,
         ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE
     );
@@ -30,11 +34,11 @@ function check<T>(value: Maybe<T>): T {
  */
 export function mapOrAsyncForMaybe<T, U>(
     input: Maybe<T>,
-    defaultValue: NotNullAndUndefined<U>,
-    transformer: AsyncTransformFn<T, NotNullAndUndefined<U>>
-): Promise<NotNullAndUndefined<U>> {
+    defaultValue: NotNullOrUndefined<U>,
+    transformer: AsyncTransformFn<T, NotNullOrUndefined<U>>
+): Promise<NotNullOrUndefined<U>> {
     if (isNullOrUndefined(input)) {
-        const nonNullDefault = expectNotNullAndUndefined(
+        const nonNullDefault = expectNotNullOrUndefined(
             defaultValue,
             ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE
         );

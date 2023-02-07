@@ -1,7 +1,11 @@
-import { expectNotNullAndUndefined } from './expect.js';
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage.js';
 import type { TransformFn } from '../internal/Function.js';
-import { type Maybe, isNullOrUndefined, type NotNullAndUndefined } from './Maybe.js';
+import {
+    type Maybe,
+    isNullOrUndefined,
+    type NotNullOrUndefined,
+    expectNotNullOrUndefined,
+} from './Maybe.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null` and `undefined`.
@@ -13,7 +17,7 @@ import { type Maybe, isNullOrUndefined, type NotNullAndUndefined } from './Maybe
  */
 export function mapForMaybe<T, U>(
     input: Maybe<T>,
-    transformer: TransformFn<T, NotNullAndUndefined<U>>
+    transformer: TransformFn<T, NotNullOrUndefined<U>>
 ): Maybe<U> {
     if (isNullOrUndefined(input)) {
         return input;
@@ -25,7 +29,7 @@ export function mapForMaybe<T, U>(
     // the nested type `Maybe<Maybe<SomeType>>`. But this type means `(SomeType | null | undefined) | null | undefined`.
     // So a type checker would recognize this type as `SomeType | null | undefined`. So it's flattened.
     // Then the user should call `andThen` (_flatmap_) operation instead of this.
-    const passed = expectNotNullAndUndefined(
+    const passed = expectNotNullOrUndefined(
         result,
         ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE
     );

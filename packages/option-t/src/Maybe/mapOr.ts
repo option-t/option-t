@@ -1,5 +1,4 @@
-import type { Maybe, NotNullAndUndefined } from './Maybe.js';
-import { expectNotNullAndUndefined } from './expect.js';
+import { type Maybe, type NotNullOrUndefined, expectNotNullOrUndefined } from './Maybe.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE,
@@ -19,9 +18,9 @@ import type { TransformFn } from '../internal/Function.js';
  */
 export function mapOrForMaybe<T, U>(
     input: Maybe<T>,
-    defaultValue: NotNullAndUndefined<U>,
-    transformer: TransformFn<T, NotNullAndUndefined<U>>
-): NotNullAndUndefined<U> {
+    defaultValue: NotNullOrUndefined<U>,
+    transformer: TransformFn<T, NotNullOrUndefined<U>>
+): NotNullOrUndefined<U> {
     let result: U;
     let msg = '';
     if (input !== undefined && input !== null) {
@@ -31,6 +30,6 @@ export function mapOrForMaybe<T, U>(
         result = defaultValue;
         msg = ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE;
     }
-    const passed = expectNotNullAndUndefined(result, msg);
+    const passed = expectNotNullOrUndefined(result, msg);
     return passed;
 }

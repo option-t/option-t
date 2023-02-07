@@ -1,10 +1,9 @@
-import { expectNotNullAndUndefined } from './expect.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
 } from './ErrorMessage.js';
 import type { TransformFn, RecoveryFn } from '../internal/Function.js';
-import type { Maybe, NotNullAndUndefined } from './Maybe.js';
+import { type Maybe, type NotNullOrUndefined, expectNotNullOrUndefined } from './Maybe.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null` and `undefined`.
@@ -19,9 +18,9 @@ import type { Maybe, NotNullAndUndefined } from './Maybe.js';
  */
 export function mapOrElseForMaybe<T, U>(
     input: Maybe<T>,
-    recoverer: RecoveryFn<NotNullAndUndefined<U>>,
-    transformer: TransformFn<T, NotNullAndUndefined<U>>
-): NotNullAndUndefined<U> {
+    recoverer: RecoveryFn<NotNullOrUndefined<U>>,
+    transformer: TransformFn<T, NotNullOrUndefined<U>>
+): NotNullOrUndefined<U> {
     let result: U;
     let msg = '';
     if (input !== undefined && input !== null) {
@@ -31,6 +30,6 @@ export function mapOrElseForMaybe<T, U>(
         result = recoverer();
         msg = ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE;
     }
-    const passed = expectNotNullAndUndefined(result, msg);
+    const passed = expectNotNullOrUndefined(result, msg);
     return passed;
 }

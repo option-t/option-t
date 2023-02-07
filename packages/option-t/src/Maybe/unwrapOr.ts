@@ -1,5 +1,9 @@
-import { isNotNullAndUndefined, type Maybe, type NotNullAndUndefined } from './Maybe.js';
-import { expectNotNullAndUndefined } from './expect.js';
+import {
+    isNotNullOrUndefined,
+    type Maybe,
+    type NotNullOrUndefined,
+    expectNotNullOrUndefined,
+} from './Maybe.js';
 import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './ErrorMessage.js';
 
 /**
@@ -11,13 +15,13 @@ import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './ErrorMessa
  */
 export function unwrapOrFromMaybe<T>(
     input: Maybe<T>,
-    defaultValue: NotNullAndUndefined<T>
-): NotNullAndUndefined<T> {
-    if (isNotNullAndUndefined(input)) {
+    defaultValue: NotNullOrUndefined<T>
+): NotNullOrUndefined<T> {
+    if (isNotNullOrUndefined(input)) {
         return input;
     }
 
-    const passed = expectNotNullAndUndefined(
+    const passed = expectNotNullOrUndefined(
         defaultValue,
         ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE
     );
