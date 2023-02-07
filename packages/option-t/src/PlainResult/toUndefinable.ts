@@ -1,6 +1,7 @@
 import type { Undefinable } from '../Undefinable/Undefinable.js';
+import { unwrapErrOrFromResult } from './internal/unwrapErrOr.js';
 import type { Result } from './Result.js';
-import { unwrapOrFromResult, unwrapErrOrFromResult } from './unwrapOr.js';
+import { unwrapOrFromResult } from './unwrapOr.js';
 
 /**
  *  Unwrap `T` if _input_ is `Ok(T)`.
