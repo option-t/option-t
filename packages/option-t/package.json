@@ -497,6 +497,10 @@
             "types": "./cjs/PlainResult/toOption.d.cts",
             "default": "./cjs/PlainResult/toOption.cjs"
         },
+        "./cjs/PlainResult/toUndefinable": {
+            "types": "./cjs/PlainResult/toUndefinable.d.cts",
+            "default": "./cjs/PlainResult/toUndefinable.cjs"
+        },
         "./cjs/PlainResult/tryCatch": {
             "types": "./cjs/PlainResult/tryCatch.d.cts",
             "default": "./cjs/PlainResult/tryCatch.cjs"
@@ -1072,6 +1076,10 @@
         "./esm/PlainResult/toOption": {
             "types": "./esm/PlainResult/toOption.d.ts",
             "default": "./esm/PlainResult/toOption.js"
+        },
+        "./esm/PlainResult/toUndefinable": {
+            "types": "./esm/PlainResult/toUndefinable.d.ts",
+            "default": "./esm/PlainResult/toUndefinable.js"
         },
         "./esm/PlainResult/tryCatch": {
             "types": "./esm/PlainResult/tryCatch.d.ts",
@@ -2425,6 +2433,17 @@
                 "default": "./cjs/PlainResult/toOption.cjs"
             },
             "default": "./esm/PlainResult/toOption.js"
+        },
+        "./lib/PlainResult/toUndefinable": {
+            "import": {
+                "types": "./esm/PlainResult/toUndefinable.d.ts",
+                "default": "./esm/PlainResult/toUndefinable.js"
+            },
+            "require": {
+                "types": "./cjs/PlainResult/toUndefinable.d.cts",
+                "default": "./cjs/PlainResult/toUndefinable.cjs"
+            },
+            "default": "./esm/PlainResult/toUndefinable.js"
         },
         "./lib/PlainResult/tryCatch": {
             "import": {
@@ -3910,6 +3929,17 @@
                 "default": "./cjs/PlainResult/toOption.cjs"
             },
             "default": "./esm/PlainResult/toOption.js"
+        },
+        "./PlainResult/toUndefinable": {
+            "import": {
+                "types": "./esm/PlainResult/toUndefinable.d.ts",
+                "default": "./esm/PlainResult/toUndefinable.js"
+            },
+            "require": {
+                "types": "./cjs/PlainResult/toUndefinable.d.cts",
+                "default": "./cjs/PlainResult/toUndefinable.cjs"
+            },
+            "default": "./esm/PlainResult/toUndefinable.js"
         },
         "./PlainResult/tryCatch": {
             "import": {
