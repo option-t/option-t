@@ -1,5 +1,5 @@
-import { TransformFn } from '../internal/Function.js';
-import { Option, createSome } from './Option.js';
+import type { TransformFn } from '../internal/Function.js';
+import { type Option, createSome } from './Option.js';
 
 /**
  *  Maps a `Option<T>` to `Option<U>` by applying a _transformer_ function

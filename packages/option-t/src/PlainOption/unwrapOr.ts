@@ -1,4 +1,4 @@
-import { Option } from './Option.js';
+import type { Option } from './Option.js';
 
 /**
  *  Unwraps a result _input_, returns the content of an `Some(T)`.

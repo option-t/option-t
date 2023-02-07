@@ -1,5 +1,5 @@
-import { TransformFn, RecoveryFn } from '../internal/Function.js';
-import { Option } from './Option.js';
+import type { TransformFn, RecoveryFn } from '../internal/Function.js';
+import type { Option } from './Option.js';
 
 /**
  *  Maps a `Option<T>` to `U` by applying _transformer_ to a contained `Some(T)` value in _input_,

@@ -3,8 +3,8 @@ import {
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
 } from './ErrorMessage.js';
 import { expectNotUndefined } from './expect.js';
-import { RecoveryFn, TransformFn } from '../internal/Function.js';
-import { NotUndefined, Undefinable } from './Undefinable.js';
+import type { RecoveryFn, TransformFn } from '../internal/Function.js';
+import type { NotUndefined, Undefinable } from './Undefinable.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `undefined`.

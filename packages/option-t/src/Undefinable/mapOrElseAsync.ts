@@ -1,5 +1,5 @@
 import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/Function.js';
-import { Undefinable, isNotUndefined, NotUndefined } from './Undefinable.js';
+import { type Undefinable, isNotUndefined, type NotUndefined } from './Undefinable.js';
 import { assertIsPromise } from '../internal/assert.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,

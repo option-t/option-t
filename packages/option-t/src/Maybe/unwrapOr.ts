@@ -1,4 +1,4 @@
-import { isNotNullAndUndefined, Maybe, NotNullAndUndefined } from './Maybe.js';
+import { isNotNullAndUndefined, type Maybe, type NotNullAndUndefined } from './Maybe.js';
 import { expectNotNullAndUndefined } from './expect.js';
 import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './ErrorMessage.js';
 

@@ -1,7 +1,7 @@
 import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
 import type { AsyncTransformFn } from '../internal/Function.js';
-import { Nullable, isNull } from './Nullable.js';
+import { type Nullable, isNull } from './Nullable.js';
 
 export type NullableAsyncTryTransformFn<T, U> = AsyncTransformFn<T, Nullable<U>>;
 

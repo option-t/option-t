@@ -2,7 +2,7 @@ import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
 import type { AsyncRecoveryFn } from '../internal/Function.js';
 
-import { Maybe, isNotNullAndUndefined, NotNullAndUndefined } from './Maybe.js';
+import { type Maybe, isNotNullAndUndefined, type NotNullAndUndefined } from './Maybe.js';
 import { expectNotNullAndUndefined } from './expect.js';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage.js';
 

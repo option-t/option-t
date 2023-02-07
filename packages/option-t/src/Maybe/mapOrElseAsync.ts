@@ -9,7 +9,7 @@ import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
 } from './ErrorMessage.js';
-import { Maybe, isNotNullAndUndefined, NotNullAndUndefined } from './Maybe.js';
+import { type Maybe, isNotNullAndUndefined, type NotNullAndUndefined } from './Maybe.js';
 import { expectNotNullAndUndefined } from './expect.js';
 
 /**

@@ -1,5 +1,5 @@
-import { RecoveryFn } from '../internal/Function.js';
-import { isNotUndefined, NotUndefined, Undefinable } from './Undefinable.js';
+import type { RecoveryFn } from '../internal/Function.js';
+import { isNotUndefined, type NotUndefined, type Undefinable } from './Undefinable.js';
 import { expectNotUndefined } from './expect.js';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage.js';
 

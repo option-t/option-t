@@ -1,5 +1,5 @@
-import { RecoveryFromErrorFn } from '../internal/Function.js';
-import { Result } from './Result.js';
+import type { RecoveryFromErrorFn } from '../internal/Function.js';
+import type { Result } from './Result.js';
 
 /**
  *  Unwraps a result _input_, returns the content of an `Ok(T)`.
