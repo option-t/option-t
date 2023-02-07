@@ -84,23 +84,6 @@ function unwrapOrNull<T>(option: Option<T>): T | null {
 ```
 
 
-## Cast from `T`, `undefined`, or `null`
-
-```typescript
-import { Option } from 'option-t/esm/Option';
-
-function fromNullable<T>(v: T | null | undefined): Option<T> {
-    return (v === undefined || v === null) ? new None<T>() : new Some<T>(v);
-}
-```
-
-The early version of this project had such APIs. But we obsolete it ([#17](https://github.com/karen-irc/option-t/issues/17)).
-In JavaScript world, there are some style to represent "null". There is no defacto standard style.
-So we decided that we should provide an explicit operation for interoperability with others.
-
-Please define for your usecases.
-
-
 ## Cast to `Promise`
 
 ```typescript

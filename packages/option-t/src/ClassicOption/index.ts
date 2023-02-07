@@ -9,4 +9,12 @@ export {
     ClassicNoneConstructor,
 } from './ClassicOption.js';
 
-export { compatToClassicOption, compatToPlainOption } from './compat.js';
+export {
+    compatToClassicOption,
+    compatToPlainOption,
+    compatToClassicOptionFromNullable,
+    compatToNullableFromClassicOption,
+    compatToClassicOptionFromUndefinable,
+    compatToUndefinableFromClassicOption,
+    compatToClassicOptionFromMaybe,
+} from './compat.js';

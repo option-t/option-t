@@ -16,4 +16,9 @@ export {
     ClassicNoneConstructor as None,
     compatToClassicOption,
     compatToPlainOption,
+    compatToClassicOptionFromNullable,
+    compatToNullableFromClassicOption,
+    compatToClassicOptionFromUndefinable,
+    compatToUndefinableFromClassicOption,
+    compatToClassicOptionFromMaybe,
 } from './ClassicOption/index.js';
