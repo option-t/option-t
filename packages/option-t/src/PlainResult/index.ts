@@ -59,12 +59,15 @@ export { orForResult as or } from './or.js';
 export { orElseForResult as orElse } from './orElse.js';
 export { orElseAsyncForResult as orElseAsync } from './orElseAsync.js';
 export { transposeForResult as transpose } from './transpose.js';
-export { toOptionFromOk, toOptionFromErr } from './toOption.js';
 export { unwrapOrFromResult as unwrapOr } from './unwrapOr.js';
 export { unwrapOrElseFromResult as unwrapOrElse } from './unwrapOrElse.js';
 export { unwrapOrElseAsyncFromResult as unwrapOrElseAsync } from './unwrapOrElseAsync.js';
 
 import { expectOk, expectErr, unwrapOk } from './Result.js';
+import {
+    toOptionFromOk as toOptionFromOkFn,
+    toOptionFromErr as toOptionFromErrFn,
+} from './toOption.js';
 
 /**
  *  @deprecated
@@ -93,3 +96,19 @@ export const expectIsErr: typeof expectErr = expectErr;
  *  Please use {@link unwrapOk} instead.
  */
 export const unwrap: typeof unwrapOk = unwrapOk;
+
+/**
+ *  @deprecated
+ *  This is an alias for backward compatibility.
+ *  __But this will be removed in the future by deprecating `PlainOption`.__
+ *  Please import from `./PlainResult/toOption` instead.
+ */
+export const toOptionFromOk: typeof toOptionFromOkFn = toOptionFromOkFn;
+
+/**
+ *  @deprecated
+ *  This is an alias for backward compatibility.
+ *  __But this will be removed in the future by deprecating `PlainOption`.__
+ *  Please import from `./PlainResult/toOption` instead.
+ */
+export const toOptionFromErr: typeof toOptionFromErrFn = toOptionFromErrFn;
