@@ -5,7 +5,7 @@ import {
     isErr,
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
-} from 'option-t/esm/PlainResult/Result';
+} from 'option-t/PlainResult/Result';
 import { fromPromiseSettledResultToResult } from 'option-t/PlainResult/fromPromiseSettledResult';
 
 test('should be Ok(T)', async (t) => {

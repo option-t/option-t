@@ -1,5 +1,5 @@
 import test from 'ava';
-import * as Undefinable from 'option-t/esm/Undefinable/index';
+import * as Undefinable from 'option-t/Undefinable';
 
 test('Undefinable::isNotUndefined', (t) => {
     const testcase = [

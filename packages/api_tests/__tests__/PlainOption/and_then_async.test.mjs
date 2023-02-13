@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/esm/PlainOption/Option';
-import { andThenAsyncForOption } from 'option-t/esm/PlainOption/andThenAsync';
+import { createSome, createNone } from 'option-t/PlainOption/Option';
+import { andThenAsyncForOption } from 'option-t/PlainOption/andThenAsync';
 
 const VALUE_T = Math.random();
 const VALUE_U = Math.random();

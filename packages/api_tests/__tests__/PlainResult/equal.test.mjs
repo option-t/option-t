@@ -7,8 +7,8 @@ import {
     isErr,
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
-} from 'option-t/esm/PlainResult/Result';
-import { equalForResult } from 'option-t/esm/PlainResult/equal';
+} from 'option-t/PlainResult/Result';
+import { equalForResult } from 'option-t/PlainResult/equal';
 
 const INNER_VALUE_A = Symbol('A');
 const INNER_VALUE_B = Symbol('B');

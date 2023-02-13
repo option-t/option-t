@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { expectNotUndefined } from 'option-t/esm/Undefinable/expect';
+import { expectNotUndefined } from 'option-t/Undefinable/expect';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;

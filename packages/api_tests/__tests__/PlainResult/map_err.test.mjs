@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createOk, createErr } from 'option-t/esm/PlainResult/Result';
-import { mapErrForResult } from 'option-t/esm/PlainResult/mapErr';
+import { createOk, createErr } from 'option-t/PlainResult/Result';
+import { mapErrForResult } from 'option-t/PlainResult/mapErr';
 
 const VALUE_T = Math.random();
 const ERROR_E = new Error('e');

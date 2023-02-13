@@ -1,10 +1,6 @@
 import test from 'ava';
 
-import {
-    createSome,
-    createNone,
-    unwrapSome as unwrapOption,
-} from 'option-t/esm/PlainOption/Option';
+import { createSome, createNone, unwrapSome as unwrapOption } from 'option-t/PlainOption/Option';
 
 const EXPECTED = Symbol('some_value');
 

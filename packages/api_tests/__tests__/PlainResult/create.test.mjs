@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as PlainResult from 'option-t/esm/PlainResult/index';
+import * as PlainResult from 'option-t/PlainResult';
 
 test('PlainResult::createOk', (t) => {
     const EXPECTED = Symbol('ok');

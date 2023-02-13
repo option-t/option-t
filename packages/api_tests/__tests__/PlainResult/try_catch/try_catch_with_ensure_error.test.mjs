@@ -6,8 +6,8 @@ import {
     isErr,
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
-} from 'option-t/esm/PlainResult/Result';
-import { tryCatchIntoResultWithEnsureError } from 'option-t/esm/PlainResult/tryCatch';
+} from 'option-t/PlainResult/Result';
+import { tryCatchIntoResultWithEnsureError } from 'option-t/PlainResult/tryCatch';
 
 test('output=Ok(T)', (t) => {
     t.plan(3);

@@ -1,10 +1,6 @@
 import test from 'ava';
 
-import {
-    createOk,
-    createErr,
-    expectOk as expectOkForResult,
-} from 'option-t/esm/PlainResult/Result';
+import { createOk, createErr, expectOk as expectOkForResult } from 'option-t/PlainResult/Result';
 
 test('input=Ok(T), expect=Ok(T)', (t) => {
     const EXPECTED = Symbol('expected');

@@ -4,7 +4,7 @@ import {
     createSome,
     createNone,
     expectSome as expectSomeForOption,
-} from 'option-t/esm/PlainOption/Option';
+} from 'option-t/PlainOption/Option';
 
 test('input=Some', (t) => {
     const EXPECTED = Symbol('expected');
