@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { orElseAsyncForUndefinable } from 'option-t/esm/Undefinable/orElseAsync';
+import { orElseAsyncForUndefinable } from 'option-t/Undefinable/orElseAsync';
 import { nonNullableValueCaseListForAsync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;

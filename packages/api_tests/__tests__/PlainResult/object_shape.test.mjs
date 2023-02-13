@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createOk, createErr } from 'option-t/esm/PlainResult/index';
+import { createOk, createErr } from 'option-t/PlainResult';
 
 test('The shape of PlainResult::Ok', (t) => {
     const INNER_VAL = 10;

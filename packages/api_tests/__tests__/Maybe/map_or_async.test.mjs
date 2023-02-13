@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { mapOrAsyncForMaybe } from 'option-t/esm/Maybe/mapOrAsync';
+import { mapOrAsyncForMaybe } from 'option-t/Maybe/mapOrAsync';
 import { nonNullableValueCaseListForAsync } from '../utils.mjs';
 
 for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForAsync) {

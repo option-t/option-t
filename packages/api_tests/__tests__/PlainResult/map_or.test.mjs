@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createOk, createErr } from 'option-t/esm/PlainResult/Result';
+import { createOk, createErr } from 'option-t/PlainResult/Result';
 
-import { mapOrForResult } from 'option-t/esm/PlainResult/mapOr';
+import { mapOrForResult } from 'option-t/PlainResult/mapOr';
 
 test('Ok<T>', (t) => {
     const INITIAL = 1;

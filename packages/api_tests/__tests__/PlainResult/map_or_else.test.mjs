@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createOk, createErr } from 'option-t/esm/PlainResult/Result';
+import { createOk, createErr } from 'option-t/PlainResult/Result';
 
-import { mapOrElseForResult } from 'option-t/esm/PlainResult/mapOrElse';
+import { mapOrElseForResult } from 'option-t/PlainResult/mapOrElse';
 
 const PLAN_COUNT = 2;
 

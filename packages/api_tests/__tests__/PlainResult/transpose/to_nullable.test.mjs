@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createOk, createErr, isOk, isErr } from 'option-t/esm/PlainResult/Result';
-import { transposeNullableForResult } from 'option-t/esm/PlainResult/transpose';
+import { createOk, createErr, isOk, isErr } from 'option-t/PlainResult/Result';
+import { transposeNullableForResult } from 'option-t/PlainResult/transpose';
 
 test('input is Ok<T>, the result should be Ok(T)', (t) => {
     const val = Symbol('val');

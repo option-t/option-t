@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/esm/PlainOption/Option';
-import { mapOrElseForOption } from 'option-t/esm/PlainOption/mapOrElse';
+import { createSome, createNone } from 'option-t/PlainOption/Option';
+import { mapOrElseForOption } from 'option-t/PlainOption/mapOrElse';
 
 test('Some(T)', function (t) {
     t.plan(3);

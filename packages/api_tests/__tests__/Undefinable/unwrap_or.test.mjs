@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { unwrapOrFromUndefinable } from 'option-t/esm/Undefinable/unwrapOr';
+import { unwrapOrFromUndefinable } from 'option-t/Undefinable/unwrapOr';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;

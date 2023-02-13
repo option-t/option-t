@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { mapOrElseForNullable } from 'option-t/esm/Nullable/mapOrElse';
+import { mapOrElseForNullable } from 'option-t/Nullable/mapOrElse';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;

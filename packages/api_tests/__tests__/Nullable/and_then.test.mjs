@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { andThenForNullable } from 'option-t/esm/Nullable/andThen';
+import { andThenForNullable } from 'option-t/Nullable/andThen';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as PlainOption from 'option-t/esm/PlainOption/index';
+import * as PlainOption from 'option-t/PlainOption';
 
 const testcase = [
     [

@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/esm/PlainOption/Option';
-import { toUndefinableFromOption } from 'option-t/esm/PlainOption/toUndefinable';
+import { createSome, createNone } from 'option-t/PlainOption/Option';
+import { toUndefinableFromOption } from 'option-t/PlainOption/toUndefinable';
 
 const VALUE_T = Math.random();
 

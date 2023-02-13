@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { xorForNullable } from 'option-t/esm/Nullable/xor';
+import { xorForNullable } from 'option-t/Nullable/xor';
 
 const SOME_VAL_A = Symbol('some_val_a');
 const SOME_VAL_B = Symbol('some_val_b');

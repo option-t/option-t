@@ -1,11 +1,11 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/esm/PlainOption/Option';
-import { okOrForPlainOption } from 'option-t/esm/PlainOption/okOr';
+import { createSome, createNone } from 'option-t/PlainOption/Option';
+import { okOrForPlainOption } from 'option-t/PlainOption/okOr';
 import {
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
-} from 'option-t/esm/PlainResult/Result';
+} from 'option-t/PlainResult/Result';
 
 test('the input is Some', (t) => {
     const OK_VAL = Symbol('ok');

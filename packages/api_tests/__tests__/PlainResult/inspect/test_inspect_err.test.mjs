@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createErr, createOk } from 'option-t/esm/PlainResult/Result';
-import { inspectErrOfResult } from 'option-t/esm/PlainResult/inspect';
+import { createErr, createOk } from 'option-t/PlainResult/Result';
+import { inspectErrOfResult } from 'option-t/PlainResult/inspect';
 
 test('input is Ok()', (t) => {
     t.plan(1);

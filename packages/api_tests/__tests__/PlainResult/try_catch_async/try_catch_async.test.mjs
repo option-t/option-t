@@ -5,8 +5,8 @@ import {
     isErr,
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
-} from 'option-t/esm/PlainResult/Result';
-import { tryCatchIntoResultAsync } from 'option-t/esm/PlainResult/tryCatchAsync';
+} from 'option-t/PlainResult/Result';
+import { tryCatchIntoResultAsync } from 'option-t/PlainResult/tryCatchAsync';
 
 test('output=Ok(T): producer is async fn', async (t) => {
     t.plan(4);
