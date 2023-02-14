@@ -37,35 +37,47 @@ export {
     expectErr,
 } from './Result.js';
 
-export { andForResult as and } from './and.js';
-export { andThenForResult as andThen } from './andThen.js';
-export { andThenAsyncForResult as andThenAsync } from './andThenAsync.js';
-export { equalForResult as equal } from './equal.js';
-export { flattenForResult as flatten } from './flatten.js';
+export { andForResult, andForResult as and } from './and.js';
+export { andThenForResult, andThenForResult as andThen } from './andThen.js';
+export { andThenAsyncForResult, andThenAsyncForResult as andThenAsync } from './andThenAsync.js';
+export { equalForResult, equalForResult as equal } from './equal.js';
+export { flattenForResult, flattenForResult as flatten } from './flatten.js';
 export {
+    inspectOkOfResult,
+    inspectErrOfResult,
+    inspectBothOfResult,
     inspectOkOfResult as inspectOk,
     inspectErrOfResult as inspectErr,
     inspectBothOfResult as inspectBoth,
 } from './inspect.js';
-export { mapForResult as map } from './map.js';
-export { mapAsyncForResult as mapAsync } from './mapAsync.js';
-export { mapOrForResult as mapOr } from './mapOr.js';
-export { mapOrAsyncForResult as mapOrAsync } from './mapOrAsync.js';
-export { mapOrElseForResult as mapOrElse } from './mapOrElse.js';
-export { mapOrElseAsyncForResult as mapOrElseAsync } from './mapOrElseAsync.js';
-export { mapErrForResult as mapErr } from './mapErr.js';
-export { mapErrAsyncForResult as mapErrAsync } from './mapErrAsync.js';
-export { orForResult as or } from './or.js';
-export { orElseForResult as orElse } from './orElse.js';
-export { orElseAsyncForResult as orElseAsync } from './orElseAsync.js';
+export { mapForResult, mapForResult as map } from './map.js';
+export { mapAsyncForResult, mapAsyncForResult as mapAsync } from './mapAsync.js';
+export { mapOrForResult, mapOrForResult as mapOr } from './mapOr.js';
+export { mapOrAsyncForResult, mapOrAsyncForResult as mapOrAsync } from './mapOrAsync.js';
+export { mapOrElseForResult, mapOrElseForResult as mapOrElse } from './mapOrElse.js';
 export {
+    mapOrElseAsyncForResult,
+    mapOrElseAsyncForResult as mapOrElseAsync,
+} from './mapOrElseAsync.js';
+export { mapErrForResult, mapErrForResult as mapErr } from './mapErr.js';
+export { mapErrAsyncForResult, mapErrAsyncForResult as mapErrAsync } from './mapErrAsync.js';
+export { orForResult, orForResult as or } from './or.js';
+export { orElseForResult, orElseForResult as orElse } from './orElse.js';
+export { orElseAsyncForResult, orElseAsyncForResult as orElseAsync } from './orElseAsync.js';
+export {
+    transposeForResult,
+    transposeNullableForResult,
+    transposeUndefinableForResult,
     transposeForResult as transpose,
     transposeNullableForResult as transposeNullable,
     transposeUndefinableForResult as transposeUndefinable,
 } from './transpose.js';
-export { unwrapOrFromResult as unwrapOr } from './unwrapOr.js';
-export { unwrapOrElseFromResult as unwrapOrElse } from './unwrapOrElse.js';
-export { unwrapOrElseAsyncFromResult as unwrapOrElseAsync } from './unwrapOrElseAsync.js';
+export { unwrapOrFromResult, unwrapOrFromResult as unwrapOr } from './unwrapOr.js';
+export { unwrapOrElseFromResult, unwrapOrElseFromResult as unwrapOrElse } from './unwrapOrElse.js';
+export {
+    unwrapOrElseAsyncFromResult,
+    unwrapOrElseAsyncFromResult as unwrapOrElseAsync,
+} from './unwrapOrElseAsync.js';
 
 import { expectOk, expectErr, unwrapOk } from './Result.js';
 import {

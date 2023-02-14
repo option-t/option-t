@@ -8,22 +8,37 @@ export {
 } from './Undefinable.js';
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
 //export { andForUndefinable as and} from './and.js';
-export { andThenForUndefinable as andThen } from './andThen.js';
-export { andThenAsyncForUndefinable as andThenAsync } from './andThenAsync.js';
-export { inspectUndefinable as inspect } from './inspect.js';
-export { mapForUndefinable as map } from './map.js';
-export { mapAsyncForUndefinable as mapAsync } from './mapAsync.js';
-export { mapOrForUndefinable as mapOr } from './mapOr.js';
-export { mapOrAsyncForUndefinable as mapOrAsync } from './mapOrAsync.js';
-export { mapOrElseForUndefinable as mapOrElse } from './mapOrElse.js';
-export { mapOrElseAsyncForUndefinable as mapOrElseAsync } from './mapOrElseAsync.js';
+export { andThenForUndefinable, andThenForUndefinable as andThen } from './andThen.js';
+export {
+    andThenAsyncForUndefinable,
+    andThenAsyncForUndefinable as andThenAsync,
+} from './andThenAsync.js';
+export { inspectUndefinable, inspectUndefinable as inspect } from './inspect.js';
+export { mapForUndefinable, mapForUndefinable as map } from './map.js';
+export { mapAsyncForUndefinable, mapAsyncForUndefinable as mapAsync } from './mapAsync.js';
+export { mapOrForUndefinable, mapOrForUndefinable as mapOr } from './mapOr.js';
+export { mapOrAsyncForUndefinable, mapOrAsyncForUndefinable as mapOrAsync } from './mapOrAsync.js';
+export { mapOrElseForUndefinable, mapOrElseForUndefinable as mapOrElse } from './mapOrElse.js';
+export {
+    mapOrElseAsyncForUndefinable,
+    mapOrElseAsyncForUndefinable as mapOrElseAsync,
+} from './mapOrElseAsync.js';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
 // export { orForUndefinable as or} from './or.js';
-export { orElseForUndefinable as orElse } from './orElse.js';
-export { orElseAsyncForUndefinable as orElseAsync } from './orElseAsync.js';
-export { unwrapOrFromUndefinable as unwrapOr } from './unwrapOr.js';
-export { unwrapOrElseFromUndefinable as unwrapOrElse } from './unwrapOrElse.js';
-export { unwrapOrElseAsyncFromUndefinable as unwrapOrElseAsync } from './unwrapOrElseAsync.js';
+export { orElseForUndefinable, orElseForUndefinable as orElse } from './orElse.js';
+export {
+    orElseAsyncForUndefinable,
+    orElseAsyncForUndefinable as orElseAsync,
+} from './orElseAsync.js';
+export { unwrapOrFromUndefinable, unwrapOrFromUndefinable as unwrapOr } from './unwrapOr.js';
+export {
+    unwrapOrElseFromUndefinable,
+    unwrapOrElseFromUndefinable as unwrapOrElse,
+} from './unwrapOrElse.js';
+export {
+    unwrapOrElseAsyncFromUndefinable,
+    unwrapOrElseAsyncFromUndefinable as unwrapOrElseAsync,
+} from './unwrapOrElseAsync.js';
 
 import { expectNotUndefined, unwrapUndefinable } from './Undefinable.js';
 
