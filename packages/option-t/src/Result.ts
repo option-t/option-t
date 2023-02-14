@@ -1,19 +1,20 @@
 /**
  *  @deprecated
  *      Use `option-t/lib/ClassicResult` instead.
+ *      We'll remove this alias in v34 or later.
  *
  *      We keep this file only for backward compatibility.
  *      See https://github.com/karen-irc/option-t/issues/459
  */
 export {
-    type ClassicTryTransformFn as FlatmapOkFn,
-    type ClassicTryRecoverFromErrorFn as FlatmapErrFn,
-    ClassicResultBase as ResultBase,
-    type ClassicResult as Result,
-    createClassicOk as createOk,
-    createClassicErr as createErr,
-    ClassicOkConstructor as Ok,
-    ClassicErrConstructor as Err,
+    type FlatmapOkFn,
+    type FlatmapErrFn,
+    ResultBase,
+    type Result,
+    createOk,
+    createErr,
+    Ok,
+    Err,
     compatToClassicResult,
     compatToPlainResult,
 } from './ClassicResult/index.js';
