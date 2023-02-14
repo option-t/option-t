@@ -60,10 +60,6 @@ export { unwrapOrElseFromResult } from './unwrapOrElse.js';
 export { unwrapOrElseAsyncFromResult } from './unwrapOrElseAsync.js';
 
 import { expectOk, expectErr, unwrapOk } from './Result.js';
-import {
-    toOptionFromOk as toOptionFromOkFn,
-    toOptionFromErr as toOptionFromErrFn,
-} from './toOption.js';
 import { andForResult } from './and.js';
 import { andThenForResult } from './andThen.js';
 import { andThenAsyncForResult } from './andThenAsync.js';
@@ -121,24 +117,6 @@ export const expectIsErr: typeof expectErr = expectErr;
  *  This might be removed in v34 or later.
  */
 export const unwrap: typeof unwrapOk = unwrapOk;
-
-/**
- *  @deprecated
- *  This is an alias for backward compatibility.
- *  __But this will be removed in the future by deprecating `PlainOption`.__
- *  Please import from `./PlainResult/toOption` instead.
- *  This might be removed in v34 or later.
- */
-export const toOptionFromOk: typeof toOptionFromOkFn = toOptionFromOkFn;
-
-/**
- *  @deprecated
- *  This is an alias for backward compatibility.
- *  __But this will be removed in the future by deprecating `PlainOption`.__
- *  Please import from `./PlainResult/toOption` instead.
- *  This might be removed in v34 or later.
- */
-export const toOptionFromErr: typeof toOptionFromErrFn = toOptionFromErrFn;
 
 /**
  *  @deprecated
