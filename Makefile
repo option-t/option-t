@@ -108,6 +108,10 @@ test_package_json_exports_field_format:
 ###########################
 # Tools
 ###########################
+.PHONY: generate_import_path_list_md
+generate_import_path_list_md: ## Generate all public import paths to docs/import_path.md
+	$(MAKE) $@ -C $(MAIN_PKG)
+
 .PHONY: format
 format: ## Apply formatters
 	$(NPM_BIN)/prettier --write $(CURDIR)
