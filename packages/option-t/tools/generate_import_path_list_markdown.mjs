@@ -5,7 +5,8 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 
 import {
-    generateExposedPathSequence,
+//    generateExposedPathSequence,
+    generateSnakeCaseExposedPathSequence as generateExposedPathSequence,
 } from './public_api/mod.mjs';
 
 

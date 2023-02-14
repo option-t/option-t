@@ -1,6 +1,7 @@
 import {
     generateLegacyExposedPathSequence,
     generateExposedPathSequence,
+    generateSnakeCaseExposedPathSequence,
 } from '../../../public_api/mod.mjs';
 
 import {
@@ -17,10 +18,21 @@ export async function addExportsFields(json) {
     const historicalPathSeq = generateLegacyExposedPathSequence();
     addHistoricalPathToExportsFields(o, historicalPathSeq);
 
-    const publicApiSourceSeq = generateExposedPathSequence();
-    const publicApiList = loadPublicAPIDefinitions(publicApiSourceSeq);
-    await addPublicAPIToExportsFields(o, publicApiList);
+    {
+        const publicApiSourceSeq = concatSequence(
+            generateExposedPathSequence(),
+            generateSnakeCaseExposedPathSequence()
+        );
+        const publicApiList = loadPublicAPIDefinitions(publicApiSourceSeq);
+        await addPublicAPIToExportsFields(o, publicApiList);
+    }
 
     // eslint-disable-next-line no-param-reassign
     json.exports = o;
+}
+
+function* concatSequence(...iterable) {
+    for (const iter of iterable) {
+        yield* iter;
+    }
 }

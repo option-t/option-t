@@ -12,6 +12,14 @@ export class ExposedPath {
         Object.freeze(this);
     }
 
+    _rawKey() {
+        return this.#key;
+    }
+
+    _raw() {
+        return this.#raw;
+    }
+
     name() {
         return this.#key;
     }
@@ -38,6 +46,32 @@ export class ExposedPath {
     isForCompat() {
         return false;
     }
+}
+
+class SnakeCaseExposedPath extends ExposedPath {
+    name() {
+        const key = this._rawKey();
+        const snake = camelToSnakeCase(key);
+        return snake;
+    }
+
+    filepath() {
+        const raw = this._raw();
+        const actualFilePath = raw.actualFilePath;
+        if (!actualFilePath) {
+            const key = this._rawKey();
+            return key;
+        }
+
+        return actualFilePath;
+    }
+}
+
+function camelToSnakeCase(str) {
+    const result = str.replace(/[A-Z]/gu, (letter) => {
+        return `_${letter.toLowerCase()}`;
+    }).replace(/\/_/gu, '/').replace(/^_/gu, '');
+    return result;
 }
 
 export class QuirksLegacyExposedPath extends ExposedPath {
@@ -71,14 +105,16 @@ export function* generateExposedPathSequence() {
     }
 }
 
+export function* generateSnakeCaseExposedPathSequence() {
+    for (const [key, value] of Object.entries(apiTable)) {
+        const o = new SnakeCaseExposedPath(key, value);
+        yield o;
+    }
+}
+
 export function* generateLegacyExposedPathSequence() {
     for (const [key, value] of Object.entries(legacyApiTable)) {
         const o = new QuirksLegacyExposedPath(key, value);
         yield o;
     }
-}
-
-export function* generateAllExposedPathSequence() {
-    yield* generateExposedPathSequence();
-    yield* generateLegacyExposedPathSequence();
 }

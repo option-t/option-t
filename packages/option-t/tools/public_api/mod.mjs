@@ -1,6 +1,6 @@
 export {
     generateExposedPathSequence,
-    generateAllExposedPathSequence,
+    generateSnakeCaseExposedPathSequence,
     generateLegacyExposedPathSequence,
     ExposedPath,
     QuirksLegacyExposedPath,
