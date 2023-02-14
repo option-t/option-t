@@ -24,17 +24,17 @@ you should avoid to expose this object as a public API of your package_  because
 This can express that there are some values or none.
 
 ```javascript
-import { createSome, createNone, } from 'option-t/esm/Option';
+import { createClassicSome, createClassicNone, } from 'option-t/esm/ClassicOption';
 // or
-const { createSome, createNone, } = require('option-t/cjs/Option');
+const { createClassicSome, createClassicNone, } = require('option-t/cjs/ClassicOption');
 
 // `Some<T>`
-const some = createSome(1);
+const some = createClassicSome(1);
 console.log(some.isSome); // true
 console.log(some.unwrap()); // 1
 
 // `None`
-const none = createNone();
+const none = createClassicNone();
 console.log(none.isSome); // false
 console.log(none.unwrap()); // this will throw `Error`.
 ```
@@ -48,18 +48,18 @@ See [`OptionBase.prototype.toJSON()`](./src/Option.js).
 This can express that there is some values or some error information.
 
 ```javascript
-import { createOk, createErr, } from 'option-t/esm/Result';
+import { createClassicOk, createClassicErr, } from 'option-t/esm/ClassicResult';
 // or
-const { createOk, createErr, } = require('option-t/cjs/Result');
+const { createClassicOk, createClassicErr, } = require('option-t/cjs/ClassicResult');
 
 // `Ok<T, E>`
-const some = createOk(1);
+const some = createClassicOk(1);
 console.log(some.isOk()); // true
 console.log(some.unwrap()); // 1
 console.log(none.unwrapErr()); // this will throw `Error`.
 
 // `Err<T, E>`
-const none = createErr('some error info');
+const none = createClassicErr('some error info');
 console.log(none.isOk()); // false
 console.log(none.unwrap()); // this will throw `Error`.
 console.log(none.unwrapErr()); // 'some error info'
@@ -70,7 +70,7 @@ console.log(none.unwrapErr()); // 'some error info'
 ## Unwrap, `undefined` or `null`
 
 ```typescript
-import { Option } from 'option-t/esm/Option';
+import type { ClassicOption as Option } from 'option-t/esm/ClassicOption';
 
 function unwrapOrUndefined<T>(option: Option<T>): T | undefined {
   const result: T | undefined = option.isSome ? option.unwrap() : undefined;
@@ -87,7 +87,7 @@ function unwrapOrNull<T>(option: Option<T>): T | null {
 ## Cast to `Promise`
 
 ```typescript
-import { Option } from 'option-t/esm/Option';
+import type { ClassicOption as Option } from 'option-t/esm/ClassicOption';
 
 // This function treats `None` as a `Promise` which is fulfilled with a tagged union object.
 function castToPromise2(option: Option<T>): Promise<{ ok: boolean; value: T }> {
