@@ -105,6 +105,28 @@ This library also provides a convenient way to handle them and its way is inspir
 
 
 
+## Supported Environments
+
+We target to run in following environments.
+
+- Language
+    - [ECMA262 5th edition](https://262.ecma-international.org/5.1/).
+    - TypeScript's latest version.
+- Module system
+    - ES Module ([ES2015](https://262.ecma-international.org/6.0/) level).
+    - CommonJS
+    - A runtime environment or module bundler must support Node.js' [package.json's `exports` field](https://nodejs.org/api/packages.html#package-entry-points) (Newer is better).
+
+
+### Caution
+
+1. Your code may work with this package even if your project does not supports all of these requirements.
+   But we may not be able to support such environments officially. We recommend to update your environment generally.
+2. If you would like to work this packages for a more legacy environment (e.g. ES3!)
+   we recommend to transform whole of codes including your dependencies in your build pipeline.
+
+
+
 
 ## Installation
 
