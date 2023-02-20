@@ -81,9 +81,9 @@
             "types": "./cjs/Maybe/andThenAsync.d.cts",
             "default": "./cjs/Maybe/andThenAsync.cjs"
         },
-        "./cjs/Maybe/compat/index": {
-            "types": "./cjs/Maybe/compat/index.d.cts",
-            "default": "./cjs/Maybe/compat/index.cjs"
+        "./cjs/Maybe/compat/v33": {
+            "types": "./cjs/Maybe/compat/v33.d.cts",
+            "default": "./cjs/Maybe/compat/v33.cjs"
         },
         "./cjs/Maybe/expect": {
             "types": "./cjs/Maybe/expect.d.cts",
@@ -189,9 +189,9 @@
             "types": "./cjs/Nullable/andThenAsync.d.cts",
             "default": "./cjs/Nullable/andThenAsync.cjs"
         },
-        "./cjs/Nullable/compat/index": {
-            "types": "./cjs/Nullable/compat/index.d.cts",
-            "default": "./cjs/Nullable/compat/index.cjs"
+        "./cjs/Nullable/compat/v33": {
+            "types": "./cjs/Nullable/compat/v33.d.cts",
+            "default": "./cjs/Nullable/compat/v33.cjs"
         },
         "./cjs/Nullable/expect": {
             "types": "./cjs/Nullable/expect.d.cts",
@@ -297,9 +297,9 @@
             "types": "./cjs/PlainOption/asMut.d.cts",
             "default": "./cjs/PlainOption/asMut.cjs"
         },
-        "./cjs/PlainOption/compat/index": {
-            "types": "./cjs/PlainOption/compat/index.d.cts",
-            "default": "./cjs/PlainOption/compat/index.cjs"
+        "./cjs/PlainOption/compat/v33": {
+            "types": "./cjs/PlainOption/compat/v33.d.cts",
+            "default": "./cjs/PlainOption/compat/v33.cjs"
         },
         "./cjs/PlainOption/drop": {
             "types": "./cjs/PlainOption/drop.d.cts",
@@ -429,9 +429,9 @@
             "types": "./cjs/PlainResult/asMut.d.cts",
             "default": "./cjs/PlainResult/asMut.cjs"
         },
-        "./cjs/PlainResult/compat/index": {
-            "types": "./cjs/PlainResult/compat/index.d.cts",
-            "default": "./cjs/PlainResult/compat/index.cjs"
+        "./cjs/PlainResult/compat/v33": {
+            "types": "./cjs/PlainResult/compat/v33.d.cts",
+            "default": "./cjs/PlainResult/compat/v33.cjs"
         },
         "./cjs/PlainResult/drop": {
             "types": "./cjs/PlainResult/drop.d.cts",
@@ -581,9 +581,9 @@
             "types": "./cjs/Undefinable/expect.d.cts",
             "default": "./cjs/Undefinable/expect.cjs"
         },
-        "./cjs/Undefinable/compat/index": {
-            "types": "./cjs/Undefinable/compat/index.d.cts",
-            "default": "./cjs/Undefinable/compat/index.cjs"
+        "./cjs/Undefinable/compat/v33": {
+            "types": "./cjs/Undefinable/compat/v33.d.cts",
+            "default": "./cjs/Undefinable/compat/v33.cjs"
         },
         "./cjs/Undefinable/index": {
             "types": "./cjs/Undefinable/index.d.cts",
@@ -693,9 +693,9 @@
             "types": "./esm/Maybe/andThenAsync.d.ts",
             "default": "./esm/Maybe/andThenAsync.js"
         },
-        "./esm/Maybe/compat/index": {
-            "types": "./esm/Maybe/compat/index.d.ts",
-            "default": "./esm/Maybe/compat/index.js"
+        "./esm/Maybe/compat/v33": {
+            "types": "./esm/Maybe/compat/v33.d.ts",
+            "default": "./esm/Maybe/compat/v33.js"
         },
         "./esm/Maybe/expect": {
             "types": "./esm/Maybe/expect.d.ts",
@@ -801,9 +801,9 @@
             "types": "./esm/Nullable/andThenAsync.d.ts",
             "default": "./esm/Nullable/andThenAsync.js"
         },
-        "./esm/Nullable/compat/index": {
-            "types": "./esm/Nullable/compat/index.d.ts",
-            "default": "./esm/Nullable/compat/index.js"
+        "./esm/Nullable/compat/v33": {
+            "types": "./esm/Nullable/compat/v33.d.ts",
+            "default": "./esm/Nullable/compat/v33.js"
         },
         "./esm/Nullable/expect": {
             "types": "./esm/Nullable/expect.d.ts",
@@ -909,9 +909,9 @@
             "types": "./esm/PlainOption/asMut.d.ts",
             "default": "./esm/PlainOption/asMut.js"
         },
-        "./esm/PlainOption/compat/index": {
-            "types": "./esm/PlainOption/compat/index.d.ts",
-            "default": "./esm/PlainOption/compat/index.js"
+        "./esm/PlainOption/compat/v33": {
+            "types": "./esm/PlainOption/compat/v33.d.ts",
+            "default": "./esm/PlainOption/compat/v33.js"
         },
         "./esm/PlainOption/drop": {
             "types": "./esm/PlainOption/drop.d.ts",
@@ -1041,9 +1041,9 @@
             "types": "./esm/PlainResult/asMut.d.ts",
             "default": "./esm/PlainResult/asMut.js"
         },
-        "./esm/PlainResult/compat/index": {
-            "types": "./esm/PlainResult/compat/index.d.ts",
-            "default": "./esm/PlainResult/compat/index.js"
+        "./esm/PlainResult/compat/v33": {
+            "types": "./esm/PlainResult/compat/v33.d.ts",
+            "default": "./esm/PlainResult/compat/v33.js"
         },
         "./esm/PlainResult/drop": {
             "types": "./esm/PlainResult/drop.d.ts",
@@ -1189,9 +1189,9 @@
             "types": "./esm/Undefinable/andThenAsync.d.ts",
             "default": "./esm/Undefinable/andThenAsync.js"
         },
-        "./esm/Undefinable/compat/index": {
-            "types": "./esm/Undefinable/compat/index.d.ts",
-            "default": "./esm/Undefinable/compat/index.js"
+        "./esm/Undefinable/compat/v33": {
+            "types": "./esm/Undefinable/compat/v33.d.ts",
+            "default": "./esm/Undefinable/compat/v33.js"
         },
         "./esm/Undefinable/expect": {
             "types": "./esm/Undefinable/expect.d.ts",
@@ -1354,16 +1354,16 @@
             },
             "default": "./esm/Maybe/andThenAsync.js"
         },
-        "./lib/Maybe/compat/index": {
+        "./lib/Maybe/compat/v33": {
             "import": {
-                "types": "./esm/Maybe/compat/index.d.ts",
-                "default": "./esm/Maybe/compat/index.js"
+                "types": "./esm/Maybe/compat/v33.d.ts",
+                "default": "./esm/Maybe/compat/v33.js"
             },
             "require": {
-                "types": "./cjs/Maybe/compat/index.d.cts",
-                "default": "./cjs/Maybe/compat/index.cjs"
+                "types": "./cjs/Maybe/compat/v33.d.cts",
+                "default": "./cjs/Maybe/compat/v33.cjs"
             },
-            "default": "./esm/Maybe/compat/index.js"
+            "default": "./esm/Maybe/compat/v33.js"
         },
         "./lib/Maybe/expect": {
             "import": {
@@ -1651,16 +1651,16 @@
             },
             "default": "./esm/Nullable/andThenAsync.js"
         },
-        "./lib/Nullable/compat/index": {
+        "./lib/Nullable/compat/v33": {
             "import": {
-                "types": "./esm/Nullable/compat/index.d.ts",
-                "default": "./esm/Nullable/compat/index.js"
+                "types": "./esm/Nullable/compat/v33.d.ts",
+                "default": "./esm/Nullable/compat/v33.js"
             },
             "require": {
-                "types": "./cjs/Nullable/compat/index.d.cts",
-                "default": "./cjs/Nullable/compat/index.cjs"
+                "types": "./cjs/Nullable/compat/v33.d.cts",
+                "default": "./cjs/Nullable/compat/v33.cjs"
             },
-            "default": "./esm/Nullable/compat/index.js"
+            "default": "./esm/Nullable/compat/v33.js"
         },
         "./lib/Nullable/expect": {
             "import": {
@@ -1948,16 +1948,16 @@
             },
             "default": "./esm/PlainOption/asMut.js"
         },
-        "./lib/PlainOption/compat/index": {
+        "./lib/PlainOption/compat/v33": {
             "import": {
-                "types": "./esm/PlainOption/compat/index.d.ts",
-                "default": "./esm/PlainOption/compat/index.js"
+                "types": "./esm/PlainOption/compat/v33.d.ts",
+                "default": "./esm/PlainOption/compat/v33.js"
             },
             "require": {
-                "types": "./cjs/PlainOption/compat/index.d.cts",
-                "default": "./cjs/PlainOption/compat/index.cjs"
+                "types": "./cjs/PlainOption/compat/v33.d.cts",
+                "default": "./cjs/PlainOption/compat/v33.cjs"
             },
-            "default": "./esm/PlainOption/compat/index.js"
+            "default": "./esm/PlainOption/compat/v33.js"
         },
         "./lib/PlainOption/drop": {
             "import": {
@@ -2311,16 +2311,16 @@
             },
             "default": "./esm/PlainResult/asMut.js"
         },
-        "./lib/PlainResult/compat/index": {
+        "./lib/PlainResult/compat/v33": {
             "import": {
-                "types": "./esm/PlainResult/compat/index.d.ts",
-                "default": "./esm/PlainResult/compat/index.js"
+                "types": "./esm/PlainResult/compat/v33.d.ts",
+                "default": "./esm/PlainResult/compat/v33.js"
             },
             "require": {
-                "types": "./cjs/PlainResult/compat/index.d.cts",
-                "default": "./cjs/PlainResult/compat/index.cjs"
+                "types": "./cjs/PlainResult/compat/v33.d.cts",
+                "default": "./cjs/PlainResult/compat/v33.cjs"
             },
-            "default": "./esm/PlainResult/compat/index.js"
+            "default": "./esm/PlainResult/compat/v33.js"
         },
         "./lib/PlainResult/drop": {
             "import": {
@@ -2718,16 +2718,16 @@
             },
             "default": "./esm/Undefinable/andThenAsync.js"
         },
-        "./lib/Undefinable/compat/index": {
+        "./lib/Undefinable/compat/v33": {
             "import": {
-                "types": "./esm/Undefinable/compat/index.d.ts",
-                "default": "./esm/Undefinable/compat/index.js"
+                "types": "./esm/Undefinable/compat/v33.d.ts",
+                "default": "./esm/Undefinable/compat/v33.js"
             },
             "require": {
-                "types": "./cjs/Undefinable/compat/index.d.cts",
-                "default": "./cjs/Undefinable/compat/index.cjs"
+                "types": "./cjs/Undefinable/compat/v33.d.cts",
+                "default": "./cjs/Undefinable/compat/v33.cjs"
             },
-            "default": "./esm/Undefinable/compat/index.js"
+            "default": "./esm/Undefinable/compat/v33.js"
         },
         "./lib/Undefinable/expect": {
             "import": {
@@ -3015,16 +3015,16 @@
             },
             "default": "./esm/Maybe/andThenAsync.js"
         },
-        "./Maybe/compat/index": {
+        "./Maybe/compat/v33": {
             "import": {
-                "types": "./esm/Maybe/compat/index.d.ts",
-                "default": "./esm/Maybe/compat/index.js"
+                "types": "./esm/Maybe/compat/v33.d.ts",
+                "default": "./esm/Maybe/compat/v33.js"
             },
             "require": {
-                "types": "./cjs/Maybe/compat/index.d.cts",
-                "default": "./cjs/Maybe/compat/index.cjs"
+                "types": "./cjs/Maybe/compat/v33.d.cts",
+                "default": "./cjs/Maybe/compat/v33.cjs"
             },
-            "default": "./esm/Maybe/compat/index.js"
+            "default": "./esm/Maybe/compat/v33.js"
         },
         "./Maybe/expect": {
             "import": {
@@ -3290,16 +3290,16 @@
             },
             "default": "./esm/Nullable/andThenAsync.js"
         },
-        "./Nullable/compat/index": {
+        "./Nullable/compat/v33": {
             "import": {
-                "types": "./esm/Nullable/compat/index.d.ts",
-                "default": "./esm/Nullable/compat/index.js"
+                "types": "./esm/Nullable/compat/v33.d.ts",
+                "default": "./esm/Nullable/compat/v33.js"
             },
             "require": {
-                "types": "./cjs/Nullable/compat/index.d.cts",
-                "default": "./cjs/Nullable/compat/index.cjs"
+                "types": "./cjs/Nullable/compat/v33.d.cts",
+                "default": "./cjs/Nullable/compat/v33.cjs"
             },
-            "default": "./esm/Nullable/compat/index.js"
+            "default": "./esm/Nullable/compat/v33.js"
         },
         "./Nullable/expect": {
             "import": {
@@ -3565,16 +3565,16 @@
             },
             "default": "./esm/PlainOption/asMut.js"
         },
-        "./PlainOption/compat/index": {
+        "./PlainOption/compat/v33": {
             "import": {
-                "types": "./esm/PlainOption/compat/index.d.ts",
-                "default": "./esm/PlainOption/compat/index.js"
+                "types": "./esm/PlainOption/compat/v33.d.ts",
+                "default": "./esm/PlainOption/compat/v33.js"
             },
             "require": {
-                "types": "./cjs/PlainOption/compat/index.d.cts",
-                "default": "./cjs/PlainOption/compat/index.cjs"
+                "types": "./cjs/PlainOption/compat/v33.d.cts",
+                "default": "./cjs/PlainOption/compat/v33.cjs"
             },
-            "default": "./esm/PlainOption/compat/index.js"
+            "default": "./esm/PlainOption/compat/v33.js"
         },
         "./PlainOption/drop": {
             "import": {
@@ -3917,16 +3917,16 @@
             },
             "default": "./esm/PlainResult/asMut.js"
         },
-        "./PlainResult/compat/index": {
+        "./PlainResult/compat/v33": {
             "import": {
-                "types": "./esm/PlainResult/compat/index.d.ts",
-                "default": "./esm/PlainResult/compat/index.js"
+                "types": "./esm/PlainResult/compat/v33.d.ts",
+                "default": "./esm/PlainResult/compat/v33.js"
             },
             "require": {
-                "types": "./cjs/PlainResult/compat/index.d.cts",
-                "default": "./cjs/PlainResult/compat/index.cjs"
+                "types": "./cjs/PlainResult/compat/v33.d.cts",
+                "default": "./cjs/PlainResult/compat/v33.cjs"
             },
-            "default": "./esm/PlainResult/compat/index.js"
+            "default": "./esm/PlainResult/compat/v33.js"
         },
         "./PlainResult/drop": {
             "import": {
@@ -4291,16 +4291,16 @@
             },
             "default": "./esm/Undefinable/andThenAsync.js"
         },
-        "./Undefinable/compat/index": {
+        "./Undefinable/compat/v33": {
             "import": {
-                "types": "./esm/Undefinable/compat/index.d.ts",
-                "default": "./esm/Undefinable/compat/index.js"
+                "types": "./esm/Undefinable/compat/v33.d.ts",
+                "default": "./esm/Undefinable/compat/v33.js"
             },
             "require": {
-                "types": "./cjs/Undefinable/compat/index.d.cts",
-                "default": "./cjs/Undefinable/compat/index.cjs"
+                "types": "./cjs/Undefinable/compat/v33.d.cts",
+                "default": "./cjs/Undefinable/compat/v33.cjs"
             },
-            "default": "./esm/Undefinable/compat/index.js"
+            "default": "./esm/Undefinable/compat/v33.js"
         },
         "./Undefinable/expect": {
             "import": {
