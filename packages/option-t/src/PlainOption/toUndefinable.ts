@@ -1,5 +1,5 @@
 import type { Undefinable } from '../Undefinable/Undefinable.js';
-import { type Option } from './Option.js';
+import type { Option } from './Option.js';
 import { mapOrForOption } from './mapOr.js';
 
 /**

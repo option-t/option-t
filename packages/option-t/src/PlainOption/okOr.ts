@@ -1,4 +1,4 @@
-import { type Option } from './Option.js';
+import type { Option } from './Option.js';
 import { type Result, createErr, createOk } from '../PlainResult/Result.js';
 
 /**
