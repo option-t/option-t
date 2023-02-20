@@ -3,7 +3,6 @@
  *  This might be removed in v35 or later.
  *  Please use `option-t/PlainOption` instead.
  */
-
 export {
     type Option,
     type Some,
@@ -16,45 +15,177 @@ export {
     expectSome,
 } from '../Option.js';
 
-export { andForOption, andForOption as and } from '../and.js';
-export { andThenForOption, andThenForOption as andThen } from '../andThen.js';
-export { andThenAsyncForOption, andThenAsyncForOption as andThenAsync } from '../andThenAsync.js';
-export { equalForOption, equalForOption as equal } from '../equal.js';
-export { filterForOption, filterForOption as filter } from '../filter.js';
-export { flattenForOption, flattenForOption as flatten } from '../flatten.js';
-export { inspectOption, inspectOption as inspect } from '../inspect.js';
-export { mapForOption, mapForOption as map } from '../map.js';
-export { mapAsyncForOption, mapAsyncForOption as mapAsync } from '../mapAsync.js';
-export { mapOrForOption, mapOrForOption as mapOr } from '../mapOr.js';
-export { mapOrAsyncForOption, mapOrAsyncForOption as mapOrAsync } from '../mapOrAsync.js';
-export { mapOrElseForOption, mapOrElseForOption as mapOrElse } from '../mapOrElse.js';
-export {
-    mapOrElseAsyncForOption,
-    mapOrElseAsyncForOption as mapOrElseAsync,
-} from '../mapOrElseAsync.js';
-export { orForOption, orForOption as or } from '../or.js';
-export { orElseForOption, orElseForOption as orElse } from '../orElse.js';
-export { orElseAsyncForOption, orElseAsyncForOption as orElseAsync } from '../orElseAsync.js';
-export { transposeForOption, transposeForOption as transpose } from '../transpose.js';
-export { unwrapOrFromOption, unwrapOrFromOption as unwrapOr } from '../unwrapOr.js';
-export { unwrapOrElseFromOption, unwrapOrElseFromOption as unwrapOrElse } from '../unwrapOrElse.js';
-export {
-    unwrapOrElseAsyncFromOption,
-    unwrapOrElseAsyncFromOption as unwrapOrElseAsync,
-} from '../unwrapOrElseAsync.js';
+export { andForOption } from '../and.js';
+export { andThenForOption } from '../andThen.js';
+export { andThenAsyncForOption } from '../andThenAsync.js';
+export { equalForOption } from '../equal.js';
+export { filterForOption } from '../filter.js';
+export { flattenForOption } from '../flatten.js';
+export { inspectOption } from '../inspect.js';
+export { mapForOption } from '../map.js';
+export { mapAsyncForOption } from '../mapAsync.js';
+export { mapOrForOption } from '../mapOr.js';
+export { mapOrAsyncForOption } from '../mapOrAsync.js';
+export { mapOrElseForOption } from '../mapOrElse.js';
+export { mapOrElseAsyncForOption } from '../mapOrElseAsync.js';
+export { orForOption } from '../or.js';
+export { orElseForOption } from '../orElse.js';
+export { orElseAsyncForOption } from '../orElseAsync.js';
+export { transposeForOption } from '../transpose.js';
+export { unwrapOrFromOption } from '../unwrapOr.js';
+export { unwrapOrElseFromOption } from '../unwrapOrElse.js';
+export { unwrapOrElseAsyncFromOption } from '../unwrapOrElseAsync.js';
 
 import { expectSome, unwrapSome } from '../Option.js';
+import { andForOption } from '../and.js';
+import { andThenForOption } from '../andThen.js';
+import { andThenAsyncForOption } from '../andThenAsync.js';
+import { equalForOption } from '../equal.js';
+import { filterForOption } from '../filter.js';
+import { flattenForOption } from '../flatten.js';
+import { inspectOption } from '../inspect.js';
+import { mapForOption } from '../map.js';
+import { mapAsyncForOption } from '../mapAsync.js';
+import { mapOrForOption } from '../mapOr.js';
+import { mapOrAsyncForOption } from '../mapOrAsync.js';
+import { mapOrElseForOption } from '../mapOrElse.js';
+import { mapOrElseAsyncForOption } from '../mapOrElseAsync.js';
+import { orForOption } from '../or.js';
+import { orElseForOption } from '../orElse.js';
+import { orElseAsyncForOption } from '../orElseAsync.js';
+import { transposeForOption } from '../transpose.js';
+import { unwrapOrFromOption } from '../unwrapOr.js';
+import { unwrapOrElseFromOption } from '../unwrapOrElse.js';
+import { unwrapOrElseAsyncFromOption } from '../unwrapOrElseAsync.js';
 
 /**
  *  @deprecated
- *  This is an alias for backward compatibility.
- *  Please use {@link expectSome} instead.
+ *  Please use {@link expectSome} in `option-t/PlainOption/Option` or `option-t/PlainOption`.
  */
 export const expect: typeof expectSome = expectSome;
 
 /**
  *  @deprecated
- *  This is an alias for backward compatibility.
- *  Please use {@link unwrapSome} instead.
+ *  Please use {@link unwrapSome} in `option-t/PlainOption/Option` or `option-t/PlainOption`.
  */
 export const unwrap: typeof unwrapSome = unwrapSome;
+
+/**
+ *  @deprecated
+ *  Please use {@link andForOption} in `option-t/PlainOption/and`.
+ */
+export const and: typeof andForOption = andForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link andThenForOption} in `option-t/PlainOption/andThen`.
+ */
+export const andThen: typeof andThenForOption = andThenForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link andThenAsyncForOption} in `option-t/PlainOption/andThenAsync`.
+ */
+export const andThenAsync: typeof andThenAsyncForOption = andThenAsyncForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link equalForOption} in `option-t/PlainOption/equal`.
+ */
+export const equal: typeof equalForOption = equalForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link filterForOption} in `option-t/PlainOption/filter`.
+ */
+export const filter: typeof filterForOption = filterForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link flattenForOption} in `option-t/PlainOption/flatten`.
+ */
+export const flatten: typeof flattenForOption = flattenForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link inspectOption} in `option-t/PlainOption/inspect`.
+ */
+export const inspect: typeof inspectOption = inspectOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapForOption} in `option-t/PlainOption/map`.
+ */
+export const map: typeof mapForOption = mapForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapAsyncForOption} in `option-t/PlainOption/mapAsync`.
+ */
+export const mapAsync: typeof mapAsyncForOption = mapAsyncForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapOrForOption} in `option-t/PlainOption/mapOr`.
+ */
+export const mapOr: typeof mapOrForOption = mapOrForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapOrAsyncForOption} in `option-t/PlainOption/mapOrAsync`.
+ */
+export const mapOrAsync: typeof mapOrAsyncForOption = mapOrAsyncForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapOrElseForOption} in `option-t/PlainOption/mapOrElse`.
+ */
+export const mapOrElse: typeof mapOrElseForOption = mapOrElseForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapOrElseAsyncForOption} in `option-t/PlainOption/mapOrElseAsync`.
+ */
+export const mapOrElseAsync: typeof mapOrElseAsyncForOption = mapOrElseAsyncForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link orForOption} in `option-t/PlainOption/or`.
+ */
+export const or: typeof orForOption = orForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link orElseForOption} in `option-t/PlainOption/orElse`.
+ */
+export const orElse: typeof orElseForOption = orElseForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link orElseAsyncForOption} in `option-t/PlainOption/orElseAsync`.
+ */
+export const orElseAsync: typeof orElseAsyncForOption = orElseAsyncForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link transposeForOption} in `option-t/PlainOption/transpose`.
+ */
+export const transpose: typeof transposeForOption = transposeForOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link unwrapOrFromOption} in `option-t/PlainOption/unwrapOr`.
+ */
+export const unwrapOr: typeof unwrapOrFromOption = unwrapOrFromOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link unwrapOrElseFromOption} in `option-t/PlainOption/unwrapOrElse`.
+ */
+export const unwrapOrElse: typeof unwrapOrElseFromOption = unwrapOrElseFromOption;
+
+/**
+ *  @deprecated
+ *  Please use {@link unwrapOrElseAsyncFromOption} in `option-t/PlainOption/unwrapOrElseAsync`.
+ */
+export const unwrapOrElseAsync: typeof unwrapOrElseAsyncFromOption = unwrapOrElseAsyncFromOption;
