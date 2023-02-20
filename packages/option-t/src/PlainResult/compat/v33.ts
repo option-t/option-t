@@ -17,10 +17,8 @@ export {
     expectErr,
 } from '../Result.js';
 
-export { andForResult } from '../and.js';
 export { andThenForResult } from '../andThen.js';
 export { andThenAsyncForResult } from '../andThenAsync.js';
-export { equalForResult } from '../equal.js';
 export { flattenForResult } from '../flatten.js';
 export { inspectOkOfResult, inspectErrOfResult, inspectBothOfResult } from '../inspect.js';
 export { mapForResult } from '../map.js';
@@ -31,7 +29,6 @@ export { mapOrElseForResult } from '../mapOrElse.js';
 export { mapOrElseAsyncForResult } from '../mapOrElseAsync.js';
 export { mapErrForResult } from '../mapErr.js';
 export { mapErrAsyncForResult } from '../mapErrAsync.js';
-export { orForResult } from '../or.js';
 export { orElseForResult } from '../orElse.js';
 export { orElseAsyncForResult } from '../orElseAsync.js';
 export { transposeNullableForResult, transposeUndefinableForResult } from '../transpose.js';
@@ -44,10 +41,10 @@ import {
     toOptionFromOk as toOptionFromOkFn,
     toOptionFromErr as toOptionFromErrFn,
 } from '../toOption.js';
-import { andForResult } from '../and.js';
+import { andForResult as andForResultOriginal } from '../and.js';
 import { andThenForResult } from '../andThen.js';
 import { andThenAsyncForResult } from '../andThenAsync.js';
-import { equalForResult } from '../equal.js';
+import { equalForResult as equalForResultOriginal } from '../equal.js';
 import { flattenForResult } from '../flatten.js';
 import { inspectOkOfResult, inspectErrOfResult, inspectBothOfResult } from '../inspect.js';
 import { mapForResult } from '../map.js';
@@ -58,7 +55,7 @@ import { mapOrElseForResult } from '../mapOrElse.js';
 import { mapOrElseAsyncForResult } from '../mapOrElseAsync.js';
 import { mapErrForResult } from '../mapErr.js';
 import { mapErrAsyncForResult } from '../mapErrAsync.js';
-import { orForResult } from '../or.js';
+import { orForResult as orForResultOriginal } from '../or.js';
 import { orElseForResult } from '../orElse.js';
 import { orElseAsyncForResult } from '../orElseAsync.js';
 import {
@@ -108,9 +105,15 @@ export const toOptionFromErr: typeof toOptionFromErrFn = toOptionFromErrFn;
 
 /**
  *  @deprecated
- *  Please use {@link andForResult} in `option-t/PlainResult/and`.
+ *  Please use `andForResult` in `option-t/PlainResult/and`.
  */
-export const and: typeof andForResult = andForResult;
+export const and: typeof andForResultOriginal = andForResultOriginal;
+
+/**
+ *  @deprecated
+ *  Please use `andForResult` in `option-t/PlainResult/and`.
+ */
+export const andForResult: typeof andForResultOriginal = andForResultOriginal;
 
 /**
  *  @deprecated
@@ -126,9 +129,15 @@ export const andThenAsync: typeof andThenAsyncForResult = andThenAsyncForResult;
 
 /**
  *  @deprecated
- *  Please use {@link equalForResult} in `option-t/PlainResult/equal`.
+ *  Please use `equalForResult` in `option-t/PlainResult/equal`.
  */
-export const equal: typeof equalForResult = equalForResult;
+export const equal: typeof equalForResultOriginal = equalForResultOriginal;
+
+/**
+ *  @deprecated
+ *  Please use `equalForResult` in `option-t/PlainResult/equal`.
+ */
+export const equalForResult: typeof equalForResultOriginal = equalForResultOriginal;
 
 /**
  *  @deprecated
@@ -204,9 +213,15 @@ export const mapErrAsync: typeof mapErrAsyncForResult = mapErrAsyncForResult;
 
 /**
  *  @deprecated
- *  Please use {@link orForResult} in `option-t/PlainResult/or`.
+ *  Please use `orForResult` in `option-t/PlainResult/or`.
  */
-export const or: typeof orForResult = orForResult;
+export const or: typeof orForResultOriginal = orForResultOriginal;
+
+/**
+ *  @deprecated
+ *  Please use `orForResult` in `option-t/PlainResult/or`.
+ */
+export const orForResult: typeof orForResultOriginal = orForResultOriginal;
 
 /**
  *  @deprecated
