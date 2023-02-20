@@ -37,58 +37,64 @@ export {
     expectErr,
 } from './Result.js';
 
-export { andForResult, andForResult as and } from './and.js';
-export { andThenForResult, andThenForResult as andThen } from './andThen.js';
-export { andThenAsyncForResult, andThenAsyncForResult as andThenAsync } from './andThenAsync.js';
-export { equalForResult, equalForResult as equal } from './equal.js';
-export { flattenForResult, flattenForResult as flatten } from './flatten.js';
-export {
-    inspectOkOfResult,
-    inspectErrOfResult,
-    inspectBothOfResult,
-    inspectOkOfResult as inspectOk,
-    inspectErrOfResult as inspectErr,
-    inspectBothOfResult as inspectBoth,
-} from './inspect.js';
-export { mapForResult, mapForResult as map } from './map.js';
-export { mapAsyncForResult, mapAsyncForResult as mapAsync } from './mapAsync.js';
-export { mapOrForResult, mapOrForResult as mapOr } from './mapOr.js';
-export { mapOrAsyncForResult, mapOrAsyncForResult as mapOrAsync } from './mapOrAsync.js';
-export { mapOrElseForResult, mapOrElseForResult as mapOrElse } from './mapOrElse.js';
-export {
-    mapOrElseAsyncForResult,
-    mapOrElseAsyncForResult as mapOrElseAsync,
-} from './mapOrElseAsync.js';
-export { mapErrForResult, mapErrForResult as mapErr } from './mapErr.js';
-export { mapErrAsyncForResult, mapErrAsyncForResult as mapErrAsync } from './mapErrAsync.js';
-export { orForResult, orForResult as or } from './or.js';
-export { orElseForResult, orElseForResult as orElse } from './orElse.js';
-export { orElseAsyncForResult, orElseAsyncForResult as orElseAsync } from './orElseAsync.js';
-export {
-    transposeForResult,
-    transposeNullableForResult,
-    transposeUndefinableForResult,
-    transposeForResult as transpose,
-    transposeNullableForResult as transposeNullable,
-    transposeUndefinableForResult as transposeUndefinable,
-} from './transpose.js';
-export { unwrapOrFromResult, unwrapOrFromResult as unwrapOr } from './unwrapOr.js';
-export { unwrapOrElseFromResult, unwrapOrElseFromResult as unwrapOrElse } from './unwrapOrElse.js';
-export {
-    unwrapOrElseAsyncFromResult,
-    unwrapOrElseAsyncFromResult as unwrapOrElseAsync,
-} from './unwrapOrElseAsync.js';
+export { andForResult } from './and.js';
+export { andThenForResult } from './andThen.js';
+export { andThenAsyncForResult } from './andThenAsync.js';
+export { equalForResult } from './equal.js';
+export { flattenForResult } from './flatten.js';
+export { inspectOkOfResult, inspectErrOfResult, inspectBothOfResult } from './inspect.js';
+export { mapForResult } from './map.js';
+export { mapAsyncForResult } from './mapAsync.js';
+export { mapOrForResult } from './mapOr.js';
+export { mapOrAsyncForResult } from './mapOrAsync.js';
+export { mapOrElseForResult } from './mapOrElse.js';
+export { mapOrElseAsyncForResult } from './mapOrElseAsync.js';
+export { mapErrForResult } from './mapErr.js';
+export { mapErrAsyncForResult } from './mapErrAsync.js';
+export { orForResult } from './or.js';
+export { orElseForResult } from './orElse.js';
+export { orElseAsyncForResult } from './orElseAsync.js';
+export { transposeNullableForResult, transposeUndefinableForResult } from './transpose.js';
+export { unwrapOrFromResult } from './unwrapOr.js';
+export { unwrapOrElseFromResult } from './unwrapOrElse.js';
+export { unwrapOrElseAsyncFromResult } from './unwrapOrElseAsync.js';
 
 import { expectOk, expectErr, unwrapOk } from './Result.js';
 import {
     toOptionFromOk as toOptionFromOkFn,
     toOptionFromErr as toOptionFromErrFn,
 } from './toOption.js';
+import { andForResult } from './and.js';
+import { andThenForResult } from './andThen.js';
+import { andThenAsyncForResult } from './andThenAsync.js';
+import { equalForResult } from './equal.js';
+import { flattenForResult } from './flatten.js';
+import { inspectOkOfResult, inspectErrOfResult, inspectBothOfResult } from './inspect.js';
+import { mapForResult } from './map.js';
+import { mapAsyncForResult } from './mapAsync.js';
+import { mapOrForResult } from './mapOr.js';
+import { mapOrAsyncForResult } from './mapOrAsync.js';
+import { mapOrElseForResult } from './mapOrElse.js';
+import { mapOrElseAsyncForResult } from './mapOrElseAsync.js';
+import { mapErrForResult } from './mapErr.js';
+import { mapErrAsyncForResult } from './mapErrAsync.js';
+import { orForResult } from './or.js';
+import { orElseForResult } from './orElse.js';
+import { orElseAsyncForResult } from './orElseAsync.js';
+import {
+    transposeForResult as transposeForResultOriginal,
+    transposeNullableForResult,
+    transposeUndefinableForResult,
+} from './transpose.js';
+import { unwrapOrFromResult } from './unwrapOr.js';
+import { unwrapOrElseFromResult } from './unwrapOrElse.js';
+import { unwrapOrElseAsyncFromResult } from './unwrapOrElseAsync.js';
 
 /**
  *  @deprecated
  *  This is an alias for backward compatibility.
  *  Please use {@link expectOk} instead.
+ *  This might be removed in v34 or later.
  */
 export const expect: typeof expectOk = expectOk;
 
@@ -96,6 +102,7 @@ export const expect: typeof expectOk = expectOk;
  *  @deprecated
  *  This is an alias for backward compatibility.
  *  Please use {@link expectOk} instead.
+ *  This might be removed in v34 or later.
  */
 export const expectIsOk: typeof expectOk = expectOk;
 
@@ -103,6 +110,7 @@ export const expectIsOk: typeof expectOk = expectOk;
  *  @deprecated
  *  This is an alias for backward compatibility.
  *  Please use {@link expectErr} instead.
+ *  This might be removed in v34 or later.
  */
 export const expectIsErr: typeof expectErr = expectErr;
 
@@ -110,6 +118,7 @@ export const expectIsErr: typeof expectErr = expectErr;
  *  @deprecated
  *  This is an alias for backward compatibility.
  *  Please use {@link unwrapOk} instead.
+ *  This might be removed in v34 or later.
  */
 export const unwrap: typeof unwrapOk = unwrapOk;
 
@@ -118,6 +127,7 @@ export const unwrap: typeof unwrapOk = unwrapOk;
  *  This is an alias for backward compatibility.
  *  __But this will be removed in the future by deprecating `PlainOption`.__
  *  Please import from `./PlainResult/toOption` instead.
+ *  This might be removed in v34 or later.
  */
 export const toOptionFromOk: typeof toOptionFromOkFn = toOptionFromOkFn;
 
@@ -126,5 +136,188 @@ export const toOptionFromOk: typeof toOptionFromOkFn = toOptionFromOkFn;
  *  This is an alias for backward compatibility.
  *  __But this will be removed in the future by deprecating `PlainOption`.__
  *  Please import from `./PlainResult/toOption` instead.
+ *  This might be removed in v34 or later.
  */
 export const toOptionFromErr: typeof toOptionFromErrFn = toOptionFromErrFn;
+
+/**
+ *  @deprecated
+ *  Please use {@link andForResult}
+ *  This might be removed in v34 or later.
+ */
+export const and: typeof andForResult = andForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link andThenForResult}
+ *  This might be removed in v34 or later.
+ */
+export const andThen: typeof andThenForResult = andThenForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link andThenAsyncForResult}
+ *  This might be removed in v34 or later.
+ */
+export const andThenAsync: typeof andThenAsyncForResult = andThenAsyncForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link equalForResult}
+ *  This might be removed in v34 or later.
+ */
+export const equal: typeof equalForResult = equalForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link flattenForResult}
+ *  This might be removed in v34 or later.
+ */
+export const flatten: typeof flattenForResult = flattenForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link inspectOkOfResult}
+ *  This might be removed in v34 or later.
+ */
+export const inspectOk: typeof inspectOkOfResult = inspectOkOfResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link inspectErrOfResult}
+ *  This might be removed in v34 or later.
+ */
+export const inspectErr: typeof inspectErrOfResult = inspectErrOfResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link inspectBothOfResult}
+ *  This might be removed in v34 or later.
+ */
+export const inspectBoth: typeof inspectBothOfResult = inspectBothOfResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapForResult}
+ *  This might be removed in v34 or later.
+ */
+export const map: typeof mapForResult = mapForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapAsyncForResult}
+ *  This might be removed in v34 or later.
+ */
+export const mapAsync: typeof mapAsyncForResult = mapAsyncForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapOrForResult}
+ *  This might be removed in v34 or later.
+ */
+export const mapOr: typeof mapOrForResult = mapOrForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapOrAsyncForResult}
+ *  This might be removed in v34 or later.
+ */
+export const mapOrAsync: typeof mapOrAsyncForResult = mapOrAsyncForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapOrElseForResult}
+ *  This might be removed in v34 or later.
+ */
+export const mapOrElse: typeof mapOrElseForResult = mapOrElseForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapOrElseAsyncForResult}
+ *  This might be removed in v34 or later.
+ */
+export const mapOrElseAsync: typeof mapOrElseAsyncForResult = mapOrElseAsyncForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapErrForResult}
+ *  This might be removed in v34 or later.
+ */
+export const mapErr: typeof mapErrForResult = mapErrForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link mapErrAsyncForResult}
+ *  This might be removed in v34 or later.
+ */
+export const mapErrAsync: typeof mapErrAsyncForResult = mapErrAsyncForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link orForResult}
+ *  This might be removed in v34 or later.
+ */
+export const or: typeof orForResult = orForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link orElseForResult}
+ *  This might be removed in v34 or later.
+ */
+export const orElse: typeof orElseForResult = orElseForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link orElseAsyncForResult}
+ *  This might be removed in v34 or later.
+ */
+export const orElseAsync: typeof orElseAsyncForResult = orElseAsyncForResult;
+
+/**
+ *  @deprecated
+ *  This might be removed in v34 or later.
+ */
+export const transposeForResult: typeof transposeForResultOriginal = transposeForResultOriginal;
+
+/**
+ *  @deprecated
+ *  Please use {@link transposeForResult}
+ *  This might be removed in v34 or later.
+ */
+export const transpose: typeof transposeForResult = transposeForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link transposeNullableForResult}
+ *  This might be removed in v34 or later.
+ */
+export const transposeNullable: typeof transposeNullableForResult = transposeNullableForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link transposeUndefinableForResult}
+ *  This might be removed in v34 or later.
+ */
+export const transposeUndefinable: typeof transposeUndefinableForResult =
+    transposeUndefinableForResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link unwrapOrFromResult}
+ *  This might be removed in v34 or later.
+ */
+export const unwrapOr: typeof unwrapOrFromResult = unwrapOrFromResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link unwrapOrElseFromResult}
+ *  This might be removed in v34 or later.
+ */
+export const unwrapOrElse: typeof unwrapOrElseFromResult = unwrapOrElseFromResult;
+
+/**
+ *  @deprecated
+ *  Please use {@link unwrapOrElseAsyncFromResult}
+ *  This might be removed in v34 or later.
+ */
+export const unwrapOrElseAsync: typeof unwrapOrElseAsyncFromResult = unwrapOrElseAsyncFromResult;
