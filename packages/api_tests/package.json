@@ -1,5 +1,6 @@
 {
     "private": true,
+    "type": "module",
     "name": "@option-t/api_tests",
     "version": "33.9.0",
     "license": "MIT",
