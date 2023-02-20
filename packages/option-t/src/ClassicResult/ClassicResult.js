@@ -4,7 +4,7 @@ import { createClassicSome, createClassicNone } from '../ClassicOption/ClassicOp
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  *
  *  @constructor
  *  @template   T, E
@@ -328,7 +328,7 @@ ClassicResultBase.prototype = Object.freeze({
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  *
  *  @template   T, E
  *  @param  {!T} v
@@ -341,7 +341,7 @@ export function createClassicOk(v) {
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  *
  *  @template   T, E
  *  @param  {!E} e
@@ -354,7 +354,7 @@ export function createClassicErr(e) {
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export function ClassicOkConstructor(val) {
     return createClassicOk(val);
@@ -362,7 +362,7 @@ export function ClassicOkConstructor(val) {
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export function ClassicErrConstructor(e) {
     return createClassicErr(e);

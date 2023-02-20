@@ -6,7 +6,7 @@ _We recommend to use utility types & functions if you don't have to use `instanc
 you should avoid to expose this object as a public API of your package_  because:
 
 1. `instanceof` checking might not work correctly if a user project has multiple versions of this package in their dependencies.
-    - See ([#337](https://github.com/karen-irc/option-t/pull/337)).
+    - See ([#337](https://github.com/option-t/option-t/pull/337)).
 2. We cannot extend more utility functions without increasing a code size.
     - Adding a property or a function to _prototype_ will increase a code size
       but it's hard to remove unused them if an user project does not use all of them.

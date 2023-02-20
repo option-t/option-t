@@ -157,7 +157,7 @@ export function createNone(): None {
     const r: None = {
         ok: false,
         // XXX: We need to fill with `null` to improve the compatibility with Next.js
-        // see https://github.com/karen-irc/option-t/pull/1256
+        // see https://github.com/option-t/option-t/pull/1256
         val: null,
     };
     return r;

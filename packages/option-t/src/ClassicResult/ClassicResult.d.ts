@@ -7,20 +7,20 @@ import type { TransformFn, RecoveryFromErrorFn, EffectFn } from '../internal/Fun
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export type ClassicTryTransformFn<T, U, E> = TransformFn<T, ClassicResult<U, E>>;
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export type ClassicTryRecoverFromErrorFn<T, E, F> = RecoveryFromErrorFn<E, ClassicResult<T, F>>;
 
 /**
  *  @deprecated
  *      We keep this only for backward compatibility.
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 interface ClassicResultable<T, E> {
     /**
@@ -141,7 +141,7 @@ interface ClassicResultable<T, E> {
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  *
  * XXX:
  * This is only used for the instanceof-basis runtime checking. (e.g. `React.PropTypes.instanceOf()`)
@@ -176,7 +176,7 @@ export abstract class ClassicResultBase<T, E> implements ClassicResultable<T, E>
 /**
  *  @deprecated
  *      We keep this only for backward compatibility.
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 interface ClassicOk<T, E> extends ClassicResultable<T, E> {
     ok(): Some<T>;
@@ -190,7 +190,7 @@ interface ClassicOk<T, E> extends ClassicResultable<T, E> {
 /**
  *  @deprecated
  *      We keep this only for backward compatibility.
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  *
  *  XXX:
  *  This class intend to represent the container of some error type `E`.
@@ -207,7 +207,7 @@ interface ClassicErr<T, E> extends ClassicResultable<T, E> {
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  *
  *  The Result/Either type interface whose APIs are inspired
  *  by Rust's `std::result::Result<T, E>`.
@@ -217,14 +217,14 @@ interface ClassicErr<T, E> extends ClassicResultable<T, E> {
  *  you should avoid to expose this object as a public API of your package_
  *  because `instanceof` checking might not work correctly if a user project has
  *  multiple version of this package in their dependencies.
- *  See ([#337](https://github.com/karen-irc/option-t/pull/337)).
+ *  See ([#337](https://github.com/option-t/option-t/pull/337)).
  *
  *  Furthermore, we don't have a plan to implements a new API aggressively for this object
  *  because we need to implement it on `.prototype`
  *  and it might be hard to remove unused methods from `.prototype` on minifying.
  *  We could resolve this problem for the future release but today is not so.
  *
- *  See [#378](https://github.com/karen-irc/option-t/issues/378)
+ *  See [#378](https://github.com/option-t/option-t/issues/378)
  *
  *  And some operators might not return a new object and reuse the input
  *  to reduce an object allocation. Thus comparing _this `Option<T>`` is meaningles.
@@ -234,26 +234,26 @@ export type ClassicResult<T, E> = ClassicOk<T, E> | ClassicErr<T, E>;
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export declare function createClassicOk<T, E>(val: T): ClassicOk<T, E>;
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export declare function createClassicErr<T, E>(err: E): ClassicErr<T, E>;
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export declare const ClassicOkConstructor: new <T, E>(val: T) => ClassicOk<T, E>;
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export declare const ClassicErrConstructor: new <T, E>(err: E) => ClassicErr<T, E>;

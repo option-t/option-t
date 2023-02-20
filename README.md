@@ -1,7 +1,7 @@
 # option-t
 
 [![npm](https://img.shields.io/npm/v/option-t.svg?style=flat)](https://www.npmjs.com/package/option-t)
-[![CI Status (GitHub Actions)](https://github.com/karen-irc/option-t/workflows/CI/badge.svg)](https://github.com/karen-irc/option-t/actions?query=workflow%3ACI)
+[![CI Status (GitHub Actions)](https://github.com/option-t/option-t/workflows/CI/badge.svg)](https://github.com/option-t/option-t/actions?query=workflow%3ACI)
 
 * **This library provides a toolkit for _nullable_ types in ECMAScript**.
     - `T | null`
@@ -152,7 +152,7 @@ All APIs are TypeScript ready.
     * plain objects
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
         * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/) (_weak deprecated_)
-* [Wrapper objects](./docs/wrapper_objects.md) ([__*deprecated*__](https://github.com/karen-irc/option-t/issues/459)).
+* [Wrapper objects](./docs/wrapper_objects.md) ([__*deprecated*__](https://github.com/option-t/option-t/issues/459)).
 
 Additional documents are in [`docs/`](./docs/).
 
