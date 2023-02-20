@@ -1,7 +1,7 @@
 /**
  *  @deprecated
  *  This might be removed in v35 or later.
- *  Please use `option-t/Undefinable` instead.
+ *  Please use `option-t/Maybe` instead.
  */
 export {
     type NotNullOrUndefined,
