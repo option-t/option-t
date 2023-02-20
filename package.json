@@ -8,7 +8,7 @@
         "@babel/core": "^7.20.12",
         "@babel/plugin-syntax-typescript": "^7.20.0",
         "@babel/preset-env": "^7.20.2",
-        "@typescript-eslint/eslint-plugin": "^5.51.0",
+        "@typescript-eslint/eslint-plugin": "^5.52.0",
         "@typescript-eslint/parser": "^5.51.0",
         "del-cli": "^5.0.0",
         "eslint": "^8.34.0",
