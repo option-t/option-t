@@ -36,10 +36,8 @@ export {
     expectSome,
 } from './Option.js';
 
-export { andForOption } from './and.js';
 export { andThenForOption } from './andThen.js';
 export { andThenAsyncForOption } from './andThenAsync.js';
-export { equalForOption } from './equal.js';
 export { filterForOption } from './filter.js';
 export { flattenForOption } from './flatten.js';
 export { inspectOption } from './inspect.js';
@@ -49,7 +47,6 @@ export { mapOrForOption } from './mapOr.js';
 export { mapOrAsyncForOption } from './mapOrAsync.js';
 export { mapOrElseForOption } from './mapOrElse.js';
 export { mapOrElseAsyncForOption } from './mapOrElseAsync.js';
-export { orForOption } from './or.js';
 export { orElseForOption } from './orElse.js';
 export { orElseAsyncForOption } from './orElseAsync.js';
 export { transposeForOption } from './transpose.js';
@@ -75,10 +72,10 @@ export const expect: typeof expectSome = expectSome;
  */
 export const unwrap: typeof unwrapSome = unwrapSome;
 
-import { andForOption } from './and.js';
+import { andForOption as andForOptionOriginal } from './and.js';
 import { andThenForOption } from './andThen.js';
 import { andThenAsyncForOption } from './andThenAsync.js';
-import { equalForOption } from './equal.js';
+import { equalForOption as equalForOptionOriginal } from './equal.js';
 import { filterForOption } from './filter.js';
 import { flattenForOption } from './flatten.js';
 import { inspectOption } from './inspect.js';
@@ -88,7 +85,7 @@ import { mapOrForOption } from './mapOr.js';
 import { mapOrAsyncForOption } from './mapOrAsync.js';
 import { mapOrElseForOption } from './mapOrElse.js';
 import { mapOrElseAsyncForOption } from './mapOrElseAsync.js';
-import { orForOption } from './or.js';
+import { orForOption as orForOptionOriginal } from './or.js';
 import { orElseForOption } from './orElse.js';
 import { orElseAsyncForOption } from './orElseAsync.js';
 import { transposeForOption } from './transpose.js';
@@ -98,10 +95,17 @@ import { unwrapOrElseAsyncFromOption } from './unwrapOrElseAsync.js';
 
 /**
  *  @deprecated
- *  Please use {@link andForOption}
+ *  Please use `andForOption` in `option-t/PlainOption/and`.
  *  This might be removed in v34 or later.
  */
-export const and: typeof andForOption = andForOption;
+export const and: typeof andForOptionOriginal = andForOptionOriginal;
+
+/**
+ *  @deprecated
+ *  Please use `andForOption` in `option-t/PlainOption/and`.
+ *  This might be removed in v34 or later.
+ */
+export const andForOption: typeof andForOptionOriginal = andForOptionOriginal;
 
 /**
  *  @deprecated
@@ -119,10 +123,17 @@ export const andThenAsync: typeof andThenAsyncForOption = andThenAsyncForOption;
 
 /**
  *  @deprecated
- *  Please use {@link equalForOption}
+ *  Please use `equalForOption` in `option-t/PlainOption/equal`
  *  This might be removed in v34 or later.
  */
-export const equal: typeof equalForOption = equalForOption;
+export const equal: typeof equalForOptionOriginal = equalForOptionOriginal;
+
+/**
+ *  @deprecated
+ *  Please use `equalForOption` in `option-t/PlainOption/equal`
+ *  This might be removed in v34 or later.
+ */
+export const equalForOption: typeof equalForOptionOriginal = equalForOptionOriginal;
 
 /**
  *  @deprecated
@@ -189,10 +200,17 @@ export const mapOrElseAsync: typeof mapOrElseAsyncForOption = mapOrElseAsyncForO
 
 /**
  *  @deprecated
- *  Please use {@link orForOption}
+ *  Please use `orForOption` in `option-t/PlainOption/or`
  *  This might be removed in v34 or later.
  */
-export const or: typeof orForOption = orForOption;
+export const orForOption: typeof orForOptionOriginal = orForOptionOriginal;
+
+/**
+ *  @deprecated
+ *  Please use `orForOption` in `option-t/PlainOption/or`
+ *  This might be removed in v34 or later.
+ */
+export const or: typeof orForOptionOriginal = orForOptionOriginal;
 
 /**
  *  @deprecated
