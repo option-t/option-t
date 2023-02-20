@@ -50,6 +50,7 @@ module.exports = {
 
             'rules': {
                 [KEY_NAMING_CONVENTION]: newNamingConventionRule,
+                '@typescript-eslint/no-import-type-side-effects': 'warn',
             },
         },
     ],
