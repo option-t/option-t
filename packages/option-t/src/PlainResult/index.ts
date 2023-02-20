@@ -8,7 +8,7 @@
  *      - Almost minifier cannot remove functions by default on `.prototype` even if they are unused.
  *  - Relax the incompatible problem by mixing multiple versions of this package
  *    in module dependency tree.
- *      - e.g. `instanceof` will be a problem. See ([#337](https://github.com/karen-irc/option-t/pull/337)).
+ *      - e.g. `instanceof` will be a problem. See ([#337](https://github.com/option-t/option-t/pull/337)).
  *
  *  And some operators might not return a new object and reuse the input
  *  to reduce an object allocation. Thus comparing _this `Option<T>`` is meaningless like a following code.

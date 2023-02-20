@@ -2,7 +2,7 @@
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  *
  *  @constructor
  *  @template   T
@@ -275,7 +275,7 @@ ClassicOptionBase.prototype = Object.freeze({
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  *
  *  @template   T
  *  @param  {T}   val
@@ -288,7 +288,7 @@ export function createClassicSome(val) {
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  *
  *  @template   T
  *  @return    {OptionT<T>}
@@ -300,7 +300,7 @@ export function createClassicNone() {
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export function ClassicSomeConstructor(val) {
     return createClassicSome(val);
@@ -308,7 +308,7 @@ export function ClassicSomeConstructor(val) {
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export function ClassicNoneConstructor() {
     return createClassicNone();

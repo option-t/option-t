@@ -2,20 +2,20 @@ import type { TransformFn, RecoveryFn, EffectFn } from '../internal/Function.js'
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export type ClassicTryTransformFn<T, U> = TransformFn<T, ClassicOption<U>>;
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export type ClassicTryRecoveryFn<T> = RecoveryFn<ClassicOption<T>>;
 
 /**
  *  @deprecated
  *      We keep this only for backward compatibility.
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 interface ClassicOptionable<T> {
     /**
@@ -151,7 +151,7 @@ interface ClassicOptionable<T> {
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  *
  *  The base object of `Some<T>` and `None<T>`.
  *
@@ -169,7 +169,7 @@ interface ClassicOptionable<T> {
  *  Our basic stance is that _you don't use this and need not it in almost case_.
  *
  *  See also:
- *  https://github.com/karen-irc/option-t/pull/77
+ *  https://github.com/option-t/option-t/pull/77
  */
 export abstract class ClassicOptionBase<T> implements ClassicOptionable<T> {
     private readonly ok: boolean;
@@ -201,7 +201,7 @@ export abstract class ClassicOptionBase<T> implements ClassicOptionable<T> {
 /**
  *  @deprecated
  *      We keep this only for backward compatibility.
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export interface ClassicSome<T> extends ClassicOptionable<T> {
     readonly isSome: true;
@@ -213,7 +213,7 @@ export interface ClassicSome<T> extends ClassicOptionable<T> {
 /**
  *  @deprecated
  *      We keep this only for backward compatibility.
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export interface ClassicNone<T> extends ClassicOptionable<T> {
     readonly isSome: false;
@@ -224,7 +224,7 @@ export interface ClassicNone<T> extends ClassicOptionable<T> {
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  *
  *  The Option/Maybe type interface whose APIs are inspired
  *  by Rust's `std::option::Option<T>`.
@@ -234,14 +234,14 @@ export interface ClassicNone<T> extends ClassicOptionable<T> {
  *  you should avoid to expose this object as a public API of your package_
  *  because `instanceof` checking might not work correctly if a user project has
  *  multiple version of this package in their dependencies.
- *  See ([#337](https://github.com/karen-irc/option-t/pull/337)).
+ *  See ([#337](https://github.com/option-t/option-t/pull/337)).
  *
  *  Furthermore, we don't have a plan to implements a new API aggressively for this object
  *  because we need to implement it on `.prototype`
  *  and it might be hard to remove unused methods from `.prototype` on minifying.
  *  We could resolve this problem for the future release but today is not so.
  *
- *  See [#378](https://github.com/karen-irc/option-t/issues/378)
+ *  See [#378](https://github.com/option-t/option-t/issues/378)
  *
  *  And some operators might not return a new object and reuse the input
  *  to reduce an object allocation. Thus comparing _this `Option<T>`` is meaningles.
@@ -251,26 +251,26 @@ export type ClassicOption<T> = ClassicSome<T> | ClassicNone<T>;
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export declare function createClassicSome<T>(val: T): ClassicSome<T>;
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 export declare function createClassicNone<T>(): ClassicNone<T>;
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export declare const ClassicSomeConstructor: new <T>(val: T) => ClassicSome<T>;
 
 /**
  *  @deprecated
- *      See https://github.com/karen-irc/option-t/issues/459
+ *      See https://github.com/option-t/option-t/issues/459
  */
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export declare const ClassicNoneConstructor: new <T>() => ClassicNone<T>;
