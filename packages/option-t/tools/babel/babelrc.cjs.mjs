@@ -20,6 +20,7 @@ export default {
         }],
         ['@babel/plugin-transform-modules-commonjs', {
             importInterop: 'none',
+            strict: true,
         }]
     ],
 };
