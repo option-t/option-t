@@ -1222,6 +1222,7 @@
             "default": "./esm/index.js"
         },
         "./lib/ClassicOption": {
+            "types": "./esm/ClassicOption/index.d.ts",
             "import": {
                 "types": "./esm/ClassicOption/index.d.ts",
                 "default": "./esm/ClassicOption/index.js"
@@ -1233,6 +1234,7 @@
             "default": "./esm/ClassicOption/index.js"
         },
         "./lib/ClassicResult": {
+            "types": "./esm/ClassicResult/index.d.ts",
             "import": {
                 "types": "./esm/ClassicResult/index.d.ts",
                 "default": "./esm/ClassicResult/index.js"
@@ -1244,6 +1246,7 @@
             "default": "./esm/ClassicResult/index.js"
         },
         "./lib/Maybe/ErrorMessage": {
+            "types": "./esm/Maybe/ErrorMessage.d.ts",
             "import": {
                 "types": "./esm/Maybe/ErrorMessage.d.ts",
                 "default": "./esm/Maybe/ErrorMessage.js"
@@ -1255,6 +1258,7 @@
             "default": "./esm/Maybe/ErrorMessage.js"
         },
         "./lib/Maybe/Maybe": {
+            "types": "./esm/Maybe/Maybe.d.ts",
             "import": {
                 "types": "./esm/Maybe/Maybe.d.ts",
                 "default": "./esm/Maybe/Maybe.js"
@@ -1266,6 +1270,7 @@
             "default": "./esm/Maybe/Maybe.js"
         },
         "./lib/Maybe/and": {
+            "types": "./esm/Maybe/and.d.ts",
             "import": {
                 "types": "./esm/Maybe/and.d.ts",
                 "default": "./esm/Maybe/and.js"
@@ -1277,6 +1282,7 @@
             "default": "./esm/Maybe/and.js"
         },
         "./lib/Maybe/andThen": {
+            "types": "./esm/Maybe/andThen.d.ts",
             "import": {
                 "types": "./esm/Maybe/andThen.d.ts",
                 "default": "./esm/Maybe/andThen.js"
@@ -1288,6 +1294,7 @@
             "default": "./esm/Maybe/andThen.js"
         },
         "./lib/Maybe/andThenAsync": {
+            "types": "./esm/Maybe/andThenAsync.d.ts",
             "import": {
                 "types": "./esm/Maybe/andThenAsync.d.ts",
                 "default": "./esm/Maybe/andThenAsync.js"
@@ -1299,6 +1306,7 @@
             "default": "./esm/Maybe/andThenAsync.js"
         },
         "./lib/Maybe/compat/v33": {
+            "types": "./esm/Maybe/compat/v33.d.ts",
             "import": {
                 "types": "./esm/Maybe/compat/v33.d.ts",
                 "default": "./esm/Maybe/compat/v33.js"
@@ -1310,6 +1318,7 @@
             "default": "./esm/Maybe/compat/v33.js"
         },
         "./lib/Maybe/expect": {
+            "types": "./esm/Maybe/expect.d.ts",
             "import": {
                 "types": "./esm/Maybe/expect.d.ts",
                 "default": "./esm/Maybe/expect.js"
@@ -1321,6 +1330,7 @@
             "default": "./esm/Maybe/expect.js"
         },
         "./lib/Maybe/inspect": {
+            "types": "./esm/Maybe/inspect.d.ts",
             "import": {
                 "types": "./esm/Maybe/inspect.d.ts",
                 "default": "./esm/Maybe/inspect.js"
@@ -1332,6 +1342,7 @@
             "default": "./esm/Maybe/inspect.js"
         },
         "./lib/Maybe": {
+            "types": "./esm/Maybe/index.d.ts",
             "import": {
                 "types": "./esm/Maybe/index.d.ts",
                 "default": "./esm/Maybe/index.js"
@@ -1343,6 +1354,7 @@
             "default": "./esm/Maybe/index.js"
         },
         "./lib/Maybe/map": {
+            "types": "./esm/Maybe/map.d.ts",
             "import": {
                 "types": "./esm/Maybe/map.d.ts",
                 "default": "./esm/Maybe/map.js"
@@ -1354,6 +1366,7 @@
             "default": "./esm/Maybe/map.js"
         },
         "./lib/Maybe/mapAsync": {
+            "types": "./esm/Maybe/mapAsync.d.ts",
             "import": {
                 "types": "./esm/Maybe/mapAsync.d.ts",
                 "default": "./esm/Maybe/mapAsync.js"
@@ -1365,6 +1378,7 @@
             "default": "./esm/Maybe/mapAsync.js"
         },
         "./lib/Maybe/mapOr": {
+            "types": "./esm/Maybe/mapOr.d.ts",
             "import": {
                 "types": "./esm/Maybe/mapOr.d.ts",
                 "default": "./esm/Maybe/mapOr.js"
@@ -1376,6 +1390,7 @@
             "default": "./esm/Maybe/mapOr.js"
         },
         "./lib/Maybe/mapOrAsync": {
+            "types": "./esm/Maybe/mapOrAsync.d.ts",
             "import": {
                 "types": "./esm/Maybe/mapOrAsync.d.ts",
                 "default": "./esm/Maybe/mapOrAsync.js"
@@ -1387,6 +1402,7 @@
             "default": "./esm/Maybe/mapOrAsync.js"
         },
         "./lib/Maybe/mapOrElse": {
+            "types": "./esm/Maybe/mapOrElse.d.ts",
             "import": {
                 "types": "./esm/Maybe/mapOrElse.d.ts",
                 "default": "./esm/Maybe/mapOrElse.js"
@@ -1398,6 +1414,7 @@
             "default": "./esm/Maybe/mapOrElse.js"
         },
         "./lib/Maybe/mapOrElseAsync": {
+            "types": "./esm/Maybe/mapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/Maybe/mapOrElseAsync.d.ts",
                 "default": "./esm/Maybe/mapOrElseAsync.js"
@@ -1409,6 +1426,7 @@
             "default": "./esm/Maybe/mapOrElseAsync.js"
         },
         "./lib/Maybe/or": {
+            "types": "./esm/Maybe/or.d.ts",
             "import": {
                 "types": "./esm/Maybe/or.d.ts",
                 "default": "./esm/Maybe/or.js"
@@ -1420,6 +1438,7 @@
             "default": "./esm/Maybe/or.js"
         },
         "./lib/Maybe/orElse": {
+            "types": "./esm/Maybe/orElse.d.ts",
             "import": {
                 "types": "./esm/Maybe/orElse.d.ts",
                 "default": "./esm/Maybe/orElse.js"
@@ -1431,6 +1450,7 @@
             "default": "./esm/Maybe/orElse.js"
         },
         "./lib/Maybe/orElseAsync": {
+            "types": "./esm/Maybe/orElseAsync.d.ts",
             "import": {
                 "types": "./esm/Maybe/orElseAsync.d.ts",
                 "default": "./esm/Maybe/orElseAsync.js"
@@ -1442,6 +1462,7 @@
             "default": "./esm/Maybe/orElseAsync.js"
         },
         "./lib/Maybe/toNullable": {
+            "types": "./esm/Maybe/toNullable.d.ts",
             "import": {
                 "types": "./esm/Maybe/toNullable.d.ts",
                 "default": "./esm/Maybe/toNullable.js"
@@ -1453,6 +1474,7 @@
             "default": "./esm/Maybe/toNullable.js"
         },
         "./lib/Maybe/toPlainResult": {
+            "types": "./esm/Maybe/toPlainResult.d.ts",
             "import": {
                 "types": "./esm/Maybe/toPlainResult.d.ts",
                 "default": "./esm/Maybe/toPlainResult.js"
@@ -1464,6 +1486,7 @@
             "default": "./esm/Maybe/toPlainResult.js"
         },
         "./lib/Maybe/toUndefinable": {
+            "types": "./esm/Maybe/toUndefinable.d.ts",
             "import": {
                 "types": "./esm/Maybe/toUndefinable.d.ts",
                 "default": "./esm/Maybe/toUndefinable.js"
@@ -1475,6 +1498,7 @@
             "default": "./esm/Maybe/toUndefinable.js"
         },
         "./lib/Maybe/unwrap": {
+            "types": "./esm/Maybe/unwrap.d.ts",
             "import": {
                 "types": "./esm/Maybe/unwrap.d.ts",
                 "default": "./esm/Maybe/unwrap.js"
@@ -1486,6 +1510,7 @@
             "default": "./esm/Maybe/unwrap.js"
         },
         "./lib/Maybe/unwrapOr": {
+            "types": "./esm/Maybe/unwrapOr.d.ts",
             "import": {
                 "types": "./esm/Maybe/unwrapOr.d.ts",
                 "default": "./esm/Maybe/unwrapOr.js"
@@ -1497,6 +1522,7 @@
             "default": "./esm/Maybe/unwrapOr.js"
         },
         "./lib/Maybe/unwrapOrElse": {
+            "types": "./esm/Maybe/unwrapOrElse.d.ts",
             "import": {
                 "types": "./esm/Maybe/unwrapOrElse.d.ts",
                 "default": "./esm/Maybe/unwrapOrElse.js"
@@ -1508,6 +1534,7 @@
             "default": "./esm/Maybe/unwrapOrElse.js"
         },
         "./lib/Maybe/unwrapOrElseAsync": {
+            "types": "./esm/Maybe/unwrapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/Maybe/unwrapOrElseAsync.d.ts",
                 "default": "./esm/Maybe/unwrapOrElseAsync.js"
@@ -1519,6 +1546,7 @@
             "default": "./esm/Maybe/unwrapOrElseAsync.js"
         },
         "./lib/Maybe/xor": {
+            "types": "./esm/Maybe/xor.d.ts",
             "import": {
                 "types": "./esm/Maybe/xor.d.ts",
                 "default": "./esm/Maybe/xor.js"
@@ -1530,6 +1558,7 @@
             "default": "./esm/Maybe/xor.js"
         },
         "./lib/Nullable/ErrorMessage": {
+            "types": "./esm/Nullable/ErrorMessage.d.ts",
             "import": {
                 "types": "./esm/Nullable/ErrorMessage.d.ts",
                 "default": "./esm/Nullable/ErrorMessage.js"
@@ -1541,6 +1570,7 @@
             "default": "./esm/Nullable/ErrorMessage.js"
         },
         "./lib/Nullable/Nullable": {
+            "types": "./esm/Nullable/Nullable.d.ts",
             "import": {
                 "types": "./esm/Nullable/Nullable.d.ts",
                 "default": "./esm/Nullable/Nullable.js"
@@ -1552,6 +1582,7 @@
             "default": "./esm/Nullable/Nullable.js"
         },
         "./lib/Nullable/and": {
+            "types": "./esm/Nullable/and.d.ts",
             "import": {
                 "types": "./esm/Nullable/and.d.ts",
                 "default": "./esm/Nullable/and.js"
@@ -1563,6 +1594,7 @@
             "default": "./esm/Nullable/and.js"
         },
         "./lib/Nullable/andThen": {
+            "types": "./esm/Nullable/andThen.d.ts",
             "import": {
                 "types": "./esm/Nullable/andThen.d.ts",
                 "default": "./esm/Nullable/andThen.js"
@@ -1574,6 +1606,7 @@
             "default": "./esm/Nullable/andThen.js"
         },
         "./lib/Nullable/andThenAsync": {
+            "types": "./esm/Nullable/andThenAsync.d.ts",
             "import": {
                 "types": "./esm/Nullable/andThenAsync.d.ts",
                 "default": "./esm/Nullable/andThenAsync.js"
@@ -1585,6 +1618,7 @@
             "default": "./esm/Nullable/andThenAsync.js"
         },
         "./lib/Nullable/compat/v33": {
+            "types": "./esm/Nullable/compat/v33.d.ts",
             "import": {
                 "types": "./esm/Nullable/compat/v33.d.ts",
                 "default": "./esm/Nullable/compat/v33.js"
@@ -1596,6 +1630,7 @@
             "default": "./esm/Nullable/compat/v33.js"
         },
         "./lib/Nullable/expect": {
+            "types": "./esm/Nullable/expect.d.ts",
             "import": {
                 "types": "./esm/Nullable/expect.d.ts",
                 "default": "./esm/Nullable/expect.js"
@@ -1607,6 +1642,7 @@
             "default": "./esm/Nullable/expect.js"
         },
         "./lib/Nullable/inspect": {
+            "types": "./esm/Nullable/inspect.d.ts",
             "import": {
                 "types": "./esm/Nullable/inspect.d.ts",
                 "default": "./esm/Nullable/inspect.js"
@@ -1618,6 +1654,7 @@
             "default": "./esm/Nullable/inspect.js"
         },
         "./lib/Nullable": {
+            "types": "./esm/Nullable/index.d.ts",
             "import": {
                 "types": "./esm/Nullable/index.d.ts",
                 "default": "./esm/Nullable/index.js"
@@ -1629,6 +1666,7 @@
             "default": "./esm/Nullable/index.js"
         },
         "./lib/Nullable/map": {
+            "types": "./esm/Nullable/map.d.ts",
             "import": {
                 "types": "./esm/Nullable/map.d.ts",
                 "default": "./esm/Nullable/map.js"
@@ -1640,6 +1678,7 @@
             "default": "./esm/Nullable/map.js"
         },
         "./lib/Nullable/mapAsync": {
+            "types": "./esm/Nullable/mapAsync.d.ts",
             "import": {
                 "types": "./esm/Nullable/mapAsync.d.ts",
                 "default": "./esm/Nullable/mapAsync.js"
@@ -1651,6 +1690,7 @@
             "default": "./esm/Nullable/mapAsync.js"
         },
         "./lib/Nullable/mapOr": {
+            "types": "./esm/Nullable/mapOr.d.ts",
             "import": {
                 "types": "./esm/Nullable/mapOr.d.ts",
                 "default": "./esm/Nullable/mapOr.js"
@@ -1662,6 +1702,7 @@
             "default": "./esm/Nullable/mapOr.js"
         },
         "./lib/Nullable/mapOrAsync": {
+            "types": "./esm/Nullable/mapOrAsync.d.ts",
             "import": {
                 "types": "./esm/Nullable/mapOrAsync.d.ts",
                 "default": "./esm/Nullable/mapOrAsync.js"
@@ -1673,6 +1714,7 @@
             "default": "./esm/Nullable/mapOrAsync.js"
         },
         "./lib/Nullable/mapOrElse": {
+            "types": "./esm/Nullable/mapOrElse.d.ts",
             "import": {
                 "types": "./esm/Nullable/mapOrElse.d.ts",
                 "default": "./esm/Nullable/mapOrElse.js"
@@ -1684,6 +1726,7 @@
             "default": "./esm/Nullable/mapOrElse.js"
         },
         "./lib/Nullable/mapOrElseAsync": {
+            "types": "./esm/Nullable/mapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/Nullable/mapOrElseAsync.d.ts",
                 "default": "./esm/Nullable/mapOrElseAsync.js"
@@ -1695,6 +1738,7 @@
             "default": "./esm/Nullable/mapOrElseAsync.js"
         },
         "./lib/Nullable/or": {
+            "types": "./esm/Nullable/or.d.ts",
             "import": {
                 "types": "./esm/Nullable/or.d.ts",
                 "default": "./esm/Nullable/or.js"
@@ -1706,6 +1750,7 @@
             "default": "./esm/Nullable/or.js"
         },
         "./lib/Nullable/orElse": {
+            "types": "./esm/Nullable/orElse.d.ts",
             "import": {
                 "types": "./esm/Nullable/orElse.d.ts",
                 "default": "./esm/Nullable/orElse.js"
@@ -1717,6 +1762,7 @@
             "default": "./esm/Nullable/orElse.js"
         },
         "./lib/Nullable/orElseAsync": {
+            "types": "./esm/Nullable/orElseAsync.d.ts",
             "import": {
                 "types": "./esm/Nullable/orElseAsync.d.ts",
                 "default": "./esm/Nullable/orElseAsync.js"
@@ -1728,6 +1774,7 @@
             "default": "./esm/Nullable/orElseAsync.js"
         },
         "./lib/Nullable/toPlainResult": {
+            "types": "./esm/Nullable/toPlainResult.d.ts",
             "import": {
                 "types": "./esm/Nullable/toPlainResult.d.ts",
                 "default": "./esm/Nullable/toPlainResult.js"
@@ -1739,6 +1786,7 @@
             "default": "./esm/Nullable/toPlainResult.js"
         },
         "./lib/Nullable/toUndefinable": {
+            "types": "./esm/Nullable/toUndefinable.d.ts",
             "import": {
                 "types": "./esm/Nullable/toUndefinable.d.ts",
                 "default": "./esm/Nullable/toUndefinable.js"
@@ -1750,6 +1798,7 @@
             "default": "./esm/Nullable/toUndefinable.js"
         },
         "./lib/Nullable/unwrap": {
+            "types": "./esm/Nullable/unwrap.d.ts",
             "import": {
                 "types": "./esm/Nullable/unwrap.d.ts",
                 "default": "./esm/Nullable/unwrap.js"
@@ -1761,6 +1810,7 @@
             "default": "./esm/Nullable/unwrap.js"
         },
         "./lib/Nullable/unwrapOr": {
+            "types": "./esm/Nullable/unwrapOr.d.ts",
             "import": {
                 "types": "./esm/Nullable/unwrapOr.d.ts",
                 "default": "./esm/Nullable/unwrapOr.js"
@@ -1772,6 +1822,7 @@
             "default": "./esm/Nullable/unwrapOr.js"
         },
         "./lib/Nullable/unwrapOrElse": {
+            "types": "./esm/Nullable/unwrapOrElse.d.ts",
             "import": {
                 "types": "./esm/Nullable/unwrapOrElse.d.ts",
                 "default": "./esm/Nullable/unwrapOrElse.js"
@@ -1783,6 +1834,7 @@
             "default": "./esm/Nullable/unwrapOrElse.js"
         },
         "./lib/Nullable/unwrapOrElseAsync": {
+            "types": "./esm/Nullable/unwrapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/Nullable/unwrapOrElseAsync.d.ts",
                 "default": "./esm/Nullable/unwrapOrElseAsync.js"
@@ -1794,6 +1846,7 @@
             "default": "./esm/Nullable/unwrapOrElseAsync.js"
         },
         "./lib/Nullable/xor": {
+            "types": "./esm/Nullable/xor.d.ts",
             "import": {
                 "types": "./esm/Nullable/xor.d.ts",
                 "default": "./esm/Nullable/xor.js"
@@ -1805,6 +1858,7 @@
             "default": "./esm/Nullable/xor.js"
         },
         "./lib/PlainOption/Option": {
+            "types": "./esm/PlainOption/Option.d.ts",
             "import": {
                 "types": "./esm/PlainOption/Option.d.ts",
                 "default": "./esm/PlainOption/Option.js"
@@ -1816,6 +1870,7 @@
             "default": "./esm/PlainOption/Option.js"
         },
         "./lib/PlainOption/and": {
+            "types": "./esm/PlainOption/and.d.ts",
             "import": {
                 "types": "./esm/PlainOption/and.d.ts",
                 "default": "./esm/PlainOption/and.js"
@@ -1827,6 +1882,7 @@
             "default": "./esm/PlainOption/and.js"
         },
         "./lib/PlainOption/andThen": {
+            "types": "./esm/PlainOption/andThen.d.ts",
             "import": {
                 "types": "./esm/PlainOption/andThen.d.ts",
                 "default": "./esm/PlainOption/andThen.js"
@@ -1838,6 +1894,7 @@
             "default": "./esm/PlainOption/andThen.js"
         },
         "./lib/PlainOption/andThenAsync": {
+            "types": "./esm/PlainOption/andThenAsync.d.ts",
             "import": {
                 "types": "./esm/PlainOption/andThenAsync.d.ts",
                 "default": "./esm/PlainOption/andThenAsync.js"
@@ -1849,6 +1906,7 @@
             "default": "./esm/PlainOption/andThenAsync.js"
         },
         "./lib/PlainOption/asMut": {
+            "types": "./esm/PlainOption/asMut.d.ts",
             "import": {
                 "types": "./esm/PlainOption/asMut.d.ts",
                 "default": "./esm/PlainOption/asMut.js"
@@ -1860,6 +1918,7 @@
             "default": "./esm/PlainOption/asMut.js"
         },
         "./lib/PlainOption/compat/v33": {
+            "types": "./esm/PlainOption/compat/v33.d.ts",
             "import": {
                 "types": "./esm/PlainOption/compat/v33.d.ts",
                 "default": "./esm/PlainOption/compat/v33.js"
@@ -1871,6 +1930,7 @@
             "default": "./esm/PlainOption/compat/v33.js"
         },
         "./lib/PlainOption/drop": {
+            "types": "./esm/PlainOption/drop.d.ts",
             "import": {
                 "types": "./esm/PlainOption/drop.d.ts",
                 "default": "./esm/PlainOption/drop.js"
@@ -1882,6 +1942,7 @@
             "default": "./esm/PlainOption/drop.js"
         },
         "./lib/PlainOption/expect": {
+            "types": "./esm/PlainOption/expect.d.ts",
             "import": {
                 "types": "./esm/PlainOption/expect.d.ts",
                 "default": "./esm/PlainOption/expect.js"
@@ -1893,6 +1954,7 @@
             "default": "./esm/PlainOption/expect.js"
         },
         "./lib/PlainOption/equal": {
+            "types": "./esm/PlainOption/equal.d.ts",
             "import": {
                 "types": "./esm/PlainOption/equal.d.ts",
                 "default": "./esm/PlainOption/equal.js"
@@ -1904,6 +1966,7 @@
             "default": "./esm/PlainOption/equal.js"
         },
         "./lib/PlainOption/flatten": {
+            "types": "./esm/PlainOption/flatten.d.ts",
             "import": {
                 "types": "./esm/PlainOption/flatten.d.ts",
                 "default": "./esm/PlainOption/flatten.js"
@@ -1915,6 +1978,7 @@
             "default": "./esm/PlainOption/flatten.js"
         },
         "./lib/PlainOption/filter": {
+            "types": "./esm/PlainOption/filter.d.ts",
             "import": {
                 "types": "./esm/PlainOption/filter.d.ts",
                 "default": "./esm/PlainOption/filter.js"
@@ -1926,6 +1990,7 @@
             "default": "./esm/PlainOption/filter.js"
         },
         "./lib/PlainOption/inspect": {
+            "types": "./esm/PlainOption/inspect.d.ts",
             "import": {
                 "types": "./esm/PlainOption/inspect.d.ts",
                 "default": "./esm/PlainOption/inspect.js"
@@ -1937,6 +2002,7 @@
             "default": "./esm/PlainOption/inspect.js"
         },
         "./lib/PlainOption": {
+            "types": "./esm/PlainOption/index.d.ts",
             "import": {
                 "types": "./esm/PlainOption/index.d.ts",
                 "default": "./esm/PlainOption/index.js"
@@ -1948,6 +2014,7 @@
             "default": "./esm/PlainOption/index.js"
         },
         "./lib/PlainOption/map": {
+            "types": "./esm/PlainOption/map.d.ts",
             "import": {
                 "types": "./esm/PlainOption/map.d.ts",
                 "default": "./esm/PlainOption/map.js"
@@ -1959,6 +2026,7 @@
             "default": "./esm/PlainOption/map.js"
         },
         "./lib/PlainOption/mapAsync": {
+            "types": "./esm/PlainOption/mapAsync.d.ts",
             "import": {
                 "types": "./esm/PlainOption/mapAsync.d.ts",
                 "default": "./esm/PlainOption/mapAsync.js"
@@ -1970,6 +2038,7 @@
             "default": "./esm/PlainOption/mapAsync.js"
         },
         "./lib/PlainOption/mapOr": {
+            "types": "./esm/PlainOption/mapOr.d.ts",
             "import": {
                 "types": "./esm/PlainOption/mapOr.d.ts",
                 "default": "./esm/PlainOption/mapOr.js"
@@ -1981,6 +2050,7 @@
             "default": "./esm/PlainOption/mapOr.js"
         },
         "./lib/PlainOption/mapOrAsync": {
+            "types": "./esm/PlainOption/mapOrAsync.d.ts",
             "import": {
                 "types": "./esm/PlainOption/mapOrAsync.d.ts",
                 "default": "./esm/PlainOption/mapOrAsync.js"
@@ -1992,6 +2062,7 @@
             "default": "./esm/PlainOption/mapOrAsync.js"
         },
         "./lib/PlainOption/mapOrElse": {
+            "types": "./esm/PlainOption/mapOrElse.d.ts",
             "import": {
                 "types": "./esm/PlainOption/mapOrElse.d.ts",
                 "default": "./esm/PlainOption/mapOrElse.js"
@@ -2003,6 +2074,7 @@
             "default": "./esm/PlainOption/mapOrElse.js"
         },
         "./lib/PlainOption/mapOrElseAsync": {
+            "types": "./esm/PlainOption/mapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/PlainOption/mapOrElseAsync.d.ts",
                 "default": "./esm/PlainOption/mapOrElseAsync.js"
@@ -2014,6 +2086,7 @@
             "default": "./esm/PlainOption/mapOrElseAsync.js"
         },
         "./lib/PlainOption/okOr": {
+            "types": "./esm/PlainOption/okOr.d.ts",
             "import": {
                 "types": "./esm/PlainOption/okOr.d.ts",
                 "default": "./esm/PlainOption/okOr.js"
@@ -2025,6 +2098,7 @@
             "default": "./esm/PlainOption/okOr.js"
         },
         "./lib/PlainOption/okOrElse": {
+            "types": "./esm/PlainOption/okOrElse.d.ts",
             "import": {
                 "types": "./esm/PlainOption/okOrElse.d.ts",
                 "default": "./esm/PlainOption/okOrElse.js"
@@ -2036,6 +2110,7 @@
             "default": "./esm/PlainOption/okOrElse.js"
         },
         "./lib/PlainOption/or": {
+            "types": "./esm/PlainOption/or.d.ts",
             "import": {
                 "types": "./esm/PlainOption/or.d.ts",
                 "default": "./esm/PlainOption/or.js"
@@ -2047,6 +2122,7 @@
             "default": "./esm/PlainOption/or.js"
         },
         "./lib/PlainOption/orElse": {
+            "types": "./esm/PlainOption/orElse.d.ts",
             "import": {
                 "types": "./esm/PlainOption/orElse.d.ts",
                 "default": "./esm/PlainOption/orElse.js"
@@ -2058,6 +2134,7 @@
             "default": "./esm/PlainOption/orElse.js"
         },
         "./lib/PlainOption/orElseAsync": {
+            "types": "./esm/PlainOption/orElseAsync.d.ts",
             "import": {
                 "types": "./esm/PlainOption/orElseAsync.d.ts",
                 "default": "./esm/PlainOption/orElseAsync.js"
@@ -2069,6 +2146,7 @@
             "default": "./esm/PlainOption/orElseAsync.js"
         },
         "./lib/PlainOption/transpose": {
+            "types": "./esm/PlainOption/transpose.d.ts",
             "import": {
                 "types": "./esm/PlainOption/transpose.d.ts",
                 "default": "./esm/PlainOption/transpose.js"
@@ -2080,6 +2158,7 @@
             "default": "./esm/PlainOption/transpose.js"
         },
         "./lib/PlainOption/toNullable": {
+            "types": "./esm/PlainOption/toNullable.d.ts",
             "import": {
                 "types": "./esm/PlainOption/toNullable.d.ts",
                 "default": "./esm/PlainOption/toNullable.js"
@@ -2091,6 +2170,7 @@
             "default": "./esm/PlainOption/toNullable.js"
         },
         "./lib/PlainOption/toUndefinable": {
+            "types": "./esm/PlainOption/toUndefinable.d.ts",
             "import": {
                 "types": "./esm/PlainOption/toUndefinable.d.ts",
                 "default": "./esm/PlainOption/toUndefinable.js"
@@ -2102,6 +2182,7 @@
             "default": "./esm/PlainOption/toUndefinable.js"
         },
         "./lib/PlainOption/unwrap": {
+            "types": "./esm/PlainOption/unwrap.d.ts",
             "import": {
                 "types": "./esm/PlainOption/unwrap.d.ts",
                 "default": "./esm/PlainOption/unwrap.js"
@@ -2113,6 +2194,7 @@
             "default": "./esm/PlainOption/unwrap.js"
         },
         "./lib/PlainOption/unwrapOr": {
+            "types": "./esm/PlainOption/unwrapOr.d.ts",
             "import": {
                 "types": "./esm/PlainOption/unwrapOr.d.ts",
                 "default": "./esm/PlainOption/unwrapOr.js"
@@ -2124,6 +2206,7 @@
             "default": "./esm/PlainOption/unwrapOr.js"
         },
         "./lib/PlainOption/unwrapOrElse": {
+            "types": "./esm/PlainOption/unwrapOrElse.d.ts",
             "import": {
                 "types": "./esm/PlainOption/unwrapOrElse.d.ts",
                 "default": "./esm/PlainOption/unwrapOrElse.js"
@@ -2135,6 +2218,7 @@
             "default": "./esm/PlainOption/unwrapOrElse.js"
         },
         "./lib/PlainOption/unwrapOrElseAsync": {
+            "types": "./esm/PlainOption/unwrapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/PlainOption/unwrapOrElseAsync.d.ts",
                 "default": "./esm/PlainOption/unwrapOrElseAsync.js"
@@ -2146,6 +2230,7 @@
             "default": "./esm/PlainOption/unwrapOrElseAsync.js"
         },
         "./lib/PlainOption/xor": {
+            "types": "./esm/PlainOption/xor.d.ts",
             "import": {
                 "types": "./esm/PlainOption/xor.d.ts",
                 "default": "./esm/PlainOption/xor.js"
@@ -2157,6 +2242,7 @@
             "default": "./esm/PlainOption/xor.js"
         },
         "./lib/PlainResult/Result": {
+            "types": "./esm/PlainResult/Result.d.ts",
             "import": {
                 "types": "./esm/PlainResult/Result.d.ts",
                 "default": "./esm/PlainResult/Result.js"
@@ -2168,6 +2254,7 @@
             "default": "./esm/PlainResult/Result.js"
         },
         "./lib/PlainResult/and": {
+            "types": "./esm/PlainResult/and.d.ts",
             "import": {
                 "types": "./esm/PlainResult/and.d.ts",
                 "default": "./esm/PlainResult/and.js"
@@ -2179,6 +2266,7 @@
             "default": "./esm/PlainResult/and.js"
         },
         "./lib/PlainResult/andThen": {
+            "types": "./esm/PlainResult/andThen.d.ts",
             "import": {
                 "types": "./esm/PlainResult/andThen.d.ts",
                 "default": "./esm/PlainResult/andThen.js"
@@ -2190,6 +2278,7 @@
             "default": "./esm/PlainResult/andThen.js"
         },
         "./lib/PlainResult/andThenAsync": {
+            "types": "./esm/PlainResult/andThenAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/andThenAsync.d.ts",
                 "default": "./esm/PlainResult/andThenAsync.js"
@@ -2201,6 +2290,7 @@
             "default": "./esm/PlainResult/andThenAsync.js"
         },
         "./lib/PlainResult/asMut": {
+            "types": "./esm/PlainResult/asMut.d.ts",
             "import": {
                 "types": "./esm/PlainResult/asMut.d.ts",
                 "default": "./esm/PlainResult/asMut.js"
@@ -2212,6 +2302,7 @@
             "default": "./esm/PlainResult/asMut.js"
         },
         "./lib/PlainResult/compat/v33": {
+            "types": "./esm/PlainResult/compat/v33.d.ts",
             "import": {
                 "types": "./esm/PlainResult/compat/v33.d.ts",
                 "default": "./esm/PlainResult/compat/v33.js"
@@ -2223,6 +2314,7 @@
             "default": "./esm/PlainResult/compat/v33.js"
         },
         "./lib/PlainResult/drop": {
+            "types": "./esm/PlainResult/drop.d.ts",
             "import": {
                 "types": "./esm/PlainResult/drop.d.ts",
                 "default": "./esm/PlainResult/drop.js"
@@ -2234,6 +2326,7 @@
             "default": "./esm/PlainResult/drop.js"
         },
         "./lib/PlainResult/equal": {
+            "types": "./esm/PlainResult/equal.d.ts",
             "import": {
                 "types": "./esm/PlainResult/equal.d.ts",
                 "default": "./esm/PlainResult/equal.js"
@@ -2245,6 +2338,7 @@
             "default": "./esm/PlainResult/equal.js"
         },
         "./lib/PlainResult/expect": {
+            "types": "./esm/PlainResult/expect.d.ts",
             "import": {
                 "types": "./esm/PlainResult/expect.d.ts",
                 "default": "./esm/PlainResult/expect.js"
@@ -2256,6 +2350,7 @@
             "default": "./esm/PlainResult/expect.js"
         },
         "./lib/PlainResult/flatten": {
+            "types": "./esm/PlainResult/flatten.d.ts",
             "import": {
                 "types": "./esm/PlainResult/flatten.d.ts",
                 "default": "./esm/PlainResult/flatten.js"
@@ -2267,6 +2362,7 @@
             "default": "./esm/PlainResult/flatten.js"
         },
         "./lib/PlainResult/fromPromiseSettledResult": {
+            "types": "./esm/PlainResult/fromPromiseSettledResult.d.ts",
             "import": {
                 "types": "./esm/PlainResult/fromPromiseSettledResult.d.ts",
                 "default": "./esm/PlainResult/fromPromiseSettledResult.js"
@@ -2278,6 +2374,7 @@
             "default": "./esm/PlainResult/fromPromiseSettledResult.js"
         },
         "./lib/PlainResult/inspect": {
+            "types": "./esm/PlainResult/inspect.d.ts",
             "import": {
                 "types": "./esm/PlainResult/inspect.d.ts",
                 "default": "./esm/PlainResult/inspect.js"
@@ -2289,6 +2386,7 @@
             "default": "./esm/PlainResult/inspect.js"
         },
         "./lib/PlainResult": {
+            "types": "./esm/PlainResult/index.d.ts",
             "import": {
                 "types": "./esm/PlainResult/index.d.ts",
                 "default": "./esm/PlainResult/index.js"
@@ -2300,6 +2398,7 @@
             "default": "./esm/PlainResult/index.js"
         },
         "./lib/PlainResult/map": {
+            "types": "./esm/PlainResult/map.d.ts",
             "import": {
                 "types": "./esm/PlainResult/map.d.ts",
                 "default": "./esm/PlainResult/map.js"
@@ -2311,6 +2410,7 @@
             "default": "./esm/PlainResult/map.js"
         },
         "./lib/PlainResult/mapAsync": {
+            "types": "./esm/PlainResult/mapAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapAsync.d.ts",
                 "default": "./esm/PlainResult/mapAsync.js"
@@ -2322,6 +2422,7 @@
             "default": "./esm/PlainResult/mapAsync.js"
         },
         "./lib/PlainResult/mapErr": {
+            "types": "./esm/PlainResult/mapErr.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapErr.d.ts",
                 "default": "./esm/PlainResult/mapErr.js"
@@ -2333,6 +2434,7 @@
             "default": "./esm/PlainResult/mapErr.js"
         },
         "./lib/PlainResult/mapErrAsync": {
+            "types": "./esm/PlainResult/mapErrAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapErrAsync.d.ts",
                 "default": "./esm/PlainResult/mapErrAsync.js"
@@ -2344,6 +2446,7 @@
             "default": "./esm/PlainResult/mapErrAsync.js"
         },
         "./lib/PlainResult/mapOr": {
+            "types": "./esm/PlainResult/mapOr.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapOr.d.ts",
                 "default": "./esm/PlainResult/mapOr.js"
@@ -2355,6 +2458,7 @@
             "default": "./esm/PlainResult/mapOr.js"
         },
         "./lib/PlainResult/mapOrAsync": {
+            "types": "./esm/PlainResult/mapOrAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapOrAsync.d.ts",
                 "default": "./esm/PlainResult/mapOrAsync.js"
@@ -2366,6 +2470,7 @@
             "default": "./esm/PlainResult/mapOrAsync.js"
         },
         "./lib/PlainResult/mapOrElse": {
+            "types": "./esm/PlainResult/mapOrElse.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapOrElse.d.ts",
                 "default": "./esm/PlainResult/mapOrElse.js"
@@ -2377,6 +2482,7 @@
             "default": "./esm/PlainResult/mapOrElse.js"
         },
         "./lib/PlainResult/mapOrElseAsync": {
+            "types": "./esm/PlainResult/mapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapOrElseAsync.d.ts",
                 "default": "./esm/PlainResult/mapOrElseAsync.js"
@@ -2388,6 +2494,7 @@
             "default": "./esm/PlainResult/mapOrElseAsync.js"
         },
         "./lib/PlainResult/or": {
+            "types": "./esm/PlainResult/or.d.ts",
             "import": {
                 "types": "./esm/PlainResult/or.d.ts",
                 "default": "./esm/PlainResult/or.js"
@@ -2399,6 +2506,7 @@
             "default": "./esm/PlainResult/or.js"
         },
         "./lib/PlainResult/orElse": {
+            "types": "./esm/PlainResult/orElse.d.ts",
             "import": {
                 "types": "./esm/PlainResult/orElse.d.ts",
                 "default": "./esm/PlainResult/orElse.js"
@@ -2410,6 +2518,7 @@
             "default": "./esm/PlainResult/orElse.js"
         },
         "./lib/PlainResult/orElseAsync": {
+            "types": "./esm/PlainResult/orElseAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/orElseAsync.d.ts",
                 "default": "./esm/PlainResult/orElseAsync.js"
@@ -2421,6 +2530,7 @@
             "default": "./esm/PlainResult/orElseAsync.js"
         },
         "./lib/PlainResult/transpose": {
+            "types": "./esm/PlainResult/transpose.d.ts",
             "import": {
                 "types": "./esm/PlainResult/transpose.d.ts",
                 "default": "./esm/PlainResult/transpose.js"
@@ -2432,6 +2542,7 @@
             "default": "./esm/PlainResult/transpose.js"
         },
         "./lib/PlainResult/toNullable": {
+            "types": "./esm/PlainResult/toNullable.d.ts",
             "import": {
                 "types": "./esm/PlainResult/toNullable.d.ts",
                 "default": "./esm/PlainResult/toNullable.js"
@@ -2443,6 +2554,7 @@
             "default": "./esm/PlainResult/toNullable.js"
         },
         "./lib/PlainResult/toOption": {
+            "types": "./esm/PlainResult/toOption.d.ts",
             "import": {
                 "types": "./esm/PlainResult/toOption.d.ts",
                 "default": "./esm/PlainResult/toOption.js"
@@ -2454,6 +2566,7 @@
             "default": "./esm/PlainResult/toOption.js"
         },
         "./lib/PlainResult/toUndefinable": {
+            "types": "./esm/PlainResult/toUndefinable.d.ts",
             "import": {
                 "types": "./esm/PlainResult/toUndefinable.d.ts",
                 "default": "./esm/PlainResult/toUndefinable.js"
@@ -2465,6 +2578,7 @@
             "default": "./esm/PlainResult/toUndefinable.js"
         },
         "./lib/PlainResult/tryCatch": {
+            "types": "./esm/PlainResult/tryCatch.d.ts",
             "import": {
                 "types": "./esm/PlainResult/tryCatch.d.ts",
                 "default": "./esm/PlainResult/tryCatch.js"
@@ -2476,6 +2590,7 @@
             "default": "./esm/PlainResult/tryCatch.js"
         },
         "./lib/PlainResult/tryCatchAsync": {
+            "types": "./esm/PlainResult/tryCatchAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/tryCatchAsync.d.ts",
                 "default": "./esm/PlainResult/tryCatchAsync.js"
@@ -2487,6 +2602,7 @@
             "default": "./esm/PlainResult/tryCatchAsync.js"
         },
         "./lib/PlainResult/unwrap": {
+            "types": "./esm/PlainResult/unwrap.d.ts",
             "import": {
                 "types": "./esm/PlainResult/unwrap.d.ts",
                 "default": "./esm/PlainResult/unwrap.js"
@@ -2498,6 +2614,7 @@
             "default": "./esm/PlainResult/unwrap.js"
         },
         "./lib/PlainResult/unwrapOr": {
+            "types": "./esm/PlainResult/unwrapOr.d.ts",
             "import": {
                 "types": "./esm/PlainResult/unwrapOr.d.ts",
                 "default": "./esm/PlainResult/unwrapOr.js"
@@ -2509,6 +2626,7 @@
             "default": "./esm/PlainResult/unwrapOr.js"
         },
         "./lib/PlainResult/unwrapOrElse": {
+            "types": "./esm/PlainResult/unwrapOrElse.d.ts",
             "import": {
                 "types": "./esm/PlainResult/unwrapOrElse.d.ts",
                 "default": "./esm/PlainResult/unwrapOrElse.js"
@@ -2520,6 +2638,7 @@
             "default": "./esm/PlainResult/unwrapOrElse.js"
         },
         "./lib/PlainResult/unwrapOrElseAsync": {
+            "types": "./esm/PlainResult/unwrapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/unwrapOrElseAsync.d.ts",
                 "default": "./esm/PlainResult/unwrapOrElseAsync.js"
@@ -2531,6 +2650,7 @@
             "default": "./esm/PlainResult/unwrapOrElseAsync.js"
         },
         "./lib/PlainResult/unwrapOrThrowError": {
+            "types": "./esm/PlainResult/unwrapOrThrowError.d.ts",
             "import": {
                 "types": "./esm/PlainResult/unwrapOrThrowError.d.ts",
                 "default": "./esm/PlainResult/unwrapOrThrowError.js"
@@ -2542,6 +2662,7 @@
             "default": "./esm/PlainResult/unwrapOrThrowError.js"
         },
         "./lib/Undefinable/ErrorMessage": {
+            "types": "./esm/Undefinable/ErrorMessage.d.ts",
             "import": {
                 "types": "./esm/Undefinable/ErrorMessage.d.ts",
                 "default": "./esm/Undefinable/ErrorMessage.js"
@@ -2553,6 +2674,7 @@
             "default": "./esm/Undefinable/ErrorMessage.js"
         },
         "./lib/Undefinable/Undefinable": {
+            "types": "./esm/Undefinable/Undefinable.d.ts",
             "import": {
                 "types": "./esm/Undefinable/Undefinable.d.ts",
                 "default": "./esm/Undefinable/Undefinable.js"
@@ -2564,6 +2686,7 @@
             "default": "./esm/Undefinable/Undefinable.js"
         },
         "./lib/Undefinable/and": {
+            "types": "./esm/Undefinable/and.d.ts",
             "import": {
                 "types": "./esm/Undefinable/and.d.ts",
                 "default": "./esm/Undefinable/and.js"
@@ -2575,6 +2698,7 @@
             "default": "./esm/Undefinable/and.js"
         },
         "./lib/Undefinable/andThen": {
+            "types": "./esm/Undefinable/andThen.d.ts",
             "import": {
                 "types": "./esm/Undefinable/andThen.d.ts",
                 "default": "./esm/Undefinable/andThen.js"
@@ -2586,6 +2710,7 @@
             "default": "./esm/Undefinable/andThen.js"
         },
         "./lib/Undefinable/andThenAsync": {
+            "types": "./esm/Undefinable/andThenAsync.d.ts",
             "import": {
                 "types": "./esm/Undefinable/andThenAsync.d.ts",
                 "default": "./esm/Undefinable/andThenAsync.js"
@@ -2597,6 +2722,7 @@
             "default": "./esm/Undefinable/andThenAsync.js"
         },
         "./lib/Undefinable/compat/v33": {
+            "types": "./esm/Undefinable/compat/v33.d.ts",
             "import": {
                 "types": "./esm/Undefinable/compat/v33.d.ts",
                 "default": "./esm/Undefinable/compat/v33.js"
@@ -2608,6 +2734,7 @@
             "default": "./esm/Undefinable/compat/v33.js"
         },
         "./lib/Undefinable/expect": {
+            "types": "./esm/Undefinable/expect.d.ts",
             "import": {
                 "types": "./esm/Undefinable/expect.d.ts",
                 "default": "./esm/Undefinable/expect.js"
@@ -2619,6 +2746,7 @@
             "default": "./esm/Undefinable/expect.js"
         },
         "./lib/Undefinable/inspect": {
+            "types": "./esm/Undefinable/inspect.d.ts",
             "import": {
                 "types": "./esm/Undefinable/inspect.d.ts",
                 "default": "./esm/Undefinable/inspect.js"
@@ -2630,6 +2758,7 @@
             "default": "./esm/Undefinable/inspect.js"
         },
         "./lib/Undefinable": {
+            "types": "./esm/Undefinable/index.d.ts",
             "import": {
                 "types": "./esm/Undefinable/index.d.ts",
                 "default": "./esm/Undefinable/index.js"
@@ -2641,6 +2770,7 @@
             "default": "./esm/Undefinable/index.js"
         },
         "./lib/Undefinable/map": {
+            "types": "./esm/Undefinable/map.d.ts",
             "import": {
                 "types": "./esm/Undefinable/map.d.ts",
                 "default": "./esm/Undefinable/map.js"
@@ -2652,6 +2782,7 @@
             "default": "./esm/Undefinable/map.js"
         },
         "./lib/Undefinable/mapAsync": {
+            "types": "./esm/Undefinable/mapAsync.d.ts",
             "import": {
                 "types": "./esm/Undefinable/mapAsync.d.ts",
                 "default": "./esm/Undefinable/mapAsync.js"
@@ -2663,6 +2794,7 @@
             "default": "./esm/Undefinable/mapAsync.js"
         },
         "./lib/Undefinable/mapOr": {
+            "types": "./esm/Undefinable/mapOr.d.ts",
             "import": {
                 "types": "./esm/Undefinable/mapOr.d.ts",
                 "default": "./esm/Undefinable/mapOr.js"
@@ -2674,6 +2806,7 @@
             "default": "./esm/Undefinable/mapOr.js"
         },
         "./lib/Undefinable/mapOrAsync": {
+            "types": "./esm/Undefinable/mapOrAsync.d.ts",
             "import": {
                 "types": "./esm/Undefinable/mapOrAsync.d.ts",
                 "default": "./esm/Undefinable/mapOrAsync.js"
@@ -2685,6 +2818,7 @@
             "default": "./esm/Undefinable/mapOrAsync.js"
         },
         "./lib/Undefinable/mapOrElse": {
+            "types": "./esm/Undefinable/mapOrElse.d.ts",
             "import": {
                 "types": "./esm/Undefinable/mapOrElse.d.ts",
                 "default": "./esm/Undefinable/mapOrElse.js"
@@ -2696,6 +2830,7 @@
             "default": "./esm/Undefinable/mapOrElse.js"
         },
         "./lib/Undefinable/mapOrElseAsync": {
+            "types": "./esm/Undefinable/mapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/Undefinable/mapOrElseAsync.d.ts",
                 "default": "./esm/Undefinable/mapOrElseAsync.js"
@@ -2707,6 +2842,7 @@
             "default": "./esm/Undefinable/mapOrElseAsync.js"
         },
         "./lib/Undefinable/or": {
+            "types": "./esm/Undefinable/or.d.ts",
             "import": {
                 "types": "./esm/Undefinable/or.d.ts",
                 "default": "./esm/Undefinable/or.js"
@@ -2718,6 +2854,7 @@
             "default": "./esm/Undefinable/or.js"
         },
         "./lib/Undefinable/orElse": {
+            "types": "./esm/Undefinable/orElse.d.ts",
             "import": {
                 "types": "./esm/Undefinable/orElse.d.ts",
                 "default": "./esm/Undefinable/orElse.js"
@@ -2729,6 +2866,7 @@
             "default": "./esm/Undefinable/orElse.js"
         },
         "./lib/Undefinable/orElseAsync": {
+            "types": "./esm/Undefinable/orElseAsync.d.ts",
             "import": {
                 "types": "./esm/Undefinable/orElseAsync.d.ts",
                 "default": "./esm/Undefinable/orElseAsync.js"
@@ -2740,6 +2878,7 @@
             "default": "./esm/Undefinable/orElseAsync.js"
         },
         "./lib/Undefinable/toNullable": {
+            "types": "./esm/Undefinable/toNullable.d.ts",
             "import": {
                 "types": "./esm/Undefinable/toNullable.d.ts",
                 "default": "./esm/Undefinable/toNullable.js"
@@ -2751,6 +2890,7 @@
             "default": "./esm/Undefinable/toNullable.js"
         },
         "./lib/Undefinable/toPlainResult": {
+            "types": "./esm/Undefinable/toPlainResult.d.ts",
             "import": {
                 "types": "./esm/Undefinable/toPlainResult.d.ts",
                 "default": "./esm/Undefinable/toPlainResult.js"
@@ -2762,6 +2902,7 @@
             "default": "./esm/Undefinable/toPlainResult.js"
         },
         "./lib/Undefinable/unwrap": {
+            "types": "./esm/Undefinable/unwrap.d.ts",
             "import": {
                 "types": "./esm/Undefinable/unwrap.d.ts",
                 "default": "./esm/Undefinable/unwrap.js"
@@ -2773,6 +2914,7 @@
             "default": "./esm/Undefinable/unwrap.js"
         },
         "./lib/Undefinable/unwrapOr": {
+            "types": "./esm/Undefinable/unwrapOr.d.ts",
             "import": {
                 "types": "./esm/Undefinable/unwrapOr.d.ts",
                 "default": "./esm/Undefinable/unwrapOr.js"
@@ -2784,6 +2926,7 @@
             "default": "./esm/Undefinable/unwrapOr.js"
         },
         "./lib/Undefinable/unwrapOrElse": {
+            "types": "./esm/Undefinable/unwrapOrElse.d.ts",
             "import": {
                 "types": "./esm/Undefinable/unwrapOrElse.d.ts",
                 "default": "./esm/Undefinable/unwrapOrElse.js"
@@ -2795,6 +2938,7 @@
             "default": "./esm/Undefinable/unwrapOrElse.js"
         },
         "./lib/Undefinable/unwrapOrElseAsync": {
+            "types": "./esm/Undefinable/unwrapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/Undefinable/unwrapOrElseAsync.d.ts",
                 "default": "./esm/Undefinable/unwrapOrElseAsync.js"
@@ -2806,6 +2950,7 @@
             "default": "./esm/Undefinable/unwrapOrElseAsync.js"
         },
         "./lib/Undefinable/xor": {
+            "types": "./esm/Undefinable/xor.d.ts",
             "import": {
                 "types": "./esm/Undefinable/xor.d.ts",
                 "default": "./esm/Undefinable/xor.js"
@@ -2817,6 +2962,7 @@
             "default": "./esm/Undefinable/xor.js"
         },
         "./lib/index": {
+            "types": "./esm/index.d.ts",
             "import": {
                 "types": "./esm/index.d.ts",
                 "default": "./esm/index.js"
@@ -2828,6 +2974,7 @@
             "default": "./esm/index.js"
         },
         ".": {
+            "types": "./esm/index.d.ts",
             "import": {
                 "types": "./esm/index.d.ts",
                 "default": "./esm/index.js"
@@ -2839,6 +2986,7 @@
             "default": "./esm/index.js"
         },
         "./Maybe": {
+            "types": "./esm/Maybe/index.d.ts",
             "import": {
                 "types": "./esm/Maybe/index.d.ts",
                 "default": "./esm/Maybe/index.js"
@@ -2850,6 +2998,7 @@
             "default": "./esm/Maybe/index.js"
         },
         "./Maybe/and": {
+            "types": "./esm/Maybe/and.d.ts",
             "import": {
                 "types": "./esm/Maybe/and.d.ts",
                 "default": "./esm/Maybe/and.js"
@@ -2861,6 +3010,7 @@
             "default": "./esm/Maybe/and.js"
         },
         "./Maybe/andThen": {
+            "types": "./esm/Maybe/andThen.d.ts",
             "import": {
                 "types": "./esm/Maybe/andThen.d.ts",
                 "default": "./esm/Maybe/andThen.js"
@@ -2872,6 +3022,7 @@
             "default": "./esm/Maybe/andThen.js"
         },
         "./Maybe/andThenAsync": {
+            "types": "./esm/Maybe/andThenAsync.d.ts",
             "import": {
                 "types": "./esm/Maybe/andThenAsync.d.ts",
                 "default": "./esm/Maybe/andThenAsync.js"
@@ -2883,6 +3034,7 @@
             "default": "./esm/Maybe/andThenAsync.js"
         },
         "./Maybe/compat/v33": {
+            "types": "./esm/Maybe/compat/v33.d.ts",
             "import": {
                 "types": "./esm/Maybe/compat/v33.d.ts",
                 "default": "./esm/Maybe/compat/v33.js"
@@ -2894,6 +3046,7 @@
             "default": "./esm/Maybe/compat/v33.js"
         },
         "./Maybe/expect": {
+            "types": "./esm/Maybe/expect.d.ts",
             "import": {
                 "types": "./esm/Maybe/expect.d.ts",
                 "default": "./esm/Maybe/expect.js"
@@ -2905,6 +3058,7 @@
             "default": "./esm/Maybe/expect.js"
         },
         "./Maybe/inspect": {
+            "types": "./esm/Maybe/inspect.d.ts",
             "import": {
                 "types": "./esm/Maybe/inspect.d.ts",
                 "default": "./esm/Maybe/inspect.js"
@@ -2916,6 +3070,7 @@
             "default": "./esm/Maybe/inspect.js"
         },
         "./Maybe/map": {
+            "types": "./esm/Maybe/map.d.ts",
             "import": {
                 "types": "./esm/Maybe/map.d.ts",
                 "default": "./esm/Maybe/map.js"
@@ -2927,6 +3082,7 @@
             "default": "./esm/Maybe/map.js"
         },
         "./Maybe/mapAsync": {
+            "types": "./esm/Maybe/mapAsync.d.ts",
             "import": {
                 "types": "./esm/Maybe/mapAsync.d.ts",
                 "default": "./esm/Maybe/mapAsync.js"
@@ -2938,6 +3094,7 @@
             "default": "./esm/Maybe/mapAsync.js"
         },
         "./Maybe/Maybe": {
+            "types": "./esm/Maybe/Maybe.d.ts",
             "import": {
                 "types": "./esm/Maybe/Maybe.d.ts",
                 "default": "./esm/Maybe/Maybe.js"
@@ -2949,6 +3106,7 @@
             "default": "./esm/Maybe/Maybe.js"
         },
         "./Maybe/mapOr": {
+            "types": "./esm/Maybe/mapOr.d.ts",
             "import": {
                 "types": "./esm/Maybe/mapOr.d.ts",
                 "default": "./esm/Maybe/mapOr.js"
@@ -2960,6 +3118,7 @@
             "default": "./esm/Maybe/mapOr.js"
         },
         "./Maybe/mapOrAsync": {
+            "types": "./esm/Maybe/mapOrAsync.d.ts",
             "import": {
                 "types": "./esm/Maybe/mapOrAsync.d.ts",
                 "default": "./esm/Maybe/mapOrAsync.js"
@@ -2971,6 +3130,7 @@
             "default": "./esm/Maybe/mapOrAsync.js"
         },
         "./Maybe/mapOrElse": {
+            "types": "./esm/Maybe/mapOrElse.d.ts",
             "import": {
                 "types": "./esm/Maybe/mapOrElse.d.ts",
                 "default": "./esm/Maybe/mapOrElse.js"
@@ -2982,6 +3142,7 @@
             "default": "./esm/Maybe/mapOrElse.js"
         },
         "./Maybe/mapOrElseAsync": {
+            "types": "./esm/Maybe/mapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/Maybe/mapOrElseAsync.d.ts",
                 "default": "./esm/Maybe/mapOrElseAsync.js"
@@ -2993,6 +3154,7 @@
             "default": "./esm/Maybe/mapOrElseAsync.js"
         },
         "./Maybe/or": {
+            "types": "./esm/Maybe/or.d.ts",
             "import": {
                 "types": "./esm/Maybe/or.d.ts",
                 "default": "./esm/Maybe/or.js"
@@ -3004,6 +3166,7 @@
             "default": "./esm/Maybe/or.js"
         },
         "./Maybe/orElse": {
+            "types": "./esm/Maybe/orElse.d.ts",
             "import": {
                 "types": "./esm/Maybe/orElse.d.ts",
                 "default": "./esm/Maybe/orElse.js"
@@ -3015,6 +3178,7 @@
             "default": "./esm/Maybe/orElse.js"
         },
         "./Maybe/orElseAsync": {
+            "types": "./esm/Maybe/orElseAsync.d.ts",
             "import": {
                 "types": "./esm/Maybe/orElseAsync.d.ts",
                 "default": "./esm/Maybe/orElseAsync.js"
@@ -3026,6 +3190,7 @@
             "default": "./esm/Maybe/orElseAsync.js"
         },
         "./Maybe/toNullable": {
+            "types": "./esm/Maybe/toNullable.d.ts",
             "import": {
                 "types": "./esm/Maybe/toNullable.d.ts",
                 "default": "./esm/Maybe/toNullable.js"
@@ -3037,6 +3202,7 @@
             "default": "./esm/Maybe/toNullable.js"
         },
         "./Maybe/toPlainResult": {
+            "types": "./esm/Maybe/toPlainResult.d.ts",
             "import": {
                 "types": "./esm/Maybe/toPlainResult.d.ts",
                 "default": "./esm/Maybe/toPlainResult.js"
@@ -3048,6 +3214,7 @@
             "default": "./esm/Maybe/toPlainResult.js"
         },
         "./Maybe/toUndefinable": {
+            "types": "./esm/Maybe/toUndefinable.d.ts",
             "import": {
                 "types": "./esm/Maybe/toUndefinable.d.ts",
                 "default": "./esm/Maybe/toUndefinable.js"
@@ -3059,6 +3226,7 @@
             "default": "./esm/Maybe/toUndefinable.js"
         },
         "./Maybe/unwrap": {
+            "types": "./esm/Maybe/unwrap.d.ts",
             "import": {
                 "types": "./esm/Maybe/unwrap.d.ts",
                 "default": "./esm/Maybe/unwrap.js"
@@ -3070,6 +3238,7 @@
             "default": "./esm/Maybe/unwrap.js"
         },
         "./Maybe/unwrapOr": {
+            "types": "./esm/Maybe/unwrapOr.d.ts",
             "import": {
                 "types": "./esm/Maybe/unwrapOr.d.ts",
                 "default": "./esm/Maybe/unwrapOr.js"
@@ -3081,6 +3250,7 @@
             "default": "./esm/Maybe/unwrapOr.js"
         },
         "./Maybe/unwrapOrElse": {
+            "types": "./esm/Maybe/unwrapOrElse.d.ts",
             "import": {
                 "types": "./esm/Maybe/unwrapOrElse.d.ts",
                 "default": "./esm/Maybe/unwrapOrElse.js"
@@ -3092,6 +3262,7 @@
             "default": "./esm/Maybe/unwrapOrElse.js"
         },
         "./Maybe/unwrapOrElseAsync": {
+            "types": "./esm/Maybe/unwrapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/Maybe/unwrapOrElseAsync.d.ts",
                 "default": "./esm/Maybe/unwrapOrElseAsync.js"
@@ -3103,6 +3274,7 @@
             "default": "./esm/Maybe/unwrapOrElseAsync.js"
         },
         "./Maybe/xor": {
+            "types": "./esm/Maybe/xor.d.ts",
             "import": {
                 "types": "./esm/Maybe/xor.d.ts",
                 "default": "./esm/Maybe/xor.js"
@@ -3114,6 +3286,7 @@
             "default": "./esm/Maybe/xor.js"
         },
         "./Nullable": {
+            "types": "./esm/Nullable/index.d.ts",
             "import": {
                 "types": "./esm/Nullable/index.d.ts",
                 "default": "./esm/Nullable/index.js"
@@ -3125,6 +3298,7 @@
             "default": "./esm/Nullable/index.js"
         },
         "./Nullable/and": {
+            "types": "./esm/Nullable/and.d.ts",
             "import": {
                 "types": "./esm/Nullable/and.d.ts",
                 "default": "./esm/Nullable/and.js"
@@ -3136,6 +3310,7 @@
             "default": "./esm/Nullable/and.js"
         },
         "./Nullable/andThen": {
+            "types": "./esm/Nullable/andThen.d.ts",
             "import": {
                 "types": "./esm/Nullable/andThen.d.ts",
                 "default": "./esm/Nullable/andThen.js"
@@ -3147,6 +3322,7 @@
             "default": "./esm/Nullable/andThen.js"
         },
         "./Nullable/andThenAsync": {
+            "types": "./esm/Nullable/andThenAsync.d.ts",
             "import": {
                 "types": "./esm/Nullable/andThenAsync.d.ts",
                 "default": "./esm/Nullable/andThenAsync.js"
@@ -3158,6 +3334,7 @@
             "default": "./esm/Nullable/andThenAsync.js"
         },
         "./Nullable/compat/v33": {
+            "types": "./esm/Nullable/compat/v33.d.ts",
             "import": {
                 "types": "./esm/Nullable/compat/v33.d.ts",
                 "default": "./esm/Nullable/compat/v33.js"
@@ -3169,6 +3346,7 @@
             "default": "./esm/Nullable/compat/v33.js"
         },
         "./Nullable/expect": {
+            "types": "./esm/Nullable/expect.d.ts",
             "import": {
                 "types": "./esm/Nullable/expect.d.ts",
                 "default": "./esm/Nullable/expect.js"
@@ -3180,6 +3358,7 @@
             "default": "./esm/Nullable/expect.js"
         },
         "./Nullable/inspect": {
+            "types": "./esm/Nullable/inspect.d.ts",
             "import": {
                 "types": "./esm/Nullable/inspect.d.ts",
                 "default": "./esm/Nullable/inspect.js"
@@ -3191,6 +3370,7 @@
             "default": "./esm/Nullable/inspect.js"
         },
         "./Nullable/map": {
+            "types": "./esm/Nullable/map.d.ts",
             "import": {
                 "types": "./esm/Nullable/map.d.ts",
                 "default": "./esm/Nullable/map.js"
@@ -3202,6 +3382,7 @@
             "default": "./esm/Nullable/map.js"
         },
         "./Nullable/mapAsync": {
+            "types": "./esm/Nullable/mapAsync.d.ts",
             "import": {
                 "types": "./esm/Nullable/mapAsync.d.ts",
                 "default": "./esm/Nullable/mapAsync.js"
@@ -3213,6 +3394,7 @@
             "default": "./esm/Nullable/mapAsync.js"
         },
         "./Nullable/mapOr": {
+            "types": "./esm/Nullable/mapOr.d.ts",
             "import": {
                 "types": "./esm/Nullable/mapOr.d.ts",
                 "default": "./esm/Nullable/mapOr.js"
@@ -3224,6 +3406,7 @@
             "default": "./esm/Nullable/mapOr.js"
         },
         "./Nullable/mapOrAsync": {
+            "types": "./esm/Nullable/mapOrAsync.d.ts",
             "import": {
                 "types": "./esm/Nullable/mapOrAsync.d.ts",
                 "default": "./esm/Nullable/mapOrAsync.js"
@@ -3235,6 +3418,7 @@
             "default": "./esm/Nullable/mapOrAsync.js"
         },
         "./Nullable/mapOrElse": {
+            "types": "./esm/Nullable/mapOrElse.d.ts",
             "import": {
                 "types": "./esm/Nullable/mapOrElse.d.ts",
                 "default": "./esm/Nullable/mapOrElse.js"
@@ -3246,6 +3430,7 @@
             "default": "./esm/Nullable/mapOrElse.js"
         },
         "./Nullable/mapOrElseAsync": {
+            "types": "./esm/Nullable/mapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/Nullable/mapOrElseAsync.d.ts",
                 "default": "./esm/Nullable/mapOrElseAsync.js"
@@ -3257,6 +3442,7 @@
             "default": "./esm/Nullable/mapOrElseAsync.js"
         },
         "./Nullable/Nullable": {
+            "types": "./esm/Nullable/Nullable.d.ts",
             "import": {
                 "types": "./esm/Nullable/Nullable.d.ts",
                 "default": "./esm/Nullable/Nullable.js"
@@ -3268,6 +3454,7 @@
             "default": "./esm/Nullable/Nullable.js"
         },
         "./Nullable/or": {
+            "types": "./esm/Nullable/or.d.ts",
             "import": {
                 "types": "./esm/Nullable/or.d.ts",
                 "default": "./esm/Nullable/or.js"
@@ -3279,6 +3466,7 @@
             "default": "./esm/Nullable/or.js"
         },
         "./Nullable/orElse": {
+            "types": "./esm/Nullable/orElse.d.ts",
             "import": {
                 "types": "./esm/Nullable/orElse.d.ts",
                 "default": "./esm/Nullable/orElse.js"
@@ -3290,6 +3478,7 @@
             "default": "./esm/Nullable/orElse.js"
         },
         "./Nullable/orElseAsync": {
+            "types": "./esm/Nullable/orElseAsync.d.ts",
             "import": {
                 "types": "./esm/Nullable/orElseAsync.d.ts",
                 "default": "./esm/Nullable/orElseAsync.js"
@@ -3301,6 +3490,7 @@
             "default": "./esm/Nullable/orElseAsync.js"
         },
         "./Nullable/toPlainResult": {
+            "types": "./esm/Nullable/toPlainResult.d.ts",
             "import": {
                 "types": "./esm/Nullable/toPlainResult.d.ts",
                 "default": "./esm/Nullable/toPlainResult.js"
@@ -3312,6 +3502,7 @@
             "default": "./esm/Nullable/toPlainResult.js"
         },
         "./Nullable/toUndefinable": {
+            "types": "./esm/Nullable/toUndefinable.d.ts",
             "import": {
                 "types": "./esm/Nullable/toUndefinable.d.ts",
                 "default": "./esm/Nullable/toUndefinable.js"
@@ -3323,6 +3514,7 @@
             "default": "./esm/Nullable/toUndefinable.js"
         },
         "./Nullable/unwrap": {
+            "types": "./esm/Nullable/unwrap.d.ts",
             "import": {
                 "types": "./esm/Nullable/unwrap.d.ts",
                 "default": "./esm/Nullable/unwrap.js"
@@ -3334,6 +3526,7 @@
             "default": "./esm/Nullable/unwrap.js"
         },
         "./Nullable/unwrapOr": {
+            "types": "./esm/Nullable/unwrapOr.d.ts",
             "import": {
                 "types": "./esm/Nullable/unwrapOr.d.ts",
                 "default": "./esm/Nullable/unwrapOr.js"
@@ -3345,6 +3538,7 @@
             "default": "./esm/Nullable/unwrapOr.js"
         },
         "./Nullable/unwrapOrElse": {
+            "types": "./esm/Nullable/unwrapOrElse.d.ts",
             "import": {
                 "types": "./esm/Nullable/unwrapOrElse.d.ts",
                 "default": "./esm/Nullable/unwrapOrElse.js"
@@ -3356,6 +3550,7 @@
             "default": "./esm/Nullable/unwrapOrElse.js"
         },
         "./Nullable/unwrapOrElseAsync": {
+            "types": "./esm/Nullable/unwrapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/Nullable/unwrapOrElseAsync.d.ts",
                 "default": "./esm/Nullable/unwrapOrElseAsync.js"
@@ -3367,6 +3562,7 @@
             "default": "./esm/Nullable/unwrapOrElseAsync.js"
         },
         "./Nullable/xor": {
+            "types": "./esm/Nullable/xor.d.ts",
             "import": {
                 "types": "./esm/Nullable/xor.d.ts",
                 "default": "./esm/Nullable/xor.js"
@@ -3378,6 +3574,7 @@
             "default": "./esm/Nullable/xor.js"
         },
         "./PlainOption": {
+            "types": "./esm/PlainOption/index.d.ts",
             "import": {
                 "types": "./esm/PlainOption/index.d.ts",
                 "default": "./esm/PlainOption/index.js"
@@ -3389,6 +3586,7 @@
             "default": "./esm/PlainOption/index.js"
         },
         "./PlainOption/and": {
+            "types": "./esm/PlainOption/and.d.ts",
             "import": {
                 "types": "./esm/PlainOption/and.d.ts",
                 "default": "./esm/PlainOption/and.js"
@@ -3400,6 +3598,7 @@
             "default": "./esm/PlainOption/and.js"
         },
         "./PlainOption/andThen": {
+            "types": "./esm/PlainOption/andThen.d.ts",
             "import": {
                 "types": "./esm/PlainOption/andThen.d.ts",
                 "default": "./esm/PlainOption/andThen.js"
@@ -3411,6 +3610,7 @@
             "default": "./esm/PlainOption/andThen.js"
         },
         "./PlainOption/andThenAsync": {
+            "types": "./esm/PlainOption/andThenAsync.d.ts",
             "import": {
                 "types": "./esm/PlainOption/andThenAsync.d.ts",
                 "default": "./esm/PlainOption/andThenAsync.js"
@@ -3422,6 +3622,7 @@
             "default": "./esm/PlainOption/andThenAsync.js"
         },
         "./PlainOption/asMut": {
+            "types": "./esm/PlainOption/asMut.d.ts",
             "import": {
                 "types": "./esm/PlainOption/asMut.d.ts",
                 "default": "./esm/PlainOption/asMut.js"
@@ -3433,6 +3634,7 @@
             "default": "./esm/PlainOption/asMut.js"
         },
         "./PlainOption/compat/v33": {
+            "types": "./esm/PlainOption/compat/v33.d.ts",
             "import": {
                 "types": "./esm/PlainOption/compat/v33.d.ts",
                 "default": "./esm/PlainOption/compat/v33.js"
@@ -3444,6 +3646,7 @@
             "default": "./esm/PlainOption/compat/v33.js"
         },
         "./PlainOption/drop": {
+            "types": "./esm/PlainOption/drop.d.ts",
             "import": {
                 "types": "./esm/PlainOption/drop.d.ts",
                 "default": "./esm/PlainOption/drop.js"
@@ -3455,6 +3658,7 @@
             "default": "./esm/PlainOption/drop.js"
         },
         "./PlainOption/equal": {
+            "types": "./esm/PlainOption/equal.d.ts",
             "import": {
                 "types": "./esm/PlainOption/equal.d.ts",
                 "default": "./esm/PlainOption/equal.js"
@@ -3466,6 +3670,7 @@
             "default": "./esm/PlainOption/equal.js"
         },
         "./PlainOption/expect": {
+            "types": "./esm/PlainOption/expect.d.ts",
             "import": {
                 "types": "./esm/PlainOption/expect.d.ts",
                 "default": "./esm/PlainOption/expect.js"
@@ -3477,6 +3682,7 @@
             "default": "./esm/PlainOption/expect.js"
         },
         "./PlainOption/filter": {
+            "types": "./esm/PlainOption/filter.d.ts",
             "import": {
                 "types": "./esm/PlainOption/filter.d.ts",
                 "default": "./esm/PlainOption/filter.js"
@@ -3488,6 +3694,7 @@
             "default": "./esm/PlainOption/filter.js"
         },
         "./PlainOption/flatten": {
+            "types": "./esm/PlainOption/flatten.d.ts",
             "import": {
                 "types": "./esm/PlainOption/flatten.d.ts",
                 "default": "./esm/PlainOption/flatten.js"
@@ -3499,6 +3706,7 @@
             "default": "./esm/PlainOption/flatten.js"
         },
         "./PlainOption/inspect": {
+            "types": "./esm/PlainOption/inspect.d.ts",
             "import": {
                 "types": "./esm/PlainOption/inspect.d.ts",
                 "default": "./esm/PlainOption/inspect.js"
@@ -3510,6 +3718,7 @@
             "default": "./esm/PlainOption/inspect.js"
         },
         "./PlainOption/map": {
+            "types": "./esm/PlainOption/map.d.ts",
             "import": {
                 "types": "./esm/PlainOption/map.d.ts",
                 "default": "./esm/PlainOption/map.js"
@@ -3521,6 +3730,7 @@
             "default": "./esm/PlainOption/map.js"
         },
         "./PlainOption/mapAsync": {
+            "types": "./esm/PlainOption/mapAsync.d.ts",
             "import": {
                 "types": "./esm/PlainOption/mapAsync.d.ts",
                 "default": "./esm/PlainOption/mapAsync.js"
@@ -3532,6 +3742,7 @@
             "default": "./esm/PlainOption/mapAsync.js"
         },
         "./PlainOption/mapOr": {
+            "types": "./esm/PlainOption/mapOr.d.ts",
             "import": {
                 "types": "./esm/PlainOption/mapOr.d.ts",
                 "default": "./esm/PlainOption/mapOr.js"
@@ -3543,6 +3754,7 @@
             "default": "./esm/PlainOption/mapOr.js"
         },
         "./PlainOption/mapOrAsync": {
+            "types": "./esm/PlainOption/mapOrAsync.d.ts",
             "import": {
                 "types": "./esm/PlainOption/mapOrAsync.d.ts",
                 "default": "./esm/PlainOption/mapOrAsync.js"
@@ -3554,6 +3766,7 @@
             "default": "./esm/PlainOption/mapOrAsync.js"
         },
         "./PlainOption/mapOrElse": {
+            "types": "./esm/PlainOption/mapOrElse.d.ts",
             "import": {
                 "types": "./esm/PlainOption/mapOrElse.d.ts",
                 "default": "./esm/PlainOption/mapOrElse.js"
@@ -3565,6 +3778,7 @@
             "default": "./esm/PlainOption/mapOrElse.js"
         },
         "./PlainOption/mapOrElseAsync": {
+            "types": "./esm/PlainOption/mapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/PlainOption/mapOrElseAsync.d.ts",
                 "default": "./esm/PlainOption/mapOrElseAsync.js"
@@ -3576,6 +3790,7 @@
             "default": "./esm/PlainOption/mapOrElseAsync.js"
         },
         "./PlainOption/okOr": {
+            "types": "./esm/PlainOption/okOr.d.ts",
             "import": {
                 "types": "./esm/PlainOption/okOr.d.ts",
                 "default": "./esm/PlainOption/okOr.js"
@@ -3587,6 +3802,7 @@
             "default": "./esm/PlainOption/okOr.js"
         },
         "./PlainOption/okOrElse": {
+            "types": "./esm/PlainOption/okOrElse.d.ts",
             "import": {
                 "types": "./esm/PlainOption/okOrElse.d.ts",
                 "default": "./esm/PlainOption/okOrElse.js"
@@ -3598,6 +3814,7 @@
             "default": "./esm/PlainOption/okOrElse.js"
         },
         "./PlainOption/Option": {
+            "types": "./esm/PlainOption/Option.d.ts",
             "import": {
                 "types": "./esm/PlainOption/Option.d.ts",
                 "default": "./esm/PlainOption/Option.js"
@@ -3609,6 +3826,7 @@
             "default": "./esm/PlainOption/Option.js"
         },
         "./PlainOption/or": {
+            "types": "./esm/PlainOption/or.d.ts",
             "import": {
                 "types": "./esm/PlainOption/or.d.ts",
                 "default": "./esm/PlainOption/or.js"
@@ -3620,6 +3838,7 @@
             "default": "./esm/PlainOption/or.js"
         },
         "./PlainOption/orElse": {
+            "types": "./esm/PlainOption/orElse.d.ts",
             "import": {
                 "types": "./esm/PlainOption/orElse.d.ts",
                 "default": "./esm/PlainOption/orElse.js"
@@ -3631,6 +3850,7 @@
             "default": "./esm/PlainOption/orElse.js"
         },
         "./PlainOption/orElseAsync": {
+            "types": "./esm/PlainOption/orElseAsync.d.ts",
             "import": {
                 "types": "./esm/PlainOption/orElseAsync.d.ts",
                 "default": "./esm/PlainOption/orElseAsync.js"
@@ -3642,6 +3862,7 @@
             "default": "./esm/PlainOption/orElseAsync.js"
         },
         "./PlainOption/transpose": {
+            "types": "./esm/PlainOption/transpose.d.ts",
             "import": {
                 "types": "./esm/PlainOption/transpose.d.ts",
                 "default": "./esm/PlainOption/transpose.js"
@@ -3653,6 +3874,7 @@
             "default": "./esm/PlainOption/transpose.js"
         },
         "./PlainOption/toNullable": {
+            "types": "./esm/PlainOption/toNullable.d.ts",
             "import": {
                 "types": "./esm/PlainOption/toNullable.d.ts",
                 "default": "./esm/PlainOption/toNullable.js"
@@ -3664,6 +3886,7 @@
             "default": "./esm/PlainOption/toNullable.js"
         },
         "./PlainOption/toUndefinable": {
+            "types": "./esm/PlainOption/toUndefinable.d.ts",
             "import": {
                 "types": "./esm/PlainOption/toUndefinable.d.ts",
                 "default": "./esm/PlainOption/toUndefinable.js"
@@ -3675,6 +3898,7 @@
             "default": "./esm/PlainOption/toUndefinable.js"
         },
         "./PlainOption/unwrap": {
+            "types": "./esm/PlainOption/unwrap.d.ts",
             "import": {
                 "types": "./esm/PlainOption/unwrap.d.ts",
                 "default": "./esm/PlainOption/unwrap.js"
@@ -3686,6 +3910,7 @@
             "default": "./esm/PlainOption/unwrap.js"
         },
         "./PlainOption/unwrapOr": {
+            "types": "./esm/PlainOption/unwrapOr.d.ts",
             "import": {
                 "types": "./esm/PlainOption/unwrapOr.d.ts",
                 "default": "./esm/PlainOption/unwrapOr.js"
@@ -3697,6 +3922,7 @@
             "default": "./esm/PlainOption/unwrapOr.js"
         },
         "./PlainOption/unwrapOrElse": {
+            "types": "./esm/PlainOption/unwrapOrElse.d.ts",
             "import": {
                 "types": "./esm/PlainOption/unwrapOrElse.d.ts",
                 "default": "./esm/PlainOption/unwrapOrElse.js"
@@ -3708,6 +3934,7 @@
             "default": "./esm/PlainOption/unwrapOrElse.js"
         },
         "./PlainOption/unwrapOrElseAsync": {
+            "types": "./esm/PlainOption/unwrapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/PlainOption/unwrapOrElseAsync.d.ts",
                 "default": "./esm/PlainOption/unwrapOrElseAsync.js"
@@ -3719,6 +3946,7 @@
             "default": "./esm/PlainOption/unwrapOrElseAsync.js"
         },
         "./PlainOption/xor": {
+            "types": "./esm/PlainOption/xor.d.ts",
             "import": {
                 "types": "./esm/PlainOption/xor.d.ts",
                 "default": "./esm/PlainOption/xor.js"
@@ -3730,6 +3958,7 @@
             "default": "./esm/PlainOption/xor.js"
         },
         "./PlainResult": {
+            "types": "./esm/PlainResult/index.d.ts",
             "import": {
                 "types": "./esm/PlainResult/index.d.ts",
                 "default": "./esm/PlainResult/index.js"
@@ -3741,6 +3970,7 @@
             "default": "./esm/PlainResult/index.js"
         },
         "./PlainResult/and": {
+            "types": "./esm/PlainResult/and.d.ts",
             "import": {
                 "types": "./esm/PlainResult/and.d.ts",
                 "default": "./esm/PlainResult/and.js"
@@ -3752,6 +3982,7 @@
             "default": "./esm/PlainResult/and.js"
         },
         "./PlainResult/andThen": {
+            "types": "./esm/PlainResult/andThen.d.ts",
             "import": {
                 "types": "./esm/PlainResult/andThen.d.ts",
                 "default": "./esm/PlainResult/andThen.js"
@@ -3763,6 +3994,7 @@
             "default": "./esm/PlainResult/andThen.js"
         },
         "./PlainResult/andThenAsync": {
+            "types": "./esm/PlainResult/andThenAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/andThenAsync.d.ts",
                 "default": "./esm/PlainResult/andThenAsync.js"
@@ -3774,6 +4006,7 @@
             "default": "./esm/PlainResult/andThenAsync.js"
         },
         "./PlainResult/asMut": {
+            "types": "./esm/PlainResult/asMut.d.ts",
             "import": {
                 "types": "./esm/PlainResult/asMut.d.ts",
                 "default": "./esm/PlainResult/asMut.js"
@@ -3785,6 +4018,7 @@
             "default": "./esm/PlainResult/asMut.js"
         },
         "./PlainResult/compat/v33": {
+            "types": "./esm/PlainResult/compat/v33.d.ts",
             "import": {
                 "types": "./esm/PlainResult/compat/v33.d.ts",
                 "default": "./esm/PlainResult/compat/v33.js"
@@ -3796,6 +4030,7 @@
             "default": "./esm/PlainResult/compat/v33.js"
         },
         "./PlainResult/drop": {
+            "types": "./esm/PlainResult/drop.d.ts",
             "import": {
                 "types": "./esm/PlainResult/drop.d.ts",
                 "default": "./esm/PlainResult/drop.js"
@@ -3807,6 +4042,7 @@
             "default": "./esm/PlainResult/drop.js"
         },
         "./PlainResult/equal": {
+            "types": "./esm/PlainResult/equal.d.ts",
             "import": {
                 "types": "./esm/PlainResult/equal.d.ts",
                 "default": "./esm/PlainResult/equal.js"
@@ -3818,6 +4054,7 @@
             "default": "./esm/PlainResult/equal.js"
         },
         "./PlainResult/expect": {
+            "types": "./esm/PlainResult/expect.d.ts",
             "import": {
                 "types": "./esm/PlainResult/expect.d.ts",
                 "default": "./esm/PlainResult/expect.js"
@@ -3829,6 +4066,7 @@
             "default": "./esm/PlainResult/expect.js"
         },
         "./PlainResult/flatten": {
+            "types": "./esm/PlainResult/flatten.d.ts",
             "import": {
                 "types": "./esm/PlainResult/flatten.d.ts",
                 "default": "./esm/PlainResult/flatten.js"
@@ -3840,6 +4078,7 @@
             "default": "./esm/PlainResult/flatten.js"
         },
         "./PlainResult/fromPromiseSettledResult": {
+            "types": "./esm/PlainResult/fromPromiseSettledResult.d.ts",
             "import": {
                 "types": "./esm/PlainResult/fromPromiseSettledResult.d.ts",
                 "default": "./esm/PlainResult/fromPromiseSettledResult.js"
@@ -3851,6 +4090,7 @@
             "default": "./esm/PlainResult/fromPromiseSettledResult.js"
         },
         "./PlainResult/inspect": {
+            "types": "./esm/PlainResult/inspect.d.ts",
             "import": {
                 "types": "./esm/PlainResult/inspect.d.ts",
                 "default": "./esm/PlainResult/inspect.js"
@@ -3862,6 +4102,7 @@
             "default": "./esm/PlainResult/inspect.js"
         },
         "./PlainResult/map": {
+            "types": "./esm/PlainResult/map.d.ts",
             "import": {
                 "types": "./esm/PlainResult/map.d.ts",
                 "default": "./esm/PlainResult/map.js"
@@ -3873,6 +4114,7 @@
             "default": "./esm/PlainResult/map.js"
         },
         "./PlainResult/mapAsync": {
+            "types": "./esm/PlainResult/mapAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapAsync.d.ts",
                 "default": "./esm/PlainResult/mapAsync.js"
@@ -3884,6 +4126,7 @@
             "default": "./esm/PlainResult/mapAsync.js"
         },
         "./PlainResult/mapErr": {
+            "types": "./esm/PlainResult/mapErr.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapErr.d.ts",
                 "default": "./esm/PlainResult/mapErr.js"
@@ -3895,6 +4138,7 @@
             "default": "./esm/PlainResult/mapErr.js"
         },
         "./PlainResult/mapErrAsync": {
+            "types": "./esm/PlainResult/mapErrAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapErrAsync.d.ts",
                 "default": "./esm/PlainResult/mapErrAsync.js"
@@ -3906,6 +4150,7 @@
             "default": "./esm/PlainResult/mapErrAsync.js"
         },
         "./PlainResult/mapOr": {
+            "types": "./esm/PlainResult/mapOr.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapOr.d.ts",
                 "default": "./esm/PlainResult/mapOr.js"
@@ -3917,6 +4162,7 @@
             "default": "./esm/PlainResult/mapOr.js"
         },
         "./PlainResult/mapOrAsync": {
+            "types": "./esm/PlainResult/mapOrAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapOrAsync.d.ts",
                 "default": "./esm/PlainResult/mapOrAsync.js"
@@ -3928,6 +4174,7 @@
             "default": "./esm/PlainResult/mapOrAsync.js"
         },
         "./PlainResult/mapOrElse": {
+            "types": "./esm/PlainResult/mapOrElse.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapOrElse.d.ts",
                 "default": "./esm/PlainResult/mapOrElse.js"
@@ -3939,6 +4186,7 @@
             "default": "./esm/PlainResult/mapOrElse.js"
         },
         "./PlainResult/mapOrElseAsync": {
+            "types": "./esm/PlainResult/mapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/mapOrElseAsync.d.ts",
                 "default": "./esm/PlainResult/mapOrElseAsync.js"
@@ -3950,6 +4198,7 @@
             "default": "./esm/PlainResult/mapOrElseAsync.js"
         },
         "./PlainResult/or": {
+            "types": "./esm/PlainResult/or.d.ts",
             "import": {
                 "types": "./esm/PlainResult/or.d.ts",
                 "default": "./esm/PlainResult/or.js"
@@ -3961,6 +4210,7 @@
             "default": "./esm/PlainResult/or.js"
         },
         "./PlainResult/orElse": {
+            "types": "./esm/PlainResult/orElse.d.ts",
             "import": {
                 "types": "./esm/PlainResult/orElse.d.ts",
                 "default": "./esm/PlainResult/orElse.js"
@@ -3972,6 +4222,7 @@
             "default": "./esm/PlainResult/orElse.js"
         },
         "./PlainResult/orElseAsync": {
+            "types": "./esm/PlainResult/orElseAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/orElseAsync.d.ts",
                 "default": "./esm/PlainResult/orElseAsync.js"
@@ -3983,6 +4234,7 @@
             "default": "./esm/PlainResult/orElseAsync.js"
         },
         "./PlainResult/Result": {
+            "types": "./esm/PlainResult/Result.d.ts",
             "import": {
                 "types": "./esm/PlainResult/Result.d.ts",
                 "default": "./esm/PlainResult/Result.js"
@@ -3994,6 +4246,7 @@
             "default": "./esm/PlainResult/Result.js"
         },
         "./PlainResult/toNullable": {
+            "types": "./esm/PlainResult/toNullable.d.ts",
             "import": {
                 "types": "./esm/PlainResult/toNullable.d.ts",
                 "default": "./esm/PlainResult/toNullable.js"
@@ -4005,6 +4258,7 @@
             "default": "./esm/PlainResult/toNullable.js"
         },
         "./PlainResult/toOption": {
+            "types": "./esm/PlainResult/toOption.d.ts",
             "import": {
                 "types": "./esm/PlainResult/toOption.d.ts",
                 "default": "./esm/PlainResult/toOption.js"
@@ -4016,6 +4270,7 @@
             "default": "./esm/PlainResult/toOption.js"
         },
         "./PlainResult/toUndefinable": {
+            "types": "./esm/PlainResult/toUndefinable.d.ts",
             "import": {
                 "types": "./esm/PlainResult/toUndefinable.d.ts",
                 "default": "./esm/PlainResult/toUndefinable.js"
@@ -4027,6 +4282,7 @@
             "default": "./esm/PlainResult/toUndefinable.js"
         },
         "./PlainResult/tryCatch": {
+            "types": "./esm/PlainResult/tryCatch.d.ts",
             "import": {
                 "types": "./esm/PlainResult/tryCatch.d.ts",
                 "default": "./esm/PlainResult/tryCatch.js"
@@ -4038,6 +4294,7 @@
             "default": "./esm/PlainResult/tryCatch.js"
         },
         "./PlainResult/tryCatchAsync": {
+            "types": "./esm/PlainResult/tryCatchAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/tryCatchAsync.d.ts",
                 "default": "./esm/PlainResult/tryCatchAsync.js"
@@ -4049,6 +4306,7 @@
             "default": "./esm/PlainResult/tryCatchAsync.js"
         },
         "./PlainResult/transpose": {
+            "types": "./esm/PlainResult/transpose.d.ts",
             "import": {
                 "types": "./esm/PlainResult/transpose.d.ts",
                 "default": "./esm/PlainResult/transpose.js"
@@ -4060,6 +4318,7 @@
             "default": "./esm/PlainResult/transpose.js"
         },
         "./PlainResult/unwrap": {
+            "types": "./esm/PlainResult/unwrap.d.ts",
             "import": {
                 "types": "./esm/PlainResult/unwrap.d.ts",
                 "default": "./esm/PlainResult/unwrap.js"
@@ -4071,6 +4330,7 @@
             "default": "./esm/PlainResult/unwrap.js"
         },
         "./PlainResult/unwrapOr": {
+            "types": "./esm/PlainResult/unwrapOr.d.ts",
             "import": {
                 "types": "./esm/PlainResult/unwrapOr.d.ts",
                 "default": "./esm/PlainResult/unwrapOr.js"
@@ -4082,6 +4342,7 @@
             "default": "./esm/PlainResult/unwrapOr.js"
         },
         "./PlainResult/unwrapOrElse": {
+            "types": "./esm/PlainResult/unwrapOrElse.d.ts",
             "import": {
                 "types": "./esm/PlainResult/unwrapOrElse.d.ts",
                 "default": "./esm/PlainResult/unwrapOrElse.js"
@@ -4093,6 +4354,7 @@
             "default": "./esm/PlainResult/unwrapOrElse.js"
         },
         "./PlainResult/unwrapOrElseAsync": {
+            "types": "./esm/PlainResult/unwrapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/PlainResult/unwrapOrElseAsync.d.ts",
                 "default": "./esm/PlainResult/unwrapOrElseAsync.js"
@@ -4104,6 +4366,7 @@
             "default": "./esm/PlainResult/unwrapOrElseAsync.js"
         },
         "./PlainResult/unwrapOrThrowError": {
+            "types": "./esm/PlainResult/unwrapOrThrowError.d.ts",
             "import": {
                 "types": "./esm/PlainResult/unwrapOrThrowError.d.ts",
                 "default": "./esm/PlainResult/unwrapOrThrowError.js"
@@ -4115,6 +4378,7 @@
             "default": "./esm/PlainResult/unwrapOrThrowError.js"
         },
         "./Undefinable": {
+            "types": "./esm/Undefinable/index.d.ts",
             "import": {
                 "types": "./esm/Undefinable/index.d.ts",
                 "default": "./esm/Undefinable/index.js"
@@ -4126,6 +4390,7 @@
             "default": "./esm/Undefinable/index.js"
         },
         "./Undefinable/and": {
+            "types": "./esm/Undefinable/and.d.ts",
             "import": {
                 "types": "./esm/Undefinable/and.d.ts",
                 "default": "./esm/Undefinable/and.js"
@@ -4137,6 +4402,7 @@
             "default": "./esm/Undefinable/and.js"
         },
         "./Undefinable/andThen": {
+            "types": "./esm/Undefinable/andThen.d.ts",
             "import": {
                 "types": "./esm/Undefinable/andThen.d.ts",
                 "default": "./esm/Undefinable/andThen.js"
@@ -4148,6 +4414,7 @@
             "default": "./esm/Undefinable/andThen.js"
         },
         "./Undefinable/andThenAsync": {
+            "types": "./esm/Undefinable/andThenAsync.d.ts",
             "import": {
                 "types": "./esm/Undefinable/andThenAsync.d.ts",
                 "default": "./esm/Undefinable/andThenAsync.js"
@@ -4159,6 +4426,7 @@
             "default": "./esm/Undefinable/andThenAsync.js"
         },
         "./Undefinable/compat/v33": {
+            "types": "./esm/Undefinable/compat/v33.d.ts",
             "import": {
                 "types": "./esm/Undefinable/compat/v33.d.ts",
                 "default": "./esm/Undefinable/compat/v33.js"
@@ -4170,6 +4438,7 @@
             "default": "./esm/Undefinable/compat/v33.js"
         },
         "./Undefinable/expect": {
+            "types": "./esm/Undefinable/expect.d.ts",
             "import": {
                 "types": "./esm/Undefinable/expect.d.ts",
                 "default": "./esm/Undefinable/expect.js"
@@ -4181,6 +4450,7 @@
             "default": "./esm/Undefinable/expect.js"
         },
         "./Undefinable/inspect": {
+            "types": "./esm/Undefinable/inspect.d.ts",
             "import": {
                 "types": "./esm/Undefinable/inspect.d.ts",
                 "default": "./esm/Undefinable/inspect.js"
@@ -4192,6 +4462,7 @@
             "default": "./esm/Undefinable/inspect.js"
         },
         "./Undefinable/map": {
+            "types": "./esm/Undefinable/map.d.ts",
             "import": {
                 "types": "./esm/Undefinable/map.d.ts",
                 "default": "./esm/Undefinable/map.js"
@@ -4203,6 +4474,7 @@
             "default": "./esm/Undefinable/map.js"
         },
         "./Undefinable/mapAsync": {
+            "types": "./esm/Undefinable/mapAsync.d.ts",
             "import": {
                 "types": "./esm/Undefinable/mapAsync.d.ts",
                 "default": "./esm/Undefinable/mapAsync.js"
@@ -4214,6 +4486,7 @@
             "default": "./esm/Undefinable/mapAsync.js"
         },
         "./Undefinable/mapOr": {
+            "types": "./esm/Undefinable/mapOr.d.ts",
             "import": {
                 "types": "./esm/Undefinable/mapOr.d.ts",
                 "default": "./esm/Undefinable/mapOr.js"
@@ -4225,6 +4498,7 @@
             "default": "./esm/Undefinable/mapOr.js"
         },
         "./Undefinable/mapOrAsync": {
+            "types": "./esm/Undefinable/mapOrAsync.d.ts",
             "import": {
                 "types": "./esm/Undefinable/mapOrAsync.d.ts",
                 "default": "./esm/Undefinable/mapOrAsync.js"
@@ -4236,6 +4510,7 @@
             "default": "./esm/Undefinable/mapOrAsync.js"
         },
         "./Undefinable/mapOrElse": {
+            "types": "./esm/Undefinable/mapOrElse.d.ts",
             "import": {
                 "types": "./esm/Undefinable/mapOrElse.d.ts",
                 "default": "./esm/Undefinable/mapOrElse.js"
@@ -4247,6 +4522,7 @@
             "default": "./esm/Undefinable/mapOrElse.js"
         },
         "./Undefinable/mapOrElseAsync": {
+            "types": "./esm/Undefinable/mapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/Undefinable/mapOrElseAsync.d.ts",
                 "default": "./esm/Undefinable/mapOrElseAsync.js"
@@ -4258,6 +4534,7 @@
             "default": "./esm/Undefinable/mapOrElseAsync.js"
         },
         "./Undefinable/or": {
+            "types": "./esm/Undefinable/or.d.ts",
             "import": {
                 "types": "./esm/Undefinable/or.d.ts",
                 "default": "./esm/Undefinable/or.js"
@@ -4269,6 +4546,7 @@
             "default": "./esm/Undefinable/or.js"
         },
         "./Undefinable/orElse": {
+            "types": "./esm/Undefinable/orElse.d.ts",
             "import": {
                 "types": "./esm/Undefinable/orElse.d.ts",
                 "default": "./esm/Undefinable/orElse.js"
@@ -4280,6 +4558,7 @@
             "default": "./esm/Undefinable/orElse.js"
         },
         "./Undefinable/orElseAsync": {
+            "types": "./esm/Undefinable/orElseAsync.d.ts",
             "import": {
                 "types": "./esm/Undefinable/orElseAsync.d.ts",
                 "default": "./esm/Undefinable/orElseAsync.js"
@@ -4291,6 +4570,7 @@
             "default": "./esm/Undefinable/orElseAsync.js"
         },
         "./Undefinable/toNullable": {
+            "types": "./esm/Undefinable/toNullable.d.ts",
             "import": {
                 "types": "./esm/Undefinable/toNullable.d.ts",
                 "default": "./esm/Undefinable/toNullable.js"
@@ -4302,6 +4582,7 @@
             "default": "./esm/Undefinable/toNullable.js"
         },
         "./Undefinable/toPlainResult": {
+            "types": "./esm/Undefinable/toPlainResult.d.ts",
             "import": {
                 "types": "./esm/Undefinable/toPlainResult.d.ts",
                 "default": "./esm/Undefinable/toPlainResult.js"
@@ -4313,6 +4594,7 @@
             "default": "./esm/Undefinable/toPlainResult.js"
         },
         "./Undefinable/Undefinable": {
+            "types": "./esm/Undefinable/Undefinable.d.ts",
             "import": {
                 "types": "./esm/Undefinable/Undefinable.d.ts",
                 "default": "./esm/Undefinable/Undefinable.js"
@@ -4324,6 +4606,7 @@
             "default": "./esm/Undefinable/Undefinable.js"
         },
         "./Undefinable/unwrap": {
+            "types": "./esm/Undefinable/unwrap.d.ts",
             "import": {
                 "types": "./esm/Undefinable/unwrap.d.ts",
                 "default": "./esm/Undefinable/unwrap.js"
@@ -4335,6 +4618,7 @@
             "default": "./esm/Undefinable/unwrap.js"
         },
         "./Undefinable/unwrapOr": {
+            "types": "./esm/Undefinable/unwrapOr.d.ts",
             "import": {
                 "types": "./esm/Undefinable/unwrapOr.d.ts",
                 "default": "./esm/Undefinable/unwrapOr.js"
@@ -4346,6 +4630,7 @@
             "default": "./esm/Undefinable/unwrapOr.js"
         },
         "./Undefinable/unwrapOrElse": {
+            "types": "./esm/Undefinable/unwrapOrElse.d.ts",
             "import": {
                 "types": "./esm/Undefinable/unwrapOrElse.d.ts",
                 "default": "./esm/Undefinable/unwrapOrElse.js"
@@ -4357,6 +4642,7 @@
             "default": "./esm/Undefinable/unwrapOrElse.js"
         },
         "./Undefinable/unwrapOrElseAsync": {
+            "types": "./esm/Undefinable/unwrapOrElseAsync.d.ts",
             "import": {
                 "types": "./esm/Undefinable/unwrapOrElseAsync.d.ts",
                 "default": "./esm/Undefinable/unwrapOrElseAsync.js"
@@ -4368,6 +4654,7 @@
             "default": "./esm/Undefinable/unwrapOrElseAsync.js"
         },
         "./Undefinable/xor": {
+            "types": "./esm/Undefinable/xor.d.ts",
             "import": {
                 "types": "./esm/Undefinable/xor.d.ts",
                 "default": "./esm/Undefinable/xor.js"

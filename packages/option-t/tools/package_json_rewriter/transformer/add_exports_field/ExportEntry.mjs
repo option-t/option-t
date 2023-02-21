@@ -217,6 +217,9 @@ function constructDualPackagePathValue({ cjs, esm, dmts, dcts }) {
     //
     // see also https://nodejs.org/api/esm.html#esm_conditional_exports
     return Object.freeze({
+        // > Note that the "types" condition should always come first in "exports".
+        // https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/#package-json-exports-imports-and-self-referencing
+        'types': dmts,
         'import': importCondition,
         'require':  requireCondition,
         // _default_ should be placed to the last.
