@@ -124,7 +124,7 @@ We target to run in following environments.
    But we may not be able to support such environments officially. We recommend to update your environment generally.
 2. If you would like to work this packages for a more legacy environment (e.g. ES3!)
    we recommend to transform whole of codes including your dependencies in your build pipeline.
-
+3. If your project still use TypeScript's `--moduleResolution` with `node` setting, please use `v34`.
 
 
 
