@@ -2,10 +2,6 @@ name: CI for each of Pull Requests
 
 on:
     push:
-        branches:
-            # These branches are used by bors-ng.
-            - staging
-            - trying
         tags-ignore:
             # Ignore for release/
             - v*.*.*
