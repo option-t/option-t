@@ -265,10 +265,6 @@
             "types": "./cjs/Nullable/xor.d.cts",
             "default": "./cjs/Nullable/xor.cjs"
         },
-        "./cjs/Option": {
-            "types": "./cjs/Option.d.cts",
-            "default": "./cjs/Option.cjs"
-        },
         "./cjs/PlainOption/Option": {
             "types": "./cjs/PlainOption/Option.d.cts",
             "default": "./cjs/PlainOption/Option.cjs"
@@ -536,10 +532,6 @@
         "./cjs/PlainResult/unwrapOrThrowError": {
             "types": "./cjs/PlainResult/unwrapOrThrowError.d.cts",
             "default": "./cjs/PlainResult/unwrapOrThrowError.cjs"
-        },
-        "./cjs/Result": {
-            "types": "./cjs/Result.d.cts",
-            "default": "./cjs/Result.cjs"
         },
         "./cjs/Undefinable/ErrorMessage": {
             "types": "./cjs/Undefinable/ErrorMessage.d.cts",
@@ -857,10 +849,6 @@
             "types": "./esm/Nullable/xor.d.ts",
             "default": "./esm/Nullable/xor.js"
         },
-        "./esm/Option": {
-            "types": "./esm/Option.d.ts",
-            "default": "./esm/Option.js"
-        },
         "./esm/PlainOption/Option": {
             "types": "./esm/PlainOption/Option.d.ts",
             "default": "./esm/PlainOption/Option.js"
@@ -1128,10 +1116,6 @@
         "./esm/PlainResult/unwrapOrThrowError": {
             "types": "./esm/PlainResult/unwrapOrThrowError.d.ts",
             "default": "./esm/PlainResult/unwrapOrThrowError.js"
-        },
-        "./esm/Result": {
-            "types": "./esm/Result.d.ts",
-            "default": "./esm/Result.js"
         },
         "./esm/Undefinable/ErrorMessage": {
             "types": "./esm/Undefinable/ErrorMessage.d.ts",
@@ -1819,17 +1803,6 @@
                 "default": "./cjs/Nullable/xor.cjs"
             },
             "default": "./esm/Nullable/xor.js"
-        },
-        "./lib/Option": {
-            "import": {
-                "types": "./esm/Option.d.ts",
-                "default": "./esm/Option.js"
-            },
-            "require": {
-                "types": "./cjs/Option.d.cts",
-                "default": "./cjs/Option.cjs"
-            },
-            "default": "./esm/Option.js"
         },
         "./lib/PlainOption/Option": {
             "import": {
@@ -2567,17 +2540,6 @@
                 "default": "./cjs/PlainResult/unwrapOrThrowError.cjs"
             },
             "default": "./esm/PlainResult/unwrapOrThrowError.js"
-        },
-        "./lib/Result": {
-            "import": {
-                "types": "./esm/Result.d.ts",
-                "default": "./esm/Result.js"
-            },
-            "require": {
-                "types": "./cjs/Result.d.cts",
-                "default": "./cjs/Result.cjs"
-            },
-            "default": "./esm/Result.js"
         },
         "./lib/Undefinable/ErrorMessage": {
             "import": {
