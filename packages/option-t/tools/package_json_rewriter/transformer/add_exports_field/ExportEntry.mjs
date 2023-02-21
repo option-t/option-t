@@ -215,12 +215,16 @@ function constructDualPackagePathValue({ cjs, esm, dmts, dcts }) {
     //  * Condition matching is applied in object order from first to last within the "exports" object.
     //  * `["node", "import"]` is used as _defaultEnv_ for its ES Module resolver.
     //
-    // see also https://nodejs.org/api/esm.html#esm_conditional_exports
+    // see also https://nodejs.org/api/packages.html#conditional-exports
     return Object.freeze({
+        // By observing some behaviors, if we add `types` to here, tsc (at least 4.7 ~ 4.9) use its `types` field
+        // to determine a module type for this entry point.
+        // For example, if we set `d.ts` for ES Module, tsc will think this entrypoint is ESM.
+
         'import': importCondition,
         'require':  requireCondition,
         // _default_ should be placed to the last.
-        // https://nodejs.org/api/esm.html#esm_conditional_exports
+        // https://nodejs.org/api/packages.html#conditional-exports
         'default': esm,
     });
 }
@@ -233,13 +237,13 @@ function constructPathValue({ filepath, dts }) {
     //  * Condition matching is applied in object order from first to last within the "exports" object.
     //  * `["node", "import"]` is used as _defaultEnv_ for its ES Module resolver.
     //
-    // see also https://nodejs.org/api/esm.html#esm_conditional_exports
+    // see also https://nodejs.org/api/packages.html#conditional-exports
     return Object.freeze({
         // > Note that the "types" condition should always come first in "exports".
         // https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/#package-json-exports-imports-and-self-referencing
         'types': dts,
         // _default_ should be placed to the last.
-        // https://nodejs.org/api/esm.html#esm_conditional_exports
+        // https://nodejs.org/api/packages.html#conditional-exports
         'default': filepath,
     });
 }
