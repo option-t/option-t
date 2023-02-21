@@ -225,7 +225,7 @@ function constructDualPackagePathValue({ cjs, esm, dmts, dcts }) {
         'require':  requireCondition,
         // _default_ should be placed to the last.
         // https://nodejs.org/api/packages.html#conditional-exports
-        'default': esm,
+        'default': importCondition,
     });
 }
 
