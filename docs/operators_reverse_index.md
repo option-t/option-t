@@ -56,6 +56,6 @@ Furthermore, operators may not be implemented for all types this package provide
 
 - _inspect()_
 
-## Aync version of operators.
+## Async version of operators.
 
 They has _Async_ suffix for their namings. e.g. _mapAsync()_.
