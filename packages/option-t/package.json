@@ -677,10 +677,6 @@
             "types": "./cjs/Undefinable/xor.d.cts",
             "default": "./cjs/Undefinable/xor.cjs"
         },
-        "./cjs/index": {
-            "types": "./cjs/index.d.cts",
-            "default": "./cjs/index.cjs"
-        },
         "./esm/ClassicOption": {
             "types": "./esm/ClassicOption/index.d.ts",
             "default": "./esm/ClassicOption/index.js"
@@ -1304,10 +1300,6 @@
         "./esm/Undefinable/xor": {
             "types": "./esm/Undefinable/xor.d.ts",
             "default": "./esm/Undefinable/xor.js"
-        },
-        "./esm/index": {
-            "types": "./esm/index.d.ts",
-            "default": "./esm/index.js"
         },
         "./lib/ClassicOption": {
             "import": {
@@ -3491,20 +3483,6 @@
             "default": {
                 "types": "./esm/Undefinable/xor.d.ts",
                 "default": "./esm/Undefinable/xor.js"
-            }
-        },
-        "./lib/index": {
-            "import": {
-                "types": "./esm/index.d.ts",
-                "default": "./esm/index.js"
-            },
-            "require": {
-                "types": "./cjs/index.d.cts",
-                "default": "./cjs/index.cjs"
-            },
-            "default": {
-                "types": "./esm/index.d.ts",
-                "default": "./esm/index.js"
             }
         },
         ".": {
