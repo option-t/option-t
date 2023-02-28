@@ -51,7 +51,7 @@ export type Option<T> = Some<T> | None;
  *  - `unwrapOr()` to get either an inner value in `Some(T)` or a fallback default value.
  *  - ...and more.
  */
-export interface Some<T> {
+export interface Some<out T> {
     /**
      *  Don't touch this property directly from an user project
      *  except 3rd party project that does not install this package but uses a value returned from an other project.
