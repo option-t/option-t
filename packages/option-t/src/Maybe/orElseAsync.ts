@@ -4,7 +4,7 @@ import type { AsyncRecoveryFn } from '../internal/Function.js';
 
 import { type Maybe, isNotNullOrUndefined } from './Maybe.js';
 
-export type MaybeAsyncRecoveryFn<T> = AsyncRecoveryFn<Maybe<T>>;
+export type MaybeAsyncRecoveryFn<out T> = AsyncRecoveryFn<Maybe<T>>;
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `null` and `undefined`.

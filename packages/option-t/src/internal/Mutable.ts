@@ -1,3 +1,3 @@
-export type Mutable<T> = {
+export type Mutable<out T> = {
     -readonly [P in keyof T]: T[P];
 };

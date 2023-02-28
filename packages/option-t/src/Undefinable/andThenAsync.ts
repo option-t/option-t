@@ -4,7 +4,7 @@ import type { AsyncTransformFn } from '../internal/Function.js';
 
 import { type Undefinable, isUndefined } from './Undefinable.js';
 
-export type UndefinableAsyncTryTransformFn<T, U> = AsyncTransformFn<T, Undefinable<U>>;
+export type UndefinableAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Undefinable<U>>;
 
 /**
  *  Returns `undefined` if the _input_ is `undefined`,

@@ -3,7 +3,7 @@ import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessag
 import type { AsyncTransformFn } from '../internal/Function.js';
 import { type Nullable, isNull } from './Nullable.js';
 
-export type NullableAsyncTryTransformFn<T, U> = AsyncTransformFn<T, Nullable<U>>;
+export type NullableAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Nullable<U>>;
 
 /**
  *  Returns `null` if the _input_ is `null`,

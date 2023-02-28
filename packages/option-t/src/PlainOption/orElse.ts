@@ -1,7 +1,7 @@
 import type { RecoveryFn } from '../internal/Function.js';
 import type { Option } from './Option.js';
 
-export type OptionTryRecoveryFn<T> = RecoveryFn<Option<T>>;
+export type OptionTryRecoveryFn<out T> = RecoveryFn<Option<T>>;
 
 /**
  *  Return _input_ as `T` if the passed _input_ is `Some(T)`.

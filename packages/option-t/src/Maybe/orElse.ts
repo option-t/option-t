@@ -1,7 +1,7 @@
 import type { RecoveryFn } from '../internal/Function.js';
 import type { Maybe } from './Maybe.js';
 
-export type MaybeRecoveryFn<T> = RecoveryFn<Maybe<T>>;
+export type MaybeRecoveryFn<out T> = RecoveryFn<Maybe<T>>;
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `null` and `undefined`.

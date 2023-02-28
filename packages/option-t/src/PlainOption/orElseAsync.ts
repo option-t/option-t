@@ -3,7 +3,7 @@ import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.
 import type { AsyncRecoveryFn } from '../internal/Function.js';
 import { type Option, isSome } from './Option.js';
 
-export type OptionAsyncTryRecoveryFn<T> = AsyncRecoveryFn<Option<T>>;
+export type OptionAsyncTryRecoveryFn<out T> = AsyncRecoveryFn<Option<T>>;
 
 /**
  *  Return _input_ as `T` if the passed _input_ is `Some(T)`.

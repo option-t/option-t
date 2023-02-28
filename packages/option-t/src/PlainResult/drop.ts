@@ -3,12 +3,12 @@ import type { EffectFn } from '../internal/Function.js';
 import { type Result, type Ok, type Err, isOk } from './Result.js';
 import { asMutResult } from './asMut.js';
 
-export type MutOk<T> = Mutable<Ok<T>>;
-export type MutErr<E> = Mutable<Err<E>>;
+export type MutOk<out T> = Mutable<Ok<T>>;
+export type MutErr<out E> = Mutable<Err<E>>;
 type MutResult<T, E> = MutOk<T> | MutErr<E>;
 
-export type UnsafeOkDestructorFn<T> = EffectFn<MutOk<T>>;
-export type UnsafeErrDestructorFn<E> = EffectFn<MutErr<E>>;
+export type UnsafeOkDestructorFn<in T> = EffectFn<MutOk<T>>;
+export type UnsafeErrDestructorFn<in E> = EffectFn<MutErr<E>>;
 
 function noop<T, E>(_input: MutResult<T, E>): void {}
 

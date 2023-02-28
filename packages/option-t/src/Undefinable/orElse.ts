@@ -1,7 +1,7 @@
 import type { RecoveryFn } from '../internal/Function.js';
 import type { Undefinable } from './Undefinable.js';
 
-export type UndefinableTryRecoveryFn<T> = RecoveryFn<Undefinable<T>>;
+export type UndefinableTryRecoveryFn<out T> = RecoveryFn<Undefinable<T>>;
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `undefined`.

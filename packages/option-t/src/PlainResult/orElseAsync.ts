@@ -4,7 +4,10 @@ import type { AsyncRecoveryFromErrorFn } from '../internal/Function.js';
 import { type Result, isOk } from './Result.js';
 import { unwrapErrFromResult } from './unwrap.js';
 
-export type ResultAsyncTryRecoveryFromErrorFn<E, T, F> = AsyncRecoveryFromErrorFn<E, Result<T, F>>;
+export type ResultAsyncTryRecoveryFromErrorFn<in E, out T, out F> = AsyncRecoveryFromErrorFn<
+    E,
+    Result<T, F>
+>;
 
 /**
  *  Calls _recoverer_ and return its returned value if the result is `Err(E)`,

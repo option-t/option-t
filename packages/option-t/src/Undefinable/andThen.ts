@@ -1,7 +1,7 @@
 import type { TransformFn } from '../internal/Function.js';
 import { type Undefinable, isUndefined } from './Undefinable.js';
 
-export type UndefinableTryTransformFn<T, U> = TransformFn<T, Undefinable<U>>;
+export type UndefinableTryTransformFn<in T, out U> = TransformFn<T, Undefinable<U>>;
 
 /**
  *  Returns `undefined` if the _input_ is `undefined`,
