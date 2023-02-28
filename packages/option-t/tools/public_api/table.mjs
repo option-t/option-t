@@ -331,7 +331,6 @@ export const legacyApiTable = Object.freeze({
     'cjs/Undefinable/unwrapOrElse': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/unwrapOrElseAsync': COMPAT_DESCRIPTOR,
     'cjs/Undefinable/xor': COMPAT_DESCRIPTOR,
-    'cjs/index': COMPAT_DESCRIPTOR,
     'esm/ClassicOption': pathRedirectionTo('esm/ClassicOption/index'),
     'esm/ClassicResult': pathRedirectionTo('esm/ClassicResult/index'),
     'esm/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
@@ -488,7 +487,6 @@ export const legacyApiTable = Object.freeze({
     'esm/Undefinable/unwrapOrElse': COMPAT_DESCRIPTOR,
     'esm/Undefinable/unwrapOrElseAsync': COMPAT_DESCRIPTOR,
     'esm/Undefinable/xor': COMPAT_DESCRIPTOR,
-    'esm/index': COMPAT_DESCRIPTOR,
     'lib/ClassicOption': pathRedirectionTo('lib/ClassicOption/index'),
     'lib/ClassicResult': pathRedirectionTo('lib/ClassicResult/index'),
     'lib/Maybe/ErrorMessage': COMPAT_DESCRIPTOR,
@@ -645,5 +643,4 @@ export const legacyApiTable = Object.freeze({
     'lib/Undefinable/unwrapOrElse': COMPAT_DESCRIPTOR,
     'lib/Undefinable/unwrapOrElseAsync': COMPAT_DESCRIPTOR,
     'lib/Undefinable/xor': COMPAT_DESCRIPTOR,
-    'lib/index': COMPAT_DESCRIPTOR,
 });
