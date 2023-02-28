@@ -121,6 +121,14 @@
             "types": "./cjs/Maybe/mapOrElseAsync.d.cts",
             "default": "./cjs/Maybe/mapOrElseAsync.cjs"
         },
+        "./cjs/Maybe/okOr": {
+            "types": "./cjs/Maybe/okOr.d.cts",
+            "default": "./cjs/Maybe/okOr.cjs"
+        },
+        "./cjs/Maybe/okOrElse": {
+            "types": "./cjs/Maybe/okOrElse.d.cts",
+            "default": "./cjs/Maybe/okOrElse.cjs"
+        },
         "./cjs/Maybe/or": {
             "types": "./cjs/Maybe/or.d.cts",
             "default": "./cjs/Maybe/or.cjs"
@@ -720,6 +728,14 @@
         "./esm/Maybe/mapOrElseAsync": {
             "types": "./esm/Maybe/mapOrElseAsync.d.ts",
             "default": "./esm/Maybe/mapOrElseAsync.js"
+        },
+        "./esm/Maybe/okOr": {
+            "types": "./esm/Maybe/okOr.d.ts",
+            "default": "./esm/Maybe/okOr.js"
+        },
+        "./esm/Maybe/okOrElse": {
+            "types": "./esm/Maybe/okOrElse.d.ts",
+            "default": "./esm/Maybe/okOrElse.js"
         },
         "./esm/Maybe/or": {
             "types": "./esm/Maybe/or.d.ts",
@@ -1489,6 +1505,34 @@
             "default": {
                 "types": "./esm/Maybe/mapOrElseAsync.d.ts",
                 "default": "./esm/Maybe/mapOrElseAsync.js"
+            }
+        },
+        "./lib/Maybe/okOr": {
+            "import": {
+                "types": "./esm/Maybe/okOr.d.ts",
+                "default": "./esm/Maybe/okOr.js"
+            },
+            "require": {
+                "types": "./cjs/Maybe/okOr.d.cts",
+                "default": "./cjs/Maybe/okOr.cjs"
+            },
+            "default": {
+                "types": "./esm/Maybe/okOr.d.ts",
+                "default": "./esm/Maybe/okOr.js"
+            }
+        },
+        "./lib/Maybe/okOrElse": {
+            "import": {
+                "types": "./esm/Maybe/okOrElse.d.ts",
+                "default": "./esm/Maybe/okOrElse.js"
+            },
+            "require": {
+                "types": "./cjs/Maybe/okOrElse.d.cts",
+                "default": "./cjs/Maybe/okOrElse.cjs"
+            },
+            "default": {
+                "types": "./esm/Maybe/okOrElse.d.ts",
+                "default": "./esm/Maybe/okOrElse.js"
             }
         },
         "./lib/Maybe/or": {
@@ -3561,6 +3605,34 @@
             "default": {
                 "types": "./esm/Maybe/mapOrElseAsync.d.ts",
                 "default": "./esm/Maybe/mapOrElseAsync.js"
+            }
+        },
+        "./Maybe/okOr": {
+            "import": {
+                "types": "./esm/Maybe/okOr.d.ts",
+                "default": "./esm/Maybe/okOr.js"
+            },
+            "require": {
+                "types": "./cjs/Maybe/okOr.d.cts",
+                "default": "./cjs/Maybe/okOr.cjs"
+            },
+            "default": {
+                "types": "./esm/Maybe/okOr.d.ts",
+                "default": "./esm/Maybe/okOr.js"
+            }
+        },
+        "./Maybe/okOrElse": {
+            "import": {
+                "types": "./esm/Maybe/okOrElse.d.ts",
+                "default": "./esm/Maybe/okOrElse.js"
+            },
+            "require": {
+                "types": "./cjs/Maybe/okOrElse.d.cts",
+                "default": "./cjs/Maybe/okOrElse.cjs"
+            },
+            "default": {
+                "types": "./esm/Maybe/okOrElse.d.ts",
+                "default": "./esm/Maybe/okOrElse.js"
             }
         },
         "./Maybe/or": {
