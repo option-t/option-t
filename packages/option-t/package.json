@@ -225,6 +225,14 @@
             "types": "./cjs/Nullable/mapOrElseAsync.d.cts",
             "default": "./cjs/Nullable/mapOrElseAsync.cjs"
         },
+        "./cjs/Nullable/okOr": {
+            "types": "./cjs/Nullable/okOr.d.cts",
+            "default": "./cjs/Nullable/okOr.cjs"
+        },
+        "./cjs/Nullable/okOrElse": {
+            "types": "./cjs/Nullable/okOrElse.d.cts",
+            "default": "./cjs/Nullable/okOrElse.cjs"
+        },
         "./cjs/Nullable/or": {
             "types": "./cjs/Nullable/or.d.cts",
             "default": "./cjs/Nullable/or.cjs"
@@ -816,6 +824,14 @@
         "./esm/Nullable/mapOrElseAsync": {
             "types": "./esm/Nullable/mapOrElseAsync.d.ts",
             "default": "./esm/Nullable/mapOrElseAsync.js"
+        },
+        "./esm/Nullable/okOr": {
+            "types": "./esm/Nullable/okOr.d.ts",
+            "default": "./esm/Nullable/okOr.js"
+        },
+        "./esm/Nullable/okOrElse": {
+            "types": "./esm/Nullable/okOrElse.d.ts",
+            "default": "./esm/Nullable/okOrElse.js"
         },
         "./esm/Nullable/or": {
             "types": "./esm/Nullable/or.d.ts",
@@ -1837,6 +1853,34 @@
             "default": {
                 "types": "./esm/Nullable/mapOrElseAsync.d.ts",
                 "default": "./esm/Nullable/mapOrElseAsync.js"
+            }
+        },
+        "./lib/Nullable/okOr": {
+            "import": {
+                "types": "./esm/Nullable/okOr.d.ts",
+                "default": "./esm/Nullable/okOr.js"
+            },
+            "require": {
+                "types": "./cjs/Nullable/okOr.d.cts",
+                "default": "./cjs/Nullable/okOr.cjs"
+            },
+            "default": {
+                "types": "./esm/Nullable/okOr.d.ts",
+                "default": "./esm/Nullable/okOr.js"
+            }
+        },
+        "./lib/Nullable/okOrElse": {
+            "import": {
+                "types": "./esm/Nullable/okOrElse.d.ts",
+                "default": "./esm/Nullable/okOrElse.js"
+            },
+            "require": {
+                "types": "./cjs/Nullable/okOrElse.d.cts",
+                "default": "./cjs/Nullable/okOrElse.cjs"
+            },
+            "default": {
+                "types": "./esm/Nullable/okOrElse.d.ts",
+                "default": "./esm/Nullable/okOrElse.js"
             }
         },
         "./lib/Nullable/or": {
@@ -3867,6 +3911,34 @@
             "default": {
                 "types": "./esm/Nullable/Nullable.d.ts",
                 "default": "./esm/Nullable/Nullable.js"
+            }
+        },
+        "./Nullable/okOr": {
+            "import": {
+                "types": "./esm/Nullable/okOr.d.ts",
+                "default": "./esm/Nullable/okOr.js"
+            },
+            "require": {
+                "types": "./cjs/Nullable/okOr.d.cts",
+                "default": "./cjs/Nullable/okOr.cjs"
+            },
+            "default": {
+                "types": "./esm/Nullable/okOr.d.ts",
+                "default": "./esm/Nullable/okOr.js"
+            }
+        },
+        "./Nullable/okOrElse": {
+            "import": {
+                "types": "./esm/Nullable/okOrElse.d.ts",
+                "default": "./esm/Nullable/okOrElse.js"
+            },
+            "require": {
+                "types": "./cjs/Nullable/okOrElse.d.cts",
+                "default": "./cjs/Nullable/okOrElse.cjs"
+            },
+            "default": {
+                "types": "./esm/Nullable/okOrElse.d.ts",
+                "default": "./esm/Nullable/okOrElse.js"
             }
         },
         "./Nullable/or": {
