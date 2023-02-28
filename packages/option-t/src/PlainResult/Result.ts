@@ -38,7 +38,7 @@ export type Result<T, E> = Ok<T> | Err<E>;
  *  - `unwrapOr()` to get either an inner value in `Ok(T)` or a fallback default value.
  *  - ...and more.
  */
-export interface Ok<T> {
+export interface Ok<out T> {
     /**
      *  Don't touch this property directly from an user project
      *  except 3rd party project that does not install this package but uses a value returned from an other project.
@@ -126,7 +126,7 @@ export function createOk<T>(val: T): Ok<T> {
  *  - {@link unwrapErr()} to get an inner failure information in `Err(E)`.
  *  - ...and more.
  */
-export interface Err<E> {
+export interface Err<out E> {
     /**
      *  Don't touch this property directly from an user project
      *  except 3rd party project that does not install this package but uses a value returned from an other project.
