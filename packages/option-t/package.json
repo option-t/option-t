@@ -593,6 +593,14 @@
             "types": "./cjs/Undefinable/mapOrElseAsync.d.cts",
             "default": "./cjs/Undefinable/mapOrElseAsync.cjs"
         },
+        "./cjs/Undefinable/okOr": {
+            "types": "./cjs/Undefinable/okOr.d.cts",
+            "default": "./cjs/Undefinable/okOr.cjs"
+        },
+        "./cjs/Undefinable/okOrElse": {
+            "types": "./cjs/Undefinable/okOrElse.d.cts",
+            "default": "./cjs/Undefinable/okOrElse.cjs"
+        },
         "./cjs/Undefinable/or": {
             "types": "./cjs/Undefinable/or.d.cts",
             "default": "./cjs/Undefinable/or.cjs"
@@ -1176,6 +1184,14 @@
         "./esm/Undefinable/mapOrElseAsync": {
             "types": "./esm/Undefinable/mapOrElseAsync.d.ts",
             "default": "./esm/Undefinable/mapOrElseAsync.js"
+        },
+        "./esm/Undefinable/okOr": {
+            "types": "./esm/Undefinable/okOr.d.ts",
+            "default": "./esm/Undefinable/okOr.js"
+        },
+        "./esm/Undefinable/okOrElse": {
+            "types": "./esm/Undefinable/okOrElse.d.ts",
+            "default": "./esm/Undefinable/okOrElse.js"
         },
         "./esm/Undefinable/or": {
             "types": "./esm/Undefinable/or.d.ts",
@@ -3109,6 +3125,34 @@
             "default": {
                 "types": "./esm/Undefinable/mapOrElseAsync.d.ts",
                 "default": "./esm/Undefinable/mapOrElseAsync.js"
+            }
+        },
+        "./lib/Undefinable/okOr": {
+            "import": {
+                "types": "./esm/Undefinable/okOr.d.ts",
+                "default": "./esm/Undefinable/okOr.js"
+            },
+            "require": {
+                "types": "./cjs/Undefinable/okOr.d.cts",
+                "default": "./cjs/Undefinable/okOr.cjs"
+            },
+            "default": {
+                "types": "./esm/Undefinable/okOr.d.ts",
+                "default": "./esm/Undefinable/okOr.js"
+            }
+        },
+        "./lib/Undefinable/okOrElse": {
+            "import": {
+                "types": "./esm/Undefinable/okOrElse.d.ts",
+                "default": "./esm/Undefinable/okOrElse.js"
+            },
+            "require": {
+                "types": "./cjs/Undefinable/okOrElse.d.cts",
+                "default": "./cjs/Undefinable/okOrElse.cjs"
+            },
+            "default": {
+                "types": "./esm/Undefinable/okOrElse.d.ts",
+                "default": "./esm/Undefinable/okOrElse.js"
             }
         },
         "./lib/Undefinable/or": {
@@ -5083,6 +5127,34 @@
             "default": {
                 "types": "./esm/Undefinable/mapOrElseAsync.d.ts",
                 "default": "./esm/Undefinable/mapOrElseAsync.js"
+            }
+        },
+        "./Undefinable/okOr": {
+            "import": {
+                "types": "./esm/Undefinable/okOr.d.ts",
+                "default": "./esm/Undefinable/okOr.js"
+            },
+            "require": {
+                "types": "./cjs/Undefinable/okOr.d.cts",
+                "default": "./cjs/Undefinable/okOr.cjs"
+            },
+            "default": {
+                "types": "./esm/Undefinable/okOr.d.ts",
+                "default": "./esm/Undefinable/okOr.js"
+            }
+        },
+        "./Undefinable/okOrElse": {
+            "import": {
+                "types": "./esm/Undefinable/okOrElse.d.ts",
+                "default": "./esm/Undefinable/okOrElse.js"
+            },
+            "require": {
+                "types": "./cjs/Undefinable/okOrElse.d.cts",
+                "default": "./cjs/Undefinable/okOrElse.cjs"
+            },
+            "default": {
+                "types": "./esm/Undefinable/okOrElse.d.ts",
+                "default": "./esm/Undefinable/okOrElse.js"
             }
         },
         "./Undefinable/or": {
