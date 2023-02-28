@@ -1,7 +1,7 @@
 import type { RecoveryFromErrorFn } from '../internal/Function.js';
 import type { Result } from './Result.js';
 
-export type ResultTryRecoveryFromErrorFn<T, E, F> = RecoveryFromErrorFn<E, Result<T, F>>;
+export type ResultTryRecoveryFromErrorFn<E, T, F> = RecoveryFromErrorFn<E, Result<T, F>>;
 
 /**
  *  Calls _recoverer_ and return its returned value if _input_ is `Err(E)`,
@@ -10,7 +10,7 @@ export type ResultTryRecoveryFromErrorFn<T, E, F> = RecoveryFromErrorFn<E, Resul
  */
 export function orElseForResult<T, E, F>(
     input: Result<T, E>,
-    recoverer: ResultTryRecoveryFromErrorFn<T, E, F>
+    recoverer: ResultTryRecoveryFromErrorFn<E, T, F>
 ): Result<T, F> {
     if (input.ok) {
         return input;
