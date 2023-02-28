@@ -25,6 +25,8 @@ export { mapOrElseForMaybe as mapOrElse } from './mapOrElse.js';
 export { mapOrElseAsyncForMaybe as mapOrElseAsync } from './mapOrElseAsync.js';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by
 // default set. export { orForMaybe as or } from './or.js';
+export { okOrForMaybe as okOr } from './okOr.js';
+export { okOrElseForMaybe as okOrElse } from './okOrElse.js';
 export { orElseForMaybe as orElse } from './orElse.js';
 export { orElseAsyncForMaybe as orElseAsync } from './orElseAsync.js';
 export { toNullableFromMaybe as toNullable } from './toNullable.js';

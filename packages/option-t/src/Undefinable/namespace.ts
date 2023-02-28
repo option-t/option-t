@@ -24,6 +24,8 @@ export { mapOrElseForUndefinable as mapOrElse } from './mapOrElse.js';
 export { mapOrElseAsyncForUndefinable as mapOrElseAsync } from './mapOrElseAsync.js';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
 // export { orForUndefinable as or } from './or.js';
+export { okOrForUndefinable as okOr } from './okOr.js';
+export { okOrElseForUndefinable as okOrElse } from './okOrElse.js';
 export { orElseForUndefinable as orElse } from './orElse.js';
 export { orElseAsyncForUndefinable as orElseAsync } from './orElseAsync.js';
 export { toNullableFromUndefinable as toNullable } from './toNullable.js';

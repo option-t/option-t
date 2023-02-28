@@ -26,6 +26,8 @@ export { mapOrForOption as mapOr } from './mapOr.js';
 export { mapOrAsyncForOption as mapOrAsync } from './mapOrAsync.js';
 export { mapOrElseForOption as mapOrElse } from './mapOrElse.js';
 export { mapOrElseAsyncForOption as mapOrElseAsync } from './mapOrElseAsync.js';
+export { okOrForPlainOption as okOr } from './okOr.js';
+export { okOrElseForPlainOption as okOrElse } from './okOrElse.js';
 export { orElseForOption as orElse } from './orElse.js';
 export { orElseAsyncForOption as orElseAsync } from './orElseAsync.js';
 export { transposeForOption as transpose } from './transpose.js';
