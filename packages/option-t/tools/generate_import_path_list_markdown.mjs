@@ -115,8 +115,6 @@ function generateText(list) {
 
 - You can import these paths from both \`require()\` and \`import()\`.
 - To import these, your toolchains must support [package.json's conditional exports](https://nodejs.org/api/esm.html#esm_conditional_exports).
-    - If your toolchains does not support package json's conditional exports, use \`option-t/lib/**\`  path pattern. (e.g. \`option-t/lib/Nullable/map\`)
-
 ${str}
 `;
 }
