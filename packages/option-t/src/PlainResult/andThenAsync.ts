@@ -4,7 +4,7 @@ import type { AsyncTransformFn } from '../internal/Function.js';
 import { type Result, isErr } from './Result.js';
 import { unwrapOkFromResult } from './unwrap.js';
 
-export type ResultAsyncTryTransformFn<T, U, E> = AsyncTransformFn<T, Result<U, E>>;
+export type ResultAsyncTryTransformFn<in T, out U, out E> = AsyncTransformFn<T, Result<U, E>>;
 
 /**
  *  Returns `Promise<Err(E)>` if the _input_ is `Err(E)`,

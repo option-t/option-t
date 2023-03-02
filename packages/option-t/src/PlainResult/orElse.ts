@@ -1,7 +1,7 @@
 import type { RecoveryFromErrorFn } from '../internal/Function.js';
 import type { Result } from './Result.js';
 
-export type ResultTryRecoveryFromErrorFn<E, T, F> = RecoveryFromErrorFn<E, Result<T, F>>;
+export type ResultTryRecoveryFromErrorFn<in E, out T, out F> = RecoveryFromErrorFn<E, Result<T, F>>;
 
 /**
  *  Calls _recoverer_ and return its returned value if _input_ is `Err(E)`,

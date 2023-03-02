@@ -1,7 +1,7 @@
 import type { RecoveryFn } from '../internal/Function.js';
 import type { Nullable } from './Nullable.js';
 
-export type NullableTryRecoveryFn<T> = RecoveryFn<Nullable<T>>;
+export type NullableTryRecoveryFn<out T> = RecoveryFn<Nullable<T>>;
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `null`.

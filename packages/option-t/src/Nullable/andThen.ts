@@ -1,7 +1,7 @@
 import type { TransformFn } from '../internal/Function.js';
 import { type Nullable, isNull } from './Nullable.js';
 
-export type NullableTryTransformFn<T, U> = TransformFn<T, Nullable<U>>;
+export type NullableTryTransformFn<in T, out U> = TransformFn<T, Nullable<U>>;
 
 /**
  *  Returns `null` if the _input_ is `null`,

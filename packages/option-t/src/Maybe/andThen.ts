@@ -1,7 +1,7 @@
 import type { TransformFn } from '../internal/Function.js';
 import { type Maybe, isNullOrUndefined } from './Maybe.js';
 
-export type MaybeTryTransformFn<T, U> = TransformFn<T, Maybe<U>>;
+export type MaybeTryTransformFn<in T, out U> = TransformFn<T, Maybe<U>>;
 
 /**
  *  Returns `null` or `undefined` if the _input_ is `null` or `undefined`,

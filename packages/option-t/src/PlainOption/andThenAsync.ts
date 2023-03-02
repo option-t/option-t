@@ -4,7 +4,7 @@ import type { AsyncTransformFn } from '../internal/Function.js';
 import { type Option, isNone } from './Option.js';
 import { unwrapOption } from './unwrap.js';
 
-export type OptionAsyncTryTransformFn<T, U> = AsyncTransformFn<T, Option<U>>;
+export type OptionAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Option<U>>;
 
 /**
  *  Returns `None` if the _input_ is `None`,

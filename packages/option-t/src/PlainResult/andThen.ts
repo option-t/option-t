@@ -1,7 +1,7 @@
 import type { TransformFn } from '../internal/Function.js';
 import type { Result } from './Result.js';
 
-export type ResultTryTransformFn<T, U, E> = TransformFn<T, Result<U, E>>;
+export type ResultTryTransformFn<in T, out U, out E> = TransformFn<T, Result<U, E>>;
 
 /**
  *  Returns `Err(E)` if the _input_ is `Err(E)`,

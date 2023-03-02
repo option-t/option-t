@@ -3,7 +3,7 @@ import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.
 import type { AsyncRecoveryFn } from '../internal/Function.js';
 import { type Nullable, isNotNull } from './Nullable.js';
 
-export type NullableAsyncTryRecoveryFn<T> = AsyncRecoveryFn<Nullable<T>>;
+export type NullableAsyncTryRecoveryFn<out T> = AsyncRecoveryFn<Nullable<T>>;
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `null`.

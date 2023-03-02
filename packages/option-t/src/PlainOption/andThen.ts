@@ -1,7 +1,7 @@
 import type { TransformFn } from '../internal/Function.js';
 import type { Option } from './Option.js';
 
-export type OptionTryTransformFn<T, U> = TransformFn<T, Option<U>>;
+export type OptionTryTransformFn<in T, out U> = TransformFn<T, Option<U>>;
 
 /**
  *  Returns `None` if the _input_ is `None`,

@@ -3,9 +3,9 @@ import type { EffectFn } from '../internal/Function.js';
 import { type Option, type Some, isSome } from './Option.js';
 import { asMutOption } from './asMut.js';
 
-export type MutSome<T> = Mutable<Some<T>>;
+export type MutSome<out T> = Mutable<Some<T>>;
 
-export type UnsafeSomeDestructorFn<T> = EffectFn<MutSome<T>>;
+export type UnsafeSomeDestructorFn<in T> = EffectFn<MutSome<T>>;
 
 /**
  *  The _mutator_ is called if _input_ is `Some<T>`.
