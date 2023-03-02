@@ -14,10 +14,8 @@ DIST_DIR := $(CURDIR)/__dist
 DIST_DOCS_DIR := $(DIST_DIR)/docs
 DIST_ESM_DIR := $(DIST_DIR)/esm
 DIST_COMMONJS_DIR := $(DIST_DIR)/cjs
-DIST_MIXED_LIB_DIR := $(DIST_DIR)/lib
 GENERATED_ESM_DIR := $(CURDIR)/esm
 GENERATED_COMMONJS_DIR := $(CURDIR)/cjs
-GENERATED_MIXED_LIB_DIR := $(CURDIR)/lib
 TMP_BASE_DIR := $(CURDIR)/__tmp_base
 TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
 TMP_CJS_DIR := $(CURDIR)/__tmp_cjs
@@ -48,7 +46,6 @@ CLEAN_TARGETS := \
 	dist \
 	generated_cjs \
 	generated_esm \
-	generated_mixedlib \
 	tmp_base \
 	tmp_mjs \
 	tmp_cjs
@@ -67,10 +64,6 @@ clean_generated_cjs:
 .PHONY: clean_generated_esm
 clean_generated_esm:
 	$(NPM_BIN)/del $(GENERATED_ESM_DIR)
-
-.PHONY: clean_generated_mixedlib
-clean_generated_mixedlib:
-	$(NPM_BIN)/del $(GENERATED_MIXED_LIB_DIR)
 
 .PHONY: clean_tmp_base
 clean_tmp_base:
@@ -92,7 +85,7 @@ clean_tmp_cjs:
 build: __build cp_docs cp_changelog cp_license cp_readme generate_manifest ## Build artifacts required to publish packages.
 
 .PHONY: __build
-__build: build_cjs build_esm build_mixedlib ## Build all targets.
+__build: build_cjs build_esm ## Build all targets.
 
 .PHONY: build_cjs
 build_cjs: clean_dist __build_cjs__cp_cjs_to_cjsdir __build_cjs__cp_dcts_to_cjsdir generate_manifest ## Build `cjs/`.
@@ -167,19 +160,6 @@ __build_tmp_base__call_babel: clean_tmp_base generate_manifest
 .PHONY: __build_tmp_base__call_cpx
 __build_tmp_base__call_cpx: clean_tmp_base generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(SRC_DIR) --source '$(SRC_DIR)/**/*.$(DTS_EXTENSION_GLOB)' --destination $(TMP_BASE_DIR)
-
-
-# We need to keep this directory to continue to support TypeScript moduleResolution=node..
-.PHONY: build_mixedlib
-build_mixedlib: clean_dist build_mixedlib_cp_dts generate_manifest ## Build `lib/`.
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs \
-        --basedir $(GENERATED_MIXED_LIB_DIR) \
-        --source '$(GENERATED_MIXED_LIB_DIR)/**/*' \
-        --destination $(DIST_MIXED_LIB_DIR)
-
-.PHONY: build_mixedlib_cp_dts
-build_mixedlib_cp_dts: clean_generated_mixedlib build_esm clean_dist generate_manifest
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(GENERATED_ESM_DIR) --source '$(GENERATED_ESM_DIR)/**/*.${DTS_EXTENSION_GLOB}' --destination $(GENERATED_MIXED_LIB_DIR)
 
 .PHONY: cp_docs
 cp_docs: clean_dist generate_manifest
