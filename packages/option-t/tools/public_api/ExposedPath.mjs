@@ -4,11 +4,11 @@ const PKG_NAME = 'option-t';
 
 export class ExposedPath {
     #key;
-    #raw;
+    #descriptor;
 
-    constructor(key, raw) {
+    constructor(key, descriptor) {
         this.#key = key;
-        this.#raw = raw;
+        this.#descriptor = descriptor;
         Object.freeze(this);
     }
 
@@ -17,7 +17,7 @@ export class ExposedPath {
     }
 
     filepath() {
-        return this.#raw.actualFilePath ?? null;
+        return this.#descriptor.actualFilePath ?? null;
     }
 
     hasPathOverride() {
@@ -40,7 +40,7 @@ export class ExposedPath {
     }
 
     shouldHideInDoc() {
-        const ok = !!this.#raw.shouldHideInDoc;
+        const ok = !!this.#descriptor.shouldHideInDoc;
         return ok;
     }
 }
