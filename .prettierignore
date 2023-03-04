@@ -9,10 +9,10 @@ __tmp_cjs/
 cjs/
 esm/
 lib/
+__snapshots__/
 
 ## TODO
 *.json
 *.md
-tools/
-.eslintrc.cjs
-ava.config.mjs
+packages/option-t/tools/
+tools/eslint/vendor/

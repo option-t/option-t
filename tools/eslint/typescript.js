@@ -23,11 +23,11 @@ const newNamingConventionRule = [...rules[KEY_NAMING_CONVENTION]].map((item) => 
     }
 
     return {
-        'selector': 'typeParameter',
-        'format': ['PascalCase'],
-        'custom': {
-            'regex': '(^[A-Z]\\d?$|^T[A-Z][a-zA-Z]+\\d?$)',
-            'match': true,
+        selector: 'typeParameter',
+        format: ['PascalCase'],
+        custom: {
+            regex: '(^[A-Z]\\d?$|^T[A-Z][a-zA-Z]+\\d?$)',
+            match: true,
         },
     };
 });
@@ -41,7 +41,7 @@ export function createlanguageOptionsForTypeScript(baseDir, filename = 'tsconfig
         sourceType,
         globals: {
             ...globals.builtin,
-            'PromiseSettledResult': 'readonly',
+            PromiseSettledResult: 'readonly',
         },
         parser: tsESLintParser,
         parserOptions: {
