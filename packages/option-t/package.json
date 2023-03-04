@@ -1285,6 +1285,34 @@
                 "default": "./esm/index.js"
             }
         },
+        "./ClassicOption": {
+            "import": {
+                "types": "./esm/ClassicOption/index.d.ts",
+                "default": "./esm/ClassicOption/index.js"
+            },
+            "require": {
+                "types": "./cjs/ClassicOption/index.d.cts",
+                "default": "./cjs/ClassicOption/index.cjs"
+            },
+            "default": {
+                "types": "./esm/ClassicOption/index.d.ts",
+                "default": "./esm/ClassicOption/index.js"
+            }
+        },
+        "./ClassicResult": {
+            "import": {
+                "types": "./esm/ClassicResult/index.d.ts",
+                "default": "./esm/ClassicResult/index.js"
+            },
+            "require": {
+                "types": "./cjs/ClassicResult/index.d.cts",
+                "default": "./cjs/ClassicResult/index.cjs"
+            },
+            "default": {
+                "types": "./esm/ClassicResult/index.d.ts",
+                "default": "./esm/ClassicResult/index.js"
+            }
+        },
         "./Maybe": {
             "import": {
                 "types": "./esm/Maybe/index.d.ts",

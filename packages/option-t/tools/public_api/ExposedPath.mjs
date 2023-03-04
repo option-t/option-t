@@ -38,6 +38,11 @@ export class ExposedPath {
     isForCompat() {
         return false;
     }
+
+    shouldHideInDoc() {
+        const ok = !!this.#raw.shouldHideInDoc;
+        return ok;
+    }
 }
 
 export class QuirksLegacyExposedPath extends ExposedPath {
