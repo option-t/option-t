@@ -108,10 +108,6 @@ run_test_unittest_with_update_snapshots: ## Run uni tests only with updating sna
 test_distribution_contain_all:
 	$(MAKE) $@ -C $(MAIN_PKG)
 
-.PHONY: test_module_path_rewrite
-test_module_path_rewrite:
-	$(MAKE) $@ -C $(MAIN_PKG)
-
 .PHONY: test_package_json_exports_field_format
 test_package_json_exports_field_format:
 	$(MAKE) $@ -C $(MAIN_PKG)

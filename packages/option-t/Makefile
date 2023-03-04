@@ -202,14 +202,6 @@ test_distribution_contain_all: build
 run_test_distribution_contain_all:
 	$(NODE_BIN) $(CURDIR)/tools/test_package_contains_expected_all.mjs --target $(DIST_DIR)
 
-.PHONY: test_module_path_rewrite
-test_module_path_rewrite: build
-	$(MAKE) run_test_module_path_rewrite -C $(CURDIR)
-
-.PHONY: run_test_module_path_rewrite
-run_test_module_path_rewrite:
-	$(NODE_BIN) $(CURDIR)/tools/test_path_rewrite.mjs --target $(DIST_DIR)
-
 .PHONY: test_package_json_exports_field_format
 test_package_json_exports_field_format: build
 	$(MAKE) run_test_package_json_exports_field_format -C $(CURDIR)
@@ -231,7 +223,6 @@ prepublish: ## Run some commands for 'npm run prepublish'
 	$(MAKE) clean -C $(CURDIR)
 	$(MAKE) build -C $(CURDIR)
 	$(MAKE) test_distribution_contain_all -C $(CURDIR)
-	$(MAKE) run_test_module_path_rewrite -C $(CURDIR)
 	$(MAKE) run_test_package_json_exports_field_format -C $(CURDIR)
 
 .PHONY: publish
