@@ -78,12 +78,18 @@ export class CompatExportEntry extends AbstractExportEntry {
     }
 
     #original;
+    #dtsExtension;
+    #jsExtension;
 
-    constructor(entry) {
+    constructor(entry, dtsExtension, jsExtension) {
         super();
         assert.ok(entry instanceof QuirksLegacyExposedPath);
+        assert.ok(typeof dtsExtension === 'string');
+        assert.ok(typeof jsExtension === 'string');
 
         this.#original = entry;
+        this.#dtsExtension = dtsExtension;
+        this.#jsExtension = jsExtension;
     }
 
     key() {
@@ -104,54 +110,38 @@ export class CompatExportEntry extends AbstractExportEntry {
         return k;
     }
 
-    _toExportEntry() {
-        throw new EvalError(`please override on ${this.constructor.name}`);
+    #toExportEntry() {
+        const key = this.pathValue();
+        const dts = `${key}.${this.#dtsExtension}`;
+
+        const p = `${key}.${this.#jsExtension}`;
+        const value = constructPathValue({
+            dts,
+            filepath: p,
+        });
+        return value;
     }
 
     toJSON() {
-        return this._toExportEntry();
+        return this.#toExportEntry();
     }
 }
 
 class CommonJSCompatFileExport extends CompatExportEntry {
     constructor(entry) {
-        super(entry);
+        super(entry, EXTENSION_DCTS, EXTENSION_CJS);
 
         Object.freeze(this);
         assert.ok(entry.isCJS());
-    }
-
-    _toExportEntry() {
-        const key = this.pathValue();
-        const dts = `${key}.${EXTENSION_DCTS}`;
-
-        const p = `${key}.${EXTENSION_CJS}`;
-        const value = constructPathValue({
-            dts,
-            filepath: p,
-        });
-        return value;
     }
 }
 
 class ESModuleCompatFileExport extends CompatExportEntry {
     constructor(entry) {
-        super(entry);
+        super(entry, EXTENSION_DMTS, EXTENSION_MJS);
 
         Object.freeze(this);
         assert.ok(entry.isESM());
-    }
-
-    _toExportEntry() {
-        const key = this.pathValue();
-        const dts = `${key}.${EXTENSION_DMTS}`;
-
-        const p = `${key}.${EXTENSION_MJS}`;
-        const value = constructPathValue({
-            dts,
-            filepath: p,
-        });
-        return value;
     }
 }
 
