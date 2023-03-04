@@ -13,4 +13,5 @@ lib/
 ## TODO
 *.json
 *.md
-tools/
+packages/option-t/tools/
+tools/eslint/vendor/
