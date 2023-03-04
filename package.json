@@ -6,6 +6,7 @@
         "packages/*"
     ],
     "devDependencies": {
+        "ava": "^5.2.0",
         "@babel/core": "^7.21.0",
         "@babel/plugin-syntax-typescript": "^7.20.0",
         "@babel/preset-env": "^7.20.2",

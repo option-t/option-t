@@ -25,6 +25,8 @@ MJS_EXTENSION_GLOB := {js,mjs}
 D_CTS_EXTENSION_GLOB := d.cts
 DTS_EXTENSION_GLOB := d.{ts,cts,mts}
 
+TEST_CASE_CONTAINS_EXPECTED := $(CURDIR)/tools/__tests__/distribution_contain_all.test.mjs
+
 ## In CI environment, we should change some configuration
 ifeq ($(CI),true)
 else
@@ -194,6 +196,17 @@ typecheck: ## Check static types
 ###########################
 # Test
 ###########################
+.PHONY: test_distribution_contain_all
+test_distribution_contain_all: build
+	$(MAKE) run_test_distribution_contain_all
+
+.PHONY: run_test_distribution_contain_all
+run_test_distribution_contain_all:
+	TARGET_DIR=$(DIST_DIR) $(NPM_BIN)/ava --config $(CURDIR)/ava.config.mjs $(TEST_CASE_CONTAINS_EXPECTED)
+
+.PHONY: run_test_distribution_contain_all_with_update_snapshots
+run_test_distribution_contain_all_with_update_snapshots:
+	TARGET_DIR=$(DIST_DIR) $(NPM_BIN)/ava --config $(CURDIR)/ava.config.mjs $(TEST_CASE_CONTAINS_EXPECTED) --update-snapshots
 
 .PHONY: test_package_json_exports_field_format
 test_package_json_exports_field_format: build
@@ -215,6 +228,7 @@ generate_import_path_list_md: ## Generate all public import paths to docs/import
 prepublish: ## Run some commands for 'npm run prepublish'
 	$(MAKE) clean -C $(CURDIR)
 	$(MAKE) build -C $(CURDIR)
+	$(MAKE) run_test_distribution_contain_all -C $(CURDIR)
 	$(MAKE) run_test_package_json_exports_field_format -C $(CURDIR)
 
 .PHONY: publish
