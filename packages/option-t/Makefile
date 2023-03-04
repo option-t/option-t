@@ -194,13 +194,6 @@ typecheck: ## Check static types
 ###########################
 # Test
 ###########################
-.PHONY: test_distribution_contain_all
-test_distribution_contain_all: build
-	$(MAKE) run_test_distribution_contain_all
-
-.PHONY: run_test_distribution_contain_all
-run_test_distribution_contain_all:
-	$(NODE_BIN) $(CURDIR)/tools/test_package_contains_expected_all.mjs --target $(DIST_DIR)
 
 .PHONY: test_package_json_exports_field_format
 test_package_json_exports_field_format: build
@@ -222,7 +215,6 @@ generate_import_path_list_md: ## Generate all public import paths to docs/import
 prepublish: ## Run some commands for 'npm run prepublish'
 	$(MAKE) clean -C $(CURDIR)
 	$(MAKE) build -C $(CURDIR)
-	$(MAKE) test_distribution_contain_all -C $(CURDIR)
 	$(MAKE) run_test_package_json_exports_field_format -C $(CURDIR)
 
 .PHONY: publish

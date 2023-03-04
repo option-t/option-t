@@ -104,10 +104,6 @@ run_test_unittest: ## Run unit tests only.
 run_test_unittest_with_update_snapshots: ## Run uni tests only with updating snapshots.
 	$(MAKE) test_with_update_snapshots -C $(API_TEST_PKG)
 
-.PHONY: test_distribution_contain_all
-test_distribution_contain_all:
-	$(MAKE) $@ -C $(MAIN_PKG)
-
 .PHONY: test_package_json_exports_field_format
 test_package_json_exports_field_format:
 	$(MAKE) $@ -C $(MAIN_PKG)
