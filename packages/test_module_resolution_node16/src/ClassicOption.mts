@@ -1,0 +1,3 @@
+import {} from 'option-t/cjs/ClassicOption';
+import {} from 'option-t/esm/ClassicOption';
+import {} from 'option-t/lib/ClassicOption';
