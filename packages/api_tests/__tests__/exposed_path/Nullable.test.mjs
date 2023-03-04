@@ -4,7 +4,6 @@ import { testImportExposedPath } from './helper.mjs';
 testImportExposedPath(
     test,
     Object.keys({
-        './cjs/Nullable/ErrorMessage': null,
         './cjs/Nullable/Nullable': null,
         './cjs/Nullable/and': null,
         './cjs/Nullable/andThen': null,
@@ -33,7 +32,6 @@ testImportExposedPath(
         './cjs/Nullable/unwrapOrElseAsync': null,
         './cjs/Nullable/xor': null,
 
-        './esm/Nullable/ErrorMessage': null,
         './esm/Nullable/Nullable': null,
         './esm/Nullable/and': null,
         './esm/Nullable/andThen': null,

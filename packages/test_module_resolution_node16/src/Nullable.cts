@@ -1,4 +1,3 @@
-import {} from 'option-t/cjs/Nullable/ErrorMessage';
 import {} from 'option-t/cjs/Nullable/Nullable';
 import {} from 'option-t/cjs/Nullable/and';
 import {} from 'option-t/cjs/Nullable/andThen';
@@ -28,7 +27,6 @@ import {} from 'option-t/cjs/Nullable/unwrapOrElseAsync';
 import {} from 'option-t/cjs/Nullable/xor';
 
 // This should be failure because commonjs cannot import ES Module directly.
-// import {} from 'option-t/esm/Nullable/ErrorMessage';
 // import {} from 'option-t/esm/Nullable/Nullable';
 // import {} from 'option-t/esm/Nullable/and';
 // import {} from 'option-t/esm/Nullable/andThen';

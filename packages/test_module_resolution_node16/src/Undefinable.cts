@@ -1,4 +1,3 @@
-import {} from 'option-t/cjs/Undefinable/ErrorMessage';
 import {} from 'option-t/cjs/Undefinable/Undefinable';
 import {} from 'option-t/cjs/Undefinable/and';
 import {} from 'option-t/cjs/Undefinable/andThen';
@@ -28,7 +27,6 @@ import {} from 'option-t/cjs/Undefinable/unwrapOrElseAsync';
 import {} from 'option-t/cjs/Undefinable/xor';
 
 // This should be failure because commonjs cannot import ES Module directly.
-// import {} from 'option-t/esm/Undefinable/ErrorMessage';
 // import {} from 'option-t/esm/Undefinable/Undefinable';
 // import {} from 'option-t/esm/Undefinable/and';
 // import {} from 'option-t/esm/Undefinable/andThen';

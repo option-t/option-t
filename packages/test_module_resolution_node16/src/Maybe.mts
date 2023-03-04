@@ -1,4 +1,3 @@
-import {} from 'option-t/cjs/Maybe/ErrorMessage';
 import {} from 'option-t/cjs/Maybe/Maybe';
 import {} from 'option-t/cjs/Maybe/and';
 import {} from 'option-t/cjs/Maybe/andThen';
@@ -28,7 +27,6 @@ import {} from 'option-t/cjs/Maybe/unwrapOrElse';
 import {} from 'option-t/cjs/Maybe/unwrapOrElseAsync';
 import {} from 'option-t/cjs/Maybe/xor';
 
-import {} from 'option-t/esm/Maybe/ErrorMessage';
 import {} from 'option-t/esm/Maybe/Maybe';
 import {} from 'option-t/esm/Maybe/and';
 import {} from 'option-t/esm/Maybe/andThen';

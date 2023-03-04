@@ -55,10 +55,6 @@
             "types": "./cjs/ClassicResult/index.d.cts",
             "default": "./cjs/ClassicResult/index.cjs"
         },
-        "./cjs/Maybe/ErrorMessage": {
-            "types": "./cjs/Maybe/ErrorMessage.d.cts",
-            "default": "./cjs/Maybe/ErrorMessage.cjs"
-        },
         "./cjs/Maybe/Maybe": {
             "types": "./cjs/Maybe/Maybe.d.cts",
             "default": "./cjs/Maybe/Maybe.cjs"
@@ -170,10 +166,6 @@
         "./cjs/Maybe/xor": {
             "types": "./cjs/Maybe/xor.d.cts",
             "default": "./cjs/Maybe/xor.cjs"
-        },
-        "./cjs/Nullable/ErrorMessage": {
-            "types": "./cjs/Nullable/ErrorMessage.d.cts",
-            "default": "./cjs/Nullable/ErrorMessage.cjs"
         },
         "./cjs/Nullable/Nullable": {
             "types": "./cjs/Nullable/Nullable.d.cts",
@@ -559,10 +551,6 @@
             "types": "./cjs/PlainResult/unwrapOrThrowError.d.cts",
             "default": "./cjs/PlainResult/unwrapOrThrowError.cjs"
         },
-        "./cjs/Undefinable/ErrorMessage": {
-            "types": "./cjs/Undefinable/ErrorMessage.d.cts",
-            "default": "./cjs/Undefinable/ErrorMessage.cjs"
-        },
         "./cjs/Undefinable/Undefinable": {
             "types": "./cjs/Undefinable/Undefinable.d.cts",
             "default": "./cjs/Undefinable/Undefinable.cjs"
@@ -679,10 +667,6 @@
             "types": "./esm/ClassicResult/index.d.ts",
             "default": "./esm/ClassicResult/index.js"
         },
-        "./esm/Maybe/ErrorMessage": {
-            "types": "./esm/Maybe/ErrorMessage.d.ts",
-            "default": "./esm/Maybe/ErrorMessage.js"
-        },
         "./esm/Maybe/Maybe": {
             "types": "./esm/Maybe/Maybe.d.ts",
             "default": "./esm/Maybe/Maybe.js"
@@ -794,10 +778,6 @@
         "./esm/Maybe/xor": {
             "types": "./esm/Maybe/xor.d.ts",
             "default": "./esm/Maybe/xor.js"
-        },
-        "./esm/Nullable/ErrorMessage": {
-            "types": "./esm/Nullable/ErrorMessage.d.ts",
-            "default": "./esm/Nullable/ErrorMessage.js"
         },
         "./esm/Nullable/Nullable": {
             "types": "./esm/Nullable/Nullable.d.ts",
@@ -1182,10 +1162,6 @@
         "./esm/PlainResult/unwrapOrThrowError": {
             "types": "./esm/PlainResult/unwrapOrThrowError.d.ts",
             "default": "./esm/PlainResult/unwrapOrThrowError.js"
-        },
-        "./esm/Undefinable/ErrorMessage": {
-            "types": "./esm/Undefinable/ErrorMessage.d.ts",
-            "default": "./esm/Undefinable/ErrorMessage.js"
         },
         "./esm/Undefinable/Undefinable": {
             "types": "./esm/Undefinable/Undefinable.d.ts",
