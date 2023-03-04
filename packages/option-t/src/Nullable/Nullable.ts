@@ -1,4 +1,4 @@
-import { ERR_MSG_UNWRAP_NO_VAL_FOR_NULLABLE } from './ErrorMessage.js';
+import { ERR_MSG_UNWRAP_NO_VAL_FOR_NULLABLE } from './internal/ErrorMessage.js';
 
 export type NotNull<T> = T extends null ? never : T;
 

@@ -4,7 +4,7 @@ import type { AsyncRecoveryFn } from '../internal/Function.js';
 
 import { type Undefinable, isNotUndefined, type NotUndefined } from './Undefinable.js';
 import { expectNotUndefined } from './expect.js';
-import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './ErrorMessage.js';
+import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './internal/ErrorMessage.js';
 
 function check<T>(value: Undefinable<T>): T {
     const passed = expectNotUndefined(

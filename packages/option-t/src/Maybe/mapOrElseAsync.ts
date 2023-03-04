@@ -8,7 +8,7 @@ import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/Function.js'
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
-} from './ErrorMessage.js';
+} from './internal/ErrorMessage.js';
 import {
     type Maybe,
     isNotNullOrUndefined,
