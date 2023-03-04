@@ -12,8 +12,6 @@ NPM_CMD := npm
 
 PROJECT_NPMRC := $(DIST_DIR)/.npmrc
 
-ESLINT_APPLIED_EXTENSIONS := .js,.jsx,cjs,.mjs,.ts,.tsx,.cts,.mts
-
 all: help
 
 help:
@@ -67,11 +65,11 @@ lint: eslint ## Run all lints
 
 .PHONY: eslint
 eslint:
-	$(NPM_BIN)/eslint --ext $(ESLINT_APPLIED_EXTENSIONS) $(CURDIR)/
+	$(NPM_BIN)/eslint $(CURDIR)/
 
 .PHONY: eslint_fix
 eslint_fix: ## Apply ESLint's `--fix` mode
-	$(NPM_BIN)/eslint --ext $(ESLINT_APPLIED_EXTENSIONS) --fix $(CURDIR)/
+	$(NPM_BIN)/eslint --fix $(CURDIR)/
 
 .PHONY: typecheck
 typecheck: ## Check static types.
