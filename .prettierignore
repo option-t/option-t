@@ -9,6 +9,7 @@ __tmp_cjs/
 cjs/
 esm/
 lib/
+__snapshots__/
 
 ## TODO
 *.json
