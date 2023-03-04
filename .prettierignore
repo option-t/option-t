@@ -14,5 +14,4 @@ lib/
 *.json
 *.md
 tools/
-.eslintrc.cjs
 ava.config.mjs
