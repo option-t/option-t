@@ -61,7 +61,6 @@ testImportExposedPath(
         './esm/Undefinable/unwrapOrElse': null,
         './esm/Undefinable/unwrapOrElseAsync': null,
         './esm/Undefinable/xor': null,
-        './lib/ClassicOption': null,
 
         './lib/Undefinable/ErrorMessage': null,
         './lib/Undefinable/Undefinable': null,
