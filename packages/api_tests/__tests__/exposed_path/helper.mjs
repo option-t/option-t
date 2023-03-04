@@ -18,8 +18,6 @@ function pathToNormalizedImport(pathname) {
         type = ImportType.CJS;
     } else if (pathname.startsWith('./esm/')) {
         type = ImportType.ESM;
-    } else if (pathname.startsWith('./lib/')) {
-        type = ImportType.Both;
     } else {
         type = ImportType.Both;
     }

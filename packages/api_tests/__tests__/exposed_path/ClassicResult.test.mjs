@@ -6,6 +6,5 @@ testImportExposedPath(
     Object.keys({
         './cjs/ClassicResult': null,
         './esm/ClassicResult': null,
-        './lib/ClassicResult': null,
     })
 );

@@ -74,11 +74,6 @@ export class CompatExportEntry extends AbstractExportEntry {
             return new ESModuleCompatFileExport(entry);
         }
 
-        if (entry.isLib()) {
-            // eslint-disable-next-line no-use-before-define
-            return new LibCompatFileExport(entry);
-        }
-
         throw new RangeError('not here');
     }
 
@@ -157,41 +152,6 @@ class ESModuleCompatFileExport extends CompatExportEntry {
             filepath: p,
         });
         return value;
-    }
-}
-
-const LIB_PATH_PREFIX = './lib/';
-const ESM_PATH_PREFIX = './esm/';
-const CJS_PATH_PREFIX = './cjs/';
-
-class LibCompatFileExport extends CompatExportEntry {
-    constructor(entry) {
-        super(entry);
-
-        Object.freeze(this);
-        assert.ok(entry.isLib());
-    }
-
-    _toExportEntry() {
-        const key = this.pathValue();
-
-        const esmKey = key.replace(LIB_PATH_PREFIX, ESM_PATH_PREFIX);
-        assert.ok(esmKey.startsWith(ESM_PATH_PREFIX));
-        const esm = `${esmKey}.${EXTENSION_MJS}`;
-        const dmts = `${esmKey}.${EXTENSION_DMTS}`;
-
-        const cjsKey = key.replace(LIB_PATH_PREFIX, CJS_PATH_PREFIX);
-        assert.ok(cjsKey.startsWith(CJS_PATH_PREFIX));
-        const cjs = `${cjsKey}.cjs`;
-        const dcts = `${cjsKey}.${EXTENSION_DCTS}`;
-
-        const p = constructDualPackagePathValue({
-            cjs,
-            esm,
-            dmts,
-            dcts,
-        });
-        return p;
     }
 }
 
