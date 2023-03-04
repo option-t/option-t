@@ -127,6 +127,7 @@ format_check: ## Check code formatting
 .PHONY: prepublish
 prepublish:
 	$(MAKE) $@ -C $(MAIN_PKG)
+	$(MAKE) run_test_unittest -C $(CURDIR)
 	$(MAKE) run_test_import_types -C $(CURDIR)
 
 .PHONY: publish
