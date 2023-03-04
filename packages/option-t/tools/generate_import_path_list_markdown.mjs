@@ -165,6 +165,10 @@ function parseCliOptions() {
             const ok = pathItem.name() !== PKG_ROOT_ENTRY_POINT;
             return ok;
         })
+        .filter((pathItem) => {
+            const ok = !pathItem.shouldHideInDoc();
+            return ok;
+        })
         .map((pathItem) => {
             const key = pathItem.name();
             const path = pathItem.filepath();

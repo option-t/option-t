@@ -1,6 +1,14 @@
 function pathRedirectionTo(actualFilePath) {
     return Object.freeze({
         actualFilePath,
+        shouldHideInDoc: false,
+    });
+}
+
+function pathRedirectionForLegacy(actualFilePath) {
+    return Object.freeze({
+        actualFilePath,
+        shouldHideInDoc: true,
     });
 }
 
@@ -8,6 +16,9 @@ const API_DESCRIPTOR = Object.freeze({});
 
 export const apiTable = Object.freeze({
     '.': pathRedirectionTo('index'),
+
+    'ClassicOption': pathRedirectionForLegacy('ClassicOption/index'),
+    'ClassicResult': pathRedirectionForLegacy('ClassicResult/index'),
 
     'Maybe': pathRedirectionTo('Maybe/index'),
 
