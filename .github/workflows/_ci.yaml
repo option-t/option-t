@@ -147,3 +147,19 @@ jobs:
             - run: make test_package_json_exports_field_format -j
               env:
                   CI: true
+
+    test_import_types:
+        needs: [install_dependencies]
+        runs-on: ubuntu-latest
+        container: node:${{ matrix.node-version }}-bullseye
+
+        strategy:
+            matrix:
+                node-version:
+                    - 18
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/prepare_ci
+            - run: make test_import_types -j
+              env:
+                  CI: true

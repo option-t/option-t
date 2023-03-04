@@ -1,6 +1,7 @@
 INNER_PACKAGES_DIR := $(CURDIR)/packages
 MAIN_PKG := $(INNER_PACKAGES_DIR)/option-t
 API_TEST_PKG := $(INNER_PACKAGES_DIR)/api_tests
+TYPE_IMPORT_TEST_UNDER_MODULE_RESOLUTION_NODE16_PKG := $(INNER_PACKAGES_DIR)/test_module_resolution_node16
 
 DIST_DIR := $(MAIN_PKG)/__dist
 
@@ -84,6 +85,17 @@ typecheck: ## Check static types.
 test_unittest: build ## Build and run unit tests
 	$(MAKE) run_test_unittest -C $(CURDIR)
 
+.PHONY: test_import_types
+test_import_types: build ## Build and run type import tests
+	$(MAKE) run_test_import_types -C $(CURDIR)
+
+.PHONY: run_test_import_types
+run_test_import_types: __run_test_import_types_under_module_resolution_node16 ## Run type import tests
+
+.PHONY: __run_test_import_types_under_module_resolution_node16
+__run_test_import_types_under_module_resolution_node16:
+	$(MAKE) test -C $(TYPE_IMPORT_TEST_UNDER_MODULE_RESOLUTION_NODE16_PKG)
+
 .PHONY: run_test_unittest
 run_test_unittest: ## Run unit tests only.
 	$(MAKE) test -C $(API_TEST_PKG)
@@ -123,6 +135,7 @@ format_check: ## Check code formatting
 .PHONY: prepublish
 prepublish:
 	$(MAKE) $@ -C $(MAIN_PKG)
+	$(MAKE) run_test_import_types -C $(CURDIR)
 
 .PHONY: publish
 publish: copy_npmrc_to_project_root ## Run some commands for 'npm publish'
