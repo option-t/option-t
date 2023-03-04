@@ -1,6 +1,16 @@
 {
     "extends": "../../tsconfig.json",
     "compilerOptions": {
+        "target": "es5",
+        "module": "es2015",
+        "declaration": true,
+        "lib": [
+            "ES5",
+            "ES2015.Promise",
+            "ES2020.Promise",
+            "ES2022.Error",
+        ],
+
         "diagnostics": true,
         "noEmit": false,
         "outDir": "./__tmp_base"
