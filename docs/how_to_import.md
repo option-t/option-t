@@ -13,22 +13,10 @@ import { unwrapNullable } from 'option-t/Nullable/unwrap';
 import { createOk, isOk } from 'option-t/PlainResult';
 ```
 
+## Enforce to import as CommonJS or ES Module
 
-## If your toolchain _does not_ support `exports` field in package.json...
-
-We provides some backward compatible styles.
-_These styles are kept for backward compatibility. You should switch to `option-t/BarFoo` style path_.
-
-### Case: Your project uses a classic bundler or type checker options which does not support `exports` field.
-
-For example, these classic tools or classic options are not support `exports` field of package.json
-
-- webpack v4 or earlier.
-- TypeScript with `--moduleResolution node`.
-    - TypeScript v4.6 or earlier only have this option.
-- or etc.
-
-Then, you can use these paths:
+You can enforce to import as CommonJS or ES Module forcely without using Node.js [`--conditions`](https://nodejs.org/docs/latest-v18.x/api/cli.html#-ccondition---conditionscondition) CLI option.
+_These might be removed for the future. We don't recommend to use them generally._
 
 - `option-t/cjs/**` (__*Deprecated*__)
    - This directory provides only commonjs style modules.
@@ -38,7 +26,6 @@ Then, you can use these paths:
    - You can use this path _to import as ES Module forcefully_.
 
 ```js
-// If your toolchains supports package.json's exports field
 import { isNotNull } from 'option-t/esm/Nullable';
 import { unwrapNullable } from 'option-t/esm/Nullable/unwrap';
 import { createOk, isOk } from 'option-t/esm/PlainResult';
@@ -49,3 +36,8 @@ const { isNotNull } = require('option-t/cjs/Nullable');
 const { unwrapNullable } = require('option-t/cjs/Nullable/unwrap');
 const { createOk, isOk } = require('option-t/cjs/PlainResult');
 ```
+
+
+## For TypeScript with `--moduleResolution node` (or `--moduleResolution node10`)
+
+Please use [**`v35`**](https://github.com/option-t/option-t/tree/v35.0.0).
