@@ -266,7 +266,7 @@ ClassicOptionBase.prototype = Object.freeze({
      */
     toJSON() {
         return {
-            // eslint-disable-next-line @typescript-eslint/naming-convention
+            // eslint-disable-next-line camelcase
             is_some: this.ok,
             value: this.val,
         };
