@@ -1,4 +1,4 @@
-import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './ErrorMessage.js';
+import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './internal/ErrorMessage.js';
 import type { TransformFn } from '../internal/Function.js';
 import {
     type Maybe,
