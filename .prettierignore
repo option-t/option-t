@@ -14,4 +14,3 @@ lib/
 *.json
 *.md
 tools/
-ava.config.mjs
