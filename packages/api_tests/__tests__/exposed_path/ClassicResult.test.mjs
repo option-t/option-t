@@ -4,8 +4,8 @@ import { testImportExposedPath } from './helper.mjs';
 testImportExposedPath(
     test,
     Object.keys({
-        './cjs/ClassicOption': null,
-        './esm/ClassicOption': null,
-        './lib/ClassicOption': null,
+        './cjs/ClassicResult': null,
+        './esm/ClassicResult': null,
+        './lib/ClassicResult': null,
     })
 );
