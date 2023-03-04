@@ -128,3 +128,21 @@ jobs:
             - run: make test_import_types -j
               env:
                   CI: true
+
+    test_distribution_contain_all:
+        needs: [install_dependencies]
+        runs-on: ubuntu-latest
+        container: node:${{ matrix.node-version }}-bullseye
+
+        strategy:
+            matrix:
+                node-version:
+                    - 18
+
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/prepare_ci
+
+            - run: make test_distribution_contain_all -j
+              env:
+                  CI: true

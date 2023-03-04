@@ -9,7 +9,6 @@
         "test:update-snapshots": "npm run test -- --update-snapshots"
     },
     "dependencies": {
-        "ava": "^5.2.0",
         "option-t": "../option-t"
     }
 }

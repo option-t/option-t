@@ -13,11 +13,6 @@
         "package.json",
         "README.md"
     ],
-    "scripts": {
-        "clean": "make clean -j",
-        "build": "make build -j",
-        "test": "make test -j"
-    },
     "author": {
         "name": "Tetsuharu OHZEKI",
         "email": "tetsuharu.ohzeki@gmail.com",
