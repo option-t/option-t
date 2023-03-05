@@ -1,10 +1,10 @@
 import { assertIsPromise } from '../internal/assert.js';
-import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
-import type { AsyncRecoveryFn } from '../internal/Function.js';
+import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
+import type { AsyncRecoveryFn } from '../internal/function.js';
 
 import { type Undefinable, isNotUndefined, type NotUndefined } from './Undefinable.js';
 import { expectNotUndefined } from './expect.js';
-import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './internal/ErrorMessage.js';
+import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.js';
 
 function check<T>(value: Undefinable<T>): T {
     const passed = expectNotUndefined(

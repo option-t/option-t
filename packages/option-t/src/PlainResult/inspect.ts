@@ -1,4 +1,4 @@
-import type { EffectFn } from '../internal/Function.js';
+import type { EffectFn } from '../internal/function.js';
 import type { Result } from './Result.js';
 
 function noop<T>(_v: T) {}

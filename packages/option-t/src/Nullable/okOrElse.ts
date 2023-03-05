@@ -1,6 +1,6 @@
 import { type Nullable, isNotNull } from './Nullable.js';
 import { type Result, createErr, createOk } from '../PlainResult/Result.js';
-import type { RecoveryFn } from '../internal/Function.js';
+import type { RecoveryFn } from '../internal/function.js';
 
 /**
  * Transforms the `Nullable<T>` into a `Result<T, E>` by mapping `T` to `Ok(T)`.

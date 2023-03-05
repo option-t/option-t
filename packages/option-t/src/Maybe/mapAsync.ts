@@ -1,6 +1,6 @@
 import { assertIsPromise } from '../internal/assert.js';
-import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
-import type { AsyncTransformFn } from '../internal/Function.js';
+import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
+import type { AsyncTransformFn } from '../internal/function.js';
 
 import {
     type Maybe,
@@ -8,7 +8,7 @@ import {
     type NotNullOrUndefined,
     expectNotNullOrUndefined,
 } from './Maybe.js';
-import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './internal/ErrorMessage.js';
+import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './internal/error_message.js';
 
 function check<T>(value: Maybe<T>): T {
     const passed = expectNotNullOrUndefined(

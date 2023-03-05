@@ -2,8 +2,8 @@ import { assertIsErrorInstance, assertIsPromise } from '../internal/assert.js';
 import {
     ERR_MSG_PRODUCER_MUST_RETURN_PROMISE,
     ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE,
-} from '../internal/ErrorMessage.js';
-import type { AsyncProducerFn } from '../internal/Function.js';
+} from '../internal/error_message.js';
+import type { AsyncProducerFn } from '../internal/function.js';
 import { mapErrForResult } from './mapErr.js';
 import { type Result, createOk, createErr } from './Result.js';
 

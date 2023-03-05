@@ -1,8 +1,8 @@
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
-} from './internal/ErrorMessage.js';
-import type { TransformFn, RecoveryFn } from '../internal/Function.js';
+} from './internal/error_message.js';
+import type { TransformFn, RecoveryFn } from '../internal/function.js';
 import { type Maybe, type NotNullOrUndefined, expectNotNullOrUndefined } from './Maybe.js';
 
 /**

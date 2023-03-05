@@ -1,4 +1,4 @@
-import { ERR_MSG_INPUT_IS_FROZEN_NOT_CAST_TO_MUTABLE } from './ErrorMessage.js';
+import { ERR_MSG_INPUT_IS_FROZEN_NOT_CAST_TO_MUTABLE } from './error_message.js';
 
 export function assertIsPromise(
     input: unknown,

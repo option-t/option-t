@@ -4,7 +4,7 @@ import {
     type NotNullOrUndefined,
     expectNotNullOrUndefined,
 } from './Maybe.js';
-import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './internal/ErrorMessage.js';
+import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './internal/error_message.js';
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `null` and `undefined`.

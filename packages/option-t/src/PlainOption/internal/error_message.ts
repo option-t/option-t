@@ -1,4 +1,4 @@
-import { ERR_MSG_CALLED_WITH } from '../../internal/ErrorMessage.js';
+import { ERR_MSG_CALLED_WITH } from '../../internal/error_message.js';
 
 const NONE_TYPE_STR = '`None`';
 

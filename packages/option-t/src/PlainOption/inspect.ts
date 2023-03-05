@@ -1,4 +1,4 @@
-import type { EffectFn } from '../internal/Function.js';
+import type { EffectFn } from '../internal/function.js';
 import type { Option } from './Option.js';
 
 /**

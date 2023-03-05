@@ -2,8 +2,8 @@ import { type Maybe, type NotNullOrUndefined, expectNotNullOrUndefined } from '.
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE,
-} from './internal/ErrorMessage.js';
-import type { TransformFn } from '../internal/Function.js';
+} from './internal/error_message.js';
+import type { TransformFn } from '../internal/function.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null` and `undefined`.

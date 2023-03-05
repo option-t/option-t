@@ -3,7 +3,7 @@ import type {
     ClassicSome as Some,
     ClassicNone as None,
 } from '../ClassicOption/ClassicOption.js';
-import type { TransformFn, RecoveryFromErrorFn, EffectFn } from '../internal/Function.js';
+import type { TransformFn, RecoveryFromErrorFn, EffectFn } from '../internal/function.ts';
 
 /**
  *  @deprecated

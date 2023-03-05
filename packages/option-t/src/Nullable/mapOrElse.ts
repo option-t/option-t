@@ -2,8 +2,8 @@ import { expectNotNull } from './expect.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
-} from './internal/ErrorMessage.js';
-import type { TransformFn, RecoveryFn } from '../internal/Function.js';
+} from './internal/error_message.js';
+import type { TransformFn, RecoveryFn } from '../internal/function.js';
 import { isNotNull, type NotNull, type Nullable } from './Nullable.js';
 
 /**

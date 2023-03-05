@@ -1,4 +1,4 @@
-import type { TransformFn, RecoveryFn } from '../internal/Function.js';
+import type { TransformFn, RecoveryFn } from '../internal/function.js';
 import type { Option } from './Option.js';
 
 /**

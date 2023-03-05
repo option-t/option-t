@@ -1,7 +1,7 @@
-import type { RecoveryFn } from '../internal/Function.js';
+import type { RecoveryFn } from '../internal/function.js';
 import { isNotUndefined, type NotUndefined, type Undefinable } from './Undefinable.js';
 import { expectNotUndefined } from './expect.js';
-import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './internal/ErrorMessage.js';
+import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.js';
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `undefined`.

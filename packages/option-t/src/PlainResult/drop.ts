@@ -1,5 +1,5 @@
-import type { Mutable } from '../internal/Mutable.js';
-import type { EffectFn } from '../internal/Function.js';
+import type { Mutable } from '../internal/mutable.js';
+import type { EffectFn } from '../internal/function.js';
 import { type Result, type Ok, type Err, isOk } from './Result.js';
 import { asMutResult } from './asMut.js';
 

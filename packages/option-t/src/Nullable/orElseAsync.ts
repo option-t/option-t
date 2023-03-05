@@ -1,6 +1,6 @@
 import { assertIsPromise } from '../internal/assert.js';
-import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
-import type { AsyncRecoveryFn } from '../internal/Function.js';
+import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
+import type { AsyncRecoveryFn } from '../internal/function.js';
 import { type Nullable, isNotNull } from './Nullable.js';
 
 export type NullableAsyncTryRecoveryFn<out T> = AsyncRecoveryFn<Nullable<T>>;
