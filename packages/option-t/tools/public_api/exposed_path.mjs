@@ -1,3 +1,6 @@
+import * as assert from 'node:assert/strict';
+
+import { ApiPathDescriptor, modifyDescriptor } from './api_path_descriptor.mjs';
 import { apiTable  } from './table.mjs';
 
 const PKG_NAME = 'option-t';
@@ -7,6 +10,9 @@ export class ExposedPath {
     #descriptor;
 
     constructor(key, descriptor) {
+        assert.ok(typeof key === 'string');
+        assert.ok(descriptor instanceof ApiPathDescriptor);
+
         this.#key = key;
         this.#descriptor = descriptor;
         Object.freeze(this);
@@ -53,18 +59,6 @@ export class ExposedPath {
         const ok = !!createCompat;
         return ok;
     }
-}
-
-function modifyDescriptor(descriptor, moduleType) {
-    const actualFilePath = descriptor.actualFilePath;
-    if (!actualFilePath) {
-        return descriptor;
-    }
-    
-    return Object.freeze({
-        ...descriptor,
-        actualFilePath: `${moduleType}/${actualFilePath}`,
-    });
 }
 
 export class QuirksLegacyExposedPath extends ExposedPath {

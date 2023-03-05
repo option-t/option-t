@@ -1,38 +1,10 @@
 /* eslint sort-keys: ["error", "asc", { caseSensitive: true }] */
-
-const DEFAULT_API_DESCRIPTOR = Object.freeze({
-    actualFilePath: null,
-    shouldHideInDoc: false,
-    // eslint-disable-next-line sort-keys
-    createCompat: true,
-});
-
-function pathRedirectionTo(actualFilePath) {
-    return Object.freeze({
-        actualFilePath,
-        shouldHideInDoc: DEFAULT_API_DESCRIPTOR.shouldHideInDoc,
-        // eslint-disable-next-line sort-keys
-        createCompat: DEFAULT_API_DESCRIPTOR.createCompat,
-    });
-}
-
-function pathRedirectionForLegacy(actualFilePath) {
-    return Object.freeze({
-        actualFilePath,
-        shouldHideInDoc: true,
-        // eslint-disable-next-line sort-keys
-        createCompat: DEFAULT_API_DESCRIPTOR.createCompat,
-    });
-}
-
-function pathRedirectionForRoot(actualFilePath) {
-    return Object.freeze({
-        actualFilePath,
-        shouldHideInDoc: true,
-        // eslint-disable-next-line sort-keys
-        createCompat: false,
-    });
-}
+import {
+    DEFAULT_API_DESCRIPTOR,
+    pathRedirectionTo,
+    pathRedirectionForLegacy,
+    pathRedirectionForRoot,
+} from './api_path_descriptor.mjs';
 
 export const apiTable = Object.freeze({
     '.': pathRedirectionForRoot('index'),
