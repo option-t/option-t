@@ -4,10 +4,7 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 
-import {
-    generateExposedPathSequence,
-} from './public_api/mod.mjs';
-
+import { generateExposedPathSequence } from './public_api/mod.mjs';
 
 const THIS_FILE_NAME = fileURLToPath(import.meta.url);
 const THIS_DIR_NAME = path.dirname(THIS_FILE_NAME);
@@ -87,7 +84,7 @@ function categorize(list) {
 
     for (const item of list) {
         const key = item.key();
-        const [prefix, ] = key.split('/');
+        const [prefix] = key.split('/');
 
         let v = m.get(prefix);
         if (v === undefined) {
@@ -146,10 +143,7 @@ function parseCliOptions() {
 }
 
 (async function main() {
-    const {
-        destinationDir: OUT_DIR,
-        sourceDir: SRC_DIR,
-    } = parseCliOptions();
+    const { destinationDir: OUT_DIR, sourceDir: SRC_DIR } = parseCliOptions();
 
     // check SRC_DIR is src/
     {

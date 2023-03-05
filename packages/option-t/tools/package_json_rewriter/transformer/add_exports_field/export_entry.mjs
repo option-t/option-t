@@ -1,8 +1,6 @@
 import * as assert from 'node:assert/strict';
 
-import {
-    QuirksLegacyExposedPath
-} from '../../../public_api/mod.mjs';
+import { QuirksLegacyExposedPath } from '../../../public_api/mod.mjs';
 
 class AbstractExportEntry {
     key() {
@@ -171,11 +169,11 @@ function constructDualPackagePathValue({ cjs, esm, dmts, dcts }) {
         // to determine a module type for this entry point.
         // For example, if we set `d.ts` for ES Module, tsc will think this entrypoint is ESM.
 
-        'import': importCondition,
-        'require':  requireCondition,
+        import: importCondition,
+        require: requireCondition,
         // _default_ should be placed to the last.
         // https://nodejs.org/api/packages.html#conditional-exports
-        'default': importCondition,
+        default: importCondition,
     });
 }
 
@@ -191,9 +189,9 @@ function constructPathValue({ filepath, dts }) {
     return Object.freeze({
         // > Note that the "types" condition should always come first in "exports".
         // https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/#package-json-exports-imports-and-self-referencing
-        'types': dts,
+        types: dts,
         // _default_ should be placed to the last.
         // https://nodejs.org/api/packages.html#conditional-exports
-        'default': filepath,
+        default: filepath,
     });
 }

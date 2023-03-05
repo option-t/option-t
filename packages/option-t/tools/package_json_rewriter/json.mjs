@@ -14,8 +14,7 @@ function parseJSON(text) {
     try {
         const o = JSON.parse(text);
         return o;
-    }
-    catch (_e) {
+    } catch (_e) {
         return null;
     }
 }

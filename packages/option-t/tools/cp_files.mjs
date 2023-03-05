@@ -6,11 +6,7 @@ import { parseArgs } from 'node:util';
 import { getAllGlobMatchedFiles } from './glob.mjs';
 import { createSourceToDestinationMapList, prepareToCreateFile } from './fs_helper.mjs';
 
-async function copyFile(
-    source,
-    dest,
-    { isDebug: _isDebug, isVerbose: _isVerbose }
-) {
+async function copyFile(source, dest, { isDebug: _isDebug, isVerbose: _isVerbose }) {
     await prepareToCreateFile(dest);
     const copying = fs.copyFile(source, dest);
     return copying;
@@ -62,13 +58,7 @@ function parseCliOptions() {
 }
 
 (async function main() {
-    const {
-        isVerbose,
-        isDebug,
-        baseDir,
-        source,
-        destinationDir,
-    } = parseCliOptions();
+    const { isVerbose, isDebug, baseDir, source, destinationDir } = parseCliOptions();
 
     const baseDirFullPath = path.resolve(process.cwd(), baseDir);
     const sourceList = await getAllGlobMatchedFiles(baseDirFullPath, source);

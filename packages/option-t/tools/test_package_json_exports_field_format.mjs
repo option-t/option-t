@@ -7,8 +7,7 @@ function parseJSON(text) {
     try {
         const o = JSON.parse(text);
         return o;
-    }
-    catch (_e) {
+    } catch (_e) {
         return null;
     }
 }
@@ -136,18 +135,21 @@ await test(`Check package.json's 'exports' field format`, async (t) => {
     const json = await loadJSON(process.cwd(), targetDir);
     const exports = getExportsField(json);
 
-    await t.test(`This script tests whether the file specied in \`exports\` field in package.json exist`, async (t) => {
-        const assetion = checkWhetherFileExist.bind(null, targetDir);
+    await t.test(
+        `This script tests whether the file specied in \`exports\` field in package.json exist`,
+        async (t) => {
+            const assetion = checkWhetherFileExist.bind(null, targetDir);
 
-        const runningTests = [];
-        for (const { route, value } of iterateKeysOfExportsFieldDeeply(exports, '')) {
-            const running = t.test(route, async (_t) => {
-                await assetion(value);
-            });
-            runningTests.push(running);
+            const runningTests = [];
+            for (const { route, value } of iterateKeysOfExportsFieldDeeply(exports, '')) {
+                const running = t.test(route, async (_t) => {
+                    await assetion(value);
+                });
+                runningTests.push(running);
+            }
+            await Promise.all(runningTests);
         }
-        await Promise.all(runningTests);
-    });
+    );
 
     await t.test(`check condition object's format`, async (t) => {
         const runningTests = [];

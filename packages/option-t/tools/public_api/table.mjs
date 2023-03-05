@@ -168,4 +168,3 @@ export const apiTable = Object.freeze({
     'Undefinable/unwrapOrElseAsync': DEFAULT_API_DESCRIPTOR,
     'Undefinable/xor': DEFAULT_API_DESCRIPTOR,
 });
-

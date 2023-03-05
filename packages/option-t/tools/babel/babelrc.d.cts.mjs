@@ -6,12 +6,18 @@ const THIS_DIRNAME = path.dirname(THIS_FILENAME);
 const pathResolve = path.resolve.bind(undefined, THIS_DIRNAME);
 
 export default {
-    'plugins': [
-        ['@babel/plugin-syntax-typescript', {
-            dts: true,
-        }],
-        [pathResolve('./babel-plugin-modify-ext.mjs'), {
-            extension: '.cjs',
-        }],
+    plugins: [
+        [
+            '@babel/plugin-syntax-typescript',
+            {
+                dts: true,
+            },
+        ],
+        [
+            pathResolve('./babel-plugin-modify-ext.mjs'),
+            {
+                extension: '.cjs',
+            },
+        ],
     ],
 };

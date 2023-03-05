@@ -14,8 +14,7 @@ async function* getAllEntriesInDirectory(rootDir) {
 
         if (file.isFile()) {
             yield fullFilepath;
-        }
-        else if (file.isDirectory()) {
+        } else if (file.isDirectory()) {
             yield fullFilepath;
             yield* getAllEntriesInDirectory(fullFilepath);
         } else {

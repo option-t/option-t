@@ -1,7 +1,7 @@
 import * as assert from 'node:assert/strict';
 
 import { ApiPathDescriptor, modifyDescriptor } from './api_path_descriptor.mjs';
-import { apiTable  } from './table.mjs';
+import { apiTable } from './table.mjs';
 
 const PKG_NAME = 'option-t';
 

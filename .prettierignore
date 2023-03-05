@@ -14,5 +14,4 @@ __snapshots__/
 ## TODO
 *.json
 *.md
-packages/option-t/tools/
 tools/eslint/vendor/
