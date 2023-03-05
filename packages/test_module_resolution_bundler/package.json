@@ -1,0 +1,13 @@
+{
+    "private": true,
+    "type": "module",
+    "name": "@option-t/test_module_resolution_bundler",
+    "version": "37.0.1",
+    "license": "MIT",
+    "scripts": {
+        "test": "tsc -p ./tsconfig.json"
+    },
+    "dependencies": {
+        "option-t": "../option-t"
+    }
+}
