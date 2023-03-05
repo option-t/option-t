@@ -10,25 +10,25 @@ export {
     isNull,
     expectNotNull,
     unwrapNullable,
-} from './Nullable.js';
+} from './nullable_.js';
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
 //export { andForNullable as and } from './and.js';
-export { andThenForNullable as andThen } from './andThen.js';
-export { andThenAsyncForNullable as andThenAsync } from './andThenAsync.js';
+export { andThenForNullable as andThen } from './and_then.js';
+export { andThenAsyncForNullable as andThenAsync } from './and_then_async.js';
 export { inspectNullable as inspect } from './inspect.js';
 export { mapForNullable as map } from './map.js';
-export { mapAsyncForNullable as mapAsync } from './mapAsync.js';
-export { mapOrForNullable as mapOr } from './mapOr.js';
-export { mapOrAsyncForNullable as mapOrAsync } from './mapOrAsync.js';
-export { mapOrElseForNullable as mapOrElse } from './mapOrElse.js';
-export { mapOrElseAsyncForNullable as mapOrElseAsync } from './mapOrElseAsync.js';
+export { mapAsyncForNullable as mapAsync } from './map_async.js';
+export { mapOrForNullable as mapOr } from './map_or.js';
+export { mapOrAsyncForNullable as mapOrAsync } from './map_or_async.js';
+export { mapOrElseForNullable as mapOrElse } from './map_or_else.js';
+export { mapOrElseAsyncForNullable as mapOrElseAsync } from './map_or_else_async.js';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
 // export { orForNullable as or } from './or.js';
-export { okOrForNullable as okOr } from './okOr.js';
-export { okOrElseForNullable as okOrElse } from './okOrElse.js';
-export { orElseForNullable as orElse } from './orElse.js';
-export { orElseAsyncForNullable as orElseAsync } from './orElseAsync.js';
-export { toUndefinableFromNullable as toUndefinable } from './toUndefinable.js';
-export { unwrapOrFromNullable as unwrapOr } from './unwrapOr.js';
-export { unwrapOrElseFromNullable as unwrapOrElse } from './unwrapOrElse.js';
-export { unwrapOrElseAsyncFromNullable as unwrapOrElseAsync } from './unwrapOrElseAsync.js';
+export { okOrForNullable as okOr } from './ok_or.js';
+export { okOrElseForNullable as okOrElse } from './ok_or_else.js';
+export { orElseForNullable as orElse } from './or_else.js';
+export { orElseAsyncForNullable as orElseAsync } from './or_else_async.js';
+export { toUndefinableFromNullable as toUndefinable } from './to_undefinable.js';
+export { unwrapOrFromNullable as unwrapOr } from './unwrap_or.js';
+export { unwrapOrElseFromNullable as unwrapOrElse } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncFromNullable as unwrapOrElseAsync } from './unwrap_or_else_async.js';

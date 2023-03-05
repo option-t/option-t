@@ -1,4 +1,4 @@
-import type { Maybe } from './Maybe.js';
+import type { Maybe } from './maybe_.js';
 
 /**
  *  Return _a_ if _a_ is not `null` and `undefined`.

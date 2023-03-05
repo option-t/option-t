@@ -35,23 +35,23 @@ export {
     unwrapErr,
     expectOk,
     expectErr,
-} from './Result.js';
+} from './result_.js';
 
-export { andThenForResult } from './andThen.js';
-export { andThenAsyncForResult } from './andThenAsync.js';
+export { andThenForResult } from './and_then.js';
+export { andThenAsyncForResult } from './and_then_async.js';
 export { flattenForResult } from './flatten.js';
 export { inspectOkOfResult, inspectErrOfResult, inspectBothOfResult } from './inspect.js';
 export { mapForResult } from './map.js';
-export { mapAsyncForResult } from './mapAsync.js';
-export { mapOrForResult } from './mapOr.js';
-export { mapOrAsyncForResult } from './mapOrAsync.js';
-export { mapOrElseForResult } from './mapOrElse.js';
-export { mapOrElseAsyncForResult } from './mapOrElseAsync.js';
-export { mapErrForResult } from './mapErr.js';
-export { mapErrAsyncForResult } from './mapErrAsync.js';
-export { orElseForResult } from './orElse.js';
-export { orElseAsyncForResult } from './orElseAsync.js';
+export { mapAsyncForResult } from './map_async.js';
+export { mapOrForResult } from './map_or.js';
+export { mapOrAsyncForResult } from './map_or_async.js';
+export { mapOrElseForResult } from './map_or_else.js';
+export { mapOrElseAsyncForResult } from './map_or_else_async.js';
+export { mapErrForResult } from './map_err.js';
+export { mapErrAsyncForResult } from './map_err_async.js';
+export { orElseForResult } from './or_else.js';
+export { orElseAsyncForResult } from './or_else_async.js';
 export { transposeNullableForResult, transposeUndefinableForResult } from './transpose.js';
-export { unwrapOrFromResult } from './unwrapOr.js';
-export { unwrapOrElseFromResult } from './unwrapOrElse.js';
-export { unwrapOrElseAsyncFromResult } from './unwrapOrElseAsync.js';
+export { unwrapOrFromResult } from './unwrap_or.js';
+export { unwrapOrElseFromResult } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncFromResult } from './unwrap_or_else_async.js';

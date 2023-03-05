@@ -5,8 +5,8 @@ import {
     type Ok,
     type Err,
     isErr,
-} from '../PlainResult/Result.js';
-import { type Option, isNone, createSome, createNone, type None, type Some } from './Option.js';
+} from '../PlainResult/result_.js';
+import { type Option, isNone, createSome, createNone, type None, type Some } from './option_.js';
 
 /**
  *  Transposes an `Option` of a `Result` into a `Result` of an `Option`.

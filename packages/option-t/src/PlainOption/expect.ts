@@ -3,7 +3,7 @@
  *  This module is kept for backward compatibility.
  *  Please use `option-t/PlainOption/Option` directly.
  */
-import { expectSome } from './Option.js';
+import { expectSome } from './option_.js';
 
 /**
  *  This is an alias for backward compatibility.

@@ -1,7 +1,7 @@
-import { type Result as PlainResult, createOk, createErr, isOk } from '../PlainResult/Result.js';
+import { type Result as PlainResult, createOk, createErr, isOk } from '../PlainResult/result_.js';
 import { unwrapOkFromResult, unwrapErrFromResult } from '../PlainResult/unwrap.js';
 
-import { type ClassicResult, createClassicOk, createClassicErr } from './ClassicResult.js';
+import { type ClassicResult, createClassicOk, createClassicErr } from './classic_result.js';
 
 export function compatToPlainResult<T, E>(classic: ClassicResult<T, E>): PlainResult<T, E> {
     if (classic.isOk()) {

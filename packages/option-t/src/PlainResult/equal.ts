@@ -1,4 +1,4 @@
-import type { Result } from './Result.js';
+import type { Result } from './result_.js';
 
 /**
  *  Return `true`:

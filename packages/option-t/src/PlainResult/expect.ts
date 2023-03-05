@@ -3,7 +3,7 @@
  *  This module is kept for backward compatibility.
  *  Please use `option-t/PlainResult/Result` directly.
  */
-import { expectOk, expectErr } from './Result.js';
+import { expectOk, expectErr } from './result_.js';
 
 /**
  *  This is an alias for backward compatibility.

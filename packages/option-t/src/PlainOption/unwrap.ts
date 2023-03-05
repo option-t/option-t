@@ -3,7 +3,7 @@
  *  This module is kept for backward compatibility.
  *  Please use `option-t/PlainOption/Option` directly.
  */
-import { unwrapSome } from './Option.js';
+import { unwrapSome } from './option_.js';
 
 /**
  *  This is an alias for backward compatibility.

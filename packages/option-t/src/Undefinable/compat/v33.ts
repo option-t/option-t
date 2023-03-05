@@ -10,37 +10,37 @@ export {
     isUndefined,
     expectNotUndefined,
     unwrapUndefinable,
-} from '../Undefinable.js';
-export { andThenForUndefinable } from '../andThen.js';
-export { andThenAsyncForUndefinable } from '../andThenAsync.js';
+} from '../undefinable_.js';
+export { andThenForUndefinable } from '../and_then.js';
+export { andThenAsyncForUndefinable } from '../and_then_async.js';
 export { inspectUndefinable } from '../inspect.js';
 export { mapForUndefinable } from '../map.js';
-export { mapAsyncForUndefinable } from '../mapAsync.js';
-export { mapOrForUndefinable } from '../mapOr.js';
-export { mapOrAsyncForUndefinable } from '../mapOrAsync.js';
-export { mapOrElseForUndefinable } from '../mapOrElse.js';
-export { mapOrElseAsyncForUndefinable } from '../mapOrElseAsync.js';
-export { orElseForUndefinable } from '../orElse.js';
-export { orElseAsyncForUndefinable } from '../orElseAsync.js';
-export { unwrapOrFromUndefinable } from '../unwrapOr.js';
-export { unwrapOrElseFromUndefinable } from '../unwrapOrElse.js';
-export { unwrapOrElseAsyncFromUndefinable } from '../unwrapOrElseAsync.js';
+export { mapAsyncForUndefinable } from '../map_async.js';
+export { mapOrForUndefinable } from '../map_or.js';
+export { mapOrAsyncForUndefinable } from '../map_or_async.js';
+export { mapOrElseForUndefinable } from '../map_or_else.js';
+export { mapOrElseAsyncForUndefinable } from '../map_or_else_async.js';
+export { orElseForUndefinable } from '../or_else.js';
+export { orElseAsyncForUndefinable } from '../or_else_async.js';
+export { unwrapOrFromUndefinable } from '../unwrap_or.js';
+export { unwrapOrElseFromUndefinable } from '../unwrap_or_else.js';
+export { unwrapOrElseAsyncFromUndefinable } from '../unwrap_or_else_async.js';
 
-import { expectNotUndefined, unwrapUndefinable } from '../Undefinable.js';
-import { andThenForUndefinable } from '../andThen.js';
-import { andThenAsyncForUndefinable } from '../andThenAsync.js';
+import { expectNotUndefined, unwrapUndefinable } from '../undefinable_.js';
+import { andThenForUndefinable } from '../and_then.js';
+import { andThenAsyncForUndefinable } from '../and_then_async.js';
 import { inspectUndefinable } from '../inspect.js';
 import { mapForUndefinable } from '../map.js';
-import { mapAsyncForUndefinable } from '../mapAsync.js';
-import { mapOrForUndefinable } from '../mapOr.js';
-import { mapOrAsyncForUndefinable } from '../mapOrAsync.js';
-import { mapOrElseForUndefinable } from '../mapOrElse.js';
-import { mapOrElseAsyncForUndefinable } from '../mapOrElseAsync.js';
-import { orElseForUndefinable } from '../orElse.js';
-import { orElseAsyncForUndefinable } from '../orElseAsync.js';
-import { unwrapOrFromUndefinable } from '../unwrapOr.js';
-import { unwrapOrElseFromUndefinable } from '../unwrapOrElse.js';
-import { unwrapOrElseAsyncFromUndefinable } from '../unwrapOrElseAsync.js';
+import { mapAsyncForUndefinable } from '../map_async.js';
+import { mapOrForUndefinable } from '../map_or.js';
+import { mapOrAsyncForUndefinable } from '../map_or_async.js';
+import { mapOrElseForUndefinable } from '../map_or_else.js';
+import { mapOrElseAsyncForUndefinable } from '../map_or_else_async.js';
+import { orElseForUndefinable } from '../or_else.js';
+import { orElseAsyncForUndefinable } from '../or_else_async.js';
+import { unwrapOrFromUndefinable } from '../unwrap_or.js';
+import { unwrapOrElseFromUndefinable } from '../unwrap_or_else.js';
+import { unwrapOrElseAsyncFromUndefinable } from '../unwrap_or_else_async.js';
 
 /**
  *  @deprecated

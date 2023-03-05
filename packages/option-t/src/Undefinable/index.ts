@@ -5,22 +5,22 @@ export {
     isUndefined,
     expectNotUndefined,
     unwrapUndefinable,
-} from './Undefinable.js';
+} from './undefinable_.js';
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
 //export { andForUndefinable } from './and.js';
-export { andThenForUndefinable } from './andThen.js';
-export { andThenAsyncForUndefinable } from './andThenAsync.js';
+export { andThenForUndefinable } from './and_then.js';
+export { andThenAsyncForUndefinable } from './and_then_async.js';
 export { inspectUndefinable } from './inspect.js';
 export { mapForUndefinable } from './map.js';
-export { mapAsyncForUndefinable } from './mapAsync.js';
-export { mapOrForUndefinable } from './mapOr.js';
-export { mapOrAsyncForUndefinable } from './mapOrAsync.js';
-export { mapOrElseForUndefinable } from './mapOrElse.js';
-export { mapOrElseAsyncForUndefinable } from './mapOrElseAsync.js';
+export { mapAsyncForUndefinable } from './map_async.js';
+export { mapOrForUndefinable } from './map_or.js';
+export { mapOrAsyncForUndefinable } from './map_or_async.js';
+export { mapOrElseForUndefinable } from './map_or_else.js';
+export { mapOrElseAsyncForUndefinable } from './map_or_else_async.js';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
 // export { orForUndefinable } from './or.js';
-export { orElseForUndefinable } from './orElse.js';
-export { orElseAsyncForUndefinable } from './orElseAsync.js';
-export { unwrapOrFromUndefinable } from './unwrapOr.js';
-export { unwrapOrElseFromUndefinable } from './unwrapOrElse.js';
-export { unwrapOrElseAsyncFromUndefinable } from './unwrapOrElseAsync.js';
+export { orElseForUndefinable } from './or_else.js';
+export { orElseAsyncForUndefinable } from './or_else_async.js';
+export { unwrapOrFromUndefinable } from './unwrap_or.js';
+export { unwrapOrElseFromUndefinable } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncFromUndefinable } from './unwrap_or_else_async.js';

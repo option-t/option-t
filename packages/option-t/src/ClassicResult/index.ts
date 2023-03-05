@@ -7,7 +7,7 @@ export {
     createClassicErr,
     ClassicOkConstructor,
     ClassicErrConstructor,
-} from './ClassicResult.js';
+} from './classic_result.js';
 
 export { compatToPlainResult, compatToClassicResult } from './compat.js';
 
@@ -20,7 +20,7 @@ import {
     createClassicErr,
     ClassicOkConstructor,
     ClassicErrConstructor,
-} from './ClassicResult.js';
+} from './classic_result.js';
 
 /**
  *  @deprecated

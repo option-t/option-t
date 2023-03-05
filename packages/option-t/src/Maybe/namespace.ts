@@ -10,31 +10,31 @@ export {
     isNullOrUndefined,
     expectNotNullOrUndefined,
     unwrapMaybe,
-} from './Maybe.js';
+} from './maybe_.js';
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by
 // default set.
 // export { andForMaybe as and } from './and.js';
-export { andThenForMaybe as andThen } from './andThen.js';
-export { andThenAsyncForMaybe as andThenAsync } from './andThenAsync.js';
+export { andThenForMaybe as andThen } from './and_then.js';
+export { andThenAsyncForMaybe as andThenAsync } from './and_then_async.js';
 export { inspectMaybe as inspect } from './inspect.js';
 export { mapForMaybe as map } from './map.js';
-export { mapAsyncForMaybe as mapAsync } from './mapAsync.js';
-export { mapOrForMaybe as mapOr } from './mapOr.js';
-export { mapOrAsyncForMaybe as mapOrAsync } from './mapOrAsync.js';
-export { mapOrElseForMaybe as mapOrElse } from './mapOrElse.js';
-export { mapOrElseAsyncForMaybe as mapOrElseAsync } from './mapOrElseAsync.js';
+export { mapAsyncForMaybe as mapAsync } from './map_async.js';
+export { mapOrForMaybe as mapOr } from './map_or.js';
+export { mapOrAsyncForMaybe as mapOrAsync } from './map_or_async.js';
+export { mapOrElseForMaybe as mapOrElse } from './map_or_else.js';
+export { mapOrElseAsyncForMaybe as mapOrElseAsync } from './map_or_else_async.js';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by
 // default set. export { orForMaybe as or } from './or.js';
-export { okOrForMaybe as okOr } from './okOr.js';
-export { okOrElseForMaybe as okOrElse } from './okOrElse.js';
-export { orElseForMaybe as orElse } from './orElse.js';
-export { orElseAsyncForMaybe as orElseAsync } from './orElseAsync.js';
-export { toNullableFromMaybe as toNullable } from './toNullable.js';
+export { okOrForMaybe as okOr } from './ok_or.js';
+export { okOrElseForMaybe as okOrElse } from './ok_or_else.js';
+export { orElseForMaybe as orElse } from './or_else.js';
+export { orElseAsyncForMaybe as orElseAsync } from './or_else_async.js';
+export { toNullableFromMaybe as toNullable } from './to_nullable.js';
 export {
     toResultErrFromMaybe as toResultErr,
     toResultOkFromMaybe as toResultOk,
-} from './toPlainResult.js';
-export { toUndefinableFromMaybe as toUndefinable } from './toUndefinable.js';
-export { unwrapOrFromMaybe as unwrapOr } from './unwrapOr.js';
-export { unwrapOrElseFromMaybe as unwrapOrElse } from './unwrapOrElse.js';
-export { unwrapOrElseAsyncFromMaybe as unwrapOrElseAsync } from './unwrapOrElseAsync.js';
+} from './to_plain_result.js';
+export { toUndefinableFromMaybe as toUndefinable } from './to_undefinable.js';
+export { unwrapOrFromMaybe as unwrapOr } from './unwrap_or.js';
+export { unwrapOrElseFromMaybe as unwrapOrElse } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncFromMaybe as unwrapOrElseAsync } from './unwrap_or_else_async.js';
