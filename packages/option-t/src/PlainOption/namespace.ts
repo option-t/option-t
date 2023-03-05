@@ -13,24 +13,24 @@ export {
     isNone,
     unwrapSome,
     expectSome,
-} from './Option.js';
+} from './option.js';
 
-export { andThenForOption as andThen } from './andThen.js';
-export { andThenAsyncForOption as andThenAsync } from './andThenAsync.js';
+export { andThenForOption as andThen } from './and_then.js';
+export { andThenAsyncForOption as andThenAsync } from './and_then_async.js';
 export { filterForOption as filter } from './filter.js';
 export { flattenForOption as flatten } from './flatten.js';
 export { inspectOption as inspect } from './inspect.js';
 export { mapForOption as map } from './map.js';
-export { mapAsyncForOption as mapAsync } from './mapAsync.js';
-export { mapOrForOption as mapOr } from './mapOr.js';
-export { mapOrAsyncForOption as mapOrAsync } from './mapOrAsync.js';
-export { mapOrElseForOption as mapOrElse } from './mapOrElse.js';
-export { mapOrElseAsyncForOption as mapOrElseAsync } from './mapOrElseAsync.js';
-export { okOrForPlainOption as okOr } from './okOr.js';
-export { okOrElseForPlainOption as okOrElse } from './okOrElse.js';
-export { orElseForOption as orElse } from './orElse.js';
-export { orElseAsyncForOption as orElseAsync } from './orElseAsync.js';
+export { mapAsyncForOption as mapAsync } from './map_async.js';
+export { mapOrForOption as mapOr } from './map_or.js';
+export { mapOrAsyncForOption as mapOrAsync } from './map_or_async.js';
+export { mapOrElseForOption as mapOrElse } from './map_or_else.js';
+export { mapOrElseAsyncForOption as mapOrElseAsync } from './map_or_else_async.js';
+export { okOrForPlainOption as okOr } from './ok_or.js';
+export { okOrElseForPlainOption as okOrElse } from './ok_or_else.js';
+export { orElseForOption as orElse } from './or_else.js';
+export { orElseAsyncForOption as orElseAsync } from './or_else_async.js';
 export { transposeForOption as transpose } from './transpose.js';
-export { unwrapOrFromOption as unwrapOr } from './unwrapOr.js';
-export { unwrapOrElseFromOption as unwrapOrElse } from './unwrapOrElse.js';
-export { unwrapOrElseAsyncFromOption as unwrapOrElseAsync } from './unwrapOrElseAsync.js';
+export { unwrapOrFromOption as unwrapOr } from './unwrap_or.js';
+export { unwrapOrElseFromOption as unwrapOrElse } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncFromOption as unwrapOrElseAsync } from './unwrap_or_else_async.js';

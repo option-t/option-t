@@ -7,7 +7,7 @@ export {
     createClassicNone,
     ClassicSomeConstructor,
     ClassicNoneConstructor,
-} from './ClassicOption.js';
+} from './classic_option.js';
 
 export {
     compatToClassicOption,
@@ -28,7 +28,7 @@ import {
     createClassicNone,
     ClassicSomeConstructor,
     ClassicNoneConstructor,
-} from './ClassicOption.js';
+} from './classic_option.js';
 
 /**
  *  @deprecated

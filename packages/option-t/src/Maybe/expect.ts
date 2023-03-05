@@ -3,7 +3,7 @@
  *  This module is kept for backward compatibility.
  *  Please use `option-t/Maybe/Maybe` directly.
  */
-import { expectNotNullOrUndefined } from './Maybe.js';
+import { expectNotNullOrUndefined } from './maybe.js';
 
 export { expectNotNullOrUndefined };
 

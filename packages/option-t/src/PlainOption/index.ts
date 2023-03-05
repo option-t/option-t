@@ -34,22 +34,22 @@ export {
     isNone,
     unwrapSome,
     expectSome,
-} from './Option.js';
+} from './option.js';
 
-export { andThenForOption } from './andThen.js';
-export { andThenAsyncForOption } from './andThenAsync.js';
+export { andThenForOption } from './and_then.js';
+export { andThenAsyncForOption } from './and_then_async.js';
 export { filterForOption } from './filter.js';
 export { flattenForOption } from './flatten.js';
 export { inspectOption } from './inspect.js';
 export { mapForOption } from './map.js';
-export { mapAsyncForOption } from './mapAsync.js';
-export { mapOrForOption } from './mapOr.js';
-export { mapOrAsyncForOption } from './mapOrAsync.js';
-export { mapOrElseForOption } from './mapOrElse.js';
-export { mapOrElseAsyncForOption } from './mapOrElseAsync.js';
-export { orElseForOption } from './orElse.js';
-export { orElseAsyncForOption } from './orElseAsync.js';
+export { mapAsyncForOption } from './map_async.js';
+export { mapOrForOption } from './map_or.js';
+export { mapOrAsyncForOption } from './map_or_async.js';
+export { mapOrElseForOption } from './map_or_else.js';
+export { mapOrElseAsyncForOption } from './map_or_else_async.js';
+export { orElseForOption } from './or_else.js';
+export { orElseAsyncForOption } from './or_else_async.js';
 export { transposeForOption } from './transpose.js';
-export { unwrapOrFromOption } from './unwrapOr.js';
-export { unwrapOrElseFromOption } from './unwrapOrElse.js';
-export { unwrapOrElseAsyncFromOption } from './unwrapOrElseAsync.js';
+export { unwrapOrFromOption } from './unwrap_or.js';
+export { unwrapOrElseFromOption } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncFromOption } from './unwrap_or_else_async.js';

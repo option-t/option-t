@@ -3,4 +3,4 @@
  *  This module is kept for backward compatibility.
  *  Please use `option-t/Nullable/Nullable` directly.
  */
-export { unwrapNullable } from './Nullable.js';
+export { unwrapNullable } from './nullable.js';

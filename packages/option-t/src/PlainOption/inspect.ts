@@ -1,5 +1,5 @@
 import type { EffectFn } from '../internal/function.js';
-import type { Option } from './Option.js';
+import type { Option } from './option.js';
 
 /**
  *  * Return _input_ directly.

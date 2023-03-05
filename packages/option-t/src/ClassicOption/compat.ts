@@ -1,20 +1,20 @@
-import { type Maybe, type NotNullOrUndefined, isNotNullOrUndefined } from '../Maybe/Maybe.js';
-import { type Nullable, type NotNull, isNotNull, expectNotNull } from '../Nullable/Nullable.js';
+import { type Maybe, type NotNullOrUndefined, isNotNullOrUndefined } from '../Maybe/maybe.js';
+import { type Nullable, type NotNull, isNotNull, expectNotNull } from '../Nullable/nullable.js';
 import {
     createSome,
     createNone,
     type Option as PlainOption,
     isSome,
-} from '../PlainOption/Option.js';
+} from '../PlainOption/option.js';
 import { unwrapOption } from '../PlainOption/unwrap.js';
 import {
     type Undefinable,
     type NotUndefined,
     expectNotUndefined,
     isNotUndefined,
-} from '../Undefinable/Undefinable.js';
+} from '../Undefinable/undefinable.js';
 
-import { type ClassicOption, createClassicNone, createClassicSome } from './ClassicOption.js';
+import { type ClassicOption, createClassicNone, createClassicSome } from './classic_option.js';
 
 /**
  *  Return `PlainOption`'s `Some(T)` with the inner T if _classic_ is `ClassicSome(T)`.

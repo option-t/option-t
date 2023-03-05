@@ -3,7 +3,7 @@
  *  This module is kept for backward compatibility.
  *  Please use `option-t/PlainResult/Result` directly.
  */
-import { unwrapOk, unwrapErr } from './Result.js';
+import { unwrapOk, unwrapErr } from './result.js';
 
 /**
  *  This is an alias for backward compatibility.

@@ -10,37 +10,37 @@ export {
     isNull,
     expectNotNull,
     unwrapNullable,
-} from '../Nullable.js';
-export { andThenForNullable } from '../andThen.js';
-export { andThenAsyncForNullable } from '../andThenAsync.js';
+} from '../nullable.js';
+export { andThenForNullable } from '../and_then.js';
+export { andThenAsyncForNullable } from '../and_then_async.js';
 export { inspectNullable } from '../inspect.js';
 export { mapForNullable } from '../map.js';
-export { mapAsyncForNullable } from '../mapAsync.js';
-export { mapOrForNullable } from '../mapOr.js';
-export { mapOrAsyncForNullable } from '../mapOrAsync.js';
-export { mapOrElseForNullable } from '../mapOrElse.js';
-export { mapOrElseAsyncForNullable } from '../mapOrElseAsync.js';
-export { orElseForNullable } from '../orElse.js';
-export { orElseAsyncForNullable } from '../orElseAsync.js';
-export { unwrapOrFromNullable } from '../unwrapOr.js';
-export { unwrapOrElseFromNullable } from '../unwrapOrElse.js';
-export { unwrapOrElseAsyncFromNullable } from '../unwrapOrElseAsync.js';
+export { mapAsyncForNullable } from '../map_async.js';
+export { mapOrForNullable } from '../map_or.js';
+export { mapOrAsyncForNullable } from '../map_or_async.js';
+export { mapOrElseForNullable } from '../map_or_else.js';
+export { mapOrElseAsyncForNullable } from '../map_or_else_async.js';
+export { orElseForNullable } from '../or_else.js';
+export { orElseAsyncForNullable } from '../or_else_async.js';
+export { unwrapOrFromNullable } from '../unwrap_or.js';
+export { unwrapOrElseFromNullable } from '../unwrap_or_else.js';
+export { unwrapOrElseAsyncFromNullable } from '../unwrap_or_else_async.js';
 
-import { expectNotNull, unwrapNullable } from '../Nullable.js';
-import { andThenForNullable } from '../andThen.js';
-import { andThenAsyncForNullable } from '../andThenAsync.js';
+import { expectNotNull, unwrapNullable } from '../nullable.js';
+import { andThenForNullable } from '../and_then.js';
+import { andThenAsyncForNullable } from '../and_then_async.js';
 import { inspectNullable } from '../inspect.js';
 import { mapForNullable } from '../map.js';
-import { mapAsyncForNullable } from '../mapAsync.js';
-import { mapOrForNullable } from '../mapOr.js';
-import { mapOrAsyncForNullable } from '../mapOrAsync.js';
-import { mapOrElseForNullable } from '../mapOrElse.js';
-import { mapOrElseAsyncForNullable } from '../mapOrElseAsync.js';
-import { orElseForNullable } from '../orElse.js';
-import { orElseAsyncForNullable } from '../orElseAsync.js';
-import { unwrapOrFromNullable } from '../unwrapOr.js';
-import { unwrapOrElseFromNullable } from '../unwrapOrElse.js';
-import { unwrapOrElseAsyncFromNullable } from '../unwrapOrElseAsync.js';
+import { mapAsyncForNullable } from '../map_async.js';
+import { mapOrForNullable } from '../map_or.js';
+import { mapOrAsyncForNullable } from '../map_or_async.js';
+import { mapOrElseForNullable } from '../map_or_else.js';
+import { mapOrElseAsyncForNullable } from '../map_or_else_async.js';
+import { orElseForNullable } from '../or_else.js';
+import { orElseAsyncForNullable } from '../or_else_async.js';
+import { unwrapOrFromNullable } from '../unwrap_or.js';
+import { unwrapOrElseFromNullable } from '../unwrap_or_else.js';
+import { unwrapOrElseAsyncFromNullable } from '../unwrap_or_else_async.js';
 
 /**
  *  @deprecated

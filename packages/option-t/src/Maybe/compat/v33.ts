@@ -10,42 +10,42 @@ export {
     isNullOrUndefined,
     expectNotNullOrUndefined,
     unwrapMaybe,
-} from '../Maybe.js';
-export { andThenForMaybe } from '../andThen.js';
-export { andThenAsyncForMaybe } from '../andThenAsync.js';
+} from '../maybe.js';
+export { andThenForMaybe } from '../and_then.js';
+export { andThenAsyncForMaybe } from '../and_then_async.js';
 export { inspectMaybe } from '../inspect.js';
 export { mapForMaybe } from '../map.js';
-export { mapAsyncForMaybe } from '../mapAsync.js';
-export { mapOrForMaybe } from '../mapOr.js';
-export { mapOrAsyncForMaybe } from '../mapOrAsync.js';
-export { mapOrElseForMaybe } from '../mapOrElse.js';
-export { mapOrElseAsyncForMaybe } from '../mapOrElseAsync.js';
-export { orElseForMaybe } from '../orElse.js';
-export { orElseAsyncForMaybe } from '../orElseAsync.js';
-export { unwrapOrFromMaybe } from '../unwrapOr.js';
-export { unwrapOrElseFromMaybe } from '../unwrapOrElse.js';
-export { unwrapOrElseAsyncFromMaybe } from '../unwrapOrElseAsync.js';
+export { mapAsyncForMaybe } from '../map_async.js';
+export { mapOrForMaybe } from '../map_or.js';
+export { mapOrAsyncForMaybe } from '../map_or_async.js';
+export { mapOrElseForMaybe } from '../map_or_else.js';
+export { mapOrElseAsyncForMaybe } from '../map_or_else_async.js';
+export { orElseForMaybe } from '../or_else.js';
+export { orElseAsyncForMaybe } from '../or_else_async.js';
+export { unwrapOrFromMaybe } from '../unwrap_or.js';
+export { unwrapOrElseFromMaybe } from '../unwrap_or_else.js';
+export { unwrapOrElseAsyncFromMaybe } from '../unwrap_or_else_async.js';
 
 import {
     expectNotNullOrUndefined,
     unwrapMaybe,
     isNotNullOrUndefined,
     type NotNullOrUndefined,
-} from '../Maybe.js';
-import { andThenForMaybe } from '../andThen.js';
-import { andThenAsyncForMaybe } from '../andThenAsync.js';
+} from '../maybe.js';
+import { andThenForMaybe } from '../and_then.js';
+import { andThenAsyncForMaybe } from '../and_then_async.js';
 import { inspectMaybe } from '../inspect.js';
 import { mapForMaybe } from '../map.js';
-import { mapAsyncForMaybe } from '../mapAsync.js';
-import { mapOrForMaybe } from '../mapOr.js';
-import { mapOrAsyncForMaybe } from '../mapOrAsync.js';
-import { mapOrElseForMaybe } from '../mapOrElse.js';
-import { mapOrElseAsyncForMaybe } from '../mapOrElseAsync.js';
-import { orElseForMaybe } from '../orElse.js';
-import { orElseAsyncForMaybe } from '../orElseAsync.js';
-import { unwrapOrFromMaybe } from '../unwrapOr.js';
-import { unwrapOrElseFromMaybe } from '../unwrapOrElse.js';
-import { unwrapOrElseAsyncFromMaybe } from '../unwrapOrElseAsync.js';
+import { mapAsyncForMaybe } from '../map_async.js';
+import { mapOrForMaybe } from '../map_or.js';
+import { mapOrAsyncForMaybe } from '../map_or_async.js';
+import { mapOrElseForMaybe } from '../map_or_else.js';
+import { mapOrElseAsyncForMaybe } from '../map_or_else_async.js';
+import { orElseForMaybe } from '../or_else.js';
+import { orElseAsyncForMaybe } from '../or_else_async.js';
+import { unwrapOrFromMaybe } from '../unwrap_or.js';
+import { unwrapOrElseFromMaybe } from '../unwrap_or_else.js';
+import { unwrapOrElseAsyncFromMaybe } from '../unwrap_or_else_async.js';
 
 /**
  *  @deprecated
