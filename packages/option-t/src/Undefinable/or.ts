@@ -1,4 +1,4 @@
-import type { Undefinable } from './undefinable_.js';
+import type { Undefinable } from './undefinable.js';
 
 /**
  *  Return _a_ if _a_ is not `undefined`.

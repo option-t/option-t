@@ -1,6 +1,6 @@
 import { assertIsFrozen } from '../internal/assert.js';
 import type { Mutable } from '../internal/mutable.js';
-import type { Result } from './result_.js';
+import type { Result } from './result.js';
 
 /**
  *  This allows to mutate the value to save needless allocation.

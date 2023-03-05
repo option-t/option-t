@@ -1,5 +1,5 @@
-import { type Result, type Ok, type Err, createOk, createErr } from '../PlainResult/result_.js';
-import { isNull, type Nullable } from './nullable_.js';
+import { type Result, type Ok, type Err, createOk, createErr } from '../PlainResult/result.js';
+import { isNull, type Nullable } from './nullable.js';
 
 /**
  *  Return `Err<void>` if _input_ is `null`.

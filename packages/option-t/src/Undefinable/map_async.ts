@@ -1,5 +1,5 @@
 import type { AsyncTransformFn } from '../internal/function.js';
-import { type Undefinable, isUndefined, type NotUndefined } from './undefinable_.js';
+import { type Undefinable, isUndefined, type NotUndefined } from './undefinable.js';
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.js';
 import { expectNotUndefined } from './expect.js';
 import { assertIsPromise } from '../internal/assert.js';

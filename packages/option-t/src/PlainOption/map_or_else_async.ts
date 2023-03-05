@@ -4,7 +4,7 @@ import {
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
 } from '../internal/error_message.js';
 import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/function.js';
-import { type Option, isNone } from './option_.js';
+import { type Option, isNone } from './option.js';
 import { unwrapOption } from './unwrap.js';
 
 /**

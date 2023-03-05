@@ -10,7 +10,7 @@ export {
     isNullOrUndefined,
     expectNotNullOrUndefined,
     unwrapMaybe,
-} from '../maybe_.js';
+} from '../maybe.js';
 export { andThenForMaybe } from '../and_then.js';
 export { andThenAsyncForMaybe } from '../and_then_async.js';
 export { inspectMaybe } from '../inspect.js';
@@ -31,7 +31,7 @@ import {
     unwrapMaybe,
     isNotNullOrUndefined,
     type NotNullOrUndefined,
-} from '../maybe_.js';
+} from '../maybe.js';
 import { andThenForMaybe } from '../and_then.js';
 import { andThenAsyncForMaybe } from '../and_then_async.js';
 import { inspectMaybe } from '../inspect.js';

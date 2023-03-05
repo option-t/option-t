@@ -1,4 +1,4 @@
-import { type Result as PlainResult, createOk, createErr, isOk } from '../PlainResult/result_.js';
+import { type Result as PlainResult, createOk, createErr, isOk } from '../PlainResult/result.js';
 import { unwrapOkFromResult, unwrapErrFromResult } from '../PlainResult/unwrap.js';
 
 import { type ClassicResult, createClassicOk, createClassicErr } from './classic_result.js';

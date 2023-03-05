@@ -5,7 +5,7 @@ import {
 } from '../internal/error_message.js';
 import type { AsyncProducerFn } from '../internal/function.js';
 import { mapErrForResult } from './map_err.js';
-import { type Result, createOk, createErr } from './result_.js';
+import { type Result, createOk, createErr } from './result.js';
 
 /**
  *  This function converts the returend value from _producer_ into `Ok(TValue)`.

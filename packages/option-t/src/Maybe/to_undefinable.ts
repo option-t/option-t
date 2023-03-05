@@ -1,5 +1,5 @@
-import type { Undefinable } from '../Undefinable/undefinable_.js';
-import { type Maybe, isNullOrUndefined } from './maybe_.js';
+import type { Undefinable } from '../Undefinable/undefinable.js';
+import { type Maybe, isNullOrUndefined } from './maybe.js';
 
 /**
  *  Return `undfined` if _input_ is `null` or `undfined`.

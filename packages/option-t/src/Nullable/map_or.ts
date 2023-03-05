@@ -1,4 +1,4 @@
-import type { NotNull, Nullable } from './nullable_.js';
+import type { NotNull, Nullable } from './nullable.js';
 import { expectNotNull } from './expect.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,

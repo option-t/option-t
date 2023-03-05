@@ -34,7 +34,7 @@ export {
     isNone,
     unwrapSome,
     expectSome,
-} from './option_.js';
+} from './option.js';
 
 export { andThenForOption } from './and_then.js';
 export { andThenAsyncForOption } from './and_then_async.js';

@@ -10,7 +10,7 @@ export {
     isUndefined,
     expectNotUndefined,
     unwrapUndefinable,
-} from './undefinable_.js';
+} from './undefinable.js';
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
 //export { andForUndefinable as and } from './and.js';
 export { andThenForUndefinable as andThen } from './and_then.js';

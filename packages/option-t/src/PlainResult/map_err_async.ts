@@ -1,7 +1,7 @@
 import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
 import type { AsyncTransformFn } from '../internal/function.js';
-import { type Result, createErr, isOk, type Ok } from './result_.js';
+import { type Result, createErr, isOk, type Ok } from './result.js';
 
 /**
  *  Maps a `Result<T, E>` to `Result<T, F>` by applying a _transformer_ function `mapFn<E, F>`

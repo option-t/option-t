@@ -1,5 +1,5 @@
 import type { TransformFn } from '../internal/function.js';
-import type { Result } from './result_.js';
+import type { Result } from './result.js';
 
 export type ResultTryTransformFn<in T, out U, out E> = TransformFn<T, Result<U, E>>;
 

@@ -1,5 +1,5 @@
-import type { Nullable } from '../Nullable/nullable_.js';
-import type { Option } from './option_.js';
+import type { Nullable } from '../Nullable/nullable.js';
+import type { Option } from './option.js';
 import { mapOrForOption } from './map_or.js';
 
 /**

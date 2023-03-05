@@ -1,6 +1,6 @@
-import type { Undefinable } from '../Undefinable/undefinable_.js';
+import type { Undefinable } from '../Undefinable/undefinable.js';
 import { unwrapErrOrFromResult } from './internal/unwrap_err_or.js';
-import type { Result } from './result_.js';
+import type { Result } from './result.js';
 import { unwrapOrFromResult } from './unwrap_or.js';
 
 /**

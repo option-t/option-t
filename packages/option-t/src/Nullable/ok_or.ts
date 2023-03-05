@@ -1,5 +1,5 @@
-import { type Nullable, isNotNull } from './nullable_.js';
-import { type Result, createErr, createOk } from '../PlainResult/result_.js';
+import { type Nullable, isNotNull } from './nullable.js';
+import { type Result, createErr, createOk } from '../PlainResult/result.js';
 
 /**
  * Transforms the `Nullable<T>` into a `Result<T, E>` by mapping `T` to `Ok(T)`.

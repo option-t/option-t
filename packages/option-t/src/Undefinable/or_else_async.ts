@@ -2,7 +2,7 @@ import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
 import type { AsyncRecoveryFn } from '../internal/function.js';
 
-import { type Undefinable, isNotUndefined } from './undefinable_.js';
+import { type Undefinable, isNotUndefined } from './undefinable.js';
 
 export type UndefinableAsyncTryRecoveryFn<out T> = AsyncRecoveryFn<Undefinable<T>>;
 

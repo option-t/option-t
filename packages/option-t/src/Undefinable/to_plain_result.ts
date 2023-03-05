@@ -1,5 +1,5 @@
-import { type Result, type Ok, type Err, createOk, createErr } from '../PlainResult/result_.js';
-import { isUndefined, type Undefinable } from './undefinable_.js';
+import { type Result, type Ok, type Err, createOk, createErr } from '../PlainResult/result.js';
+import { isUndefined, type Undefinable } from './undefinable.js';
 
 /**
  *  Return `Err<void>` if _input_ is `undefinable`.

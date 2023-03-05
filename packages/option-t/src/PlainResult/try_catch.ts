@@ -1,7 +1,7 @@
 import { assertIsErrorInstance } from '../internal/assert.js';
 import { ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE } from '../internal/error_message.js';
 import type { ProducerFn } from '../internal/function.js';
-import { type Result, createOk, createErr } from './result_.js';
+import { type Result, createOk, createErr } from './result.js';
 
 /**
  *  This function converts the returend value from _producer_ into `Ok(TValue)`.

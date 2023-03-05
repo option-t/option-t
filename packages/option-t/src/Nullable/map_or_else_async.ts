@@ -1,5 +1,5 @@
 import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/function.js';
-import { type Nullable, isNotNull, type NotNull } from './nullable_.js';
+import { type Nullable, isNotNull, type NotNull } from './nullable.js';
 import { assertIsPromise } from '../internal/assert.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,

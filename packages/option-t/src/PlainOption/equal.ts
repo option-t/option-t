@@ -1,4 +1,4 @@
-import type { Option } from './option_.js';
+import type { Option } from './option.js';
 
 /**
  *  Return `true`:

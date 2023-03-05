@@ -1,5 +1,5 @@
-import { type Result, type Ok, type Err, createOk, createErr } from '../PlainResult/result_.js';
-import { type Maybe, isNullOrUndefined } from './maybe_.js';
+import { type Result, type Ok, type Err, createOk, createErr } from '../PlainResult/result.js';
+import { type Maybe, isNullOrUndefined } from './maybe.js';
 
 /**
  *  Return `Err<void>` if _input_ is `null` or `undefined`.

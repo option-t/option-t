@@ -10,7 +10,7 @@ export {
     isNull,
     expectNotNull,
     unwrapNullable,
-} from '../nullable_.js';
+} from '../nullable.js';
 export { andThenForNullable } from '../and_then.js';
 export { andThenAsyncForNullable } from '../and_then_async.js';
 export { inspectNullable } from '../inspect.js';
@@ -26,7 +26,7 @@ export { unwrapOrFromNullable } from '../unwrap_or.js';
 export { unwrapOrElseFromNullable } from '../unwrap_or_else.js';
 export { unwrapOrElseAsyncFromNullable } from '../unwrap_or_else_async.js';
 
-import { expectNotNull, unwrapNullable } from '../nullable_.js';
+import { expectNotNull, unwrapNullable } from '../nullable.js';
 import { andThenForNullable } from '../and_then.js';
 import { andThenAsyncForNullable } from '../and_then_async.js';
 import { inspectNullable } from '../inspect.js';

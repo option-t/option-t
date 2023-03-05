@@ -15,7 +15,7 @@ export {
     unwrapErr,
     expectOk,
     expectErr,
-} from '../result_.js';
+} from '../result.js';
 
 export { andThenForResult } from '../and_then.js';
 export { andThenAsyncForResult } from '../and_then_async.js';
@@ -36,7 +36,7 @@ export { unwrapOrFromResult } from '../unwrap_or.js';
 export { unwrapOrElseFromResult } from '../unwrap_or_else.js';
 export { unwrapOrElseAsyncFromResult } from '../unwrap_or_else_async.js';
 
-import { expectOk, expectErr, unwrapOk } from '../result_.js';
+import { expectOk, expectErr, unwrapOk } from '../result.js';
 import {
     toOptionFromOk as toOptionFromOkFn,
     toOptionFromErr as toOptionFromErrFn,

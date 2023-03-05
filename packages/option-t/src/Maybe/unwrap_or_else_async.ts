@@ -7,7 +7,7 @@ import {
     isNotNullOrUndefined,
     type NotNullOrUndefined,
     expectNotNullOrUndefined,
-} from './maybe_.js';
+} from './maybe.js';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './internal/error_message.js';
 
 function check<T>(value: Maybe<T>): T {

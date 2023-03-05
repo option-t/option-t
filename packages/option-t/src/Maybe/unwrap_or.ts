@@ -3,7 +3,7 @@ import {
     type Maybe,
     type NotNullOrUndefined,
     expectNotNullOrUndefined,
-} from './maybe_.js';
+} from './maybe.js';
 import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './internal/error_message.js';
 
 /**

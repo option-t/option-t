@@ -1,5 +1,5 @@
-import { type Maybe, isNotNullOrUndefined } from './maybe_.js';
-import { type Result, createErr, createOk } from '../PlainResult/result_.js';
+import { type Maybe, isNotNullOrUndefined } from './maybe.js';
+import { type Result, createErr, createOk } from '../PlainResult/result.js';
 import type { RecoveryFn } from '../internal/function.js';
 
 /**

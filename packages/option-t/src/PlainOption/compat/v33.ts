@@ -13,7 +13,7 @@ export {
     isNone,
     unwrapSome,
     expectSome,
-} from '../option_.js';
+} from '../option.js';
 
 export { andThenForOption } from '../and_then.js';
 export { andThenAsyncForOption } from '../and_then_async.js';
@@ -33,7 +33,7 @@ export { unwrapOrFromOption } from '../unwrap_or.js';
 export { unwrapOrElseFromOption } from '../unwrap_or_else.js';
 export { unwrapOrElseAsyncFromOption } from '../unwrap_or_else_async.js';
 
-import { expectSome, unwrapSome } from '../option_.js';
+import { expectSome, unwrapSome } from '../option.js';
 import { andForOption as andForOptionOriginal } from '../and.js';
 import { andThenForOption } from '../and_then.js';
 import { andThenAsyncForOption } from '../and_then_async.js';

@@ -1,5 +1,5 @@
-import type { Option } from './option_.js';
-import { type Result, createErr, createOk } from '../PlainResult/result_.js';
+import type { Option } from './option.js';
+import { type Result, createErr, createOk } from '../PlainResult/result.js';
 import type { RecoveryFn } from '../internal/function.js';
 
 /**

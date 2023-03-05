@@ -13,7 +13,7 @@ export const apiTable = Object.freeze({
     'ClassicResult': pathRedirectionForLegacy('ClassicResult/index'),
 
     'Maybe': pathRedirectionTo('Maybe/index'),
-    'Maybe/Maybe': pathRedirectionTo('Maybe/maybe_'),
+    'Maybe/Maybe': pathRedirectionTo('Maybe/maybe'),
     'Maybe/and': DEFAULT_API_DESCRIPTOR,
     'Maybe/andThen': pathRedirectionTo('Maybe/and_then'),
     'Maybe/andThenAsync': pathRedirectionTo('Maybe/and_then_async'),
@@ -42,7 +42,7 @@ export const apiTable = Object.freeze({
     'Maybe/xor': DEFAULT_API_DESCRIPTOR,
 
     'Nullable': pathRedirectionTo('Nullable/index'),
-    'Nullable/Nullable': pathRedirectionTo('Nullable/nullable_'),
+    'Nullable/Nullable': pathRedirectionTo('Nullable/nullable'),
     'Nullable/and': DEFAULT_API_DESCRIPTOR,
     'Nullable/andThen': pathRedirectionTo('Nullable/and_then'),
     'Nullable/andThenAsync': pathRedirectionTo('Nullable/and_then_async'),
@@ -70,7 +70,7 @@ export const apiTable = Object.freeze({
     'Nullable/xor': DEFAULT_API_DESCRIPTOR,
 
     'PlainOption': pathRedirectionTo('PlainOption/index'),
-    'PlainOption/Option': pathRedirectionTo('PlainOption/option_'),
+    'PlainOption/Option': pathRedirectionTo('PlainOption/option'),
     'PlainOption/and': DEFAULT_API_DESCRIPTOR,
     'PlainOption/andThen': pathRedirectionTo('PlainOption/and_then'),
     'PlainOption/andThenAsync': pathRedirectionTo('PlainOption/and_then_async'),
@@ -104,7 +104,7 @@ export const apiTable = Object.freeze({
     'PlainOption/xor': DEFAULT_API_DESCRIPTOR,
 
     'PlainResult': pathRedirectionTo('PlainResult/index'),
-    'PlainResult/Result': pathRedirectionTo('PlainResult/result_'),
+    'PlainResult/Result': pathRedirectionTo('PlainResult/result'),
     'PlainResult/and': DEFAULT_API_DESCRIPTOR,
     'PlainResult/andThen': pathRedirectionTo('PlainResult/and_then'),
     'PlainResult/andThenAsync': pathRedirectionTo('PlainResult/and_then_async'),
@@ -143,7 +143,7 @@ export const apiTable = Object.freeze({
     'PlainResult/unwrapOrThrowError': pathRedirectionTo('PlainResult/unwrap_or_throw_error'),
 
     'Undefinable': pathRedirectionTo('Undefinable/index'),
-    'Undefinable/Undefinable': pathRedirectionTo('Undefinable/undefinable_'),
+    'Undefinable/Undefinable': pathRedirectionTo('Undefinable/undefinable'),
     'Undefinable/and': DEFAULT_API_DESCRIPTOR,
     'Undefinable/andThen': pathRedirectionTo('Undefinable/and_then'),
     'Undefinable/andThenAsync': pathRedirectionTo('Undefinable/and_then_async'),

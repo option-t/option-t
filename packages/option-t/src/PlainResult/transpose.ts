@@ -1,7 +1,7 @@
-import { type Nullable, isNull } from '../Nullable/nullable_.js';
-import { type Option, createSome, createNone, isNone, type Some } from '../PlainOption/option_.js';
-import { isUndefined, type Undefinable } from '../Undefinable/undefinable_.js';
-import { type Result, type Ok, type Err, isErr, createOk, createErr, unwrapOk } from './result_.js';
+import { type Nullable, isNull } from '../Nullable/nullable.js';
+import { type Option, createSome, createNone, isNone, type Some } from '../PlainOption/option.js';
+import { isUndefined, type Undefinable } from '../Undefinable/undefinable.js';
+import { type Result, type Ok, type Err, isErr, createOk, createErr, unwrapOk } from './result.js';
 
 /**
  *  Transposes a `Result` of an `Option` into an `Option` of a `Result`.

@@ -1,5 +1,5 @@
 import type { RecoveryFn } from '../internal/function.js';
-import { isNotNull, type NotNull, type Nullable } from './nullable_.js';
+import { isNotNull, type NotNull, type Nullable } from './nullable.js';
 import { expectNotNull } from './expect.js';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './internal/error_message.js';
 

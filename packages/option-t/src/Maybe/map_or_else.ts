@@ -3,7 +3,7 @@ import {
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
 } from './internal/error_message.js';
 import type { TransformFn, RecoveryFn } from '../internal/function.js';
-import { type Maybe, type NotNullOrUndefined, expectNotNullOrUndefined } from './maybe_.js';
+import { type Maybe, type NotNullOrUndefined, expectNotNullOrUndefined } from './maybe.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null` and `undefined`.

@@ -1,7 +1,7 @@
 import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
 import type { AsyncRecoveryFn } from '../internal/function.js';
-import { type Option, isSome } from './option_.js';
+import { type Option, isSome } from './option.js';
 
 export type OptionAsyncTryRecoveryFn<out T> = AsyncRecoveryFn<Option<T>>;
 

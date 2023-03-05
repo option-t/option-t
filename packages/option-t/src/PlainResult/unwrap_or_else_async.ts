@@ -1,7 +1,7 @@
 import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
 import type { AsyncRecoveryFromErrorFn } from '../internal/function.js';
-import { type Result, isOk } from './result_.js';
+import { type Result, isOk } from './result.js';
 import { unwrapOkFromResult, unwrapErrFromResult } from './unwrap.js';
 
 /**

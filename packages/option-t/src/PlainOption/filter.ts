@@ -1,4 +1,4 @@
-import { type Option, isNone, createNone } from './option_.js';
+import { type Option, isNone, createNone } from './option.js';
 import type { FilterFn } from '../internal/function.js';
 
 /**

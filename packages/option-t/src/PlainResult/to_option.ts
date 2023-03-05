@@ -1,5 +1,5 @@
-import { type Option, createNone, createSome } from '../PlainOption/option_.js';
-import type { Result } from './result_.js';
+import { type Option, createNone, createSome } from '../PlainOption/option.js';
+import type { Result } from './result.js';
 
 /**
  *  Convert to `Some(T)` if _input_ is `Ok(T)`.

@@ -1,4 +1,4 @@
-import type { Option } from './option_.js';
+import type { Option } from './option.js';
 import { andThenForOption } from './and_then.js';
 
 function flatten<T>(input: Option<T>): Option<T> {

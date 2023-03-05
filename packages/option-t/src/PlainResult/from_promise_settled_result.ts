@@ -1,4 +1,4 @@
-import { type Result, createOk, createErr } from './result_.js';
+import { type Result, createOk, createErr } from './result.js';
 
 /**
  *  Convert {@link PromiseSettledResult<T>} returned by {@link Promise.allSettled} to {@link Result}

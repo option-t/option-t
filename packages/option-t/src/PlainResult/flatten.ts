@@ -1,4 +1,4 @@
-import type { Result } from './result_.js';
+import type { Result } from './result.js';
 import { andThenForResult } from './and_then.js';
 
 function flatten<T, E>(input: Result<T, E>): Result<T, E> {

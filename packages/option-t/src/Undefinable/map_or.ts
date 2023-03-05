@@ -4,7 +4,7 @@ import {
 } from './internal/error_message.js';
 import { expectNotUndefined } from './expect.js';
 import type { TransformFn } from '../internal/function.js';
-import type { NotUndefined, Undefinable } from './undefinable_.js';
+import type { NotUndefined, Undefinable } from './undefinable.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `undefined`.

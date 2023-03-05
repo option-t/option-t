@@ -10,7 +10,7 @@ export {
     isNull,
     expectNotNull,
     unwrapNullable,
-} from './nullable_.js';
+} from './nullable.js';
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
 //export { andForNullable as and } from './and.js';
 export { andThenForNullable as andThen } from './and_then.js';

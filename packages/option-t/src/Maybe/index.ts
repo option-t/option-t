@@ -5,7 +5,7 @@ export {
     isNullOrUndefined,
     expectNotNullOrUndefined,
     unwrapMaybe,
-} from './maybe_.js';
+} from './maybe.js';
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
 //export { andForMaybe } from './and.js';
 export { andThenForMaybe } from './and_then.js';

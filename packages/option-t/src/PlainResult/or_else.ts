@@ -1,5 +1,5 @@
 import type { RecoveryFromErrorFn } from '../internal/function.js';
-import type { Result } from './result_.js';
+import type { Result } from './result.js';
 
 export type ResultTryRecoveryFromErrorFn<in E, out T, out F> = RecoveryFromErrorFn<E, Result<T, F>>;
 

@@ -11,7 +11,7 @@ import {
     isNullOrUndefined,
     type NotNullOrUndefined,
     expectNotNullOrUndefined,
-} from './maybe_.js';
+} from './maybe.js';
 
 function check<T>(value: Maybe<T>): T {
     const passed = expectNotNullOrUndefined(

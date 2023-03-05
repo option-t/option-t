@@ -35,7 +35,7 @@ export {
     unwrapErr,
     expectOk,
     expectErr,
-} from './result_.js';
+} from './result.js';
 
 export { andThenForResult } from './and_then.js';
 export { andThenAsyncForResult } from './and_then_async.js';

@@ -1,5 +1,5 @@
-import { type Maybe, isNotNullOrUndefined } from './maybe_.js';
-import { type Result, createErr, createOk } from '../PlainResult/result_.js';
+import { type Maybe, isNotNullOrUndefined } from './maybe.js';
+import { type Result, createErr, createOk } from '../PlainResult/result.js';
 
 /**
  * Transforms the `Maybe<T>` into a `Result<T, E>` by mapping `T` to `Ok(T)`.

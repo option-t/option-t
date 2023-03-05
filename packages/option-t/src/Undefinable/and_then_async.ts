@@ -2,7 +2,7 @@ import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
 import type { AsyncTransformFn } from '../internal/function.js';
 
-import { type Undefinable, isUndefined } from './undefinable_.js';
+import { type Undefinable, isUndefined } from './undefinable.js';
 
 export type UndefinableAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Undefinable<U>>;
 

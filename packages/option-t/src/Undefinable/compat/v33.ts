@@ -10,7 +10,7 @@ export {
     isUndefined,
     expectNotUndefined,
     unwrapUndefinable,
-} from '../undefinable_.js';
+} from '../undefinable.js';
 export { andThenForUndefinable } from '../and_then.js';
 export { andThenAsyncForUndefinable } from '../and_then_async.js';
 export { inspectUndefinable } from '../inspect.js';
@@ -26,7 +26,7 @@ export { unwrapOrFromUndefinable } from '../unwrap_or.js';
 export { unwrapOrElseFromUndefinable } from '../unwrap_or_else.js';
 export { unwrapOrElseAsyncFromUndefinable } from '../unwrap_or_else_async.js';
 
-import { expectNotUndefined, unwrapUndefinable } from '../undefinable_.js';
+import { expectNotUndefined, unwrapUndefinable } from '../undefinable.js';
 import { andThenForUndefinable } from '../and_then.js';
 import { andThenAsyncForUndefinable } from '../and_then_async.js';
 import { inspectUndefinable } from '../inspect.js';

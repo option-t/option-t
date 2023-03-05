@@ -1,7 +1,7 @@
 import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
 import type { AsyncTransformFn } from '../internal/function.js';
-import { type Option, isNone } from './option_.js';
+import { type Option, isNone } from './option.js';
 import { unwrapOption } from './unwrap.js';
 
 export type OptionAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Option<U>>;

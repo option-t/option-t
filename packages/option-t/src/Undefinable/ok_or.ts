@@ -1,5 +1,5 @@
-import { type Undefinable, isNotUndefined } from './undefinable_.js';
-import { type Result, createErr, createOk } from '../PlainResult/result_.js';
+import { type Undefinable, isNotUndefined } from './undefinable.js';
+import { type Result, createErr, createOk } from '../PlainResult/result.js';
 
 /**
  * Transforms the `Undefinable<T>` into a `Result<T, E>` by mapping `T` to `Ok(T)`.

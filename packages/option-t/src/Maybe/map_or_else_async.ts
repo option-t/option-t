@@ -14,7 +14,7 @@ import {
     isNotNullOrUndefined,
     type NotNullOrUndefined,
     expectNotNullOrUndefined,
-} from './maybe_.js';
+} from './maybe.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null` and `undefined`.

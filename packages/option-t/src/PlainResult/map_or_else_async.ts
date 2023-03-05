@@ -4,7 +4,7 @@ import {
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
 } from '../internal/error_message.js';
 import type { AsyncTransformFn, AsyncRecoveryFromErrorFn } from '../internal/function.js';
-import { type Result, isOk } from './result_.js';
+import { type Result, isOk } from './result.js';
 import { unwrapOkFromResult, unwrapErrFromResult } from './unwrap.js';
 
 /**
