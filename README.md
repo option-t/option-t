@@ -146,12 +146,12 @@ yarn add option-t --save
 All APIs are TypeScript ready.
 
 * _Utility functions for these types_. These are designed for more tree shaking friendly and more usable for JavaScript common world.
-    * [`Nullable<T>` (`T | null`)](./src/Nullable/)
-    * [`Undefinable<T>` (`T | undefined`)](./src/Undefinable/)
-    * [`Maybe<T>` (`T | null | undefined`)](./src/Maybe/)
+    * [`Nullable<T>` (`T | null`)](./docs/public_api_list.md#nullable)
+    * [`Undefinable<T>` (`T | undefined`)](./docs/public_api_list.md#undefinable)
+    * [`Maybe<T>` (`T | null | undefined`)](./docs/public_api_list.md#maybe)
     * plain objects
-        * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./src/PlainResult/)
-        * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./src/PlainOption/) (_weak deprecated_)
+        * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./docs/public_api_list.md#plainresult)
+        * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./docs/public_api_list.md#plainoption) (_weak deprecated_)
 * [Wrapper objects](./docs/wrapper_objects.md) ([__*deprecated*__](https://github.com/option-t/option-t/issues/459)).
 
 Additional documents are in [`docs/`](./docs/).
@@ -161,7 +161,6 @@ Additional documents are in [`docs/`](./docs/).
 
 **You can use [these paths](./docs/public_api_list.md) in both of CommonJS style and ES Module style.**
 This package provides some sub directories to import various functions (e.g. `option-t/PlainResult`).
-Each of them includes the same directory hierarchy with [under `src`/](./src/).
 
 If you're project cannot import by their path, please read [this guide](./docs/how_to_import.md) to know more details.
 
@@ -234,8 +233,8 @@ However, we think there some different design decision between neverthrow and us
 We does not provide class based implementation and method chaining style.
 Historically, we had provided a method-chain style APIs and data types as tier 1.
 
-- [`ClassicOption`](./src/ClassicOption/)
-- [`ClassicResult`](./src/ClassicResult/)
+- [`ClassicOption`](./packages/option-t/src/classic_option/classic_option.d.ts)
+- [`ClassicResult`](./packages/option-t/src/classic_result/classic_result.d.ts)
 
 But we gave up method chain style as primary style and switched our primary APIs
 to current simple functions combination style by various reasons.
