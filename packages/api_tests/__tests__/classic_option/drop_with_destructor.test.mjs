@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createClassicSome, createClassicNone } from 'option-t/esm/ClassicOption';
+import { createClassicSome, createClassicNone } from 'option-t/ClassicOption';
 
 test('Some<T>', function (t) {
     t.plan(3);

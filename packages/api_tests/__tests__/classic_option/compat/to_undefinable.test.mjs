@@ -5,7 +5,7 @@ import {
     createClassicNone,
     compatToClassicOptionFromUndefinable,
     compatToUndefinableFromClassicOption,
-} from 'option-t/esm/ClassicOption';
+} from 'option-t/ClassicOption';
 
 test(`input is T`, (t) => {
     const EXPECTED = Math.random();
