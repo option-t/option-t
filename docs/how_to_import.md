@@ -2,9 +2,6 @@
 
 **You can use [these paths](./public_api_list.md) in both of CommonJS style and ES Module style.**
 
-This package provides some sub directories to import various functions (e.g. `option-t/PlainResult`).
-Each of them includes the same directory hierarchy with [under `src`/](../packages/option-t/src/).
-
 ### Examples
 
 ```js
