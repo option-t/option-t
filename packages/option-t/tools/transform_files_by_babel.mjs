@@ -8,12 +8,7 @@ import * as babel from '@babel/core';
 import { getAllGlobMatchedFiles } from './glob.mjs';
 import { createSourceToDestinationMapList, prepareToCreateFile } from './fs_helper.mjs';
 
-async function transformFile(
-    config,
-    source,
-    dest,
-    { isDebug: _isDebug, isVerbose: _isVerbose }
-) {
+async function transformFile(config, source, dest, { isDebug: _isDebug, isVerbose: _isVerbose }) {
     const transformed = await babel.transformFileAsync(source, {
         babelrc: false,
         ...config,
@@ -77,14 +72,7 @@ function parseCliOptions() {
 }
 
 (async function main() {
-    const {
-        isVerbose,
-        isDebug,
-        baseDir,
-        source,
-        destinationDir,
-        configPath,
-    } = parseCliOptions();
+    const { isVerbose, isDebug, baseDir, source, destinationDir, configPath } = parseCliOptions();
 
     const cwd = process.cwd();
     const configFullPath = path.resolve(cwd, configPath);

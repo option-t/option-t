@@ -62,6 +62,7 @@ function parseCliOptions() {
     console.log('====== This script generates `exports` field for `package.json` ======');
 
     const {
+        // @prettier-ignore
         sourceManifestPath: INPUT_MANIFEST_PATH,
         destinationDir: OUTDIR,
     } = parseCliOptions();
@@ -69,9 +70,7 @@ function parseCliOptions() {
     const json = await loadJSON(BASE_DIR, INPUT_MANIFEST_PATH);
     assert.notStrictEqual(json, null, 'Fail to parse the file list snapshot');
 
-    const TRANSFORMERS = [
-        addExportsFields,
-    ];
+    const TRANSFORMERS = [addExportsFields];
     for (const transforer of TRANSFORMERS) {
         // eslint-disable-next-line no-await-in-loop
         await transforer(json);

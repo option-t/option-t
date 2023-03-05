@@ -8,19 +8,28 @@ const THIS_DIRNAME = path.dirname(THIS_FILENAME);
 const pathResolve = path.resolve.bind(undefined, THIS_DIRNAME);
 
 export default {
-    'presets': [
-        ['@babel/preset-env', {
-            ...babelEnvPresetConfig,
-            'modules': false,
-        }],
+    presets: [
+        [
+            '@babel/preset-env',
+            {
+                ...babelEnvPresetConfig,
+                modules: false,
+            },
+        ],
     ],
-    'plugins': [
-        [pathResolve('./babel-plugin-modify-ext.mjs'), {
-            extension: '.cjs',
-        }],
-        ['@babel/plugin-transform-modules-commonjs', {
-            importInterop: 'none',
-            strict: true,
-        }]
+    plugins: [
+        [
+            pathResolve('./babel-plugin-modify-ext.mjs'),
+            {
+                extension: '.cjs',
+            },
+        ],
+        [
+            '@babel/plugin-transform-modules-commonjs',
+            {
+                importInterop: 'none',
+                strict: true,
+            },
+        ],
     ],
 };

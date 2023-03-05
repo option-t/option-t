@@ -1,7 +1,7 @@
 import * as assert from 'node:assert/strict';
 
 export class ApiPathDescriptor {
-    #actualFilePath =  null;
+    #actualFilePath = null;
     #shouldHideInDoc = false;
     #createCompat = true;
 
