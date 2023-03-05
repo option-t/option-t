@@ -1,5 +1,5 @@
-import { type Maybe, type NotNullOrUndefined, isNotNullOrUndefined } from '../maybe_/maybe.js';
-import { type Nullable, type NotNull, isNotNull, expectNotNull } from '../nullable_/nullable.js';
+import { type Maybe, type NotNullOrUndefined, isNotNullOrUndefined } from '../maybe/maybe.js';
+import { type Nullable, type NotNull, isNotNull, expectNotNull } from '../nullable/nullable.js';
 import {
     createSome,
     createNone,
@@ -12,7 +12,7 @@ import {
     type NotUndefined,
     expectNotUndefined,
     isNotUndefined,
-} from '../undefinable_/undefinable.js';
+} from '../undefinable/undefinable.js';
 
 import { type ClassicOption, createClassicNone, createClassicSome } from './classic_option.js';
 

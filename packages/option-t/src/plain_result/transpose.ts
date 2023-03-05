@@ -1,6 +1,6 @@
-import { type Nullable, isNull } from '../nullable_/nullable.js';
+import { type Nullable, isNull } from '../nullable/nullable.js';
 import { type Option, createSome, createNone, isNone, type Some } from '../plain_option/option.js';
-import { isUndefined, type Undefinable } from '../undefinable_/undefinable.js';
+import { isUndefined, type Undefinable } from '../undefinable/undefinable.js';
 import { type Result, type Ok, type Err, isErr, createOk, createErr, unwrapOk } from './result.js';
 
 /**

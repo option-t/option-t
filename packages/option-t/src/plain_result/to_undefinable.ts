@@ -1,4 +1,4 @@
-import type { Undefinable } from '../undefinable_/undefinable.js';
+import type { Undefinable } from '../undefinable/undefinable.js';
 import { unwrapErrOrFromResult } from './internal/unwrap_err_or.js';
 import type { Result } from './result.js';
 import { unwrapOrFromResult } from './unwrap_or.js';

@@ -56,224 +56,224 @@
             "default": "./cjs/classic_result/index.cjs"
         },
         "./cjs/Maybe": {
-            "types": "./cjs/maybe_/index.d.cts",
-            "default": "./cjs/maybe_/index.cjs"
+            "types": "./cjs/maybe/index.d.cts",
+            "default": "./cjs/maybe/index.cjs"
         },
         "./cjs/Maybe/Maybe": {
-            "types": "./cjs/maybe_/maybe.d.cts",
-            "default": "./cjs/maybe_/maybe.cjs"
+            "types": "./cjs/maybe/maybe.d.cts",
+            "default": "./cjs/maybe/maybe.cjs"
         },
         "./cjs/Maybe/and": {
-            "types": "./cjs/maybe_/and.d.cts",
-            "default": "./cjs/maybe_/and.cjs"
+            "types": "./cjs/maybe/and.d.cts",
+            "default": "./cjs/maybe/and.cjs"
         },
         "./cjs/Maybe/andThen": {
-            "types": "./cjs/maybe_/and_then.d.cts",
-            "default": "./cjs/maybe_/and_then.cjs"
+            "types": "./cjs/maybe/and_then.d.cts",
+            "default": "./cjs/maybe/and_then.cjs"
         },
         "./cjs/Maybe/andThenAsync": {
-            "types": "./cjs/maybe_/and_then_async.d.cts",
-            "default": "./cjs/maybe_/and_then_async.cjs"
+            "types": "./cjs/maybe/and_then_async.d.cts",
+            "default": "./cjs/maybe/and_then_async.cjs"
         },
         "./cjs/Maybe/compat/v33": {
-            "types": "./cjs/maybe_/compat/v33.d.cts",
-            "default": "./cjs/maybe_/compat/v33.cjs"
+            "types": "./cjs/maybe/compat/v33.d.cts",
+            "default": "./cjs/maybe/compat/v33.cjs"
         },
         "./cjs/Maybe/expect": {
-            "types": "./cjs/maybe_/expect.d.cts",
-            "default": "./cjs/maybe_/expect.cjs"
+            "types": "./cjs/maybe/expect.d.cts",
+            "default": "./cjs/maybe/expect.cjs"
         },
         "./cjs/Maybe/inspect": {
-            "types": "./cjs/maybe_/inspect.d.cts",
-            "default": "./cjs/maybe_/inspect.cjs"
+            "types": "./cjs/maybe/inspect.d.cts",
+            "default": "./cjs/maybe/inspect.cjs"
         },
         "./cjs/Maybe/map": {
-            "types": "./cjs/maybe_/map.d.cts",
-            "default": "./cjs/maybe_/map.cjs"
+            "types": "./cjs/maybe/map.d.cts",
+            "default": "./cjs/maybe/map.cjs"
         },
         "./cjs/Maybe/mapAsync": {
-            "types": "./cjs/maybe_/map_async.d.cts",
-            "default": "./cjs/maybe_/map_async.cjs"
+            "types": "./cjs/maybe/map_async.d.cts",
+            "default": "./cjs/maybe/map_async.cjs"
         },
         "./cjs/Maybe/mapOr": {
-            "types": "./cjs/maybe_/map_or.d.cts",
-            "default": "./cjs/maybe_/map_or.cjs"
+            "types": "./cjs/maybe/map_or.d.cts",
+            "default": "./cjs/maybe/map_or.cjs"
         },
         "./cjs/Maybe/mapOrAsync": {
-            "types": "./cjs/maybe_/map_or_async.d.cts",
-            "default": "./cjs/maybe_/map_or_async.cjs"
+            "types": "./cjs/maybe/map_or_async.d.cts",
+            "default": "./cjs/maybe/map_or_async.cjs"
         },
         "./cjs/Maybe/mapOrElse": {
-            "types": "./cjs/maybe_/map_or_else.d.cts",
-            "default": "./cjs/maybe_/map_or_else.cjs"
+            "types": "./cjs/maybe/map_or_else.d.cts",
+            "default": "./cjs/maybe/map_or_else.cjs"
         },
         "./cjs/Maybe/mapOrElseAsync": {
-            "types": "./cjs/maybe_/map_or_else_async.d.cts",
-            "default": "./cjs/maybe_/map_or_else_async.cjs"
+            "types": "./cjs/maybe/map_or_else_async.d.cts",
+            "default": "./cjs/maybe/map_or_else_async.cjs"
         },
         "./cjs/Maybe/namespace": {
-            "types": "./cjs/maybe_/namespace.d.cts",
-            "default": "./cjs/maybe_/namespace.cjs"
+            "types": "./cjs/maybe/namespace.d.cts",
+            "default": "./cjs/maybe/namespace.cjs"
         },
         "./cjs/Maybe/okOr": {
-            "types": "./cjs/maybe_/ok_or.d.cts",
-            "default": "./cjs/maybe_/ok_or.cjs"
+            "types": "./cjs/maybe/ok_or.d.cts",
+            "default": "./cjs/maybe/ok_or.cjs"
         },
         "./cjs/Maybe/okOrElse": {
-            "types": "./cjs/maybe_/ok_or_else.d.cts",
-            "default": "./cjs/maybe_/ok_or_else.cjs"
+            "types": "./cjs/maybe/ok_or_else.d.cts",
+            "default": "./cjs/maybe/ok_or_else.cjs"
         },
         "./cjs/Maybe/or": {
-            "types": "./cjs/maybe_/or.d.cts",
-            "default": "./cjs/maybe_/or.cjs"
+            "types": "./cjs/maybe/or.d.cts",
+            "default": "./cjs/maybe/or.cjs"
         },
         "./cjs/Maybe/orElse": {
-            "types": "./cjs/maybe_/or_else.d.cts",
-            "default": "./cjs/maybe_/or_else.cjs"
+            "types": "./cjs/maybe/or_else.d.cts",
+            "default": "./cjs/maybe/or_else.cjs"
         },
         "./cjs/Maybe/orElseAsync": {
-            "types": "./cjs/maybe_/or_else_async.d.cts",
-            "default": "./cjs/maybe_/or_else_async.cjs"
+            "types": "./cjs/maybe/or_else_async.d.cts",
+            "default": "./cjs/maybe/or_else_async.cjs"
         },
         "./cjs/Maybe/toNullable": {
-            "types": "./cjs/maybe_/to_nullable.d.cts",
-            "default": "./cjs/maybe_/to_nullable.cjs"
+            "types": "./cjs/maybe/to_nullable.d.cts",
+            "default": "./cjs/maybe/to_nullable.cjs"
         },
         "./cjs/Maybe/toPlainResult": {
-            "types": "./cjs/maybe_/to_plain_result.d.cts",
-            "default": "./cjs/maybe_/to_plain_result.cjs"
+            "types": "./cjs/maybe/to_plain_result.d.cts",
+            "default": "./cjs/maybe/to_plain_result.cjs"
         },
         "./cjs/Maybe/toUndefinable": {
-            "types": "./cjs/maybe_/to_undefinable.d.cts",
-            "default": "./cjs/maybe_/to_undefinable.cjs"
+            "types": "./cjs/maybe/to_undefinable.d.cts",
+            "default": "./cjs/maybe/to_undefinable.cjs"
         },
         "./cjs/Maybe/unwrap": {
-            "types": "./cjs/maybe_/unwrap.d.cts",
-            "default": "./cjs/maybe_/unwrap.cjs"
+            "types": "./cjs/maybe/unwrap.d.cts",
+            "default": "./cjs/maybe/unwrap.cjs"
         },
         "./cjs/Maybe/unwrapOr": {
-            "types": "./cjs/maybe_/unwrap_or.d.cts",
-            "default": "./cjs/maybe_/unwrap_or.cjs"
+            "types": "./cjs/maybe/unwrap_or.d.cts",
+            "default": "./cjs/maybe/unwrap_or.cjs"
         },
         "./cjs/Maybe/unwrapOrElse": {
-            "types": "./cjs/maybe_/unwrap_or_else.d.cts",
-            "default": "./cjs/maybe_/unwrap_or_else.cjs"
+            "types": "./cjs/maybe/unwrap_or_else.d.cts",
+            "default": "./cjs/maybe/unwrap_or_else.cjs"
         },
         "./cjs/Maybe/unwrapOrElseAsync": {
-            "types": "./cjs/maybe_/unwrap_or_else_async.d.cts",
-            "default": "./cjs/maybe_/unwrap_or_else_async.cjs"
+            "types": "./cjs/maybe/unwrap_or_else_async.d.cts",
+            "default": "./cjs/maybe/unwrap_or_else_async.cjs"
         },
         "./cjs/Maybe/xor": {
-            "types": "./cjs/maybe_/xor.d.cts",
-            "default": "./cjs/maybe_/xor.cjs"
+            "types": "./cjs/maybe/xor.d.cts",
+            "default": "./cjs/maybe/xor.cjs"
         },
         "./cjs/Nullable": {
-            "types": "./cjs/nullable_/index.d.cts",
-            "default": "./cjs/nullable_/index.cjs"
+            "types": "./cjs/nullable/index.d.cts",
+            "default": "./cjs/nullable/index.cjs"
         },
         "./cjs/Nullable/Nullable": {
-            "types": "./cjs/nullable_/nullable.d.cts",
-            "default": "./cjs/nullable_/nullable.cjs"
+            "types": "./cjs/nullable/nullable.d.cts",
+            "default": "./cjs/nullable/nullable.cjs"
         },
         "./cjs/Nullable/and": {
-            "types": "./cjs/nullable_/and.d.cts",
-            "default": "./cjs/nullable_/and.cjs"
+            "types": "./cjs/nullable/and.d.cts",
+            "default": "./cjs/nullable/and.cjs"
         },
         "./cjs/Nullable/andThen": {
-            "types": "./cjs/nullable_/and_then.d.cts",
-            "default": "./cjs/nullable_/and_then.cjs"
+            "types": "./cjs/nullable/and_then.d.cts",
+            "default": "./cjs/nullable/and_then.cjs"
         },
         "./cjs/Nullable/andThenAsync": {
-            "types": "./cjs/nullable_/and_then_async.d.cts",
-            "default": "./cjs/nullable_/and_then_async.cjs"
+            "types": "./cjs/nullable/and_then_async.d.cts",
+            "default": "./cjs/nullable/and_then_async.cjs"
         },
         "./cjs/Nullable/compat/v33": {
-            "types": "./cjs/nullable_/compat/v33.d.cts",
-            "default": "./cjs/nullable_/compat/v33.cjs"
+            "types": "./cjs/nullable/compat/v33.d.cts",
+            "default": "./cjs/nullable/compat/v33.cjs"
         },
         "./cjs/Nullable/expect": {
-            "types": "./cjs/nullable_/expect.d.cts",
-            "default": "./cjs/nullable_/expect.cjs"
+            "types": "./cjs/nullable/expect.d.cts",
+            "default": "./cjs/nullable/expect.cjs"
         },
         "./cjs/Nullable/inspect": {
-            "types": "./cjs/nullable_/inspect.d.cts",
-            "default": "./cjs/nullable_/inspect.cjs"
+            "types": "./cjs/nullable/inspect.d.cts",
+            "default": "./cjs/nullable/inspect.cjs"
         },
         "./cjs/Nullable/map": {
-            "types": "./cjs/nullable_/map.d.cts",
-            "default": "./cjs/nullable_/map.cjs"
+            "types": "./cjs/nullable/map.d.cts",
+            "default": "./cjs/nullable/map.cjs"
         },
         "./cjs/Nullable/mapAsync": {
-            "types": "./cjs/nullable_/map_async.d.cts",
-            "default": "./cjs/nullable_/map_async.cjs"
+            "types": "./cjs/nullable/map_async.d.cts",
+            "default": "./cjs/nullable/map_async.cjs"
         },
         "./cjs/Nullable/mapOr": {
-            "types": "./cjs/nullable_/map_or.d.cts",
-            "default": "./cjs/nullable_/map_or.cjs"
+            "types": "./cjs/nullable/map_or.d.cts",
+            "default": "./cjs/nullable/map_or.cjs"
         },
         "./cjs/Nullable/mapOrAsync": {
-            "types": "./cjs/nullable_/map_or_async.d.cts",
-            "default": "./cjs/nullable_/map_or_async.cjs"
+            "types": "./cjs/nullable/map_or_async.d.cts",
+            "default": "./cjs/nullable/map_or_async.cjs"
         },
         "./cjs/Nullable/mapOrElse": {
-            "types": "./cjs/nullable_/map_or_else.d.cts",
-            "default": "./cjs/nullable_/map_or_else.cjs"
+            "types": "./cjs/nullable/map_or_else.d.cts",
+            "default": "./cjs/nullable/map_or_else.cjs"
         },
         "./cjs/Nullable/mapOrElseAsync": {
-            "types": "./cjs/nullable_/map_or_else_async.d.cts",
-            "default": "./cjs/nullable_/map_or_else_async.cjs"
+            "types": "./cjs/nullable/map_or_else_async.d.cts",
+            "default": "./cjs/nullable/map_or_else_async.cjs"
         },
         "./cjs/Nullable/namespace": {
-            "types": "./cjs/nullable_/namespace.d.cts",
-            "default": "./cjs/nullable_/namespace.cjs"
+            "types": "./cjs/nullable/namespace.d.cts",
+            "default": "./cjs/nullable/namespace.cjs"
         },
         "./cjs/Nullable/okOr": {
-            "types": "./cjs/nullable_/ok_or.d.cts",
-            "default": "./cjs/nullable_/ok_or.cjs"
+            "types": "./cjs/nullable/ok_or.d.cts",
+            "default": "./cjs/nullable/ok_or.cjs"
         },
         "./cjs/Nullable/okOrElse": {
-            "types": "./cjs/nullable_/ok_or_else.d.cts",
-            "default": "./cjs/nullable_/ok_or_else.cjs"
+            "types": "./cjs/nullable/ok_or_else.d.cts",
+            "default": "./cjs/nullable/ok_or_else.cjs"
         },
         "./cjs/Nullable/or": {
-            "types": "./cjs/nullable_/or.d.cts",
-            "default": "./cjs/nullable_/or.cjs"
+            "types": "./cjs/nullable/or.d.cts",
+            "default": "./cjs/nullable/or.cjs"
         },
         "./cjs/Nullable/orElse": {
-            "types": "./cjs/nullable_/or_else.d.cts",
-            "default": "./cjs/nullable_/or_else.cjs"
+            "types": "./cjs/nullable/or_else.d.cts",
+            "default": "./cjs/nullable/or_else.cjs"
         },
         "./cjs/Nullable/orElseAsync": {
-            "types": "./cjs/nullable_/or_else_async.d.cts",
-            "default": "./cjs/nullable_/or_else_async.cjs"
+            "types": "./cjs/nullable/or_else_async.d.cts",
+            "default": "./cjs/nullable/or_else_async.cjs"
         },
         "./cjs/Nullable/toPlainResult": {
-            "types": "./cjs/nullable_/to_plain_result.d.cts",
-            "default": "./cjs/nullable_/to_plain_result.cjs"
+            "types": "./cjs/nullable/to_plain_result.d.cts",
+            "default": "./cjs/nullable/to_plain_result.cjs"
         },
         "./cjs/Nullable/toUndefinable": {
-            "types": "./cjs/nullable_/to_undefinable.d.cts",
-            "default": "./cjs/nullable_/to_undefinable.cjs"
+            "types": "./cjs/nullable/to_undefinable.d.cts",
+            "default": "./cjs/nullable/to_undefinable.cjs"
         },
         "./cjs/Nullable/unwrap": {
-            "types": "./cjs/nullable_/unwrap.d.cts",
-            "default": "./cjs/nullable_/unwrap.cjs"
+            "types": "./cjs/nullable/unwrap.d.cts",
+            "default": "./cjs/nullable/unwrap.cjs"
         },
         "./cjs/Nullable/unwrapOr": {
-            "types": "./cjs/nullable_/unwrap_or.d.cts",
-            "default": "./cjs/nullable_/unwrap_or.cjs"
+            "types": "./cjs/nullable/unwrap_or.d.cts",
+            "default": "./cjs/nullable/unwrap_or.cjs"
         },
         "./cjs/Nullable/unwrapOrElse": {
-            "types": "./cjs/nullable_/unwrap_or_else.d.cts",
-            "default": "./cjs/nullable_/unwrap_or_else.cjs"
+            "types": "./cjs/nullable/unwrap_or_else.d.cts",
+            "default": "./cjs/nullable/unwrap_or_else.cjs"
         },
         "./cjs/Nullable/unwrapOrElseAsync": {
-            "types": "./cjs/nullable_/unwrap_or_else_async.d.cts",
-            "default": "./cjs/nullable_/unwrap_or_else_async.cjs"
+            "types": "./cjs/nullable/unwrap_or_else_async.d.cts",
+            "default": "./cjs/nullable/unwrap_or_else_async.cjs"
         },
         "./cjs/Nullable/xor": {
-            "types": "./cjs/nullable_/xor.d.cts",
-            "default": "./cjs/nullable_/xor.cjs"
+            "types": "./cjs/nullable/xor.d.cts",
+            "default": "./cjs/nullable/xor.cjs"
         },
         "./cjs/PlainOption": {
             "types": "./cjs/plain_option/index.d.cts",
@@ -552,112 +552,112 @@
             "default": "./cjs/plain_result/unwrap_or_throw_error.cjs"
         },
         "./cjs/Undefinable": {
-            "types": "./cjs/undefinable_/index.d.cts",
-            "default": "./cjs/undefinable_/index.cjs"
+            "types": "./cjs/undefinable/index.d.cts",
+            "default": "./cjs/undefinable/index.cjs"
         },
         "./cjs/Undefinable/Undefinable": {
-            "types": "./cjs/undefinable_/undefinable.d.cts",
-            "default": "./cjs/undefinable_/undefinable.cjs"
+            "types": "./cjs/undefinable/undefinable.d.cts",
+            "default": "./cjs/undefinable/undefinable.cjs"
         },
         "./cjs/Undefinable/and": {
-            "types": "./cjs/undefinable_/and.d.cts",
-            "default": "./cjs/undefinable_/and.cjs"
+            "types": "./cjs/undefinable/and.d.cts",
+            "default": "./cjs/undefinable/and.cjs"
         },
         "./cjs/Undefinable/andThen": {
-            "types": "./cjs/undefinable_/and_then.d.cts",
-            "default": "./cjs/undefinable_/and_then.cjs"
+            "types": "./cjs/undefinable/and_then.d.cts",
+            "default": "./cjs/undefinable/and_then.cjs"
         },
         "./cjs/Undefinable/andThenAsync": {
-            "types": "./cjs/undefinable_/and_then_async.d.cts",
-            "default": "./cjs/undefinable_/and_then_async.cjs"
+            "types": "./cjs/undefinable/and_then_async.d.cts",
+            "default": "./cjs/undefinable/and_then_async.cjs"
         },
         "./cjs/Undefinable/compat/v33": {
-            "types": "./cjs/undefinable_/compat/v33.d.cts",
-            "default": "./cjs/undefinable_/compat/v33.cjs"
+            "types": "./cjs/undefinable/compat/v33.d.cts",
+            "default": "./cjs/undefinable/compat/v33.cjs"
         },
         "./cjs/Undefinable/expect": {
-            "types": "./cjs/undefinable_/expect.d.cts",
-            "default": "./cjs/undefinable_/expect.cjs"
+            "types": "./cjs/undefinable/expect.d.cts",
+            "default": "./cjs/undefinable/expect.cjs"
         },
         "./cjs/Undefinable/inspect": {
-            "types": "./cjs/undefinable_/inspect.d.cts",
-            "default": "./cjs/undefinable_/inspect.cjs"
+            "types": "./cjs/undefinable/inspect.d.cts",
+            "default": "./cjs/undefinable/inspect.cjs"
         },
         "./cjs/Undefinable/map": {
-            "types": "./cjs/undefinable_/map.d.cts",
-            "default": "./cjs/undefinable_/map.cjs"
+            "types": "./cjs/undefinable/map.d.cts",
+            "default": "./cjs/undefinable/map.cjs"
         },
         "./cjs/Undefinable/mapAsync": {
-            "types": "./cjs/undefinable_/map_async.d.cts",
-            "default": "./cjs/undefinable_/map_async.cjs"
+            "types": "./cjs/undefinable/map_async.d.cts",
+            "default": "./cjs/undefinable/map_async.cjs"
         },
         "./cjs/Undefinable/mapOr": {
-            "types": "./cjs/undefinable_/map_or.d.cts",
-            "default": "./cjs/undefinable_/map_or.cjs"
+            "types": "./cjs/undefinable/map_or.d.cts",
+            "default": "./cjs/undefinable/map_or.cjs"
         },
         "./cjs/Undefinable/mapOrAsync": {
-            "types": "./cjs/undefinable_/map_or_async.d.cts",
-            "default": "./cjs/undefinable_/map_or_async.cjs"
+            "types": "./cjs/undefinable/map_or_async.d.cts",
+            "default": "./cjs/undefinable/map_or_async.cjs"
         },
         "./cjs/Undefinable/mapOrElse": {
-            "types": "./cjs/undefinable_/map_or_else.d.cts",
-            "default": "./cjs/undefinable_/map_or_else.cjs"
+            "types": "./cjs/undefinable/map_or_else.d.cts",
+            "default": "./cjs/undefinable/map_or_else.cjs"
         },
         "./cjs/Undefinable/mapOrElseAsync": {
-            "types": "./cjs/undefinable_/map_or_else_async.d.cts",
-            "default": "./cjs/undefinable_/map_or_else_async.cjs"
+            "types": "./cjs/undefinable/map_or_else_async.d.cts",
+            "default": "./cjs/undefinable/map_or_else_async.cjs"
         },
         "./cjs/Undefinable/namespace": {
-            "types": "./cjs/undefinable_/namespace.d.cts",
-            "default": "./cjs/undefinable_/namespace.cjs"
+            "types": "./cjs/undefinable/namespace.d.cts",
+            "default": "./cjs/undefinable/namespace.cjs"
         },
         "./cjs/Undefinable/okOr": {
-            "types": "./cjs/undefinable_/ok_or.d.cts",
-            "default": "./cjs/undefinable_/ok_or.cjs"
+            "types": "./cjs/undefinable/ok_or.d.cts",
+            "default": "./cjs/undefinable/ok_or.cjs"
         },
         "./cjs/Undefinable/okOrElse": {
-            "types": "./cjs/undefinable_/ok_or_else.d.cts",
-            "default": "./cjs/undefinable_/ok_or_else.cjs"
+            "types": "./cjs/undefinable/ok_or_else.d.cts",
+            "default": "./cjs/undefinable/ok_or_else.cjs"
         },
         "./cjs/Undefinable/or": {
-            "types": "./cjs/undefinable_/or.d.cts",
-            "default": "./cjs/undefinable_/or.cjs"
+            "types": "./cjs/undefinable/or.d.cts",
+            "default": "./cjs/undefinable/or.cjs"
         },
         "./cjs/Undefinable/orElse": {
-            "types": "./cjs/undefinable_/or_else.d.cts",
-            "default": "./cjs/undefinable_/or_else.cjs"
+            "types": "./cjs/undefinable/or_else.d.cts",
+            "default": "./cjs/undefinable/or_else.cjs"
         },
         "./cjs/Undefinable/orElseAsync": {
-            "types": "./cjs/undefinable_/or_else_async.d.cts",
-            "default": "./cjs/undefinable_/or_else_async.cjs"
+            "types": "./cjs/undefinable/or_else_async.d.cts",
+            "default": "./cjs/undefinable/or_else_async.cjs"
         },
         "./cjs/Undefinable/toNullable": {
-            "types": "./cjs/undefinable_/to_nullable.d.cts",
-            "default": "./cjs/undefinable_/to_nullable.cjs"
+            "types": "./cjs/undefinable/to_nullable.d.cts",
+            "default": "./cjs/undefinable/to_nullable.cjs"
         },
         "./cjs/Undefinable/toPlainResult": {
-            "types": "./cjs/undefinable_/to_plain_result.d.cts",
-            "default": "./cjs/undefinable_/to_plain_result.cjs"
+            "types": "./cjs/undefinable/to_plain_result.d.cts",
+            "default": "./cjs/undefinable/to_plain_result.cjs"
         },
         "./cjs/Undefinable/unwrap": {
-            "types": "./cjs/undefinable_/unwrap.d.cts",
-            "default": "./cjs/undefinable_/unwrap.cjs"
+            "types": "./cjs/undefinable/unwrap.d.cts",
+            "default": "./cjs/undefinable/unwrap.cjs"
         },
         "./cjs/Undefinable/unwrapOr": {
-            "types": "./cjs/undefinable_/unwrap_or.d.cts",
-            "default": "./cjs/undefinable_/unwrap_or.cjs"
+            "types": "./cjs/undefinable/unwrap_or.d.cts",
+            "default": "./cjs/undefinable/unwrap_or.cjs"
         },
         "./cjs/Undefinable/unwrapOrElse": {
-            "types": "./cjs/undefinable_/unwrap_or_else.d.cts",
-            "default": "./cjs/undefinable_/unwrap_or_else.cjs"
+            "types": "./cjs/undefinable/unwrap_or_else.d.cts",
+            "default": "./cjs/undefinable/unwrap_or_else.cjs"
         },
         "./cjs/Undefinable/unwrapOrElseAsync": {
-            "types": "./cjs/undefinable_/unwrap_or_else_async.d.cts",
-            "default": "./cjs/undefinable_/unwrap_or_else_async.cjs"
+            "types": "./cjs/undefinable/unwrap_or_else_async.d.cts",
+            "default": "./cjs/undefinable/unwrap_or_else_async.cjs"
         },
         "./cjs/Undefinable/xor": {
-            "types": "./cjs/undefinable_/xor.d.cts",
-            "default": "./cjs/undefinable_/xor.cjs"
+            "types": "./cjs/undefinable/xor.d.cts",
+            "default": "./cjs/undefinable/xor.cjs"
         },
         "./esm/ClassicOption": {
             "types": "./esm/classic_option/index.d.ts",
@@ -668,224 +668,224 @@
             "default": "./esm/classic_result/index.js"
         },
         "./esm/Maybe": {
-            "types": "./esm/maybe_/index.d.ts",
-            "default": "./esm/maybe_/index.js"
+            "types": "./esm/maybe/index.d.ts",
+            "default": "./esm/maybe/index.js"
         },
         "./esm/Maybe/Maybe": {
-            "types": "./esm/maybe_/maybe.d.ts",
-            "default": "./esm/maybe_/maybe.js"
+            "types": "./esm/maybe/maybe.d.ts",
+            "default": "./esm/maybe/maybe.js"
         },
         "./esm/Maybe/and": {
-            "types": "./esm/maybe_/and.d.ts",
-            "default": "./esm/maybe_/and.js"
+            "types": "./esm/maybe/and.d.ts",
+            "default": "./esm/maybe/and.js"
         },
         "./esm/Maybe/andThen": {
-            "types": "./esm/maybe_/and_then.d.ts",
-            "default": "./esm/maybe_/and_then.js"
+            "types": "./esm/maybe/and_then.d.ts",
+            "default": "./esm/maybe/and_then.js"
         },
         "./esm/Maybe/andThenAsync": {
-            "types": "./esm/maybe_/and_then_async.d.ts",
-            "default": "./esm/maybe_/and_then_async.js"
+            "types": "./esm/maybe/and_then_async.d.ts",
+            "default": "./esm/maybe/and_then_async.js"
         },
         "./esm/Maybe/compat/v33": {
-            "types": "./esm/maybe_/compat/v33.d.ts",
-            "default": "./esm/maybe_/compat/v33.js"
+            "types": "./esm/maybe/compat/v33.d.ts",
+            "default": "./esm/maybe/compat/v33.js"
         },
         "./esm/Maybe/expect": {
-            "types": "./esm/maybe_/expect.d.ts",
-            "default": "./esm/maybe_/expect.js"
+            "types": "./esm/maybe/expect.d.ts",
+            "default": "./esm/maybe/expect.js"
         },
         "./esm/Maybe/inspect": {
-            "types": "./esm/maybe_/inspect.d.ts",
-            "default": "./esm/maybe_/inspect.js"
+            "types": "./esm/maybe/inspect.d.ts",
+            "default": "./esm/maybe/inspect.js"
         },
         "./esm/Maybe/map": {
-            "types": "./esm/maybe_/map.d.ts",
-            "default": "./esm/maybe_/map.js"
+            "types": "./esm/maybe/map.d.ts",
+            "default": "./esm/maybe/map.js"
         },
         "./esm/Maybe/mapAsync": {
-            "types": "./esm/maybe_/map_async.d.ts",
-            "default": "./esm/maybe_/map_async.js"
+            "types": "./esm/maybe/map_async.d.ts",
+            "default": "./esm/maybe/map_async.js"
         },
         "./esm/Maybe/mapOr": {
-            "types": "./esm/maybe_/map_or.d.ts",
-            "default": "./esm/maybe_/map_or.js"
+            "types": "./esm/maybe/map_or.d.ts",
+            "default": "./esm/maybe/map_or.js"
         },
         "./esm/Maybe/mapOrAsync": {
-            "types": "./esm/maybe_/map_or_async.d.ts",
-            "default": "./esm/maybe_/map_or_async.js"
+            "types": "./esm/maybe/map_or_async.d.ts",
+            "default": "./esm/maybe/map_or_async.js"
         },
         "./esm/Maybe/mapOrElse": {
-            "types": "./esm/maybe_/map_or_else.d.ts",
-            "default": "./esm/maybe_/map_or_else.js"
+            "types": "./esm/maybe/map_or_else.d.ts",
+            "default": "./esm/maybe/map_or_else.js"
         },
         "./esm/Maybe/mapOrElseAsync": {
-            "types": "./esm/maybe_/map_or_else_async.d.ts",
-            "default": "./esm/maybe_/map_or_else_async.js"
+            "types": "./esm/maybe/map_or_else_async.d.ts",
+            "default": "./esm/maybe/map_or_else_async.js"
         },
         "./esm/Maybe/namespace": {
-            "types": "./esm/maybe_/namespace.d.ts",
-            "default": "./esm/maybe_/namespace.js"
+            "types": "./esm/maybe/namespace.d.ts",
+            "default": "./esm/maybe/namespace.js"
         },
         "./esm/Maybe/okOr": {
-            "types": "./esm/maybe_/ok_or.d.ts",
-            "default": "./esm/maybe_/ok_or.js"
+            "types": "./esm/maybe/ok_or.d.ts",
+            "default": "./esm/maybe/ok_or.js"
         },
         "./esm/Maybe/okOrElse": {
-            "types": "./esm/maybe_/ok_or_else.d.ts",
-            "default": "./esm/maybe_/ok_or_else.js"
+            "types": "./esm/maybe/ok_or_else.d.ts",
+            "default": "./esm/maybe/ok_or_else.js"
         },
         "./esm/Maybe/or": {
-            "types": "./esm/maybe_/or.d.ts",
-            "default": "./esm/maybe_/or.js"
+            "types": "./esm/maybe/or.d.ts",
+            "default": "./esm/maybe/or.js"
         },
         "./esm/Maybe/orElse": {
-            "types": "./esm/maybe_/or_else.d.ts",
-            "default": "./esm/maybe_/or_else.js"
+            "types": "./esm/maybe/or_else.d.ts",
+            "default": "./esm/maybe/or_else.js"
         },
         "./esm/Maybe/orElseAsync": {
-            "types": "./esm/maybe_/or_else_async.d.ts",
-            "default": "./esm/maybe_/or_else_async.js"
+            "types": "./esm/maybe/or_else_async.d.ts",
+            "default": "./esm/maybe/or_else_async.js"
         },
         "./esm/Maybe/toNullable": {
-            "types": "./esm/maybe_/to_nullable.d.ts",
-            "default": "./esm/maybe_/to_nullable.js"
+            "types": "./esm/maybe/to_nullable.d.ts",
+            "default": "./esm/maybe/to_nullable.js"
         },
         "./esm/Maybe/toPlainResult": {
-            "types": "./esm/maybe_/to_plain_result.d.ts",
-            "default": "./esm/maybe_/to_plain_result.js"
+            "types": "./esm/maybe/to_plain_result.d.ts",
+            "default": "./esm/maybe/to_plain_result.js"
         },
         "./esm/Maybe/toUndefinable": {
-            "types": "./esm/maybe_/to_undefinable.d.ts",
-            "default": "./esm/maybe_/to_undefinable.js"
+            "types": "./esm/maybe/to_undefinable.d.ts",
+            "default": "./esm/maybe/to_undefinable.js"
         },
         "./esm/Maybe/unwrap": {
-            "types": "./esm/maybe_/unwrap.d.ts",
-            "default": "./esm/maybe_/unwrap.js"
+            "types": "./esm/maybe/unwrap.d.ts",
+            "default": "./esm/maybe/unwrap.js"
         },
         "./esm/Maybe/unwrapOr": {
-            "types": "./esm/maybe_/unwrap_or.d.ts",
-            "default": "./esm/maybe_/unwrap_or.js"
+            "types": "./esm/maybe/unwrap_or.d.ts",
+            "default": "./esm/maybe/unwrap_or.js"
         },
         "./esm/Maybe/unwrapOrElse": {
-            "types": "./esm/maybe_/unwrap_or_else.d.ts",
-            "default": "./esm/maybe_/unwrap_or_else.js"
+            "types": "./esm/maybe/unwrap_or_else.d.ts",
+            "default": "./esm/maybe/unwrap_or_else.js"
         },
         "./esm/Maybe/unwrapOrElseAsync": {
-            "types": "./esm/maybe_/unwrap_or_else_async.d.ts",
-            "default": "./esm/maybe_/unwrap_or_else_async.js"
+            "types": "./esm/maybe/unwrap_or_else_async.d.ts",
+            "default": "./esm/maybe/unwrap_or_else_async.js"
         },
         "./esm/Maybe/xor": {
-            "types": "./esm/maybe_/xor.d.ts",
-            "default": "./esm/maybe_/xor.js"
+            "types": "./esm/maybe/xor.d.ts",
+            "default": "./esm/maybe/xor.js"
         },
         "./esm/Nullable": {
-            "types": "./esm/nullable_/index.d.ts",
-            "default": "./esm/nullable_/index.js"
+            "types": "./esm/nullable/index.d.ts",
+            "default": "./esm/nullable/index.js"
         },
         "./esm/Nullable/Nullable": {
-            "types": "./esm/nullable_/nullable.d.ts",
-            "default": "./esm/nullable_/nullable.js"
+            "types": "./esm/nullable/nullable.d.ts",
+            "default": "./esm/nullable/nullable.js"
         },
         "./esm/Nullable/and": {
-            "types": "./esm/nullable_/and.d.ts",
-            "default": "./esm/nullable_/and.js"
+            "types": "./esm/nullable/and.d.ts",
+            "default": "./esm/nullable/and.js"
         },
         "./esm/Nullable/andThen": {
-            "types": "./esm/nullable_/and_then.d.ts",
-            "default": "./esm/nullable_/and_then.js"
+            "types": "./esm/nullable/and_then.d.ts",
+            "default": "./esm/nullable/and_then.js"
         },
         "./esm/Nullable/andThenAsync": {
-            "types": "./esm/nullable_/and_then_async.d.ts",
-            "default": "./esm/nullable_/and_then_async.js"
+            "types": "./esm/nullable/and_then_async.d.ts",
+            "default": "./esm/nullable/and_then_async.js"
         },
         "./esm/Nullable/compat/v33": {
-            "types": "./esm/nullable_/compat/v33.d.ts",
-            "default": "./esm/nullable_/compat/v33.js"
+            "types": "./esm/nullable/compat/v33.d.ts",
+            "default": "./esm/nullable/compat/v33.js"
         },
         "./esm/Nullable/expect": {
-            "types": "./esm/nullable_/expect.d.ts",
-            "default": "./esm/nullable_/expect.js"
+            "types": "./esm/nullable/expect.d.ts",
+            "default": "./esm/nullable/expect.js"
         },
         "./esm/Nullable/inspect": {
-            "types": "./esm/nullable_/inspect.d.ts",
-            "default": "./esm/nullable_/inspect.js"
+            "types": "./esm/nullable/inspect.d.ts",
+            "default": "./esm/nullable/inspect.js"
         },
         "./esm/Nullable/map": {
-            "types": "./esm/nullable_/map.d.ts",
-            "default": "./esm/nullable_/map.js"
+            "types": "./esm/nullable/map.d.ts",
+            "default": "./esm/nullable/map.js"
         },
         "./esm/Nullable/mapAsync": {
-            "types": "./esm/nullable_/map_async.d.ts",
-            "default": "./esm/nullable_/map_async.js"
+            "types": "./esm/nullable/map_async.d.ts",
+            "default": "./esm/nullable/map_async.js"
         },
         "./esm/Nullable/mapOr": {
-            "types": "./esm/nullable_/map_or.d.ts",
-            "default": "./esm/nullable_/map_or.js"
+            "types": "./esm/nullable/map_or.d.ts",
+            "default": "./esm/nullable/map_or.js"
         },
         "./esm/Nullable/mapOrAsync": {
-            "types": "./esm/nullable_/map_or_async.d.ts",
-            "default": "./esm/nullable_/map_or_async.js"
+            "types": "./esm/nullable/map_or_async.d.ts",
+            "default": "./esm/nullable/map_or_async.js"
         },
         "./esm/Nullable/mapOrElse": {
-            "types": "./esm/nullable_/map_or_else.d.ts",
-            "default": "./esm/nullable_/map_or_else.js"
+            "types": "./esm/nullable/map_or_else.d.ts",
+            "default": "./esm/nullable/map_or_else.js"
         },
         "./esm/Nullable/mapOrElseAsync": {
-            "types": "./esm/nullable_/map_or_else_async.d.ts",
-            "default": "./esm/nullable_/map_or_else_async.js"
+            "types": "./esm/nullable/map_or_else_async.d.ts",
+            "default": "./esm/nullable/map_or_else_async.js"
         },
         "./esm/Nullable/namespace": {
-            "types": "./esm/nullable_/namespace.d.ts",
-            "default": "./esm/nullable_/namespace.js"
+            "types": "./esm/nullable/namespace.d.ts",
+            "default": "./esm/nullable/namespace.js"
         },
         "./esm/Nullable/okOr": {
-            "types": "./esm/nullable_/ok_or.d.ts",
-            "default": "./esm/nullable_/ok_or.js"
+            "types": "./esm/nullable/ok_or.d.ts",
+            "default": "./esm/nullable/ok_or.js"
         },
         "./esm/Nullable/okOrElse": {
-            "types": "./esm/nullable_/ok_or_else.d.ts",
-            "default": "./esm/nullable_/ok_or_else.js"
+            "types": "./esm/nullable/ok_or_else.d.ts",
+            "default": "./esm/nullable/ok_or_else.js"
         },
         "./esm/Nullable/or": {
-            "types": "./esm/nullable_/or.d.ts",
-            "default": "./esm/nullable_/or.js"
+            "types": "./esm/nullable/or.d.ts",
+            "default": "./esm/nullable/or.js"
         },
         "./esm/Nullable/orElse": {
-            "types": "./esm/nullable_/or_else.d.ts",
-            "default": "./esm/nullable_/or_else.js"
+            "types": "./esm/nullable/or_else.d.ts",
+            "default": "./esm/nullable/or_else.js"
         },
         "./esm/Nullable/orElseAsync": {
-            "types": "./esm/nullable_/or_else_async.d.ts",
-            "default": "./esm/nullable_/or_else_async.js"
+            "types": "./esm/nullable/or_else_async.d.ts",
+            "default": "./esm/nullable/or_else_async.js"
         },
         "./esm/Nullable/toPlainResult": {
-            "types": "./esm/nullable_/to_plain_result.d.ts",
-            "default": "./esm/nullable_/to_plain_result.js"
+            "types": "./esm/nullable/to_plain_result.d.ts",
+            "default": "./esm/nullable/to_plain_result.js"
         },
         "./esm/Nullable/toUndefinable": {
-            "types": "./esm/nullable_/to_undefinable.d.ts",
-            "default": "./esm/nullable_/to_undefinable.js"
+            "types": "./esm/nullable/to_undefinable.d.ts",
+            "default": "./esm/nullable/to_undefinable.js"
         },
         "./esm/Nullable/unwrap": {
-            "types": "./esm/nullable_/unwrap.d.ts",
-            "default": "./esm/nullable_/unwrap.js"
+            "types": "./esm/nullable/unwrap.d.ts",
+            "default": "./esm/nullable/unwrap.js"
         },
         "./esm/Nullable/unwrapOr": {
-            "types": "./esm/nullable_/unwrap_or.d.ts",
-            "default": "./esm/nullable_/unwrap_or.js"
+            "types": "./esm/nullable/unwrap_or.d.ts",
+            "default": "./esm/nullable/unwrap_or.js"
         },
         "./esm/Nullable/unwrapOrElse": {
-            "types": "./esm/nullable_/unwrap_or_else.d.ts",
-            "default": "./esm/nullable_/unwrap_or_else.js"
+            "types": "./esm/nullable/unwrap_or_else.d.ts",
+            "default": "./esm/nullable/unwrap_or_else.js"
         },
         "./esm/Nullable/unwrapOrElseAsync": {
-            "types": "./esm/nullable_/unwrap_or_else_async.d.ts",
-            "default": "./esm/nullable_/unwrap_or_else_async.js"
+            "types": "./esm/nullable/unwrap_or_else_async.d.ts",
+            "default": "./esm/nullable/unwrap_or_else_async.js"
         },
         "./esm/Nullable/xor": {
-            "types": "./esm/nullable_/xor.d.ts",
-            "default": "./esm/nullable_/xor.js"
+            "types": "./esm/nullable/xor.d.ts",
+            "default": "./esm/nullable/xor.js"
         },
         "./esm/PlainOption": {
             "types": "./esm/plain_option/index.d.ts",
@@ -1164,112 +1164,112 @@
             "default": "./esm/plain_result/unwrap_or_throw_error.js"
         },
         "./esm/Undefinable": {
-            "types": "./esm/undefinable_/index.d.ts",
-            "default": "./esm/undefinable_/index.js"
+            "types": "./esm/undefinable/index.d.ts",
+            "default": "./esm/undefinable/index.js"
         },
         "./esm/Undefinable/Undefinable": {
-            "types": "./esm/undefinable_/undefinable.d.ts",
-            "default": "./esm/undefinable_/undefinable.js"
+            "types": "./esm/undefinable/undefinable.d.ts",
+            "default": "./esm/undefinable/undefinable.js"
         },
         "./esm/Undefinable/and": {
-            "types": "./esm/undefinable_/and.d.ts",
-            "default": "./esm/undefinable_/and.js"
+            "types": "./esm/undefinable/and.d.ts",
+            "default": "./esm/undefinable/and.js"
         },
         "./esm/Undefinable/andThen": {
-            "types": "./esm/undefinable_/and_then.d.ts",
-            "default": "./esm/undefinable_/and_then.js"
+            "types": "./esm/undefinable/and_then.d.ts",
+            "default": "./esm/undefinable/and_then.js"
         },
         "./esm/Undefinable/andThenAsync": {
-            "types": "./esm/undefinable_/and_then_async.d.ts",
-            "default": "./esm/undefinable_/and_then_async.js"
+            "types": "./esm/undefinable/and_then_async.d.ts",
+            "default": "./esm/undefinable/and_then_async.js"
         },
         "./esm/Undefinable/compat/v33": {
-            "types": "./esm/undefinable_/compat/v33.d.ts",
-            "default": "./esm/undefinable_/compat/v33.js"
+            "types": "./esm/undefinable/compat/v33.d.ts",
+            "default": "./esm/undefinable/compat/v33.js"
         },
         "./esm/Undefinable/expect": {
-            "types": "./esm/undefinable_/expect.d.ts",
-            "default": "./esm/undefinable_/expect.js"
+            "types": "./esm/undefinable/expect.d.ts",
+            "default": "./esm/undefinable/expect.js"
         },
         "./esm/Undefinable/inspect": {
-            "types": "./esm/undefinable_/inspect.d.ts",
-            "default": "./esm/undefinable_/inspect.js"
+            "types": "./esm/undefinable/inspect.d.ts",
+            "default": "./esm/undefinable/inspect.js"
         },
         "./esm/Undefinable/map": {
-            "types": "./esm/undefinable_/map.d.ts",
-            "default": "./esm/undefinable_/map.js"
+            "types": "./esm/undefinable/map.d.ts",
+            "default": "./esm/undefinable/map.js"
         },
         "./esm/Undefinable/mapAsync": {
-            "types": "./esm/undefinable_/map_async.d.ts",
-            "default": "./esm/undefinable_/map_async.js"
+            "types": "./esm/undefinable/map_async.d.ts",
+            "default": "./esm/undefinable/map_async.js"
         },
         "./esm/Undefinable/mapOr": {
-            "types": "./esm/undefinable_/map_or.d.ts",
-            "default": "./esm/undefinable_/map_or.js"
+            "types": "./esm/undefinable/map_or.d.ts",
+            "default": "./esm/undefinable/map_or.js"
         },
         "./esm/Undefinable/mapOrAsync": {
-            "types": "./esm/undefinable_/map_or_async.d.ts",
-            "default": "./esm/undefinable_/map_or_async.js"
+            "types": "./esm/undefinable/map_or_async.d.ts",
+            "default": "./esm/undefinable/map_or_async.js"
         },
         "./esm/Undefinable/mapOrElse": {
-            "types": "./esm/undefinable_/map_or_else.d.ts",
-            "default": "./esm/undefinable_/map_or_else.js"
+            "types": "./esm/undefinable/map_or_else.d.ts",
+            "default": "./esm/undefinable/map_or_else.js"
         },
         "./esm/Undefinable/mapOrElseAsync": {
-            "types": "./esm/undefinable_/map_or_else_async.d.ts",
-            "default": "./esm/undefinable_/map_or_else_async.js"
+            "types": "./esm/undefinable/map_or_else_async.d.ts",
+            "default": "./esm/undefinable/map_or_else_async.js"
         },
         "./esm/Undefinable/namespace": {
-            "types": "./esm/undefinable_/namespace.d.ts",
-            "default": "./esm/undefinable_/namespace.js"
+            "types": "./esm/undefinable/namespace.d.ts",
+            "default": "./esm/undefinable/namespace.js"
         },
         "./esm/Undefinable/okOr": {
-            "types": "./esm/undefinable_/ok_or.d.ts",
-            "default": "./esm/undefinable_/ok_or.js"
+            "types": "./esm/undefinable/ok_or.d.ts",
+            "default": "./esm/undefinable/ok_or.js"
         },
         "./esm/Undefinable/okOrElse": {
-            "types": "./esm/undefinable_/ok_or_else.d.ts",
-            "default": "./esm/undefinable_/ok_or_else.js"
+            "types": "./esm/undefinable/ok_or_else.d.ts",
+            "default": "./esm/undefinable/ok_or_else.js"
         },
         "./esm/Undefinable/or": {
-            "types": "./esm/undefinable_/or.d.ts",
-            "default": "./esm/undefinable_/or.js"
+            "types": "./esm/undefinable/or.d.ts",
+            "default": "./esm/undefinable/or.js"
         },
         "./esm/Undefinable/orElse": {
-            "types": "./esm/undefinable_/or_else.d.ts",
-            "default": "./esm/undefinable_/or_else.js"
+            "types": "./esm/undefinable/or_else.d.ts",
+            "default": "./esm/undefinable/or_else.js"
         },
         "./esm/Undefinable/orElseAsync": {
-            "types": "./esm/undefinable_/or_else_async.d.ts",
-            "default": "./esm/undefinable_/or_else_async.js"
+            "types": "./esm/undefinable/or_else_async.d.ts",
+            "default": "./esm/undefinable/or_else_async.js"
         },
         "./esm/Undefinable/toNullable": {
-            "types": "./esm/undefinable_/to_nullable.d.ts",
-            "default": "./esm/undefinable_/to_nullable.js"
+            "types": "./esm/undefinable/to_nullable.d.ts",
+            "default": "./esm/undefinable/to_nullable.js"
         },
         "./esm/Undefinable/toPlainResult": {
-            "types": "./esm/undefinable_/to_plain_result.d.ts",
-            "default": "./esm/undefinable_/to_plain_result.js"
+            "types": "./esm/undefinable/to_plain_result.d.ts",
+            "default": "./esm/undefinable/to_plain_result.js"
         },
         "./esm/Undefinable/unwrap": {
-            "types": "./esm/undefinable_/unwrap.d.ts",
-            "default": "./esm/undefinable_/unwrap.js"
+            "types": "./esm/undefinable/unwrap.d.ts",
+            "default": "./esm/undefinable/unwrap.js"
         },
         "./esm/Undefinable/unwrapOr": {
-            "types": "./esm/undefinable_/unwrap_or.d.ts",
-            "default": "./esm/undefinable_/unwrap_or.js"
+            "types": "./esm/undefinable/unwrap_or.d.ts",
+            "default": "./esm/undefinable/unwrap_or.js"
         },
         "./esm/Undefinable/unwrapOrElse": {
-            "types": "./esm/undefinable_/unwrap_or_else.d.ts",
-            "default": "./esm/undefinable_/unwrap_or_else.js"
+            "types": "./esm/undefinable/unwrap_or_else.d.ts",
+            "default": "./esm/undefinable/unwrap_or_else.js"
         },
         "./esm/Undefinable/unwrapOrElseAsync": {
-            "types": "./esm/undefinable_/unwrap_or_else_async.d.ts",
-            "default": "./esm/undefinable_/unwrap_or_else_async.js"
+            "types": "./esm/undefinable/unwrap_or_else_async.d.ts",
+            "default": "./esm/undefinable/unwrap_or_else_async.js"
         },
         "./esm/Undefinable/xor": {
-            "types": "./esm/undefinable_/xor.d.ts",
-            "default": "./esm/undefinable_/xor.js"
+            "types": "./esm/undefinable/xor.d.ts",
+            "default": "./esm/undefinable/xor.js"
         },
         ".": {
             "import": {
@@ -1315,772 +1315,772 @@
         },
         "./Maybe": {
             "import": {
-                "types": "./esm/maybe_/index.d.ts",
-                "default": "./esm/maybe_/index.js"
+                "types": "./esm/maybe/index.d.ts",
+                "default": "./esm/maybe/index.js"
             },
             "require": {
-                "types": "./cjs/maybe_/index.d.cts",
-                "default": "./cjs/maybe_/index.cjs"
+                "types": "./cjs/maybe/index.d.cts",
+                "default": "./cjs/maybe/index.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/index.d.ts",
-                "default": "./esm/maybe_/index.js"
+                "types": "./esm/maybe/index.d.ts",
+                "default": "./esm/maybe/index.js"
             }
         },
         "./Maybe/Maybe": {
             "import": {
-                "types": "./esm/maybe_/maybe.d.ts",
-                "default": "./esm/maybe_/maybe.js"
+                "types": "./esm/maybe/maybe.d.ts",
+                "default": "./esm/maybe/maybe.js"
             },
             "require": {
-                "types": "./cjs/maybe_/maybe.d.cts",
-                "default": "./cjs/maybe_/maybe.cjs"
+                "types": "./cjs/maybe/maybe.d.cts",
+                "default": "./cjs/maybe/maybe.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/maybe.d.ts",
-                "default": "./esm/maybe_/maybe.js"
+                "types": "./esm/maybe/maybe.d.ts",
+                "default": "./esm/maybe/maybe.js"
             }
         },
         "./Maybe/and": {
             "import": {
-                "types": "./esm/maybe_/and.d.ts",
-                "default": "./esm/maybe_/and.js"
+                "types": "./esm/maybe/and.d.ts",
+                "default": "./esm/maybe/and.js"
             },
             "require": {
-                "types": "./cjs/maybe_/and.d.cts",
-                "default": "./cjs/maybe_/and.cjs"
+                "types": "./cjs/maybe/and.d.cts",
+                "default": "./cjs/maybe/and.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/and.d.ts",
-                "default": "./esm/maybe_/and.js"
+                "types": "./esm/maybe/and.d.ts",
+                "default": "./esm/maybe/and.js"
             }
         },
         "./Maybe/andThen": {
             "import": {
-                "types": "./esm/maybe_/and_then.d.ts",
-                "default": "./esm/maybe_/and_then.js"
+                "types": "./esm/maybe/and_then.d.ts",
+                "default": "./esm/maybe/and_then.js"
             },
             "require": {
-                "types": "./cjs/maybe_/and_then.d.cts",
-                "default": "./cjs/maybe_/and_then.cjs"
+                "types": "./cjs/maybe/and_then.d.cts",
+                "default": "./cjs/maybe/and_then.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/and_then.d.ts",
-                "default": "./esm/maybe_/and_then.js"
+                "types": "./esm/maybe/and_then.d.ts",
+                "default": "./esm/maybe/and_then.js"
             }
         },
         "./Maybe/andThenAsync": {
             "import": {
-                "types": "./esm/maybe_/and_then_async.d.ts",
-                "default": "./esm/maybe_/and_then_async.js"
+                "types": "./esm/maybe/and_then_async.d.ts",
+                "default": "./esm/maybe/and_then_async.js"
             },
             "require": {
-                "types": "./cjs/maybe_/and_then_async.d.cts",
-                "default": "./cjs/maybe_/and_then_async.cjs"
+                "types": "./cjs/maybe/and_then_async.d.cts",
+                "default": "./cjs/maybe/and_then_async.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/and_then_async.d.ts",
-                "default": "./esm/maybe_/and_then_async.js"
+                "types": "./esm/maybe/and_then_async.d.ts",
+                "default": "./esm/maybe/and_then_async.js"
             }
         },
         "./Maybe/compat/v33": {
             "import": {
-                "types": "./esm/maybe_/compat/v33.d.ts",
-                "default": "./esm/maybe_/compat/v33.js"
+                "types": "./esm/maybe/compat/v33.d.ts",
+                "default": "./esm/maybe/compat/v33.js"
             },
             "require": {
-                "types": "./cjs/maybe_/compat/v33.d.cts",
-                "default": "./cjs/maybe_/compat/v33.cjs"
+                "types": "./cjs/maybe/compat/v33.d.cts",
+                "default": "./cjs/maybe/compat/v33.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/compat/v33.d.ts",
-                "default": "./esm/maybe_/compat/v33.js"
+                "types": "./esm/maybe/compat/v33.d.ts",
+                "default": "./esm/maybe/compat/v33.js"
             }
         },
         "./Maybe/expect": {
             "import": {
-                "types": "./esm/maybe_/expect.d.ts",
-                "default": "./esm/maybe_/expect.js"
+                "types": "./esm/maybe/expect.d.ts",
+                "default": "./esm/maybe/expect.js"
             },
             "require": {
-                "types": "./cjs/maybe_/expect.d.cts",
-                "default": "./cjs/maybe_/expect.cjs"
+                "types": "./cjs/maybe/expect.d.cts",
+                "default": "./cjs/maybe/expect.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/expect.d.ts",
-                "default": "./esm/maybe_/expect.js"
+                "types": "./esm/maybe/expect.d.ts",
+                "default": "./esm/maybe/expect.js"
             }
         },
         "./Maybe/inspect": {
             "import": {
-                "types": "./esm/maybe_/inspect.d.ts",
-                "default": "./esm/maybe_/inspect.js"
+                "types": "./esm/maybe/inspect.d.ts",
+                "default": "./esm/maybe/inspect.js"
             },
             "require": {
-                "types": "./cjs/maybe_/inspect.d.cts",
-                "default": "./cjs/maybe_/inspect.cjs"
+                "types": "./cjs/maybe/inspect.d.cts",
+                "default": "./cjs/maybe/inspect.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/inspect.d.ts",
-                "default": "./esm/maybe_/inspect.js"
+                "types": "./esm/maybe/inspect.d.ts",
+                "default": "./esm/maybe/inspect.js"
             }
         },
         "./Maybe/map": {
             "import": {
-                "types": "./esm/maybe_/map.d.ts",
-                "default": "./esm/maybe_/map.js"
+                "types": "./esm/maybe/map.d.ts",
+                "default": "./esm/maybe/map.js"
             },
             "require": {
-                "types": "./cjs/maybe_/map.d.cts",
-                "default": "./cjs/maybe_/map.cjs"
+                "types": "./cjs/maybe/map.d.cts",
+                "default": "./cjs/maybe/map.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/map.d.ts",
-                "default": "./esm/maybe_/map.js"
+                "types": "./esm/maybe/map.d.ts",
+                "default": "./esm/maybe/map.js"
             }
         },
         "./Maybe/mapAsync": {
             "import": {
-                "types": "./esm/maybe_/map_async.d.ts",
-                "default": "./esm/maybe_/map_async.js"
+                "types": "./esm/maybe/map_async.d.ts",
+                "default": "./esm/maybe/map_async.js"
             },
             "require": {
-                "types": "./cjs/maybe_/map_async.d.cts",
-                "default": "./cjs/maybe_/map_async.cjs"
+                "types": "./cjs/maybe/map_async.d.cts",
+                "default": "./cjs/maybe/map_async.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/map_async.d.ts",
-                "default": "./esm/maybe_/map_async.js"
+                "types": "./esm/maybe/map_async.d.ts",
+                "default": "./esm/maybe/map_async.js"
             }
         },
         "./Maybe/mapOr": {
             "import": {
-                "types": "./esm/maybe_/map_or.d.ts",
-                "default": "./esm/maybe_/map_or.js"
+                "types": "./esm/maybe/map_or.d.ts",
+                "default": "./esm/maybe/map_or.js"
             },
             "require": {
-                "types": "./cjs/maybe_/map_or.d.cts",
-                "default": "./cjs/maybe_/map_or.cjs"
+                "types": "./cjs/maybe/map_or.d.cts",
+                "default": "./cjs/maybe/map_or.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/map_or.d.ts",
-                "default": "./esm/maybe_/map_or.js"
+                "types": "./esm/maybe/map_or.d.ts",
+                "default": "./esm/maybe/map_or.js"
             }
         },
         "./Maybe/mapOrAsync": {
             "import": {
-                "types": "./esm/maybe_/map_or_async.d.ts",
-                "default": "./esm/maybe_/map_or_async.js"
+                "types": "./esm/maybe/map_or_async.d.ts",
+                "default": "./esm/maybe/map_or_async.js"
             },
             "require": {
-                "types": "./cjs/maybe_/map_or_async.d.cts",
-                "default": "./cjs/maybe_/map_or_async.cjs"
+                "types": "./cjs/maybe/map_or_async.d.cts",
+                "default": "./cjs/maybe/map_or_async.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/map_or_async.d.ts",
-                "default": "./esm/maybe_/map_or_async.js"
+                "types": "./esm/maybe/map_or_async.d.ts",
+                "default": "./esm/maybe/map_or_async.js"
             }
         },
         "./Maybe/mapOrElse": {
             "import": {
-                "types": "./esm/maybe_/map_or_else.d.ts",
-                "default": "./esm/maybe_/map_or_else.js"
+                "types": "./esm/maybe/map_or_else.d.ts",
+                "default": "./esm/maybe/map_or_else.js"
             },
             "require": {
-                "types": "./cjs/maybe_/map_or_else.d.cts",
-                "default": "./cjs/maybe_/map_or_else.cjs"
+                "types": "./cjs/maybe/map_or_else.d.cts",
+                "default": "./cjs/maybe/map_or_else.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/map_or_else.d.ts",
-                "default": "./esm/maybe_/map_or_else.js"
+                "types": "./esm/maybe/map_or_else.d.ts",
+                "default": "./esm/maybe/map_or_else.js"
             }
         },
         "./Maybe/mapOrElseAsync": {
             "import": {
-                "types": "./esm/maybe_/map_or_else_async.d.ts",
-                "default": "./esm/maybe_/map_or_else_async.js"
+                "types": "./esm/maybe/map_or_else_async.d.ts",
+                "default": "./esm/maybe/map_or_else_async.js"
             },
             "require": {
-                "types": "./cjs/maybe_/map_or_else_async.d.cts",
-                "default": "./cjs/maybe_/map_or_else_async.cjs"
+                "types": "./cjs/maybe/map_or_else_async.d.cts",
+                "default": "./cjs/maybe/map_or_else_async.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/map_or_else_async.d.ts",
-                "default": "./esm/maybe_/map_or_else_async.js"
+                "types": "./esm/maybe/map_or_else_async.d.ts",
+                "default": "./esm/maybe/map_or_else_async.js"
             }
         },
         "./Maybe/namespace": {
             "import": {
-                "types": "./esm/maybe_/namespace.d.ts",
-                "default": "./esm/maybe_/namespace.js"
+                "types": "./esm/maybe/namespace.d.ts",
+                "default": "./esm/maybe/namespace.js"
             },
             "require": {
-                "types": "./cjs/maybe_/namespace.d.cts",
-                "default": "./cjs/maybe_/namespace.cjs"
+                "types": "./cjs/maybe/namespace.d.cts",
+                "default": "./cjs/maybe/namespace.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/namespace.d.ts",
-                "default": "./esm/maybe_/namespace.js"
+                "types": "./esm/maybe/namespace.d.ts",
+                "default": "./esm/maybe/namespace.js"
             }
         },
         "./Maybe/okOr": {
             "import": {
-                "types": "./esm/maybe_/ok_or.d.ts",
-                "default": "./esm/maybe_/ok_or.js"
+                "types": "./esm/maybe/ok_or.d.ts",
+                "default": "./esm/maybe/ok_or.js"
             },
             "require": {
-                "types": "./cjs/maybe_/ok_or.d.cts",
-                "default": "./cjs/maybe_/ok_or.cjs"
+                "types": "./cjs/maybe/ok_or.d.cts",
+                "default": "./cjs/maybe/ok_or.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/ok_or.d.ts",
-                "default": "./esm/maybe_/ok_or.js"
+                "types": "./esm/maybe/ok_or.d.ts",
+                "default": "./esm/maybe/ok_or.js"
             }
         },
         "./Maybe/okOrElse": {
             "import": {
-                "types": "./esm/maybe_/ok_or_else.d.ts",
-                "default": "./esm/maybe_/ok_or_else.js"
+                "types": "./esm/maybe/ok_or_else.d.ts",
+                "default": "./esm/maybe/ok_or_else.js"
             },
             "require": {
-                "types": "./cjs/maybe_/ok_or_else.d.cts",
-                "default": "./cjs/maybe_/ok_or_else.cjs"
+                "types": "./cjs/maybe/ok_or_else.d.cts",
+                "default": "./cjs/maybe/ok_or_else.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/ok_or_else.d.ts",
-                "default": "./esm/maybe_/ok_or_else.js"
+                "types": "./esm/maybe/ok_or_else.d.ts",
+                "default": "./esm/maybe/ok_or_else.js"
             }
         },
         "./Maybe/or": {
             "import": {
-                "types": "./esm/maybe_/or.d.ts",
-                "default": "./esm/maybe_/or.js"
+                "types": "./esm/maybe/or.d.ts",
+                "default": "./esm/maybe/or.js"
             },
             "require": {
-                "types": "./cjs/maybe_/or.d.cts",
-                "default": "./cjs/maybe_/or.cjs"
+                "types": "./cjs/maybe/or.d.cts",
+                "default": "./cjs/maybe/or.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/or.d.ts",
-                "default": "./esm/maybe_/or.js"
+                "types": "./esm/maybe/or.d.ts",
+                "default": "./esm/maybe/or.js"
             }
         },
         "./Maybe/orElse": {
             "import": {
-                "types": "./esm/maybe_/or_else.d.ts",
-                "default": "./esm/maybe_/or_else.js"
+                "types": "./esm/maybe/or_else.d.ts",
+                "default": "./esm/maybe/or_else.js"
             },
             "require": {
-                "types": "./cjs/maybe_/or_else.d.cts",
-                "default": "./cjs/maybe_/or_else.cjs"
+                "types": "./cjs/maybe/or_else.d.cts",
+                "default": "./cjs/maybe/or_else.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/or_else.d.ts",
-                "default": "./esm/maybe_/or_else.js"
+                "types": "./esm/maybe/or_else.d.ts",
+                "default": "./esm/maybe/or_else.js"
             }
         },
         "./Maybe/orElseAsync": {
             "import": {
-                "types": "./esm/maybe_/or_else_async.d.ts",
-                "default": "./esm/maybe_/or_else_async.js"
+                "types": "./esm/maybe/or_else_async.d.ts",
+                "default": "./esm/maybe/or_else_async.js"
             },
             "require": {
-                "types": "./cjs/maybe_/or_else_async.d.cts",
-                "default": "./cjs/maybe_/or_else_async.cjs"
+                "types": "./cjs/maybe/or_else_async.d.cts",
+                "default": "./cjs/maybe/or_else_async.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/or_else_async.d.ts",
-                "default": "./esm/maybe_/or_else_async.js"
+                "types": "./esm/maybe/or_else_async.d.ts",
+                "default": "./esm/maybe/or_else_async.js"
             }
         },
         "./Maybe/toNullable": {
             "import": {
-                "types": "./esm/maybe_/to_nullable.d.ts",
-                "default": "./esm/maybe_/to_nullable.js"
+                "types": "./esm/maybe/to_nullable.d.ts",
+                "default": "./esm/maybe/to_nullable.js"
             },
             "require": {
-                "types": "./cjs/maybe_/to_nullable.d.cts",
-                "default": "./cjs/maybe_/to_nullable.cjs"
+                "types": "./cjs/maybe/to_nullable.d.cts",
+                "default": "./cjs/maybe/to_nullable.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/to_nullable.d.ts",
-                "default": "./esm/maybe_/to_nullable.js"
+                "types": "./esm/maybe/to_nullable.d.ts",
+                "default": "./esm/maybe/to_nullable.js"
             }
         },
         "./Maybe/toPlainResult": {
             "import": {
-                "types": "./esm/maybe_/to_plain_result.d.ts",
-                "default": "./esm/maybe_/to_plain_result.js"
+                "types": "./esm/maybe/to_plain_result.d.ts",
+                "default": "./esm/maybe/to_plain_result.js"
             },
             "require": {
-                "types": "./cjs/maybe_/to_plain_result.d.cts",
-                "default": "./cjs/maybe_/to_plain_result.cjs"
+                "types": "./cjs/maybe/to_plain_result.d.cts",
+                "default": "./cjs/maybe/to_plain_result.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/to_plain_result.d.ts",
-                "default": "./esm/maybe_/to_plain_result.js"
+                "types": "./esm/maybe/to_plain_result.d.ts",
+                "default": "./esm/maybe/to_plain_result.js"
             }
         },
         "./Maybe/toUndefinable": {
             "import": {
-                "types": "./esm/maybe_/to_undefinable.d.ts",
-                "default": "./esm/maybe_/to_undefinable.js"
+                "types": "./esm/maybe/to_undefinable.d.ts",
+                "default": "./esm/maybe/to_undefinable.js"
             },
             "require": {
-                "types": "./cjs/maybe_/to_undefinable.d.cts",
-                "default": "./cjs/maybe_/to_undefinable.cjs"
+                "types": "./cjs/maybe/to_undefinable.d.cts",
+                "default": "./cjs/maybe/to_undefinable.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/to_undefinable.d.ts",
-                "default": "./esm/maybe_/to_undefinable.js"
+                "types": "./esm/maybe/to_undefinable.d.ts",
+                "default": "./esm/maybe/to_undefinable.js"
             }
         },
         "./Maybe/unwrap": {
             "import": {
-                "types": "./esm/maybe_/unwrap.d.ts",
-                "default": "./esm/maybe_/unwrap.js"
+                "types": "./esm/maybe/unwrap.d.ts",
+                "default": "./esm/maybe/unwrap.js"
             },
             "require": {
-                "types": "./cjs/maybe_/unwrap.d.cts",
-                "default": "./cjs/maybe_/unwrap.cjs"
+                "types": "./cjs/maybe/unwrap.d.cts",
+                "default": "./cjs/maybe/unwrap.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/unwrap.d.ts",
-                "default": "./esm/maybe_/unwrap.js"
+                "types": "./esm/maybe/unwrap.d.ts",
+                "default": "./esm/maybe/unwrap.js"
             }
         },
         "./Maybe/unwrapOr": {
             "import": {
-                "types": "./esm/maybe_/unwrap_or.d.ts",
-                "default": "./esm/maybe_/unwrap_or.js"
+                "types": "./esm/maybe/unwrap_or.d.ts",
+                "default": "./esm/maybe/unwrap_or.js"
             },
             "require": {
-                "types": "./cjs/maybe_/unwrap_or.d.cts",
-                "default": "./cjs/maybe_/unwrap_or.cjs"
+                "types": "./cjs/maybe/unwrap_or.d.cts",
+                "default": "./cjs/maybe/unwrap_or.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/unwrap_or.d.ts",
-                "default": "./esm/maybe_/unwrap_or.js"
+                "types": "./esm/maybe/unwrap_or.d.ts",
+                "default": "./esm/maybe/unwrap_or.js"
             }
         },
         "./Maybe/unwrapOrElse": {
             "import": {
-                "types": "./esm/maybe_/unwrap_or_else.d.ts",
-                "default": "./esm/maybe_/unwrap_or_else.js"
+                "types": "./esm/maybe/unwrap_or_else.d.ts",
+                "default": "./esm/maybe/unwrap_or_else.js"
             },
             "require": {
-                "types": "./cjs/maybe_/unwrap_or_else.d.cts",
-                "default": "./cjs/maybe_/unwrap_or_else.cjs"
+                "types": "./cjs/maybe/unwrap_or_else.d.cts",
+                "default": "./cjs/maybe/unwrap_or_else.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/unwrap_or_else.d.ts",
-                "default": "./esm/maybe_/unwrap_or_else.js"
+                "types": "./esm/maybe/unwrap_or_else.d.ts",
+                "default": "./esm/maybe/unwrap_or_else.js"
             }
         },
         "./Maybe/unwrapOrElseAsync": {
             "import": {
-                "types": "./esm/maybe_/unwrap_or_else_async.d.ts",
-                "default": "./esm/maybe_/unwrap_or_else_async.js"
+                "types": "./esm/maybe/unwrap_or_else_async.d.ts",
+                "default": "./esm/maybe/unwrap_or_else_async.js"
             },
             "require": {
-                "types": "./cjs/maybe_/unwrap_or_else_async.d.cts",
-                "default": "./cjs/maybe_/unwrap_or_else_async.cjs"
+                "types": "./cjs/maybe/unwrap_or_else_async.d.cts",
+                "default": "./cjs/maybe/unwrap_or_else_async.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/unwrap_or_else_async.d.ts",
-                "default": "./esm/maybe_/unwrap_or_else_async.js"
+                "types": "./esm/maybe/unwrap_or_else_async.d.ts",
+                "default": "./esm/maybe/unwrap_or_else_async.js"
             }
         },
         "./Maybe/xor": {
             "import": {
-                "types": "./esm/maybe_/xor.d.ts",
-                "default": "./esm/maybe_/xor.js"
+                "types": "./esm/maybe/xor.d.ts",
+                "default": "./esm/maybe/xor.js"
             },
             "require": {
-                "types": "./cjs/maybe_/xor.d.cts",
-                "default": "./cjs/maybe_/xor.cjs"
+                "types": "./cjs/maybe/xor.d.cts",
+                "default": "./cjs/maybe/xor.cjs"
             },
             "default": {
-                "types": "./esm/maybe_/xor.d.ts",
-                "default": "./esm/maybe_/xor.js"
+                "types": "./esm/maybe/xor.d.ts",
+                "default": "./esm/maybe/xor.js"
             }
         },
         "./Nullable": {
             "import": {
-                "types": "./esm/nullable_/index.d.ts",
-                "default": "./esm/nullable_/index.js"
+                "types": "./esm/nullable/index.d.ts",
+                "default": "./esm/nullable/index.js"
             },
             "require": {
-                "types": "./cjs/nullable_/index.d.cts",
-                "default": "./cjs/nullable_/index.cjs"
+                "types": "./cjs/nullable/index.d.cts",
+                "default": "./cjs/nullable/index.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/index.d.ts",
-                "default": "./esm/nullable_/index.js"
+                "types": "./esm/nullable/index.d.ts",
+                "default": "./esm/nullable/index.js"
             }
         },
         "./Nullable/Nullable": {
             "import": {
-                "types": "./esm/nullable_/nullable.d.ts",
-                "default": "./esm/nullable_/nullable.js"
+                "types": "./esm/nullable/nullable.d.ts",
+                "default": "./esm/nullable/nullable.js"
             },
             "require": {
-                "types": "./cjs/nullable_/nullable.d.cts",
-                "default": "./cjs/nullable_/nullable.cjs"
+                "types": "./cjs/nullable/nullable.d.cts",
+                "default": "./cjs/nullable/nullable.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/nullable.d.ts",
-                "default": "./esm/nullable_/nullable.js"
+                "types": "./esm/nullable/nullable.d.ts",
+                "default": "./esm/nullable/nullable.js"
             }
         },
         "./Nullable/and": {
             "import": {
-                "types": "./esm/nullable_/and.d.ts",
-                "default": "./esm/nullable_/and.js"
+                "types": "./esm/nullable/and.d.ts",
+                "default": "./esm/nullable/and.js"
             },
             "require": {
-                "types": "./cjs/nullable_/and.d.cts",
-                "default": "./cjs/nullable_/and.cjs"
+                "types": "./cjs/nullable/and.d.cts",
+                "default": "./cjs/nullable/and.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/and.d.ts",
-                "default": "./esm/nullable_/and.js"
+                "types": "./esm/nullable/and.d.ts",
+                "default": "./esm/nullable/and.js"
             }
         },
         "./Nullable/andThen": {
             "import": {
-                "types": "./esm/nullable_/and_then.d.ts",
-                "default": "./esm/nullable_/and_then.js"
+                "types": "./esm/nullable/and_then.d.ts",
+                "default": "./esm/nullable/and_then.js"
             },
             "require": {
-                "types": "./cjs/nullable_/and_then.d.cts",
-                "default": "./cjs/nullable_/and_then.cjs"
+                "types": "./cjs/nullable/and_then.d.cts",
+                "default": "./cjs/nullable/and_then.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/and_then.d.ts",
-                "default": "./esm/nullable_/and_then.js"
+                "types": "./esm/nullable/and_then.d.ts",
+                "default": "./esm/nullable/and_then.js"
             }
         },
         "./Nullable/andThenAsync": {
             "import": {
-                "types": "./esm/nullable_/and_then_async.d.ts",
-                "default": "./esm/nullable_/and_then_async.js"
+                "types": "./esm/nullable/and_then_async.d.ts",
+                "default": "./esm/nullable/and_then_async.js"
             },
             "require": {
-                "types": "./cjs/nullable_/and_then_async.d.cts",
-                "default": "./cjs/nullable_/and_then_async.cjs"
+                "types": "./cjs/nullable/and_then_async.d.cts",
+                "default": "./cjs/nullable/and_then_async.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/and_then_async.d.ts",
-                "default": "./esm/nullable_/and_then_async.js"
+                "types": "./esm/nullable/and_then_async.d.ts",
+                "default": "./esm/nullable/and_then_async.js"
             }
         },
         "./Nullable/compat/v33": {
             "import": {
-                "types": "./esm/nullable_/compat/v33.d.ts",
-                "default": "./esm/nullable_/compat/v33.js"
+                "types": "./esm/nullable/compat/v33.d.ts",
+                "default": "./esm/nullable/compat/v33.js"
             },
             "require": {
-                "types": "./cjs/nullable_/compat/v33.d.cts",
-                "default": "./cjs/nullable_/compat/v33.cjs"
+                "types": "./cjs/nullable/compat/v33.d.cts",
+                "default": "./cjs/nullable/compat/v33.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/compat/v33.d.ts",
-                "default": "./esm/nullable_/compat/v33.js"
+                "types": "./esm/nullable/compat/v33.d.ts",
+                "default": "./esm/nullable/compat/v33.js"
             }
         },
         "./Nullable/expect": {
             "import": {
-                "types": "./esm/nullable_/expect.d.ts",
-                "default": "./esm/nullable_/expect.js"
+                "types": "./esm/nullable/expect.d.ts",
+                "default": "./esm/nullable/expect.js"
             },
             "require": {
-                "types": "./cjs/nullable_/expect.d.cts",
-                "default": "./cjs/nullable_/expect.cjs"
+                "types": "./cjs/nullable/expect.d.cts",
+                "default": "./cjs/nullable/expect.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/expect.d.ts",
-                "default": "./esm/nullable_/expect.js"
+                "types": "./esm/nullable/expect.d.ts",
+                "default": "./esm/nullable/expect.js"
             }
         },
         "./Nullable/inspect": {
             "import": {
-                "types": "./esm/nullable_/inspect.d.ts",
-                "default": "./esm/nullable_/inspect.js"
+                "types": "./esm/nullable/inspect.d.ts",
+                "default": "./esm/nullable/inspect.js"
             },
             "require": {
-                "types": "./cjs/nullable_/inspect.d.cts",
-                "default": "./cjs/nullable_/inspect.cjs"
+                "types": "./cjs/nullable/inspect.d.cts",
+                "default": "./cjs/nullable/inspect.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/inspect.d.ts",
-                "default": "./esm/nullable_/inspect.js"
+                "types": "./esm/nullable/inspect.d.ts",
+                "default": "./esm/nullable/inspect.js"
             }
         },
         "./Nullable/map": {
             "import": {
-                "types": "./esm/nullable_/map.d.ts",
-                "default": "./esm/nullable_/map.js"
+                "types": "./esm/nullable/map.d.ts",
+                "default": "./esm/nullable/map.js"
             },
             "require": {
-                "types": "./cjs/nullable_/map.d.cts",
-                "default": "./cjs/nullable_/map.cjs"
+                "types": "./cjs/nullable/map.d.cts",
+                "default": "./cjs/nullable/map.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/map.d.ts",
-                "default": "./esm/nullable_/map.js"
+                "types": "./esm/nullable/map.d.ts",
+                "default": "./esm/nullable/map.js"
             }
         },
         "./Nullable/mapAsync": {
             "import": {
-                "types": "./esm/nullable_/map_async.d.ts",
-                "default": "./esm/nullable_/map_async.js"
+                "types": "./esm/nullable/map_async.d.ts",
+                "default": "./esm/nullable/map_async.js"
             },
             "require": {
-                "types": "./cjs/nullable_/map_async.d.cts",
-                "default": "./cjs/nullable_/map_async.cjs"
+                "types": "./cjs/nullable/map_async.d.cts",
+                "default": "./cjs/nullable/map_async.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/map_async.d.ts",
-                "default": "./esm/nullable_/map_async.js"
+                "types": "./esm/nullable/map_async.d.ts",
+                "default": "./esm/nullable/map_async.js"
             }
         },
         "./Nullable/mapOr": {
             "import": {
-                "types": "./esm/nullable_/map_or.d.ts",
-                "default": "./esm/nullable_/map_or.js"
+                "types": "./esm/nullable/map_or.d.ts",
+                "default": "./esm/nullable/map_or.js"
             },
             "require": {
-                "types": "./cjs/nullable_/map_or.d.cts",
-                "default": "./cjs/nullable_/map_or.cjs"
+                "types": "./cjs/nullable/map_or.d.cts",
+                "default": "./cjs/nullable/map_or.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/map_or.d.ts",
-                "default": "./esm/nullable_/map_or.js"
+                "types": "./esm/nullable/map_or.d.ts",
+                "default": "./esm/nullable/map_or.js"
             }
         },
         "./Nullable/mapOrAsync": {
             "import": {
-                "types": "./esm/nullable_/map_or_async.d.ts",
-                "default": "./esm/nullable_/map_or_async.js"
+                "types": "./esm/nullable/map_or_async.d.ts",
+                "default": "./esm/nullable/map_or_async.js"
             },
             "require": {
-                "types": "./cjs/nullable_/map_or_async.d.cts",
-                "default": "./cjs/nullable_/map_or_async.cjs"
+                "types": "./cjs/nullable/map_or_async.d.cts",
+                "default": "./cjs/nullable/map_or_async.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/map_or_async.d.ts",
-                "default": "./esm/nullable_/map_or_async.js"
+                "types": "./esm/nullable/map_or_async.d.ts",
+                "default": "./esm/nullable/map_or_async.js"
             }
         },
         "./Nullable/mapOrElse": {
             "import": {
-                "types": "./esm/nullable_/map_or_else.d.ts",
-                "default": "./esm/nullable_/map_or_else.js"
+                "types": "./esm/nullable/map_or_else.d.ts",
+                "default": "./esm/nullable/map_or_else.js"
             },
             "require": {
-                "types": "./cjs/nullable_/map_or_else.d.cts",
-                "default": "./cjs/nullable_/map_or_else.cjs"
+                "types": "./cjs/nullable/map_or_else.d.cts",
+                "default": "./cjs/nullable/map_or_else.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/map_or_else.d.ts",
-                "default": "./esm/nullable_/map_or_else.js"
+                "types": "./esm/nullable/map_or_else.d.ts",
+                "default": "./esm/nullable/map_or_else.js"
             }
         },
         "./Nullable/mapOrElseAsync": {
             "import": {
-                "types": "./esm/nullable_/map_or_else_async.d.ts",
-                "default": "./esm/nullable_/map_or_else_async.js"
+                "types": "./esm/nullable/map_or_else_async.d.ts",
+                "default": "./esm/nullable/map_or_else_async.js"
             },
             "require": {
-                "types": "./cjs/nullable_/map_or_else_async.d.cts",
-                "default": "./cjs/nullable_/map_or_else_async.cjs"
+                "types": "./cjs/nullable/map_or_else_async.d.cts",
+                "default": "./cjs/nullable/map_or_else_async.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/map_or_else_async.d.ts",
-                "default": "./esm/nullable_/map_or_else_async.js"
+                "types": "./esm/nullable/map_or_else_async.d.ts",
+                "default": "./esm/nullable/map_or_else_async.js"
             }
         },
         "./Nullable/namespace": {
             "import": {
-                "types": "./esm/nullable_/namespace.d.ts",
-                "default": "./esm/nullable_/namespace.js"
+                "types": "./esm/nullable/namespace.d.ts",
+                "default": "./esm/nullable/namespace.js"
             },
             "require": {
-                "types": "./cjs/nullable_/namespace.d.cts",
-                "default": "./cjs/nullable_/namespace.cjs"
+                "types": "./cjs/nullable/namespace.d.cts",
+                "default": "./cjs/nullable/namespace.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/namespace.d.ts",
-                "default": "./esm/nullable_/namespace.js"
+                "types": "./esm/nullable/namespace.d.ts",
+                "default": "./esm/nullable/namespace.js"
             }
         },
         "./Nullable/okOr": {
             "import": {
-                "types": "./esm/nullable_/ok_or.d.ts",
-                "default": "./esm/nullable_/ok_or.js"
+                "types": "./esm/nullable/ok_or.d.ts",
+                "default": "./esm/nullable/ok_or.js"
             },
             "require": {
-                "types": "./cjs/nullable_/ok_or.d.cts",
-                "default": "./cjs/nullable_/ok_or.cjs"
+                "types": "./cjs/nullable/ok_or.d.cts",
+                "default": "./cjs/nullable/ok_or.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/ok_or.d.ts",
-                "default": "./esm/nullable_/ok_or.js"
+                "types": "./esm/nullable/ok_or.d.ts",
+                "default": "./esm/nullable/ok_or.js"
             }
         },
         "./Nullable/okOrElse": {
             "import": {
-                "types": "./esm/nullable_/ok_or_else.d.ts",
-                "default": "./esm/nullable_/ok_or_else.js"
+                "types": "./esm/nullable/ok_or_else.d.ts",
+                "default": "./esm/nullable/ok_or_else.js"
             },
             "require": {
-                "types": "./cjs/nullable_/ok_or_else.d.cts",
-                "default": "./cjs/nullable_/ok_or_else.cjs"
+                "types": "./cjs/nullable/ok_or_else.d.cts",
+                "default": "./cjs/nullable/ok_or_else.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/ok_or_else.d.ts",
-                "default": "./esm/nullable_/ok_or_else.js"
+                "types": "./esm/nullable/ok_or_else.d.ts",
+                "default": "./esm/nullable/ok_or_else.js"
             }
         },
         "./Nullable/or": {
             "import": {
-                "types": "./esm/nullable_/or.d.ts",
-                "default": "./esm/nullable_/or.js"
+                "types": "./esm/nullable/or.d.ts",
+                "default": "./esm/nullable/or.js"
             },
             "require": {
-                "types": "./cjs/nullable_/or.d.cts",
-                "default": "./cjs/nullable_/or.cjs"
+                "types": "./cjs/nullable/or.d.cts",
+                "default": "./cjs/nullable/or.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/or.d.ts",
-                "default": "./esm/nullable_/or.js"
+                "types": "./esm/nullable/or.d.ts",
+                "default": "./esm/nullable/or.js"
             }
         },
         "./Nullable/orElse": {
             "import": {
-                "types": "./esm/nullable_/or_else.d.ts",
-                "default": "./esm/nullable_/or_else.js"
+                "types": "./esm/nullable/or_else.d.ts",
+                "default": "./esm/nullable/or_else.js"
             },
             "require": {
-                "types": "./cjs/nullable_/or_else.d.cts",
-                "default": "./cjs/nullable_/or_else.cjs"
+                "types": "./cjs/nullable/or_else.d.cts",
+                "default": "./cjs/nullable/or_else.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/or_else.d.ts",
-                "default": "./esm/nullable_/or_else.js"
+                "types": "./esm/nullable/or_else.d.ts",
+                "default": "./esm/nullable/or_else.js"
             }
         },
         "./Nullable/orElseAsync": {
             "import": {
-                "types": "./esm/nullable_/or_else_async.d.ts",
-                "default": "./esm/nullable_/or_else_async.js"
+                "types": "./esm/nullable/or_else_async.d.ts",
+                "default": "./esm/nullable/or_else_async.js"
             },
             "require": {
-                "types": "./cjs/nullable_/or_else_async.d.cts",
-                "default": "./cjs/nullable_/or_else_async.cjs"
+                "types": "./cjs/nullable/or_else_async.d.cts",
+                "default": "./cjs/nullable/or_else_async.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/or_else_async.d.ts",
-                "default": "./esm/nullable_/or_else_async.js"
+                "types": "./esm/nullable/or_else_async.d.ts",
+                "default": "./esm/nullable/or_else_async.js"
             }
         },
         "./Nullable/toPlainResult": {
             "import": {
-                "types": "./esm/nullable_/to_plain_result.d.ts",
-                "default": "./esm/nullable_/to_plain_result.js"
+                "types": "./esm/nullable/to_plain_result.d.ts",
+                "default": "./esm/nullable/to_plain_result.js"
             },
             "require": {
-                "types": "./cjs/nullable_/to_plain_result.d.cts",
-                "default": "./cjs/nullable_/to_plain_result.cjs"
+                "types": "./cjs/nullable/to_plain_result.d.cts",
+                "default": "./cjs/nullable/to_plain_result.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/to_plain_result.d.ts",
-                "default": "./esm/nullable_/to_plain_result.js"
+                "types": "./esm/nullable/to_plain_result.d.ts",
+                "default": "./esm/nullable/to_plain_result.js"
             }
         },
         "./Nullable/toUndefinable": {
             "import": {
-                "types": "./esm/nullable_/to_undefinable.d.ts",
-                "default": "./esm/nullable_/to_undefinable.js"
+                "types": "./esm/nullable/to_undefinable.d.ts",
+                "default": "./esm/nullable/to_undefinable.js"
             },
             "require": {
-                "types": "./cjs/nullable_/to_undefinable.d.cts",
-                "default": "./cjs/nullable_/to_undefinable.cjs"
+                "types": "./cjs/nullable/to_undefinable.d.cts",
+                "default": "./cjs/nullable/to_undefinable.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/to_undefinable.d.ts",
-                "default": "./esm/nullable_/to_undefinable.js"
+                "types": "./esm/nullable/to_undefinable.d.ts",
+                "default": "./esm/nullable/to_undefinable.js"
             }
         },
         "./Nullable/unwrap": {
             "import": {
-                "types": "./esm/nullable_/unwrap.d.ts",
-                "default": "./esm/nullable_/unwrap.js"
+                "types": "./esm/nullable/unwrap.d.ts",
+                "default": "./esm/nullable/unwrap.js"
             },
             "require": {
-                "types": "./cjs/nullable_/unwrap.d.cts",
-                "default": "./cjs/nullable_/unwrap.cjs"
+                "types": "./cjs/nullable/unwrap.d.cts",
+                "default": "./cjs/nullable/unwrap.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/unwrap.d.ts",
-                "default": "./esm/nullable_/unwrap.js"
+                "types": "./esm/nullable/unwrap.d.ts",
+                "default": "./esm/nullable/unwrap.js"
             }
         },
         "./Nullable/unwrapOr": {
             "import": {
-                "types": "./esm/nullable_/unwrap_or.d.ts",
-                "default": "./esm/nullable_/unwrap_or.js"
+                "types": "./esm/nullable/unwrap_or.d.ts",
+                "default": "./esm/nullable/unwrap_or.js"
             },
             "require": {
-                "types": "./cjs/nullable_/unwrap_or.d.cts",
-                "default": "./cjs/nullable_/unwrap_or.cjs"
+                "types": "./cjs/nullable/unwrap_or.d.cts",
+                "default": "./cjs/nullable/unwrap_or.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/unwrap_or.d.ts",
-                "default": "./esm/nullable_/unwrap_or.js"
+                "types": "./esm/nullable/unwrap_or.d.ts",
+                "default": "./esm/nullable/unwrap_or.js"
             }
         },
         "./Nullable/unwrapOrElse": {
             "import": {
-                "types": "./esm/nullable_/unwrap_or_else.d.ts",
-                "default": "./esm/nullable_/unwrap_or_else.js"
+                "types": "./esm/nullable/unwrap_or_else.d.ts",
+                "default": "./esm/nullable/unwrap_or_else.js"
             },
             "require": {
-                "types": "./cjs/nullable_/unwrap_or_else.d.cts",
-                "default": "./cjs/nullable_/unwrap_or_else.cjs"
+                "types": "./cjs/nullable/unwrap_or_else.d.cts",
+                "default": "./cjs/nullable/unwrap_or_else.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/unwrap_or_else.d.ts",
-                "default": "./esm/nullable_/unwrap_or_else.js"
+                "types": "./esm/nullable/unwrap_or_else.d.ts",
+                "default": "./esm/nullable/unwrap_or_else.js"
             }
         },
         "./Nullable/unwrapOrElseAsync": {
             "import": {
-                "types": "./esm/nullable_/unwrap_or_else_async.d.ts",
-                "default": "./esm/nullable_/unwrap_or_else_async.js"
+                "types": "./esm/nullable/unwrap_or_else_async.d.ts",
+                "default": "./esm/nullable/unwrap_or_else_async.js"
             },
             "require": {
-                "types": "./cjs/nullable_/unwrap_or_else_async.d.cts",
-                "default": "./cjs/nullable_/unwrap_or_else_async.cjs"
+                "types": "./cjs/nullable/unwrap_or_else_async.d.cts",
+                "default": "./cjs/nullable/unwrap_or_else_async.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/unwrap_or_else_async.d.ts",
-                "default": "./esm/nullable_/unwrap_or_else_async.js"
+                "types": "./esm/nullable/unwrap_or_else_async.d.ts",
+                "default": "./esm/nullable/unwrap_or_else_async.js"
             }
         },
         "./Nullable/xor": {
             "import": {
-                "types": "./esm/nullable_/xor.d.ts",
-                "default": "./esm/nullable_/xor.js"
+                "types": "./esm/nullable/xor.d.ts",
+                "default": "./esm/nullable/xor.js"
             },
             "require": {
-                "types": "./cjs/nullable_/xor.d.cts",
-                "default": "./cjs/nullable_/xor.cjs"
+                "types": "./cjs/nullable/xor.d.cts",
+                "default": "./cjs/nullable/xor.cjs"
             },
             "default": {
-                "types": "./esm/nullable_/xor.d.ts",
-                "default": "./esm/nullable_/xor.js"
+                "types": "./esm/nullable/xor.d.ts",
+                "default": "./esm/nullable/xor.js"
             }
         },
         "./PlainOption": {
@@ -3051,380 +3051,380 @@
         },
         "./Undefinable": {
             "import": {
-                "types": "./esm/undefinable_/index.d.ts",
-                "default": "./esm/undefinable_/index.js"
+                "types": "./esm/undefinable/index.d.ts",
+                "default": "./esm/undefinable/index.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/index.d.cts",
-                "default": "./cjs/undefinable_/index.cjs"
+                "types": "./cjs/undefinable/index.d.cts",
+                "default": "./cjs/undefinable/index.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/index.d.ts",
-                "default": "./esm/undefinable_/index.js"
+                "types": "./esm/undefinable/index.d.ts",
+                "default": "./esm/undefinable/index.js"
             }
         },
         "./Undefinable/Undefinable": {
             "import": {
-                "types": "./esm/undefinable_/undefinable.d.ts",
-                "default": "./esm/undefinable_/undefinable.js"
+                "types": "./esm/undefinable/undefinable.d.ts",
+                "default": "./esm/undefinable/undefinable.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/undefinable.d.cts",
-                "default": "./cjs/undefinable_/undefinable.cjs"
+                "types": "./cjs/undefinable/undefinable.d.cts",
+                "default": "./cjs/undefinable/undefinable.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/undefinable.d.ts",
-                "default": "./esm/undefinable_/undefinable.js"
+                "types": "./esm/undefinable/undefinable.d.ts",
+                "default": "./esm/undefinable/undefinable.js"
             }
         },
         "./Undefinable/and": {
             "import": {
-                "types": "./esm/undefinable_/and.d.ts",
-                "default": "./esm/undefinable_/and.js"
+                "types": "./esm/undefinable/and.d.ts",
+                "default": "./esm/undefinable/and.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/and.d.cts",
-                "default": "./cjs/undefinable_/and.cjs"
+                "types": "./cjs/undefinable/and.d.cts",
+                "default": "./cjs/undefinable/and.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/and.d.ts",
-                "default": "./esm/undefinable_/and.js"
+                "types": "./esm/undefinable/and.d.ts",
+                "default": "./esm/undefinable/and.js"
             }
         },
         "./Undefinable/andThen": {
             "import": {
-                "types": "./esm/undefinable_/and_then.d.ts",
-                "default": "./esm/undefinable_/and_then.js"
+                "types": "./esm/undefinable/and_then.d.ts",
+                "default": "./esm/undefinable/and_then.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/and_then.d.cts",
-                "default": "./cjs/undefinable_/and_then.cjs"
+                "types": "./cjs/undefinable/and_then.d.cts",
+                "default": "./cjs/undefinable/and_then.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/and_then.d.ts",
-                "default": "./esm/undefinable_/and_then.js"
+                "types": "./esm/undefinable/and_then.d.ts",
+                "default": "./esm/undefinable/and_then.js"
             }
         },
         "./Undefinable/andThenAsync": {
             "import": {
-                "types": "./esm/undefinable_/and_then_async.d.ts",
-                "default": "./esm/undefinable_/and_then_async.js"
+                "types": "./esm/undefinable/and_then_async.d.ts",
+                "default": "./esm/undefinable/and_then_async.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/and_then_async.d.cts",
-                "default": "./cjs/undefinable_/and_then_async.cjs"
+                "types": "./cjs/undefinable/and_then_async.d.cts",
+                "default": "./cjs/undefinable/and_then_async.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/and_then_async.d.ts",
-                "default": "./esm/undefinable_/and_then_async.js"
+                "types": "./esm/undefinable/and_then_async.d.ts",
+                "default": "./esm/undefinable/and_then_async.js"
             }
         },
         "./Undefinable/compat/v33": {
             "import": {
-                "types": "./esm/undefinable_/compat/v33.d.ts",
-                "default": "./esm/undefinable_/compat/v33.js"
+                "types": "./esm/undefinable/compat/v33.d.ts",
+                "default": "./esm/undefinable/compat/v33.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/compat/v33.d.cts",
-                "default": "./cjs/undefinable_/compat/v33.cjs"
+                "types": "./cjs/undefinable/compat/v33.d.cts",
+                "default": "./cjs/undefinable/compat/v33.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/compat/v33.d.ts",
-                "default": "./esm/undefinable_/compat/v33.js"
+                "types": "./esm/undefinable/compat/v33.d.ts",
+                "default": "./esm/undefinable/compat/v33.js"
             }
         },
         "./Undefinable/expect": {
             "import": {
-                "types": "./esm/undefinable_/expect.d.ts",
-                "default": "./esm/undefinable_/expect.js"
+                "types": "./esm/undefinable/expect.d.ts",
+                "default": "./esm/undefinable/expect.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/expect.d.cts",
-                "default": "./cjs/undefinable_/expect.cjs"
+                "types": "./cjs/undefinable/expect.d.cts",
+                "default": "./cjs/undefinable/expect.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/expect.d.ts",
-                "default": "./esm/undefinable_/expect.js"
+                "types": "./esm/undefinable/expect.d.ts",
+                "default": "./esm/undefinable/expect.js"
             }
         },
         "./Undefinable/inspect": {
             "import": {
-                "types": "./esm/undefinable_/inspect.d.ts",
-                "default": "./esm/undefinable_/inspect.js"
+                "types": "./esm/undefinable/inspect.d.ts",
+                "default": "./esm/undefinable/inspect.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/inspect.d.cts",
-                "default": "./cjs/undefinable_/inspect.cjs"
+                "types": "./cjs/undefinable/inspect.d.cts",
+                "default": "./cjs/undefinable/inspect.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/inspect.d.ts",
-                "default": "./esm/undefinable_/inspect.js"
+                "types": "./esm/undefinable/inspect.d.ts",
+                "default": "./esm/undefinable/inspect.js"
             }
         },
         "./Undefinable/map": {
             "import": {
-                "types": "./esm/undefinable_/map.d.ts",
-                "default": "./esm/undefinable_/map.js"
+                "types": "./esm/undefinable/map.d.ts",
+                "default": "./esm/undefinable/map.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/map.d.cts",
-                "default": "./cjs/undefinable_/map.cjs"
+                "types": "./cjs/undefinable/map.d.cts",
+                "default": "./cjs/undefinable/map.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/map.d.ts",
-                "default": "./esm/undefinable_/map.js"
+                "types": "./esm/undefinable/map.d.ts",
+                "default": "./esm/undefinable/map.js"
             }
         },
         "./Undefinable/mapAsync": {
             "import": {
-                "types": "./esm/undefinable_/map_async.d.ts",
-                "default": "./esm/undefinable_/map_async.js"
+                "types": "./esm/undefinable/map_async.d.ts",
+                "default": "./esm/undefinable/map_async.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/map_async.d.cts",
-                "default": "./cjs/undefinable_/map_async.cjs"
+                "types": "./cjs/undefinable/map_async.d.cts",
+                "default": "./cjs/undefinable/map_async.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/map_async.d.ts",
-                "default": "./esm/undefinable_/map_async.js"
+                "types": "./esm/undefinable/map_async.d.ts",
+                "default": "./esm/undefinable/map_async.js"
             }
         },
         "./Undefinable/mapOr": {
             "import": {
-                "types": "./esm/undefinable_/map_or.d.ts",
-                "default": "./esm/undefinable_/map_or.js"
+                "types": "./esm/undefinable/map_or.d.ts",
+                "default": "./esm/undefinable/map_or.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/map_or.d.cts",
-                "default": "./cjs/undefinable_/map_or.cjs"
+                "types": "./cjs/undefinable/map_or.d.cts",
+                "default": "./cjs/undefinable/map_or.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/map_or.d.ts",
-                "default": "./esm/undefinable_/map_or.js"
+                "types": "./esm/undefinable/map_or.d.ts",
+                "default": "./esm/undefinable/map_or.js"
             }
         },
         "./Undefinable/mapOrAsync": {
             "import": {
-                "types": "./esm/undefinable_/map_or_async.d.ts",
-                "default": "./esm/undefinable_/map_or_async.js"
+                "types": "./esm/undefinable/map_or_async.d.ts",
+                "default": "./esm/undefinable/map_or_async.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/map_or_async.d.cts",
-                "default": "./cjs/undefinable_/map_or_async.cjs"
+                "types": "./cjs/undefinable/map_or_async.d.cts",
+                "default": "./cjs/undefinable/map_or_async.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/map_or_async.d.ts",
-                "default": "./esm/undefinable_/map_or_async.js"
+                "types": "./esm/undefinable/map_or_async.d.ts",
+                "default": "./esm/undefinable/map_or_async.js"
             }
         },
         "./Undefinable/mapOrElse": {
             "import": {
-                "types": "./esm/undefinable_/map_or_else.d.ts",
-                "default": "./esm/undefinable_/map_or_else.js"
+                "types": "./esm/undefinable/map_or_else.d.ts",
+                "default": "./esm/undefinable/map_or_else.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/map_or_else.d.cts",
-                "default": "./cjs/undefinable_/map_or_else.cjs"
+                "types": "./cjs/undefinable/map_or_else.d.cts",
+                "default": "./cjs/undefinable/map_or_else.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/map_or_else.d.ts",
-                "default": "./esm/undefinable_/map_or_else.js"
+                "types": "./esm/undefinable/map_or_else.d.ts",
+                "default": "./esm/undefinable/map_or_else.js"
             }
         },
         "./Undefinable/mapOrElseAsync": {
             "import": {
-                "types": "./esm/undefinable_/map_or_else_async.d.ts",
-                "default": "./esm/undefinable_/map_or_else_async.js"
+                "types": "./esm/undefinable/map_or_else_async.d.ts",
+                "default": "./esm/undefinable/map_or_else_async.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/map_or_else_async.d.cts",
-                "default": "./cjs/undefinable_/map_or_else_async.cjs"
+                "types": "./cjs/undefinable/map_or_else_async.d.cts",
+                "default": "./cjs/undefinable/map_or_else_async.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/map_or_else_async.d.ts",
-                "default": "./esm/undefinable_/map_or_else_async.js"
+                "types": "./esm/undefinable/map_or_else_async.d.ts",
+                "default": "./esm/undefinable/map_or_else_async.js"
             }
         },
         "./Undefinable/namespace": {
             "import": {
-                "types": "./esm/undefinable_/namespace.d.ts",
-                "default": "./esm/undefinable_/namespace.js"
+                "types": "./esm/undefinable/namespace.d.ts",
+                "default": "./esm/undefinable/namespace.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/namespace.d.cts",
-                "default": "./cjs/undefinable_/namespace.cjs"
+                "types": "./cjs/undefinable/namespace.d.cts",
+                "default": "./cjs/undefinable/namespace.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/namespace.d.ts",
-                "default": "./esm/undefinable_/namespace.js"
+                "types": "./esm/undefinable/namespace.d.ts",
+                "default": "./esm/undefinable/namespace.js"
             }
         },
         "./Undefinable/okOr": {
             "import": {
-                "types": "./esm/undefinable_/ok_or.d.ts",
-                "default": "./esm/undefinable_/ok_or.js"
+                "types": "./esm/undefinable/ok_or.d.ts",
+                "default": "./esm/undefinable/ok_or.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/ok_or.d.cts",
-                "default": "./cjs/undefinable_/ok_or.cjs"
+                "types": "./cjs/undefinable/ok_or.d.cts",
+                "default": "./cjs/undefinable/ok_or.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/ok_or.d.ts",
-                "default": "./esm/undefinable_/ok_or.js"
+                "types": "./esm/undefinable/ok_or.d.ts",
+                "default": "./esm/undefinable/ok_or.js"
             }
         },
         "./Undefinable/okOrElse": {
             "import": {
-                "types": "./esm/undefinable_/ok_or_else.d.ts",
-                "default": "./esm/undefinable_/ok_or_else.js"
+                "types": "./esm/undefinable/ok_or_else.d.ts",
+                "default": "./esm/undefinable/ok_or_else.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/ok_or_else.d.cts",
-                "default": "./cjs/undefinable_/ok_or_else.cjs"
+                "types": "./cjs/undefinable/ok_or_else.d.cts",
+                "default": "./cjs/undefinable/ok_or_else.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/ok_or_else.d.ts",
-                "default": "./esm/undefinable_/ok_or_else.js"
+                "types": "./esm/undefinable/ok_or_else.d.ts",
+                "default": "./esm/undefinable/ok_or_else.js"
             }
         },
         "./Undefinable/or": {
             "import": {
-                "types": "./esm/undefinable_/or.d.ts",
-                "default": "./esm/undefinable_/or.js"
+                "types": "./esm/undefinable/or.d.ts",
+                "default": "./esm/undefinable/or.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/or.d.cts",
-                "default": "./cjs/undefinable_/or.cjs"
+                "types": "./cjs/undefinable/or.d.cts",
+                "default": "./cjs/undefinable/or.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/or.d.ts",
-                "default": "./esm/undefinable_/or.js"
+                "types": "./esm/undefinable/or.d.ts",
+                "default": "./esm/undefinable/or.js"
             }
         },
         "./Undefinable/orElse": {
             "import": {
-                "types": "./esm/undefinable_/or_else.d.ts",
-                "default": "./esm/undefinable_/or_else.js"
+                "types": "./esm/undefinable/or_else.d.ts",
+                "default": "./esm/undefinable/or_else.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/or_else.d.cts",
-                "default": "./cjs/undefinable_/or_else.cjs"
+                "types": "./cjs/undefinable/or_else.d.cts",
+                "default": "./cjs/undefinable/or_else.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/or_else.d.ts",
-                "default": "./esm/undefinable_/or_else.js"
+                "types": "./esm/undefinable/or_else.d.ts",
+                "default": "./esm/undefinable/or_else.js"
             }
         },
         "./Undefinable/orElseAsync": {
             "import": {
-                "types": "./esm/undefinable_/or_else_async.d.ts",
-                "default": "./esm/undefinable_/or_else_async.js"
+                "types": "./esm/undefinable/or_else_async.d.ts",
+                "default": "./esm/undefinable/or_else_async.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/or_else_async.d.cts",
-                "default": "./cjs/undefinable_/or_else_async.cjs"
+                "types": "./cjs/undefinable/or_else_async.d.cts",
+                "default": "./cjs/undefinable/or_else_async.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/or_else_async.d.ts",
-                "default": "./esm/undefinable_/or_else_async.js"
+                "types": "./esm/undefinable/or_else_async.d.ts",
+                "default": "./esm/undefinable/or_else_async.js"
             }
         },
         "./Undefinable/toNullable": {
             "import": {
-                "types": "./esm/undefinable_/to_nullable.d.ts",
-                "default": "./esm/undefinable_/to_nullable.js"
+                "types": "./esm/undefinable/to_nullable.d.ts",
+                "default": "./esm/undefinable/to_nullable.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/to_nullable.d.cts",
-                "default": "./cjs/undefinable_/to_nullable.cjs"
+                "types": "./cjs/undefinable/to_nullable.d.cts",
+                "default": "./cjs/undefinable/to_nullable.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/to_nullable.d.ts",
-                "default": "./esm/undefinable_/to_nullable.js"
+                "types": "./esm/undefinable/to_nullable.d.ts",
+                "default": "./esm/undefinable/to_nullable.js"
             }
         },
         "./Undefinable/toPlainResult": {
             "import": {
-                "types": "./esm/undefinable_/to_plain_result.d.ts",
-                "default": "./esm/undefinable_/to_plain_result.js"
+                "types": "./esm/undefinable/to_plain_result.d.ts",
+                "default": "./esm/undefinable/to_plain_result.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/to_plain_result.d.cts",
-                "default": "./cjs/undefinable_/to_plain_result.cjs"
+                "types": "./cjs/undefinable/to_plain_result.d.cts",
+                "default": "./cjs/undefinable/to_plain_result.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/to_plain_result.d.ts",
-                "default": "./esm/undefinable_/to_plain_result.js"
+                "types": "./esm/undefinable/to_plain_result.d.ts",
+                "default": "./esm/undefinable/to_plain_result.js"
             }
         },
         "./Undefinable/unwrap": {
             "import": {
-                "types": "./esm/undefinable_/unwrap.d.ts",
-                "default": "./esm/undefinable_/unwrap.js"
+                "types": "./esm/undefinable/unwrap.d.ts",
+                "default": "./esm/undefinable/unwrap.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/unwrap.d.cts",
-                "default": "./cjs/undefinable_/unwrap.cjs"
+                "types": "./cjs/undefinable/unwrap.d.cts",
+                "default": "./cjs/undefinable/unwrap.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/unwrap.d.ts",
-                "default": "./esm/undefinable_/unwrap.js"
+                "types": "./esm/undefinable/unwrap.d.ts",
+                "default": "./esm/undefinable/unwrap.js"
             }
         },
         "./Undefinable/unwrapOr": {
             "import": {
-                "types": "./esm/undefinable_/unwrap_or.d.ts",
-                "default": "./esm/undefinable_/unwrap_or.js"
+                "types": "./esm/undefinable/unwrap_or.d.ts",
+                "default": "./esm/undefinable/unwrap_or.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/unwrap_or.d.cts",
-                "default": "./cjs/undefinable_/unwrap_or.cjs"
+                "types": "./cjs/undefinable/unwrap_or.d.cts",
+                "default": "./cjs/undefinable/unwrap_or.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/unwrap_or.d.ts",
-                "default": "./esm/undefinable_/unwrap_or.js"
+                "types": "./esm/undefinable/unwrap_or.d.ts",
+                "default": "./esm/undefinable/unwrap_or.js"
             }
         },
         "./Undefinable/unwrapOrElse": {
             "import": {
-                "types": "./esm/undefinable_/unwrap_or_else.d.ts",
-                "default": "./esm/undefinable_/unwrap_or_else.js"
+                "types": "./esm/undefinable/unwrap_or_else.d.ts",
+                "default": "./esm/undefinable/unwrap_or_else.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/unwrap_or_else.d.cts",
-                "default": "./cjs/undefinable_/unwrap_or_else.cjs"
+                "types": "./cjs/undefinable/unwrap_or_else.d.cts",
+                "default": "./cjs/undefinable/unwrap_or_else.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/unwrap_or_else.d.ts",
-                "default": "./esm/undefinable_/unwrap_or_else.js"
+                "types": "./esm/undefinable/unwrap_or_else.d.ts",
+                "default": "./esm/undefinable/unwrap_or_else.js"
             }
         },
         "./Undefinable/unwrapOrElseAsync": {
             "import": {
-                "types": "./esm/undefinable_/unwrap_or_else_async.d.ts",
-                "default": "./esm/undefinable_/unwrap_or_else_async.js"
+                "types": "./esm/undefinable/unwrap_or_else_async.d.ts",
+                "default": "./esm/undefinable/unwrap_or_else_async.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/unwrap_or_else_async.d.cts",
-                "default": "./cjs/undefinable_/unwrap_or_else_async.cjs"
+                "types": "./cjs/undefinable/unwrap_or_else_async.d.cts",
+                "default": "./cjs/undefinable/unwrap_or_else_async.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/unwrap_or_else_async.d.ts",
-                "default": "./esm/undefinable_/unwrap_or_else_async.js"
+                "types": "./esm/undefinable/unwrap_or_else_async.d.ts",
+                "default": "./esm/undefinable/unwrap_or_else_async.js"
             }
         },
         "./Undefinable/xor": {
             "import": {
-                "types": "./esm/undefinable_/xor.d.ts",
-                "default": "./esm/undefinable_/xor.js"
+                "types": "./esm/undefinable/xor.d.ts",
+                "default": "./esm/undefinable/xor.js"
             },
             "require": {
-                "types": "./cjs/undefinable_/xor.d.cts",
-                "default": "./cjs/undefinable_/xor.cjs"
+                "types": "./cjs/undefinable/xor.d.cts",
+                "default": "./cjs/undefinable/xor.cjs"
             },
             "default": {
-                "types": "./esm/undefinable_/xor.d.ts",
-                "default": "./esm/undefinable_/xor.js"
+                "types": "./esm/undefinable/xor.d.ts",
+                "default": "./esm/undefinable/xor.js"
             }
         }
     }

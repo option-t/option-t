@@ -5,9 +5,9 @@ import {
     pathRedirectionForRoot,
 } from './api_path_descriptor.mjs';
 
-const MAYBE_DIR = 'maybe_';
-const NULLABLE_DIR = 'nullable_';
-const UNDEFINABLE_DIR = 'undefinable_';
+const MAYBE_DIR = 'maybe';
+const NULLABLE_DIR = 'nullable';
+const UNDEFINABLE_DIR = 'undefinable';
 const PLAIN_OPTION_DIR = 'plain_option';
 const PLAIN_RESULT_DIR = 'plain_result';
 
