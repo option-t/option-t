@@ -24,9 +24,9 @@ you should avoid to expose this object as a public API of your package_  because
 This can express that there are some values or none.
 
 ```javascript
-import { createClassicSome, createClassicNone, } from 'option-t/esm/ClassicOption';
+import { createClassicSome, createClassicNone, } from 'option-t/ClassicOption';
 // or
-const { createClassicSome, createClassicNone, } = require('option-t/cjs/ClassicOption');
+const { createClassicSome, createClassicNone, } = require('option-t/ClassicOption');
 
 // `Some<T>`
 const some = createClassicSome(1);
@@ -48,9 +48,9 @@ See [`OptionBase.prototype.toJSON()`](./src/Option.js).
 This can express that there is some values or some error information.
 
 ```javascript
-import { createClassicOk, createClassicErr, } from 'option-t/esm/ClassicResult';
+import { createClassicOk, createClassicErr, } from 'option-t/ClassicResult';
 // or
-const { createClassicOk, createClassicErr, } = require('option-t/cjs/ClassicResult');
+const { createClassicOk, createClassicErr, } = require('option-t/ClassicResult');
 
 // `Ok<T, E>`
 const some = createClassicOk(1);
@@ -70,7 +70,7 @@ console.log(none.unwrapErr()); // 'some error info'
 ## Unwrap, `undefined` or `null`
 
 ```typescript
-import type { ClassicOption as Option } from 'option-t/esm/ClassicOption';
+import type { ClassicOption as Option } from 'option-t/ClassicOption';
 
 function unwrapOrUndefined<T>(option: Option<T>): T | undefined {
   const result: T | undefined = option.isSome ? option.unwrap() : undefined;
@@ -87,7 +87,7 @@ function unwrapOrNull<T>(option: Option<T>): T | null {
 ## Cast to `Promise`
 
 ```typescript
-import type { ClassicOption as Option } from 'option-t/esm/ClassicOption';
+import type { ClassicOption as Option } from 'option-t/ClassicOption';
 
 // This function treats `None` as a `Promise` which is fulfilled with a tagged union object.
 function castToPromise2(option: Option<T>): Promise<{ ok: boolean; value: T }> {

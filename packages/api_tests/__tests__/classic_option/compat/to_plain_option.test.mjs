@@ -12,7 +12,7 @@ import {
     createClassicNone,
     compatToClassicOption,
     compatToPlainOption,
-} from 'option-t/esm/ClassicOption';
+} from 'option-t/ClassicOption';
 
 test(`input is Plain's Some`, (t) => {
     const expected = Math.random();

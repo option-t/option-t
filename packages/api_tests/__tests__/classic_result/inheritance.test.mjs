@@ -6,7 +6,7 @@ import {
     ClassicResultBase,
     ClassicOkConstructor as Ok,
     ClassicErrConstructor as Err,
-} from 'option-t/esm/ClassicResult';
+} from 'option-t/ClassicResult';
 
 test('Ok<T> should be instanceof `ClassicResultBase`', (t) => {
     const result = createClassicOk(1);

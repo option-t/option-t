@@ -13,7 +13,7 @@ import {
     createClassicErr,
     compatToClassicResult,
     compatToPlainResult,
-} from 'option-t/esm/ClassicResult';
+} from 'option-t/ClassicResult';
 
 test(`input is Plain's Ok`, (t) => {
     const expected = Math.random();

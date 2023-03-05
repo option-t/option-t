@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createClassicSome, createClassicNone } from 'option-t/esm/ClassicOption';
+import { createClassicSome, createClassicNone } from 'option-t/ClassicOption';
 
 test('drop `Some<T>`', function (t) {
     const option = createClassicSome(1);

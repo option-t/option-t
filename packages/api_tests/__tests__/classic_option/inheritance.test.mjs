@@ -6,7 +6,7 @@ import {
     ClassicOptionBase,
     ClassicSomeConstructor as Some,
     ClassicNoneConstructor as None,
-} from 'option-t/esm/ClassicOption';
+} from 'option-t/ClassicOption';
 
 test('`Some<T>`', function (t) {
     const option = createClassicSome(1);
