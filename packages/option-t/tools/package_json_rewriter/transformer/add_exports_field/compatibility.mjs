@@ -2,7 +2,7 @@ import * as assert from 'node:assert/strict';
 
 import {
     CompatExportEntry,
-} from './ExportEntry.mjs';
+} from './export_entry.mjs';
 
 export function addHistoricalPathToExportsFields(o, histricalJSPathSeq) {
     // https://nodejs.org/api/esm.html

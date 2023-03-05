@@ -6,6 +6,7 @@
 ## Maybe
 
 - [option-t/Maybe](../packages/option-t/src/Maybe/index.ts)
+- [option-t/Maybe/Maybe](../packages/option-t/src/Maybe/Maybe.ts)
 - [option-t/Maybe/and](../packages/option-t/src/Maybe/and.ts)
 - [option-t/Maybe/andThen](../packages/option-t/src/Maybe/andThen.ts)
 - [option-t/Maybe/andThenAsync](../packages/option-t/src/Maybe/andThenAsync.ts)
@@ -14,7 +15,6 @@
 - [option-t/Maybe/inspect](../packages/option-t/src/Maybe/inspect.ts)
 - [option-t/Maybe/map](../packages/option-t/src/Maybe/map.ts)
 - [option-t/Maybe/mapAsync](../packages/option-t/src/Maybe/mapAsync.ts)
-- [option-t/Maybe/Maybe](../packages/option-t/src/Maybe/Maybe.ts)
 - [option-t/Maybe/mapOr](../packages/option-t/src/Maybe/mapOr.ts)
 - [option-t/Maybe/mapOrAsync](../packages/option-t/src/Maybe/mapOrAsync.ts)
 - [option-t/Maybe/mapOrElse](../packages/option-t/src/Maybe/mapOrElse.ts)
@@ -38,6 +38,7 @@
 ## Nullable
 
 - [option-t/Nullable](../packages/option-t/src/Nullable/index.ts)
+- [option-t/Nullable/Nullable](../packages/option-t/src/Nullable/Nullable.ts)
 - [option-t/Nullable/and](../packages/option-t/src/Nullable/and.ts)
 - [option-t/Nullable/andThen](../packages/option-t/src/Nullable/andThen.ts)
 - [option-t/Nullable/andThenAsync](../packages/option-t/src/Nullable/andThenAsync.ts)
@@ -50,7 +51,6 @@
 - [option-t/Nullable/mapOrAsync](../packages/option-t/src/Nullable/mapOrAsync.ts)
 - [option-t/Nullable/mapOrElse](../packages/option-t/src/Nullable/mapOrElse.ts)
 - [option-t/Nullable/mapOrElseAsync](../packages/option-t/src/Nullable/mapOrElseAsync.ts)
-- [option-t/Nullable/Nullable](../packages/option-t/src/Nullable/Nullable.ts)
 - [option-t/Nullable/namespace](../packages/option-t/src/Nullable/namespace.ts)
 - [option-t/Nullable/okOr](../packages/option-t/src/Nullable/okOr.ts)
 - [option-t/Nullable/okOrElse](../packages/option-t/src/Nullable/okOrElse.ts)
@@ -69,6 +69,7 @@
 ## PlainOption
 
 - [option-t/PlainOption](../packages/option-t/src/PlainOption/index.ts)
+- [option-t/PlainOption/Option](../packages/option-t/src/PlainOption/Option.ts)
 - [option-t/PlainOption/and](../packages/option-t/src/PlainOption/and.ts)
 - [option-t/PlainOption/andThen](../packages/option-t/src/PlainOption/andThen.ts)
 - [option-t/PlainOption/andThenAsync](../packages/option-t/src/PlainOption/andThenAsync.ts)
@@ -86,16 +87,15 @@
 - [option-t/PlainOption/mapOrAsync](../packages/option-t/src/PlainOption/mapOrAsync.ts)
 - [option-t/PlainOption/mapOrElse](../packages/option-t/src/PlainOption/mapOrElse.ts)
 - [option-t/PlainOption/mapOrElseAsync](../packages/option-t/src/PlainOption/mapOrElseAsync.ts)
+- [option-t/PlainOption/namespace](../packages/option-t/src/PlainOption/namespace.ts)
 - [option-t/PlainOption/okOr](../packages/option-t/src/PlainOption/okOr.ts)
 - [option-t/PlainOption/okOrElse](../packages/option-t/src/PlainOption/okOrElse.ts)
-- [option-t/PlainOption/Option](../packages/option-t/src/PlainOption/Option.ts)
-- [option-t/PlainOption/namespace](../packages/option-t/src/PlainOption/namespace.ts)
 - [option-t/PlainOption/or](../packages/option-t/src/PlainOption/or.ts)
 - [option-t/PlainOption/orElse](../packages/option-t/src/PlainOption/orElse.ts)
 - [option-t/PlainOption/orElseAsync](../packages/option-t/src/PlainOption/orElseAsync.ts)
-- [option-t/PlainOption/transpose](../packages/option-t/src/PlainOption/transpose.ts)
 - [option-t/PlainOption/toNullable](../packages/option-t/src/PlainOption/toNullable.ts)
 - [option-t/PlainOption/toUndefinable](../packages/option-t/src/PlainOption/toUndefinable.ts)
+- [option-t/PlainOption/transpose](../packages/option-t/src/PlainOption/transpose.ts)
 - [option-t/PlainOption/unwrap](../packages/option-t/src/PlainOption/unwrap.ts)
 - [option-t/PlainOption/unwrapOr](../packages/option-t/src/PlainOption/unwrapOr.ts)
 - [option-t/PlainOption/unwrapOrElse](../packages/option-t/src/PlainOption/unwrapOrElse.ts)
@@ -106,6 +106,7 @@
 ## PlainResult
 
 - [option-t/PlainResult](../packages/option-t/src/PlainResult/index.ts)
+- [option-t/PlainResult/Result](../packages/option-t/src/PlainResult/Result.ts)
 - [option-t/PlainResult/and](../packages/option-t/src/PlainResult/and.ts)
 - [option-t/PlainResult/andThen](../packages/option-t/src/PlainResult/andThen.ts)
 - [option-t/PlainResult/andThenAsync](../packages/option-t/src/PlainResult/andThenAsync.ts)
@@ -129,13 +130,12 @@
 - [option-t/PlainResult/or](../packages/option-t/src/PlainResult/or.ts)
 - [option-t/PlainResult/orElse](../packages/option-t/src/PlainResult/orElse.ts)
 - [option-t/PlainResult/orElseAsync](../packages/option-t/src/PlainResult/orElseAsync.ts)
-- [option-t/PlainResult/Result](../packages/option-t/src/PlainResult/Result.ts)
 - [option-t/PlainResult/toNullable](../packages/option-t/src/PlainResult/toNullable.ts)
 - [option-t/PlainResult/toOption](../packages/option-t/src/PlainResult/toOption.ts)
 - [option-t/PlainResult/toUndefinable](../packages/option-t/src/PlainResult/toUndefinable.ts)
+- [option-t/PlainResult/transpose](../packages/option-t/src/PlainResult/transpose.ts)
 - [option-t/PlainResult/tryCatch](../packages/option-t/src/PlainResult/tryCatch.ts)
 - [option-t/PlainResult/tryCatchAsync](../packages/option-t/src/PlainResult/tryCatchAsync.ts)
-- [option-t/PlainResult/transpose](../packages/option-t/src/PlainResult/transpose.ts)
 - [option-t/PlainResult/unwrap](../packages/option-t/src/PlainResult/unwrap.ts)
 - [option-t/PlainResult/unwrapOr](../packages/option-t/src/PlainResult/unwrapOr.ts)
 - [option-t/PlainResult/unwrapOrElse](../packages/option-t/src/PlainResult/unwrapOrElse.ts)
@@ -146,6 +146,7 @@
 ## Undefinable
 
 - [option-t/Undefinable](../packages/option-t/src/Undefinable/index.ts)
+- [option-t/Undefinable/Undefinable](../packages/option-t/src/Undefinable/Undefinable.ts)
 - [option-t/Undefinable/and](../packages/option-t/src/Undefinable/and.ts)
 - [option-t/Undefinable/andThen](../packages/option-t/src/Undefinable/andThen.ts)
 - [option-t/Undefinable/andThenAsync](../packages/option-t/src/Undefinable/andThenAsync.ts)
@@ -166,7 +167,6 @@
 - [option-t/Undefinable/orElseAsync](../packages/option-t/src/Undefinable/orElseAsync.ts)
 - [option-t/Undefinable/toNullable](../packages/option-t/src/Undefinable/toNullable.ts)
 - [option-t/Undefinable/toPlainResult](../packages/option-t/src/Undefinable/toPlainResult.ts)
-- [option-t/Undefinable/Undefinable](../packages/option-t/src/Undefinable/Undefinable.ts)
 - [option-t/Undefinable/unwrap](../packages/option-t/src/Undefinable/unwrap.ts)
 - [option-t/Undefinable/unwrapOr](../packages/option-t/src/Undefinable/unwrapOr.ts)
 - [option-t/Undefinable/unwrapOrElse](../packages/option-t/src/Undefinable/unwrapOrElse.ts)
