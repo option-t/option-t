@@ -1,14 +1,14 @@
-import { apiTable, legacyApiTable } from './table.mjs';
+import { apiTable  } from './table.mjs';
 
 const PKG_NAME = 'option-t';
 
 export class ExposedPath {
     #key;
-    #raw;
+    #descriptor;
 
-    constructor(key, raw) {
+    constructor(key, descriptor) {
         this.#key = key;
-        this.#raw = raw;
+        this.#descriptor = descriptor;
         Object.freeze(this);
     }
 
@@ -16,8 +16,12 @@ export class ExposedPath {
         return this.#key;
     }
 
+    descriptor() {
+        return this.#descriptor;
+    }
+
     filepath() {
-        return this.#raw.actualFilePath ?? null;
+        return this.#descriptor.actualFilePath ?? null;
     }
 
     hasPathOverride() {
@@ -40,12 +44,36 @@ export class ExposedPath {
     }
 
     shouldHideInDoc() {
-        const ok = !!this.#raw.shouldHideInDoc;
+        const ok = !!this.#descriptor.shouldHideInDoc;
+        return ok;
+    }
+
+    shouldCreateCompat() {
+        const createCompat = this.#descriptor.createCompat;
+        const ok = !!createCompat;
         return ok;
     }
 }
 
+function modifyDescriptor(descriptor, moduleType) {
+    const actualFilePath = descriptor.actualFilePath;
+    if (!actualFilePath) {
+        return descriptor;
+    }
+    
+    return Object.freeze({
+        ...descriptor,
+        actualFilePath: `${moduleType}/${actualFilePath}`,
+    });
+}
+
 export class QuirksLegacyExposedPath extends ExposedPath {
+    constructor(moduleType, key, descriptor) {
+        const compatKey = `${moduleType}/${key}`;
+        const desc = modifyDescriptor(descriptor, moduleType);
+        super(compatKey, desc);
+    }
+
     isForCompat() {
         return true;
     }
@@ -70,14 +98,30 @@ export function* generateExposedPathSequence() {
     }
 }
 
+const CJS_DIR_PREFIX = 'cjs';
+const ESM_DIR_PREFIX = 'esm';
+
 export function* generateLegacyExposedPathSequence() {
-    for (const [key, value] of Object.entries(legacyApiTable)) {
-        const o = new QuirksLegacyExposedPath(key, value);
+    for (const item of generateExposedPathSequence()) {
+        if (!item.shouldCreateCompat()) {
+            continue;
+        }
+
+        const key = item.name();
+        const descriptor = item.descriptor();
+
+        const o = new QuirksLegacyExposedPath(CJS_DIR_PREFIX, key, descriptor);
         yield o;
     }
-}
 
-export function* generateAllExposedPathSequence() {
-    yield* generateExposedPathSequence();
-    yield* generateLegacyExposedPathSequence();
+    for (const item of generateExposedPathSequence()) {
+        if (!item.shouldCreateCompat()) {
+            continue;
+        }
+
+        const key = item.name();
+        const descriptor = item.descriptor();
+        const o = new QuirksLegacyExposedPath(ESM_DIR_PREFIX, key, descriptor);
+        yield o;
+    }
 }
