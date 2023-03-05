@@ -45,8 +45,6 @@ export class ApiPathDescriptor {
     }
 }
 
-export const DEFAULT_API_DESCRIPTOR = Object.freeze(new ApiPathDescriptor());
-
 export function pathRedirectionTo(actualFilePath) {
     const desc = new ApiPathDescriptor();
     desc.setActualFilePath(actualFilePath);
