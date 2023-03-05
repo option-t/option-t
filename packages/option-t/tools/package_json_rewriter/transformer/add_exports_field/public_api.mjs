@@ -1,6 +1,6 @@
 import * as assert from 'node:assert/strict';
 
-import { ExportEntry } from './ExportEntry.mjs';
+import { ExportEntry } from './export_entry.mjs';
 
 export function loadPublicAPIDefinitions(seq) {
     const EXPORT_ENTRIES = [];

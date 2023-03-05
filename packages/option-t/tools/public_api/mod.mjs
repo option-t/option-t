@@ -3,4 +3,4 @@ export {
     generateLegacyExposedPathSequence,
     ExposedPath,
     QuirksLegacyExposedPath,
-} from './ExposedPath.mjs';
+} from './exposed_path.mjs';
