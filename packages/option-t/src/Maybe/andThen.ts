@@ -1,4 +1,4 @@
-import type { TransformFn } from '../internal/Function.js';
+import type { TransformFn } from '../internal/function.js';
 import { type Maybe, isNullOrUndefined } from './Maybe.js';
 
 export type MaybeTryTransformFn<in T, out U> = TransformFn<T, Maybe<U>>;

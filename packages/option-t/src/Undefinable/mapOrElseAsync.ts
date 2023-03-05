@@ -1,14 +1,14 @@
-import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/Function.js';
+import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/function.js';
 import { type Undefinable, isNotUndefined, type NotUndefined } from './Undefinable.js';
 import { assertIsPromise } from '../internal/assert.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
     ERR_MSG_RECOVERER_MUST_RETURN_PROMISE,
-} from '../internal/ErrorMessage.js';
+} from '../internal/error_message.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
-} from './internal/ErrorMessage.js';
+} from './internal/error_message.js';
 import { expectNotUndefined } from './expect.js';
 
 /**

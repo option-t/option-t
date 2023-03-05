@@ -1,6 +1,6 @@
 import { type Maybe, isNotNullOrUndefined } from './Maybe.js';
 import { type Result, createErr, createOk } from '../PlainResult/Result.js';
-import type { RecoveryFn } from '../internal/Function.js';
+import type { RecoveryFn } from '../internal/function.js';
 
 /**
  * Transforms the `Maybe<T>` into a `Result<T, E>` by mapping `T` to `Ok(T)`.

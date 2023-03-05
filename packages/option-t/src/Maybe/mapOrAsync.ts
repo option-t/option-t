@@ -1,11 +1,11 @@
 import { assertIsPromise } from '../internal/assert.js';
-import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
-import type { AsyncTransformFn } from '../internal/Function.js';
+import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
+import type { AsyncTransformFn } from '../internal/function.js';
 
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE,
-} from './internal/ErrorMessage.js';
+} from './internal/error_message.js';
 import {
     type Maybe,
     isNullOrUndefined,

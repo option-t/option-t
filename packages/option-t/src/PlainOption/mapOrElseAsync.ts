@@ -2,8 +2,8 @@ import { assertIsPromise } from '../internal/assert.js';
 import {
     ERR_MSG_RECOVERER_MUST_RETURN_PROMISE,
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
-} from '../internal/ErrorMessage.js';
-import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/Function.js';
+} from '../internal/error_message.js';
+import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/function.js';
 import { type Option, isNone } from './Option.js';
 import { unwrapOption } from './unwrap.js';
 

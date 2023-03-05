@@ -1,5 +1,5 @@
 import { assertIsFrozen } from '../internal/assert.js';
-import type { Mutable } from '../internal/Mutable.js';
+import type { Mutable } from '../internal/mutable.js';
 import type { Option } from './Option.js';
 
 /**

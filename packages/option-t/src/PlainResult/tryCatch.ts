@@ -1,6 +1,6 @@
 import { assertIsErrorInstance } from '../internal/assert.js';
-import { ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE } from '../internal/ErrorMessage.js';
-import type { ProducerFn } from '../internal/Function.js';
+import { ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE } from '../internal/error_message.js';
+import type { ProducerFn } from '../internal/function.js';
 import { type Result, createOk, createErr } from './Result.js';
 
 /**

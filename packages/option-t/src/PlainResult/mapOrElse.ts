@@ -1,4 +1,4 @@
-import type { TransformFn, RecoveryFromErrorFn } from '../internal/Function.js';
+import type { TransformFn, RecoveryFromErrorFn } from '../internal/function.js';
 import type { Result } from './Result.js';
 
 /**

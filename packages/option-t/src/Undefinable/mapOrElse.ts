@@ -1,9 +1,9 @@
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
-} from './internal/ErrorMessage.js';
+} from './internal/error_message.js';
 import { expectNotUndefined } from './expect.js';
-import type { RecoveryFn, TransformFn } from '../internal/Function.js';
+import type { RecoveryFn, TransformFn } from '../internal/function.js';
 import type { NotUndefined, Undefinable } from './Undefinable.js';
 
 /**

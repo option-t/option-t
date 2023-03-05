@@ -1,5 +1,5 @@
 import { assertIsErrorInstance } from '../internal/assert.js';
-import { ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE } from '../internal/ErrorMessage.js';
+import { ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE } from '../internal/error_message.js';
 import { type Result, isOk } from './Result.js';
 import { unwrapErrFromResult, unwrapOkFromResult } from './unwrap.js';
 

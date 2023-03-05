@@ -1,5 +1,5 @@
 import type { Nullable } from '../Nullable/Nullable.js';
-import { unwrapErrOrFromResult } from './internal/unwrapErrOr.js';
+import { unwrapErrOrFromResult } from './internal/unwrap_err_or.js';
 import type { Result } from './Result.js';
 import { unwrapOrFromResult } from './unwrapOr.js';
 

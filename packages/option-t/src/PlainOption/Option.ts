@@ -1,4 +1,4 @@
-import { ERR_MSG_UNWRAP_SOME_BUT_INPUT_IS_NONE } from './internal/ErrorMessage.js';
+import { ERR_MSG_UNWRAP_SOME_BUT_INPUT_IS_NONE } from './internal/error_message.js';
 
 /**
  *  @deprecated
