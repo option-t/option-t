@@ -1,5 +1,3 @@
-import { assertIsPromise } from '../internal/assert.js';
-import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
 import type { AsyncTransformFn } from '../internal/function.js';
 import { type Result, type Err, createOk, isErr } from './result.js';
 import { unwrapOkFromResult } from './unwrap.js';
@@ -10,21 +8,17 @@ import { unwrapOkFromResult } from './unwrap.js';
  *
  *  This function can be used to compose the results of two functions.
  */
-export function mapAsyncForResult<T, U, E>(
+export async function mapAsyncForResult<T, U, E>(
     input: Result<T, E>,
     transformer: AsyncTransformFn<T, U>
 ): Promise<Result<U, E>> {
     if (isErr(input)) {
-        const s: Err<E> = input;
-        return Promise.resolve(s);
+        const fallback: Err<E> = input;
+        return fallback;
     }
 
     const inner: T = unwrapOkFromResult(input);
-    const result: Promise<U> = transformer(inner);
-    // If this is async function, this always return Promise, but not.
-    // We should check to clarify the error case if user call this function from plain js
-    // and they mistake to use this.
-    assertIsPromise(result, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
-    const passed: Promise<Result<U, E>> = result.then(createOk);
-    return passed;
+    const mapped: U = await transformer(inner);
+    const result: Result<U, E> = createOk(mapped);
+    return result;
 }

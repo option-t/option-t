@@ -40,21 +40,3 @@ test('input is Err(E)', async (t) => {
     t.false(actual.ok);
     t.is(actual.err, ERROR_E);
 });
-
-test('callback should return Promise', async (t) => {
-    t.plan(2);
-
-    await t.throwsAsync(
-        async () => {
-            const input = createOk(VALUE_T);
-            await mapAsyncForResult(input, () => {
-                t.pass();
-                return 1;
-            });
-        },
-        {
-            instanceOf: TypeError,
-            message: '`transformer` must return Promise',
-        }
-    );
-});
