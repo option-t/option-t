@@ -6,9 +6,11 @@ import { parseArgs } from 'node:util';
 import { getAllGlobMatchedFiles } from './glob.mjs';
 import { createSourceToDestinationMapList, prepareToCreateFile } from './fs_helper.mjs';
 
+const FS_FILE_COPY_MODE = fs.constants.COPYFILE_EXCL;
+
 async function copyFile(source, dest, { isDebug: _isDebug, isVerbose: _isVerbose }) {
     await prepareToCreateFile(dest);
-    const copying = fs.copyFile(source, dest);
+    const copying = fs.copyFile(source, dest, FS_FILE_COPY_MODE);
     return copying;
 }
 
