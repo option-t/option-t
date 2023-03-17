@@ -4,6 +4,16 @@
         "noEmit": true,
         "outDir": "./__dist",
         // We would like to test whether generated d.ts are valid under configured moduleResolution mode.
+        // By the docment, we should set `--module esnext` too if we would like to use `--moduleResolution bundler`.
+        // See:
+        //  - https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/
+        //  - https://www.typescriptlang.org/tsconfig#moduleResolution
+        //
+        // As the behavior of typescript@5.0.2,
+        // tsc does not throw any error if we does not set `--module esnext` (e.g. set `--module es2022`).
+        // So I seem that it means that `--module esnext` just does not do any transform related to module
+        // as described in https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#whats-new-since-the-beta-and-rc
+        "module": "ESNext",
         "moduleResolution": "bundler",
         "skipLibCheck": false
     },
