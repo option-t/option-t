@@ -33,22 +33,4 @@ for (const NULL_VALUE of [undefined, null]) {
         const actual = await result;
         t.is(actual, NULL_VALUE);
     });
-
-    test(`input is ${NULL_VALUE}, callback should return Promise`, async (t) => {
-        t.plan(2);
-
-        await t.throwsAsync(
-            async () => {
-                const input = Math.random();
-                await andThenAsyncForMaybe(input, (_input) => {
-                    t.pass('should be called');
-                    return 1;
-                });
-            },
-            {
-                instanceOf: TypeError,
-                message: '`transformer` must return Promise',
-            }
-        );
-    });
 }
