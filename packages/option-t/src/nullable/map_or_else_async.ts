@@ -1,10 +1,5 @@
 import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/function.js';
 import { type Nullable, isNotNull, type NotNull } from './nullable.js';
-import { assertIsPromise } from '../internal/assert.js';
-import {
-    ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
-    ERR_MSG_RECOVERER_MUST_RETURN_PROMISE,
-} from '../internal/error_message.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
@@ -22,33 +17,22 @@ import { expectNotNull } from './expect.js';
  *      * If the result of _recoverer_ is null`, this throw an `Error`.
  *  * If you'd like to accept `Nullable<*>` as `U`, use a combination `andThenAsync()` and `orElseAsync()`.
  */
-export function mapOrElseAsyncForNullable<T, U>(
+export async function mapOrElseAsyncForNullable<T, U>(
     input: Nullable<T>,
     recoverer: AsyncRecoveryFn<NotNull<U>>,
     transformer: AsyncTransformFn<T, NotNull<U>>
 ): Promise<NotNull<U>> {
-    let result: Nullable<Promise<U>> = null;
-    let messageForPromiseCheck = '';
+    let result: U;
     let messageForExpect = '';
 
     if (isNotNull(input)) {
-        result = transformer(input);
-        messageForPromiseCheck = ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE;
+        result = await transformer(input);
         messageForExpect = ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE;
     } else {
-        result = recoverer();
-        messageForPromiseCheck = ERR_MSG_RECOVERER_MUST_RETURN_PROMISE;
+        result = await recoverer();
         messageForExpect = ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE;
     }
 
-    // If this is async function, this always return Promise, but not.
-    // We should check to clarify the error case if user call this function from plain js
-    // and they mistake to use this.
-    assertIsPromise(result, messageForPromiseCheck);
-
-    const passed = result.then((result) => {
-        const unwrappedResult = expectNotNull(result, messageForExpect);
-        return unwrappedResult;
-    });
-    return passed;
+    const checked: NotNull<U> = expectNotNull(result, messageForExpect);
+    return checked;
 }
