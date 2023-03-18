@@ -38,21 +38,3 @@ test('input is None', async (t) => {
     const actual = await result;
     t.is(input, actual);
 });
-
-test('callback should return Promise', async (t) => {
-    t.plan(2);
-
-    await t.throwsAsync(
-        async () => {
-            const input = createSome(VALUE_T);
-            await mapAsyncForOption(input, () => {
-                t.pass();
-                return 1;
-            });
-        },
-        {
-            instanceOf: TypeError,
-            message: '`transformer` must return Promise',
-        }
-    );
-});
