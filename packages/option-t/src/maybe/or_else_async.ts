@@ -1,5 +1,3 @@
-import { assertIsPromise } from '../internal/assert.js';
-import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
 import type { AsyncRecoveryFn } from '../internal/function.js';
 
 import { type Maybe, isNotNullOrUndefined } from './maybe.js';
@@ -10,20 +8,14 @@ export type MaybeAsyncRecoveryFn<out T> = AsyncRecoveryFn<Maybe<T>>;
  *  Return _input_ as `T` if the passed _input_ is not `null` and `undefined`.
  *  Otherwise, return the result of _recoverer_.
  */
-export function orElseAsyncForMaybe<T>(
+export async function orElseAsyncForMaybe<T>(
     input: Maybe<T>,
     recoverer: MaybeAsyncRecoveryFn<T>
 ): Promise<Maybe<T>> {
     if (isNotNullOrUndefined(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
-    const fallback = recoverer();
-
-    // If this is async function, this always return Promise, but not.
-    // We should check to clarify the error case if user call this function from plain js
-    // and they mistake to use this.
-    assertIsPromise(fallback, ERR_MSG_RECOVERER_MUST_RETURN_PROMISE);
-
+    const fallback: Maybe<T> = await recoverer();
     return fallback;
 }
