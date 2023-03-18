@@ -35,16 +35,11 @@ export async function tryCatchIntoResultAsync<T>(
  *  1. An user should narrow the scope of _producer_ to make it predictable that is in `Err(E)`.
  *  2. This function requires ES2022's `Error.cause` to get an actual thrown object.
  */
-export function tryCatchIntoResultWithEnsureErrorAsync<T>(
+export async function tryCatchIntoResultWithEnsureErrorAsync<T>(
     producer: AsyncProducerFn<T>
 ): Promise<Result<T, Error>> {
-    const result = tryCatchIntoResultAsync(producer);
-    const ensured: Promise<Result<T, Error>> = result.then(ensureErrorInResultErr);
-    return ensured;
-}
-
-function ensureErrorInResultErr<T>(input: Result<T, unknown>): Result<T, Error> {
-    const ensured = mapErrForResult(input, checkThrownIsError);
+    const result: Result<T, unknown> = await tryCatchIntoResultAsync(producer);
+    const ensured: Result<T, Error> = mapErrForResult(result, checkThrownIsError);
     return ensured;
 }
 
