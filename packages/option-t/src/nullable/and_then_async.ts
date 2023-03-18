@@ -1,5 +1,3 @@
-import { assertIsPromise } from '../internal/assert.js';
-import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
 import type { AsyncTransformFn } from '../internal/function.js';
 import { type Nullable, isNull } from './nullable.js';
 
@@ -14,18 +12,14 @@ export type NullableAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Nulla
  *  But we don't provide `flatMap()` as alias of this function.
  *  because it's too hard to undarstand that "flatMap" operation for `T | null`
  */
-export function andThenAsyncForNullable<T, U>(
+export async function andThenAsyncForNullable<T, U>(
     input: Nullable<T>,
     transformer: NullableAsyncTryTransformFn<T, U>
 ): Promise<Nullable<U>> {
     if (isNull(input)) {
-        return Promise.resolve<Nullable<U>>(input);
+        return null;
     }
 
-    const result: Promise<Nullable<U>> = transformer(input);
-    // If this is async function, this always return Promise, but not.
-    // We should check to clarify the error case if user call this function from plain js
-    // and they mistake to use this.
-    assertIsPromise(result, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
+    const result: Nullable<U> = await transformer(input);
     return result;
 }
