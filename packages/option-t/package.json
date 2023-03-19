@@ -123,6 +123,10 @@
             "types": "./cjs/maybe/ok_or_else.d.cts",
             "default": "./cjs/maybe/ok_or_else.cjs"
         },
+        "./cjs/Maybe/okOrElseAsync": {
+            "types": "./cjs/maybe/ok_or_else_async.d.cts",
+            "default": "./cjs/maybe/ok_or_else_async.cjs"
+        },
         "./cjs/Maybe/or": {
             "types": "./cjs/maybe/or.d.cts",
             "default": "./cjs/maybe/or.cjs"
@@ -742,6 +746,10 @@
         "./esm/Maybe/okOrElse": {
             "types": "./esm/maybe/ok_or_else.d.ts",
             "default": "./esm/maybe/ok_or_else.js"
+        },
+        "./esm/Maybe/okOrElseAsync": {
+            "types": "./esm/maybe/ok_or_else_async.d.ts",
+            "default": "./esm/maybe/ok_or_else_async.js"
         },
         "./esm/Maybe/or": {
             "types": "./esm/maybe/or.d.ts",
@@ -1565,6 +1573,20 @@
             "default": {
                 "types": "./esm/maybe/ok_or_else.d.ts",
                 "default": "./esm/maybe/ok_or_else.js"
+            }
+        },
+        "./Maybe/okOrElseAsync": {
+            "import": {
+                "types": "./esm/maybe/ok_or_else_async.d.ts",
+                "default": "./esm/maybe/ok_or_else_async.js"
+            },
+            "require": {
+                "types": "./cjs/maybe/ok_or_else_async.d.cts",
+                "default": "./cjs/maybe/ok_or_else_async.cjs"
+            },
+            "default": {
+                "types": "./esm/maybe/ok_or_else_async.d.ts",
+                "default": "./esm/maybe/ok_or_else_async.js"
             }
         },
         "./Maybe/or": {

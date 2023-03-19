@@ -34,6 +34,7 @@ export const apiTable = Object.freeze({
     'Maybe/namespace': pathRedirectionTo(`${MAYBE_DIR}/namespace`),
     'Maybe/okOr': pathRedirectionTo(`${MAYBE_DIR}/ok_or`),
     'Maybe/okOrElse': pathRedirectionTo(`${MAYBE_DIR}/ok_or_else`),
+    'Maybe/okOrElseAsync': pathRedirectionTo(`${MAYBE_DIR}/ok_or_else_async`),
     'Maybe/or': pathRedirectionTo(`${MAYBE_DIR}/or`),
     'Maybe/orElse': pathRedirectionTo(`${MAYBE_DIR}/or_else`),
     'Maybe/orElseAsync': pathRedirectionTo(`${MAYBE_DIR}/or_else_async`),

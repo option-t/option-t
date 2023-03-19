@@ -22,6 +22,7 @@
 - [option-t/Maybe/namespace](../packages/option-t/src/maybe/namespace.ts)
 - [option-t/Maybe/okOr](../packages/option-t/src/maybe/ok_or.ts)
 - [option-t/Maybe/okOrElse](../packages/option-t/src/maybe/ok_or_else.ts)
+- [option-t/Maybe/okOrElseAsync](../packages/option-t/src/maybe/ok_or_else_async.ts)
 - [option-t/Maybe/or](../packages/option-t/src/maybe/or.ts)
 - [option-t/Maybe/orElse](../packages/option-t/src/maybe/or_else.ts)
 - [option-t/Maybe/orElseAsync](../packages/option-t/src/maybe/or_else_async.ts)
