@@ -623,6 +623,10 @@
             "types": "./cjs/undefinable/ok_or_else.d.cts",
             "default": "./cjs/undefinable/ok_or_else.cjs"
         },
+        "./cjs/Undefinable/okOrElseAsync": {
+            "types": "./cjs/undefinable/ok_or_else_async.d.cts",
+            "default": "./cjs/undefinable/ok_or_else_async.cjs"
+        },
         "./cjs/Undefinable/or": {
             "types": "./cjs/undefinable/or.d.cts",
             "default": "./cjs/undefinable/or.cjs"
@@ -1238,6 +1242,10 @@
         "./esm/Undefinable/okOrElse": {
             "types": "./esm/undefinable/ok_or_else.d.ts",
             "default": "./esm/undefinable/ok_or_else.js"
+        },
+        "./esm/Undefinable/okOrElseAsync": {
+            "types": "./esm/undefinable/ok_or_else_async.d.ts",
+            "default": "./esm/undefinable/ok_or_else_async.js"
         },
         "./esm/Undefinable/or": {
             "types": "./esm/undefinable/or.d.ts",
@@ -3307,6 +3315,20 @@
             "default": {
                 "types": "./esm/undefinable/ok_or_else.d.ts",
                 "default": "./esm/undefinable/ok_or_else.js"
+            }
+        },
+        "./Undefinable/okOrElseAsync": {
+            "import": {
+                "types": "./esm/undefinable/ok_or_else_async.d.ts",
+                "default": "./esm/undefinable/ok_or_else_async.js"
+            },
+            "require": {
+                "types": "./cjs/undefinable/ok_or_else_async.d.cts",
+                "default": "./cjs/undefinable/ok_or_else_async.cjs"
+            },
+            "default": {
+                "types": "./esm/undefinable/ok_or_else_async.d.ts",
+                "default": "./esm/undefinable/ok_or_else_async.js"
             }
         },
         "./Undefinable/or": {

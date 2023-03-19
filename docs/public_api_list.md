@@ -163,6 +163,7 @@
 - [option-t/Undefinable/namespace](../packages/option-t/src/undefinable/namespace.ts)
 - [option-t/Undefinable/okOr](../packages/option-t/src/undefinable/ok_or.ts)
 - [option-t/Undefinable/okOrElse](../packages/option-t/src/undefinable/ok_or_else.ts)
+- [option-t/Undefinable/okOrElseAsync](../packages/option-t/src/undefinable/ok_or_else_async.ts)
 - [option-t/Undefinable/or](../packages/option-t/src/undefinable/or.ts)
 - [option-t/Undefinable/orElse](../packages/option-t/src/undefinable/or_else.ts)
 - [option-t/Undefinable/orElseAsync](../packages/option-t/src/undefinable/or_else_async.ts)

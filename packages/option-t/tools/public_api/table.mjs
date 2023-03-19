@@ -167,6 +167,7 @@ export const apiTable = Object.freeze({
     'Undefinable/namespace': pathRedirectionTo(`${UNDEFINABLE_DIR}/namespace`),
     'Undefinable/okOr': pathRedirectionTo(`${UNDEFINABLE_DIR}/ok_or`),
     'Undefinable/okOrElse': pathRedirectionTo(`${UNDEFINABLE_DIR}/ok_or_else`),
+    'Undefinable/okOrElseAsync': pathRedirectionTo(`${UNDEFINABLE_DIR}/ok_or_else_async`),
     'Undefinable/or': pathRedirectionTo(`${UNDEFINABLE_DIR}/or`),
     'Undefinable/orElse': pathRedirectionTo(`${UNDEFINABLE_DIR}/or_else`),
     'Undefinable/orElseAsync': pathRedirectionTo(`${UNDEFINABLE_DIR}/or_else_async`),
