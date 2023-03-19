@@ -235,6 +235,10 @@
             "types": "./cjs/nullable/ok_or_else.d.cts",
             "default": "./cjs/nullable/ok_or_else.cjs"
         },
+        "./cjs/Nullable/okOrElseAsync": {
+            "types": "./cjs/nullable/ok_or_else_async.d.cts",
+            "default": "./cjs/nullable/ok_or_else_async.cjs"
+        },
         "./cjs/Nullable/or": {
             "types": "./cjs/nullable/or.d.cts",
             "default": "./cjs/nullable/or.cjs"
@@ -846,6 +850,10 @@
         "./esm/Nullable/okOrElse": {
             "types": "./esm/nullable/ok_or_else.d.ts",
             "default": "./esm/nullable/ok_or_else.js"
+        },
+        "./esm/Nullable/okOrElseAsync": {
+            "types": "./esm/nullable/ok_or_else_async.d.ts",
+            "default": "./esm/nullable/ok_or_else_async.js"
         },
         "./esm/Nullable/or": {
             "types": "./esm/nullable/or.d.ts",
@@ -1941,6 +1949,20 @@
             "default": {
                 "types": "./esm/nullable/ok_or_else.d.ts",
                 "default": "./esm/nullable/ok_or_else.js"
+            }
+        },
+        "./Nullable/okOrElseAsync": {
+            "import": {
+                "types": "./esm/nullable/ok_or_else_async.d.ts",
+                "default": "./esm/nullable/ok_or_else_async.js"
+            },
+            "require": {
+                "types": "./cjs/nullable/ok_or_else_async.d.cts",
+                "default": "./cjs/nullable/ok_or_else_async.cjs"
+            },
+            "default": {
+                "types": "./esm/nullable/ok_or_else_async.d.ts",
+                "default": "./esm/nullable/ok_or_else_async.js"
             }
         },
         "./Nullable/or": {

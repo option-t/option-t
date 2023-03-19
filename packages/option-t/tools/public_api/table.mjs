@@ -63,6 +63,7 @@ export const apiTable = Object.freeze({
     'Nullable/namespace': pathRedirectionTo(`${NULLABLE_DIR}/namespace`),
     'Nullable/okOr': pathRedirectionTo(`${NULLABLE_DIR}/ok_or`),
     'Nullable/okOrElse': pathRedirectionTo(`${NULLABLE_DIR}/ok_or_else`),
+    'Nullable/okOrElseAsync': pathRedirectionTo(`${NULLABLE_DIR}/ok_or_else_async`),
     'Nullable/or': pathRedirectionTo(`${NULLABLE_DIR}/or`),
     'Nullable/orElse': pathRedirectionTo(`${NULLABLE_DIR}/or_else`),
     'Nullable/orElseAsync': pathRedirectionTo(`${NULLABLE_DIR}/or_else_async`),

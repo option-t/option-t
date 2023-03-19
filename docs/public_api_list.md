@@ -54,6 +54,7 @@
 - [option-t/Nullable/namespace](../packages/option-t/src/nullable/namespace.ts)
 - [option-t/Nullable/okOr](../packages/option-t/src/nullable/ok_or.ts)
 - [option-t/Nullable/okOrElse](../packages/option-t/src/nullable/ok_or_else.ts)
+- [option-t/Nullable/okOrElseAsync](../packages/option-t/src/nullable/ok_or_else_async.ts)
 - [option-t/Nullable/or](../packages/option-t/src/nullable/or.ts)
 - [option-t/Nullable/orElse](../packages/option-t/src/nullable/or_else.ts)
 - [option-t/Nullable/orElseAsync](../packages/option-t/src/nullable/or_else_async.ts)
