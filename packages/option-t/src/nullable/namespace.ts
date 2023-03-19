@@ -26,6 +26,7 @@ export { mapOrElseAsyncForNullable as mapOrElseAsync } from './map_or_else_async
 // export { orForNullable as or } from './or.js';
 export { okOrForNullable as okOr } from './ok_or.js';
 export { okOrElseForNullable as okOrElse } from './ok_or_else.js';
+export { okOrElseAsyncForNullable as okOrElseAsync } from './ok_or_else_async.js';
 export { orElseForNullable as orElse } from './or_else.js';
 export { orElseAsyncForNullable as orElseAsync } from './or_else_async.js';
 export { toUndefinableFromNullable as toUndefinable } from './to_undefinable.js';

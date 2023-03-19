@@ -123,6 +123,10 @@
             "types": "./cjs/maybe/ok_or_else.d.cts",
             "default": "./cjs/maybe/ok_or_else.cjs"
         },
+        "./cjs/Maybe/okOrElseAsync": {
+            "types": "./cjs/maybe/ok_or_else_async.d.cts",
+            "default": "./cjs/maybe/ok_or_else_async.cjs"
+        },
         "./cjs/Maybe/or": {
             "types": "./cjs/maybe/or.d.cts",
             "default": "./cjs/maybe/or.cjs"
@@ -234,6 +238,10 @@
         "./cjs/Nullable/okOrElse": {
             "types": "./cjs/nullable/ok_or_else.d.cts",
             "default": "./cjs/nullable/ok_or_else.cjs"
+        },
+        "./cjs/Nullable/okOrElseAsync": {
+            "types": "./cjs/nullable/ok_or_else_async.d.cts",
+            "default": "./cjs/nullable/ok_or_else_async.cjs"
         },
         "./cjs/Nullable/or": {
             "types": "./cjs/nullable/or.d.cts",
@@ -619,6 +627,10 @@
             "types": "./cjs/undefinable/ok_or_else.d.cts",
             "default": "./cjs/undefinable/ok_or_else.cjs"
         },
+        "./cjs/Undefinable/okOrElseAsync": {
+            "types": "./cjs/undefinable/ok_or_else_async.d.cts",
+            "default": "./cjs/undefinable/ok_or_else_async.cjs"
+        },
         "./cjs/Undefinable/or": {
             "types": "./cjs/undefinable/or.d.cts",
             "default": "./cjs/undefinable/or.cjs"
@@ -735,6 +747,10 @@
             "types": "./esm/maybe/ok_or_else.d.ts",
             "default": "./esm/maybe/ok_or_else.js"
         },
+        "./esm/Maybe/okOrElseAsync": {
+            "types": "./esm/maybe/ok_or_else_async.d.ts",
+            "default": "./esm/maybe/ok_or_else_async.js"
+        },
         "./esm/Maybe/or": {
             "types": "./esm/maybe/or.d.ts",
             "default": "./esm/maybe/or.js"
@@ -846,6 +862,10 @@
         "./esm/Nullable/okOrElse": {
             "types": "./esm/nullable/ok_or_else.d.ts",
             "default": "./esm/nullable/ok_or_else.js"
+        },
+        "./esm/Nullable/okOrElseAsync": {
+            "types": "./esm/nullable/ok_or_else_async.d.ts",
+            "default": "./esm/nullable/ok_or_else_async.js"
         },
         "./esm/Nullable/or": {
             "types": "./esm/nullable/or.d.ts",
@@ -1231,6 +1251,10 @@
             "types": "./esm/undefinable/ok_or_else.d.ts",
             "default": "./esm/undefinable/ok_or_else.js"
         },
+        "./esm/Undefinable/okOrElseAsync": {
+            "types": "./esm/undefinable/ok_or_else_async.d.ts",
+            "default": "./esm/undefinable/ok_or_else_async.js"
+        },
         "./esm/Undefinable/or": {
             "types": "./esm/undefinable/or.d.ts",
             "default": "./esm/undefinable/or.js"
@@ -1549,6 +1573,20 @@
             "default": {
                 "types": "./esm/maybe/ok_or_else.d.ts",
                 "default": "./esm/maybe/ok_or_else.js"
+            }
+        },
+        "./Maybe/okOrElseAsync": {
+            "import": {
+                "types": "./esm/maybe/ok_or_else_async.d.ts",
+                "default": "./esm/maybe/ok_or_else_async.js"
+            },
+            "require": {
+                "types": "./cjs/maybe/ok_or_else_async.d.cts",
+                "default": "./cjs/maybe/ok_or_else_async.cjs"
+            },
+            "default": {
+                "types": "./esm/maybe/ok_or_else_async.d.ts",
+                "default": "./esm/maybe/ok_or_else_async.js"
             }
         },
         "./Maybe/or": {
@@ -1941,6 +1979,20 @@
             "default": {
                 "types": "./esm/nullable/ok_or_else.d.ts",
                 "default": "./esm/nullable/ok_or_else.js"
+            }
+        },
+        "./Nullable/okOrElseAsync": {
+            "import": {
+                "types": "./esm/nullable/ok_or_else_async.d.ts",
+                "default": "./esm/nullable/ok_or_else_async.js"
+            },
+            "require": {
+                "types": "./cjs/nullable/ok_or_else_async.d.cts",
+                "default": "./cjs/nullable/ok_or_else_async.cjs"
+            },
+            "default": {
+                "types": "./esm/nullable/ok_or_else_async.d.ts",
+                "default": "./esm/nullable/ok_or_else_async.js"
             }
         },
         "./Nullable/or": {
@@ -3285,6 +3337,20 @@
             "default": {
                 "types": "./esm/undefinable/ok_or_else.d.ts",
                 "default": "./esm/undefinable/ok_or_else.js"
+            }
+        },
+        "./Undefinable/okOrElseAsync": {
+            "import": {
+                "types": "./esm/undefinable/ok_or_else_async.d.ts",
+                "default": "./esm/undefinable/ok_or_else_async.js"
+            },
+            "require": {
+                "types": "./cjs/undefinable/ok_or_else_async.d.cts",
+                "default": "./cjs/undefinable/ok_or_else_async.cjs"
+            },
+            "default": {
+                "types": "./esm/undefinable/ok_or_else_async.d.ts",
+                "default": "./esm/undefinable/ok_or_else_async.js"
             }
         },
         "./Undefinable/or": {

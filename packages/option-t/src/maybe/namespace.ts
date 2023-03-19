@@ -27,6 +27,7 @@ export { mapOrElseAsyncForMaybe as mapOrElseAsync } from './map_or_else_async.js
 // default set. export { orForMaybe as or } from './or.js';
 export { okOrForMaybe as okOr } from './ok_or.js';
 export { okOrElseForMaybe as okOrElse } from './ok_or_else.js';
+export { okOrElseAsyncForMaybe as okOrElseAsync } from './ok_or_else_async.js';
 export { orElseForMaybe as orElse } from './or_else.js';
 export { orElseAsyncForMaybe as orElseAsync } from './or_else_async.js';
 export { toNullableFromMaybe as toNullable } from './to_nullable.js';
