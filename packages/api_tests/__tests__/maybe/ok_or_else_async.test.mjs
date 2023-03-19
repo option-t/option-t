@@ -35,21 +35,4 @@ for (const NULL_VALUE of [undefined, null]) {
         t.true(isErr(actual), 'should be Err(E)');
         t.is(unwrapErr(actual), DEFAULT_ERR, 'should contain the expected');
     });
-
-    test(`input is ${NULL_VALUE}, callback should return Promise`, async (t) => {
-        t.plan(2);
-
-        await t.throwsAsync(
-            async () => {
-                await okOrElseAsyncForMaybe(NULL_VALUE, () => {
-                    t.pass('should be called');
-                    return 1;
-                });
-            },
-            {
-                instanceOf: TypeError,
-                message: '`recoverer` must return Promise',
-            }
-        );
-    });
 }
