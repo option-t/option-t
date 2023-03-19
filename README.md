@@ -132,11 +132,13 @@ We target to run in following environments.
 
 ```sh
 npm install --save option-t
-// or
-yarn add option-t --save
+
+# If your project still...
+#   1. Use TypeScript with `--moduleResolution node` or `--moduleResolution node10` setting.
+#   2. Or use some other tools that does not support Node.js's package.json's `exports` field.
+#       - For example, `eslint-plugin-import@2.27.5`'s `import/no-unresolved` rule would be affected.
+npm install --save option-t@^35
 ```
-
-
 
 
 

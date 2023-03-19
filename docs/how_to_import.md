@@ -33,8 +33,3 @@ const { isNotNull } = require('option-t/cjs/Nullable');
 const { unwrapNullable } = require('option-t/cjs/Nullable/unwrap');
 const { createOk, isOk } = require('option-t/cjs/PlainResult');
 ```
-
-
-## For TypeScript with `--moduleResolution node` (or `--moduleResolution node10`)
-
-Please use [**`v35`**](https://github.com/option-t/option-t/tree/v35.0.0).
