@@ -8,8 +8,6 @@
 - [Wrapper objects](./wrapper_objects.md): The guide for _deprecated_ wrappaer object based on class implementation.
 
 
-## Migration Guide
+## [Migration Guide](./migration/)
 
 We sometimes write up migration guides for "impactful" breaking changes.
-
-- [Migrate to v34 from v33](./migration/v34.md)
