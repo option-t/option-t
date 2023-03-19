@@ -10,8 +10,8 @@ export function compatToPlainResult<T, E>(classic: ClassicResult<T, E>): PlainRe
         return result;
     }
 
-    const e: E = classic.unwrapErr();
-    const result = createErr<E>(e);
+    const err: E = classic.unwrapErr();
+    const result = createErr<E>(err);
     return result;
 }
 
@@ -22,7 +22,7 @@ export function compatToClassicResult<T, E>(plain: PlainResult<T, E>): ClassicRe
         return result;
     }
 
-    const e: E = unwrapErrFromResult(plain);
-    const result = createClassicErr<T, E>(e);
+    const err: E = unwrapErrFromResult(plain);
+    const result = createClassicErr<T, E>(err);
     return result;
 }

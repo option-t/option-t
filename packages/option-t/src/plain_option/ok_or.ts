@@ -10,10 +10,10 @@ import { type Result, createErr, createOk } from '../plain_result/result.js';
  */
 export function okOrForPlainOption<T, E>(input: Option<T>, err: E): Result<T, E> {
     if (input.ok) {
-        const v = createOk<T>(input.val);
-        return v;
+        const okWrapped = createOk<T>(input.val);
+        return okWrapped;
     }
 
-    const e = createErr<E>(err);
-    return e;
+    const errWrapped = createErr<E>(err);
+    return errWrapped;
 }

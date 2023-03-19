@@ -8,11 +8,11 @@ import type { RecoveryFn } from '../internal/function.js';
  */
 export function okOrElseForMaybe<T, E>(input: Maybe<T>, recoverer: RecoveryFn<E>): Result<T, E> {
     if (isNotNullOrUndefined(input)) {
-        const v = createOk<T>(input);
-        return v;
+        const okWrapped = createOk<T>(input);
+        return okWrapped;
     }
 
-    const e: E = recoverer();
-    const v = createErr<E>(e);
-    return v;
+    const fallback: E = recoverer();
+    const errWrapped = createErr<E>(fallback);
+    return errWrapped;
 }

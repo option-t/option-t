@@ -13,11 +13,11 @@ import { type Result, createOk, createErr } from './result.js';
 export function tryCatchIntoResult<T>(producer: ProducerFn<T>): Result<T, unknown> {
     try {
         const value: T = producer();
-        const ok = createOk<T>(value);
-        return ok;
+        const okWrapped = createOk<T>(value);
+        return okWrapped;
     } catch (e: unknown) {
-        const err = createErr<unknown>(e);
-        return err;
+        const errWrapped = createErr<unknown>(e);
+        return errWrapped;
     }
 }
 
@@ -33,11 +33,11 @@ export function tryCatchIntoResult<T>(producer: ProducerFn<T>): Result<T, unknow
 export function tryCatchIntoResultWithEnsureError<T>(producer: ProducerFn<T>): Result<T, Error> {
     try {
         const value: T = producer();
-        const ok = createOk<T>(value);
-        return ok;
+        const okWrapped = createOk<T>(value);
+        return okWrapped;
     } catch (e: unknown) {
         assertIsErrorInstance(e, ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE);
-        const err = createErr<Error>(e);
-        return err;
+        const errWrapped = createErr<Error>(e);
+        return errWrapped;
     }
 }
