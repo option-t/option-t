@@ -153,7 +153,7 @@ All APIs are TypeScript ready.
     * [`Maybe<T>` (`T | null | undefined`)](./docs/public_api_list.md#maybe)
     * plain objects
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./docs/public_api_list.md#plainresult)
-        * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./docs/public_api_list.md#plainoption) (_weak deprecated_)
+        * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./docs/public_api_list.md#plainoption) (_deprecated_)
 * [Wrapper objects](./docs/wrapper_objects.md) ([__*deprecated*__](https://github.com/option-t/option-t/issues/459)).
 
 Additional documents are in [`docs/`](./docs/).
