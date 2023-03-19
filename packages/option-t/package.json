@@ -1,6 +1,6 @@
 {
     "name": "option-t",
-    "version": "37.0.2",
+    "version": "37.0.3",
     "description": "Types and implementations whose APIs are inspired by Rust's `Option<T>` and `Result<T, E>`.",
     "type": "module",
     "files": [
