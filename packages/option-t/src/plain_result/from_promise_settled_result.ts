@@ -10,13 +10,13 @@ export function fromPromiseSettledResultToResult<T>(
     switch (status) {
         case 'fulfilled': {
             const value = input.value;
-            const ok = createOk(value);
-            return ok;
+            const okWrapped = createOk(value);
+            return okWrapped;
         }
         case 'rejected': {
             const reason = input.reason;
-            const err = createErr(reason);
-            return err;
+            const errWrapped = createErr(reason);
+            return errWrapped;
         }
         default: {
             const statusStr = String(status);

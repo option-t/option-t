@@ -12,8 +12,8 @@ import { type Result, type Ok, type Err, isErr, createOk, createErr, unwrapOk } 
  */
 export function transposeForResult<T, E>(input: Result<Option<T>, E>): Option<Result<T, E>> {
     if (isErr(input)) {
-        const e: E = input.err;
-        const newErr: Err<E> = createErr(e);
+        const err: E = input.err;
+        const newErr: Err<E> = createErr(err);
         const result: Some<Err<E>> = createSome<Err<E>>(newErr);
         return result;
     }

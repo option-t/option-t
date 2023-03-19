@@ -11,10 +11,10 @@ import { type Result, createErr, createOk } from '../plain_result/result.js';
  */
 export function okOrForMaybe<T, E>(input: Maybe<T>, err: E): Result<T, E> {
     if (isNotNullOrUndefined(input)) {
-        const v = createOk<T>(input);
-        return v;
+        const okWrapped = createOk<T>(input);
+        return okWrapped;
     }
 
-    const e = createErr<E>(err);
-    return e;
+    const errWrapped = createErr<E>(err);
+    return errWrapped;
 }

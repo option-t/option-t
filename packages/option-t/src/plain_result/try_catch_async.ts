@@ -21,8 +21,8 @@ export function tryCatchIntoResultAsync<T>(
     try {
         value = producer();
     } catch (e: unknown) {
-        const err = createErr<unknown>(e);
-        return Promise.resolve(err);
+        const errWrapped = createErr<unknown>(e);
+        return Promise.resolve(errWrapped);
     }
 
     assertIsPromise(value, ERR_MSG_PRODUCER_MUST_RETURN_PROMISE);

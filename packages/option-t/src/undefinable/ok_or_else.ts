@@ -11,11 +11,11 @@ export function okOrElseForUndefinable<T, E>(
     recoverer: RecoveryFn<E>
 ): Result<T, E> {
     if (isNotUndefined(input)) {
-        const v = createOk<T>(input);
-        return v;
+        const okWrapped = createOk<T>(input);
+        return okWrapped;
     }
 
-    const e: E = recoverer();
-    const v = createErr<E>(e);
-    return v;
+    const fallback: E = recoverer();
+    const errWrapped = createErr<E>(fallback);
+    return errWrapped;
 }

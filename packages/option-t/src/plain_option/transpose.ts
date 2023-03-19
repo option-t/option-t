@@ -24,8 +24,8 @@ export function transposeForOption<T, E>(input: Option<Result<T, E>>): Result<Op
 
     const inner: Result<T, E> = input.val;
     if (isErr(inner)) {
-        const e: E = inner.err;
-        const result: Err<E> = createErr(e);
+        const err: E = inner.err;
+        const result: Err<E> = createErr(err);
         return result;
     }
 
