@@ -68,6 +68,7 @@
 - [option-t/Nullable/unwrapOrElseAsync](../packages/option-t/src/nullable/unwrap_or_else_async.ts)
 - [option-t/Nullable/xor](../packages/option-t/src/nullable/xor.ts)
 - [option-t/Nullable/zip](../packages/option-t/src/nullable/zip.ts)
+- [option-t/Nullable/zipWith](../packages/option-t/src/nullable/zip_with.ts)
 
 
 ## PlainOption
