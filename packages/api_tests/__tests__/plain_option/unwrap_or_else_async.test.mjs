@@ -35,21 +35,3 @@ test('input is None', async (t) => {
     const actual = await result;
     t.is(actual, DEFAULT_VAL);
 });
-
-test('callback should return Promise', async (t) => {
-    t.plan(2);
-
-    await t.throwsAsync(
-        async () => {
-            const input = createNone();
-            await unwrapOrElseAsyncFromOption(input, () => {
-                t.pass();
-                return createNone();
-            });
-        },
-        {
-            instanceOf: TypeError,
-            message: '`recoverer` must return Promise',
-        }
-    );
-});

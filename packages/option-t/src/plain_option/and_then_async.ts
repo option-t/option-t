@@ -1,5 +1,3 @@
-import { assertIsPromise } from '../internal/assert.js';
-import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
 import type { AsyncTransformFn } from '../internal/function.js';
 import { type Option, isNone } from './option.js';
 import { unwrapOption } from './unwrap.js';
@@ -15,20 +13,15 @@ export type OptionAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Option<
  *  But we don't provide `flatMap()` as alias of this function
  *  to sort with other APIs.
  */
-export function andThenAsyncForOption<T, U>(
+export async function andThenAsyncForOption<T, U>(
     input: Option<T>,
     transformer: OptionAsyncTryTransformFn<T, U>
 ): Promise<Option<U>> {
     if (isNone(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
     const inner: T = unwrapOption(input);
-    const result = transformer(inner);
-
-    // If this is async function, this always return Promise, but not.
-    // We should check to clarify the error case if user call this function from plain js
-    // and they mistake to use this.
-    assertIsPromise(result, ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE);
+    const result: Option<U> = await transformer(inner);
     return result;
 }
