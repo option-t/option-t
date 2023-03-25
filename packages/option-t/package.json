@@ -3,6 +3,9 @@
     "version": "37.2.1",
     "description": "Types and implementations whose APIs are inspired by Rust's `Option<T>` and `Result<T, E>`.",
     "type": "module",
+    "engines": {
+        "node": ">=14.21.0"
+    },
     "files": [
         "CHANGELOG.md",
         "CHANGELOG_OLD.md",
