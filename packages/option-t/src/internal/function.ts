@@ -3,6 +3,7 @@ export type RecoveryFn<out T> = () => T;
 export type RecoveryFromErrorFn<in E, out T> = TransformFn<E, T>;
 export type EffectFn<in T> = (input: T) => void;
 export type FilterFn<in T> = (input: T) => boolean;
+export type TypePredicateFn<in T, out U extends T> = (input: T) => input is U;
 export type ProducerFn<out T> = () => T;
 export type ZipTransformerFn<in T, in U, out R> = (a: T, b: U) => R;
 

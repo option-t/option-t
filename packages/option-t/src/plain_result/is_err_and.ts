@@ -1,0 +1,29 @@
+import type { FilterFn, TypePredicateFn } from '../internal/function.js';
+import { isOk, unwrapErr, type Result, type Err } from './result.js';
+
+/**
+ *  Returns `true` if the _result_ is `Err<E>` and the value inside of it matches a _predicate_.
+ */
+export function isErrAnd<T, E>(result: Result<T, E>, predicate: FilterFn<E>): boolean {
+    if (isOk(result)) {
+        return false;
+    }
+
+    const err: E = unwrapErr(result);
+    const ok: boolean = predicate(err);
+    return ok;
+}
+
+/**
+ *  Returns `true` if the _result_ is `Ok<T>` and the value inside of it matches a _predicate_.
+ *  Then _result_ would be `Err<F>`.
+ *
+ *  Please use {@link isErrAnd} generally if you don't have to narrow the type.
+ */
+export function isErrAndWithEnsureType<T, E, F extends E>(
+    result: Result<T, E>,
+    predicate: TypePredicateFn<E, F>
+): result is Err<F> {
+    const ok = isErrAnd(result, predicate);
+    return ok;
+}
