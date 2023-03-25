@@ -302,6 +302,10 @@
             "types": "./cjs/nullable/zip_with.d.cts",
             "default": "./cjs/nullable/zip_with.cjs"
         },
+        "./cjs/Nullable/zipWithAsync": {
+            "types": "./cjs/nullable/zip_with_async.d.cts",
+            "default": "./cjs/nullable/zip_with_async.cjs"
+        },
         "./cjs/PlainOption": {
             "types": "./cjs/plain_option/index.d.cts",
             "default": "./cjs/plain_option/index.cjs"
@@ -949,6 +953,10 @@
         "./esm/Nullable/zipWith": {
             "types": "./esm/nullable/zip_with.d.ts",
             "default": "./esm/nullable/zip_with.js"
+        },
+        "./esm/Nullable/zipWithAsync": {
+            "types": "./esm/nullable/zip_with_async.d.ts",
+            "default": "./esm/nullable/zip_with_async.js"
         },
         "./esm/PlainOption": {
             "types": "./esm/plain_option/index.d.ts",
@@ -2240,6 +2248,20 @@
             "default": {
                 "types": "./esm/nullable/zip_with.d.ts",
                 "default": "./esm/nullable/zip_with.js"
+            }
+        },
+        "./Nullable/zipWithAsync": {
+            "import": {
+                "types": "./esm/nullable/zip_with_async.d.ts",
+                "default": "./esm/nullable/zip_with_async.js"
+            },
+            "require": {
+                "types": "./cjs/nullable/zip_with_async.d.cts",
+                "default": "./cjs/nullable/zip_with_async.cjs"
+            },
+            "default": {
+                "types": "./esm/nullable/zip_with_async.d.ts",
+                "default": "./esm/nullable/zip_with_async.js"
             }
         },
         "./PlainOption": {

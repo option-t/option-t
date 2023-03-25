@@ -70,6 +70,7 @@
 - [option-t/Nullable/xor](../packages/option-t/src/nullable/xor.ts)
 - [option-t/Nullable/zip](../packages/option-t/src/nullable/zip.ts)
 - [option-t/Nullable/zipWith](../packages/option-t/src/nullable/zip_with.ts)
+- [option-t/Nullable/zipWithAsync](../packages/option-t/src/nullable/zip_with_async.ts)
 
 
 ## PlainOption
