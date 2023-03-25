@@ -4,10 +4,7 @@
  *  @deprecated
  *      See https://github.com/option-t/option-t/issues/459
  *
- *  @constructor
  *  @template   T
- *  @param  {boolean}   ok
- *  @param  {T|undefined} val
  *
  *  A base object of `Option<T>`.
  *  This is only used to `option instanceof OptionT`
@@ -15,22 +12,28 @@
  *
  *  The usecase example is a `React.PropTypes.
  */
-export function ClassicOptionBase(ok, val) {
+export class ClassicOptionBase {
     /**
-     *  @private
-     *  @type   {boolean}
+     *  @template   T
+     *  @param  {boolean}   ok
+     *  @param  {T|undefined} val
      */
-    this.ok = ok;
+    constructor(ok, val) {
+        /**
+         *  @private
+         *  @type   {boolean}
+         */
+        this.ok = ok;
 
-    /**
-     *  @private
-     *  @type   {T|undefined}
-     */
-    this.val = val;
+        /**
+         *  @private
+         *  @type   {T|undefined}
+         */
+        this.val = val;
 
-    Object.seal(this);
-}
-ClassicOptionBase.prototype = Object.freeze({
+        Object.seal(this);
+    }
+
     /**
      *  Return whether this is `Some<T>` or not.
      *
@@ -38,7 +41,7 @@ ClassicOptionBase.prototype = Object.freeze({
      */
     get isSome() {
         return this.ok;
-    },
+    }
 
     /**
      *  Return whether this is `None` or not.
@@ -47,7 +50,7 @@ ClassicOptionBase.prototype = Object.freeze({
      */
     get isNone() {
         return !this.ok;
-    },
+    }
 
     /**
      *  Returns the inner `T` of a `Some<T>`.
@@ -64,7 +67,7 @@ ClassicOptionBase.prototype = Object.freeze({
         }
 
         return this.val;
-    },
+    }
 
     /**
      *  Returns the contained value or a default value `def`.
@@ -76,7 +79,7 @@ ClassicOptionBase.prototype = Object.freeze({
      */
     unwrapOr(def) {
         return this.ok ? this.val : def;
-    },
+    }
 
     /**
      *  Returns the contained value or computes it from a closure `fn`.
@@ -88,7 +91,7 @@ ClassicOptionBase.prototype = Object.freeze({
      */
     unwrapOrElse(fn) {
         return this.ok ? this.val : fn();
-    },
+    }
 
     /**
      *  Returns the inner `T` of a `Some<T>`.
@@ -107,7 +110,7 @@ ClassicOptionBase.prototype = Object.freeze({
         }
 
         return this.val;
-    },
+    }
 
     /**
      *  Maps an `Option<T>` to `Option<U>` by applying a function to a contained value.
@@ -126,7 +129,7 @@ ClassicOptionBase.prototype = Object.freeze({
         const value = fn(this.val);
         const option = createClassicSome(value);
         return option;
-    },
+    }
 
     /**
      *  Returns `None` if the self is `None`,
@@ -150,7 +153,7 @@ ClassicOptionBase.prototype = Object.freeze({
         }
 
         return mapped;
-    },
+    }
 
     /**
      *  Applies a function `fn` to the contained value or returns a default `def`.
@@ -167,7 +170,7 @@ ClassicOptionBase.prototype = Object.freeze({
         } else {
             return def;
         }
-    },
+    }
 
     /**
      *  Applies a function `fn` to the contained value or computes a default result by `defFn`.
@@ -184,7 +187,7 @@ ClassicOptionBase.prototype = Object.freeze({
         } else {
             return defFn();
         }
-    },
+    }
 
     /**
      *  Returns `None` if the self is `None`, otherwise returns `optb`.
@@ -196,7 +199,7 @@ ClassicOptionBase.prototype = Object.freeze({
      */
     and(optb) {
         return this.ok ? optb : this;
-    },
+    }
 
     /**
      *  The alias of `Option<T>.flatMap()`.
@@ -208,7 +211,7 @@ ClassicOptionBase.prototype = Object.freeze({
      */
     andThen(fn) {
         return this.flatMap(fn);
-    },
+    }
 
     /**
      *  Returns the self if it contains a value, otherwise returns `optb`.
@@ -220,7 +223,7 @@ ClassicOptionBase.prototype = Object.freeze({
      */
     or(optb) {
         return this.ok ? this : optb;
-    },
+    }
 
     /**
      *  Returns the self if it contains a value,
@@ -242,7 +245,7 @@ ClassicOptionBase.prototype = Object.freeze({
 
             throw new TypeError("Option<T>.orElse()' param `fn` should return `Option<T>`.");
         }
-    },
+    }
 
     /**
      *  Finalize the self.
@@ -259,7 +262,7 @@ ClassicOptionBase.prototype = Object.freeze({
 
         this.val = null;
         Object.freeze(this);
-    },
+    }
 
     /**
      *  @return {*}
@@ -270,8 +273,9 @@ ClassicOptionBase.prototype = Object.freeze({
             is_some: this.ok,
             value: this.val,
         };
-    },
-});
+    }
+}
+Object.freeze(ClassicOptionBase.prototype);
 
 /**
  *  @deprecated
