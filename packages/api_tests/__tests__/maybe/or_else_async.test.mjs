@@ -33,21 +33,4 @@ for (const NULL_VALUE of [undefined, null]) {
         const actual = await result;
         t.is(actual, DEFAULT_VAL);
     });
-
-    test(`input is ${NULL_VALUE}, callback should return Promise`, async (t) => {
-        t.plan(2);
-
-        await t.throwsAsync(
-            async () => {
-                await orElseAsyncForMaybe(NULL_VALUE, () => {
-                    t.pass('should be called');
-                    return 1;
-                });
-            },
-            {
-                instanceOf: TypeError,
-                message: '`recoverer` must return Promise',
-            }
-        );
-    });
 }

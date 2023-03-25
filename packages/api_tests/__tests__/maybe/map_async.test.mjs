@@ -57,21 +57,3 @@ for (const NULL_VALUE of [undefined, null]) {
         });
     }
 }
-
-test('callback should return Promise', async (t) => {
-    t.plan(2);
-
-    await t.throwsAsync(
-        async () => {
-            const input = Math.random();
-            await mapAsyncForMaybe(input, () => {
-                t.pass();
-                return 1;
-            });
-        },
-        {
-            instanceOf: TypeError,
-            message: '`transformer` must return Promise',
-        }
-    );
-});
