@@ -679,6 +679,10 @@
             "types": "./cjs/undefinable/xor.d.cts",
             "default": "./cjs/undefinable/xor.cjs"
         },
+        "./cjs/Undefinable/zip": {
+            "types": "./cjs/undefinable/zip.d.cts",
+            "default": "./cjs/undefinable/zip.cjs"
+        },
         "./esm/ClassicOption": {
             "types": "./esm/classic_option/index.d.ts",
             "default": "./esm/classic_option/index.js"
@@ -1310,6 +1314,10 @@
         "./esm/Undefinable/xor": {
             "types": "./esm/undefinable/xor.d.ts",
             "default": "./esm/undefinable/xor.js"
+        },
+        "./esm/Undefinable/zip": {
+            "types": "./esm/undefinable/zip.d.ts",
+            "default": "./esm/undefinable/zip.js"
         },
         ".": {
             "import": {
@@ -3535,6 +3543,20 @@
             "default": {
                 "types": "./esm/undefinable/xor.d.ts",
                 "default": "./esm/undefinable/xor.js"
+            }
+        },
+        "./Undefinable/zip": {
+            "import": {
+                "types": "./esm/undefinable/zip.d.ts",
+                "default": "./esm/undefinable/zip.js"
+            },
+            "require": {
+                "types": "./cjs/undefinable/zip.d.cts",
+                "default": "./cjs/undefinable/zip.cjs"
+            },
+            "default": {
+                "types": "./esm/undefinable/zip.d.ts",
+                "default": "./esm/undefinable/zip.js"
             }
         }
     }
