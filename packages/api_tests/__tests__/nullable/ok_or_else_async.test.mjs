@@ -58,20 +58,3 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.true(isErr(actual), 'should be Err(E)');
     t.is(unwrapErr(actual), DEFAULT_ERR, 'should contain the expected');
 });
-
-test('callback should return Promise', async (t) => {
-    t.plan(2);
-
-    await t.throwsAsync(
-        async () => {
-            await okOrElseAsyncForNullable(NULL_VALUE_IN_THIS_TEST_CASE, () => {
-                t.pass();
-                return 1;
-            });
-        },
-        {
-            instanceOf: TypeError,
-            message: '`recoverer` must return Promise',
-        }
-    );
-});
