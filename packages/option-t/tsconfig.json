@@ -1,7 +1,7 @@
 {
     "extends": "../../tsconfig.json",
     "compilerOptions": {
-        // See also packages/option-t/tools/babel/babelconfig.mjs
+        // https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
         "target": "ES2017",
         "module": "es2015",
         "declaration": true,

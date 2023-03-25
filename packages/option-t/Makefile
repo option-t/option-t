@@ -145,23 +145,11 @@ __build_mjs_create_tmp_mjs: __build_tmp_base clean_tmp_mjs
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_BASE_DIR) --source '$(TMP_BASE_DIR)/**/*' --destination $(TMP_MJS_DIR)
 
 .PHONY: __build_tmp_base
-__build_tmp_base: clean_tmp_base __build_tmp_base__call_tsc __build_tmp_base__call_babel __build_tmp_base__call_cpx
+__build_tmp_base: clean_tmp_base __build_tmp_base__call_tsc
 
 .PHONY: __build_tmp_base__call_tsc
 __build_tmp_base__call_tsc: clean_tmp_base generate_manifest
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.json
-
-.PHONY: __build_tmp_base__call_babel
-__build_tmp_base__call_babel: clean_tmp_base generate_manifest
-	$(NODE_BIN) $(CURDIR)/tools/transform_files_by_babel.mjs \
-		--basedir $(SRC_DIR) \
-		--source '$(SRC_DIR)/**/*.$(MJS_EXTENSION_GLOB)' \
-		--destination $(TMP_BASE_DIR) \
-		--config $(CURDIR)/tools/babel/babelrc.esm.mjs
-
-.PHONY: __build_tmp_base__call_cpx
-__build_tmp_base__call_cpx: clean_tmp_base generate_manifest
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(SRC_DIR) --source '$(SRC_DIR)/**/*.$(DTS_EXTENSION_GLOB)' --destination $(TMP_BASE_DIR)
 
 .PHONY: cp_docs
 cp_docs: clean_dist generate_manifest
