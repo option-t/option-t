@@ -120,6 +120,8 @@
 - [option-t/PlainResult/flatten](../packages/option-t/src/plain_result/flatten.ts)
 - [option-t/PlainResult/fromPromiseSettledResult](../packages/option-t/src/plain_result/from_promise_settled_result.ts)
 - [option-t/PlainResult/inspect](../packages/option-t/src/plain_result/inspect.ts)
+- [option-t/PlainResult/isErrAnd](../packages/option-t/src/plain_result/is_err_and.ts)
+- [option-t/PlainResult/isOkAnd](../packages/option-t/src/plain_result/is_ok_and.ts)
 - [option-t/PlainResult/map](../packages/option-t/src/plain_result/map.ts)
 - [option-t/PlainResult/mapAsync](../packages/option-t/src/plain_result/map_async.ts)
 - [option-t/PlainResult/mapErr](../packages/option-t/src/plain_result/map_err.ts)
