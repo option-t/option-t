@@ -27,6 +27,7 @@ import {} from 'option-t/cjs/Undefinable/unwrapOrElse';
 import {} from 'option-t/cjs/Undefinable/unwrapOrElseAsync';
 import {} from 'option-t/cjs/Undefinable/xor';
 import {} from 'option-t/cjs/Undefinable/zip';
+import {} from 'option-t/cjs/Undefinable/zipWith';
 
 import {} from 'option-t/esm/Undefinable/Undefinable';
 import {} from 'option-t/esm/Undefinable/and';
@@ -57,6 +58,7 @@ import {} from 'option-t/esm/Undefinable/unwrapOrElse';
 import {} from 'option-t/esm/Undefinable/unwrapOrElseAsync';
 import {} from 'option-t/esm/Undefinable/xor';
 import {} from 'option-t/esm/Undefinable/zip';
+import {} from 'option-t/esm/Undefinable/zipWith';
 
 import {} from 'option-t/Undefinable';
 import {} from 'option-t/Undefinable/and';
@@ -87,3 +89,4 @@ import {} from 'option-t/Undefinable/unwrapOrElse';
 import {} from 'option-t/Undefinable/unwrapOrElseAsync';
 import {} from 'option-t/Undefinable/xor';
 import {} from 'option-t/Undefinable/zip';
+import {} from 'option-t/Undefinable/zipWith';

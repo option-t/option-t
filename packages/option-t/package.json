@@ -175,6 +175,10 @@
             "types": "./cjs/maybe/zip.d.cts",
             "default": "./cjs/maybe/zip.cjs"
         },
+        "./cjs/Maybe/zipWith": {
+            "types": "./cjs/maybe/zip_with.d.cts",
+            "default": "./cjs/maybe/zip_with.cjs"
+        },
         "./cjs/Nullable": {
             "types": "./cjs/nullable/index.d.cts",
             "default": "./cjs/nullable/index.cjs"
@@ -290,6 +294,10 @@
         "./cjs/Nullable/zip": {
             "types": "./cjs/nullable/zip.d.cts",
             "default": "./cjs/nullable/zip.cjs"
+        },
+        "./cjs/Nullable/zipWith": {
+            "types": "./cjs/nullable/zip_with.d.cts",
+            "default": "./cjs/nullable/zip_with.cjs"
         },
         "./cjs/PlainOption": {
             "types": "./cjs/plain_option/index.d.cts",
@@ -683,6 +691,10 @@
             "types": "./cjs/undefinable/zip.d.cts",
             "default": "./cjs/undefinable/zip.cjs"
         },
+        "./cjs/Undefinable/zipWith": {
+            "types": "./cjs/undefinable/zip_with.d.cts",
+            "default": "./cjs/undefinable/zip_with.cjs"
+        },
         "./esm/ClassicOption": {
             "types": "./esm/classic_option/index.d.ts",
             "default": "./esm/classic_option/index.js"
@@ -811,6 +823,10 @@
             "types": "./esm/maybe/zip.d.ts",
             "default": "./esm/maybe/zip.js"
         },
+        "./esm/Maybe/zipWith": {
+            "types": "./esm/maybe/zip_with.d.ts",
+            "default": "./esm/maybe/zip_with.js"
+        },
         "./esm/Nullable": {
             "types": "./esm/nullable/index.d.ts",
             "default": "./esm/nullable/index.js"
@@ -926,6 +942,10 @@
         "./esm/Nullable/zip": {
             "types": "./esm/nullable/zip.d.ts",
             "default": "./esm/nullable/zip.js"
+        },
+        "./esm/Nullable/zipWith": {
+            "types": "./esm/nullable/zip_with.d.ts",
+            "default": "./esm/nullable/zip_with.js"
         },
         "./esm/PlainOption": {
             "types": "./esm/plain_option/index.d.ts",
@@ -1318,6 +1338,10 @@
         "./esm/Undefinable/zip": {
             "types": "./esm/undefinable/zip.d.ts",
             "default": "./esm/undefinable/zip.js"
+        },
+        "./esm/Undefinable/zipWith": {
+            "types": "./esm/undefinable/zip_with.d.ts",
+            "default": "./esm/undefinable/zip_with.js"
         },
         ".": {
             "import": {
@@ -1781,6 +1805,20 @@
                 "default": "./esm/maybe/zip.js"
             }
         },
+        "./Maybe/zipWith": {
+            "import": {
+                "types": "./esm/maybe/zip_with.d.ts",
+                "default": "./esm/maybe/zip_with.js"
+            },
+            "require": {
+                "types": "./cjs/maybe/zip_with.d.cts",
+                "default": "./cjs/maybe/zip_with.cjs"
+            },
+            "default": {
+                "types": "./esm/maybe/zip_with.d.ts",
+                "default": "./esm/maybe/zip_with.js"
+            }
+        },
         "./Nullable": {
             "import": {
                 "types": "./esm/nullable/index.d.ts",
@@ -2185,6 +2223,20 @@
             "default": {
                 "types": "./esm/nullable/zip.d.ts",
                 "default": "./esm/nullable/zip.js"
+            }
+        },
+        "./Nullable/zipWith": {
+            "import": {
+                "types": "./esm/nullable/zip_with.d.ts",
+                "default": "./esm/nullable/zip_with.js"
+            },
+            "require": {
+                "types": "./cjs/nullable/zip_with.d.cts",
+                "default": "./cjs/nullable/zip_with.cjs"
+            },
+            "default": {
+                "types": "./esm/nullable/zip_with.d.ts",
+                "default": "./esm/nullable/zip_with.js"
             }
         },
         "./PlainOption": {
@@ -3557,6 +3609,20 @@
             "default": {
                 "types": "./esm/undefinable/zip.d.ts",
                 "default": "./esm/undefinable/zip.js"
+            }
+        },
+        "./Undefinable/zipWith": {
+            "import": {
+                "types": "./esm/undefinable/zip_with.d.ts",
+                "default": "./esm/undefinable/zip_with.js"
+            },
+            "require": {
+                "types": "./cjs/undefinable/zip_with.d.cts",
+                "default": "./cjs/undefinable/zip_with.cjs"
+            },
+            "default": {
+                "types": "./esm/undefinable/zip_with.d.ts",
+                "default": "./esm/undefinable/zip_with.js"
             }
         }
     }
