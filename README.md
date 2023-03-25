@@ -110,7 +110,7 @@ This library also provides a convenient way to handle them and its way is inspir
 We target to run in following environments.
 
 - Language
-    - [ECMA262 5th edition](https://262.ecma-international.org/5.1/).
+    - [ECMA262 2017 edition](https://262.ecma-international.org/8.0/).
     - TypeScript's latest version.
 - Module system
     - ES Module ([ES2015](https://262.ecma-international.org/6.0/) level).
@@ -122,8 +122,9 @@ We target to run in following environments.
 
 1. Your code may work with this package even if your project does not supports all of these requirements.
    But we may not be able to support such environments officially. We recommend to update your environment generally.
-2. If you would like to work this packages for a more legacy environment (e.g. ES3!)
+2. If you would like to work this packages for a more legacy environment (e.g. ES2016 or earlier)
    we recommend to transform whole of codes including your dependencies in your build pipeline.
+    - If you need to support ES5 environment, you can use [**`v37`**](https://github.com/option-t/option-t/tree/v37.2.1) too.
 3. If your project still use TypeScript's `--moduleResolution` with `node/node10` setting, please use [**`v35`**](https://github.com/option-t/option-t/tree/v35.0.0).
 
 
@@ -132,6 +133,10 @@ We target to run in following environments.
 
 ```sh
 npm install --save option-t
+
+# If you need to supports an environment that does not support ES2017
+# without any transform whole of programs including dependencies.
+npm install --save option-t@^37
 
 # If your project still...
 #   1. Use TypeScript with `--moduleResolution node` or `--moduleResolution node10` setting.
