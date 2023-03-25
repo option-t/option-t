@@ -184,4 +184,5 @@ export const apiTable = Object.freeze({
     'Undefinable/unwrapOrElseAsync': pathRedirectionTo(`${UNDEFINABLE_DIR}/unwrap_or_else_async`),
     'Undefinable/xor': pathRedirectionTo(`${UNDEFINABLE_DIR}/xor`),
     'Undefinable/zip': pathRedirectionTo(`${UNDEFINABLE_DIR}/zip`),
+    'Undefinable/zipWith': pathRedirectionTo(`${UNDEFINABLE_DIR}/zip_with`),
 });

@@ -180,4 +180,5 @@
 - [option-t/Undefinable/unwrapOrElseAsync](../packages/option-t/src/undefinable/unwrap_or_else_async.ts)
 - [option-t/Undefinable/xor](../packages/option-t/src/undefinable/xor.ts)
 - [option-t/Undefinable/zip](../packages/option-t/src/undefinable/zip.ts)
+- [option-t/Undefinable/zipWith](../packages/option-t/src/undefinable/zip_with.ts)
 
