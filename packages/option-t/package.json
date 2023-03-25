@@ -171,6 +171,10 @@
             "types": "./cjs/maybe/xor.d.cts",
             "default": "./cjs/maybe/xor.cjs"
         },
+        "./cjs/Maybe/zip": {
+            "types": "./cjs/maybe/zip.d.cts",
+            "default": "./cjs/maybe/zip.cjs"
+        },
         "./cjs/Nullable": {
             "types": "./cjs/nullable/index.d.cts",
             "default": "./cjs/nullable/index.cjs"
@@ -798,6 +802,10 @@
         "./esm/Maybe/xor": {
             "types": "./esm/maybe/xor.d.ts",
             "default": "./esm/maybe/xor.js"
+        },
+        "./esm/Maybe/zip": {
+            "types": "./esm/maybe/zip.d.ts",
+            "default": "./esm/maybe/zip.js"
         },
         "./esm/Nullable": {
             "types": "./esm/nullable/index.d.ts",
@@ -1749,6 +1757,20 @@
             "default": {
                 "types": "./esm/maybe/xor.d.ts",
                 "default": "./esm/maybe/xor.js"
+            }
+        },
+        "./Maybe/zip": {
+            "import": {
+                "types": "./esm/maybe/zip.d.ts",
+                "default": "./esm/maybe/zip.js"
+            },
+            "require": {
+                "types": "./cjs/maybe/zip.d.cts",
+                "default": "./cjs/maybe/zip.cjs"
+            },
+            "default": {
+                "types": "./esm/maybe/zip.d.ts",
+                "default": "./esm/maybe/zip.js"
             }
         },
         "./Nullable": {
