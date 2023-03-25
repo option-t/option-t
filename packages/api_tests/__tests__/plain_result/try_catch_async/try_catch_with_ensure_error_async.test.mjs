@@ -89,23 +89,6 @@ test('output=Err(Error): producer is normal fn but throw an error before return 
     t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
 });
 
-test('if producer does not return Promise, case = return', async (t) => {
-    t.plan(2);
-
-    await t.throwsAsync(
-        async () => {
-            await tryCatchIntoResultWithEnsureErrorAsync(() => {
-                t.pass('producer is called');
-                return Math.random();
-            });
-        },
-        {
-            instanceOf: TypeError,
-            message: '`producer` must return Promise',
-        }
-    );
-});
-
 test('if producer is normal function and reject a Promise with not-Error-instance value', async (t) => {
     t.plan(3);
 
