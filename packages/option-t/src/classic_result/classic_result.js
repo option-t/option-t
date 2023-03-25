@@ -6,11 +6,7 @@ import { createClassicSome, createClassicNone } from '../classic_option/classic_
  *  @deprecated
  *      See https://github.com/option-t/option-t/issues/459
  *
- *  @constructor
  *  @template   T, E
- *  @param  {boolean}   ok
- *  @param  {T|undefined}   val
- *  @param  {E|undefined}   err
  *
  *  A base object of `Result<T, E>`.
  *  This is only used to `option instanceof ResultBase`
@@ -18,25 +14,32 @@ import { createClassicSome, createClassicNone } from '../classic_option/classic_
  *
  *  The usecase example is a `React.PropTypes`.
  */
-export function ClassicResultBase(ok, val, err) {
+export class ClassicResultBase {
     /**
-     *  @private
-     *  @type   {boolean}
+     *  @template   T, E
+     *  @param  {boolean}   ok
+     *  @param  {T|undefined}   val
+     *  @param  {E|undefined}   err
      */
-    this._isOk = ok;
-    /**
-     *  @private
-     *  @type   {T}
-     */
-    this._v = val;
-    /**
-     *  @private
-     *  @type   {E}
-     */
-    this._e = err;
-    Object.seal(this);
-}
-ClassicResultBase.prototype = Object.freeze({
+    constructor(ok, val, err) {
+        /**
+         *  @private
+         *  @type   {boolean}
+         */
+        this._isOk = ok;
+        /**
+         *  @private
+         *  @type   {T}
+         */
+        this._v = val;
+        /**
+         *  @private
+         *  @type   {E}
+         */
+        this._e = err;
+        Object.seal(this);
+    }
+
     /**
      *  Returns true if the result is `Ok`.
      *
@@ -44,7 +47,7 @@ ClassicResultBase.prototype = Object.freeze({
      */
     isOk() {
         return this._isOk;
-    },
+    }
 
     /**
      *  Returns true if the result is `Err`.
@@ -53,7 +56,7 @@ ClassicResultBase.prototype = Object.freeze({
      */
     isErr() {
         return !this._isOk;
-    },
+    }
 
     /**
      *  Converts from `Result<T, E>` to `Option<T>`.
@@ -68,7 +71,7 @@ ClassicResultBase.prototype = Object.freeze({
         } else {
             return createClassicNone();
         }
-    },
+    }
 
     /**
      *  Converts from `Result<T, E>` to `Option<E>`.
@@ -83,7 +86,7 @@ ClassicResultBase.prototype = Object.freeze({
         } else {
             return createClassicNone();
         }
-    },
+    }
 
     /**
      *  Maps a `Result<T, E>` to `Result<U, E>` by applying a function `mapFn<T, U>`
@@ -104,7 +107,7 @@ ClassicResultBase.prototype = Object.freeze({
         const value = op(this._v);
         const result = createClassicOk(value);
         return result;
-    },
+    }
 
     /**
      *  Maps a `Result<T, E>` to `U` by applying a function to a contained `Ok` value,
@@ -124,7 +127,7 @@ ClassicResultBase.prototype = Object.freeze({
 
         const r = selector(this._v);
         return r;
-    },
+    }
 
     /**
      *  Maps a `Result<T, E>` to `Result<T, F>` by applying a function `mapFn<E, F>`
@@ -145,7 +148,7 @@ ClassicResultBase.prototype = Object.freeze({
         const value = op(this._e);
         const result = createClassicErr(value);
         return result;
-    },
+    }
 
     /**
      *  Returns `res` if the result is `Ok`, otherwise returns the `Err` value of self.
@@ -161,7 +164,7 @@ ClassicResultBase.prototype = Object.freeze({
             // cheat to escape from a needless allocation.
             return this;
         }
-    },
+    }
 
     /**
      *  Calls `op` if the result is `Ok`, otherwise returns the `Err` value of self.
@@ -184,7 +187,7 @@ ClassicResultBase.prototype = Object.freeze({
         }
 
         return mapped;
-    },
+    }
 
     /**
      *  Returns `res` if the result is `Err`, otherwise returns the `Ok` value of self.
@@ -200,7 +203,7 @@ ClassicResultBase.prototype = Object.freeze({
         } else {
             return res;
         }
-    },
+    }
 
     /**
      *  Calls `op` if the result is `Err`, otherwise returns the `Ok` value of self.
@@ -223,7 +226,7 @@ ClassicResultBase.prototype = Object.freeze({
         }
 
         return mapped;
-    },
+    }
 
     /**
      *  Return the inner `T` of a `Ok(T)`.
@@ -235,7 +238,7 @@ ClassicResultBase.prototype = Object.freeze({
      */
     unwrap() {
         return this.expect('called `unwrap()` on a `Err` value');
-    },
+    }
 
     /**
      *  Return the inner `E` of a `Err(E)`.
@@ -251,7 +254,7 @@ ClassicResultBase.prototype = Object.freeze({
         } else {
             return this._e;
         }
-    },
+    }
 
     /**
      *  Unwraps a result, return the content of an `Ok`. Else it returns `optb`.
@@ -265,7 +268,7 @@ ClassicResultBase.prototype = Object.freeze({
         } else {
             return optb;
         }
-    },
+    }
 
     /**
      *  Unwraps a result, returns the content of an `Ok`.
@@ -281,7 +284,7 @@ ClassicResultBase.prototype = Object.freeze({
 
         const recovered = op(this._e);
         return recovered;
-    },
+    }
 
     /**
      *  Return the inner `T` of a `Ok(T)`.
@@ -298,7 +301,7 @@ ClassicResultBase.prototype = Object.freeze({
         } else {
             throw new TypeError(message);
         }
-    },
+    }
 
     /**
      *  The destructor method inspired by Rust's `Drop` trait.
@@ -323,8 +326,9 @@ ClassicResultBase.prototype = Object.freeze({
             this._e = null;
         }
         Object.freeze(this);
-    },
-});
+    }
+}
+Object.freeze(ClassicResultBase.prototype);
 
 /**
  *  @deprecated
