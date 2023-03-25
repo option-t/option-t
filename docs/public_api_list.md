@@ -34,6 +34,8 @@
 - [option-t/Maybe/unwrapOrElse](../packages/option-t/src/maybe/unwrap_or_else.ts)
 - [option-t/Maybe/unwrapOrElseAsync](../packages/option-t/src/maybe/unwrap_or_else_async.ts)
 - [option-t/Maybe/xor](../packages/option-t/src/maybe/xor.ts)
+- [option-t/Maybe/zip](../packages/option-t/src/maybe/zip.ts)
+- [option-t/Maybe/zipWith](../packages/option-t/src/maybe/zip_with.ts)
 
 
 ## Nullable
@@ -66,6 +68,8 @@
 - [option-t/Nullable/unwrapOrElse](../packages/option-t/src/nullable/unwrap_or_else.ts)
 - [option-t/Nullable/unwrapOrElseAsync](../packages/option-t/src/nullable/unwrap_or_else_async.ts)
 - [option-t/Nullable/xor](../packages/option-t/src/nullable/xor.ts)
+- [option-t/Nullable/zip](../packages/option-t/src/nullable/zip.ts)
+- [option-t/Nullable/zipWith](../packages/option-t/src/nullable/zip_with.ts)
 
 
 ## PlainOption
@@ -175,4 +179,6 @@
 - [option-t/Undefinable/unwrapOrElse](../packages/option-t/src/undefinable/unwrap_or_else.ts)
 - [option-t/Undefinable/unwrapOrElseAsync](../packages/option-t/src/undefinable/unwrap_or_else_async.ts)
 - [option-t/Undefinable/xor](../packages/option-t/src/undefinable/xor.ts)
+- [option-t/Undefinable/zip](../packages/option-t/src/undefinable/zip.ts)
+- [option-t/Undefinable/zipWith](../packages/option-t/src/undefinable/zip_with.ts)
 
