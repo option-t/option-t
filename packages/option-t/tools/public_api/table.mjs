@@ -48,6 +48,7 @@ export const apiTable = Object.freeze({
     'Maybe/xor': pathRedirectionTo(`${MAYBE_DIR}/xor`),
     'Maybe/zip': pathRedirectionTo(`${MAYBE_DIR}/zip`),
     'Maybe/zipWith': pathRedirectionTo(`${MAYBE_DIR}/zip_with`),
+    'Maybe/zipWithAsync': pathRedirectionTo(`${MAYBE_DIR}/zip_with_async`),
 
     'Nullable': pathRedirectionTo(`${NULLABLE_DIR}/index`),
     'Nullable/Nullable': pathRedirectionTo(`${NULLABLE_DIR}/nullable`),

@@ -36,6 +36,7 @@
 - [option-t/Maybe/xor](../packages/option-t/src/maybe/xor.ts)
 - [option-t/Maybe/zip](../packages/option-t/src/maybe/zip.ts)
 - [option-t/Maybe/zipWith](../packages/option-t/src/maybe/zip_with.ts)
+- [option-t/Maybe/zipWithAsync](../packages/option-t/src/maybe/zip_with_async.ts)
 
 
 ## Nullable
