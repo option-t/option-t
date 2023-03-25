@@ -46,7 +46,7 @@ In addition, ECMA262 interacts with [DOM binding](https://heycam.github.io/webid
 Node.js standard modules, and others. There are additional various ways to represent "none" value.
 
 In practice, we write some _glue code_ to tame their various ways in our project to uniform their expression style.
-This library contributes to uniform the convention to write it. 
+This library contributes to uniform the convention to write it.
 
 
 ### Uniform the way to carry error information instead of throwing an error.
@@ -80,7 +80,7 @@ This categorization is pretty useful to relax the problem about exception in ECM
 Thus this library provides a way to express _recoverable_ error and also recommends
 to use throwing an error only if you intend to throw an _unrecoverable_ error.
 This categorization introduces a convenient convention for you:
-	
+
 * If the code uses _throw_, you should be careful about _unrecoverable_ error.
 * If the code returns `Result<T, E>` provided this library, then you should handle it correctly.
 
@@ -90,16 +90,16 @@ This convention is clear as error handling style and it's static typing friendly
 ### Provide a utility function to handle these uniformed expression easily.
 
 Some static type checking tools also provide a way to check nullability and provide these conventions.
- 
+
 - Flowtype's semantics has [a built-in "Maybe" types](https://flow.org/en/docs/types/maybe/),
 - TypeScript has [a non-nullable type check](https://github.com/Microsoft/TypeScript/issues/185),
 - Google Closure Compiler also can check a non-nullable type via JSDoc style annotations in some compilation mode.
- 
+
 Flowtype and TypeScript checks with their control flow analysis
 (Sorry, I'm not sure about the details of Google Closure Compiler's behavior).
- 
+
 However, these compilers do not provide a way to handle their value easily like `map` or `flatMap` operations.
- 
+
 Rust's `std::option` and `std::result` have some utilities operation method to handle them easily.
 This library also provides a convenient way to handle them and its way is inspired by Rust's ones.
 
@@ -262,7 +262,7 @@ Under this condition, we cannot add a feature as property methods without increa
 We would like to add a popular feature as a part of this package to reuse it or would like to fill a gap with Rust's original feature set.
 But an user project does not use all features at every time.
 They use a partial of this package generally. Even if an user project does not use them,
-features provided as a object property method are not removed, so it increases a final application size. 
+features provided as a object property method are not removed, so it increases a final application size.
 This might be a big problem for client-side application, especially to implement SDK libraries.
 Thus we would like to avoid it sincerely.
 
