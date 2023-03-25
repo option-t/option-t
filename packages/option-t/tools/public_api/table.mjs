@@ -48,6 +48,7 @@ export const apiTable = Object.freeze({
     'Maybe/xor': pathRedirectionTo(`${MAYBE_DIR}/xor`),
     'Maybe/zip': pathRedirectionTo(`${MAYBE_DIR}/zip`),
     'Maybe/zipWith': pathRedirectionTo(`${MAYBE_DIR}/zip_with`),
+    'Maybe/zipWithAsync': pathRedirectionTo(`${MAYBE_DIR}/zip_with_async`),
 
     'Nullable': pathRedirectionTo(`${NULLABLE_DIR}/index`),
     'Nullable/Nullable': pathRedirectionTo(`${NULLABLE_DIR}/nullable`),
@@ -79,6 +80,7 @@ export const apiTable = Object.freeze({
     'Nullable/xor': pathRedirectionTo(`${NULLABLE_DIR}/xor`),
     'Nullable/zip': pathRedirectionTo(`${NULLABLE_DIR}/zip`),
     'Nullable/zipWith': pathRedirectionTo(`${NULLABLE_DIR}/zip_with`),
+    'Nullable/zipWithAsync': pathRedirectionTo(`${NULLABLE_DIR}/zip_with_async`),
 
     'PlainOption': pathRedirectionTo(`${PLAIN_OPTION_DIR}/index`),
     'PlainOption/Option': pathRedirectionTo(`${PLAIN_OPTION_DIR}/option`),
@@ -185,4 +187,5 @@ export const apiTable = Object.freeze({
     'Undefinable/xor': pathRedirectionTo(`${UNDEFINABLE_DIR}/xor`),
     'Undefinable/zip': pathRedirectionTo(`${UNDEFINABLE_DIR}/zip`),
     'Undefinable/zipWith': pathRedirectionTo(`${UNDEFINABLE_DIR}/zip_with`),
+    'Undefinable/zipWithAsync': pathRedirectionTo(`${UNDEFINABLE_DIR}/zip_with_async`),
 });

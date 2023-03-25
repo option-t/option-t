@@ -10,3 +10,4 @@ export type AsyncTransformFn<in T, out U> = TransformFn<T, Promise<U>>;
 export type AsyncRecoveryFn<out T> = RecoveryFn<Promise<T>>;
 export type AsyncRecoveryFromErrorFn<in E, out T> = AsyncTransformFn<E, T>;
 export type AsyncProducerFn<out T> = ProducerFn<Promise<T>>;
+export type AsyncZipTransformerFn<in T, in U, out R> = (a: T, b: U) => Promise<R>;

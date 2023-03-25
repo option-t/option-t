@@ -28,6 +28,7 @@ import {} from 'option-t/cjs/Nullable/unwrapOrElseAsync';
 import {} from 'option-t/cjs/Nullable/xor';
 import {} from 'option-t/cjs/Nullable/zip';
 import {} from 'option-t/cjs/Nullable/zipWith';
+import {} from 'option-t/cjs/Nullable/zipWithAsync';
 
 import {} from 'option-t/esm/Nullable/Nullable';
 import {} from 'option-t/esm/Nullable/and';
@@ -59,6 +60,7 @@ import {} from 'option-t/esm/Nullable/unwrapOrElseAsync';
 import {} from 'option-t/esm/Nullable/xor';
 import {} from 'option-t/esm/Nullable/zip';
 import {} from 'option-t/esm/Nullable/zipWith';
+import {} from 'option-t/esm/Nullable/zipWithAsync';
 
 import {} from 'option-t/Nullable';
 import {} from 'option-t/Nullable/and';
@@ -90,3 +92,4 @@ import {} from 'option-t/Nullable/unwrapOrElseAsync';
 import {} from 'option-t/Nullable/xor';
 import {} from 'option-t/Nullable/zip';
 import {} from 'option-t/Nullable/zipWith';
+import {} from 'option-t/Nullable/zipWithAsync';
