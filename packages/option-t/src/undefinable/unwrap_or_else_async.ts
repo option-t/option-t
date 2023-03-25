@@ -1,18 +1,8 @@
-import { assertIsPromise } from '../internal/assert.js';
-import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
 import type { AsyncRecoveryFn } from '../internal/function.js';
 
 import { type Undefinable, isNotUndefined, type NotUndefined } from './undefinable.js';
 import { expectNotUndefined } from './expect.js';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.js';
-
-function check<T>(value: Undefinable<T>): T {
-    const passed = expectNotUndefined(
-        value,
-        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE
-    );
-    return passed;
-}
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `undefined`.
@@ -22,20 +12,18 @@ function check<T>(value: Undefinable<T>): T {
  *      * If you try to recover the value, use `orElse()`
  *  * If the result of _recoverer_ is `undefined`, throw `TypeError`.
  */
-export function unwrapOrElseAsyncFromUndefinable<T>(
+export async function unwrapOrElseAsyncFromUndefinable<T>(
     input: Undefinable<T>,
     recoverer: AsyncRecoveryFn<NotUndefined<T>>
 ): Promise<NotUndefined<T>> {
     if (isNotUndefined(input)) {
-        return Promise.resolve(input);
+        return input;
     }
 
-    const fallback: Promise<NotUndefined<T>> = recoverer();
-    // If this is async function, this always return Promise, but not.
-    // We should check to clarify the error case if user call this function from plain js
-    // and they mistake to use this.
-    assertIsPromise(fallback, ERR_MSG_RECOVERER_MUST_RETURN_PROMISE);
-
-    const passed = fallback.then(check);
-    return passed;
+    const fallback: T = await recoverer();
+    const checked: NotUndefined<T> = expectNotUndefined(
+        fallback,
+        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE
+    );
+    return checked;
 }

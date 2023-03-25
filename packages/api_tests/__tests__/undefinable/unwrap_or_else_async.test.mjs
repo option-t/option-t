@@ -73,20 +73,3 @@ for (const [src, def] of testcases) {
         );
     });
 }
-
-test('callback should return Promise', async (t) => {
-    t.plan(2);
-
-    await t.throwsAsync(
-        async () => {
-            await unwrapOrElseAsyncFromUndefinable(NULL_VALUE_IN_THIS_TEST_CASE, () => {
-                t.pass();
-                return 1;
-            });
-        },
-        {
-            instanceOf: TypeError,
-            message: '`recoverer` must return Promise',
-        }
-    );
-});

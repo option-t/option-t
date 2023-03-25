@@ -53,23 +53,3 @@ test('pass undefined', async (t) => {
     const actual = await result;
     t.is(actual, NULL_VALUE_IN_THIS_TEST_CASE, 'should be the expected result');
 });
-
-test('callback should return Promise', async (t) => {
-    t.plan(2);
-
-    await t.throwsAsync(
-        async () => {
-            await andThenAsyncForUndefinable(
-                NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
-                () => {
-                    t.pass();
-                    return 1;
-                }
-            );
-        },
-        {
-            instanceOf: TypeError,
-            message: '`transformer` must return Promise',
-        }
-    );
-});
