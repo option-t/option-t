@@ -75,6 +75,7 @@ export const apiTable = Object.freeze({
     'Nullable/unwrapOrElse': pathRedirectionTo(`${NULLABLE_DIR}/unwrap_or_else`),
     'Nullable/unwrapOrElseAsync': pathRedirectionTo(`${NULLABLE_DIR}/unwrap_or_else_async`),
     'Nullable/xor': pathRedirectionTo(`${NULLABLE_DIR}/xor`),
+    'Nullable/zip': pathRedirectionTo(`${NULLABLE_DIR}/zip`),
 
     'PlainOption': pathRedirectionTo(`${PLAIN_OPTION_DIR}/index`),
     'PlainOption/Option': pathRedirectionTo(`${PLAIN_OPTION_DIR}/option`),

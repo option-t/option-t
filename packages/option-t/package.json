@@ -283,6 +283,10 @@
             "types": "./cjs/nullable/xor.d.cts",
             "default": "./cjs/nullable/xor.cjs"
         },
+        "./cjs/Nullable/zip": {
+            "types": "./cjs/nullable/zip.d.cts",
+            "default": "./cjs/nullable/zip.cjs"
+        },
         "./cjs/PlainOption": {
             "types": "./cjs/plain_option/index.d.cts",
             "default": "./cjs/plain_option/index.cjs"
@@ -906,6 +910,10 @@
         "./esm/Nullable/xor": {
             "types": "./esm/nullable/xor.d.ts",
             "default": "./esm/nullable/xor.js"
+        },
+        "./esm/Nullable/zip": {
+            "types": "./esm/nullable/zip.d.ts",
+            "default": "./esm/nullable/zip.js"
         },
         "./esm/PlainOption": {
             "types": "./esm/plain_option/index.d.ts",
@@ -2133,6 +2141,20 @@
             "default": {
                 "types": "./esm/nullable/xor.d.ts",
                 "default": "./esm/nullable/xor.js"
+            }
+        },
+        "./Nullable/zip": {
+            "import": {
+                "types": "./esm/nullable/zip.d.ts",
+                "default": "./esm/nullable/zip.js"
+            },
+            "require": {
+                "types": "./cjs/nullable/zip.d.cts",
+                "default": "./cjs/nullable/zip.cjs"
+            },
+            "default": {
+                "types": "./esm/nullable/zip.d.ts",
+                "default": "./esm/nullable/zip.js"
             }
         },
         "./PlainOption": {
