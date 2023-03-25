@@ -27,6 +27,7 @@ import {} from 'option-t/cjs/Maybe/unwrapOr';
 import {} from 'option-t/cjs/Maybe/unwrapOrElse';
 import {} from 'option-t/cjs/Maybe/unwrapOrElseAsync';
 import {} from 'option-t/cjs/Maybe/xor';
+import {} from 'option-t/cjs/Maybe/zip';
 
 // This should be failure because commonjs cannot import ES Module directly.
 // import {} from 'option-t/esm/Maybe/Maybe';
@@ -58,6 +59,7 @@ import {} from 'option-t/cjs/Maybe/xor';
 // import {} from 'option-t/esm/Maybe/unwrapOrElse';
 // import {} from 'option-t/esm/Maybe/unwrapOrElseAsync';
 // import {} from 'option-t/esm/Maybe/xor';
+// import {} from 'option-t/esm/Maybe/zip';
 
 import {} from 'option-t/Maybe';
 import {} from 'option-t/Maybe/and';
@@ -88,3 +90,4 @@ import {} from 'option-t/Maybe/unwrapOr';
 import {} from 'option-t/Maybe/unwrapOrElse';
 import {} from 'option-t/Maybe/unwrapOrElseAsync';
 import {} from 'option-t/Maybe/xor';
+import {} from 'option-t/Maybe/zip';

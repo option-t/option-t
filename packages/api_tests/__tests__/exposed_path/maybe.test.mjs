@@ -33,6 +33,7 @@ testImportExposedPath(
         './cjs/Maybe/unwrapOrElse': null,
         './cjs/Maybe/unwrapOrElseAsync': null,
         './cjs/Maybe/xor': null,
+        './cjs/Maybe/zip': null,
 
         './esm/Maybe/Maybe': null,
         './esm/Maybe/and': null,
@@ -63,6 +64,7 @@ testImportExposedPath(
         './esm/Maybe/unwrapOrElse': null,
         './esm/Maybe/unwrapOrElseAsync': null,
         './esm/Maybe/xor': null,
+        './esm/Maybe/zip': null,
 
         './Maybe': null,
         './Maybe/and': null,
@@ -93,5 +95,6 @@ testImportExposedPath(
         './Maybe/unwrapOrElse': null,
         './Maybe/unwrapOrElseAsync': null,
         './Maybe/xor': null,
+        './Maybe/zip': null,
     })
 );

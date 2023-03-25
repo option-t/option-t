@@ -32,6 +32,7 @@ testImportExposedPath(
         './cjs/Undefinable/unwrapOrElse': null,
         './cjs/Undefinable/unwrapOrElseAsync': null,
         './cjs/Undefinable/xor': null,
+        './cjs/Undefinable/zip': null,
 
         './esm/Undefinable/Undefinable': null,
         './esm/Undefinable/and': null,
@@ -61,6 +62,7 @@ testImportExposedPath(
         './esm/Undefinable/unwrapOrElse': null,
         './esm/Undefinable/unwrapOrElseAsync': null,
         './esm/Undefinable/xor': null,
+        './esm/Undefinable/zip': null,
 
         './Undefinable': null,
         './Undefinable/and': null,
@@ -90,5 +92,6 @@ testImportExposedPath(
         './Undefinable/unwrapOrElse': null,
         './Undefinable/unwrapOrElseAsync': null,
         './Undefinable/xor': null,
+        './Undefinable/zip': null,
     })
 );
