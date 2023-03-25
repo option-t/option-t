@@ -17,3 +17,11 @@ export function assertIsFrozen(input: unknown): void {
         throw new TypeError(ERR_MSG_INPUT_IS_FROZEN_NOT_CAST_TO_MUTABLE);
     }
 }
+
+export function assertIsArray(input: unknown, message: string): asserts input is Array<unknown> {
+    if (Array.isArray(input)) {
+        return;
+    }
+
+    throw new TypeError(message);
+}

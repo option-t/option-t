@@ -68,6 +68,7 @@
 - [option-t/Nullable/unwrapOr](../packages/option-t/src/nullable/unwrap_or.ts)
 - [option-t/Nullable/unwrapOrElse](../packages/option-t/src/nullable/unwrap_or_else.ts)
 - [option-t/Nullable/unwrapOrElseAsync](../packages/option-t/src/nullable/unwrap_or_else_async.ts)
+- [option-t/Nullable/unzip](../packages/option-t/src/nullable/unzip.ts)
 - [option-t/Nullable/xor](../packages/option-t/src/nullable/xor.ts)
 - [option-t/Nullable/zip](../packages/option-t/src/nullable/zip.ts)
 - [option-t/Nullable/zipWith](../packages/option-t/src/nullable/zip_with.ts)

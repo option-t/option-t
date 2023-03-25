@@ -20,3 +20,5 @@ export const ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE =
 
 export const ERR_MSG_INPUT_IS_FROZEN_NOT_CAST_TO_MUTABLE =
     'input is frozen, cannot cast to mutable';
+
+export const ERR_MSG_INPUT_MUST_BE_TUPLE_ARRAY = 'input must be tuple array';

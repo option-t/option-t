@@ -294,6 +294,10 @@
             "types": "./cjs/nullable/unwrap_or_else_async.d.cts",
             "default": "./cjs/nullable/unwrap_or_else_async.cjs"
         },
+        "./cjs/Nullable/unzip": {
+            "types": "./cjs/nullable/unzip.d.cts",
+            "default": "./cjs/nullable/unzip.cjs"
+        },
         "./cjs/Nullable/xor": {
             "types": "./cjs/nullable/xor.d.cts",
             "default": "./cjs/nullable/xor.cjs"
@@ -953,6 +957,10 @@
         "./esm/Nullable/unwrapOrElseAsync": {
             "types": "./esm/nullable/unwrap_or_else_async.d.ts",
             "default": "./esm/nullable/unwrap_or_else_async.js"
+        },
+        "./esm/Nullable/unzip": {
+            "types": "./esm/nullable/unzip.d.ts",
+            "default": "./esm/nullable/unzip.js"
         },
         "./esm/Nullable/xor": {
             "types": "./esm/nullable/xor.d.ts",
@@ -2236,6 +2244,20 @@
             "default": {
                 "types": "./esm/nullable/unwrap_or_else_async.d.ts",
                 "default": "./esm/nullable/unwrap_or_else_async.js"
+            }
+        },
+        "./Nullable/unzip": {
+            "import": {
+                "types": "./esm/nullable/unzip.d.ts",
+                "default": "./esm/nullable/unzip.js"
+            },
+            "require": {
+                "types": "./cjs/nullable/unzip.d.cts",
+                "default": "./cjs/nullable/unzip.cjs"
+            },
+            "default": {
+                "types": "./esm/nullable/unzip.d.ts",
+                "default": "./esm/nullable/unzip.js"
             }
         },
         "./Nullable/xor": {
