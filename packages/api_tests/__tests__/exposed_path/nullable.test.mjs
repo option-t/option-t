@@ -32,6 +32,8 @@ testImportExposedPath(
         './cjs/Nullable/unwrapOrElse': null,
         './cjs/Nullable/unwrapOrElseAsync': null,
         './cjs/Nullable/xor': null,
+        './cjs/Nullable/zip': null,
+        './cjs/Nullable/zipWith': null,
 
         './esm/Nullable/Nullable': null,
         './esm/Nullable/and': null,
@@ -61,6 +63,8 @@ testImportExposedPath(
         './esm/Nullable/unwrapOrElse': null,
         './esm/Nullable/unwrapOrElseAsync': null,
         './esm/Nullable/xor': null,
+        './esm/Nullable/zip': null,
+        './esm/Nullable/zipWith': null,
 
         './Nullable': null,
         './Nullable/and': null,
@@ -90,5 +94,7 @@ testImportExposedPath(
         './Nullable/unwrapOrElse': null,
         './Nullable/unwrapOrElseAsync': null,
         './Nullable/xor': null,
+        './Nullable/zip': null,
+        './Nullable/zipWith': null,
     })
 );

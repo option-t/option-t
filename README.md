@@ -124,7 +124,7 @@ We target to run in following environments.
    But we may not be able to support such environments officially. We recommend to update your environment generally.
 2. If you would like to work this packages for a more legacy environment (e.g. ES2016 or earlier)
    we recommend to transform whole of codes including your dependencies in your build pipeline.
-    - If you need to support ES5 environment, you can use [**`v37`**](https://github.com/option-t/option-t/tree/v37.2.1) too.
+    - If you need to support ES5 environment, you can use [**`v37`**](https://github.com/option-t/option-t/tree/v37.3.0) too.
 3. If your project still use TypeScript's `--moduleResolution` with `node/node10` setting, please use [**`v35`**](https://github.com/option-t/option-t/tree/v35.0.0).
 
 
