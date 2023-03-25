@@ -702,6 +702,10 @@
             "types": "./cjs/undefinable/zip_with.d.cts",
             "default": "./cjs/undefinable/zip_with.cjs"
         },
+        "./cjs/Undefinable/zipWithAsync": {
+            "types": "./cjs/undefinable/zip_with_async.d.cts",
+            "default": "./cjs/undefinable/zip_with_async.cjs"
+        },
         "./esm/ClassicOption": {
             "types": "./esm/classic_option/index.d.ts",
             "default": "./esm/classic_option/index.js"
@@ -1353,6 +1357,10 @@
         "./esm/Undefinable/zipWith": {
             "types": "./esm/undefinable/zip_with.d.ts",
             "default": "./esm/undefinable/zip_with.js"
+        },
+        "./esm/Undefinable/zipWithAsync": {
+            "types": "./esm/undefinable/zip_with_async.d.ts",
+            "default": "./esm/undefinable/zip_with_async.js"
         },
         ".": {
             "import": {
@@ -3648,6 +3656,20 @@
             "default": {
                 "types": "./esm/undefinable/zip_with.d.ts",
                 "default": "./esm/undefinable/zip_with.js"
+            }
+        },
+        "./Undefinable/zipWithAsync": {
+            "import": {
+                "types": "./esm/undefinable/zip_with_async.d.ts",
+                "default": "./esm/undefinable/zip_with_async.js"
+            },
+            "require": {
+                "types": "./cjs/undefinable/zip_with_async.d.cts",
+                "default": "./cjs/undefinable/zip_with_async.cjs"
+            },
+            "default": {
+                "types": "./esm/undefinable/zip_with_async.d.ts",
+                "default": "./esm/undefinable/zip_with_async.js"
             }
         }
     }

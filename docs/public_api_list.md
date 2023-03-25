@@ -182,4 +182,5 @@
 - [option-t/Undefinable/xor](../packages/option-t/src/undefinable/xor.ts)
 - [option-t/Undefinable/zip](../packages/option-t/src/undefinable/zip.ts)
 - [option-t/Undefinable/zipWith](../packages/option-t/src/undefinable/zip_with.ts)
+- [option-t/Undefinable/zipWithAsync](../packages/option-t/src/undefinable/zip_with_async.ts)
 
