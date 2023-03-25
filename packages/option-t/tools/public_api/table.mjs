@@ -47,6 +47,7 @@ export const apiTable = Object.freeze({
     'Maybe/unwrapOrElseAsync': pathRedirectionTo(`${MAYBE_DIR}/unwrap_or_else_async`),
     'Maybe/xor': pathRedirectionTo(`${MAYBE_DIR}/xor`),
     'Maybe/zip': pathRedirectionTo(`${MAYBE_DIR}/zip`),
+    'Maybe/zipWith': pathRedirectionTo(`${MAYBE_DIR}/zip_with`),
 
     'Nullable': pathRedirectionTo(`${NULLABLE_DIR}/index`),
     'Nullable/Nullable': pathRedirectionTo(`${NULLABLE_DIR}/nullable`),

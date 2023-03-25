@@ -35,6 +35,7 @@
 - [option-t/Maybe/unwrapOrElseAsync](../packages/option-t/src/maybe/unwrap_or_else_async.ts)
 - [option-t/Maybe/xor](../packages/option-t/src/maybe/xor.ts)
 - [option-t/Maybe/zip](../packages/option-t/src/maybe/zip.ts)
+- [option-t/Maybe/zipWith](../packages/option-t/src/maybe/zip_with.ts)
 
 
 ## Nullable
