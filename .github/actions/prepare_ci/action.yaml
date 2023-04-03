@@ -1,9 +1,28 @@
 name: Prepare CI
 description: This action prepare CI that restore cachable items
 
+inputs:
+    node-version:
+        required: true
+
 runs:
     using: composite
     steps:
+        # Ideally, we run every CI jobs in some containers as a hermetic to make it easy to reproduce the environment locally.
+        # However,
+        #   1. Recently, it is delayed to update of Node.js' docker image.
+        #      This would not be a high impact problem but this is a remarkable problem for major version.
+        #      It sometimes 3~4 weeks delay. We cannot test with a new version immidiately.
+        #   2. Old actions/setup-node (v1) cannot install the Node.js that is not listed in the action's database.
+        #      It's slower than a docker image. See https://github.com/option-t/option-t/pull/681#issuecomment-658219488
+        #      But the recent version of its GH action does not such problem.
+        #   3. GH Action job is enough to hermetic to achieve, I think. Any fork can them in their forked repository,
+        #      and each of steps of them are almost portable to reproduce them for this project's purpose.
+        # So we use `actions/setup-node` simply.
+        - name: Setup Node.js
+          uses: actions/setup-node@v3
+          with:
+              node-version: ${{ inputs.node-version }}
         - name: Get npm cache directory
           shell: bash
           id: npm-cache-dir
