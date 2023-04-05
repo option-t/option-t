@@ -1,7 +1,9 @@
 /**
- *  @deprecated
+ *  @fileoverview
  *  This might be removed in v35 or later.
  *  Please use `option-t/Undefinable` instead.
+ *
+ *  @deprecated 34.0.0.
  */
 export {
     type NotUndefined,

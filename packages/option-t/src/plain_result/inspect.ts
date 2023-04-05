@@ -50,19 +50,16 @@ export function inspectBothOfResult<T, E>(
 }
 
 /**
- *  @deprecated
- *  Use {@link inspectOkOfResult}
+ *  @deprecated 32.1.0. Use {@link inspectOkOfResult}
  */
 export const inspectOk: typeof inspectOkOfResult = inspectOkOfResult;
 
 /**
- *  @deprecated
- *  Use {@link inspectErrOfResult}
+ *  @deprecated 32.1.0. Use {@link inspectErrOfResult}
  */
 export const inspectErr: typeof inspectErrOfResult = inspectErrOfResult;
 
 /**
- *  @deprecated
- *  Use {@link inspectBothOfResult}
+ *  @deprecated 32.1.0. Use {@link inspectBothOfResult}
  */
 export const inspectBoth: typeof inspectBothOfResult = inspectBothOfResult;

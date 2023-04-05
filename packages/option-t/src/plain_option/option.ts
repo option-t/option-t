@@ -1,7 +1,6 @@
 import { ERR_MSG_UNWRAP_SOME_BUT_INPUT_IS_NONE } from './internal/error_message.js';
 
 /**
- *  @deprecated
  *  Consider to use `Nullable<T>`, `Undefinable<T>`, or `Maybe<T>` to express an absence of a value.
  *  In JavaScript, they satisfy almost use cases. Probably, you might not have to use this type.
  *
@@ -36,6 +35,8 @@ import { ERR_MSG_UNWRAP_SOME_BUT_INPUT_IS_NONE } from './internal/error_message.
  *      2. You need to treat `null` or `undefined` as some value rather than absence of value.
  *
  *  Then this tagged type helps you powerfully.
+ *
+ *  @deprecated 37.1.0
  */
 export type Option<T> = Some<T> | None;
 
