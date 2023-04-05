@@ -1,7 +1,11 @@
 import type { AsyncRecoveryFn } from '../internal/function.js';
 
-import { type Undefinable, isNotUndefined, type NotUndefined } from './undefinable.js';
-import { expectNotUndefined } from './expect.js';
+import {
+    type Undefinable,
+    isNotUndefined,
+    type NotUndefined,
+    expectNotUndefined,
+} from './undefinable.js';
 import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.js';
 
 /**

@@ -1,5 +1,9 @@
-import { isNotUndefined, type NotUndefined, type Undefinable } from './undefinable.js';
-import { expectNotUndefined } from './expect.js';
+import {
+    isNotUndefined,
+    type NotUndefined,
+    type Undefinable,
+    expectNotUndefined,
+} from './undefinable.js';
 import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.js';
 
 /**

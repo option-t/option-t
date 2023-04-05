@@ -1,7 +1,6 @@
 import type { AsyncTransformFn } from '../internal/function.js';
 
-import { type Option, createSome, isNone } from './option.js';
-import { unwrapOption } from './unwrap.js';
+import { type Option, createSome, isNone, unwrapSome } from './option.js';
 
 /**
  *  Maps a `Option<T>` to `Option<U>` by applying a _transformer_ function
@@ -17,7 +16,7 @@ export async function mapAsyncForOption<T, U>(
         return input;
     }
 
-    const inner: T = unwrapOption(input);
+    const inner: T = unwrapSome(input);
     const result: U = await transformer(inner);
     const wrapped: Option<U> = createSome(result);
     return wrapped;

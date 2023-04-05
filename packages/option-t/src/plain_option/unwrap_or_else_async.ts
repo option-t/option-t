@@ -1,6 +1,5 @@
 import type { AsyncRecoveryFn } from '../internal/function.js';
-import { type Option, isSome } from './option.js';
-import { unwrapOption } from './unwrap.js';
+import { type Option, isSome, unwrapSome } from './option.js';
 
 /**
  *  Unwraps a result _input_, returns the content of an `Some(T)`.
@@ -11,7 +10,7 @@ export async function unwrapOrElseAsyncFromOption<T>(
     recoverer: AsyncRecoveryFn<T>
 ): Promise<T> {
     if (isSome(input)) {
-        const val: T = unwrapOption(input);
+        const val: T = unwrapSome(input);
         return val;
     }
 
