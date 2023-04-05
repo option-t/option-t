@@ -1,8 +1,7 @@
 import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
 import type { AsyncRecoveryFn } from '../internal/Function.js';
-import { type Option, isSome } from './Option.js';
-import { unwrapOption } from './unwrap.js';
+import { type Option, isSome, unwrapSome } from './Option.js';
 
 /**
  *  Unwraps a result _input_, returns the content of an `Some(T)`.
@@ -13,7 +12,7 @@ export function unwrapOrElseAsyncFromOption<T>(
     recoverer: AsyncRecoveryFn<T>
 ): Promise<T> {
     if (isSome(input)) {
-        const val: T = unwrapOption(input);
+        const val: T = unwrapSome(input);
         return Promise.resolve(val);
     }
 

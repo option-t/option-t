@@ -2,8 +2,7 @@ import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
 import type { AsyncTransformFn } from '../internal/Function.js';
 
-import { type Option, createSome, isNone } from './Option.js';
-import { unwrapOption } from './unwrap.js';
+import { type Option, createSome, isNone, unwrapSome } from './Option.js';
 
 /**
  *  Maps a `Option<T>` to `Option<U>` by applying a _transformer_ function
@@ -19,7 +18,7 @@ export function mapAsyncForOption<T, U>(
         return Promise.resolve(input);
     }
 
-    const inner = unwrapOption(input);
+    const inner = unwrapSome(input);
     const result: Promise<U> = transformer(inner);
 
     // If this is async function, this always return Promise, but not.
