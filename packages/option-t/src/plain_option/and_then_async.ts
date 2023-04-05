@@ -1,8 +1,7 @@
 import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
 import type { AsyncTransformFn } from '../internal/function.js';
-import { type Option, isNone } from './option.js';
-import { unwrapOption } from './unwrap.js';
+import { type Option, isNone, unwrapSome } from './option.js';
 
 export type OptionAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Option<U>>;
 
@@ -23,7 +22,7 @@ export function andThenAsyncForOption<T, U>(
         return Promise.resolve(input);
     }
 
-    const inner: T = unwrapOption(input);
+    const inner: T = unwrapSome(input);
     const result = transformer(inner);
 
     // If this is async function, this always return Promise, but not.

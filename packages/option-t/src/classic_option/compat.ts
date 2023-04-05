@@ -5,8 +5,8 @@ import {
     createNone,
     type Option as PlainOption,
     isSome,
+    unwrapSome,
 } from '../plain_option/option.js';
-import { unwrapOption } from '../plain_option/unwrap.js';
 import {
     type Undefinable,
     type NotUndefined,
@@ -37,7 +37,7 @@ export function compatToPlainOption<T>(classic: ClassicOption<T>): PlainOption<T
  */
 export function compatToClassicOption<T>(plain: PlainOption<T>): ClassicOption<T> {
     if (isSome(plain)) {
-        const val: T = unwrapOption(plain);
+        const val: T = unwrapSome(plain);
         const result = createClassicSome<T>(val);
         return result;
     }

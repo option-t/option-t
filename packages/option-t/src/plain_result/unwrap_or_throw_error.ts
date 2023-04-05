@@ -1,7 +1,6 @@
 import { assertIsErrorInstance } from '../internal/assert.js';
 import { ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE } from '../internal/error_message.js';
-import { type Result, isOk } from './result.js';
-import { unwrapErrFromResult, unwrapOkFromResult } from './unwrap.js';
+import { type Result, isOk, unwrapOk, unwrapErr } from './result.js';
 
 /**
  *  Unwraps _input_, returns the content of an `Ok(T)`.
@@ -17,11 +16,11 @@ import { unwrapErrFromResult, unwrapOkFromResult } from './unwrap.js';
  */
 export function unwrapOrThrowErrorFromResult<T>(input: Result<T, Error>): T {
     if (isOk(input)) {
-        const val: T = unwrapOkFromResult<T>(input);
+        const val: T = unwrapOk<T>(input);
         return val;
     }
 
-    const e: unknown = unwrapErrFromResult(input);
+    const e: unknown = unwrapErr(input);
     assertIsErrorInstance(e, ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE);
     throw e;
 }

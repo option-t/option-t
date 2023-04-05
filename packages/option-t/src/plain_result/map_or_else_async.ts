@@ -4,8 +4,7 @@ import {
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
 } from '../internal/error_message.js';
 import type { AsyncTransformFn, AsyncRecoveryFromErrorFn } from '../internal/function.js';
-import { type Result, isOk } from './result.js';
-import { unwrapOkFromResult, unwrapErrFromResult } from './unwrap.js';
+import { type Result, isOk, unwrapOk, unwrapErr } from './result.js';
 
 /**
  *  Maps a `Result<T, E>` to `U` by applying _transformer_ to a contained `Ok(T)` value in _input_,
@@ -18,7 +17,7 @@ export function mapOrElseAsyncForResult<T, E, U>(
     transformer: AsyncTransformFn<T, U>
 ): Promise<U> {
     if (isOk(input)) {
-        const inner: T = unwrapOkFromResult(input);
+        const inner: T = unwrapOk(input);
         const result: Promise<U> = transformer(inner);
         // If this is async function, this always return Promise, but not.
         // We should check to clarify the error case if user call this function from plain js
@@ -27,7 +26,7 @@ export function mapOrElseAsyncForResult<T, E, U>(
         return result;
     }
 
-    const err: E = unwrapErrFromResult(input);
+    const err: E = unwrapErr(input);
     const fallback: Promise<U> = recoverer(err);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
