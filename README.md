@@ -14,10 +14,15 @@
 * **TypeScript friendly APIs**.
     * We recommend to use this with some static type systems like TypeScript.
 * **Zero dependency**.
+    * We use only a pure [ECMAScript](https://tc39.es/ecma262/) feature to implement this library as possible
+      except a packaging system or a legacy module system.
+    * This library is designed to be portable to any [host environments](https://tc39.es/ecma262/#host-environment)
+      supporting a set of ECMAScript features which we uses, _at implementation code level (not at packaging level)_.
+    * We might provide a feature using [host defined](https://tc39.es/ecma262/#host-defined) facilities
+      but they would be a __opt-in__.
 * **Tree shakable completely**.
-* **ES Module fully compatbile**.
-    * Support Node.js' ES Module.
-    * Of course, we provides CommonJS too.
+* **ES Module first**.
+    * Of course, we provides CommonJS too for a backward compatibility.
 
 
 
