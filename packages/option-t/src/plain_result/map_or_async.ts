@@ -1,6 +1,5 @@
 import type { AsyncTransformFn } from '../internal/function.js';
-import { isErr, type Result } from './result.js';
-import { unwrapOkFromResult } from './unwrap.js';
+import { isErr, type Result, unwrapOk } from './result.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is `Ok(T)`.
@@ -17,7 +16,7 @@ export async function mapOrAsyncForResult<T, E, U>(
         return defaultValue;
     }
 
-    const source: T = unwrapOkFromResult(input);
+    const source: T = unwrapOk(input);
     const result: U = await transformer(source);
     return result;
 }

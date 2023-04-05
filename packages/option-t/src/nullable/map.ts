@@ -1,7 +1,6 @@
-import { expectNotNull } from './expect.js';
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './internal/error_message.js';
 import type { TransformFn } from '../internal/function.js';
-import { type Nullable, isNull, type NotNull } from './nullable.js';
+import { type Nullable, isNull, type NotNull, expectNotNull } from './nullable.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null`,

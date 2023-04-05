@@ -1,6 +1,5 @@
 import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/function.js';
-import { type Option, isNone } from './option.js';
-import { unwrapOption } from './unwrap.js';
+import { type Option, isNone, unwrapSome } from './option.js';
 
 /**
  *  Maps a `Option<T>` to `U` by applying _transformer_ to a contained `Some(T)` value in _input_,
@@ -17,7 +16,7 @@ export async function mapOrElseAsyncForOption<T, U>(
         return fallback;
     }
 
-    const inner: T = unwrapOption(input);
+    const inner: T = unwrapSome(input);
     const result: U = await transformer(inner);
     return result;
 }

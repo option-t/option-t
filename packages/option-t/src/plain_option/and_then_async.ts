@@ -1,6 +1,5 @@
 import type { AsyncTransformFn } from '../internal/function.js';
-import { type Option, isNone } from './option.js';
-import { unwrapOption } from './unwrap.js';
+import { type Option, isNone, unwrapSome } from './option.js';
 
 export type OptionAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Option<U>>;
 
@@ -21,7 +20,7 @@ export async function andThenAsyncForOption<T, U>(
         return input;
     }
 
-    const inner: T = unwrapOption(input);
+    const inner: T = unwrapSome(input);
     const result: Option<U> = await transformer(inner);
     return result;
 }

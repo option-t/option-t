@@ -1,6 +1,5 @@
 import type { AsyncRecoveryFromErrorFn } from '../internal/function.js';
-import { type Result, isOk } from './result.js';
-import { unwrapErrFromResult } from './unwrap.js';
+import { type Result, isOk, unwrapErr } from './result.js';
 
 export type ResultAsyncTryRecoveryFromErrorFn<in E, out T, out F> = AsyncRecoveryFromErrorFn<
     E,
@@ -19,7 +18,7 @@ export async function orElseAsyncForResult<T, E, F>(
         return input;
     }
 
-    const inner = unwrapErrFromResult(input);
+    const inner = unwrapErr(input);
     const defaultValue: Result<T, F> = await recoverer(inner);
     return defaultValue;
 }
