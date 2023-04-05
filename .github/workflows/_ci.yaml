@@ -74,13 +74,15 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/prepare_ci
-
             - run: make build -j
               env:
                   CI: true
+            - uses: ./.github/actions/upload_build_artifacts
+              with:
+                  git-sha: ${{ github.sha }}
 
     unittest:
-        needs: [install_dependencies]
+        needs: [install_dependencies, build]
         runs-on: ubuntu-latest
         container: node:${{ matrix.node-version }}-bullseye
 
@@ -92,8 +94,10 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/prepare_ci
-
-            - run: make test_unittest -j
+            - uses: ./.github/actions/download_build_artifacts
+              with:
+                  git-sha: ${{ github.sha }}
+            - run: make run_test_unittest -j
               env:
                   CI: true
 

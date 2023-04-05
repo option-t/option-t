@@ -1,0 +1,24 @@
+name: Upload a build artifact
+description: This action provides a uniform way to upload a build artifact.
+
+inputs:
+    git-sha:
+        required: true
+    working-directory:
+        default: ${{ github.workspace }}
+        required: false
+
+runs:
+    using: composite
+    steps:
+        - name: Create tarball
+          shell: bash
+          run: tar --create --gzip --verbose --file ./artifact.tgz ./__dist
+          working-directory: ${{ inputs.working-directory }}
+        - uses: actions/upload-artifact@v3
+          with:
+              name: artifacts-${{ inputs.git-sha }}
+              path: ${{ inputs.working-directory }}/artifact.tgz
+              if-no-files-found: error
+              # We can reproduce a build easily. We don't have to keep artifacts for a long time.
+              retention-days: 1

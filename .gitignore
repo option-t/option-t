@@ -11,3 +11,6 @@ __tmp_cjs/
 cjs/
 esm/
 lib/
+
+# Genrated by GitHub Actions
+artifact.tgz
