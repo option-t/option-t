@@ -49,6 +49,11 @@ export class ExposedPath {
         return false;
     }
 
+    isDeprecated() {
+        const ok = this.#descriptor.isDeprecatedPath;
+        return ok;
+    }
+
     shouldHideInDoc() {
         const ok = !!this.#descriptor.shouldHideInDoc;
         return ok;

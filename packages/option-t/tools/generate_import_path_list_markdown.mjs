@@ -19,11 +19,13 @@ const PKG_NAME = 'option-t';
 class ListItem {
     #key;
     #subpath;
+    #isDeprecated;
     #extension;
 
-    constructor(key, subpath, extension = 'ts') {
+    constructor(key, subpath, isDeprecated, extension = 'ts') {
         this.#key = key;
         this.#subpath = subpath;
+        this.#isDeprecated = isDeprecated;
         this.#extension = extension;
         Object.freeze(this);
     }
@@ -51,10 +53,14 @@ class ListItem {
     }
 
     toString() {
+        const isDeprecated = this.#isDeprecated;
+
         const name = this.#pathname();
         const href = `${RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO}/${this.href()}.${this.#extension}`;
 
-        return `- [${name}](${href})`;
+        const anchor = `[${name}](${href})`;
+        const link = !isDeprecated ? anchor : `${anchor} (deprecated)`;
+        return `- ${link}`;
     }
 }
 
@@ -161,7 +167,8 @@ function parseCliOptions() {
         .map((pathItem) => {
             const key = pathItem.name();
             const path = pathItem.filepath();
-            const item = new ListItem(key, path);
+            const isDeprecated = pathItem.isDeprecated();
+            const item = new ListItem(key, path, isDeprecated);
             return item;
         });
 
