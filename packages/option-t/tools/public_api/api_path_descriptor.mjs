@@ -4,8 +4,10 @@ export class ApiPathDescriptor {
     #actualFilePath = null;
     #shouldHideInDoc = false;
     #createCompat = true;
+    #isDeprecatedPath = false;
 
-    constructor() {
+    constructor(actualFilePath) {
+        this.#actualFilePath = actualFilePath;
         Object.seal(this);
     }
 
@@ -36,6 +38,15 @@ export class ApiPathDescriptor {
         this.#createCompat = val;
     }
 
+    get isDeprecatedPath() {
+        return this.#isDeprecatedPath;
+    }
+
+    setIsDeprecatedPath(val) {
+        assert.strictEqual(typeof val, 'boolean');
+        this.#isDeprecatedPath = val;
+    }
+
     clone() {
         const newly = new ApiPathDescriptor();
         newly.#actualFilePath = this.#actualFilePath;
@@ -46,21 +57,24 @@ export class ApiPathDescriptor {
 }
 
 export function pathRedirectionTo(actualFilePath) {
-    const desc = new ApiPathDescriptor();
-    desc.setActualFilePath(actualFilePath);
+    const desc = new ApiPathDescriptor(actualFilePath);
     return Object.freeze(desc);
 }
 
 export function pathRedirectionForLegacy(actualFilePath) {
-    const desc = new ApiPathDescriptor();
-    desc.setActualFilePath(actualFilePath);
+    const desc = new ApiPathDescriptor(actualFilePath);
     desc.setShouldHideInDoc(true);
     return Object.freeze(desc);
 }
 
+export function pathRedirectionMarkedAsDeprecated(actualFilePath) {
+    const desc = new ApiPathDescriptor(actualFilePath);
+    desc.setIsDeprecatedPath(true);
+    return Object.freeze(desc);
+}
+
 export function pathRedirectionForRoot(actualFilePath) {
-    const desc = new ApiPathDescriptor();
-    desc.setActualFilePath(actualFilePath);
+    const desc = new ApiPathDescriptor(actualFilePath);
     desc.setShouldHideInDoc(true);
     desc.setCreateCompat(false);
     return Object.freeze(desc);
