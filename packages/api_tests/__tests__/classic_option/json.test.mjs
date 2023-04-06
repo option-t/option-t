@@ -1,5 +1,3 @@
-/* eslint-disable no-prototype-builtins */
-
 import test from 'ava';
 
 import { createClassicSome, createClassicNone } from 'option-t/ClassicOption';

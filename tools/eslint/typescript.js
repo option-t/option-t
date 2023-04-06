@@ -60,6 +60,13 @@ export const config = Object.freeze({
         ...prettier.rules,
 
         [KEY_NAMING_CONVENTION]: newNamingConventionRule,
+
+        '@typescript-eslint/consistent-type-imports': [
+            'warn',
+            {
+                prefer: 'type-imports',
+            },
+        ],
         '@typescript-eslint/no-import-type-side-effects': 'warn',
     },
 });
