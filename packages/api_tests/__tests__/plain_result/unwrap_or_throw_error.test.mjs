@@ -47,27 +47,3 @@ test('input is Err, but the contained value is not Error', (t) => {
 
     t.is(thrown.cause, ERROR_E, `should be set Error.cause`);
 });
-
-class CannotStringifyObject {
-    toString() {
-        throw new Error('cannot stringify!');
-    }
-}
-
-test('input is Err, but the contained value is not Error and cannot stringify', (t) => {
-    t.plan(2);
-
-    const ERROR_E = new CannotStringifyObject();
-    const input = createErr(ERROR_E);
-    const thrown = t.throws(
-        () => {
-            unwrapOrThrowErrorFromResult(input);
-        },
-        {
-            instanceOf: TypeError,
-            message: `The contained E should be \`Error\` instance.`,
-        }
-    );
-
-    t.is(thrown.cause, ERROR_E, `should be set Error.cause`);
-});

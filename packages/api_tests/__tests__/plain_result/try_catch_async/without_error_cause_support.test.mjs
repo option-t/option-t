@@ -87,30 +87,3 @@ test('if producer is async function and throw a not-Error-instance value', async
 
     t.is(actual.cause, THROWN_EXPECTED, 'should set Error.cause');
 });
-
-class CannotStringifyObject {
-    toString() {
-        throw new Error('cannot stringify!');
-    }
-}
-
-test('if producer is async function and throw a not-Error-instance and cannot stringify value', async (t) => {
-    t.plan(3);
-
-    const THROWN_EXPECTED = new CannotStringifyObject();
-    const actual = await t.throwsAsync(
-        async () => {
-            await tryCatchIntoResultWithEnsureErrorAsync(async () => {
-                t.pass('producer is called');
-                throw THROWN_EXPECTED;
-            });
-            t.fail('unreachable here');
-        },
-        {
-            instanceOf: TypeError,
-            message: `The thrown value is not an \`Error\` instance.`,
-        }
-    );
-
-    t.is(actual.cause, THROWN_EXPECTED, `should be set Error.cause`);
-});

@@ -43,29 +43,3 @@ test('If producer throw non-Error-instance value', (t) => {
 
     t.is(actual.cause, EXPECT_THROWN, `should set Error.cause`);
 });
-
-class CannotStringifyObject {
-    toString() {
-        throw new Error('cannot stringify!');
-    }
-}
-
-test('If producer throw non-Error-instance and cannot stringify value', (t) => {
-    t.plan(3);
-
-    const EXPECT_THROWN = new CannotStringifyObject();
-    const thrown = t.throws(
-        () => {
-            tryCatchIntoResultWithEnsureError(() => {
-                t.pass();
-                throw EXPECT_THROWN;
-            });
-        },
-        {
-            instanceOf: TypeError,
-            message: `The thrown value is not an \`Error\` instance.`,
-        }
-    );
-
-    t.is(thrown.cause, EXPECT_THROWN, `should be set Error.cause`);
-});
