@@ -16,8 +16,7 @@ test('The shape of PlainOption::None', (t) => {
     t.is(actual.val, null, 'None.val');
 
     t.true(
-        // eslint-disable-next-line no-prototype-builtins
-        actual.hasOwnProperty('val'),
+        Object.hasOwn(actual, 'val'),
         "`val` should be added on creating this object to stabilize object's Shape/Structure/Hidden Class"
     );
 });
