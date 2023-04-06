@@ -24,7 +24,7 @@ primitiveVal.forEach(function (value) {
         const result = JSON.parse(JSON.stringify(raw));
 
         ['is_some', 'value'].forEach(function (key) {
-            t.is(result.hasOwnProperty(key), true, 'json has `' + key + '` field.');
+            t.is(Object.hasOwn(result, key), true, 'json has `' + key + '` field.');
         });
 
         t.is(result.is_some, true, '`is_some` should be expected');
@@ -43,7 +43,7 @@ objectVal.forEach(function (value) {
         const result = JSON.parse(JSON.stringify(raw));
 
         ['is_some', 'value'].forEach(function (key) {
-            t.is(result.hasOwnProperty(key), true, 'json has `' + key + '` field.');
+            t.is(Object.hasOwn(result, key), true, 'json has `' + key + '` field.');
         });
 
         t.is(result.is_some, true);
@@ -64,7 +64,7 @@ nonSerializableObjectVal.forEach(function (value) {
         const result = JSON.parse(JSON.stringify(raw));
 
         ['is_some', 'value'].forEach(function (key) {
-            t.is(result.hasOwnProperty(key), true, 'json has `' + key + '` field.');
+            t.is(Object.hasOwn(result, key), true, 'json has `' + key + '` field.');
         });
 
         t.is(result.is_some, true);
@@ -85,7 +85,7 @@ funcVal.forEach(function (value) {
         const result = JSON.parse(JSON.stringify(raw));
 
         ['is_some'].forEach(function (key) {
-            t.is(result.hasOwnProperty(key), true, 'json has `' + key + '` field.');
+            t.is(Object.hasOwn(result, key), true, 'json has `' + key + '` field.');
         });
 
         t.is(result.is_some, true);
@@ -106,7 +106,7 @@ symbolVal.forEach(function (value) {
         const result = JSON.parse(JSON.stringify(raw));
 
         ['is_some'].forEach(function (key) {
-            t.is(result.hasOwnProperty(key), true, 'json has `' + key + '` field.');
+            t.is(Object.hasOwn(result, key), true, 'json has `' + key + '` field.');
         });
 
         t.is(result.is_some, true);
@@ -126,7 +126,7 @@ undefinedVal.forEach(function (value) {
         const result = JSON.parse(JSON.stringify(raw));
 
         ['is_some'].forEach(function (key) {
-            t.is(result.hasOwnProperty(key), true, 'json has `' + key + '` field.');
+            t.is(Object.hasOwn(result, key), true, 'json has `' + key + '` field.');
         });
 
         t.is(result.is_some, true, '`is_some` should be expected');
@@ -141,7 +141,7 @@ test('None', function (t) {
     const result = JSON.parse(JSON.stringify(raw));
 
     ['is_some'].forEach(function (key) {
-        t.is(result.hasOwnProperty(key), true, 'json has `' + key + '` field.');
+        t.is(Object.hasOwn(result, key), true, 'json has `' + key + '` field.');
     });
 
     t.is(result.is_some, false, '`is_some` should be expected');

@@ -12,8 +12,7 @@ test('The shape of PlainResult::Ok', (t) => {
     t.is(actual.err, null, 'Ok.err');
 
     t.true(
-        // eslint-disable-next-line no-prototype-builtins
-        actual.hasOwnProperty('err'),
+        Object.hasOwn(actual, 'err'),
         "`err` should be added on creating this object to stabilize object's Shape/Structure/Hidden Class"
     );
 });
@@ -27,8 +26,7 @@ test('The shape of PlainResult::Err', (t) => {
     t.is(actual.val, null, 'Err.val');
 
     t.true(
-        // eslint-disable-next-line no-prototype-builtins
-        actual.hasOwnProperty('val'),
+        Object.hasOwn(actual, 'val'),
         "`val` should be added on creating this object to stabilize object's Shape/Structure/Hidden Class"
     );
     t.is(actual.err, INNER_VAL, 'Err.err');
