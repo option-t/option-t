@@ -84,7 +84,7 @@ clean_tmp_cjs:
 # Build
 ###########################
 .PHONY: build
-build: __build cp_docs cp_changelog cp_license cp_readme generate_manifest ## Build artifacts required to publish packages.
+build: __build cp_docs cp_license cp_readme generate_manifest ## Build artifacts required to publish packages.
 
 .PHONY: __build
 __build: build_cjs build_esm ## Build all targets.
@@ -154,10 +154,6 @@ __build_tmp_base__call_tsc: clean_tmp_base generate_manifest
 .PHONY: cp_docs
 cp_docs: clean_dist generate_manifest
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(DOCS_DIR) --source '$(DOCS_DIR)/**/*' --destination $(DIST_DOCS_DIR)
-
-.PHONY: cp_changelog
-cp_changelog: clean_dist generate_manifest
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(REPO_ROOT_DIR) --source '$(REPO_ROOT_DIR)/{CHANGELOG.md,CHANGELOG_OLD.md}' --destination $(DIST_DIR)
 
 .PHONY: cp_license
 cp_license: clean_dist generate_manifest
