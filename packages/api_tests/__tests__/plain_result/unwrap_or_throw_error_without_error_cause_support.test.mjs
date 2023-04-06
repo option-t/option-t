@@ -1,32 +1,28 @@
 import test from 'ava';
+import * as assert from 'node:assert/strict';
 import { webcrypto } from 'node:crypto';
 
-import { createOk, createErr } from 'option-t/PlainResult/Result';
+import { createErr } from 'option-t/PlainResult/Result';
 import { unwrapOrThrowErrorFromResult } from 'option-t/PlainResult/unwrapOrThrowError';
 
-test('input is Ok(T)', (t) => {
-    const VALUE_T = Math.random();
+const OriginalTypeErrorCtor = globalThis.TypeError;
 
-    const input = createOk(VALUE_T);
-    let actual;
-    t.notThrows(() => {
-        actual = unwrapOrThrowErrorFromResult(input);
-    });
-    t.is(actual, VALUE_T);
+class MissingCauseTypeError extends OriginalTypeErrorCtor {
+    constructor(...args) {
+        super(...args);
+        delete this.cause;
+        assert.ok(!this.cause, '.cause is still on this!');
+    }
+}
+
+// We would like to test if the host does not have support `Error.cause`.
+// FIXME(#1833): We should remove this test.
+test.beforeEach(() => {
+    globalThis.TypeError = MissingCauseTypeError;
 });
 
-test('input is Err(Error)', (t) => {
-    const ERROR_E = new Error();
-
-    const input = createErr(ERROR_E);
-    t.throws(
-        () => {
-            unwrapOrThrowErrorFromResult(input);
-        },
-        {
-            is: ERROR_E,
-        }
-    );
+test.afterEach(() => {
+    globalThis.TypeError = OriginalTypeErrorCtor;
 });
 
 test('input is Err, but the contained value is not Error', (t) => {

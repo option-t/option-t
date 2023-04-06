@@ -10,6 +10,9 @@ import { type Result, isOk, unwrapOk, unwrapErr } from './result.js';
  *
  *  This function is provided only to improve an interoperability with the world using "throw error" convention.
  *  __We do not recommend to use this function__.
+ *
+ *  This function requires `Error.cause` to carry the failure reason
+ *  if it is not an `Error` instance.
  */
 export function unwrapOrThrowErrorFromResult<T>(input: Result<T, Error>): T {
     if (isOk(input)) {

@@ -1,92 +1,25 @@
 import test from 'ava';
-
-import {
-    isOk,
-    isErr,
-    unwrapOk as unwrapOkFromResult,
-    unwrapErr as unwrapErrFromResult,
-} from 'option-t/PlainResult/Result';
+import * as assert from 'node:assert/strict';
 import { tryCatchIntoResultWithEnsureErrorAsync } from 'option-t/PlainResult/tryCatchAsync';
 
-test('output=Ok(T): producer is async fn', async (t) => {
-    t.plan(4);
+const OriginalTypeErrorCtor = globalThis.TypeError;
 
-    const EXPECTED = Math.random();
-    const result = tryCatchIntoResultWithEnsureErrorAsync(async () => {
-        t.pass();
-        return EXPECTED;
-    });
+class MissingCauseTypeError extends OriginalTypeErrorCtor {
+    constructor(...args) {
+        super(...args);
+        delete this.cause;
+        assert.ok(!this.cause, '.cause is still on this!');
+    }
+}
 
-    t.true(result instanceof Promise, 'result should be Promise');
-
-    const actual = await result;
-    t.true(isOk(actual), 'should be Ok(T)');
-    t.is(unwrapOkFromResult(actual), EXPECTED, 'should contain the expect inner value');
+// We would like to test if the host does not have support `Error.cause`.
+// FIXME(#1833): We should remove this test.
+test.beforeEach(() => {
+    globalThis.TypeError = MissingCauseTypeError;
 });
 
-test('output=Ok(T): producer is normal fn', async (t) => {
-    t.plan(4);
-
-    const EXPECTED = Math.random();
-    const result = tryCatchIntoResultWithEnsureErrorAsync(() => {
-        t.pass();
-        return Promise.resolve(EXPECTED);
-    });
-
-    t.true(result instanceof Promise, 'result should be Promise');
-
-    const actual = await result;
-    t.true(isOk(actual), 'should be Ok(T)');
-    t.is(unwrapOkFromResult(actual), EXPECTED, 'should contain the expect inner value');
-});
-
-test('output=Err(Error): producer is async fn', async (t) => {
-    t.plan(4);
-
-    const EXPECTED = new Error(Math.random());
-    const result = tryCatchIntoResultWithEnsureErrorAsync(async () => {
-        t.pass();
-        throw EXPECTED;
-    });
-
-    t.true(result instanceof Promise, 'result should be Promise');
-
-    const actual = await result;
-    t.true(isErr(actual), 'should be Err(E)');
-    t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
-});
-
-test('output=Err(Error): producer is normal fn', async (t) => {
-    t.plan(4);
-
-    const EXPECTED = new Error(Math.random());
-    const result = tryCatchIntoResultWithEnsureErrorAsync(() => {
-        t.pass();
-        return Promise.reject(EXPECTED);
-    });
-
-    t.true(result instanceof Promise, 'result should be Promise');
-
-    const actual = await result;
-    t.true(isErr(actual), 'should be Err(E)');
-    t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
-});
-
-test('output=Err(Error): producer is normal fn but throw an error before return any Promise', async (t) => {
-    t.plan(4);
-
-    const EXPECTED = new Error(Math.random());
-
-    const result = tryCatchIntoResultWithEnsureErrorAsync(() => {
-        t.pass();
-        throw EXPECTED;
-    });
-
-    t.true(result instanceof Promise, 'result should be Promise');
-
-    const actual = await result;
-    t.true(isErr(actual), 'should be Err(E)');
-    t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
+test.afterEach(() => {
+    globalThis.TypeError = OriginalTypeErrorCtor;
 });
 
 test('if producer is normal function and reject a Promise with not-Error-instance value', async (t) => {

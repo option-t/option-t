@@ -1,38 +1,27 @@
 import test from 'ava';
+import * as assert from 'node:assert/strict';
 import { webcrypto } from 'node:crypto';
 
-import {
-    isOk,
-    isErr,
-    unwrapOk as unwrapOkFromResult,
-    unwrapErr as unwrapErrFromResult,
-} from 'option-t/PlainResult/Result';
 import { tryCatchIntoResultWithEnsureError } from 'option-t/PlainResult/tryCatch';
 
-test('output=Ok(T)', (t) => {
-    t.plan(3);
+const OriginalTypeErrorCtor = globalThis.TypeError;
 
-    const EXPECTED = Math.random();
-    const actual = tryCatchIntoResultWithEnsureError(() => {
-        t.pass();
-        return EXPECTED;
-    });
+class MissingCauseTypeError extends OriginalTypeErrorCtor {
+    constructor(...args) {
+        super(...args);
+        delete this.cause;
+        assert.ok(!this.cause, '.cause is still on this!');
+    }
+}
 
-    t.true(isOk(actual), 'should be Ok(T)');
-    t.is(unwrapOkFromResult(actual), EXPECTED, 'should contain the expect inner value');
+// We would like to test if the host does not have support `Error.cause`.
+// FIXME(#1833): We should remove this test.
+test.beforeEach(() => {
+    globalThis.TypeError = MissingCauseTypeError;
 });
 
-test('output=Err(Error)', (t) => {
-    t.plan(3);
-
-    const EXPECTED = new Error(Math.random());
-    const actual = tryCatchIntoResultWithEnsureError(() => {
-        t.pass();
-        throw EXPECTED;
-    });
-
-    t.true(isErr(actual), 'should be Err(E)');
-    t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
+test.afterEach(() => {
+    globalThis.TypeError = OriginalTypeErrorCtor;
 });
 
 test('If producer throw non-Error-instance value', (t) => {
