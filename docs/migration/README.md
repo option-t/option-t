@@ -11,20 +11,20 @@ please see a release note in [Releases](https://github.com/option-t/option-t/rel
 
 - [v35](https://github.com/option-t/option-t/releases/tag/v35.0.0)
 - [v34](./v34.md)
-- [v33](https://github.com/option-t/option-t/releases/tag/v33.0.0)
+- [v33](./v33.md)
 - [v32](https://github.com/option-t/option-t/releases/tag/v32.0.0)
 - [v31](https://github.com/option-t/option-t/releases/tag/v31.0.0)
 
-## v25 ~ v30
+## v26 ~ v30
 
-- [v30](https://github.com/option-t/option-t/releases/tag/v30.0.0)
+- [v30](./v30.md)
 - [v29](https://github.com/option-t/option-t/releases/tag/v29.0.0)
 - [v28](https://github.com/option-t/option-t/releases/tag/v28.0.0)
 - [v27](https://github.com/option-t/option-t/releases/tag/v27.0.0)
-- [v26](https://github.com/option-t/option-t/releases/tag/v26.0.0)
-- [v25](https://github.com/option-t/option-t/releases/tag/v25.0.0)
+- [v26](./v26.md)
 
+## ~ v25
 
-## Before v25
-
-- See [/CHANGELOG_OLD.md](../../CHANGELOG_OLD.md).
+- [v25](./v25.md)
+- [v24](https://github.com/option-t/option-t/releases/tag/v24.0.0)
+- Before v23 are in [/CHANGELOG_OLD.md](../../CHANGELOG_OLD.md#2302).
