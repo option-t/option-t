@@ -1,12 +1,11 @@
 import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/error_message.js';
 import type { AsyncTransformFn } from '../internal/function.js';
-import type { NotNull, Nullable } from './nullable.js';
+import { isNull, type NotNull, type Nullable, expectNotNull } from './nullable.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
     ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE,
 } from './internal/error_message.js';
-import { expectNotNull } from './expect.js';
 
 function check<T>(value: Nullable<T>): NotNull<T> {
     const passed = expectNotNull(value, ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
@@ -29,7 +28,7 @@ export function mapOrAsyncForNullable<T, U>(
     defaultValue: NotNull<U>,
     transformer: AsyncTransformFn<T, NotNull<U>>
 ): Promise<NotNull<U>> {
-    if (input === null) {
+    if (isNull(input)) {
         const nonNullDefault = expectNotNull(
             defaultValue,
             ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE

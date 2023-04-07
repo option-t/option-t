@@ -14,14 +14,32 @@ export function assertIsPromise(
 
 export function assertIsErrorInstance(input: unknown, message: string): asserts input is Error {
     const ok = input instanceof Error;
-    if (!ok) {
-        const stringified = String(input);
-        const msg = `${message} The actual is \`${stringified}\``;
-        // We don't throw Node's AssertionError because the code size will be larger.
-        throw new TypeError(msg, {
-            cause: input,
-        });
+    if (ok) {
+        return;
     }
+
+    // We don't throw Node's AssertionError because the code size will be larger.
+    const e = new TypeError(message, {
+        cause: input,
+    });
+
+    // Check each time to avoid the timing problem to install the polyfill.
+    // FIXME(#1833): We should remove this path.
+    if (e.cause !== input && Object.isExtensible(e)) {
+        installErrorCauseAsPolyfill(e, input);
+    }
+
+    throw e;
+}
+
+function installErrorCauseAsPolyfill(e: TypeError, input: unknown) {
+    // see https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-installerrorcause
+    Object.defineProperty(e, 'cause', {
+        value: input,
+        writable: true,
+        enumerable: false,
+        configurable: true,
+    });
 }
 
 export function assertIsFrozen(input: unknown): void {
