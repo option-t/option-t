@@ -48,9 +48,7 @@ test('If producer throw non-Error-instance value', (t) => {
         },
         {
             instanceOf: TypeError,
-            message: `The thrown value is not an \`Error\` instance. The actual is \`${String(
-                EXPECT_THROWN
-            )}\``,
+            message: `The thrown value is not an \`Error\` instance.`,
         }
     );
 

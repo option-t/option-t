@@ -1,7 +1,6 @@
 import { assertIsErrorInstance } from '../internal/assert.js';
 import { ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE } from '../internal/ErrorMessage.js';
-import { type Result, isOk } from './Result.js';
-import { unwrapErrFromResult, unwrapOkFromResult } from './unwrap.js';
+import { type Result, isOk, unwrapOk, unwrapErr } from './Result.js';
 
 /**
  *  Unwraps _input_, returns the content of an `Ok(T)`.
@@ -11,14 +10,17 @@ import { unwrapErrFromResult, unwrapOkFromResult } from './unwrap.js';
  *
  *  This function is provided only to improve an interoperability with the world using "throw error" convention.
  *  __We do not recommend to use this function__.
+ *
+ *  This function requires `Error.cause` to carry the failure reason
+ *  if it is not an `Error` instance.
  */
 export function unwrapOrThrowErrorFromResult<T>(input: Result<T, Error>): T {
     if (isOk(input)) {
-        const val: T = unwrapOkFromResult<T>(input);
+        const val: T = unwrapOk<T>(input);
         return val;
     }
 
-    const e: unknown = unwrapErrFromResult(input);
+    const e: unknown = unwrapErr(input);
     assertIsErrorInstance(e, ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE);
     throw e;
 }

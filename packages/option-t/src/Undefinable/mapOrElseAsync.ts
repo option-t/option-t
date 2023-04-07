@@ -1,5 +1,10 @@
 import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/Function.js';
-import { type Undefinable, isNotUndefined, type NotUndefined } from './Undefinable.js';
+import {
+    type Undefinable,
+    isNotUndefined,
+    type NotUndefined,
+    expectNotUndefined,
+} from './Undefinable.js';
 import { assertIsPromise } from '../internal/assert.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
@@ -9,7 +14,6 @@ import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
 } from './ErrorMessage.js';
-import { expectNotUndefined } from './expect.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `undefined`.

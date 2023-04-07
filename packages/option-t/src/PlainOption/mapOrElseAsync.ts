@@ -4,8 +4,7 @@ import {
     ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE,
 } from '../internal/ErrorMessage.js';
 import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/Function.js';
-import { type Option, isNone } from './Option.js';
-import { unwrapOption } from './unwrap.js';
+import { type Option, isNone, unwrapSome } from './Option.js';
 
 /**
  *  Maps a `Option<T>` to `U` by applying _transformer_ to a contained `Some(T)` value in _input_,
@@ -26,7 +25,7 @@ export function mapOrElseAsyncForOption<T, U>(
         return fallback;
     }
 
-    const inner: T = unwrapOption(input);
+    const inner: T = unwrapSome(input);
     const result: Promise<U> = transformer(inner);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js

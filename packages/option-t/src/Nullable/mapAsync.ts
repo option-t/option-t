@@ -1,7 +1,6 @@
 import type { AsyncTransformFn } from '../internal/Function.js';
-import { type Nullable, isNull, type NotNull } from './Nullable.js';
+import { type Nullable, isNull, type NotNull, expectNotNull } from './Nullable.js';
 import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './ErrorMessage.js';
-import { expectNotNull } from './expect.js';
 import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_TRANSFORMER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
 

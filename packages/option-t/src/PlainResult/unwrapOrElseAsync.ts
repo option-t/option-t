@@ -1,8 +1,7 @@
 import { assertIsPromise } from '../internal/assert.js';
 import { ERR_MSG_RECOVERER_MUST_RETURN_PROMISE } from '../internal/ErrorMessage.js';
 import type { AsyncRecoveryFromErrorFn } from '../internal/Function.js';
-import { type Result, isOk } from './Result.js';
-import { unwrapOkFromResult, unwrapErrFromResult } from './unwrap.js';
+import { type Result, isOk, unwrapOk, unwrapErr } from './Result.js';
 
 /**
  *  Unwraps _input_, returns the content of an `Ok(T)`.
@@ -13,11 +12,11 @@ export function unwrapOrElseAsyncFromResult<T, E>(
     recoverer: AsyncRecoveryFromErrorFn<E, T>
 ): Promise<T> {
     if (isOk(input)) {
-        const value = unwrapOkFromResult(input);
+        const value = unwrapOk(input);
         return Promise.resolve(value);
     }
 
-    const error: E = unwrapErrFromResult(input);
+    const error: E = unwrapErr(input);
     const defaultValue: Promise<T> = recoverer(error);
     // If this is async function, this always return Promise, but not.
     // We should check to clarify the error case if user call this function from plain js
