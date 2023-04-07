@@ -1,7 +1,7 @@
 {
     "name": "option-t",
     "version": "38.0.3",
-    "description": "Types and implementations whose APIs are inspired by Rust's `Option<T>` and `Result<T, E>`.",
+    "description": "A toolkit of Nullable/Option/Result type implementation in ECMAScript. Their APIs are inspired by Rust's `Option<T>` and `Result<T, E>`.",
     "type": "module",
     "engines": {
         "node": ">=16.20.0"
