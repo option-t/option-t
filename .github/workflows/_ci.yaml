@@ -10,7 +10,7 @@ permissions:
     contents: read
 
 jobs:
-    install_dependencies:
+    warmup_dependency_cache:
         runs-on: ubuntu-latest
         container: node:${{ matrix.node-version }}-bullseye
 
@@ -26,7 +26,7 @@ jobs:
             - uses: ./.github/actions/prepare_ci
 
     format_check:
-        needs: [install_dependencies]
+        needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
         container: node:${{ matrix.node-version }}-bullseye
 
@@ -44,7 +44,7 @@ jobs:
                   CI: true
 
     lint:
-        needs: [install_dependencies]
+        needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
         container: node:${{ matrix.node-version }}-bullseye
 
@@ -62,7 +62,7 @@ jobs:
                   CI: true
 
     build:
-        needs: [install_dependencies]
+        needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
         container: node:${{ matrix.node-version }}-bullseye
 
@@ -80,7 +80,7 @@ jobs:
                   CI: true
 
     unittest:
-        needs: [install_dependencies]
+        needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
         container: node:${{ matrix.node-version }}-bullseye
 
@@ -98,7 +98,7 @@ jobs:
                   CI: true
 
     test_package_json_exports_field_format:
-        needs: [install_dependencies]
+        needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
         container: node:${{ matrix.node-version }}-bullseye
 
@@ -114,7 +114,7 @@ jobs:
                   CI: true
 
     test_import_types:
-        needs: [install_dependencies]
+        needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
         container: node:${{ matrix.node-version }}-bullseye
 
@@ -130,7 +130,7 @@ jobs:
                   CI: true
 
     test_distribution_contain_all:
-        needs: [install_dependencies]
+        needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
         container: node:${{ matrix.node-version }}-bullseye
 
