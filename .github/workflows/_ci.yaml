@@ -12,7 +12,6 @@ permissions:
 jobs:
     warmup_dependency_cache:
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -24,11 +23,12 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/prepare_ci
+              with:
+                  node-version: ${{ matrix.node-version }}
 
     format_check:
         needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -38,7 +38,8 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/prepare_ci
-
+              with:
+                  node-version: ${{ matrix.node-version }}
             - run: make format_check -j
               env:
                   CI: true
@@ -46,7 +47,6 @@ jobs:
     lint:
         needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -56,7 +56,8 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/prepare_ci
-
+              with:
+                  node-version: ${{ matrix.node-version }}
             - run: make lint -j
               env:
                   CI: true
@@ -64,7 +65,6 @@ jobs:
     build:
         needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -74,7 +74,8 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/prepare_ci
-
+              with:
+                  node-version: ${{ matrix.node-version }}
             - run: make build -j
               env:
                   CI: true
@@ -82,7 +83,6 @@ jobs:
     unittest:
         needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -92,7 +92,8 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/prepare_ci
-
+              with:
+                  node-version: ${{ matrix.node-version }}
             - run: make test_unittest -j
               env:
                   CI: true
@@ -100,7 +101,6 @@ jobs:
     test_package_json_exports_field_format:
         needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -109,6 +109,8 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/prepare_ci
+              with:
+                  node-version: ${{ matrix.node-version }}
             - run: make test_package_json_exports_field_format -j
               env:
                   CI: true
@@ -116,7 +118,6 @@ jobs:
     test_import_types:
         needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -125,6 +126,8 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/prepare_ci
+              with:
+                  node-version: ${{ matrix.node-version }}
             - run: make test_import_types -j
               env:
                   CI: true
@@ -132,7 +135,6 @@ jobs:
     test_distribution_contain_all:
         needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
-        container: node:${{ matrix.node-version }}-bullseye
 
         strategy:
             matrix:
@@ -142,7 +144,8 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/prepare_ci
-
+              with:
+                  node-version: ${{ matrix.node-version }}
             - run: make test_distribution_contain_all -j
               env:
                   CI: true
