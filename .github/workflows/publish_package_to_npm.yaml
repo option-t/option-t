@@ -8,10 +8,12 @@ permissions:
 jobs:
     build:
         runs-on: ubuntu-latest
-        container: node:18-bullseye
 
         steps:
             - uses: actions/checkout@v3
+            - uses: ./.github/actions/prepare_ci
+              with:
+                  node-version: 18
             - run: npm ci
             - run: make clean
             - run: make prepublish -j
