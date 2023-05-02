@@ -10,7 +10,7 @@
         "@babel/plugin-syntax-typescript": "^7.21.4",
         "@babel/plugin-transform-modules-commonjs": "^7.21.5",
         "@eslint/js": "^8.39.0",
-        "@typescript-eslint/eslint-plugin": "^5.59.0",
+        "@typescript-eslint/eslint-plugin": "^5.59.2",
         "@typescript-eslint/parser": "^5.59.1",
         "ava": "^5.2.0",
         "del-cli": "^5.0.0",
