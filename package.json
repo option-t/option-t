@@ -6,7 +6,7 @@
         "packages/*"
     ],
     "devDependencies": {
-        "@babel/core": "^7.21.5",
+        "@babel/core": "^7.21.8",
         "@babel/plugin-syntax-typescript": "^7.21.4",
         "@babel/plugin-transform-modules-commonjs": "^7.21.5",
         "@eslint/js": "^8.39.0",
