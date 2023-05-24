@@ -217,4 +217,4 @@ prepublish: ## Run some commands for 'npm run prepublish'
 
 .PHONY: publish
 publish: ## Run some commands for 'npm publish'
-	cd $(DIST_DIR) && npm publish
+	cd $(DIST_DIR) && npm publish --provenance --access public
