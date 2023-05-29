@@ -12,7 +12,7 @@
         "@eslint/js": "^8.41.0",
         "@typescript-eslint/eslint-plugin": "^5.59.6",
         "@typescript-eslint/parser": "^5.59.6",
-        "ava": "^5.2.0",
+        "ava": "^5.3.0",
         "del-cli": "^5.0.0",
         "eslint": "^8.41.0",
         "eslint-config-prettier": "^8.8.0",
