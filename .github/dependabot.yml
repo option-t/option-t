@@ -14,6 +14,14 @@ updates:
       ignore:
           - dependency-name: typescript
             update-types: ["version-update:semver-major", "version-update:semver-minor"]
+      # - https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#groups
+      groups:
+          babel:
+              patterns:
+                  - "@babel/*"
+          typescript-eslint:
+              patterns:
+                  - "@typescript-eslint/*"
 
     - package-ecosystem: github-actions
       directory: "/"
