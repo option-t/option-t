@@ -11,7 +11,7 @@ import { isNotUndefined, type NotUndefined, type Undefinable } from './undefinab
  */
 export function inspectUndefinable<T>(
     input: Undefinable<T>,
-    effector: EffectFn<NotUndefined<T>>
+    effector: EffectFn<NotUndefined<T>>,
 ): Undefinable<T> {
     if (isNotUndefined(input)) {
         effector(input);

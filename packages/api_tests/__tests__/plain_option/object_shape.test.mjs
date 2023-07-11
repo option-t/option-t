@@ -17,6 +17,6 @@ test('The shape of PlainOption::None', (t) => {
 
     t.true(
         Object.hasOwn(actual, 'val'),
-        "`val` should be added on creating this object to stabilize object's Shape/Structure/Hidden Class"
+        "`val` should be added on creating this object to stabilize object's Shape/Structure/Hidden Class",
     );
 });

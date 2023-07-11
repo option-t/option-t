@@ -9,7 +9,7 @@ import { type Result, createErr, isOk } from './result.js';
  */
 export async function mapErrAsyncForResult<T, E, F>(
     input: Result<T, E>,
-    transformer: AsyncTransformFn<E, F>
+    transformer: AsyncTransformFn<E, F>,
 ): Promise<Result<T, F>> {
     if (isOk(input)) {
         return input;

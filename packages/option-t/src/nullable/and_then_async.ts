@@ -14,7 +14,7 @@ export type NullableAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Nulla
  */
 export async function andThenAsyncForNullable<T, U>(
     input: Nullable<T>,
-    transformer: NullableAsyncTryTransformFn<T, U>
+    transformer: NullableAsyncTryTransformFn<T, U>,
 ): Promise<Nullable<U>> {
     if (isNull(input)) {
         return null;

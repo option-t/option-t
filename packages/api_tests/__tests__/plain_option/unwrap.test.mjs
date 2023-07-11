@@ -18,6 +18,6 @@ test('None', (t) => {
         {
             instanceOf: TypeError,
             message: 'called with `None`',
-        }
+        },
     );
 });

@@ -16,7 +16,7 @@ import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './internal/e
  */
 export function unwrapOrElseFromMaybe<T>(
     input: Maybe<T>,
-    recoverer: RecoveryFn<NotNullOrUndefined<T>>
+    recoverer: RecoveryFn<NotNullOrUndefined<T>>,
 ): NotNullOrUndefined<T> {
     if (isNotNullOrUndefined(input)) {
         return input;
@@ -25,7 +25,7 @@ export function unwrapOrElseFromMaybe<T>(
     const fallback: T = recoverer();
     const passed = expectNotNullOrUndefined(
         fallback,
-        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE
+        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     );
     return passed;
 }

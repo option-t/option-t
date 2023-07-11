@@ -33,7 +33,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
         () => {
             t.pass('should not call recover fn');
             return DEFAULT_VAL;
-        }
+        },
     );
 
     t.is(result, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE, 'should the input result');
@@ -61,7 +61,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
                 () => {
                     unwrapOrElseFromUndefinable(src, () => def);
                 },
-                { instanceOf: TypeError, message: '`recoverer` must not return `undefined`' }
+                { instanceOf: TypeError, message: '`recoverer` must not return `undefined`' },
             );
         });
     }

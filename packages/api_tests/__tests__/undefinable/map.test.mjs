@@ -48,7 +48,7 @@ test('pass undefined', (t) => {
                 () => {
                     mapForUndefinable(src, (_v) => def);
                 },
-                { instanceOf: TypeError, message: '`transformer` must not return `undefined`' }
+                { instanceOf: TypeError, message: '`transformer` must not return `undefined`' },
             );
         });
     }

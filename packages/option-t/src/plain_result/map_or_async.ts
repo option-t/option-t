@@ -10,7 +10,7 @@ import { isErr, type Result, unwrapOk } from './result.js';
 export async function mapOrAsyncForResult<T, E, U>(
     input: Result<T, E>,
     defaultValue: U,
-    transformer: AsyncTransformFn<T, U>
+    transformer: AsyncTransformFn<T, U>,
 ): Promise<U> {
     if (isErr(input)) {
         return defaultValue;

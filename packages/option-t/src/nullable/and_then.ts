@@ -14,7 +14,7 @@ export type NullableTryTransformFn<in T, out U> = TransformFn<T, Nullable<U>>;
  */
 export function andThenForNullable<T, U>(
     input: Nullable<T>,
-    transformer: NullableTryTransformFn<T, U>
+    transformer: NullableTryTransformFn<T, U>,
 ): Nullable<U> {
     if (isNull(input)) {
         return input;

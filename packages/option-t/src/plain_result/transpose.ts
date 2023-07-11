@@ -38,7 +38,7 @@ export function transposeForResult<T, E>(input: Result<Option<T>, E>): Option<Re
  *  - `Err(E)` -> `Err(E)`
  */
 export function transposeNullableForResult<T, E>(
-    input: Result<Nullable<T>, E>
+    input: Result<Nullable<T>, E>,
 ): Nullable<Result<T, E>> {
     if (isErr(input)) {
         return input;
@@ -60,7 +60,7 @@ export function transposeNullableForResult<T, E>(
  *  - `Err(E)` -> `Err(E)`
  */
 export function transposeUndefinableForResult<T, E>(
-    input: Result<Undefinable<T>, E>
+    input: Result<Undefinable<T>, E>,
 ): Undefinable<Result<T, E>> {
     if (isErr(input)) {
         return input;

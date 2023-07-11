@@ -19,7 +19,7 @@ import { type Maybe, type NotNullOrUndefined, expectNotNullOrUndefined } from '.
 export function mapOrElseForMaybe<T, U>(
     input: Maybe<T>,
     recoverer: RecoveryFn<NotNullOrUndefined<U>>,
-    transformer: TransformFn<T, NotNullOrUndefined<U>>
+    transformer: TransformFn<T, NotNullOrUndefined<U>>,
 ): NotNullOrUndefined<U> {
     let result: U;
     let msg = '';

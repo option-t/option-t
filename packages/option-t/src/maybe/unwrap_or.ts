@@ -15,7 +15,7 @@ import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE } from './internal/e
  */
 export function unwrapOrFromMaybe<T>(
     input: Maybe<T>,
-    defaultValue: NotNullOrUndefined<T>
+    defaultValue: NotNullOrUndefined<T>,
 ): NotNullOrUndefined<T> {
     if (isNotNullOrUndefined(input)) {
         return input;
@@ -23,7 +23,7 @@ export function unwrapOrFromMaybe<T>(
 
     const passed = expectNotNullOrUndefined(
         defaultValue,
-        ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE
+        ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE,
     );
     return passed;
 }

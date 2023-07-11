@@ -20,7 +20,7 @@ test('Some<T>', async (t) => {
         async (v) => {
             t.is(v, INITIAL, 'the argument');
             return EXPECTED;
-        }
+        },
     );
 
     t.true(result instanceof Promise, 'result should be Promise');
@@ -43,7 +43,7 @@ test('None', async (t) => {
         },
         async (_v) => {
             t.fail(`don't enter this path`);
-        }
+        },
     );
 
     t.true(result instanceof Promise, 'result should be Promise');

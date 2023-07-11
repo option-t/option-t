@@ -19,6 +19,6 @@ test('Err<E>', (t) => {
         {
             instanceOf: TypeError,
             message: 'called `unwrap()` on a `Err` value',
-        }
+        },
     );
 });

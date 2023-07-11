@@ -34,7 +34,7 @@ for (const NULL_VALUE of [undefined, null]) {
     ];
     for (const [src, def] of testcases) {
         test(`assert that do not return Maybe<*> as the selector's resultv = ${String(
-            src
+            src,
         )}, def = ${String(def)}`, (t) => {
             t.plan(1);
             t.throws(
@@ -44,7 +44,7 @@ for (const NULL_VALUE of [undefined, null]) {
                 {
                     instanceOf: TypeError,
                     message: '`transformer` must not return `null` or `undefined`',
-                }
+                },
             );
         });
     }

@@ -45,7 +45,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
             t.pass('should call selector fn');
             t.is(v, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
             return COMPUTED_VAL;
-        }
+        },
     );
 
     t.is(result, COMPUTED_VAL);
@@ -55,13 +55,13 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     const testcases = [[1, 2, NULL_VALUE_IN_THIS_TEST_CASE]];
     for (const [src, def, selectorResult] of testcases) {
         test(`assert that do not return Nullable<*> as the selector's result, v = ${String(
-            src
+            src,
         )}, def = ${String(def)}, selectorResult=${String(selectorResult)}`, (t) => {
             t.throws(
                 () => {
                     mapOrForNullable(src, def, (_v) => selectorResult);
                 },
-                { instanceOf: TypeError, message: '`transformer` must not return `null`' }
+                { instanceOf: TypeError, message: '`transformer` must not return `null`' },
             );
         });
     }
@@ -71,13 +71,13 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     const testcases = [[NULL_VALUE_IN_THIS_TEST_CASE, NULL_VALUE_IN_THIS_TEST_CASE, '']];
     for (const [src, def, selectorResult] of testcases) {
         test(`assert that def is not Nullable<*>', v = ${String(src)}, def = ${String(
-            def
+            def,
         )}, selectorResult=${String(selectorResult)}`, (t) => {
             t.throws(
                 () => {
                     mapOrForNullable(src, def, (_v) => selectorResult);
                 },
-                { instanceOf: TypeError, message: '`defaultValue` must not be `null`' }
+                { instanceOf: TypeError, message: '`defaultValue` must not be `null`' },
             );
         });
     }

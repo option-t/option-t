@@ -17,6 +17,6 @@ test('unwrap `None`', function (t) {
         {
             instanceOf: TypeError,
             message: 'called `unwrap()` on a `None` value',
-        }
+        },
     );
 });

@@ -21,6 +21,6 @@ test('Err<E>', function (t) {
         {
             instanceOf: TypeError,
             message: EXPECTED_ERR,
-        }
+        },
     );
 });

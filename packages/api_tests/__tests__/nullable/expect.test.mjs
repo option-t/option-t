@@ -26,7 +26,7 @@ test('pass null', (t) => {
         {
             instanceOf: TypeError,
             message: EXPECTED_MSG,
-        }
+        },
     );
 });
 

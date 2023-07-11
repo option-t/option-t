@@ -44,7 +44,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
         () => {
             t.fail('should not call recover fn');
             return DEFAULT_VAL;
-        }
+        },
     );
 
     t.is(result, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
@@ -57,7 +57,7 @@ for (const [src, def] of testcases) {
             () => {
                 unwrapOrElseFromNullable(src, () => def);
             },
-            { instanceOf: TypeError, message: '`recoverer` must not return `null`' }
+            { instanceOf: TypeError, message: '`recoverer` must not return `null`' },
         );
     });
 }

@@ -148,7 +148,7 @@ await test(`Check package.json's 'exports' field format`, async (t) => {
                 runningTests.push(running);
             }
             await Promise.all(runningTests);
-        }
+        },
     );
 
     await t.test(`check condition object's format`, async (t) => {

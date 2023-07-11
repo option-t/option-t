@@ -12,7 +12,7 @@ import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './interna
  */
 export async function unwrapOrElseAsyncFromNullable<T>(
     input: Nullable<T>,
-    recoverer: AsyncRecoveryFn<NotNull<T>>
+    recoverer: AsyncRecoveryFn<NotNull<T>>,
 ): Promise<NotNull<T>> {
     if (isNotNull(input)) {
         return input;

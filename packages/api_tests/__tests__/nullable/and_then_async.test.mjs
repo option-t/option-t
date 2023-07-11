@@ -46,7 +46,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
         async (v) => {
             t.pass();
             return v;
-        }
+        },
     );
 
     t.true(result instanceof Promise, 'result should be Promise');

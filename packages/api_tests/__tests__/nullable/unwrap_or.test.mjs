@@ -25,7 +25,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     const DEFAULT_VAL = Math.random();
     const result = unwrapOrFromNullable(
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
-        DEFAULT_VAL
+        DEFAULT_VAL,
     );
 
     t.is(result, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
@@ -40,7 +40,7 @@ for (const [src, def] of testcases) {
             () => {
                 unwrapOrFromNullable(src, def);
             },
-            { instanceOf: TypeError, message: '`defaultValue` must not be `null`' }
+            { instanceOf: TypeError, message: '`defaultValue` must not be `null`' },
         );
     });
 }

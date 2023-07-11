@@ -86,7 +86,7 @@ export default [
             'packages/option-t/**/*.cts',
         ],
         languageOptions: createlanguageOptionsForTypeScript(
-            path.resolve(THIS_DIR_NAME, 'packages/option-t/')
+            path.resolve(THIS_DIR_NAME, 'packages/option-t/'),
         ),
         ...configForTypeScript,
     },

@@ -34,7 +34,7 @@ test("self is `None`, param don't return `Option<T>`", function (t) {
         {
             instanceOf: TypeError,
             message: "Option<T>.orElse()' param `fn` should return `Option<T>`.",
-        }
+        },
     );
 });
 

@@ -17,7 +17,7 @@ import {
  */
 export function mapForMaybe<T, U>(
     input: Maybe<T>,
-    transformer: TransformFn<T, NotNullOrUndefined<U>>
+    transformer: TransformFn<T, NotNullOrUndefined<U>>,
 ): Maybe<U> {
     if (isNullOrUndefined(input)) {
         return input;
@@ -31,7 +31,7 @@ export function mapForMaybe<T, U>(
     // Then the user should call `andThen` (_flatmap_) operation instead of this.
     const passed = expectNotNullOrUndefined(
         result,
-        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE
+        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     );
     return passed;
 }

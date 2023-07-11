@@ -32,7 +32,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
         async () => {
             t.fail('should not call recover fn');
             return DEFAULT_ERR;
-        }
+        },
     );
 
     t.true(result instanceof Promise, 'result should be Promise');
@@ -41,7 +41,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.is(
         unwrapOk(actual),
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
-        'should contain the expected'
+        'should contain the expected',
     );
 });
 

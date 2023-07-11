@@ -7,5 +7,5 @@ testImportExposedPath(
         './ClassicResult': null,
         './cjs/ClassicResult': null,
         './esm/ClassicResult': null,
-    })
+    }),
 );

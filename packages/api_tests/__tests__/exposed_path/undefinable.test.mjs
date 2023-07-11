@@ -99,5 +99,5 @@ testImportExposedPath(
         './Undefinable/zip': null,
         './Undefinable/zipWith': null,
         './Undefinable/zipWithAsync': null,
-    })
+    }),
 );

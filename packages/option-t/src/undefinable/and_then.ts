@@ -14,7 +14,7 @@ export type UndefinableTryTransformFn<in T, out U> = TransformFn<T, Undefinable<
  */
 export function andThenForUndefinable<T, U>(
     input: Undefinable<T>,
-    transformer: UndefinableTryTransformFn<T, U>
+    transformer: UndefinableTryTransformFn<T, U>,
 ): Undefinable<U> {
     if (isUndefined(input)) {
         return input;

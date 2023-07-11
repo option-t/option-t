@@ -16,7 +16,7 @@ test('with Ok', (t) => {
         },
         (_e) => {
             t.fail('Do not enter this path.');
-        }
+        },
     );
 
     t.is(actual.ok, false, 'should be modified');
@@ -36,7 +36,7 @@ test('with Err', (t) => {
         (err) => {
             err.ok = true;
             err.err = expected;
-        }
+        },
     );
 
     t.is(actual.ok, true, 'should be modified');
@@ -56,13 +56,13 @@ test('should throw if the passed value is frozen: Ok', (t) => {
                 },
                 (_err) => {
                     t.fail('Do not enter this path. _err callback');
-                }
+                },
             );
         },
         {
             instanceOf: TypeError,
             message: `input is frozen, cannot cast to mutable`,
-        }
+        },
     );
 });
 
@@ -78,12 +78,12 @@ test('should throw if the passed value is frozen: Err', (t) => {
                 },
                 (_err) => {
                     t.fail('Do not enter this path. _err callback');
-                }
+                },
             );
         },
         {
             instanceOf: TypeError,
             message: `input is frozen, cannot cast to mutable`,
-        }
+        },
     );
 });

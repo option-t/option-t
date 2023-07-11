@@ -12,7 +12,7 @@ import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './inter
  */
 export async function mapAsyncForNullable<T, U>(
     input: Nullable<T>,
-    transformer: AsyncTransformFn<T, NotNull<U>>
+    transformer: AsyncTransformFn<T, NotNull<U>>,
 ): Promise<Nullable<U>> {
     if (isNull(input)) {
         return null;
@@ -26,7 +26,7 @@ export async function mapAsyncForNullable<T, U>(
     // Then the user should call `andThen` (_flatmap_) operation instead of this.
     const passed: NotNull<U> = expectNotNull(
         result,
-        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE
+        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
     );
     return passed;
 }

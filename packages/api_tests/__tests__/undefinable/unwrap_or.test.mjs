@@ -24,7 +24,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     const DEFAULT_VAL = Math.random();
     const result = unwrapOrFromUndefinable(
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
-        DEFAULT_VAL
+        DEFAULT_VAL,
     );
 
     t.is(result, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE, 'should be the default');
@@ -45,7 +45,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
                 () => {
                     unwrapOrFromUndefinable(src, def);
                 },
-                { instanceOf: TypeError, message: '`defaultValue` must not be `undefined`' }
+                { instanceOf: TypeError, message: '`defaultValue` must not be `undefined`' },
             );
         });
     }

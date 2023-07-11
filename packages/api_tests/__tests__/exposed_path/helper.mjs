@@ -57,7 +57,7 @@ export function testImportExposedPath(test, pathList) {
                     t.deepEqual(
                         Object.keys(esmActual),
                         Object.keys(cjsActual),
-                        'esm and cjs should has same named items'
+                        'esm and cjs should has same named items',
                     );
                     actual = esmActual;
                     break;

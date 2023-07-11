@@ -17,7 +17,7 @@ import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './in
  */
 export async function mapAsyncForUndefinable<T, U>(
     input: Undefinable<T>,
-    transformer: AsyncTransformFn<T, NotUndefined<U>>
+    transformer: AsyncTransformFn<T, NotUndefined<U>>,
 ): Promise<Undefinable<U>> {
     if (isUndefined(input)) {
         return undefined;
@@ -32,7 +32,7 @@ export async function mapAsyncForUndefinable<T, U>(
     // Then the user should call `andThen` (_flatmap_) operation instead of this.
     const checked: NotUndefined<U> = expectNotUndefined(
         result,
-        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE
+        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
     );
     return checked;
 }

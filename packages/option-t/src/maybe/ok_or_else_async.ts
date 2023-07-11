@@ -9,7 +9,7 @@ import { type Result, createErr, createOk } from '../plain_result/result.js';
  */
 export async function okOrElseAsyncForMaybe<T, E>(
     input: Maybe<T>,
-    recoverer: AsyncRecoveryFn<E>
+    recoverer: AsyncRecoveryFn<E>,
 ): Promise<Result<T, E>> {
     if (isNotNullOrUndefined(input)) {
         const okWrapped = createOk<T>(input);

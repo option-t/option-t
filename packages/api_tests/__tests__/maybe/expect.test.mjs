@@ -26,7 +26,7 @@ for (const NULL_VALUE of [undefined, null]) {
             {
                 instanceOf: TypeError,
                 message: EXPECTED_MSG,
-            }
+            },
         );
     });
 }

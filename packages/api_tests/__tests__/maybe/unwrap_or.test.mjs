@@ -35,7 +35,7 @@ for (const NULL_VALUE of [undefined, null]) {
     ];
     for (const [src, def] of testcases) {
         test(`should not accept Maybe<*> as default, v = ${String(src)}, def = ${String(
-            def
+            def,
         )}`, (t) => {
             t.plan(1);
             t.throws(
@@ -45,7 +45,7 @@ for (const NULL_VALUE of [undefined, null]) {
                 {
                     instanceOf: TypeError,
                     message: '`defaultValue` must not be `null` or `undefined`',
-                }
+                },
             );
         });
     }

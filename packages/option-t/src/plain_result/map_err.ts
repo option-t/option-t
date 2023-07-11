@@ -9,7 +9,7 @@ import { type Result, createErr } from './result.js';
  */
 export function mapErrForResult<T, E, F>(
     input: Result<T, E>,
-    transformer: TransformFn<E, F>
+    transformer: TransformFn<E, F>,
 ): Result<T, F> {
     if (input.ok) {
         return input;

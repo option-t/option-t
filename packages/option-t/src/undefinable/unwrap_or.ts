@@ -15,7 +15,7 @@ import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './inte
  */
 export function unwrapOrFromUndefinable<T>(
     input: Undefinable<T>,
-    defaultValue: NotUndefined<T>
+    defaultValue: NotUndefined<T>,
 ): NotUndefined<T> {
     if (isNotUndefined(input)) {
         return input;
@@ -23,7 +23,7 @@ export function unwrapOrFromUndefinable<T>(
 
     const passed = expectNotUndefined(
         defaultValue,
-        ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE
+        ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE,
     );
     return passed;
 }

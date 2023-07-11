@@ -9,7 +9,7 @@ import { type Option, isNone, unwrapSome } from './option.js';
 export async function mapOrElseAsyncForOption<T, U>(
     input: Option<T>,
     recoverer: AsyncRecoveryFn<U>,
-    transformer: AsyncTransformFn<T, U>
+    transformer: AsyncTransformFn<T, U>,
 ): Promise<U> {
     if (isNone(input)) {
         const fallback: U = await recoverer();

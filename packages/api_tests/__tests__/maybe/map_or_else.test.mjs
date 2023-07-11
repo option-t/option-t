@@ -19,7 +19,7 @@ for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
                 t.pass('should call selector fn');
                 t.is(v, PASSED_VALUE, 'the arg is the input');
                 return v;
-            }
+            },
         );
 
         t.is(result, EXPECTED);
@@ -42,13 +42,13 @@ for (const NULL_VALUE of [undefined, null]) {
             (_v) => {
                 t.fail('should not call selector fn');
                 return COMPUTED_VAL;
-            }
+            },
         );
         t.is(result, DEFAULE_VAL);
     });
 
     test(`assert that do not return Maybe<*> as the transformer's result. transformer's result=${String(
-        NULL_VALUE
+        NULL_VALUE,
     )}`, (t) => {
         t.plan(2);
 
@@ -64,13 +64,13 @@ for (const NULL_VALUE of [undefined, null]) {
                     (_v) => {
                         t.pass('call here');
                         return NULL_VALUE;
-                    }
+                    },
                 );
             },
             {
                 instanceOf: TypeError,
                 message: '`transformer` must not return `null` or `undefined`',
-            }
+            },
         );
     });
 
@@ -88,13 +88,13 @@ for (const NULL_VALUE of [undefined, null]) {
                         (_v) => {
                             t.fail('do not call this');
                             return Math.random();
-                        }
+                        },
                     );
                 },
                 {
                     instanceOf: TypeError,
                     message: '`recoverer` must not return `null` or `undefined`',
-                }
+                },
             );
         });
     }

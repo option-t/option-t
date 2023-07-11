@@ -9,7 +9,7 @@ import { type Result, type Err, createOk, isErr, unwrapOk } from './result.js';
  */
 export async function mapAsyncForResult<T, U, E>(
     input: Result<T, E>,
-    transformer: AsyncTransformFn<T, U>
+    transformer: AsyncTransformFn<T, U>,
 ): Promise<Result<U, E>> {
     if (isErr(input)) {
         const fallback: Err<E> = input;

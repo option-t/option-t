@@ -12,7 +12,7 @@ import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './interna
  */
 export function unwrapOrElseFromNullable<T>(
     input: Nullable<T>,
-    recoverer: RecoveryFn<NotNull<T>>
+    recoverer: RecoveryFn<NotNull<T>>,
 ): NotNull<T> {
     if (isNotNull(input)) {
         return input;
@@ -21,7 +21,7 @@ export function unwrapOrElseFromNullable<T>(
     const fallback: T = recoverer();
     const passed: NotNull<T> = expectNotNull(
         fallback,
-        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE
+        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
     );
     return passed;
 }

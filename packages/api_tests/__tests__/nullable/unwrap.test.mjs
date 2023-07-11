@@ -19,7 +19,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
         () => {
             unwrapNullable(NULL_VALUE_IN_THIS_TEST_CASE);
         },
-        { instanceOf: TypeError, message: 'called with `null`' }
+        { instanceOf: TypeError, message: 'called with `null`' },
     );
 });
 

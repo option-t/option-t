@@ -38,11 +38,11 @@ export const nonNullableValueCaseListForAsync = Object.freeze(
         }
 
         return [input, input, input];
-    })
+    }),
 );
 
 export const nonNullableValueCaseListForSync = Object.freeze(
     nonNullableValue.map((input) => {
         return [input, input, input];
-    })
+    }),
 );

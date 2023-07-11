@@ -39,7 +39,7 @@ export function inspectErrOfResult<T, E>(input: Result<T, E>, effector: EffectFn
 export function inspectBothOfResult<T, E>(
     input: Result<T, E>,
     okEffector: EffectFn<T>,
-    errEffector: EffectFn<E>
+    errEffector: EffectFn<E>,
 ): Result<T, E> {
     if (input.ok) {
         okEffector(input.val);

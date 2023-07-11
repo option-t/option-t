@@ -38,7 +38,7 @@ test('if producer is normal function and reject a Promise with not-Error-instanc
         {
             instanceOf: TypeError,
             message: `The thrown value is not an \`Error\` instance.`,
-        }
+        },
     );
 
     t.is(actual.cause, THROWN_EXPECTED, 'should set Error.cause');
@@ -60,7 +60,7 @@ test('if producer is normal function and throw a not-Error-instance value before
         {
             instanceOf: TypeError,
             message: `The thrown value is not an \`Error\` instance.`,
-        }
+        },
     );
 
     t.is(actual.cause, THROWN_EXPECTED, 'should set Error.cause');
@@ -82,7 +82,7 @@ test('if producer is async function and throw a not-Error-instance value', async
         {
             instanceOf: TypeError,
             message: `The thrown value is not an \`Error\` instance.`,
-        }
+        },
     );
 
     t.is(actual.cause, THROWN_EXPECTED, 'should set Error.cause');

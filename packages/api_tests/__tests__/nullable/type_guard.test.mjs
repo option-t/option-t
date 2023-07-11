@@ -20,7 +20,7 @@ import * as Nullable from 'option-t/Nullable';
 
     testcase.forEach(([input, expected]) => {
         test(`isNotNull(): \`${String(input)} (typeof ${typeof input})\` should be \`${String(
-            expected
+            expected,
         )}\``, (t) => {
             t.is(Nullable.isNotNull(input), expected);
         });
@@ -45,7 +45,7 @@ import * as Nullable from 'option-t/Nullable';
 
     testcase.forEach(([input, expected]) => {
         test(`isNull(): \`${String(input)} (typeof ${typeof input})\` should be \`${String(
-            expected
+            expected,
         )}\``, (t) => {
             t.is(Nullable.isNull(input), expected);
         });

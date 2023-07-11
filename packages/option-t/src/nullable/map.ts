@@ -12,7 +12,7 @@ import { type Nullable, isNull, type NotNull, expectNotNull } from './nullable.j
  */
 export function mapForNullable<T, U>(
     input: Nullable<T>,
-    transformer: TransformFn<T, NotNull<U>>
+    transformer: TransformFn<T, NotNull<U>>,
 ): Nullable<U> {
     if (isNull(input)) {
         return input;

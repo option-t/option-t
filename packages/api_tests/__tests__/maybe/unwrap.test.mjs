@@ -24,7 +24,7 @@ for (const NULL_VALUE of [undefined, null]) {
             () => {
                 unwrapMaybe(NULL_VALUE);
             },
-            { instanceOf: TypeError, message: 'called with `null` or `undefined`' }
+            { instanceOf: TypeError, message: 'called with `null` or `undefined`' },
         );
     });
 }

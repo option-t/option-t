@@ -19,7 +19,7 @@ import type { TransformFn } from '../internal/function.js';
 export function mapOrForMaybe<T, U>(
     input: Maybe<T>,
     defaultValue: NotNullOrUndefined<U>,
-    transformer: TransformFn<T, NotNullOrUndefined<U>>
+    transformer: TransformFn<T, NotNullOrUndefined<U>>,
 ): NotNullOrUndefined<U> {
     let result: U;
     let msg = '';

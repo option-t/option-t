@@ -14,7 +14,7 @@ export type ResultAsyncTryTransformFn<in T, out U, out E> = AsyncTransformFn<T, 
  */
 export async function andThenAsyncForResult<T, U, E>(
     input: Result<T, E>,
-    transformer: ResultAsyncTryTransformFn<T, U, E>
+    transformer: ResultAsyncTryTransformFn<T, U, E>,
 ): Promise<Result<U, E>> {
     if (isErr(input)) {
         return input;

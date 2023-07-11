@@ -14,7 +14,7 @@ test('Ok<T>', function (t) {
         {
             instanceOf: TypeError,
             message: 'called `unwrapErr()` on a `Ok` value',
-        }
+        },
     );
 });
 

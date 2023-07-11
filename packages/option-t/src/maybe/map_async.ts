@@ -18,7 +18,7 @@ import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './internal
  */
 export async function mapAsyncForMaybe<T, U>(
     input: Maybe<T>,
-    transformer: AsyncTransformFn<T, NotNullOrUndefined<U>>
+    transformer: AsyncTransformFn<T, NotNullOrUndefined<U>>,
 ): Promise<Maybe<U>> {
     if (isNullOrUndefined(input)) {
         return input;
@@ -33,7 +33,7 @@ export async function mapAsyncForMaybe<T, U>(
     // Then the user should call `andThen` (_flatmap_) operation instead of this.
     const checked: NotNullOrUndefined<U> = expectNotNullOrUndefined(
         result,
-        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE
+        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     );
     return checked;
 }

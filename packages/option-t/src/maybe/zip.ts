@@ -7,7 +7,7 @@ import { type Maybe, type NotNullOrUndefined, isNotNullOrUndefined } from './may
  */
 export function zipForMaybe<T, U>(
     self: Maybe<T>,
-    other: Maybe<U>
+    other: Maybe<U>,
 ): Maybe<[NotNullOrUndefined<T>, NotNullOrUndefined<U>]> {
     if (isNotNullOrUndefined(self) && isNotNullOrUndefined(other)) {
         return [self, other];

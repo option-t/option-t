@@ -99,5 +99,5 @@ testImportExposedPath(
         './Maybe/xor': null,
         './Maybe/zip': null,
         './Maybe/zipWith': null,
-    })
+    }),
 );

@@ -8,7 +8,7 @@ import type { AsyncRecoveryFn } from '../internal/function.js';
  */
 export async function okOrElseAsyncForUndefinable<T, E>(
     input: Undefinable<T>,
-    recoverer: AsyncRecoveryFn<E>
+    recoverer: AsyncRecoveryFn<E>,
 ): Promise<Result<T, E>> {
     if (isNotUndefined(input)) {
         const okWrapped = createOk<T>(input);

@@ -10,7 +10,7 @@ export type ResultTryRecoveryFromErrorFn<in E, out T, out F> = RecoveryFromError
  */
 export function orElseForResult<T, E, F>(
     input: Result<T, E>,
-    recoverer: ResultTryRecoveryFromErrorFn<E, T, F>
+    recoverer: ResultTryRecoveryFromErrorFn<E, T, F>,
 ): Result<T, F> {
     if (input.ok) {
         return input;

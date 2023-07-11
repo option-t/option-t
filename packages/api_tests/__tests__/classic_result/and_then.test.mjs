@@ -67,7 +67,7 @@ test('Ok(T): return non Result type', (t) => {
         {
             instanceOf: TypeError,
             message: "Result<T, E>.andThen()' param `op` should return `Result<U, E>`.",
-        }
+        },
     );
 });
 

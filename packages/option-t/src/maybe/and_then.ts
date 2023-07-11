@@ -14,7 +14,7 @@ export type MaybeTryTransformFn<in T, out U> = TransformFn<T, Maybe<U>>;
  */
 export function andThenForMaybe<T, U>(
     input: Maybe<T>,
-    transformer: MaybeTryTransformFn<T, U>
+    transformer: MaybeTryTransformFn<T, U>,
 ): Maybe<U> {
     if (isNullOrUndefined(input)) {
         return input;

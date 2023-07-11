@@ -15,7 +15,7 @@ export type UndefinableAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Un
  */
 export async function andThenAsyncForUndefinable<T, U>(
     input: Undefinable<T>,
-    transformer: UndefinableAsyncTryTransformFn<T, U>
+    transformer: UndefinableAsyncTryTransformFn<T, U>,
 ): Promise<Undefinable<U>> {
     if (isUndefined(input)) {
         return undefined;

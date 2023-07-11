@@ -35,7 +35,7 @@ for (const NULL_VALUE of [undefined, null]) {
 
     for (const FALLBACK_VALUE of [null, undefined]) {
         test(`should not accept Maybe<*> as default, v = ${String(NULL_VALUE)}, def = ${String(
-            FALLBACK_VALUE
+            FALLBACK_VALUE,
         )}`, async (t) => {
             t.plan(2);
 
@@ -49,7 +49,7 @@ for (const NULL_VALUE of [undefined, null]) {
                 {
                     instanceOf: TypeError,
                     message: '`recoverer` must not return `null` or `undefined`',
-                }
+                },
             );
         });
     }

@@ -22,7 +22,7 @@ const SOME_VALUE_PATTERN = [
     testCase(
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
-        EXPECTED_RESULT_VALUE
+        EXPECTED_RESULT_VALUE,
     ),
 ];
 
@@ -49,17 +49,17 @@ const NO_VALUE_PATTERN = [
     testCase(
         NULL_VALUE_IN_THIS_TEST_CASE,
         NULL_VALUE_IN_THIS_TEST_CASE,
-        NULL_VALUE_IN_THIS_TEST_CASE
+        NULL_VALUE_IN_THIS_TEST_CASE,
     ),
     testCase(
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
         NULL_VALUE_IN_THIS_TEST_CASE,
-        NULL_VALUE_IN_THIS_TEST_CASE
+        NULL_VALUE_IN_THIS_TEST_CASE,
     ),
     testCase(
         NULL_VALUE_IN_THIS_TEST_CASE,
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
-        NULL_VALUE_IN_THIS_TEST_CASE
+        NULL_VALUE_IN_THIS_TEST_CASE,
     ),
 ];
 
@@ -94,6 +94,6 @@ test(`should throw if the callback return ${NULL_VALUE_IN_THIS_TEST_CASE}`, asyn
         {
             instanceOf: TypeError,
             message: '`transformer` must not return `undefined`',
-        }
+        },
     );
 });

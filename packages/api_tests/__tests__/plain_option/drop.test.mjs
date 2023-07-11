@@ -41,7 +41,7 @@ test(`should throw if the input is frozen: Some`, (t) => {
         {
             instanceOf: TypeError,
             message: `input is frozen, cannot cast to mutable`,
-        }
+        },
     );
 });
 
@@ -59,6 +59,6 @@ test(`should throw if the input is frozen: None`, (t) => {
         {
             instanceOf: TypeError,
             message: `input is frozen, cannot cast to mutable`,
-        }
+        },
     );
 });

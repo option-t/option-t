@@ -7,7 +7,7 @@ import { type Option, isSome, unwrapSome } from './option.js';
  */
 export async function unwrapOrElseAsyncFromOption<T>(
     input: Option<T>,
-    recoverer: AsyncRecoveryFn<T>
+    recoverer: AsyncRecoveryFn<T>,
 ): Promise<T> {
     if (isSome(input)) {
         const val: T = unwrapSome(input);

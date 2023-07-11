@@ -22,7 +22,7 @@ for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {
                 t.pass('should call selector fn');
                 t.is(v, PASSED_VALUE);
                 return v;
-            }
+            },
         );
 
         t.is(result, EXPECTED, 'should the expected result');
@@ -41,7 +41,7 @@ test('pass null', (t) => {
         (_v) => {
             t.pass('should call selector fn');
             return COMPUTED_VAL;
-        }
+        },
     );
 
     t.is(result, COMPUTED_VAL, 'should be the expected');
@@ -60,7 +60,7 @@ test('pass undefined', (t) => {
             t.pass('should not call selector fn');
 
             return COMPUTED_VAL;
-        }
+        },
     );
 
     t.is(result, DEFAULE_VAL, 'should be the expected');
@@ -70,7 +70,7 @@ test('pass undefined', (t) => {
     const testcases = [[1, 2, NULL_VALUE_IN_THIS_TEST_CASE]];
     for (const [src, def, selectorResult] of testcases) {
         const LABEL = `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(
-            selectorResult
+            selectorResult,
         )}`;
 
         test("assert that do not return Undefinable<*> as the selector's result: " + LABEL, (t) => {
@@ -80,10 +80,10 @@ test('pass undefined', (t) => {
                     mapOrElseForUndefinable(
                         src,
                         () => def,
-                        (_v) => selectorResult
+                        (_v) => selectorResult,
                     );
                 },
-                { instanceOf: TypeError, message: '`transformer` must not return `undefined`' }
+                { instanceOf: TypeError, message: '`transformer` must not return `undefined`' },
             );
         });
     }
@@ -93,7 +93,7 @@ test('pass undefined', (t) => {
     const testcases = [[NULL_VALUE_IN_THIS_TEST_CASE, NULL_VALUE_IN_THIS_TEST_CASE, Math.random()]];
     for (const [src, def, selectorResult] of testcases) {
         const LABEL = `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(
-            selectorResult
+            selectorResult,
         )}`;
 
         test('assert that def is not Undefinable<*>: ' + LABEL, (t) => {
@@ -104,10 +104,10 @@ test('pass undefined', (t) => {
                     mapOrElseForUndefinable(
                         src,
                         () => def,
-                        (_v) => selectorResult
+                        (_v) => selectorResult,
                     );
                 },
-                { instanceOf: TypeError, message: '`recoverer` must not return `undefined`' }
+                { instanceOf: TypeError, message: '`recoverer` must not return `undefined`' },
             );
         });
     }

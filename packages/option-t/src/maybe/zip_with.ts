@@ -19,7 +19,7 @@ import {
 export function zipWithForMaybe<T, U, R>(
     self: Maybe<T>,
     other: Maybe<U>,
-    transformer: ZipTransformerFn<T, U, NotNullOrUndefined<R>>
+    transformer: ZipTransformerFn<T, U, NotNullOrUndefined<R>>,
 ): Maybe<R> {
     if (isNullOrUndefined(self) || isNullOrUndefined(other)) {
         return undefined;
@@ -28,7 +28,7 @@ export function zipWithForMaybe<T, U, R>(
     const result: R = transformer(self, other);
     const checked: NotNullOrUndefined<R> = expectNotNullOrUndefined(
         result,
-        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE
+        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     );
     return checked;
 }
