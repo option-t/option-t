@@ -7,7 +7,7 @@ import { isNotNull, type Nullable, type NotNull } from './nullable.js';
  */
 export function zipForNullable<T, U>(
     self: Nullable<T>,
-    other: Nullable<U>
+    other: Nullable<U>,
 ): Nullable<[NotNull<T>, NotNull<U>]> {
     if (isNotNull(self) && isNotNull(other)) {
         return [self, other];

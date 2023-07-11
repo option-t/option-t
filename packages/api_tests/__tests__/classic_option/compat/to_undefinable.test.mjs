@@ -37,7 +37,7 @@ test(`input is Classic's but contains undefined`, (t) => {
         {
             instanceOf: TypeError,
             message: `ClassicOption<T>'s inner value is undefined. This type cannot be converted to Undefinable<T>`,
-        }
+        },
     );
 });
 

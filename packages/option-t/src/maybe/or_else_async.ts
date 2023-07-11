@@ -10,7 +10,7 @@ export type MaybeAsyncRecoveryFn<out T> = AsyncRecoveryFn<Maybe<T>>;
  */
 export async function orElseAsyncForMaybe<T>(
     input: Maybe<T>,
-    recoverer: MaybeAsyncRecoveryFn<T>
+    recoverer: MaybeAsyncRecoveryFn<T>,
 ): Promise<Maybe<T>> {
     if (isNotNullOrUndefined(input)) {
         return input;

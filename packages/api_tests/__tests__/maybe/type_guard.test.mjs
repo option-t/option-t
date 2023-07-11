@@ -20,7 +20,7 @@ import * as Maybe from 'option-t/Maybe/Maybe';
 
     testcase.forEach(([input, expected]) => {
         test(`isSomeActual() \`${String(input)} (typeof ${typeof input})\` should be \`${String(
-            expected
+            expected,
         )}\``, (t) => {
             t.is(Maybe.isNotNullOrUndefined(input), expected);
         });
@@ -45,7 +45,7 @@ import * as Maybe from 'option-t/Maybe/Maybe';
 
     testcase.forEach(([input, expected]) => {
         test(`isUndefinedOrNull() \`${String(
-            input
+            input,
         )} (typeof ${typeof input})\` should be \`${String(expected)}\``, (t) => {
             t.is(Maybe.isNullOrUndefined(input), expected);
         });

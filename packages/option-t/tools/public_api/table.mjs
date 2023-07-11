@@ -129,7 +129,7 @@ export const apiTable = Object.freeze({
     'PlainResult/expect': pathRedirectionMarkedAsDeprecated(`${PLAIN_RESULT_DIR}/expect`),
     'PlainResult/flatten': pathRedirectionTo(`${PLAIN_RESULT_DIR}/flatten`),
     'PlainResult/fromPromiseSettledResult': pathRedirectionTo(
-        'plain_result/from_promise_settled_result'
+        'plain_result/from_promise_settled_result',
     ),
     'PlainResult/inspect': pathRedirectionTo(`${PLAIN_RESULT_DIR}/inspect`),
     'PlainResult/map': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map`),
@@ -155,7 +155,7 @@ export const apiTable = Object.freeze({
     'PlainResult/unwrapOrElse': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or_else`),
     'PlainResult/unwrapOrElseAsync': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or_else_async`),
     'PlainResult/unwrapOrThrowError': pathRedirectionTo(
-        `${PLAIN_RESULT_DIR}/unwrap_or_throw_error`
+        `${PLAIN_RESULT_DIR}/unwrap_or_throw_error`,
     ),
 
     'Undefinable': pathRedirectionTo(`${UNDEFINABLE_DIR}/index`),

@@ -25,12 +25,12 @@ import {
 export async function mapOrAsyncForUndefinable<T, U>(
     input: Undefinable<T>,
     defaultValue: NotUndefined<U>,
-    transformer: AsyncTransformFn<T, NotUndefined<U>>
+    transformer: AsyncTransformFn<T, NotUndefined<U>>,
 ): Promise<NotUndefined<U>> {
     if (isUndefined(input)) {
         const nonNullDefault: NotUndefined<U> = expectNotUndefined(
             defaultValue,
-            ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE
+            ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE,
         );
         return nonNullDefault;
     }
@@ -39,7 +39,7 @@ export async function mapOrAsyncForUndefinable<T, U>(
 
     const checked: NotUndefined<U> = expectNotUndefined(
         result,
-        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE
+        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
     );
     return checked;
 }

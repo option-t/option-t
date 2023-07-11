@@ -10,7 +10,7 @@ export type UndefinableAsyncTryRecoveryFn<out T> = AsyncRecoveryFn<Undefinable<T
  */
 export async function orElseAsyncForUndefinable<T>(
     input: Undefinable<T>,
-    recoverer: UndefinableAsyncTryRecoveryFn<T>
+    recoverer: UndefinableAsyncTryRecoveryFn<T>,
 ): Promise<Undefinable<T>> {
     if (isNotUndefined(input)) {
         return input;

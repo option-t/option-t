@@ -32,7 +32,7 @@ test('pass null', async (t) => {
         async (_v) => {
             t.pass('should call selector fn');
             return RESULT_VAL;
-        }
+        },
     );
 
     t.true(result instanceof Promise, 'result should be Promise');

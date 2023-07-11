@@ -51,7 +51,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
         async () => {
             t.fail('should not call recover fn');
             return DEFAULT_VAL;
-        }
+        },
     );
 
     t.true(result instanceof Promise, 'result should be Promise');
@@ -63,13 +63,13 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
 const testcases = [[NULL_VALUE_IN_THIS_TEST_CASE, NULL_VALUE_IN_THIS_TEST_CASE]];
 for (const [src, def] of testcases) {
     test(`should not accept null as default value, v = ${String(src)}, def = ${String(
-        def
+        def,
     )}`, async (t) => {
         await t.throwsAsync(
             async () => {
                 await unwrapOrElseAsyncFromNullable(src, async () => def);
             },
-            { instanceOf: TypeError, message: '`recoverer` must not return `null`' }
+            { instanceOf: TypeError, message: '`recoverer` must not return `null`' },
         );
     });
 }

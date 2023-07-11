@@ -9,7 +9,7 @@ import { type Result, isOk, unwrapOk, unwrapErr } from './result.js';
 export async function mapOrElseAsyncForResult<T, E, U>(
     input: Result<T, E>,
     recoverer: AsyncRecoveryFromErrorFn<E, U>,
-    transformer: AsyncTransformFn<T, U>
+    transformer: AsyncTransformFn<T, U>,
 ): Promise<U> {
     if (isOk(input)) {
         const inner: T = unwrapOk(input);

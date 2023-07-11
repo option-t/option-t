@@ -10,7 +10,7 @@ import type { TransformFn } from '../internal/function.js';
 export function mapOrForResult<T, E, U>(
     input: Result<T, E>,
     defaultValue: U,
-    transformer: TransformFn<T, U>
+    transformer: TransformFn<T, U>,
 ): U {
     if (input.ok) {
         const result: U = transformer(input.val);

@@ -31,7 +31,7 @@ for (const [typename, inputValue] of TEST_CASE_LIST) {
             {
                 instanceOf: TypeError,
                 message: `input is frozen, cannot cast to mutable`,
-            }
+            },
         );
     });
 }

@@ -14,7 +14,7 @@ export type OptionTryTransformFn<in T, out U> = TransformFn<T, Option<U>>;
  */
 export function andThenForOption<T, U>(
     input: Option<T>,
-    transformer: OptionTryTransformFn<T, U>
+    transformer: OptionTryTransformFn<T, U>,
 ): Option<U> {
     if (!input.ok) {
         return input;

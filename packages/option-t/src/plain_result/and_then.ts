@@ -14,7 +14,7 @@ export type ResultTryTransformFn<in T, out U, out E> = TransformFn<T, Result<U, 
  */
 export function andThenForResult<T, U, E>(
     input: Result<T, E>,
-    transformer: ResultTryTransformFn<T, U, E>
+    transformer: ResultTryTransformFn<T, U, E>,
 ): Result<U, E> {
     if (!input.ok) {
         return input;

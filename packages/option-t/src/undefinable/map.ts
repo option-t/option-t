@@ -17,7 +17,7 @@ import {
  */
 export function mapForUndefinable<T, U>(
     input: Undefinable<T>,
-    transformer: TransformFn<T, NotUndefined<U>>
+    transformer: TransformFn<T, NotUndefined<U>>,
 ): Undefinable<U> {
     if (isUndefined(input)) {
         return input;
@@ -31,7 +31,7 @@ export function mapForUndefinable<T, U>(
     // Then the user should call `andThen` (_flatmap_) operation instead of this.
     const passed = expectNotUndefined(
         result,
-        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE
+        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
     );
     return passed;
 }

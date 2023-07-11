@@ -19,6 +19,6 @@ test('unwrap `None`', function (t) {
         {
             instanceOf: TypeError,
             message: EXPECTED,
-        }
+        },
     );
 });

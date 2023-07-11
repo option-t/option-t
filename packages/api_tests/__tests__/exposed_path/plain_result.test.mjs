@@ -114,5 +114,5 @@ testImportExposedPath(
         './PlainResult/unwrapOrElse': null,
         './PlainResult/unwrapOrElseAsync': null,
         './PlainResult/unwrapOrThrowError': null,
-    })
+    }),
 );

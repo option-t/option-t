@@ -9,7 +9,7 @@ export type UndefinableTryRecoveryFn<out T> = RecoveryFn<Undefinable<T>>;
  */
 export function orElseForUndefinable<T>(
     input: Undefinable<T>,
-    recoverer: UndefinableTryRecoveryFn<T>
+    recoverer: UndefinableTryRecoveryFn<T>,
 ): Undefinable<T> {
     if (input !== undefined) {
         return input;

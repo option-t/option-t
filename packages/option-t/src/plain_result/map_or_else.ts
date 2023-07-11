@@ -9,7 +9,7 @@ import type { Result } from './result.js';
 export function mapOrElseForResult<T, E, U>(
     input: Result<T, E>,
     recoverer: RecoveryFromErrorFn<E, U>,
-    transformer: TransformFn<T, U>
+    transformer: TransformFn<T, U>,
 ): U {
     if (input.ok) {
         const result: U = transformer(input.val);

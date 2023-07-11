@@ -75,6 +75,6 @@ test('Err(E): return non Result type', (t) => {
         {
             instanceOf: TypeError,
             message: "Result<T, E>.orElse()' param `op` should return `Result<T, F>`.",
-        }
+        },
     );
 });

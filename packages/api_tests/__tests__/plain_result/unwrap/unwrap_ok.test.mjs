@@ -19,6 +19,6 @@ test('Err', (t) => {
         {
             instanceOf: TypeError,
             message: 'called with `Err`',
-        }
+        },
     );
 });

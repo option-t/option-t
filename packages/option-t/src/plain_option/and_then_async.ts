@@ -14,7 +14,7 @@ export type OptionAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Option<
  */
 export async function andThenAsyncForOption<T, U>(
     input: Option<T>,
-    transformer: OptionAsyncTryTransformFn<T, U>
+    transformer: OptionAsyncTryTransformFn<T, U>,
 ): Promise<Option<U>> {
     if (isNone(input)) {
         return input;

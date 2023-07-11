@@ -5,5 +5,5 @@ testImportExposedPath(
     test,
     Object.keys({
         '.': null,
-    })
+    }),
 );

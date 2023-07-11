@@ -4,7 +4,7 @@ import { type Result, createOk, createErr } from './result.js';
  *  Convert {@link PromiseSettledResult<T>} returned by {@link Promise.allSettled} to {@link Result}
  */
 export function fromPromiseSettledResultToResult<T>(
-    input: PromiseSettledResult<T>
+    input: PromiseSettledResult<T>,
 ): Result<T, unknown> {
     const status = input.status;
     switch (status) {

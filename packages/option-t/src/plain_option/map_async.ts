@@ -10,7 +10,7 @@ import { type Option, createSome, isNone, unwrapSome } from './option.js';
  */
 export async function mapAsyncForOption<T, U>(
     input: Option<T>,
-    transformer: AsyncTransformFn<T, U>
+    transformer: AsyncTransformFn<T, U>,
 ): Promise<Option<U>> {
     if (isNone(input)) {
         return input;

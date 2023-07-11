@@ -19,7 +19,7 @@ import { isNotNull, type NotNull, type Nullable, expectNotNull } from './nullabl
 export function mapOrElseForNullable<T, U>(
     input: Nullable<T>,
     recoverer: RecoveryFn<NotNull<U>>,
-    transformer: TransformFn<T, NotNull<U>>
+    transformer: TransformFn<T, NotNull<U>>,
 ): NotNull<U> {
     let result: U;
     let msg = '';

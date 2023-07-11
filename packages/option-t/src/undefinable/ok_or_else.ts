@@ -8,7 +8,7 @@ import type { RecoveryFn } from '../internal/function.js';
  */
 export function okOrElseForUndefinable<T, E>(
     input: Undefinable<T>,
-    recoverer: RecoveryFn<E>
+    recoverer: RecoveryFn<E>,
 ): Result<T, E> {
     if (isNotUndefined(input)) {
         const okWrapped = createOk<T>(input);

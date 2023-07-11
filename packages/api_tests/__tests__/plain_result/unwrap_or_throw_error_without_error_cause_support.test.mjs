@@ -38,7 +38,7 @@ test('input is Err, but the contained value is not Error', (t) => {
         {
             instanceOf: TypeError,
             message: `The contained E should be \`Error\` instance.`,
-        }
+        },
     );
 
     t.is(thrown.cause, ERROR_E, `should be set Error.cause`);

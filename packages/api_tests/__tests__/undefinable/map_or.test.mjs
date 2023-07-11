@@ -32,7 +32,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
         (_v) => {
             t.pass('should call selector fn');
             return COMPUTED_VAL;
-        }
+        },
     );
 
     t.is(result, COMPUTED_VAL, 'should be the expected');
@@ -55,7 +55,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     const testcases = [[1, 2, NULL_VALUE_IN_THIS_TEST_CASE]];
     for (const [src, def, selectorResult] of testcases) {
         const label = `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(
-            selectorResult
+            selectorResult,
         )}`;
         test("assert that do not return Undefinable<*> as the selector's result: " + label, (t) => {
             t.plan(1);
@@ -64,7 +64,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
                 () => {
                     mapOrForUndefinable(src, def, (_v) => selectorResult);
                 },
-                { instanceOf: TypeError, message: '`transformer` must not return `undefined`' }
+                { instanceOf: TypeError, message: '`transformer` must not return `undefined`' },
             );
         });
     }
@@ -74,7 +74,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     const testcases = [[NULL_VALUE_IN_THIS_TEST_CASE, NULL_VALUE_IN_THIS_TEST_CASE, '']];
     for (const [src, def, selectorResult] of testcases) {
         const label = `v = ${String(src)}, def = ${String(def)}, selectorResult=${String(
-            selectorResult
+            selectorResult,
         )}`;
         test('assert that def is not Undefinable<*>: ' + label, (t) => {
             t.plan(1);
@@ -83,7 +83,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
                 () => {
                     mapOrForUndefinable(src, def, (_v) => selectorResult);
                 },
-                { instanceOf: TypeError, message: '`defaultValue` must not be `undefined`' }
+                { instanceOf: TypeError, message: '`defaultValue` must not be `undefined`' },
             );
         });
     }

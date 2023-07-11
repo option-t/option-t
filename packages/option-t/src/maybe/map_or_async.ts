@@ -25,12 +25,12 @@ import {
 export async function mapOrAsyncForMaybe<T, U>(
     input: Maybe<T>,
     defaultValue: NotNullOrUndefined<U>,
-    transformer: AsyncTransformFn<T, NotNullOrUndefined<U>>
+    transformer: AsyncTransformFn<T, NotNullOrUndefined<U>>,
 ): Promise<NotNullOrUndefined<U>> {
     if (isNullOrUndefined(input)) {
         const nonNullDefault: NotNullOrUndefined<U> = expectNotNullOrUndefined(
             defaultValue,
-            ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE
+            ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_MAYBE,
         );
         return nonNullDefault;
     }
@@ -38,7 +38,7 @@ export async function mapOrAsyncForMaybe<T, U>(
     const result: U = await transformer(input);
     const checked: NotNullOrUndefined<U> = expectNotNullOrUndefined(
         result,
-        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE
+        ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     );
     return checked;
 }

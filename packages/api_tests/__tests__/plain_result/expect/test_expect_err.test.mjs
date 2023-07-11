@@ -15,7 +15,7 @@ test('input=Ok(T), expect=Err(E)', (t) => {
         {
             instanceOf: TypeError,
             message: MSG,
-        }
+        },
     );
 });
 

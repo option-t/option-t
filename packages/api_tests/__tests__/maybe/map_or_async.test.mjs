@@ -49,7 +49,7 @@ for (const NULL_VALUE of [undefined, null]) {
             {
                 instanceOf: TypeError,
                 message: '`transformer` must not return `null` or `undefined`',
-            }
+            },
         );
     });
 
@@ -67,7 +67,7 @@ for (const NULL_VALUE of [undefined, null]) {
                 {
                     instanceOf: TypeError,
                     message: '`defaultValue` must not be `null` or `undefined`',
-                }
+                },
             );
         });
     }

@@ -19,7 +19,7 @@ import {
 export async function mapOrElseAsyncForNullable<T, U>(
     input: Nullable<T>,
     recoverer: AsyncRecoveryFn<NotNull<U>>,
-    transformer: AsyncTransformFn<T, NotNull<U>>
+    transformer: AsyncTransformFn<T, NotNull<U>>,
 ): Promise<NotNull<U>> {
     let result: U;
     let messageForExpect = '';

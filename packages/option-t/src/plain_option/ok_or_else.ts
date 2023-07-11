@@ -7,7 +7,7 @@ import type { RecoveryFn } from '../internal/function.js';
  */
 export function okOrElseForPlainOption<T, E>(
     input: Option<T>,
-    recoverer: RecoveryFn<E>
+    recoverer: RecoveryFn<E>,
 ): Result<T, E> {
     if (input.ok) {
         const okWrapped = createOk<T>(input.val);

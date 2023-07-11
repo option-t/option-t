@@ -38,7 +38,7 @@ test('If producer throw non-Error-instance value', (t) => {
         {
             instanceOf: TypeError,
             message: `The thrown value is not an \`Error\` instance.`,
-        }
+        },
     );
 
     t.is(actual.cause, EXPECT_THROWN, `should set Error.cause`);

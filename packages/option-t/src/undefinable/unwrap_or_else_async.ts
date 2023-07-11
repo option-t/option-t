@@ -18,7 +18,7 @@ import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './inte
  */
 export async function unwrapOrElseAsyncFromUndefinable<T>(
     input: Undefinable<T>,
-    recoverer: AsyncRecoveryFn<NotUndefined<T>>
+    recoverer: AsyncRecoveryFn<NotUndefined<T>>,
 ): Promise<NotUndefined<T>> {
     if (isNotUndefined(input)) {
         return input;
@@ -27,7 +27,7 @@ export async function unwrapOrElseAsyncFromUndefinable<T>(
     const fallback: T = await recoverer();
     const checked: NotUndefined<T> = expectNotUndefined(
         fallback,
-        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE
+        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
     );
     return checked;
 }

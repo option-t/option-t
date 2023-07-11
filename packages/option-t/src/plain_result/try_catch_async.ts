@@ -12,7 +12,7 @@ import { type Result, createOk, createErr } from './result.js';
  *  An user should narrow the scope of _producer_ to make it predictable that is in `Err(E)`.
  */
 export async function tryCatchIntoResultAsync<T>(
-    producer: AsyncProducerFn<T>
+    producer: AsyncProducerFn<T>,
 ): Promise<Result<T, unknown>> {
     let value: T;
     try {
@@ -36,7 +36,7 @@ export async function tryCatchIntoResultAsync<T>(
  *  2. This function requires ES2022's `Error.cause` to get an actual thrown object.
  */
 export async function tryCatchIntoResultWithEnsureErrorAsync<T>(
-    producer: AsyncProducerFn<T>
+    producer: AsyncProducerFn<T>,
 ): Promise<Result<T, Error>> {
     const result: Result<T, unknown> = await tryCatchIntoResultAsync(producer);
     const ensured: Result<T, Error> = mapErrForResult(result, checkThrownIsError);

@@ -18,7 +18,7 @@ test('Ok<T>', (t) => {
         (v) => {
             t.is(v, INITIAL, 'the argument');
             return EXPECTED;
-        }
+        },
     );
 
     t.is(r, 3, 'the return value');
@@ -38,7 +38,7 @@ test('Err<E>', (t) => {
         },
         (_v) => {
             t.fail(`don't enter this path`);
-        }
+        },
     );
 
     t.is(r, 3, 'the return value');

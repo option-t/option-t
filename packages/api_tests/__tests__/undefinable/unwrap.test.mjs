@@ -40,6 +40,6 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
         {
             instanceOf: TypeError,
             message: 'called with `undefined`',
-        }
+        },
     );
 });

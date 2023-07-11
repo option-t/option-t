@@ -15,7 +15,7 @@ export type MaybeAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Maybe<U>
  */
 export async function andThenAsyncForMaybe<T, U>(
     input: Maybe<T>,
-    transformer: MaybeAsyncTryTransformFn<T, U>
+    transformer: MaybeAsyncTryTransformFn<T, U>,
 ): Promise<Maybe<U>> {
     if (isNullOrUndefined(input)) {
         return input;

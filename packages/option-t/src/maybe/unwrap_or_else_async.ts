@@ -17,7 +17,7 @@ import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './internal/e
  */
 export async function unwrapOrElseAsyncFromMaybe<T>(
     input: Maybe<T>,
-    recoverer: AsyncRecoveryFn<NotNullOrUndefined<T>>
+    recoverer: AsyncRecoveryFn<NotNullOrUndefined<T>>,
 ): Promise<NotNullOrUndefined<T>> {
     if (isNotNullOrUndefined(input)) {
         return input;
@@ -27,7 +27,7 @@ export async function unwrapOrElseAsyncFromMaybe<T>(
 
     const checked = expectNotNullOrUndefined(
         fallback,
-        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE
+        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,
     );
     return checked;
 }

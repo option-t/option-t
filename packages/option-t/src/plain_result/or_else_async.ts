@@ -12,7 +12,7 @@ export type ResultAsyncTryRecoveryFromErrorFn<in E, out T, out F> = AsyncRecover
  */
 export async function orElseAsyncForResult<T, E, F>(
     input: Result<T, E>,
-    recoverer: ResultAsyncTryRecoveryFromErrorFn<E, T, F>
+    recoverer: ResultAsyncTryRecoveryFromErrorFn<E, T, F>,
 ): Promise<Result<T, F>> {
     if (isOk(input)) {
         return input;

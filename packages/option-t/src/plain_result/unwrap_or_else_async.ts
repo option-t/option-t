@@ -7,7 +7,7 @@ import { type Result, isOk, unwrapErr, unwrapOk } from './result.js';
  */
 export async function unwrapOrElseAsyncFromResult<T, E>(
     input: Result<T, E>,
-    recoverer: AsyncRecoveryFromErrorFn<E, T>
+    recoverer: AsyncRecoveryFromErrorFn<E, T>,
 ): Promise<T> {
     if (isOk(input)) {
         const value: T = unwrapOk(input);

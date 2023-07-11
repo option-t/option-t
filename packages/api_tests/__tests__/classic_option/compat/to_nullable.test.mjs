@@ -36,7 +36,7 @@ test(`input is Classic's but contains null`, (t) => {
         {
             instanceOf: TypeError,
             message: `ClassicOption<T>'s inner value is null. This type cannot be converted to Nullable<T>`,
-        }
+        },
     );
 });
 

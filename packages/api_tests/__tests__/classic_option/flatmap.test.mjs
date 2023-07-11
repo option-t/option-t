@@ -46,6 +46,6 @@ test("self is `Some<T>`, `fn` don't returns `Option<T>`", function (t) {
         {
             instanceOf: TypeError,
             message: "Option<T>.flatMap()' param `fn` should return `Option<T>`.",
-        }
+        },
     );
 });

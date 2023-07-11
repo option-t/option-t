@@ -42,13 +42,13 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
 const testcases = [[1, NULL_VALUE_IN_THIS_TEST_CASE]];
 for (const [src, def] of testcases) {
     test(`assert that do not return Nullable<*> as the selector's result, v = ${String(
-        src
+        src,
     )}, def = ${String(def)}`, (t) => {
         t.throws(
             () => {
                 mapForNullable(src, (_v) => def);
             },
-            { instanceOf: TypeError, message: '`transformer` must not return `null`' }
+            { instanceOf: TypeError, message: '`transformer` must not return `null`' },
         );
     });
 }

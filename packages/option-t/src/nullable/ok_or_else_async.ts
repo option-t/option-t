@@ -9,7 +9,7 @@ import { type Result, createErr, createOk } from '../plain_result/result.js';
  */
 export async function okOrElseAsyncForNullable<T, E>(
     input: Nullable<T>,
-    recoverer: AsyncRecoveryFn<E>
+    recoverer: AsyncRecoveryFn<E>,
 ): Promise<Result<T, E>> {
     if (isNotNull(input)) {
         const okWrapped = createOk<T>(input);

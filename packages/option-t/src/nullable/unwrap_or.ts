@@ -15,7 +15,7 @@ export function unwrapOrFromNullable<T>(input: Nullable<T>, defaultValue: NotNul
 
     const passed = expectNotNull(
         defaultValue,
-        ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE
+        ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_NULLABLE,
     );
     return passed;
 }

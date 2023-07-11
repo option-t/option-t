@@ -9,7 +9,7 @@ export type NullableAsyncTryRecoveryFn<out T> = AsyncRecoveryFn<Nullable<T>>;
  */
 export async function orElseAsyncForNullable<T>(
     input: Nullable<T>,
-    recoverer: NullableAsyncTryRecoveryFn<T>
+    recoverer: NullableAsyncTryRecoveryFn<T>,
 ): Promise<Nullable<T>> {
     if (isNotNull(input)) {
         return input;

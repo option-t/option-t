@@ -11,7 +11,7 @@ import { type NotNull, type Nullable, isNotNull } from './nullable.js';
  */
 export function inspectNullable<T>(
     input: Nullable<T>,
-    effector: EffectFn<NotNull<T>>
+    effector: EffectFn<NotNull<T>>,
 ): Nullable<T> {
     if (isNotNull(input)) {
         effector(input);

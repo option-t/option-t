@@ -15,7 +15,7 @@ test('self is `None`', function (t) {
         },
         function mapFn() {
             t.fail('`mapFn` should not be called');
-        }
+        },
     );
 
     t.is(result, EXPECTED);
@@ -38,7 +38,7 @@ test('self is `Some<T>`', function (t) {
             t.pass('`mapFn` should be called');
             t.not(val, EXPECTED);
             return EXPECTED;
-        }
+        },
     );
     t.is(result, EXPECTED);
 });

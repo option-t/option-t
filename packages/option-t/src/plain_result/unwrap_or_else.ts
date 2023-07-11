@@ -7,7 +7,7 @@ import type { Result } from './result.js';
  */
 export function unwrapOrElseFromResult<T, E>(
     input: Result<T, E>,
-    recoverer: RecoveryFromErrorFn<E, T>
+    recoverer: RecoveryFromErrorFn<E, T>,
 ): T {
     if (input.ok) {
         const val: T = input.val;

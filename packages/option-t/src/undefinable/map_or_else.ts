@@ -19,7 +19,7 @@ import { type NotUndefined, type Undefinable, expectNotUndefined } from './undef
 export function mapOrElseForUndefinable<T, U>(
     input: Undefinable<T>,
     recoverer: RecoveryFn<NotUndefined<U>>,
-    transformer: TransformFn<T, NotUndefined<U>>
+    transformer: TransformFn<T, NotUndefined<U>>,
 ): NotUndefined<U> {
     let result: U;
     let msg = '';

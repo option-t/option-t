@@ -11,7 +11,7 @@ import { isNotNullOrUndefined, type Maybe, type NotNullOrUndefined } from './may
  */
 export function inspectMaybe<T>(
     input: Maybe<T>,
-    effector: EffectFn<NotNullOrUndefined<T>>
+    effector: EffectFn<NotNullOrUndefined<T>>,
 ): Maybe<T> {
     if (isNotNullOrUndefined(input)) {
         effector(input);

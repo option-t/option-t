@@ -28,6 +28,6 @@ test('input=Err(E), expect=Ok(T)', (t) => {
         {
             instanceOf: TypeError,
             message: MSG,
-        }
+        },
     );
 });

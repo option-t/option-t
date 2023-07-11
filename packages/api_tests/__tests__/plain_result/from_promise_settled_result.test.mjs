@@ -41,6 +41,6 @@ test('should throw error if the input is not supported type', async (t) => {
         {
             instanceOf: TypeError,
             message: `\`PromiseSettledResult.status=${status}\` is not supported`,
-        }
+        },
     );
 });

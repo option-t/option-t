@@ -13,7 +13,7 @@ test('The shape of PlainResult::Ok', (t) => {
 
     t.true(
         Object.hasOwn(actual, 'err'),
-        "`err` should be added on creating this object to stabilize object's Shape/Structure/Hidden Class"
+        "`err` should be added on creating this object to stabilize object's Shape/Structure/Hidden Class",
     );
 });
 
@@ -27,7 +27,7 @@ test('The shape of PlainResult::Err', (t) => {
 
     t.true(
         Object.hasOwn(actual, 'val'),
-        "`val` should be added on creating this object to stabilize object's Shape/Structure/Hidden Class"
+        "`val` should be added on creating this object to stabilize object's Shape/Structure/Hidden Class",
     );
     t.is(actual.err, INNER_VAL, 'Err.err');
 });

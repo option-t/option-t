@@ -9,7 +9,7 @@ export type NullableTryRecoveryFn<out T> = RecoveryFn<Nullable<T>>;
  */
 export function orElseForNullable<T>(
     input: Nullable<T>,
-    recoverer: NullableTryRecoveryFn<T>
+    recoverer: NullableTryRecoveryFn<T>,
 ): Nullable<T> {
     if (input !== null) {
         return input;

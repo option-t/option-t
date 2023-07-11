@@ -9,7 +9,7 @@ import type { Option } from './option.js';
 export function mapOrElseForOption<T, U>(
     input: Option<T>,
     recoverer: RecoveryFn<U>,
-    transformer: TransformFn<T, U>
+    transformer: TransformFn<T, U>,
 ): U {
     if (!input.ok) {
         const fallback = recoverer();

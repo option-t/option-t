@@ -9,7 +9,7 @@ export type OptionAsyncTryRecoveryFn<out T> = AsyncRecoveryFn<Option<T>>;
  */
 export async function orElseAsyncForOption<T>(
     input: Option<T>,
-    recoverer: OptionAsyncTryRecoveryFn<T>
+    recoverer: OptionAsyncTryRecoveryFn<T>,
 ): Promise<Option<T>> {
     if (isSome(input)) {
         return input;

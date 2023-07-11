@@ -480,7 +480,7 @@ export const ClassicSomeConstructor: new <T>(val: T) => ClassicSome<T> =
  */
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const ClassicNoneConstructor: new <T>() => ClassicNone<T> = function ClassicNoneConstructor<
-    T
+    T,
 >() {
     return createClassicNone<T>();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

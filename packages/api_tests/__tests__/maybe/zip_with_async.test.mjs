@@ -75,7 +75,7 @@ for (const nullValue of [null, undefined]) {
             {
                 instanceOf: TypeError,
                 message: '`transformer` must not return `null` or `undefined`',
-            }
+            },
         );
     });
 }

@@ -7,7 +7,7 @@ import { type Undefinable, type NotUndefined, isNotUndefined } from './undefinab
  */
 export function zipForUndefinable<T, U>(
     self: Undefinable<T>,
-    other: Undefinable<U>
+    other: Undefinable<U>,
 ): Undefinable<[NotUndefined<T>, NotUndefined<U>]> {
     if (isNotUndefined(self) && isNotUndefined(other)) {
         return [self, other];

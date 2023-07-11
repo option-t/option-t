@@ -30,6 +30,6 @@ test('input=None', (t) => {
         {
             instanceOf: TypeError,
             message: MSG,
-        }
+        },
     );
 });

@@ -9,7 +9,7 @@ import { type Result, createOk } from './result.js';
  */
 export function mapForResult<T, U, E>(
     input: Result<T, E>,
-    transformer: TransformFn<T, U>
+    transformer: TransformFn<T, U>,
 ): Result<U, E> {
     if (!input.ok) {
         return input;

@@ -53,7 +53,7 @@ const ERR_MSG_CANNOT_CONVERT_TO_NULLABLE = `ClassicOption<T>'s inner value is nu
  *  Otherwise, return `null.
  */
 export function compatToNullableFromClassicOption<T>(
-    input: ClassicOption<NotNull<T>>
+    input: ClassicOption<NotNull<T>>,
 ): Nullable<T> {
     if (input.isNone) {
         return null;
@@ -85,7 +85,7 @@ const ERR_MSG_CANNOT_CONVERT_TO_UNDEFINABLE = `ClassicOption<T>'s inner value is
  *  Otherwise, return `null.
  */
 export function compatToUndefinableFromClassicOption<T>(
-    input: ClassicOption<NotUndefined<T>>
+    input: ClassicOption<NotUndefined<T>>,
 ): Undefinable<T> {
     if (input.isNone) {
         return undefined;

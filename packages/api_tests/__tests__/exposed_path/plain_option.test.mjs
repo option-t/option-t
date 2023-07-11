@@ -105,5 +105,5 @@ testImportExposedPath(
         './PlainOption/unwrapOrElse': null,
         './PlainOption/unwrapOrElseAsync': null,
         './PlainOption/xor': null,
-    })
+    }),
 );

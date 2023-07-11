@@ -42,7 +42,7 @@ test('pass undefined', async (t) => {
         async (v) => {
             t.pass();
             return v;
-        }
+        },
     );
 
     t.true(result instanceof Promise, 'result should be Promise');
@@ -53,7 +53,7 @@ test('pass undefined', async (t) => {
 const testcases = [[1, NULL_VALUE_IN_THIS_TEST_CASE]];
 for (const [src, def] of testcases) {
     test(`assert that do not return Nullable<*> as the selector's result, v = ${String(
-        src
+        src,
     )}, def = ${String(def)}`, async (t) => {
         await t.throwsAsync(
             async () => {
@@ -63,7 +63,7 @@ for (const [src, def] of testcases) {
             {
                 instanceOf: TypeError,
                 message: '`transformer` must not return `null`',
-            }
+            },
         );
     });
 }

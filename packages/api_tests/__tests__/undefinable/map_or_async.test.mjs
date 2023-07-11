@@ -33,7 +33,7 @@ test('pass null', async (t) => {
         async (_v) => {
             t.fail('should not call selector fn');
             return COMPUTED_VAL;
-        }
+        },
     );
 
     t.true(result instanceof Promise, 'result should be Promise');
@@ -53,7 +53,7 @@ test('pass undefined', async (t) => {
             t.pass('should call selector fn');
             t.is(v, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
             return COMPUTED_VAL;
-        }
+        },
     );
 
     t.true(result instanceof Promise, 'result should be Promise');
@@ -65,7 +65,7 @@ test('pass undefined', async (t) => {
     const testcases = [[1, 2, NULL_VALUE_IN_THIS_TEST_CASE]];
     for (const [src, def, selectorResult] of testcases) {
         test(`assert that do not return Nullable<*> as the selector's result, v = ${String(
-            src
+            src,
         )}, def = ${String(def)}, selectorResult=${String(selectorResult)}`, async (t) => {
             t.plan(2);
 
@@ -80,7 +80,7 @@ test('pass undefined', async (t) => {
                 {
                     instanceOf: TypeError,
                     message: '`transformer` must not return `undefined`',
-                }
+                },
             );
         });
     }
@@ -90,7 +90,7 @@ test('pass undefined', async (t) => {
     const testcases = [[NULL_VALUE_IN_THIS_TEST_CASE, NULL_VALUE_IN_THIS_TEST_CASE, '']];
     for (const [src, def, selectorResult] of testcases) {
         test(`assert that def is not Nullable<*>', v = ${String(src)}, def = ${String(
-            def
+            def,
         )}, selectorResult=${String(selectorResult)}`, async (t) => {
             t.plan(1);
 
@@ -105,7 +105,7 @@ test('pass undefined', async (t) => {
                 {
                     instanceOf: TypeError,
                     message: '`defaultValue` must not be `undefined`',
-                }
+                },
             );
         });
     }

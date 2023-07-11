@@ -17,7 +17,7 @@ import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './inte
  */
 export function unwrapOrElseFromUndefinable<T>(
     input: Undefinable<T>,
-    recoverer: RecoveryFn<NotUndefined<T>>
+    recoverer: RecoveryFn<NotUndefined<T>>,
 ): NotUndefined<T> {
     if (isNotUndefined(input)) {
         return input;
@@ -26,7 +26,7 @@ export function unwrapOrElseFromUndefinable<T>(
     const fallback: T = recoverer();
     const passed = expectNotUndefined(
         fallback,
-        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE
+        ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
     );
     return passed;
 }

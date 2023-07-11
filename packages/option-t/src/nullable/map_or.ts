@@ -19,7 +19,7 @@ import type { TransformFn } from '../internal/function.js';
 export function mapOrForNullable<T, U>(
     input: Nullable<T>,
     defaultValue: NotNull<U>,
-    transformer: TransformFn<T, NotNull<U>>
+    transformer: TransformFn<T, NotNull<U>>,
 ): NotNull<U> {
     let result: U;
     let msg = '';

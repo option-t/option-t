@@ -24,14 +24,14 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     t.plan(2);
     const actual = okOrForUndefinable(
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
-        DEFAULT_ERR
+        DEFAULT_ERR,
     );
 
     t.true(isOk(actual), 'should be Ok(T)');
     t.is(
         unwrapOk(actual),
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
-        'should contain the expected'
+        'should contain the expected',
     );
 });
 

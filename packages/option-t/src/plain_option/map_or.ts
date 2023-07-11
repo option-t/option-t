@@ -10,7 +10,7 @@ import type { TransformFn } from '../internal/function.js';
 export function mapOrForOption<T, U>(
     input: Option<T>,
     defaultValue: U,
-    transformer: TransformFn<T, U>
+    transformer: TransformFn<T, U>,
 ): U {
     if (!input.ok) {
         return defaultValue;

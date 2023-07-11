@@ -24,7 +24,7 @@ import {
 export async function mapOrElseAsyncForUndefinable<T, U>(
     input: Undefinable<T>,
     recoverer: AsyncRecoveryFn<NotUndefined<U>>,
-    transformer: AsyncTransformFn<T, NotUndefined<U>>
+    transformer: AsyncTransformFn<T, NotUndefined<U>>,
 ): Promise<NotUndefined<U>> {
     let result: U;
     let messageForExpect = '';

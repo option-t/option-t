@@ -16,7 +16,7 @@ test('input is Ok()', (t) => {
         },
         (_e) => {
             t.fail('should not call this path');
-        }
+        },
     );
 
     t.is(input, actual, 'should be the expect returned');
@@ -35,7 +35,7 @@ test('input is Err()', (t) => {
         (e) => {
             t.pass('should call the inspect err fn');
             t.is(e, INPUT_INNER, 'should be the expected arg');
-        }
+        },
     );
 
     t.is(input, actual, 'should be the expect returned');

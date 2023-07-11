@@ -24,7 +24,7 @@ test('Undefinable::isNotUndefined', (t) => {
         t.is(
             Undefinable.isNotUndefined(input),
             expected,
-            `\`${String(input)}\` should be \`${String(expected)}\``
+            `\`${String(input)}\` should be \`${String(expected)}\``,
         );
     });
 });

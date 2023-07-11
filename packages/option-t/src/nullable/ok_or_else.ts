@@ -8,7 +8,7 @@ import type { RecoveryFn } from '../internal/function.js';
  */
 export function okOrElseForNullable<T, E>(
     input: Nullable<T>,
-    recoverer: RecoveryFn<E>
+    recoverer: RecoveryFn<E>,
 ): Result<T, E> {
     if (isNotNull(input)) {
         const okWrapped = createOk<T>(input);
