@@ -1,0 +1,11 @@
+name: CI for Merge Queue.
+
+on:
+    merge_group:
+
+permissions:
+    contents: read
+
+jobs:
+    ci:
+        uses: ./.github/workflows/_ci.yaml
