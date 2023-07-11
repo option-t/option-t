@@ -150,3 +150,32 @@ jobs:
             - run: make test_distribution_contain_all -j
               env:
                   CI: true
+
+    sentinel:
+        needs:
+            - format_check
+            - build
+            - lint
+            - unittest
+            - test_package_json_exports_field_format
+            - test_import_types
+            - test_distribution_contain_all
+        runs-on: ubuntu-latest
+        if: ${{ always() }}
+        steps:
+            - name: Check whether all dependency jobs are success or not.
+              uses: actions/github-script@v6
+              env:
+                  JOB_RESULTS: ${{ toJSON(needs.*.result) }}
+              with:
+                  script: |
+                      'use strict';
+                      const assert = require('node:assert/strict');
+
+                      const results = JSON.parse(process.env['JOB_RESULTS']);
+                      assert.ok(Array.isArray(results), 'the parsed result is not an array');
+
+                      const success = results.every((value) => value.toLowerCase() === 'success');
+                      if (!success) {
+                          core.setFailed('Failed required checks');
+                      }
