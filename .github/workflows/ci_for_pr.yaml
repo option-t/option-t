@@ -1,10 +1,6 @@
 name: CI for each of Pull Requests
 
 on:
-    push:
-        tags-ignore:
-            # Ignore for release/
-            - v*.*.*
     pull_request:
     merge_group:
 
