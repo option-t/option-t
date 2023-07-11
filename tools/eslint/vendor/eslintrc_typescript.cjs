@@ -329,15 +329,6 @@ module.exports = {
         // Please opt-out this rule if you don't have any workarounds.
         '@typescript-eslint/no-non-null-assertion': 'warn',
 
-        // This TypeScript syntax is useful to reduce declarations of class properties.
-        // However, we feel this syntax has these negative points:
-        //
-        //  * This is not a part of ECMA262 standards.
-        //  * This makes the ordering of initializing members unclear.
-        //
-        // By these things, we enable this rule as defensive choice.
-        '@typescript-eslint/no-parameter-properties': 'error',
-
         // Today, we should use ES Module import in general (almost) case.
         '@typescript-eslint/no-require-imports': 'error',
 
@@ -514,7 +505,7 @@ module.exports = {
 
         // This detects a common mistake which uses `+` for diffrent types.
         '@typescript-eslint/restrict-plus-operands': ['warn', {
-            'checkCompoundAssignments': true,
+            'skipCompoundAssignments': true,
         }],
 
         // I think it's error prone to implicit string conversion.
