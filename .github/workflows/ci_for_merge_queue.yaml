@@ -1,7 +1,10 @@
-name: CI for Merge Queue.
+name: CI for Merge Queue
 
 on:
     merge_group:
+        # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#merge_group
+        types:
+            - checks_requested
 
 permissions:
     contents: read
