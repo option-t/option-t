@@ -14,7 +14,7 @@
         "@typescript-eslint/parser": "^6.2.1",
         "ava": "^5.3.1",
         "del-cli": "^5.0.0",
-        "eslint": "^8.44.0",
+        "eslint": "^8.46.0",
         "eslint-config-prettier": "^8.8.0",
         "globals": "^13.20.0",
         "picomatch": "^2.3.1",
