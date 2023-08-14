@@ -17,13 +17,13 @@
     * We use only a pure [ECMAScript](https://tc39.es/ecma262/) feature to implement this library as possible
       except a packaging system or a legacy module system.
     * This library is designed to be portable to any [host environments](https://tc39.es/ecma262/#host-environment)
-      supporting a set of ECMAScript features which we uses, _at implementation code level (not at packaging level)_.
+      supporting a set of ECMAScript features which we use, _at implementation code level (not at packaging level)_.
     * We might provide a feature using [host defined](https://tc39.es/ecma262/#host-defined) facilities
       but they would be a __opt-in__.
 * **Tree shakable completely**.
 * **ES Module first**.
-    * Of course, we provides CommonJS too for a backward compatibility.
-* **Enable to use with a programming styles that mixes a execution context between server and client across the boundary (e.g. [Qwik](https://github.com/BuilderIO/qwik)).**
+    * Of course, we provide CommonJS too for backward compatibility.
+* **Enable to use with a programming styles that mixes an execution context between server and client across the boundary (e.g. [Qwik](https://github.com/BuilderIO/qwik)).**
 
 
 ## Motivation
@@ -57,7 +57,7 @@ This library contributes to uniform the convention to write it.
 ### Uniform the way to carry error information instead of throwing an error.
 
 _Exception_ is useful but it has some terrible aspects.
-It's easy that _try-catch_ statement be a jump instruction by large scoped _try-catch_ statement.
+It's easy that _try-catch_ statement to be a jump instruction by large scoped _try-catch_ statement.
 It's hard to find where to throw an error, it's also hard to handle a penetrated exception from a lower layer.
 Especially, _exception_ mechanism mis-matches with an async programming model.
 ECMA262 7th' _async-await_ relaxes the problem about an exception with async programming,
@@ -105,7 +105,7 @@ Flowtype and TypeScript checks with their control flow analysis
 
 However, these compilers do not provide a way to handle their value easily like `map` or `flatMap` operations.
 
-Rust's `std::option` and `std::result` have some utilities operation method to handle them easily.
+Rust's `std::option` and `std::result` have some utility operation methods to handle them easily.
 This library also provides a convenient way to handle them and its way is inspired by Rust's ones.
 
 
@@ -223,13 +223,13 @@ These are written for Rust, but the essence is just same.
 
 ### [fp-ts (v2.13.1)](https://github.com/gcanti/fp-ts/tree/2.13.1)
 
-_fp-ts_ is a packages that provides various tools to write a functional programming style code including _Either_ and _Option_ type.
+_fp-ts_ is a package that provides various tools to write a functional programming style code including _Either_ and _Option_ type.
 
 our design’ origin is Rust language, so we also contains an essence of functional programming style which Rust language contains.
-In this point, features that we provides would be similar to fp-ts’ one.
+In this point, features that we provide would be similar to fp-ts’ one.
 
-However, we do not aim to achieve to provides a feature to write a functional programming language code unlike fp-ts.
-Our design goal is that we provide more specialized tools to handle an absence of a values.
+However, However, we do not aim to provide a feature to write a functional programming language code unlike fp-ts.
+Our design goal is that we provide more specialized tools to handle an absence of values.
 
 
 ### [neverthrow (v6.0.0)](https://github.com/supermacro/neverthrow/tree/v6.0.0)
@@ -237,58 +237,58 @@ Our design goal is that we provide more specialized tools to handle an absence o
 _neverthrow_ is a package that provides _Result_ type implementation.
 At this point, we think that we and they share the same spirits.
 
-However, we think there some different design decision between neverthrow and us.
+However, we think there are some different design decisions between neverthrow and us.
 
 
 #### option-t does not provide a method chain style but have a perfect "tree-shakability"
 
-We does not provide class based implementation and method chaining style.
+We do not provide class based implementation and method chaining style.
 Historically, we had provided a method-chain style APIs and data types as tier 1.
 
 - [`ClassicOption`](./packages/option-t/src/classic_option/classic_option.ts)
 - [`ClassicResult`](./packages/option-t/src/classic_result/classic_result.ts)
 
 But we gave up method chain style as primary style and switched our primary APIs
-to current simple functions combination style by various reasons.
+to current simple functions combination style for various reasons.
 
 First, there was a problem with [dead code elimination](https://en.wikipedia.org/wiki/Dead-code_elimination).
 Dead code elimination (as known as DCE or “tree shaking” in JavaScript toolchain context) is important optimization.
 It reduces a final bundled code size after linking codes by a module bundler (linker).
 
-However, it’s hard to remove unused an object property method in JavaScript.
-To remove them _safely_, an optimizer should know weather a object property is used or not over a whole of programs.
+However, it’s hard to remove unused object property methods in JavaScript.
+To remove them _safely_, an optimizer should know whether an object property is used or not over a whole of programs.
 But this kind of optimization requires perfect call graph information too.
 This kind of optimization is easy relatively with a static language like C++ or Rust
 but JavaScript is a dynamic language essentially.
-JavaScript have a multiple way to prevent a this kind of optimization like a reflection (e.g. `Object.keys(obj)`).
+JavaScript has a multiple way to prevent a this kind of optimization like a reflection (e.g. `Object.keys(obj)`).
 So it’s hard.
 
-Under this condition, we cannot add a feature as property methods without increase a final code size.
+Under this condition, we cannot add a feature as property methods without increase the final code size.
 We would like to add a popular feature as a part of this package to reuse it or would like to fill a gap with Rust's original feature set.
-But an user project does not use all features at every time.
+But a user project does not use all features at all times.
 They use a partial of this package generally. Even if an user project does not use them,
-features provided as a object property method are not removed, so it increases a final application size.
-This might be a big problem for client-side application, especially to implement SDK libraries.
+features provided as an object property method are not removed, so it increases a final application size.
+This might be a big problem for client-side applications, especially to implement SDK libraries.
 Thus we would like to avoid it sincerely.
 
 Exceptionally, as our memory, Google Closure Compiler’s advanced optimization mode can do such aggressive dead code elimination
 about an unused object property as a part of static optimization.
-But it’s not a popular toolchain choice in 2010s later.
+But it’s not a popular toolchain choice in the 2010s later.
 We could not expect that a user project accept it as a popular choice rather than UglyfyJS, terser,
 or other code minifier lacking an analysis whole of programs statically.
 
 Second, there was a problem with TypeScript’s type inference.
 In 2016~2018, our method chain style implementation sometimes fall into that
 a type parameter for generics fallback to `any` or `unknown`
-in mid of a long (relatively complex) method chains in our user project.
+in the middle of a long (relatively complex) method chain in our user project.
 This causes to break a type integrity whole of a project and causes a bad developer experience.
 
-Third, there was a problem to make hard to keep a consistent behavior with mixing multiple version in a project dependency.
+Third, there was a problem making it hard to keep a consistent behavior with mixing multiple versions in a project dependency.
 A class based object implementation often supports `instanceof` check naturally as a part of APIs implicitly.
 However, if there are multiple versions of same name package in a project dependencies
 by aggregating them with semantic versioning, `instanceof` behavior might be inconsistent as contrary to expectations of a developer.
 
-For example,  the following code will be result as `false`. This is just unsound.
+For example,  the following code will result as `false`. This is just unsound.
 
 ```js
 // This is some_package@v2 actually.
@@ -297,29 +297,29 @@ import { SomeClass } from 'some_package';
 import { getBar } from 'other_package';
 
 // This value is some_package@v1's instance
-// that having same type shape with some_package@v2's same named class instance.
+// that have the same type shape with some_package@v2's same named class instance.
 const bar = getBar();
-// Developer think this should be `true`, but the actual is `false`.
+// Developers think this should be `true`, but the actual is `false`.
 console.log(bar instanceof SomeClass); // false
 ```
 
 You may think TypeScript’s static type system can fix this problem,
 but it cannot do. TypeScript’s type system uses structural subtyping.
-This example is valid if the `bar`  and `SomeClass`  (instance) have a same type shape.
+This example is valid if the `bar`  and `SomeClass`  (instance) have the same type shape.
 As a result, it’s bad behavior. To fix above problems,
-we gave up method chain style and make it deprecated.
+we gave up method chain style and made it deprecated.
 
-Forth, a new programming style for web application in JavaScript is emerging that
-mixes a code execution context either a client or a server (e.g. [Qwik](https://github.com/BuilderIO/qwik)).
+Fourth, a new programming style for web application in JavaScript is emerging that
+mixes a code execution context either with a client or a server  (e.g. [Qwik](https://github.com/BuilderIO/qwik)).
 With their style, each of objects are required to be serializable to allow to transfer a data
-from the server to the client across boundaries. We cannot use method chains in such case.
+from the server to the client across boundaries. We cannot use method chains in such a case.
 
 Finally, we shifted to provide a set of minimum types and various standalone "operator" functions.
 This design allows us to "tree-shaking" perfectly to remove unused functions.
 
-Of course, we know this design style is boring programming style.
+Of course, we know this design style is a boring programming style.
 If [pipeline operator proposal](https://github.com/tc39/proposal-pipeline-operator) advance to the part of ECMA262 spec,
 this boring style problem might be relaxed.
 
 Furthermore, we think that it happens many times reading the code but writing one is fewer than it.
-We believe that this style is tired but not a problem in actually as a long term.
+We believe that this style is tiring but not a problem in the long term.
