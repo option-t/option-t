@@ -23,7 +23,7 @@
 * **Tree shakable completely**.
 * **ES Module first**.
     * Of course, we provides CommonJS too for a backward compatibility.
-
+* **Enable to use with a programming styles that mixes a execution context between server and client across the boundary (e.g. [Qwik](https://github.com/BuilderIO/qwik)).**
 
 
 ## Motivation
@@ -308,6 +308,11 @@ but it cannot do. TypeScript’s type system uses structural subtyping.
 This example is valid if the `bar`  and `SomeClass`  (instance) have a same type shape.
 As a result, it’s bad behavior. To fix above problems,
 we gave up method chain style and make it deprecated.
+
+Forth, a new programming style for web application in JavaScript is emerging that
+mixes a code execution context either a client or a server (e.g. [Qwik](https://github.com/BuilderIO/qwik)).
+With their style, each of objects are required to be serializable to allow to transfer a data
+from the server to the client across boundaries. We cannot use method chains in such case.
 
 Finally, we shifted to provide a set of minimum types and various standalone "operator" functions.
 This design allows us to "tree-shaking" perfectly to remove unused functions.
