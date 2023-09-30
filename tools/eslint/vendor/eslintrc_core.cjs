@@ -97,7 +97,6 @@ module.exports = {
             'allowImplicit': false, // Should return `undefined` explicitly
         }],
         'block-scoped-var': 2, // https://eslint.org/docs/rules/block-scoped-var
-        'class-methods-use-this': 0, // A class method does not use `this` in some case.
         'complexity': 0, // We think there is no meaning to measure it in a daily linting.
         'consistent-return': 2,
         'curly': 2, // It's possible error to allow this.
