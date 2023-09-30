@@ -36,7 +36,6 @@ export default [
         linterOptions,
         rules: {
             ...rulesForJavaScript,
-            'no-unused-private-class-members': 'warn',
         },
     },
     {

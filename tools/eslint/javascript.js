@@ -4,6 +4,8 @@ import * as prettierConfig from './prettier.js';
 export const rules = Object.freeze({
     ...vendoredCoreConfig.rules,
     ...prettierConfig.rules,
+
+    'no-unused-private-class-members': 'warn',
 });
 
 export function createLanguageOptionsForModule(ecmaVersion, globals) {
