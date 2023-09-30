@@ -4,8 +4,12 @@ import { fileURLToPath } from 'node:url';
 import js from '@eslint/js';
 import globals from 'globals';
 
-import coreConfig from './tools/eslint/vendor/eslintrc_core.cjs';
-import * as prettierConfig from './tools/eslint/prettier.js';
+import {
+    rules as rulesForJavaScript,
+    createLanguageOptionsForModule,
+    createLanguageOptionsForCommonJS,
+} from './tools/eslint/javascript.js';
+import { linterOptions } from './tools/eslint/linter_option.js';
 import {
     createlanguageOptionsForTypeScript,
     config as configForTypeScript,
@@ -14,28 +18,15 @@ import {
 const THIS_FILE_NAME = fileURLToPath(import.meta.url);
 const THIS_DIR_NAME = path.dirname(THIS_FILE_NAME);
 
-const reportUnusedDisableDirectives = true;
 const ecmaVersion = 2022;
 
-const linterOptions = Object.freeze({
-    reportUnusedDisableDirectives,
+const languageOptionsForModule = createLanguageOptionsForModule(ecmaVersion, {
+    ...globals.nodeBuiltin,
 });
 
-const languageOptionsForModule = Object.freeze({
-    ecmaVersion,
-    sourceType: 'module',
-    globals: {
-        ...globals.nodeBuiltin,
-    },
-});
-
-const languageOptionsForCommonJS = Object.freeze({
-    ecmaVersion,
-    sourceType: 'commonjs',
-    globals: {
-        ...globals.node,
-        ...globals.commonjs,
-    },
+const languageOptionsForCommonJS = createLanguageOptionsForCommonJS(ecmaVersion, {
+    ...globals.node,
+    ...globals.commonjs,
 });
 
 // https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new
@@ -44,9 +35,7 @@ export default [
     {
         linterOptions,
         rules: {
-            ...coreConfig.rules,
-            ...prettierConfig.rules,
-
+            ...rulesForJavaScript,
             'no-unused-private-class-members': 'warn',
         },
     },
