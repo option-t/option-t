@@ -5,9 +5,15 @@ import { apiTable } from './table.mjs';
 
 const PKG_NAME = 'option-t';
 
-export class ExposedPath {
+class ExposedPath {
     #key;
     #descriptor;
+
+    /**
+     *  @protected
+     *  @type   {boolean}
+     */
+    _isForCompat = false;
 
     constructor(key, descriptor) {
         assert.ok(typeof key === 'string');
@@ -15,7 +21,7 @@ export class ExposedPath {
 
         this.#key = key;
         this.#descriptor = descriptor;
-        Object.freeze(this);
+        Object.seal(this);
     }
 
     name() {
@@ -46,7 +52,7 @@ export class ExposedPath {
     }
 
     isForCompat() {
-        return false;
+        return this._isForCompat;
     }
 
     isDeprecated() {
@@ -71,10 +77,8 @@ export class QuirksLegacyExposedPath extends ExposedPath {
         const compatKey = `${moduleType}/${key}`;
         const desc = modifyDescriptor(descriptor, moduleType);
         super(compatKey, desc);
-    }
-
-    isForCompat() {
-        return true;
+        this._isForCompat = true;
+        Object.freeze(this);
     }
 
     isESM() {
