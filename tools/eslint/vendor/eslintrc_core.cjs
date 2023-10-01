@@ -53,11 +53,6 @@ module.exports = {
         'no-empty-character-class': 2, // https://eslint.org/docs/rules/no-empty-character-class
         'no-ex-assign': 2, // Ban to reassign to `e` of `catch (e) {}`
         'no-extra-boolean-cast': 0, // Allow to cast to boolean with `!!bar`. This is common idiom.
-        'no-extra-parens': [0, 'all', { // We'd like to write extra parens for readability.
-            'nestedBinaryExpressions': false,
-            'enforceForNewInMemberExpressions': false,
-        }],
-        'no-extra-semi': 1,
         'no-func-assign': 2,
         'no-import-assign': 'error',
         'no-inner-declarations': [2, 'functions'], // https://eslint.org/docs/rules/no-inner-declarations
@@ -71,7 +66,6 @@ module.exports = {
         'no-setter-return': 'error', // return in setter would be meaningless.
         'no-sparse-arrays': 2, // Ban `[,,]`
         'no-template-curly-in-string': 2,
-        'no-unexpected-multiline': 1,
         'no-unreachable': 1,
         'no-unsafe-finally': 2, // https://eslint.org/docs/rules/no-unsafe-finally
         'no-unsafe-negation': [2, { // https://eslint.org/docs/rules/no-unsafe-negation
@@ -99,7 +93,6 @@ module.exports = {
         'block-scoped-var': 2, // https://eslint.org/docs/rules/block-scoped-var
         'complexity': 0, // We think there is no meaning to measure it in a daily linting.
         'consistent-return': 2,
-        'curly': 2, // It's possible error to allow this.
         'default-case': 0, // This is not a problem.
 
         // Ideally we should make this an error.
@@ -138,7 +131,6 @@ module.exports = {
         // If you're annoy for this warning when you use redux, then it's better for you to disable this rule only for them.
         'default-param-last': 'warn',
 
-        'dot-location': 0, // This is just a stylistic issue.
         'dot-notation': 2, // We hate reflection by strings. It's possible error.
         'eqeqeq': [2, 'always'], // Don't use loosely equality operator.
         'grouped-accessor-pairs': ['warn', 'getBeforeSet'], // getter/setter should be pairs
@@ -158,7 +150,6 @@ module.exports = {
         'no-extra-bind': 1, // https://eslint.org/docs/rules/no-extra-bind
         'no-extra-label': 2, // https://eslint.org/docs/rules/no-extra-label
         'no-fallthrough': 1,
-        'no-floating-decimal': 0, // Allow `0.1` and `.1` in same project.
         'no-global-assign': 2, // https://eslint.org/docs/rules/no-global-assign
         'no-implicit-coercion': [2, { // https://eslint.org/docs/rules/no-implicit-coercion
             'boolean': true,
@@ -177,7 +168,6 @@ module.exports = {
             // Allow these values which are used commonly in test, flags, or others.
             'ignore': [0, 1],
         }],
-        'no-multi-spaces': 1, // https://eslint.org/docs/rules/no-multi-spaces
         'no-multi-str': 0, // https://eslint.org/docs/rules/no-multi-str
         'no-new': 1,
         'no-new-func': 1, // Just an escape hatch for optimizing technique.
@@ -231,7 +221,6 @@ module.exports = {
         //        So we enable this rule as _error_.
         'require-unicode-regexp': 2, // https://eslint.org/docs/rules/require-unicode-regexp
         'vars-on-top': 0, // This is a truly ridiculous convention.
-        'wrap-iife': 0, // https://eslint.org/docs/rules/wrap-iife
         'yoda': 0, // https://eslint.org/docs/rules/wrap-iife
 
         // Strict Mode
@@ -280,41 +269,12 @@ module.exports = {
         }],
 
         // Stylistic Issues
-        'array-bracket-newline ': 0,
-        'array-bracket-spacing': 0, // https://eslint.org/docs/rules/array-bracket-spacing
-        'array-element-newline': 0,
-        'block-spacing': 0, // https://eslint.org/docs/rules/block-spacing
-        'brace-style': [0, 'stroustrup', { // https://eslint.org/docs/rules/brace-style
-            'allowSingleLine': true
-        }],
         'camelcase': [2, { // https://eslint.org/docs/rules/camelcase
             'properties': 'always',
             'ignoreDestructuring': false,
         }],
         'capitalized-comments': 0, // we don't think this is a serious problem.
-        'comma-dangle': [0, 'never'], // XXX: This rule set does not think about IE8.
-        'comma-spacing': [2, { // https://eslint.org/docs/rules/comma-spacing
-            'before': false,
-            'after': true
-        }],
-        'comma-style': [1, 'last', {// https://eslint.org/docs/rules/comma-style
-            'exceptions': {
-                'ArrayPattern': false,
-                'ArrowFunctionExpression': false,
-                'CallExpression': false,
-                'FunctionDeclaration': false,
-                'FunctionExpression': false,
-                'ImportDeclaration': false,
-                'NewExpression': false,
-                'ObjectPattern': false,
-            },
-        }],
-        'computed-property-spacing': [2, 'never', {
-            'enforceForClassMembers': true,
-        }],
         'consistent-this': [2, 'that'],
-        'eol-last': [0, 'always'], // we don't have to restrict this. Use EditorConfig.
-        'func-call-spacing': 2,
         'func-name-matching': 1,
         'func-names': [0, 'as-needed'], // we don't have to restrict this in most case.
         'func-style': [0, 'declaration', {
@@ -322,53 +282,19 @@ module.exports = {
             // but it would be good to allow both forms of declaration/expression.
             'allowArrowFunctions': true,
         }],
-        // This should be handled by the formatter.
-        'function-call-argument-newline': 'off',
-        // This should be handled by the formatter.
-        'function-paren-newline': 'off',
         'id-blacklist': 0, // https://eslint.org/docs/rules/id-blacklist
         'id-length': 0, // https://eslint.org/docs/rules/id-length
         'id-match': 0, // https://eslint.org/docs/rules/id-match
-        'implicit-arrow-linebreak': [2, 'beside'], // I think 'below' mode is horrible and confusable.
-        'indent': [2, 4, {
-            'SwitchCase': 1,
-            'MemberExpression': 1,
-            'CallExpression': {
-                'arguments': 'first',
-            },
-        }],
-        'jsx-quotes': [1, 'prefer-single'], // Sort with JavaScript.
-        'key-spacing': 0, // https://eslint.org/docs/rules/key-spacing
-        'keyword-spacing': [1, {
-            'before': true,
-            'after': true,
-        }],
-        'linebreak-style': [2, 'unix'],
         'line-comment-position': 0, // This is needless. https://eslint.org/docs/rules/line-comment-position
-        'lines-around-comment': 0, // https://eslint.org/docs/rules/lines-around-comment
         'lines-between-class-members': 0, // https://eslint.org/docs/rules/lines-between-class-members
         'max-depth': [2, 10], // https://eslint.org/docs/rules/max-depth
-        'max-len': [2, 256, 4, { // https://eslint.org/docs/rules/max-len
-            'ignoreUrls': true,
-            'ignoreStrings': true,
-            'ignoreTemplateLiterals': true,
-            'ignoreRegExpLiterals': true,
-        }],
         'max-lines': 0, // We trust our code review. https://eslint.org/docs/rules/max-lines
         'max-lines-per-function': 0, // We trust our code review. https://eslint.org/docs/rules/max-lines-per-function
         'max-nested-callback': 0, // https://eslint.org/docs/rules/max-nested-callbacks
         'max-params': 0, // https://eslint.org/docs/rules/max-params
         'max-statements': 0, // https://eslint.org/docs/rules/max-statements
-        'max-statements-per-line': [1, { // https://eslint.org/docs/rules/max-statements-per-line
-            'max': 1, // Basically, it's bad to place 2 statements into 1 line.
-        }],
         'multiline-comment-style': 0, // https://eslint.org/docs/rules/multiline-comment-style
-        'multiline-ternary': 0, // We don't have any strong opinion about this.
         'new-cap': 1,
-        'new-parens': 2,
-        'newline-per-chained-call': [0, { // https://eslint.org/docs/rules/newline-per-chained-call
-            'ignoreChainWithDepth': 4, // I don't feel this is a real problem at now...
-        }],
         'no-array-constructor': 2, // In almost case, we don't have to use it.
         'no-bitwise': [2, { // In almost case, we don't use bitwise operators...
             'allow': [],
@@ -378,8 +304,6 @@ module.exports = {
         'no-continue': 0, // https://eslint.org/docs/rules/no-continue
         'no-inline-comments': 0, // https://eslint.org/docs/rules/no-inline-comments
         'no-lonely-if': 1, // https://eslint.org/docs/rules/no-lonely-if
-        'no-mixed-operators': 2, // https://eslint.org/docs/rules/no-mixed-operators
-        'no-mixed-spaces-and-tabs': 2,
         'no-multi-assign': 1,
         'no-multiple-empty-lines': 0, // Empty lines somtimes means a section of a program.
         'no-negated-condition': 0, // https://eslint.org/docs/rules/no-negated-condition
@@ -390,25 +314,14 @@ module.exports = {
             // Ban the way to reflection by strings (Enable explicitly if you'd like to use).
             'ForInStatement'
         ],
-        'no-tabs': [2, {
-            'allowIndentationTabs': false,
-        }],
         'no-ternary': 0, // https://eslint.org/docs/rules/no-ternary
         'no-trailing-spaces': 1,
         'no-underscore-dangle': [2, { // Ban the name which starts with `_`.
             'allowAfterThis': true, // allow after this to create a private member.
         }],
         'no-unneeded-ternary': 2,
-        'no-whitespace-before-property': 2,
-        'nonblock-statement-body-position': 0, // https://eslint.org/docs/rules/nonblock-statement-body-position
-        'object-curly-newline': 0, // Just case by case! https://eslint.org/docs/rules/object-curly-newline
-        'object-curly-spacing': 0, // https://eslint.org/docs/rules/object-curly-spacing
-        'object-property-newline': 0, // Disable to allow many properties into single line.
         'one-var': [2, 'never'], // https://eslint.org/docs/rules/one-var
-        'one-var-declaration-per-line': 1, // https://eslint.org/docs/rules/one-var-declaration-per-line
         'operator-assignment': 0, // Unlike `i++` or `++i`, this is not a problem
-        'operator-linebreak': [2, 'after'],
-        'padded-blocks': 0,
         'padding-line-between-statements': [1,
             /**
              *  This configuration is valid the case:
@@ -425,56 +338,15 @@ module.exports = {
         ],
         'prefer-object-spread': 1, // https://eslint.org/docs/rules/prefer-object-spread
         'prefer-exponentiation-operator': 0, // There is no reason to enforce `**` instead of Math.pow()
-        'quotes': [2, 'single', {
-            'avoidEscape': true,
-            'allowTemplateLiterals': true,
-        }],
-        'quote-props': 0, // `bar-foo` without quote will be parse error if we disable this rules.
-        'semi': [2, 'always'], // Enfoce semicolon.
-        'semi-spacing': [2, { // Ban a space char before semicolon.
-            'before': false,
-            'after': true
-        }],
-        'semi-style': [1, 'last'],
         'sort-keys': 0, // We don't think this is useful for all object by default.
         'sort-vars': 0, // we don't have to sort vars.
-        'space-before-blocks': 0, // https://eslint.org/docs/rules/space-before-blocks
-        'space-before-function-paren': [1, { // https://eslint.org/docs/rules/space-before-function-parentheses
-            'anonymous': 'ignore',
-            'named': 'never',
-            'asyncArrow': 'ignore',
-        }],
-        'space-in-parens': 0,
-        'space-infix-ops': 1,
-        'space-unary-ops': [1, {
-            'words': true, // It's more readable for keywords.
-            'nonwords': false, // It's very tired to enforce before/after of `++`/`--`.
-        }],
         'spaced-comment': 0,
-        'switch-colon-spacing': [1, {
-            'after': true,
-            'before': false,
-        }],
-        'template-tag-spacing': 1,
         'unicode-bom': 2, // Ban byte-order-mark
-        'wrap-regex': 0,
 
         // ECMASctipt 6
         'arrow-body-style': 0, // This is just a stylistic issue.
-        'arrow-parens': 2, // requires parens for arrow function.
-        'arrow-spacing': [1, { // requires space before/after for `=>` of arrow func.
-            'before': true,
-            'after': true
-        }],
         'constructor-super': 2, // check calling `super()` in a derived class.
-        'generator-star-spacing': [2, {
-            'before': false,
-            'after': true
-        }],
         'no-class-assign': 2, // Ban to assign the same name of class declaration.
-        'no-confusing-arrow': [1, { // Detect confusing arrow func (`=>`) or "great/less than or equal operator" (`>=`, `<=`)
-            'allowParens': true,
-        }],
         'no-const-assign': 2, // https://eslint.org/docs/rules/no-const-assign
         'no-dupe-class-members': 2, // https://eslint.org/docs/rules/no-dupe-class-members
         'no-duplicate-imports': 1, // https://eslint.org/docs/rules/no-duplicate-imports
@@ -505,10 +377,7 @@ module.exports = {
         'prefer-spread': 1, // Recommend to use spread operator instead of `Function.prototype.apply`.
         'prefer-template': 0,
         'require-yield': 2, // Detect missing `yield` in a generator function.
-        'rest-spread-spacing': [2, 'never'], // clarify 'this is rest/spread operator'.
         // 'sort-import': 0,
         'symbol-description': 2, // Force to pass the description to `Symbol()`.
-        'template-curly-spacing': [1, 'never'], // https://eslint.org/docs/rules/template-curly-spacing
-        'yield-star-spacing': [1, 'after'], // https://eslint.org/docs/rules/%20yield-star-spacing.html
     }
 };
