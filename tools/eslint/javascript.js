@@ -24,8 +24,27 @@ const builtinRules = Object.freeze({
     // This prevents the pattern that is error prone.
     'no-constant-binary-expression': 'error',
 
+    // Allow to cast to boolean with `!!bar`. This is common idiom.
+    'no-extra-boolean-cast': 'off',
+
     // This detects unused field easily.
     'no-unused-private-class-members': 'warn',
+
+    // We use custom config to make the behavior similar to TypeScript's unused var checker.
+    'no-unused-vars': [
+        // Not make an error for debugging.
+        'warn',
+        {
+            vars: 'all',
+            args: 'after-used',
+            argsIgnorePattern: '^_', // Sort with TypeScript compiler's builtin linter.
+            caughtErrors: 'all',
+            caughtErrorsIgnorePattern: '^_', // Allow `catch (_e) {...}`
+        },
+    ],
+
+    // This prevents the error at the running time.
+    'valid-typeof': ['error', { requireStringLiterals: true }],
 });
 
 export const rules = Object.freeze({
