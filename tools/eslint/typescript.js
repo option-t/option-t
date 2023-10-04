@@ -51,6 +51,19 @@ const rules = Object.freeze({
         },
     ],
 
+    // This enforces a type annotation for an explicit module interface.
+    '@typescript-eslint/explicit-module-boundary-types': [
+        'warn',
+        {
+            // We would like to ban `any`
+            allowArgumentsExplicitlyTypedAsAny: false,
+            // Ideally, we should set this `false` but it's sometimes too complex......
+            allowHigherOrderFunctions: true,
+            // We would like to force type annotation for function expression.
+            allowTypedFunctionExpressions: false,
+        },
+    ],
+
     // This prevents importing a module accidentally to avoid a side effect caused by importing.
     '@typescript-eslint/no-import-type-side-effects': 'warn',
 });

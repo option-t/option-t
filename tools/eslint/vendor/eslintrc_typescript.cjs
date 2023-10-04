@@ -87,9 +87,6 @@ module.exports = {
             },
         }],
 
-        // TODO: #301
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
-
         // I don't think it's not efffective to sort the order by public/private/protected.
         '@typescript-eslint/member-ordering': ['warn', {
             // * I'd like to aggregate instance fields
