@@ -75,6 +75,9 @@ const rulesRequiringType = Object.freeze({
     // If your application cannot load any polyfills or have any perf issues,
     // let's disable this.
     '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
+
+    // This is nice to work with union.
+    '@typescript-eslint/switch-exhaustiveness-check': 'error',
 });
 
 // We allow `K` or `V` forms to avoid to rewrite type parameters.

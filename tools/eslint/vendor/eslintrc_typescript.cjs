@@ -475,9 +475,6 @@ module.exports = {
         // FIXME: #152
         '@typescript-eslint/strict-boolean-expressions': 'off',
 
-        // This is nice to work with union.
-        '@typescript-eslint/switch-exhaustiveness-check': 'error',
-
         // Basically, use ES Module import. // <reference path="" /> is just special case.
         '@typescript-eslint/triple-slash-reference': ['error', {
             'path': 'never',
