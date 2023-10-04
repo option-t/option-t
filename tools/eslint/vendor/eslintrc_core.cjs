@@ -33,44 +33,15 @@ module.exports = {
     'rules': {
         // Possible Errors
 
-        'for-direction': 0, // We don't think this is "possible error".
-        'getter-return': 1, // https://eslint.org/docs/rules/getter-return
-        'no-async-promise-executor': 2, // https://eslint.org/docs/rules/no-async-promise-executor
         // We should reconsider about this after ECMA262 introduces
         // [async iteration](https://github.com/tc39/proposal-async-iteration),
         // But now, we enable this.
         'no-await-in-loop': 1,
-        'no-cond-assign': 2, // https://eslint.org/docs/rules/no-cond-assign
+
         'no-console': 0, // `console`
-        'no-constant-condition': 1, // Use "warn" for debugging
-        'no-control-regex': 2, // https://eslint.org/docs/rules/no-control-regex
-        'no-debugger': 1, // debugger statement
-        'no-dupe-args': 2, // https://eslint.org/docs/rules/no-dupe-args
-        'no-dupe-else-if': 'warn',
-        'no-dupe-keys': 2, // in an object literal.
-        'no-duplicate-case': 2, // https://eslint.org/docs/rules/no-duplicate-case
-        'no-empty': 2, // https://eslint.org/docs/rules/no-empty
-        'no-empty-character-class': 2, // https://eslint.org/docs/rules/no-empty-character-class
-        'no-ex-assign': 2, // Ban to reassign to `e` of `catch (e) {}`
-        'no-extra-boolean-cast': 0, // Allow to cast to boolean with `!!bar`. This is common idiom.
-        'no-func-assign': 2,
-        'no-import-assign': 'error',
-        'no-inner-declarations': [2, 'functions'], // https://eslint.org/docs/rules/no-inner-declarations
-        'no-invalid-regexp': 2, //https://eslint.org/docs/rules/no-invalid-regexp
-        'no-irregular-whitespace': 2, // https://eslint.org/docs/rules/no-irregular-whitespace
-        'no-loss-of-precision': 'error',
-        'no-misleading-character-class': 2, // https://eslint.org/docs/rules/no-misleading-character-class
-        'no-obj-calls': 2, // https://eslint.org/docs/rules/no-obj-calls
-        'no-prototype-builtins': 2, // https://eslint.org/docs/rules/no-prototype-builtins
-        'no-regex-spaces': 2, // https://eslint.org/docs/rules/no-regex-spaces
-        'no-setter-return': 'error', // return in setter would be meaningless.
-        'no-sparse-arrays': 2, // Ban `[,,]`
+
         'no-template-curly-in-string': 2,
-        'no-unreachable': 1,
-        'no-unsafe-finally': 2, // https://eslint.org/docs/rules/no-unsafe-finally
-        'no-unsafe-negation': [2, { // https://eslint.org/docs/rules/no-unsafe-negation
-            'enforceForOrderingRelations': true,
-        }],
+
         // This rule might be useful to detect a typical anti pattern about data race.
         // However, it could not detect the problem if we assign a value into an interim variable
         // because this rule only checks a syntax and ECMA262's semantics without other semantics.
@@ -79,11 +50,6 @@ module.exports = {
         // Thus I doubt that detecting race condition correctly & statically is hard without introducing other semantics.
         // So we regard this rule as meaningless actually and disable this.
         'require-atomic-updates ': 0, // https://eslint.org/docs/rules/require-atomic-updates
-        'use-isnan': ['error', { // Use `Number.isNaN`
-            'enforceForSwitchCase': true,
-            'enforceForIndexOf': false, // IMO, this kind of rules without any static type information would mis-detect.
-        }],
-        'valid-typeof': [1, { 'requireStringLiterals': true }],
 
         // Best Practices
         'accessor-pairs': 0, // Allow only getter or setter to define a "read-only" or "write-only" object
@@ -138,19 +104,15 @@ module.exports = {
         'max-classes-per-file': 0, // We don't have to enable this. https://eslint.org/docs/rules/max-classes-per-file
         'no-alert': 1, // for debugging.
         'no-caller': 2, // Don't touch `arguments` in a normal code.
-        'no-case-declarations': 2, // https://eslint.org/docs/rules/no-case-declarations
         'no-constructor-return': 'error', // Generally, we should not return object from _constructor_.
         'no-div-regex': 2, // https://eslint.org/docs/rules/no-div-regex
         'no-else-return': 0, // `else` branch sometimes means "A or B" explicitly.
         'no-empty-function': 0, // Allow to set a no-op function.
-        'no-empty-pattern': 2,
         'no-eq-null': 2, // Sort with `eqeqeq`. We might disable this for Flowtype's semantics for the future.
         'no-eval': 2,
         'no-extend-native': 2, // We don't do this in non-library code.
         'no-extra-bind': 1, // https://eslint.org/docs/rules/no-extra-bind
         'no-extra-label': 2, // https://eslint.org/docs/rules/no-extra-label
-        'no-fallthrough': 1,
-        'no-global-assign': 2, // https://eslint.org/docs/rules/no-global-assign
         'no-implicit-coercion': [2, { // https://eslint.org/docs/rules/no-implicit-coercion
             'boolean': true,
             'number': true,
@@ -172,35 +134,25 @@ module.exports = {
         'no-new': 1,
         'no-new-func': 1, // Just an escape hatch for optimizing technique.
         'no-new-wrappers': 1, // We don't have to `new` to cast a value. https://eslint.org/docs/rules/no-new-wrappers
-        'no-octal': 2,
         'no-octal-escape': 2, // https://eslint.org/docs/rules/no-octal-escape
         'no-param-reassign': [1, {
             'props': true
             // 'ignorePropertyModificationsForRegex': [],
         }],
         'no-proto': 2,
-        'no-redeclare': ['error', { 'builtinGlobals': true }],
         'no-restricted-properties': 0, // https://eslint.org/docs/rules/no-restricted-properties
         'no-return-assign': 2, // This is a problem for readability.
-        'no-return-await': 1, // Warn. Because this is not a serious problem which is same degree with `no-return-assign`.
         'no-script-url': 2, // Use an event handler.
-        'no-self-assign': [2, { // https://eslint.org/docs/rules/no-self-assign
-            'props': true,
-        }],
         'no-self-compare': 2, // https://eslint.org/docs/rules/no-self-compare
         'no-sequences': 2, // We're not doing a code golf: https://eslint.org/docs/rules/no-sequences
         'no-throw-literal': 2,
         'no-unmodified-loop-condition': 1,
         'no-unused-expressions': 2, // https://eslint.org/docs/rules/no-unused-expressions
-        'no-unused-labels': 2, // https://eslint.org/docs/rules/no-unused-labels
         'no-useless-call': 1,
-        'no-useless-catch': 1, // There is no reason to disable this.
         'no-useless-concat': 1,
-        'no-useless-escape': 1,
         'no-useless-return': 1, // https://eslint.org/docs/rules/no-useless-return
         'no-void': 2, // We live in after ES5 : https://eslint.org/docs/rules/no-void
         'no-warning-comments': 0, // We need not always enable this : https://eslint.org/docs/rules/no-warning-comments
-        'no-with': 2,
         'prefer-promise-reject-errors': [1, {
             'allowEmptyReject': true, // Enable to create empty rejected one for compositing promises.
         }],
@@ -246,23 +198,13 @@ module.exports = {
         //  If we keep to enable this rule, `let: a: T;` would be error
         //  and we need to write `let a: T | null = null;` even if a will not be `null`. This is not useful.
         'init-declarations': 'off',
-        'no-delete-var': 2, // In a general case, we don't have to do this.
         'no-label-var': 2,
         'no-restricted-globals': [2, // https://eslint.org/docs/rules/no-restricted-globals
             'name', 'top', 'event'
         ],
         'no-shadow': 0,
-        'no-shadow-restricted-names': 2,
-        'no-undef': 2, // Ban a variables which are not defined explicitly.
         'no-undefined': 0,
         'no-undef-init': 2,
-        'no-unused-vars': [1, { // Not make an error for debugging.
-            'vars': 'all',
-            'args': 'after-used',
-            'argsIgnorePattern': '^_', // Sort with TypeScript compiler's builtin linter.
-            'caughtErrors': 'all',
-            'caughtErrorsIgnorePattern': '^_', // Allow `catch (_e) {...}`
-        }],
         'no-use-before-define': [2, { // the measure for Temporary Dead Zone
             'functions': false, //  Function declarations are hoisted.
             'classes': true, // Class declarations are not hoisted. We should warn it.
@@ -282,7 +224,6 @@ module.exports = {
             // but it would be good to allow both forms of declaration/expression.
             'allowArrowFunctions': true,
         }],
-        'id-blacklist': 0, // https://eslint.org/docs/rules/id-blacklist
         'id-length': 0, // https://eslint.org/docs/rules/id-length
         'id-match': 0, // https://eslint.org/docs/rules/id-match
         'line-comment-position': 0, // This is needless. https://eslint.org/docs/rules/line-comment-position
@@ -300,7 +241,6 @@ module.exports = {
             'allow': [],
             'int32Hint': true, // https://eslint.org/docs/rules/no-bitwise
         }],
-        'no-compare-neg-zero': 1, // https://eslint.org/docs/rules/no-compare-neg-zero
         'no-continue': 0, // https://eslint.org/docs/rules/no-continue
         'no-inline-comments': 0, // https://eslint.org/docs/rules/no-inline-comments
         'no-lonely-if': 1, // https://eslint.org/docs/rules/no-lonely-if
@@ -308,7 +248,6 @@ module.exports = {
         'no-multiple-empty-lines': 0, // Empty lines somtimes means a section of a program.
         'no-negated-condition': 0, // https://eslint.org/docs/rules/no-negated-condition
         'no-nested-ternary': 2, // https://eslint.org/docs/rules/no-nested-ternary
-        'no-new-object': 2, // In almost case, we don't have to use it.
         'no-plusplus': 0, // We might use it for loop.
         'no-restricted-syntax': [2,
             // Ban the way to reflection by strings (Enable explicitly if you'd like to use).
@@ -345,14 +284,8 @@ module.exports = {
 
         // ECMASctipt 6
         'arrow-body-style': 0, // This is just a stylistic issue.
-        'constructor-super': 2, // check calling `super()` in a derived class.
-        'no-class-assign': 2, // Ban to assign the same name of class declaration.
-        'no-const-assign': 2, // https://eslint.org/docs/rules/no-const-assign
-        'no-dupe-class-members': 2, // https://eslint.org/docs/rules/no-dupe-class-members
         'no-duplicate-imports': 1, // https://eslint.org/docs/rules/no-duplicate-imports
-        'no-new-symbol': 2, // `Symbol` is not a constructor.
         'no-restricted-imports': 0, // Should specified by for each projects: https://eslint.org/docs/rules/no-restricted-imports
-        'no-this-before-super': 2, // https://eslint.org/docs/rules/no-this-before-super
         'no-useless-computed-key': 1,
         'no-useless-constructor': 0, // This is a stylistic issue.
         'no-useless-rename': 1,
@@ -376,7 +309,6 @@ module.exports = {
         'prefer-rest-params': 1, // Recommend to use rest parameter instead of `arguments`.
         'prefer-spread': 1, // Recommend to use spread operator instead of `Function.prototype.apply`.
         'prefer-template': 0,
-        'require-yield': 2, // Detect missing `yield` in a generator function.
         // 'sort-import': 0,
         'symbol-description': 2, // Force to pass the description to `Symbol()`.
     }

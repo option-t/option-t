@@ -1,12 +1,7 @@
 import vendoredCoreConfig from './vendor/eslintrc_core.cjs';
 import * as prettierConfig from './prettier.js';
 
-export const rules = Object.freeze({
-    ...vendoredCoreConfig.rules,
-    ...prettierConfig.rules,
-
-    'no-unused-private-class-members': 'warn',
-
+const builtinRules = Object.freeze({
     // In JavaScript, after ES Module or CommonJS era (single module per single file),
     // excluding the case to improve an API ergonomics or requirement to implement an object interface,
     // we don't have to belong a function that does not touch `this` to a class unlike Java or C++.
@@ -25,6 +20,43 @@ export const rules = Object.freeze({
     // it's better that we should export a standalone function directly
     // instead of a part of class if it does not affect an API ergonomics.
     'class-methods-use-this': 'warn',
+
+    // This prevents the pattern that is error prone.
+    'no-constant-binary-expression': 'error',
+
+    // Allow to cast to boolean with `!!bar`. This is common idiom.
+    'no-extra-boolean-cast': 'off',
+
+    // This prevents the runtime error.
+    'no-new-native-nonconstructor': 'error',
+
+    // We should not use it by the reason described in https://eslint.org/docs/latest/rules/no-object-constructor
+    'no-object-constructor': 'warn',
+
+    // This detects unused field easily.
+    'no-unused-private-class-members': 'warn',
+
+    // We use custom config to make the behavior similar to TypeScript's unused var checker.
+    'no-unused-vars': [
+        // Not make an error for debugging.
+        'warn',
+        {
+            vars: 'all',
+            args: 'after-used',
+            argsIgnorePattern: '^_', // Sort with TypeScript compiler's builtin linter.
+            caughtErrors: 'all',
+            caughtErrorsIgnorePattern: '^_', // Allow `catch (_e) {...}`
+        },
+    ],
+
+    // This prevents the error at the running time.
+    'valid-typeof': ['error', { requireStringLiterals: true }],
+});
+
+export const rules = Object.freeze({
+    ...vendoredCoreConfig.rules,
+    ...builtinRules,
+    ...prettierConfig.rules,
 });
 
 export function createLanguageOptionsForModule(ecmaVersion, globals) {
