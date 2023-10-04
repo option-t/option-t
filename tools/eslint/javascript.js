@@ -21,6 +21,9 @@ const builtinRules = Object.freeze({
     // instead of a part of class if it does not affect an API ergonomics.
     'class-methods-use-this': 'warn',
 
+    // This prevents the pattern that is error prone.
+    'no-constant-binary-expression': 'error',
+
     // This detects unused field easily.
     'no-unused-private-class-members': 'warn',
 });
