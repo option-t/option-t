@@ -27,6 +27,9 @@ const builtinRules = Object.freeze({
     // Allow to cast to boolean with `!!bar`. This is common idiom.
     'no-extra-boolean-cast': 'off',
 
+    // We should not use it by the reason described in https://eslint.org/docs/latest/rules/no-object-constructor
+    'no-object-constructor': 'warn',
+
     // This detects unused field easily.
     'no-unused-private-class-members': 'warn',
 
