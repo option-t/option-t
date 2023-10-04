@@ -1,12 +1,7 @@
 import vendoredCoreConfig from './vendor/eslintrc_core.cjs';
 import * as prettierConfig from './prettier.js';
 
-export const rules = Object.freeze({
-    ...vendoredCoreConfig.rules,
-    ...prettierConfig.rules,
-
-    'no-unused-private-class-members': 'warn',
-
+const builtinRules = Object.freeze({
     // In JavaScript, after ES Module or CommonJS era (single module per single file),
     // excluding the case to improve an API ergonomics or requirement to implement an object interface,
     // we don't have to belong a function that does not touch `this` to a class unlike Java or C++.
@@ -25,6 +20,15 @@ export const rules = Object.freeze({
     // it's better that we should export a standalone function directly
     // instead of a part of class if it does not affect an API ergonomics.
     'class-methods-use-this': 'warn',
+
+    // This detects unused field easily.
+    'no-unused-private-class-members': 'warn',
+});
+
+export const rules = Object.freeze({
+    ...vendoredCoreConfig.rules,
+    ...builtinRules,
+    ...prettierConfig.rules,
 });
 
 export function createLanguageOptionsForModule(ecmaVersion, globals) {
