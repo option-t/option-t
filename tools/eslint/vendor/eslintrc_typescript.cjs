@@ -434,13 +434,6 @@ module.exports = {
         // We should elminate such code.
         '@typescript-eslint/prefer-regexp-exec': 'warn',
 
-        // Today, in almost case, we would develop our application with ES2015~ polyfills
-        // and it's rare case to develop an app without ~ES2015 polyfills.
-        // So I think we should enable this rule.
-        // If your application cannot load any polyfills or have any perf issues,
-        // let's disable this.
-        '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
-
         // Of course, It looks nice for styling to sort them
         // to async function that all functions returning `Promise`.
         // However, we hesitate to say some policy about it by these reasons

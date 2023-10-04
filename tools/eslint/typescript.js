@@ -68,7 +68,14 @@ const rules = Object.freeze({
     '@typescript-eslint/no-import-type-side-effects': 'warn',
 });
 
-const rulesRequiringType = Object.freeze({});
+const rulesRequiringType = Object.freeze({
+    // Today, in almost case, we would develop our application with ES2015~ polyfills
+    // and it's rare case to develop an app without ~ES2015 polyfills.
+    // So I think we should enable this rule.
+    // If your application cannot load any polyfills or have any perf issues,
+    // let's disable this.
+    '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
+});
 
 // We allow `K` or `V` forms to avoid to rewrite type parameters.
 const newNamingConventionRule = [...tsPresetsRules[KEY_NAMING_CONVENTION]].map((item) => {
