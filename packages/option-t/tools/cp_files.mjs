@@ -3,16 +3,36 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
 
+import { reflinkFile } from '@reflink/reflink';
+
 import { getAllGlobMatchedFiles } from './glob.mjs';
 import { createSourceToDestinationMapList, prepareToCreateFile } from './fs_helper.mjs';
 
 // eslint-disable-next-line no-bitwise
 const FS_FILE_COPY_MODE = fs.constants.COPYFILE_EXCL | fs.constants.COPYFILE_FICLONE;
+const IS_DARWIN = process.platform === 'darwin';
 
-async function copyFile(source, dest, { isDebug: _isDebug, isVerbose: _isVerbose }) {
+async function copyFile(source, dest) {
+    // libuv still lack the support for this kind of modern file operation.
+    //  - https://github.com/libuv/libuv/issues/2936
+    //
+    // To such enhancment operation, we use pnpm's alternative approach.
+    //  - https://github.com/pnpm/pnpm/issues/5001
+    //  - https://github.com/pnpm/pnpm/pull/7031
+    //
+    // But their relink implementation still has some issues.
+    // We use this approach only for APFS.
+    //  - https://github.com/pnpm/pnpm/issues/7186
+    if (IS_DARWIN) {
+        await reflinkFile(source, dest);
+    } else {
+        await fs.copyFile(source, dest, FS_FILE_COPY_MODE);
+    }
+}
+
+async function copyFileOperation(source, dest, { isDebug: _isDebug, isVerbose: _isVerbose }) {
     await prepareToCreateFile(dest);
-    const copying = fs.copyFile(source, dest, FS_FILE_COPY_MODE);
-    return copying;
+    await copyFile(source, dest);
 }
 
 function parseCliOptions() {
@@ -85,7 +105,7 @@ function parseCliOptions() {
 
     const result = [];
     for (const { source, dest } of pairList) {
-        const processing = copyFile(source, dest, {
+        const processing = copyFileOperation(source, dest, {
             isDebug,
             isVerbose,
         });
