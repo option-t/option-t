@@ -22,8 +22,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-// XXX: To uniform the style of an object literals, we enable `quote-props`
-/* eslint quote-props: ['error', "always"] no-magic-numbers: 'off' */
+/* eslint no-magic-numbers: 'off' */
 
 'use strict';
 

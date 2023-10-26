@@ -22,8 +22,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-// XXX: To uniform the style of an object literals, we enable `quote-props`
-/* eslint quote-props: ['error', "always"] no-magic-numbers: 0 */
+/* eslint no-magic-numbers: 'off' */
 
 'use strict';
 
@@ -173,7 +172,7 @@ module.exports = {
         //        So we enable this rule as _error_.
         'require-unicode-regexp': 2, // https://eslint.org/docs/rules/require-unicode-regexp
         'vars-on-top': 0, // This is a truly ridiculous convention.
-        'yoda': 0, // https://eslint.org/docs/rules/wrap-iife
+        'yoda': 0, // https://eslint.org/docs/rules/yoda
 
         // Strict Mode
         'strict': [2, 'global'],
@@ -227,7 +226,6 @@ module.exports = {
         'id-length': 0, // https://eslint.org/docs/rules/id-length
         'id-match': 0, // https://eslint.org/docs/rules/id-match
         'line-comment-position': 0, // This is needless. https://eslint.org/docs/rules/line-comment-position
-        'lines-between-class-members': 0, // https://eslint.org/docs/rules/lines-between-class-members
         'max-depth': [2, 10], // https://eslint.org/docs/rules/max-depth
         'max-lines': 0, // We trust our code review. https://eslint.org/docs/rules/max-lines
         'max-lines-per-function': 0, // We trust our code review. https://eslint.org/docs/rules/max-lines-per-function
@@ -245,7 +243,6 @@ module.exports = {
         'no-inline-comments': 0, // https://eslint.org/docs/rules/no-inline-comments
         'no-lonely-if': 1, // https://eslint.org/docs/rules/no-lonely-if
         'no-multi-assign': 1,
-        'no-multiple-empty-lines': 0, // Empty lines somtimes means a section of a program.
         'no-negated-condition': 0, // https://eslint.org/docs/rules/no-negated-condition
         'no-nested-ternary': 2, // https://eslint.org/docs/rules/no-nested-ternary
         'no-plusplus': 0, // We might use it for loop.
@@ -254,32 +251,16 @@ module.exports = {
             'ForInStatement'
         ],
         'no-ternary': 0, // https://eslint.org/docs/rules/no-ternary
-        'no-trailing-spaces': 1,
         'no-underscore-dangle': [2, { // Ban the name which starts with `_`.
             'allowAfterThis': true, // allow after this to create a private member.
         }],
         'no-unneeded-ternary': 2,
         'one-var': [2, 'never'], // https://eslint.org/docs/rules/one-var
         'operator-assignment': 0, // Unlike `i++` or `++i`, this is not a problem
-        'padding-line-between-statements': [1,
-            /**
-             *  This configuration is valid the case:
-             *
-             *  ```
-             *      "use strict";
-             *      "use asm";
-             *
-             *      foo();
-             *  ```
-             */
-            { 'blankLine': 'always', 'prev': 'directive', 'next': '*' },
-            { 'blankLine': 'any', 'prev': 'directive', 'next': 'directive' },
-        ],
         'prefer-object-spread': 1, // https://eslint.org/docs/rules/prefer-object-spread
         'prefer-exponentiation-operator': 0, // There is no reason to enforce `**` instead of Math.pow()
         'sort-keys': 0, // We don't think this is useful for all object by default.
         'sort-vars': 0, // we don't have to sort vars.
-        'spaced-comment': 0,
         'unicode-bom': 2, // Ban byte-order-mark
 
         // ECMASctipt 6
