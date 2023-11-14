@@ -35,7 +35,6 @@ export { unwrapOrFromOption } from '../unwrap_or.js';
 export { unwrapOrElseFromOption } from '../unwrap_or_else.js';
 export { unwrapOrElseAsyncFromOption } from '../unwrap_or_else_async.js';
 
-import { expectSome, unwrapSome } from '../option.js';
 import { andForOption as andForOptionOriginal } from '../and.js';
 import { andThenForOption } from '../and_then.js';
 import { andThenAsyncForOption } from '../and_then_async.js';
@@ -49,6 +48,7 @@ import { mapOrForOption } from '../map_or.js';
 import { mapOrAsyncForOption } from '../map_or_async.js';
 import { mapOrElseForOption } from '../map_or_else.js';
 import { mapOrElseAsyncForOption } from '../map_or_else_async.js';
+import { expectSome, unwrapSome } from '../option.js';
 import { orForOption as orForOptionOriginal } from '../or.js';
 import { orElseForOption } from '../or_else.js';
 import { orElseAsyncForOption } from '../or_else_async.js';

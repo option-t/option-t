@@ -1,5 +1,5 @@
-import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.js';
 import type { AsyncZipTransformerFn } from '../internal/function.js';
+import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.js';
 import {
     type Undefinable,
     type NotUndefined,

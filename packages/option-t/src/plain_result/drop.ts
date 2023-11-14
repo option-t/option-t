@@ -1,7 +1,7 @@
-import type { Mutable } from '../internal/mutable.js';
 import type { EffectFn } from '../internal/function.js';
-import { type Result, type Ok, type Err, isOk } from './result.js';
+import type { Mutable } from '../internal/mutable.js';
 import { asMutResult } from './as_mut.js';
+import { type Result, type Ok, type Err, isOk } from './result.js';
 
 export type MutOk<out T> = Mutable<Ok<T>>;
 export type MutErr<out E> = Mutable<Err<E>>;

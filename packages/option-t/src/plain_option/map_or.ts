@@ -1,5 +1,5 @@
-import type { Option } from './option.js';
 import type { TransformFn } from '../internal/function.js';
+import type { Option } from './option.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is `Some(T)`.

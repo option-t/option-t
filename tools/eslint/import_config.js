@@ -4,6 +4,27 @@ const plugins = {
     import: importPlugin,
 };
 
+const rulesForAllCode = {
+    'import/order': [
+        'warn',
+        {
+            alphabetize: {
+                caseInsensitive: false,
+                order: 'asc',
+            },
+            groups: [
+                // @prettier-ignore
+                'builtin',
+                'external',
+                'internal',
+                'parent',
+                'sibling',
+                'index',
+            ],
+        },
+    ],
+};
+
 const rulesForLibaryCode = {
     // Do not import packages that listed in dependencies explicitly.
     'import/no-extraneous-dependencies': [
@@ -26,6 +47,9 @@ const rulesForLibaryCode = {
  */
 export const configForLibaryCode = {
     plugins,
-    rules: rulesForLibaryCode,
+    rules: {
+        ...rulesForAllCode,
+        ...rulesForLibaryCode,
+    },
     settings: importPlugin.configs.typescript.settings,
 };
