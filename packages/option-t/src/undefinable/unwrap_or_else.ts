@@ -1,11 +1,11 @@
 import type { RecoveryFn } from '../internal/function.js';
+import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.js';
 import {
     isNotUndefined,
     type NotUndefined,
     type Undefinable,
     expectNotUndefined,
 } from './undefinable.js';
-import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.js';
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `undefined`.

@@ -1,5 +1,5 @@
-import type { Result } from './result.js';
 import type { TransformFn } from '../internal/function.js';
+import type { Result } from './result.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is `Ok(T)`.

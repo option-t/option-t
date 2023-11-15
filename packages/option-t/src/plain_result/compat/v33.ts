@@ -38,11 +38,6 @@ export { unwrapOrFromResult } from '../unwrap_or.js';
 export { unwrapOrElseFromResult } from '../unwrap_or_else.js';
 export { unwrapOrElseAsyncFromResult } from '../unwrap_or_else_async.js';
 
-import { expectOk, expectErr, unwrapOk } from '../result.js';
-import {
-    toOptionFromOk as toOptionFromOkFn,
-    toOptionFromErr as toOptionFromErrFn,
-} from '../to_option.js';
 import { andForResult as andForResultOriginal } from '../and.js';
 import { andThenForResult } from '../and_then.js';
 import { andThenAsyncForResult } from '../and_then_async.js';
@@ -51,15 +46,20 @@ import { flattenForResult } from '../flatten.js';
 import { inspectOkOfResult, inspectErrOfResult, inspectBothOfResult } from '../inspect.js';
 import { mapForResult } from '../map.js';
 import { mapAsyncForResult } from '../map_async.js';
+import { mapErrForResult } from '../map_err.js';
+import { mapErrAsyncForResult } from '../map_err_async.js';
 import { mapOrForResult } from '../map_or.js';
 import { mapOrAsyncForResult } from '../map_or_async.js';
 import { mapOrElseForResult } from '../map_or_else.js';
 import { mapOrElseAsyncForResult } from '../map_or_else_async.js';
-import { mapErrForResult } from '../map_err.js';
-import { mapErrAsyncForResult } from '../map_err_async.js';
 import { orForResult as orForResultOriginal } from '../or.js';
 import { orElseForResult } from '../or_else.js';
 import { orElseAsyncForResult } from '../or_else_async.js';
+import { expectOk, expectErr, unwrapOk } from '../result.js';
+import {
+    toOptionFromOk as toOptionFromOkFn,
+    toOptionFromErr as toOptionFromErrFn,
+} from '../to_option.js';
 import {
     transposeForResult as transposeForResultOriginal,
     transposeNullableForResult,

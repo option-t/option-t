@@ -28,7 +28,6 @@ export { unwrapOrFromUndefinable } from '../unwrap_or.js';
 export { unwrapOrElseFromUndefinable } from '../unwrap_or_else.js';
 export { unwrapOrElseAsyncFromUndefinable } from '../unwrap_or_else_async.js';
 
-import { expectNotUndefined, unwrapUndefinable } from '../undefinable.js';
 import { andThenForUndefinable } from '../and_then.js';
 import { andThenAsyncForUndefinable } from '../and_then_async.js';
 import { inspectUndefinable } from '../inspect.js';
@@ -40,6 +39,7 @@ import { mapOrElseForUndefinable } from '../map_or_else.js';
 import { mapOrElseAsyncForUndefinable } from '../map_or_else_async.js';
 import { orElseForUndefinable } from '../or_else.js';
 import { orElseAsyncForUndefinable } from '../or_else_async.js';
+import { expectNotUndefined, unwrapUndefinable } from '../undefinable.js';
 import { unwrapOrFromUndefinable } from '../unwrap_or.js';
 import { unwrapOrElseFromUndefinable } from '../unwrap_or_else.js';
 import { unwrapOrElseAsyncFromUndefinable } from '../unwrap_or_else_async.js';

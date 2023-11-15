@@ -28,12 +28,6 @@ export { unwrapOrFromMaybe } from '../unwrap_or.js';
 export { unwrapOrElseFromMaybe } from '../unwrap_or_else.js';
 export { unwrapOrElseAsyncFromMaybe } from '../unwrap_or_else_async.js';
 
-import {
-    expectNotNullOrUndefined,
-    unwrapMaybe,
-    isNotNullOrUndefined,
-    type NotNullOrUndefined,
-} from '../maybe.js';
 import { andThenForMaybe } from '../and_then.js';
 import { andThenAsyncForMaybe } from '../and_then_async.js';
 import { inspectMaybe } from '../inspect.js';
@@ -43,6 +37,12 @@ import { mapOrForMaybe } from '../map_or.js';
 import { mapOrAsyncForMaybe } from '../map_or_async.js';
 import { mapOrElseForMaybe } from '../map_or_else.js';
 import { mapOrElseAsyncForMaybe } from '../map_or_else_async.js';
+import {
+    expectNotNullOrUndefined,
+    unwrapMaybe,
+    isNotNullOrUndefined,
+    type NotNullOrUndefined,
+} from '../maybe.js';
 import { orElseForMaybe } from '../or_else.js';
 import { orElseAsyncForMaybe } from '../or_else_async.js';
 import { unwrapOrFromMaybe } from '../unwrap_or.js';

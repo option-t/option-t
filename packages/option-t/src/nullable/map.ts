@@ -1,5 +1,5 @@
-import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './internal/error_message.js';
 import type { TransformFn } from '../internal/function.js';
+import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './internal/error_message.js';
 import { type Nullable, isNull, type NotNull, expectNotNull } from './nullable.js';
 
 /**

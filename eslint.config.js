@@ -9,6 +9,7 @@ import {
     createLanguageOptionsForModule,
     createLanguageOptionsForCommonJS,
 } from './tools/eslint/javascript.js';
+import * as importConfig from './tools/eslint/import_config.js';
 import { linterOptions } from './tools/eslint/linter_option.js';
 import {
     createlanguageOptionsForTypeScript,
@@ -78,6 +79,15 @@ export default [
             path.resolve(THIS_DIR_NAME, 'packages/option-t/'),
         ),
         ...configForTypeScript,
+    },
+    {
+        files: [
+            // @prettier-ignore
+            'packages/option-t/src/**/*.ts',
+            'packages/option-t/src/**/*.mts',
+            'packages/option-t/src/**/*.cts',
+        ],
+        ...importConfig.configForLibaryCode,
     },
     {
         files: [

@@ -1,6 +1,6 @@
-import type { Option } from './option.js';
-import { type Result, createErr, createOk } from '../plain_result/result.js';
 import type { RecoveryFn } from '../internal/function.js';
+import { type Result, createErr, createOk } from '../plain_result/result.js';
+import type { Option } from './option.js';
 
 /**
  * Transforms the `Option<T>` into a `Result<T, E>`, mapping `Some(v)` to `Ok(v)` and `None` to `Err(err())`.
