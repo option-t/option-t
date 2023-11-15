@@ -39,6 +39,10 @@ const TYPESCRIPT_FILES = [
     '**/*.cts',
 ];
 
+const APPLICATION_FILES = TYPESCRIPT_FILES.map((path) => {
+    return `packages/option-t/src/${path}`;
+});
+
 // https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new
 export default [
     js.configs.recommended,
@@ -93,24 +97,13 @@ export default [
         ...importConfig.configForTypeScript,
     },
     {
-        files: [
-            // @prettier-ignore
-            'packages/option-t/**/*.ts',
-            'packages/option-t/**/*.mts',
-            'packages/option-t/**/*.cts',
-        ],
+        files: APPLICATION_FILES,
         languageOptions: createlanguageOptionsForTypeScript(
             path.resolve(THIS_DIR_NAME, 'packages/option-t/'),
         ),
-        ...configForTypeScript,
     },
     {
-        files: [
-            // @prettier-ignore
-            'packages/option-t/src/**/*.ts',
-            'packages/option-t/src/**/*.mts',
-            'packages/option-t/src/**/*.cts',
-        ],
+        files: APPLICATION_FILES,
         ...importConfig.configForLibaryCode,
     },
     ...prettierConfigs,
