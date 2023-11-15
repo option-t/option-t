@@ -1,6 +1,6 @@
-import test from 'ava';
 import * as assert from 'node:assert/strict';
 import { webcrypto } from 'node:crypto';
+import test from 'ava';
 
 import { createErr } from 'option-t/PlainResult/Result';
 import { unwrapOrThrowErrorFromResult } from 'option-t/PlainResult/unwrapOrThrowError';

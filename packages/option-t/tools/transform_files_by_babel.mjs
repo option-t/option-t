@@ -5,8 +5,8 @@ import { parseArgs } from 'node:util';
 
 import * as babel from '@babel/core';
 
-import { getAllGlobMatchedFiles } from './glob.mjs';
 import { createSourceToDestinationMapList, prepareToCreateFile } from './fs_helper.mjs';
+import { getAllGlobMatchedFiles } from './glob.mjs';
 
 async function transformFile(config, source, dest, { isDebug: _isDebug, isVerbose: _isVerbose }) {
     const transformed = await babel.transformFileAsync(source, {

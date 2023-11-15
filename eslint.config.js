@@ -4,17 +4,17 @@ import { fileURLToPath } from 'node:url';
 import js from '@eslint/js';
 import globals from 'globals';
 
+import * as importConfig from './tools/eslint/import_config.js';
 import {
     rules as rulesForJavaScript,
     createLanguageOptionsForModule,
     createLanguageOptionsForCommonJS,
 } from './tools/eslint/javascript.js';
-import * as importConfig from './tools/eslint/import_config.js';
+import { configs as prettierConfigs } from './tools/eslint/prettier.js';
 import {
     createlanguageOptionsForTypeScript,
     config as configForTypeScript,
 } from './tools/eslint/typescript.js';
-import { configs as prettierConfigs } from './tools/eslint/prettier.js';
 
 const THIS_FILE_NAME = fileURLToPath(import.meta.url);
 const THIS_DIR_NAME = path.dirname(THIS_FILE_NAME);
@@ -29,6 +29,15 @@ const languageOptionsForCommonJS = createLanguageOptionsForCommonJS(ECMA262_VERS
     ...globals.node,
     ...globals.commonjs,
 });
+
+const JS_FILES = ['**/*.mjs', '**/*.js'];
+const COMMONJS_FILES = ['**/*.cjs'];
+const TYPESCRIPT_FILES = [
+    // @prettier-ignore
+    '**/*.ts',
+    '**/*.mts',
+    '**/*.cts',
+];
 
 // https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new
 export default [
@@ -56,11 +65,15 @@ export default [
         ],
     },
     {
-        files: ['**/*.mjs', '**/*.js'],
+        files: JS_FILES,
         languageOptions: languageOptionsForModule,
     },
     {
-        files: ['**/*.cjs'],
+        files: JS_FILES,
+        ...importConfig.configForJavaScript,
+    },
+    {
+        files: COMMONJS_FILES,
         languageOptions: languageOptionsForCommonJS,
     },
     {
@@ -71,14 +84,13 @@ export default [
         },
     },
     {
-        files: [
-            // @prettier-ignore
-            '**/*.ts',
-            '**/*.mts',
-            '**/*.cts',
-        ],
+        files: TYPESCRIPT_FILES,
         languageOptions: createlanguageOptionsForTypeScript(THIS_DIR_NAME),
         ...configForTypeScript,
+    },
+    {
+        files: TYPESCRIPT_FILES,
+        ...importConfig.configForTypeScript,
     },
     {
         files: [

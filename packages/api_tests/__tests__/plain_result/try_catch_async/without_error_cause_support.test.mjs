@@ -1,5 +1,5 @@
-import test from 'ava';
 import * as assert from 'node:assert/strict';
+import test from 'ava';
 import { tryCatchIntoResultWithEnsureErrorAsync } from 'option-t/PlainResult/tryCatchAsync';
 
 const OriginalTypeErrorCtor = globalThis.TypeError;

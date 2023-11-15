@@ -1,6 +1,6 @@
-import test from 'ava';
 import * as assert from 'node:assert/strict';
 import { webcrypto } from 'node:crypto';
+import test from 'ava';
 
 import { tryCatchIntoResultWithEnsureError } from 'option-t/PlainResult/tryCatch';
 
