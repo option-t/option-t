@@ -4,13 +4,13 @@ import { fileURLToPath } from 'node:url';
 import js from '@eslint/js';
 import globals from 'globals';
 
+import * as importConfig from './tools/eslint/import_config.js';
 import {
     rules as rulesForJavaScript,
     createLanguageOptionsForModule,
     createLanguageOptionsForCommonJS,
 } from './tools/eslint/javascript.js';
-import * as importConfig from './tools/eslint/import_config.js';
-import { linterOptions } from './tools/eslint/linter_option.js';
+import { configs as prettierConfigs } from './tools/eslint/prettier.js';
 import {
     createlanguageOptionsForTypeScript,
     config as configForTypeScript,
@@ -19,22 +19,37 @@ import {
 const THIS_FILE_NAME = fileURLToPath(import.meta.url);
 const THIS_DIR_NAME = path.dirname(THIS_FILE_NAME);
 
-const ecmaVersion = 2022;
+const ECMA262_VERSION = 2022;
 
-const languageOptionsForModule = createLanguageOptionsForModule(ecmaVersion, {
+const languageOptionsForModule = createLanguageOptionsForModule(ECMA262_VERSION, {
     ...globals.nodeBuiltin,
 });
 
-const languageOptionsForCommonJS = createLanguageOptionsForCommonJS(ecmaVersion, {
+const languageOptionsForCommonJS = createLanguageOptionsForCommonJS(ECMA262_VERSION, {
     ...globals.node,
     ...globals.commonjs,
+});
+
+const JS_FILES = ['**/*.mjs', '**/*.js'];
+const COMMONJS_FILES = ['**/*.cjs'];
+const TYPESCRIPT_FILES = [
+    // @prettier-ignore
+    '**/*.ts',
+    '**/*.mts',
+    '**/*.cts',
+];
+
+const APPLICATION_FILES = TYPESCRIPT_FILES.map((path) => {
+    return `packages/option-t/src/${path}`;
 });
 
 // https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new
 export default [
     js.configs.recommended,
     {
-        linterOptions,
+        linterOptions: {
+            reportUnusedDisableDirectives: true,
+        },
         rules: {
             ...rulesForJavaScript,
         },
@@ -54,11 +69,15 @@ export default [
         ],
     },
     {
-        files: ['**/*.mjs', '**/*.js'],
+        files: JS_FILES,
         languageOptions: languageOptionsForModule,
     },
     {
-        files: ['**/*.cjs'],
+        files: JS_FILES,
+        ...importConfig.configForJavaScript,
+    },
+    {
+        files: COMMONJS_FILES,
         languageOptions: languageOptionsForCommonJS,
     },
     {
@@ -69,34 +88,23 @@ export default [
         },
     },
     {
-        files: [
-            // @prettier-ignore
-            'packages/option-t/**/*.ts',
-            'packages/option-t/**/*.mts',
-            'packages/option-t/**/*.cts',
-        ],
-        languageOptions: createlanguageOptionsForTypeScript(
-            path.resolve(THIS_DIR_NAME, 'packages/option-t/'),
-        ),
-        ...configForTypeScript,
-    },
-    {
-        files: [
-            // @prettier-ignore
-            'packages/option-t/src/**/*.ts',
-            'packages/option-t/src/**/*.mts',
-            'packages/option-t/src/**/*.cts',
-        ],
-        ...importConfig.configForLibaryCode,
-    },
-    {
-        files: [
-            // @prettier-ignore
-            '**/*.ts',
-            '**/*.mts',
-            '**/*.cts',
-        ],
+        files: TYPESCRIPT_FILES,
         languageOptions: createlanguageOptionsForTypeScript(THIS_DIR_NAME),
         ...configForTypeScript,
     },
+    {
+        files: TYPESCRIPT_FILES,
+        ...importConfig.configForTypeScript,
+    },
+    {
+        files: APPLICATION_FILES,
+        languageOptions: createlanguageOptionsForTypeScript(
+            path.resolve(THIS_DIR_NAME, 'packages/option-t/'),
+        ),
+    },
+    {
+        files: APPLICATION_FILES,
+        ...importConfig.configForLibaryCode,
+    },
+    ...prettierConfigs,
 ];

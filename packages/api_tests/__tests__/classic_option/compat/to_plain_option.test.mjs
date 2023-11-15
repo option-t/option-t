@@ -1,18 +1,18 @@
 import test from 'ava';
 
 import {
+    createClassicSome,
+    createClassicNone,
+    compatToClassicOption,
+    compatToPlainOption,
+} from 'option-t/ClassicOption';
+import {
     createSome,
     createNone,
     isSome,
     isNone,
     unwrapSome as unwrapOption,
 } from 'option-t/esm/PlainOption/Option';
-import {
-    createClassicSome,
-    createClassicNone,
-    compatToClassicOption,
-    compatToPlainOption,
-} from 'option-t/ClassicOption';
 
 test(`input is Plain's Some`, (t) => {
     const expected = Math.random();

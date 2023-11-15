@@ -53,3 +53,24 @@ export const configForLibaryCode = {
     },
     settings: importPlugin.configs.typescript.settings,
 };
+
+/**
+ *  @type   {import('eslint').Linter.FlatConfig}
+ */
+export const configForJavaScript = {
+    plugins,
+    rules: {
+        ...rulesForAllCode,
+    },
+};
+
+/**
+ *  @type   {import('eslint').Linter.FlatConfig}
+ */
+export const configForTypeScript = {
+    plugins,
+    settings: importPlugin.configs.typescript.settings,
+    rules: {
+        ...rulesForAllCode,
+    },
+};

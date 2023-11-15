@@ -1,5 +1,5 @@
-import test from 'ava';
 import { webcrypto } from 'node:crypto';
+import test from 'ava';
 
 import { createOk, createErr } from 'option-t/PlainResult/Result';
 import { unwrapOrThrowErrorFromResult } from 'option-t/PlainResult/unwrapOrThrowError';

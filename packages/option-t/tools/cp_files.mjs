@@ -5,8 +5,8 @@ import { parseArgs } from 'node:util';
 
 import { reflinkFile } from '@reflink/reflink';
 
-import { getAllGlobMatchedFiles } from './glob.mjs';
 import { createSourceToDestinationMapList, prepareToCreateFile } from './fs_helper.mjs';
+import { getAllGlobMatchedFiles } from './glob.mjs';
 
 // eslint-disable-next-line no-bitwise
 const FS_FILE_COPY_MODE = fs.constants.COPYFILE_EXCL | fs.constants.COPYFILE_FICLONE;

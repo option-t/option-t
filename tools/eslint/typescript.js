@@ -6,7 +6,6 @@ import tsESLintParser from '@typescript-eslint/parser';
 import globals from 'globals';
 
 import tsPresets from './vendor/eslintrc_typescript.cjs';
-import * as prettier from './prettier.js';
 
 const KEY_NAMING_CONVENTION = '@typescript-eslint/naming-convention';
 
@@ -127,7 +126,6 @@ export const config = Object.freeze({
         ...tsPresets.rules,
         ...rules,
         ...rulesRequiringType,
-        ...prettier.rules,
 
         [KEY_NAMING_CONVENTION]: newNamingConventionRule,
     },

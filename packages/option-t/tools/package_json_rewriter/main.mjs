@@ -4,8 +4,8 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 
-import { addExportsFields } from './transformer/add_exports_field/main.mjs';
 import { loadJSON } from './json.mjs';
+import { addExportsFields } from './transformer/add_exports_field/main.mjs';
 
 const THIS_FILENAME = fileURLToPath(import.meta.url);
 const THIS_DIRNAME = path.dirname(THIS_FILENAME);

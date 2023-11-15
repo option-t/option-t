@@ -1,5 +1,4 @@
 import vendoredCoreConfig from './vendor/eslintrc_core.cjs';
-import * as prettierConfig from './prettier.js';
 
 const builtinRules = Object.freeze({
     // In JavaScript, after ES Module or CommonJS era (single module per single file),
@@ -56,7 +55,6 @@ const builtinRules = Object.freeze({
 export const rules = Object.freeze({
     ...vendoredCoreConfig.rules,
     ...builtinRules,
-    ...prettierConfig.rules,
 });
 
 export function createLanguageOptionsForModule(ecmaVersion, globals) {

@@ -1,5 +1,5 @@
-import test from 'ava';
 import { webcrypto } from 'node:crypto';
+import test from 'ava';
 
 import {
     isOk,

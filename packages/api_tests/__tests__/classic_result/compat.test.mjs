@@ -1,6 +1,12 @@
 import test from 'ava';
 
 import {
+    createClassicOk,
+    createClassicErr,
+    compatToClassicResult,
+    compatToPlainResult,
+} from 'option-t/ClassicResult';
+import {
     createOk,
     createErr,
     isOk,
@@ -8,12 +14,6 @@ import {
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
 } from 'option-t/esm/PlainResult/Result';
-import {
-    createClassicOk,
-    createClassicErr,
-    compatToClassicResult,
-    compatToPlainResult,
-} from 'option-t/ClassicResult';
 
 test(`input is Plain's Ok`, (t) => {
     const expected = Math.random();
