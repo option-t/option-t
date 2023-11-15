@@ -73,6 +73,16 @@ export default [
     {
         files: [
             // @prettier-ignore
+            '**/*.ts',
+            '**/*.mts',
+            '**/*.cts',
+        ],
+        languageOptions: createlanguageOptionsForTypeScript(THIS_DIR_NAME),
+        ...configForTypeScript,
+    },
+    {
+        files: [
+            // @prettier-ignore
             'packages/option-t/**/*.ts',
             'packages/option-t/**/*.mts',
             'packages/option-t/**/*.cts',
@@ -90,16 +100,6 @@ export default [
             'packages/option-t/src/**/*.cts',
         ],
         ...importConfig.configForLibaryCode,
-    },
-    {
-        files: [
-            // @prettier-ignore
-            '**/*.ts',
-            '**/*.mts',
-            '**/*.cts',
-        ],
-        languageOptions: createlanguageOptionsForTypeScript(THIS_DIR_NAME),
-        ...configForTypeScript,
     },
     ...prettierConfigs,
 ];
