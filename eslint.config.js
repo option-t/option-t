@@ -10,7 +10,6 @@ import {
     createLanguageOptionsForCommonJS,
 } from './tools/eslint/javascript.js';
 import * as importConfig from './tools/eslint/import_config.js';
-import { linterOptions } from './tools/eslint/linter_option.js';
 import {
     createlanguageOptionsForTypeScript,
     config as configForTypeScript,
@@ -20,13 +19,13 @@ import { configs as prettierConfigs } from './tools/eslint/prettier.js';
 const THIS_FILE_NAME = fileURLToPath(import.meta.url);
 const THIS_DIR_NAME = path.dirname(THIS_FILE_NAME);
 
-const ecmaVersion = 2022;
+const ECMA262_VERSION = 2022;
 
-const languageOptionsForModule = createLanguageOptionsForModule(ecmaVersion, {
+const languageOptionsForModule = createLanguageOptionsForModule(ECMA262_VERSION, {
     ...globals.nodeBuiltin,
 });
 
-const languageOptionsForCommonJS = createLanguageOptionsForCommonJS(ecmaVersion, {
+const languageOptionsForCommonJS = createLanguageOptionsForCommonJS(ECMA262_VERSION, {
     ...globals.node,
     ...globals.commonjs,
 });
@@ -35,7 +34,9 @@ const languageOptionsForCommonJS = createLanguageOptionsForCommonJS(ecmaVersion,
 export default [
     js.configs.recommended,
     {
-        linterOptions,
+        linterOptions: {
+            reportUnusedDisableDirectives: true,
+        },
         rules: {
             ...rulesForJavaScript,
         },
