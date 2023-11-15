@@ -15,6 +15,7 @@ import {
     createlanguageOptionsForTypeScript,
     config as configForTypeScript,
 } from './tools/eslint/typescript.js';
+import { configs as prettierConfigs } from './tools/eslint/prettier.js';
 
 const THIS_FILE_NAME = fileURLToPath(import.meta.url);
 const THIS_DIR_NAME = path.dirname(THIS_FILE_NAME);
@@ -99,4 +100,5 @@ export default [
         languageOptions: createlanguageOptionsForTypeScript(THIS_DIR_NAME),
         ...configForTypeScript,
     },
+    ...prettierConfigs,
 ];

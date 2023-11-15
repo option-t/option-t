@@ -1,8 +1,6 @@
 import presets from 'eslint-config-prettier';
 
-export const rules = Object.freeze({
-    ...presets.rules,
-
+const rules = Object.freeze({
     // This rule avoid the prettier's behavior which omits curly blacket for if statement by default like following:
     //
     //  before:
@@ -21,3 +19,15 @@ export const rules = Object.freeze({
     // see also https://github.com/prettier/eslint-config-prettier#curly
     curly: ['error', 'all'],
 });
+
+/**
+ *  @type   {Array<import('eslint').Linter.FlatConfig>}
+ */
+export const configs = Object.freeze([
+    {
+        rules: presets.rules,
+    },
+    {
+        rules,
+    },
+]);
