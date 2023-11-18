@@ -164,7 +164,7 @@ jobs:
         if: ${{ always() }}
         steps:
             - name: Check whether all dependency jobs are success or not.
-              uses: actions/github-script@v6
+              uses: actions/github-script@v7
               env:
                   JOB_RESULTS: ${{ toJSON(needs.*.result) }}
               with:
