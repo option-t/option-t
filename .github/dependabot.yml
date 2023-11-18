@@ -39,12 +39,11 @@ updates:
           - A-dependency
           - I-dependency-gardening
 
-    ###
     ##################################################
     #   In-repository composite actions
     #####################################################
     - package-ecosystem: github-actions
-      directory: "/.github/actions/prepare_ci"
+      directory: "/.github/actions/prepare_ci/"
       schedule:
           interval: monthly
       open-pull-requests-limit: 99
