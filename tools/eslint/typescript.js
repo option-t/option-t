@@ -36,7 +36,7 @@ const rules = Object.freeze({
             // We would like to allow override the base method on super class.
             ignoreOverrideMethods: true,
             // We would like to allow to implement an empty method as a part of the interface.
-            ignoreClassesThatImplementAnInterface: true,
+            ignoreClassesThatImplementAnInterface: 'public-fields',
         },
     ],
 
