@@ -10,24 +10,7 @@ export function assertIsErrorInstance(input: unknown, message: string): asserts 
     const e = new TypeError(message, {
         cause: input,
     });
-
-    // Check each time to avoid the timing problem to install the polyfill.
-    // FIXME(#1833): We should remove this path.
-    if (e.cause !== input && Object.isExtensible(e)) {
-        installErrorCauseAsPolyfill(e, input);
-    }
-
     throw e;
-}
-
-function installErrorCauseAsPolyfill(e: TypeError, input: unknown) {
-    // see https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-installerrorcause
-    Object.defineProperty(e, 'cause', {
-        value: input,
-        writable: true,
-        enumerable: false,
-        configurable: true,
-    });
 }
 
 export function assertIsFrozen(input: unknown): void {
