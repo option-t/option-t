@@ -3,7 +3,7 @@
     "compilerOptions": {
         // https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
         "target": "ES2017",
-        "module": "es2015",
+        "module": "Node16",
         "declaration": true,
         "lib": [
             "ES5",
