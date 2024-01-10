@@ -1,13 +1,11 @@
 import * as assert from 'node:assert/strict';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 
 import { generateExposedPathSequence } from './public_api/mod.mjs';
 
-const THIS_FILE_NAME = fileURLToPath(import.meta.url);
-const THIS_DIR_NAME = path.dirname(THIS_FILE_NAME);
+const THIS_DIR_NAME = import.meta.dirname;
 
 const RELATIVE_PATH_TO_SRC_DIR = '../src';
 const RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO = '../packages/option-t/src';
