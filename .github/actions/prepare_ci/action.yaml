@@ -29,7 +29,7 @@ runs:
           run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
         - name: Restore dependencies from cache
           id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
-          uses: actions/cache@v3
+          uses: actions/cache@v4
           with:
               path: ${{ steps.npm-cache-dir.outputs.dir }}
               key: v0-${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
