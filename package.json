@@ -10,7 +10,7 @@
         "@babel/plugin-syntax-typescript": "^7.23.3",
         "@babel/plugin-transform-modules-commonjs": "^7.23.3",
         "@eslint/js": "^8.56.0",
-        "@reflink/reflink": "^0.1.15",
+        "@reflink/reflink": "^0.1.16",
         "@typescript-eslint/eslint-plugin": "^6.16.0",
         "@typescript-eslint/parser": "^6.16.0",
         "ava": "^6.1.1",
