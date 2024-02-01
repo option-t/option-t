@@ -1,12 +1,12 @@
 import * as assert from 'node:assert/strict';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 
+const THIS_FILE_NAME = import.meta.filename;
+
 function debug(input) {
-    const filename = fileURLToPath(import.meta.url);
-    console.log(`${filename}: ${input}`);
+    console.log(`${THIS_FILE_NAME}: ${input}`);
 }
 
 async function* getAllDescendantFiles(subrootDir) {

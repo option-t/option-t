@@ -1,14 +1,12 @@
 import * as assert from 'node:assert/strict';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 
 import { loadJSON } from './json.mjs';
 import { addExportsFields } from './transformer/add_exports_field/main.mjs';
 
-const THIS_FILENAME = fileURLToPath(import.meta.url);
-const THIS_DIRNAME = path.dirname(THIS_FILENAME);
+const THIS_DIRNAME = import.meta.dirname;
 
 const BASE_DIR = THIS_DIRNAME;
 

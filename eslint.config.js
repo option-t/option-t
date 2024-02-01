@@ -1,5 +1,4 @@
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
 import js from '@eslint/js';
 import globals from 'globals';
@@ -16,8 +15,7 @@ import {
     config as configForTypeScript,
 } from './tools/eslint/typescript.js';
 
-const THIS_FILE_NAME = fileURLToPath(import.meta.url);
-const THIS_DIR_NAME = path.dirname(THIS_FILE_NAME);
+const THIS_DIR_NAME = import.meta.dirname;
 
 const ECMA262_VERSION = 2022;
 
