@@ -1,7 +1,7 @@
 # option-t
 
 [![npm](https://img.shields.io/npm/v/option-t.svg?style=flat)](https://www.npmjs.com/package/option-t)
-[![CI Status (GitHub Actions)](https://github.com/option-t/option-t/workflows/CI/badge.svg)](https://github.com/option-t/option-t/actions?query=workflow%3ACI)
+[![CI on main branch](https://github.com/option-t/option-t/actions/workflows/ci_on_main.yaml/badge.svg)](https://github.com/option-t/option-t/actions/workflows/ci_on_main.yaml)
 
 * **This library provides a toolkit for _nullable_ types in ECMAScript**.
     - `T | null`
