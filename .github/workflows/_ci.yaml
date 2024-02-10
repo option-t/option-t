@@ -162,19 +162,7 @@ jobs:
         runs-on: ubuntu-latest
         if: ${{ always() }}
         steps:
-            - name: Check whether all dependency jobs are success or not.
-              uses: actions/github-script@v7
-              env:
-                  JOB_RESULTS: ${{ toJSON(needs.*.result) }}
-              with:
-                  script: |
-                      'use strict';
-                      const assert = require('node:assert/strict');
-
-                      const results = JSON.parse(process.env['JOB_RESULTS']);
-                      assert.ok(Array.isArray(results), 'the parsed result is not an array');
-
-                      const success = results.every((value) => value.toLowerCase() === 'success');
-                      if (!success) {
-                          core.setFailed('Failed required checks');
-                      }
+            - name: Check whether required jobs are successful
+              if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+              # Fail this job
+              run: exit 1
