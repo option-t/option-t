@@ -4,7 +4,7 @@ INNER_PACKAGES_DIR := $(abspath $(CURDIR)/..)
 NODE_BIN := node
 NPM_MOD_DIR := $(REPO_ROOT_DIR)/node_modules
 NPM_BIN := $(NPM_MOD_DIR)/.bin
-NPM_CMD := npm
+NPM_CMD := pnpm
 
 SRC_DIR := $(CURDIR)/src
 DOCS_DIR := $(REPO_ROOT_DIR)/docs

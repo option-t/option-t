@@ -23,21 +23,24 @@ runs:
           uses: actions/setup-node@v4
           with:
               node-version: ${{ inputs.node-version }}
-        - name: Get npm cache directory
+        - name: Activate corepack
           shell: bash
-          id: npm-cache-dir
-          run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+          run: corepack enable
+        - name: Get pnpm cache directory
+          shell: bash
+          id: pnpm-cache-dir
+          run: echo "dir=$(pnpm store path)" >> ${GITHUB_OUTPUT}
         - name: Restore dependencies from cache
-          id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+          id: pnpm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
           uses: actions/cache@v4
           with:
-              path: ${{ steps.npm-cache-dir.outputs.dir }}
-              key: v0-${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+              path: ${{ steps.pnpm-cache-dir.outputs.dir }}
+              key: v0-${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-workspace.yaml') }}
               restore-keys: |
-                  v0-${{ runner.os }}-npm-
+                  v0-${{ runner.os }}-pnpm-
         - name: Install dependencies
           shell: bash
           # We only cache `npm config get cache`, not including `node_modules/`.
           # thus we need to do `npm ci` to restore `node_modules/` so we need run always this step.
           # if: steps.npm-cache.outputs.cache-hit != 'true'
-          run: npm ci
+          run: pnpm install
