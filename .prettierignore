@@ -10,6 +10,7 @@ cjs/
 esm/
 lib/
 __snapshots__/
+pnpm-lock.yaml
 
 ## TODO
 *.json

@@ -1,4 +1,4 @@
-NPM_CMD := npm
+NPM_CMD := pnpm
 
 all: help
 

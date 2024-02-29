@@ -10,6 +10,7 @@ NODE_BIN := node
 NPM_MOD_DIR := $(CURDIR)/node_modules
 NPM_BIN := $(NPM_MOD_DIR)/.bin
 NPM_CMD := npm
+PNPM_CMD := pnpm
 
 PROJECT_NPMRC := $(DIST_DIR)/.npmrc
 
@@ -25,7 +26,7 @@ help:
 ###########################
 .PHONY: install
 install: ## Install dependencies.
-	$(NPM_CMD) ci
+	$(PNPM_CMD) install
 
 
 ###########################
@@ -163,12 +164,12 @@ git_diff: ## Test whether there is no committed changes.
 
 .PHONY: version_major
 version_major: ## Alias to run `npm version major -ws`.
-	$(NPM_CMD) version major --workspaces
+	$(NPM_CMD) version major --no-git-tag-version --workspaces --no-workspaces-update
 
 .PHONY: version_minor
 version_minor: ## Alias to run `npm version minor -ws`.
-	$(NPM_CMD) version minor --workspaces
+	$(NPM_CMD) version minor --no-git-tag-version --workspaces --no-workspaces-update
 
 .PHONY: version_patch
 version_patch: ## Alias to run `npm version patch -ws`.
-	$(NPM_CMD) version patch --workspaces
+	$(NPM_CMD) version patch --no-git-tag-version --workspaces --no-workspaces-update
