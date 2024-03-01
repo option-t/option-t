@@ -45,8 +45,8 @@ importers:
         specifier: ^2.29.1
         version: 2.29.1(@typescript-eslint/parser@7.0.2)(eslint@8.56.0)
       globals:
-        specifier: ^13.24.0
-        version: 13.24.0
+        specifier: ^14.0.0
+        version: 14.0.0
       picomatch:
         specifier: ^3.0.1
         version: 3.0.1
@@ -1875,6 +1875,11 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       type-fest: 0.20.2
+    dev: true
+
+  /globals@14.0.0:
+    resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
+    engines: {node: '>=18'}
     dev: true
 
   /globalthis@1.0.3:
