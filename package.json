@@ -14,7 +14,7 @@
         "@reflink/reflink": "^0.1.16",
         "@typescript-eslint/eslint-plugin": "^7.1.0",
         "@typescript-eslint/parser": "^7.1.0",
-        "ava": "^6.1.1",
+        "ava": "^6.1.2",
         "del-cli": "^5.1.0",
         "eslint": "^8.56.0",
         "eslint-config-prettier": "^9.1.0",
