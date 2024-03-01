@@ -7,7 +7,7 @@
     ],
     "packageManager": "pnpm@8.15.4+sha256.cea6d0bdf2de3a0549582da3983c70c92ffc577ff4410cbf190817ddc35137c2",
     "devDependencies": {
-        "@babel/core": "^7.23.9",
+        "@babel/core": "^7.24.0",
         "@babel/plugin-syntax-typescript": "^7.23.3",
         "@babel/plugin-transform-modules-commonjs": "^7.23.3",
         "@eslint/js": "^8.56.0",
