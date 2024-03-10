@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "name": "@option-t/api_tests",
-    "version": "39.0.2",
+    "version": "39.0.3",
     "license": "MIT",
     "scripts": {
         "test": "ava --config ./ava.config.mjs",
