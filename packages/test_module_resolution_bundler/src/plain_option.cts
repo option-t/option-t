@@ -1,37 +1,3 @@
-import {} from 'option-t/cjs/PlainOption/Option';
-import {} from 'option-t/cjs/PlainOption/and';
-import {} from 'option-t/cjs/PlainOption/andThen';
-import {} from 'option-t/cjs/PlainOption/andThenAsync';
-import {} from 'option-t/cjs/PlainOption/asMut';
-import {} from 'option-t/cjs/PlainOption/compat/v33';
-import {} from 'option-t/cjs/PlainOption/drop';
-import {} from 'option-t/cjs/PlainOption/equal';
-import {} from 'option-t/cjs/PlainOption/expect';
-import {} from 'option-t/cjs/PlainOption/filter';
-import {} from 'option-t/cjs/PlainOption/flatten';
-import {} from 'option-t/cjs/PlainOption/inspect';
-import {} from 'option-t/cjs/PlainOption';
-import {} from 'option-t/cjs/PlainOption/map';
-import {} from 'option-t/cjs/PlainOption/mapAsync';
-import {} from 'option-t/cjs/PlainOption/mapOr';
-import {} from 'option-t/cjs/PlainOption/mapOrAsync';
-import {} from 'option-t/cjs/PlainOption/mapOrElse';
-import {} from 'option-t/cjs/PlainOption/mapOrElseAsync';
-import {} from 'option-t/cjs/PlainOption/namespace';
-import {} from 'option-t/cjs/PlainOption/okOr';
-import {} from 'option-t/cjs/PlainOption/okOrElse';
-import {} from 'option-t/cjs/PlainOption/or';
-import {} from 'option-t/cjs/PlainOption/orElse';
-import {} from 'option-t/cjs/PlainOption/orElseAsync';
-import {} from 'option-t/cjs/PlainOption/transpose';
-import {} from 'option-t/cjs/PlainOption/toNullable';
-import {} from 'option-t/cjs/PlainOption/toUndefinable';
-import {} from 'option-t/cjs/PlainOption/unwrap';
-import {} from 'option-t/cjs/PlainOption/unwrapOr';
-import {} from 'option-t/cjs/PlainOption/unwrapOrElse';
-import {} from 'option-t/cjs/PlainOption/unwrapOrElseAsync';
-import {} from 'option-t/cjs/PlainOption/xor';
-
 // This should be failure because commonjs cannot import ES Module directly.
 // import {} from 'option-t/esm/PlainOption/Option';
 // import {} from 'option-t/esm/PlainOption/and';

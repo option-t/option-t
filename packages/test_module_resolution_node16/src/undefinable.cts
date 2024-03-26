@@ -1,35 +1,3 @@
-import {} from 'option-t/cjs/Undefinable/Undefinable';
-import {} from 'option-t/cjs/Undefinable/and';
-import {} from 'option-t/cjs/Undefinable/andThen';
-import {} from 'option-t/cjs/Undefinable/andThenAsync';
-import {} from 'option-t/cjs/Undefinable/expect';
-import {} from 'option-t/cjs/Undefinable/compat/v33';
-import {} from 'option-t/cjs/Undefinable/inspect';
-import {} from 'option-t/cjs/Undefinable';
-import {} from 'option-t/cjs/Undefinable/map';
-import {} from 'option-t/cjs/Undefinable/mapAsync';
-import {} from 'option-t/cjs/Undefinable/mapOr';
-import {} from 'option-t/cjs/Undefinable/mapOrAsync';
-import {} from 'option-t/cjs/Undefinable/mapOrElse';
-import {} from 'option-t/cjs/Undefinable/mapOrElseAsync';
-import {} from 'option-t/cjs/Undefinable/namespace';
-import {} from 'option-t/cjs/Undefinable/okOr';
-import {} from 'option-t/cjs/Undefinable/okOrElse';
-import {} from 'option-t/cjs/Undefinable/okOrElseAsync';
-import {} from 'option-t/cjs/Undefinable/or';
-import {} from 'option-t/cjs/Undefinable/orElse';
-import {} from 'option-t/cjs/Undefinable/orElseAsync';
-import {} from 'option-t/cjs/Undefinable/toNullable';
-import {} from 'option-t/cjs/Undefinable/toPlainResult';
-import {} from 'option-t/cjs/Undefinable/unwrap';
-import {} from 'option-t/cjs/Undefinable/unwrapOr';
-import {} from 'option-t/cjs/Undefinable/unwrapOrElse';
-import {} from 'option-t/cjs/Undefinable/unwrapOrElseAsync';
-import {} from 'option-t/cjs/Undefinable/xor';
-import {} from 'option-t/cjs/Undefinable/zip';
-import {} from 'option-t/cjs/Undefinable/zipWith';
-import {} from 'option-t/cjs/Undefinable/zipWithAsync';
-
 // This should be failure because commonjs cannot import ES Module directly.
 // import {} from 'option-t/esm/Undefinable/Undefinable';
 // import {} from 'option-t/esm/Undefinable/and';

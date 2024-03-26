@@ -1,36 +1,3 @@
-import {} from 'option-t/cjs/Maybe/Maybe';
-import {} from 'option-t/cjs/Maybe/and';
-import {} from 'option-t/cjs/Maybe/andThen';
-import {} from 'option-t/cjs/Maybe/andThenAsync';
-import {} from 'option-t/cjs/Maybe/compat/v33';
-import {} from 'option-t/cjs/Maybe/expect';
-import {} from 'option-t/cjs/Maybe/inspect';
-import {} from 'option-t/cjs/Maybe';
-import {} from 'option-t/cjs/Maybe/map';
-import {} from 'option-t/cjs/Maybe/mapAsync';
-import {} from 'option-t/cjs/Maybe/mapOr';
-import {} from 'option-t/cjs/Maybe/mapOrAsync';
-import {} from 'option-t/cjs/Maybe/mapOrElse';
-import {} from 'option-t/cjs/Maybe/mapOrElseAsync';
-import {} from 'option-t/cjs/Maybe/namespace';
-import {} from 'option-t/cjs/Maybe/okOr';
-import {} from 'option-t/cjs/Maybe/okOrElse';
-import {} from 'option-t/cjs/Maybe/okOrElseAsync';
-import {} from 'option-t/cjs/Maybe/or';
-import {} from 'option-t/cjs/Maybe/orElse';
-import {} from 'option-t/cjs/Maybe/orElseAsync';
-import {} from 'option-t/cjs/Maybe/toNullable';
-import {} from 'option-t/cjs/Maybe/toPlainResult';
-import {} from 'option-t/cjs/Maybe/toUndefinable';
-import {} from 'option-t/cjs/Maybe/unwrap';
-import {} from 'option-t/cjs/Maybe/unwrapOr';
-import {} from 'option-t/cjs/Maybe/unwrapOrElse';
-import {} from 'option-t/cjs/Maybe/unwrapOrElseAsync';
-import {} from 'option-t/cjs/Maybe/xor';
-import {} from 'option-t/cjs/Maybe/zip';
-import {} from 'option-t/cjs/Maybe/zipWith';
-import {} from 'option-t/cjs/Maybe/zipWithAsync';
-
 // This should be failure because commonjs cannot import ES Module directly.
 // import {} from 'option-t/esm/Maybe/Maybe';
 // import {} from 'option-t/esm/Maybe/and';
