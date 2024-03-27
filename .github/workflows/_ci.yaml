@@ -160,9 +160,8 @@ jobs:
             - test_import_types
             - test_distribution_contain_all
         runs-on: ubuntu-latest
-        if: ${{ always() }}
+        if: ${{ cancelled() || failure() }}
         steps:
+            # Fail this job
             - name: Check whether required jobs are successful
-              if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
-              # Fail this job
               run: exit 1
