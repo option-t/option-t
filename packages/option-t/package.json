@@ -162,20 +162,6 @@
                 "default": "./esm/maybe/and_then_async.js"
             }
         },
-        "./Maybe/compat/v33": {
-            "import": {
-                "types": "./esm/maybe/compat/v33.d.ts",
-                "default": "./esm/maybe/compat/v33.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/compat/v33.d.cts",
-                "default": "./cjs/maybe/compat/v33.cjs"
-            },
-            "default": {
-                "types": "./esm/maybe/compat/v33.d.ts",
-                "default": "./esm/maybe/compat/v33.js"
-            }
-        },
         "./Maybe/expect": {
             "import": {
                 "types": "./esm/maybe/expect.d.ts",
@@ -610,20 +596,6 @@
                 "default": "./esm/nullable/and_then_async.js"
             }
         },
-        "./Nullable/compat/v33": {
-            "import": {
-                "types": "./esm/nullable/compat/v33.d.ts",
-                "default": "./esm/nullable/compat/v33.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/compat/v33.d.cts",
-                "default": "./cjs/nullable/compat/v33.cjs"
-            },
-            "default": {
-                "types": "./esm/nullable/compat/v33.d.ts",
-                "default": "./esm/nullable/compat/v33.js"
-            }
-        },
         "./Nullable/expect": {
             "import": {
                 "types": "./esm/nullable/expect.d.ts",
@@ -1056,20 +1028,6 @@
             "default": {
                 "types": "./esm/plain_option/as_mut.d.ts",
                 "default": "./esm/plain_option/as_mut.js"
-            }
-        },
-        "./PlainOption/compat/v33": {
-            "import": {
-                "types": "./esm/plain_option/compat/v33.d.ts",
-                "default": "./esm/plain_option/compat/v33.js"
-            },
-            "require": {
-                "types": "./cjs/plain_option/compat/v33.d.cts",
-                "default": "./cjs/plain_option/compat/v33.cjs"
-            },
-            "default": {
-                "types": "./esm/plain_option/compat/v33.d.ts",
-                "default": "./esm/plain_option/compat/v33.js"
             }
         },
         "./PlainOption/drop": {
@@ -1518,20 +1476,6 @@
             "default": {
                 "types": "./esm/plain_result/as_mut.d.ts",
                 "default": "./esm/plain_result/as_mut.js"
-            }
-        },
-        "./PlainResult/compat/v33": {
-            "import": {
-                "types": "./esm/plain_result/compat/v33.d.ts",
-                "default": "./esm/plain_result/compat/v33.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/compat/v33.d.cts",
-                "default": "./cjs/plain_result/compat/v33.cjs"
-            },
-            "default": {
-                "types": "./esm/plain_result/compat/v33.d.ts",
-                "default": "./esm/plain_result/compat/v33.js"
             }
         },
         "./PlainResult/drop": {
@@ -2008,20 +1952,6 @@
             "default": {
                 "types": "./esm/undefinable/and_then_async.d.ts",
                 "default": "./esm/undefinable/and_then_async.js"
-            }
-        },
-        "./Undefinable/compat/v33": {
-            "import": {
-                "types": "./esm/undefinable/compat/v33.d.ts",
-                "default": "./esm/undefinable/compat/v33.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/compat/v33.d.cts",
-                "default": "./cjs/undefinable/compat/v33.cjs"
-            },
-            "default": {
-                "types": "./esm/undefinable/compat/v33.d.ts",
-                "default": "./esm/undefinable/compat/v33.js"
             }
         },
         "./Undefinable/expect": {

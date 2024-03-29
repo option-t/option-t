@@ -3,7 +3,6 @@ import {} from 'option-t/Undefinable/and';
 import {} from 'option-t/Undefinable/andThen';
 import {} from 'option-t/Undefinable/andThenAsync';
 import {} from 'option-t/Undefinable/expect';
-import {} from 'option-t/Undefinable/compat/v33';
 import {} from 'option-t/Undefinable/inspect';
 import {} from 'option-t/Undefinable/map';
 import {} from 'option-t/Undefinable/mapAsync';

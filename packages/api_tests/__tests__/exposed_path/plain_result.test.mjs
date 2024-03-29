@@ -9,7 +9,6 @@ testImportExposedPath(
         './PlainResult/andThen': null,
         './PlainResult/andThenAsync': null,
         './PlainResult/asMut': null,
-        './PlainResult/compat/v33': null,
         './PlainResult/drop': null,
         './PlainResult/equal': null,
         './PlainResult/expect': null,

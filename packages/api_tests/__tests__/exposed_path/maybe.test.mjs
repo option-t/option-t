@@ -8,7 +8,6 @@ testImportExposedPath(
         './Maybe/and': null,
         './Maybe/andThen': null,
         './Maybe/andThenAsync': null,
-        './Maybe/compat/v33': null,
         './Maybe/expect': null,
         './Maybe/inspect': null,
         './Maybe/map': null,

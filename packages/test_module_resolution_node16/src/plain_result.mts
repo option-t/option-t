@@ -3,7 +3,6 @@ import {} from 'option-t/PlainResult/and';
 import {} from 'option-t/PlainResult/andThen';
 import {} from 'option-t/PlainResult/andThenAsync';
 import {} from 'option-t/PlainResult/asMut';
-import {} from 'option-t/PlainResult/compat/v33';
 import {} from 'option-t/PlainResult/drop';
 import {} from 'option-t/PlainResult/equal';
 import {} from 'option-t/PlainResult/expect';
