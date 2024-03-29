@@ -25,6 +25,11 @@ export { okOrElseAsyncForUndefinable } from './ok_or_else_async.js';
 export { orElseForUndefinable } from './or_else.js';
 export { orElseAsyncForUndefinable } from './or_else_async.js';
 export { toNullableFromUndefinable } from './to_nullable.js';
+// TODO: #2045
 export { unwrapOrFromUndefinable } from './unwrap_or.js';
 export { unwrapOrElseFromUndefinable } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncFromUndefinable } from './unwrap_or_else_async.js';
+// TODO: #2071
+// TODO: #2072
+// TODO: #2073
+// TODO: #2074
