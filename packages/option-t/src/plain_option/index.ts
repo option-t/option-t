@@ -30,21 +30,24 @@
  *      Object.is(a, b);
  *  ```
  */
-
 export {
+    createNone,
+    createSome,
+    expectSome,
+    isNone,
+    isSome,
+    unwrapSome,
+    type None,
     type Option,
     type Some,
-    type None,
-    createSome,
-    createNone,
-    isSome,
-    isNone,
-    unwrapSome,
-    expectSome,
 } from './option.js';
 
+// TODO: #2099
 export { andThenForOption } from './and_then.js';
 export { andThenAsyncForOption } from './and_then_async.js';
+// TODO: #2100
+// TODO: #2101
+// TODO: #2102
 export { filterForOption } from './filter.js';
 export { flattenForOption } from './flatten.js';
 export { inspectOption } from './inspect.js';
@@ -54,9 +57,15 @@ export { mapOrForOption } from './map_or.js';
 export { mapOrAsyncForOption } from './map_or_async.js';
 export { mapOrElseForOption } from './map_or_else.js';
 export { mapOrElseAsyncForOption } from './map_or_else_async.js';
+// TODO: #2103
+// TODO: #2104
+// TODO: #2105
 export { orElseForOption } from './or_else.js';
 export { orElseAsyncForOption } from './or_else_async.js';
+export { toNullableFromOption } from './to_nullable.js';
+export { toUndefinableFromOption } from './to_undefinable.js';
 export { transposeForOption } from './transpose.js';
 export { unwrapOrFromOption } from './unwrap_or.js';
 export { unwrapOrElseFromOption } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncFromOption } from './unwrap_or_else_async.js';
+// TODO: #2108
