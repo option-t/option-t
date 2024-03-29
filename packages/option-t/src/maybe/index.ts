@@ -26,7 +26,7 @@ export { okOrElseAsyncForMaybe } from './ok_or_else_async.js';
 export { orElseForMaybe } from './or_else.js';
 export { orElseAsyncForMaybe } from './or_else_async.js';
 export { toNullableFromMaybe } from './to_nullable.js';
-// TODO: #2077
+export { toResultErrFromMaybe, toResultOkFromMaybe } from './to_plain_result.js';
 export { toUndefinableFromMaybe } from './to_undefinable.js';
 export { unwrapOrFromMaybe } from './unwrap_or.js';
 export { unwrapOrElseFromMaybe } from './unwrap_or_else.js';
