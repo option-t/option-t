@@ -18,6 +18,9 @@ export { mapOrForMaybe } from './map_or.js';
 export { mapOrAsyncForMaybe } from './map_or_async.js';
 export { mapOrElseForMaybe } from './map_or_else.js';
 export { mapOrElseAsyncForMaybe } from './map_or_else_async.js';
+export { okOrForMaybe } from './ok_or.js';
+export { okOrElseForMaybe } from './ok_or_else.js';
+export { okOrElseAsyncForMaybe } from './ok_or_else_async.js';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
 // export { orForMaybe } from './or.js';
 export { orElseForMaybe } from './or_else.js';
