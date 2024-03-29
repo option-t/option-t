@@ -1,10 +1,10 @@
 export {
-    type NotUndefined,
-    type Undefinable,
+    expectNotUndefined,
     isNotUndefined,
     isUndefined,
-    expectNotUndefined,
     unwrapUndefinable,
+    type NotUndefined,
+    type Undefinable,
 } from './undefinable.js';
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
 //export { andForUndefinable } from './and.js';
@@ -21,6 +21,7 @@ export { mapOrElseAsyncForUndefinable } from './map_or_else_async.js';
 // export { orForUndefinable } from './or.js';
 export { orElseForUndefinable } from './or_else.js';
 export { orElseAsyncForUndefinable } from './or_else_async.js';
+export { toNullableFromUndefinable } from './to_nullable.js';
 export { unwrapOrFromUndefinable } from './unwrap_or.js';
 export { unwrapOrElseFromUndefinable } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncFromUndefinable } from './unwrap_or_else_async.js';
