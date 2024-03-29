@@ -30,17 +30,16 @@
  *      Object.is(a, b);
  *  ```
  */
-
 export {
+    createNone,
+    createSome,
+    expectSome,
+    isNone,
+    isSome,
+    unwrapSome,
+    type None,
     type Option,
     type Some,
-    type None,
-    createSome,
-    createNone,
-    isSome,
-    isNone,
-    unwrapSome,
-    expectSome,
 } from './option.js';
 
 export { andThenForOption } from './and_then.js';
