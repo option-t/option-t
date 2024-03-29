@@ -1,12 +1,8 @@
-import * as assert from 'node:assert/strict';
-
 import { ExportEntry } from './export_entry.mjs';
 
 export function loadPublicAPIDefinitions(seq) {
     const EXPORT_ENTRIES = [];
     for (const item of seq) {
-        assert.ok(!item.isForCompat());
-
         const name = item.name();
         const path = item.filepath();
         const entry = new ExportEntry(name, path);

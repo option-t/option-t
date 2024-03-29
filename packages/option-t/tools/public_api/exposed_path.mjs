@@ -1,6 +1,6 @@
 import * as assert from 'node:assert/strict';
 
-import { ApiPathDescriptor, modifyDescriptor } from './api_path_descriptor.mjs';
+import { ApiPathDescriptor } from './api_path_descriptor.mjs';
 import { apiTable } from './table.mjs';
 
 const PKG_NAME = 'option-t';
@@ -8,12 +8,6 @@ const PKG_NAME = 'option-t';
 class ExposedPath {
     #key;
     #descriptor;
-
-    /**
-     *  @protected
-     *  @type   {boolean}
-     */
-    _isForCompat = false;
 
     constructor(key, descriptor) {
         assert.ok(typeof key === 'string');
@@ -36,11 +30,6 @@ class ExposedPath {
         return this.#descriptor.actualFilePath ?? null;
     }
 
-    hasPathOverride() {
-        const ok = this.filepath() !== null;
-        return ok;
-    }
-
     resolvedName() {
         const raw = this.name();
         if (raw === '.') {
@@ -49,10 +38,6 @@ class ExposedPath {
 
         const concat = `${PKG_NAME}/${raw}`;
         return concat;
-    }
-
-    isForCompat() {
-        return this._isForCompat;
     }
 
     isDeprecated() {
@@ -64,34 +49,6 @@ class ExposedPath {
         const ok = !!this.#descriptor.shouldHideInDoc;
         return ok;
     }
-
-    shouldCreateCompat() {
-        const createCompat = this.#descriptor.createCompat;
-        const ok = !!createCompat;
-        return ok;
-    }
-}
-
-export class QuirksLegacyExposedPath extends ExposedPath {
-    constructor(moduleType, key, descriptor) {
-        const compatKey = `${moduleType}/${key}`;
-        const desc = modifyDescriptor(descriptor, moduleType);
-        super(compatKey, desc);
-        this._isForCompat = true;
-        Object.freeze(this);
-    }
-
-    isESM() {
-        const name = this.name();
-        const isESM = /^esm\//u.test(name);
-        return isESM;
-    }
-
-    isCJS() {
-        const name = this.name();
-        const isCJS = /^cjs\//u.test(name);
-        return isCJS;
-    }
 }
 
 export function* generateExposedPathSequence() {
@@ -100,5 +57,3 @@ export function* generateExposedPathSequence() {
         yield o;
     }
 }
-
-export function* generateLegacyExposedPathSequence() {}
