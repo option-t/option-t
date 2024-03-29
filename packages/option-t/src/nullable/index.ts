@@ -1,10 +1,10 @@
 export {
-    type NotNull,
-    type Nullable,
+    expectNotNull,
     isNotNull,
     isNull,
-    expectNotNull,
     unwrapNullable,
+    type NotNull,
+    type Nullable,
 } from './nullable.js';
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
 //export { andForNullable } from './and.js';
