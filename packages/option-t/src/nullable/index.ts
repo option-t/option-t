@@ -17,6 +17,9 @@ export { mapOrForNullable } from './map_or.js';
 export { mapOrAsyncForNullable } from './map_or_async.js';
 export { mapOrElseForNullable } from './map_or_else.js';
 export { mapOrElseAsyncForNullable } from './map_or_else_async.js';
+export { okOrForNullable } from './ok_or.js';
+export { okOrElseForNullable } from './ok_or_else.js';
+export { okOrElseAsyncForNullable } from './ok_or_else_async.js';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
 // export { orForNullable } from './or.js';
 export { orElseForNullable } from './or_else.js';
