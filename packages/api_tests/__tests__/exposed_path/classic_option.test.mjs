@@ -5,6 +5,5 @@ testImportExposedPath(
     test,
     Object.keys({
         './ClassicOption': null,
-        './esm/ClassicOption': null,
     }),
 );

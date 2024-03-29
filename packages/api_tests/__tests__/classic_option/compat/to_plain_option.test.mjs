@@ -12,7 +12,7 @@ import {
     isSome,
     isNone,
     unwrapSome as unwrapOption,
-} from 'option-t/esm/PlainOption/Option';
+} from 'option-t/PlainOption/Option';
 
 test(`input is Plain's Some`, (t) => {
     const expected = Math.random();
