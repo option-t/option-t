@@ -30,7 +30,15 @@ export { okOrElseAsyncForNullable as okOrElseAsync } from './ok_or_else_async.js
 // export { orForNullable as or } from './or.js';
 export { orElseForNullable as orElse } from './or_else.js';
 export { orElseAsyncForNullable as orElseAsync } from './or_else_async.js';
+export {
+    toResultErrFromNullable as toResultErr,
+    toResultOkFromNullable as toResultOk,
+} from './to_plain_result.js';
 export { toUndefinableFromNullable as toUndefinable } from './to_undefinable.js';
 export { unwrapOrFromNullable as unwrapOr } from './unwrap_or.js';
 export { unwrapOrElseFromNullable as unwrapOrElse } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncFromNullable as unwrapOrElseAsync } from './unwrap_or_else_async.js';
+// TODO: #2058
+// TODO: #2059
+// TODO: #2060
+// TODO: #2061
