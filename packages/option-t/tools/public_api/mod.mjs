@@ -1,5 +1,1 @@
-export {
-    generateExposedPathSequence,
-    generateLegacyExposedPathSequence,
-    QuirksLegacyExposedPath,
-} from './exposed_path.mjs';
+export { generateExposedPathSequence } from './exposed_path.mjs';

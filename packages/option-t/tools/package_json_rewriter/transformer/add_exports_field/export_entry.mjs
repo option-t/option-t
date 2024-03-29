@@ -1,7 +1,5 @@
 import * as assert from 'node:assert/strict';
 
-import { QuirksLegacyExposedPath } from '../../../public_api/mod.mjs';
-
 class AbstractExportEntry {
     key() {
         throw new EvalError(`please override on ${this.constructor.name}`);
@@ -56,90 +54,6 @@ export class ExportEntry extends AbstractExportEntry {
             dcts,
         });
         return entry;
-    }
-}
-
-export class CompatExportEntry extends AbstractExportEntry {
-    static create(entry) {
-        assert.ok(entry instanceof QuirksLegacyExposedPath);
-        if (entry.isCJS()) {
-            // eslint-disable-next-line no-use-before-define
-            return new CommonJSCompatFileExport(entry);
-        }
-
-        if (entry.isESM()) {
-            // eslint-disable-next-line no-use-before-define
-            return new ESModuleCompatFileExport(entry);
-        }
-
-        throw new RangeError('not here');
-    }
-
-    #original;
-    #dtsExtension;
-    #jsExtension;
-
-    constructor(entry, dtsExtension, jsExtension) {
-        super();
-        assert.ok(entry instanceof QuirksLegacyExposedPath);
-        assert.ok(typeof dtsExtension === 'string');
-        assert.ok(typeof jsExtension === 'string');
-
-        this.#original = entry;
-        this.#dtsExtension = dtsExtension;
-        this.#jsExtension = jsExtension;
-    }
-
-    key() {
-        const key = this.#original.name();
-        const k = `./${key}`;
-        return k;
-    }
-
-    pathValue() {
-        const original = this.#original;
-        if (original.hasPathOverride()) {
-            const p = original.filepath();
-            const k = `./${p}`;
-            return k;
-        }
-
-        const k = this.key();
-        return k;
-    }
-
-    #toExportEntry() {
-        const key = this.pathValue();
-        const dts = `${key}.${this.#dtsExtension}`;
-
-        const p = `${key}.${this.#jsExtension}`;
-        const value = constructPathValue({
-            dts,
-            filepath: p,
-        });
-        return value;
-    }
-
-    toJSON() {
-        return this.#toExportEntry();
-    }
-}
-
-class CommonJSCompatFileExport extends CompatExportEntry {
-    constructor(entry) {
-        super(entry, EXTENSION_DCTS, EXTENSION_CJS);
-
-        Object.freeze(this);
-        assert.ok(entry.isCJS());
-    }
-}
-
-class ESModuleCompatFileExport extends CompatExportEntry {
-    constructor(entry) {
-        super(entry, EXTENSION_DMTS, EXTENSION_MJS);
-
-        Object.freeze(this);
-        assert.ok(entry.isESM());
     }
 }
 

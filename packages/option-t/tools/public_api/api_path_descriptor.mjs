@@ -15,11 +15,6 @@ export class ApiPathDescriptor {
         return this.#actualFilePath;
     }
 
-    setActualFilePath(val) {
-        assert.strictEqual(typeof val, 'string');
-        this.#actualFilePath = val;
-    }
-
     get shouldHideInDoc() {
         return this.#shouldHideInDoc;
     }
@@ -46,14 +41,6 @@ export class ApiPathDescriptor {
         assert.strictEqual(typeof val, 'boolean');
         this.#isDeprecatedPath = val;
     }
-
-    clone() {
-        const newly = new ApiPathDescriptor();
-        newly.#actualFilePath = this.#actualFilePath;
-        newly.#shouldHideInDoc = this.#shouldHideInDoc;
-        newly.#createCompat = this.#createCompat;
-        return newly;
-    }
 }
 
 export function pathRedirectionTo(actualFilePath) {
@@ -78,16 +65,4 @@ export function pathRedirectionForRoot(actualFilePath) {
     desc.setShouldHideInDoc(true);
     desc.setCreateCompat(false);
     return Object.freeze(desc);
-}
-
-export function modifyDescriptor(descriptor, moduleType) {
-    const actualFilePath = descriptor.actualFilePath;
-    if (!actualFilePath) {
-        return descriptor;
-    }
-
-    const newDescriptor = descriptor.clone();
-    newDescriptor.setActualFilePath(`${moduleType}/${actualFilePath}`);
-
-    return Object.freeze(newDescriptor);
 }
