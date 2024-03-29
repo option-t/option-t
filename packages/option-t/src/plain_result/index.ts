@@ -51,6 +51,9 @@ export { mapOrElseForResult } from './map_or_else.js';
 export { mapOrElseAsyncForResult } from './map_or_else_async.js';
 export { orElseForResult } from './or_else.js';
 export { orElseAsyncForResult } from './or_else_async.js';
+export { toNullableFromErr, toNullableFromOk } from './to_nullable.js';
+// We don't export to_option since its type has been deprecated.
+export { toUndefinableFromErr, toUndefinableFromOk } from './to_undefinable.js';
 export { transposeNullableForResult, transposeUndefinableForResult } from './transpose.js';
 export { unwrapOrFromResult } from './unwrap_or.js';
 export { unwrapOrElseFromResult } from './unwrap_or_else.js';
