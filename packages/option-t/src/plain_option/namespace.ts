@@ -11,15 +11,15 @@
  *  This is not designed for other usecases. Please do not use for other cases.
  */
 export {
+    createNone,
+    createSome,
+    expectSome,
+    isNone,
+    isSome,
+    unwrapSome,
+    type None,
     type Option,
     type Some,
-    type None,
-    createSome,
-    createNone,
-    isSome,
-    isNone,
-    unwrapSome,
-    expectSome,
 } from './option.js';
 
 export { andThenForOption as andThen } from './and_then.js';
