@@ -20,7 +20,7 @@ export {
 // TODO: #2063
 export { andThenForResult as andThen } from './and_then.js';
 export { andThenAsyncForResult as andThenAsync } from './and_then_async.js';
-// TODO: #2064
+// - We don't expose items from as_mut.js that is unsafe operation.
 // TODO: #2065
 // TODO: #2066
 export { flattenForResult as flatten } from './flatten.js';

@@ -25,7 +25,7 @@ export {
 // TODO: #2049
 export { andThenForOption as andThen } from './and_then.js';
 export { andThenAsyncForOption as andThenAsync } from './and_then_async.js';
-// TODO: #2038
+// - We don't expose items from as_mut.js that is unsafe operation.
 // TODO: #2039
 // TODO: #2050
 export { filterForOption as filter } from './filter.js';
