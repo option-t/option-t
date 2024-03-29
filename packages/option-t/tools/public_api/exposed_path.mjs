@@ -101,17 +101,4 @@ export function* generateExposedPathSequence() {
     }
 }
 
-const ESM_DIR_PREFIX = 'esm';
-
-export function* generateLegacyExposedPathSequence() {
-    for (const item of generateExposedPathSequence()) {
-        if (!item.shouldCreateCompat()) {
-            continue;
-        }
-
-        const key = item.name();
-        const descriptor = item.descriptor();
-        const o = new QuirksLegacyExposedPath(ESM_DIR_PREFIX, key, descriptor);
-        yield o;
-    }
-}
+export function* generateLegacyExposedPathSequence() {}

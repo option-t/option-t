@@ -1,36 +1,3 @@
-// This should be failure because commonjs cannot import ES Module directly.
-// import {} from 'option-t/esm/Undefinable/Undefinable';
-// import {} from 'option-t/esm/Undefinable/and';
-// import {} from 'option-t/esm/Undefinable/andThen';
-// import {} from 'option-t/esm/Undefinable/andThenAsync';
-// import {} from 'option-t/esm/Undefinable/compat/v33';
-// import {} from 'option-t/esm/Undefinable/expect';
-// import {} from 'option-t/esm/Undefinable/inspect';
-// import {} from 'option-t/esm/Undefinable';
-// import {} from 'option-t/esm/Undefinable/map';
-// import {} from 'option-t/esm/Undefinable/mapAsync';
-// import {} from 'option-t/esm/Undefinable/mapOr';
-// import {} from 'option-t/esm/Undefinable/mapOrAsync';
-// import {} from 'option-t/esm/Undefinable/mapOrElse';
-// import {} from 'option-t/esm/Undefinable/mapOrElseAsync';
-// import {} from 'option-t/esm/Undefinable/namespace';
-// import {} from 'option-t/esm/Undefinable/okOr';
-// import {} from 'option-t/esm/Undefinable/okOrElse';
-// import {} from 'option-t/esm/Undefinable/okOrElseAsync';
-// import {} from 'option-t/esm/Undefinable/or';
-// import {} from 'option-t/esm/Undefinable/orElse';
-// import {} from 'option-t/esm/Undefinable/orElseAsync';
-// import {} from 'option-t/esm/Undefinable/toNullable';
-// import {} from 'option-t/esm/Undefinable/toPlainResult';
-// import {} from 'option-t/esm/Undefinable/unwrap';
-// import {} from 'option-t/esm/Undefinable/unwrapOr';
-// import {} from 'option-t/esm/Undefinable/unwrapOrElse';
-// import {} from 'option-t/esm/Undefinable/unwrapOrElseAsync';
-// import {} from 'option-t/esm/Undefinable/xor';
-// import {} from 'option-t/esm/Undefinable/zip';
-// import {} from 'option-t/esm/Undefinable/zipWith';
-// import {} from 'option-t/esm/Undefinable/zipWithAsync';
-
 import {} from 'option-t/Undefinable';
 import {} from 'option-t/Undefinable/and';
 import {} from 'option-t/Undefinable/andThen';

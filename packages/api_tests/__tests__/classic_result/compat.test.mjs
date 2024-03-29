@@ -13,7 +13,7 @@ import {
     isErr,
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
-} from 'option-t/esm/PlainResult/Result';
+} from 'option-t/PlainResult/Result';
 
 test(`input is Plain's Ok`, (t) => {
     const expected = Math.random();
