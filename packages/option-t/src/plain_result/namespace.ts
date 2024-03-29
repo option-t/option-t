@@ -17,8 +17,12 @@ export {
     type Result,
 } from './result.js';
 
+// TODO: #2063
 export { andThenForResult as andThen } from './and_then.js';
 export { andThenAsyncForResult as andThenAsync } from './and_then_async.js';
+// TODO: #2064
+// TODO: #2065
+// TODO: #2066
 export { flattenForResult as flatten } from './flatten.js';
 export { fromPromiseSettledResultToResult as fromPromiseSettledResult } from './from_promise_settled_result.js';
 export {
@@ -34,6 +38,7 @@ export { mapOrForResult as mapOr } from './map_or.js';
 export { mapOrAsyncForResult as mapOrAsync } from './map_or_async.js';
 export { mapOrElseForResult as mapOrElse } from './map_or_else.js';
 export { mapOrElseAsyncForResult as mapOrElseAsync } from './map_or_else_async.js';
+// TODO: #2067
 export { orElseForResult as orElse } from './or_else.js';
 export { orElseAsyncForResult as orElseAsync } from './or_else_async.js';
 export { toNullableFromErr, toNullableFromOk } from './to_nullable.js';
@@ -54,3 +59,4 @@ export {
 export { unwrapOrFromResult as unwrapOr } from './unwrap_or.js';
 export { unwrapOrElseFromResult as unwrapOrElse } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncFromResult as unwrapOrElseAsync } from './unwrap_or_else_async.js';
+// TODO: #2068
