@@ -57,8 +57,8 @@ export { mapOrForOption } from './map_or.js';
 export { mapOrAsyncForOption } from './map_or_async.js';
 export { mapOrElseForOption } from './map_or_else.js';
 export { mapOrElseAsyncForOption } from './map_or_else_async.js';
-// TODO: #2103
-// TODO: #2104
+export { okOrForPlainOption } from './ok_or.js';
+export { okOrElseForPlainOption } from './ok_or_else.js';
 // TODO: #2105
 export { orElseForOption } from './or_else.js';
 export { orElseAsyncForOption } from './or_else_async.js';
