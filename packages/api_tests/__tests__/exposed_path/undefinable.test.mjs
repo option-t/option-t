@@ -9,7 +9,6 @@ testImportExposedPath(
         './Undefinable/andThen': null,
         './Undefinable/andThenAsync': null,
         './Undefinable/expect': null,
-        './Undefinable/compat/v33': null,
         './Undefinable/inspect': null,
         './Undefinable/map': null,
         './Undefinable/mapAsync': null,

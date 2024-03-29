@@ -2,7 +2,6 @@ import {} from 'option-t/Nullable';
 import {} from 'option-t/Nullable/and';
 import {} from 'option-t/Nullable/andThen';
 import {} from 'option-t/Nullable/andThenAsync';
-import {} from 'option-t/Nullable/compat/v33';
 import {} from 'option-t/Nullable/expect';
 import {} from 'option-t/Nullable/inspect';
 import {} from 'option-t/Nullable/map';
