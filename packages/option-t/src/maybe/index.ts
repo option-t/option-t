@@ -1,11 +1,12 @@
 export {
-    type NotNullOrUndefined,
-    type Maybe,
+    expectNotNullOrUndefined,
     isNotNullOrUndefined,
     isNullOrUndefined,
-    expectNotNullOrUndefined,
     unwrapMaybe,
+    type Maybe,
+    type NotNullOrUndefined,
 } from './maybe.js';
+
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
 //export { andForMaybe } from './and.js';
 export { andThenForMaybe } from './and_then.js';
@@ -21,6 +22,9 @@ export { mapOrElseAsyncForMaybe } from './map_or_else_async.js';
 // export { orForMaybe } from './or.js';
 export { orElseForMaybe } from './or_else.js';
 export { orElseAsyncForMaybe } from './or_else_async.js';
+export { toNullableFromMaybe } from './to_nullable.js';
+// TODO: #2077
+export { toUndefinableFromMaybe } from './to_undefinable.js';
 export { unwrapOrFromMaybe } from './unwrap_or.js';
 export { unwrapOrElseFromMaybe } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncFromMaybe } from './unwrap_or_else_async.js';
