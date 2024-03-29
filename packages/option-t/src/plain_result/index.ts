@@ -37,9 +37,14 @@ export {
     type Result,
 } from './result.js';
 
+// TODO: #2117
 export { andThenForResult } from './and_then.js';
 export { andThenAsyncForResult } from './and_then_async.js';
+// TODO: #2118
+// TODO: #2119
+// TODO: #2120
 export { flattenForResult } from './flatten.js';
+// TODO: #2116
 export { inspectBothOfResult, inspectErrOfResult, inspectOkOfResult } from './inspect.js';
 export { mapForResult } from './map.js';
 export { mapAsyncForResult } from './map_async.js';
@@ -49,12 +54,16 @@ export { mapOrForResult } from './map_or.js';
 export { mapOrAsyncForResult } from './map_or_async.js';
 export { mapOrElseForResult } from './map_or_else.js';
 export { mapOrElseAsyncForResult } from './map_or_else_async.js';
+// TODO: #2112
 export { orElseForResult } from './or_else.js';
 export { orElseAsyncForResult } from './or_else_async.js';
 export { toNullableFromErr, toNullableFromOk } from './to_nullable.js';
 // We don't export to_option since its type has been deprecated.
 export { toUndefinableFromErr, toUndefinableFromOk } from './to_undefinable.js';
 export { transposeNullableForResult, transposeUndefinableForResult } from './transpose.js';
+// TODO: #2111
+// TODO: #2110
 export { unwrapOrFromResult } from './unwrap_or.js';
 export { unwrapOrElseFromResult } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncFromResult } from './unwrap_or_else_async.js';
+// TODO: #2109
