@@ -24,31 +24,31 @@
  *  ```
  */
 export {
-    type Result,
-    type Ok,
-    type Err,
-    createOk,
     createErr,
-    isOk,
-    isErr,
-    unwrapOk,
-    unwrapErr,
-    expectOk,
+    createOk,
     expectErr,
+    expectOk,
+    isErr,
+    isOk,
+    unwrapErr,
+    unwrapOk,
+    type Err,
+    type Ok,
+    type Result,
 } from './result.js';
 
 export { andThenForResult } from './and_then.js';
 export { andThenAsyncForResult } from './and_then_async.js';
 export { flattenForResult } from './flatten.js';
-export { inspectOkOfResult, inspectErrOfResult, inspectBothOfResult } from './inspect.js';
+export { inspectBothOfResult, inspectErrOfResult, inspectOkOfResult } from './inspect.js';
 export { mapForResult } from './map.js';
 export { mapAsyncForResult } from './map_async.js';
+export { mapErrForResult } from './map_err.js';
+export { mapErrAsyncForResult } from './map_err_async.js';
 export { mapOrForResult } from './map_or.js';
 export { mapOrAsyncForResult } from './map_or_async.js';
 export { mapOrElseForResult } from './map_or_else.js';
 export { mapOrElseAsyncForResult } from './map_or_else_async.js';
-export { mapErrForResult } from './map_err.js';
-export { mapErrAsyncForResult } from './map_err_async.js';
 export { orElseForResult } from './or_else.js';
 export { orElseAsyncForResult } from './or_else_async.js';
 export { transposeNullableForResult, transposeUndefinableForResult } from './transpose.js';
