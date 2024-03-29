@@ -1,11 +1,12 @@
 export {
-    type NotNullOrUndefined,
-    type Maybe,
+    expectNotNullOrUndefined,
     isNotNullOrUndefined,
     isNullOrUndefined,
-    expectNotNullOrUndefined,
     unwrapMaybe,
+    type Maybe,
+    type NotNullOrUndefined,
 } from './maybe.js';
+
 // XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
 //export { andForMaybe } from './and.js';
 export { andThenForMaybe } from './and_then.js';
