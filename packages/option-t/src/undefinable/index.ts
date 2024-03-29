@@ -17,6 +17,9 @@ export { mapOrForUndefinable } from './map_or.js';
 export { mapOrAsyncForUndefinable } from './map_or_async.js';
 export { mapOrElseForUndefinable } from './map_or_else.js';
 export { mapOrElseAsyncForUndefinable } from './map_or_else_async.js';
+export { okOrForUndefinable } from './ok_or.js';
+export { okOrElseForUndefinable } from './ok_or_else.js';
+export { okOrElseAsyncForUndefinable } from './ok_or_else_async.js';
 // XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
 // export { orForUndefinable } from './or.js';
 export { orElseForUndefinable } from './or_else.js';
