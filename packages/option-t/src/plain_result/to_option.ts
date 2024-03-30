@@ -1,26 +1,13 @@
-import { type Option, createNone, createSome } from '../plain_option/option.js';
-import type { Result } from './result.js';
+import { fromOkToOption, fromErrToOption } from '../plain_option/from_result.js';
 
 /**
- *  Convert to `Some(T)` if _input_ is `Ok(T)`.
- *  Otherwise, return `None`.
+ *  @deprecated
+ *  Use {@link fromErrToOption} in `option-t/PlainOption/fromResult` instead.
  */
-export function toOptionFromOk<T, E>(input: Result<T, E>): Option<T> {
-    if (input.ok) {
-        return createSome<T>(input.val);
-    }
-
-    return createNone();
-}
+export const toOptionFromOk: typeof fromOkToOption = fromOkToOption;
 
 /**
- *  Convert to `Some(E)` if _input_ is `Err(E)`.
- *  Otherwise, return `None`.
+ *  @deprecated
+ *  Use {@link fromErrToOption} in `option-t/PlainOption/fromResult` instead.
  */
-export function toOptionFromErr<T, E>(input: Result<T, E>): Option<E> {
-    if (!input.ok) {
-        return createSome<E>(input.err);
-    }
-
-    return createNone();
-}
+export const toOptionFromErr: typeof fromErrToOption = fromErrToOption;

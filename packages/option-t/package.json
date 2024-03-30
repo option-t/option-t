@@ -1100,6 +1100,20 @@
                 "default": "./esm/plain_option/flatten.js"
             }
         },
+        "./PlainOption/fromResult": {
+            "import": {
+                "types": "./esm/plain_option/from_result.d.ts",
+                "default": "./esm/plain_option/from_result.js"
+            },
+            "require": {
+                "types": "./cjs/plain_option/from_result.d.cts",
+                "default": "./cjs/plain_option/from_result.cjs"
+            },
+            "default": {
+                "types": "./esm/plain_option/from_result.d.ts",
+                "default": "./esm/plain_option/from_result.js"
+            }
+        },
         "./PlainOption/inspect": {
             "import": {
                 "types": "./esm/plain_option/inspect.d.ts",

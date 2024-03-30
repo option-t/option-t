@@ -61,7 +61,11 @@ export { orElseAsyncForResult } from './or_else_async.js';
 export { toNullableFromErr, toNullableFromOk } from './to_nullable.js';
 // We don't export to_option since its type has been deprecated.
 export { toUndefinableFromErr, toUndefinableFromOk } from './to_undefinable.js';
-export { transposeNullableForResult, transposeUndefinableForResult } from './transpose.js';
+export {
+    // We don't export `transposeForResult()` from this since `PlainOption` type has been deprecated.
+    transposeNullableForResult,
+    transposeUndefinableForResult,
+} from './transpose.js';
 export { tryCatchIntoResult, tryCatchIntoResultWithEnsureError } from './try_catch.js';
 export {
     tryCatchIntoResultAsync,

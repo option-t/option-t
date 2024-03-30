@@ -31,6 +31,7 @@ export { andThenAsyncForOption as andThenAsync } from './and_then_async.js';
 //   We don't recommend to compare this result type's value.
 export { filterForOption as filter } from './filter.js';
 export { flattenForOption as flatten } from './flatten.js';
+export { fromErrToOption, fromOkToOption } from './from_result.js';
 export { inspectOption as inspect } from './inspect.js';
 export { mapForOption as map } from './map.js';
 export { mapAsyncForOption as mapAsync } from './map_async.js';
