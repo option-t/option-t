@@ -21,8 +21,9 @@ export {
 export { andThenForResult as andThen } from './and_then.js';
 export { andThenAsyncForResult as andThenAsync } from './and_then_async.js';
 // - We don't expose items from as_mut.js that is unsafe operation.
-// TODO: #2065
-// TODO: #2066
+// - We don't expose items from drop.js that is unsafe operation.
+// - We don't expose items from equal.js that is provided for exception case.
+//   We don't recommend to compare this result type's value.
 export { flattenForResult as flatten } from './flatten.js';
 export { fromPromiseSettledResultToResult as fromPromiseSettledResult } from './from_promise_settled_result.js';
 export {
@@ -59,4 +60,6 @@ export {
 export { unwrapOrFromResult as unwrapOr } from './unwrap_or.js';
 export { unwrapOrElseFromResult as unwrapOrElse } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncFromResult as unwrapOrElseAsync } from './unwrap_or_else_async.js';
-// TODO: #2068
+// - From this module, we don't expose items from unwrap_or_throw_error.js.
+//   that is provided only for the case to bridge with exist codes.
+//   We recommend to handle result type in that style.
