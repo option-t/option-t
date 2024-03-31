@@ -2,13 +2,13 @@ import test from 'ava';
 
 import { createSome, createNone, isSome, isNone } from 'option-t/PlainOption/Option';
 import { createOk, createErr, isOk, isErr } from 'option-t/PlainResult/Result';
-import { transposeResultToOption } from 'option-t/PlainResult/transpose';
+import { transposeForResult } from 'option-t/PlainResult/transpose';
 
 test('input is Ok<Some<T>>, the result should be Some(Ok(v))', (t) => {
     const val = Symbol('val');
     const inner = createSome(val);
     const input = createOk(inner);
-    const actual = transposeResultToOption(input);
+    const actual = transposeForResult(input);
 
     const actualInner = actual.val;
 
@@ -24,7 +24,7 @@ test('input is Ok<Some<T>>, the result should be Some(Ok(v))', (t) => {
 test('input is Ok<None>, the result should be None', (t) => {
     const inner = createNone();
     const input = createOk(inner);
-    const actual = transposeResultToOption(input);
+    const actual = transposeForResult(input);
 
     t.true(isNone(actual), 'the outer should None');
     t.not(actual, inner, 'the outer  should be different from the input');
@@ -33,7 +33,7 @@ test('input is Ok<None>, the result should be None', (t) => {
 test('input is Err<E>, the result should be Some(Err(e))', (t) => {
     const inner = Symbol('err');
     const input = createErr(inner);
-    const actual = transposeResultToOption(input);
+    const actual = transposeForResult(input);
 
     const actualInner = actual.val;
 

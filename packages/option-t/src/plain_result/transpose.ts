@@ -10,7 +10,7 @@ import { type Result, type Ok, type Err, isErr, createOk, createErr, unwrapOk } 
  *  - `Ok(None)` -> `None`
  *  - `Err(e)` -> `Some(Err(e))`
  */
-export function transposeForResult<T, E>(input: Result<Option<T>, E>): Option<Result<T, E>> {
+export function transposeResultToOption<T, E>(input: Result<Option<T>, E>): Option<Result<T, E>> {
     if (isErr(input)) {
         const err: E = input.err;
         const newErr: Err<E> = createErr(err);
@@ -31,13 +31,19 @@ export function transposeForResult<T, E>(input: Result<Option<T>, E>): Option<Re
 }
 
 /**
+ *  @deprecated
+ *  Use {@link transposeResultToOption} instead.
+ */
+export const transposeForResult: typeof transposeResultToOption = transposeResultToOption;
+
+/**
  *  Transposes a `Result` of an `Nullable<T>` into an `Nullable<T>` of a `Result`.
  *
  *  - `Ok(T)` -> `Ok(T)`
  *  - `Ok(null)` -> `null`
  *  - `Err(E)` -> `Err(E)`
  */
-export function transposeNullableForResult<T, E>(
+export function transposeResultToNullable<T, E>(
     input: Result<Nullable<T>, E>,
 ): Nullable<Result<T, E>> {
     if (isErr(input)) {
@@ -53,13 +59,20 @@ export function transposeNullableForResult<T, E>(
 }
 
 /**
+ *  @deprecated
+ *  Use {@link transposeResultToNullable} instead.
+ */
+export const transposeNullableForResult: typeof transposeResultToNullable =
+    transposeResultToNullable;
+
+/**
  *  Transposes a `Result` of an `Undefinable<T>` into an `Undefinable<T>` of a `Result`.
  *
  *  - `Ok(T)` -> `Ok(T)`
  *  - `Ok(undefined)` -> `undefined`
  *  - `Err(E)` -> `Err(E)`
  */
-export function transposeUndefinableForResult<T, E>(
+export function transposeResultToUndefinable<T, E>(
     input: Result<Undefinable<T>, E>,
 ): Undefinable<Result<T, E>> {
     if (isErr(input)) {
@@ -73,3 +86,10 @@ export function transposeUndefinableForResult<T, E>(
 
     return createOk<T>(inner);
 }
+
+/**
+ *  @deprecated
+ *  Use {@link transposeResultToUndefinable} instead.
+ */
+export const transposeUndefinableForResult: typeof transposeResultToUndefinable =
+    transposeResultToUndefinable;

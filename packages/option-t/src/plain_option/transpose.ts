@@ -15,7 +15,7 @@ import { type Option, isNone, createSome, createNone, type None, type Some } fro
  *  - `Some(Err(e))` -> `Err(e)`
  *  - `None` => `Ok(None)`
  */
-export function transposeForOption<T, E>(input: Option<Result<T, E>>): Result<Option<T>, E> {
+export function transposeOptionToResult<T, E>(input: Option<Result<T, E>>): Result<Option<T>, E> {
     if (isNone(input)) {
         const inner: None = createNone();
         const result: Ok<None> = createOk(inner);
@@ -34,3 +34,9 @@ export function transposeForOption<T, E>(input: Option<Result<T, E>>): Result<Op
     const result: Ok<Some<T>> = createOk(some);
     return result;
 }
+
+/**
+ *  @deprecated
+ *  Use {@link transposeOptionToResult} instead.
+ */
+export const transposeForOption: typeof transposeOptionToResult = transposeOptionToResult;

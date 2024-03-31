@@ -1,14 +1,14 @@
 import test from 'ava';
 
 import { createSome, createNone, isSome, isNone } from 'option-t/PlainOption/Option';
-import { transposeOptionToResult } from 'option-t/PlainOption/transpose';
+import { transposeForOption } from 'option-t/PlainOption/transpose';
 import { createOk, createErr, isOk, isErr } from 'option-t/PlainResult/Result';
 
 test('input is Some<Ok<T>>, the result should be Ok(Some(x))', (t) => {
     const val = Symbol('val');
     const inner = createOk(val);
     const input = createSome(inner);
-    const actual = transposeOptionToResult(input);
+    const actual = transposeForOption(input);
 
     const actualInner = actual.val;
 
@@ -25,7 +25,7 @@ test('input is Some<Err<E>>, the result should be Err(e)', (t) => {
     const err = Symbol('err');
     const inner = createErr(err);
     const input = createSome(inner);
-    const actual = transposeOptionToResult(input);
+    const actual = transposeForOption(input);
 
     t.true(isErr(actual), 'the outer should Err<E>');
     t.is(actual.err, err, 'the inner should be E');
@@ -34,7 +34,7 @@ test('input is Some<Err<E>>, the result should be Err(e)', (t) => {
 
 test('input is None, the result should be Ok(None)', (t) => {
     const input = createNone();
-    const actual = transposeOptionToResult(input);
+    const actual = transposeForOption(input);
 
     const actualInner = actual.val;
 
