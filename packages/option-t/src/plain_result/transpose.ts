@@ -1,34 +1,19 @@
 import { type Nullable, isNull } from '../nullable/nullable.js';
-import { type Option, createSome, createNone, isNone, type Some } from '../plain_option/option.js';
+import { transposeResultToOption as transposeResultToOption_ } from '../plain_option/transpose.js';
 import { isUndefined, type Undefinable } from '../undefinable/undefinable.js';
-import { type Result, type Ok, type Err, isErr, createOk, createErr, unwrapOk } from './result.js';
+import { type Result, isErr, createOk, unwrapOk } from './result.js';
 
 /**
- *  Transposes a `Result` of an `Option` into an `Option` of a `Result`.
- *
- *  - `Ok(Some(v))` -> `Some(Ok(v))`
- *  - `Ok(None)` -> `None`
- *  - `Err(e)` -> `Some(Err(e))`
+ *  @deprecated
+ *  Use `transposeResultToOption` in `option-t/PlainOption`.
  */
-export function transposeForResult<T, E>(input: Result<Option<T>, E>): Option<Result<T, E>> {
-    if (isErr(input)) {
-        const err: E = input.err;
-        const newErr: Err<E> = createErr(err);
-        const result: Some<Err<E>> = createSome<Err<E>>(newErr);
-        return result;
-    }
+export const transposeResultToOption: typeof transposeResultToOption_ = transposeResultToOption_;
 
-    const inner: Option<T> = input.val;
-    if (isNone(inner)) {
-        const result = createNone();
-        return result;
-    }
-
-    const innerInner: T = inner.val;
-    const innerV: Ok<T> = createOk(innerInner);
-    const result: Option<Ok<T>> = createSome(innerV);
-    return result;
-}
+/**
+ *  @deprecated
+ *  Use `transposeResultToOption` in `option-t/PlainOption`.
+ */
+export const transposeForResult: typeof transposeResultToOption = transposeResultToOption;
 
 /**
  *  Transposes a `Result` of an `Nullable<T>` into an `Nullable<T>` of a `Result`.
@@ -37,7 +22,7 @@ export function transposeForResult<T, E>(input: Result<Option<T>, E>): Option<Re
  *  - `Ok(null)` -> `null`
  *  - `Err(E)` -> `Err(E)`
  */
-export function transposeNullableForResult<T, E>(
+export function transposeResultToNullable<T, E>(
     input: Result<Nullable<T>, E>,
 ): Nullable<Result<T, E>> {
     if (isErr(input)) {
@@ -53,13 +38,20 @@ export function transposeNullableForResult<T, E>(
 }
 
 /**
+ *  @deprecated
+ *  Use {@link transposeResultToNullable} instead.
+ */
+export const transposeNullableForResult: typeof transposeResultToNullable =
+    transposeResultToNullable;
+
+/**
  *  Transposes a `Result` of an `Undefinable<T>` into an `Undefinable<T>` of a `Result`.
  *
  *  - `Ok(T)` -> `Ok(T)`
  *  - `Ok(undefined)` -> `undefined`
  *  - `Err(E)` -> `Err(E)`
  */
-export function transposeUndefinableForResult<T, E>(
+export function transposeResultToUndefinable<T, E>(
     input: Result<Undefinable<T>, E>,
 ): Undefinable<Result<T, E>> {
     if (isErr(input)) {
@@ -73,3 +65,10 @@ export function transposeUndefinableForResult<T, E>(
 
     return createOk<T>(inner);
 }
+
+/**
+ *  @deprecated
+ *  Use {@link transposeResultToUndefinable} instead.
+ */
+export const transposeUndefinableForResult: typeof transposeResultToUndefinable =
+    transposeResultToUndefinable;

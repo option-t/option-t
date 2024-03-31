@@ -46,7 +46,10 @@ export { orElseForOption as orElse } from './or_else.js';
 export { orElseAsyncForOption as orElseAsync } from './or_else_async.js';
 export { toNullableFromOption as toNullable } from './to_nullable.js';
 export { toUndefinableFromOption as toUndefinable } from './to_undefinable.js';
-export { transposeForOption as transpose } from './transpose.js';
+export {
+    transposeOptionToResult as transpose,
+    transposeResultToOption as transposeFromResult,
+} from './transpose.js';
 export { unwrapOrFromOption as unwrapOr } from './unwrap_or.js';
 export { unwrapOrElseFromOption as unwrapOrElse } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncFromOption as unwrapOrElseAsync } from './unwrap_or_else_async.js';
