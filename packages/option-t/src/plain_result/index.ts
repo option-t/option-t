@@ -44,7 +44,7 @@ export { andThenAsyncForResult } from './and_then_async.js';
 // TODO: #2119
 // TODO: #2120
 export { flattenForResult } from './flatten.js';
-// TODO: #2116
+export { fromPromiseSettledResultToResult } from './from_promise_settled_result.js';
 export { inspectBothOfResult, inspectErrOfResult, inspectOkOfResult } from './inspect.js';
 export { mapForResult } from './map.js';
 export { mapAsyncForResult } from './map_async.js';
@@ -61,8 +61,11 @@ export { toNullableFromErr, toNullableFromOk } from './to_nullable.js';
 // We don't export to_option since its type has been deprecated.
 export { toUndefinableFromErr, toUndefinableFromOk } from './to_undefinable.js';
 export { transposeNullableForResult, transposeUndefinableForResult } from './transpose.js';
-// TODO: #2111
-// TODO: #2110
+export { tryCatchIntoResult, tryCatchIntoResultWithEnsureError } from './try_catch.js';
+export {
+    tryCatchIntoResultAsync,
+    tryCatchIntoResultWithEnsureErrorAsync,
+} from './try_catch_async.js';
 export { unwrapOrFromResult } from './unwrap_or.js';
 export { unwrapOrElseFromResult } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncFromResult } from './unwrap_or_else_async.js';
