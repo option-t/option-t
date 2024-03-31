@@ -26,8 +26,9 @@ export {
 export { andThenForOption as andThen } from './and_then.js';
 export { andThenAsyncForOption as andThenAsync } from './and_then_async.js';
 // - We don't expose items from as_mut.js that is unsafe operation.
-// TODO: #2039
-// TODO: #2050
+// - We don't expose items from drop.js that is unsafe operation.
+// - We don't expose items from equal.js that is provided for exception case.
+//   We don't recommend to compare this result type's value.
 export { filterForOption as filter } from './filter.js';
 export { flattenForOption as flatten } from './flatten.js';
 export { inspectOption as inspect } from './inspect.js';
