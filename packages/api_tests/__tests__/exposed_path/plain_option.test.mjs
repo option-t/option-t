@@ -14,6 +14,7 @@ testImportExposedPath(
         './PlainOption/expect': null,
         './PlainOption/filter': null,
         './PlainOption/flatten': null,
+        './PlainOption/fromResult': null,
         './PlainOption/inspect': null,
         './PlainOption/map': null,
         './PlainOption/mapAsync': null,

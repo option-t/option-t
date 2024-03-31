@@ -8,6 +8,7 @@ import {} from 'option-t/PlainOption/equal';
 import {} from 'option-t/PlainOption/expect';
 import {} from 'option-t/PlainOption/filter';
 import {} from 'option-t/PlainOption/flatten';
+import {} from 'option-t/PlainOption/fromResult';
 import {} from 'option-t/PlainOption/inspect';
 import {} from 'option-t/PlainOption/map';
 import {} from 'option-t/PlainOption/mapAsync';
