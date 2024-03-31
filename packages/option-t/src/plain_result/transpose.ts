@@ -1,38 +1,17 @@
 import { type Nullable, isNull } from '../nullable/nullable.js';
-import { type Option, createSome, createNone, isNone, type Some } from '../plain_option/option.js';
+import { transposeResultToOption as transposeResultToOption_ } from '../plain_option/transpose.js';
 import { isUndefined, type Undefinable } from '../undefinable/undefinable.js';
-import { type Result, type Ok, type Err, isErr, createOk, createErr, unwrapOk } from './result.js';
-
-/**
- *  Transposes a `Result` of an `Option` into an `Option` of a `Result`.
- *
- *  - `Ok(Some(v))` -> `Some(Ok(v))`
- *  - `Ok(None)` -> `None`
- *  - `Err(e)` -> `Some(Err(e))`
- */
-export function transposeResultToOption<T, E>(input: Result<Option<T>, E>): Option<Result<T, E>> {
-    if (isErr(input)) {
-        const err: E = input.err;
-        const newErr: Err<E> = createErr(err);
-        const result: Some<Err<E>> = createSome<Err<E>>(newErr);
-        return result;
-    }
-
-    const inner: Option<T> = input.val;
-    if (isNone(inner)) {
-        const result = createNone();
-        return result;
-    }
-
-    const innerInner: T = inner.val;
-    const innerV: Ok<T> = createOk(innerInner);
-    const result: Option<Ok<T>> = createSome(innerV);
-    return result;
-}
+import { type Result, isErr, createOk, unwrapOk } from './result.js';
 
 /**
  *  @deprecated
- *  Use {@link transposeResultToOption} instead.
+ *  Use `transposeResultToOption` in `option-t/PlainOption`.
+ */
+export const transposeResultToOption: typeof transposeResultToOption_ = transposeResultToOption_;
+
+/**
+ *  @deprecated
+ *  Use `transposeResultToOption` in `option-t/PlainOption`.
  */
 export const transposeForResult: typeof transposeResultToOption = transposeResultToOption;
 

@@ -40,3 +40,30 @@ export function transposeOptionToResult<T, E>(input: Option<Result<T, E>>): Resu
  *  Use {@link transposeOptionToResult} instead.
  */
 export const transposeForOption: typeof transposeOptionToResult = transposeOptionToResult;
+
+/**
+ *  Transposes a `Result` of an `Option` into an `Option` of a `Result`.
+ *
+ *  - `Ok(Some(v))` -> `Some(Ok(v))`
+ *  - `Ok(None)` -> `None`
+ *  - `Err(e)` -> `Some(Err(e))`
+ */
+export function transposeResultToOption<T, E>(input: Result<Option<T>, E>): Option<Result<T, E>> {
+    if (isErr(input)) {
+        const err: E = input.err;
+        const newErr: Err<E> = createErr(err);
+        const result: Some<Err<E>> = createSome<Err<E>>(newErr);
+        return result;
+    }
+
+    const inner: Option<T> = input.val;
+    if (isNone(inner)) {
+        const result = createNone();
+        return result;
+    }
+
+    const innerInner: T = inner.val;
+    const innerV: Ok<T> = createOk(innerInner);
+    const result: Option<Ok<T>> = createSome(innerV);
+    return result;
+}

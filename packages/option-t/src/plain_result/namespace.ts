@@ -46,7 +46,6 @@ export { toNullableFromErr, toNullableFromOk } from './to_nullable.js';
 // We don't export to_option since its type has been deprecated.
 export { toUndefinableFromErr, toUndefinableFromOk } from './to_undefinable.js';
 export {
-    // We don't export `transposeForResult()` from this since `PlainOption` type has been deprecated.
     transposeResultToNullable as transposeToNullable,
     transposeResultToUndefinable as transposeToUndefinable,
 } from './transpose.js';
@@ -65,11 +64,7 @@ export { unwrapOrElseAsyncFromResult as unwrapOrElseAsync } from './unwrap_or_el
 //   that is provided only for the case to bridge with exist codes.
 //   We recommend to handle result type in that style.
 
-import {
-    // We don't export `transposeForResult()` from this since `PlainOption` type has been deprecated.
-    transposeResultToNullable,
-    transposeResultToUndefinable,
-} from './transpose.js';
+import { transposeResultToNullable, transposeResultToUndefinable } from './transpose.js';
 
 /**
  *  @deprecated
