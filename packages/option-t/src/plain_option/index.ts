@@ -81,27 +81,27 @@ import { unwrapOrElseForOption } from './unwrap_or_else.js';
 import { unwrapOrElseAsyncForOption } from './unwrap_or_else_async.js';
 
 /**
- *  @deprecated
+ *  @deprecated 40.5.0
  *  Use {@link transposeOptionToResult} instead.
  */
 export const transposeForOption: typeof transposeOptionToResult = transposeOptionToResult;
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrForOption} instead.
  */
 export const unwrapOrFromOption: typeof unwrapOrForOption = unwrapOrForOption;
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrElseFromOption} instead.
  */
 export const unwrapOrElseFromOption: typeof unwrapOrElseForOption = unwrapOrElseForOption;
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrElseAsyncFromOption} instead.
  */

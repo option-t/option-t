@@ -44,21 +44,21 @@ import { unwrapOrElseForMaybe } from './unwrap_or_else.js';
 import { unwrapOrElseAsyncForMaybe } from './unwrap_or_else_async.js';
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrForMaybe} instead.
  */
 export const unwrapOrFromMaybe: typeof unwrapOrForMaybe = unwrapOrForMaybe;
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrElseForMaybe} instead.
  */
 export const unwrapOrElseFromMaybe: typeof unwrapOrElseForMaybe = unwrapOrElseForMaybe;
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrElseAsyncForMaybe} instead.
  */

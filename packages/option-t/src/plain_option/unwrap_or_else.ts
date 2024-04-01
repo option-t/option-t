@@ -16,7 +16,7 @@ export function unwrapOrElseForOption<T>(input: Option<T>, recoverer: RecoveryFn
 }
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrElseForOption} instead.

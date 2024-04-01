@@ -4,13 +4,13 @@ import { isUndefined, type Undefinable } from '../undefinable/undefinable.js';
 import { type Result, isErr, createOk, unwrapOk } from './result.js';
 
 /**
- *  @deprecated
+ *  @deprecated 40.5.0
  *  Use `transposeResultToOption` in `option-t/PlainOption`.
  */
 export const transposeResultToOption: typeof transposeResultToOption_ = transposeResultToOption_;
 
 /**
- *  @deprecated
+ *  @deprecated 40.5.0
  *  Use `transposeResultToOption` in `option-t/PlainOption`.
  */
 export const transposeForResult: typeof transposeResultToOption = transposeResultToOption;
@@ -38,7 +38,7 @@ export function transposeResultToNullable<T, E>(
 }
 
 /**
- *  @deprecated
+ *  @deprecated 40.5.0
  *  Use {@link transposeResultToNullable} instead.
  */
 export const transposeNullableForResult: typeof transposeResultToNullable =
@@ -67,7 +67,7 @@ export function transposeResultToUndefinable<T, E>(
 }
 
 /**
- *  @deprecated
+ *  @deprecated 40.5.0
  *  Use {@link transposeResultToUndefinable} instead.
  */
 export const transposeUndefinableForResult: typeof transposeResultToUndefinable =

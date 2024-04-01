@@ -32,7 +32,7 @@ export function unwrapOrElseForUndefinable<T>(
 }
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrElseForUndefinable} instead.

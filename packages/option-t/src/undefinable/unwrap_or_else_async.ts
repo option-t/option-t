@@ -33,7 +33,7 @@ export async function unwrapOrElseAsyncForUndefinable<T>(
 }
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrElseAsyncForUndefinable} instead.

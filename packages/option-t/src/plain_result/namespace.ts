@@ -70,13 +70,13 @@ export { unwrapOrElseAsyncForResult as unwrapOrElseAsync } from './unwrap_or_els
 import { transposeResultToNullable, transposeResultToUndefinable } from './transpose.js';
 
 /**
- *  @deprecated
+ *  @deprecated 40.5.0
  *  Use `transposeToNullable instead.
  */
 export const transposeNullable: typeof transposeResultToNullable = transposeResultToNullable;
 
 /**
- *  @deprecated
+ *  @deprecated 40.5.0
  *  Use `transposeToUndefinable` instead.
  */
 export const transposeUndefinable: typeof transposeResultToUndefinable =

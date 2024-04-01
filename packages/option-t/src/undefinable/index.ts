@@ -42,14 +42,14 @@ import { unwrapOrElseForUndefinable } from './unwrap_or_else.js';
 import { unwrapOrElseAsyncForUndefinable } from './unwrap_or_else_async.js';
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrForUndefinable} instead.
  */
 export const unwrapOrFromUndefinable: typeof unwrapOrForUndefinable = unwrapOrForUndefinable;
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrElseForUndefinable} instead.
  */
@@ -57,7 +57,7 @@ export const unwrapOrElseFromUndefinable: typeof unwrapOrElseForUndefinable =
     unwrapOrElseForUndefinable;
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrElseAsyncForUndefinable} instead.
  */
