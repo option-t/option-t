@@ -2,7 +2,7 @@ import { fromOkToOption, fromErrToOption } from '../plain_option/from_result.js'
 
 /**
  *  @deprecated
- *  Use {@link fromErrToOption} in `option-t/PlainOption/fromResult` instead.
+ *  Use {@link fromOkToOption} in `option-t/PlainOption/fromResult` instead.
  */
 export const toOptionFromOk: typeof fromOkToOption = fromOkToOption;
 
