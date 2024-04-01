@@ -1,19 +1,6 @@
 import { type Nullable, isNull } from '../nullable/nullable.js';
-import { transposeResultToOption as transposeResultToOption_ } from '../plain_option/transpose.js';
 import { isUndefined, type Undefinable } from '../undefinable/undefinable.js';
 import { type Result, isErr, createOk, unwrapOk } from './result.js';
-
-/**
- *  @deprecated 40.5.0
- *  Use `transposeResultToOption` in `option-t/PlainOption`.
- */
-export const transposeResultToOption: typeof transposeResultToOption_ = transposeResultToOption_;
-
-/**
- *  @deprecated 40.5.0
- *  Use `transposeResultToOption` in `option-t/PlainOption`.
- */
-export const transposeForResult: typeof transposeResultToOption = transposeResultToOption;
 
 /**
  *  Transposes a `Result` of an `Nullable<T>` into an `Nullable<T>` of a `Result`.
@@ -38,13 +25,6 @@ export function transposeResultToNullable<T, E>(
 }
 
 /**
- *  @deprecated 40.5.0
- *  Use {@link transposeResultToNullable} instead.
- */
-export const transposeNullableForResult: typeof transposeResultToNullable =
-    transposeResultToNullable;
-
-/**
  *  Transposes a `Result` of an `Undefinable<T>` into an `Undefinable<T>` of a `Result`.
  *
  *  - `Ok(T)` -> `Ok(T)`
@@ -65,10 +45,3 @@ export function transposeResultToUndefinable<T, E>(
 
     return createOk<T>(inner);
 }
-
-/**
- *  @deprecated 40.5.0
- *  Use {@link transposeResultToUndefinable} instead.
- */
-export const transposeUndefinableForResult: typeof transposeResultToUndefinable =
-    transposeResultToUndefinable;
