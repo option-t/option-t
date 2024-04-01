@@ -568,20 +568,6 @@
                 "default": "./esm/nullable/and_then_async.js"
             }
         },
-        "./Nullable/expect": {
-            "import": {
-                "types": "./esm/nullable/expect.d.ts",
-                "default": "./esm/nullable/expect.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/expect.d.cts",
-                "default": "./cjs/nullable/expect.cjs"
-            },
-            "default": {
-                "types": "./esm/nullable/expect.d.ts",
-                "default": "./esm/nullable/expect.js"
-            }
-        },
         "./Nullable/inspect": {
             "import": {
                 "types": "./esm/nullable/inspect.d.ts",
@@ -804,20 +790,6 @@
             "default": {
                 "types": "./esm/nullable/to_undefinable.d.ts",
                 "default": "./esm/nullable/to_undefinable.js"
-            }
-        },
-        "./Nullable/unwrap": {
-            "import": {
-                "types": "./esm/nullable/unwrap.d.ts",
-                "default": "./esm/nullable/unwrap.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/unwrap.d.cts",
-                "default": "./cjs/nullable/unwrap.cjs"
-            },
-            "default": {
-                "types": "./esm/nullable/unwrap.d.ts",
-                "default": "./esm/nullable/unwrap.js"
             }
         },
         "./Nullable/unwrapOr": {
