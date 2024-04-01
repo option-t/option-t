@@ -77,15 +77,7 @@ export { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
 /**
  *  Backward Compatibility
  */
-import { unwrapOrElseForResult } from './unwrap_or_else.js';
 import { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
-
-/**
- *  @deprecated 40.6.0
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseForResult} instead.
- */
-export const unwrapOrElseFromResult: typeof unwrapOrElseForResult = unwrapOrElseForResult;
 
 /**
  *  @deprecated 40.6.0

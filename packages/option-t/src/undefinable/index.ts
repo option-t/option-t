@@ -37,16 +37,7 @@ export { unwrapOrElseAsyncForUndefinable } from './unwrap_or_else_async.js';
 /**
  *  Backward Compatibility
  */
-import { unwrapOrElseForUndefinable } from './unwrap_or_else.js';
 import { unwrapOrElseAsyncForUndefinable } from './unwrap_or_else_async.js';
-
-/**
- *  @deprecated 40.6.0
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseForUndefinable} instead.
- */
-export const unwrapOrElseFromUndefinable: typeof unwrapOrElseForUndefinable =
-    unwrapOrElseForUndefinable;
 
 /**
  *  @deprecated 40.6.0

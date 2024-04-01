@@ -25,11 +25,3 @@ export function unwrapOrElseForNullable<T>(
     );
     return passed;
 }
-
-/**
- *  @deprecated 40.6.0
- *
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseForNullable} instead.
- */
-export const unwrapOrElseFromNullable: typeof unwrapOrElseForNullable = unwrapOrElseForNullable;
