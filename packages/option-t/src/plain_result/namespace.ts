@@ -27,9 +27,9 @@ export { andThenAsyncForResult as andThenAsync } from './and_then_async.js';
 export { flattenForResult as flatten } from './flatten.js';
 export { fromPromiseSettledResultToResult as fromPromiseSettledResult } from './from_promise_settled_result.js';
 export {
-    inspectBothOfResult as inspectBoth,
-    inspectErrOfResult as inspectErr,
-    inspectOkOfResult as inspectOk,
+    inspectBothForResult as inspectBoth,
+    inspectErrForResult as inspectErr,
+    inspectOkForResult as inspectOk,
 } from './inspect.js';
 export { mapForResult as map } from './map.js';
 export { mapAsyncForResult as mapAsync } from './map_async.js';
