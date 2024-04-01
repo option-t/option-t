@@ -12,11 +12,3 @@ export function unwrapOrForOption<T>(input: Option<T>, defaultValue: T): T {
 
     return defaultValue;
 }
-
-/**
- *  @deprecated 40.6.0
- *
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrForOption} instead.
- */
-export const unwrapOrFromOption: typeof unwrapOrForOption = unwrapOrForOption;

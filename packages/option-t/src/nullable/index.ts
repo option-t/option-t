@@ -37,16 +37,8 @@ export { unwrapOrElseAsyncForNullable } from './unwrap_or_else_async.js';
 /**
  *  Backward Compatibility
  */
-import { unwrapOrForNullable } from './unwrap_or.js';
 import { unwrapOrElseForNullable } from './unwrap_or_else.js';
 import { unwrapOrElseAsyncForNullable } from './unwrap_or_else_async.js';
-
-/**
- *  @deprecated 40.6.0
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrForNullable} instead.
- */
-export const unwrapOrFromNullable: typeof unwrapOrForNullable = unwrapOrForNullable;
 
 /**
  *  @deprecated 40.6.0

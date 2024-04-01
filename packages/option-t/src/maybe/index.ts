@@ -39,16 +39,8 @@ export { unwrapOrElseAsyncForMaybe } from './unwrap_or_else_async.js';
 /**
  *  Backward Compatibility
  */
-import { unwrapOrForMaybe } from './unwrap_or.js';
 import { unwrapOrElseForMaybe } from './unwrap_or_else.js';
 import { unwrapOrElseAsyncForMaybe } from './unwrap_or_else_async.js';
-
-/**
- *  @deprecated 40.6.0
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrForMaybe} instead.
- */
-export const unwrapOrFromMaybe: typeof unwrapOrForMaybe = unwrapOrForMaybe;
 
 /**
  *  @deprecated 40.6.0
