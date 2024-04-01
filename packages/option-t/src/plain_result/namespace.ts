@@ -57,13 +57,16 @@ export {
     tryCatchIntoResultAsync as tryCatchIntoAsync,
     tryCatchIntoResultWithEnsureErrorAsync as tryCatchIntoWithEnsureErrorAsync,
 } from './try_catch_async.js';
-export { unwrapOrFromResult as unwrapOr } from './unwrap_or.js';
-export { unwrapOrElseFromResult as unwrapOrElse } from './unwrap_or_else.js';
-export { unwrapOrElseAsyncFromResult as unwrapOrElseAsync } from './unwrap_or_else_async.js';
+export { unwrapOrForResult as unwrapOr } from './unwrap_or.js';
+export { unwrapOrElseForResult as unwrapOrElse } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncForResult as unwrapOrElseAsync } from './unwrap_or_else_async.js';
 // - From this module, we don't expose items from unwrap_or_throw_error.js.
 //   that is provided only for the case to bridge with exist codes.
 //   We recommend to handle result type in that style.
 
+/**
+ *  Backward Compatibility
+ */
 import { transposeResultToNullable, transposeResultToUndefinable } from './transpose.js';
 
 /**

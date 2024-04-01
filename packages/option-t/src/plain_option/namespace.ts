@@ -50,7 +50,7 @@ export {
     transposeOptionToResult as transpose,
     transposeResultToOption as transposeFromResult,
 } from './transpose.js';
-export { unwrapOrFromOption as unwrapOr } from './unwrap_or.js';
-export { unwrapOrElseFromOption as unwrapOrElse } from './unwrap_or_else.js';
-export { unwrapOrElseAsyncFromOption as unwrapOrElseAsync } from './unwrap_or_else_async.js';
+export { unwrapOrForOption as unwrapOr } from './unwrap_or.js';
+export { unwrapOrElseForOption as unwrapOrElse } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncForOption as unwrapOrElseAsync } from './unwrap_or_else_async.js';
 // TODO: #2052

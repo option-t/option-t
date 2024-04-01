@@ -13,7 +13,7 @@ import {
  *  * _defaultValue_ must not be `Maybe<*>`.
  *  * If the _defaultValue_ is `null` or `undefined`, throw `TypeError`.
  */
-export function unwrapOrFromMaybe<T>(
+export function unwrapOrForMaybe<T>(
     input: Maybe<T>,
     defaultValue: NotNullOrUndefined<T>,
 ): NotNullOrUndefined<T> {
@@ -27,3 +27,11 @@ export function unwrapOrFromMaybe<T>(
     );
     return passed;
 }
+
+/**
+ *  @deprecated
+ *
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrForMaybe} instead.
+ */
+export const unwrapOrFromMaybe: typeof unwrapOrForMaybe = unwrapOrForMaybe;

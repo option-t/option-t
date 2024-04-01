@@ -36,9 +36,9 @@ export {
     toResultOkFromMaybe as toResultOk,
 } from './to_plain_result.js';
 export { toUndefinableFromMaybe as toUndefinable } from './to_undefinable.js';
-export { unwrapOrFromMaybe as unwrapOr } from './unwrap_or.js';
-export { unwrapOrElseFromMaybe as unwrapOrElse } from './unwrap_or_else.js';
-export { unwrapOrElseAsyncFromMaybe as unwrapOrElseAsync } from './unwrap_or_else_async.js';
+export { unwrapOrForMaybe as unwrapOr } from './unwrap_or.js';
+export { unwrapOrElseForMaybe as unwrapOrElse } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncForMaybe as unwrapOrElseAsync } from './unwrap_or_else_async.js';
 // TODO: #2088
 // TODO: #2089
 // TODO: #2090

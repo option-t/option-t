@@ -28,10 +28,39 @@ export { orElseAsyncForMaybe } from './or_else_async.js';
 export { toNullableFromMaybe } from './to_nullable.js';
 export { toResultErrFromMaybe, toResultOkFromMaybe } from './to_plain_result.js';
 export { toUndefinableFromMaybe } from './to_undefinable.js';
-export { unwrapOrFromMaybe } from './unwrap_or.js';
-export { unwrapOrElseFromMaybe } from './unwrap_or_else.js';
-export { unwrapOrElseAsyncFromMaybe } from './unwrap_or_else_async.js';
+export { unwrapOrForMaybe } from './unwrap_or.js';
+export { unwrapOrElseForMaybe } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncForMaybe } from './unwrap_or_else_async.js';
 // TODO: #2095
 // TODO: #2096
 // TODO: #2098
 // TODO: #2097
+
+/**
+ *  Backward Compatibility
+ */
+import { unwrapOrForMaybe } from './unwrap_or.js';
+import { unwrapOrElseForMaybe } from './unwrap_or_else.js';
+import { unwrapOrElseAsyncForMaybe } from './unwrap_or_else_async.js';
+
+/**
+ *  @deprecated
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrForMaybe} instead.
+ */
+export const unwrapOrFromMaybe: typeof unwrapOrForMaybe = unwrapOrForMaybe;
+
+/**
+ *  @deprecated
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseForMaybe} instead.
+ */
+export const unwrapOrElseFromMaybe: typeof unwrapOrElseForMaybe = unwrapOrElseForMaybe;
+
+/**
+ *  @deprecated
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseAsyncForMaybe} instead.
+ */
+export const unwrapOrElseAsyncFromMaybe: typeof unwrapOrElseAsyncForMaybe =
+    unwrapOrElseAsyncForMaybe;

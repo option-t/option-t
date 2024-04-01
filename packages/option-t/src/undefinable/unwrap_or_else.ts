@@ -15,7 +15,7 @@ import {
  *      * If you try to recover the value, use `orElse()`
  *  * If the result of _recoverer_ is `undefined`, throw `TypeError`.
  */
-export function unwrapOrElseFromUndefinable<T>(
+export function unwrapOrElseForUndefinable<T>(
     input: Undefinable<T>,
     recoverer: RecoveryFn<NotUndefined<T>>,
 ): NotUndefined<T> {
@@ -30,3 +30,12 @@ export function unwrapOrElseFromUndefinable<T>(
     );
     return passed;
 }
+
+/**
+ *  @deprecated
+ *
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseForUndefinable} instead.
+ */
+export const unwrapOrElseFromUndefinable: typeof unwrapOrElseForUndefinable =
+    unwrapOrElseForUndefinable;

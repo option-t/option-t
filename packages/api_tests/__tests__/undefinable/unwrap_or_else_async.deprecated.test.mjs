@@ -1,10 +1,10 @@
 import test from 'ava';
 
-import { unwrapOrElseAsyncForNullable } from 'option-t/Nullable/unwrapOrElseAsync';
+import { unwrapOrElseAsyncFromUndefinable } from 'option-t/Undefinable/unwrapOrElseAsync';
 import { nonNullableValueCaseListForAsync } from '../utils.mjs';
 
-const NULL_VALUE_IN_THIS_TEST_CASE = null;
-const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
+const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
+const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = null;
 
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForAsync) {
     test('pass the value: ' + String(INPUT), async (t) => {
@@ -14,7 +14,7 @@ for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForAsync) {
 
         let result;
         t.notThrows(() => {
-            result = unwrapOrElseAsyncForNullable(INPUT, () => {
+            result = unwrapOrElseAsyncFromUndefinable(INPUT, () => {
                 t.fail('should not call recover fn');
                 return DEFAULT_VAL;
             });
@@ -31,7 +31,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.plan(3);
 
     const DEFAULT_VAL = Math.random();
-    const result = unwrapOrElseAsyncForNullable(NULL_VALUE_IN_THIS_TEST_CASE, async () => {
+    const result = unwrapOrElseAsyncFromUndefinable(NULL_VALUE_IN_THIS_TEST_CASE, async () => {
         t.pass('should call recover fn');
         return DEFAULT_VAL;
     });
@@ -46,7 +46,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.plan(2);
 
     const DEFAULT_VAL = Math.random();
-    const result = unwrapOrElseAsyncForNullable(
+    const result = unwrapOrElseAsyncFromUndefinable(
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
         async () => {
             t.fail('should not call recover fn');
@@ -67,9 +67,9 @@ for (const [src, def] of testcases) {
     )}`, async (t) => {
         await t.throwsAsync(
             async () => {
-                await unwrapOrElseAsyncForNullable(src, async () => def);
+                await unwrapOrElseAsyncFromUndefinable(src, async () => def);
             },
-            { instanceOf: TypeError, message: '`recoverer` must not return `null`' },
+            { instanceOf: TypeError, message: '`recoverer` must not return `undefined`' },
         );
     });
 }

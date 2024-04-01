@@ -5,7 +5,7 @@ import type { Result } from './result.js';
  *  Unwraps a result _input_, returns the content of an `Ok(T)`.
  *  If the value is an `Err(E)` then it calls `def` with its value.
  */
-export function unwrapOrElseFromResult<T, E>(
+export function unwrapOrElseForResult<T, E>(
     input: Result<T, E>,
     recoverer: RecoveryFromErrorFn<E, T>,
 ): T {
@@ -17,3 +17,11 @@ export function unwrapOrElseFromResult<T, E>(
     const fallback: T = recoverer(input.err);
     return fallback;
 }
+
+/**
+ *  @deprecated
+ *
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseForResult} instead.
+ */
+export const unwrapOrElseFromResult: typeof unwrapOrElseForResult = unwrapOrElseForResult;

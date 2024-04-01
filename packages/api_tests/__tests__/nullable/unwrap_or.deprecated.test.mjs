@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { unwrapOrForNullable } from 'option-t/Nullable/unwrapOr';
+import { unwrapOrFromNullable } from 'option-t/Nullable/unwrapOr';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;
@@ -9,21 +9,21 @@ const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
     test('pass the value: ' + String(INPUT), (t) => {
         const DEFAULT_VAL = Math.random();
-        const result = unwrapOrForNullable(INPUT, DEFAULT_VAL);
+        const result = unwrapOrFromNullable(INPUT, DEFAULT_VAL);
         t.is(result, EXPECTED);
     });
 }
 
 test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     const DEFAULT_VAL = Math.random();
-    const result = unwrapOrForNullable(NULL_VALUE_IN_THIS_TEST_CASE, DEFAULT_VAL);
+    const result = unwrapOrFromNullable(NULL_VALUE_IN_THIS_TEST_CASE, DEFAULT_VAL);
 
     t.is(result, DEFAULT_VAL);
 });
 
 test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     const DEFAULT_VAL = Math.random();
-    const result = unwrapOrForNullable(
+    const result = unwrapOrFromNullable(
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
         DEFAULT_VAL,
     );
@@ -38,7 +38,7 @@ for (const [src, def] of testcases) {
 
         t.throws(
             () => {
-                unwrapOrForNullable(src, def);
+                unwrapOrFromNullable(src, def);
             },
             { instanceOf: TypeError, message: '`defaultValue` must not be `null`' },
         );

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { unwrapOrFromUndefinable } from 'option-t/Undefinable/unwrapOr';
+import { unwrapOrForUndefinable } from 'option-t/Undefinable/unwrapOr';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
@@ -13,7 +13,7 @@ for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
         const DEFAULT_VAL = Math.random();
         let result;
         t.notThrows(() => {
-            result = unwrapOrFromUndefinable(INPUT, DEFAULT_VAL);
+            result = unwrapOrForUndefinable(INPUT, DEFAULT_VAL);
         }, 'should not throw error');
 
         t.is(result, EXPECTED, 'should the expected result');
@@ -22,7 +22,7 @@ for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
 
 test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     const DEFAULT_VAL = Math.random();
-    const result = unwrapOrFromUndefinable(
+    const result = unwrapOrForUndefinable(
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
         DEFAULT_VAL,
     );
@@ -32,7 +32,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
 
 test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     const DEFAULT_VAL = Math.random();
-    const result = unwrapOrFromUndefinable(NULL_VALUE_IN_THIS_TEST_CASE, DEFAULT_VAL);
+    const result = unwrapOrForUndefinable(NULL_VALUE_IN_THIS_TEST_CASE, DEFAULT_VAL);
     t.is(result, DEFAULT_VAL, 'should be the default');
 });
 
@@ -43,7 +43,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
         test('should not accept undefined as default: ' + label, (t) => {
             t.throws(
                 () => {
-                    unwrapOrFromUndefinable(src, def);
+                    unwrapOrForUndefinable(src, def);
                 },
                 { instanceOf: TypeError, message: '`defaultValue` must not be `undefined`' },
             );

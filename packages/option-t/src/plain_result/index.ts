@@ -67,14 +67,20 @@ export {
     tryCatchIntoResultAsync,
     tryCatchIntoResultWithEnsureErrorAsync,
 } from './try_catch_async.js';
-export { unwrapOrFromResult } from './unwrap_or.js';
-export { unwrapOrElseFromResult } from './unwrap_or_else.js';
-export { unwrapOrElseAsyncFromResult } from './unwrap_or_else_async.js';
+export { unwrapOrForResult } from './unwrap_or.js';
+export { unwrapOrElseForResult } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
 // - From this module, we don't expose items from unwrap_or_throw_error.js.
 //   that is provided only for the case to bridge with exist codes.
 //   We recommend to handle result type in that style.
 
+/**
+ *  Backward Compatibility
+ */
 import { transposeResultToNullable, transposeResultToUndefinable } from './transpose.js';
+import { unwrapOrForResult } from './unwrap_or.js';
+import { unwrapOrElseForResult } from './unwrap_or_else.js';
+import { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
 
 /**
  *  @deprecated
@@ -89,3 +95,25 @@ export const transposeNullableForResult: typeof transposeResultToNullable =
  */
 export const transposeUndefinableForResult: typeof transposeResultToUndefinable =
     transposeResultToUndefinable;
+
+/**
+ *  @deprecated
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrForResult} instead.
+ */
+export const unwrapOrFromResult: typeof unwrapOrForResult = unwrapOrForResult;
+
+/**
+ *  @deprecated
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseForResult} instead.
+ */
+export const unwrapOrElseFromResult: typeof unwrapOrElseForResult = unwrapOrElseForResult;
+
+/**
+ *  @deprecated
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseAsyncForResult} instead.
+ */
+export const unwrapOrElseAsyncFromResult: typeof unwrapOrElseAsyncForResult =
+    unwrapOrElseAsyncForResult;

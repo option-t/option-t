@@ -5,7 +5,7 @@ import { type Result, isOk, unwrapErr, unwrapOk } from './result.js';
  *  Unwraps _input_, returns the content of an `Ok(T)`.
  *  If the value is an `Err(E)` then it calls `recoverer` with its value.
  */
-export async function unwrapOrElseAsyncFromResult<T, E>(
+export async function unwrapOrElseAsyncForResult<T, E>(
     input: Result<T, E>,
     recoverer: AsyncRecoveryFromErrorFn<E, T>,
 ): Promise<T> {
@@ -18,3 +18,12 @@ export async function unwrapOrElseAsyncFromResult<T, E>(
     const defaultValue: T = await recoverer(error);
     return defaultValue;
 }
+
+/**
+ *  @deprecated
+ *
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseAsyncForResult} instead.
+ */
+export const unwrapOrElseAsyncFromResult: typeof unwrapOrElseAsyncForResult =
+    unwrapOrElseAsyncForResult;

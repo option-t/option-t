@@ -35,9 +35,9 @@ export {
     toResultOkFromNullable as toResultOk,
 } from './to_plain_result.js';
 export { toUndefinableFromNullable as toUndefinable } from './to_undefinable.js';
-export { unwrapOrFromNullable as unwrapOr } from './unwrap_or.js';
-export { unwrapOrElseFromNullable as unwrapOrElse } from './unwrap_or_else.js';
-export { unwrapOrElseAsyncFromNullable as unwrapOrElseAsync } from './unwrap_or_else_async.js';
+export { unwrapOrForNullable as unwrapOr } from './unwrap_or.js';
+export { unwrapOrElseForNullable as unwrapOrElse } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncForNullable as unwrapOrElseAsync } from './unwrap_or_else_async.js';
 // TODO: #2058
 // TODO: #2059
 // TODO: #2060

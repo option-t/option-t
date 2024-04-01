@@ -14,7 +14,7 @@ import {
  *  * The result of _recoverer_ must not be `Maybe<*>`.
  *  * If the result of _recoverer_ is `null` or `undefined`, throw `TypeError`.
  */
-export function unwrapOrElseFromMaybe<T>(
+export function unwrapOrElseForMaybe<T>(
     input: Maybe<T>,
     recoverer: RecoveryFn<NotNullOrUndefined<T>>,
 ): NotNullOrUndefined<T> {
@@ -29,3 +29,11 @@ export function unwrapOrElseFromMaybe<T>(
     );
     return passed;
 }
+
+/**
+ *  @deprecated
+ *
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseForMaybe} instead.
+ */
+export const unwrapOrElseFromMaybe: typeof unwrapOrElseForMaybe = unwrapOrElseForMaybe;

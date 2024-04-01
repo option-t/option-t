@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { unwrapOrElseForUndefinable } from 'option-t/Undefinable/unwrapOrElse';
+import { unwrapOrElseFromUndefinable } from 'option-t/Undefinable/unwrapOrElse';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
@@ -13,7 +13,7 @@ for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
         const DEFAULT_VAL = Math.random();
         let actual;
         t.notThrows(() => {
-            actual = unwrapOrElseForUndefinable(INPUT, () => {
+            actual = unwrapOrElseFromUndefinable(INPUT, () => {
                 t.pass('should not call recover fn');
                 return DEFAULT_VAL;
             });
@@ -28,7 +28,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
 
     t.plan(1);
 
-    const result = unwrapOrElseForUndefinable(
+    const result = unwrapOrElseFromUndefinable(
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
         () => {
             t.pass('should not call recover fn');
@@ -44,7 +44,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
 
     t.plan(2);
 
-    const result = unwrapOrElseForUndefinable(NULL_VALUE_IN_THIS_TEST_CASE, () => {
+    const result = unwrapOrElseFromUndefinable(NULL_VALUE_IN_THIS_TEST_CASE, () => {
         t.pass('should call recover fn');
         return DEFAULT_VAL;
     });
@@ -59,7 +59,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
         test('should not accept undefined as default: ' + label, (t) => {
             t.throws(
                 () => {
-                    unwrapOrElseForUndefinable(src, () => def);
+                    unwrapOrElseFromUndefinable(src, () => def);
                 },
                 { instanceOf: TypeError, message: '`recoverer` must not return `undefined`' },
             );

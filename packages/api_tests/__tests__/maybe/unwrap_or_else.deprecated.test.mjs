@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { unwrapOrElseForMaybe } from 'option-t/Maybe/unwrapOrElse';
+import { unwrapOrElseFromMaybe } from 'option-t/Maybe/unwrapOrElse';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
@@ -9,7 +9,7 @@ for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
 
         let actual;
         t.notThrows(() => {
-            actual = unwrapOrElseForMaybe(INPUT, () => {
+            actual = unwrapOrElseFromMaybe(INPUT, () => {
                 t.fail('should not call recover fn');
                 return Math.random();
             });
@@ -24,7 +24,7 @@ for (const NULL_VALUE of [undefined, null]) {
         t.plan(2);
 
         const DEFAULT_VAL = Math.random();
-        const result = unwrapOrElseForMaybe(NULL_VALUE, () => {
+        const result = unwrapOrElseFromMaybe(NULL_VALUE, () => {
             t.pass('should call recover fn');
             return DEFAULT_VAL;
         });
@@ -39,7 +39,7 @@ for (const NULL_VALUE of [undefined, null]) {
             t.plan(2);
             t.throws(
                 () => {
-                    unwrapOrElseForMaybe(NULL_VALUE, () => {
+                    unwrapOrElseFromMaybe(NULL_VALUE, () => {
                         t.pass('should be called');
                         return FALLBACK_VALUE;
                     });
