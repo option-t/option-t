@@ -14,7 +14,7 @@ export function unwrapOrForResult<T>(input: Result<T, unknown>, defaultValue: T)
 }
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrForResult} instead.

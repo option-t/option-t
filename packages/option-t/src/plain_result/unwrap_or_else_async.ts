@@ -20,7 +20,7 @@ export async function unwrapOrElseAsyncForResult<T, E>(
 }
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrElseAsyncForResult} instead.

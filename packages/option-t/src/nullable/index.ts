@@ -42,21 +42,21 @@ import { unwrapOrElseForNullable } from './unwrap_or_else.js';
 import { unwrapOrElseAsyncForNullable } from './unwrap_or_else_async.js';
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrForNullable} instead.
  */
 export const unwrapOrFromNullable: typeof unwrapOrForNullable = unwrapOrForNullable;
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrElseForNullable} instead.
  */
 export const unwrapOrElseFromNullable: typeof unwrapOrElseForNullable = unwrapOrElseForNullable;
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrElseAsyncForNullable} instead.
  */

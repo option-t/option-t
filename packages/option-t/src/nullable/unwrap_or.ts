@@ -21,7 +21,7 @@ export function unwrapOrForNullable<T>(input: Nullable<T>, defaultValue: NotNull
 }
 
 /**
- *  @deprecated
+ *  @deprecated 40.6.0
  *
  *  This is kept for backward compatibility.
  *  Use {@link unwrapOrForNullable} instead.

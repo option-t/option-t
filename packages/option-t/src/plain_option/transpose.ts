@@ -36,7 +36,7 @@ export function transposeOptionToResult<T, E>(input: Option<Result<T, E>>): Resu
 }
 
 /**
- *  @deprecated
+ *  @deprecated 40.5.0
  *  Use {@link transposeOptionToResult} instead.
  */
 export const transposeForOption: typeof transposeOptionToResult = transposeOptionToResult;
