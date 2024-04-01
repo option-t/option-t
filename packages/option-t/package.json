@@ -1002,20 +1002,6 @@
                 "default": "./esm/plain_option/equal.js"
             }
         },
-        "./PlainOption/expect": {
-            "import": {
-                "types": "./esm/plain_option/expect.d.ts",
-                "default": "./esm/plain_option/expect.js"
-            },
-            "require": {
-                "types": "./cjs/plain_option/expect.d.cts",
-                "default": "./cjs/plain_option/expect.cjs"
-            },
-            "default": {
-                "types": "./esm/plain_option/expect.d.ts",
-                "default": "./esm/plain_option/expect.js"
-            }
-        },
         "./PlainOption/filter": {
             "import": {
                 "types": "./esm/plain_option/filter.d.ts",
@@ -1280,20 +1266,6 @@
             "default": {
                 "types": "./esm/plain_option/transpose.d.ts",
                 "default": "./esm/plain_option/transpose.js"
-            }
-        },
-        "./PlainOption/unwrap": {
-            "import": {
-                "types": "./esm/plain_option/unwrap.d.ts",
-                "default": "./esm/plain_option/unwrap.js"
-            },
-            "require": {
-                "types": "./cjs/plain_option/unwrap.d.cts",
-                "default": "./cjs/plain_option/unwrap.cjs"
-            },
-            "default": {
-                "types": "./esm/plain_option/unwrap.d.ts",
-                "default": "./esm/plain_option/unwrap.js"
             }
         },
         "./PlainOption/unwrapOr": {
