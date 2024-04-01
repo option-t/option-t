@@ -7,9 +7,9 @@
     ],
     "packageManager": "pnpm@8.15.4+sha256.cea6d0bdf2de3a0549582da3983c70c92ffc577ff4410cbf190817ddc35137c2",
     "devDependencies": {
-        "@babel/core": "^7.24.0",
-        "@babel/plugin-syntax-typescript": "^7.23.3",
-        "@babel/plugin-transform-modules-commonjs": "^7.23.3",
+        "@babel/core": "^7.24.3",
+        "@babel/plugin-syntax-typescript": "^7.24.1",
+        "@babel/plugin-transform-modules-commonjs": "^7.24.1",
         "@eslint/js": "^8.57.0",
         "@reflink/reflink": "^0.1.16",
         "@typescript-eslint/eslint-plugin": "^7.4.0",
