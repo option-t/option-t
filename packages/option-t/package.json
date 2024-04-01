@@ -162,20 +162,6 @@
                 "default": "./esm/maybe/and_then_async.js"
             }
         },
-        "./Maybe/expect": {
-            "import": {
-                "types": "./esm/maybe/expect.d.ts",
-                "default": "./esm/maybe/expect.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/expect.d.cts",
-                "default": "./cjs/maybe/expect.cjs"
-            },
-            "default": {
-                "types": "./esm/maybe/expect.d.ts",
-                "default": "./esm/maybe/expect.js"
-            }
-        },
         "./Maybe/inspect": {
             "import": {
                 "types": "./esm/maybe/inspect.d.ts",
@@ -412,20 +398,6 @@
             "default": {
                 "types": "./esm/maybe/to_undefinable.d.ts",
                 "default": "./esm/maybe/to_undefinable.js"
-            }
-        },
-        "./Maybe/unwrap": {
-            "import": {
-                "types": "./esm/maybe/unwrap.d.ts",
-                "default": "./esm/maybe/unwrap.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/unwrap.d.cts",
-                "default": "./cjs/maybe/unwrap.cjs"
-            },
-            "default": {
-                "types": "./esm/maybe/unwrap.d.ts",
-                "default": "./esm/maybe/unwrap.js"
             }
         },
         "./Maybe/unwrapOr": {
