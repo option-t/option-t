@@ -46,7 +46,7 @@ export { andThenAsyncForResult } from './and_then_async.js';
 //   We don't recommend to compare this result type's value.
 export { flattenForResult } from './flatten.js';
 export { fromPromiseSettledResultToResult } from './from_promise_settled_result.js';
-export { inspectBothOfResult, inspectErrOfResult, inspectOkOfResult } from './inspect.js';
+export { inspectBothForResult, inspectErrForResult, inspectOkForResult } from './inspect.js';
 export { mapForResult } from './map.js';
 export { mapAsyncForResult } from './map_async.js';
 export { mapErrForResult } from './map_err.js';
@@ -70,6 +70,7 @@ export {
 export { unwrapOrForResult } from './unwrap_or.js';
 export { unwrapOrElseForResult } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
+import { inspectOkForResult, inspectErrForResult, inspectBothForResult } from './inspect.js';
 // - From this module, we don't expose items from unwrap_or_throw_error.js.
 //   that is provided only for the case to bridge with exist codes.
 //   We recommend to handle result type in that style.
@@ -117,3 +118,21 @@ export const unwrapOrElseFromResult: typeof unwrapOrElseForResult = unwrapOrElse
  */
 export const unwrapOrElseAsyncFromResult: typeof unwrapOrElseAsyncForResult =
     unwrapOrElseAsyncForResult;
+
+/**
+ *  @deprecated 40.7.0
+ *  Use {@link inspectOkForResult}
+ */
+export const inspectOkOfResult: typeof inspectOkForResult = inspectOkForResult;
+
+/**
+ *  @deprecated 40.7.0
+ *  Use {@link inspectErrForResult}
+ */
+export const inspectErrOfResult: typeof inspectErrForResult = inspectErrForResult;
+
+/**
+ *  @deprecated 40.7.0
+ *  Use {@link inspectBothForResult}
+ */
+export const inspectBothOfResult: typeof inspectBothForResult = inspectBothForResult;
