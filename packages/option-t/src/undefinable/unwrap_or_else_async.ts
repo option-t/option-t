@@ -31,12 +31,3 @@ export async function unwrapOrElseAsyncForUndefinable<T>(
     );
     return checked;
 }
-
-/**
- *  @deprecated 40.6.0
- *
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseAsyncForUndefinable} instead.
- */
-export const unwrapOrElseAsyncFromUndefinable: typeof unwrapOrElseAsyncForUndefinable =
-    unwrapOrElseAsyncForUndefinable;

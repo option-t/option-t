@@ -33,16 +33,3 @@ export { unwrapOrElseAsyncForUndefinable } from './unwrap_or_else_async.js';
 // TODO: #2072
 // TODO: #2073
 // TODO: #2074
-
-/**
- *  Backward Compatibility
- */
-import { unwrapOrElseAsyncForUndefinable } from './unwrap_or_else_async.js';
-
-/**
- *  @deprecated 40.6.0
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseAsyncForUndefinable} instead.
- */
-export const unwrapOrElseAsyncFromUndefinable: typeof unwrapOrElseAsyncForUndefinable =
-    unwrapOrElseAsyncForUndefinable;

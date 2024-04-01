@@ -17,12 +17,3 @@ export async function unwrapOrElseAsyncForOption<T>(
     const defaultValue: T = await recoverer();
     return defaultValue;
 }
-
-/**
- *  @deprecated 40.6.0
- *
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseAsyncForOption} instead.
- */
-export const unwrapOrElseAsyncFromOption: typeof unwrapOrElseAsyncForOption =
-    unwrapOrElseAsyncForOption;

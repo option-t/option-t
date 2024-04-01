@@ -23,12 +23,3 @@ export async function unwrapOrElseAsyncForNullable<T>(
     const checked = expectNotNull(fallback, ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE);
     return checked;
 }
-
-/**
- *  @deprecated 40.6.0
- *
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseAsyncForNullable} instead.
- */
-export const unwrapOrElseAsyncFromNullable: typeof unwrapOrElseAsyncForNullable =
-    unwrapOrElseAsyncForNullable;

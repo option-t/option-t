@@ -71,16 +71,3 @@ export { unwrapOrForOption } from './unwrap_or.js';
 export { unwrapOrElseForOption } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncForOption } from './unwrap_or_else_async.js';
 // TODO: #2108
-
-/**
- *  Backward Compatibility
- */
-import { unwrapOrElseAsyncForOption } from './unwrap_or_else_async.js';
-
-/**
- *  @deprecated 40.6.0
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseAsyncFromOption} instead.
- */
-export const unwrapOrElseAsyncFromOption: typeof unwrapOrElseAsyncForOption =
-    unwrapOrElseAsyncForOption;

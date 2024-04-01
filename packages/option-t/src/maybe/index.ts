@@ -35,13 +35,3 @@ export { unwrapOrElseAsyncForMaybe } from './unwrap_or_else_async.js';
 // TODO: #2096
 // TODO: #2098
 // TODO: #2097
-
-import { unwrapOrElseAsyncForMaybe } from './unwrap_or_else_async.js';
-
-/**
- *  @deprecated 40.6.0
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseAsyncForMaybe} instead.
- */
-export const unwrapOrElseAsyncFromMaybe: typeof unwrapOrElseAsyncForMaybe =
-    unwrapOrElseAsyncForMaybe;
