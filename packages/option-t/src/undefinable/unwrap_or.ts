@@ -13,7 +13,7 @@ import {
  *  * _defaultValue_ must not be `Undefinable<*>`.
  *  * If the result of _defaultValue_ is `undefined`, throw `TypeError`.
  */
-export function unwrapOrFromUndefinable<T>(
+export function unwrapOrForUndefinable<T>(
     input: Undefinable<T>,
     defaultValue: NotUndefined<T>,
 ): NotUndefined<T> {
@@ -27,3 +27,11 @@ export function unwrapOrFromUndefinable<T>(
     );
     return passed;
 }
+
+/**
+ *  @deprecated
+ *
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrForUndefinable} instead.
+ */
+export const unwrapOrFromUndefinable: typeof unwrapOrForUndefinable = unwrapOrForUndefinable;

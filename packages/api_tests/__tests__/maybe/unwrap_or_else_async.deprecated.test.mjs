@@ -1,13 +1,13 @@
 import test from 'ava';
 
-import { unwrapOrElseAsyncForMaybe } from 'option-t/Maybe/unwrapOrElseAsync';
+import { unwrapOrElseAsyncFromMaybe } from 'option-t/Maybe/unwrapOrElseAsync';
 import { nonNullableValueCaseListForAsync } from '../utils.mjs';
 
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForAsync) {
     test('pass the value: ' + String(INPUT), async (t) => {
         t.plan(2);
 
-        const result = unwrapOrElseAsyncForMaybe(INPUT, () => {
+        const result = unwrapOrElseAsyncFromMaybe(INPUT, () => {
             t.fail('should not call recover fn');
             return Math.random();
         });
@@ -23,7 +23,7 @@ for (const NULL_VALUE of [undefined, null]) {
         t.plan(3);
 
         const EXPECTED = Math.random();
-        const result = unwrapOrElseAsyncForMaybe(NULL_VALUE, async () => {
+        const result = unwrapOrElseAsyncFromMaybe(NULL_VALUE, async () => {
             t.pass('should call recover fn');
             return EXPECTED;
         });
@@ -41,7 +41,7 @@ for (const NULL_VALUE of [undefined, null]) {
 
             await t.throwsAsync(
                 async () => {
-                    await unwrapOrElseAsyncForMaybe(NULL_VALUE, async () => {
+                    await unwrapOrElseAsyncFromMaybe(NULL_VALUE, async () => {
                         t.pass('should be called');
                         return FALLBACK_VALUE;
                     });

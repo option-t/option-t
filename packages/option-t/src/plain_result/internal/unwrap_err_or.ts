@@ -1,6 +1,6 @@
 import { type Result, isOk, unwrapErr } from '../result.js';
 
-export function unwrapErrOrFromResult<E>(input: Result<unknown, E>, defaultValue: E): E {
+export function unwrapErrOrForResult<E>(input: Result<unknown, E>, defaultValue: E): E {
     if (isOk(input)) {
         return defaultValue;
     }

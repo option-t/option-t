@@ -15,7 +15,7 @@ import {
  *  * The result of _recoverer_ must not be `Maybe<*>`.
  *  * If the result of _recoverer_ is `null` or `undefined`, throw `TypeError`.
  */
-export async function unwrapOrElseAsyncFromMaybe<T>(
+export async function unwrapOrElseAsyncForMaybe<T>(
     input: Maybe<T>,
     recoverer: AsyncRecoveryFn<NotNullOrUndefined<T>>,
 ): Promise<NotNullOrUndefined<T>> {
@@ -31,3 +31,12 @@ export async function unwrapOrElseAsyncFromMaybe<T>(
     );
     return checked;
 }
+
+/**
+ *  @deprecated
+ *
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseAsyncForMaybe} instead.
+ */
+export const unwrapOrElseAsyncFromMaybe: typeof unwrapOrElseAsyncForMaybe =
+    unwrapOrElseAsyncForMaybe;

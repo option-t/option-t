@@ -1,7 +1,7 @@
 import test from 'ava';
 
 import { createSome, createNone } from 'option-t/PlainOption/Option';
-import { unwrapOrElseAsyncFromOption } from 'option-t/PlainOption/unwrapOrElseAsync';
+import { unwrapOrElseAsyncForOption } from 'option-t/PlainOption/unwrapOrElseAsync';
 
 const VALUE_T = Math.random();
 const DEFAULT_VAL = Math.random();
@@ -10,7 +10,7 @@ test('input is Some(T)', async (t) => {
     t.plan(2);
 
     const input = createSome(VALUE_T);
-    const result = unwrapOrElseAsyncFromOption(input, async () => {
+    const result = unwrapOrElseAsyncForOption(input, async () => {
         t.pass(false);
         return DEFAULT_VAL;
     });
@@ -25,7 +25,7 @@ test('input is None', async (t) => {
     t.plan(3);
 
     const input = createNone();
-    const result = unwrapOrElseAsyncFromOption(input, async () => {
+    const result = unwrapOrElseAsyncForOption(input, async () => {
         t.pass(true);
         return DEFAULT_VAL;
     });

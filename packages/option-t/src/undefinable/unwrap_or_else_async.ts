@@ -16,7 +16,7 @@ import {
  *      * If you try to recover the value, use `orElse()`
  *  * If the result of _recoverer_ is `undefined`, throw `TypeError`.
  */
-export async function unwrapOrElseAsyncFromUndefinable<T>(
+export async function unwrapOrElseAsyncForUndefinable<T>(
     input: Undefinable<T>,
     recoverer: AsyncRecoveryFn<NotUndefined<T>>,
 ): Promise<NotUndefined<T>> {
@@ -31,3 +31,12 @@ export async function unwrapOrElseAsyncFromUndefinable<T>(
     );
     return checked;
 }
+
+/**
+ *  @deprecated
+ *
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseAsyncForUndefinable} instead.
+ */
+export const unwrapOrElseAsyncFromUndefinable: typeof unwrapOrElseAsyncForUndefinable =
+    unwrapOrElseAsyncForUndefinable;

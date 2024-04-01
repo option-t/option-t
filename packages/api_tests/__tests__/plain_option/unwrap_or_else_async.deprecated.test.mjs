@@ -1,18 +1,17 @@
 import test from 'ava';
 
-import { createOk, createErr } from 'option-t/PlainResult/Result';
-import { unwrapOrElseAsyncForResult } from 'option-t/PlainResult/unwrapOrElseAsync';
+import { createSome, createNone } from 'option-t/PlainOption/Option';
+import { unwrapOrElseAsyncFromOption } from 'option-t/PlainOption/unwrapOrElseAsync';
 
 const VALUE_T = Math.random();
 const DEFAULT_VAL = Math.random();
-const ERROR_E = new Error();
 
-test('input is Ok(T)', async (t) => {
+test('input is Some(T)', async (t) => {
     t.plan(2);
 
-    const input = createOk(VALUE_T);
-    const result = unwrapOrElseAsyncForResult(input, async () => {
-        t.pass(true);
+    const input = createSome(VALUE_T);
+    const result = unwrapOrElseAsyncFromOption(input, async () => {
+        t.pass(false);
         return DEFAULT_VAL;
     });
 
@@ -22,11 +21,11 @@ test('input is Ok(T)', async (t) => {
     t.is(actual, VALUE_T);
 });
 
-test('input is Err(E)', async (t) => {
+test('input is None', async (t) => {
     t.plan(3);
 
-    const input = createErr(ERROR_E);
-    const result = unwrapOrElseAsyncForResult(input, async () => {
+    const input = createNone();
+    const result = unwrapOrElseAsyncFromOption(input, async () => {
         t.pass(true);
         return DEFAULT_VAL;
     });

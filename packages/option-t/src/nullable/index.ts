@@ -26,10 +26,39 @@ export { orElseForNullable } from './or_else.js';
 export { orElseAsyncForNullable } from './or_else_async.js';
 export { toResultErrFromNullable, toResultOkFromNullable } from './to_plain_result.js';
 export { toUndefinableFromNullable } from './to_undefinable.js';
-export { unwrapOrFromNullable } from './unwrap_or.js';
-export { unwrapOrElseFromNullable } from './unwrap_or_else.js';
-export { unwrapOrElseAsyncFromNullable } from './unwrap_or_else_async.js';
+export { unwrapOrForNullable } from './unwrap_or.js';
+export { unwrapOrElseForNullable } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncForNullable } from './unwrap_or_else_async.js';
 // TODO: #2084
 // TODO: #2085
 // TODO: #2087
 // TODO: #2086
+
+/**
+ *  Backward Compatibility
+ */
+import { unwrapOrForNullable } from './unwrap_or.js';
+import { unwrapOrElseForNullable } from './unwrap_or_else.js';
+import { unwrapOrElseAsyncForNullable } from './unwrap_or_else_async.js';
+
+/**
+ *  @deprecated
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrForNullable} instead.
+ */
+export const unwrapOrFromNullable: typeof unwrapOrForNullable = unwrapOrForNullable;
+
+/**
+ *  @deprecated
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseForNullable} instead.
+ */
+export const unwrapOrElseFromNullable: typeof unwrapOrElseForNullable = unwrapOrElseForNullable;
+
+/**
+ *  @deprecated
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseAsyncForNullable} instead.
+ */
+export const unwrapOrElseAsyncFromNullable: typeof unwrapOrElseAsyncForNullable =
+    unwrapOrElseAsyncForNullable;

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { unwrapOrElseAsyncFromUndefinable } from 'option-t/Undefinable/unwrapOrElseAsync';
+import { unwrapOrElseAsyncForUndefinable } from 'option-t/Undefinable/unwrapOrElseAsync';
 import { nonNullableValueCaseListForAsync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
@@ -14,7 +14,7 @@ for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForAsync) {
 
         let result;
         t.notThrows(() => {
-            result = unwrapOrElseAsyncFromUndefinable(INPUT, () => {
+            result = unwrapOrElseAsyncForUndefinable(INPUT, () => {
                 t.fail('should not call recover fn');
                 return DEFAULT_VAL;
             });
@@ -31,7 +31,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.plan(3);
 
     const DEFAULT_VAL = Math.random();
-    const result = unwrapOrElseAsyncFromUndefinable(NULL_VALUE_IN_THIS_TEST_CASE, async () => {
+    const result = unwrapOrElseAsyncForUndefinable(NULL_VALUE_IN_THIS_TEST_CASE, async () => {
         t.pass('should call recover fn');
         return DEFAULT_VAL;
     });
@@ -46,7 +46,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.plan(2);
 
     const DEFAULT_VAL = Math.random();
-    const result = unwrapOrElseAsyncFromUndefinable(
+    const result = unwrapOrElseAsyncForUndefinable(
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
         async () => {
             t.fail('should not call recover fn');
@@ -67,7 +67,7 @@ for (const [src, def] of testcases) {
     )}`, async (t) => {
         await t.throwsAsync(
             async () => {
-                await unwrapOrElseAsyncFromUndefinable(src, async () => def);
+                await unwrapOrElseAsyncForUndefinable(src, async () => def);
             },
             { instanceOf: TypeError, message: '`recoverer` must not return `undefined`' },
         );

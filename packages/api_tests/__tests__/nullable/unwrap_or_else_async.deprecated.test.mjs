@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { unwrapOrElseAsyncForNullable } from 'option-t/Nullable/unwrapOrElseAsync';
+import { unwrapOrElseAsyncFromNullable } from 'option-t/Nullable/unwrapOrElseAsync';
 import { nonNullableValueCaseListForAsync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;
@@ -14,7 +14,7 @@ for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForAsync) {
 
         let result;
         t.notThrows(() => {
-            result = unwrapOrElseAsyncForNullable(INPUT, () => {
+            result = unwrapOrElseAsyncFromNullable(INPUT, () => {
                 t.fail('should not call recover fn');
                 return DEFAULT_VAL;
             });
@@ -31,7 +31,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.plan(3);
 
     const DEFAULT_VAL = Math.random();
-    const result = unwrapOrElseAsyncForNullable(NULL_VALUE_IN_THIS_TEST_CASE, async () => {
+    const result = unwrapOrElseAsyncFromNullable(NULL_VALUE_IN_THIS_TEST_CASE, async () => {
         t.pass('should call recover fn');
         return DEFAULT_VAL;
     });
@@ -46,7 +46,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.plan(2);
 
     const DEFAULT_VAL = Math.random();
-    const result = unwrapOrElseAsyncForNullable(
+    const result = unwrapOrElseAsyncFromNullable(
         NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE,
         async () => {
             t.fail('should not call recover fn');
@@ -67,7 +67,7 @@ for (const [src, def] of testcases) {
     )}`, async (t) => {
         await t.throwsAsync(
             async () => {
-                await unwrapOrElseAsyncForNullable(src, async () => def);
+                await unwrapOrElseAsyncFromNullable(src, async () => def);
             },
             { instanceOf: TypeError, message: '`recoverer` must not return `null`' },
         );

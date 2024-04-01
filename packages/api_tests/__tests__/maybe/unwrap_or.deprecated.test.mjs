@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { unwrapOrForMaybe } from 'option-t/Maybe/unwrapOr';
+import { unwrapOrFromMaybe } from 'option-t/Maybe/unwrapOr';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
@@ -10,7 +10,7 @@ for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
         const DEFAULT_VAL = Math.random();
         let actual;
         t.notThrows(() => {
-            actual = unwrapOrForMaybe(INPUT, DEFAULT_VAL);
+            actual = unwrapOrFromMaybe(INPUT, DEFAULT_VAL);
         });
 
         t.is(actual, EXPECTED);
@@ -20,7 +20,7 @@ for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
 for (const NULL_VALUE of [undefined, null]) {
     test(`pass ${NULL_VALUE}`, (t) => {
         const DEFAULT_VAL = Math.random();
-        const result = unwrapOrForMaybe(NULL_VALUE, DEFAULT_VAL);
+        const result = unwrapOrFromMaybe(NULL_VALUE, DEFAULT_VAL);
 
         t.is(result, DEFAULT_VAL);
     });
@@ -40,7 +40,7 @@ for (const NULL_VALUE of [undefined, null]) {
             t.plan(1);
             t.throws(
                 () => {
-                    unwrapOrForMaybe(src, def);
+                    unwrapOrFromMaybe(src, def);
                 },
                 {
                     instanceOf: TypeError,

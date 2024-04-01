@@ -10,7 +10,7 @@ import { isNotNull, type NotNull, type Nullable, expectNotNull } from './nullabl
  *      * If you try to recover the value, use `orElse()`
  *  * If the result of _recoverer_ is `null`, throw `TypeError`.
  */
-export function unwrapOrElseFromNullable<T>(
+export function unwrapOrElseForNullable<T>(
     input: Nullable<T>,
     recoverer: RecoveryFn<NotNull<T>>,
 ): NotNull<T> {
@@ -25,3 +25,11 @@ export function unwrapOrElseFromNullable<T>(
     );
     return passed;
 }
+
+/**
+ *  @deprecated
+ *
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseForNullable} instead.
+ */
+export const unwrapOrElseFromNullable: typeof unwrapOrElseForNullable = unwrapOrElseForNullable;

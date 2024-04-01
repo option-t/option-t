@@ -8,7 +8,7 @@ import { type Nullable, type NotNull, isNotNull, expectNotNull } from './nullabl
  *  * _defaultValue_ must not be `Nullable<*>`.
  *  * If the _defaultValue_ is `null`, throw `TypeError`.
  */
-export function unwrapOrFromNullable<T>(input: Nullable<T>, defaultValue: NotNull<T>): NotNull<T> {
+export function unwrapOrForNullable<T>(input: Nullable<T>, defaultValue: NotNull<T>): NotNull<T> {
     if (isNotNull(input)) {
         return input;
     }
@@ -19,3 +19,11 @@ export function unwrapOrFromNullable<T>(input: Nullable<T>, defaultValue: NotNul
     );
     return passed;
 }
+
+/**
+ *  @deprecated
+ *
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrForNullable} instead.
+ */
+export const unwrapOrFromNullable: typeof unwrapOrForNullable = unwrapOrForNullable;

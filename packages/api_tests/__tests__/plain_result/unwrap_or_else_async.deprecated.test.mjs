@@ -1,7 +1,7 @@
 import test from 'ava';
 
 import { createOk, createErr } from 'option-t/PlainResult/Result';
-import { unwrapOrElseAsyncForResult } from 'option-t/PlainResult/unwrapOrElseAsync';
+import { unwrapOrElseAsyncFromResult } from 'option-t/PlainResult/unwrapOrElseAsync';
 
 const VALUE_T = Math.random();
 const DEFAULT_VAL = Math.random();
@@ -11,7 +11,7 @@ test('input is Ok(T)', async (t) => {
     t.plan(2);
 
     const input = createOk(VALUE_T);
-    const result = unwrapOrElseAsyncForResult(input, async () => {
+    const result = unwrapOrElseAsyncFromResult(input, async () => {
         t.pass(true);
         return DEFAULT_VAL;
     });
@@ -26,7 +26,7 @@ test('input is Err(E)', async (t) => {
     t.plan(3);
 
     const input = createErr(ERROR_E);
-    const result = unwrapOrElseAsyncForResult(input, async () => {
+    const result = unwrapOrElseAsyncFromResult(input, async () => {
         t.pass(true);
         return DEFAULT_VAL;
     });

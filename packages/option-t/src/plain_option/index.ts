@@ -67,15 +67,43 @@ export { orElseAsyncForOption } from './or_else_async.js';
 export { toNullableFromOption } from './to_nullable.js';
 export { toUndefinableFromOption } from './to_undefinable.js';
 export { transposeOptionToResult, transposeResultToOption } from './transpose.js';
-export { unwrapOrFromOption } from './unwrap_or.js';
-export { unwrapOrElseFromOption } from './unwrap_or_else.js';
-export { unwrapOrElseAsyncFromOption } from './unwrap_or_else_async.js';
+export { unwrapOrForOption } from './unwrap_or.js';
+export { unwrapOrElseForOption } from './unwrap_or_else.js';
+export { unwrapOrElseAsyncForOption } from './unwrap_or_else_async.js';
 // TODO: #2108
 
+/**
+ *  Backward Compatibility
+ */
 import { transposeOptionToResult } from './transpose.js';
+import { unwrapOrForOption } from './unwrap_or.js';
+import { unwrapOrElseForOption } from './unwrap_or_else.js';
+import { unwrapOrElseAsyncForOption } from './unwrap_or_else_async.js';
 
 /**
  *  @deprecated
  *  Use {@link transposeOptionToResult} instead.
  */
 export const transposeForOption: typeof transposeOptionToResult = transposeOptionToResult;
+
+/**
+ *  @deprecated
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrForOption} instead.
+ */
+export const unwrapOrFromOption: typeof unwrapOrForOption = unwrapOrForOption;
+
+/**
+ *  @deprecated
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseFromOption} instead.
+ */
+export const unwrapOrElseFromOption: typeof unwrapOrElseForOption = unwrapOrElseForOption;
+
+/**
+ *  @deprecated
+ *  This is kept for backward compatibility.
+ *  Use {@link unwrapOrElseAsyncFromOption} instead.
+ */
+export const unwrapOrElseAsyncFromOption: typeof unwrapOrElseAsyncForOption =
+    unwrapOrElseAsyncForOption;
