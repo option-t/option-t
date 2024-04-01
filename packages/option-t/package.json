@@ -1758,20 +1758,6 @@
                 "default": "./esm/plain_result/to_nullable.js"
             }
         },
-        "./PlainResult/toOption": {
-            "import": {
-                "types": "./esm/plain_result/to_option.d.ts",
-                "default": "./esm/plain_result/to_option.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/to_option.d.cts",
-                "default": "./cjs/plain_result/to_option.cjs"
-            },
-            "default": {
-                "types": "./esm/plain_result/to_option.d.ts",
-                "default": "./esm/plain_result/to_option.js"
-            }
-        },
         "./PlainResult/toUndefinable": {
             "import": {
                 "types": "./esm/plain_result/to_undefinable.d.ts",

@@ -23,7 +23,6 @@ import {} from 'option-t/PlainResult/orElse';
 import {} from 'option-t/PlainResult/orElseAsync';
 import {} from 'option-t/PlainResult/Result';
 import {} from 'option-t/PlainResult/toNullable';
-import {} from 'option-t/PlainResult/toOption';
 import {} from 'option-t/PlainResult/toUndefinable';
 import {} from 'option-t/PlainResult/tryCatch';
 import {} from 'option-t/PlainResult/tryCatchAsync';
