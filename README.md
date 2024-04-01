@@ -180,7 +180,7 @@ If you're project cannot import by their path, please read [this guide](./docs/h
 
 ```js
 import { isNotNull } from 'option-t/Nullable';
-import { unwrapNullable } from 'option-t/Nullable/unwrap';
+import { unwrapNullable } from 'option-t/Nullable/Nullable';
 import { createOk, isOk } from 'option-t/PlainResult';
 ```
 
