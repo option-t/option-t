@@ -31,8 +31,3 @@ export function expectNotNullOrUndefined<T>(input: Maybe<T>, msg: string): NotNu
 export function unwrapMaybe<T>(value: Maybe<T>): NotNullOrUndefined<T> {
     return expectNotNullOrUndefined(value, ERR_MSG_UNWRAP_NO_VAL_FOR_MAYBE);
 }
-
-/**
- *  @deprecated 33.8.0. Use {@link isNotNullOrUndefined} instead.
- */
-export const expectNotNullAndUndefined: typeof expectNotNullOrUndefined = expectNotNullOrUndefined;
