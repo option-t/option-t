@@ -78,24 +78,9 @@ import { inspectOkForResult, inspectErrForResult, inspectBothForResult } from '.
 /**
  *  Backward Compatibility
  */
-import { transposeResultToNullable, transposeResultToUndefinable } from './transpose.js';
 import { unwrapOrForResult } from './unwrap_or.js';
 import { unwrapOrElseForResult } from './unwrap_or_else.js';
 import { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
-
-/**
- *  @deprecated 40.5.0
- *  Use `transposeResultToNullable` instead.
- */
-export const transposeNullableForResult: typeof transposeResultToNullable =
-    transposeResultToNullable;
-
-/**
- *  @deprecated 40.5.0
- *  Use `transposeResultToUndefinable` instead.
- */
-export const transposeUndefinableForResult: typeof transposeResultToUndefinable =
-    transposeResultToUndefinable;
 
 /**
  *  @deprecated 40.6.0

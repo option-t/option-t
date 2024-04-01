@@ -75,16 +75,9 @@ export { unwrapOrElseAsyncForOption } from './unwrap_or_else_async.js';
 /**
  *  Backward Compatibility
  */
-import { transposeOptionToResult } from './transpose.js';
 import { unwrapOrForOption } from './unwrap_or.js';
 import { unwrapOrElseForOption } from './unwrap_or_else.js';
 import { unwrapOrElseAsyncForOption } from './unwrap_or_else_async.js';
-
-/**
- *  @deprecated 40.5.0
- *  Use {@link transposeOptionToResult} instead.
- */
-export const transposeForOption: typeof transposeOptionToResult = transposeOptionToResult;
 
 /**
  *  @deprecated 40.6.0

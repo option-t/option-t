@@ -63,21 +63,3 @@ export { unwrapOrElseAsyncForResult as unwrapOrElseAsync } from './unwrap_or_els
 // - From this module, we don't expose items from unwrap_or_throw_error.js.
 //   that is provided only for the case to bridge with exist codes.
 //   We recommend to handle result type in that style.
-
-/**
- *  Backward Compatibility
- */
-import { transposeResultToNullable, transposeResultToUndefinable } from './transpose.js';
-
-/**
- *  @deprecated 40.5.0
- *  Use `transposeToNullable instead.
- */
-export const transposeNullable: typeof transposeResultToNullable = transposeResultToNullable;
-
-/**
- *  @deprecated 40.5.0
- *  Use `transposeToUndefinable` instead.
- */
-export const transposeUndefinable: typeof transposeResultToUndefinable =
-    transposeResultToUndefinable;
