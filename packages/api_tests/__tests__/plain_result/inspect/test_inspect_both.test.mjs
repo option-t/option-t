@@ -1,14 +1,14 @@
 import test from 'ava';
 
 import { createErr, createOk } from 'option-t/PlainResult/Result';
-import { inspectBothOfResult } from 'option-t/PlainResult/inspect';
+import { inspectBothForResult } from 'option-t/PlainResult/inspect';
 
 test('input is Ok()', (t) => {
     t.plan(3);
     const INPUT_INNER = Symbol('input');
 
     const input = createOk(INPUT_INNER);
-    const actual = inspectBothOfResult(
+    const actual = inspectBothForResult(
         input,
         (v) => {
             t.pass('should call the inspect ok fn');
@@ -27,7 +27,7 @@ test('input is Err()', (t) => {
     const INPUT_INNER = Symbol('input');
 
     const input = createErr(INPUT_INNER);
-    const actual = inspectBothOfResult(
+    const actual = inspectBothForResult(
         input,
         (_v) => {
             t.fail('should not call this path');

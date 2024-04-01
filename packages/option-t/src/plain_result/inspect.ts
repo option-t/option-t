@@ -51,36 +51,3 @@ export function inspectBothForResult<T, E>(
     }
     return input;
 }
-
-/**
- *  @deprecated 32.1.0. Use {@link inspectOkForResult}
- */
-export const inspectOk: typeof inspectOkForResult = inspectOkForResult;
-
-/**
- *  @deprecated 32.1.0. Use {@link inspectErrForResult}
- */
-export const inspectErr: typeof inspectErrForResult = inspectErrForResult;
-
-/**
- *  @deprecated 32.1.0. Use {@link inspectBothForResult}
- */
-export const inspectBoth: typeof inspectBothForResult = inspectBothForResult;
-
-/**
- *  @deprecated 40.7.0
- *  Use {@link inspectOkForResult}
- */
-export const inspectOkOfResult: typeof inspectOkForResult = inspectOkForResult;
-
-/**
- *  @deprecated 40.7.0
- *  Use {@link inspectErrForResult}
- */
-export const inspectErrOfResult: typeof inspectErrForResult = inspectErrForResult;
-
-/**
- *  @deprecated 40.7.0
- *  Use {@link inspectBothForResult}
- */
-export const inspectBothOfResult: typeof inspectBothForResult = inspectBothForResult;
