@@ -33,16 +33,6 @@ export function unwrapMaybe<T>(value: Maybe<T>): NotNullOrUndefined<T> {
 }
 
 /**
- *  @deprecated 33.8.0. Use {@link NotNullOrUndefined} instead.
- */
-export type NotNullAndUndefined<T> = NotNullOrUndefined<T>;
-
-/**
- *  @deprecated 33.8.0. Use {@link isNotNullOrUndefined} instead.
- */
-export const isNotNullAndUndefined: typeof isNotNullOrUndefined = isNotNullOrUndefined;
-
-/**
  *  @deprecated 33.8.0. Use {@link isNotNullOrUndefined} instead.
  */
 export const expectNotNullAndUndefined: typeof expectNotNullOrUndefined = expectNotNullOrUndefined;
