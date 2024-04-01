@@ -17,11 +17,3 @@ export function unwrapOrElseForResult<T, E>(
     const fallback: T = recoverer(input.err);
     return fallback;
 }
-
-/**
- *  @deprecated 40.6.0
- *
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseForResult} instead.
- */
-export const unwrapOrElseFromResult: typeof unwrapOrElseForResult = unwrapOrElseForResult;

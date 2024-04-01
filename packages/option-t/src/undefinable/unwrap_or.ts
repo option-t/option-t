@@ -27,11 +27,3 @@ export function unwrapOrForUndefinable<T>(
     );
     return passed;
 }
-
-/**
- *  @deprecated 40.6.0
- *
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrForUndefinable} instead.
- */
-export const unwrapOrFromUndefinable: typeof unwrapOrForUndefinable = unwrapOrForUndefinable;

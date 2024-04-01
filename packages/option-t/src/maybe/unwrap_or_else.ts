@@ -29,11 +29,3 @@ export function unwrapOrElseForMaybe<T>(
     );
     return passed;
 }
-
-/**
- *  @deprecated 40.6.0
- *
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseForMaybe} instead.
- */
-export const unwrapOrElseFromMaybe: typeof unwrapOrElseForMaybe = unwrapOrElseForMaybe;

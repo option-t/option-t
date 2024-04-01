@@ -14,11 +14,3 @@ export function unwrapOrElseForOption<T>(input: Option<T>, recoverer: RecoveryFn
     const fallback = recoverer();
     return fallback;
 }
-
-/**
- *  @deprecated 40.6.0
- *
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseForOption} instead.
- */
-export const unwrapOrElseFromOption: typeof unwrapOrElseForOption = unwrapOrElseForOption;

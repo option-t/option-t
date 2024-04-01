@@ -12,11 +12,3 @@ export function unwrapOrForResult<T>(input: Result<T, unknown>, defaultValue: T)
 
     return defaultValue;
 }
-
-/**
- *  @deprecated 40.6.0
- *
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrForResult} instead.
- */
-export const unwrapOrFromResult: typeof unwrapOrForResult = unwrapOrForResult;

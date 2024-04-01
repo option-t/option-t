@@ -18,12 +18,3 @@ export async function unwrapOrElseAsyncForResult<T, E>(
     const defaultValue: T = await recoverer(error);
     return defaultValue;
 }
-
-/**
- *  @deprecated 40.6.0
- *
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseAsyncForResult} instead.
- */
-export const unwrapOrElseAsyncFromResult: typeof unwrapOrElseAsyncForResult =
-    unwrapOrElseAsyncForResult;

@@ -73,32 +73,3 @@ export { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
 // - From this module, we don't expose items from unwrap_or_throw_error.js.
 //   that is provided only for the case to bridge with exist codes.
 //   We recommend to handle result type in that style.
-
-/**
- *  Backward Compatibility
- */
-import { unwrapOrForResult } from './unwrap_or.js';
-import { unwrapOrElseForResult } from './unwrap_or_else.js';
-import { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
-
-/**
- *  @deprecated 40.6.0
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrForResult} instead.
- */
-export const unwrapOrFromResult: typeof unwrapOrForResult = unwrapOrForResult;
-
-/**
- *  @deprecated 40.6.0
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseForResult} instead.
- */
-export const unwrapOrElseFromResult: typeof unwrapOrElseForResult = unwrapOrElseForResult;
-
-/**
- *  @deprecated 40.6.0
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseAsyncForResult} instead.
- */
-export const unwrapOrElseAsyncFromResult: typeof unwrapOrElseAsyncForResult =
-    unwrapOrElseAsyncForResult;

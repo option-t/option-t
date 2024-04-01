@@ -31,12 +31,3 @@ export async function unwrapOrElseAsyncForMaybe<T>(
     );
     return checked;
 }
-
-/**
- *  @deprecated 40.6.0
- *
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrElseAsyncForMaybe} instead.
- */
-export const unwrapOrElseAsyncFromMaybe: typeof unwrapOrElseAsyncForMaybe =
-    unwrapOrElseAsyncForMaybe;

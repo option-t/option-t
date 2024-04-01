@@ -19,11 +19,3 @@ export function unwrapOrForNullable<T>(input: Nullable<T>, defaultValue: NotNull
     );
     return passed;
 }
-
-/**
- *  @deprecated 40.6.0
- *
- *  This is kept for backward compatibility.
- *  Use {@link unwrapOrForNullable} instead.
- */
-export const unwrapOrFromNullable: typeof unwrapOrForNullable = unwrapOrForNullable;
