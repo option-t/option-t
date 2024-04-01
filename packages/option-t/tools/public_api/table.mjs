@@ -3,7 +3,6 @@ import {
     pathRedirectionTo,
     pathRedirectionForLegacy,
     pathRedirectionForRoot,
-    pathRedirectionMarkedAsDeprecated,
 } from './api_path_descriptor.mjs';
 
 const MAYBE_DIR = 'maybe';
@@ -117,7 +116,6 @@ export const apiTable = Object.freeze({
     'PlainResult/asMut': pathRedirectionTo(`${PLAIN_RESULT_DIR}/as_mut`),
     'PlainResult/drop': pathRedirectionTo(`${PLAIN_RESULT_DIR}/drop`),
     'PlainResult/equal': pathRedirectionTo(`${PLAIN_RESULT_DIR}/equal`),
-    'PlainResult/expect': pathRedirectionMarkedAsDeprecated(`${PLAIN_RESULT_DIR}/expect`),
     'PlainResult/flatten': pathRedirectionTo(`${PLAIN_RESULT_DIR}/flatten`),
     'PlainResult/fromPromiseSettledResult': pathRedirectionTo(
         'plain_result/from_promise_settled_result',
@@ -140,7 +138,6 @@ export const apiTable = Object.freeze({
     'PlainResult/transpose': pathRedirectionTo(`${PLAIN_RESULT_DIR}/transpose`),
     'PlainResult/tryCatch': pathRedirectionTo(`${PLAIN_RESULT_DIR}/try_catch`),
     'PlainResult/tryCatchAsync': pathRedirectionTo(`${PLAIN_RESULT_DIR}/try_catch_async`),
-    'PlainResult/unwrap': pathRedirectionMarkedAsDeprecated(`${PLAIN_RESULT_DIR}/unwrap`),
     'PlainResult/unwrapOr': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or`),
     'PlainResult/unwrapOrElse': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or_else`),
     'PlainResult/unwrapOrElseAsync': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or_else_async`),

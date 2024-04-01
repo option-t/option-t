@@ -1436,20 +1436,6 @@
                 "default": "./esm/plain_result/equal.js"
             }
         },
-        "./PlainResult/expect": {
-            "import": {
-                "types": "./esm/plain_result/expect.d.ts",
-                "default": "./esm/plain_result/expect.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/expect.d.cts",
-                "default": "./cjs/plain_result/expect.cjs"
-            },
-            "default": {
-                "types": "./esm/plain_result/expect.d.ts",
-                "default": "./esm/plain_result/expect.js"
-            }
-        },
         "./PlainResult/flatten": {
             "import": {
                 "types": "./esm/plain_result/flatten.d.ts",
@@ -1728,20 +1714,6 @@
             "default": {
                 "types": "./esm/plain_result/try_catch_async.d.ts",
                 "default": "./esm/plain_result/try_catch_async.js"
-            }
-        },
-        "./PlainResult/unwrap": {
-            "import": {
-                "types": "./esm/plain_result/unwrap.d.ts",
-                "default": "./esm/plain_result/unwrap.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/unwrap.d.cts",
-                "default": "./cjs/plain_result/unwrap.cjs"
-            },
-            "default": {
-                "types": "./esm/plain_result/unwrap.d.ts",
-                "default": "./esm/plain_result/unwrap.js"
             }
         },
         "./PlainResult/unwrapOr": {
