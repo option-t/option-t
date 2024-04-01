@@ -142,7 +142,6 @@ export const apiTable = Object.freeze({
     'PlainResult/orElse': pathRedirectionTo(`${PLAIN_RESULT_DIR}/or_else`),
     'PlainResult/orElseAsync': pathRedirectionTo(`${PLAIN_RESULT_DIR}/or_else_async`),
     'PlainResult/toNullable': pathRedirectionTo(`${PLAIN_RESULT_DIR}/to_nullable`),
-    'PlainResult/toOption': pathRedirectionMarkedAsDeprecated(`${PLAIN_RESULT_DIR}/to_option`),
     'PlainResult/toUndefinable': pathRedirectionTo(`${PLAIN_RESULT_DIR}/to_undefinable`),
     'PlainResult/transpose': pathRedirectionTo(`${PLAIN_RESULT_DIR}/transpose`),
     'PlainResult/tryCatch': pathRedirectionTo(`${PLAIN_RESULT_DIR}/try_catch`),

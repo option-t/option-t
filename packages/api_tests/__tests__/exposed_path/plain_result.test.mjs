@@ -29,7 +29,6 @@ testImportExposedPath(
         './PlainResult/orElseAsync': null,
         './PlainResult/Result': null,
         './PlainResult/toNullable': null,
-        './PlainResult/toOption': null,
         './PlainResult/toUndefinable': null,
         './PlainResult/tryCatch': null,
         './PlainResult/tryCatchAsync': null,

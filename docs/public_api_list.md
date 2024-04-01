@@ -136,7 +136,6 @@
 - [option-t/PlainResult/orElse](../packages/option-t/src/plain_result/or_else.ts)
 - [option-t/PlainResult/orElseAsync](../packages/option-t/src/plain_result/or_else_async.ts)
 - [option-t/PlainResult/toNullable](../packages/option-t/src/plain_result/to_nullable.ts)
-- [option-t/PlainResult/toOption](../packages/option-t/src/plain_result/to_option.ts) (deprecated)
 - [option-t/PlainResult/toUndefinable](../packages/option-t/src/plain_result/to_undefinable.ts)
 - [option-t/PlainResult/transpose](../packages/option-t/src/plain_result/transpose.ts)
 - [option-t/PlainResult/tryCatch](../packages/option-t/src/plain_result/try_catch.ts)
