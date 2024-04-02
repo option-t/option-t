@@ -1,12 +1,12 @@
 import test from 'ava';
 
-import { filterWithEnsureTypeForNullable } from 'option-t/Nullable/filter';
+import { filterForNullable } from 'option-t/Nullable/filter';
 
 test('input is T, and predicate return true', (t) => {
     t.plan(2);
 
     const INPUT = Math.random();
-    const actual = filterWithEnsureTypeForNullable(INPUT, (inner) => {
+    const actual = filterForNullable(INPUT, (inner) => {
         t.is(inner, INPUT);
         return true;
     });
@@ -17,7 +17,7 @@ test('input is T, and predicate return false', (t) => {
     t.plan(2);
 
     const INPUT = Math.random();
-    const actual = filterWithEnsureTypeForNullable(INPUT, (inner) => {
+    const actual = filterForNullable(INPUT, (inner) => {
         t.is(inner, INPUT);
         return false;
     });
@@ -27,7 +27,7 @@ test('input is T, and predicate return false', (t) => {
 test('input is null', (t) => {
     t.plan(1);
 
-    const actual = filterWithEnsureTypeForNullable(null, (_inner) => {
+    const actual = filterForNullable(null, (_inner) => {
         t.fail();
         return true;
     });
