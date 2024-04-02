@@ -582,6 +582,20 @@
                 "default": "./esm/nullable/filter.js"
             }
         },
+        "./Nullable/filterAsync": {
+            "import": {
+                "types": "./esm/nullable/filter_async.d.ts",
+                "default": "./esm/nullable/filter_async.js"
+            },
+            "require": {
+                "types": "./cjs/nullable/filter_async.d.cts",
+                "default": "./cjs/nullable/filter_async.cjs"
+            },
+            "default": {
+                "types": "./esm/nullable/filter_async.d.ts",
+                "default": "./esm/nullable/filter_async.js"
+            }
+        },
         "./Nullable/inspect": {
             "import": {
                 "types": "./esm/nullable/inspect.d.ts",

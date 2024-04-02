@@ -7,6 +7,7 @@ export type TypePredicateFn<in T, out U extends T> = (input: T) => input is U;
 export type ProducerFn<out T> = () => T;
 export type ZipTransformerFn<in T, in U, out R> = (a: T, b: U) => R;
 
+export type AsyncFilterFn<in T> = (input: T) => Promise<boolean>;
 export type AsyncTransformFn<in T, out U> = TransformFn<T, Promise<U>>;
 export type AsyncRecoveryFn<out T> = RecoveryFn<Promise<T>>;
 export type AsyncRecoveryFromErrorFn<in E, out T> = AsyncTransformFn<E, T>;

@@ -20,6 +20,7 @@ export {
     filterForNullable as filter,
     filterWithEnsureTypeForNullable as filterWithEnsureType,
 } from './filter.js';
+export { filterAsyncForNullable as filterAsync } from './filter_async.js';
 export { inspectNullable as inspect } from './inspect.js';
 export { mapForNullable as map } from './map.js';
 export { mapAsyncForNullable as mapAsync } from './map_async.js';
