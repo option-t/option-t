@@ -2,7 +2,7 @@ import type { AsyncFilterFn } from '../internal/function.js';
 import { type Nullable, isNotNull } from './nullable.js';
 
 /**
- *  Returns `null` if the option is `null`,
+ *  Returns `null` if the _input_ is `null`,
  *  otherwise calls _predicate_ with the value `T` and returns:
  *
  *      * `T` if _predicate_ returns `true`.
