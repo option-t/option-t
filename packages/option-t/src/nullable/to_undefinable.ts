@@ -1,11 +1,11 @@
-import type { Undefinable } from '../undefinable/undefinable.js';
+import type { NotUndefined, Undefinable } from '../undefinable/undefinable.js';
 import { type Nullable, isNull } from './nullable.js';
 
 /**
  *  Return `undefined` if _input_ is `null`.
  *  Otherwise, return `T` directly.
  */
-export function toUndefinableFromNullable<T>(input: Nullable<T>): Undefinable<T> {
+export function toUndefinableFromNullable<T>(input: Nullable<NotUndefined<T>>): Undefinable<T> {
     if (isNull(input)) {
         return undefined;
     }

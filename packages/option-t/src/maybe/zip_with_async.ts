@@ -25,7 +25,7 @@ export async function zipWithAsyncForMaybe<T, U, R>(
         return undefined;
     }
 
-    const result: R = await transformer(self, other);
+    const result: NotNullOrUndefined<R> = await transformer(self, other);
     const checked: NotNullOrUndefined<R> = expectNotNullOrUndefined(
         result,
         ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,

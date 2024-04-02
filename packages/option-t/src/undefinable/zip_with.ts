@@ -24,7 +24,7 @@ export function zipWithForUndefinable<T, U, R>(
         return undefined;
     }
 
-    const result: R = transformer(self, other);
+    const result: NotUndefined<R> = transformer(self, other);
     const checked: NotUndefined<R> = expectNotUndefined(
         result,
         ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,

@@ -35,7 +35,7 @@ export async function mapOrAsyncForUndefinable<T, U>(
         return nonNullDefault;
     }
 
-    const result: U = await transformer(input);
+    const result: NotUndefined<U> = await transformer(input);
 
     const checked: NotUndefined<U> = expectNotUndefined(
         result,

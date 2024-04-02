@@ -18,7 +18,7 @@ export function unwrapOrElseForNullable<T>(
         return input;
     }
 
-    const fallback: T = recoverer();
+    const fallback: NotNull<T> = recoverer();
     const passed: NotNull<T> = expectNotNull(
         fallback,
         ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
