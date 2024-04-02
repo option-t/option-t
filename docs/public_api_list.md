@@ -43,6 +43,7 @@
 - [option-t/Nullable/and](../packages/option-t/src/nullable/and.ts)
 - [option-t/Nullable/andThen](../packages/option-t/src/nullable/and_then.ts)
 - [option-t/Nullable/andThenAsync](../packages/option-t/src/nullable/and_then_async.ts)
+- [option-t/Nullable/filter](../packages/option-t/src/nullable/filter.ts)
 - [option-t/Nullable/inspect](../packages/option-t/src/nullable/inspect.ts)
 - [option-t/Nullable/map](../packages/option-t/src/nullable/map.ts)
 - [option-t/Nullable/mapAsync](../packages/option-t/src/nullable/map_async.ts)

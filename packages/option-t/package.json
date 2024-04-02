@@ -568,6 +568,20 @@
                 "default": "./esm/nullable/and_then_async.js"
             }
         },
+        "./Nullable/filter": {
+            "import": {
+                "types": "./esm/nullable/filter.d.ts",
+                "default": "./esm/nullable/filter.js"
+            },
+            "require": {
+                "types": "./cjs/nullable/filter.d.cts",
+                "default": "./cjs/nullable/filter.cjs"
+            },
+            "default": {
+                "types": "./esm/nullable/filter.d.ts",
+                "default": "./esm/nullable/filter.js"
+            }
+        },
         "./Nullable/inspect": {
             "import": {
                 "types": "./esm/nullable/inspect.d.ts",
