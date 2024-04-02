@@ -4,13 +4,21 @@
 
 ### Examples
 
-```js
-import { isNotNull } from 'option-t/Nullable';
-import { mapForNullable } from 'option-t/Nullable/map';
+```ts
+// Import only functions or types which you would like to use.
+import { isNotNull, type Nullable } from 'option-t/Nullable';
+import { unwrapNullable } from 'option-t/Nullable/Nullable';
 import { createOk, isOk } from 'option-t/PlainResult';
 
-// or
+// You can use `<TypeName>.<operatorName>` style.
+import * as Nullable from 'option-t/Nullable/namespace';
 
+declare let numberOrNull: Nullable.Nullable<number>;
+const some = Nullable.unwrapOr(numberOrNull, -1);
+```
+
+```js
+// for commonjs
 const { isNotNull } = require('option-t/Nullable');
 const { mapForNullable } = require('option-t/Nullable/map');
 const { createOk, isOk } = require('option-t/PlainResult');
