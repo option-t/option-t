@@ -2,8 +2,8 @@ import type { FilterFn, TypePredicateFn } from '../internal/function.js';
 import { type Nullable, isNotNull } from './nullable.js';
 
 /**
- *  Returns `null` if the option is `null`,
- *  otherwise calls _predicate_ with the value `T` and returns:
+ *  Returns `null` if the _input_ is `null`,
+ *  otherwise calls _predicate_ with the _input_ `T` and returns:
  *
  *      * `T` if _predicate_ returns `true`.
  *      * `null` if _predicate_ returns `false`.
@@ -20,8 +20,8 @@ export function filterForNullable<T>(input: Nullable<T>, predicate: FilterFn<T>)
 }
 
 /**
- *  Returns `null` if the option is `null`,
- *  otherwise calls _predicate_ with the value `T` and returns:
+ *  Returns `null` if the _input_ is `null`,
+ *  otherwise calls _predicate_ with the _input_ `T` and returns:
  *
  *      * `I` if _predicate_ returns `true` which means that _predicate_ says the input value is U.
  *      * `null` if _predicate_ returns `false`.

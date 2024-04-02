@@ -148,6 +148,8 @@
 - [option-t/Undefinable/and](../packages/option-t/src/undefinable/and.ts)
 - [option-t/Undefinable/andThen](../packages/option-t/src/undefinable/and_then.ts)
 - [option-t/Undefinable/andThenAsync](../packages/option-t/src/undefinable/and_then_async.ts)
+- [option-t/Undefinable/filter](../packages/option-t/src/undefinable/filter.ts)
+- [option-t/Undefinable/filterAsync](../packages/option-t/src/undefinable/filter_async.ts)
 - [option-t/Undefinable/inspect](../packages/option-t/src/undefinable/inspect.ts)
 - [option-t/Undefinable/map](../packages/option-t/src/undefinable/map.ts)
 - [option-t/Undefinable/mapAsync](../packages/option-t/src/undefinable/map_async.ts)

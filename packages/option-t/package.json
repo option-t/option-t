@@ -1870,6 +1870,34 @@
                 "default": "./esm/undefinable/and_then_async.js"
             }
         },
+        "./Undefinable/filter": {
+            "import": {
+                "types": "./esm/undefinable/filter.d.ts",
+                "default": "./esm/undefinable/filter.js"
+            },
+            "require": {
+                "types": "./cjs/undefinable/filter.d.cts",
+                "default": "./cjs/undefinable/filter.cjs"
+            },
+            "default": {
+                "types": "./esm/undefinable/filter.d.ts",
+                "default": "./esm/undefinable/filter.js"
+            }
+        },
+        "./Undefinable/filterAsync": {
+            "import": {
+                "types": "./esm/undefinable/filter_async.d.ts",
+                "default": "./esm/undefinable/filter_async.js"
+            },
+            "require": {
+                "types": "./cjs/undefinable/filter_async.d.cts",
+                "default": "./cjs/undefinable/filter_async.cjs"
+            },
+            "default": {
+                "types": "./esm/undefinable/filter_async.d.ts",
+                "default": "./esm/undefinable/filter_async.js"
+            }
+        },
         "./Undefinable/inspect": {
             "import": {
                 "types": "./esm/undefinable/inspect.d.ts",

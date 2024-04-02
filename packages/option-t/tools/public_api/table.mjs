@@ -152,6 +152,8 @@ export const apiTable = Object.freeze({
     'Undefinable/and': pathRedirectionTo(`${UNDEFINABLE_DIR}/and`),
     'Undefinable/andThen': pathRedirectionTo(`${UNDEFINABLE_DIR}/and_then`),
     'Undefinable/andThenAsync': pathRedirectionTo(`${UNDEFINABLE_DIR}/and_then_async`),
+    'Undefinable/filter': pathRedirectionTo(`${UNDEFINABLE_DIR}/filter`),
+    'Undefinable/filterAsync': pathRedirectionTo(`${UNDEFINABLE_DIR}/filter_async`),
     'Undefinable/inspect': pathRedirectionTo(`${UNDEFINABLE_DIR}/inspect`),
     'Undefinable/map': pathRedirectionTo(`${UNDEFINABLE_DIR}/map`),
     'Undefinable/mapAsync': pathRedirectionTo(`${UNDEFINABLE_DIR}/map_async`),
