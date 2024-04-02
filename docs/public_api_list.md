@@ -10,6 +10,8 @@
 - [option-t/Maybe/and](../packages/option-t/src/maybe/and.ts)
 - [option-t/Maybe/andThen](../packages/option-t/src/maybe/and_then.ts)
 - [option-t/Maybe/andThenAsync](../packages/option-t/src/maybe/and_then_async.ts)
+- [option-t/Maybe/filter](../packages/option-t/src/maybe/filter.ts)
+- [option-t/Maybe/filterAsync](../packages/option-t/src/maybe/filter_async.ts)
 - [option-t/Maybe/inspect](../packages/option-t/src/maybe/inspect.ts)
 - [option-t/Maybe/map](../packages/option-t/src/maybe/map.ts)
 - [option-t/Maybe/mapAsync](../packages/option-t/src/maybe/map_async.ts)

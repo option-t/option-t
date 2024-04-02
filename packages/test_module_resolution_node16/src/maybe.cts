@@ -2,6 +2,8 @@ import {} from 'option-t/Maybe';
 import {} from 'option-t/Maybe/and';
 import {} from 'option-t/Maybe/andThen';
 import {} from 'option-t/Maybe/andThenAsync';
+import {} from 'option-t/Maybe/filter';
+import {} from 'option-t/Maybe/filterAsync';
 import {} from 'option-t/Maybe/inspect';
 import {} from 'option-t/Maybe/map';
 import {} from 'option-t/Maybe/mapAsync';
