@@ -2,6 +2,8 @@ import {} from 'option-t/Undefinable';
 import {} from 'option-t/Undefinable/and';
 import {} from 'option-t/Undefinable/andThen';
 import {} from 'option-t/Undefinable/andThenAsync';
+import {} from 'option-t/Undefinable/filter';
+import {} from 'option-t/Undefinable/filterAsync';
 import {} from 'option-t/Undefinable/inspect';
 import {} from 'option-t/Undefinable/map';
 import {} from 'option-t/Undefinable/mapAsync';

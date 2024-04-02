@@ -16,6 +16,11 @@ export {
 // export { andForMaybe as and } from './and.js';
 export { andThenForMaybe as andThen } from './and_then.js';
 export { andThenAsyncForMaybe as andThenAsync } from './and_then_async.js';
+export {
+    filterForMaybe as filter,
+    filterWithEnsureTypeForMaybe as filterWithEnsureType,
+} from './filter.js';
+export { filterAsyncForMaybe as filterAsync } from './filter_async.js';
 export { inspectMaybe as inspect } from './inspect.js';
 export { mapForMaybe as map } from './map.js';
 export { mapAsyncForMaybe as mapAsync } from './map_async.js';

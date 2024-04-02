@@ -1,12 +1,12 @@
 import test from 'ava';
 
-import { filterForUndefinable } from 'option-t/Undefinable/filter';
+import { filterForMaybe } from 'option-t/Maybe/filter';
 
 test('input is T, and predicate return true', (t) => {
     t.plan(2);
 
     const INPUT = Math.random();
-    const actual = filterForUndefinable(INPUT, (inner) => {
+    const actual = filterForMaybe(INPUT, (inner) => {
         t.is(inner, INPUT);
         return true;
     });
@@ -17,17 +17,25 @@ test('input is T, and predicate return false', (t) => {
     t.plan(2);
 
     const INPUT = Math.random();
-    const actual = filterForUndefinable(INPUT, (inner) => {
+    const actual = filterForMaybe(INPUT, (inner) => {
         t.is(inner, INPUT);
         return false;
     });
     t.is(actual, undefined);
 });
 
-test('input is undefined', (t) => {
+test('input is null', (t) => {
     t.plan(1);
 
-    const actual = filterForUndefinable(undefined, (_inner) => {
+    const actual = filterForMaybe(null, (_inner) => {
+        t.fail();
+        return true;
+    });
+    t.is(actual, undefined);
+});
+
+test('input is undefined', async (t) => {
+    const actual = await filterForMaybe(undefined, async (_inner) => {
         t.fail();
         return true;
     });

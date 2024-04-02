@@ -162,6 +162,34 @@
                 "default": "./esm/maybe/and_then_async.js"
             }
         },
+        "./Maybe/filter": {
+            "import": {
+                "types": "./esm/maybe/filter.d.ts",
+                "default": "./esm/maybe/filter.js"
+            },
+            "require": {
+                "types": "./cjs/maybe/filter.d.cts",
+                "default": "./cjs/maybe/filter.cjs"
+            },
+            "default": {
+                "types": "./esm/maybe/filter.d.ts",
+                "default": "./esm/maybe/filter.js"
+            }
+        },
+        "./Maybe/filterAsync": {
+            "import": {
+                "types": "./esm/maybe/filter_async.d.ts",
+                "default": "./esm/maybe/filter_async.js"
+            },
+            "require": {
+                "types": "./cjs/maybe/filter_async.d.cts",
+                "default": "./cjs/maybe/filter_async.cjs"
+            },
+            "default": {
+                "types": "./esm/maybe/filter_async.d.ts",
+                "default": "./esm/maybe/filter_async.js"
+            }
+        },
         "./Maybe/inspect": {
             "import": {
                 "types": "./esm/maybe/inspect.d.ts",
