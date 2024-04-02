@@ -9,8 +9,15 @@
 import { isNotNull, type Nullable } from 'option-t/Nullable';
 import { unwrapNullable } from 'option-t/Nullable/Nullable';
 import { createOk, isOk } from 'option-t/PlainResult';
+```
 
+```ts
 // You can use `<TypeName>.<operatorName>` style.
+//
+// XXX:
+// We strongly recommend to use TypeScript for this style
+// This style is more hard to migrate a breaking change
+// in your code due to a import namespace object may be an other name.
 import * as Nullable from 'option-t/Nullable/namespace';
 
 declare let numberOrNull: Nullable.Nullable<number>;
