@@ -16,7 +16,11 @@ export {
 //export { andForNullable as and } from './and.js';
 export { andThenForNullable as andThen } from './and_then.js';
 export { andThenAsyncForNullable as andThenAsync } from './and_then_async.js';
-export { filterForNullable as filter } from './filter.js';
+export {
+    filterForNullable as filter,
+    filterWithEnsureTypeForNullable as filterWithEnsureType,
+} from './filter.js';
+export { filterAsyncForNullable as filterAsync } from './filter_async.js';
 export { inspectNullable as inspect } from './inspect.js';
 export { mapForNullable as map } from './map.js';
 export { mapAsyncForNullable as mapAsync } from './map_async.js';

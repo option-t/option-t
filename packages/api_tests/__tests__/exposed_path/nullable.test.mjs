@@ -9,6 +9,7 @@ testImportExposedPath(
         './Nullable/andThen': null,
         './Nullable/andThenAsync': null,
         './Nullable/filter': null,
+        './Nullable/filterAsync': null,
         './Nullable/inspect': null,
         './Nullable/map': null,
         './Nullable/mapAsync': null,

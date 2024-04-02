@@ -25,6 +25,11 @@ test('input is T, and predicate return false', (t) => {
 });
 
 test('input is null', (t) => {
-    const actual = filterForNullable(null);
+    t.plan(1);
+
+    const actual = filterForNullable(null, (_inner) => {
+        t.fail();
+        return true;
+    });
     t.is(actual, null);
 });
