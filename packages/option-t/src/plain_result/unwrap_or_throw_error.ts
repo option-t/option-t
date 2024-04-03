@@ -14,7 +14,7 @@ import { type Result, isOk, unwrapOk, unwrapErr } from './result.js';
  *  This function requires `Error.cause` to carry the failure reason
  *  if it is not an `Error` instance.
  */
-export function unwrapOrThrowErrorFromResult<T>(input: Result<T, Error>): T {
+export function unwrapOrThrowErrorForResult<T>(input: Result<T, Error>): T {
     if (isOk(input)) {
         const val: T = unwrapOk<T>(input);
         return val;
@@ -24,3 +24,10 @@ export function unwrapOrThrowErrorFromResult<T>(input: Result<T, Error>): T {
     assertIsErrorInstance(e, ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE);
     throw e;
 }
+
+/**
+ *  @deprecated 41.2.0
+ *  Use {@link unwrapOrThrowErrorForResult} instead.
+ */
+export const unwrapOrThrowErrorFromResult: typeof unwrapOrThrowErrorForResult =
+    unwrapOrThrowErrorForResult;
