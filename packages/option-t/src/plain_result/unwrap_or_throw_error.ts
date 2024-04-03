@@ -24,10 +24,3 @@ export function unwrapOrThrowErrorForResult<T>(input: Result<T, Error>): T {
     assertIsErrorInstance(e, ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE);
     throw e;
 }
-
-/**
- *  @deprecated 41.2.0
- *  Use {@link unwrapOrThrowErrorForResult} instead.
- */
-export const unwrapOrThrowErrorFromResult: typeof unwrapOrThrowErrorForResult =
-    unwrapOrThrowErrorForResult;
