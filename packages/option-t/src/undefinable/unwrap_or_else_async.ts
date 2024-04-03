@@ -24,7 +24,7 @@ export async function unwrapOrElseAsyncForUndefinable<T>(
         return input;
     }
 
-    const fallback: T = await recoverer();
+    const fallback: NotUndefined<T> = await recoverer();
     const checked: NotUndefined<T> = expectNotUndefined(
         fallback,
         ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,

@@ -21,7 +21,7 @@ export function mapOrElseForUndefinable<T, U>(
     recoverer: RecoveryFn<NotUndefined<U>>,
     transformer: TransformFn<T, NotUndefined<U>>,
 ): NotUndefined<U> {
-    let result: U;
+    let result: NotUndefined<U>;
     let msg = '';
     if (input !== undefined) {
         result = transformer(input);

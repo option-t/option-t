@@ -24,7 +24,7 @@ export async function mapAsyncForMaybe<T, U>(
         return input;
     }
 
-    const result: U = await transformer(input);
+    const result: NotNullOrUndefined<U> = await transformer(input);
 
     // XXX:
     // If `U` is `Maybe<SomeType>`, we think naturally the returned value of this function would be

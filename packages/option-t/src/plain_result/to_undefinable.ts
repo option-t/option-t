@@ -1,4 +1,4 @@
-import type { Undefinable } from '../undefinable/undefinable.js';
+import type { NotUndefined, Undefinable } from '../undefinable/undefinable.js';
 import { unwrapErrOrForResult } from './internal/unwrap_err_or.js';
 import type { Result } from './result.js';
 import { unwrapOrForResult } from './unwrap_or.js';
@@ -7,7 +7,7 @@ import { unwrapOrForResult } from './unwrap_or.js';
  *  Unwrap `T` if _input_ is `Ok(T)`.
  *  Otherwise, return `undefined`.
  */
-export function toUndefinableFromOk<T>(input: Result<T, unknown>): Undefinable<T> {
+export function toUndefinableFromOk<T>(input: Result<NotUndefined<T>, unknown>): Undefinable<T> {
     const val: Undefinable<T> = unwrapOrForResult<Undefinable<T>>(input, undefined);
     return val;
 }
@@ -16,7 +16,7 @@ export function toUndefinableFromOk<T>(input: Result<T, unknown>): Undefinable<T
  *  Unwrap `E` if _input_ is `Err(E)`.
  *  Otherwise, return `undefined`.
  */
-export function toUndefinableFromErr<E>(input: Result<unknown, E>): Undefinable<E> {
+export function toUndefinableFromErr<E>(input: Result<unknown, NotUndefined<E>>): Undefinable<E> {
     const err: Undefinable<E> = unwrapErrOrForResult<Undefinable<E>>(input, undefined);
     return err;
 }

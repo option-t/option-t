@@ -21,7 +21,7 @@ export async function mapOrElseAsyncForNullable<T, U>(
     recoverer: AsyncRecoveryFn<NotNull<U>>,
     transformer: AsyncTransformFn<T, NotNull<U>>,
 ): Promise<NotNull<U>> {
-    let result: U;
+    let result: NotNull<U>;
     let messageForExpect = '';
 
     if (isNotNull(input)) {
