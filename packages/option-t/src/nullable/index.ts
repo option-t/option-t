@@ -10,8 +10,8 @@ export {
 //export { andForNullable } from './and.js';
 export { andThenForNullable } from './and_then.js';
 export { andThenAsyncForNullable } from './and_then_async.js';
-export { filterForNullable, filterWithEnsureTypeForNullable } from './filter.js';
-export { filterAsyncForNullable } from './filter_async.js';
+// XXX:
+//  We exposed filter once from here during v41 but it was too early decision.
 export { inspectNullable } from './inspect.js';
 export { mapForNullable } from './map.js';
 export { mapAsyncForNullable } from './map_async.js';

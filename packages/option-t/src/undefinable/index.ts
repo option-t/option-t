@@ -10,8 +10,8 @@ export {
 //export { andForUndefinable } from './and.js';
 export { andThenForUndefinable } from './and_then.js';
 export { andThenAsyncForUndefinable } from './and_then_async.js';
-export { filterForUndefinable, filterWithEnsureTypeForUndefinable } from './filter.js';
-export { filterAsyncForUndefinable } from './filter_async.js';
+// XXX:
+//  We exposed filter once from here during v41 but it was too early decision.
 export { inspectUndefinable } from './inspect.js';
 export { mapForUndefinable } from './map.js';
 export { mapAsyncForUndefinable } from './map_async.js';
