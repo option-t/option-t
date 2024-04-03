@@ -2,7 +2,7 @@ import { ERR_MSG_UNWRAP_NO_VAL_FOR_NULLABLE } from './internal/error_message.js'
 
 export type NotNull<T> = T extends null ? never : T;
 
-export type Nullable<T> = T | null;
+export type Nullable<T> = NotNull<T> | null;
 
 export function isNotNull<T>(input: Nullable<T>): input is NotNull<T> {
     return input !== null;

@@ -2,7 +2,7 @@ import { ERR_MSG_UNWRAP_NO_VAL_FOR_MAYBE } from './internal/error_message.js';
 
 export type NotNullOrUndefined<T> = T extends null | undefined ? never : T;
 
-export type Maybe<T> = T | null | undefined;
+export type Maybe<T> = NotNullOrUndefined<T> | null | undefined;
 
 export function isNotNullOrUndefined<T>(input: Maybe<T>): input is NotNullOrUndefined<T> {
     return input !== undefined && input !== null;

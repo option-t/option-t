@@ -2,7 +2,7 @@ import { ERR_MSG_UNWRAP_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.
 
 export type NotUndefined<T> = T extends undefined ? never : T;
 
-export type Undefinable<T> = T | undefined;
+export type Undefinable<T> = NotUndefined<T> | undefined;
 
 export function isNotUndefined<T>(input: Undefinable<T>): input is NotUndefined<T> {
     return input !== undefined;
