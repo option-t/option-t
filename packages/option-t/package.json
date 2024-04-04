@@ -1534,6 +1534,34 @@
                 "default": "./esm/plain_result/inspect.js"
             }
         },
+        "./PlainResult/isErrAnd": {
+            "import": {
+                "types": "./esm/plain_result/is_err_and.d.ts",
+                "default": "./esm/plain_result/is_err_and.js"
+            },
+            "require": {
+                "types": "./cjs/plain_result/is_err_and.d.cts",
+                "default": "./cjs/plain_result/is_err_and.cjs"
+            },
+            "default": {
+                "types": "./esm/plain_result/is_err_and.d.ts",
+                "default": "./esm/plain_result/is_err_and.js"
+            }
+        },
+        "./PlainResult/isOkAnd": {
+            "import": {
+                "types": "./esm/plain_result/is_ok_and.d.ts",
+                "default": "./esm/plain_result/is_ok_and.js"
+            },
+            "require": {
+                "types": "./cjs/plain_result/is_ok_and.d.cts",
+                "default": "./cjs/plain_result/is_ok_and.cjs"
+            },
+            "default": {
+                "types": "./esm/plain_result/is_ok_and.d.ts",
+                "default": "./esm/plain_result/is_ok_and.js"
+            }
+        },
         "./PlainResult/map": {
             "import": {
                 "types": "./esm/plain_result/map.d.ts",

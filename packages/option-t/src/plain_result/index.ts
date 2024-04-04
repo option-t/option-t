@@ -82,6 +82,8 @@ export { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
 //  - and
 //  - or
 //  - filter
+//  - is_err_and
+//  - is_ok_and
 //  - xor
 //  - zip
 //  - zipWith

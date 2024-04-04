@@ -8,6 +8,8 @@ import {} from 'option-t/PlainResult/equal';
 import {} from 'option-t/PlainResult/flatten';
 import {} from 'option-t/PlainResult/fromPromiseSettledResult';
 import {} from 'option-t/PlainResult/inspect';
+import {} from 'option-t/PlainResult/isErrAnd';
+import {} from 'option-t/PlainResult/isOkAnd';
 import {} from 'option-t/PlainResult/map';
 import {} from 'option-t/PlainResult/mapAsync';
 import {} from 'option-t/PlainResult/mapErr';

@@ -72,6 +72,8 @@ export { unwrapOrElseAsyncForResult as unwrapOrElseAsync } from './unwrap_or_els
 //  - and
 //  - or
 //  - filter
+//  - is_err_and
+//  - is_ok_and
 //  - xor
 //  - zip
 //  - zipWith

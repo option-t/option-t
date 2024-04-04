@@ -125,6 +125,8 @@ export const apiTable = Object.freeze({
         'plain_result/from_promise_settled_result',
     ),
     'PlainResult/inspect': pathRedirectionTo(`${PLAIN_RESULT_DIR}/inspect`),
+    'PlainResult/isErrAnd': pathRedirectionTo(`${PLAIN_RESULT_DIR}/is_err_and`),
+    'PlainResult/isOkAnd': pathRedirectionTo(`${PLAIN_RESULT_DIR}/is_ok_and`),
     'PlainResult/map': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map`),
     'PlainResult/mapAsync': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map_async`),
     'PlainResult/mapErr': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map_err`),
