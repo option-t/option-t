@@ -60,7 +60,7 @@ export function compatToNullableFromClassicOption<T>(
     }
 
     const inner = input.unwrap();
-    const value: NotNull<T> = expectNotNull(inner, ERR_MSG_CANNOT_CONVERT_TO_NULLABLE);
+    const value: T = expectNotNull(inner, ERR_MSG_CANNOT_CONVERT_TO_NULLABLE);
     return value;
 }
 
@@ -92,7 +92,7 @@ export function compatToUndefinableFromClassicOption<T>(
     }
 
     const inner = input.unwrap();
-    const value: NotUndefined<T> = expectNotUndefined(inner, ERR_MSG_CANNOT_CONVERT_TO_UNDEFINABLE);
+    const value: T = expectNotUndefined(inner, ERR_MSG_CANNOT_CONVERT_TO_UNDEFINABLE);
     return value;
 }
 
