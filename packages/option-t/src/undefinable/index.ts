@@ -6,12 +6,9 @@ export {
     type NotUndefined,
     type Undefinable,
 } from './undefinable.js';
-// XXX: `and()` operation is equivalent of `a && b` so we don't ship it by default set.
-//export { andForUndefinable } from './and.js';
+
 export { andThenForUndefinable } from './and_then.js';
 export { andThenAsyncForUndefinable } from './and_then_async.js';
-// XXX:
-//  We exposed filter once from here during v41 but it was too early decision.
 export { inspectUndefinable } from './inspect.js';
 export { mapForUndefinable } from './map.js';
 export { mapAsyncForUndefinable } from './map_async.js';
@@ -22,8 +19,6 @@ export { mapOrElseAsyncForUndefinable } from './map_or_else_async.js';
 export { okOrForUndefinable } from './ok_or.js';
 export { okOrElseForUndefinable } from './ok_or_else.js';
 export { okOrElseAsyncForUndefinable } from './ok_or_else_async.js';
-// XXX: `or()` operation is equivalent of `a || b` so we don't ship it by default set.
-// export { orForUndefinable } from './or.js';
 export { orElseForUndefinable } from './or_else.js';
 export { orElseAsyncForUndefinable } from './or_else_async.js';
 export { toNullableFromUndefinable } from './to_nullable.js';
@@ -31,7 +26,21 @@ export { toResultErrFromUndefinable, toResultOkFromUndefinable } from './to_plai
 export { unwrapOrForUndefinable } from './unwrap_or.js';
 export { unwrapOrElseForUndefinable } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncForUndefinable } from './unwrap_or_else_async.js';
-// TODO: #2071
-// TODO: #2072
-// TODO: #2073
-// TODO: #2074
+
+// XXX:
+//  _and_ operator is equivalent of `a && b` so we don't ship it by this default set.
+//
+// XXX:
+//  _or_ operation is equivalent of `a || b` so we don't ship it by this default set.
+//
+// XXX:
+//  To keep a simple API set,
+//  we don't expose APIs from here that takes multiple values to compose a data flow pipeline.
+//  We may reconsider it if pipeline operator syntax proposal is advanced to the standard.
+//  But please import them directly from their path at this moment.
+//
+//  - filter
+//  - xor
+//  - zip
+//  - zipWith
+//  - zipWithAsync

@@ -37,13 +37,8 @@ export {
     type Result,
 } from './result.js';
 
-// TODO: #2117
 export { andThenForResult } from './and_then.js';
 export { andThenAsyncForResult } from './and_then_async.js';
-// - We don't expose items from as_mut.js that is unsafe operation.
-// - We don't expose items from drop.js that is unsafe operation.
-// - We don't expose items from equal.js that is provided for exception case.
-//   We don't recommend to compare this result type's value.
 export { flattenForResult } from './flatten.js';
 export { fromPromiseSettledResultToResult } from './from_promise_settled_result.js';
 export { inspectBothForResult, inspectErrForResult, inspectOkForResult } from './inspect.js';
@@ -55,7 +50,6 @@ export { mapOrForResult } from './map_or.js';
 export { mapOrAsyncForResult } from './map_or_async.js';
 export { mapOrElseForResult } from './map_or_else.js';
 export { mapOrElseAsyncForResult } from './map_or_else_async.js';
-// TODO: #2112
 export { orElseForResult } from './or_else.js';
 export { orElseAsyncForResult } from './or_else_async.js';
 export { toNullableFromErr, toNullableFromOk } from './to_nullable.js';
@@ -69,6 +63,31 @@ export {
 export { unwrapOrForResult } from './unwrap_or.js';
 export { unwrapOrElseForResult } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
-// - From this module, we don't expose items from unwrap_or_throw_error.js.
-//   that is provided only for the case to bridge with exist codes.
-//   We recommend to handle result type in that style.
+
+// XXX:
+//  We don't expose these itens that is unsafe operation.
+//
+//  - as_mut
+//  - drop
+//
+// XXX:
+//  _equals, we don't expose it by this due to that is provided for exception case
+//
+// XXX:
+//  To keep a simple API set,
+//  we don't expose APIs from here that takes multiple values to compose a data flow pipeline.
+//  We may reconsider it if pipeline operator syntax proposal is advanced to the standard.
+//  But please import them directly from their path at this moment.
+//
+//  - and
+//  - or
+//  - filter
+//  - xor
+//  - zip
+//  - zipWith
+//  - zipWithAsync
+//
+// XXX:
+//  _unwrap_or_throw_error_, we don't expose items from this for it.
+//  It is provided only for the case to bridge with exist codes.
+//  We recommend to handle result type in that style.
