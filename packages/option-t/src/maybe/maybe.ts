@@ -2,6 +2,10 @@ import { ERR_MSG_UNWRAP_NO_VAL_FOR_MAYBE } from './internal/error_message.js';
 
 export type NotNullOrUndefined<T> = T extends null | undefined ? never : T;
 
+// Ideally, probably it might be better to make this `NotNullOrUndefined<T> | null | undefined`.
+// But we keep this type simple to interoperable with others
+// (3rd party libraries, exist code, or a returned value type of buitin types')
+// to allow to assign to a value typed as this directly.
 export type Maybe<T> = T | null | undefined;
 
 export function isNotNullOrUndefined<T>(input: Maybe<T>): input is NotNullOrUndefined<T> {
