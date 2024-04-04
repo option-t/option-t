@@ -1,5 +1,5 @@
-import type { FilterFn } from '../internal/function.js';
-import { type Result, isErr, unwrapOk } from './result.js';
+import type { FilterFn, TypePredicateFn } from '../internal/function.js';
+import { type Result, isErr, unwrapOk, type Ok } from './result.js';
 
 /**
  * Returns `true` if the _result_ is `Ok<T>` and the value inside of it matches a _predicate_.
@@ -14,5 +14,19 @@ export function isOkAndForResult<T, E>(result: Result<T, E>, predicate: FilterFn
 
     const val: T = unwrapOk(result);
     const ok: boolean = predicate(val);
+    return ok;
+}
+
+/**
+ *  Returns `true` if the _result_ is `Ok<T>` and the value inside of it matches a _predicate_.
+ *  Then _result_ would be `Ok<U>`.
+ *
+ *  Please use {@link isOkAndForResult} generally if you don't have to narrow the type.
+ */
+export function isOkAndWithEnsureTypeForResult<T, E, U extends T>(
+    result: Result<T, E>,
+    predicate: TypePredicateFn<T, U>,
+): result is Ok<U> {
+    const ok = isOkAndForResult(result, predicate);
     return ok;
 }
