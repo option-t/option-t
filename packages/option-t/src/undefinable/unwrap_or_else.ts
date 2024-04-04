@@ -23,7 +23,7 @@ export function unwrapOrElseForUndefinable<T>(
         return input;
     }
 
-    const fallback: NotUndefined<T> = recoverer();
+    const fallback: T = recoverer();
     const passed = expectNotUndefined(
         fallback,
         ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,

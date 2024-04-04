@@ -23,7 +23,7 @@ export async function unwrapOrElseAsyncForMaybe<T>(
         return input;
     }
 
-    const fallback: NotNullOrUndefined<T> = await recoverer();
+    const fallback: T = await recoverer();
 
     const checked = expectNotNullOrUndefined(
         fallback,
