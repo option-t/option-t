@@ -22,13 +22,8 @@ export {
     type Some,
 } from './option.js';
 
-// TODO: #2049
 export { andThenForOption as andThen } from './and_then.js';
 export { andThenAsyncForOption as andThenAsync } from './and_then_async.js';
-// - We don't expose items from as_mut.js that is unsafe operation.
-// - We don't expose items from drop.js that is unsafe operation.
-// - We don't expose items from equal.js that is provided for exception case.
-//   We don't recommend to compare this result type's value.
 export { filterForOption as filter } from './filter.js';
 export { flattenForOption as flatten } from './flatten.js';
 export { fromErrToOption, fromOkToOption } from './from_result.js';
@@ -41,7 +36,6 @@ export { mapOrElseForOption as mapOrElse } from './map_or_else.js';
 export { mapOrElseAsyncForOption as mapOrElseAsync } from './map_or_else_async.js';
 export { okOrForPlainOption as okOr } from './ok_or.js';
 export { okOrElseForPlainOption as okOrElse } from './ok_or_else.js';
-// TODO: #2051
 export { orElseForOption as orElse } from './or_else.js';
 export { orElseAsyncForOption as orElseAsync } from './or_else_async.js';
 export { toNullableFromOption as toNullable } from './to_nullable.js';
@@ -53,4 +47,23 @@ export {
 export { unwrapOrForOption as unwrapOr } from './unwrap_or.js';
 export { unwrapOrElseForOption as unwrapOrElse } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncForOption as unwrapOrElseAsync } from './unwrap_or_else_async.js';
-// TODO: #2052
+
+// XXX:
+//  We don't expose these itens that is unsafe operation.
+//
+//  - as_mut
+//  - drop
+//
+// XXX:
+//  _equals, we don't expose it by this due to that is provided for exception case
+//
+// XXX:
+//  To keep a simple API set,
+//  we don't expose APIs from here that takes multiple values to compose a data flow pipeline.
+//  We may reconsider it if pipeline operator syntax proposal is advanced to the standard.
+//  But please import them directly from their path at this moment.
+//
+//  - and
+//  - or
+//  - filter (This is exception because we shipped it for a long time)
+//  - xor

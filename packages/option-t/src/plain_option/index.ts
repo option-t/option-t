@@ -42,13 +42,8 @@ export {
     type Some,
 } from './option.js';
 
-// TODO: #2099
 export { andThenForOption } from './and_then.js';
 export { andThenAsyncForOption } from './and_then_async.js';
-// - We don't expose items from as_mut.js that is unsafe operation.
-// - We don't expose items from drop.js that is unsafe operation.
-// - We don't expose items from equal.js that is provided for exception case.
-//   We don't recommend to compare this result type's value.
 export { filterForOption } from './filter.js';
 export { flattenForOption } from './flatten.js';
 export { fromErrToOption, fromOkToOption } from './from_result.js';
@@ -61,7 +56,6 @@ export { mapOrElseForOption } from './map_or_else.js';
 export { mapOrElseAsyncForOption } from './map_or_else_async.js';
 export { okOrForPlainOption } from './ok_or.js';
 export { okOrElseForPlainOption } from './ok_or_else.js';
-// TODO: #2105
 export { orElseForOption } from './or_else.js';
 export { orElseAsyncForOption } from './or_else_async.js';
 export { toNullableFromOption } from './to_nullable.js';
@@ -70,4 +64,23 @@ export { transposeOptionToResult, transposeResultToOption } from './transpose.js
 export { unwrapOrForOption } from './unwrap_or.js';
 export { unwrapOrElseForOption } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncForOption } from './unwrap_or_else_async.js';
-// TODO: #2108
+
+// XXX:
+//  We don't expose these itens that is unsafe operation.
+//
+//  - as_mut
+//  - drop
+//
+// XXX:
+//  _equals, we don't expose it by this due to that is provided for exception case
+//
+// XXX:
+//  To keep a simple API set,
+//  we don't expose APIs from here that takes multiple values to compose a data flow pipeline.
+//  We may reconsider it if pipeline operator syntax proposal is advanced to the standard.
+//  But please import them directly from their path at this moment.
+//
+//  - and
+//  - or
+//  - filter (This is exception because we shipped it for a long time)
+//  - xor
