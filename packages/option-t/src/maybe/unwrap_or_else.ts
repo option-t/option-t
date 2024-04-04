@@ -22,7 +22,7 @@ export function unwrapOrElseForMaybe<T>(
         return input;
     }
 
-    const fallback: NotNullOrUndefined<T> = recoverer();
+    const fallback: T = recoverer();
     const passed = expectNotNullOrUndefined(
         fallback,
         ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,

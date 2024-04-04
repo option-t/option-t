@@ -35,7 +35,7 @@ export async function mapOrAsyncForMaybe<T, U>(
         return nonNullDefault;
     }
 
-    const result: NotNullOrUndefined<U> = await transformer(input);
+    const result: U = await transformer(input);
     const checked: NotNullOrUndefined<U> = expectNotNullOrUndefined(
         result,
         ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE,

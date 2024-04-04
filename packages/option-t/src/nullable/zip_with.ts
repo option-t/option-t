@@ -19,7 +19,7 @@ export function zipWithForNullable<T, U, R>(
         return null;
     }
 
-    const result: NotNull<R> = transformer(self, other);
+    const result: R = transformer(self, other);
     const checked: NotNull<R> = expectNotNull(
         result,
         ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
