@@ -29,7 +29,7 @@ export async function mapOrAsyncForNullable<T, U>(
         return nonNullDefault;
     }
 
-    const result: NotNull<U> = await transformer(input);
+    const result: U = await transformer(input);
     const checked: NotNull<U> = expectNotNull(
         result,
         ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,

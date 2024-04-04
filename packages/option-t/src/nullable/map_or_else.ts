@@ -21,7 +21,7 @@ export function mapOrElseForNullable<T, U>(
     recoverer: RecoveryFn<NotNull<U>>,
     transformer: TransformFn<T, NotNull<U>>,
 ): NotNull<U> {
-    let result: NotNull<U>;
+    let result: U;
     let msg = '';
     if (isNotNull(input)) {
         result = transformer(input);

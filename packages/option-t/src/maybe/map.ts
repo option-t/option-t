@@ -23,7 +23,7 @@ export function mapForMaybe<T, U>(
         return input;
     }
 
-    const result: NotNullOrUndefined<U> = transformer(input);
+    const result: U = transformer(input);
     // XXX:
     // If `U` is `Maybe<SomeType>`, we think naturally the returned value of this function would be
     // the nested type `Maybe<Maybe<SomeType>>`. But this type means `(SomeType | null | undefined) | null | undefined`.

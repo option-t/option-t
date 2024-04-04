@@ -23,7 +23,7 @@ export async function mapAsyncForUndefinable<T, U>(
         return undefined;
     }
 
-    const result: NotUndefined<U> = await transformer(input);
+    const result: U = await transformer(input);
 
     // XXX:
     // If `U` is `Undefinable<SomeType>`, we think naturally the returned value of this function would be
