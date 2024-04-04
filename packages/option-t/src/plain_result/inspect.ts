@@ -1,7 +1,5 @@
 import type { EffectFn } from '../internal/function.js';
-import type { Result } from './result.js';
-
-function noop<T>(_v: T) {}
+import { isErr, isOk, type Result } from './result.js';
 
 /**
  *  * Return _input_ directly.
@@ -12,7 +10,10 @@ function noop<T>(_v: T) {}
  *    if-else statement might be sufficient to mutate the inner value instead of calling this function.
  */
 export function inspectOkForResult<T, E>(input: Result<T, E>, effector: EffectFn<T>): Result<T, E> {
-    return inspectBothForResult(input, effector, noop);
+    if (isOk(input)) {
+        effector(input.val);
+    }
+    return input;
 }
 
 /**
@@ -27,7 +28,10 @@ export function inspectErrForResult<T, E>(
     input: Result<T, E>,
     effector: EffectFn<E>,
 ): Result<T, E> {
-    return inspectBothForResult(input, noop, effector);
+    if (isErr(input)) {
+        effector(input.err);
+    }
+    return input;
 }
 
 /**
