@@ -1,3 +1,5 @@
+/* eslint sort-keys: ["error", "asc", { caseSensitive: true }] */
+
 import test from 'ava';
 import { testImportExposedPath } from './helper.mjs';
 
@@ -5,6 +7,7 @@ testImportExposedPath(
     test,
     Object.keys({
         './PlainResult': null,
+        './PlainResult/Result': null,
         './PlainResult/and': null,
         './PlainResult/andThen': null,
         './PlainResult/andThenAsync': null,
@@ -28,12 +31,11 @@ testImportExposedPath(
         './PlainResult/or': null,
         './PlainResult/orElse': null,
         './PlainResult/orElseAsync': null,
-        './PlainResult/Result': null,
         './PlainResult/toNullable': null,
         './PlainResult/toUndefinable': null,
+        './PlainResult/transpose': null,
         './PlainResult/tryCatch': null,
         './PlainResult/tryCatchAsync': null,
-        './PlainResult/transpose': null,
         './PlainResult/unwrapOr': null,
         './PlainResult/unwrapOrElse': null,
         './PlainResult/unwrapOrElseAsync': null,
