@@ -2,6 +2,10 @@ import { ERR_MSG_UNWRAP_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.
 
 export type NotUndefined<T> = T extends undefined ? never : T;
 
+// Ideally, probably it might be better to make this `NotUndefined<T> | undefined`.
+// But we keep this type simple to interoperable with others
+// (3rd party libraries, exist code, or a returned value type of buitin types')
+// to allow to assign to a value typed as this directly.
 export type Undefinable<T> = T | undefined;
 
 export function isNotUndefined<T>(input: Undefinable<T>): input is NotUndefined<T> {
