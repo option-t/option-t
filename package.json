@@ -22,6 +22,6 @@
         "globals": "^15.0.0",
         "picomatch": "^4.0.2",
         "prettier": "^3.2.4",
-        "typescript": "^5.4.3"
+        "typescript": "^5.4.5"
     }
 }
