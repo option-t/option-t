@@ -45,6 +45,7 @@ export type Option<T> = Some<T> | None;
  *
  *  You can create this type value and get an inner value in this type by hand.
  *  But we recommend to use factory and utility functions for forward compatibility.
+ *  And we don't recommend to implement this type for your type too.
  *
  *  - {@link createSome()} to create a value of `Some(T)`.
  *  - {@link isSome()} to check whether the value is `Some(T)`.
@@ -93,6 +94,7 @@ export function createSome<T>(val: T): Some<T> {
  *
  *  You can create this type value and get an inner value in this type by hand.
  *  But we recommend to use factory and utility functions for forward compatibility.
+ *  And we don't recommend to implement this type for your type too.
  *
  *  - {@link createNone()} to create a value of `None`.
  *  - {@link isNone()} to check whether the value is `None`.
