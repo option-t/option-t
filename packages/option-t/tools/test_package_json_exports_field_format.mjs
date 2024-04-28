@@ -155,13 +155,7 @@ await test(`Check package.json's 'exports' field format`, async (t) => {
         const runningTests = [];
         for (const [exportedPath, value] of Object.entries(exports)) {
             const running = t.test(exportedPath, async (t) => {
-                if (exportedPath.startsWith('./cjs/')) {
-                    await testBasicConditionObject(TestMode.CJS, t, value);
-                } else if (exportedPath.startsWith('./esm/')) {
-                    await testBasicConditionObject(TestMode.ESM, t, value);
-                } else {
-                    await testComplexConditionObject(t, value);
-                }
+                await testComplexConditionObject(t, value);
             });
 
             runningTests.push(running);
