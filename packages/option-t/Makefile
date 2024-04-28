@@ -13,17 +13,12 @@ SRC_TEST_DIR := $(CURDIR)/__tests__
 DIST_DIR := $(CURDIR)/__dist
 DIST_DOCS_DIR := $(DIST_DIR)/docs
 DIST_ESM_DIR := $(DIST_DIR)/esm
-DIST_COMMONJS_DIR := $(DIST_DIR)/cjs
 GENERATED_ESM_DIR := $(CURDIR)/esm
-GENERATED_COMMONJS_DIR := $(CURDIR)/cjs
 TMP_BASE_DIR := $(CURDIR)/__tmp_base
 TMP_MJS_DIR := $(CURDIR)/__tmp_mjs
-TMP_CJS_DIR := $(CURDIR)/__tmp_cjs
 
-CJS_EXTENSION_GLOB := cjs
 MJS_EXTENSION_GLOB := {js,mjs}
-D_CTS_EXTENSION_GLOB := d.cts
-DTS_EXTENSION_GLOB := d.{ts,cts,mts}
+DTS_EXTENSION_GLOB := d.{ts,mts}
 
 TEST_CASE_CONTAINS_EXPECTED := $(CURDIR)/tools/__tests__/distribution_contain_all.test.mjs
 
@@ -46,11 +41,9 @@ help:
 ###########################
 CLEAN_TARGETS := \
 	dist \
-	generated_cjs \
 	generated_esm \
 	tmp_base \
-	tmp_mjs \
-	tmp_cjs
+	tmp_mjs
 
 .PHONY: clean
 clean: $(addprefix clean_, $(CLEAN_TARGETS))
@@ -58,10 +51,6 @@ clean: $(addprefix clean_, $(CLEAN_TARGETS))
 .PHONY: clean_dist
 clean_dist:
 	$(NPM_BIN)/del $(DIST_DIR)
-
-.PHONY: clean_generated_cjs
-clean_generated_cjs:
-	$(NPM_BIN)/del $(GENERATED_COMMONJS_DIR)
 
 .PHONY: clean_generated_esm
 clean_generated_esm:
@@ -74,10 +63,6 @@ clean_tmp_base:
 .PHONY: clean_tmp_mjs
 clean_tmp_mjs:
 	$(NPM_BIN)/del $(TMP_MJS_DIR)
-
-.PHONY: clean_tmp_cjs
-clean_tmp_cjs:
-	$(NPM_BIN)/del $(TMP_CJS_DIR)
 
 
 ###########################
