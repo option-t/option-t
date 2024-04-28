@@ -87,43 +87,7 @@ clean_tmp_cjs:
 build: __build cp_docs cp_license cp_readme generate_manifest ## Build artifacts required to publish packages.
 
 .PHONY: __build
-__build: build_cjs build_esm ## Build all targets.
-
-.PHONY: build_cjs
-build_cjs: clean_dist __build_cjs__cp_cjs_to_cjsdir __build_cjs__cp_dcts_to_cjsdir generate_manifest ## Build `cjs/`.
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs \
-        --basedir $(GENERATED_COMMONJS_DIR) \
-        --source '$(GENERATED_COMMONJS_DIR)/**/*' \
-        --destination $(DIST_COMMONJS_DIR)
-
-.PHONY: __build_cjs__cp_cjs_to_cjsdir
-__build_cjs__cp_cjs_to_cjsdir: __build_cjs__rename_js_to_cjs clean_generated_cjs generate_manifest
-	$(NODE_BIN) $(CURDIR)/tools/transform_files_by_babel.mjs \
-		--basedir $(TMP_CJS_DIR) \
-		--source '$(TMP_CJS_DIR)/**/*.$(CJS_EXTENSION_GLOB)' \
-		--destination $(GENERATED_COMMONJS_DIR) \
-		--config $(CURDIR)/tools/babel/babelrc.cjs.mjs
-
-.PHONY: __build_cjs__cp_dcts_to_cjsdir
-__build_cjs__cp_dcts_to_cjsdir: __build_cjs_rename_dts_to_dcts clean_generated_cjs generate_manifest
-	$(NODE_BIN) $(CURDIR)/tools/transform_files_by_babel.mjs \
-		--basedir $(TMP_CJS_DIR) \
-		--source '$(TMP_CJS_DIR)/**/*.$(D_CTS_EXTENSION_GLOB)' \
-		--destination $(GENERATED_COMMONJS_DIR) \
-		--config $(CURDIR)/tools/babel/babelrc.d.cts.mjs
-
-.PHONY: __build_cjs_rename_dts_to_dcts
-__build_cjs_rename_dts_to_dcts: __build_cjs__create_tmp_cjs generate_manifest
-	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_CJS_DIR) --to-extension 'cts' --from-extension 'ts'
-
-.PHONY: __build_cjs__rename_js_to_cjs
-__build_cjs__rename_js_to_cjs: __build_cjs__create_tmp_cjs generate_manifest
-	$(NODE_BIN) $(CURDIR)/tools/extension_renamer.mjs --target-dir $(TMP_CJS_DIR) --to-extension 'cjs' --from-extension 'js'
-
-.PHONY: __build_cjs__create_tmp_cjs
-__build_cjs__create_tmp_cjs: __build_tmp_base clean_tmp_cjs generate_manifest
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(TMP_BASE_DIR) --source '$(TMP_BASE_DIR)/**/*' --destination $(TMP_CJS_DIR)
-
+__build: build_esm ## Build all targets.
 
 .PHONY: build_esm
 build_esm: clean_dist __build_mjs_cp_mjs_to_esm __build_mjs_cp_dts_to_esm generate_manifest ## Build `esm/`.
