@@ -239,11 +239,15 @@ These are written for Rust, but the essence is just same.
 
 _fp-ts_ is a package that provides various tools to write a functional programming style code including _Either_ and _Option_ type.
 
-our design’ origin is Rust language, so we also contains an essence of functional programming style which Rust language contains.
+Our design’ origin is Rust language, so we also contains an essence of functional programming style which Rust language contains.
 In this point, features that we provide would be similar to fp-ts’ one.
 
-However, However, we do not aim to provide a feature to write a functional programming language code unlike fp-ts.
+However, we do not aim to provide a feature to write a functional programming language code unlike fp-ts.
 Our design goal is that we provide more specialized tools to handle an absence of values.
+
+We think **[Effect-TS (v3.1.0)](https://github.com/Effect-TS/effect/tree/effect%403.1.0)** is also placed in here.
+Side-effect handling abstraction, concurrency controls, or platform integration are not a goal of this package.
+We intend to provide only value types that are evaluated immediately unlike them. 
 
 
 ### [neverthrow (v6.0.0)](https://github.com/supermacro/neverthrow/tree/v6.0.0)
