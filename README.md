@@ -242,7 +242,7 @@ _fp-ts_ is a package that provides various tools to write a functional programmi
 our design’ origin is Rust language, so we also contains an essence of functional programming style which Rust language contains.
 In this point, features that we provide would be similar to fp-ts’ one.
 
-However, However, we do not aim to provide a feature to write a functional programming language code unlike fp-ts.
+However, we do not aim to provide a feature to write a functional programming language code unlike fp-ts.
 Our design goal is that we provide more specialized tools to handle an absence of values.
 
 
