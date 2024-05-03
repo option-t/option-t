@@ -5,7 +5,7 @@
     "workspaces": [
         "packages/*"
     ],
-    "packageManager": "pnpm@9.0.4+sha256.caa915eaae9d9aefccf50ee8aeda25a2f8684d8f9d5c6e367eaf176d97c1f89e",
+    "packageManager": "pnpm@9.1.0-0+sha512.568e95e38592215a03fa2cb02a58b67c6452e51b176d9941d546a59a471c42e2b4c2428bf286addcbe4e2dec98e682e2df0fa93a5082cf3493afc496affd8ffb",
     "devDependencies": {
         "@babel/core": "^7.24.4",
         "@babel/plugin-syntax-typescript": "^7.24.1",
