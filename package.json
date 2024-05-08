@@ -19,7 +19,7 @@
         "eslint": "^9.1.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-import": "^2.29.1",
-        "globals": "^15.0.0",
+        "globals": "^15.1.0",
         "picomatch": "^4.0.2",
         "prettier": "^3.2.4",
         "typescript": "^5.4.5"
