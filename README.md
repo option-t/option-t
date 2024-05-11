@@ -118,7 +118,7 @@ We target to run in following environments.
     - [ECMA262 2017 edition](https://262.ecma-international.org/8.0/).
     - TypeScript's latest version.
 - Module system
-    - ES Module ([ES2015](https://262.ecma-international.org/6.0/) level).
+    - ES Module ([ES2020](https://262.ecma-international.org/11.0/) level).
     - CommonJS
     - A runtime environment or module bundler must support Node.js' [package.json's `exports` field](https://nodejs.org/api/packages.html#package-entry-points) (Newer is better).
 
