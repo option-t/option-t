@@ -20,5 +20,6 @@ export default {
                 strict: true,
             },
         ],
+        ['@babel/plugin-transform-export-namespace-from', {}],
     ],
 };

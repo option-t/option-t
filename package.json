@@ -9,6 +9,7 @@
     "devDependencies": {
         "@babel/core": "^7.24.5",
         "@babel/plugin-syntax-typescript": "^7.24.1",
+        "@babel/plugin-transform-export-namespace-from": "^7.24.1",
         "@babel/plugin-transform-modules-commonjs": "^7.24.1",
         "@eslint/js": "^9.2.0",
         "@reflink/reflink": "^0.1.16",

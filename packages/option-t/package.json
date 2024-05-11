@@ -1492,6 +1492,20 @@
                 "default": "./esm/plain_result/equal.js"
             }
         },
+        "./PlainResult/experimental_ns": {
+            "import": {
+                "types": "./esm/plain_result/ns.d.ts",
+                "default": "./esm/plain_result/ns.js"
+            },
+            "require": {
+                "types": "./cjs/plain_result/ns.d.cts",
+                "default": "./cjs/plain_result/ns.cjs"
+            },
+            "default": {
+                "types": "./esm/plain_result/ns.d.ts",
+                "default": "./esm/plain_result/ns.js"
+            }
+        },
         "./PlainResult/flatten": {
             "import": {
                 "types": "./esm/plain_result/flatten.d.ts",
