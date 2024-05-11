@@ -20,13 +20,13 @@ class ListItem {
     #key;
     #subpath;
     #isDeprecated;
-    #extension;
+    #deprecatedMessage;
 
-    constructor(key, subpath, isDeprecated, extension = 'ts') {
+    constructor(key, subpath, isDeprecated, deprecatedMessage) {
         this.#key = key;
         this.#subpath = subpath;
         this.#isDeprecated = isDeprecated;
-        this.#extension = extension;
+        this.#deprecatedMessage = deprecatedMessage;
         Object.freeze(this);
     }
 
@@ -56,10 +56,12 @@ class ListItem {
         const isDeprecated = this.#isDeprecated;
 
         const name = this.#pathname();
-        const href = `${RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO}/${this.href()}.${this.#extension}`;
+        const href = `${RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO}/${this.href()}.ts`;
 
         const anchor = `[${name}](${href})`;
-        const link = !isDeprecated ? anchor : `${anchor} (deprecated)`;
+        const link = !isDeprecated
+            ? anchor
+            : `${anchor} (__deprecated__. ${this.#deprecatedMessage})`;
         return `- ${link}`;
     }
 }
@@ -90,7 +92,26 @@ function categorize(list) {
 
     for (const item of list) {
         const key = item.key();
-        const [prefix] = key.split('/');
+        let [prefix] = key.split('/');
+        switch (prefix) {
+            case 'maybe':
+                prefix = 'Maybe';
+                break;
+            case 'nullable':
+                prefix = 'Nullable';
+                break;
+            case 'undefinable':
+                prefix = 'Undefinable';
+                break;
+            case 'plain_option':
+                prefix = 'PlainOption';
+                break;
+            case 'plain_result':
+                prefix = 'PlainResult';
+                break;
+            default:
+                break;
+        }
 
         let v = m.get(prefix);
         if (v === undefined) {
@@ -168,7 +189,8 @@ function parseCliOptions() {
             const key = pathItem.name();
             const path = pathItem.filepath();
             const isDeprecated = pathItem.isDeprecated();
-            const item = new ListItem(key, path, isDeprecated);
+            const deprecatedMessage = pathItem.deprecatedPathMessage();
+            const item = new ListItem(key, path, isDeprecated, deprecatedMessage);
             return item;
         });
 
