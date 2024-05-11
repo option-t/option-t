@@ -20,6 +20,11 @@ export {
     type None,
     type Option,
     type Some,
+    // XXX:
+    //  If we export self type as `Type`, vscode's IntelliSense (tsserver) will try to import `Type`
+    //  or import it directly from this path when you input `T` of `Type` or some case you want to import `Type`.
+    //  Because this module path is exposed to userland via `exports` field.
+    //  It's less ergonomic so we don't export here.
 } from './option.js';
 
 export { andThenForOption as andThen } from './and_then.js';
