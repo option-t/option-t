@@ -1940,6 +1940,20 @@
                 "default": "./esm/undefinable/and_then_async.js"
             }
         },
+        "./Undefinable/experimental_ns": {
+            "import": {
+                "types": "./esm/undefinable/ns.d.ts",
+                "default": "./esm/undefinable/ns.js"
+            },
+            "require": {
+                "types": "./cjs/undefinable/ns.d.cts",
+                "default": "./cjs/undefinable/ns.cjs"
+            },
+            "default": {
+                "types": "./esm/undefinable/ns.d.ts",
+                "default": "./esm/undefinable/ns.js"
+            }
+        },
         "./Undefinable/filter": {
             "import": {
                 "types": "./esm/undefinable/filter.d.ts",
