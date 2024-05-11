@@ -14,7 +14,6 @@ testImportExposedPath(
         './PlainResult/asMut': null,
         './PlainResult/drop': null,
         './PlainResult/equal': null,
-        './PlainResult/experimental_ns': null,
         './PlainResult/flatten': null,
         './PlainResult/fromPromiseSettledResult': null,
         './PlainResult/inspect': null,

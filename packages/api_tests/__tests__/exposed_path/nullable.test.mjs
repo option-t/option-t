@@ -11,7 +11,6 @@ testImportExposedPath(
         './Nullable/and': null,
         './Nullable/andThen': null,
         './Nullable/andThenAsync': null,
-        './Nullable/experimental_ns': null,
         './Nullable/filter': null,
         './Nullable/filterAsync': null,
         './Nullable/inspect': null,

@@ -117,7 +117,6 @@
 - [option-t/PlainResult/asMut](../packages/option-t/src/plain_result/as_mut.ts)
 - [option-t/PlainResult/drop](../packages/option-t/src/plain_result/drop.ts)
 - [option-t/PlainResult/equal](../packages/option-t/src/plain_result/equal.ts)
-- [option-t/PlainResult/experimental_ns](../packages/option-t/src/plain_result/ns.ts)
 - [option-t/PlainResult/flatten](../packages/option-t/src/plain_result/flatten.ts)
 - [option-t/PlainResult/fromPromiseSettledResult](../packages/option-t/src/plain_result/from_promise_settled_result.ts)
 - [option-t/PlainResult/inspect](../packages/option-t/src/plain_result/inspect.ts)

@@ -11,7 +11,6 @@ testImportExposedPath(
         './Maybe/and': null,
         './Maybe/andThen': null,
         './Maybe/andThenAsync': null,
-        './Maybe/experimental_ns': null,
         './Maybe/filter': null,
         './Maybe/filterAsync': null,
         './Maybe/inspect': null,
