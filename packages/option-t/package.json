@@ -610,6 +610,20 @@
                 "default": "./esm/nullable/and_then_async.js"
             }
         },
+        "./Nullable/experimental_ns": {
+            "import": {
+                "types": "./esm/nullable/ns.d.ts",
+                "default": "./esm/nullable/ns.js"
+            },
+            "require": {
+                "types": "./cjs/nullable/ns.d.cts",
+                "default": "./cjs/nullable/ns.cjs"
+            },
+            "default": {
+                "types": "./esm/nullable/ns.d.ts",
+                "default": "./esm/nullable/ns.js"
+            }
+        },
         "./Nullable/filter": {
             "import": {
                 "types": "./esm/nullable/filter.d.ts",
