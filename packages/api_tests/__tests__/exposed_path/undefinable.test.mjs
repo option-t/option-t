@@ -11,7 +11,6 @@ testImportExposedPath(
         './Undefinable/and': null,
         './Undefinable/andThen': null,
         './Undefinable/andThenAsync': null,
-        './Undefinable/experimental_ns': null,
         './Undefinable/filter': null,
         './Undefinable/filterAsync': null,
         './Undefinable/inspect': null,

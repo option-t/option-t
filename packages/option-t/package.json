@@ -162,20 +162,6 @@
                 "default": "./esm/maybe/and_then_async.js"
             }
         },
-        "./Maybe/experimental_ns": {
-            "import": {
-                "types": "./esm/maybe/ns.d.ts",
-                "default": "./esm/maybe/ns.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/ns.d.cts",
-                "default": "./cjs/maybe/ns.cjs"
-            },
-            "default": {
-                "types": "./esm/maybe/ns.d.ts",
-                "default": "./esm/maybe/ns.js"
-            }
-        },
         "./Maybe/filter": {
             "import": {
                 "types": "./esm/maybe/filter.d.ts",
@@ -608,20 +594,6 @@
             "default": {
                 "types": "./esm/nullable/and_then_async.d.ts",
                 "default": "./esm/nullable/and_then_async.js"
-            }
-        },
-        "./Nullable/experimental_ns": {
-            "import": {
-                "types": "./esm/nullable/ns.d.ts",
-                "default": "./esm/nullable/ns.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/ns.d.cts",
-                "default": "./cjs/nullable/ns.cjs"
-            },
-            "default": {
-                "types": "./esm/nullable/ns.d.ts",
-                "default": "./esm/nullable/ns.js"
             }
         },
         "./Nullable/filter": {
@@ -1520,20 +1492,6 @@
                 "default": "./esm/plain_result/equal.js"
             }
         },
-        "./PlainResult/experimental_ns": {
-            "import": {
-                "types": "./esm/plain_result/ns.d.ts",
-                "default": "./esm/plain_result/ns.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/ns.d.cts",
-                "default": "./cjs/plain_result/ns.cjs"
-            },
-            "default": {
-                "types": "./esm/plain_result/ns.d.ts",
-                "default": "./esm/plain_result/ns.js"
-            }
-        },
         "./PlainResult/flatten": {
             "import": {
                 "types": "./esm/plain_result/flatten.d.ts",
@@ -1966,20 +1924,6 @@
             "default": {
                 "types": "./esm/undefinable/and_then_async.d.ts",
                 "default": "./esm/undefinable/and_then_async.js"
-            }
-        },
-        "./Undefinable/experimental_ns": {
-            "import": {
-                "types": "./esm/undefinable/ns.d.ts",
-                "default": "./esm/undefinable/ns.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/ns.d.cts",
-                "default": "./cjs/undefinable/ns.cjs"
-            },
-            "default": {
-                "types": "./esm/undefinable/ns.d.ts",
-                "default": "./esm/undefinable/ns.js"
             }
         },
         "./Undefinable/filter": {
