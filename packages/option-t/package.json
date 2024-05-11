@@ -290,16 +290,16 @@
         },
         "./Maybe/namespace": {
             "import": {
-                "types": "./esm/maybe/namespace.d.ts",
-                "default": "./esm/maybe/namespace.js"
+                "types": "./esm/maybe/ns.d.ts",
+                "default": "./esm/maybe/ns.js"
             },
             "require": {
-                "types": "./cjs/maybe/namespace.d.cts",
-                "default": "./cjs/maybe/namespace.cjs"
+                "types": "./cjs/maybe/ns.d.cts",
+                "default": "./cjs/maybe/ns.cjs"
             },
             "default": {
-                "types": "./esm/maybe/namespace.d.ts",
-                "default": "./esm/maybe/namespace.js"
+                "types": "./esm/maybe/ns.d.ts",
+                "default": "./esm/maybe/ns.js"
             }
         },
         "./Maybe/okOr": {
@@ -724,16 +724,16 @@
         },
         "./Nullable/namespace": {
             "import": {
-                "types": "./esm/nullable/namespace.d.ts",
-                "default": "./esm/nullable/namespace.js"
+                "types": "./esm/nullable/ns.d.ts",
+                "default": "./esm/nullable/ns.js"
             },
             "require": {
-                "types": "./cjs/nullable/namespace.d.cts",
-                "default": "./cjs/nullable/namespace.cjs"
+                "types": "./cjs/nullable/ns.d.cts",
+                "default": "./cjs/nullable/ns.cjs"
             },
             "default": {
-                "types": "./esm/nullable/namespace.d.ts",
-                "default": "./esm/nullable/namespace.js"
+                "types": "./esm/nullable/ns.d.ts",
+                "default": "./esm/nullable/ns.js"
             }
         },
         "./Nullable/okOr": {
@@ -1200,16 +1200,16 @@
         },
         "./PlainOption/namespace": {
             "import": {
-                "types": "./esm/plain_option/namespace.d.ts",
-                "default": "./esm/plain_option/namespace.js"
+                "types": "./esm/plain_option/ns.d.ts",
+                "default": "./esm/plain_option/ns.js"
             },
             "require": {
-                "types": "./cjs/plain_option/namespace.d.cts",
-                "default": "./cjs/plain_option/namespace.cjs"
+                "types": "./cjs/plain_option/ns.d.cts",
+                "default": "./cjs/plain_option/ns.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/namespace.d.ts",
-                "default": "./esm/plain_option/namespace.js"
+                "types": "./esm/plain_option/ns.d.ts",
+                "default": "./esm/plain_option/ns.js"
             }
         },
         "./PlainOption/okOr": {
@@ -1676,16 +1676,16 @@
         },
         "./PlainResult/namespace": {
             "import": {
-                "types": "./esm/plain_result/namespace.d.ts",
-                "default": "./esm/plain_result/namespace.js"
+                "types": "./esm/plain_result/ns.d.ts",
+                "default": "./esm/plain_result/ns.js"
             },
             "require": {
-                "types": "./cjs/plain_result/namespace.d.cts",
-                "default": "./cjs/plain_result/namespace.cjs"
+                "types": "./cjs/plain_result/ns.d.cts",
+                "default": "./cjs/plain_result/ns.cjs"
             },
             "default": {
-                "types": "./esm/plain_result/namespace.d.ts",
-                "default": "./esm/plain_result/namespace.js"
+                "types": "./esm/plain_result/ns.d.ts",
+                "default": "./esm/plain_result/ns.js"
             }
         },
         "./PlainResult/or": {
@@ -2054,16 +2054,16 @@
         },
         "./Undefinable/namespace": {
             "import": {
-                "types": "./esm/undefinable/namespace.d.ts",
-                "default": "./esm/undefinable/namespace.js"
+                "types": "./esm/undefinable/ns.d.ts",
+                "default": "./esm/undefinable/ns.js"
             },
             "require": {
-                "types": "./cjs/undefinable/namespace.d.cts",
-                "default": "./cjs/undefinable/namespace.cjs"
+                "types": "./cjs/undefinable/ns.d.cts",
+                "default": "./cjs/undefinable/ns.cjs"
             },
             "default": {
-                "types": "./esm/undefinable/namespace.d.ts",
-                "default": "./esm/undefinable/namespace.js"
+                "types": "./esm/undefinable/ns.d.ts",
+                "default": "./esm/undefinable/ns.js"
             }
         },
         "./Undefinable/okOr": {
