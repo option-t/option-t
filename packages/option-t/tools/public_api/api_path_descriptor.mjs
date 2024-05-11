@@ -4,6 +4,7 @@ export class ApiPathDescriptor {
     #actualFilePath = null;
     #shouldHideInDoc = false;
     #isDeprecatedPath = false;
+    #isExperimental = false;
 
     constructor(actualFilePath) {
         this.#actualFilePath = actualFilePath;
@@ -31,6 +32,15 @@ export class ApiPathDescriptor {
         assert.strictEqual(typeof val, 'boolean');
         this.#isDeprecatedPath = val;
     }
+
+    get isExperimental() {
+        return this.#isExperimental;
+    }
+
+    setIsExperimental(val) {
+        assert.strictEqual(typeof val, 'boolean');
+        this.#isExperimental = val;
+    }
 }
 
 export function pathRedirectionTo(actualFilePath) {
@@ -53,5 +63,12 @@ export function pathRedirectionMarkedAsDeprecated(actualFilePath) {
 export function pathRedirectionForRoot(actualFilePath) {
     const desc = new ApiPathDescriptor(actualFilePath);
     desc.setShouldHideInDoc(true);
+    return Object.freeze(desc);
+}
+
+export function pathExperimentalAndHidden(actualFilePath) {
+    const desc = new ApiPathDescriptor(actualFilePath);
+    desc.setShouldHideInDoc(true);
+    desc.pathExperimental(true);
     return Object.freeze(desc);
 }
