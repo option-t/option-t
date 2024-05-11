@@ -162,6 +162,20 @@
                 "default": "./esm/maybe/and_then_async.js"
             }
         },
+        "./Maybe/experimental_ns": {
+            "import": {
+                "types": "./esm/maybe/ns.d.ts",
+                "default": "./esm/maybe/ns.js"
+            },
+            "require": {
+                "types": "./cjs/maybe/ns.d.cts",
+                "default": "./cjs/maybe/ns.cjs"
+            },
+            "default": {
+                "types": "./esm/maybe/ns.d.ts",
+                "default": "./esm/maybe/ns.js"
+            }
+        },
         "./Maybe/filter": {
             "import": {
                 "types": "./esm/maybe/filter.d.ts",
