@@ -87,9 +87,6 @@ export interface Ok<out T> {
     //
     // By these reasons, we should not recommend to create this object without this factory function.
     // User can create this object by hand. But it's fragile for the future change. So We should not recommend it.
-    //
-    // We use `null | undefined` as more widen type rather than `null` for the backward compatibility.
-    // This definition allows to accept a value created by the old version of this library.
     /**
      *  Don't touch this property directly from an user project.
      *  Instead, use {@link unwrapErr()} operator to get an inner value.
@@ -98,7 +95,7 @@ export interface Ok<out T> {
      *  Then there was no well optimized `Symbol` to achieve a private property.
      *  We don't have a plan to change this into private property keep the backward compatibility.
      */
-    readonly err?: null | undefined;
+    readonly err: null;
 }
 
 export function isOk<T, E>(input: Result<T, E>): input is Ok<T> {
@@ -109,8 +106,9 @@ export function createOk<T>(val: T): Ok<T> {
     const r: Ok<T> = {
         ok: true,
         val,
-        // XXX: We need to fill with `null` to improve the compatibility with Next.js
-        // see https://github.com/option-t/option-t/pull/1256
+        // XXX:
+        //  We need to fill with `null` to improve the compatibility with Next.js
+        //  see https://github.com/option-t/option-t/pull/1256
         err: null,
     };
     return r;
@@ -166,9 +164,6 @@ export interface Err<out E> {
     //
     // By these reasons, we should not recommend to create this object without this factory function.
     // User can create this object by hand. But it's fragile for the future change. So We should not recommend it.
-    //
-    // We use `null | undefined` as more widen type rather than `null` for the backward compatibility.
-    // This definition allows to accept a value created by the old version of this library.
     /**
      *  Don't touch this property directly from an user project
      *  except 3rd party project that does not install this package but uses a value returned from an other project.
@@ -178,7 +173,7 @@ export interface Err<out E> {
      *  Then there was no well optimized `Symbol` to achieve a private property.
      *  We don't have a plan to change this into private property keep the backward compatibility.
      */
-    readonly val?: null | undefined;
+    readonly val: null;
 
     /**
      *  Don't touch this property directly from an user project
@@ -199,8 +194,9 @@ export function isErr<T, E>(input: Result<T, E>): input is Err<E> {
 export function createErr<E>(err: E): Err<E> {
     const r: Err<E> = {
         ok: false,
-        // XXX: We need to fill with `null` to improve the compatibility with Next.js
-        // see https://github.com/option-t/option-t/pull/1256
+        // XXX:
+        //  We need to fill with `null` to improve the compatibility with Next.js
+        //  see https://github.com/option-t/option-t/pull/1256
         val: null,
         err,
     };
