@@ -1,6 +1,8 @@
 export {
     type NotNullOrUndefined,
     type Maybe,
+    // FIXME(#2173):
+    // It's might better to expose this type as `Type`.
     isNotNullOrUndefined,
     isNullOrUndefined,
     expectNotNullOrUndefined,
