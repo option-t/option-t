@@ -5,7 +5,14 @@ please see a release note in [Releases](https://github.com/option-t/option-t/rel
 
 ## v40 ~ v45
 
+- [v45](https://github.com/option-t/option-t/releases/tag/v45.0.0)
+- [v44](https://github.com/option-t/option-t/releases/tag/v44.0.0)
+- [v43](https://github.com/option-t/option-t/releases/tag/v43.0.0)
+- [v42](https://github.com/option-t/option-t/releases/tag/v42.0.0)
 - [v41](./v41.md)
+
+## v36 ~ v40
+
 - [v40](./v40.md)
 - [v39](https://github.com/option-t/option-t/releases/tag/v39.0.0)
 - [v38](./v38.md)
