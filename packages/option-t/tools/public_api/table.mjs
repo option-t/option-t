@@ -120,6 +120,7 @@ export const apiTable = Object.freeze({
     'PlainResult/asMut': pathRedirectionTo(`${PLAIN_RESULT_DIR}/as_mut`),
     'PlainResult/drop': pathRedirectionTo(`${PLAIN_RESULT_DIR}/drop`),
     'PlainResult/equal': pathRedirectionTo(`${PLAIN_RESULT_DIR}/equal`),
+    'PlainResult/experimental_ns': pathRedirectionTo(`${PLAIN_RESULT_DIR}/ns`),
     'PlainResult/flatten': pathRedirectionTo(`${PLAIN_RESULT_DIR}/flatten`),
     'PlainResult/fromPromiseSettledResult': pathRedirectionTo(
         'plain_result/from_promise_settled_result',
