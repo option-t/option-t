@@ -1,8 +1,3 @@
-/**
- *  XXX:
- *  This module is designed to use as `import * as PlainResult from 'option-t/PlainResult/namespace';`.
- *  This is not designed for other usecases. Please do not use for other cases.
- */
 export {
     createErr,
     createOk,
