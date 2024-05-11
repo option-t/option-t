@@ -43,7 +43,7 @@ export function testImportExposedPath(test, pathList) {
                 actual = esmActual;
             }
 
-            t.snapshot(Object.keys(actual), 'should match expected exported items');
+            t.snapshot(actual, 'should match expected exported items');
         });
     }
 }
