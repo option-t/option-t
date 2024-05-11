@@ -6,8 +6,6 @@
 export {
     createErr,
     createOk,
-    createErr as err,
-    createOk as ok,
     expectErr,
     expectOk,
     isErr,
