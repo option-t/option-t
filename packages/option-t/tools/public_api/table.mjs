@@ -1,9 +1,9 @@
 /* eslint sort-keys: ["error", "asc", { caseSensitive: true }] */
 import {
-    pathRedirectionTo,
+    pathRedirectionMarkedAsDeprecated as pathRedirectionTo,
     pathRedirectionForLegacy,
     pathRedirectionForRoot,
-    pathExperimentalAndHidden,
+    pathRedirectionTo as pathExperimentalAndHidden,
 } from './api_path_descriptor.mjs';
 
 const MAYBE_DIR = 'maybe';
@@ -183,8 +183,8 @@ export const apiTable = Object.freeze({
     'Undefinable/zipWith': pathRedirectionTo(`${UNDEFINABLE_DIR}/zip_with`),
     'Undefinable/zipWithAsync': pathRedirectionTo(`${UNDEFINABLE_DIR}/zip_with_async`),
 
-    'classic_option': pathExperimentalAndHidden('classic_option/index'),
-    'classic_result': pathExperimentalAndHidden('classic_result/index'),
+    'classic_option': pathRedirectionForLegacy('classic_option/index'),
+    'classic_result': pathRedirectionForLegacy('classic_result/index'),
 
     'maybe': pathExperimentalAndHidden(`${MAYBE_DIR}/index`),
     'maybe/and': pathExperimentalAndHidden(`${MAYBE_DIR}/and`),

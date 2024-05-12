@@ -45,6 +45,11 @@ class ExposedPath {
         return ok;
     }
 
+    deprecatedPathMessage() {
+        const ok = this.#descriptor.deprecatedPathMessage;
+        return ok;
+    }
+
     shouldHideInDoc() {
         const ok = !!this.#descriptor.shouldHideInDoc;
         return ok;

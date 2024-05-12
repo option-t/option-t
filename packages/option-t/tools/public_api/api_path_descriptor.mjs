@@ -4,6 +4,7 @@ export class ApiPathDescriptor {
     #actualFilePath = null;
     #shouldHideInDoc = false;
     #isDeprecatedPath = false;
+    #deprecatedPathMessage = '';
     #isExperimental = false;
 
     constructor(actualFilePath) {
@@ -28,9 +29,15 @@ export class ApiPathDescriptor {
         return this.#isDeprecatedPath;
     }
 
-    setIsDeprecatedPath(val) {
+    get deprecatedPathMessage() {
+        return this.#deprecatedPathMessage;
+    }
+
+    setIsDeprecatedPath(val, message) {
         assert.strictEqual(typeof val, 'boolean');
+        assert.strictEqual(typeof message, 'string');
         this.#isDeprecatedPath = val;
+        this.#deprecatedPathMessage = message;
     }
 
     get isExperimental() {
@@ -54,9 +61,12 @@ export function pathRedirectionForLegacy(actualFilePath) {
     return Object.freeze(desc);
 }
 
-export function pathRedirectionMarkedAsDeprecated(actualFilePath) {
+export function pathRedirectionMarkedAsDeprecated(
+    actualFilePath,
+    message = 'Use snake_case path instead.',
+) {
     const desc = new ApiPathDescriptor(actualFilePath);
-    desc.setIsDeprecatedPath(true);
+    desc.setIsDeprecatedPath(true, message);
     return Object.freeze(desc);
 }
 
