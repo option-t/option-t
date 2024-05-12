@@ -7,5 +7,7 @@ testImportExposedPath(
     test,
     Object.keys({
         './ClassicResult': null,
+
+        './classic_result': null,
     }),
 );
