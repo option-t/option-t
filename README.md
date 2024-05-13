@@ -121,6 +121,8 @@ We target to run in following environments.
     - ES Module ([ES2020](https://262.ecma-international.org/11.0/) level).
     - CommonJS
     - A runtime environment or module bundler must support Node.js' [package.json's `exports` field](https://nodejs.org/api/packages.html#package-entry-points) (Newer is better).
+        - We require TypeScript's [`--moduleResolution`](https://www.typescriptlang.org/tsconfig/#moduleResolution)
+          is set as `node16`, `bundler`, or others that supports `exports` field if your project use TypeScript.
 
 
 ### Caution
@@ -171,27 +173,37 @@ Additional documents are in [`docs/`](./docs/).
 
 ### How to import
 
+#### Examples
+
+```ts
+// Import functions and types which you would like to use:
+import { type Maybe } from 'option-t/Maybe';
+import { type Nullable, isNotNull } from 'option-t/Nullable';
+import { type Undefinable } from 'option-t/Undefinable';
+import { type Result, createOk, isOk } from 'option-t/PlainResult';
+```
+
+```ts
+// You can also use `<TypeName>.<operatorName>`
+import { Nullable } from 'option-t/Nullable/namespace';
+
+declare let numberOrNull: Nullable.Nullable<number>;
+// IntelliSense can suggest and narrow down by the order of Type -> related operations.
+const some = Nullable.unwrapOr(numberOrNull, -1);
+```
+
+```ts
+// You can import only a specific function by the more detailed path.
+import { type Nullable, unwrapNullable } from 'option-t/Nullable/Nullable';
+import { unwrapOrForNullable } from 'option-t/Nullable/unwrapOr';
+```
+
+#### See also
+
 **You can use [these paths](./docs/public_api_list.md) in both of CommonJS style and ES Module style.**
 This package provides some sub directories to import various functions (e.g. `option-t/PlainResult`).
 
 If you're project cannot import by their path, please read [this guide](./docs/how_to_import.md) to know more details.
-
-#### Examples
-
-```ts
-// Import only functions or types which you would like to use.
-import { isNotNull, type Nullable } from 'option-t/Nullable';
-import { unwrapNullable } from 'option-t/Nullable/Nullable';
-import { createOk, isOk } from 'option-t/PlainResult';
-```
-
-```ts
-// You can use `<TypeName>.<operatorName>` style.
-import { Nullable } from 'option-t/Nullable/namespace';
-
-declare let numberOrNull: Nullable.Nullable<number>;
-const some = Nullable.unwrapOr(numberOrNull, -1);
-```
 
 
 ### Deprecation
