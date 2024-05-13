@@ -121,6 +121,8 @@ We target to run in following environments.
     - ES Module ([ES2020](https://262.ecma-international.org/11.0/) level).
     - CommonJS
     - A runtime environment or module bundler must support Node.js' [package.json's `exports` field](https://nodejs.org/api/packages.html#package-entry-points) (Newer is better).
+        - We require TypeScript's [`--moduleResolution`](https://www.typescriptlang.org/tsconfig/#moduleResolution)
+          is set as `node16`, `bundler`, or others that supports `exports` field if your project use TypeScript.
 
 
 ### Caution
