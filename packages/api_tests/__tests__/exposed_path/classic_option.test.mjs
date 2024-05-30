@@ -6,8 +6,6 @@ import { testImportExposedPath } from './helper.mjs';
 testImportExposedPath(
     test,
     Object.keys({
-        './ClassicOption': null,
-
         './classic_option': null,
     }),
 );
