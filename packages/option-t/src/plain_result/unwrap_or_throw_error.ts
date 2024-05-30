@@ -21,7 +21,7 @@ import { type Result, isOk, unwrapOk, unwrapErr } from './result.js';
  *      If `Err` conatins a non `Error` instance value at the running time,
  *      this throws an `TypeError` with setting the original value to `.cause`.
  */
-export function unwrapOrThrowErrorForResult<T>(input: Result<T, Error>): T {
+export function unwrapOrThrowErrorWithAssertForResult<T>(input: Result<T, Error>): T {
     if (isOk(input)) {
         const val: T = unwrapOk<T>(input);
         return val;
@@ -31,3 +31,12 @@ export function unwrapOrThrowErrorForResult<T>(input: Result<T, Error>): T {
     assertIsErrorInstance(e, ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE);
     throw e;
 }
+
+/**
+ *  @deprecated 46.1.0
+ *  Use {@link unwrapOrThrowErrorWithAssertForResult} instead.
+ *
+ *  FIXME: https://github.com/option-t/option-t/issues/2260
+ */
+export const unwrapOrThrowErrorForResult: typeof unwrapOrThrowErrorWithAssertForResult =
+    unwrapOrThrowErrorWithAssertForResult;
