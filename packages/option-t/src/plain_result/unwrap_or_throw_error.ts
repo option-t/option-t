@@ -13,6 +13,13 @@ import { type Result, isOk, unwrapOk, unwrapErr } from './result.js';
  *
  *  This function requires `Error.cause` to carry the failure reason
  *  if it is not an `Error` instance.
+ *
+ *  @throws {Error}
+ *      This throws an inner value wrapped by Err(Error)`.
+ *
+ *  @throws {TypeError}
+ *      If `Err` conatins a non `Error` instance value at the running time,
+ *      this throws an `TypeError` with setting the original value to `.cause`.
  */
 export function unwrapOrThrowErrorForResult<T>(input: Result<T, Error>): T {
     if (isOk(input)) {
