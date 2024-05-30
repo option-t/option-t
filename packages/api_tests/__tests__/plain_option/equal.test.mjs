@@ -1,5 +1,6 @@
 import test from 'ava';
 
+import { equalForOption } from 'option-t/plain_option/equal';
 import {
     createSome,
     createNone,
@@ -7,7 +8,6 @@ import {
     isNone,
     unwrapSome as unwrapOption,
 } from 'option-t/plain_option/option';
-import { equalForOption } from 'option-t/plain_option/equal';
 
 const INNER_VALUE_A = Symbol('A');
 const INNER_VALUE_B = Symbol('B');

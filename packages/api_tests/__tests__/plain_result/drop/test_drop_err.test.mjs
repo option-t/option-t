@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import test from 'ava';
 
-import { createOk, createErr } from 'option-t/plain_result/result';
 import { unsafeDropErrForResult } from 'option-t/plain_result/drop';
+import { createOk, createErr } from 'option-t/plain_result/result';
 
 test('with Ok', (t) => {
     const actual = createOk(1);

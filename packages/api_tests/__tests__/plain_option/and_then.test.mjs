@@ -1,5 +1,6 @@
 import test from 'ava';
 
+import { andThenForOption } from 'option-t/plain_option/and_then';
 import {
     createSome,
     createNone,
@@ -7,7 +8,6 @@ import {
     isSome,
     unwrapSome as unwrapOption,
 } from 'option-t/plain_option/option';
-import { andThenForOption } from 'option-t/plain_option/and_then';
 
 test('src is `None`', (t) => {
     t.plan(1);

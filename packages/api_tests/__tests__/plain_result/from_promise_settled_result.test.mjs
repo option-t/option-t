@@ -1,12 +1,12 @@
 import test from 'ava';
 
+import { fromPromiseSettledResultToResult } from 'option-t/plain_result/from_promise_settled_result';
 import {
     isOk,
     isErr,
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
 } from 'option-t/plain_result/result';
-import { fromPromiseSettledResultToResult } from 'option-t/plain_result/from_promise_settled_result';
 
 test('should be Ok(T)', async (t) => {
     const VALUE_T = Symbol('value');

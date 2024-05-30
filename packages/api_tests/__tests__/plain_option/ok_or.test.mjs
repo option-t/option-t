@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/plain_option/option';
 import { okOrForPlainOption } from 'option-t/plain_option/ok_or';
+import { createSome, createNone } from 'option-t/plain_option/option';
 import {
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,

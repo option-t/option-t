@@ -1,5 +1,6 @@
 import test from 'ava';
 
+import { equalForResult } from 'option-t/plain_result/equal';
 import {
     createOk,
     createErr,
@@ -8,7 +9,6 @@ import {
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
 } from 'option-t/plain_result/result';
-import { equalForResult } from 'option-t/plain_result/equal';
 
 const INNER_VALUE_A = Symbol('A');
 const INNER_VALUE_B = Symbol('B');

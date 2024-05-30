@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createOk, createErr } from 'option-t/plain_result/result';
 import { asMutResult } from 'option-t/plain_result/as_mut';
+import { createOk, createErr } from 'option-t/plain_result/result';
 
 const FUNC_LIST = [createOk, createErr];
 
