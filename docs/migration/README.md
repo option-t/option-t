@@ -5,6 +5,7 @@ please see a release note in [Releases](https://github.com/option-t/option-t/rel
 
 ## v46 ~
 
+- [v47](./v47.md)
 - [v46](./v46.md)
 
 ## v40 ~ v45
