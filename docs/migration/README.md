@@ -3,6 +3,10 @@
 If there is no migration guide for a specific version,
 please see a release note in [Releases](https://github.com/option-t/option-t/releases).
 
+## v46 ~
+
+- [v46](./v46.md)
+
 ## v40 ~ v45
 
 - [v45](https://github.com/option-t/option-t/releases/tag/v45.0.0)
