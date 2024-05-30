@@ -31,21 +31,3 @@ export function unwrapOrThrowWithEnsureErrorForResult<T>(input: Result<T, Error>
     assertIsErrorInstance(e, ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE);
     throw e;
 }
-
-/**
- *  @deprecated 46.1.0
- *  Use {@link unwrapOrThrowWithEnsureErrorForResult} instead.
- *
- *  FIXME: https://github.com/option-t/option-t/issues/2260
- */
-export const unwrapOrThrowErrorForResult: typeof unwrapOrThrowWithEnsureErrorForResult =
-    unwrapOrThrowWithEnsureErrorForResult;
-
-/**
- *  @deprecated 46.2.0
- *  Use {@link unwrapOrThrowWithEnsureErrorForResult} instead.
- *
- *  FIXME: https://github.com/option-t/option-t/issues/2260
- */
-export const unwrapOrThrowErrorWithAssertForResult: typeof unwrapOrThrowWithEnsureErrorForResult =
-    unwrapOrThrowWithEnsureErrorForResult;

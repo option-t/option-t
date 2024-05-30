@@ -93,23 +93,3 @@ export { unwrapOrThrowUnknownDirectlyForResult } from './unwrap_or_throw_unknown
 //
 // TODO: https://github.com/option-t/option-t/issues/2267
 // `unwrap_or_throw`.
-
-import { unwrapOrThrowWithEnsureErrorForResult } from './unwrap_or_throw_error.js';
-
-/**
- *  @deprecated 46.1.0
- *  Use {@link unwrapOrThrowWithEnsureErrorForResult} instead.
- *
- *  FIXME: https://github.com/option-t/option-t/issues/2260
- */
-export const unwrapOrThrowErrorForResult: typeof unwrapOrThrowWithEnsureErrorForResult =
-    unwrapOrThrowWithEnsureErrorForResult;
-
-/**
- *  @deprecated 46.2.0
- *  Use {@link unwrapOrThrowWithEnsureErrorForResult} instead.
- *
- *  FIXME: https://github.com/option-t/option-t/issues/2260
- */
-export const unwrapOrThrowErrorWithAssertForResult: typeof unwrapOrThrowWithEnsureErrorForResult =
-    unwrapOrThrowWithEnsureErrorForResult;
