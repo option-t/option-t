@@ -39,6 +39,7 @@ testImportExposedPath(
         './plain_result/unwrap_or': null,
         './plain_result/unwrap_or_else': null,
         './plain_result/unwrap_or_else_async': null,
+        './plain_result/unwrap_or_throw': null,
         './plain_result/unwrap_or_throw_error': null,
         './plain_result/unwrap_or_throw_unknown': null,
     }),

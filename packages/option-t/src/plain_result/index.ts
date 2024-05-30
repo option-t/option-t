@@ -90,6 +90,9 @@ export { unwrapOrThrowUnknownDirectlyForResult } from './unwrap_or_throw_unknown
 //  - zip
 //  - zipWith
 //  - zipWithAsync
+//
+// TODO: https://github.com/option-t/option-t/issues/2267
+// `unwrap_or_throw`.
 
 import { unwrapOrThrowWithEnsureErrorForResult } from './unwrap_or_throw_error.js';
 

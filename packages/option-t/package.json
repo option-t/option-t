@@ -1842,6 +1842,20 @@
                 "default": "./esm/plain_result/unwrap_or_else_async.js"
             }
         },
+        "./plain_result/unwrap_or_throw": {
+            "import": {
+                "types": "./esm/plain_result/unwrap_or_throw.d.ts",
+                "default": "./esm/plain_result/unwrap_or_throw.js"
+            },
+            "require": {
+                "types": "./cjs/plain_result/unwrap_or_throw.d.cts",
+                "default": "./cjs/plain_result/unwrap_or_throw.cjs"
+            },
+            "default": {
+                "types": "./esm/plain_result/unwrap_or_throw.d.ts",
+                "default": "./esm/plain_result/unwrap_or_throw.js"
+            }
+        },
         "./plain_result/unwrap_or_throw_error": {
             "import": {
                 "types": "./esm/plain_result/unwrap_or_throw_error.d.ts",
