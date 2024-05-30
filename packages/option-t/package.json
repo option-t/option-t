@@ -7,8 +7,6 @@
         "node": ">=16.20.0"
     },
     "files": [
-        "CHANGELOG.md",
-        "CHANGELOG_OLD.md",
         "cjs/",
         "docs/",
         "esm/",
