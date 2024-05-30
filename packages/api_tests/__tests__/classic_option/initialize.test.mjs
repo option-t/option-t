@@ -5,7 +5,7 @@ import {
     createClassicNone,
     ClassicSomeConstructor as Some,
     ClassicNoneConstructor as None,
-} from 'option-t/ClassicOption';
+} from 'option-t/classic_option';
 
 import {
     primitiveVal,

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createOk, createErr, expectErr as expectErrForResult } from 'option-t/PlainResult/Result';
+import { createOk, createErr, expectErr as expectErrForResult } from 'option-t/plain_result/result';
 
 test('input=Ok(T), expect=Err(E)', (t) => {
     const NOT_EXPECTED = Symbol('not expected');

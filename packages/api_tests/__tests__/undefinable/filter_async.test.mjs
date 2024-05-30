@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { filterAsyncForUndefinable } from 'option-t/Undefinable/filterAsync';
+import { filterAsyncForUndefinable } from 'option-t/undefinable/filter_async';
 
 test('input is T, and predicate return true', async (t) => {
     t.plan(2);

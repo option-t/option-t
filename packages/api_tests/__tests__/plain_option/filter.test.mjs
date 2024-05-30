@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/PlainOption/Option';
-import { filterForOption } from 'option-t/PlainOption/filter';
+import { createSome, createNone } from 'option-t/plain_option/option';
+import { filterForOption } from 'option-t/plain_option/filter';
 
 test('input is Some, and predicate return true', (t) => {
     t.plan(3);

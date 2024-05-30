@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { inspectMaybe } from 'option-t/Maybe/inspect';
+import { inspectMaybe } from 'option-t/maybe/inspect';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {

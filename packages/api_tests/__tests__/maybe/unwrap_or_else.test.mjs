@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { unwrapOrElseForMaybe } from 'option-t/Maybe/unwrapOrElse';
+import { unwrapOrElseForMaybe } from 'option-t/maybe/unwrap_or_else';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {

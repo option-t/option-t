@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { isSome, isNone } from 'option-t/PlainOption/Option';
-import { fromOkToOption, fromErrToOption } from 'option-t/PlainOption/fromResult';
-import { createOk, createErr } from 'option-t/PlainResult/Result';
+import { isSome, isNone } from 'option-t/plain_option/option';
+import { fromOkToOption, fromErrToOption } from 'option-t/plain_option/from_result';
+import { createOk, createErr } from 'option-t/plain_result/result';
 
 test('input=Ok(T), output=Some(T)', (t) => {
     const EXPECTED = Symbol('expected');

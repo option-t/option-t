@@ -5,7 +5,7 @@ import {
     createClassicErr,
     compatToClassicResult,
     compatToPlainResult,
-} from 'option-t/ClassicResult';
+} from 'option-t/classic_result';
 import {
     createOk,
     createErr,
@@ -13,7 +13,7 @@ import {
     isErr,
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
-} from 'option-t/PlainResult/Result';
+} from 'option-t/plain_result/result';
 
 test(`input is Plain's Ok`, (t) => {
     const expected = Math.random();

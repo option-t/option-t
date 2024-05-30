@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { orForUndefinable } from 'option-t/Undefinable/or';
+import { orForUndefinable } from 'option-t/undefinable/or';
 import { nonNullableValue } from '../utils.mjs';
 
 test('Undefinable::or', (t) => {

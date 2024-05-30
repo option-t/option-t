@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as PlainResult from 'option-t/PlainResult';
+import * as PlainResult from 'option-t/plain_result';
 
 const testcase = [
     [

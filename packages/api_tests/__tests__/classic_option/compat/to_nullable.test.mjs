@@ -5,7 +5,7 @@ import {
     createClassicNone,
     compatToClassicOptionFromNullable,
     compatToNullableFromClassicOption,
-} from 'option-t/ClassicOption';
+} from 'option-t/classic_option';
 
 test(`input is T`, (t) => {
     const EXPECTED = Math.random();

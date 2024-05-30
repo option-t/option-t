@@ -1,11 +1,11 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/PlainOption/Option';
-import { okOrElseForPlainOption } from 'option-t/PlainOption/okOrElse';
+import { createSome, createNone } from 'option-t/plain_option/option';
+import { okOrElseForPlainOption } from 'option-t/plain_option/ok_or_else';
 import {
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
-} from 'option-t/PlainResult/Result';
+} from 'option-t/plain_result/result';
 
 test('the input is Some', (t) => {
     t.plan(2);

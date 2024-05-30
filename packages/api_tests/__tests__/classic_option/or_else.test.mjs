@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createClassicSome, createClassicNone } from 'option-t/ClassicOption';
+import { createClassicSome, createClassicNone } from 'option-t/classic_option';
 
 test('self is `None`, param returns `Some<T>`', function (t) {
     const EXPECTED = 1;

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createClassicOk, createClassicErr } from 'option-t/ClassicResult';
+import { createClassicOk, createClassicErr } from 'option-t/classic_result';
 
 test('Ok<T>', function (t) {
     t.plan(2);

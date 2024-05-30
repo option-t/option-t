@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/PlainResult/Result';
-import { okOrForUndefinable } from 'option-t/Undefinable/okOr';
+import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
+import { okOrForUndefinable } from 'option-t/undefinable/ok_or';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;

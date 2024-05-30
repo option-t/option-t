@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { filterWithEnsureTypeForMaybe } from 'option-t/Maybe/filter';
+import { filterWithEnsureTypeForMaybe } from 'option-t/maybe/filter';
 
 test('input is T, and predicate return true', (t) => {
     t.plan(2);

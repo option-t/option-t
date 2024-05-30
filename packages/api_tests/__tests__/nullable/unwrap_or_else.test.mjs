@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { unwrapOrElseForNullable } from 'option-t/Nullable/unwrapOrElse';
+import { unwrapOrElseForNullable } from 'option-t/nullable/unwrap_or_else';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;

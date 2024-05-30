@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { andThenForMaybe } from 'option-t/Maybe/andThen';
+import { andThenForMaybe } from 'option-t/maybe/and_then';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, PASSED_VALUE, EXPECTED] of nonNullableValueCaseListForSync) {

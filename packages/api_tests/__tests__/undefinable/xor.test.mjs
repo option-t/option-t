@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { xorForUndefinable } from 'option-t/Undefinable/xor';
+import { xorForUndefinable } from 'option-t/undefinable/xor';
 
 const SOME_VAL_A = Symbol('some_val_a');
 const SOME_VAL_B = Symbol('some_val_b');

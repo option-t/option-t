@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createOk, createErr } from 'option-t/PlainResult';
+import { createOk, createErr } from 'option-t/plain_result';
 
 test('The shape of PlainResult::Ok', (t) => {
     const INNER_VAL = 10;

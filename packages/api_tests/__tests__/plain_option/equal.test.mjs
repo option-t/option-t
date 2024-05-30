@@ -6,8 +6,8 @@ import {
     isSome,
     isNone,
     unwrapSome as unwrapOption,
-} from 'option-t/PlainOption/Option';
-import { equalForOption } from 'option-t/PlainOption/equal';
+} from 'option-t/plain_option/option';
+import { equalForOption } from 'option-t/plain_option/equal';
 
 const INNER_VALUE_A = Symbol('A');
 const INNER_VALUE_B = Symbol('B');

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { compatToClassicOptionFromMaybe } from 'option-t/ClassicOption';
+import { compatToClassicOptionFromMaybe } from 'option-t/classic_option';
 
 test(`input is T`, (t) => {
     const EXPECTED = Math.random();

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createOk, createErr, unwrapOk as unwrapOkFromResult } from 'option-t/PlainResult/Result';
+import { createOk, createErr, unwrapOk as unwrapOkFromResult } from 'option-t/plain_result/result';
 
 const EXPECTED_OK = Symbol('expected_ok');
 const EXPECTED_ERR = Symbol('expected_err');

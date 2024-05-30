@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { andForMaybe } from 'option-t/Maybe/and';
+import { andForMaybe } from 'option-t/maybe/and';
 import { nonNullableValue } from '../utils.mjs';
 
 const LEFT = Symbol('a');

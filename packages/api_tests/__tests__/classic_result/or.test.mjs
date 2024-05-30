@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createClassicOk, createClassicErr } from 'option-t/ClassicResult';
+import { createClassicOk, createClassicErr } from 'option-t/classic_result';
 
 const EXPECTED = Symbol('0');
 const UNEXPECTED = Symbol('1');

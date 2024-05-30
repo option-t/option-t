@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { toResultErrFromNullable } from 'option-t/Nullable/toPlainResult';
-import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/PlainResult/Result';
+import { toResultErrFromNullable } from 'option-t/nullable/to_plain_result';
+import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { nonNullableValueCaseListForSync } from '../../utils.mjs';
 
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {

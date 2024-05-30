@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createOk, createErr } from 'option-t/PlainResult/Result';
+import { createOk, createErr } from 'option-t/plain_result/result';
 
-import { mapOrAsyncForResult } from 'option-t/PlainResult/mapOrAsync';
+import { mapOrAsyncForResult } from 'option-t/plain_result/map_or_async';
 
 test('Ok<T>', async (t) => {
     const INITIAL = `Initial: ${String(Math.random())}`;

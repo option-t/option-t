@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { filterAsyncForMaybe } from 'option-t/Maybe/filterAsync';
+import { filterAsyncForMaybe } from 'option-t/maybe/filter_async';
 
 test('input is T, and predicate return true', async (t) => {
     t.plan(2);

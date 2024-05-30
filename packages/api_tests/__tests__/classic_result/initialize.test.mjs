@@ -5,7 +5,7 @@ import {
     createClassicErr,
     ClassicOkConstructor as Ok,
     ClassicErrConstructor as Err,
-} from 'option-t/ClassicResult';
+} from 'option-t/classic_result';
 
 import {
     primitiveVal,

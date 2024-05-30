@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { xorForMaybe } from 'option-t/Maybe/xor';
+import { xorForMaybe } from 'option-t/maybe/xor';
 
 const SOME_VAL_A = Symbol('some_val_a');
 const SOME_VAL_B = Symbol('some_val_b');

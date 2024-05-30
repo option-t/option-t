@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { zipForMaybe } from 'option-t/Maybe/zip';
+import { zipForMaybe } from 'option-t/maybe/zip';
 
 const SOME_VAL_A = `a: ${Math.random()}`;
 const SOME_VAL_B = `b: ${Math.random()}`;

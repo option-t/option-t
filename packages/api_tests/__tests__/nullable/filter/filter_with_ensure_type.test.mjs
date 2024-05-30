@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { filterWithEnsureTypeForNullable } from 'option-t/Nullable/filter';
+import { filterWithEnsureTypeForNullable } from 'option-t/nullable/filter';
 
 test('input is T, and predicate return true', (t) => {
     t.plan(2);
