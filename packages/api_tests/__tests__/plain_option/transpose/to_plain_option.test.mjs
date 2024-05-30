@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createSome, createNone, isSome, isNone } from 'option-t/PlainOption/Option';
-import { transposeResultToOption } from 'option-t/PlainOption/transpose';
-import { createOk, createErr, isOk, isErr } from 'option-t/PlainResult/Result';
+import { createSome, createNone, isSome, isNone } from 'option-t/plain_option/option';
+import { transposeResultToOption } from 'option-t/plain_option/transpose';
+import { createOk, createErr, isOk, isErr } from 'option-t/plain_result/result';
 
 test('input is Ok<Some<T>>, the result should be Some(Ok(v))', (t) => {
     const val = Symbol('val');

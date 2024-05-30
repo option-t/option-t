@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone, isNone, isSome } from 'option-t/PlainOption/Option';
-import { xorForOption } from 'option-t/PlainOption/xor';
+import { createSome, createNone, isNone, isSome } from 'option-t/plain_option/option';
+import { xorForOption } from 'option-t/plain_option/xor';
 
 const valA = Symbol('a');
 const valB = Symbol('b');

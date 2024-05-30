@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/PlainOption/Option';
-import { toNullableFromOption } from 'option-t/PlainOption/toNullable';
+import { createSome, createNone } from 'option-t/plain_option/option';
+import { toNullableFromOption } from 'option-t/plain_option/to_nullable';
 
 const VALUE_T = Math.random();
 

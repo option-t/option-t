@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/PlainOption/Option';
-import { orForOption } from 'option-t/PlainOption/or';
+import { createSome, createNone } from 'option-t/plain_option/option';
+import { orForOption } from 'option-t/plain_option/or';
 
 test('a=Some, b=Some', (t) => {
     const EXPECTED = Symbol('expected');

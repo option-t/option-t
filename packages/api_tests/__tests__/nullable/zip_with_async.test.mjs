@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { zipWithAsyncForNullable } from 'option-t/Nullable/zipWithAsync';
+import { zipWithAsyncForNullable } from 'option-t/nullable/zip_with_async';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = undefined;

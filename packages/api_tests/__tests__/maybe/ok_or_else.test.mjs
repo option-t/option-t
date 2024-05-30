@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { okOrElseForMaybe } from 'option-t/Maybe/okOrElse';
-import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/PlainResult/Result';
+import { okOrElseForMaybe } from 'option-t/maybe/ok_or_else';
+import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 const DEFAULT_ERR = Symbol('default err');

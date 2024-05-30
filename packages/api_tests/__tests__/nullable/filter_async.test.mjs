@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { filterAsyncForNullable } from 'option-t/Nullable/filterAsync';
+import { filterAsyncForNullable } from 'option-t/nullable/filter_async';
 
 test('input is T, and predicate return true', async (t) => {
     t.plan(2);

@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createOk, createErr } from 'option-t/PlainResult/Result';
-import { orElseAsyncForResult } from 'option-t/PlainResult/orElseAsync';
+import { createOk, createErr } from 'option-t/plain_result/result';
+import { orElseAsyncForResult } from 'option-t/plain_result/or_else_async';
 
 const VALUE_T = Math.random();
 const ERROR_E = new Error('e');

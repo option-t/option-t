@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as Nullable from 'option-t/Nullable';
+import * as Nullable from 'option-t/nullable';
 
 {
     const testcase = [

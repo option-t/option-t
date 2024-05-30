@@ -36,7 +36,7 @@ and they don't have any helper like [`React.Suspense()`](https://reactjs.org/doc
 `Result<T, E>` would be useful to express such progressive data.
 
 ```typescript
-import type { Result } from 'option-t/PlainResult/Result';
+import type { Result } from 'option-t/plain_result';
 
 // pattern 1
 type ProgressResult<T, E> = null | Result<T, E>;
@@ -64,7 +64,7 @@ If you'd like to contain them for the future, type _pattern 2_ would be more nic
 By these types, the above example would be:
 
 ```typescript
-import type { Result } from 'option-t/PlainResult/Result';
+import type { Result } from 'option-t/plain_result';
 import React from 'react';
 
 type ProgressResult<T, E> =

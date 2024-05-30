@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createClassicSome, createClassicNone } from 'option-t/ClassicOption';
+import { createClassicSome, createClassicNone } from 'option-t/classic_option';
 
 test('self is `None`', function (t) {
     const none = createClassicNone();

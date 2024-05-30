@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import test from 'ava';
 
-import { createOk, createErr } from 'option-t/PlainResult/Result';
-import { unsafeDropBothForResult } from 'option-t/PlainResult/drop';
+import { createOk, createErr } from 'option-t/plain_result/result';
+import { unsafeDropBothForResult } from 'option-t/plain_result/drop';
 
 test('with Ok', (t) => {
     const expected = Symbol('');

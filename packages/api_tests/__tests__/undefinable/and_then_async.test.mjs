@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { andThenAsyncForUndefinable } from 'option-t/Undefinable/andThenAsync';
+import { andThenAsyncForUndefinable } from 'option-t/undefinable/and_then_async';
 import { nonNullableValueCaseListForAsync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { createSome, createNone, isSome, isNone } from 'option-t/PlainOption';
+import { createSome, createNone, isSome, isNone } from 'option-t/plain_option';
 
 test('createSome', (t) => {
     const EXPECTED = Symbol('');

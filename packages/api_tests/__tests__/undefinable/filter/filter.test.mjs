@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { filterForUndefinable } from 'option-t/Undefinable/filter';
+import { filterForUndefinable } from 'option-t/undefinable/filter';
 
 test('input is T, and predicate return true', (t) => {
     t.plan(2);

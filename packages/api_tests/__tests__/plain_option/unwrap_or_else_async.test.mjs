@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/PlainOption/Option';
-import { unwrapOrElseAsyncForOption } from 'option-t/PlainOption/unwrapOrElseAsync';
+import { createSome, createNone } from 'option-t/plain_option/option';
+import { unwrapOrElseAsyncForOption } from 'option-t/plain_option/unwrap_or_else_async';
 
 const VALUE_T = Math.random();
 const DEFAULT_VAL = Math.random();

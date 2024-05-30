@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { expectNotNullOrUndefined } from 'option-t/Maybe/Maybe';
+import { expectNotNullOrUndefined } from 'option-t/maybe/maybe';
 import { nonNullableValueCaseListForSync } from '../utils.mjs';
 
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {

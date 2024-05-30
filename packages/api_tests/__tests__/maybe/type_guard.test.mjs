@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as Maybe from 'option-t/Maybe/Maybe';
+import * as Maybe from 'option-t/maybe/maybe';
 
 {
     const testcase = [

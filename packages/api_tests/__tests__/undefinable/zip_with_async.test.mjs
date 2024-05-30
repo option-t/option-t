@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { zipWithAsyncForUndefinable } from 'option-t/Undefinable/zipWithAsync';
+import { zipWithAsyncForUndefinable } from 'option-t/undefinable/zip_with_async';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = null;

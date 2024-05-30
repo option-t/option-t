@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { zipWithForUndefinable } from 'option-t/Undefinable/zipWith';
+import { zipWithForUndefinable } from 'option-t/undefinable/zip_with';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
 const NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE = null;

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { zipForNullable } from 'option-t/Nullable/zip';
+import { zipForNullable } from 'option-t/nullable/zip';
 
 const SOME_VAL_A = `a: ${Math.random()}`;
 const SOME_VAL_B = `b: ${Math.random()}`;

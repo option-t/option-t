@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/PlainOption/Option';
-import { mapOrElseAsyncForOption } from 'option-t/PlainOption/mapOrElseAsync';
+import { createSome, createNone } from 'option-t/plain_option/option';
+import { mapOrElseAsyncForOption } from 'option-t/plain_option/map_or_else_async';
 
 const PLAN_COUNT = 3;
 

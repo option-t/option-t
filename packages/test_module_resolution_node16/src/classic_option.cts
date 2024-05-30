@@ -1,1 +1,1 @@
-import {} from 'option-t/ClassicOption';
+import {} from 'option-t/classic_option';

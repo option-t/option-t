@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { andThenAsyncForNullable } from 'option-t/Nullable/andThenAsync';
+import { andThenAsyncForNullable } from 'option-t/nullable/and_then_async';
 import { nonNullableValueCaseListForAsync } from '../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;

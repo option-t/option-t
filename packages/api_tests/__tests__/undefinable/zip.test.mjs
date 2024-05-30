@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { zipForUndefinable } from 'option-t/Undefinable/zip';
+import { zipForUndefinable } from 'option-t/undefinable/zip';
 
 const SOME_VAL_A = `a: ${Math.random()}`;
 const SOME_VAL_B = `b: ${Math.random()}`;

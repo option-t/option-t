@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createSome, createNone } from 'option-t/PlainOption/Option';
-import { mapOrAsyncForOption } from 'option-t/PlainOption/mapOrAsync';
+import { createSome, createNone } from 'option-t/plain_option/option';
+import { mapOrAsyncForOption } from 'option-t/plain_option/map_or_async';
 
 test('Some<T>', async (t) => {
     const INITIAL = `Initial: ${String(Math.random())}`;

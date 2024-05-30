@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { filterForNullable } from 'option-t/Nullable/filter';
+import { filterForNullable } from 'option-t/nullable/filter';
 
 test('input is T, and predicate return true', (t) => {
     t.plan(2);

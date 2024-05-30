@@ -6,8 +6,8 @@ import {
     isNone,
     isSome,
     unwrapSome as unwrapOption,
-} from 'option-t/PlainOption/Option';
-import { andThenForOption } from 'option-t/PlainOption/andThen';
+} from 'option-t/plain_option/option';
+import { andThenForOption } from 'option-t/plain_option/and_then';
 
 test('src is `None`', (t) => {
     t.plan(1);

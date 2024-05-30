@@ -5,14 +5,14 @@ import {
     createClassicNone,
     compatToClassicOption,
     compatToPlainOption,
-} from 'option-t/ClassicOption';
+} from 'option-t/classic_option';
 import {
     createSome,
     createNone,
     isSome,
     isNone,
     unwrapSome as unwrapOption,
-} from 'option-t/PlainOption/Option';
+} from 'option-t/plain_option/option';
 
 test(`input is Plain's Some`, (t) => {
     const expected = Math.random();

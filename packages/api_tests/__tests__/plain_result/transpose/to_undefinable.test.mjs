@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { createOk, createErr, isOk, isErr } from 'option-t/PlainResult/Result';
-import { transposeResultToUndefinable } from 'option-t/PlainResult/transpose';
+import { createOk, createErr, isOk, isErr } from 'option-t/plain_result/result';
+import { transposeResultToUndefinable } from 'option-t/plain_result/transpose';
 
 test('input is Ok<T>, the result should be Ok(T)', (t) => {
     const val = Symbol('val');
