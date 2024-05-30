@@ -1,8 +1,8 @@
 import { randomUUID } from 'node:crypto';
 import test from 'ava';
 
-import { createOk } from 'option-t/plain_result/result';
 import { isOkAndForResult } from 'option-t/plain_result/is_ok_and';
+import { createOk } from 'option-t/plain_result/result';
 
 test('input=Ok(T), predicate returns true', (t) => {
     t.plan(3);

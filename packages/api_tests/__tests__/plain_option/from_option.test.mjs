@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import { isSome, isNone } from 'option-t/plain_option/option';
 import { fromOkToOption, fromErrToOption } from 'option-t/plain_option/from_result';
+import { isSome, isNone } from 'option-t/plain_option/option';
 import { createOk, createErr } from 'option-t/plain_result/result';
 
 test('input=Ok(T), output=Some(T)', (t) => {

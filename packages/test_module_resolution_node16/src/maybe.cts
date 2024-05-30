@@ -28,4 +28,4 @@ import {} from 'option-t/maybe/unwrap_or_else_async';
 import {} from 'option-t/maybe/xor';
 import {} from 'option-t/maybe/zip';
 import {} from 'option-t/maybe/zip_with';
-import {} from 'option-t/Maybe/zipWithAsync';
+import {} from 'option-t/maybe/zip_with_async';

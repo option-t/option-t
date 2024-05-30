@@ -1,8 +1,8 @@
 import { randomUUID } from 'node:crypto';
 import test from 'ava';
 
-import { createErr } from 'option-t/plain_result/result';
 import { isOkAndWithEnsureTypeForResult } from 'option-t/plain_result/is_ok_and';
+import { createErr } from 'option-t/plain_result/result';
 
 test('input=Err(T), predicate returns true', (t) => {
     t.plan(1);
