@@ -8,7 +8,6 @@
     },
     "files": [
         "cjs/",
-        "docs/",
         "esm/",
         "LICENSE.MIT",
         "package.json",
