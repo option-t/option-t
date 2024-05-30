@@ -29,7 +29,7 @@ test('input is Err(Error)', (t) => {
     );
 
     t.not(thrown, ERROR_E, 'should generate a new error instance');
-    t.is(thrown.name, 'CausalCarrier', 'should be expected Error.name');
+    t.is(thrown.name, 'CausalCarrierError', 'should be expected Error.name');
     t.is(thrown.cause, ERROR_E, '.cause should be set properly');
 });
 
@@ -48,6 +48,6 @@ test('input is Err(non Error instance)', (t) => {
     );
 
     t.not(thrown, ERROR_E, 'should generate a new error instance');
-    t.is(thrown.name, 'CausalCarrier', 'should be expected Error.name');
+    t.is(thrown.name, 'CausalCarrierError', 'should be expected Error.name');
     t.is(thrown.cause, ERROR_E, '.cause should be set properly');
 });
