@@ -151,6 +151,7 @@ export const apiTable = Object.freeze({
     'plain_result/unwrap_or_else_async': pathRedirectionTo(
         `${PLAIN_RESULT_DIR}/unwrap_or_else_async`,
     ),
+    'plain_result/unwrap_or_throw': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or_throw`),
     'plain_result/unwrap_or_throw_error': pathRedirectionTo(
         `${PLAIN_RESULT_DIR}/unwrap_or_throw_error`,
     ),
