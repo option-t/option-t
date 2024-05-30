@@ -63,7 +63,7 @@ export {
 export { unwrapOrForResult } from './unwrap_or.js';
 export { unwrapOrElseForResult } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
-export { unwrapOrThrowErrorForResult } from './unwrap_or_throw_error.js';
+export { unwrapOrThrowErrorWithAssertForResult } from './unwrap_or_throw_error.js';
 
 // XXX:
 //  We don't expose these itens that is unsafe operation.
@@ -89,3 +89,14 @@ export { unwrapOrThrowErrorForResult } from './unwrap_or_throw_error.js';
 //  - zip
 //  - zipWith
 //  - zipWithAsync
+
+import { unwrapOrThrowErrorWithAssertForResult } from './unwrap_or_throw_error.js';
+
+/**
+ *  @deprecated 46.1.0
+ *  Use {@link unwrapOrThrowErrorWithAssertForResult} instead.
+ *
+ *  FIXME: https://github.com/option-t/option-t/issues/2260
+ */
+export const unwrapOrThrowErrorForResult: typeof unwrapOrThrowErrorWithAssertForResult =
+    unwrapOrThrowErrorWithAssertForResult;
