@@ -50,7 +50,7 @@ export {
 export { unwrapOrForResult as unwrapOr } from '../unwrap_or.js';
 export { unwrapOrElseForResult as unwrapOrElse } from '../unwrap_or_else.js';
 export { unwrapOrElseAsyncForResult as unwrapOrElseAsync } from '../unwrap_or_else_async.js';
-export { unwrapOrThrowErrorWithAssertForResult as unwrapOrThrowErrorWithAssert } from '../unwrap_or_throw_error.js';
+export { unwrapOrThrowWithEnsureErrorForResult as unwrapOrThrowWithEnsureError } from '../unwrap_or_throw_error.js';
 export { unwrapOrThrowUnknownDirectlyForResult as unwrapOrThrowUnknownDirectly } from '../unwrap_or_throw_unknown.js';
 
 // XXX:
@@ -78,12 +78,21 @@ export { unwrapOrThrowUnknownDirectlyForResult as unwrapOrThrowUnknownDirectly }
 //  - zipWith
 //  - zipWithAsync
 
-import { unwrapOrThrowErrorWithAssertForResult as unwrapOrThrowErrorWithAssert } from '../unwrap_or_throw_error.js';
+import { unwrapOrThrowWithEnsureErrorForResult as unwrapOrThrowWithEnsureError } from '../unwrap_or_throw_error.js';
 
 /**
  *  @deprecated 46.1.0
- *  Use {@link unwrapOrThrowErrorWithAssert} instead.
+ *  Use {@link unwrapOrThrowWithEnsureError} instead.
  *
  *  FIXME: https://github.com/option-t/option-t/issues/2260
  */
-export const unwrapOrThrowError: typeof unwrapOrThrowErrorWithAssert = unwrapOrThrowErrorWithAssert;
+export const unwrapOrThrowError: typeof unwrapOrThrowWithEnsureError = unwrapOrThrowWithEnsureError;
+
+/**
+ *  @deprecated 46.2.0
+ *  Use {@link unwrapOrThrowWithEnsureError} instead.
+ *
+ *  FIXME: https://github.com/option-t/option-t/issues/2260
+ */
+export const unwrapOrThrowErrorWithAssert: typeof unwrapOrThrowWithEnsureError =
+    unwrapOrThrowWithEnsureError;

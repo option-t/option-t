@@ -2,7 +2,7 @@ import { webcrypto } from 'node:crypto';
 import test from 'ava';
 
 import { createOk, createErr } from 'option-t/plain_result/result';
-import { unwrapOrThrowErrorWithAssertForResult } from 'option-t/plain_result/unwrap_or_throw_error';
+import { unwrapOrThrowWithEnsureErrorForResult } from 'option-t/plain_result/unwrap_or_throw_error';
 
 test('input is Ok(T)', (t) => {
     const VALUE_T = Math.random();
@@ -10,7 +10,7 @@ test('input is Ok(T)', (t) => {
     const input = createOk(VALUE_T);
     let actual;
     t.notThrows(() => {
-        actual = unwrapOrThrowErrorWithAssertForResult(input);
+        actual = unwrapOrThrowWithEnsureErrorForResult(input);
     });
     t.is(actual, VALUE_T);
 });
@@ -21,7 +21,7 @@ test('input is Err(Error)', (t) => {
     const input = createErr(ERROR_E);
     t.throws(
         () => {
-            unwrapOrThrowErrorWithAssertForResult(input);
+            unwrapOrThrowWithEnsureErrorForResult(input);
         },
         {
             is: ERROR_E,
@@ -37,7 +37,7 @@ test('input is Err, but the contained value is not Error', (t) => {
     const input = createErr(ERROR_E);
     const thrown = t.throws(
         () => {
-            unwrapOrThrowErrorWithAssertForResult(input);
+            unwrapOrThrowWithEnsureErrorForResult(input);
         },
         {
             instanceOf: TypeError,
