@@ -50,6 +50,7 @@ export {
 export { unwrapOrForResult as unwrapOr } from '../unwrap_or.js';
 export { unwrapOrElseForResult as unwrapOrElse } from '../unwrap_or_else.js';
 export { unwrapOrElseAsyncForResult as unwrapOrElseAsync } from '../unwrap_or_else_async.js';
+export { unwrapOrThrowErrorForResult as unwrapOrThrowError } from '../unwrap_or_throw_error.js';
 
 // XXX:
 //  We don't expose these itens that is unsafe operation.
@@ -75,8 +76,3 @@ export { unwrapOrElseAsyncForResult as unwrapOrElseAsync } from '../unwrap_or_el
 //  - zip
 //  - zipWith
 //  - zipWithAsync
-//
-// XXX:
-//  _unwrap_or_throw_error_, we don't expose items from this for it.
-//  It is provided only for the case to bridge with exist codes.
-//  We recommend to handle result type in that style.
