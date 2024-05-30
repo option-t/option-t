@@ -32,3 +32,4 @@ import {} from 'option-t/plain_result/unwrap_or';
 import {} from 'option-t/plain_result/unwrap_or_else';
 import {} from 'option-t/plain_result/unwrap_or_else_async';
 import {} from 'option-t/plain_result/unwrap_or_throw_error';
+import {} from 'option-t/plain_result/unwrap_or_throw_unknown';

@@ -1856,6 +1856,20 @@
                 "default": "./esm/plain_result/unwrap_or_throw_error.js"
             }
         },
+        "./plain_result/unwrap_or_throw_unknown": {
+            "import": {
+                "types": "./esm/plain_result/unwrap_or_throw_unknown.d.ts",
+                "default": "./esm/plain_result/unwrap_or_throw_unknown.js"
+            },
+            "require": {
+                "types": "./cjs/plain_result/unwrap_or_throw_unknown.d.cts",
+                "default": "./cjs/plain_result/unwrap_or_throw_unknown.cjs"
+            },
+            "default": {
+                "types": "./esm/plain_result/unwrap_or_throw_unknown.d.ts",
+                "default": "./esm/plain_result/unwrap_or_throw_unknown.js"
+            }
+        },
         "./undefinable": {
             "import": {
                 "types": "./esm/undefinable/index.d.ts",
