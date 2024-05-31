@@ -50,6 +50,10 @@ export {
 export { unwrapOrForResult as unwrapOr } from '../unwrap_or.js';
 export { unwrapOrElseForResult as unwrapOrElse } from '../unwrap_or_else.js';
 export { unwrapOrElseAsyncForResult as unwrapOrElseAsync } from '../unwrap_or_else_async.js';
+export { unwrapOrThrowForResult as unwrapOrThrow } from '../unwrap_or_throw.js';
+/**
+ *  @deprecated 48.1.0
+ */
 export { unwrapOrThrowWithEnsureErrorForResult as unwrapOrThrowWithEnsureError } from '../unwrap_or_throw_error.js';
 
 // XXX:
@@ -76,6 +80,3 @@ export { unwrapOrThrowWithEnsureErrorForResult as unwrapOrThrowWithEnsureError }
 //  - zip
 //  - zipWith
 //  - zipWithAsync
-//
-// TODO: https://github.com/option-t/option-t/issues/2267
-// `unwrap_or_throw`.
