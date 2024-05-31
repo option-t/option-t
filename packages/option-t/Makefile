@@ -11,7 +11,6 @@ DOCS_DIR := $(REPO_ROOT_DIR)/docs
 SRC_TEST_DIR := $(CURDIR)/__tests__
 
 DIST_DIR := $(CURDIR)/__dist
-DIST_DOCS_DIR := $(DIST_DIR)/docs
 DIST_ESM_DIR := $(DIST_DIR)/esm
 DIST_COMMONJS_DIR := $(DIST_DIR)/cjs
 GENERATED_ESM_DIR := $(CURDIR)/esm
@@ -84,7 +83,7 @@ clean_tmp_cjs:
 # Build
 ###########################
 .PHONY: build
-build: __build cp_docs cp_license cp_readme generate_manifest ## Build artifacts required to publish packages.
+build: __build cp_license cp_readme generate_manifest ## Build artifacts required to publish packages.
 
 .PHONY: __build
 __build: build_cjs build_esm ## Build all targets.
@@ -150,10 +149,6 @@ __build_tmp_base: clean_tmp_base __build_tmp_base__call_tsc
 .PHONY: __build_tmp_base__call_tsc
 __build_tmp_base__call_tsc: clean_tmp_base generate_manifest
 	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.json
-
-.PHONY: cp_docs
-cp_docs: clean_dist generate_manifest
-	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(DOCS_DIR) --source '$(DOCS_DIR)/**/*' --destination $(DIST_DOCS_DIR)
 
 .PHONY: cp_license
 cp_license: clean_dist generate_manifest
