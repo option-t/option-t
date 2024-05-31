@@ -64,7 +64,6 @@ export { unwrapOrForResult } from './unwrap_or.js';
 export { unwrapOrElseForResult } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
 export { unwrapOrThrowWithEnsureErrorForResult } from './unwrap_or_throw_error.js';
-export { unwrapOrThrowUnknownDirectlyForResult } from './unwrap_or_throw_unknown.js';
 
 // XXX:
 //  We don't expose these itens that is unsafe operation.
