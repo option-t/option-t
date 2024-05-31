@@ -3,6 +3,19 @@ import { ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE } from '../in
 import { type Result, isOk, unwrapOk, unwrapErr } from './result.js';
 
 /**
+ *  @deprecated 48.1.0
+ *  This operator throws the `Error` contained in _input_ directly
+ *  but its stack trace informartion lacks the information about where throws it actually.
+ *  To keep it, use `unwrapOrThrowForResult` exported from following instead:
+ *
+ *  - `option-t/plain_result`
+ *  - `option-t/plain_result/unwrap_or_throw`
+ *  - `option-t/plain_result/namespace` exports it as `Result.unwrapOrThrow()`
+ *
+ *  It throw a new `Error` with keeping the original error as `Error.cause` property.
+ *
+ *  -------
+ *
  *  Unwraps _input_, returns the content of an `Ok(T)`.
  *  Otherwise, this function throw the contained `Error` in `Err(Error)`.
  *
