@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "name": "@option-t/test_module_resolution_node16",
-    "version": "47.0.0",
+    "version": "48.0.0",
     "license": "MIT",
     "scripts": {
         "test": "tsc -p ./tsconfig.json"
