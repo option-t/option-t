@@ -1,18 +1,8 @@
-import { ERR_MSG_FOR_ERROR_OBJECT_GENERATED_BY_UNWRAP_OR_THROW } from './internal/error_message.js';
+import {
+    // We don't expose this as a implementation detail.
+    CausalCarrierError,
+} from './internal/causal_carrier.js';
 import { type Result, isOk, unwrapOk, unwrapErr } from './result.js';
-
-const WRAPPER_NAME = 'CausalCarrierError' as const;
-
-// We don't expose this as a implementation detail.
-class CausalCarrierError<E> extends Error {
-    override name: typeof WRAPPER_NAME = WRAPPER_NAME;
-
-    constructor(cause: E) {
-        super(ERR_MSG_FOR_ERROR_OBJECT_GENERATED_BY_UNWRAP_OR_THROW, {
-            cause,
-        });
-    }
-}
 
 /**
  *  Unwraps _input_, returns the content of an `Ok(T)`.
