@@ -7,6 +7,7 @@ import {
     unwrapErr as unwrapErrFromResult,
 } from 'option-t/plain_result/result';
 import { tryCatchIntoResultWithEnsureErrorAsync } from 'option-t/plain_result/try_catch_async';
+import { getCrossRealmErrorConstructor } from '../../../cross_realm_error_helper.mjs';
 
 test('output=Ok(T): producer is normal fn', async (t) => {
     t.plan(4);
@@ -72,7 +73,7 @@ test('if producer is normal function and reject a Promise with not-Error-instanc
         },
         {
             instanceOf: TypeError,
-            message: `The thrown value is not an \`Error\` instance.`,
+            message: "The thrown value is not an instance of the current relam's `Error`.",
         },
     );
 
@@ -94,7 +95,36 @@ test('if producer is normal function and throw a not-Error-instance value before
         },
         {
             instanceOf: TypeError,
-            message: `The thrown value is not an \`Error\` instance.`,
+            message: "The thrown value is not an instance of the current relam's `Error`.",
+        },
+    );
+
+    t.is(actual.cause, THROWN_EXPECTED, 'should set Error.cause');
+});
+
+test('if producer is normal function and throw a instance value from cross-realm `Error` constructor before return any `Promise`', async (t) => {
+    t.plan(6);
+    const CurrentRealmErrorCtor = globalThis.Error;
+
+    // arrange
+    const CrossRealmErrorCtor = getCrossRealmErrorConstructor(t);
+    const THROWN_EXPECTED = new CrossRealmErrorCtor(Math.random());
+    t.false(
+        THROWN_EXPECTED instanceof CurrentRealmErrorCtor,
+        `the thrown error should not be the instance of current relam's Error consturctor`,
+    );
+
+    const actual = await t.throwsAsync(
+        async () => {
+            await tryCatchIntoResultWithEnsureErrorAsync(() => {
+                t.pass('producer is called');
+                throw THROWN_EXPECTED;
+            });
+            t.fail('unreachable here');
+        },
+        {
+            instanceOf: TypeError,
+            message: "The thrown value is not an instance of the current relam's `Error`.",
         },
     );
 
