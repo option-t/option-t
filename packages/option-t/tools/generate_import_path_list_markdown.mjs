@@ -21,12 +21,14 @@ class ListItem {
     #subpath;
     #isDeprecated;
     #deprecatedMessage;
+    #isExperimental;
 
-    constructor(key, subpath, isDeprecated, deprecatedMessage) {
+    constructor(key, subpath, isDeprecated, deprecatedMessage, isExperimental) {
         this.#key = key;
         this.#subpath = subpath;
         this.#isDeprecated = isDeprecated;
         this.#deprecatedMessage = deprecatedMessage;
+        this.#isExperimental = isExperimental;
         Object.freeze(this);
     }
 
@@ -54,14 +56,20 @@ class ListItem {
 
     toString() {
         const isDeprecated = this.#isDeprecated;
+        const isExperimental = this.#isExperimental;
 
         const name = this.#pathname();
         const href = `${RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO}/${this.href()}.ts`;
 
         const anchor = `[${name}](${href})`;
-        const link = !isDeprecated
-            ? anchor
-            : `${anchor} (__deprecated__. ${this.#deprecatedMessage})`;
+        let link = '';
+        if (isDeprecated) {
+            link = `${anchor} (__deprecated__. ${this.#deprecatedMessage})`;
+        } else if (isExperimental) {
+            link = `${anchor} (__experimental__)`;
+        } else {
+            link = anchor;
+        }
         return `- ${link}`;
     }
 }
@@ -190,7 +198,8 @@ function parseCliOptions() {
             const path = pathItem.filepath();
             const isDeprecated = pathItem.isDeprecated();
             const deprecatedMessage = pathItem.deprecatedPathMessage();
-            const item = new ListItem(key, path, isDeprecated, deprecatedMessage);
+            const isExperimental = pathItem.isExperimental();
+            const item = new ListItem(key, path, isDeprecated, deprecatedMessage, isExperimental);
             return item;
         });
 
