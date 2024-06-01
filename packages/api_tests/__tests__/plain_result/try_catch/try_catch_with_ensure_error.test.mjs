@@ -8,6 +8,7 @@ import {
     unwrapErr as unwrapErrFromResult,
 } from 'option-t/plain_result/result';
 import { tryCatchIntoResultWithEnsureError } from 'option-t/plain_result/try_catch';
+import { getCrossRealmErrorConstructor } from '../../cross_realm_error_helper.mjs';
 
 test('output=Ok(T)', (t) => {
     t.plan(3);
@@ -48,9 +49,39 @@ test('If producer throw non-Error-instance value', (t) => {
         },
         {
             instanceOf: TypeError,
-            message: `The thrown value is not an \`Error\` instance.`,
+            message: "The thrown value is not an instance of the current relam's `Error`.",
         },
     );
 
+    t.is(actual.cause, EXPECT_THROWN, `should set Error.cause`);
+});
+
+test('If producer throw the instance value from cross-realm `Error` constructor', (t) => {
+    t.plan(6);
+    const CurrentRealmErrorCtor = globalThis.Error;
+
+    // arrange
+    const CrossRealmErrorCtor = getCrossRealmErrorConstructor(t);
+    const EXPECT_THROWN = new CrossRealmErrorCtor(Math.random());
+    t.false(
+        EXPECT_THROWN instanceof CurrentRealmErrorCtor,
+        `the thrown error should not be the instance of current relam's Error consturctor`,
+    );
+
+    // act & assert
+    const actual = t.throws(
+        () => {
+            tryCatchIntoResultWithEnsureError(() => {
+                t.pass();
+                throw EXPECT_THROWN;
+            });
+        },
+        {
+            instanceOf: TypeError,
+            message: "The thrown value is not an instance of the current relam's `Error`.",
+        },
+    );
+
+    // assert
     t.is(actual.cause, EXPECT_THROWN, `should set Error.cause`);
 });

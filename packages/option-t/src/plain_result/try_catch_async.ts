@@ -28,8 +28,15 @@ export async function tryCatchIntoResultAsync<T>(
 
 /**
  *  - This function converts the returend value from _producer_ into `Ok(TValue)`.
- *  - If _producer_ throw an `Error` instance, this returns it with wrapping `Err(Error)`.
- *  - Otherwise, If _producer_ throw a not `Error` instance, then this throw `TypeError`.
+ *  - If _producer_ throw an `Error` instance of **current [relam][realm]**,
+ *    this returns it with wrapping `Err(Error)`.
+ *
+ *  @throws {TypeError}
+ *      This throws it if _producer_ throw the value that is not an instance of `Error` constructor of **current [relam][realm]**.
+ *
+ *  [realm]: https://262.ecma-international.org/14.0/#realm
+ *
+ * -----
  *
  *  NOTE:
  *  1. An user should narrow the scope of _producer_ to make it predictable that is in `Err(E)`.
