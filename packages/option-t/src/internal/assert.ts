@@ -1,8 +1,12 @@
 import { ERR_MSG_INPUT_IS_FROZEN_NOT_CAST_TO_MUTABLE } from './error_message.js';
 
-export function assertIsErrorInstance(input: unknown, message: string): asserts input is Error {
+export function isCurrentRealmErrorInstance(input: unknown): input is Error {
     const ok = input instanceof Error;
-    if (ok) {
+    return ok;
+}
+
+export function assertIsErrorInstance(input: unknown, message: string): asserts input is Error {
+    if (isCurrentRealmErrorInstance(input)) {
         return;
     }
 

@@ -1475,6 +1475,34 @@
                 "default": "./esm/plain_result/equal.js"
             }
         },
+        "./plain_result/experimental/try_catch": {
+            "import": {
+                "types": "./esm/plain_result/experimental/try_catch.d.ts",
+                "default": "./esm/plain_result/experimental/try_catch.js"
+            },
+            "require": {
+                "types": "./cjs/plain_result/experimental/try_catch.d.cts",
+                "default": "./cjs/plain_result/experimental/try_catch.cjs"
+            },
+            "default": {
+                "types": "./esm/plain_result/experimental/try_catch.d.ts",
+                "default": "./esm/plain_result/experimental/try_catch.js"
+            }
+        },
+        "./plain_result/experimental/try_catch_async": {
+            "import": {
+                "types": "./esm/plain_result/experimental/try_catch_async.d.ts",
+                "default": "./esm/plain_result/experimental/try_catch_async.js"
+            },
+            "require": {
+                "types": "./cjs/plain_result/experimental/try_catch_async.d.cts",
+                "default": "./cjs/plain_result/experimental/try_catch_async.cjs"
+            },
+            "default": {
+                "types": "./esm/plain_result/experimental/try_catch_async.d.ts",
+                "default": "./esm/plain_result/experimental/try_catch_async.js"
+            }
+        },
         "./plain_result/flatten": {
             "import": {
                 "types": "./esm/plain_result/flatten.d.ts",

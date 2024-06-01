@@ -116,6 +116,8 @@
 - [option-t/plain_result/as_mut](../packages/option-t/src/plain_result/as_mut.ts)
 - [option-t/plain_result/drop](../packages/option-t/src/plain_result/drop.ts)
 - [option-t/plain_result/equal](../packages/option-t/src/plain_result/equal.ts)
+- [option-t/plain_result/experimental/try_catch](../packages/option-t/src/plain_result/experimental/try_catch.ts) (__experimental__)
+- [option-t/plain_result/experimental/try_catch_async](../packages/option-t/src/plain_result/experimental/try_catch_async.ts) (__experimental__)
 - [option-t/plain_result/flatten](../packages/option-t/src/plain_result/flatten.ts)
 - [option-t/plain_result/from_promise_settled_result](../packages/option-t/src/plain_result/from_promise_settled_result.ts)
 - [option-t/plain_result/inspect](../packages/option-t/src/plain_result/inspect.ts)
