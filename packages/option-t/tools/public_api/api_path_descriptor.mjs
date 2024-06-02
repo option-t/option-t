@@ -1,13 +1,28 @@
 import * as assert from 'node:assert/strict';
+import { webcrypto } from 'node:crypto';
+
+/**
+ *  @enum   {string}
+ */
+const ApiStability = Object.freeze({
+    Stable: `stable: ${webcrypto.randomUUID()}`,
+    Experimental: `experimental: ${webcrypto.randomUUID()}`,
+    Deprecated: `deprecated: ${webcrypto.randomUUID()}`,
+});
+
+const apiStabilitySet = new Set([
+    ApiStability.Stable,
+    ApiStability.Experimental,
+    ApiStability.Deprecated,
+]);
 
 export class ApiPathDescriptor {
     #actualFilePath = null;
     #isTypeRootPath = false;
     #isCorePrimitive = false;
     #shouldHideInDoc = false;
-    #isDeprecatedPath = false;
-    #isExperimental = false;
     #message = null;
+    #stability = ApiStability.Stable;
 
     constructor(actualFilePath) {
         this.#actualFilePath = actualFilePath;
@@ -27,22 +42,17 @@ export class ApiPathDescriptor {
         this.#shouldHideInDoc = val;
     }
 
-    get isDeprecatedPath() {
-        return this.#isDeprecatedPath;
+    setApiStability(val) {
+        assert.ok(apiStabilitySet.has(val));
+        this.#stability = val;
     }
 
-    setIsDeprecatedPath(val) {
-        assert.strictEqual(typeof val, 'boolean');
-        this.#isDeprecatedPath = val;
+    get isDeprecatedPath() {
+        return this.#stability === ApiStability.Deprecated;
     }
 
     get isExperimental() {
-        return this.#isExperimental;
-    }
-
-    setIsExperimental(val) {
-        assert.strictEqual(typeof val, 'boolean');
-        this.#isExperimental = val;
+        return this.#stability === ApiStability.Experimental;
     }
 
     setIsTypeRootPath(val) {
@@ -79,6 +89,7 @@ export function pathRedirectionTo(actualFilePath) {
 
 export function pathRedirectionForLegacy(actualFilePath) {
     const desc = new ApiPathDescriptor(actualFilePath);
+    desc.setApiStability(ApiStability.Deprecated);
     desc.setShouldHideInDoc(true);
     return Object.freeze(desc);
 }
@@ -106,7 +117,7 @@ export function pathRedirectionMarkedAsCorePrimitive(actualFilePath) {
 
 export function pathRedirectionMarkedAsDeprecated(actualFilePath, message) {
     const desc = new ApiPathDescriptor(actualFilePath);
-    desc.setIsDeprecatedPath(true, message);
+    desc.setApiStability(ApiStability.Deprecated);
     desc.setMessage(message);
     return Object.freeze(desc);
 }
@@ -119,13 +130,6 @@ export function pathRedirectionForRoot(actualFilePath) {
 
 export function pathRedirectionToAsExperimental(actualFilePath) {
     const desc = new ApiPathDescriptor(actualFilePath);
-    desc.setIsExperimental(true);
-    return Object.freeze(desc);
-}
-
-export function pathExperimentalAndHidden(actualFilePath) {
-    const desc = new ApiPathDescriptor(actualFilePath);
-    desc.setShouldHideInDoc(true);
-    desc.setIsExperimental(true);
+    desc.setApiStability(ApiStability.Experimental);
     return Object.freeze(desc);
 }
