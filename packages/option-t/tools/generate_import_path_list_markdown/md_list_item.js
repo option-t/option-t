@@ -1,3 +1,5 @@
+import * as assert from 'node:assert/strict';
+
 const RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO = '../packages/option-t/src';
 
 const PKG_NAME = 'option-t';
@@ -10,12 +12,21 @@ export class MarkdownListItem {
     #isExperimental;
 
     constructor(key, subpath, isDeprecated, deprecatedMessage, isExperimental) {
+        assert.ok(typeof key === 'string');
+        assert.ok(typeof subpath === 'string');
+        assert.ok(typeof isDeprecated === 'boolean');
+        assert.ok(typeof isExperimental === 'boolean');
+
         this.#key = key;
         this.#subpath = subpath;
         this.#isDeprecated = isDeprecated;
         this.#deprecatedMessage = deprecatedMessage;
         this.#isExperimental = isExperimental;
         Object.freeze(this);
+    }
+
+    get isExperimental() {
+        return this.#isExperimental;
     }
 
     key() {

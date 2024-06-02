@@ -38,6 +38,8 @@
 - [option-t/maybe/zip_with_async](../packages/option-t/src/maybe/zip_with_async.ts)
 
 
+
+
 ## Nullable
 
 - [option-t/nullable](../packages/option-t/src/nullable/index.ts)
@@ -70,6 +72,8 @@
 - [option-t/nullable/zip](../packages/option-t/src/nullable/zip.ts)
 - [option-t/nullable/zip_with](../packages/option-t/src/nullable/zip_with.ts)
 - [option-t/nullable/zip_with_async](../packages/option-t/src/nullable/zip_with_async.ts)
+
+
 
 
 ## PlainOption
@@ -107,6 +111,8 @@
 - [option-t/plain_option/xor](../packages/option-t/src/plain_option/xor.ts)
 
 
+
+
 ## PlainResult
 
 - [option-t/plain_result](../packages/option-t/src/plain_result/index.ts)
@@ -116,8 +122,6 @@
 - [option-t/plain_result/as_mut](../packages/option-t/src/plain_result/as_mut.ts)
 - [option-t/plain_result/drop](../packages/option-t/src/plain_result/drop.ts)
 - [option-t/plain_result/equal](../packages/option-t/src/plain_result/equal.ts)
-- [option-t/plain_result/experimental/try_catch](../packages/option-t/src/plain_result/experimental/try_catch.ts) (__experimental__)
-- [option-t/plain_result/experimental/try_catch_async](../packages/option-t/src/plain_result/experimental/try_catch_async.ts) (__experimental__)
 - [option-t/plain_result/flatten](../packages/option-t/src/plain_result/flatten.ts)
 - [option-t/plain_result/from_promise_settled_result](../packages/option-t/src/plain_result/from_promise_settled_result.ts)
 - [option-t/plain_result/inspect](../packages/option-t/src/plain_result/inspect.ts)
@@ -147,6 +151,15 @@
 - [option-t/plain_result/unwrap_or_throw](../packages/option-t/src/plain_result/unwrap_or_throw.ts)
 - [option-t/plain_result/unwrap_or_throw_error](../packages/option-t/src/plain_result/unwrap_or_throw_error.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)
 - [option-t/plain_result/unwrap_or_throw_unknown](../packages/option-t/src/plain_result/unwrap_or_throw_unknown.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)
+
+
+### Experimental
+
+These are experimental. We might cause a breaking change without any major version up.
+
+- [option-t/plain_result/experimental/try_catch](../packages/option-t/src/plain_result/experimental/try_catch.ts) (__experimental__)
+- [option-t/plain_result/experimental/try_catch_async](../packages/option-t/src/plain_result/experimental/try_catch_async.ts) (__experimental__)
+
 
 
 ## Undefinable
@@ -181,4 +194,6 @@
 - [option-t/undefinable/zip](../packages/option-t/src/undefinable/zip.ts)
 - [option-t/undefinable/zip_with](../packages/option-t/src/undefinable/zip_with.ts)
 - [option-t/undefinable/zip_with_async](../packages/option-t/src/undefinable/zip_with_async.ts)
+
+
 
