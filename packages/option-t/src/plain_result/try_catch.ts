@@ -1,6 +1,8 @@
 import { assertIsErrorInstance } from '../internal/assert.js';
 import type { ProducerFn } from '../internal/function.js';
 import { ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE } from './internal/error_message.js';
+import { wrapWithNewErrorIfCausalIsUnknown } from './internal/unknown_causal_carrier.js';
+import { mapErrForResult } from './map_err.js';
 import { type Result, createOk, createErr } from './result.js';
 
 /**
@@ -21,7 +23,19 @@ export function tryCatchIntoResult<T>(producer: ProducerFn<T>): Result<T, unknow
     }
 }
 
-export { tryCatchIntoResultWithEnsureError } from './experimental/try_catch.js';
+/**
+ *  @experimental
+ *  We might change this without any breaking changes.
+ *  See https://github.com/option-t/option-t/issues/2295
+ */
+export function tryCatchIntoResultWithEnsureError<T>(producer: ProducerFn<T>): Result<T, Error> {
+    const result = tryCatchIntoResult(producer);
+    const mapped: Result<T, Error> = mapErrForResult<T, unknown, Error>(
+        result,
+        wrapWithNewErrorIfCausalIsUnknown,
+    );
+    return mapped;
+}
 
 /**
  *  - This function converts the returend value from _producer_ into `Ok(TValue)`.

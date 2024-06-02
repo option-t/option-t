@@ -185,13 +185,6 @@ Basic APIs are exported here:
 - [`option-t/plain_result/unwrap_or_throw_unknown`](../packages/option-t/src/plain_result/deprecated/unwrap_or_throw_unknown.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)
 
 
-### Experimental
-
-These paths are experimental. We might cause a breaking change without any major version up.
-
-- [`option-t/plain_result/experimental/try_catch`](../packages/option-t/src/plain_result/experimental/try_catch.ts) (__experimental__)
-- [`option-t/plain_result/experimental/try_catch_async`](../packages/option-t/src/plain_result/experimental/try_catch_async.ts) (__experimental__)
-
 
 
 ## Undefinable
