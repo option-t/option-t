@@ -5,8 +5,6 @@ import {} from 'option-t/plain_result/and_then_async';
 import {} from 'option-t/plain_result/as_mut';
 import {} from 'option-t/plain_result/drop';
 import {} from 'option-t/plain_result/equal';
-import {} from 'option-t/plain_result/experimental/try_catch';
-import {} from 'option-t/plain_result/experimental/try_catch_async';
 import {} from 'option-t/plain_result/flatten';
 import {} from 'option-t/plain_result/from_promise_settled_result';
 import {} from 'option-t/plain_result/inspect';

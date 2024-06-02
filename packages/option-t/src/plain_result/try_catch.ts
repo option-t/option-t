@@ -1,6 +1,8 @@
 import { assertIsErrorInstance } from '../internal/assert.js';
 import type { ProducerFn } from '../internal/function.js';
 import { ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE } from './internal/error_message.js';
+import { wrapWithNewErrorIfCausalIsUnknown } from './internal/unknown_causal_carrier.js';
+import { mapErrForResult } from './map_err.js';
 import { type Result, createOk, createErr } from './result.js';
 
 /**
@@ -19,6 +21,20 @@ export function tryCatchIntoResult<T>(producer: ProducerFn<T>): Result<T, unknow
         const errWrapped = createErr<unknown>(e);
         return errWrapped;
     }
+}
+
+/**
+ *  @experimental
+ *  We might change this without any breaking changes.
+ *  See https://github.com/option-t/option-t/issues/2295
+ */
+export function tryCatchIntoResultWithEnsureError<T>(producer: ProducerFn<T>): Result<T, Error> {
+    const result = tryCatchIntoResult(producer);
+    const mapped: Result<T, Error> = mapErrForResult<T, unknown, Error>(
+        result,
+        wrapWithNewErrorIfCausalIsUnknown,
+    );
+    return mapped;
 }
 
 /**
@@ -48,10 +64,3 @@ export function tryCatchIntoResultWithAssertError<T>(producer: ProducerFn<T>): R
         return errWrapped;
     }
 }
-
-/**
- *  @deprecated
- *  This implementation will be replaced with the next version.
- */
-export const tryCatchIntoResultWithEnsureError: typeof tryCatchIntoResultWithAssertError =
-    tryCatchIntoResultWithAssertError;

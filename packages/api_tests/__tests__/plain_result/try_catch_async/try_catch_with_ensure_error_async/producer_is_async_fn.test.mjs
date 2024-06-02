@@ -1,8 +1,8 @@
 import { webcrypto } from 'node:crypto';
 import test from 'ava';
 
-import { tryCatchIntoResultWithEnsureErrorAsync } from 'option-t/plain_result/experimental/try_catch_async';
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
+import { tryCatchIntoResultWithEnsureErrorAsync } from 'option-t/plain_result/try_catch_async';
 import { getCrossRealmErrorConstructor } from '../../../cross_realm_error_helper.mjs';
 
 test('output=Ok(T): producer is async fn', async (t) => {
