@@ -26,6 +26,8 @@ export async function tryCatchIntoResultAsync<T>(
     return wrapped;
 }
 
+export { tryCatchIntoResultWithEnsureErrorAsync } from './experimental/try_catch_async.js';
+
 /**
  *  - This function converts the returend value from _producer_ into `Ok(TValue)`.
  *  - If _producer_ throw an `Error` instance of **current [realm][realm]**,
@@ -54,10 +56,3 @@ function checkThrownIsError(thrown: unknown): Error {
     assertIsErrorInstance(thrown, ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE);
     return thrown;
 }
-
-/**
- *  @deprecated
- *  This implementation will be replaced with the next version.
- */
-export const tryCatchIntoResultWithEnsureErrorAsync: typeof tryCatchIntoResultWithAssertErrorAsync =
-    tryCatchIntoResultWithAssertErrorAsync;
