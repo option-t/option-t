@@ -6,16 +6,16 @@ import {
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
 } from 'option-t/plain_result/result';
-import { tryCatchIntoResultWithEnsureErrorAsync } from 'option-t/plain_result/try_catch_async';
+import { tryCatchIntoResultWithAssertErrorAsync } from 'option-t/plain_result/try_catch_async';
 import { getCrossRealmErrorConstructor } from '../../../cross_realm_error_helper.mjs';
 
-test('output=Ok(T): producer is normal fn', async (t) => {
+test('output=Ok(T): producer is async fn', async (t) => {
     t.plan(4);
 
     const EXPECTED = Math.random();
-    const result = tryCatchIntoResultWithEnsureErrorAsync(() => {
+    const result = tryCatchIntoResultWithAssertErrorAsync(async () => {
         t.pass();
-        return Promise.resolve(EXPECTED);
+        return EXPECTED;
     });
 
     t.true(result instanceof Promise, 'result should be Promise');
@@ -25,28 +25,11 @@ test('output=Ok(T): producer is normal fn', async (t) => {
     t.is(unwrapOkFromResult(actual), EXPECTED, 'should contain the expect inner value');
 });
 
-test('output=Err(Error): producer is normal fn', async (t) => {
+test('output=Err(Error): producer is async fn', async (t) => {
     t.plan(4);
 
     const EXPECTED = new Error(Math.random());
-    const result = tryCatchIntoResultWithEnsureErrorAsync(() => {
-        t.pass();
-        return Promise.reject(EXPECTED);
-    });
-
-    t.true(result instanceof Promise, 'result should be Promise');
-
-    const actual = await result;
-    t.true(isErr(actual), 'should be Err(E)');
-    t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
-});
-
-test('output=Err(Error): producer is normal fn but throw an error before return any Promise', async (t) => {
-    t.plan(4);
-
-    const EXPECTED = new Error(Math.random());
-
-    const result = tryCatchIntoResultWithEnsureErrorAsync(() => {
+    const result = tryCatchIntoResultWithAssertErrorAsync(async () => {
         t.pass();
         throw EXPECTED;
     });
@@ -58,36 +41,14 @@ test('output=Err(Error): producer is normal fn but throw an error before return 
     t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
 });
 
-test('if producer is normal function and reject a Promise with not-Error-instance value', async (t) => {
+test('if producer is async function and throw a not-Error-instance value', async (t) => {
     t.plan(3);
 
     const THROWN_EXPECTED = Math.random();
 
     const actual = await t.throwsAsync(
         async () => {
-            await tryCatchIntoResultWithEnsureErrorAsync(() => {
-                t.pass('producer is called');
-                return Promise.reject(THROWN_EXPECTED);
-            });
-            t.fail('unreachable here');
-        },
-        {
-            instanceOf: TypeError,
-            message: 'The thrown value is not an instance of `Error` of the current realm.',
-        },
-    );
-
-    t.is(actual.cause, THROWN_EXPECTED, 'should set Error.cause');
-});
-
-test('if producer is normal function and throw a not-Error-instance value before return any `Promise`', async (t) => {
-    t.plan(3);
-
-    const THROWN_EXPECTED = Math.random();
-
-    const actual = await t.throwsAsync(
-        async () => {
-            await tryCatchIntoResultWithEnsureErrorAsync(() => {
+            await tryCatchIntoResultWithAssertErrorAsync(async () => {
                 t.pass('producer is called');
                 throw THROWN_EXPECTED;
             });
@@ -102,7 +63,7 @@ test('if producer is normal function and throw a not-Error-instance value before
     t.is(actual.cause, THROWN_EXPECTED, 'should set Error.cause');
 });
 
-test('if producer is normal function and throw a instance value from cross-realm `Error` constructor before return any `Promise`', async (t) => {
+test('if producer is async function and throw a instance value from cross-realm `Error` constructor', async (t) => {
     t.plan(6);
     const CurrentRealmErrorCtor = globalThis.Error;
 
@@ -116,7 +77,7 @@ test('if producer is normal function and throw a instance value from cross-realm
 
     const actual = await t.throwsAsync(
         async () => {
-            await tryCatchIntoResultWithEnsureErrorAsync(() => {
+            await tryCatchIntoResultWithAssertErrorAsync(async () => {
                 t.pass('producer is called');
                 throw THROWN_EXPECTED;
             });

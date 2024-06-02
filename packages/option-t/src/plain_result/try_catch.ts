@@ -37,7 +37,7 @@ export function tryCatchIntoResult<T>(producer: ProducerFn<T>): Result<T, unknow
  *  1. An user should narrow the scope of _producer_ to make it predictable that is in `Err(E)`.
  *  2. This function requires ES2022's `Error.cause` to get an actual thrown object.
  */
-export function tryCatchIntoResultWithEnsureError<T>(producer: ProducerFn<T>): Result<T, Error> {
+export function tryCatchIntoResultWithAssertError<T>(producer: ProducerFn<T>): Result<T, Error> {
     try {
         const value: T = producer();
         const okWrapped = createOk<T>(value);
@@ -48,3 +48,10 @@ export function tryCatchIntoResultWithEnsureError<T>(producer: ProducerFn<T>): R
         return errWrapped;
     }
 }
+
+/**
+ *  @deprecated
+ *  This implementation will be replaced with the next version.
+ */
+export const tryCatchIntoResultWithEnsureError: typeof tryCatchIntoResultWithAssertError =
+    tryCatchIntoResultWithAssertError;

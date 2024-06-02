@@ -7,14 +7,14 @@ import {
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
 } from 'option-t/plain_result/result';
-import { tryCatchIntoResultWithEnsureError } from 'option-t/plain_result/try_catch';
+import { tryCatchIntoResultWithAssertError } from 'option-t/plain_result/try_catch';
 import { getCrossRealmErrorConstructor } from '../../cross_realm_error_helper.mjs';
 
 test('output=Ok(T)', (t) => {
     t.plan(3);
 
     const EXPECTED = Math.random();
-    const actual = tryCatchIntoResultWithEnsureError(() => {
+    const actual = tryCatchIntoResultWithAssertError(() => {
         t.pass();
         return EXPECTED;
     });
@@ -27,7 +27,7 @@ test('output=Err(Error)', (t) => {
     t.plan(3);
 
     const EXPECTED = new Error(Math.random());
-    const actual = tryCatchIntoResultWithEnsureError(() => {
+    const actual = tryCatchIntoResultWithAssertError(() => {
         t.pass();
         throw EXPECTED;
     });
@@ -42,7 +42,7 @@ test('If producer throw non-Error-instance value', (t) => {
     const EXPECT_THROWN = webcrypto.randomUUID();
     const actual = t.throws(
         () => {
-            tryCatchIntoResultWithEnsureError(() => {
+            tryCatchIntoResultWithAssertError(() => {
                 t.pass();
                 throw EXPECT_THROWN;
             });
@@ -71,7 +71,7 @@ test('If producer throw the instance value from cross-realm `Error` constructor'
     // act & assert
     const actual = t.throws(
         () => {
-            tryCatchIntoResultWithEnsureError(() => {
+            tryCatchIntoResultWithAssertError(() => {
                 t.pass();
                 throw EXPECT_THROWN;
             });
