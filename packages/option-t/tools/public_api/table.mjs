@@ -4,6 +4,7 @@ import {
     pathRedirectionForRoot,
     pathRedirectionTo,
     pathRedirectionToAsExperimental,
+    pathRedirectionMarkedAsDeprecated,
 } from './api_path_descriptor.mjs';
 
 const MAYBE_DIR = 'maybe';
@@ -159,11 +160,13 @@ export const apiTable = Object.freeze({
         `${PLAIN_RESULT_DIR}/unwrap_or_else_async`,
     ),
     'plain_result/unwrap_or_throw': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or_throw`),
-    'plain_result/unwrap_or_throw_error': pathRedirectionTo(
+    'plain_result/unwrap_or_throw_error': pathRedirectionMarkedAsDeprecated(
         `${PLAIN_RESULT_DIR}/unwrap_or_throw_error`,
+        'Use `option-t/plain_result/unwrap_or_throw` instead.',
     ),
-    'plain_result/unwrap_or_throw_unknown': pathRedirectionTo(
+    'plain_result/unwrap_or_throw_unknown': pathRedirectionMarkedAsDeprecated(
         `${PLAIN_RESULT_DIR}/unwrap_or_throw_unknown`,
+        'Use `option-t/plain_result/unwrap_or_throw` instead.',
     ),
 
     'undefinable': pathRedirectionTo(`${UNDEFINABLE_DIR}/index`),
