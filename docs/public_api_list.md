@@ -8,7 +8,7 @@
 Basic APIs are exported here:
 
 - [`option-t/maybe`](../packages/option-t/src/maybe/index.ts)
-- [`option-t/maybe/namespace`](../packages/option-t/src/maybe/namespace.ts) (We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.)
+- [`option-t/maybe/namespace`](../packages/option-t/src/maybe/namespace.ts) (We don't recommend to use this without TypeScript to make it hard to follow future breaking changes.)
 
 ### Core Primitives
 
@@ -53,7 +53,7 @@ Basic APIs are exported here:
 Basic APIs are exported here:
 
 - [`option-t/nullable`](../packages/option-t/src/nullable/index.ts)
-- [`option-t/nullable/namespace`](../packages/option-t/src/nullable/namespace.ts) (We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.)
+- [`option-t/nullable/namespace`](../packages/option-t/src/nullable/namespace.ts) (We don't recommend to use this without TypeScript to make it hard to follow future breaking changes.)
 
 ### Core Primitives
 
@@ -97,7 +97,7 @@ Basic APIs are exported here:
 Basic APIs are exported here:
 
 - [`option-t/plain_option`](../packages/option-t/src/plain_option/index.ts)
-- [`option-t/plain_option/namespace`](../packages/option-t/src/plain_option/namespace.ts) (We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.)
+- [`option-t/plain_option/namespace`](../packages/option-t/src/plain_option/namespace.ts) (We don't recommend to use this without TypeScript to make it hard to follow future breaking changes.)
 
 ### Core Primitives
 
@@ -142,7 +142,7 @@ Basic APIs are exported here:
 Basic APIs are exported here:
 
 - [`option-t/plain_result`](../packages/option-t/src/plain_result/index.ts)
-- [`option-t/plain_result/namespace`](../packages/option-t/src/plain_result/namespace.ts) (We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.)
+- [`option-t/plain_result/namespace`](../packages/option-t/src/plain_result/namespace.ts) (We don't recommend to use this without TypeScript to make it hard to follow future breaking changes.)
 
 ### Core Primitives
 
@@ -199,7 +199,7 @@ These paths are experimental. We might cause a breaking change without any major
 Basic APIs are exported here:
 
 - [`option-t/undefinable`](../packages/option-t/src/undefinable/index.ts)
-- [`option-t/undefinable/namespace`](../packages/option-t/src/undefinable/namespace.ts) (We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.)
+- [`option-t/undefinable/namespace`](../packages/option-t/src/undefinable/namespace.ts) (We don't recommend to use this without TypeScript to make it hard to follow future breaking changes.)
 
 ### Core Primitives
 
