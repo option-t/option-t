@@ -54,7 +54,7 @@ export { unwrapOrThrowForResult as unwrapOrThrow } from '../unwrap_or_throw.js';
 /**
  *  @deprecated 48.1.0
  */
-export { unwrapOrThrowWithEnsureErrorForResult as unwrapOrThrowWithEnsureError } from '../unwrap_or_throw_error.js';
+export { unwrapOrThrowWithEnsureErrorForResult as unwrapOrThrowWithEnsureError } from '../deprecated/unwrap_or_throw_error.js';
 
 // XXX:
 //  We don't expose these itens that is unsafe operation.

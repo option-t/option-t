@@ -181,8 +181,8 @@ Basic APIs are exported here:
 - [`option-t/plain_result/unwrap_or_else`](../packages/option-t/src/plain_result/unwrap_or_else.ts)
 - [`option-t/plain_result/unwrap_or_else_async`](../packages/option-t/src/plain_result/unwrap_or_else_async.ts)
 - [`option-t/plain_result/unwrap_or_throw`](../packages/option-t/src/plain_result/unwrap_or_throw.ts)
-- [`option-t/plain_result/unwrap_or_throw_error`](../packages/option-t/src/plain_result/unwrap_or_throw_error.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)
-- [`option-t/plain_result/unwrap_or_throw_unknown`](../packages/option-t/src/plain_result/unwrap_or_throw_unknown.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)
+- [`option-t/plain_result/unwrap_or_throw_error`](../packages/option-t/src/plain_result/deprecated/unwrap_or_throw_error.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)
+- [`option-t/plain_result/unwrap_or_throw_unknown`](../packages/option-t/src/plain_result/deprecated/unwrap_or_throw_unknown.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)
 
 
 ### Experimental
