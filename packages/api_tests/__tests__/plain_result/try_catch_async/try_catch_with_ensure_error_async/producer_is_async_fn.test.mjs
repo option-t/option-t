@@ -56,7 +56,7 @@ test('if producer is async function and throw a not-Error-instance value', async
         },
         {
             instanceOf: TypeError,
-            message: "The thrown value is not an instance of the current relam's `Error`.",
+            message: 'The thrown value is not an instance of `Error` of the current realm.',
         },
     );
 
@@ -72,7 +72,7 @@ test('if producer is async function and throw a instance value from cross-realm 
     const THROWN_EXPECTED = new CrossRealmErrorCtor(Math.random());
     t.false(
         THROWN_EXPECTED instanceof CurrentRealmErrorCtor,
-        `the thrown error should not be the instance of current relam's Error consturctor`,
+        `the thrown error should not be the instance of current realm's Error consturctor`,
     );
 
     const actual = await t.throwsAsync(
@@ -85,7 +85,7 @@ test('if producer is async function and throw a instance value from cross-realm 
         },
         {
             instanceOf: TypeError,
-            message: "The thrown value is not an instance of the current relam's `Error`.",
+            message: 'The thrown value is not an instance of `Error` of the current realm.',
         },
     );
 

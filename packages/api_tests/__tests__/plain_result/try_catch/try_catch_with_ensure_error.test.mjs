@@ -49,7 +49,7 @@ test('If producer throw non-Error-instance value', (t) => {
         },
         {
             instanceOf: TypeError,
-            message: "The thrown value is not an instance of the current relam's `Error`.",
+            message: 'The thrown value is not an instance of `Error` of the current realm.',
         },
     );
 
@@ -65,7 +65,7 @@ test('If producer throw the instance value from cross-realm `Error` constructor'
     const EXPECT_THROWN = new CrossRealmErrorCtor(Math.random());
     t.false(
         EXPECT_THROWN instanceof CurrentRealmErrorCtor,
-        `the thrown error should not be the instance of current relam's Error consturctor`,
+        `the thrown error should not be the instance of current realm's Error consturctor`,
     );
 
     // act & assert
@@ -78,7 +78,7 @@ test('If producer throw the instance value from cross-realm `Error` constructor'
         },
         {
             instanceOf: TypeError,
-            message: "The thrown value is not an instance of the current relam's `Error`.",
+            message: 'The thrown value is not an instance of `Error` of the current realm.',
         },
     );
 

@@ -42,7 +42,7 @@ test('input is Err, but the contained value is not Error', (t) => {
         },
         {
             instanceOf: TypeError,
-            message: "The contained E should be an instance of the current relam's `Error`.",
+            message: 'The contained E should be an instance of `Error` of the current realm.',
         },
     );
 
@@ -58,7 +58,7 @@ test('input is Err, but the contained value is not an `Error` instance of curren
     const ERROR_E = new CrossRealmErrorCtor(webcrypto.randomUUID());
     t.false(
         ERROR_E instanceof CurrentRealmErrorCtor,
-        `the thrown error should not be the instance of current relam's Error consturctor`,
+        `the thrown error should not be the instance of current realm's Error consturctor`,
     );
 
     const input = createErr(ERROR_E);
@@ -68,7 +68,7 @@ test('input is Err, but the contained value is not an `Error` instance of curren
         },
         {
             instanceOf: TypeError,
-            message: "The contained E should be an instance of the current relam's `Error`.",
+            message: 'The contained E should be an instance of `Error` of the current realm.',
         },
     );
 

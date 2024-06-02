@@ -90,7 +90,7 @@ test('if producer is async function and throw a instance value from cross-realm 
     const EXPECT_THROWN = new CrossRealmErrorCtor(webcrypto.randomUUID());
     t.false(
         EXPECT_THROWN instanceof CurrentRealmErrorCtor,
-        `the thrown error should not be the instance of current relam's Error consturctor`,
+        `the thrown error should not be the instance of current realm's Error consturctor`,
     );
     Object.freeze(EXPECT_THROWN); // prevent to modify this object.
 

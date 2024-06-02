@@ -23,11 +23,11 @@ export function tryCatchIntoResult<T>(producer: ProducerFn<T>): Result<T, unknow
 
 /**
  *  - This function converts the returend value from _producer_ into `Ok(TValue)`.
- *  - If _producer_ throw an `Error` instance of **current [relam][realm]**,
+ *  - If _producer_ throw an `Error` instance of **current [realm][realm]**,
  *    this returns it with wrapping `Err(Error)`.
  *
  *  @throws {TypeError}
- *      This throws it if _producer_ throw the value that is not an instance of `Error` constructor of **current [relam][realm]**.
+ *      This throws it if _producer_ throw the value that is not an instance of `Error` constructor of **current [realm][realm]**.
  *
  *  [realm]: https://262.ecma-international.org/14.0/#realm
  *
