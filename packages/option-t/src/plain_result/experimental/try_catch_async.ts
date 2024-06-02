@@ -9,7 +9,7 @@ import { tryCatchIntoResultAsync } from '../try_catch_async.js';
  *  We might change this without any breaking changes.
  *  See https://github.com/option-t/option-t/issues/2296
  */
-export async function tryCatchIntoResultAndMapErrFallbackAsync<T>(
+export async function tryCatchIntoResultWithEnsureErrorAsync<T>(
     producer: AsyncProducerFn<T>,
 ): Promise<Result<T, Error>> {
     const result = await tryCatchIntoResultAsync(producer);
