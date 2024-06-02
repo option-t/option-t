@@ -73,7 +73,7 @@ test('if producer is normal function and reject a Promise with not-Error-instanc
         },
         {
             instanceOf: TypeError,
-            message: "The thrown value is not an instance of the current relam's `Error`.",
+            message: 'The thrown value is not an instance of `Error` of the current realm.',
         },
     );
 
@@ -95,7 +95,7 @@ test('if producer is normal function and throw a not-Error-instance value before
         },
         {
             instanceOf: TypeError,
-            message: "The thrown value is not an instance of the current relam's `Error`.",
+            message: 'The thrown value is not an instance of `Error` of the current realm.',
         },
     );
 
@@ -124,7 +124,7 @@ test('if producer is normal function and throw a instance value from cross-realm
         },
         {
             instanceOf: TypeError,
-            message: "The thrown value is not an instance of the current relam's `Error`.",
+            message: 'The thrown value is not an instance of `Error` of the current realm.',
         },
     );
 

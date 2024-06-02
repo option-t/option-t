@@ -42,7 +42,7 @@ test('input is Err, but the contained value is not Error', (t) => {
         },
         {
             instanceOf: TypeError,
-            message: "The contained E should be an instance of the current relam's `Error`.",
+            message: 'The contained E should be an instance of `Error` of the current realm.',
         },
     );
 
@@ -68,7 +68,7 @@ test('input is Err, but the contained value is not an `Error` instance of curren
         },
         {
             instanceOf: TypeError,
-            message: "The contained E should be an instance of the current relam's `Error`.",
+            message: 'The contained E should be an instance of `Error` of the current realm.',
         },
     );
 
