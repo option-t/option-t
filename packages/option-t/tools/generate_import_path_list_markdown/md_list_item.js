@@ -2,10 +2,9 @@ import * as assert from 'node:assert/strict';
 
 const RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO = '../packages/option-t/src';
 
-const PKG_NAME = 'option-t';
-
 export class MarkdownListItem {
     #key;
+    #publicApiPath;
     #subpath;
     #isDeprecated;
     #message;
@@ -15,6 +14,7 @@ export class MarkdownListItem {
 
     constructor(
         key,
+        publicApiPath,
         subpath,
         isDeprecated,
         message,
@@ -23,6 +23,7 @@ export class MarkdownListItem {
         isCorePrimitive,
     ) {
         assert.ok(typeof key === 'string');
+        assert.ok(typeof publicApiPath === 'string');
         assert.ok(typeof subpath === 'string');
         assert.ok(typeof isDeprecated === 'boolean');
         assert.ok(typeof isExperimental === 'boolean');
@@ -30,6 +31,7 @@ export class MarkdownListItem {
         assert.ok(typeof isCorePrimitive === 'boolean');
 
         this.#key = key;
+        this.#publicApiPath = publicApiPath;
         this.#subpath = subpath;
         this.#isDeprecated = isDeprecated;
         this.#message = message;
@@ -64,17 +66,8 @@ export class MarkdownListItem {
         return subpath;
     }
 
-    #pathname() {
-        const key = this.#key;
-        if (key === '.') {
-            return PKG_NAME;
-        }
-
-        return `${PKG_NAME}/${key}`;
-    }
-
     toString() {
-        const name = this.#pathname();
+        const name = this.#publicApiPath;
         const href = `${RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO}/${this.href()}.ts`;
 
         const anchor = `[\`${name}\`](${href})`;

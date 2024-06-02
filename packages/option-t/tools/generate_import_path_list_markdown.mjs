@@ -115,6 +115,7 @@ function parseCliOptions() {
         })
         .map((pathItem) => {
             const key = pathItem.name();
+            const publicApiPath = pathItem.resolvedName();
             const path = pathItem.filepath();
             const isDeprecated = pathItem.isDeprecated();
             const message = pathItem.message();
@@ -123,6 +124,7 @@ function parseCliOptions() {
             const isCorePrimitive = pathItem.isCorePrimitive();
             const item = new MarkdownListItem(
                 key,
+                publicApiPath,
                 path,
                 isDeprecated,
                 message,
