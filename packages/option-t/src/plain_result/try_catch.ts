@@ -24,9 +24,21 @@ export function tryCatchIntoResult<T>(producer: ProducerFn<T>): Result<T, unknow
 }
 
 /**
- *  @experimental
- *  We might change this without any breaking changes.
- *  See https://github.com/option-t/option-t/issues/2295
+ *  - This function converts the returend value from _producer_ into `Ok(T)`.
+ *  - If _producer_ throw a value that is an instance of `Error` of **current [realm][realm]**,
+ *    this returns it with wrapping `Err(Error)`.
+ *  - Otherwise, if _producer_ throw a value that is **not** an instance of current realm including
+ *    a one created from cross-ream `Error` constructor (e.g. `node:vm`, iframe),
+ *    then this operator creates a new `Error` object created from the current realm's constructor
+ *    and the thrown value to its `Error.cause`, make it `Err(Error)`, and return it finally.
+ *
+ *  [realm]: https://262.ecma-international.org/14.0/#realm
+ *
+ * -----
+ *
+ *  NOTE:
+ *  1. An user should narrow the scope of _producer_ to make it predictable that is in `Err(E)`.
+ *  2. This function requires ES2022's `Error.cause` to get an actual thrown object.
  */
 export function tryCatchIntoResultWithEnsureError<T>(producer: ProducerFn<T>): Result<T, Error> {
     const result = tryCatchIntoResult(producer);
