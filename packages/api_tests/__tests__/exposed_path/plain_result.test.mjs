@@ -11,6 +11,8 @@ testImportExposedPath(
         './plain_result/and_then': null,
         './plain_result/and_then_async': null,
         './plain_result/as_mut': null,
+        './plain_result/deprecated/unwrap_or_throw_error': null,
+        './plain_result/deprecated/unwrap_or_throw_unknown': null,
         './plain_result/drop': null,
         './plain_result/equal': null,
         './plain_result/flatten': null,
@@ -40,7 +42,5 @@ testImportExposedPath(
         './plain_result/unwrap_or_else': null,
         './plain_result/unwrap_or_else_async': null,
         './plain_result/unwrap_or_throw': null,
-        './plain_result/unwrap_or_throw_error': null,
-        './plain_result/unwrap_or_throw_unknown': null,
     }),
 );
