@@ -3,6 +3,7 @@ import {
     pathRedirectionForLegacy,
     pathRedirectionForRoot,
     pathRedirectionTo,
+    pathRedirectionToAsExperimental,
 } from './api_path_descriptor.mjs';
 
 const MAYBE_DIR = 'maybe';
@@ -121,6 +122,12 @@ export const apiTable = Object.freeze({
     'plain_result/as_mut': pathRedirectionTo(`${PLAIN_RESULT_DIR}/as_mut`),
     'plain_result/drop': pathRedirectionTo(`${PLAIN_RESULT_DIR}/drop`),
     'plain_result/equal': pathRedirectionTo(`${PLAIN_RESULT_DIR}/equal`),
+    'plain_result/experimental/try_catch': pathRedirectionToAsExperimental(
+        `${PLAIN_RESULT_DIR}/experimental/try_catch`,
+    ),
+    'plain_result/experimental/try_catch_async': pathRedirectionToAsExperimental(
+        `${PLAIN_RESULT_DIR}/experimental/try_catch_async`,
+    ),
     'plain_result/flatten': pathRedirectionTo(`${PLAIN_RESULT_DIR}/flatten`),
     'plain_result/from_promise_settled_result': pathRedirectionTo(
         'plain_result/from_promise_settled_result',

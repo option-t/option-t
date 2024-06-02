@@ -54,6 +54,11 @@ class ExposedPath {
         const ok = !!this.#descriptor.shouldHideInDoc;
         return ok;
     }
+
+    isExperimental() {
+        const ok = !!this.#descriptor.isExperimental;
+        return ok;
+    }
 }
 
 export function* generateExposedPathSequence() {

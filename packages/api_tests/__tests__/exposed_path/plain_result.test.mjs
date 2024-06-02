@@ -13,6 +13,8 @@ testImportExposedPath(
         './plain_result/as_mut': null,
         './plain_result/drop': null,
         './plain_result/equal': null,
+        './plain_result/experimental/try_catch': null,
+        './plain_result/experimental/try_catch_async': null,
         './plain_result/flatten': null,
         './plain_result/from_promise_settled_result': null,
         './plain_result/inspect': null,

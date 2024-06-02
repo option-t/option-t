@@ -76,6 +76,12 @@ export function pathRedirectionForRoot(actualFilePath) {
     return Object.freeze(desc);
 }
 
+export function pathRedirectionToAsExperimental(actualFilePath) {
+    const desc = new ApiPathDescriptor(actualFilePath);
+    desc.setIsExperimental(true);
+    return Object.freeze(desc);
+}
+
 export function pathExperimentalAndHidden(actualFilePath) {
     const desc = new ApiPathDescriptor(actualFilePath);
     desc.setShouldHideInDoc(true);
