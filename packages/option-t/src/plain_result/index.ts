@@ -55,11 +55,6 @@ export { orElseAsyncForResult } from './or_else_async.js';
 export { toNullableFromErr, toNullableFromOk } from './to_nullable.js';
 export { toUndefinableFromErr, toUndefinableFromOk } from './to_undefinable.js';
 export { transposeResultToNullable, transposeResultToUndefinable } from './transpose.js';
-export { tryCatchIntoResult, tryCatchIntoResultWithEnsureError } from './try_catch.js';
-export {
-    tryCatchIntoResultAsync,
-    tryCatchIntoResultWithEnsureErrorAsync,
-} from './try_catch_async.js';
 export { unwrapOrForResult } from './unwrap_or.js';
 export { unwrapOrElseForResult } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
