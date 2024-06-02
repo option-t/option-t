@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { tryCatchIntoResultAndMapErrFallbackAsync } from 'option-t/plain_result/experimental/try_catch_async';
+import { tryCatchIntoResultWithEnsureErrorAsync } from 'option-t/plain_result/experimental/try_catch_async';
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { getCrossRealmErrorConstructor } from '../../../cross_realm_error_helper.mjs';
 
@@ -11,7 +11,7 @@ test('output=Ok(T): producer is normal fn', async (t) => {
     const EXPECTED = Math.random();
 
     // act
-    const result = tryCatchIntoResultAndMapErrFallbackAsync(() => {
+    const result = tryCatchIntoResultWithEnsureErrorAsync(() => {
         t.pass();
         return Promise.resolve(EXPECTED);
     });
@@ -34,7 +34,7 @@ test('output=Err(Error): producer is normal fn and reject a Promise with Error',
     Object.freeze(EXPECTED); // prevent to modify this object.
 
     // act
-    const result = tryCatchIntoResultAndMapErrFallbackAsync(() => {
+    const result = tryCatchIntoResultWithEnsureErrorAsync(() => {
         t.pass();
         return Promise.reject(EXPECTED);
     });
@@ -57,7 +57,7 @@ test('output=Err(Error): producer is normal fn but throw an error before return 
     Object.freeze(EXPECTED); // prevent to modify this object.
 
     // act
-    const result = tryCatchIntoResultAndMapErrFallbackAsync(() => {
+    const result = tryCatchIntoResultWithEnsureErrorAsync(() => {
         t.pass();
         throw EXPECTED;
     });
@@ -79,7 +79,7 @@ test('if producer is normal function and reject a Promise with not-Error-instanc
     const THROWN_EXPECTED = Math.random();
 
     // act
-    const result = tryCatchIntoResultAndMapErrFallbackAsync(() => {
+    const result = tryCatchIntoResultWithEnsureErrorAsync(() => {
         t.pass('producer is called');
         return Promise.reject(THROWN_EXPECTED);
     });
@@ -117,7 +117,7 @@ test('if producer is normal function and reject a Promise with a instance value 
     Object.freeze(THROWN_EXPECTED); // prevent to modify this object.
 
     // act
-    const result = tryCatchIntoResultAndMapErrFallbackAsync(() => {
+    const result = tryCatchIntoResultWithEnsureErrorAsync(() => {
         t.pass('producer is called');
         return Promise.reject(THROWN_EXPECTED);
     });
@@ -150,7 +150,7 @@ test('if producer is normal function and throw a not-Error-instance value before
     // arrange
     const THROWN_EXPECTED = Math.random();
 
-    const result = tryCatchIntoResultAndMapErrFallbackAsync(() => {
+    const result = tryCatchIntoResultWithEnsureErrorAsync(() => {
         t.pass('producer is called');
         throw THROWN_EXPECTED;
     });
@@ -188,7 +188,7 @@ test('if producer is normal function and throw a instance value from cross-realm
     Object.freeze(THROWN_EXPECTED); // prevent to modify this object.
 
     // act
-    const result = tryCatchIntoResultAndMapErrFallbackAsync(() => {
+    const result = tryCatchIntoResultWithEnsureErrorAsync(() => {
         t.pass('producer is called');
         throw THROWN_EXPECTED;
     });

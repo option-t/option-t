@@ -1,7 +1,7 @@
 import { webcrypto } from 'node:crypto';
 import test from 'ava';
 
-import { tryCatchIntoResultAndMapErrFallbackAsync } from 'option-t/plain_result/experimental/try_catch_async';
+import { tryCatchIntoResultWithEnsureErrorAsync } from 'option-t/plain_result/experimental/try_catch_async';
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { getCrossRealmErrorConstructor } from '../../../cross_realm_error_helper.mjs';
 
@@ -12,7 +12,7 @@ test('output=Ok(T): producer is async fn', async (t) => {
     const EXPECTED = webcrypto.randomUUID();
 
     // act
-    const result = tryCatchIntoResultAndMapErrFallbackAsync(async () => {
+    const result = tryCatchIntoResultWithEnsureErrorAsync(async () => {
         t.pass();
         return EXPECTED;
     });
@@ -35,7 +35,7 @@ test('output=Err(Error): producer is async fn', async (t) => {
     Object.freeze(EXPECTED); // prevent to modify this object.
 
     // act
-    const result = tryCatchIntoResultAndMapErrFallbackAsync(async () => {
+    const result = tryCatchIntoResultWithEnsureErrorAsync(async () => {
         t.pass();
         throw EXPECTED;
     });
@@ -57,7 +57,7 @@ test('if producer is async function and throw a not-Error-instance value', async
     const EXPECT_THROWN = webcrypto.randomUUID();
 
     // act
-    const result = tryCatchIntoResultAndMapErrFallbackAsync(async () => {
+    const result = tryCatchIntoResultWithEnsureErrorAsync(async () => {
         t.pass('producer is called');
         throw EXPECT_THROWN;
     });
@@ -94,7 +94,7 @@ test('if producer is async function and throw a instance value from cross-realm 
     );
     Object.freeze(EXPECT_THROWN); // prevent to modify this object.
 
-    const result = tryCatchIntoResultAndMapErrFallbackAsync(async () => {
+    const result = tryCatchIntoResultWithEnsureErrorAsync(async () => {
         t.pass('producer is called');
         throw EXPECT_THROWN;
     });

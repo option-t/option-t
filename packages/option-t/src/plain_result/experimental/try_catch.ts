@@ -9,7 +9,7 @@ import { tryCatchIntoResult } from '../try_catch.js';
  *  We might change this without any breaking changes.
  *  See https://github.com/option-t/option-t/issues/2295
  */
-export function tryCatchIntoResultAndMapErrFallback<T>(producer: ProducerFn<T>): Result<T, Error> {
+export function tryCatchIntoResultWithEnsureError<T>(producer: ProducerFn<T>): Result<T, Error> {
     const result = tryCatchIntoResult(producer);
     const mapped: Result<T, Error> = mapErrForResult<T, unknown, Error>(
         result,

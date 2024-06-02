@@ -1,7 +1,7 @@
 import { webcrypto } from 'node:crypto';
 import test from 'ava';
 
-import { tryCatchIntoResultAndMapErrFallback } from 'option-t/plain_result/experimental/try_catch';
+import { tryCatchIntoResultWithEnsureError } from 'option-t/plain_result/experimental/try_catch';
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { getCrossRealmErrorConstructor } from '../../cross_realm_error_helper.mjs';
 
@@ -12,7 +12,7 @@ test('output=Ok(T)', (t) => {
     const EXPECTED = webcrypto.randomUUID();
 
     // act
-    const actualResult = tryCatchIntoResultAndMapErrFallback(() => {
+    const actualResult = tryCatchIntoResultWithEnsureError(() => {
         t.pass();
         return EXPECTED;
     });
@@ -33,7 +33,7 @@ test('output=Err(Error)', (t) => {
     Object.freeze(EXPECTED); // prevent to modify this object.
 
     // act
-    const actualResult = tryCatchIntoResultAndMapErrFallback(() => {
+    const actualResult = tryCatchIntoResultWithEnsureError(() => {
         t.pass();
         throw EXPECTED;
     });
@@ -53,7 +53,7 @@ test('If producer throw non-Error-instance value', (t) => {
     const EXPECT_THROWN = webcrypto.randomUUID();
 
     // act
-    const actualResult = tryCatchIntoResultAndMapErrFallback(() => {
+    const actualResult = tryCatchIntoResultWithEnsureError(() => {
         t.pass();
         throw EXPECT_THROWN;
     });
@@ -89,7 +89,7 @@ test('If producer throw the instance value of cross-realm `Error` constructor', 
     Object.freeze(EXPECT_THROWN); // prevent to modify this object.
 
     // act
-    const actualResult = tryCatchIntoResultAndMapErrFallback(() => {
+    const actualResult = tryCatchIntoResultWithEnsureError(() => {
         t.pass();
         throw EXPECT_THROWN;
     });
