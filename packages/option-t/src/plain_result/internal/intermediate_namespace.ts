@@ -42,12 +42,10 @@ export {
 export {
     tryCatchIntoResult as tryCatchInto,
     tryCatchIntoResultWithEnsureError as tryCatchIntoWithEnsureError,
-    tryCatchIntoResultWithAssertError as tryCatchIntoWithAssertError,
 } from '../try_catch.js';
 export {
     tryCatchIntoResultAsync as tryCatchIntoAsync,
     tryCatchIntoResultWithEnsureErrorAsync as tryCatchIntoWithEnsureErrorAsync,
-    tryCatchIntoResultWithAssertErrorAsync as tryCatchIntoWithAssertErrorAsync,
 } from '../try_catch_async.js';
 export { unwrapOrForResult as unwrapOr } from '../unwrap_or.js';
 export { unwrapOrElseForResult as unwrapOrElse } from '../unwrap_or_else.js';
