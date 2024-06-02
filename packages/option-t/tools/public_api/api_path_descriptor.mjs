@@ -120,7 +120,7 @@ export function pathRedirectionMarkedAsTypeRootNamespace(actualFilePath) {
     const desc = new ApiPathDescriptor(actualFilePath);
     desc.setApiKind(ApiKind.TypeRootPath);
     desc.setMessage(
-        `We don't recommend to use this without TypeScript to make it hard to follow future breaking changes.`,
+        `We don't recommend to use this without TypeScript due to it would be hard to follow future breaking changes.`,
     );
     return Object.freeze(desc);
 }
