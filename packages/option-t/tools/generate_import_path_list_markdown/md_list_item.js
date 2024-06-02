@@ -77,7 +77,7 @@ export class MarkdownListItem {
         const name = this.#pathname();
         const href = `${RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO}/${this.href()}.ts`;
 
-        const anchor = `[${name}](${href})`;
+        const anchor = `[\`${name}\`](${href})`;
         let link = '';
         const message = this.#message;
         if (message !== null) {
@@ -101,7 +101,7 @@ export class MarkdownListItem {
             return `${anchor} (__experimental__. ${message})`;
         }
 
-        return `${anchor}: ${message}`;
+        return `${anchor} (${message})`;
     }
 
     #buildLinkTextWithoutMessage(anchor) {
