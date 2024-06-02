@@ -4,98 +4,18 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 
+import { MarkdownListItem } from './generate_import_path_list_markdown/md_list_item.js';
+import { MarkdownTypeSection } from './generate_import_path_list_markdown/md_type_section.js';
 import { generateExposedPathSequence } from './public_api/mod.mjs';
 
 const THIS_FILE_NAME = fileURLToPath(import.meta.url);
 const THIS_DIR_NAME = path.dirname(THIS_FILE_NAME);
 
 const RELATIVE_PATH_TO_SRC_DIR = '../src';
-const RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO = '../packages/option-t/src';
 
 const FILENAME = 'public_api_list.md';
 
-const PKG_NAME = 'option-t';
-
-class ListItem {
-    #key;
-    #subpath;
-    #isDeprecated;
-    #deprecatedMessage;
-    #isExperimental;
-
-    constructor(key, subpath, isDeprecated, deprecatedMessage, isExperimental) {
-        this.#key = key;
-        this.#subpath = subpath;
-        this.#isDeprecated = isDeprecated;
-        this.#deprecatedMessage = deprecatedMessage;
-        this.#isExperimental = isExperimental;
-        Object.freeze(this);
-    }
-
-    key() {
-        return this.#key;
-    }
-
-    href() {
-        const subpath = this.#subpath;
-        if (!subpath) {
-            return this.#key;
-        }
-
-        return subpath;
-    }
-
-    #pathname() {
-        const key = this.#key;
-        if (key === '.') {
-            return PKG_NAME;
-        }
-
-        return `${PKG_NAME}/${key}`;
-    }
-
-    toString() {
-        const isDeprecated = this.#isDeprecated;
-        const isExperimental = this.#isExperimental;
-
-        const name = this.#pathname();
-        const href = `${RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO}/${this.href()}.ts`;
-
-        const anchor = `[${name}](${href})`;
-        let link = '';
-        if (isDeprecated) {
-            link = `${anchor} (__deprecated__. ${this.#deprecatedMessage})`;
-        } else if (isExperimental) {
-            link = `${anchor} (__experimental__)`;
-        } else {
-            link = anchor;
-        }
-        return `- ${link}`;
-    }
-}
-
-class Section {
-    #headline;
-    #list;
-
-    constructor(headline, list) {
-        this.#headline = headline;
-        this.#list = list;
-        Object.freeze(this);
-    }
-
-    toString() {
-        const str = this.#list.map(String).join('\n');
-
-        return `
-## ${this.#headline}
-
-${str}
-`;
-    }
-}
-
-function categorize(list) {
+function categorizeByType(list) {
     const m = new Map();
 
     for (const item of list) {
@@ -132,7 +52,7 @@ function categorize(list) {
 
     const result = [];
     for (const [key, list] of m) {
-        const s = new Section(key, list);
+        const s = new MarkdownTypeSection(key, list);
         result.push(s);
     }
 
@@ -197,13 +117,23 @@ function parseCliOptions() {
             const key = pathItem.name();
             const path = pathItem.filepath();
             const isDeprecated = pathItem.isDeprecated();
-            const deprecatedMessage = pathItem.deprecatedPathMessage();
+            const message = pathItem.message();
             const isExperimental = pathItem.isExperimental();
-            const item = new ListItem(key, path, isDeprecated, deprecatedMessage, isExperimental);
+            const isTypeRootPath = pathItem.isTypeRootPath();
+            const isCorePrimitive = pathItem.isCorePrimitive();
+            const item = new MarkdownListItem(
+                key,
+                path,
+                isDeprecated,
+                message,
+                isExperimental,
+                isTypeRootPath,
+                isCorePrimitive,
+            );
             return item;
         });
 
-    const sectionList = categorize(list);
+    const sectionList = categorizeByType(list);
 
     const text = generateText(sectionList);
 

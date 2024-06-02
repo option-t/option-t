@@ -2,10 +2,12 @@ import * as assert from 'node:assert/strict';
 
 export class ApiPathDescriptor {
     #actualFilePath = null;
+    #isTypeRootPath = false;
+    #isCorePrimitive = false;
     #shouldHideInDoc = false;
     #isDeprecatedPath = false;
-    #deprecatedPathMessage = '';
     #isExperimental = false;
+    #message = null;
 
     constructor(actualFilePath) {
         this.#actualFilePath = actualFilePath;
@@ -29,15 +31,9 @@ export class ApiPathDescriptor {
         return this.#isDeprecatedPath;
     }
 
-    get deprecatedPathMessage() {
-        return this.#deprecatedPathMessage;
-    }
-
-    setIsDeprecatedPath(val, message) {
+    setIsDeprecatedPath(val) {
         assert.strictEqual(typeof val, 'boolean');
-        assert.strictEqual(typeof message, 'string');
         this.#isDeprecatedPath = val;
-        this.#deprecatedPathMessage = message;
     }
 
     get isExperimental() {
@@ -47,6 +43,32 @@ export class ApiPathDescriptor {
     setIsExperimental(val) {
         assert.strictEqual(typeof val, 'boolean');
         this.#isExperimental = val;
+    }
+
+    setIsTypeRootPath(val) {
+        assert.strictEqual(typeof val, 'boolean');
+        this.#isTypeRootPath = val;
+    }
+
+    get isTypeRootPath() {
+        return this.#isTypeRootPath;
+    }
+
+    setMessage(message) {
+        assert.ok(typeof message === 'string' || message === null);
+        this.#message = message;
+    }
+
+    get message() {
+        return this.#message;
+    }
+
+    setIsCorePrimitive() {
+        this.#isCorePrimitive = true;
+    }
+
+    get isCorePrimitive() {
+        return this.#isCorePrimitive;
     }
 }
 
@@ -61,12 +83,31 @@ export function pathRedirectionForLegacy(actualFilePath) {
     return Object.freeze(desc);
 }
 
-export function pathRedirectionMarkedAsDeprecated(
-    actualFilePath,
-    message = 'Use snake_case path instead.',
-) {
+export function pathRedirectionMarkedAsTypeRoot(actualFilePath) {
+    const desc = new ApiPathDescriptor(actualFilePath);
+    desc.setIsTypeRootPath(true);
+    return Object.freeze(desc);
+}
+
+export function pathRedirectionMarkedAsTypeRootNamespace(actualFilePath) {
+    const desc = new ApiPathDescriptor(actualFilePath);
+    desc.setIsTypeRootPath(true);
+    desc.setMessage(
+        `We don't recommend to use this without TypeScript to make it hard to follow future breaking changes.`,
+    );
+    return Object.freeze(desc);
+}
+
+export function pathRedirectionMarkedAsCorePrimitive(actualFilePath) {
+    const desc = new ApiPathDescriptor(actualFilePath);
+    desc.setIsCorePrimitive();
+    return Object.freeze(desc);
+}
+
+export function pathRedirectionMarkedAsDeprecated(actualFilePath, message) {
     const desc = new ApiPathDescriptor(actualFilePath);
     desc.setIsDeprecatedPath(true, message);
+    desc.setMessage(message);
     return Object.freeze(desc);
 }
 

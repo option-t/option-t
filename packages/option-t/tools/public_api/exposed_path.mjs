@@ -45,8 +45,8 @@ class ExposedPath {
         return ok;
     }
 
-    deprecatedPathMessage() {
-        const ok = this.#descriptor.deprecatedPathMessage;
+    message() {
+        const ok = this.#descriptor.message;
         return ok;
     }
 
@@ -57,6 +57,16 @@ class ExposedPath {
 
     isExperimental() {
         const ok = !!this.#descriptor.isExperimental;
+        return ok;
+    }
+
+    isTypeRootPath() {
+        const ok = !!this.#descriptor.isTypeRootPath;
+        return ok;
+    }
+
+    isCorePrimitive() {
+        const ok = !!this.#descriptor.isCorePrimitive;
         return ok;
     }
 }
