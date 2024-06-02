@@ -69,13 +69,6 @@ export { unwrapOrForResult } from './unwrap_or.js';
 export { unwrapOrElseForResult } from './unwrap_or_else.js';
 export { unwrapOrElseAsyncForResult } from './unwrap_or_else_async.js';
 export { unwrapOrThrowForResult } from './unwrap_or_throw.js';
-/**
- *  @deprecated 48.1.0
- */
-export {
-    unwrapOrThrowWithAssertErrorForResult,
-    unwrapOrThrowWithAssertErrorForResult as unwrapOrThrowWithEnsureErrorForResult,
-} from './deprecated/unwrap_or_throw_error.js';
 
 // XXX:
 //  We don't expose these itens that is unsafe operation.
