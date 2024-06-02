@@ -23,10 +23,6 @@ class ExposedPath {
         return this.#key;
     }
 
-    descriptor() {
-        return this.#descriptor;
-    }
-
     filepath() {
         return this.#descriptor.actualFilePath;
     }
