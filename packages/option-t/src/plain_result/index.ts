@@ -55,10 +55,15 @@ export { orElseAsyncForResult } from './or_else_async.js';
 export { toNullableFromErr, toNullableFromOk } from './to_nullable.js';
 export { toUndefinableFromErr, toUndefinableFromOk } from './to_undefinable.js';
 export { transposeResultToNullable, transposeResultToUndefinable } from './transpose.js';
-export { tryCatchIntoResult, tryCatchIntoResultWithEnsureError } from './try_catch.js';
+export {
+    tryCatchIntoResult,
+    tryCatchIntoResultWithEnsureError,
+    tryCatchIntoResultWithAssertError,
+} from './try_catch.js';
 export {
     tryCatchIntoResultAsync,
     tryCatchIntoResultWithEnsureErrorAsync,
+    tryCatchIntoResultWithAssertErrorAsync,
 } from './try_catch_async.js';
 export { unwrapOrForResult } from './unwrap_or.js';
 export { unwrapOrElseForResult } from './unwrap_or_else.js';
@@ -67,7 +72,10 @@ export { unwrapOrThrowForResult } from './unwrap_or_throw.js';
 /**
  *  @deprecated 48.1.0
  */
-export { unwrapOrThrowWithEnsureErrorForResult } from './deprecated/unwrap_or_throw_error.js';
+export {
+    unwrapOrThrowWithAssertErrorForResult,
+    unwrapOrThrowWithAssertErrorForResult as unwrapOrThrowWithEnsureErrorForResult,
+} from './deprecated/unwrap_or_throw_error.js';
 
 // XXX:
 //  We don't expose these itens that is unsafe operation.

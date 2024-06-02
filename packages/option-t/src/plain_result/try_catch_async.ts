@@ -42,7 +42,7 @@ export async function tryCatchIntoResultAsync<T>(
  *  1. An user should narrow the scope of _producer_ to make it predictable that is in `Err(E)`.
  *  2. This function requires ES2022's `Error.cause` to get an actual thrown object.
  */
-export async function tryCatchIntoResultWithEnsureErrorAsync<T>(
+export async function tryCatchIntoResultWithAssertErrorAsync<T>(
     producer: AsyncProducerFn<T>,
 ): Promise<Result<T, Error>> {
     const result: Result<T, unknown> = await tryCatchIntoResultAsync(producer);
@@ -54,3 +54,10 @@ function checkThrownIsError(thrown: unknown): Error {
     assertIsErrorInstance(thrown, ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE);
     return thrown;
 }
+
+/**
+ *  @deprecated
+ *  This implementation will be replaced with the next version.
+ */
+export const tryCatchIntoResultWithEnsureErrorAsync: typeof tryCatchIntoResultWithAssertErrorAsync =
+    tryCatchIntoResultWithAssertErrorAsync;

@@ -42,10 +42,12 @@ export {
 export {
     tryCatchIntoResult as tryCatchInto,
     tryCatchIntoResultWithEnsureError as tryCatchIntoWithEnsureError,
+    tryCatchIntoResultWithAssertError as tryCatchIntoWithAssertError,
 } from '../try_catch.js';
 export {
     tryCatchIntoResultAsync as tryCatchIntoAsync,
     tryCatchIntoResultWithEnsureErrorAsync as tryCatchIntoWithEnsureErrorAsync,
+    tryCatchIntoResultWithAssertErrorAsync as tryCatchIntoWithAssertErrorAsync,
 } from '../try_catch_async.js';
 export { unwrapOrForResult as unwrapOr } from '../unwrap_or.js';
 export { unwrapOrElseForResult as unwrapOrElse } from '../unwrap_or_else.js';
@@ -54,7 +56,10 @@ export { unwrapOrThrowForResult as unwrapOrThrow } from '../unwrap_or_throw.js';
 /**
  *  @deprecated 48.1.0
  */
-export { unwrapOrThrowWithEnsureErrorForResult as unwrapOrThrowWithEnsureError } from '../deprecated/unwrap_or_throw_error.js';
+export {
+    unwrapOrThrowWithAssertErrorForResult as unwrapOrThrowWithAssertError,
+    unwrapOrThrowWithAssertErrorForResult as unwrapOrThrowWithEnsureError,
+} from '../deprecated/unwrap_or_throw_error.js';
 
 // XXX:
 //  We don't expose these itens that is unsafe operation.

@@ -1,63 +1,82 @@
 import { webcrypto } from 'node:crypto';
 import test from 'ava';
 
-import {
-    isOk,
-    isErr,
-    unwrapOk as unwrapOkFromResult,
-    unwrapErr as unwrapErrFromResult,
-} from 'option-t/plain_result/result';
-import { tryCatchIntoResultWithEnsureError } from 'option-t/plain_result/try_catch';
+import { tryCatchIntoResultWithEnsureError } from 'option-t/plain_result/experimental/try_catch';
+import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { getCrossRealmErrorConstructor } from '../../cross_realm_error_helper.mjs';
 
 test('output=Ok(T)', (t) => {
     t.plan(3);
 
-    const EXPECTED = Math.random();
-    const actual = tryCatchIntoResultWithEnsureError(() => {
+    // arrange
+    const EXPECTED = webcrypto.randomUUID();
+
+    // act
+    const actualResult = tryCatchIntoResultWithEnsureError(() => {
         t.pass();
         return EXPECTED;
     });
 
-    t.true(isOk(actual), 'should be Ok(T)');
-    t.is(unwrapOkFromResult(actual), EXPECTED, 'should contain the expect inner value');
+    // assert
+    t.true(isOk(actualResult), 'should be Ok(T)');
+    {
+        const actual = unwrapOk(actualResult);
+        t.is(actual, EXPECTED, 'should contain the expect inner value');
+    }
 });
 
 test('output=Err(Error)', (t) => {
     t.plan(3);
 
-    const EXPECTED = new Error(Math.random());
-    const actual = tryCatchIntoResultWithEnsureError(() => {
+    // arrange
+    const EXPECTED = new Error(webcrypto.randomUUID());
+    Object.freeze(EXPECTED); // prevent to modify this object.
+
+    // act
+    const actualResult = tryCatchIntoResultWithEnsureError(() => {
         t.pass();
         throw EXPECTED;
     });
 
-    t.true(isErr(actual), 'should be Err(E)');
-    t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
+    // assert
+    t.true(isErr(actualResult), 'should be Err(E)');
+    {
+        const actual = unwrapErr(actualResult);
+        t.is(actual, EXPECTED, 'should keep the thrown as the expect inner value directly');
+    }
 });
 
 test('If producer throw non-Error-instance value', (t) => {
-    t.plan(3);
+    t.plan(7);
 
+    // arrange
     const EXPECT_THROWN = webcrypto.randomUUID();
-    const actual = t.throws(
-        () => {
-            tryCatchIntoResultWithEnsureError(() => {
-                t.pass();
-                throw EXPECT_THROWN;
-            });
-        },
-        {
-            instanceOf: TypeError,
-            message: 'The thrown value is not an instance of `Error` of the current realm.',
-        },
-    );
 
-    t.is(actual.cause, EXPECT_THROWN, `should set Error.cause`);
+    // act
+    const actualResult = tryCatchIntoResultWithEnsureError(() => {
+        t.pass();
+        throw EXPECT_THROWN;
+    });
+
+    // assert
+    t.true(isErr(actualResult), 'should be Err(E)');
+    {
+        const actual = unwrapErr(actualResult);
+        t.assert(actual instanceof Error, `should be the current realm's Error instance`);
+        t.not(actual, EXPECT_THROWN, 'should not be the same instance with the thrown');
+
+        t.is(actual.name, 'UnknownCausalError', '.name should be expected');
+        t.is(
+            actual.message,
+            'This `.cause` is not an instance of `Error` of the current realm.',
+            '.message should be expected',
+        );
+        t.is(actual.cause, EXPECT_THROWN, '.cause should hold the expect inner value');
+    }
 });
 
-test('If producer throw the instance value from cross-realm `Error` constructor', (t) => {
-    t.plan(6);
+test('If producer throw the instance value of cross-realm `Error` constructor', (t) => {
+    t.plan(10);
     const CurrentRealmErrorCtor = globalThis.Error;
 
     // arrange
@@ -67,21 +86,30 @@ test('If producer throw the instance value from cross-realm `Error` constructor'
         EXPECT_THROWN instanceof CurrentRealmErrorCtor,
         `the thrown error should not be the instance of current realm's Error consturctor`,
     );
+    Object.freeze(EXPECT_THROWN); // prevent to modify this object.
 
-    // act & assert
-    const actual = t.throws(
-        () => {
-            tryCatchIntoResultWithEnsureError(() => {
-                t.pass();
-                throw EXPECT_THROWN;
-            });
-        },
-        {
-            instanceOf: TypeError,
-            message: 'The thrown value is not an instance of `Error` of the current realm.',
-        },
-    );
+    // act
+    const actualResult = tryCatchIntoResultWithEnsureError(() => {
+        t.pass();
+        throw EXPECT_THROWN;
+    });
 
     // assert
-    t.is(actual.cause, EXPECT_THROWN, `should set Error.cause`);
+    t.true(isErr(actualResult), 'should be Err(E)');
+    {
+        const actual = unwrapErr(actualResult);
+        t.assert(
+            actual instanceof CurrentRealmErrorCtor,
+            `should be the current realm's Error instance`,
+        );
+        t.not(actual, EXPECT_THROWN, 'should not be the same instance with the thrown');
+
+        t.is(actual.name, 'UnknownCausalError', '.name should be expected');
+        t.is(
+            actual.message,
+            'This `.cause` is not an instance of `Error` of the current realm.',
+            '.message should be expected',
+        );
+        t.is(actual.cause, EXPECT_THROWN, '.cause should hold the expect inner value');
+    }
 });
