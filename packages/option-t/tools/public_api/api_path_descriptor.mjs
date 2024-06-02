@@ -16,17 +16,35 @@ const apiStabilitySet = new Set([
     ApiStability.Deprecated,
 ]);
 
+/**
+ *  @enum   {string}
+ */
+const ApiKind = Object.freeze({
+    TypeRootPath: `type_root_path: ${webcrypto.randomUUID()}`,
+    CorePrimitive: `core_primitive: ${webcrypto.randomUUID()}`,
+    Operator: `operator: ${webcrypto.randomUUID()}`,
+});
+
+const apiKindSet = new Set([
+    // @prettier-ignore
+    ApiKind.TypeRootPath,
+    ApiKind.CorePrimitive,
+    ApiKind.Operator,
+]);
+
 export class ApiPathDescriptor {
     #actualFilePath = null;
-    #isTypeRootPath = false;
-    #isCorePrimitive = false;
     #shouldHideInDoc = false;
     #message = null;
     #stability = ApiStability.Stable;
+    #kind = ApiKind.Operator;
 
     constructor(actualFilePath) {
         this.#actualFilePath = actualFilePath;
         Object.seal(this);
+
+        assert.ok(apiStabilitySet.has(this.#stability));
+        assert.ok(apiKindSet.has(this.#kind));
     }
 
     get actualFilePath() {
@@ -47,6 +65,11 @@ export class ApiPathDescriptor {
         this.#stability = val;
     }
 
+    setApiKind(val) {
+        assert.ok(apiKindSet.has(val));
+        this.#kind = val;
+    }
+
     get isDeprecatedPath() {
         return this.#stability === ApiStability.Deprecated;
     }
@@ -55,13 +78,12 @@ export class ApiPathDescriptor {
         return this.#stability === ApiStability.Experimental;
     }
 
-    setIsTypeRootPath(val) {
-        assert.strictEqual(typeof val, 'boolean');
-        this.#isTypeRootPath = val;
+    get isTypeRootPath() {
+        return this.#kind === ApiKind.TypeRootPath;
     }
 
-    get isTypeRootPath() {
-        return this.#isTypeRootPath;
+    get isCorePrimitive() {
+        return this.#kind === ApiKind.CorePrimitive;
     }
 
     setMessage(message) {
@@ -71,14 +93,6 @@ export class ApiPathDescriptor {
 
     get message() {
         return this.#message;
-    }
-
-    setIsCorePrimitive() {
-        this.#isCorePrimitive = true;
-    }
-
-    get isCorePrimitive() {
-        return this.#isCorePrimitive;
     }
 }
 
@@ -96,13 +110,13 @@ export function pathRedirectionForLegacy(actualFilePath) {
 
 export function pathRedirectionMarkedAsTypeRoot(actualFilePath) {
     const desc = new ApiPathDescriptor(actualFilePath);
-    desc.setIsTypeRootPath(true);
+    desc.setApiKind(ApiKind.TypeRootPath);
     return Object.freeze(desc);
 }
 
 export function pathRedirectionMarkedAsTypeRootNamespace(actualFilePath) {
     const desc = new ApiPathDescriptor(actualFilePath);
-    desc.setIsTypeRootPath(true);
+    desc.setApiKind(ApiKind.TypeRootPath);
     desc.setMessage(
         `We don't recommend to use this without TypeScript to make it hard to follow future breaking changes.`,
     );
@@ -111,7 +125,7 @@ export function pathRedirectionMarkedAsTypeRootNamespace(actualFilePath) {
 
 export function pathRedirectionMarkedAsCorePrimitive(actualFilePath) {
     const desc = new ApiPathDescriptor(actualFilePath);
-    desc.setIsCorePrimitive();
+    desc.setApiKind(ApiKind.CorePrimitive);
     return Object.freeze(desc);
 }
 
