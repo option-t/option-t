@@ -21,6 +21,8 @@ export function tryCatchIntoResult<T>(producer: ProducerFn<T>): Result<T, unknow
     }
 }
 
+export { tryCatchIntoResultWithEnsureError } from './experimental/try_catch.js';
+
 /**
  *  - This function converts the returend value from _producer_ into `Ok(TValue)`.
  *  - If _producer_ throw an `Error` instance of **current [realm][realm]**,
@@ -48,10 +50,3 @@ export function tryCatchIntoResultWithAssertError<T>(producer: ProducerFn<T>): R
         return errWrapped;
     }
 }
-
-/**
- *  @deprecated
- *  This implementation will be replaced with the next version.
- */
-export const tryCatchIntoResultWithEnsureError: typeof tryCatchIntoResultWithAssertError =
-    tryCatchIntoResultWithAssertError;
