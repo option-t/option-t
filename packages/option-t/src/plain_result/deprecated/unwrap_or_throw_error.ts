@@ -46,18 +46,3 @@ export function unwrapOrThrowWithAssertErrorForResult<T>(input: Result<T, Error>
     assertIsErrorInstance(e, ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE);
     throw e;
 }
-
-/**
- *  @deprecated 48.1.0
- *  This operator throws the `Error` contained in _input_ directly
- *  but its stack trace informartion lacks the information about where throws it actually.
- *  To keep it, use `unwrapOrThrowForResult` exported from following instead:
- *
- *  - `option-t/plain_result`
- *  - `option-t/plain_result/unwrap_or_throw`
- *  - `option-t/plain_result/namespace` exports it as `Result.unwrapOrThrow()`
- *
- *  @see    {@link unwrapOrThrowWithAssertErrorForResult}
- */
-export const unwrapOrThrowWithEnsureErrorForResult: typeof unwrapOrThrowWithAssertErrorForResult =
-    unwrapOrThrowWithAssertErrorForResult;

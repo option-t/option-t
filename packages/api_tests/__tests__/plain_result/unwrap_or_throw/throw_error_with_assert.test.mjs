@@ -2,7 +2,7 @@ import { webcrypto } from 'node:crypto';
 import test from 'ava';
 
 import { createOk, createErr } from 'option-t/plain_result/result';
-import { unwrapOrThrowWithEnsureErrorForResult } from 'option-t/plain_result/unwrap_or_throw_error';
+import { unwrapOrThrowWithAssertErrorForResult } from 'option-t/plain_result/unwrap_or_throw_error';
 import { getCrossRealmErrorConstructor } from '../../cross_realm_error_helper.mjs';
 
 test('input is Ok(T)', (t) => {
@@ -11,7 +11,7 @@ test('input is Ok(T)', (t) => {
     const input = createOk(VALUE_T);
     let actual;
     t.notThrows(() => {
-        actual = unwrapOrThrowWithEnsureErrorForResult(input);
+        actual = unwrapOrThrowWithAssertErrorForResult(input);
     });
     t.is(actual, VALUE_T);
 });
@@ -22,7 +22,7 @@ test('input is Err(Error)', (t) => {
     const input = createErr(ERROR_E);
     t.throws(
         () => {
-            unwrapOrThrowWithEnsureErrorForResult(input);
+            unwrapOrThrowWithAssertErrorForResult(input);
         },
         {
             is: ERROR_E,
@@ -38,7 +38,7 @@ test('input is Err, but the contained value is not Error', (t) => {
     const input = createErr(ERROR_E);
     const thrown = t.throws(
         () => {
-            unwrapOrThrowWithEnsureErrorForResult(input);
+            unwrapOrThrowWithAssertErrorForResult(input);
         },
         {
             instanceOf: TypeError,
@@ -64,7 +64,7 @@ test('input is Err, but the contained value is not an `Error` instance of curren
     const input = createErr(ERROR_E);
     const thrown = t.throws(
         () => {
-            unwrapOrThrowWithEnsureErrorForResult(input);
+            unwrapOrThrowWithAssertErrorForResult(input);
         },
         {
             instanceOf: TypeError,
