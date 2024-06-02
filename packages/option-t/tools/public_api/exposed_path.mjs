@@ -4,6 +4,7 @@ import { ApiPathDescriptor } from './api_path_descriptor.mjs';
 import { apiTable } from './table.mjs';
 
 const PKG_NAME = 'option-t';
+const RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO = `../packages/${PKG_NAME}/src`;
 
 class ExposedPath {
     #key;
@@ -27,7 +28,13 @@ class ExposedPath {
     }
 
     filepath() {
-        return this.#descriptor.actualFilePath ?? null;
+        return this.#descriptor.actualFilePath;
+    }
+
+    hrefFromDocsDir() {
+        const subpath = this.filepath();
+        const href = `${RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO}/${subpath}.ts`;
+        return href;
     }
 
     resolvedName() {

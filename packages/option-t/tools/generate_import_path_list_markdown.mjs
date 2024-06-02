@@ -116,7 +116,7 @@ function parseCliOptions() {
         .map((pathItem) => {
             const key = pathItem.name();
             const publicApiPath = pathItem.resolvedName();
-            const path = pathItem.filepath();
+            const hrefFromDocsDir = pathItem.hrefFromDocsDir();
             const isDeprecated = pathItem.isDeprecated();
             const message = pathItem.message();
             const isExperimental = pathItem.isExperimental();
@@ -125,7 +125,7 @@ function parseCliOptions() {
             const item = new MarkdownListItem(
                 key,
                 publicApiPath,
-                path,
+                hrefFromDocsDir,
                 isDeprecated,
                 message,
                 isExperimental,

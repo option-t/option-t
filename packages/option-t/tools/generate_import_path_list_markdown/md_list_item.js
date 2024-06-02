@@ -1,11 +1,9 @@
 import * as assert from 'node:assert/strict';
 
-const RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO = '../packages/option-t/src';
-
 export class MarkdownListItem {
     #key;
     #publicApiPath;
-    #subpath;
+    #hrefFromDocsDir;
     #isDeprecated;
     #message;
     #isExperimental;
@@ -15,7 +13,7 @@ export class MarkdownListItem {
     constructor(
         key,
         publicApiPath,
-        subpath,
+        hrefFromDocsDir,
         isDeprecated,
         message,
         isExperimental,
@@ -24,7 +22,7 @@ export class MarkdownListItem {
     ) {
         assert.ok(typeof key === 'string');
         assert.ok(typeof publicApiPath === 'string');
-        assert.ok(typeof subpath === 'string');
+        assert.ok(typeof hrefFromDocsDir === 'string');
         assert.ok(typeof isDeprecated === 'boolean');
         assert.ok(typeof isExperimental === 'boolean');
         assert.ok(typeof isTypeRootPath === 'boolean');
@@ -32,7 +30,7 @@ export class MarkdownListItem {
 
         this.#key = key;
         this.#publicApiPath = publicApiPath;
-        this.#subpath = subpath;
+        this.#hrefFromDocsDir = hrefFromDocsDir;
         this.#isDeprecated = isDeprecated;
         this.#message = message;
         this.#isExperimental = isExperimental;
@@ -57,18 +55,9 @@ export class MarkdownListItem {
         return this.#key;
     }
 
-    href() {
-        const subpath = this.#subpath;
-        if (!subpath) {
-            return this.#key;
-        }
-
-        return subpath;
-    }
-
     toString() {
         const name = this.#publicApiPath;
-        const href = `${RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO}/${this.href()}.ts`;
+        const href = this.#hrefFromDocsDir;
 
         const anchor = `[\`${name}\`](${href})`;
         let link = '';

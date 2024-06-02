@@ -33,13 +33,15 @@ const apiKindSet = new Set([
 ]);
 
 export class ApiPathDescriptor {
-    #actualFilePath = null;
+    #actualFilePath = '';
     #shouldHideInDoc = false;
     #message = null;
     #stability = ApiStability.Stable;
     #kind = ApiKind.Operator;
 
     constructor(actualFilePath) {
+        assert.ok(typeof actualFilePath === 'string');
+
         this.#actualFilePath = actualFilePath;
         Object.seal(this);
 
