@@ -117,14 +117,16 @@ function parseCliOptions() {
             const key = pathItem.name();
             const path = pathItem.filepath();
             const isDeprecated = pathItem.isDeprecated();
-            const deprecatedMessage = pathItem.deprecatedPathMessage();
+            const message = pathItem.message();
             const isExperimental = pathItem.isExperimental();
+            const isTypeRootPath = pathItem.isTypeRootPath();
             const item = new MarkdownListItem(
                 key,
                 path,
                 isDeprecated,
-                deprecatedMessage,
+                message,
                 isExperimental,
+                isTypeRootPath,
             );
             return item;
         });

@@ -8,25 +8,32 @@ export class MarkdownListItem {
     #key;
     #subpath;
     #isDeprecated;
-    #deprecatedMessage;
+    #message;
     #isExperimental;
+    #isTypeRootPath;
 
-    constructor(key, subpath, isDeprecated, deprecatedMessage, isExperimental) {
+    constructor(key, subpath, isDeprecated, message, isExperimental, isTypeRootPath) {
         assert.ok(typeof key === 'string');
         assert.ok(typeof subpath === 'string');
         assert.ok(typeof isDeprecated === 'boolean');
         assert.ok(typeof isExperimental === 'boolean');
+        assert.ok(typeof isTypeRootPath === 'boolean');
 
         this.#key = key;
         this.#subpath = subpath;
         this.#isDeprecated = isDeprecated;
-        this.#deprecatedMessage = deprecatedMessage;
+        this.#message = message;
         this.#isExperimental = isExperimental;
+        this.#isTypeRootPath = isTypeRootPath;
         Object.freeze(this);
     }
 
     get isExperimental() {
         return this.#isExperimental;
+    }
+
+    get isTypeRootPath() {
+        return this.#isTypeRootPath;
     }
 
     key() {
@@ -52,21 +59,48 @@ export class MarkdownListItem {
     }
 
     toString() {
-        const isDeprecated = this.#isDeprecated;
-        const isExperimental = this.#isExperimental;
-
         const name = this.#pathname();
         const href = `${RELATIVE_PATH_TO_SRC_DIR_IN_MONOREPO}/${this.href()}.ts`;
 
         const anchor = `[${name}](${href})`;
         let link = '';
-        if (isDeprecated) {
-            link = `${anchor} (__deprecated__. ${this.#deprecatedMessage})`;
-        } else if (isExperimental) {
-            link = `${anchor} (__experimental__)`;
+        const message = this.#message;
+        if (message !== null) {
+            link = this.#buildLinkTextWithMessage(anchor, message);
         } else {
-            link = anchor;
+            link = this.#buildLinkTextWithoutMessage(anchor);
         }
+
         return `- ${link}`;
+    }
+
+    #buildLinkTextWithMessage(anchor, message) {
+        const isDeprecated = this.#isDeprecated;
+        const isExperimental = this.#isExperimental;
+
+        if (isDeprecated) {
+            return `${anchor} (__deprecated__. ${message})`;
+        }
+
+        if (isExperimental) {
+            return `${anchor} (__experimental__. ${message})`;
+        }
+
+        return `${anchor}: ${message}`;
+    }
+
+    #buildLinkTextWithoutMessage(anchor) {
+        const isDeprecated = this.#isDeprecated;
+        const isExperimental = this.#isExperimental;
+
+        if (isDeprecated) {
+            return `${anchor} (__deprecated__)`;
+        }
+
+        if (isExperimental) {
+            return `${anchor} (__experimental__)`;
+        }
+
+        return anchor;
     }
 }

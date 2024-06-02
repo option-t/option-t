@@ -5,6 +5,8 @@ import {
     pathRedirectionTo,
     pathRedirectionToAsExperimental,
     pathRedirectionMarkedAsDeprecated,
+    pathRedirectionMarkedAsTypeRoot,
+    pathRedirectionMarkedAsTypeRootNamespace,
 } from './api_path_descriptor.mjs';
 
 const MAYBE_DIR = 'maybe';
@@ -19,7 +21,7 @@ export const apiTable = Object.freeze({
     'classic_option': pathRedirectionForLegacy('classic_option/index'),
     'classic_result': pathRedirectionForLegacy('classic_result/index'),
 
-    'maybe': pathRedirectionTo(`${MAYBE_DIR}/index`),
+    'maybe': pathRedirectionMarkedAsTypeRoot(`${MAYBE_DIR}/index`),
     'maybe/and': pathRedirectionTo(`${MAYBE_DIR}/and`),
     'maybe/and_then': pathRedirectionTo(`${MAYBE_DIR}/and_then`),
     'maybe/and_then_async': pathRedirectionTo(`${MAYBE_DIR}/and_then_async`),
@@ -33,7 +35,7 @@ export const apiTable = Object.freeze({
     'maybe/map_or_else': pathRedirectionTo(`${MAYBE_DIR}/map_or_else`),
     'maybe/map_or_else_async': pathRedirectionTo(`${MAYBE_DIR}/map_or_else_async`),
     'maybe/maybe': pathRedirectionTo(`${MAYBE_DIR}/maybe`),
-    'maybe/namespace': pathRedirectionTo(`${MAYBE_DIR}/namespace`),
+    'maybe/namespace': pathRedirectionMarkedAsTypeRootNamespace(`${MAYBE_DIR}/namespace`),
     'maybe/ok_or': pathRedirectionTo(`${MAYBE_DIR}/ok_or`),
     'maybe/ok_or_else': pathRedirectionTo(`${MAYBE_DIR}/ok_or_else`),
     'maybe/ok_or_else_async': pathRedirectionTo(`${MAYBE_DIR}/ok_or_else_async`),
@@ -51,7 +53,7 @@ export const apiTable = Object.freeze({
     'maybe/zip_with': pathRedirectionTo(`${MAYBE_DIR}/zip_with`),
     'maybe/zip_with_async': pathRedirectionTo(`${MAYBE_DIR}/zip_with_async`),
 
-    'nullable': pathRedirectionTo(`${NULLABLE_DIR}/index`),
+    'nullable': pathRedirectionMarkedAsTypeRoot(`${NULLABLE_DIR}/index`),
     'nullable/and': pathRedirectionTo(`${NULLABLE_DIR}/and`),
     'nullable/and_then': pathRedirectionTo(`${NULLABLE_DIR}/and_then`),
     'nullable/and_then_async': pathRedirectionTo(`${NULLABLE_DIR}/and_then_async`),
@@ -64,7 +66,7 @@ export const apiTable = Object.freeze({
     'nullable/map_or_async': pathRedirectionTo(`${NULLABLE_DIR}/map_or_async`),
     'nullable/map_or_else': pathRedirectionTo(`${NULLABLE_DIR}/map_or_else`),
     'nullable/map_or_else_async': pathRedirectionTo(`${NULLABLE_DIR}/map_or_else_async`),
-    'nullable/namespace': pathRedirectionTo(`${NULLABLE_DIR}/namespace`),
+    'nullable/namespace': pathRedirectionMarkedAsTypeRootNamespace(`${NULLABLE_DIR}/namespace`),
     'nullable/nullable': pathRedirectionTo(`${NULLABLE_DIR}/nullable`),
     'nullable/ok_or': pathRedirectionTo(`${NULLABLE_DIR}/ok_or`),
     'nullable/ok_or_else': pathRedirectionTo(`${NULLABLE_DIR}/ok_or_else`),
@@ -82,7 +84,7 @@ export const apiTable = Object.freeze({
     'nullable/zip_with': pathRedirectionTo(`${NULLABLE_DIR}/zip_with`),
     'nullable/zip_with_async': pathRedirectionTo(`${NULLABLE_DIR}/zip_with_async`),
 
-    'plain_option': pathRedirectionTo(`${PLAIN_OPTION_DIR}/index`),
+    'plain_option': pathRedirectionMarkedAsTypeRoot(`${PLAIN_OPTION_DIR}/index`),
     'plain_option/and': pathRedirectionTo(`${PLAIN_OPTION_DIR}/and`),
     'plain_option/and_then': pathRedirectionTo(`${PLAIN_OPTION_DIR}/and_then`),
     'plain_option/and_then_async': pathRedirectionTo(`${PLAIN_OPTION_DIR}/and_then_async`),
@@ -99,7 +101,9 @@ export const apiTable = Object.freeze({
     'plain_option/map_or_async': pathRedirectionTo(`${PLAIN_OPTION_DIR}/map_or_async`),
     'plain_option/map_or_else': pathRedirectionTo(`${PLAIN_OPTION_DIR}/map_or_else`),
     'plain_option/map_or_else_async': pathRedirectionTo(`${PLAIN_OPTION_DIR}/map_or_else_async`),
-    'plain_option/namespace': pathRedirectionTo(`${PLAIN_OPTION_DIR}/namespace`),
+    'plain_option/namespace': pathRedirectionMarkedAsTypeRootNamespace(
+        `${PLAIN_OPTION_DIR}/namespace`,
+    ),
     'plain_option/ok_or': pathRedirectionTo(`${PLAIN_OPTION_DIR}/ok_or`),
     'plain_option/ok_or_else': pathRedirectionTo(`${PLAIN_OPTION_DIR}/ok_or_else`),
     'plain_option/option': pathRedirectionTo(`${PLAIN_OPTION_DIR}/option`),
@@ -116,7 +120,7 @@ export const apiTable = Object.freeze({
     ),
     'plain_option/xor': pathRedirectionTo(`${PLAIN_OPTION_DIR}/xor`),
 
-    'plain_result': pathRedirectionTo(`${PLAIN_RESULT_DIR}/index`),
+    'plain_result': pathRedirectionMarkedAsTypeRoot(`${PLAIN_RESULT_DIR}/index`),
     'plain_result/and': pathRedirectionTo(`${PLAIN_RESULT_DIR}/and`),
     'plain_result/and_then': pathRedirectionTo(`${PLAIN_RESULT_DIR}/and_then`),
     'plain_result/and_then_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/and_then_async`),
@@ -144,7 +148,9 @@ export const apiTable = Object.freeze({
     'plain_result/map_or_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map_or_async`),
     'plain_result/map_or_else': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map_or_else`),
     'plain_result/map_or_else_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map_or_else_async`),
-    'plain_result/namespace': pathRedirectionTo(`${PLAIN_RESULT_DIR}/namespace`),
+    'plain_result/namespace': pathRedirectionMarkedAsTypeRootNamespace(
+        `${PLAIN_RESULT_DIR}/namespace`,
+    ),
     'plain_result/or': pathRedirectionTo(`${PLAIN_RESULT_DIR}/or`),
     'plain_result/or_else': pathRedirectionTo(`${PLAIN_RESULT_DIR}/or_else`),
     'plain_result/or_else_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/or_else_async`),
@@ -169,7 +175,7 @@ export const apiTable = Object.freeze({
         'Use `option-t/plain_result/unwrap_or_throw` instead.',
     ),
 
-    'undefinable': pathRedirectionTo(`${UNDEFINABLE_DIR}/index`),
+    'undefinable': pathRedirectionMarkedAsTypeRoot(`${UNDEFINABLE_DIR}/index`),
     'undefinable/and': pathRedirectionTo(`${UNDEFINABLE_DIR}/and`),
     'undefinable/and_then': pathRedirectionTo(`${UNDEFINABLE_DIR}/and_then`),
     'undefinable/and_then_async': pathRedirectionTo(`${UNDEFINABLE_DIR}/and_then_async`),
@@ -182,7 +188,9 @@ export const apiTable = Object.freeze({
     'undefinable/map_or_async': pathRedirectionTo(`${UNDEFINABLE_DIR}/map_or_async`),
     'undefinable/map_or_else': pathRedirectionTo(`${UNDEFINABLE_DIR}/map_or_else`),
     'undefinable/map_or_else_async': pathRedirectionTo(`${UNDEFINABLE_DIR}/map_or_else_async`),
-    'undefinable/namespace': pathRedirectionTo(`${UNDEFINABLE_DIR}/namespace`),
+    'undefinable/namespace': pathRedirectionMarkedAsTypeRootNamespace(
+        `${UNDEFINABLE_DIR}/namespace`,
+    ),
     'undefinable/ok_or': pathRedirectionTo(`${UNDEFINABLE_DIR}/ok_or`),
     'undefinable/ok_or_else': pathRedirectionTo(`${UNDEFINABLE_DIR}/ok_or_else`),
     'undefinable/ok_or_else_async': pathRedirectionTo(`${UNDEFINABLE_DIR}/ok_or_else_async`),

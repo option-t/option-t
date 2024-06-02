@@ -5,7 +5,13 @@
 
 ## Maybe
 
+Basic APIs are exported here:
+
 - [option-t/maybe](../packages/option-t/src/maybe/index.ts)
+- [option-t/maybe/namespace](../packages/option-t/src/maybe/namespace.ts): We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.
+
+### Operators
+
 - [option-t/maybe/and](../packages/option-t/src/maybe/and.ts)
 - [option-t/maybe/and_then](../packages/option-t/src/maybe/and_then.ts)
 - [option-t/maybe/and_then_async](../packages/option-t/src/maybe/and_then_async.ts)
@@ -19,7 +25,6 @@
 - [option-t/maybe/map_or_else](../packages/option-t/src/maybe/map_or_else.ts)
 - [option-t/maybe/map_or_else_async](../packages/option-t/src/maybe/map_or_else_async.ts)
 - [option-t/maybe/maybe](../packages/option-t/src/maybe/maybe.ts)
-- [option-t/maybe/namespace](../packages/option-t/src/maybe/namespace.ts)
 - [option-t/maybe/ok_or](../packages/option-t/src/maybe/ok_or.ts)
 - [option-t/maybe/ok_or_else](../packages/option-t/src/maybe/ok_or_else.ts)
 - [option-t/maybe/ok_or_else_async](../packages/option-t/src/maybe/ok_or_else_async.ts)
@@ -42,7 +47,13 @@
 
 ## Nullable
 
+Basic APIs are exported here:
+
 - [option-t/nullable](../packages/option-t/src/nullable/index.ts)
+- [option-t/nullable/namespace](../packages/option-t/src/nullable/namespace.ts): We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.
+
+### Operators
+
 - [option-t/nullable/and](../packages/option-t/src/nullable/and.ts)
 - [option-t/nullable/and_then](../packages/option-t/src/nullable/and_then.ts)
 - [option-t/nullable/and_then_async](../packages/option-t/src/nullable/and_then_async.ts)
@@ -55,7 +66,6 @@
 - [option-t/nullable/map_or_async](../packages/option-t/src/nullable/map_or_async.ts)
 - [option-t/nullable/map_or_else](../packages/option-t/src/nullable/map_or_else.ts)
 - [option-t/nullable/map_or_else_async](../packages/option-t/src/nullable/map_or_else_async.ts)
-- [option-t/nullable/namespace](../packages/option-t/src/nullable/namespace.ts)
 - [option-t/nullable/nullable](../packages/option-t/src/nullable/nullable.ts)
 - [option-t/nullable/ok_or](../packages/option-t/src/nullable/ok_or.ts)
 - [option-t/nullable/ok_or_else](../packages/option-t/src/nullable/ok_or_else.ts)
@@ -78,7 +88,13 @@
 
 ## PlainOption
 
+Basic APIs are exported here:
+
 - [option-t/plain_option](../packages/option-t/src/plain_option/index.ts)
+- [option-t/plain_option/namespace](../packages/option-t/src/plain_option/namespace.ts): We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.
+
+### Operators
+
 - [option-t/plain_option/and](../packages/option-t/src/plain_option/and.ts)
 - [option-t/plain_option/and_then](../packages/option-t/src/plain_option/and_then.ts)
 - [option-t/plain_option/and_then_async](../packages/option-t/src/plain_option/and_then_async.ts)
@@ -95,7 +111,6 @@
 - [option-t/plain_option/map_or_async](../packages/option-t/src/plain_option/map_or_async.ts)
 - [option-t/plain_option/map_or_else](../packages/option-t/src/plain_option/map_or_else.ts)
 - [option-t/plain_option/map_or_else_async](../packages/option-t/src/plain_option/map_or_else_async.ts)
-- [option-t/plain_option/namespace](../packages/option-t/src/plain_option/namespace.ts)
 - [option-t/plain_option/ok_or](../packages/option-t/src/plain_option/ok_or.ts)
 - [option-t/plain_option/ok_or_else](../packages/option-t/src/plain_option/ok_or_else.ts)
 - [option-t/plain_option/option](../packages/option-t/src/plain_option/option.ts)
@@ -115,7 +130,13 @@
 
 ## PlainResult
 
+Basic APIs are exported here:
+
 - [option-t/plain_result](../packages/option-t/src/plain_result/index.ts)
+- [option-t/plain_result/namespace](../packages/option-t/src/plain_result/namespace.ts): We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.
+
+### Operators
+
 - [option-t/plain_result/and](../packages/option-t/src/plain_result/and.ts)
 - [option-t/plain_result/and_then](../packages/option-t/src/plain_result/and_then.ts)
 - [option-t/plain_result/and_then_async](../packages/option-t/src/plain_result/and_then_async.ts)
@@ -135,7 +156,6 @@
 - [option-t/plain_result/map_or_async](../packages/option-t/src/plain_result/map_or_async.ts)
 - [option-t/plain_result/map_or_else](../packages/option-t/src/plain_result/map_or_else.ts)
 - [option-t/plain_result/map_or_else_async](../packages/option-t/src/plain_result/map_or_else_async.ts)
-- [option-t/plain_result/namespace](../packages/option-t/src/plain_result/namespace.ts)
 - [option-t/plain_result/or](../packages/option-t/src/plain_result/or.ts)
 - [option-t/plain_result/or_else](../packages/option-t/src/plain_result/or_else.ts)
 - [option-t/plain_result/or_else_async](../packages/option-t/src/plain_result/or_else_async.ts)
@@ -155,7 +175,7 @@
 
 ### Experimental
 
-These are experimental. We might cause a breaking change without any major version up.
+These paths are experimental. We might cause a breaking change without any major version up.
 
 - [option-t/plain_result/experimental/try_catch](../packages/option-t/src/plain_result/experimental/try_catch.ts) (__experimental__)
 - [option-t/plain_result/experimental/try_catch_async](../packages/option-t/src/plain_result/experimental/try_catch_async.ts) (__experimental__)
@@ -164,7 +184,13 @@ These are experimental. We might cause a breaking change without any major versi
 
 ## Undefinable
 
+Basic APIs are exported here:
+
 - [option-t/undefinable](../packages/option-t/src/undefinable/index.ts)
+- [option-t/undefinable/namespace](../packages/option-t/src/undefinable/namespace.ts): We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.
+
+### Operators
+
 - [option-t/undefinable/and](../packages/option-t/src/undefinable/and.ts)
 - [option-t/undefinable/and_then](../packages/option-t/src/undefinable/and_then.ts)
 - [option-t/undefinable/and_then_async](../packages/option-t/src/undefinable/and_then_async.ts)
@@ -177,7 +203,6 @@ These are experimental. We might cause a breaking change without any major versi
 - [option-t/undefinable/map_or_async](../packages/option-t/src/undefinable/map_or_async.ts)
 - [option-t/undefinable/map_or_else](../packages/option-t/src/undefinable/map_or_else.ts)
 - [option-t/undefinable/map_or_else_async](../packages/option-t/src/undefinable/map_or_else_async.ts)
-- [option-t/undefinable/namespace](../packages/option-t/src/undefinable/namespace.ts)
 - [option-t/undefinable/ok_or](../packages/option-t/src/undefinable/ok_or.ts)
 - [option-t/undefinable/ok_or_else](../packages/option-t/src/undefinable/ok_or_else.ts)
 - [option-t/undefinable/ok_or_else_async](../packages/option-t/src/undefinable/ok_or_else_async.ts)

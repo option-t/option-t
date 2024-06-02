@@ -18,14 +18,23 @@ export class MarkdownTypeSection {
         Object.freeze(this);
     }
 
+    #getTypeRootPath() {
+        const list = this.#list;
+        const targetItems = list.filter((item) => item.isTypeRootPath);
+        const str = targetItems.map(String).join('\n');
+        return str;
+    }
+
     toString() {
         const list = this.#list;
         const experimental = buildExperimentalSection(list);
+        const typeRoot = this.#getTypeRootPath();
 
         const str = list
             .filter((item) => {
                 const isExperimental = item.isExperimental;
-                const ok = !isExperimental;
+                const isTypeRootPath = item.isTypeRootPath;
+                const ok = !isExperimental && !isTypeRootPath;
                 return ok;
             })
             .map(String)
@@ -33,6 +42,12 @@ export class MarkdownTypeSection {
 
         return `
 ## ${this.#headlineTypeName}
+
+Basic APIs are exported here:
+
+${typeRoot}
+
+### Operators
 
 ${str}
 
