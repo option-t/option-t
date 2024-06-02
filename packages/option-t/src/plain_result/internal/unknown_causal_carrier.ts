@@ -1,5 +1,5 @@
 import { isCurrentRealmErrorInstance } from '../../internal/assert.js';
-import { ERR_MSG_DOT_CAUSE_PROPS_IS_NOT_CURRENT_REALM_BUILTIN_ERROR_INSTANCE } from '../../internal/error_message.js';
+import { ERR_MSG_DOT_CAUSE_PROPS_IS_NOT_CURRENT_REALM_BUILTIN_ERROR_INSTANCE } from './error_message.js';
 
 const WRAPPER_NAME = 'UnknownCausalError' as const;
 

@@ -168,11 +168,11 @@ export const apiTable = Object.freeze({
     ),
     'plain_result/unwrap_or_throw': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or_throw`),
     'plain_result/unwrap_or_throw_error': pathRedirectionMarkedAsDeprecated(
-        `${PLAIN_RESULT_DIR}/unwrap_or_throw_error`,
+        `${PLAIN_RESULT_DIR}/deprecated/unwrap_or_throw_error`,
         'Use `option-t/plain_result/unwrap_or_throw` instead.',
     ),
     'plain_result/unwrap_or_throw_unknown': pathRedirectionMarkedAsDeprecated(
-        `${PLAIN_RESULT_DIR}/unwrap_or_throw_unknown`,
+        `${PLAIN_RESULT_DIR}/deprecated/unwrap_or_throw_unknown`,
         'Use `option-t/plain_result/unwrap_or_throw` instead.',
     ),
 
