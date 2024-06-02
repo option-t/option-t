@@ -39,14 +39,6 @@ export {
     transposeResultToNullable as transposeToNullable,
     transposeResultToUndefinable as transposeToUndefinable,
 } from '../transpose.js';
-export {
-    tryCatchIntoResult as tryCatchInto,
-    tryCatchIntoResultWithEnsureError as tryCatchIntoWithEnsureError,
-} from '../try_catch.js';
-export {
-    tryCatchIntoResultAsync as tryCatchIntoAsync,
-    tryCatchIntoResultWithEnsureErrorAsync as tryCatchIntoWithEnsureErrorAsync,
-} from '../try_catch_async.js';
 export { unwrapOrForResult as unwrapOr } from '../unwrap_or.js';
 export { unwrapOrElseForResult as unwrapOrElse } from '../unwrap_or_else.js';
 export { unwrapOrElseAsyncForResult as unwrapOrElseAsync } from '../unwrap_or_else_async.js';
