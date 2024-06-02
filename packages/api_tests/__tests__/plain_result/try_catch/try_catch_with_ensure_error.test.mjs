@@ -65,7 +65,7 @@ test('If producer throw the instance value from cross-realm `Error` constructor'
     const EXPECT_THROWN = new CrossRealmErrorCtor(Math.random());
     t.false(
         EXPECT_THROWN instanceof CurrentRealmErrorCtor,
-        `the thrown error should not be the instance of current relam's Error consturctor`,
+        `the thrown error should not be the instance of current realm's Error consturctor`,
     );
 
     // act & assert

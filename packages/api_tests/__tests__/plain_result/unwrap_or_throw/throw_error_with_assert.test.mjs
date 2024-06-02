@@ -58,7 +58,7 @@ test('input is Err, but the contained value is not an `Error` instance of curren
     const ERROR_E = new CrossRealmErrorCtor(webcrypto.randomUUID());
     t.false(
         ERROR_E instanceof CurrentRealmErrorCtor,
-        `the thrown error should not be the instance of current relam's Error consturctor`,
+        `the thrown error should not be the instance of current realm's Error consturctor`,
     );
 
     const input = createErr(ERROR_E);

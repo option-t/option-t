@@ -31,7 +31,7 @@ import { type Result, isOk, unwrapOk, unwrapErr } from './result.js';
  *      This throws an inner value wrapped by Err(Error)`.
  *
  *  @throws {TypeError}
- *      If `Err` conatins the value that is not an instance of `Error` constructor of **current [relam][realm]**,
+ *      If `Err` conatins the value that is not an instance of `Error` constructor of **current [realm][realm]**,
  *      this throws an `TypeError` with setting the original value to `.cause`.
  *
  *  [realm]: https://262.ecma-international.org/14.0/#realm
