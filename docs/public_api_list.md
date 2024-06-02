@@ -154,6 +154,8 @@ Basic APIs are exported here:
 - [`option-t/plain_result/and_then`](../packages/option-t/src/plain_result/and_then.ts)
 - [`option-t/plain_result/and_then_async`](../packages/option-t/src/plain_result/and_then_async.ts)
 - [`option-t/plain_result/as_mut`](../packages/option-t/src/plain_result/as_mut.ts)
+- [`option-t/plain_result/deprecated/unwrap_or_throw_error`](../packages/option-t/src/plain_result/deprecated/unwrap_or_throw_error.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)
+- [`option-t/plain_result/deprecated/unwrap_or_throw_unknown`](../packages/option-t/src/plain_result/deprecated/unwrap_or_throw_unknown.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)
 - [`option-t/plain_result/drop`](../packages/option-t/src/plain_result/drop.ts)
 - [`option-t/plain_result/equal`](../packages/option-t/src/plain_result/equal.ts)
 - [`option-t/plain_result/flatten`](../packages/option-t/src/plain_result/flatten.ts)
@@ -181,8 +183,6 @@ Basic APIs are exported here:
 - [`option-t/plain_result/unwrap_or_else`](../packages/option-t/src/plain_result/unwrap_or_else.ts)
 - [`option-t/plain_result/unwrap_or_else_async`](../packages/option-t/src/plain_result/unwrap_or_else_async.ts)
 - [`option-t/plain_result/unwrap_or_throw`](../packages/option-t/src/plain_result/unwrap_or_throw.ts)
-- [`option-t/plain_result/unwrap_or_throw_error`](../packages/option-t/src/plain_result/deprecated/unwrap_or_throw_error.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)
-- [`option-t/plain_result/unwrap_or_throw_unknown`](../packages/option-t/src/plain_result/deprecated/unwrap_or_throw_unknown.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)
 
 
 

@@ -1,8 +1,8 @@
 import { webcrypto } from 'node:crypto';
 import test from 'ava';
 
+import { unwrapOrThrowWithAssertErrorForResult } from 'option-t/plain_result/deprecated/unwrap_or_throw_error';
 import { createOk, createErr } from 'option-t/plain_result/result';
-import { unwrapOrThrowWithAssertErrorForResult } from 'option-t/plain_result/unwrap_or_throw_error';
 import { getCrossRealmErrorConstructor } from '../../cross_realm_error_helper.mjs';
 
 test('input is Ok(T)', (t) => {

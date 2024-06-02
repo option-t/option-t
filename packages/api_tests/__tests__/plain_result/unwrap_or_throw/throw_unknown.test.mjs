@@ -1,7 +1,7 @@
 import test from 'ava';
 
+import { unwrapOrThrowUnknownDirectlyForResult } from 'option-t/plain_result/deprecated/unwrap_or_throw_unknown';
 import { createOk, createErr } from 'option-t/plain_result/result';
-import { unwrapOrThrowUnknownDirectlyForResult } from 'option-t/plain_result/unwrap_or_throw_unknown';
 
 test('input is Ok(T)', (t) => {
     const VALUE_T = Math.random();

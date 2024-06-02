@@ -1447,6 +1447,34 @@
                 "default": "./esm/plain_result/as_mut.js"
             }
         },
+        "./plain_result/deprecated/unwrap_or_throw_error": {
+            "import": {
+                "types": "./esm/plain_result/deprecated/unwrap_or_throw_error.d.ts",
+                "default": "./esm/plain_result/deprecated/unwrap_or_throw_error.js"
+            },
+            "require": {
+                "types": "./cjs/plain_result/deprecated/unwrap_or_throw_error.d.cts",
+                "default": "./cjs/plain_result/deprecated/unwrap_or_throw_error.cjs"
+            },
+            "default": {
+                "types": "./esm/plain_result/deprecated/unwrap_or_throw_error.d.ts",
+                "default": "./esm/plain_result/deprecated/unwrap_or_throw_error.js"
+            }
+        },
+        "./plain_result/deprecated/unwrap_or_throw_unknown": {
+            "import": {
+                "types": "./esm/plain_result/deprecated/unwrap_or_throw_unknown.d.ts",
+                "default": "./esm/plain_result/deprecated/unwrap_or_throw_unknown.js"
+            },
+            "require": {
+                "types": "./cjs/plain_result/deprecated/unwrap_or_throw_unknown.d.cts",
+                "default": "./cjs/plain_result/deprecated/unwrap_or_throw_unknown.cjs"
+            },
+            "default": {
+                "types": "./esm/plain_result/deprecated/unwrap_or_throw_unknown.d.ts",
+                "default": "./esm/plain_result/deprecated/unwrap_or_throw_unknown.js"
+            }
+        },
         "./plain_result/drop": {
             "import": {
                 "types": "./esm/plain_result/drop.d.ts",
@@ -1851,34 +1879,6 @@
             "default": {
                 "types": "./esm/plain_result/unwrap_or_throw.d.ts",
                 "default": "./esm/plain_result/unwrap_or_throw.js"
-            }
-        },
-        "./plain_result/unwrap_or_throw_error": {
-            "import": {
-                "types": "./esm/plain_result/deprecated/unwrap_or_throw_error.d.ts",
-                "default": "./esm/plain_result/deprecated/unwrap_or_throw_error.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/deprecated/unwrap_or_throw_error.d.cts",
-                "default": "./cjs/plain_result/deprecated/unwrap_or_throw_error.cjs"
-            },
-            "default": {
-                "types": "./esm/plain_result/deprecated/unwrap_or_throw_error.d.ts",
-                "default": "./esm/plain_result/deprecated/unwrap_or_throw_error.js"
-            }
-        },
-        "./plain_result/unwrap_or_throw_unknown": {
-            "import": {
-                "types": "./esm/plain_result/deprecated/unwrap_or_throw_unknown.d.ts",
-                "default": "./esm/plain_result/deprecated/unwrap_or_throw_unknown.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/deprecated/unwrap_or_throw_unknown.d.cts",
-                "default": "./cjs/plain_result/deprecated/unwrap_or_throw_unknown.cjs"
-            },
-            "default": {
-                "types": "./esm/plain_result/deprecated/unwrap_or_throw_unknown.d.ts",
-                "default": "./esm/plain_result/deprecated/unwrap_or_throw_unknown.js"
             }
         },
         "./undefinable": {
