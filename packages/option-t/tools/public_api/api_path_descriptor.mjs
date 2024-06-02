@@ -1,17 +1,52 @@
 import * as assert from 'node:assert/strict';
+import { webcrypto } from 'node:crypto';
+
+/**
+ *  @enum   {string}
+ */
+const ApiStability = Object.freeze({
+    Stable: `stable: ${webcrypto.randomUUID()}`,
+    Experimental: `experimental: ${webcrypto.randomUUID()}`,
+    Deprecated: `deprecated: ${webcrypto.randomUUID()}`,
+});
+
+const apiStabilitySet = new Set([
+    ApiStability.Stable,
+    ApiStability.Experimental,
+    ApiStability.Deprecated,
+]);
+
+/**
+ *  @enum   {string}
+ */
+const ApiKind = Object.freeze({
+    TypeRootPath: `type_root_path: ${webcrypto.randomUUID()}`,
+    CorePrimitive: `core_primitive: ${webcrypto.randomUUID()}`,
+    Operator: `operator: ${webcrypto.randomUUID()}`,
+});
+
+const apiKindSet = new Set([
+    // @prettier-ignore
+    ApiKind.TypeRootPath,
+    ApiKind.CorePrimitive,
+    ApiKind.Operator,
+]);
 
 export class ApiPathDescriptor {
-    #actualFilePath = null;
-    #isTypeRootPath = false;
-    #isCorePrimitive = false;
+    #actualFilePath = '';
     #shouldHideInDoc = false;
-    #isDeprecatedPath = false;
-    #isExperimental = false;
     #message = null;
+    #stability = ApiStability.Stable;
+    #kind = ApiKind.Operator;
 
     constructor(actualFilePath) {
+        assert.ok(typeof actualFilePath === 'string');
+
         this.#actualFilePath = actualFilePath;
         Object.seal(this);
+
+        assert.ok(apiStabilitySet.has(this.#stability));
+        assert.ok(apiKindSet.has(this.#kind));
     }
 
     get actualFilePath() {
@@ -27,31 +62,30 @@ export class ApiPathDescriptor {
         this.#shouldHideInDoc = val;
     }
 
-    get isDeprecatedPath() {
-        return this.#isDeprecatedPath;
+    setApiStability(val) {
+        assert.ok(apiStabilitySet.has(val));
+        this.#stability = val;
     }
 
-    setIsDeprecatedPath(val) {
-        assert.strictEqual(typeof val, 'boolean');
-        this.#isDeprecatedPath = val;
+    setApiKind(val) {
+        assert.ok(apiKindSet.has(val));
+        this.#kind = val;
+    }
+
+    get isDeprecatedPath() {
+        return this.#stability === ApiStability.Deprecated;
     }
 
     get isExperimental() {
-        return this.#isExperimental;
-    }
-
-    setIsExperimental(val) {
-        assert.strictEqual(typeof val, 'boolean');
-        this.#isExperimental = val;
-    }
-
-    setIsTypeRootPath(val) {
-        assert.strictEqual(typeof val, 'boolean');
-        this.#isTypeRootPath = val;
+        return this.#stability === ApiStability.Experimental;
     }
 
     get isTypeRootPath() {
-        return this.#isTypeRootPath;
+        return this.#kind === ApiKind.TypeRootPath;
+    }
+
+    get isCorePrimitive() {
+        return this.#kind === ApiKind.CorePrimitive;
     }
 
     setMessage(message) {
@@ -62,14 +96,6 @@ export class ApiPathDescriptor {
     get message() {
         return this.#message;
     }
-
-    setIsCorePrimitive() {
-        this.#isCorePrimitive = true;
-    }
-
-    get isCorePrimitive() {
-        return this.#isCorePrimitive;
-    }
 }
 
 export function pathRedirectionTo(actualFilePath) {
@@ -79,19 +105,20 @@ export function pathRedirectionTo(actualFilePath) {
 
 export function pathRedirectionForLegacy(actualFilePath) {
     const desc = new ApiPathDescriptor(actualFilePath);
+    desc.setApiStability(ApiStability.Deprecated);
     desc.setShouldHideInDoc(true);
     return Object.freeze(desc);
 }
 
 export function pathRedirectionMarkedAsTypeRoot(actualFilePath) {
     const desc = new ApiPathDescriptor(actualFilePath);
-    desc.setIsTypeRootPath(true);
+    desc.setApiKind(ApiKind.TypeRootPath);
     return Object.freeze(desc);
 }
 
 export function pathRedirectionMarkedAsTypeRootNamespace(actualFilePath) {
     const desc = new ApiPathDescriptor(actualFilePath);
-    desc.setIsTypeRootPath(true);
+    desc.setApiKind(ApiKind.TypeRootPath);
     desc.setMessage(
         `We don't recommend to use this without TypeScript to make it hard to follow future breaking changes.`,
     );
@@ -100,13 +127,13 @@ export function pathRedirectionMarkedAsTypeRootNamespace(actualFilePath) {
 
 export function pathRedirectionMarkedAsCorePrimitive(actualFilePath) {
     const desc = new ApiPathDescriptor(actualFilePath);
-    desc.setIsCorePrimitive();
+    desc.setApiKind(ApiKind.CorePrimitive);
     return Object.freeze(desc);
 }
 
 export function pathRedirectionMarkedAsDeprecated(actualFilePath, message) {
     const desc = new ApiPathDescriptor(actualFilePath);
-    desc.setIsDeprecatedPath(true, message);
+    desc.setApiStability(ApiStability.Deprecated);
     desc.setMessage(message);
     return Object.freeze(desc);
 }
@@ -119,13 +146,6 @@ export function pathRedirectionForRoot(actualFilePath) {
 
 export function pathRedirectionToAsExperimental(actualFilePath) {
     const desc = new ApiPathDescriptor(actualFilePath);
-    desc.setIsExperimental(true);
-    return Object.freeze(desc);
-}
-
-export function pathExperimentalAndHidden(actualFilePath) {
-    const desc = new ApiPathDescriptor(actualFilePath);
-    desc.setShouldHideInDoc(true);
-    desc.setIsExperimental(true);
+    desc.setApiStability(ApiStability.Experimental);
     return Object.freeze(desc);
 }
