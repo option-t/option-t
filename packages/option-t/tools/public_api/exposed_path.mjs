@@ -64,6 +64,11 @@ class ExposedPath {
         const ok = !!this.#descriptor.isTypeRootPath;
         return ok;
     }
+
+    isCorePrimitive() {
+        const ok = !!this.#descriptor.isCorePrimitive;
+        return ok;
+    }
 }
 
 export function* generateExposedPathSequence() {

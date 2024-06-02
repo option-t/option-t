@@ -10,6 +10,10 @@ Basic APIs are exported here:
 - [option-t/maybe](../packages/option-t/src/maybe/index.ts)
 - [option-t/maybe/namespace](../packages/option-t/src/maybe/namespace.ts): We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.
 
+### Core Primitives
+
+- [option-t/maybe/maybe](../packages/option-t/src/maybe/maybe.ts)
+
 ### Operators
 
 - [option-t/maybe/and](../packages/option-t/src/maybe/and.ts)
@@ -24,7 +28,6 @@ Basic APIs are exported here:
 - [option-t/maybe/map_or_async](../packages/option-t/src/maybe/map_or_async.ts)
 - [option-t/maybe/map_or_else](../packages/option-t/src/maybe/map_or_else.ts)
 - [option-t/maybe/map_or_else_async](../packages/option-t/src/maybe/map_or_else_async.ts)
-- [option-t/maybe/maybe](../packages/option-t/src/maybe/maybe.ts)
 - [option-t/maybe/ok_or](../packages/option-t/src/maybe/ok_or.ts)
 - [option-t/maybe/ok_or_else](../packages/option-t/src/maybe/ok_or_else.ts)
 - [option-t/maybe/ok_or_else_async](../packages/option-t/src/maybe/ok_or_else_async.ts)
@@ -42,6 +45,10 @@ Basic APIs are exported here:
 - [option-t/maybe/zip_with](../packages/option-t/src/maybe/zip_with.ts)
 - [option-t/maybe/zip_with_async](../packages/option-t/src/maybe/zip_with_async.ts)
 
+### Experimental
+
+These paths are experimental. We might cause a breaking change without any major version up.
+
 
 
 
@@ -51,6 +58,10 @@ Basic APIs are exported here:
 
 - [option-t/nullable](../packages/option-t/src/nullable/index.ts)
 - [option-t/nullable/namespace](../packages/option-t/src/nullable/namespace.ts): We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.
+
+### Core Primitives
+
+- [option-t/nullable/nullable](../packages/option-t/src/nullable/nullable.ts)
 
 ### Operators
 
@@ -66,7 +77,6 @@ Basic APIs are exported here:
 - [option-t/nullable/map_or_async](../packages/option-t/src/nullable/map_or_async.ts)
 - [option-t/nullable/map_or_else](../packages/option-t/src/nullable/map_or_else.ts)
 - [option-t/nullable/map_or_else_async](../packages/option-t/src/nullable/map_or_else_async.ts)
-- [option-t/nullable/nullable](../packages/option-t/src/nullable/nullable.ts)
 - [option-t/nullable/ok_or](../packages/option-t/src/nullable/ok_or.ts)
 - [option-t/nullable/ok_or_else](../packages/option-t/src/nullable/ok_or_else.ts)
 - [option-t/nullable/ok_or_else_async](../packages/option-t/src/nullable/ok_or_else_async.ts)
@@ -83,6 +93,10 @@ Basic APIs are exported here:
 - [option-t/nullable/zip_with](../packages/option-t/src/nullable/zip_with.ts)
 - [option-t/nullable/zip_with_async](../packages/option-t/src/nullable/zip_with_async.ts)
 
+### Experimental
+
+These paths are experimental. We might cause a breaking change without any major version up.
+
 
 
 
@@ -92,6 +106,10 @@ Basic APIs are exported here:
 
 - [option-t/plain_option](../packages/option-t/src/plain_option/index.ts)
 - [option-t/plain_option/namespace](../packages/option-t/src/plain_option/namespace.ts): We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.
+
+### Core Primitives
+
+- [option-t/plain_option/option](../packages/option-t/src/plain_option/option.ts)
 
 ### Operators
 
@@ -113,7 +131,6 @@ Basic APIs are exported here:
 - [option-t/plain_option/map_or_else_async](../packages/option-t/src/plain_option/map_or_else_async.ts)
 - [option-t/plain_option/ok_or](../packages/option-t/src/plain_option/ok_or.ts)
 - [option-t/plain_option/ok_or_else](../packages/option-t/src/plain_option/ok_or_else.ts)
-- [option-t/plain_option/option](../packages/option-t/src/plain_option/option.ts)
 - [option-t/plain_option/or](../packages/option-t/src/plain_option/or.ts)
 - [option-t/plain_option/or_else](../packages/option-t/src/plain_option/or_else.ts)
 - [option-t/plain_option/or_else_async](../packages/option-t/src/plain_option/or_else_async.ts)
@@ -125,6 +142,10 @@ Basic APIs are exported here:
 - [option-t/plain_option/unwrap_or_else_async](../packages/option-t/src/plain_option/unwrap_or_else_async.ts)
 - [option-t/plain_option/xor](../packages/option-t/src/plain_option/xor.ts)
 
+### Experimental
+
+These paths are experimental. We might cause a breaking change without any major version up.
+
 
 
 
@@ -134,6 +155,10 @@ Basic APIs are exported here:
 
 - [option-t/plain_result](../packages/option-t/src/plain_result/index.ts)
 - [option-t/plain_result/namespace](../packages/option-t/src/plain_result/namespace.ts): We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.
+
+### Core Primitives
+
+- [option-t/plain_result/result](../packages/option-t/src/plain_result/result.ts)
 
 ### Operators
 
@@ -159,7 +184,6 @@ Basic APIs are exported here:
 - [option-t/plain_result/or](../packages/option-t/src/plain_result/or.ts)
 - [option-t/plain_result/or_else](../packages/option-t/src/plain_result/or_else.ts)
 - [option-t/plain_result/or_else_async](../packages/option-t/src/plain_result/or_else_async.ts)
-- [option-t/plain_result/result](../packages/option-t/src/plain_result/result.ts)
 - [option-t/plain_result/to_nullable](../packages/option-t/src/plain_result/to_nullable.ts)
 - [option-t/plain_result/to_undefinable](../packages/option-t/src/plain_result/to_undefinable.ts)
 - [option-t/plain_result/transpose](../packages/option-t/src/plain_result/transpose.ts)
@@ -172,10 +196,10 @@ Basic APIs are exported here:
 - [option-t/plain_result/unwrap_or_throw_error](../packages/option-t/src/plain_result/unwrap_or_throw_error.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)
 - [option-t/plain_result/unwrap_or_throw_unknown](../packages/option-t/src/plain_result/unwrap_or_throw_unknown.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)
 
-
 ### Experimental
 
 These paths are experimental. We might cause a breaking change without any major version up.
+
 
 - [option-t/plain_result/experimental/try_catch](../packages/option-t/src/plain_result/experimental/try_catch.ts) (__experimental__)
 - [option-t/plain_result/experimental/try_catch_async](../packages/option-t/src/plain_result/experimental/try_catch_async.ts) (__experimental__)
@@ -188,6 +212,10 @@ Basic APIs are exported here:
 
 - [option-t/undefinable](../packages/option-t/src/undefinable/index.ts)
 - [option-t/undefinable/namespace](../packages/option-t/src/undefinable/namespace.ts): We don't recomment to use this without TypeScript to make it hard to follow future breaking changes.
+
+### Core Primitives
+
+- [option-t/undefinable/undefinable](../packages/option-t/src/undefinable/undefinable.ts)
 
 ### Operators
 
@@ -211,7 +239,6 @@ Basic APIs are exported here:
 - [option-t/undefinable/or_else_async](../packages/option-t/src/undefinable/or_else_async.ts)
 - [option-t/undefinable/to_nullable](../packages/option-t/src/undefinable/to_nullable.ts)
 - [option-t/undefinable/to_plain_result](../packages/option-t/src/undefinable/to_plain_result.ts)
-- [option-t/undefinable/undefinable](../packages/option-t/src/undefinable/undefinable.ts)
 - [option-t/undefinable/unwrap_or](../packages/option-t/src/undefinable/unwrap_or.ts)
 - [option-t/undefinable/unwrap_or_else](../packages/option-t/src/undefinable/unwrap_or_else.ts)
 - [option-t/undefinable/unwrap_or_else_async](../packages/option-t/src/undefinable/unwrap_or_else_async.ts)
@@ -219,6 +246,10 @@ Basic APIs are exported here:
 - [option-t/undefinable/zip](../packages/option-t/src/undefinable/zip.ts)
 - [option-t/undefinable/zip_with](../packages/option-t/src/undefinable/zip_with.ts)
 - [option-t/undefinable/zip_with_async](../packages/option-t/src/undefinable/zip_with_async.ts)
+
+### Experimental
+
+These paths are experimental. We might cause a breaking change without any major version up.
 
 
 

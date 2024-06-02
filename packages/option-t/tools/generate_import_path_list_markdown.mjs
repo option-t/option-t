@@ -120,6 +120,7 @@ function parseCliOptions() {
             const message = pathItem.message();
             const isExperimental = pathItem.isExperimental();
             const isTypeRootPath = pathItem.isTypeRootPath();
+            const isCorePrimitive = pathItem.isCorePrimitive();
             const item = new MarkdownListItem(
                 key,
                 path,
@@ -127,6 +128,7 @@ function parseCliOptions() {
                 message,
                 isExperimental,
                 isTypeRootPath,
+                isCorePrimitive,
             );
             return item;
         });

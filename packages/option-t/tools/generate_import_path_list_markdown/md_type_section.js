@@ -25,16 +25,25 @@ export class MarkdownTypeSection {
         return str;
     }
 
+    #getCorePrimitivePath() {
+        const list = this.#list;
+        const targetItems = list.filter((item) => item.isCorePrimitive);
+        const str = targetItems.map(String).join('\n');
+        return str;
+    }
+
     toString() {
         const list = this.#list;
         const experimental = buildExperimentalSection(list);
         const typeRoot = this.#getTypeRootPath();
+        const corePrimitive = this.#getCorePrimitivePath();
 
-        const str = list
+        const operators = list
             .filter((item) => {
                 const isExperimental = item.isExperimental;
                 const isTypeRootPath = item.isTypeRootPath;
-                const ok = !isExperimental && !isTypeRootPath;
+                const isCorePrimitive = item.isCorePrimitive;
+                const ok = !isExperimental && !isTypeRootPath && !isCorePrimitive;
                 return ok;
             })
             .map(String)
@@ -47,9 +56,13 @@ Basic APIs are exported here:
 
 ${typeRoot}
 
+### Core Primitives
+
+${corePrimitive}
+
 ### Operators
 
-${str}
+${operators}
 
 ${experimental}
 `;

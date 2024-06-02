@@ -11,13 +11,23 @@ export class MarkdownListItem {
     #message;
     #isExperimental;
     #isTypeRootPath;
+    #isCorePrimitive;
 
-    constructor(key, subpath, isDeprecated, message, isExperimental, isTypeRootPath) {
+    constructor(
+        key,
+        subpath,
+        isDeprecated,
+        message,
+        isExperimental,
+        isTypeRootPath,
+        isCorePrimitive,
+    ) {
         assert.ok(typeof key === 'string');
         assert.ok(typeof subpath === 'string');
         assert.ok(typeof isDeprecated === 'boolean');
         assert.ok(typeof isExperimental === 'boolean');
         assert.ok(typeof isTypeRootPath === 'boolean');
+        assert.ok(typeof isCorePrimitive === 'boolean');
 
         this.#key = key;
         this.#subpath = subpath;
@@ -25,6 +35,7 @@ export class MarkdownListItem {
         this.#message = message;
         this.#isExperimental = isExperimental;
         this.#isTypeRootPath = isTypeRootPath;
+        this.#isCorePrimitive = isCorePrimitive;
         Object.freeze(this);
     }
 
@@ -34,6 +45,10 @@ export class MarkdownListItem {
 
     get isTypeRootPath() {
         return this.#isTypeRootPath;
+    }
+
+    get isCorePrimitive() {
+        return this.#isCorePrimitive;
     }
 
     key() {

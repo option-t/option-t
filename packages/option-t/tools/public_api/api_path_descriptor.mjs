@@ -3,6 +3,7 @@ import * as assert from 'node:assert/strict';
 export class ApiPathDescriptor {
     #actualFilePath = null;
     #isTypeRootPath = false;
+    #isCorePrimitive = false;
     #shouldHideInDoc = false;
     #isDeprecatedPath = false;
     #isExperimental = false;
@@ -61,6 +62,14 @@ export class ApiPathDescriptor {
     get message() {
         return this.#message;
     }
+
+    setIsCorePrimitive() {
+        this.#isCorePrimitive = true;
+    }
+
+    get isCorePrimitive() {
+        return this.#isCorePrimitive;
+    }
 }
 
 export function pathRedirectionTo(actualFilePath) {
@@ -86,6 +95,12 @@ export function pathRedirectionMarkedAsTypeRootNamespace(actualFilePath) {
     desc.setMessage(
         `We don't recommend to use this without TypeScript to make it hard to follow future breaking changes.`,
     );
+    return Object.freeze(desc);
+}
+
+export function pathRedirectionMarkedAsCorePrimitive(actualFilePath) {
+    const desc = new ApiPathDescriptor(actualFilePath);
+    desc.setIsCorePrimitive();
     return Object.freeze(desc);
 }
 

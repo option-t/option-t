@@ -7,6 +7,7 @@ import {
     pathRedirectionMarkedAsDeprecated,
     pathRedirectionMarkedAsTypeRoot,
     pathRedirectionMarkedAsTypeRootNamespace,
+    pathRedirectionMarkedAsCorePrimitive,
 } from './api_path_descriptor.mjs';
 
 const MAYBE_DIR = 'maybe';
@@ -34,7 +35,7 @@ export const apiTable = Object.freeze({
     'maybe/map_or_async': pathRedirectionTo(`${MAYBE_DIR}/map_or_async`),
     'maybe/map_or_else': pathRedirectionTo(`${MAYBE_DIR}/map_or_else`),
     'maybe/map_or_else_async': pathRedirectionTo(`${MAYBE_DIR}/map_or_else_async`),
-    'maybe/maybe': pathRedirectionTo(`${MAYBE_DIR}/maybe`),
+    'maybe/maybe': pathRedirectionMarkedAsCorePrimitive(`${MAYBE_DIR}/maybe`),
     'maybe/namespace': pathRedirectionMarkedAsTypeRootNamespace(`${MAYBE_DIR}/namespace`),
     'maybe/ok_or': pathRedirectionTo(`${MAYBE_DIR}/ok_or`),
     'maybe/ok_or_else': pathRedirectionTo(`${MAYBE_DIR}/ok_or_else`),
@@ -67,7 +68,7 @@ export const apiTable = Object.freeze({
     'nullable/map_or_else': pathRedirectionTo(`${NULLABLE_DIR}/map_or_else`),
     'nullable/map_or_else_async': pathRedirectionTo(`${NULLABLE_DIR}/map_or_else_async`),
     'nullable/namespace': pathRedirectionMarkedAsTypeRootNamespace(`${NULLABLE_DIR}/namespace`),
-    'nullable/nullable': pathRedirectionTo(`${NULLABLE_DIR}/nullable`),
+    'nullable/nullable': pathRedirectionMarkedAsCorePrimitive(`${NULLABLE_DIR}/nullable`),
     'nullable/ok_or': pathRedirectionTo(`${NULLABLE_DIR}/ok_or`),
     'nullable/ok_or_else': pathRedirectionTo(`${NULLABLE_DIR}/ok_or_else`),
     'nullable/ok_or_else_async': pathRedirectionTo(`${NULLABLE_DIR}/ok_or_else_async`),
@@ -106,7 +107,7 @@ export const apiTable = Object.freeze({
     ),
     'plain_option/ok_or': pathRedirectionTo(`${PLAIN_OPTION_DIR}/ok_or`),
     'plain_option/ok_or_else': pathRedirectionTo(`${PLAIN_OPTION_DIR}/ok_or_else`),
-    'plain_option/option': pathRedirectionTo(`${PLAIN_OPTION_DIR}/option`),
+    'plain_option/option': pathRedirectionMarkedAsCorePrimitive(`${PLAIN_OPTION_DIR}/option`),
     'plain_option/or': pathRedirectionTo(`${PLAIN_OPTION_DIR}/or`),
     'plain_option/or_else': pathRedirectionTo(`${PLAIN_OPTION_DIR}/or_else`),
     'plain_option/or_else_async': pathRedirectionTo(`${PLAIN_OPTION_DIR}/or_else_async`),
@@ -154,7 +155,7 @@ export const apiTable = Object.freeze({
     'plain_result/or': pathRedirectionTo(`${PLAIN_RESULT_DIR}/or`),
     'plain_result/or_else': pathRedirectionTo(`${PLAIN_RESULT_DIR}/or_else`),
     'plain_result/or_else_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/or_else_async`),
-    'plain_result/result': pathRedirectionTo(`${PLAIN_RESULT_DIR}/result`),
+    'plain_result/result': pathRedirectionMarkedAsCorePrimitive(`${PLAIN_RESULT_DIR}/result`),
     'plain_result/to_nullable': pathRedirectionTo(`${PLAIN_RESULT_DIR}/to_nullable`),
     'plain_result/to_undefinable': pathRedirectionTo(`${PLAIN_RESULT_DIR}/to_undefinable`),
     'plain_result/transpose': pathRedirectionTo(`${PLAIN_RESULT_DIR}/transpose`),
@@ -199,7 +200,9 @@ export const apiTable = Object.freeze({
     'undefinable/or_else_async': pathRedirectionTo(`${UNDEFINABLE_DIR}/or_else_async`),
     'undefinable/to_nullable': pathRedirectionTo(`${UNDEFINABLE_DIR}/to_nullable`),
     'undefinable/to_plain_result': pathRedirectionTo(`${UNDEFINABLE_DIR}/to_plain_result`),
-    'undefinable/undefinable': pathRedirectionTo(`${UNDEFINABLE_DIR}/undefinable`),
+    'undefinable/undefinable': pathRedirectionMarkedAsCorePrimitive(
+        `${UNDEFINABLE_DIR}/undefinable`,
+    ),
     'undefinable/unwrap_or': pathRedirectionTo(`${UNDEFINABLE_DIR}/unwrap_or`),
     'undefinable/unwrap_or_else': pathRedirectionTo(`${UNDEFINABLE_DIR}/unwrap_or_else`),
     'undefinable/unwrap_or_else_async': pathRedirectionTo(
