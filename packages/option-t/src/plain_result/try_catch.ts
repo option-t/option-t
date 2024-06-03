@@ -74,7 +74,7 @@ export function tryCatchIntoResultWithEnsureError<T>(producer: ProducerFn<T>): R
  *
  *  [realm]: https://262.ecma-international.org/14.0/#realm
  *
- *  Probably, we might deprecate this operator for the future.
+ *  @deprecated
  *  Please consider to use {@link tryCatchIntoResultWithEnsureError} too.
  *
  * -----
