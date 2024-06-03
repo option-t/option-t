@@ -1,12 +1,12 @@
 import test from 'ava';
 
+import { tryCatchIntoResultWithAssertErrorAsync } from 'option-t/plain_result/deprecated/try_catch_with_assert_error_async';
 import {
     isOk,
     isErr,
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
 } from 'option-t/plain_result/result';
-import { tryCatchIntoResultWithAssertErrorAsync } from 'option-t/plain_result/try_catch_async';
 import { getCrossRealmErrorConstructor } from '../../../cross_realm_error_helper.mjs';
 
 test('output=Ok(T): producer is normal fn', async (t) => {
