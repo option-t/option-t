@@ -42,7 +42,12 @@ export async function tryCatchIntoResultAsync<T>(
  *
  *  [realm]: https://262.ecma-international.org/14.0/#realm
  *
+ * -----
  *
+ *  This just returns it directly if the thrown value is an `Error` instance of the current realm.
+ *  We can do this due to that we can regard it is happen in the same operation step to throw a value
+ *  unlike the combination of `tryCatchIntoResult` + `mapErrForResult`.
+ *  This shortcut can reduce an unnecessary `Error.cause` chain.
  *
  * -----
  *
@@ -77,13 +82,6 @@ export async function tryCatchIntoResultWithEnsureErrorAsync<T>(
  *
  *  Probably, we might deprecate this operator for the future.
  *  Please consider to use {@link tryCatchIntoResultWithEnsureErrorAsync} too.
- *
- * -----
- *
- *  This just returns it directly if the thrown value is an `Error` instance of the current realm.
- *  We can do this due to that we can regard it is happen in the same operation step to throw a value
- *  unlike the combination of `tryCatchIntoResult` + `mapErrForResult`.
- *  This shortcut can reduce an unnecessary `Error.cause` chain.
  *
  * -----
  *
