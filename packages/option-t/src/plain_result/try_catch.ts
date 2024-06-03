@@ -1,7 +1,6 @@
 import type { ProducerFn } from '../internal/function.js';
 import { wrapWithNewErrorIfCausalIsUnknown } from './internal/unknown_causal_carrier.js';
-import { mapErrForResult } from './map_err.js';
-import { type Result, createOk, createErr } from './result.js';
+import { type Result, createOk, createErr, isOk, unwrapErr } from './result.js';
 
 /**
  *  This function converts the returend value from _producer_ into `Ok(T)`.
@@ -55,9 +54,12 @@ export function tryCatchIntoResult<T>(producer: ProducerFn<T>): Result<T, unknow
  */
 export function tryCatchIntoResultWithEnsureError<T>(producer: ProducerFn<T>): Result<T, Error> {
     const result = tryCatchIntoResult(producer);
-    const mapped: Result<T, Error> = mapErrForResult<T, unknown, Error>(
-        result,
-        wrapWithNewErrorIfCausalIsUnknown,
-    );
-    return mapped;
+    if (isOk(result)) {
+        return result;
+    }
+
+    const thrown: unknown = unwrapErr<unknown>(result);
+    const causal: Error = wrapWithNewErrorIfCausalIsUnknown(thrown);
+    const errWrapped = createErr<Error>(causal);
+    return errWrapped;
 }

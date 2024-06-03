@@ -1,9 +1,7 @@
 import { assertIsErrorInstance } from '../../internal/assert.js';
 import type { AsyncProducerFn } from '../../internal/function.js';
 import { ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE } from '../internal/error_message.js';
-import { mapErrForResult } from '../map_err.js';
-import type { Result } from '../result.js';
-import { tryCatchIntoResultAsync } from '../try_catch_async.js';
+import { createErr, createOk, type Result } from '../result.js';
 
 /**
  *  - This function converts the returend value from _producer_ into `Ok(T)`.
@@ -31,12 +29,13 @@ import { tryCatchIntoResultAsync } from '../try_catch_async.js';
 export async function tryCatchIntoResultWithAssertErrorAsync<T>(
     producer: AsyncProducerFn<T>,
 ): Promise<Result<T, Error>> {
-    const result: Result<T, unknown> = await tryCatchIntoResultAsync(producer);
-    const ensured: Result<T, Error> = mapErrForResult(result, checkThrownIsError);
-    return ensured;
-}
-
-function checkThrownIsError(thrown: unknown): Error {
-    assertIsErrorInstance(thrown, ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE);
-    return thrown;
+    try {
+        const value: T = await producer();
+        const okWrapped = createOk<T>(value);
+        return okWrapped;
+    } catch (e: unknown) {
+        assertIsErrorInstance(e, ERR_MSG_THROWN_VALUE_IS_NOT_BUILTIN_ERROR_INSTANCE);
+        const errWrapped = createErr<Error>(e);
+        return errWrapped;
+    }
 }
