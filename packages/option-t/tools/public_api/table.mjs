@@ -125,6 +125,14 @@ export const apiTable = Object.freeze({
     'plain_result/and_then': pathRedirectionTo(`${PLAIN_RESULT_DIR}/and_then`),
     'plain_result/and_then_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/and_then_async`),
     'plain_result/as_mut': pathRedirectionTo(`${PLAIN_RESULT_DIR}/as_mut`),
+    'plain_result/deprecated/try_catch_with_assert_error': pathRedirectionMarkedAsDeprecated(
+        `${PLAIN_RESULT_DIR}/deprecated/try_catch_with_assert_error`,
+        null,
+    ),
+    'plain_result/deprecated/try_catch_with_assert_error_async': pathRedirectionMarkedAsDeprecated(
+        `${PLAIN_RESULT_DIR}/deprecated/try_catch_with_assert_error_async`,
+        null,
+    ),
     'plain_result/deprecated/unwrap_or_throw_error': pathRedirectionMarkedAsDeprecated(
         `${PLAIN_RESULT_DIR}/deprecated/unwrap_or_throw_error`,
         'Use `option-t/plain_result/unwrap_or_throw` instead.',

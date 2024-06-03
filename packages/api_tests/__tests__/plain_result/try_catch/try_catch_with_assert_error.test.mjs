@@ -1,13 +1,13 @@
 import { webcrypto } from 'node:crypto';
 import test from 'ava';
 
+import { tryCatchIntoResultWithAssertError } from 'option-t/plain_result/deprecated/try_catch_with_assert_error';
 import {
     isOk,
     isErr,
     unwrapOk as unwrapOkFromResult,
     unwrapErr as unwrapErrFromResult,
 } from 'option-t/plain_result/result';
-import { tryCatchIntoResultWithAssertError } from 'option-t/plain_result/try_catch';
 import { getCrossRealmErrorConstructor } from '../../cross_realm_error_helper.mjs';
 
 test('output=Ok(T)', (t) => {

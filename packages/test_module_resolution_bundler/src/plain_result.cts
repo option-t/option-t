@@ -31,5 +31,7 @@ import {} from 'option-t/plain_result/transpose';
 import {} from 'option-t/plain_result/unwrap_or';
 import {} from 'option-t/plain_result/unwrap_or_else';
 import {} from 'option-t/plain_result/unwrap_or_else_async';
+import {} from 'option-t/plain_result/deprecated/try_catch_with_assert_error';
+import {} from 'option-t/plain_result/deprecated/try_catch_with_assert_error_async';
 import {} from 'option-t/plain_result/deprecated/unwrap_or_throw_error';
 import {} from 'option-t/plain_result/deprecated/unwrap_or_throw_unknown';

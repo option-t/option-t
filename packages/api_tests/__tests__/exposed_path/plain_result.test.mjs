@@ -11,6 +11,8 @@ testImportExposedPath(
         './plain_result/and_then': null,
         './plain_result/and_then_async': null,
         './plain_result/as_mut': null,
+        './plain_result/deprecated/try_catch_with_assert_error': null,
+        './plain_result/deprecated/try_catch_with_assert_error_async': null,
         './plain_result/deprecated/unwrap_or_throw_error': null,
         './plain_result/deprecated/unwrap_or_throw_unknown': null,
         './plain_result/drop': null,
