@@ -7,7 +7,7 @@
     ],
     "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903",
     "devDependencies": {
-        "@babel/core": "^7.24.9",
+        "@babel/core": "^7.25.2",
         "@babel/plugin-syntax-typescript": "^7.24.7",
         "@babel/plugin-transform-export-namespace-from": "^7.24.7",
         "@babel/plugin-transform-modules-commonjs": "^7.24.8",
