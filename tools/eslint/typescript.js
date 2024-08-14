@@ -65,6 +65,9 @@ const rules = Object.freeze({
 
     // This prevents importing a module accidentally to avoid a side effect caused by importing.
     '@typescript-eslint/no-import-type-side-effects': 'warn',
+
+    // Should throw only Error or derived classes.
+    '@typescript-eslint/only-throw-error': 'error',
 });
 
 const rulesRequiringType = Object.freeze({

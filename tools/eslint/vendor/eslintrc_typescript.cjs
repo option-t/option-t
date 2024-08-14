@@ -302,9 +302,6 @@ module.exports = {
             'allowedNames': ['self'],
         }],
 
-        // Should throw only Error or derived classes.
-        '@typescript-eslint/no-throw-literal': 'error',
-
         // Disabling this does not make sense completely.
         '@typescript-eslint/no-type-alias': 'off',
 
