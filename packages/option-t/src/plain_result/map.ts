@@ -1,5 +1,6 @@
 import type { TransformFn } from '../internal/function.js';
-import { type Result, createOk } from './result.js';
+import { unsafeUnwrapValueInOkWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
+import { type Result, createOk, isErr } from './result.js';
 
 /**
  *  Maps a `Result<T, E>` to `Result<U, E>` by applying a _transformer_ function
@@ -11,10 +12,11 @@ export function mapForResult<T, U, E>(
     input: Result<T, E>,
     transformer: TransformFn<T, U>,
 ): Result<U, E> {
-    if (!input.ok) {
+    if (isErr(input)) {
         return input;
     }
 
-    const result: U = transformer(input.val);
+    const val: T = unsafeUnwrapValueInOkWithoutAnyCheck(input);
+    const result: U = transformer(val);
     return createOk(result);
 }

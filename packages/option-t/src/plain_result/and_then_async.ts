@@ -1,5 +1,6 @@
 import type { AsyncTransformFn } from '../internal/function.js';
-import { type Result, isErr, unwrapOk } from './result.js';
+import { unsafeUnwrapValueInOkWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
+import { type Result, isErr } from './result.js';
 
 export type ResultAsyncTryTransformFn<in T, out U, out E> = AsyncTransformFn<T, Result<U, E>>;
 
@@ -20,7 +21,7 @@ export async function andThenAsyncForResult<T, U, E>(
         return input;
     }
 
-    const source: T = unwrapOk(input);
+    const source: T = unsafeUnwrapValueInOkWithoutAnyCheck(input);
     const result: Result<U, E> = await transformer(source);
     return result;
 }

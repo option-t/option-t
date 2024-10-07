@@ -1,4 +1,5 @@
 import type { AsyncTransformFn } from '../internal/function.js';
+import { unsafeUnwrapValueInErrWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
 import { type Result, createErr, isOk } from './result.js';
 
 /**
@@ -15,7 +16,8 @@ export async function mapErrAsyncForResult<T, E, F>(
         return input;
     }
 
-    const e: F = await transformer(input.err);
+    const err: E = unsafeUnwrapValueInErrWithoutAnyCheck(input);
+    const e: F = await transformer(err);
     const result: Result<T, F> = createErr(e);
     return result;
 }

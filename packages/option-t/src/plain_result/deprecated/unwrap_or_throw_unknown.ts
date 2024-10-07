@@ -1,4 +1,8 @@
-import { type Result, isOk, unwrapOk, unwrapErr } from '../result.js';
+import {
+    unsafeUnwrapValueInErrWithoutAnyCheck,
+    unsafeUnwrapValueInOkWithoutAnyCheck,
+} from '../internal/intrinsics_unsafe.js';
+import { type Result, isOk } from '../result.js';
 
 /**
  *  @deprecated 48.1.0
@@ -27,10 +31,10 @@ import { type Result, isOk, unwrapOk, unwrapErr } from '../result.js';
  */
 export function unwrapOrThrowUnknownDirectlyForResult<T>(input: Result<T, unknown>): T {
     if (isOk(input)) {
-        const val: T = unwrapOk<T>(input);
+        const val: T = unsafeUnwrapValueInOkWithoutAnyCheck<T>(input);
         return val;
     }
 
-    const e: unknown = unwrapErr(input);
+    const e: unknown = unsafeUnwrapValueInErrWithoutAnyCheck(input);
     throw e;
 }

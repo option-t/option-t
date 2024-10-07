@@ -2,7 +2,11 @@ import {
     // We don't expose this as a implementation detail.
     CausalCarrierError,
 } from './internal/causal_carrier.js';
-import { type Result, isOk, unwrapOk, unwrapErr } from './result.js';
+import {
+    unsafeUnwrapValueInErrWithoutAnyCheck,
+    unsafeUnwrapValueInOkWithoutAnyCheck,
+} from './internal/intrinsics_unsafe.js';
+import { type Result, isOk } from './result.js';
 
 /**
  *  Unwraps _input_, returns the content of an `Ok(T)`.
@@ -23,11 +27,11 @@ import { type Result, isOk, unwrapOk, unwrapErr } from './result.js';
  */
 export function unwrapOrThrowForResult<T, E>(input: Result<T, E>): T {
     if (isOk(input)) {
-        const val: T = unwrapOk<T>(input);
+        const val: T = unsafeUnwrapValueInOkWithoutAnyCheck<T>(input);
         return val;
     }
 
-    const cause: E = unwrapErr(input);
+    const cause: E = unsafeUnwrapValueInErrWithoutAnyCheck(input);
     const wrapper = new CausalCarrierError<E>(cause);
     throw wrapper;
 }

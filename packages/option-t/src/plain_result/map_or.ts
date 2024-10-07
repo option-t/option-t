@@ -1,5 +1,6 @@
 import type { TransformFn } from '../internal/function.js';
-import type { Result } from './result.js';
+import { unsafeUnwrapValueInOkWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
+import { isOk, type Result } from './result.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is `Ok(T)`.
@@ -12,8 +13,9 @@ export function mapOrForResult<T, E, U>(
     defaultValue: U,
     transformer: TransformFn<T, U>,
 ): U {
-    if (input.ok) {
-        const result: U = transformer(input.val);
+    if (isOk(input)) {
+        const val = unsafeUnwrapValueInOkWithoutAnyCheck(input);
+        const result: U = transformer(val);
         return result;
     }
 

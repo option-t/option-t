@@ -1,6 +1,7 @@
 import type { ProducerFn } from '../internal/function.js';
 import { wrapWithNewErrorIfCausalIsUnknown } from './internal/unknown_causal_carrier.js';
-import { type Result, createOk, createErr, isOk, unwrapErr } from './result.js';
+import { unsafeUnwrapValueInErrWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
+import { type Result, createOk, createErr, isOk } from './result.js';
 
 /**
  *  This function converts the returend value from _producer_ into `Ok(T)`.
@@ -58,7 +59,7 @@ export function tryCatchIntoResultWithEnsureError<T>(producer: ProducerFn<T>): R
         return result;
     }
 
-    const thrown: unknown = unwrapErr<unknown>(result);
+    const thrown: unknown = unsafeUnwrapValueInErrWithoutAnyCheck<unknown>(result);
     const causal: Error = wrapWithNewErrorIfCausalIsUnknown(thrown);
     const errWrapped = createErr<Error>(causal);
     return errWrapped;

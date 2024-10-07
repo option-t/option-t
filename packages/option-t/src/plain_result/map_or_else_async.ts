@@ -1,5 +1,9 @@
 import type { AsyncTransformFn, AsyncRecoveryFromErrorFn } from '../internal/function.js';
-import { type Result, isOk, unwrapOk, unwrapErr } from './result.js';
+import {
+    unsafeUnwrapValueInErrWithoutAnyCheck,
+    unsafeUnwrapValueInOkWithoutAnyCheck,
+} from './internal/intrinsics_unsafe.js';
+import { type Result, isOk } from './result.js';
 
 /**
  *  Maps a `Result<T, E>` to `U` by applying _transformer_ to a contained `Ok(T)` value in _input_,
@@ -12,12 +16,12 @@ export async function mapOrElseAsyncForResult<T, E, U>(
     transformer: AsyncTransformFn<T, U>,
 ): Promise<U> {
     if (isOk(input)) {
-        const inner: T = unwrapOk(input);
+        const inner: T = unsafeUnwrapValueInOkWithoutAnyCheck(input);
         const result: U = await transformer(inner);
         return result;
     }
 
-    const err: E = unwrapErr(input);
+    const err: E = unsafeUnwrapValueInErrWithoutAnyCheck(input);
     const fallback: U = await recoverer(err);
     return fallback;
 }

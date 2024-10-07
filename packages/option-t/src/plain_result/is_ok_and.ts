@@ -1,5 +1,6 @@
 import type { FilterFn, TypePredicateFn } from '../internal/function.js';
-import { type Result, isErr, unwrapOk, type Ok } from './result.js';
+import { unsafeUnwrapValueInOkWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
+import { type Result, isErr, type Ok } from './result.js';
 
 /**
  * Returns `true` if the _result_ is `Ok<T>` and the value inside of it matches a _predicate_.
@@ -12,7 +13,7 @@ export function isOkAndForResult<T, E>(result: Result<T, E>, predicate: FilterFn
         return false;
     }
 
-    const val: T = unwrapOk(result);
+    const val: T = unsafeUnwrapValueInOkWithoutAnyCheck(result);
     const ok: boolean = predicate(val);
     return ok;
 }

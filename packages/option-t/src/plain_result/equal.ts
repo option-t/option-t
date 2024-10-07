@@ -1,3 +1,4 @@
+import { isNotSameOkField, isSameErrField, isSameValField } from './internal/intrinsics_compare.js';
 import type { Result } from './result.js';
 
 /**
@@ -16,10 +17,10 @@ export function equalForResult<T, E>(lhs: Result<T, E>, rhs: Result<T, E>): bool
         return true;
     }
 
-    if (lhs.ok !== rhs.ok) {
+    if (isNotSameOkField(lhs, rhs)) {
         return false;
     }
 
-    const isEqual = lhs.val === rhs.val && lhs.err === rhs.err;
+    const isEqual = isSameValField(lhs, rhs) && isSameErrField(lhs, rhs);
     return isEqual;
 }

@@ -1,5 +1,6 @@
 import type { AsyncTransformFn } from '../internal/function.js';
-import { type Result, type Err, createOk, isErr, unwrapOk } from './result.js';
+import { unsafeUnwrapValueInOkWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
+import { type Result, type Err, createOk, isErr } from './result.js';
 
 /**
  *  Maps a `Result<T, E>` to `Result<U, E>` by applying a _transformer_ function
@@ -16,7 +17,7 @@ export async function mapAsyncForResult<T, U, E>(
         return fallback;
     }
 
-    const inner: T = unwrapOk(input);
+    const inner: T = unsafeUnwrapValueInOkWithoutAnyCheck(input);
     const mapped: U = await transformer(inner);
     const result: Result<U, E> = createOk(mapped);
     return result;

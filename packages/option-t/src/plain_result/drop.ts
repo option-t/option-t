@@ -1,11 +1,13 @@
 import type { EffectFn } from '../internal/function.js';
-import type { Mutable } from '../internal/mutable.js';
 import { asMutResult } from './as_mut.js';
-import { type Result, type Ok, type Err, isOk } from './result.js';
+import type { MutOk, MutErr, MutResult } from './internal/mutable.js';
+import {
+    setUndefinedToErrFieldOnErrDirectly,
+    setUndefinedToValFieldOnOkDirectly,
+} from './internal/intrinsics_unsafe.js';
+import { type Result, isOk } from './result.js';
 
-export type MutOk<out T> = Mutable<Ok<T>>;
-export type MutErr<out E> = Mutable<Err<E>>;
-type MutResult<T, E> = MutOk<T> | MutErr<E>;
+export type { MutOk, MutErr };
 
 export type UnsafeOkDestructorFn<in T> = EffectFn<MutOk<T>>;
 export type UnsafeErrDestructorFn<in E> = EffectFn<MutErr<E>>;
@@ -44,10 +46,10 @@ export function unsafeDropBothForResult<T, E>(
     const mutable = asMutResult(input);
     if (isOk(mutable)) {
         okMutator(mutable);
-        mutable.val = undefined as never;
+        setUndefinedToValFieldOnOkDirectly(mutable);
     } else {
         errMutator(mutable);
-        mutable.err = undefined as never;
+        setUndefinedToErrFieldOnErrDirectly(mutable);
     }
 
     // By this freezing, if this function is called to the _input_ again,

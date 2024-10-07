@@ -231,11 +231,13 @@ export function unwrapErr<E>(input: Result<unknown, E>): E {
  *      Throws if the self is a `Err`.
  */
 export function expectOk<T, E>(input: Result<T, E>, msg: string): T {
-    if (!input.ok) {
+    if (isErr(input)) {
         throw new TypeError(msg);
     }
 
-    return input.val;
+    // We access the property directly to make this operator is a primitive basic operator.
+    const val: T = input.val;
+    return val;
 }
 
 /**
@@ -246,9 +248,11 @@ export function expectOk<T, E>(input: Result<T, E>, msg: string): T {
  *      Throws if the self is a `Ok`.
  */
 export function expectErr<T, E>(input: Result<T, E>, msg: string): E {
-    if (input.ok) {
+    if (isOk(input)) {
         throw new TypeError(msg);
     }
 
-    return input.err;
+    // We access the property directly to make this operator is a primitive basic operator.
+    const err: E = input.err;
+    return err;
 }
