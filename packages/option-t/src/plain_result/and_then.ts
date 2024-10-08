@@ -1,5 +1,6 @@
 import type { TransformFn } from '../internal/function.js';
-import type { Result } from './result.js';
+import { unsafeUnwrapValueInOkWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
+import { isErr, type Result } from './result.js';
 
 export type ResultTryTransformFn<in T, out U, out E> = TransformFn<T, Result<U, E>>;
 
@@ -16,10 +17,11 @@ export function andThenForResult<T, U, E>(
     input: Result<T, E>,
     transformer: ResultTryTransformFn<T, U, E>,
 ): Result<U, E> {
-    if (!input.ok) {
+    if (isErr(input)) {
         return input;
     }
 
-    const result = transformer(input.val);
+    const val: T = unsafeUnwrapValueInOkWithoutAnyCheck(input);
+    const result = transformer(val);
     return result;
 }

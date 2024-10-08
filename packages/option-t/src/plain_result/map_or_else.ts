@@ -1,5 +1,9 @@
 import type { TransformFn, RecoveryFromErrorFn } from '../internal/function.js';
-import type { Result } from './result.js';
+import {
+    unsafeUnwrapValueInErrWithoutAnyCheck,
+    unsafeUnwrapValueInOkWithoutAnyCheck,
+} from './internal/intrinsics_unsafe.js';
+import { isOk, type Result } from './result.js';
 
 /**
  *  Maps a `Result<T, E>` to `U` by applying _transformer_ to a contained `Ok(T)` value in _input_,
@@ -11,11 +15,13 @@ export function mapOrElseForResult<T, E, U>(
     recoverer: RecoveryFromErrorFn<E, U>,
     transformer: TransformFn<T, U>,
 ): U {
-    if (input.ok) {
-        const result: U = transformer(input.val);
+    if (isOk(input)) {
+        const val = unsafeUnwrapValueInOkWithoutAnyCheck(input);
+        const result: U = transformer(val);
         return result;
     }
 
-    const fallback: U = recoverer(input.err);
+    const err = unsafeUnwrapValueInErrWithoutAnyCheck(input);
+    const fallback: U = recoverer(err);
     return fallback;
 }

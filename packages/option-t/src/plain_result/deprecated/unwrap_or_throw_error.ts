@@ -1,6 +1,10 @@
 import { assertIsErrorInstance } from '../../internal/assert.js';
 import { ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE } from '../internal/error_message.js';
-import { type Result, isOk, unwrapOk, unwrapErr } from '../result.js';
+import {
+    unsafeUnwrapValueInErrWithoutAnyCheck,
+    unsafeUnwrapValueInOkWithoutAnyCheck,
+} from '../internal/intrinsics_unsafe.js';
+import { type Result, isOk } from '../result.js';
 
 /**
  *  @deprecated 48.1.0
@@ -38,11 +42,11 @@ import { type Result, isOk, unwrapOk, unwrapErr } from '../result.js';
  */
 export function unwrapOrThrowWithAssertErrorForResult<T>(input: Result<T, Error>): T {
     if (isOk(input)) {
-        const val: T = unwrapOk<T>(input);
+        const val: T = unsafeUnwrapValueInOkWithoutAnyCheck<T>(input);
         return val;
     }
 
-    const e: unknown = unwrapErr(input);
+    const e: unknown = unsafeUnwrapValueInErrWithoutAnyCheck(input);
     assertIsErrorInstance(e, ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE);
     throw e;
 }

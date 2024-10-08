@@ -1,5 +1,9 @@
 import type { AsyncRecoveryFromErrorFn } from '../internal/function.js';
-import { type Result, isOk, unwrapErr, unwrapOk } from './result.js';
+import {
+    unsafeUnwrapValueInErrWithoutAnyCheck,
+    unsafeUnwrapValueInOkWithoutAnyCheck,
+} from './internal/intrinsics_unsafe.js';
+import { type Result, isOk } from './result.js';
 
 /**
  *  Unwraps _input_, returns the content of an `Ok(T)`.
@@ -10,11 +14,11 @@ export async function unwrapOrElseAsyncForResult<T, E>(
     recoverer: AsyncRecoveryFromErrorFn<E, T>,
 ): Promise<T> {
     if (isOk(input)) {
-        const value: T = unwrapOk(input);
+        const value: T = unsafeUnwrapValueInOkWithoutAnyCheck(input);
         return value;
     }
 
-    const error: E = unwrapErr(input);
+    const error: E = unsafeUnwrapValueInErrWithoutAnyCheck(input);
     const defaultValue: T = await recoverer(error);
     return defaultValue;
 }

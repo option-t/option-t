@@ -1,6 +1,7 @@
 import { type Nullable, isNull } from '../nullable/nullable.js';
 import { isUndefined, type Undefinable } from '../undefinable/undefinable.js';
-import { type Result, isErr, createOk, unwrapOk } from './result.js';
+import { unsafeUnwrapValueInOkWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
+import { type Result, isErr, createOk } from './result.js';
 
 /**
  *  Transposes a `Result` of an `Nullable<T>` into an `Nullable<T>` of a `Result`.
@@ -16,7 +17,7 @@ export function transposeResultToNullable<T, E>(
         return input;
     }
 
-    const inner: Nullable<T> = unwrapOk(input);
+    const inner: Nullable<T> = unsafeUnwrapValueInOkWithoutAnyCheck(input);
     if (isNull(inner)) {
         return null;
     }
@@ -38,7 +39,7 @@ export function transposeResultToUndefinable<T, E>(
         return input;
     }
 
-    const inner: Undefinable<T> = unwrapOk(input);
+    const inner: Undefinable<T> = unsafeUnwrapValueInOkWithoutAnyCheck(input);
     if (isUndefined(inner)) {
         return undefined;
     }

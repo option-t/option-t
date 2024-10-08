@@ -1,5 +1,5 @@
 import { assertIsFrozen } from '../internal/assert.js';
-import type { Mutable } from '../internal/mutable.js';
+import type { MutResult as InternalMutResult } from './internal/mutable.js';
 import type { Result } from './result.js';
 
 /**
@@ -8,7 +8,7 @@ import type { Result } from './result.js';
  *  We don't define `MutOk<T>` or `MutErr` because we can always mutable properties on `MutResult<T>`.
  *  This means that it's hard to check the type on static type system.
  */
-export type MutResult<T, E> = Mutable<Result<T, E>>;
+export type MutResult<T, E> = InternalMutResult<T, E>;
 
 /**
  *  @throws

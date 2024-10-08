@@ -5,6 +5,8 @@ import {
     type Ok,
     type Err,
     isErr,
+    unwrapErr,
+    unwrapOk,
 } from '../plain_result/result.js';
 import { type Option, isNone, createSome, createNone, type None, type Some } from './option.js';
 
@@ -24,12 +26,12 @@ export function transposeOptionToResult<T, E>(input: Option<Result<T, E>>): Resu
 
     const inner: Result<T, E> = input.val;
     if (isErr(inner)) {
-        const err: E = inner.err;
+        const err: E = unwrapErr(inner);
         const result: Err<E> = createErr(err);
         return result;
     }
 
-    const innerInner: T = inner.val;
+    const innerInner: T = unwrapOk(inner);
     const some: Some<T> = createSome(innerInner);
     const result: Ok<Some<T>> = createOk(some);
     return result;
@@ -44,13 +46,13 @@ export function transposeOptionToResult<T, E>(input: Option<Result<T, E>>): Resu
  */
 export function transposeResultToOption<T, E>(input: Result<Option<T>, E>): Option<Result<T, E>> {
     if (isErr(input)) {
-        const err: E = input.err;
+        const err: E = unwrapErr(input);
         const newErr: Err<E> = createErr(err);
         const result: Some<Err<E>> = createSome<Err<E>>(newErr);
         return result;
     }
 
-    const inner: Option<T> = input.val;
+    const inner: Option<T> = unwrapOk(input);
     if (isNone(inner)) {
         const result = createNone();
         return result;

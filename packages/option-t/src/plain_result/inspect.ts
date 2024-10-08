@@ -1,4 +1,8 @@
 import type { EffectFn } from '../internal/function.js';
+import {
+    unsafeUnwrapValueInErrWithoutAnyCheck,
+    unsafeUnwrapValueInOkWithoutAnyCheck,
+} from './internal/intrinsics_unsafe.js';
 import { isErr, isOk, type Result } from './result.js';
 
 /**
@@ -11,7 +15,8 @@ import { isErr, isOk, type Result } from './result.js';
  */
 export function inspectOkForResult<T, E>(input: Result<T, E>, effector: EffectFn<T>): Result<T, E> {
     if (isOk(input)) {
-        effector(input.val);
+        const val: T = unsafeUnwrapValueInOkWithoutAnyCheck(input);
+        effector(val);
     }
     return input;
 }
@@ -29,7 +34,8 @@ export function inspectErrForResult<T, E>(
     effector: EffectFn<E>,
 ): Result<T, E> {
     if (isErr(input)) {
-        effector(input.err);
+        const err: E = unsafeUnwrapValueInErrWithoutAnyCheck(input);
+        effector(err);
     }
     return input;
 }
@@ -48,10 +54,12 @@ export function inspectBothForResult<T, E>(
     okEffector: EffectFn<T>,
     errEffector: EffectFn<E>,
 ): Result<T, E> {
-    if (input.ok) {
-        okEffector(input.val);
+    if (isOk(input)) {
+        const val: T = unsafeUnwrapValueInOkWithoutAnyCheck(input);
+        okEffector(val);
     } else {
-        errEffector(input.err);
+        const err: E = unsafeUnwrapValueInErrWithoutAnyCheck(input);
+        errEffector(err);
     }
     return input;
 }

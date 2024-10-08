@@ -1,5 +1,9 @@
 import type { RecoveryFromErrorFn } from '../internal/function.js';
-import type { Result } from './result.js';
+import {
+    unsafeUnwrapValueInErrWithoutAnyCheck,
+    unsafeUnwrapValueInOkWithoutAnyCheck,
+} from './internal/intrinsics_unsafe.js';
+import { isOk, type Result } from './result.js';
 
 /**
  *  Unwraps a result _input_, returns the content of an `Ok(T)`.
@@ -9,11 +13,12 @@ export function unwrapOrElseForResult<T, E>(
     input: Result<T, E>,
     recoverer: RecoveryFromErrorFn<E, T>,
 ): T {
-    if (input.ok) {
-        const val: T = input.val;
+    if (isOk(input)) {
+        const val: T = unsafeUnwrapValueInOkWithoutAnyCheck(input);
         return val;
     }
 
-    const fallback: T = recoverer(input.err);
+    const err: E = unsafeUnwrapValueInErrWithoutAnyCheck(input);
+    const fallback: T = recoverer(err);
     return fallback;
 }
