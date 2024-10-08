@@ -1,7 +1,14 @@
 import test from 'ava';
 
 import { flattenForResult } from 'option-t/plain_result/flatten';
-import { createOk, createErr } from 'option-t/plain_result/result';
+import {
+    createOk,
+    createErr,
+    isOk,
+    isErr,
+    unwrapOk,
+    unwrapErr,
+} from 'option-t/plain_result/result';
 
 test('input is Ok(Ok(T))', (t) => {
     const VALUE_T = Symbol('value');
@@ -10,8 +17,8 @@ test('input is Ok(Ok(T))', (t) => {
     const input = createOk(inner);
     const actual = flattenForResult(input);
 
-    t.true(actual.ok, 'should be Ok');
-    t.is(actual.val, VALUE_T, 'should be the wrapped value');
+    t.true(isOk(actual), 'should be Ok');
+    t.is(unwrapOk(actual), VALUE_T, 'should be the wrapped value');
 });
 
 test('input is Ok(Err(E))', (t) => {
@@ -21,8 +28,8 @@ test('input is Ok(Err(E))', (t) => {
     const input = createOk(inner);
     const actual = flattenForResult(input);
 
-    t.false(actual.ok, 'should be Err');
-    t.is(actual.err, VALUE_E, 'should be the wrapped error');
+    t.true(isErr(actual), 'should be Err');
+    t.is(unwrapErr(actual), VALUE_E, 'should be the wrapped error');
 });
 
 test('input is Err(E)', (t) => {
@@ -30,8 +37,8 @@ test('input is Err(E)', (t) => {
     const input = createErr(VALUE_E);
     const actual = flattenForResult(input);
 
-    t.false(actual.ok, 'should be Err');
-    t.is(actual.err, VALUE_E, 'should be the wrapped error');
+    t.true(isErr(actual), 'should be Err');
+    t.is(unwrapErr(actual), VALUE_E, 'should be the wrapped error');
 });
 
 test('this should remove only one nest level', (t) => {

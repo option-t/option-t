@@ -1,7 +1,14 @@
 import test from 'ava';
 
 import { andForResult } from 'option-t/plain_result/and';
-import { createOk, createErr } from 'option-t/plain_result/result';
+import {
+    createOk,
+    createErr,
+    isOk,
+    isErr,
+    unwrapOk,
+    unwrapErr,
+} from 'option-t/plain_result/result';
 
 test('a=Ok, b=Ok', (t) => {
     const EXPECTED = Symbol('expected');
@@ -13,8 +20,8 @@ test('a=Ok, b=Ok', (t) => {
     const actual = andForResult(a, b);
 
     t.is(actual, b, 'should return b');
-    t.true(actual.ok, 'should be Ok');
-    t.is(actual.val, EXPECTED, 'should be the inner value');
+    t.true(isOk(actual), 'should be Ok');
+    t.is(unwrapOk(actual), EXPECTED, 'should be the inner value');
 });
 
 test('a=Ok, b=Err', (t) => {
@@ -27,8 +34,8 @@ test('a=Ok, b=Err', (t) => {
     const actual = andForResult(a, b);
 
     t.is(actual, b, 'should return b');
-    t.false(actual.ok, 'should be Err');
-    t.is(actual.err, EXPECTED, 'should be the inner value');
+    t.true(isErr(actual), 'should be Err');
+    t.is(unwrapErr(actual), EXPECTED, 'should be the inner value');
 });
 
 test('a=Err, b=Ok', (t) => {
@@ -41,8 +48,8 @@ test('a=Err, b=Ok', (t) => {
     const actual = andForResult(a, b);
 
     t.is(actual, a, 'should return a');
-    t.false(actual.ok, 'should be Err');
-    t.is(actual.err, EXPECTED, 'should be the inner value');
+    t.true(isErr(actual), 'should be Err');
+    t.is(unwrapErr(actual), EXPECTED, 'should be the inner value');
 });
 
 test('a=Err, b=Err', (t) => {
@@ -55,6 +62,6 @@ test('a=Err, b=Err', (t) => {
     const actual = andForResult(a, b);
 
     t.is(actual, a, 'should return a');
-    t.false(actual.ok, 'should be Err');
-    t.is(actual.err, EXPECTED, 'should be the inner value');
+    t.true(isErr(actual), 'should be Err');
+    t.is(unwrapErr(actual), EXPECTED, 'should be the inner value');
 });
