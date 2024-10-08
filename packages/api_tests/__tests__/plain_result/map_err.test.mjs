@@ -1,7 +1,14 @@
 import test from 'ava';
 
 import { mapErrForResult } from 'option-t/plain_result/map_err';
-import { createOk, createErr } from 'option-t/plain_result/result';
+import {
+    createOk,
+    createErr,
+    isOk,
+    isErr,
+    unwrapOk,
+    unwrapErr,
+} from 'option-t/plain_result/result';
 
 const VALUE_T = Math.random();
 const ERROR_E = new Error('e');
@@ -17,8 +24,8 @@ test('input is Ok(T)', (t) => {
     });
 
     t.is(actual, input);
-    t.true(actual.ok);
-    t.is(actual.val, VALUE_T);
+    t.true(isOk(actual));
+    t.is(unwrapOk(actual), VALUE_T);
 });
 
 test('input is Err(E)', (t) => {
@@ -31,6 +38,6 @@ test('input is Err(E)', (t) => {
     });
 
     t.not(actual, input);
-    t.false(actual.ok);
-    t.is(actual.err, ERROR_F);
+    t.true(isErr(actual));
+    t.is(unwrapErr(actual), ERROR_F);
 });

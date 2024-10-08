@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import { createSome, createNone, isSome, isNone } from 'option-t/plain_option/option';
+import { createSome, createNone, isSome, isNone, unwrapSome } from 'option-t/plain_option/option';
 import { transposeOptionToResult } from 'option-t/plain_option/transpose';
-import { createOk, createErr, isOk, isErr } from 'option-t/plain_result/result';
+import { createOk, createErr, isOk, isErr, unwrapOk } from 'option-t/plain_result/result';
 
 test('input is Some<Ok<T>>, the result should be Ok(Some(x))', (t) => {
     const val = Symbol('val');
@@ -10,11 +10,11 @@ test('input is Some<Ok<T>>, the result should be Ok(Some(x))', (t) => {
     const input = createSome(inner);
     const actual = transposeOptionToResult(input);
 
-    const actualInner = actual.val;
+    const actualInner = unwrapOk(actual);
 
     t.true(isOk(actual), 'the outer should be Ok<Some<T>>');
     t.true(isSome(actualInner), 'the inner should be Some<T>');
-    t.is(actualInner.val, val, "the inner's inner should T");
+    t.is(unwrapSome(actualInner), val, "the inner's inner should T");
     t.not(actual, input, 'the outer should be different from the input');
     t.not(actual, inner, "the outer should be different from the input's inner");
     t.not(actualInner, input, 'the inner should be different from the input');
@@ -36,7 +36,7 @@ test('input is None, the result should be Ok(None)', (t) => {
     const input = createNone();
     const actual = transposeOptionToResult(input);
 
-    const actualInner = actual.val;
+    const actualInner = unwrapOk(actual);
 
     t.true(isOk(actual), 'the outer should Ok(None)');
     t.true(isNone(actualInner), 'the inner should be None');

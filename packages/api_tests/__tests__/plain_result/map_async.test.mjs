@@ -1,7 +1,14 @@
 import test from 'ava';
 
 import { mapAsyncForResult } from 'option-t/plain_result/map_async';
-import { createOk, createErr } from 'option-t/plain_result/result';
+import {
+    createOk,
+    createErr,
+    isOk,
+    isErr,
+    unwrapOk,
+    unwrapErr,
+} from 'option-t/plain_result/result';
 
 const VALUE_T = Math.random();
 const VALUE_U = Math.random();
@@ -20,8 +27,8 @@ test('input is Ok(T), callback return T', async (t) => {
 
     const actual = await result;
     t.not(actual, input);
-    t.true(actual.ok);
-    t.is(actual.val, VALUE_U);
+    t.true(isOk(actual));
+    t.is(unwrapOk(actual), VALUE_U);
 });
 
 test('input is Err(E)', async (t) => {
@@ -37,6 +44,6 @@ test('input is Err(E)', async (t) => {
 
     const actual = await result;
     t.is(actual, input);
-    t.false(actual.ok);
-    t.is(actual.err, ERROR_E);
+    t.true(isErr(actual));
+    t.is(unwrapErr(actual), ERROR_E);
 });

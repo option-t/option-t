@@ -2,7 +2,7 @@
 import test from 'ava';
 
 import { unsafeDropBothForResult } from 'option-t/plain_result/drop';
-import { createOk, createErr } from 'option-t/plain_result/result';
+import { createOk, createErr, isOk } from 'option-t/plain_result/result';
 
 test('with Ok', (t) => {
     const expected = Symbol('');
@@ -19,7 +19,7 @@ test('with Ok', (t) => {
         },
     );
 
-    t.is(actual.ok, false, 'should be modified');
+    t.is(isOk(actual), false, 'should be modified');
     t.is(actual.val, undefined, 'should be released');
     t.true(Object.isFrozen(actual), 'should be frozen');
 });
@@ -39,7 +39,7 @@ test('with Err', (t) => {
         },
     );
 
-    t.is(actual.ok, true, 'should be modified');
+    t.is(isOk(actual), true, 'should be modified');
     t.is(actual.err, undefined, 'should be released');
     t.true(Object.isFrozen(actual), 'should be frozen');
 });

@@ -2,7 +2,7 @@
 import test from 'ava';
 
 import { unsafeDropOkForResult } from 'option-t/plain_result/drop';
-import { createOk, createErr } from 'option-t/plain_result/result';
+import { createOk, createErr, isOk, unwrapOk } from 'option-t/plain_result/result';
 
 test('with Ok', (t) => {
     const expected = Symbol('');
@@ -13,7 +13,7 @@ test('with Ok', (t) => {
         ok.val = expected;
     });
 
-    t.is(actual.ok, false, 'should be modified');
+    t.is(isOk(actual), false, 'should be modified');
     t.is(actual.val, undefined, 'should be released');
     t.true(Object.isFrozen(actual), 'should be frozen');
 });
@@ -25,7 +25,7 @@ test('with Err', (t) => {
         t.fail('Do not enter this path.');
     });
 
-    t.is(actual.ok, false, 'should not be modified');
+    t.is(isOk(actual), false, 'should not be modified');
     t.true(Object.isFrozen(actual), 'should be frozen');
 });
 
