@@ -2,7 +2,7 @@
 import test from 'ava';
 
 import { unsafeDropOkForResult } from 'option-t/plain_result/drop';
-import { createOk, createErr, isOk, unwrapOk } from 'option-t/plain_result/result';
+import { createOk, createErr, isOk } from 'option-t/plain_result/result';
 
 test('with Ok', (t) => {
     const expected = Symbol('');
