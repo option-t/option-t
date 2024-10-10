@@ -42,6 +42,8 @@ export { andThenAsyncForResult } from './and_then_async.js';
 export { flattenForResult } from './flatten.js';
 export { fromPromiseSettledResultToResult } from './from_promise_settled_result.js';
 export { inspectBothForResult, inspectErrForResult, inspectOkForResult } from './inspect.js';
+export { isErrAndForResult, isErrAndWithEnsureTypeForResult } from './is_err_and.js';
+export { isOkAndForResult, isOkAndWithEnsureTypeForResult } from './is_ok_and.js';
 export { mapForResult } from './map.js';
 export { mapAsyncForResult } from './map_async.js';
 export { mapErrForResult } from './map_err.js';
@@ -83,8 +85,6 @@ export { unwrapOrThrowForResult } from './unwrap_or_throw.js';
 //  - and
 //  - or
 //  - filter
-//  - is_err_and
-//  - is_ok_and
 //  - xor
 //  - zip
 //  - zipWith
