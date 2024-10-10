@@ -1,6 +1,6 @@
 import type { ProducerFn } from '../internal/function.js';
-import { wrapWithNewErrorIfCausalIsUnknown } from './internal/unknown_causal_carrier.js';
 import { unsafeUnwrapValueInErrWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
+import { wrapWithNewErrorIfCausalIsUnknown } from './internal/unknown_causal_carrier.js';
 import { type Result, createOk, createErr, isOk } from './result.js';
 
 /**
