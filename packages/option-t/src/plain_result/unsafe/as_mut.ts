@@ -1,4 +1,4 @@
-import { assertIsFrozen } from '../../internal/assert.js';
+import { assertIsNotFrozen } from '../../internal/assert.js';
 import type { MutResult as InternalMutResult } from '../internal/mutable.js';
 import type { Result } from '../result.js';
 
@@ -15,6 +15,6 @@ export type MutResult<T, E> = InternalMutResult<T, E>;
  *  This throw an `Error` instance if the _input_ is frozen.
  */
 export function asMutResult<T, E>(input: Result<T, E>): MutResult<T, E> {
-    assertIsFrozen(input);
+    assertIsNotFrozen(input);
     return input as MutResult<T, E>;
 }

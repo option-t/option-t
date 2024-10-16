@@ -1,4 +1,4 @@
-import { assertIsFrozen } from '../../internal/assert.js';
+import { assertIsNotFrozen } from '../../internal/assert.js';
 import type { Mutable } from '../../internal/mutable.js';
 import type { Option } from '../option.js';
 
@@ -15,6 +15,6 @@ export type MutOption<T> = Mutable<Option<T>>;
  *  This throw an `Error` instance if the _input_ is frozen.
  */
 export function asMutOption<T>(input: Option<T>): MutOption<T> {
-    assertIsFrozen(input);
+    assertIsNotFrozen(input);
     return input as MutOption<T>;
 }
