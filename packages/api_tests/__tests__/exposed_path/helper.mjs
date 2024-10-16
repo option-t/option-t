@@ -45,5 +45,22 @@ export function testImportExposedPath(test, pathList) {
 
             t.snapshot(actual, 'should match expected exported items');
         });
+
+        const [major] = getNodeVersionTriple(process);
+        const t = major >= 23 ? test : test.skip;
+        t(`same module is loaded if module system recognize 'module-sync': ${input}`, async (t) => {
+            const viaRequire = require(input);
+            const viaImport = await import(input);
+            t.deepEqual(
+                viaRequire,
+                viaImport,
+                'should be loaded the same module object for the same path',
+            );
+        });
     }
+}
+
+function getNodeVersionTriple(process) {
+    const [major, minor, patch] = process.versions.node.split('.').map(parseInt);
+    return [major, minor, patch];
 }
