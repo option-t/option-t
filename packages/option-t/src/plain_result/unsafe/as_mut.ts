@@ -1,6 +1,6 @@
-import { assertIsFrozen } from '../internal/assert.js';
-import type { MutResult as InternalMutResult } from './internal/mutable.js';
-import type { Result } from './result.js';
+import { assertIsNotFrozen } from '../../internal/assert.js';
+import type { MutResult as InternalMutResult } from '../internal/mutable.js';
+import type { Result } from '../result.js';
 
 /**
  *  This allows to mutate the value to save needless allocation.
@@ -14,7 +14,7 @@ export type MutResult<T, E> = InternalMutResult<T, E>;
  *  @throws
  *  This throw an `Error` instance if the _input_ is frozen.
  */
-export function asMutResult<T, E>(input: Result<T, E>): MutResult<T, E> {
-    assertIsFrozen(input);
+export function unsafeAsMutResult<T, E>(input: Result<T, E>): MutResult<T, E> {
+    assertIsNotFrozen(input);
     return input as MutResult<T, E>;
 }
