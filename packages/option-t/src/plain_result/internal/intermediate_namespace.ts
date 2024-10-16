@@ -55,8 +55,8 @@ export { unwrapOrThrowForResult as unwrapOrThrow } from '../unwrap_or_throw.js';
 // XXX:
 //  We don't expose these itens that is unsafe operation.
 //
-//  - as_mut
-//  - drop
+//  - unsafe/as_mut
+//  - unsafe/drop
 //
 // XXX:
 //  _equals, we don't expose it by this due to that is provided for exception case

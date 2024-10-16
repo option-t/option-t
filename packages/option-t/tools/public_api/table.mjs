@@ -88,8 +88,6 @@ export const apiTable = Object.freeze({
     'plain_option/and': pathRedirectionTo(`${PLAIN_OPTION_DIR}/and`),
     'plain_option/and_then': pathRedirectionTo(`${PLAIN_OPTION_DIR}/and_then`),
     'plain_option/and_then_async': pathRedirectionTo(`${PLAIN_OPTION_DIR}/and_then_async`),
-    'plain_option/as_mut': pathRedirectionTo(`${PLAIN_OPTION_DIR}/as_mut`),
-    'plain_option/drop': pathRedirectionTo(`${PLAIN_OPTION_DIR}/drop`),
     'plain_option/equal': pathRedirectionTo(`${PLAIN_OPTION_DIR}/equal`),
     'plain_option/filter': pathRedirectionTo(`${PLAIN_OPTION_DIR}/filter`),
     'plain_option/flatten': pathRedirectionTo(`${PLAIN_OPTION_DIR}/flatten`),
@@ -113,6 +111,8 @@ export const apiTable = Object.freeze({
     'plain_option/to_nullable': pathRedirectionTo(`${PLAIN_OPTION_DIR}/to_nullable`),
     'plain_option/to_undefinable': pathRedirectionTo(`${PLAIN_OPTION_DIR}/to_undefinable`),
     'plain_option/transpose': pathRedirectionTo(`${PLAIN_OPTION_DIR}/transpose`),
+    'plain_option/unsafe/as_mut': pathRedirectionTo(`${PLAIN_OPTION_DIR}/unsafe/as_mut`),
+    'plain_option/unsafe/drop': pathRedirectionTo(`${PLAIN_OPTION_DIR}/unsafe/drop`),
     'plain_option/unwrap_or': pathRedirectionTo(`${PLAIN_OPTION_DIR}/unwrap_or`),
     'plain_option/unwrap_or_else': pathRedirectionTo(`${PLAIN_OPTION_DIR}/unwrap_or_else`),
     'plain_option/unwrap_or_else_async': pathRedirectionTo(
@@ -124,7 +124,7 @@ export const apiTable = Object.freeze({
     'plain_result/and': pathRedirectionTo(`${PLAIN_RESULT_DIR}/and`),
     'plain_result/and_then': pathRedirectionTo(`${PLAIN_RESULT_DIR}/and_then`),
     'plain_result/and_then_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/and_then_async`),
-    'plain_result/as_mut': pathRedirectionTo(`${PLAIN_RESULT_DIR}/as_mut`),
+
     'plain_result/deprecated/try_catch_with_assert_error': pathRedirectionMarkedAsDeprecated(
         `${PLAIN_RESULT_DIR}/deprecated/try_catch_with_assert_error`,
         null,
@@ -141,7 +141,6 @@ export const apiTable = Object.freeze({
         `${PLAIN_RESULT_DIR}/deprecated/unwrap_or_throw_unknown`,
         'Use `option-t/plain_result/unwrap_or_throw` instead.',
     ),
-    'plain_result/drop': pathRedirectionTo(`${PLAIN_RESULT_DIR}/drop`),
     'plain_result/equal': pathRedirectionTo(`${PLAIN_RESULT_DIR}/equal`),
     'plain_result/flatten': pathRedirectionTo(`${PLAIN_RESULT_DIR}/flatten`),
     'plain_result/from_promise_settled_result': pathRedirectionTo(
@@ -170,6 +169,8 @@ export const apiTable = Object.freeze({
     'plain_result/transpose': pathRedirectionTo(`${PLAIN_RESULT_DIR}/transpose`),
     'plain_result/try_catch': pathRedirectionTo(`${PLAIN_RESULT_DIR}/try_catch`),
     'plain_result/try_catch_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/try_catch_async`),
+    'plain_result/unsafe/as_mut': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unsafe/as_mut`),
+    'plain_result/unsafe/drop': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unsafe/drop`),
     'plain_result/unwrap_or': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or`),
     'plain_result/unwrap_or_else': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or_else`),
     'plain_result/unwrap_or_else_async': pathRedirectionTo(

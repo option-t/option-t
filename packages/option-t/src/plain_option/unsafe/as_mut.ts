@@ -1,6 +1,6 @@
-import { assertIsFrozen } from '../internal/assert.js';
-import type { Mutable } from '../internal/mutable.js';
-import type { Option } from './option.js';
+import { assertIsFrozen } from '../../internal/assert.js';
+import type { Mutable } from '../../internal/mutable.js';
+import type { Option } from '../option.js';
 
 /**
  *  This allows to mutate the value to save needless allocation.
