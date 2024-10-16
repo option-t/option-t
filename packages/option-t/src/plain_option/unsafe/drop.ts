@@ -1,7 +1,7 @@
 import type { EffectFn } from '../../internal/function.js';
 import type { Mutable } from '../../internal/mutable.js';
 import { type Option, type Some, isSome } from '../option.js';
-import { asMutOption } from './as_mut.js';
+import { unsafeAsMutOption } from './as_mut.js';
 
 export type MutSome<out T> = Mutable<Some<T>>;
 
@@ -30,7 +30,7 @@ export type UnsafeSomeDestructorFn<in T> = EffectFn<MutSome<T>>;
  *  This throw an `Error` instance if the _input_ is frozen.
  */
 export function unsafeDropForOption<T>(input: Option<T>, mutator: UnsafeSomeDestructorFn<T>): void {
-    const mutable = asMutOption(input);
+    const mutable = unsafeAsMutOption(input);
     if (isSome(mutable)) {
         mutator(mutable);
         mutable.val = undefined as never;

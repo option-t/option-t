@@ -14,7 +14,7 @@ export type MutResult<T, E> = InternalMutResult<T, E>;
  *  @throws
  *  This throw an `Error` instance if the _input_ is frozen.
  */
-export function asMutResult<T, E>(input: Result<T, E>): MutResult<T, E> {
+export function unsafeAsMutResult<T, E>(input: Result<T, E>): MutResult<T, E> {
     assertIsNotFrozen(input);
     return input as MutResult<T, E>;
 }

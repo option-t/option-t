@@ -14,7 +14,7 @@ export type MutOption<T> = Mutable<Option<T>>;
  *  @throws
  *  This throw an `Error` instance if the _input_ is frozen.
  */
-export function asMutOption<T>(input: Option<T>): MutOption<T> {
+export function unsafeAsMutOption<T>(input: Option<T>): MutOption<T> {
     assertIsNotFrozen(input);
     return input as MutOption<T>;
 }

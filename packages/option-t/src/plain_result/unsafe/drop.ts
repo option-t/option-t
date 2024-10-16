@@ -5,7 +5,7 @@ import {
 } from '../internal/intrinsics_unsafe.js';
 import type { MutOk, MutErr, MutResult } from '../internal/mutable.js';
 import { type Result, isOk } from '../result.js';
-import { asMutResult } from './as_mut.js';
+import { unsafeAsMutResult } from './as_mut.js';
 
 export type { MutOk, MutErr };
 
@@ -43,7 +43,7 @@ export function unsafeDropBothForResult<T, E>(
     okMutator: UnsafeOkDestructorFn<T>,
     errMutator: UnsafeErrDestructorFn<E>,
 ): void {
-    const mutable = asMutResult(input);
+    const mutable = unsafeAsMutResult(input);
     if (isOk(mutable)) {
         okMutator(mutable);
         setUndefinedToValFieldOnOkDirectly(mutable);
