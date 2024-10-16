@@ -63,12 +63,12 @@ function constructDualPackagePathValue({ cjs, esm, dmts, dcts }) {
     assert.strictEqual(typeof dmts, 'string', 'dmts should be string');
     assert.strictEqual(typeof dcts, 'string', 'dcts should be string');
 
-    const importCondition = constructPathValue({
+    const esmCondition = constructPathValue({
         filepath: esm,
         dts: dmts,
     });
 
-    const requireCondition = constructPathValue({
+    const cjsCondition = constructPathValue({
         filepath: cjs,
         dts: dcts,
     });
@@ -83,11 +83,12 @@ function constructDualPackagePathValue({ cjs, esm, dmts, dcts }) {
         // to determine a module type for this entry point.
         // For example, if we set `d.ts` for ES Module, tsc will think this entrypoint is ESM.
 
-        import: importCondition,
-        require: requireCondition,
+        'import': esmCondition,
+        'module-sync': esmCondition,
+        'require': cjsCondition,
         // _default_ should be placed to the last.
         // https://nodejs.org/api/packages.html#conditional-exports
-        default: importCondition,
+        'default': esmCondition,
     });
 }
 
