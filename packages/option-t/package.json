@@ -785,6 +785,24 @@
                 "default": "./esm/nullable/inspect.js"
             }
         },
+        "./nullable/is_some_and": {
+            "import": {
+                "types": "./esm/nullable/is_some_and.d.ts",
+                "default": "./esm/nullable/is_some_and.js"
+            },
+            "module-sync": {
+                "types": "./esm/nullable/is_some_and.d.ts",
+                "default": "./esm/nullable/is_some_and.js"
+            },
+            "require": {
+                "types": "./cjs/nullable/is_some_and.d.cts",
+                "default": "./cjs/nullable/is_some_and.cjs"
+            },
+            "default": {
+                "types": "./esm/nullable/is_some_and.d.ts",
+                "default": "./esm/nullable/is_some_and.js"
+            }
+        },
         "./nullable/map": {
             "import": {
                 "types": "./esm/nullable/map.d.ts",
