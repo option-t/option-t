@@ -13,7 +13,6 @@ testImportExposedPath(
         './maybe/filter': null,
         './maybe/filter_async': null,
         './maybe/inspect': null,
-        './maybe/is_some_and': null,
         './maybe/map': null,
         './maybe/map_async': null,
         './maybe/map_or': null,

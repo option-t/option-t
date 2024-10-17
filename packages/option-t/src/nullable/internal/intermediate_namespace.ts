@@ -45,7 +45,6 @@ export { unwrapOrElseAsyncForNullable as unwrapOrElseAsync } from '../unwrap_or_
 //  But please import them directly from their path at this moment.
 //
 //  - filter
-//  - is_some_and
 //  - xor
 //  - zip
 //  - zipWith
