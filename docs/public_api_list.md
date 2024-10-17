@@ -22,6 +22,7 @@ Basic APIs are exported here:
 - [`option-t/maybe/filter`](../packages/option-t/src/maybe/filter.ts)
 - [`option-t/maybe/filter_async`](../packages/option-t/src/maybe/filter_async.ts)
 - [`option-t/maybe/inspect`](../packages/option-t/src/maybe/inspect.ts)
+- [`option-t/maybe/is_some_and`](../packages/option-t/src/maybe/is_some_and.ts)
 - [`option-t/maybe/map`](../packages/option-t/src/maybe/map.ts)
 - [`option-t/maybe/map_async`](../packages/option-t/src/maybe/map_async.ts)
 - [`option-t/maybe/map_or`](../packages/option-t/src/maybe/map_or.ts)

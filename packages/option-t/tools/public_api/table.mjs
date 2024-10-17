@@ -28,6 +28,7 @@ export const apiTable = Object.freeze({
     'maybe/filter': pathRedirectionTo(`${MAYBE_DIR}/filter`),
     'maybe/filter_async': pathRedirectionTo(`${MAYBE_DIR}/filter_async`),
     'maybe/inspect': pathRedirectionTo(`${MAYBE_DIR}/inspect`),
+    'maybe/is_some_and': pathRedirectionTo(`${MAYBE_DIR}/is_some_and`),
     'maybe/map': pathRedirectionTo(`${MAYBE_DIR}/map`),
     'maybe/map_async': pathRedirectionTo(`${MAYBE_DIR}/map_async`),
     'maybe/map_or': pathRedirectionTo(`${MAYBE_DIR}/map_or`),

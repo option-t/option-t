@@ -227,6 +227,24 @@
                 "default": "./esm/maybe/inspect.js"
             }
         },
+        "./maybe/is_some_and": {
+            "import": {
+                "types": "./esm/maybe/is_some_and.d.ts",
+                "default": "./esm/maybe/is_some_and.js"
+            },
+            "module-sync": {
+                "types": "./esm/maybe/is_some_and.d.ts",
+                "default": "./esm/maybe/is_some_and.js"
+            },
+            "require": {
+                "types": "./cjs/maybe/is_some_and.d.cts",
+                "default": "./cjs/maybe/is_some_and.cjs"
+            },
+            "default": {
+                "types": "./esm/maybe/is_some_and.d.ts",
+                "default": "./esm/maybe/is_some_and.js"
+            }
+        },
         "./maybe/map": {
             "import": {
                 "types": "./esm/maybe/map.d.ts",
