@@ -2603,6 +2603,24 @@
                 "default": "./esm/undefinable/inspect.js"
             }
         },
+        "./undefinable/is_some_and": {
+            "import": {
+                "types": "./esm/undefinable/is_some_and.d.ts",
+                "default": "./esm/undefinable/is_some_and.js"
+            },
+            "module-sync": {
+                "types": "./esm/undefinable/is_some_and.d.ts",
+                "default": "./esm/undefinable/is_some_and.js"
+            },
+            "require": {
+                "types": "./cjs/undefinable/is_some_and.d.cts",
+                "default": "./cjs/undefinable/is_some_and.cjs"
+            },
+            "default": {
+                "types": "./esm/undefinable/is_some_and.d.ts",
+                "default": "./esm/undefinable/is_some_and.js"
+            }
+        },
         "./undefinable/map": {
             "import": {
                 "types": "./esm/undefinable/map.d.ts",

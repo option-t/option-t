@@ -210,6 +210,7 @@ Basic APIs are exported here:
 - [`option-t/undefinable/filter`](../packages/option-t/src/undefinable/filter.ts)
 - [`option-t/undefinable/filter_async`](../packages/option-t/src/undefinable/filter_async.ts)
 - [`option-t/undefinable/inspect`](../packages/option-t/src/undefinable/inspect.ts)
+- [`option-t/undefinable/is_some_and`](../packages/option-t/src/undefinable/is_some_and.ts)
 - [`option-t/undefinable/map`](../packages/option-t/src/undefinable/map.ts)
 - [`option-t/undefinable/map_async`](../packages/option-t/src/undefinable/map_async.ts)
 - [`option-t/undefinable/map_or`](../packages/option-t/src/undefinable/map_or.ts)

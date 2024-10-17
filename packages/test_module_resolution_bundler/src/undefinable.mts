@@ -5,6 +5,7 @@ import {} from 'option-t/undefinable/and_then_async';
 import {} from 'option-t/undefinable/filter';
 import {} from 'option-t/undefinable/filter_async';
 import {} from 'option-t/undefinable/inspect';
+import {} from 'option-t/undefinable/is_some_and';
 import {} from 'option-t/undefinable/map';
 import {} from 'option-t/undefinable/map_async';
 import {} from 'option-t/undefinable/map_or';
