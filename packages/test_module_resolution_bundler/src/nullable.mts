@@ -5,7 +5,6 @@ import {} from 'option-t/nullable/and_then_async';
 import {} from 'option-t/nullable/filter';
 import {} from 'option-t/nullable/filter_async';
 import {} from 'option-t/nullable/inspect';
-import {} from 'option-t/nullable/is_some_and';
 import {} from 'option-t/nullable/map';
 import {} from 'option-t/nullable/map_async';
 import {} from 'option-t/nullable/map_or';

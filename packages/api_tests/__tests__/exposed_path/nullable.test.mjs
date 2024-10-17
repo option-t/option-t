@@ -13,7 +13,6 @@ testImportExposedPath(
         './nullable/filter': null,
         './nullable/filter_async': null,
         './nullable/inspect': null,
-        './nullable/is_some_and': null,
         './nullable/map': null,
         './nullable/map_async': null,
         './nullable/map_or': null,

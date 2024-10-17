@@ -13,7 +13,6 @@ testImportExposedPath(
         './undefinable/filter': null,
         './undefinable/filter_async': null,
         './undefinable/inspect': null,
-        './undefinable/is_some_and': null,
         './undefinable/map': null,
         './undefinable/map_async': null,
         './undefinable/map_or': null,

@@ -45,7 +45,6 @@ export { unwrapOrElseAsyncForUndefinable as unwrapOrElseAsync } from '../unwrap_
 //  But please import them directly from their path at this moment.
 //
 //  - filter
-//  - is_some_and
 //  - xor
 //  - zip
 //  - zipWith

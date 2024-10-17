@@ -40,7 +40,6 @@ export { unwrapOrElseAsyncForNullable } from './unwrap_or_else_async.js';
 //  But please import them directly from their path at this moment.
 //
 //  - filter
-//  - is_some_and
 //  - xor
 //  - zip
 //  - zipWith

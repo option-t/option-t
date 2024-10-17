@@ -227,24 +227,6 @@
                 "default": "./esm/maybe/inspect.js"
             }
         },
-        "./maybe/is_some_and": {
-            "import": {
-                "types": "./esm/maybe/is_some_and.d.ts",
-                "default": "./esm/maybe/is_some_and.js"
-            },
-            "module-sync": {
-                "types": "./esm/maybe/is_some_and.d.ts",
-                "default": "./esm/maybe/is_some_and.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/is_some_and.d.cts",
-                "default": "./cjs/maybe/is_some_and.cjs"
-            },
-            "default": {
-                "types": "./esm/maybe/is_some_and.d.ts",
-                "default": "./esm/maybe/is_some_and.js"
-            }
-        },
         "./maybe/map": {
             "import": {
                 "types": "./esm/maybe/map.d.ts",
@@ -801,24 +783,6 @@
             "default": {
                 "types": "./esm/nullable/inspect.d.ts",
                 "default": "./esm/nullable/inspect.js"
-            }
-        },
-        "./nullable/is_some_and": {
-            "import": {
-                "types": "./esm/nullable/is_some_and.d.ts",
-                "default": "./esm/nullable/is_some_and.js"
-            },
-            "module-sync": {
-                "types": "./esm/nullable/is_some_and.d.ts",
-                "default": "./esm/nullable/is_some_and.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/is_some_and.d.cts",
-                "default": "./cjs/nullable/is_some_and.cjs"
-            },
-            "default": {
-                "types": "./esm/nullable/is_some_and.d.ts",
-                "default": "./esm/nullable/is_some_and.js"
             }
         },
         "./nullable/map": {
@@ -2601,24 +2565,6 @@
             "default": {
                 "types": "./esm/undefinable/inspect.d.ts",
                 "default": "./esm/undefinable/inspect.js"
-            }
-        },
-        "./undefinable/is_some_and": {
-            "import": {
-                "types": "./esm/undefinable/is_some_and.d.ts",
-                "default": "./esm/undefinable/is_some_and.js"
-            },
-            "module-sync": {
-                "types": "./esm/undefinable/is_some_and.d.ts",
-                "default": "./esm/undefinable/is_some_and.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/is_some_and.d.cts",
-                "default": "./cjs/undefinable/is_some_and.cjs"
-            },
-            "default": {
-                "types": "./esm/undefinable/is_some_and.d.ts",
-                "default": "./esm/undefinable/is_some_and.js"
             }
         },
         "./undefinable/map": {
