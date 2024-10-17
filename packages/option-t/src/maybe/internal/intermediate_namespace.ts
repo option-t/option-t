@@ -46,6 +46,7 @@ export { unwrapOrElseAsyncForMaybe as unwrapOrElseAsync } from '../unwrap_or_els
 //  But please import them directly from their path at this moment.
 //
 //  - filter
+//  - is_some_and
 //  - xor
 //  - zip
 //  - zipWith

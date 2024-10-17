@@ -5,6 +5,7 @@ import {} from 'option-t/maybe/and_then_async';
 import {} from 'option-t/maybe/filter';
 import {} from 'option-t/maybe/filter_async';
 import {} from 'option-t/maybe/inspect';
+import {} from 'option-t/maybe/is_some_and';
 import {} from 'option-t/maybe/map';
 import {} from 'option-t/maybe/map_async';
 import {} from 'option-t/maybe/maybe';
