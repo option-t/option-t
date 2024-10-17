@@ -47,7 +47,8 @@ export function testImportExposedPath(test, pathList) {
         });
 
         const [major] = getNodeVersionTriple(process);
-        const t = major >= 23 ? test : test.skip;
+        const isModuleSyncSupported = major >= 22;
+        const t = isModuleSyncSupported ? test : test.skip;
         t(`same module is loaded if module system recognize 'module-sync': ${input}`, async (t) => {
             const viaRequire = require(input);
             const viaImport = await import(input);
