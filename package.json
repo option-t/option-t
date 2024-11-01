@@ -16,7 +16,7 @@
         "@typescript-eslint/eslint-plugin": "^8.8.0",
         "@typescript-eslint/parser": "^8.8.0",
         "ava": "^6.2.0",
-        "del-cli": "^5.1.0",
+        "del-cli": "^6.0.0",
         "eslint": "^9.11.1",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-import": "^2.30.0",
