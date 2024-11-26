@@ -8,6 +8,6 @@
         "test": "tsc -p ./tsconfig.json"
     },
     "dependencies": {
-        "option-t": "../option-t"
+        "option-t": "link:../option-t"
     }
 }
