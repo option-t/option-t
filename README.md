@@ -348,3 +348,34 @@ this boring style problem might be relaxed.
 
 Furthermore, we think that it happens many times reading the code but writing one is fewer than it.
 We believe that this style is tiring but not a problem in the long term.
+
+#### option-t does not provide [`try!`](https://doc.rust-lang.org/1.83.0/std/macro.try.html) like control flow sugar utility to keep a simplicity of user project code
+
+We got some feedbacks about why option-t does not provide a `try!` like control flow sugar function
+to make it easy to unwrap of `Result<T, E>` type.
+And some users told us that they switched to _neverthrow_ that have [`safeTry()`](https://github.com/supermacro/neverthrow/tree/v8.1.1?tab=readme-ov-file#safetry)
+due to lacking a such function in this package by default. 
+
+In short, this is a result of design choice.
+We would hesitate to do it or will not implement such utility sugaring stuff
+without introducing a macro system to JavaScript.
+
+Unlike a syntax expansion achieved by macro, the kind of `try!` utility uses a generator mechanism
+like an emulation of async/await style control flow in pre-ES2017 era.
+
+We admit it simplifies a control flow related to unwrap operation for Result type
+but we think it introduces a complication to a user code.
+This means that user code gets a new userland executor mechanism in addition to a react fiber or other view library's runtime executor.
+We think it might be hard to debug a code that lives a long time (probably over a decade)
+because such code requires an additional knowledge of this library's framework-ish practice.
+
+Our motto of design & implementation is that achievement both of simplicity and abstraction.
+We think this design choice is important to keep a simplicity of code analytic pipeline,
+a simplicity of build pipeline, and to reduce a runtime overhead of user project application for long-term user project code lifecycle.
+Therefore we would like to avoid introducing a new sugar utility that is a bit different from a common control syntax flow populated
+in the community to decrease complexity by introducing this library.
+We think strongly that "writing a code is only once, but your code will be read far many times than what you imagined".
+
+If you want `try!` style utility,
+please consider to introduce [option-t-safe-try](https://jsr.io/@totto/option-t-safe-try) ([github](https://github.com/totto2727-org/option-t-safe-try))
+or defines a similar implementation to your repository. 
