@@ -257,7 +257,7 @@ Side-effect handling abstraction, concurrency controls, or platform integration 
 We intend to provide only value types that are evaluated immediately unlike them. 
 
 
-### [neverthrow (v6.0.0)](https://github.com/supermacro/neverthrow/tree/v6.0.0)
+### [neverthrow (v8.1.1)](https://github.com/supermacro/neverthrow/tree/v8.1.1)
 
 _neverthrow_ is a package that provides _Result_ type implementation.
 At this point, we think that we and they share the same spirits.
