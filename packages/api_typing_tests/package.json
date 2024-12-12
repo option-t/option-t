@@ -1,7 +1,7 @@
 {
     "private": true,
     "type": "module",
-    "name": "@option-t/test_module_resolution_node16",
+    "name": "@option-t/api_typing_tests",
     "version": "50.0.1",
     "license": "MIT",
     "scripts": {
