@@ -1,8 +1,8 @@
 {
     "private": true,
     "type": "module",
-    "name": "@option-t/test_module_resolution_node16",
-    "version": "50.0.1",
+    "name": "@option-t/api_typing_tests",
+    "version": "50.0.2",
     "license": "MIT",
     "scripts": {
         "test": "tsc -p ./tsconfig.json"
