@@ -1,6 +1,7 @@
 INNER_PACKAGES_DIR := $(CURDIR)/packages
 MAIN_PKG := $(INNER_PACKAGES_DIR)/option-t
 API_TEST_PKG := $(INNER_PACKAGES_DIR)/api_tests
+API_TYPING_TEST_PKG := $(INNER_PACKAGES_DIR)/api_typing_tests
 TYPE_IMPORT_TEST_UNDER_MODULE_RESOLUTION_NODE16_PKG := $(INNER_PACKAGES_DIR)/test_module_resolution_node16
 TYPE_IMPORT_TEST_UNDER_MODULE_RESOLUTION_BUNDLER_PKG := $(INNER_PACKAGES_DIR)/test_module_resolution_bundler
 
@@ -85,6 +86,10 @@ typecheck: ## Check static types.
 test_unittest: build ## Build and run unit tests
 	$(MAKE) run_test_unittest -C $(CURDIR)
 
+.PHONY: test_api_typing
+test_api_typing: build ## Build and run api typing tests
+	$(MAKE) run_test_api_typing -C $(CURDIR)
+
 .PHONY: test_import_types
 test_import_types: build ## Build and run type import tests
 	$(MAKE) run_test_import_types -C $(CURDIR)
@@ -107,6 +112,10 @@ __run_test_import_types_under_module_resolution_bundler:
 .PHONY: run_test_unittest
 run_test_unittest: ## Run unit tests only.
 	$(MAKE) test -C $(API_TEST_PKG)
+
+.PHONY: run_test_api_typing
+run_test_api_typing: ## Run api typing tests only.
+	$(MAKE) test -C $(API_TYPING_TEST_PKG)
 
 .PHONY: run_test_unittest_with_update_snapshots
 run_test_unittest_with_update_snapshots: ## Run unit tests only with updating snapshots.
@@ -148,6 +157,7 @@ format_check: ## Check code formatting
 prepublish:
 	$(MAKE) $@ -C $(MAIN_PKG)
 	$(MAKE) run_test_unittest -C $(CURDIR)
+	$(MAKE) run_test_api_typing -C $(CURDIR)
 	$(MAKE) run_test_import_types -C $(CURDIR)
 
 .PHONY: publish

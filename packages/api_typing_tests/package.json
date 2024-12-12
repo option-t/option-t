@@ -1,0 +1,15 @@
+{
+    "private": true,
+    "type": "module",
+    "name": "@option-t/test_module_resolution_node16",
+    "version": "50.0.1",
+    "license": "MIT",
+    "scripts": {
+        "test": "tsc -p ./tsconfig.json"
+    },
+    "dependencies": {
+        "ava": "^6.2.0",
+        "expect-type": "^1.1.0",
+        "option-t": "link:../option-t"
+    }
+}
