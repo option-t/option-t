@@ -100,6 +100,24 @@ jobs:
               env:
                   CI: true
 
+    api_typing_test:
+        needs: [warmup_dependency_cache]
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version:
+                    - 22
+
+        steps:
+            - uses: actions/checkout@v4
+            - uses: ./.github/actions/prepare_ci
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - run: make test_api_typing -j
+              env:
+                  CI: true
+
     test_package_json_exports_field_format:
         needs: [warmup_dependency_cache]
         runs-on: ubuntu-latest
