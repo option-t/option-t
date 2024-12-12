@@ -5,7 +5,7 @@
     "version": "50.0.1",
     "license": "MIT",
     "scripts": {
-        "test": "ava --config ./ava.config.mjs",
+        "test": "ava --config ./ava.config.js",
         "test:update-snapshots": "npm run test -- --update-snapshots"
     },
     "dependencies": {
