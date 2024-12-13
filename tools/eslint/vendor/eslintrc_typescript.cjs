@@ -33,6 +33,9 @@ module.exports = {
     ],
 
     'rules': {
+        // This rule is covered by typescript compiler
+        'no-redeclare': 'off',
+
         // Basically, it's nice to uniform the order of overload signatures.
         '@typescript-eslint/adjacent-overload-signatures': 'warn',
 
