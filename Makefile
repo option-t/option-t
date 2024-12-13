@@ -13,8 +13,6 @@ NPM_BIN := $(NPM_MOD_DIR)/.bin
 NPM_CMD := npm
 PNPM_CMD := pnpm
 
-PROJECT_NPMRC := $(DIST_DIR)/.npmrc
-
 all: help
 
 help:
@@ -45,11 +43,7 @@ clean_main_pkg:
 	$(MAKE) clean -C $(MAIN_PKG)
 
 .PHONY: clean_repo_root
-clean_repo_root: clean_npmrc
-
-.PHONY: clean_npmrc
-clean_npmrc:
-	$(NPM_BIN)/del $(PROJECT_NPMRC)
+clean_repo_root:
 
 
 ###########################
@@ -161,12 +155,8 @@ prepublish:
 	$(MAKE) run_test_import_types -C $(CURDIR)
 
 .PHONY: publish
-publish: copy_npmrc_to_project_root ## Run some commands for 'npm publish'
+publish: ## Run some commands for 'npm publish'
 	$(MAKE) $@ -C $(MAIN_PKG)
-
-.PHONY: copy_npmrc_to_project_root
-copy_npmrc_to_project_root: clean_npmrc
-	cp $(CURDIR)/tools/publish/.npmrc $(PROJECT_NPMRC)
 
 .PHONY: git_diff
 git_diff: ## Test whether there is no committed changes.
