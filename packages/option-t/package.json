@@ -33,7 +33,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/option-t/option-t.git"
+        "url": "https://github.com/option-t/option-t.git"
     },
     "keywords": [
         "either",
