@@ -12,7 +12,7 @@
         "@babel/plugin-transform-export-namespace-from": "^7.25.9",
         "@babel/plugin-transform-modules-commonjs": "^7.25.9",
         "@eslint/js": "^9.16.0",
-        "@reflink/reflink": "^0.1.18",
+        "@reflink/reflink": "^0.1.19",
         "@typescript-eslint/eslint-plugin": "^8.16.0",
         "@typescript-eslint/parser": "^8.16.0",
         "ava": "^6.2.0",
