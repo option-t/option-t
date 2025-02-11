@@ -23,6 +23,14 @@ export {
     inspectErrForResult as inspectErr,
     inspectOkForResult as inspectOk,
 } from '../inspect.js';
+export {
+    isErrAndForResult as isErrAnd,
+    isErrAndWithEnsureTypeForResult as isErrAndWithEnsureType,
+} from '../is_err_and.js';
+export {
+    isOkAndForResult as isOkAnd,
+    isOkAndWithEnsureTypeForResult as isOkAndWithEnsureType,
+} from '../is_ok_and.js';
 export { mapForResult as map } from '../map.js';
 export { mapAsyncForResult as mapAsync } from '../map_async.js';
 export { mapErrForResult as mapErr } from '../map_err.js';
@@ -70,8 +78,6 @@ export { unwrapOrThrowForResult as unwrapOrThrow } from '../unwrap_or_throw.js';
 //  - and
 //  - or
 //  - filter
-//  - is_err_and
-//  - is_ok_and
 //  - xor
 //  - zip
 //  - zipWith
