@@ -25,7 +25,9 @@ runs:
               node-version: ${{ inputs.node-version }}
         - name: Activate corepack
           shell: bash
-          run: corepack enable
+          run: | # This workaround https://github.com/nodejs/corepack/issues/612
+              npm i -g corepack
+              corepack enable
         - name: Get pnpm cache directory
           shell: bash
           id: pnpm-cache-dir
