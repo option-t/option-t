@@ -48,7 +48,8 @@ export default [
     js.configs.recommended,
     {
         linterOptions: {
-            reportUnusedDisableDirectives: true,
+            reportUnusedDisableDirectives: 'warn',
+            reportUnusedInlineConfigs: 'warn',
         },
         rules: {
             ...rulesForJavaScript,
