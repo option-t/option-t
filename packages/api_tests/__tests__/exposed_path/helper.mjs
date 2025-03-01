@@ -46,13 +46,9 @@ export function testImportExposedPath(test, pathList) {
             t.snapshot(actual, 'should match expected exported items');
         });
 
-        const [major] = getNodeVersionTriple(process);
-        const isModuleSyncSupported = major >= 22;
-        if (isModuleSyncSupported) {
-            assert.ok(process.features.require_module, 'require(esm) is not enabled');
-        }
-        const t = isModuleSyncSupported ? test : test.skip;
-        t(`same module is loaded if module system recognize 'module-sync': ${input}`, async (t) => {
+        assert.ok(process.features.require_module, 'require(esm) is not enabled');
+
+        test(`same module is loaded if module system recognize 'module-sync': ${input}`, async (t) => {
             const viaRequire = require(input);
             const viaImport = await import(input);
             t.deepEqual(
@@ -62,9 +58,4 @@ export function testImportExposedPath(test, pathList) {
             );
         });
     }
-}
-
-function getNodeVersionTriple(process) {
-    const [major, minor, patch] = process.versions.node.split('.').map(parseInt);
-    return [major, minor, patch];
 }
