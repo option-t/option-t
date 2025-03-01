@@ -89,6 +89,12 @@ importers:
         specifier: link:../option-t
         version: link:../option-t
 
+  packages/test_module_resolution_node_next:
+    dependencies:
+      option-t:
+        specifier: link:../option-t
+        version: link:../option-t
+
 packages:
 
   '@ampproject/remapping@2.3.0':

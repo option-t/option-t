@@ -1,0 +1,13 @@
+{
+    "private": true,
+    "type": "module",
+    "name": "@option-t/test_module_resolution_node_next",
+    "version": "51.1.0",
+    "license": "MIT",
+    "scripts": {
+        "test": "tsc -p ./tsconfig.json"
+    },
+    "dependencies": {
+        "option-t": "link:../option-t"
+    }
+}
