@@ -1,7 +1,6 @@
 INNER_PACKAGES_DIR := $(CURDIR)/packages
 MAIN_PKG := $(INNER_PACKAGES_DIR)/option-t
 API_TEST_PKG := $(INNER_PACKAGES_DIR)/api_tests
-API_TYPING_TEST_PKG := $(INNER_PACKAGES_DIR)/api_typing_tests
 
 DIST_DIR := $(MAIN_PKG)/__dist
 
@@ -107,7 +106,7 @@ run_test_unittest: ## Run unit tests only.
 
 .PHONY: run_test_api_typing
 run_test_api_typing: ## Run api typing tests only.
-	$(MAKE) test -C $(API_TYPING_TEST_PKG)
+	$(NPM_BIN)/turbo run test --filter './packages/api_typing_tests'
 
 .PHONY: run_test_unittest_with_update_snapshots
 run_test_unittest_with_update_snapshots: ## Run unit tests only with updating snapshots.
