@@ -69,7 +69,7 @@ importers:
   packages/api_tests:
     dependencies:
       option-t:
-        specifier: link:../option-t
+        specifier: workspace:*
         version: link:../option-t
 
   packages/api_typing_tests:
@@ -78,7 +78,7 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       option-t:
-        specifier: link:../option-t
+        specifier: workspace:*
         version: link:../option-t
 
   packages/option-t: {}
@@ -86,19 +86,19 @@ importers:
   packages/test_module_resolution_bundler:
     dependencies:
       option-t:
-        specifier: link:../option-t
+        specifier: workspace:*
         version: link:../option-t
 
   packages/test_module_resolution_node16:
     dependencies:
       option-t:
-        specifier: link:../option-t
+        specifier: workspace:*
         version: link:../option-t
 
   packages/test_module_resolution_node_next:
     dependencies:
       option-t:
-        specifier: link:../option-t
+        specifier: workspace:*
         version: link:../option-t
 
 packages:

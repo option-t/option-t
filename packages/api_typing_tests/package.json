@@ -9,6 +9,6 @@
     },
     "dependencies": {
         "expect-type": "^1.2.0",
-        "option-t": "link:../option-t"
+        "option-t": "workspace:*"
     }
 }
