@@ -9,6 +9,6 @@
         "test:update-snapshots": "npm run test -- --update-snapshots"
     },
     "dependencies": {
-        "option-t": "link:../option-t"
+        "option-t": "workspace:*"
     }
 }
