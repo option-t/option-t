@@ -5,6 +5,10 @@
         "test": {
             // Historically, our testing is not designed to enable cache easily.
             "cache": false
+        },
+        "test:update-snapshots": {
+            // Historically, our testing is not designed to enable cache easily.
+            "cache": false
         }
     },
     "globalEnv": [
