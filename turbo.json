@@ -2,6 +2,10 @@
 {
     "$schema": "https://turbo.build/schema.json",
     "tasks": {
+        "test": {
+            // Historically, our testing is not designed to enable cache easily.
+            "cache": false
+        }
     },
     "globalEnv": [
         // This should be used for build the package.

@@ -2,9 +2,6 @@ INNER_PACKAGES_DIR := $(CURDIR)/packages
 MAIN_PKG := $(INNER_PACKAGES_DIR)/option-t
 API_TEST_PKG := $(INNER_PACKAGES_DIR)/api_tests
 API_TYPING_TEST_PKG := $(INNER_PACKAGES_DIR)/api_typing_tests
-TYPE_IMPORT_TEST_UNDER_MODULE_RESOLUTION_NODE16_PKG := $(INNER_PACKAGES_DIR)/test_module_resolution_node16
-TYPE_IMPORT_TEST_UNDER_MODULE_RESOLUTION_NODE_NEXT_PKG := $(INNER_PACKAGES_DIR)/test_module_resolution_node_next
-TYPE_IMPORT_TEST_UNDER_MODULE_RESOLUTION_BUNDLER_PKG := $(INNER_PACKAGES_DIR)/test_module_resolution_bundler
 
 DIST_DIR := $(MAIN_PKG)/__dist
 
@@ -100,25 +97,9 @@ test_api_typing: build ## Build and run api typing tests
 test_import_types: build ## Build and run type import tests
 	$(MAKE) run_test_import_types -C $(CURDIR)
 
-MODULE_RESOLUTION_TEST_TARGETS := \
-	node16 \
-	node_next \
-	bundler
-
 .PHONY: run_test_import_types
-run_test_import_types: $(addprefix __run_test_import_types_under_module_resolution_, $(MODULE_RESOLUTION_TEST_TARGETS)) ## Run type import tests
-
-.PHONY: __run_test_import_types_under_module_resolution_node16
-__run_test_import_types_under_module_resolution_node16:
-	$(MAKE) test -C $(TYPE_IMPORT_TEST_UNDER_MODULE_RESOLUTION_NODE16_PKG)
-
-.PHONY: __run_test_import_types_under_module_resolution_node_next
-__run_test_import_types_under_module_resolution_node_next:
-	$(MAKE) test -C $(TYPE_IMPORT_TEST_UNDER_MODULE_RESOLUTION_NODE_NEXT_PKG)
-
-.PHONY: __run_test_import_types_under_module_resolution_bundler
-__run_test_import_types_under_module_resolution_bundler:
-	$(MAKE) test -C $(TYPE_IMPORT_TEST_UNDER_MODULE_RESOLUTION_BUNDLER_PKG)
+run_test_import_types: ## Run type import tests
+	$(NPM_BIN)/turbo run test --filter './packages/test_module_resolution_*'
 
 .PHONY: run_test_unittest
 run_test_unittest: ## Run unit tests only.
