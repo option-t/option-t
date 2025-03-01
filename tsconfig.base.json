@@ -59,6 +59,7 @@
         // "allowUmdGlobalAccess": true,                /* Allow accessing UMD globals from modules. */
         "verbatimModuleSyntax":  true,
         "noUncheckedSideEffectImports": true,
+        "libReplacement": false,
 
         /* Source Map Options */
         // "sourceRoot": "",                            /* Specify the location where debugger should locate TypeScript files instead of source locations. */
