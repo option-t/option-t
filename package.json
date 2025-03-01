@@ -18,7 +18,7 @@
         "ava": "^6.2.0",
         "del-cli": "^6.0.0",
         "eslint": "^9.21.0",
-        "eslint-config-prettier": "^9.1.0",
+        "eslint-config-prettier": "^10.0.2",
         "eslint-plugin-import": "^2.31.0",
         "globals": "^16.0.0",
         "picomatch": "^4.0.2",
