@@ -1,0 +1,10 @@
+// See https://turbo.build/repo/docs
+{
+    "$schema": "https://turbo.build/schema.json",
+    "tasks": {
+    },
+    "globalEnv": [
+        // This should be used for build the package.
+        "TARGET_DIR"
+    ]
+}

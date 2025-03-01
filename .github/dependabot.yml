@@ -26,6 +26,11 @@ updates:
           typescript-eslint:
               patterns:
                   - "@typescript-eslint/*"
+          # These are managed in the same repo and their releases are aligned.
+          turborepo:
+              patterns:
+                  - turbo
+                  - eslint-config-turbo
 
     #####################################################
     #   GitHub Action Workflows

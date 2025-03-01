@@ -15,6 +15,7 @@ NPM_CMD := npm
 PNPM_CMD := pnpm
 
 PROJECT_NPMRC := $(DIST_DIR)/.npmrc
+PROJECT_TURBO_DIR := $(CURDIR)/.turbo
 
 all: help
 
@@ -46,11 +47,15 @@ clean_main_pkg:
 	$(MAKE) clean -C $(MAIN_PKG)
 
 .PHONY: clean_repo_root
-clean_repo_root: clean_npmrc
+clean_repo_root: clean_npmrc clean_turborepo_cache
 
 .PHONY: clean_npmrc
 clean_npmrc:
 	$(NPM_BIN)/del $(PROJECT_NPMRC)
+
+.PHONY: clean_turborepo_cache
+clean_turborepo_cache:
+	$(NPM_BIN)/del $(PROJECT_TURBO_DIR)
 
 
 ###########################
