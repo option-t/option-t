@@ -164,12 +164,12 @@ git_diff: ## Test whether there is no committed changes.
 
 .PHONY: version_major
 version_major: ## Alias to run `npm version major -ws`.
-	$(NPM_CMD) version major --no-git-tag-version --workspaces --no-workspaces-update
+	$(PNPM_CMD) -r exec $(PNPM_CMD) version major --no-git-tag-version
 
 .PHONY: version_minor
 version_minor: ## Alias to run `npm version minor -ws`.
-	$(NPM_CMD) version minor --no-git-tag-version --workspaces --no-workspaces-update
+	$(PNPM_CMD) -r exec $(PNPM_CMD) version minor --no-git-tag-version
 
 .PHONY: version_patch
 version_patch: ## Alias to run `npm version patch -ws`.
-	$(NPM_CMD) version patch --no-git-tag-version --workspaces --no-workspaces-update
+	$(PNPM_CMD) -r exec $(PNPM_CMD) version patch --no-git-tag-version
