@@ -270,8 +270,8 @@ However, we think there are some different design decisions between neverthrow a
 We do not provide class based implementation and method chaining style.
 Historically, we had provided a method-chain style APIs and data types as tier 1.
 
-- [`ClassicOption`](./packages/option-t/src/classic_option/classic_option.ts)
-- [`ClassicResult`](./packages/option-t/src/classic_result/classic_result.ts)
+- [`ClassicOption`](./packages/option-t/src/deprecated/classic_option/classic_option.ts)
+- [`ClassicResult`](./packages/option-t/src/deprecated/classic_result/classic_result.ts)
 
 But we gave up method chain style as primary style and switched our primary APIs
 to current simple functions combination style for various reasons.

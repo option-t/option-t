@@ -12,14 +12,14 @@ import {
 const MAYBE_DIR = 'maybe';
 const NULLABLE_DIR = 'nullable';
 const UNDEFINABLE_DIR = 'undefinable';
-const PLAIN_OPTION_DIR = 'plain_option';
+const PLAIN_OPTION_DIR = 'deprecated/plain_option';
 const PLAIN_RESULT_DIR = 'plain_result';
 
 export const apiTable = Object.freeze({
     '.': pathRedirectionForRoot('index'),
 
-    'classic_option': pathRedirectionForLegacy('classic_option/index'),
-    'classic_result': pathRedirectionForLegacy('classic_result/index'),
+    'classic_option': pathRedirectionForLegacy('deprecated/classic_option/index'),
+    'classic_result': pathRedirectionForLegacy('deprecated/classic_result/index'),
 
     'maybe': pathRedirectionMarkedAsTypeRoot(`${MAYBE_DIR}/index`),
     'maybe/and': pathRedirectionTo(`${MAYBE_DIR}/and`),

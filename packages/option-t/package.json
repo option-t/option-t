@@ -67,38 +67,38 @@
         },
         "./classic_option": {
             "import": {
-                "types": "./esm/classic_option/index.d.ts",
-                "default": "./esm/classic_option/index.js"
+                "types": "./esm/deprecated/classic_option/index.d.ts",
+                "default": "./esm/deprecated/classic_option/index.js"
             },
             "module-sync": {
-                "types": "./esm/classic_option/index.d.ts",
-                "default": "./esm/classic_option/index.js"
+                "types": "./esm/deprecated/classic_option/index.d.ts",
+                "default": "./esm/deprecated/classic_option/index.js"
             },
             "require": {
-                "types": "./cjs/classic_option/index.d.cts",
-                "default": "./cjs/classic_option/index.cjs"
+                "types": "./cjs/deprecated/classic_option/index.d.cts",
+                "default": "./cjs/deprecated/classic_option/index.cjs"
             },
             "default": {
-                "types": "./esm/classic_option/index.d.ts",
-                "default": "./esm/classic_option/index.js"
+                "types": "./esm/deprecated/classic_option/index.d.ts",
+                "default": "./esm/deprecated/classic_option/index.js"
             }
         },
         "./classic_result": {
             "import": {
-                "types": "./esm/classic_result/index.d.ts",
-                "default": "./esm/classic_result/index.js"
+                "types": "./esm/deprecated/classic_result/index.d.ts",
+                "default": "./esm/deprecated/classic_result/index.js"
             },
             "module-sync": {
-                "types": "./esm/classic_result/index.d.ts",
-                "default": "./esm/classic_result/index.js"
+                "types": "./esm/deprecated/classic_result/index.d.ts",
+                "default": "./esm/deprecated/classic_result/index.js"
             },
             "require": {
-                "types": "./cjs/classic_result/index.d.cts",
-                "default": "./cjs/classic_result/index.cjs"
+                "types": "./cjs/deprecated/classic_result/index.d.cts",
+                "default": "./cjs/deprecated/classic_result/index.cjs"
             },
             "default": {
-                "types": "./esm/classic_result/index.d.ts",
-                "default": "./esm/classic_result/index.js"
+                "types": "./esm/deprecated/classic_result/index.d.ts",
+                "default": "./esm/deprecated/classic_result/index.js"
             }
         },
         "./maybe": {
@@ -1201,560 +1201,560 @@
         },
         "./plain_option": {
             "import": {
-                "types": "./esm/plain_option/index.d.ts",
-                "default": "./esm/plain_option/index.js"
+                "types": "./esm/deprecated/plain_option/index.d.ts",
+                "default": "./esm/deprecated/plain_option/index.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/index.d.ts",
-                "default": "./esm/plain_option/index.js"
+                "types": "./esm/deprecated/plain_option/index.d.ts",
+                "default": "./esm/deprecated/plain_option/index.js"
             },
             "require": {
-                "types": "./cjs/plain_option/index.d.cts",
-                "default": "./cjs/plain_option/index.cjs"
+                "types": "./cjs/deprecated/plain_option/index.d.cts",
+                "default": "./cjs/deprecated/plain_option/index.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/index.d.ts",
-                "default": "./esm/plain_option/index.js"
+                "types": "./esm/deprecated/plain_option/index.d.ts",
+                "default": "./esm/deprecated/plain_option/index.js"
             }
         },
         "./plain_option/and": {
             "import": {
-                "types": "./esm/plain_option/and.d.ts",
-                "default": "./esm/plain_option/and.js"
+                "types": "./esm/deprecated/plain_option/and.d.ts",
+                "default": "./esm/deprecated/plain_option/and.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/and.d.ts",
-                "default": "./esm/plain_option/and.js"
+                "types": "./esm/deprecated/plain_option/and.d.ts",
+                "default": "./esm/deprecated/plain_option/and.js"
             },
             "require": {
-                "types": "./cjs/plain_option/and.d.cts",
-                "default": "./cjs/plain_option/and.cjs"
+                "types": "./cjs/deprecated/plain_option/and.d.cts",
+                "default": "./cjs/deprecated/plain_option/and.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/and.d.ts",
-                "default": "./esm/plain_option/and.js"
+                "types": "./esm/deprecated/plain_option/and.d.ts",
+                "default": "./esm/deprecated/plain_option/and.js"
             }
         },
         "./plain_option/and_then": {
             "import": {
-                "types": "./esm/plain_option/and_then.d.ts",
-                "default": "./esm/plain_option/and_then.js"
+                "types": "./esm/deprecated/plain_option/and_then.d.ts",
+                "default": "./esm/deprecated/plain_option/and_then.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/and_then.d.ts",
-                "default": "./esm/plain_option/and_then.js"
+                "types": "./esm/deprecated/plain_option/and_then.d.ts",
+                "default": "./esm/deprecated/plain_option/and_then.js"
             },
             "require": {
-                "types": "./cjs/plain_option/and_then.d.cts",
-                "default": "./cjs/plain_option/and_then.cjs"
+                "types": "./cjs/deprecated/plain_option/and_then.d.cts",
+                "default": "./cjs/deprecated/plain_option/and_then.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/and_then.d.ts",
-                "default": "./esm/plain_option/and_then.js"
+                "types": "./esm/deprecated/plain_option/and_then.d.ts",
+                "default": "./esm/deprecated/plain_option/and_then.js"
             }
         },
         "./plain_option/and_then_async": {
             "import": {
-                "types": "./esm/plain_option/and_then_async.d.ts",
-                "default": "./esm/plain_option/and_then_async.js"
+                "types": "./esm/deprecated/plain_option/and_then_async.d.ts",
+                "default": "./esm/deprecated/plain_option/and_then_async.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/and_then_async.d.ts",
-                "default": "./esm/plain_option/and_then_async.js"
+                "types": "./esm/deprecated/plain_option/and_then_async.d.ts",
+                "default": "./esm/deprecated/plain_option/and_then_async.js"
             },
             "require": {
-                "types": "./cjs/plain_option/and_then_async.d.cts",
-                "default": "./cjs/plain_option/and_then_async.cjs"
+                "types": "./cjs/deprecated/plain_option/and_then_async.d.cts",
+                "default": "./cjs/deprecated/plain_option/and_then_async.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/and_then_async.d.ts",
-                "default": "./esm/plain_option/and_then_async.js"
+                "types": "./esm/deprecated/plain_option/and_then_async.d.ts",
+                "default": "./esm/deprecated/plain_option/and_then_async.js"
             }
         },
         "./plain_option/equal": {
             "import": {
-                "types": "./esm/plain_option/equal.d.ts",
-                "default": "./esm/plain_option/equal.js"
+                "types": "./esm/deprecated/plain_option/equal.d.ts",
+                "default": "./esm/deprecated/plain_option/equal.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/equal.d.ts",
-                "default": "./esm/plain_option/equal.js"
+                "types": "./esm/deprecated/plain_option/equal.d.ts",
+                "default": "./esm/deprecated/plain_option/equal.js"
             },
             "require": {
-                "types": "./cjs/plain_option/equal.d.cts",
-                "default": "./cjs/plain_option/equal.cjs"
+                "types": "./cjs/deprecated/plain_option/equal.d.cts",
+                "default": "./cjs/deprecated/plain_option/equal.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/equal.d.ts",
-                "default": "./esm/plain_option/equal.js"
+                "types": "./esm/deprecated/plain_option/equal.d.ts",
+                "default": "./esm/deprecated/plain_option/equal.js"
             }
         },
         "./plain_option/filter": {
             "import": {
-                "types": "./esm/plain_option/filter.d.ts",
-                "default": "./esm/plain_option/filter.js"
+                "types": "./esm/deprecated/plain_option/filter.d.ts",
+                "default": "./esm/deprecated/plain_option/filter.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/filter.d.ts",
-                "default": "./esm/plain_option/filter.js"
+                "types": "./esm/deprecated/plain_option/filter.d.ts",
+                "default": "./esm/deprecated/plain_option/filter.js"
             },
             "require": {
-                "types": "./cjs/plain_option/filter.d.cts",
-                "default": "./cjs/plain_option/filter.cjs"
+                "types": "./cjs/deprecated/plain_option/filter.d.cts",
+                "default": "./cjs/deprecated/plain_option/filter.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/filter.d.ts",
-                "default": "./esm/plain_option/filter.js"
+                "types": "./esm/deprecated/plain_option/filter.d.ts",
+                "default": "./esm/deprecated/plain_option/filter.js"
             }
         },
         "./plain_option/flatten": {
             "import": {
-                "types": "./esm/plain_option/flatten.d.ts",
-                "default": "./esm/plain_option/flatten.js"
+                "types": "./esm/deprecated/plain_option/flatten.d.ts",
+                "default": "./esm/deprecated/plain_option/flatten.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/flatten.d.ts",
-                "default": "./esm/plain_option/flatten.js"
+                "types": "./esm/deprecated/plain_option/flatten.d.ts",
+                "default": "./esm/deprecated/plain_option/flatten.js"
             },
             "require": {
-                "types": "./cjs/plain_option/flatten.d.cts",
-                "default": "./cjs/plain_option/flatten.cjs"
+                "types": "./cjs/deprecated/plain_option/flatten.d.cts",
+                "default": "./cjs/deprecated/plain_option/flatten.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/flatten.d.ts",
-                "default": "./esm/plain_option/flatten.js"
+                "types": "./esm/deprecated/plain_option/flatten.d.ts",
+                "default": "./esm/deprecated/plain_option/flatten.js"
             }
         },
         "./plain_option/from_result": {
             "import": {
-                "types": "./esm/plain_option/from_result.d.ts",
-                "default": "./esm/plain_option/from_result.js"
+                "types": "./esm/deprecated/plain_option/from_result.d.ts",
+                "default": "./esm/deprecated/plain_option/from_result.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/from_result.d.ts",
-                "default": "./esm/plain_option/from_result.js"
+                "types": "./esm/deprecated/plain_option/from_result.d.ts",
+                "default": "./esm/deprecated/plain_option/from_result.js"
             },
             "require": {
-                "types": "./cjs/plain_option/from_result.d.cts",
-                "default": "./cjs/plain_option/from_result.cjs"
+                "types": "./cjs/deprecated/plain_option/from_result.d.cts",
+                "default": "./cjs/deprecated/plain_option/from_result.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/from_result.d.ts",
-                "default": "./esm/plain_option/from_result.js"
+                "types": "./esm/deprecated/plain_option/from_result.d.ts",
+                "default": "./esm/deprecated/plain_option/from_result.js"
             }
         },
         "./plain_option/inspect": {
             "import": {
-                "types": "./esm/plain_option/inspect.d.ts",
-                "default": "./esm/plain_option/inspect.js"
+                "types": "./esm/deprecated/plain_option/inspect.d.ts",
+                "default": "./esm/deprecated/plain_option/inspect.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/inspect.d.ts",
-                "default": "./esm/plain_option/inspect.js"
+                "types": "./esm/deprecated/plain_option/inspect.d.ts",
+                "default": "./esm/deprecated/plain_option/inspect.js"
             },
             "require": {
-                "types": "./cjs/plain_option/inspect.d.cts",
-                "default": "./cjs/plain_option/inspect.cjs"
+                "types": "./cjs/deprecated/plain_option/inspect.d.cts",
+                "default": "./cjs/deprecated/plain_option/inspect.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/inspect.d.ts",
-                "default": "./esm/plain_option/inspect.js"
+                "types": "./esm/deprecated/plain_option/inspect.d.ts",
+                "default": "./esm/deprecated/plain_option/inspect.js"
             }
         },
         "./plain_option/map": {
             "import": {
-                "types": "./esm/plain_option/map.d.ts",
-                "default": "./esm/plain_option/map.js"
+                "types": "./esm/deprecated/plain_option/map.d.ts",
+                "default": "./esm/deprecated/plain_option/map.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/map.d.ts",
-                "default": "./esm/plain_option/map.js"
+                "types": "./esm/deprecated/plain_option/map.d.ts",
+                "default": "./esm/deprecated/plain_option/map.js"
             },
             "require": {
-                "types": "./cjs/plain_option/map.d.cts",
-                "default": "./cjs/plain_option/map.cjs"
+                "types": "./cjs/deprecated/plain_option/map.d.cts",
+                "default": "./cjs/deprecated/plain_option/map.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/map.d.ts",
-                "default": "./esm/plain_option/map.js"
+                "types": "./esm/deprecated/plain_option/map.d.ts",
+                "default": "./esm/deprecated/plain_option/map.js"
             }
         },
         "./plain_option/map_async": {
             "import": {
-                "types": "./esm/plain_option/map_async.d.ts",
-                "default": "./esm/plain_option/map_async.js"
+                "types": "./esm/deprecated/plain_option/map_async.d.ts",
+                "default": "./esm/deprecated/plain_option/map_async.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/map_async.d.ts",
-                "default": "./esm/plain_option/map_async.js"
+                "types": "./esm/deprecated/plain_option/map_async.d.ts",
+                "default": "./esm/deprecated/plain_option/map_async.js"
             },
             "require": {
-                "types": "./cjs/plain_option/map_async.d.cts",
-                "default": "./cjs/plain_option/map_async.cjs"
+                "types": "./cjs/deprecated/plain_option/map_async.d.cts",
+                "default": "./cjs/deprecated/plain_option/map_async.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/map_async.d.ts",
-                "default": "./esm/plain_option/map_async.js"
+                "types": "./esm/deprecated/plain_option/map_async.d.ts",
+                "default": "./esm/deprecated/plain_option/map_async.js"
             }
         },
         "./plain_option/map_or": {
             "import": {
-                "types": "./esm/plain_option/map_or.d.ts",
-                "default": "./esm/plain_option/map_or.js"
+                "types": "./esm/deprecated/plain_option/map_or.d.ts",
+                "default": "./esm/deprecated/plain_option/map_or.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/map_or.d.ts",
-                "default": "./esm/plain_option/map_or.js"
+                "types": "./esm/deprecated/plain_option/map_or.d.ts",
+                "default": "./esm/deprecated/plain_option/map_or.js"
             },
             "require": {
-                "types": "./cjs/plain_option/map_or.d.cts",
-                "default": "./cjs/plain_option/map_or.cjs"
+                "types": "./cjs/deprecated/plain_option/map_or.d.cts",
+                "default": "./cjs/deprecated/plain_option/map_or.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/map_or.d.ts",
-                "default": "./esm/plain_option/map_or.js"
+                "types": "./esm/deprecated/plain_option/map_or.d.ts",
+                "default": "./esm/deprecated/plain_option/map_or.js"
             }
         },
         "./plain_option/map_or_async": {
             "import": {
-                "types": "./esm/plain_option/map_or_async.d.ts",
-                "default": "./esm/plain_option/map_or_async.js"
+                "types": "./esm/deprecated/plain_option/map_or_async.d.ts",
+                "default": "./esm/deprecated/plain_option/map_or_async.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/map_or_async.d.ts",
-                "default": "./esm/plain_option/map_or_async.js"
+                "types": "./esm/deprecated/plain_option/map_or_async.d.ts",
+                "default": "./esm/deprecated/plain_option/map_or_async.js"
             },
             "require": {
-                "types": "./cjs/plain_option/map_or_async.d.cts",
-                "default": "./cjs/plain_option/map_or_async.cjs"
+                "types": "./cjs/deprecated/plain_option/map_or_async.d.cts",
+                "default": "./cjs/deprecated/plain_option/map_or_async.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/map_or_async.d.ts",
-                "default": "./esm/plain_option/map_or_async.js"
+                "types": "./esm/deprecated/plain_option/map_or_async.d.ts",
+                "default": "./esm/deprecated/plain_option/map_or_async.js"
             }
         },
         "./plain_option/map_or_else": {
             "import": {
-                "types": "./esm/plain_option/map_or_else.d.ts",
-                "default": "./esm/plain_option/map_or_else.js"
+                "types": "./esm/deprecated/plain_option/map_or_else.d.ts",
+                "default": "./esm/deprecated/plain_option/map_or_else.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/map_or_else.d.ts",
-                "default": "./esm/plain_option/map_or_else.js"
+                "types": "./esm/deprecated/plain_option/map_or_else.d.ts",
+                "default": "./esm/deprecated/plain_option/map_or_else.js"
             },
             "require": {
-                "types": "./cjs/plain_option/map_or_else.d.cts",
-                "default": "./cjs/plain_option/map_or_else.cjs"
+                "types": "./cjs/deprecated/plain_option/map_or_else.d.cts",
+                "default": "./cjs/deprecated/plain_option/map_or_else.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/map_or_else.d.ts",
-                "default": "./esm/plain_option/map_or_else.js"
+                "types": "./esm/deprecated/plain_option/map_or_else.d.ts",
+                "default": "./esm/deprecated/plain_option/map_or_else.js"
             }
         },
         "./plain_option/map_or_else_async": {
             "import": {
-                "types": "./esm/plain_option/map_or_else_async.d.ts",
-                "default": "./esm/plain_option/map_or_else_async.js"
+                "types": "./esm/deprecated/plain_option/map_or_else_async.d.ts",
+                "default": "./esm/deprecated/plain_option/map_or_else_async.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/map_or_else_async.d.ts",
-                "default": "./esm/plain_option/map_or_else_async.js"
+                "types": "./esm/deprecated/plain_option/map_or_else_async.d.ts",
+                "default": "./esm/deprecated/plain_option/map_or_else_async.js"
             },
             "require": {
-                "types": "./cjs/plain_option/map_or_else_async.d.cts",
-                "default": "./cjs/plain_option/map_or_else_async.cjs"
+                "types": "./cjs/deprecated/plain_option/map_or_else_async.d.cts",
+                "default": "./cjs/deprecated/plain_option/map_or_else_async.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/map_or_else_async.d.ts",
-                "default": "./esm/plain_option/map_or_else_async.js"
+                "types": "./esm/deprecated/plain_option/map_or_else_async.d.ts",
+                "default": "./esm/deprecated/plain_option/map_or_else_async.js"
             }
         },
         "./plain_option/namespace": {
             "import": {
-                "types": "./esm/plain_option/namespace.d.ts",
-                "default": "./esm/plain_option/namespace.js"
+                "types": "./esm/deprecated/plain_option/namespace.d.ts",
+                "default": "./esm/deprecated/plain_option/namespace.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/namespace.d.ts",
-                "default": "./esm/plain_option/namespace.js"
+                "types": "./esm/deprecated/plain_option/namespace.d.ts",
+                "default": "./esm/deprecated/plain_option/namespace.js"
             },
             "require": {
-                "types": "./cjs/plain_option/namespace.d.cts",
-                "default": "./cjs/plain_option/namespace.cjs"
+                "types": "./cjs/deprecated/plain_option/namespace.d.cts",
+                "default": "./cjs/deprecated/plain_option/namespace.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/namespace.d.ts",
-                "default": "./esm/plain_option/namespace.js"
+                "types": "./esm/deprecated/plain_option/namespace.d.ts",
+                "default": "./esm/deprecated/plain_option/namespace.js"
             }
         },
         "./plain_option/ok_or": {
             "import": {
-                "types": "./esm/plain_option/ok_or.d.ts",
-                "default": "./esm/plain_option/ok_or.js"
+                "types": "./esm/deprecated/plain_option/ok_or.d.ts",
+                "default": "./esm/deprecated/plain_option/ok_or.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/ok_or.d.ts",
-                "default": "./esm/plain_option/ok_or.js"
+                "types": "./esm/deprecated/plain_option/ok_or.d.ts",
+                "default": "./esm/deprecated/plain_option/ok_or.js"
             },
             "require": {
-                "types": "./cjs/plain_option/ok_or.d.cts",
-                "default": "./cjs/plain_option/ok_or.cjs"
+                "types": "./cjs/deprecated/plain_option/ok_or.d.cts",
+                "default": "./cjs/deprecated/plain_option/ok_or.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/ok_or.d.ts",
-                "default": "./esm/plain_option/ok_or.js"
+                "types": "./esm/deprecated/plain_option/ok_or.d.ts",
+                "default": "./esm/deprecated/plain_option/ok_or.js"
             }
         },
         "./plain_option/ok_or_else": {
             "import": {
-                "types": "./esm/plain_option/ok_or_else.d.ts",
-                "default": "./esm/plain_option/ok_or_else.js"
+                "types": "./esm/deprecated/plain_option/ok_or_else.d.ts",
+                "default": "./esm/deprecated/plain_option/ok_or_else.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/ok_or_else.d.ts",
-                "default": "./esm/plain_option/ok_or_else.js"
+                "types": "./esm/deprecated/plain_option/ok_or_else.d.ts",
+                "default": "./esm/deprecated/plain_option/ok_or_else.js"
             },
             "require": {
-                "types": "./cjs/plain_option/ok_or_else.d.cts",
-                "default": "./cjs/plain_option/ok_or_else.cjs"
+                "types": "./cjs/deprecated/plain_option/ok_or_else.d.cts",
+                "default": "./cjs/deprecated/plain_option/ok_or_else.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/ok_or_else.d.ts",
-                "default": "./esm/plain_option/ok_or_else.js"
+                "types": "./esm/deprecated/plain_option/ok_or_else.d.ts",
+                "default": "./esm/deprecated/plain_option/ok_or_else.js"
             }
         },
         "./plain_option/option": {
             "import": {
-                "types": "./esm/plain_option/option.d.ts",
-                "default": "./esm/plain_option/option.js"
+                "types": "./esm/deprecated/plain_option/option.d.ts",
+                "default": "./esm/deprecated/plain_option/option.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/option.d.ts",
-                "default": "./esm/plain_option/option.js"
+                "types": "./esm/deprecated/plain_option/option.d.ts",
+                "default": "./esm/deprecated/plain_option/option.js"
             },
             "require": {
-                "types": "./cjs/plain_option/option.d.cts",
-                "default": "./cjs/plain_option/option.cjs"
+                "types": "./cjs/deprecated/plain_option/option.d.cts",
+                "default": "./cjs/deprecated/plain_option/option.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/option.d.ts",
-                "default": "./esm/plain_option/option.js"
+                "types": "./esm/deprecated/plain_option/option.d.ts",
+                "default": "./esm/deprecated/plain_option/option.js"
             }
         },
         "./plain_option/or": {
             "import": {
-                "types": "./esm/plain_option/or.d.ts",
-                "default": "./esm/plain_option/or.js"
+                "types": "./esm/deprecated/plain_option/or.d.ts",
+                "default": "./esm/deprecated/plain_option/or.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/or.d.ts",
-                "default": "./esm/plain_option/or.js"
+                "types": "./esm/deprecated/plain_option/or.d.ts",
+                "default": "./esm/deprecated/plain_option/or.js"
             },
             "require": {
-                "types": "./cjs/plain_option/or.d.cts",
-                "default": "./cjs/plain_option/or.cjs"
+                "types": "./cjs/deprecated/plain_option/or.d.cts",
+                "default": "./cjs/deprecated/plain_option/or.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/or.d.ts",
-                "default": "./esm/plain_option/or.js"
+                "types": "./esm/deprecated/plain_option/or.d.ts",
+                "default": "./esm/deprecated/plain_option/or.js"
             }
         },
         "./plain_option/or_else": {
             "import": {
-                "types": "./esm/plain_option/or_else.d.ts",
-                "default": "./esm/plain_option/or_else.js"
+                "types": "./esm/deprecated/plain_option/or_else.d.ts",
+                "default": "./esm/deprecated/plain_option/or_else.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/or_else.d.ts",
-                "default": "./esm/plain_option/or_else.js"
+                "types": "./esm/deprecated/plain_option/or_else.d.ts",
+                "default": "./esm/deprecated/plain_option/or_else.js"
             },
             "require": {
-                "types": "./cjs/plain_option/or_else.d.cts",
-                "default": "./cjs/plain_option/or_else.cjs"
+                "types": "./cjs/deprecated/plain_option/or_else.d.cts",
+                "default": "./cjs/deprecated/plain_option/or_else.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/or_else.d.ts",
-                "default": "./esm/plain_option/or_else.js"
+                "types": "./esm/deprecated/plain_option/or_else.d.ts",
+                "default": "./esm/deprecated/plain_option/or_else.js"
             }
         },
         "./plain_option/or_else_async": {
             "import": {
-                "types": "./esm/plain_option/or_else_async.d.ts",
-                "default": "./esm/plain_option/or_else_async.js"
+                "types": "./esm/deprecated/plain_option/or_else_async.d.ts",
+                "default": "./esm/deprecated/plain_option/or_else_async.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/or_else_async.d.ts",
-                "default": "./esm/plain_option/or_else_async.js"
+                "types": "./esm/deprecated/plain_option/or_else_async.d.ts",
+                "default": "./esm/deprecated/plain_option/or_else_async.js"
             },
             "require": {
-                "types": "./cjs/plain_option/or_else_async.d.cts",
-                "default": "./cjs/plain_option/or_else_async.cjs"
+                "types": "./cjs/deprecated/plain_option/or_else_async.d.cts",
+                "default": "./cjs/deprecated/plain_option/or_else_async.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/or_else_async.d.ts",
-                "default": "./esm/plain_option/or_else_async.js"
+                "types": "./esm/deprecated/plain_option/or_else_async.d.ts",
+                "default": "./esm/deprecated/plain_option/or_else_async.js"
             }
         },
         "./plain_option/to_nullable": {
             "import": {
-                "types": "./esm/plain_option/to_nullable.d.ts",
-                "default": "./esm/plain_option/to_nullable.js"
+                "types": "./esm/deprecated/plain_option/to_nullable.d.ts",
+                "default": "./esm/deprecated/plain_option/to_nullable.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/to_nullable.d.ts",
-                "default": "./esm/plain_option/to_nullable.js"
+                "types": "./esm/deprecated/plain_option/to_nullable.d.ts",
+                "default": "./esm/deprecated/plain_option/to_nullable.js"
             },
             "require": {
-                "types": "./cjs/plain_option/to_nullable.d.cts",
-                "default": "./cjs/plain_option/to_nullable.cjs"
+                "types": "./cjs/deprecated/plain_option/to_nullable.d.cts",
+                "default": "./cjs/deprecated/plain_option/to_nullable.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/to_nullable.d.ts",
-                "default": "./esm/plain_option/to_nullable.js"
+                "types": "./esm/deprecated/plain_option/to_nullable.d.ts",
+                "default": "./esm/deprecated/plain_option/to_nullable.js"
             }
         },
         "./plain_option/to_undefinable": {
             "import": {
-                "types": "./esm/plain_option/to_undefinable.d.ts",
-                "default": "./esm/plain_option/to_undefinable.js"
+                "types": "./esm/deprecated/plain_option/to_undefinable.d.ts",
+                "default": "./esm/deprecated/plain_option/to_undefinable.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/to_undefinable.d.ts",
-                "default": "./esm/plain_option/to_undefinable.js"
+                "types": "./esm/deprecated/plain_option/to_undefinable.d.ts",
+                "default": "./esm/deprecated/plain_option/to_undefinable.js"
             },
             "require": {
-                "types": "./cjs/plain_option/to_undefinable.d.cts",
-                "default": "./cjs/plain_option/to_undefinable.cjs"
+                "types": "./cjs/deprecated/plain_option/to_undefinable.d.cts",
+                "default": "./cjs/deprecated/plain_option/to_undefinable.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/to_undefinable.d.ts",
-                "default": "./esm/plain_option/to_undefinable.js"
+                "types": "./esm/deprecated/plain_option/to_undefinable.d.ts",
+                "default": "./esm/deprecated/plain_option/to_undefinable.js"
             }
         },
         "./plain_option/transpose": {
             "import": {
-                "types": "./esm/plain_option/transpose.d.ts",
-                "default": "./esm/plain_option/transpose.js"
+                "types": "./esm/deprecated/plain_option/transpose.d.ts",
+                "default": "./esm/deprecated/plain_option/transpose.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/transpose.d.ts",
-                "default": "./esm/plain_option/transpose.js"
+                "types": "./esm/deprecated/plain_option/transpose.d.ts",
+                "default": "./esm/deprecated/plain_option/transpose.js"
             },
             "require": {
-                "types": "./cjs/plain_option/transpose.d.cts",
-                "default": "./cjs/plain_option/transpose.cjs"
+                "types": "./cjs/deprecated/plain_option/transpose.d.cts",
+                "default": "./cjs/deprecated/plain_option/transpose.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/transpose.d.ts",
-                "default": "./esm/plain_option/transpose.js"
+                "types": "./esm/deprecated/plain_option/transpose.d.ts",
+                "default": "./esm/deprecated/plain_option/transpose.js"
             }
         },
         "./plain_option/unsafe/as_mut": {
             "import": {
-                "types": "./esm/plain_option/unsafe/as_mut.d.ts",
-                "default": "./esm/plain_option/unsafe/as_mut.js"
+                "types": "./esm/deprecated/plain_option/unsafe/as_mut.d.ts",
+                "default": "./esm/deprecated/plain_option/unsafe/as_mut.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/unsafe/as_mut.d.ts",
-                "default": "./esm/plain_option/unsafe/as_mut.js"
+                "types": "./esm/deprecated/plain_option/unsafe/as_mut.d.ts",
+                "default": "./esm/deprecated/plain_option/unsafe/as_mut.js"
             },
             "require": {
-                "types": "./cjs/plain_option/unsafe/as_mut.d.cts",
-                "default": "./cjs/plain_option/unsafe/as_mut.cjs"
+                "types": "./cjs/deprecated/plain_option/unsafe/as_mut.d.cts",
+                "default": "./cjs/deprecated/plain_option/unsafe/as_mut.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/unsafe/as_mut.d.ts",
-                "default": "./esm/plain_option/unsafe/as_mut.js"
+                "types": "./esm/deprecated/plain_option/unsafe/as_mut.d.ts",
+                "default": "./esm/deprecated/plain_option/unsafe/as_mut.js"
             }
         },
         "./plain_option/unsafe/drop": {
             "import": {
-                "types": "./esm/plain_option/unsafe/drop.d.ts",
-                "default": "./esm/plain_option/unsafe/drop.js"
+                "types": "./esm/deprecated/plain_option/unsafe/drop.d.ts",
+                "default": "./esm/deprecated/plain_option/unsafe/drop.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/unsafe/drop.d.ts",
-                "default": "./esm/plain_option/unsafe/drop.js"
+                "types": "./esm/deprecated/plain_option/unsafe/drop.d.ts",
+                "default": "./esm/deprecated/plain_option/unsafe/drop.js"
             },
             "require": {
-                "types": "./cjs/plain_option/unsafe/drop.d.cts",
-                "default": "./cjs/plain_option/unsafe/drop.cjs"
+                "types": "./cjs/deprecated/plain_option/unsafe/drop.d.cts",
+                "default": "./cjs/deprecated/plain_option/unsafe/drop.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/unsafe/drop.d.ts",
-                "default": "./esm/plain_option/unsafe/drop.js"
+                "types": "./esm/deprecated/plain_option/unsafe/drop.d.ts",
+                "default": "./esm/deprecated/plain_option/unsafe/drop.js"
             }
         },
         "./plain_option/unwrap_or": {
             "import": {
-                "types": "./esm/plain_option/unwrap_or.d.ts",
-                "default": "./esm/plain_option/unwrap_or.js"
+                "types": "./esm/deprecated/plain_option/unwrap_or.d.ts",
+                "default": "./esm/deprecated/plain_option/unwrap_or.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/unwrap_or.d.ts",
-                "default": "./esm/plain_option/unwrap_or.js"
+                "types": "./esm/deprecated/plain_option/unwrap_or.d.ts",
+                "default": "./esm/deprecated/plain_option/unwrap_or.js"
             },
             "require": {
-                "types": "./cjs/plain_option/unwrap_or.d.cts",
-                "default": "./cjs/plain_option/unwrap_or.cjs"
+                "types": "./cjs/deprecated/plain_option/unwrap_or.d.cts",
+                "default": "./cjs/deprecated/plain_option/unwrap_or.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/unwrap_or.d.ts",
-                "default": "./esm/plain_option/unwrap_or.js"
+                "types": "./esm/deprecated/plain_option/unwrap_or.d.ts",
+                "default": "./esm/deprecated/plain_option/unwrap_or.js"
             }
         },
         "./plain_option/unwrap_or_else": {
             "import": {
-                "types": "./esm/plain_option/unwrap_or_else.d.ts",
-                "default": "./esm/plain_option/unwrap_or_else.js"
+                "types": "./esm/deprecated/plain_option/unwrap_or_else.d.ts",
+                "default": "./esm/deprecated/plain_option/unwrap_or_else.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/unwrap_or_else.d.ts",
-                "default": "./esm/plain_option/unwrap_or_else.js"
+                "types": "./esm/deprecated/plain_option/unwrap_or_else.d.ts",
+                "default": "./esm/deprecated/plain_option/unwrap_or_else.js"
             },
             "require": {
-                "types": "./cjs/plain_option/unwrap_or_else.d.cts",
-                "default": "./cjs/plain_option/unwrap_or_else.cjs"
+                "types": "./cjs/deprecated/plain_option/unwrap_or_else.d.cts",
+                "default": "./cjs/deprecated/plain_option/unwrap_or_else.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/unwrap_or_else.d.ts",
-                "default": "./esm/plain_option/unwrap_or_else.js"
+                "types": "./esm/deprecated/plain_option/unwrap_or_else.d.ts",
+                "default": "./esm/deprecated/plain_option/unwrap_or_else.js"
             }
         },
         "./plain_option/unwrap_or_else_async": {
             "import": {
-                "types": "./esm/plain_option/unwrap_or_else_async.d.ts",
-                "default": "./esm/plain_option/unwrap_or_else_async.js"
+                "types": "./esm/deprecated/plain_option/unwrap_or_else_async.d.ts",
+                "default": "./esm/deprecated/plain_option/unwrap_or_else_async.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/unwrap_or_else_async.d.ts",
-                "default": "./esm/plain_option/unwrap_or_else_async.js"
+                "types": "./esm/deprecated/plain_option/unwrap_or_else_async.d.ts",
+                "default": "./esm/deprecated/plain_option/unwrap_or_else_async.js"
             },
             "require": {
-                "types": "./cjs/plain_option/unwrap_or_else_async.d.cts",
-                "default": "./cjs/plain_option/unwrap_or_else_async.cjs"
+                "types": "./cjs/deprecated/plain_option/unwrap_or_else_async.d.cts",
+                "default": "./cjs/deprecated/plain_option/unwrap_or_else_async.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/unwrap_or_else_async.d.ts",
-                "default": "./esm/plain_option/unwrap_or_else_async.js"
+                "types": "./esm/deprecated/plain_option/unwrap_or_else_async.d.ts",
+                "default": "./esm/deprecated/plain_option/unwrap_or_else_async.js"
             }
         },
         "./plain_option/xor": {
             "import": {
-                "types": "./esm/plain_option/xor.d.ts",
-                "default": "./esm/plain_option/xor.js"
+                "types": "./esm/deprecated/plain_option/xor.d.ts",
+                "default": "./esm/deprecated/plain_option/xor.js"
             },
             "module-sync": {
-                "types": "./esm/plain_option/xor.d.ts",
-                "default": "./esm/plain_option/xor.js"
+                "types": "./esm/deprecated/plain_option/xor.d.ts",
+                "default": "./esm/deprecated/plain_option/xor.js"
             },
             "require": {
-                "types": "./cjs/plain_option/xor.d.cts",
-                "default": "./cjs/plain_option/xor.cjs"
+                "types": "./cjs/deprecated/plain_option/xor.d.cts",
+                "default": "./cjs/deprecated/plain_option/xor.cjs"
             },
             "default": {
-                "types": "./esm/plain_option/xor.d.ts",
-                "default": "./esm/plain_option/xor.js"
+                "types": "./esm/deprecated/plain_option/xor.d.ts",
+                "default": "./esm/deprecated/plain_option/xor.js"
             }
         },
         "./plain_result": {
