@@ -2,6 +2,10 @@
 {
     "$schema": "https://turbo.build/schema.json",
     "tasks": {
+        "build": {
+            // Historically, we don't have any assurance for cache aware.
+            "cache": false
+        },
         "test": {
             // Historically, our testing is not designed to enable cache easily.
             "cache": false

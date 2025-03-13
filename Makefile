@@ -58,7 +58,7 @@ clean_turborepo_cache:
 ###########################
 .PHONY: build
 build:
-	$(MAKE) $@ -C $(MAIN_PKG)
+	$(NPM_BIN)/turbo run build
 
 
 ###########################

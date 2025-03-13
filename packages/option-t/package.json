@@ -30,6 +30,9 @@
             "url": "https://github.com/rail44"
         }
     ],
+    "scripts": {
+        "build": "make build -j"
+    },
     "license": "MIT",
     "repository": {
         "type": "git",
