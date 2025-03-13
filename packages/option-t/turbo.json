@@ -1,0 +1,20 @@
+// See https://turbo.build/repo/docs/reference/package-configurations
+{
+    "$schema": "https://turbo.build/schema.json",
+    "extends": ["//"],
+    "tasks": {
+        "typecheck": {
+            "cache": true,
+            "inputs": [
+                // @prettier-ignore
+                "src/",
+                "tools/",
+                "ava.config.mjs",
+                "Makefile",
+                "package.json",
+                "tsconfig.json"
+            ],
+            "outputs": []
+        }
+    }
+  }
