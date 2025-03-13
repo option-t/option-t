@@ -163,15 +163,6 @@ generate_manifest: clean_dist
 	$(NODE_BIN) $(CURDIR)/tools/package_json_rewriter/main.mjs --input-manifest-path $(CURDIR)/package.json --destination $(CURDIR)
 	$(NODE_BIN) $(CURDIR)/tools/cp_files.mjs --basedir $(CURDIR) --source '$(CURDIR)/package.json' --destination $(DIST_DIR)
 
-
-###########################
-# Lint
-###########################
-.PHONY: typecheck
-typecheck: ## Check static types
-	$(NPM_BIN)/tsc -p $(CURDIR)/tsconfig.json --noEmit
-
-
 ###########################
 # Test
 ###########################

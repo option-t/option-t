@@ -2,6 +2,14 @@
 {
     "$schema": "https://turbo.build/schema.json",
     "tasks": {
+        "typecheck": {
+            // Historically, we don't have any assurance for cache aware.
+            "cache": false
+        },
+        "build": {
+            // Historically, we don't have any assurance for cache aware.
+            "cache": false
+        },
         "test": {
             // Historically, our testing is not designed to enable cache easily.
             "cache": false

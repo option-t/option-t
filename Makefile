@@ -58,7 +58,7 @@ clean_turborepo_cache:
 ###########################
 .PHONY: build
 build:
-	$(MAKE) $@ -C $(MAIN_PKG)
+	$(NPM_BIN)/turbo run build
 
 
 ###########################
@@ -77,7 +77,7 @@ eslint_fix: ## Apply ESLint's `--fix` mode
 
 .PHONY: typecheck
 typecheck: ## Check static types.
-	$(MAKE) $@ -C $(MAIN_PKG)
+	$(NPM_BIN)/turbo run typecheck
 
 
 ###########################
