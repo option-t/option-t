@@ -31,6 +31,7 @@
         }
     ],
     "scripts": {
+        "typecheck": "tsc -p ./tsconfig.json --noEmit",
         "build": "make build -j"
     },
     "license": "MIT",

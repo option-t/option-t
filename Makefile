@@ -77,7 +77,7 @@ eslint_fix: ## Apply ESLint's `--fix` mode
 
 .PHONY: typecheck
 typecheck: ## Check static types.
-	$(MAKE) $@ -C $(MAIN_PKG)
+	$(NPM_BIN)/turbo run typecheck
 
 
 ###########################
