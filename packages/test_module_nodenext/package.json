@@ -1,0 +1,13 @@
+{
+    "private": true,
+    "type": "module",
+    "name": "@option-t/test_module_nodenext",
+    "version": "52.1.0",
+    "license": "MIT",
+    "scripts": {
+        "test": "tsc -p ./tsconfig.json"
+    },
+    "dependencies": {
+        "option-t": "workspace:*"
+    }
+}

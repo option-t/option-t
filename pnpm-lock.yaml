@@ -83,6 +83,12 @@ importers:
 
   packages/option-t: {}
 
+  packages/test_module_nodenext:
+    dependencies:
+      option-t:
+        specifier: workspace:*
+        version: link:../option-t
+
   packages/test_module_resolution_bundler:
     dependencies:
       option-t:
