@@ -1,3 +1,4 @@
+/*
 import {} from 'option-t/undefinable';
 import {} from 'option-t/undefinable/and';
 import {} from 'option-t/undefinable/and_then';
@@ -28,3 +29,4 @@ import {} from 'option-t/undefinable/xor';
 import {} from 'option-t/undefinable/zip';
 import {} from 'option-t/undefinable/zip_with';
 import {} from 'option-t/undefinable/zip_with_async';
+*/

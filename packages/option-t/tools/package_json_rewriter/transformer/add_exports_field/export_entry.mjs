@@ -9,7 +9,6 @@ class AbstractExportEntry {
     }
 }
 
-const EXTENSION_CJS = 'cjs';
 const EXTENSION_MJS = 'js';
 const EXTENSION_DMTS = 'd.ts';
 const EXTENSION_DCTS = 'd.cts';
@@ -44,12 +43,10 @@ export class ExportEntry extends AbstractExportEntry {
         const p = this.#path !== null ? this.#path : this.#key;
 
         const esm = `./esm/${p}.${EXTENSION_MJS}`;
-        const cjs = `./cjs/${p}.${EXTENSION_CJS}`;
         const dmts = `./esm/${p}.${EXTENSION_DMTS}`;
         const dcts = `./cjs/${p}.${EXTENSION_DCTS}`;
         const entry = constructDualPackagePathValue({
             esm,
-            cjs,
             dmts,
             dcts,
         });
@@ -57,8 +54,7 @@ export class ExportEntry extends AbstractExportEntry {
     }
 }
 
-function constructDualPackagePathValue({ cjs, esm, dmts, dcts }) {
-    assert.strictEqual(typeof cjs, 'string', 'cjs should be string');
+function constructDualPackagePathValue({ esm, dmts, dcts }) {
     assert.strictEqual(typeof esm, 'string', 'esm should be string');
     assert.strictEqual(typeof dmts, 'string', 'dmts should be string');
     assert.strictEqual(typeof dcts, 'string', 'dcts should be string');
@@ -66,11 +62,6 @@ function constructDualPackagePathValue({ cjs, esm, dmts, dcts }) {
     const esmCondition = constructPathValue({
         filepath: esm,
         dts: dmts,
-    });
-
-    const cjsCondition = constructPathValue({
-        filepath: cjs,
-        dts: dcts,
     });
 
     // [By the document of Node.js v14.2](https://nodejs.org/api/esm.html#esm_resolution_algorithm),
@@ -85,7 +76,6 @@ function constructDualPackagePathValue({ cjs, esm, dmts, dcts }) {
 
         'import': esmCondition,
         'module-sync': esmCondition,
-        'require': cjsCondition,
         // _default_ should be placed to the last.
         // https://nodejs.org/api/packages.html#conditional-exports
         'default': esmCondition,

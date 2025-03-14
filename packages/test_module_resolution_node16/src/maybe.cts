@@ -1,3 +1,4 @@
+/*
 import {} from 'option-t/maybe';
 import {} from 'option-t/maybe/and';
 import {} from 'option-t/maybe/and_then';
@@ -29,3 +30,4 @@ import {} from 'option-t/maybe/xor';
 import {} from 'option-t/maybe/zip';
 import {} from 'option-t/maybe/zip_with';
 import {} from 'option-t/maybe/zip_with_async';
+*/
