@@ -60,10 +60,6 @@
                 "types": "./esm/index.d.ts",
                 "default": "./esm/index.js"
             },
-            "require": {
-                "types": "./cjs/index.d.cts",
-                "default": "./cjs/index.cjs"
-            },
             "default": {
                 "types": "./esm/index.d.ts",
                 "default": "./esm/index.js"
@@ -77,10 +73,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/classic_option/index.d.ts",
                 "default": "./esm/deprecated/classic_option/index.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/classic_option/index.d.cts",
-                "default": "./cjs/deprecated/classic_option/index.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/classic_option/index.d.ts",
@@ -96,10 +88,6 @@
                 "types": "./esm/deprecated/classic_result/index.d.ts",
                 "default": "./esm/deprecated/classic_result/index.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/classic_result/index.d.cts",
-                "default": "./cjs/deprecated/classic_result/index.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/classic_result/index.d.ts",
                 "default": "./esm/deprecated/classic_result/index.js"
@@ -113,10 +101,6 @@
             "module-sync": {
                 "types": "./esm/maybe/index.d.ts",
                 "default": "./esm/maybe/index.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/index.d.cts",
-                "default": "./cjs/maybe/index.cjs"
             },
             "default": {
                 "types": "./esm/maybe/index.d.ts",
@@ -132,10 +116,6 @@
                 "types": "./esm/maybe/and.d.ts",
                 "default": "./esm/maybe/and.js"
             },
-            "require": {
-                "types": "./cjs/maybe/and.d.cts",
-                "default": "./cjs/maybe/and.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/and.d.ts",
                 "default": "./esm/maybe/and.js"
@@ -149,10 +129,6 @@
             "module-sync": {
                 "types": "./esm/maybe/and_then.d.ts",
                 "default": "./esm/maybe/and_then.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/and_then.d.cts",
-                "default": "./cjs/maybe/and_then.cjs"
             },
             "default": {
                 "types": "./esm/maybe/and_then.d.ts",
@@ -168,10 +144,6 @@
                 "types": "./esm/maybe/and_then_async.d.ts",
                 "default": "./esm/maybe/and_then_async.js"
             },
-            "require": {
-                "types": "./cjs/maybe/and_then_async.d.cts",
-                "default": "./cjs/maybe/and_then_async.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/and_then_async.d.ts",
                 "default": "./esm/maybe/and_then_async.js"
@@ -185,10 +157,6 @@
             "module-sync": {
                 "types": "./esm/maybe/filter.d.ts",
                 "default": "./esm/maybe/filter.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/filter.d.cts",
-                "default": "./cjs/maybe/filter.cjs"
             },
             "default": {
                 "types": "./esm/maybe/filter.d.ts",
@@ -204,10 +172,6 @@
                 "types": "./esm/maybe/filter_async.d.ts",
                 "default": "./esm/maybe/filter_async.js"
             },
-            "require": {
-                "types": "./cjs/maybe/filter_async.d.cts",
-                "default": "./cjs/maybe/filter_async.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/filter_async.d.ts",
                 "default": "./esm/maybe/filter_async.js"
@@ -221,10 +185,6 @@
             "module-sync": {
                 "types": "./esm/maybe/inspect.d.ts",
                 "default": "./esm/maybe/inspect.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/inspect.d.cts",
-                "default": "./cjs/maybe/inspect.cjs"
             },
             "default": {
                 "types": "./esm/maybe/inspect.d.ts",
@@ -240,10 +200,6 @@
                 "types": "./esm/maybe/map.d.ts",
                 "default": "./esm/maybe/map.js"
             },
-            "require": {
-                "types": "./cjs/maybe/map.d.cts",
-                "default": "./cjs/maybe/map.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/map.d.ts",
                 "default": "./esm/maybe/map.js"
@@ -257,10 +213,6 @@
             "module-sync": {
                 "types": "./esm/maybe/map_async.d.ts",
                 "default": "./esm/maybe/map_async.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/map_async.d.cts",
-                "default": "./cjs/maybe/map_async.cjs"
             },
             "default": {
                 "types": "./esm/maybe/map_async.d.ts",
@@ -276,10 +228,6 @@
                 "types": "./esm/maybe/map_or.d.ts",
                 "default": "./esm/maybe/map_or.js"
             },
-            "require": {
-                "types": "./cjs/maybe/map_or.d.cts",
-                "default": "./cjs/maybe/map_or.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/map_or.d.ts",
                 "default": "./esm/maybe/map_or.js"
@@ -293,10 +241,6 @@
             "module-sync": {
                 "types": "./esm/maybe/map_or_async.d.ts",
                 "default": "./esm/maybe/map_or_async.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/map_or_async.d.cts",
-                "default": "./cjs/maybe/map_or_async.cjs"
             },
             "default": {
                 "types": "./esm/maybe/map_or_async.d.ts",
@@ -312,10 +256,6 @@
                 "types": "./esm/maybe/map_or_else.d.ts",
                 "default": "./esm/maybe/map_or_else.js"
             },
-            "require": {
-                "types": "./cjs/maybe/map_or_else.d.cts",
-                "default": "./cjs/maybe/map_or_else.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/map_or_else.d.ts",
                 "default": "./esm/maybe/map_or_else.js"
@@ -329,10 +269,6 @@
             "module-sync": {
                 "types": "./esm/maybe/map_or_else_async.d.ts",
                 "default": "./esm/maybe/map_or_else_async.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/map_or_else_async.d.cts",
-                "default": "./cjs/maybe/map_or_else_async.cjs"
             },
             "default": {
                 "types": "./esm/maybe/map_or_else_async.d.ts",
@@ -348,10 +284,6 @@
                 "types": "./esm/maybe/maybe.d.ts",
                 "default": "./esm/maybe/maybe.js"
             },
-            "require": {
-                "types": "./cjs/maybe/maybe.d.cts",
-                "default": "./cjs/maybe/maybe.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/maybe.d.ts",
                 "default": "./esm/maybe/maybe.js"
@@ -365,10 +297,6 @@
             "module-sync": {
                 "types": "./esm/maybe/namespace.d.ts",
                 "default": "./esm/maybe/namespace.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/namespace.d.cts",
-                "default": "./cjs/maybe/namespace.cjs"
             },
             "default": {
                 "types": "./esm/maybe/namespace.d.ts",
@@ -384,10 +312,6 @@
                 "types": "./esm/maybe/ok_or.d.ts",
                 "default": "./esm/maybe/ok_or.js"
             },
-            "require": {
-                "types": "./cjs/maybe/ok_or.d.cts",
-                "default": "./cjs/maybe/ok_or.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/ok_or.d.ts",
                 "default": "./esm/maybe/ok_or.js"
@@ -401,10 +325,6 @@
             "module-sync": {
                 "types": "./esm/maybe/ok_or_else.d.ts",
                 "default": "./esm/maybe/ok_or_else.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/ok_or_else.d.cts",
-                "default": "./cjs/maybe/ok_or_else.cjs"
             },
             "default": {
                 "types": "./esm/maybe/ok_or_else.d.ts",
@@ -420,10 +340,6 @@
                 "types": "./esm/maybe/ok_or_else_async.d.ts",
                 "default": "./esm/maybe/ok_or_else_async.js"
             },
-            "require": {
-                "types": "./cjs/maybe/ok_or_else_async.d.cts",
-                "default": "./cjs/maybe/ok_or_else_async.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/ok_or_else_async.d.ts",
                 "default": "./esm/maybe/ok_or_else_async.js"
@@ -437,10 +353,6 @@
             "module-sync": {
                 "types": "./esm/maybe/or.d.ts",
                 "default": "./esm/maybe/or.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/or.d.cts",
-                "default": "./cjs/maybe/or.cjs"
             },
             "default": {
                 "types": "./esm/maybe/or.d.ts",
@@ -456,10 +368,6 @@
                 "types": "./esm/maybe/or_else.d.ts",
                 "default": "./esm/maybe/or_else.js"
             },
-            "require": {
-                "types": "./cjs/maybe/or_else.d.cts",
-                "default": "./cjs/maybe/or_else.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/or_else.d.ts",
                 "default": "./esm/maybe/or_else.js"
@@ -473,10 +381,6 @@
             "module-sync": {
                 "types": "./esm/maybe/or_else_async.d.ts",
                 "default": "./esm/maybe/or_else_async.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/or_else_async.d.cts",
-                "default": "./cjs/maybe/or_else_async.cjs"
             },
             "default": {
                 "types": "./esm/maybe/or_else_async.d.ts",
@@ -492,10 +396,6 @@
                 "types": "./esm/maybe/to_nullable.d.ts",
                 "default": "./esm/maybe/to_nullable.js"
             },
-            "require": {
-                "types": "./cjs/maybe/to_nullable.d.cts",
-                "default": "./cjs/maybe/to_nullable.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/to_nullable.d.ts",
                 "default": "./esm/maybe/to_nullable.js"
@@ -509,10 +409,6 @@
             "module-sync": {
                 "types": "./esm/maybe/to_plain_result.d.ts",
                 "default": "./esm/maybe/to_plain_result.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/to_plain_result.d.cts",
-                "default": "./cjs/maybe/to_plain_result.cjs"
             },
             "default": {
                 "types": "./esm/maybe/to_plain_result.d.ts",
@@ -528,10 +424,6 @@
                 "types": "./esm/maybe/to_undefinable.d.ts",
                 "default": "./esm/maybe/to_undefinable.js"
             },
-            "require": {
-                "types": "./cjs/maybe/to_undefinable.d.cts",
-                "default": "./cjs/maybe/to_undefinable.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/to_undefinable.d.ts",
                 "default": "./esm/maybe/to_undefinable.js"
@@ -545,10 +437,6 @@
             "module-sync": {
                 "types": "./esm/maybe/unwrap_or.d.ts",
                 "default": "./esm/maybe/unwrap_or.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/unwrap_or.d.cts",
-                "default": "./cjs/maybe/unwrap_or.cjs"
             },
             "default": {
                 "types": "./esm/maybe/unwrap_or.d.ts",
@@ -564,10 +452,6 @@
                 "types": "./esm/maybe/unwrap_or_else.d.ts",
                 "default": "./esm/maybe/unwrap_or_else.js"
             },
-            "require": {
-                "types": "./cjs/maybe/unwrap_or_else.d.cts",
-                "default": "./cjs/maybe/unwrap_or_else.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/unwrap_or_else.d.ts",
                 "default": "./esm/maybe/unwrap_or_else.js"
@@ -581,10 +465,6 @@
             "module-sync": {
                 "types": "./esm/maybe/unwrap_or_else_async.d.ts",
                 "default": "./esm/maybe/unwrap_or_else_async.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/unwrap_or_else_async.d.cts",
-                "default": "./cjs/maybe/unwrap_or_else_async.cjs"
             },
             "default": {
                 "types": "./esm/maybe/unwrap_or_else_async.d.ts",
@@ -600,10 +480,6 @@
                 "types": "./esm/maybe/xor.d.ts",
                 "default": "./esm/maybe/xor.js"
             },
-            "require": {
-                "types": "./cjs/maybe/xor.d.cts",
-                "default": "./cjs/maybe/xor.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/xor.d.ts",
                 "default": "./esm/maybe/xor.js"
@@ -617,10 +493,6 @@
             "module-sync": {
                 "types": "./esm/maybe/zip.d.ts",
                 "default": "./esm/maybe/zip.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/zip.d.cts",
-                "default": "./cjs/maybe/zip.cjs"
             },
             "default": {
                 "types": "./esm/maybe/zip.d.ts",
@@ -636,10 +508,6 @@
                 "types": "./esm/maybe/zip_with.d.ts",
                 "default": "./esm/maybe/zip_with.js"
             },
-            "require": {
-                "types": "./cjs/maybe/zip_with.d.cts",
-                "default": "./cjs/maybe/zip_with.cjs"
-            },
             "default": {
                 "types": "./esm/maybe/zip_with.d.ts",
                 "default": "./esm/maybe/zip_with.js"
@@ -653,10 +521,6 @@
             "module-sync": {
                 "types": "./esm/maybe/zip_with_async.d.ts",
                 "default": "./esm/maybe/zip_with_async.js"
-            },
-            "require": {
-                "types": "./cjs/maybe/zip_with_async.d.cts",
-                "default": "./cjs/maybe/zip_with_async.cjs"
             },
             "default": {
                 "types": "./esm/maybe/zip_with_async.d.ts",
@@ -672,10 +536,6 @@
                 "types": "./esm/nullable/index.d.ts",
                 "default": "./esm/nullable/index.js"
             },
-            "require": {
-                "types": "./cjs/nullable/index.d.cts",
-                "default": "./cjs/nullable/index.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/index.d.ts",
                 "default": "./esm/nullable/index.js"
@@ -689,10 +549,6 @@
             "module-sync": {
                 "types": "./esm/nullable/and.d.ts",
                 "default": "./esm/nullable/and.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/and.d.cts",
-                "default": "./cjs/nullable/and.cjs"
             },
             "default": {
                 "types": "./esm/nullable/and.d.ts",
@@ -708,10 +564,6 @@
                 "types": "./esm/nullable/and_then.d.ts",
                 "default": "./esm/nullable/and_then.js"
             },
-            "require": {
-                "types": "./cjs/nullable/and_then.d.cts",
-                "default": "./cjs/nullable/and_then.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/and_then.d.ts",
                 "default": "./esm/nullable/and_then.js"
@@ -725,10 +577,6 @@
             "module-sync": {
                 "types": "./esm/nullable/and_then_async.d.ts",
                 "default": "./esm/nullable/and_then_async.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/and_then_async.d.cts",
-                "default": "./cjs/nullable/and_then_async.cjs"
             },
             "default": {
                 "types": "./esm/nullable/and_then_async.d.ts",
@@ -744,10 +592,6 @@
                 "types": "./esm/nullable/filter.d.ts",
                 "default": "./esm/nullable/filter.js"
             },
-            "require": {
-                "types": "./cjs/nullable/filter.d.cts",
-                "default": "./cjs/nullable/filter.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/filter.d.ts",
                 "default": "./esm/nullable/filter.js"
@@ -761,10 +605,6 @@
             "module-sync": {
                 "types": "./esm/nullable/filter_async.d.ts",
                 "default": "./esm/nullable/filter_async.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/filter_async.d.cts",
-                "default": "./cjs/nullable/filter_async.cjs"
             },
             "default": {
                 "types": "./esm/nullable/filter_async.d.ts",
@@ -780,10 +620,6 @@
                 "types": "./esm/nullable/inspect.d.ts",
                 "default": "./esm/nullable/inspect.js"
             },
-            "require": {
-                "types": "./cjs/nullable/inspect.d.cts",
-                "default": "./cjs/nullable/inspect.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/inspect.d.ts",
                 "default": "./esm/nullable/inspect.js"
@@ -797,10 +633,6 @@
             "module-sync": {
                 "types": "./esm/nullable/map.d.ts",
                 "default": "./esm/nullable/map.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/map.d.cts",
-                "default": "./cjs/nullable/map.cjs"
             },
             "default": {
                 "types": "./esm/nullable/map.d.ts",
@@ -816,10 +648,6 @@
                 "types": "./esm/nullable/map_async.d.ts",
                 "default": "./esm/nullable/map_async.js"
             },
-            "require": {
-                "types": "./cjs/nullable/map_async.d.cts",
-                "default": "./cjs/nullable/map_async.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/map_async.d.ts",
                 "default": "./esm/nullable/map_async.js"
@@ -833,10 +661,6 @@
             "module-sync": {
                 "types": "./esm/nullable/map_or.d.ts",
                 "default": "./esm/nullable/map_or.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/map_or.d.cts",
-                "default": "./cjs/nullable/map_or.cjs"
             },
             "default": {
                 "types": "./esm/nullable/map_or.d.ts",
@@ -852,10 +676,6 @@
                 "types": "./esm/nullable/map_or_async.d.ts",
                 "default": "./esm/nullable/map_or_async.js"
             },
-            "require": {
-                "types": "./cjs/nullable/map_or_async.d.cts",
-                "default": "./cjs/nullable/map_or_async.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/map_or_async.d.ts",
                 "default": "./esm/nullable/map_or_async.js"
@@ -869,10 +689,6 @@
             "module-sync": {
                 "types": "./esm/nullable/map_or_else.d.ts",
                 "default": "./esm/nullable/map_or_else.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/map_or_else.d.cts",
-                "default": "./cjs/nullable/map_or_else.cjs"
             },
             "default": {
                 "types": "./esm/nullable/map_or_else.d.ts",
@@ -888,10 +704,6 @@
                 "types": "./esm/nullable/map_or_else_async.d.ts",
                 "default": "./esm/nullable/map_or_else_async.js"
             },
-            "require": {
-                "types": "./cjs/nullable/map_or_else_async.d.cts",
-                "default": "./cjs/nullable/map_or_else_async.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/map_or_else_async.d.ts",
                 "default": "./esm/nullable/map_or_else_async.js"
@@ -905,10 +717,6 @@
             "module-sync": {
                 "types": "./esm/nullable/namespace.d.ts",
                 "default": "./esm/nullable/namespace.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/namespace.d.cts",
-                "default": "./cjs/nullable/namespace.cjs"
             },
             "default": {
                 "types": "./esm/nullable/namespace.d.ts",
@@ -924,10 +732,6 @@
                 "types": "./esm/nullable/nullable.d.ts",
                 "default": "./esm/nullable/nullable.js"
             },
-            "require": {
-                "types": "./cjs/nullable/nullable.d.cts",
-                "default": "./cjs/nullable/nullable.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/nullable.d.ts",
                 "default": "./esm/nullable/nullable.js"
@@ -941,10 +745,6 @@
             "module-sync": {
                 "types": "./esm/nullable/ok_or.d.ts",
                 "default": "./esm/nullable/ok_or.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/ok_or.d.cts",
-                "default": "./cjs/nullable/ok_or.cjs"
             },
             "default": {
                 "types": "./esm/nullable/ok_or.d.ts",
@@ -960,10 +760,6 @@
                 "types": "./esm/nullable/ok_or_else.d.ts",
                 "default": "./esm/nullable/ok_or_else.js"
             },
-            "require": {
-                "types": "./cjs/nullable/ok_or_else.d.cts",
-                "default": "./cjs/nullable/ok_or_else.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/ok_or_else.d.ts",
                 "default": "./esm/nullable/ok_or_else.js"
@@ -977,10 +773,6 @@
             "module-sync": {
                 "types": "./esm/nullable/ok_or_else_async.d.ts",
                 "default": "./esm/nullable/ok_or_else_async.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/ok_or_else_async.d.cts",
-                "default": "./cjs/nullable/ok_or_else_async.cjs"
             },
             "default": {
                 "types": "./esm/nullable/ok_or_else_async.d.ts",
@@ -996,10 +788,6 @@
                 "types": "./esm/nullable/or.d.ts",
                 "default": "./esm/nullable/or.js"
             },
-            "require": {
-                "types": "./cjs/nullable/or.d.cts",
-                "default": "./cjs/nullable/or.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/or.d.ts",
                 "default": "./esm/nullable/or.js"
@@ -1013,10 +801,6 @@
             "module-sync": {
                 "types": "./esm/nullable/or_else.d.ts",
                 "default": "./esm/nullable/or_else.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/or_else.d.cts",
-                "default": "./cjs/nullable/or_else.cjs"
             },
             "default": {
                 "types": "./esm/nullable/or_else.d.ts",
@@ -1032,10 +816,6 @@
                 "types": "./esm/nullable/or_else_async.d.ts",
                 "default": "./esm/nullable/or_else_async.js"
             },
-            "require": {
-                "types": "./cjs/nullable/or_else_async.d.cts",
-                "default": "./cjs/nullable/or_else_async.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/or_else_async.d.ts",
                 "default": "./esm/nullable/or_else_async.js"
@@ -1049,10 +829,6 @@
             "module-sync": {
                 "types": "./esm/nullable/to_plain_result.d.ts",
                 "default": "./esm/nullable/to_plain_result.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/to_plain_result.d.cts",
-                "default": "./cjs/nullable/to_plain_result.cjs"
             },
             "default": {
                 "types": "./esm/nullable/to_plain_result.d.ts",
@@ -1068,10 +844,6 @@
                 "types": "./esm/nullable/to_undefinable.d.ts",
                 "default": "./esm/nullable/to_undefinable.js"
             },
-            "require": {
-                "types": "./cjs/nullable/to_undefinable.d.cts",
-                "default": "./cjs/nullable/to_undefinable.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/to_undefinable.d.ts",
                 "default": "./esm/nullable/to_undefinable.js"
@@ -1085,10 +857,6 @@
             "module-sync": {
                 "types": "./esm/nullable/unwrap_or.d.ts",
                 "default": "./esm/nullable/unwrap_or.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/unwrap_or.d.cts",
-                "default": "./cjs/nullable/unwrap_or.cjs"
             },
             "default": {
                 "types": "./esm/nullable/unwrap_or.d.ts",
@@ -1104,10 +872,6 @@
                 "types": "./esm/nullable/unwrap_or_else.d.ts",
                 "default": "./esm/nullable/unwrap_or_else.js"
             },
-            "require": {
-                "types": "./cjs/nullable/unwrap_or_else.d.cts",
-                "default": "./cjs/nullable/unwrap_or_else.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/unwrap_or_else.d.ts",
                 "default": "./esm/nullable/unwrap_or_else.js"
@@ -1121,10 +885,6 @@
             "module-sync": {
                 "types": "./esm/nullable/unwrap_or_else_async.d.ts",
                 "default": "./esm/nullable/unwrap_or_else_async.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/unwrap_or_else_async.d.cts",
-                "default": "./cjs/nullable/unwrap_or_else_async.cjs"
             },
             "default": {
                 "types": "./esm/nullable/unwrap_or_else_async.d.ts",
@@ -1140,10 +900,6 @@
                 "types": "./esm/nullable/xor.d.ts",
                 "default": "./esm/nullable/xor.js"
             },
-            "require": {
-                "types": "./cjs/nullable/xor.d.cts",
-                "default": "./cjs/nullable/xor.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/xor.d.ts",
                 "default": "./esm/nullable/xor.js"
@@ -1157,10 +913,6 @@
             "module-sync": {
                 "types": "./esm/nullable/zip.d.ts",
                 "default": "./esm/nullable/zip.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/zip.d.cts",
-                "default": "./cjs/nullable/zip.cjs"
             },
             "default": {
                 "types": "./esm/nullable/zip.d.ts",
@@ -1176,10 +928,6 @@
                 "types": "./esm/nullable/zip_with.d.ts",
                 "default": "./esm/nullable/zip_with.js"
             },
-            "require": {
-                "types": "./cjs/nullable/zip_with.d.cts",
-                "default": "./cjs/nullable/zip_with.cjs"
-            },
             "default": {
                 "types": "./esm/nullable/zip_with.d.ts",
                 "default": "./esm/nullable/zip_with.js"
@@ -1193,10 +941,6 @@
             "module-sync": {
                 "types": "./esm/nullable/zip_with_async.d.ts",
                 "default": "./esm/nullable/zip_with_async.js"
-            },
-            "require": {
-                "types": "./cjs/nullable/zip_with_async.d.cts",
-                "default": "./cjs/nullable/zip_with_async.cjs"
             },
             "default": {
                 "types": "./esm/nullable/zip_with_async.d.ts",
@@ -1212,10 +956,6 @@
                 "types": "./esm/deprecated/plain_option/index.d.ts",
                 "default": "./esm/deprecated/plain_option/index.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/index.d.cts",
-                "default": "./cjs/deprecated/plain_option/index.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/index.d.ts",
                 "default": "./esm/deprecated/plain_option/index.js"
@@ -1229,10 +969,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/and.d.ts",
                 "default": "./esm/deprecated/plain_option/and.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/and.d.cts",
-                "default": "./cjs/deprecated/plain_option/and.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/and.d.ts",
@@ -1248,10 +984,6 @@
                 "types": "./esm/deprecated/plain_option/and_then.d.ts",
                 "default": "./esm/deprecated/plain_option/and_then.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/and_then.d.cts",
-                "default": "./cjs/deprecated/plain_option/and_then.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/and_then.d.ts",
                 "default": "./esm/deprecated/plain_option/and_then.js"
@@ -1265,10 +997,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/and_then_async.d.ts",
                 "default": "./esm/deprecated/plain_option/and_then_async.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/and_then_async.d.cts",
-                "default": "./cjs/deprecated/plain_option/and_then_async.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/and_then_async.d.ts",
@@ -1284,10 +1012,6 @@
                 "types": "./esm/deprecated/plain_option/equal.d.ts",
                 "default": "./esm/deprecated/plain_option/equal.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/equal.d.cts",
-                "default": "./cjs/deprecated/plain_option/equal.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/equal.d.ts",
                 "default": "./esm/deprecated/plain_option/equal.js"
@@ -1301,10 +1025,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/filter.d.ts",
                 "default": "./esm/deprecated/plain_option/filter.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/filter.d.cts",
-                "default": "./cjs/deprecated/plain_option/filter.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/filter.d.ts",
@@ -1320,10 +1040,6 @@
                 "types": "./esm/deprecated/plain_option/flatten.d.ts",
                 "default": "./esm/deprecated/plain_option/flatten.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/flatten.d.cts",
-                "default": "./cjs/deprecated/plain_option/flatten.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/flatten.d.ts",
                 "default": "./esm/deprecated/plain_option/flatten.js"
@@ -1337,10 +1053,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/from_result.d.ts",
                 "default": "./esm/deprecated/plain_option/from_result.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/from_result.d.cts",
-                "default": "./cjs/deprecated/plain_option/from_result.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/from_result.d.ts",
@@ -1356,10 +1068,6 @@
                 "types": "./esm/deprecated/plain_option/inspect.d.ts",
                 "default": "./esm/deprecated/plain_option/inspect.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/inspect.d.cts",
-                "default": "./cjs/deprecated/plain_option/inspect.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/inspect.d.ts",
                 "default": "./esm/deprecated/plain_option/inspect.js"
@@ -1373,10 +1081,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/map.d.ts",
                 "default": "./esm/deprecated/plain_option/map.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/map.d.cts",
-                "default": "./cjs/deprecated/plain_option/map.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/map.d.ts",
@@ -1392,10 +1096,6 @@
                 "types": "./esm/deprecated/plain_option/map_async.d.ts",
                 "default": "./esm/deprecated/plain_option/map_async.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/map_async.d.cts",
-                "default": "./cjs/deprecated/plain_option/map_async.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/map_async.d.ts",
                 "default": "./esm/deprecated/plain_option/map_async.js"
@@ -1409,10 +1109,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/map_or.d.ts",
                 "default": "./esm/deprecated/plain_option/map_or.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/map_or.d.cts",
-                "default": "./cjs/deprecated/plain_option/map_or.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/map_or.d.ts",
@@ -1428,10 +1124,6 @@
                 "types": "./esm/deprecated/plain_option/map_or_async.d.ts",
                 "default": "./esm/deprecated/plain_option/map_or_async.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/map_or_async.d.cts",
-                "default": "./cjs/deprecated/plain_option/map_or_async.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/map_or_async.d.ts",
                 "default": "./esm/deprecated/plain_option/map_or_async.js"
@@ -1445,10 +1137,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/map_or_else.d.ts",
                 "default": "./esm/deprecated/plain_option/map_or_else.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/map_or_else.d.cts",
-                "default": "./cjs/deprecated/plain_option/map_or_else.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/map_or_else.d.ts",
@@ -1464,10 +1152,6 @@
                 "types": "./esm/deprecated/plain_option/map_or_else_async.d.ts",
                 "default": "./esm/deprecated/plain_option/map_or_else_async.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/map_or_else_async.d.cts",
-                "default": "./cjs/deprecated/plain_option/map_or_else_async.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/map_or_else_async.d.ts",
                 "default": "./esm/deprecated/plain_option/map_or_else_async.js"
@@ -1481,10 +1165,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/namespace.d.ts",
                 "default": "./esm/deprecated/plain_option/namespace.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/namespace.d.cts",
-                "default": "./cjs/deprecated/plain_option/namespace.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/namespace.d.ts",
@@ -1500,10 +1180,6 @@
                 "types": "./esm/deprecated/plain_option/ok_or.d.ts",
                 "default": "./esm/deprecated/plain_option/ok_or.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/ok_or.d.cts",
-                "default": "./cjs/deprecated/plain_option/ok_or.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/ok_or.d.ts",
                 "default": "./esm/deprecated/plain_option/ok_or.js"
@@ -1517,10 +1193,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/ok_or_else.d.ts",
                 "default": "./esm/deprecated/plain_option/ok_or_else.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/ok_or_else.d.cts",
-                "default": "./cjs/deprecated/plain_option/ok_or_else.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/ok_or_else.d.ts",
@@ -1536,10 +1208,6 @@
                 "types": "./esm/deprecated/plain_option/option.d.ts",
                 "default": "./esm/deprecated/plain_option/option.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/option.d.cts",
-                "default": "./cjs/deprecated/plain_option/option.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/option.d.ts",
                 "default": "./esm/deprecated/plain_option/option.js"
@@ -1553,10 +1221,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/or.d.ts",
                 "default": "./esm/deprecated/plain_option/or.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/or.d.cts",
-                "default": "./cjs/deprecated/plain_option/or.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/or.d.ts",
@@ -1572,10 +1236,6 @@
                 "types": "./esm/deprecated/plain_option/or_else.d.ts",
                 "default": "./esm/deprecated/plain_option/or_else.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/or_else.d.cts",
-                "default": "./cjs/deprecated/plain_option/or_else.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/or_else.d.ts",
                 "default": "./esm/deprecated/plain_option/or_else.js"
@@ -1589,10 +1249,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/or_else_async.d.ts",
                 "default": "./esm/deprecated/plain_option/or_else_async.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/or_else_async.d.cts",
-                "default": "./cjs/deprecated/plain_option/or_else_async.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/or_else_async.d.ts",
@@ -1608,10 +1264,6 @@
                 "types": "./esm/deprecated/plain_option/to_nullable.d.ts",
                 "default": "./esm/deprecated/plain_option/to_nullable.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/to_nullable.d.cts",
-                "default": "./cjs/deprecated/plain_option/to_nullable.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/to_nullable.d.ts",
                 "default": "./esm/deprecated/plain_option/to_nullable.js"
@@ -1625,10 +1277,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/to_undefinable.d.ts",
                 "default": "./esm/deprecated/plain_option/to_undefinable.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/to_undefinable.d.cts",
-                "default": "./cjs/deprecated/plain_option/to_undefinable.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/to_undefinable.d.ts",
@@ -1644,10 +1292,6 @@
                 "types": "./esm/deprecated/plain_option/transpose.d.ts",
                 "default": "./esm/deprecated/plain_option/transpose.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/transpose.d.cts",
-                "default": "./cjs/deprecated/plain_option/transpose.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/transpose.d.ts",
                 "default": "./esm/deprecated/plain_option/transpose.js"
@@ -1661,10 +1305,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/unsafe/as_mut.d.ts",
                 "default": "./esm/deprecated/plain_option/unsafe/as_mut.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/unsafe/as_mut.d.cts",
-                "default": "./cjs/deprecated/plain_option/unsafe/as_mut.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/unsafe/as_mut.d.ts",
@@ -1680,10 +1320,6 @@
                 "types": "./esm/deprecated/plain_option/unsafe/drop.d.ts",
                 "default": "./esm/deprecated/plain_option/unsafe/drop.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/unsafe/drop.d.cts",
-                "default": "./cjs/deprecated/plain_option/unsafe/drop.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/unsafe/drop.d.ts",
                 "default": "./esm/deprecated/plain_option/unsafe/drop.js"
@@ -1697,10 +1333,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/unwrap_or.d.ts",
                 "default": "./esm/deprecated/plain_option/unwrap_or.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/unwrap_or.d.cts",
-                "default": "./cjs/deprecated/plain_option/unwrap_or.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/unwrap_or.d.ts",
@@ -1716,10 +1348,6 @@
                 "types": "./esm/deprecated/plain_option/unwrap_or_else.d.ts",
                 "default": "./esm/deprecated/plain_option/unwrap_or_else.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/unwrap_or_else.d.cts",
-                "default": "./cjs/deprecated/plain_option/unwrap_or_else.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/unwrap_or_else.d.ts",
                 "default": "./esm/deprecated/plain_option/unwrap_or_else.js"
@@ -1733,10 +1361,6 @@
             "module-sync": {
                 "types": "./esm/deprecated/plain_option/unwrap_or_else_async.d.ts",
                 "default": "./esm/deprecated/plain_option/unwrap_or_else_async.js"
-            },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/unwrap_or_else_async.d.cts",
-                "default": "./cjs/deprecated/plain_option/unwrap_or_else_async.cjs"
             },
             "default": {
                 "types": "./esm/deprecated/plain_option/unwrap_or_else_async.d.ts",
@@ -1752,10 +1376,6 @@
                 "types": "./esm/deprecated/plain_option/xor.d.ts",
                 "default": "./esm/deprecated/plain_option/xor.js"
             },
-            "require": {
-                "types": "./cjs/deprecated/plain_option/xor.d.cts",
-                "default": "./cjs/deprecated/plain_option/xor.cjs"
-            },
             "default": {
                 "types": "./esm/deprecated/plain_option/xor.d.ts",
                 "default": "./esm/deprecated/plain_option/xor.js"
@@ -1769,10 +1389,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/index.d.ts",
                 "default": "./esm/plain_result/index.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/index.d.cts",
-                "default": "./cjs/plain_result/index.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/index.d.ts",
@@ -1788,10 +1404,6 @@
                 "types": "./esm/plain_result/and.d.ts",
                 "default": "./esm/plain_result/and.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/and.d.cts",
-                "default": "./cjs/plain_result/and.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/and.d.ts",
                 "default": "./esm/plain_result/and.js"
@@ -1805,10 +1417,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/and_then.d.ts",
                 "default": "./esm/plain_result/and_then.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/and_then.d.cts",
-                "default": "./cjs/plain_result/and_then.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/and_then.d.ts",
@@ -1824,10 +1432,6 @@
                 "types": "./esm/plain_result/and_then_async.d.ts",
                 "default": "./esm/plain_result/and_then_async.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/and_then_async.d.cts",
-                "default": "./cjs/plain_result/and_then_async.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/and_then_async.d.ts",
                 "default": "./esm/plain_result/and_then_async.js"
@@ -1841,10 +1445,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/deprecated/try_catch_with_assert_error.d.ts",
                 "default": "./esm/plain_result/deprecated/try_catch_with_assert_error.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/deprecated/try_catch_with_assert_error.d.cts",
-                "default": "./cjs/plain_result/deprecated/try_catch_with_assert_error.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/deprecated/try_catch_with_assert_error.d.ts",
@@ -1860,10 +1460,6 @@
                 "types": "./esm/plain_result/deprecated/try_catch_with_assert_error_async.d.ts",
                 "default": "./esm/plain_result/deprecated/try_catch_with_assert_error_async.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/deprecated/try_catch_with_assert_error_async.d.cts",
-                "default": "./cjs/plain_result/deprecated/try_catch_with_assert_error_async.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/deprecated/try_catch_with_assert_error_async.d.ts",
                 "default": "./esm/plain_result/deprecated/try_catch_with_assert_error_async.js"
@@ -1877,10 +1473,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/deprecated/unwrap_or_throw_error.d.ts",
                 "default": "./esm/plain_result/deprecated/unwrap_or_throw_error.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/deprecated/unwrap_or_throw_error.d.cts",
-                "default": "./cjs/plain_result/deprecated/unwrap_or_throw_error.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/deprecated/unwrap_or_throw_error.d.ts",
@@ -1896,10 +1488,6 @@
                 "types": "./esm/plain_result/deprecated/unwrap_or_throw_unknown.d.ts",
                 "default": "./esm/plain_result/deprecated/unwrap_or_throw_unknown.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/deprecated/unwrap_or_throw_unknown.d.cts",
-                "default": "./cjs/plain_result/deprecated/unwrap_or_throw_unknown.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/deprecated/unwrap_or_throw_unknown.d.ts",
                 "default": "./esm/plain_result/deprecated/unwrap_or_throw_unknown.js"
@@ -1913,10 +1501,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/equal.d.ts",
                 "default": "./esm/plain_result/equal.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/equal.d.cts",
-                "default": "./cjs/plain_result/equal.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/equal.d.ts",
@@ -1932,10 +1516,6 @@
                 "types": "./esm/plain_result/flatten.d.ts",
                 "default": "./esm/plain_result/flatten.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/flatten.d.cts",
-                "default": "./cjs/plain_result/flatten.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/flatten.d.ts",
                 "default": "./esm/plain_result/flatten.js"
@@ -1949,10 +1529,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/from_promise_settled_result.d.ts",
                 "default": "./esm/plain_result/from_promise_settled_result.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/from_promise_settled_result.d.cts",
-                "default": "./cjs/plain_result/from_promise_settled_result.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/from_promise_settled_result.d.ts",
@@ -1968,10 +1544,6 @@
                 "types": "./esm/plain_result/inspect.d.ts",
                 "default": "./esm/plain_result/inspect.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/inspect.d.cts",
-                "default": "./cjs/plain_result/inspect.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/inspect.d.ts",
                 "default": "./esm/plain_result/inspect.js"
@@ -1985,10 +1557,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/is_err_and.d.ts",
                 "default": "./esm/plain_result/is_err_and.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/is_err_and.d.cts",
-                "default": "./cjs/plain_result/is_err_and.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/is_err_and.d.ts",
@@ -2004,10 +1572,6 @@
                 "types": "./esm/plain_result/is_ok_and.d.ts",
                 "default": "./esm/plain_result/is_ok_and.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/is_ok_and.d.cts",
-                "default": "./cjs/plain_result/is_ok_and.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/is_ok_and.d.ts",
                 "default": "./esm/plain_result/is_ok_and.js"
@@ -2021,10 +1585,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/map.d.ts",
                 "default": "./esm/plain_result/map.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/map.d.cts",
-                "default": "./cjs/plain_result/map.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/map.d.ts",
@@ -2040,10 +1600,6 @@
                 "types": "./esm/plain_result/map_async.d.ts",
                 "default": "./esm/plain_result/map_async.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/map_async.d.cts",
-                "default": "./cjs/plain_result/map_async.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/map_async.d.ts",
                 "default": "./esm/plain_result/map_async.js"
@@ -2057,10 +1613,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/map_err.d.ts",
                 "default": "./esm/plain_result/map_err.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/map_err.d.cts",
-                "default": "./cjs/plain_result/map_err.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/map_err.d.ts",
@@ -2076,10 +1628,6 @@
                 "types": "./esm/plain_result/map_err_async.d.ts",
                 "default": "./esm/plain_result/map_err_async.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/map_err_async.d.cts",
-                "default": "./cjs/plain_result/map_err_async.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/map_err_async.d.ts",
                 "default": "./esm/plain_result/map_err_async.js"
@@ -2093,10 +1641,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/map_or.d.ts",
                 "default": "./esm/plain_result/map_or.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/map_or.d.cts",
-                "default": "./cjs/plain_result/map_or.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/map_or.d.ts",
@@ -2112,10 +1656,6 @@
                 "types": "./esm/plain_result/map_or_async.d.ts",
                 "default": "./esm/plain_result/map_or_async.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/map_or_async.d.cts",
-                "default": "./cjs/plain_result/map_or_async.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/map_or_async.d.ts",
                 "default": "./esm/plain_result/map_or_async.js"
@@ -2129,10 +1669,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/map_or_else.d.ts",
                 "default": "./esm/plain_result/map_or_else.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/map_or_else.d.cts",
-                "default": "./cjs/plain_result/map_or_else.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/map_or_else.d.ts",
@@ -2148,10 +1684,6 @@
                 "types": "./esm/plain_result/map_or_else_async.d.ts",
                 "default": "./esm/plain_result/map_or_else_async.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/map_or_else_async.d.cts",
-                "default": "./cjs/plain_result/map_or_else_async.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/map_or_else_async.d.ts",
                 "default": "./esm/plain_result/map_or_else_async.js"
@@ -2165,10 +1697,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/namespace.d.ts",
                 "default": "./esm/plain_result/namespace.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/namespace.d.cts",
-                "default": "./cjs/plain_result/namespace.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/namespace.d.ts",
@@ -2184,10 +1712,6 @@
                 "types": "./esm/plain_result/or.d.ts",
                 "default": "./esm/plain_result/or.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/or.d.cts",
-                "default": "./cjs/plain_result/or.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/or.d.ts",
                 "default": "./esm/plain_result/or.js"
@@ -2201,10 +1725,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/or_else.d.ts",
                 "default": "./esm/plain_result/or_else.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/or_else.d.cts",
-                "default": "./cjs/plain_result/or_else.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/or_else.d.ts",
@@ -2220,10 +1740,6 @@
                 "types": "./esm/plain_result/or_else_async.d.ts",
                 "default": "./esm/plain_result/or_else_async.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/or_else_async.d.cts",
-                "default": "./cjs/plain_result/or_else_async.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/or_else_async.d.ts",
                 "default": "./esm/plain_result/or_else_async.js"
@@ -2237,10 +1753,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/result.d.ts",
                 "default": "./esm/plain_result/result.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/result.d.cts",
-                "default": "./cjs/plain_result/result.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/result.d.ts",
@@ -2256,10 +1768,6 @@
                 "types": "./esm/plain_result/to_nullable.d.ts",
                 "default": "./esm/plain_result/to_nullable.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/to_nullable.d.cts",
-                "default": "./cjs/plain_result/to_nullable.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/to_nullable.d.ts",
                 "default": "./esm/plain_result/to_nullable.js"
@@ -2273,10 +1781,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/to_undefinable.d.ts",
                 "default": "./esm/plain_result/to_undefinable.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/to_undefinable.d.cts",
-                "default": "./cjs/plain_result/to_undefinable.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/to_undefinable.d.ts",
@@ -2292,10 +1796,6 @@
                 "types": "./esm/plain_result/transpose.d.ts",
                 "default": "./esm/plain_result/transpose.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/transpose.d.cts",
-                "default": "./cjs/plain_result/transpose.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/transpose.d.ts",
                 "default": "./esm/plain_result/transpose.js"
@@ -2309,10 +1809,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/try_catch.d.ts",
                 "default": "./esm/plain_result/try_catch.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/try_catch.d.cts",
-                "default": "./cjs/plain_result/try_catch.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/try_catch.d.ts",
@@ -2328,10 +1824,6 @@
                 "types": "./esm/plain_result/try_catch_async.d.ts",
                 "default": "./esm/plain_result/try_catch_async.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/try_catch_async.d.cts",
-                "default": "./cjs/plain_result/try_catch_async.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/try_catch_async.d.ts",
                 "default": "./esm/plain_result/try_catch_async.js"
@@ -2345,10 +1837,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/unsafe/as_mut.d.ts",
                 "default": "./esm/plain_result/unsafe/as_mut.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/unsafe/as_mut.d.cts",
-                "default": "./cjs/plain_result/unsafe/as_mut.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/unsafe/as_mut.d.ts",
@@ -2364,10 +1852,6 @@
                 "types": "./esm/plain_result/unsafe/drop.d.ts",
                 "default": "./esm/plain_result/unsafe/drop.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/unsafe/drop.d.cts",
-                "default": "./cjs/plain_result/unsafe/drop.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/unsafe/drop.d.ts",
                 "default": "./esm/plain_result/unsafe/drop.js"
@@ -2381,10 +1865,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/unwrap_or.d.ts",
                 "default": "./esm/plain_result/unwrap_or.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/unwrap_or.d.cts",
-                "default": "./cjs/plain_result/unwrap_or.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/unwrap_or.d.ts",
@@ -2400,10 +1880,6 @@
                 "types": "./esm/plain_result/unwrap_or_else.d.ts",
                 "default": "./esm/plain_result/unwrap_or_else.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/unwrap_or_else.d.cts",
-                "default": "./cjs/plain_result/unwrap_or_else.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/unwrap_or_else.d.ts",
                 "default": "./esm/plain_result/unwrap_or_else.js"
@@ -2417,10 +1893,6 @@
             "module-sync": {
                 "types": "./esm/plain_result/unwrap_or_else_async.d.ts",
                 "default": "./esm/plain_result/unwrap_or_else_async.js"
-            },
-            "require": {
-                "types": "./cjs/plain_result/unwrap_or_else_async.d.cts",
-                "default": "./cjs/plain_result/unwrap_or_else_async.cjs"
             },
             "default": {
                 "types": "./esm/plain_result/unwrap_or_else_async.d.ts",
@@ -2436,10 +1908,6 @@
                 "types": "./esm/plain_result/unwrap_or_throw.d.ts",
                 "default": "./esm/plain_result/unwrap_or_throw.js"
             },
-            "require": {
-                "types": "./cjs/plain_result/unwrap_or_throw.d.cts",
-                "default": "./cjs/plain_result/unwrap_or_throw.cjs"
-            },
             "default": {
                 "types": "./esm/plain_result/unwrap_or_throw.d.ts",
                 "default": "./esm/plain_result/unwrap_or_throw.js"
@@ -2453,10 +1921,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/index.d.ts",
                 "default": "./esm/undefinable/index.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/index.d.cts",
-                "default": "./cjs/undefinable/index.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/index.d.ts",
@@ -2472,10 +1936,6 @@
                 "types": "./esm/undefinable/and.d.ts",
                 "default": "./esm/undefinable/and.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/and.d.cts",
-                "default": "./cjs/undefinable/and.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/and.d.ts",
                 "default": "./esm/undefinable/and.js"
@@ -2489,10 +1949,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/and_then.d.ts",
                 "default": "./esm/undefinable/and_then.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/and_then.d.cts",
-                "default": "./cjs/undefinable/and_then.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/and_then.d.ts",
@@ -2508,10 +1964,6 @@
                 "types": "./esm/undefinable/and_then_async.d.ts",
                 "default": "./esm/undefinable/and_then_async.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/and_then_async.d.cts",
-                "default": "./cjs/undefinable/and_then_async.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/and_then_async.d.ts",
                 "default": "./esm/undefinable/and_then_async.js"
@@ -2525,10 +1977,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/filter.d.ts",
                 "default": "./esm/undefinable/filter.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/filter.d.cts",
-                "default": "./cjs/undefinable/filter.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/filter.d.ts",
@@ -2544,10 +1992,6 @@
                 "types": "./esm/undefinable/filter_async.d.ts",
                 "default": "./esm/undefinable/filter_async.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/filter_async.d.cts",
-                "default": "./cjs/undefinable/filter_async.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/filter_async.d.ts",
                 "default": "./esm/undefinable/filter_async.js"
@@ -2561,10 +2005,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/inspect.d.ts",
                 "default": "./esm/undefinable/inspect.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/inspect.d.cts",
-                "default": "./cjs/undefinable/inspect.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/inspect.d.ts",
@@ -2580,10 +2020,6 @@
                 "types": "./esm/undefinable/map.d.ts",
                 "default": "./esm/undefinable/map.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/map.d.cts",
-                "default": "./cjs/undefinable/map.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/map.d.ts",
                 "default": "./esm/undefinable/map.js"
@@ -2597,10 +2033,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/map_async.d.ts",
                 "default": "./esm/undefinable/map_async.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/map_async.d.cts",
-                "default": "./cjs/undefinable/map_async.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/map_async.d.ts",
@@ -2616,10 +2048,6 @@
                 "types": "./esm/undefinable/map_or.d.ts",
                 "default": "./esm/undefinable/map_or.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/map_or.d.cts",
-                "default": "./cjs/undefinable/map_or.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/map_or.d.ts",
                 "default": "./esm/undefinable/map_or.js"
@@ -2633,10 +2061,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/map_or_async.d.ts",
                 "default": "./esm/undefinable/map_or_async.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/map_or_async.d.cts",
-                "default": "./cjs/undefinable/map_or_async.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/map_or_async.d.ts",
@@ -2652,10 +2076,6 @@
                 "types": "./esm/undefinable/map_or_else.d.ts",
                 "default": "./esm/undefinable/map_or_else.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/map_or_else.d.cts",
-                "default": "./cjs/undefinable/map_or_else.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/map_or_else.d.ts",
                 "default": "./esm/undefinable/map_or_else.js"
@@ -2669,10 +2089,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/map_or_else_async.d.ts",
                 "default": "./esm/undefinable/map_or_else_async.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/map_or_else_async.d.cts",
-                "default": "./cjs/undefinable/map_or_else_async.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/map_or_else_async.d.ts",
@@ -2688,10 +2104,6 @@
                 "types": "./esm/undefinable/namespace.d.ts",
                 "default": "./esm/undefinable/namespace.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/namespace.d.cts",
-                "default": "./cjs/undefinable/namespace.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/namespace.d.ts",
                 "default": "./esm/undefinable/namespace.js"
@@ -2705,10 +2117,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/ok_or.d.ts",
                 "default": "./esm/undefinable/ok_or.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/ok_or.d.cts",
-                "default": "./cjs/undefinable/ok_or.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/ok_or.d.ts",
@@ -2724,10 +2132,6 @@
                 "types": "./esm/undefinable/ok_or_else.d.ts",
                 "default": "./esm/undefinable/ok_or_else.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/ok_or_else.d.cts",
-                "default": "./cjs/undefinable/ok_or_else.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/ok_or_else.d.ts",
                 "default": "./esm/undefinable/ok_or_else.js"
@@ -2741,10 +2145,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/ok_or_else_async.d.ts",
                 "default": "./esm/undefinable/ok_or_else_async.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/ok_or_else_async.d.cts",
-                "default": "./cjs/undefinable/ok_or_else_async.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/ok_or_else_async.d.ts",
@@ -2760,10 +2160,6 @@
                 "types": "./esm/undefinable/or.d.ts",
                 "default": "./esm/undefinable/or.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/or.d.cts",
-                "default": "./cjs/undefinable/or.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/or.d.ts",
                 "default": "./esm/undefinable/or.js"
@@ -2777,10 +2173,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/or_else.d.ts",
                 "default": "./esm/undefinable/or_else.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/or_else.d.cts",
-                "default": "./cjs/undefinable/or_else.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/or_else.d.ts",
@@ -2796,10 +2188,6 @@
                 "types": "./esm/undefinable/or_else_async.d.ts",
                 "default": "./esm/undefinable/or_else_async.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/or_else_async.d.cts",
-                "default": "./cjs/undefinable/or_else_async.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/or_else_async.d.ts",
                 "default": "./esm/undefinable/or_else_async.js"
@@ -2813,10 +2201,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/to_nullable.d.ts",
                 "default": "./esm/undefinable/to_nullable.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/to_nullable.d.cts",
-                "default": "./cjs/undefinable/to_nullable.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/to_nullable.d.ts",
@@ -2832,10 +2216,6 @@
                 "types": "./esm/undefinable/to_plain_result.d.ts",
                 "default": "./esm/undefinable/to_plain_result.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/to_plain_result.d.cts",
-                "default": "./cjs/undefinable/to_plain_result.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/to_plain_result.d.ts",
                 "default": "./esm/undefinable/to_plain_result.js"
@@ -2849,10 +2229,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/undefinable.d.ts",
                 "default": "./esm/undefinable/undefinable.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/undefinable.d.cts",
-                "default": "./cjs/undefinable/undefinable.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/undefinable.d.ts",
@@ -2868,10 +2244,6 @@
                 "types": "./esm/undefinable/unwrap_or.d.ts",
                 "default": "./esm/undefinable/unwrap_or.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/unwrap_or.d.cts",
-                "default": "./cjs/undefinable/unwrap_or.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/unwrap_or.d.ts",
                 "default": "./esm/undefinable/unwrap_or.js"
@@ -2885,10 +2257,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/unwrap_or_else.d.ts",
                 "default": "./esm/undefinable/unwrap_or_else.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/unwrap_or_else.d.cts",
-                "default": "./cjs/undefinable/unwrap_or_else.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/unwrap_or_else.d.ts",
@@ -2904,10 +2272,6 @@
                 "types": "./esm/undefinable/unwrap_or_else_async.d.ts",
                 "default": "./esm/undefinable/unwrap_or_else_async.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/unwrap_or_else_async.d.cts",
-                "default": "./cjs/undefinable/unwrap_or_else_async.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/unwrap_or_else_async.d.ts",
                 "default": "./esm/undefinable/unwrap_or_else_async.js"
@@ -2921,10 +2285,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/xor.d.ts",
                 "default": "./esm/undefinable/xor.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/xor.d.cts",
-                "default": "./cjs/undefinable/xor.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/xor.d.ts",
@@ -2940,10 +2300,6 @@
                 "types": "./esm/undefinable/zip.d.ts",
                 "default": "./esm/undefinable/zip.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/zip.d.cts",
-                "default": "./cjs/undefinable/zip.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/zip.d.ts",
                 "default": "./esm/undefinable/zip.js"
@@ -2958,10 +2314,6 @@
                 "types": "./esm/undefinable/zip_with.d.ts",
                 "default": "./esm/undefinable/zip_with.js"
             },
-            "require": {
-                "types": "./cjs/undefinable/zip_with.d.cts",
-                "default": "./cjs/undefinable/zip_with.cjs"
-            },
             "default": {
                 "types": "./esm/undefinable/zip_with.d.ts",
                 "default": "./esm/undefinable/zip_with.js"
@@ -2975,10 +2327,6 @@
             "module-sync": {
                 "types": "./esm/undefinable/zip_with_async.d.ts",
                 "default": "./esm/undefinable/zip_with_async.js"
-            },
-            "require": {
-                "types": "./cjs/undefinable/zip_with_async.d.cts",
-                "default": "./cjs/undefinable/zip_with_async.cjs"
             },
             "default": {
                 "types": "./esm/undefinable/zip_with_async.d.ts",

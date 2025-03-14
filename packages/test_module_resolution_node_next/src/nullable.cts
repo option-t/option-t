@@ -1,3 +1,4 @@
+/*
 import {} from 'option-t/nullable';
 import {} from 'option-t/nullable/and';
 import {} from 'option-t/nullable/and_then';
@@ -28,3 +29,4 @@ import {} from 'option-t/nullable/xor';
 import {} from 'option-t/nullable/zip';
 import {} from 'option-t/nullable/zip_with';
 import {} from 'option-t/nullable/zip_with_async';
+*/

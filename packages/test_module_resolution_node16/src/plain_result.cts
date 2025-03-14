@@ -1,3 +1,4 @@
+/*
 import {} from 'option-t/plain_result';
 import {} from 'option-t/plain_result/and';
 import {} from 'option-t/plain_result/and_then';
@@ -35,3 +36,4 @@ import {} from 'option-t/plain_result/deprecated/try_catch_with_assert_error';
 import {} from 'option-t/plain_result/deprecated/try_catch_with_assert_error_async';
 import {} from 'option-t/plain_result/deprecated/unwrap_or_throw_error';
 import {} from 'option-t/plain_result/deprecated/unwrap_or_throw_unknown';
+*/

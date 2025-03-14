@@ -1,3 +1,4 @@
+/*
 import {} from 'option-t/plain_option';
 import {} from 'option-t/plain_option/and';
 import {} from 'option-t/plain_option/and_then';
@@ -29,3 +30,4 @@ import {} from 'option-t/plain_option/unwrap_or';
 import {} from 'option-t/plain_option/unwrap_or_else';
 import {} from 'option-t/plain_option/unwrap_or_else_async';
 import {} from 'option-t/plain_option/xor';
+*/
