@@ -11,7 +11,6 @@ class AbstractExportEntry {
 
 const EXTENSION_MJS = 'js';
 const EXTENSION_DMTS = 'd.ts';
-const EXTENSION_DCTS = 'd.cts';
 
 export class ExportEntry extends AbstractExportEntry {
     #key;
@@ -44,20 +43,17 @@ export class ExportEntry extends AbstractExportEntry {
 
         const esm = `./esm/${p}.${EXTENSION_MJS}`;
         const dmts = `./esm/${p}.${EXTENSION_DMTS}`;
-        const dcts = `./cjs/${p}.${EXTENSION_DCTS}`;
         const entry = constructDualPackagePathValue({
             esm,
             dmts,
-            dcts,
         });
         return entry;
     }
 }
 
-function constructDualPackagePathValue({ esm, dmts, dcts }) {
+function constructDualPackagePathValue({ esm, dmts }) {
     assert.strictEqual(typeof esm, 'string', 'esm should be string');
     assert.strictEqual(typeof dmts, 'string', 'dmts should be string');
-    assert.strictEqual(typeof dcts, 'string', 'dcts should be string');
 
     const esmCondition = constructPathValue({
         filepath: esm,
