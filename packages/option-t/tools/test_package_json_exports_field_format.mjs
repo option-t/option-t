@@ -111,6 +111,10 @@ async function testComplexConditionObject(t, conditionValue) {
         await testBasicConditionObject(TestMode.ESM, t, conditionValue['module-sync']);
     });
 
+    await t.test('`default` field is condition', async (t) => {
+        await testBasicConditionObject(TestMode.ESM, t, conditionValue.default);
+    });
+
     await t.test('contains expected fields', (_t) => {
         const keys = Object.keys(conditionValue);
         assert.deepStrictEqual(keys, ['import', 'module-sync', 'default']);
