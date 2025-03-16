@@ -7,7 +7,6 @@
         "node": ">=16.20.0"
     },
     "files": [
-        "cjs/",
         "esm/",
         "LICENSE.MIT",
         "package.json",
