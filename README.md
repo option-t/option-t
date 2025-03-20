@@ -147,16 +147,16 @@ For more details, please see [docs/installation.md](./docs/installation.md).
 
 ## Usage & APIs
 
-All APIs are TypeScript ready.
+These are designed for more tree shaking friendly and more usable for JavaScript common world,
+and all APIs are TypeScript ready.
 
-* _Utility functions for these types_. These are designed for more tree shaking friendly and more usable for JavaScript common world.
+* _Utility functions for these types_.
     * [`Nullable<T>` (`T | null`)](./docs/public_api_list.md#nullable)
     * [`Undefinable<T>` (`T | undefined`)](./docs/public_api_list.md#undefinable)
     * [`Maybe<T>` (`T | null | undefined`)](./docs/public_api_list.md#maybe)
-    * plain objects
+    * plain objects as tagged union.
         * [`Result<T, E>` (`{ ok: true; val: T } | { ok: false; err: E; }`)](./docs/public_api_list.md#plainresult)
         * [`Option<T>` (`{ ok: true; val: T } | { ok: false; }`)](./docs/public_api_list.md#plainoption) (_deprecated_)
-* [Wrapper objects](./docs/wrapper_objects.md) ([__*deprecated*__](https://github.com/option-t/option-t/issues/459)).
 
 Additional documents are in [`docs/`](./docs/).
 

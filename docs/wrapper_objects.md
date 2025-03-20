@@ -1,4 +1,4 @@
-# Wrapper objects (deprecated)
+# Wrapper objects ([deprecated](https://github.com/option-t/option-t/issues/459))
 
 This is a wrapper object which have utility methods on its prototype.
 
