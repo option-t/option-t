@@ -127,12 +127,8 @@ We target to run in following environments.
 
 ### Caution
 
-1. Your code may work with this package even if your project does not supports all of these requirements.
-   But we may not be able to support such environments officially. We recommend to update your environment generally.
-2. If you would like to work this packages for a more legacy environment (e.g. ES2016 or earlier)
-   we recommend to transform whole of codes including your dependencies in your build pipeline.
-    - If you need to support ES5 environment, you can use [**`v37`**](https://github.com/option-t/option-t/tree/v37.3.0) too.
-3. If your project still use TypeScript's `--moduleResolution` with `node/node10` setting, please use [**`v35`**](https://github.com/option-t/option-t/tree/v35.0.0).
+- Your code may work with this package even if your project does not supports all of these requirements.
+  But we may not be able to support such environments officially. We recommend to update your environment generally.
 
 
 
@@ -141,16 +137,11 @@ We target to run in following environments.
 ```sh
 npm install --save option-t
 
-# If you need to supports an environment that does not support ES2017
-# without any transform whole of programs including dependencies.
-npm install --save option-t@^37
-
-# If your project still...
-#   1. Use TypeScript with `--moduleResolution node` or `--moduleResolution node10` setting.
-#   2. Or use some other tools that does not support Node.js's package.json's `exports` field.
-#       - For example, `eslint-plugin-import@2.27.5`'s `import/no-unresolved` rule would be affected.
-npm install --save option-t@^35
+# If you still need a commonjs implementation:
+npm install --save option-t@^52
 ```
+
+For more details, please see [docs/installation.md](./docs/installation.md).
 
 
 
@@ -202,7 +193,7 @@ import { unwrapOrForNullable } from 'option-t/nullable/unwrap_or';
 **You can import [these paths in the list of public APIs](./docs/public_api_list.md).**
 This package provides some sub directories to import various functions (e.g. `option-t/PlainResult`).
 
-If you're project cannot import by their path, please read [this guide](./docs/how_to_import.md) to know more details.
+If you're project cannot import by their path, please read [our installation guide](./docs/installation.md) to know more details.
 
 
 ### Deprecation
