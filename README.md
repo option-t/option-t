@@ -136,9 +136,6 @@ We target to run in following environments.
 
 ```sh
 npm install --save option-t
-
-# If you still need a commonjs implementation:
-npm install --save option-t@^52
 ```
 
 For more details, please see [docs/installation.md](./docs/installation.md).
