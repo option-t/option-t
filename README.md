@@ -22,7 +22,7 @@
       but they would be a __opt-in__.
 * **Tree shakable completely**.
 * **ES Module first**.
-    * Of course, we provide CommonJS too for backward compatibility.
+    * Don't worry. We have a compatibility for _require(esm)_ of Node.js. 
 * **Enable to use with a programming styles that mixes an execution context between server and client across the boundary (e.g. [Qwik](https://github.com/BuilderIO/qwik)).**
 
 
@@ -119,7 +119,7 @@ We target to run in following environments.
     - TypeScript's latest version.
 - Module system
     - ES Module ([ES2020](https://262.ecma-international.org/11.0/) level).
-    - CommonJS
+        - We have a compatibility with [_require(esm)_](https://nodejs.org/docs/latest-v22.x/api/modules.html#loading-ecmascript-modules-using-require) for Node.js.
     - A runtime environment or module bundler must support Node.js' [package.json's `exports` field](https://nodejs.org/api/packages.html#package-entry-points) (Newer is better).
         - We require TypeScript's [`--moduleResolution`](https://www.typescriptlang.org/tsconfig/#moduleResolution)
           is set as `node16`, `bundler`, or others that supports `exports` field if your project use TypeScript.
@@ -151,7 +151,6 @@ npm install --save option-t@^37
 #       - For example, `eslint-plugin-import@2.27.5`'s `import/no-unresolved` rule would be affected.
 npm install --save option-t@^35
 ```
-
 
 
 
@@ -200,7 +199,7 @@ import { unwrapOrForNullable } from 'option-t/nullable/unwrap_or';
 
 #### See also
 
-**You can use [these paths](./docs/public_api_list.md) in both of CommonJS style and ES Module style.**
+**You can import [these paths in the list of public APIs](./docs/public_api_list.md).**
 This package provides some sub directories to import various functions (e.g. `option-t/PlainResult`).
 
 If you're project cannot import by their path, please read [this guide](./docs/how_to_import.md) to know more details.

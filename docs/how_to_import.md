@@ -1,6 +1,6 @@
 # How to import
 
-**You can use [these paths](./public_api_list.md) in both of CommonJS style and ES Module style.**
+**You can import [these paths in the list of public APIs](./docs/public_api_list.md).**
 
 ### Examples
 
