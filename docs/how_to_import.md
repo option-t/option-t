@@ -1,6 +1,6 @@
 # How to import
 
-**You can use [these paths](./public_api_list.md) in both of CommonJS style and ES Module style.**
+**You can import [these paths in the list of public APIs](./docs/public_api_list.md).**
 
 ### Examples
 
@@ -27,9 +27,7 @@ import { type Nullable, unwrapNullable } from 'option-t/nullable/nullable';
 import { unwrapOrForNullable } from 'option-t/nullable/unwrap_or';
 ```
 
-### Cautions
+### Trouble Shooting
 
-1. If your project use TypeScript, you need to set TypeScript's [`--moduleResolution`](https://www.typescriptlang.org/tsconfig/#moduleResolution)
-   with `bundler`, `node16` or other values that enables to support `exports` field in package.json.
-    - If your project still use TypeScript's `--moduleResolution` with `node/node10` setting,
-      please use [**`v35`**](https://github.com/option-t/option-t/tree/v35.0.0).
+If you cannot work the above example in your project with TypeScript,
+please revisit [our installation guide](./installation.md).
