@@ -32,7 +32,7 @@ function categorizeByType(list) {
                 prefix = 'Undefinable';
                 break;
             case 'plain_option':
-                prefix = 'PlainOption';
+                prefix = 'PlainOption (deprecated)';
                 break;
             case 'plain_result':
                 prefix = 'PlainResult';
