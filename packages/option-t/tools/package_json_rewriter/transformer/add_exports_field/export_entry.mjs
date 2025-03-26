@@ -70,7 +70,6 @@ function constructDualPackagePathValue({ esm, dmts }) {
         // to determine a module type for this entry point.
         // For example, if we set `d.ts` for ES Module, tsc will think this entrypoint is ESM.
 
-        'import': esmCondition,
         'module-sync': esmCondition,
         // _default_ should be placed to the last.
         // https://nodejs.org/api/packages.html#conditional-exports

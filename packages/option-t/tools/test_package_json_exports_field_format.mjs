@@ -103,10 +103,6 @@ async function testComplexConditionObject(t, conditionValue) {
         assert.notStrictEqual(conditionValue, null);
     });
 
-    await t.test('`import` field is condition', async (t) => {
-        await testBasicConditionObject(TestMode.ESM, t, conditionValue.import);
-    });
-
     await t.test('`module-sync` field is condition', async (t) => {
         await testBasicConditionObject(TestMode.ESM, t, conditionValue['module-sync']);
     });
@@ -117,7 +113,11 @@ async function testComplexConditionObject(t, conditionValue) {
 
     await t.test('contains expected fields', (_t) => {
         const keys = Object.keys(conditionValue);
-        assert.deepStrictEqual(keys, ['import', 'module-sync', 'default']);
+        assert.deepStrictEqual(keys, [
+            // @prettier-ignore
+            'module-sync',
+            'default',
+        ]);
     });
 }
 
