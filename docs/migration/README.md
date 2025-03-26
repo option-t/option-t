@@ -5,6 +5,10 @@ please see a release note in [Releases](https://github.com/option-t/option-t/rel
 
 ## v51 ~
 
+- [v53](https://github.com/option-t/option-t/releases/tag/v53.0.0)
+- [v52](https://github.com/option-t/option-t/releases/tag/v52.0.1)
+- [v51](https://github.com/option-t/option-t/releases/tag/v51.0.0)
+
 ## v46 ~ v50
 
 - [v50](https://github.com/option-t/option-t/releases/tag/v50.0.0)
