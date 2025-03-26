@@ -92,7 +92,7 @@ Basic APIs are exported here:
 
 
 
-## PlainOption
+## PlainOption (deprecated)
 
 Basic APIs are exported here:
 
