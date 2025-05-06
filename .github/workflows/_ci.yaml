@@ -89,6 +89,7 @@ jobs:
                 node-version:
                     - ">=22.12.0"
                     - 23
+                    - 24
 
         steps:
             - uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2
