@@ -17,3 +17,9 @@ useTabs = false
     files = "*.{yaml,yml}"
     [overrides.options]
     singleQuote = false
+
+[[overrides]]
+    files = "turbo.jsonc"
+    [overrides.options]
+    # Turborepo 2.5 does not support trailingComma even if in jsonc file.
+    trailingComma = "none"
