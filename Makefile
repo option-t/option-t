@@ -97,7 +97,7 @@ test_import_types: build ## Build and run type import tests
 
 .PHONY: run_test_import_types
 run_test_import_types: ## Run type import tests
-	$(NPM_BIN)/turbo run test --filter './packages/test_module_resolution_*'
+	$(NPM_BIN)/turbo run test --filter './packages/test_module_*'
 
 .PHONY: run_test_unittest
 run_test_unittest: ## Run unit tests only.
