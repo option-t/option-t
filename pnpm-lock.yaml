@@ -71,6 +71,15 @@ importers:
 
   packages/option-t: {}
 
+  packages/test_module_node20:
+    dependencies:
+      option-t:
+        specifier: workspace:*
+        version: link:../option-t
+      typescript:
+        specifier: 5.9.1-rc
+        version: 5.9.1-rc
+
   packages/test_module_nodenext:
     dependencies:
       option-t:
@@ -1613,6 +1622,11 @@ packages:
 
   typescript@5.8.3:
     resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+  typescript@5.9.1-rc:
+    resolution: {integrity: sha512-pWar+9HGLkLwxu2PX1ItWnWg80r6nZ8qVEyWVRsnlZyZeFkHeR+eCrZ9PcYeVZjdLvcd5p/WgycViI+lsTh2qg==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3368,6 +3382,8 @@ snapshots:
       reflect.getprototypeof: 1.0.10
 
   typescript@5.8.3: {}
+
+  typescript@5.9.1-rc: {}
 
   unbox-primitive@1.1.0:
     dependencies:

@@ -1,0 +1,12 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "noEmit": true,
+        "outDir": "./__dist",
+        "module": "node20",
+        "skipLibCheck": false
+    },
+    "include": [
+        "src/**/*",
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "private": true,
+    "type": "module",
+    "name": "@option-t/test_module_node20",
+    "version": "53.0.0",
+    "license": "MIT",
+    "scripts": {
+        "test": "tsc -p ./tsconfig.json"
+    },
+    "dependencies": {
+        "option-t": "workspace:*",
+        "typescript": "5.9.1-rc"
+    }
+}
