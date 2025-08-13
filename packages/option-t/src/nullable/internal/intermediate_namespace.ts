@@ -5,8 +5,6 @@ export {
     unwrapNullable,
     type NotNull,
     type Nullable,
-    // FIXME(#2173):
-    // It's might better to expose this type as `Type`.
 } from '../core/nullable.js';
 
 export { andThenForNullable as andThen } from '../operators/and_then.js';
