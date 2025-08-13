@@ -28,7 +28,8 @@ npm install --save option-t@^35
 ### For TypeScript users
 
 1. If your project use TypeScript, you should set TypeScript's [`--moduleResolution`](https://www.typescriptlang.org/tsconfig/#moduleResolution)
-   with `bundler`, `node16` or other values that enables to support `exports` field in package.json.
+   or [`--module`](https://www.typescriptlang.org/tsconfig/#module)
+   with `bundler`, `node20` or other values that enables to support `exports` field in package.json.
     - If your project still use TypeScript's `--moduleResolution` with `node/node10` setting,
       please use [**`v35`**](https://github.com/option-t/option-t/tree/v35.0.0).
 2. If you would like to import this package from CommonJS (as known as [_require(esm)_](https://nodejs.org/docs/latest-v22.x/api/modules.html#loading-ecmascript-modules-using-require)),
