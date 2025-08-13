@@ -71,15 +71,11 @@ export { unwrapOrElseForResult } from './operators/unwrap_or_else.js';
 export { unwrapOrElseAsyncForResult } from './operators/unwrap_or_else_async.js';
 export { unwrapOrThrowForResult } from './operators/unwrap_or_throw.js';
 
-import * as resultOperators from './internal/intermediate_operators.js';
-
 /**
  *  @experimental
  *      This API is still experimental. We might change this without any breaking changes.
  */
-// FIXME: https://github.com/option-t/option-t/issues/2547
-// eslint-disable-next-line @typescript-eslint/naming-convention
-export const experimental_ResultOperators: typeof resultOperators = resultOperators;
+export * as experimental_ResultOperators from './internal/intermediate_operators.js';
 
 // XXX:
 //  We don't expose these itens that is unsafe operation.
