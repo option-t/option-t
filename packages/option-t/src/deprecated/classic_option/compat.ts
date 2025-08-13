@@ -1,4 +1,8 @@
-import { type Maybe, type NotNullOrUndefined, isNotNullOrUndefined } from '../../maybe/maybe.js';
+import {
+    type Maybe,
+    type NotNullOrUndefined,
+    isNotNullOrUndefined,
+} from '../../maybe/core/maybe.js';
 import {
     type Nullable,
     type NotNull,

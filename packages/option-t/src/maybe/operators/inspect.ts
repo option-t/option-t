@@ -1,5 +1,5 @@
-import type { EffectFn } from '../internal/function.js';
-import { isNotNullOrUndefined, type Maybe, type NotNullOrUndefined } from './maybe.js';
+import type { EffectFn } from '../../internal/function.js';
+import { isNotNullOrUndefined, type Maybe, type NotNullOrUndefined } from '../core/maybe.js';
 
 /**
  *  * Return _input_ directly.

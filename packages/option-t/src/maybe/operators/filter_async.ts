@@ -1,5 +1,5 @@
-import type { AsyncFilterFn } from '../internal/function.js';
-import { type Maybe, isNotNullOrUndefined } from './maybe.js';
+import type { AsyncFilterFn } from '../../internal/function.js';
+import { type Maybe, isNotNullOrUndefined } from '../core/maybe.js';
 
 /**
  *  Returns `undefined` if the _input_ is `null` or `undefined`,

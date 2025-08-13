@@ -1,4 +1,4 @@
-import { type Maybe, isNotNullOrUndefined } from './maybe.js';
+import { type Maybe, isNotNullOrUndefined } from '../core/maybe.js';
 
 /**
  *  Return one of this pattern:

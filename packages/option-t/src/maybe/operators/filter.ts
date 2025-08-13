@@ -1,5 +1,5 @@
-import type { FilterFn, TypePredicateFn } from '../internal/function.js';
-import { type Maybe, isNotNullOrUndefined, type NotNullOrUndefined } from './maybe.js';
+import type { FilterFn, TypePredicateFn } from '../../internal/function.js';
+import { type Maybe, isNotNullOrUndefined, type NotNullOrUndefined } from '../core/maybe.js';
 
 /**
  *  Returns `undefined` if the _input_ is `null` or `undefined`,

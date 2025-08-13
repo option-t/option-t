@@ -1,7 +1,7 @@
-import type { AsyncRecoveryFn } from '../internal/function.js';
+import type { AsyncRecoveryFn } from '../../internal/function.js';
 
-import { type Result, createErr, createOk } from '../plain_result/result.js';
-import { type Maybe, isNotNullOrUndefined } from './maybe.js';
+import { type Result, createErr, createOk } from '../../plain_result/result.js';
+import { type Maybe, isNotNullOrUndefined } from '../core/maybe.js';
 
 /**
  * Transforms the `Maybe<T>` into a `Result<T, E>` by mapping `T` to `Ok(T)`.

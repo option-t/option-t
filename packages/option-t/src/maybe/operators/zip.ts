@@ -1,4 +1,4 @@
-import { type Maybe, type NotNullOrUndefined, isNotNullOrUndefined } from './maybe.js';
+import { type Maybe, type NotNullOrUndefined, isNotNullOrUndefined } from '../core/maybe.js';
 
 /**
  *  Zips _self_ with another `Maybe<T>`.

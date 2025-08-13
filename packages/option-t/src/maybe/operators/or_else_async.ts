@@ -1,6 +1,6 @@
-import type { AsyncRecoveryFn } from '../internal/function.js';
+import type { AsyncRecoveryFn } from '../../internal/function.js';
 
-import { type Maybe, isNotNullOrUndefined } from './maybe.js';
+import { type Maybe, isNotNullOrUndefined } from '../core/maybe.js';
 
 export type MaybeAsyncRecoveryFn<out T> = AsyncRecoveryFn<Maybe<T>>;
 

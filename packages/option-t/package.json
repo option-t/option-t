@@ -76,80 +76,80 @@
         },
         "./maybe/and": {
             "default": {
-                "types": "./esm/maybe/and.d.ts",
-                "default": "./esm/maybe/and.js"
+                "types": "./esm/maybe/operators/and.d.ts",
+                "default": "./esm/maybe/operators/and.js"
             }
         },
         "./maybe/and_then": {
             "default": {
-                "types": "./esm/maybe/and_then.d.ts",
-                "default": "./esm/maybe/and_then.js"
+                "types": "./esm/maybe/operators/and_then.d.ts",
+                "default": "./esm/maybe/operators/and_then.js"
             }
         },
         "./maybe/and_then_async": {
             "default": {
-                "types": "./esm/maybe/and_then_async.d.ts",
-                "default": "./esm/maybe/and_then_async.js"
+                "types": "./esm/maybe/operators/and_then_async.d.ts",
+                "default": "./esm/maybe/operators/and_then_async.js"
             }
         },
         "./maybe/filter": {
             "default": {
-                "types": "./esm/maybe/filter.d.ts",
-                "default": "./esm/maybe/filter.js"
+                "types": "./esm/maybe/operators/filter.d.ts",
+                "default": "./esm/maybe/operators/filter.js"
             }
         },
         "./maybe/filter_async": {
             "default": {
-                "types": "./esm/maybe/filter_async.d.ts",
-                "default": "./esm/maybe/filter_async.js"
+                "types": "./esm/maybe/operators/filter_async.d.ts",
+                "default": "./esm/maybe/operators/filter_async.js"
             }
         },
         "./maybe/inspect": {
             "default": {
-                "types": "./esm/maybe/inspect.d.ts",
-                "default": "./esm/maybe/inspect.js"
+                "types": "./esm/maybe/operators/inspect.d.ts",
+                "default": "./esm/maybe/operators/inspect.js"
             }
         },
         "./maybe/map": {
             "default": {
-                "types": "./esm/maybe/map.d.ts",
-                "default": "./esm/maybe/map.js"
+                "types": "./esm/maybe/operators/map.d.ts",
+                "default": "./esm/maybe/operators/map.js"
             }
         },
         "./maybe/map_async": {
             "default": {
-                "types": "./esm/maybe/map_async.d.ts",
-                "default": "./esm/maybe/map_async.js"
+                "types": "./esm/maybe/operators/map_async.d.ts",
+                "default": "./esm/maybe/operators/map_async.js"
             }
         },
         "./maybe/map_or": {
             "default": {
-                "types": "./esm/maybe/map_or.d.ts",
-                "default": "./esm/maybe/map_or.js"
+                "types": "./esm/maybe/operators/map_or.d.ts",
+                "default": "./esm/maybe/operators/map_or.js"
             }
         },
         "./maybe/map_or_async": {
             "default": {
-                "types": "./esm/maybe/map_or_async.d.ts",
-                "default": "./esm/maybe/map_or_async.js"
+                "types": "./esm/maybe/operators/map_or_async.d.ts",
+                "default": "./esm/maybe/operators/map_or_async.js"
             }
         },
         "./maybe/map_or_else": {
             "default": {
-                "types": "./esm/maybe/map_or_else.d.ts",
-                "default": "./esm/maybe/map_or_else.js"
+                "types": "./esm/maybe/operators/map_or_else.d.ts",
+                "default": "./esm/maybe/operators/map_or_else.js"
             }
         },
         "./maybe/map_or_else_async": {
             "default": {
-                "types": "./esm/maybe/map_or_else_async.d.ts",
-                "default": "./esm/maybe/map_or_else_async.js"
+                "types": "./esm/maybe/operators/map_or_else_async.d.ts",
+                "default": "./esm/maybe/operators/map_or_else_async.js"
             }
         },
         "./maybe/maybe": {
             "default": {
-                "types": "./esm/maybe/maybe.d.ts",
-                "default": "./esm/maybe/maybe.js"
+                "types": "./esm/maybe/core/maybe.d.ts",
+                "default": "./esm/maybe/core/maybe.js"
             }
         },
         "./maybe/namespace": {
@@ -160,98 +160,98 @@
         },
         "./maybe/ok_or": {
             "default": {
-                "types": "./esm/maybe/ok_or.d.ts",
-                "default": "./esm/maybe/ok_or.js"
+                "types": "./esm/maybe/operators/ok_or.d.ts",
+                "default": "./esm/maybe/operators/ok_or.js"
             }
         },
         "./maybe/ok_or_else": {
             "default": {
-                "types": "./esm/maybe/ok_or_else.d.ts",
-                "default": "./esm/maybe/ok_or_else.js"
+                "types": "./esm/maybe/operators/ok_or_else.d.ts",
+                "default": "./esm/maybe/operators/ok_or_else.js"
             }
         },
         "./maybe/ok_or_else_async": {
             "default": {
-                "types": "./esm/maybe/ok_or_else_async.d.ts",
-                "default": "./esm/maybe/ok_or_else_async.js"
+                "types": "./esm/maybe/operators/ok_or_else_async.d.ts",
+                "default": "./esm/maybe/operators/ok_or_else_async.js"
             }
         },
         "./maybe/or": {
             "default": {
-                "types": "./esm/maybe/or.d.ts",
-                "default": "./esm/maybe/or.js"
+                "types": "./esm/maybe/operators/or.d.ts",
+                "default": "./esm/maybe/operators/or.js"
             }
         },
         "./maybe/or_else": {
             "default": {
-                "types": "./esm/maybe/or_else.d.ts",
-                "default": "./esm/maybe/or_else.js"
+                "types": "./esm/maybe/operators/or_else.d.ts",
+                "default": "./esm/maybe/operators/or_else.js"
             }
         },
         "./maybe/or_else_async": {
             "default": {
-                "types": "./esm/maybe/or_else_async.d.ts",
-                "default": "./esm/maybe/or_else_async.js"
+                "types": "./esm/maybe/operators/or_else_async.d.ts",
+                "default": "./esm/maybe/operators/or_else_async.js"
             }
         },
         "./maybe/to_nullable": {
             "default": {
-                "types": "./esm/maybe/to_nullable.d.ts",
-                "default": "./esm/maybe/to_nullable.js"
+                "types": "./esm/maybe/operators/to_nullable.d.ts",
+                "default": "./esm/maybe/operators/to_nullable.js"
             }
         },
         "./maybe/to_plain_result": {
             "default": {
-                "types": "./esm/maybe/to_plain_result.d.ts",
-                "default": "./esm/maybe/to_plain_result.js"
+                "types": "./esm/maybe/operators/to_plain_result.d.ts",
+                "default": "./esm/maybe/operators/to_plain_result.js"
             }
         },
         "./maybe/to_undefinable": {
             "default": {
-                "types": "./esm/maybe/to_undefinable.d.ts",
-                "default": "./esm/maybe/to_undefinable.js"
+                "types": "./esm/maybe/operators/to_undefinable.d.ts",
+                "default": "./esm/maybe/operators/to_undefinable.js"
             }
         },
         "./maybe/unwrap_or": {
             "default": {
-                "types": "./esm/maybe/unwrap_or.d.ts",
-                "default": "./esm/maybe/unwrap_or.js"
+                "types": "./esm/maybe/operators/unwrap_or.d.ts",
+                "default": "./esm/maybe/operators/unwrap_or.js"
             }
         },
         "./maybe/unwrap_or_else": {
             "default": {
-                "types": "./esm/maybe/unwrap_or_else.d.ts",
-                "default": "./esm/maybe/unwrap_or_else.js"
+                "types": "./esm/maybe/operators/unwrap_or_else.d.ts",
+                "default": "./esm/maybe/operators/unwrap_or_else.js"
             }
         },
         "./maybe/unwrap_or_else_async": {
             "default": {
-                "types": "./esm/maybe/unwrap_or_else_async.d.ts",
-                "default": "./esm/maybe/unwrap_or_else_async.js"
+                "types": "./esm/maybe/operators/unwrap_or_else_async.d.ts",
+                "default": "./esm/maybe/operators/unwrap_or_else_async.js"
             }
         },
         "./maybe/xor": {
             "default": {
-                "types": "./esm/maybe/xor.d.ts",
-                "default": "./esm/maybe/xor.js"
+                "types": "./esm/maybe/operators/xor.d.ts",
+                "default": "./esm/maybe/operators/xor.js"
             }
         },
         "./maybe/zip": {
             "default": {
-                "types": "./esm/maybe/zip.d.ts",
-                "default": "./esm/maybe/zip.js"
+                "types": "./esm/maybe/operators/zip.d.ts",
+                "default": "./esm/maybe/operators/zip.js"
             }
         },
         "./maybe/zip_with": {
             "default": {
-                "types": "./esm/maybe/zip_with.d.ts",
-                "default": "./esm/maybe/zip_with.js"
+                "types": "./esm/maybe/operators/zip_with.d.ts",
+                "default": "./esm/maybe/operators/zip_with.js"
             }
         },
         "./maybe/zip_with_async": {
             "default": {
-                "types": "./esm/maybe/zip_with_async.d.ts",
-                "default": "./esm/maybe/zip_with_async.js"
+                "types": "./esm/maybe/operators/zip_with_async.d.ts",
+                "default": "./esm/maybe/operators/zip_with_async.js"
             }
         },
         "./nullable": {
