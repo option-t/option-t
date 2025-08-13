@@ -6,8 +6,8 @@
     "devDependencies": {
         "@eslint/js": "^9.32.0",
         "@reflink/reflink": "^0.1.19",
-        "@typescript-eslint/eslint-plugin": "^8.38.0",
-        "@typescript-eslint/parser": "^8.38.0",
+        "@typescript-eslint/eslint-plugin": "^8.39.1",
+        "@typescript-eslint/parser": "^8.39.1",
         "ava": "^6.4.1",
         "del-cli": "^6.0.0",
         "eslint": "^9.32.0",
