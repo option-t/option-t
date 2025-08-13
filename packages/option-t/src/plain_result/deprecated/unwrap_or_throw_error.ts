@@ -1,10 +1,10 @@
 import { assertIsErrorInstance } from '../../internal/assert.js';
+import { type Result, isOk } from '../core/result.js';
 import { ERR_MSG_CONTAINED_TYPE_E_SHOULD_BE_BUILTIN_ERROR_INSTANCE } from '../internal/error_message.js';
 import {
     unsafeUnwrapValueInErrWithoutAnyCheck,
     unsafeUnwrapValueInOkWithoutAnyCheck,
 } from '../internal/intrinsics_unsafe.js';
-import { type Result, isOk } from '../result.js';
 
 /**
  *  @deprecated 48.1.0

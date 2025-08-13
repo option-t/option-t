@@ -1,8 +1,8 @@
+import { type Result, isOk } from '../core/result.js';
 import {
     unsafeUnwrapValueInErrWithoutAnyCheck,
     unsafeUnwrapValueInOkWithoutAnyCheck,
 } from '../internal/intrinsics_unsafe.js';
-import { type Result, isOk } from '../result.js';
 
 /**
  *  @deprecated 48.1.0

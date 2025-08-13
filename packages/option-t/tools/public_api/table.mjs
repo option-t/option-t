@@ -22,7 +22,12 @@ const UNDEFINABLE_CORE_DIR = `${UNDEFINABLE_DIR}/core`;
 const UNDEFINABLE_OPERARORS_DIR = `${UNDEFINABLE_DIR}/operators`;
 
 const PLAIN_OPTION_DIR = 'deprecated/plain_option';
+
 const PLAIN_RESULT_DIR = 'plain_result';
+const PLAIN_RESULT_CORE_DIR = `${PLAIN_RESULT_DIR}/core`;
+const PLAIN_RESULT_DEPRECATED_DIR = `${PLAIN_RESULT_DIR}/deprecated`;
+const PLAIN_RESULT_OPERARORS_DIR = `${PLAIN_RESULT_DIR}/operators`;
+const PLAIN_RESULT_UNSAFE_DIR = `${PLAIN_RESULT_DIR}/unsafe`;
 
 export const apiTable = Object.freeze({
     '.': pathRedirectionForRoot('index'),
@@ -132,62 +137,73 @@ export const apiTable = Object.freeze({
     'plain_option/xor': pathRedirectionTo(`${PLAIN_OPTION_DIR}/xor`),
 
     'plain_result': pathRedirectionMarkedAsTypeRoot(`${PLAIN_RESULT_DIR}/index`),
-    'plain_result/and': pathRedirectionTo(`${PLAIN_RESULT_DIR}/and`),
-    'plain_result/and_then': pathRedirectionTo(`${PLAIN_RESULT_DIR}/and_then`),
-    'plain_result/and_then_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/and_then_async`),
-
+    'plain_result/and': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/and`),
+    'plain_result/and_then': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/and_then`),
+    'plain_result/and_then_async': pathRedirectionTo(
+        `${PLAIN_RESULT_OPERARORS_DIR}/and_then_async`,
+    ),
     'plain_result/deprecated/try_catch_with_assert_error': pathRedirectionMarkedAsDeprecated(
-        `${PLAIN_RESULT_DIR}/deprecated/try_catch_with_assert_error`,
+        `${PLAIN_RESULT_DEPRECATED_DIR}/try_catch_with_assert_error`,
         null,
     ),
     'plain_result/deprecated/try_catch_with_assert_error_async': pathRedirectionMarkedAsDeprecated(
-        `${PLAIN_RESULT_DIR}/deprecated/try_catch_with_assert_error_async`,
+        `${PLAIN_RESULT_DEPRECATED_DIR}/try_catch_with_assert_error_async`,
         null,
     ),
     'plain_result/deprecated/unwrap_or_throw_error': pathRedirectionMarkedAsDeprecated(
-        `${PLAIN_RESULT_DIR}/deprecated/unwrap_or_throw_error`,
+        `${PLAIN_RESULT_DEPRECATED_DIR}/unwrap_or_throw_error`,
         'Use `option-t/plain_result/unwrap_or_throw` instead.',
     ),
     'plain_result/deprecated/unwrap_or_throw_unknown': pathRedirectionMarkedAsDeprecated(
-        `${PLAIN_RESULT_DIR}/deprecated/unwrap_or_throw_unknown`,
+        `${PLAIN_RESULT_DEPRECATED_DIR}/unwrap_or_throw_unknown`,
         'Use `option-t/plain_result/unwrap_or_throw` instead.',
     ),
-    'plain_result/equal': pathRedirectionTo(`${PLAIN_RESULT_DIR}/equal`),
-    'plain_result/flatten': pathRedirectionTo(`${PLAIN_RESULT_DIR}/flatten`),
+    'plain_result/equal': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/equal`),
+    'plain_result/flatten': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/flatten`),
     'plain_result/from_promise_settled_result': pathRedirectionTo(
-        'plain_result/from_promise_settled_result',
+        `${PLAIN_RESULT_OPERARORS_DIR}/from_promise_settled_result`,
     ),
-    'plain_result/inspect': pathRedirectionTo(`${PLAIN_RESULT_DIR}/inspect`),
-    'plain_result/is_err_and': pathRedirectionTo(`${PLAIN_RESULT_DIR}/is_err_and`),
-    'plain_result/is_ok_and': pathRedirectionTo(`${PLAIN_RESULT_DIR}/is_ok_and`),
-    'plain_result/map': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map`),
-    'plain_result/map_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map_async`),
-    'plain_result/map_err': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map_err`),
-    'plain_result/map_err_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map_err_async`),
-    'plain_result/map_or': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map_or`),
-    'plain_result/map_or_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map_or_async`),
-    'plain_result/map_or_else': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map_or_else`),
-    'plain_result/map_or_else_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/map_or_else_async`),
+    'plain_result/inspect': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/inspect`),
+    'plain_result/is_err_and': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/is_err_and`),
+    'plain_result/is_ok_and': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/is_ok_and`),
+    'plain_result/map': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/map`),
+    'plain_result/map_async': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/map_async`),
+    'plain_result/map_err': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/map_err`),
+    'plain_result/map_err_async': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/map_err_async`),
+    'plain_result/map_or': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/map_or`),
+    'plain_result/map_or_async': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/map_or_async`),
+    'plain_result/map_or_else': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/map_or_else`),
+    'plain_result/map_or_else_async': pathRedirectionTo(
+        `${PLAIN_RESULT_OPERARORS_DIR}/map_or_else_async`,
+    ),
     'plain_result/namespace': pathRedirectionMarkedAsTypeRootNamespace(
         `${PLAIN_RESULT_DIR}/namespace`,
     ),
-    'plain_result/or': pathRedirectionTo(`${PLAIN_RESULT_DIR}/or`),
-    'plain_result/or_else': pathRedirectionTo(`${PLAIN_RESULT_DIR}/or_else`),
-    'plain_result/or_else_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/or_else_async`),
-    'plain_result/result': pathRedirectionMarkedAsCorePrimitive(`${PLAIN_RESULT_DIR}/result`),
-    'plain_result/to_nullable': pathRedirectionTo(`${PLAIN_RESULT_DIR}/to_nullable`),
-    'plain_result/to_undefinable': pathRedirectionTo(`${PLAIN_RESULT_DIR}/to_undefinable`),
-    'plain_result/transpose': pathRedirectionTo(`${PLAIN_RESULT_DIR}/transpose`),
-    'plain_result/try_catch': pathRedirectionTo(`${PLAIN_RESULT_DIR}/try_catch`),
-    'plain_result/try_catch_async': pathRedirectionTo(`${PLAIN_RESULT_DIR}/try_catch_async`),
-    'plain_result/unsafe/as_mut': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unsafe/as_mut`),
-    'plain_result/unsafe/drop': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unsafe/drop`),
-    'plain_result/unwrap_or': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or`),
-    'plain_result/unwrap_or_else': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or_else`),
-    'plain_result/unwrap_or_else_async': pathRedirectionTo(
-        `${PLAIN_RESULT_DIR}/unwrap_or_else_async`,
+    'plain_result/or': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/or`),
+    'plain_result/or_else': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/or_else`),
+    'plain_result/or_else_async': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/or_else_async`),
+    'plain_result/result': pathRedirectionMarkedAsCorePrimitive(`${PLAIN_RESULT_CORE_DIR}/result`),
+    'plain_result/to_nullable': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/to_nullable`),
+    'plain_result/to_undefinable': pathRedirectionTo(
+        `${PLAIN_RESULT_OPERARORS_DIR}/to_undefinable`,
     ),
-    'plain_result/unwrap_or_throw': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or_throw`),
+    'plain_result/transpose': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/transpose`),
+    'plain_result/try_catch': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/try_catch`),
+    'plain_result/try_catch_async': pathRedirectionTo(
+        `${PLAIN_RESULT_OPERARORS_DIR}/try_catch_async`,
+    ),
+    'plain_result/unsafe/as_mut': pathRedirectionTo(`${PLAIN_RESULT_UNSAFE_DIR}/as_mut`),
+    'plain_result/unsafe/drop': pathRedirectionTo(`${PLAIN_RESULT_UNSAFE_DIR}/drop`),
+    'plain_result/unwrap_or': pathRedirectionTo(`${PLAIN_RESULT_OPERARORS_DIR}/unwrap_or`),
+    'plain_result/unwrap_or_else': pathRedirectionTo(
+        `${PLAIN_RESULT_OPERARORS_DIR}/unwrap_or_else`,
+    ),
+    'plain_result/unwrap_or_else_async': pathRedirectionTo(
+        `${PLAIN_RESULT_OPERARORS_DIR}/unwrap_or_else_async`,
+    ),
+    'plain_result/unwrap_or_throw': pathRedirectionTo(
+        `${PLAIN_RESULT_OPERARORS_DIR}/unwrap_or_throw`,
+    ),
 
     'undefinable': pathRedirectionMarkedAsTypeRoot(`${UNDEFINABLE_DIR}/index`),
     'undefinable/and': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/and`),

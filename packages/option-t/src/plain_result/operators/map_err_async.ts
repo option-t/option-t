@@ -1,6 +1,6 @@
-import type { AsyncTransformFn } from '../internal/function.js';
-import { unsafeUnwrapValueInErrWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
-import { type Result, createErr, isOk } from './result.js';
+import type { AsyncTransformFn } from '../../internal/function.js';
+import { type Result, createErr, isOk } from '../core/result.js';
+import { unsafeUnwrapValueInErrWithoutAnyCheck } from '../internal/intrinsics_unsafe.js';
 
 /**
  *  Maps a `Result<T, E>` to `Result<T, F>` by applying a _transformer_ function `mapFn<E, F>`

@@ -1,7 +1,7 @@
 import {
     ERR_MSG_UNWRAP_ERR_BUT_INPUT_IS_OK,
     ERR_MSG_UNWRAP_OK_BUT_INPUT_IS_ERR,
-} from './internal/error_message.js';
+} from '../internal/error_message.js';
 
 /**
  *

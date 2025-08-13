@@ -1,4 +1,4 @@
-import { isErr, isOk, unwrapErr, unwrapOk, type Result } from '../../plain_result/result.js';
+import { isErr, isOk, unwrapErr, unwrapOk, type Result } from '../../plain_result/core/result.js';
 import { type Option, createNone, createSome } from './option.js';
 
 /**

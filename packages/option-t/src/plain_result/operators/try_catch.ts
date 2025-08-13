@@ -1,7 +1,7 @@
-import type { AsyncProducerFn } from '../internal/function.js';
-import { unsafeUnwrapValueInErrWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
-import { wrapWithNewErrorIfCausalIsUnknown } from './internal/unknown_causal_carrier.js';
-import { type Result, createOk, createErr, isOk } from './result.js';
+import type { ProducerFn } from '../../internal/function.js';
+import { type Result, createOk, createErr, isOk } from '../core/result.js';
+import { unsafeUnwrapValueInErrWithoutAnyCheck } from '../internal/intrinsics_unsafe.js';
+import { wrapWithNewErrorIfCausalIsUnknown } from '../internal/unknown_causal_carrier.js';
 
 /**
  *  This function converts the returend value from _producer_ into `Ok(T)`.
@@ -14,19 +14,15 @@ import { type Result, createOk, createErr, isOk } from './result.js';
  *     Use this operator just to make a bridge to existing codebase
  *     that you cannot inspect deeply to details.
  */
-export async function tryCatchIntoResultAsync<T>(
-    producer: AsyncProducerFn<T>,
-): Promise<Result<T, unknown>> {
-    let value: T;
+export function tryCatchIntoResult<T>(producer: ProducerFn<T>): Result<T, unknown> {
     try {
-        value = await producer();
+        const value: T = producer();
+        const okWrapped = createOk<T>(value);
+        return okWrapped;
     } catch (e: unknown) {
         const errWrapped = createErr<unknown>(e);
         return errWrapped;
     }
-
-    const wrapped: Result<T, unknown> = createOk(value);
-    return wrapped;
 }
 
 /**
@@ -57,10 +53,8 @@ export async function tryCatchIntoResultAsync<T>(
  *     Use this operator just to make a bridge to existing codebase
  *     that you cannot inspect deeply to details.
  */
-export async function tryCatchIntoResultWithEnsureErrorAsync<T>(
-    producer: AsyncProducerFn<T>,
-): Promise<Result<T, Error>> {
-    const result = await tryCatchIntoResultAsync(producer);
+export function tryCatchIntoResultWithEnsureError<T>(producer: ProducerFn<T>): Result<T, Error> {
+    const result = tryCatchIntoResult(producer);
     if (isOk(result)) {
         return result;
     }

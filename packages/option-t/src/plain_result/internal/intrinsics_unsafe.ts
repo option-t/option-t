@@ -1,4 +1,4 @@
-import type { Ok, Err } from '../result.js';
+import type { Ok, Err } from '../core/result.js';
 import type { MutErr, MutOk } from './mutable.js';
 
 // This is introduced to avoid to evaluate the guard if statement twice

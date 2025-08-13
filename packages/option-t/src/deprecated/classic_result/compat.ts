@@ -5,7 +5,7 @@ import {
     isOk,
     unwrapOk,
     unwrapErr,
-} from '../../plain_result/result.js';
+} from '../../plain_result/core/result.js';
 
 import { type ClassicResult, createClassicOk, createClassicErr } from './classic_result.js';
 

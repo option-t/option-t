@@ -1,9 +1,9 @@
-import type { AsyncRecoveryFromErrorFn } from '../internal/function.js';
+import type { AsyncRecoveryFromErrorFn } from '../../internal/function.js';
+import { type Result, isOk } from '../core/result.js';
 import {
     unsafeUnwrapValueInErrWithoutAnyCheck,
     unsafeUnwrapValueInOkWithoutAnyCheck,
-} from './internal/intrinsics_unsafe.js';
-import { type Result, isOk } from './result.js';
+} from '../internal/intrinsics_unsafe.js';
 
 /**
  *  Unwraps _input_, returns the content of an `Ok(T)`.

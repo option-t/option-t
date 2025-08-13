@@ -1,6 +1,6 @@
-import type { AsyncRecoveryFromErrorFn } from '../internal/function.js';
-import { unsafeUnwrapValueInErrWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
-import { type Result, isOk } from './result.js';
+import type { AsyncRecoveryFromErrorFn } from '../../internal/function.js';
+import { type Result, isOk } from '../core/result.js';
+import { unsafeUnwrapValueInErrWithoutAnyCheck } from '../internal/intrinsics_unsafe.js';
 
 export type ResultAsyncTryRecoveryFromErrorFn<in E, out T, out F> = AsyncRecoveryFromErrorFn<
     E,

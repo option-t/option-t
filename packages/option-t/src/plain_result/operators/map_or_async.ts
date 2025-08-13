@@ -1,6 +1,6 @@
-import type { AsyncTransformFn } from '../internal/function.js';
-import { unsafeUnwrapValueInOkWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
-import { isErr, type Result } from './result.js';
+import type { AsyncTransformFn } from '../../internal/function.js';
+import { isErr, type Result } from '../core/result.js';
+import { unsafeUnwrapValueInOkWithoutAnyCheck } from '../internal/intrinsics_unsafe.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is `Ok(T)`.

@@ -1,6 +1,6 @@
 import { assertIsNotFrozen } from '../../internal/assert.js';
+import type { Result } from '../core/result.js';
 import type { MutResult as InternalMutResult } from '../internal/mutable.js';
-import type { Result } from '../result.js';
 
 /**
  *  This allows to mutate the value to save needless allocation.

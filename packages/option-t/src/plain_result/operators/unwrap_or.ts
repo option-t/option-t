@@ -1,5 +1,5 @@
-import { unsafeUnwrapValueInOkWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
-import { isOk, type Result } from './result.js';
+import { isOk, type Result } from '../core/result.js';
+import { unsafeUnwrapValueInOkWithoutAnyCheck } from '../internal/intrinsics_unsafe.js';
 
 /**
  *  Unwraps a result _input_, returns the content of an `Ok(T)`.

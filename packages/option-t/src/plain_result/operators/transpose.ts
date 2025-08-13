@@ -1,7 +1,7 @@
-import { type Nullable, isNull } from '../nullable/core/nullable.js';
-import { isUndefined, type Undefinable } from '../undefinable/core/undefinable.js';
-import { unsafeUnwrapValueInOkWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
-import { type Result, isErr, createOk } from './result.js';
+import { type Nullable, isNull } from '../../nullable/core/nullable.js';
+import { isUndefined, type Undefinable } from '../../undefinable/core/undefinable.js';
+import { type Result, isErr, createOk } from '../core/result.js';
+import { unsafeUnwrapValueInOkWithoutAnyCheck } from '../internal/intrinsics_unsafe.js';
 
 /**
  *  Transposes a `Result` of an `Nullable<T>` into an `Nullable<T>` of a `Result`.
