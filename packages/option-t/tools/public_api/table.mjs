@@ -18,6 +18,9 @@ const NULLABLE_CORE_DIR = `${NULLABLE_DIR}/core`;
 const NULLABLE_OPERARORS_DIR = `${NULLABLE_DIR}/operators`;
 
 const UNDEFINABLE_DIR = 'undefinable';
+const UNDEFINABLE_CORE_DIR = `${UNDEFINABLE_DIR}/core`;
+const UNDEFINABLE_OPERARORS_DIR = `${UNDEFINABLE_DIR}/operators`;
+
 const PLAIN_OPTION_DIR = 'deprecated/plain_option';
 const PLAIN_RESULT_DIR = 'plain_result';
 
@@ -187,39 +190,45 @@ export const apiTable = Object.freeze({
     'plain_result/unwrap_or_throw': pathRedirectionTo(`${PLAIN_RESULT_DIR}/unwrap_or_throw`),
 
     'undefinable': pathRedirectionMarkedAsTypeRoot(`${UNDEFINABLE_DIR}/index`),
-    'undefinable/and': pathRedirectionTo(`${UNDEFINABLE_DIR}/and`),
-    'undefinable/and_then': pathRedirectionTo(`${UNDEFINABLE_DIR}/and_then`),
-    'undefinable/and_then_async': pathRedirectionTo(`${UNDEFINABLE_DIR}/and_then_async`),
-    'undefinable/filter': pathRedirectionTo(`${UNDEFINABLE_DIR}/filter`),
-    'undefinable/filter_async': pathRedirectionTo(`${UNDEFINABLE_DIR}/filter_async`),
-    'undefinable/inspect': pathRedirectionTo(`${UNDEFINABLE_DIR}/inspect`),
-    'undefinable/map': pathRedirectionTo(`${UNDEFINABLE_DIR}/map`),
-    'undefinable/map_async': pathRedirectionTo(`${UNDEFINABLE_DIR}/map_async`),
-    'undefinable/map_or': pathRedirectionTo(`${UNDEFINABLE_DIR}/map_or`),
-    'undefinable/map_or_async': pathRedirectionTo(`${UNDEFINABLE_DIR}/map_or_async`),
-    'undefinable/map_or_else': pathRedirectionTo(`${UNDEFINABLE_DIR}/map_or_else`),
-    'undefinable/map_or_else_async': pathRedirectionTo(`${UNDEFINABLE_DIR}/map_or_else_async`),
+    'undefinable/and': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/and`),
+    'undefinable/and_then': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/and_then`),
+    'undefinable/and_then_async': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/and_then_async`),
+    'undefinable/filter': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/filter`),
+    'undefinable/filter_async': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/filter_async`),
+    'undefinable/inspect': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/inspect`),
+    'undefinable/map': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/map`),
+    'undefinable/map_async': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/map_async`),
+    'undefinable/map_or': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/map_or`),
+    'undefinable/map_or_async': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/map_or_async`),
+    'undefinable/map_or_else': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/map_or_else`),
+    'undefinable/map_or_else_async': pathRedirectionTo(
+        `${UNDEFINABLE_OPERARORS_DIR}/map_or_else_async`,
+    ),
     'undefinable/namespace': pathRedirectionMarkedAsTypeRootNamespace(
         `${UNDEFINABLE_DIR}/namespace`,
     ),
-    'undefinable/ok_or': pathRedirectionTo(`${UNDEFINABLE_DIR}/ok_or`),
-    'undefinable/ok_or_else': pathRedirectionTo(`${UNDEFINABLE_DIR}/ok_or_else`),
-    'undefinable/ok_or_else_async': pathRedirectionTo(`${UNDEFINABLE_DIR}/ok_or_else_async`),
-    'undefinable/or': pathRedirectionTo(`${UNDEFINABLE_DIR}/or`),
-    'undefinable/or_else': pathRedirectionTo(`${UNDEFINABLE_DIR}/or_else`),
-    'undefinable/or_else_async': pathRedirectionTo(`${UNDEFINABLE_DIR}/or_else_async`),
-    'undefinable/to_nullable': pathRedirectionTo(`${UNDEFINABLE_DIR}/to_nullable`),
-    'undefinable/to_plain_result': pathRedirectionTo(`${UNDEFINABLE_DIR}/to_plain_result`),
+    'undefinable/ok_or': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/ok_or`),
+    'undefinable/ok_or_else': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/ok_or_else`),
+    'undefinable/ok_or_else_async': pathRedirectionTo(
+        `${UNDEFINABLE_OPERARORS_DIR}/ok_or_else_async`,
+    ),
+    'undefinable/or': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/or`),
+    'undefinable/or_else': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/or_else`),
+    'undefinable/or_else_async': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/or_else_async`),
+    'undefinable/to_nullable': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/to_nullable`),
+    'undefinable/to_plain_result': pathRedirectionTo(
+        `${UNDEFINABLE_OPERARORS_DIR}/to_plain_result`,
+    ),
     'undefinable/undefinable': pathRedirectionMarkedAsCorePrimitive(
-        `${UNDEFINABLE_DIR}/undefinable`,
+        `${UNDEFINABLE_CORE_DIR}/undefinable`,
     ),
-    'undefinable/unwrap_or': pathRedirectionTo(`${UNDEFINABLE_DIR}/unwrap_or`),
-    'undefinable/unwrap_or_else': pathRedirectionTo(`${UNDEFINABLE_DIR}/unwrap_or_else`),
+    'undefinable/unwrap_or': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/unwrap_or`),
+    'undefinable/unwrap_or_else': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/unwrap_or_else`),
     'undefinable/unwrap_or_else_async': pathRedirectionTo(
-        `${UNDEFINABLE_DIR}/unwrap_or_else_async`,
+        `${UNDEFINABLE_OPERARORS_DIR}/unwrap_or_else_async`,
     ),
-    'undefinable/xor': pathRedirectionTo(`${UNDEFINABLE_DIR}/xor`),
-    'undefinable/zip': pathRedirectionTo(`${UNDEFINABLE_DIR}/zip`),
-    'undefinable/zip_with': pathRedirectionTo(`${UNDEFINABLE_DIR}/zip_with`),
-    'undefinable/zip_with_async': pathRedirectionTo(`${UNDEFINABLE_DIR}/zip_with_async`),
+    'undefinable/xor': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/xor`),
+    'undefinable/zip': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/zip`),
+    'undefinable/zip_with': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/zip_with`),
+    'undefinable/zip_with_async': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/zip_with_async`),
 });

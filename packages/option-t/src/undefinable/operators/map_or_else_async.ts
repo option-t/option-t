@@ -1,14 +1,14 @@
-import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/function.js';
-import {
-    ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
-    ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
-} from './internal/error_message.js';
+import type { AsyncTransformFn, AsyncRecoveryFn } from '../../internal/function.js';
 import {
     type Undefinable,
     isNotUndefined,
     type NotUndefined,
     expectNotUndefined,
-} from './undefinable.js';
+} from '../core/undefinable.js';
+import {
+    ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
+    ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE,
+} from '../internal/error_message.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `undefined`.

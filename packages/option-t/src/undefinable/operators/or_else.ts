@@ -1,5 +1,5 @@
-import type { RecoveryFn } from '../internal/function.js';
-import type { Undefinable } from './undefinable.js';
+import type { RecoveryFn } from '../../internal/function.js';
+import type { Undefinable } from '../core/undefinable.js';
 
 export type UndefinableTryRecoveryFn<out T> = RecoveryFn<Undefinable<T>>;
 

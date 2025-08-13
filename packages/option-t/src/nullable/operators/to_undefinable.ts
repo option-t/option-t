@@ -1,4 +1,4 @@
-import type { Undefinable } from '../../undefinable/undefinable.js';
+import type { Undefinable } from '../../undefinable/core/undefinable.js';
 import { type Nullable, isNull } from '../core/nullable.js';
 
 /**

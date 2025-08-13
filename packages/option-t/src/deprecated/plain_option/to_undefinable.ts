@@ -1,4 +1,4 @@
-import type { Undefinable } from '../../undefinable/undefinable.js';
+import type { Undefinable } from '../../undefinable/core/undefinable.js';
 import { mapOrForOption } from './map_or.js';
 import type { Option } from './option.js';
 

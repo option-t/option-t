@@ -14,7 +14,7 @@ import {
     type NotUndefined,
     expectNotUndefined,
     isNotUndefined,
-} from '../../undefinable/undefinable.js';
+} from '../../undefinable/core/undefinable.js';
 import {
     createSome,
     createNone,

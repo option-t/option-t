@@ -1,4 +1,4 @@
-import { ERR_MSG_UNWRAP_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.js';
+import { ERR_MSG_UNWRAP_NO_VAL_FOR_UNDEFINABLE } from '../internal/error_message.js';
 
 export type NotUndefined<T> = T extends undefined ? never : T;
 

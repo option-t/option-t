@@ -1,6 +1,6 @@
-import type { AsyncTransformFn } from '../internal/function.js';
+import type { AsyncTransformFn } from '../../internal/function.js';
 
-import { type Undefinable, isUndefined } from './undefinable.js';
+import { type Undefinable, isUndefined } from '../core/undefinable.js';
 
 export type UndefinableAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Undefinable<U>>;
 

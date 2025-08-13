@@ -1,6 +1,6 @@
-import type { AsyncRecoveryFn } from '../internal/function.js';
+import type { AsyncRecoveryFn } from '../../internal/function.js';
 
-import { type Undefinable, isNotUndefined } from './undefinable.js';
+import { type Undefinable, isNotUndefined } from '../core/undefinable.js';
 
 export type UndefinableAsyncTryRecoveryFn<out T> = AsyncRecoveryFn<Undefinable<T>>;
 

@@ -1,5 +1,5 @@
-import type { FilterFn, TypePredicateFn } from '../internal/function.js';
-import { type Undefinable, isNotUndefined, type NotUndefined } from './undefinable.js';
+import type { FilterFn, TypePredicateFn } from '../../internal/function.js';
+import { type Undefinable, isNotUndefined, type NotUndefined } from '../core/undefinable.js';
 
 /**
  *  Returns `undefined` if the _input_ is `undefined`,
