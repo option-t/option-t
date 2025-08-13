@@ -9,6 +9,6 @@
     },
     "dependencies": {
         "option-t": "workspace:*",
-        "typescript": "5.9.1-rc"
+        "typescript": "5.9.2"
     }
 }
