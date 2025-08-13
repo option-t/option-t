@@ -1,5 +1,5 @@
-import type { TransformFn } from '../internal/function.js';
-import { type Undefinable, isUndefined } from './undefinable.js';
+import type { TransformFn } from '../../internal/function.js';
+import { type Undefinable, isUndefined } from '../core/undefinable.js';
 
 export type UndefinableTryTransformFn<in T, out U> = TransformFn<T, Undefinable<U>>;
 

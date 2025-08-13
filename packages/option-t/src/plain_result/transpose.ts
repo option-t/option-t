@@ -1,5 +1,5 @@
 import { type Nullable, isNull } from '../nullable/core/nullable.js';
-import { isUndefined, type Undefinable } from '../undefinable/undefinable.js';
+import { isUndefined, type Undefinable } from '../undefinable/core/undefinable.js';
 import { unsafeUnwrapValueInOkWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
 import { type Result, isErr, createOk } from './result.js';
 

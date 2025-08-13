@@ -1,5 +1,5 @@
-import type { AsyncFilterFn } from '../internal/function.js';
-import { type Undefinable, isNotUndefined } from './undefinable.js';
+import type { AsyncFilterFn } from '../../internal/function.js';
+import { type Undefinable, isNotUndefined } from '../core/undefinable.js';
 
 /**
  *  Returns `undefined` if the _input_ is `undefined`,

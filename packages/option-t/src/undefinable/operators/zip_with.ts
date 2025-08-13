@@ -1,11 +1,11 @@
-import type { ZipTransformerFn } from '../internal/function.js';
-import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.js';
+import type { ZipTransformerFn } from '../../internal/function.js';
 import {
     type Undefinable,
     type NotUndefined,
     expectNotUndefined,
     isUndefined,
-} from './undefinable.js';
+} from '../core/undefinable.js';
+import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE } from '../internal/error_message.js';
 
 /**
  *  Zips _self_ and another `Undefinable` with function _transformer_.

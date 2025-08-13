@@ -1,4 +1,4 @@
-import { type Undefinable, isNotUndefined } from './undefinable.js';
+import { type Undefinable, isNotUndefined } from '../core/undefinable.js';
 
 /**
  *  Return one of this pattern:

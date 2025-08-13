@@ -1,4 +1,4 @@
-import { type Undefinable, type NotUndefined, isNotUndefined } from './undefinable.js';
+import { type Undefinable, type NotUndefined, isNotUndefined } from '../core/undefinable.js';
 
 /**
  *  Zips _self_ with another `Undefinable<T>`.

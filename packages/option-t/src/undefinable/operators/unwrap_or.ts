@@ -1,10 +1,10 @@
-import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from './internal/error_message.js';
 import {
     isNotUndefined,
     type NotUndefined,
     type Undefinable,
     expectNotUndefined,
-} from './undefinable.js';
+} from '../core/undefinable.js';
+import { ERR_MSG_DEFAULT_VALUE_MUST_NOT_BE_NO_VAL_FOR_UNDEFINABLE } from '../internal/error_message.js';
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `undefined`.
