@@ -30,6 +30,16 @@ export { unwrapOrForUndefinable } from './operators/unwrap_or.js';
 export { unwrapOrElseForUndefinable } from './operators/unwrap_or_else.js';
 export { unwrapOrElseAsyncForUndefinable } from './operators/unwrap_or_else_async.js';
 
+import * as undefinableOperators from './internal/intermediate_operators.js';
+
+/**
+ *  @experimental
+ *      This API is still experimental. We might change this without any breaking changes.
+ */
+// FIXME: https://github.com/option-t/option-t/issues/2549
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export const experimental_UndefinableOperators: typeof undefinableOperators = undefinableOperators;
+
 // XXX:
 //  _and_ operator is equivalent of `a && b` so we don't ship it by this default set.
 //
