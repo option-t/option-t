@@ -10,8 +10,6 @@ export {
     type Err,
     type Ok,
     type Result,
-    // FIXME(#2173):
-    // It's might better to expose this type as `Type`.
 } from '../result.js';
 
 export { andThenForResult as andThen } from '../and_then.js';

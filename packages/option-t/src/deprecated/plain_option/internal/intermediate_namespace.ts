@@ -8,8 +8,6 @@ export {
     type None,
     type Option,
     type Some,
-    // FIXME(#2173):
-    // It's might better to expose this type as `Type`.
 } from '../option.js';
 
 export { andThenForOption as andThen } from '../and_then.js';
