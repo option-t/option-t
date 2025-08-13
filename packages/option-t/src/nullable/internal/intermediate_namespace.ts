@@ -7,30 +7,30 @@ export {
     type Nullable,
     // FIXME(#2173):
     // It's might better to expose this type as `Type`.
-} from '../nullable.js';
+} from '../core/nullable.js';
 
-export { andThenForNullable as andThen } from '../and_then.js';
-export { andThenAsyncForNullable as andThenAsync } from '../and_then_async.js';
-export { inspectNullable as inspect } from '../inspect.js';
-export { mapForNullable as map } from '../map.js';
-export { mapAsyncForNullable as mapAsync } from '../map_async.js';
-export { mapOrForNullable as mapOr } from '../map_or.js';
-export { mapOrAsyncForNullable as mapOrAsync } from '../map_or_async.js';
-export { mapOrElseForNullable as mapOrElse } from '../map_or_else.js';
-export { mapOrElseAsyncForNullable as mapOrElseAsync } from '../map_or_else_async.js';
-export { okOrForNullable as okOr } from '../ok_or.js';
-export { okOrElseForNullable as okOrElse } from '../ok_or_else.js';
-export { okOrElseAsyncForNullable as okOrElseAsync } from '../ok_or_else_async.js';
-export { orElseForNullable as orElse } from '../or_else.js';
-export { orElseAsyncForNullable as orElseAsync } from '../or_else_async.js';
+export { andThenForNullable as andThen } from '../operators/and_then.js';
+export { andThenAsyncForNullable as andThenAsync } from '../operators/and_then_async.js';
+export { inspectNullable as inspect } from '../operators/inspect.js';
+export { mapForNullable as map } from '../operators/map.js';
+export { mapAsyncForNullable as mapAsync } from '../operators/map_async.js';
+export { mapOrForNullable as mapOr } from '../operators/map_or.js';
+export { mapOrAsyncForNullable as mapOrAsync } from '../operators/map_or_async.js';
+export { mapOrElseForNullable as mapOrElse } from '../operators/map_or_else.js';
+export { mapOrElseAsyncForNullable as mapOrElseAsync } from '../operators/map_or_else_async.js';
+export { okOrForNullable as okOr } from '../operators/ok_or.js';
+export { okOrElseForNullable as okOrElse } from '../operators/ok_or_else.js';
+export { okOrElseAsyncForNullable as okOrElseAsync } from '../operators/ok_or_else_async.js';
+export { orElseForNullable as orElse } from '../operators/or_else.js';
+export { orElseAsyncForNullable as orElseAsync } from '../operators/or_else_async.js';
 export {
     toResultErrFromNullable as toResultErr,
     toResultOkFromNullable as toResultOk,
-} from '../to_plain_result.js';
-export { toUndefinableFromNullable as toUndefinable } from '../to_undefinable.js';
-export { unwrapOrForNullable as unwrapOr } from '../unwrap_or.js';
-export { unwrapOrElseForNullable as unwrapOrElse } from '../unwrap_or_else.js';
-export { unwrapOrElseAsyncForNullable as unwrapOrElseAsync } from '../unwrap_or_else_async.js';
+} from '../operators/to_plain_result.js';
+export { toUndefinableFromNullable as toUndefinable } from '../operators/to_undefinable.js';
+export { unwrapOrForNullable as unwrapOr } from '../operators/unwrap_or.js';
+export { unwrapOrElseForNullable as unwrapOrElse } from '../operators/unwrap_or_else.js';
+export { unwrapOrElseAsyncForNullable as unwrapOrElseAsync } from '../operators/unwrap_or_else_async.js';
 
 // XXX:
 //  _and_ operator is equivalent of `a && b` so we don't ship it by this default set.

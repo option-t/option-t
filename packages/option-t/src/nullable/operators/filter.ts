@@ -1,5 +1,5 @@
-import type { FilterFn, TypePredicateFn } from '../internal/function.js';
-import { type Nullable, isNotNull, type NotNull } from './nullable.js';
+import type { FilterFn, TypePredicateFn } from '../../internal/function.js';
+import { type Nullable, isNotNull, type NotNull } from '../core/nullable.js';
 
 /**
  *  Returns `null` if the _input_ is `null`,

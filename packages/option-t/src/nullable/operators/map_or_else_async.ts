@@ -1,9 +1,9 @@
-import type { AsyncTransformFn, AsyncRecoveryFn } from '../internal/function.js';
+import type { AsyncTransformFn, AsyncRecoveryFn } from '../../internal/function.js';
+import { type Nullable, isNotNull, type NotNull, expectNotNull } from '../core/nullable.js';
 import {
     ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
     ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE,
-} from './internal/error_message.js';
-import { type Nullable, isNotNull, type NotNull, expectNotNull } from './nullable.js';
+} from '../internal/error_message.js';
 
 /**
  *  Return the result of _transformer_ with using _input_ as an argument for it if _input_ is not `null`.

@@ -1,4 +1,4 @@
-import type { Nullable } from '../nullable/nullable.js';
+import type { Nullable } from '../nullable/core/nullable.js';
 import { type Maybe, isNullOrUndefined } from './maybe.js';
 
 /**

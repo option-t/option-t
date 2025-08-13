@@ -1,4 +1,4 @@
-import { isNotNull, type Nullable, type NotNull } from './nullable.js';
+import { isNotNull, type Nullable, type NotNull } from '../core/nullable.js';
 
 /**
  *  Zips _self_ with another `Nullable<T>`.
