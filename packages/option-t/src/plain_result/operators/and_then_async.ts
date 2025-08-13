@@ -1,6 +1,6 @@
-import type { AsyncTransformFn } from '../internal/function.js';
-import { unsafeUnwrapValueInOkWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
-import { type Result, isErr } from './result.js';
+import type { AsyncTransformFn } from '../../internal/function.js';
+import { type Result, isErr } from '../core/result.js';
+import { unsafeUnwrapValueInOkWithoutAnyCheck } from '../internal/intrinsics_unsafe.js';
 
 export type ResultAsyncTryTransformFn<in T, out U, out E> = AsyncTransformFn<T, Result<U, E>>;
 

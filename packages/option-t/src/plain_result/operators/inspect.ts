@@ -1,9 +1,9 @@
-import type { EffectFn } from '../internal/function.js';
+import type { EffectFn } from '../../internal/function.js';
+import { isErr, isOk, type Result } from '../core/result.js';
 import {
     unsafeUnwrapValueInErrWithoutAnyCheck,
     unsafeUnwrapValueInOkWithoutAnyCheck,
-} from './internal/intrinsics_unsafe.js';
-import { isErr, isOk, type Result } from './result.js';
+} from '../internal/intrinsics_unsafe.js';
 
 /**
  *  * Return _input_ directly.

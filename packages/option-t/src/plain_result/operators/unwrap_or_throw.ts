@@ -1,12 +1,12 @@
+import { type Result, isOk } from '../core/result.js';
 import {
     // We don't expose this as a implementation detail.
     CausalCarrierError,
-} from './internal/causal_carrier.js';
+} from '../internal/causal_carrier.js';
 import {
     unsafeUnwrapValueInErrWithoutAnyCheck,
     unsafeUnwrapValueInOkWithoutAnyCheck,
-} from './internal/intrinsics_unsafe.js';
-import { type Result, isOk } from './result.js';
+} from '../internal/intrinsics_unsafe.js';
 
 /**
  *  Unwraps _input_, returns the content of an `Ok(T)`.

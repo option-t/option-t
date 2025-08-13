@@ -1,4 +1,4 @@
-import type { Result } from '../result.js';
+import type { Result } from '../core/result.js';
 
 export function isNotSameOkField(
     lhs: Result<unknown, unknown>,

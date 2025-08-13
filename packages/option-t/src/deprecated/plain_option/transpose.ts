@@ -7,7 +7,7 @@ import {
     isErr,
     unwrapErr,
     unwrapOk,
-} from '../../plain_result/result.js';
+} from '../../plain_result/core/result.js';
 import { type Option, isNone, createSome, createNone, type None, type Some } from './option.js';
 
 /**

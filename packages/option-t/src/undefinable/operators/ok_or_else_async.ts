@@ -1,5 +1,5 @@
 import type { AsyncRecoveryFn } from '../../internal/function.js';
-import { type Result, createErr, createOk } from '../../plain_result/result.js';
+import { type Result, createErr, createOk } from '../../plain_result/core/result.js';
 import { type Undefinable, isNotUndefined } from '../core/undefinable.js';
 
 /**

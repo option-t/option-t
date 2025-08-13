@@ -1,5 +1,9 @@
-import { isNotSameOkField, isSameErrField, isSameValField } from './internal/intrinsics_compare.js';
-import type { Result } from './result.js';
+import type { Result } from '../core/result.js';
+import {
+    isNotSameOkField,
+    isSameErrField,
+    isSameValField,
+} from '../internal/intrinsics_compare.js';
 
 /**
  *  Return `true`:

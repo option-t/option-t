@@ -1,6 +1,6 @@
-import type { Nullable } from '../nullable/core/nullable.js';
-import { unwrapErrOrForResult } from './internal/unwrap_err_or.js';
-import type { Result } from './result.js';
+import type { Nullable } from '../../nullable/core/nullable.js';
+import type { Result } from '../core/result.js';
+import { unwrapErrOrForResult } from '../internal/unwrap_err_or.js';
 import { unwrapOrForResult } from './unwrap_or.js';
 
 /**

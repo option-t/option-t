@@ -1,5 +1,5 @@
 import type { RecoveryFn } from '../../internal/function.js';
-import { type Result, createErr, createOk } from '../../plain_result/result.js';
+import { type Result, createErr, createOk } from '../../plain_result/core/result.js';
 import { type Nullable, isNotNull } from '../core/nullable.js';
 
 /**

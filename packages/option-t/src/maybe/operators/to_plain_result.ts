@@ -1,4 +1,10 @@
-import { type Result, type Ok, type Err, createOk, createErr } from '../../plain_result/result.js';
+import {
+    type Result,
+    type Ok,
+    type Err,
+    createOk,
+    createErr,
+} from '../../plain_result/core/result.js';
 import { type Maybe, isNullOrUndefined } from '../core/maybe.js';
 
 /**

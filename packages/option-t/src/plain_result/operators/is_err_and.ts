@@ -1,6 +1,6 @@
-import type { FilterFn, TypePredicateFn } from '../internal/function.js';
-import { unsafeUnwrapValueInErrWithoutAnyCheck } from './internal/intrinsics_unsafe.js';
-import { isOk, type Result, type Err } from './result.js';
+import type { FilterFn, TypePredicateFn } from '../../internal/function.js';
+import { isOk, type Result, type Err } from '../core/result.js';
+import { unsafeUnwrapValueInErrWithoutAnyCheck } from '../internal/intrinsics_unsafe.js';
 
 /**
  *  Returns `true` if the _result_ is `Err<E>` and the value inside of it matches a _predicate_.

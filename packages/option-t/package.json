@@ -628,20 +628,20 @@
         },
         "./plain_result/and": {
             "default": {
-                "types": "./esm/plain_result/and.d.ts",
-                "default": "./esm/plain_result/and.js"
+                "types": "./esm/plain_result/operators/and.d.ts",
+                "default": "./esm/plain_result/operators/and.js"
             }
         },
         "./plain_result/and_then": {
             "default": {
-                "types": "./esm/plain_result/and_then.d.ts",
-                "default": "./esm/plain_result/and_then.js"
+                "types": "./esm/plain_result/operators/and_then.d.ts",
+                "default": "./esm/plain_result/operators/and_then.js"
             }
         },
         "./plain_result/and_then_async": {
             "default": {
-                "types": "./esm/plain_result/and_then_async.d.ts",
-                "default": "./esm/plain_result/and_then_async.js"
+                "types": "./esm/plain_result/operators/and_then_async.d.ts",
+                "default": "./esm/plain_result/operators/and_then_async.js"
             }
         },
         "./plain_result/deprecated/try_catch_with_assert_error": {
@@ -670,86 +670,86 @@
         },
         "./plain_result/equal": {
             "default": {
-                "types": "./esm/plain_result/equal.d.ts",
-                "default": "./esm/plain_result/equal.js"
+                "types": "./esm/plain_result/operators/equal.d.ts",
+                "default": "./esm/plain_result/operators/equal.js"
             }
         },
         "./plain_result/flatten": {
             "default": {
-                "types": "./esm/plain_result/flatten.d.ts",
-                "default": "./esm/plain_result/flatten.js"
+                "types": "./esm/plain_result/operators/flatten.d.ts",
+                "default": "./esm/plain_result/operators/flatten.js"
             }
         },
         "./plain_result/from_promise_settled_result": {
             "default": {
-                "types": "./esm/plain_result/from_promise_settled_result.d.ts",
-                "default": "./esm/plain_result/from_promise_settled_result.js"
+                "types": "./esm/plain_result/operators/from_promise_settled_result.d.ts",
+                "default": "./esm/plain_result/operators/from_promise_settled_result.js"
             }
         },
         "./plain_result/inspect": {
             "default": {
-                "types": "./esm/plain_result/inspect.d.ts",
-                "default": "./esm/plain_result/inspect.js"
+                "types": "./esm/plain_result/operators/inspect.d.ts",
+                "default": "./esm/plain_result/operators/inspect.js"
             }
         },
         "./plain_result/is_err_and": {
             "default": {
-                "types": "./esm/plain_result/is_err_and.d.ts",
-                "default": "./esm/plain_result/is_err_and.js"
+                "types": "./esm/plain_result/operators/is_err_and.d.ts",
+                "default": "./esm/plain_result/operators/is_err_and.js"
             }
         },
         "./plain_result/is_ok_and": {
             "default": {
-                "types": "./esm/plain_result/is_ok_and.d.ts",
-                "default": "./esm/plain_result/is_ok_and.js"
+                "types": "./esm/plain_result/operators/is_ok_and.d.ts",
+                "default": "./esm/plain_result/operators/is_ok_and.js"
             }
         },
         "./plain_result/map": {
             "default": {
-                "types": "./esm/plain_result/map.d.ts",
-                "default": "./esm/plain_result/map.js"
+                "types": "./esm/plain_result/operators/map.d.ts",
+                "default": "./esm/plain_result/operators/map.js"
             }
         },
         "./plain_result/map_async": {
             "default": {
-                "types": "./esm/plain_result/map_async.d.ts",
-                "default": "./esm/plain_result/map_async.js"
+                "types": "./esm/plain_result/operators/map_async.d.ts",
+                "default": "./esm/plain_result/operators/map_async.js"
             }
         },
         "./plain_result/map_err": {
             "default": {
-                "types": "./esm/plain_result/map_err.d.ts",
-                "default": "./esm/plain_result/map_err.js"
+                "types": "./esm/plain_result/operators/map_err.d.ts",
+                "default": "./esm/plain_result/operators/map_err.js"
             }
         },
         "./plain_result/map_err_async": {
             "default": {
-                "types": "./esm/plain_result/map_err_async.d.ts",
-                "default": "./esm/plain_result/map_err_async.js"
+                "types": "./esm/plain_result/operators/map_err_async.d.ts",
+                "default": "./esm/plain_result/operators/map_err_async.js"
             }
         },
         "./plain_result/map_or": {
             "default": {
-                "types": "./esm/plain_result/map_or.d.ts",
-                "default": "./esm/plain_result/map_or.js"
+                "types": "./esm/plain_result/operators/map_or.d.ts",
+                "default": "./esm/plain_result/operators/map_or.js"
             }
         },
         "./plain_result/map_or_async": {
             "default": {
-                "types": "./esm/plain_result/map_or_async.d.ts",
-                "default": "./esm/plain_result/map_or_async.js"
+                "types": "./esm/plain_result/operators/map_or_async.d.ts",
+                "default": "./esm/plain_result/operators/map_or_async.js"
             }
         },
         "./plain_result/map_or_else": {
             "default": {
-                "types": "./esm/plain_result/map_or_else.d.ts",
-                "default": "./esm/plain_result/map_or_else.js"
+                "types": "./esm/plain_result/operators/map_or_else.d.ts",
+                "default": "./esm/plain_result/operators/map_or_else.js"
             }
         },
         "./plain_result/map_or_else_async": {
             "default": {
-                "types": "./esm/plain_result/map_or_else_async.d.ts",
-                "default": "./esm/plain_result/map_or_else_async.js"
+                "types": "./esm/plain_result/operators/map_or_else_async.d.ts",
+                "default": "./esm/plain_result/operators/map_or_else_async.js"
             }
         },
         "./plain_result/namespace": {
@@ -760,56 +760,56 @@
         },
         "./plain_result/or": {
             "default": {
-                "types": "./esm/plain_result/or.d.ts",
-                "default": "./esm/plain_result/or.js"
+                "types": "./esm/plain_result/operators/or.d.ts",
+                "default": "./esm/plain_result/operators/or.js"
             }
         },
         "./plain_result/or_else": {
             "default": {
-                "types": "./esm/plain_result/or_else.d.ts",
-                "default": "./esm/plain_result/or_else.js"
+                "types": "./esm/plain_result/operators/or_else.d.ts",
+                "default": "./esm/plain_result/operators/or_else.js"
             }
         },
         "./plain_result/or_else_async": {
             "default": {
-                "types": "./esm/plain_result/or_else_async.d.ts",
-                "default": "./esm/plain_result/or_else_async.js"
+                "types": "./esm/plain_result/operators/or_else_async.d.ts",
+                "default": "./esm/plain_result/operators/or_else_async.js"
             }
         },
         "./plain_result/result": {
             "default": {
-                "types": "./esm/plain_result/result.d.ts",
-                "default": "./esm/plain_result/result.js"
+                "types": "./esm/plain_result/core/result.d.ts",
+                "default": "./esm/plain_result/core/result.js"
             }
         },
         "./plain_result/to_nullable": {
             "default": {
-                "types": "./esm/plain_result/to_nullable.d.ts",
-                "default": "./esm/plain_result/to_nullable.js"
+                "types": "./esm/plain_result/operators/to_nullable.d.ts",
+                "default": "./esm/plain_result/operators/to_nullable.js"
             }
         },
         "./plain_result/to_undefinable": {
             "default": {
-                "types": "./esm/plain_result/to_undefinable.d.ts",
-                "default": "./esm/plain_result/to_undefinable.js"
+                "types": "./esm/plain_result/operators/to_undefinable.d.ts",
+                "default": "./esm/plain_result/operators/to_undefinable.js"
             }
         },
         "./plain_result/transpose": {
             "default": {
-                "types": "./esm/plain_result/transpose.d.ts",
-                "default": "./esm/plain_result/transpose.js"
+                "types": "./esm/plain_result/operators/transpose.d.ts",
+                "default": "./esm/plain_result/operators/transpose.js"
             }
         },
         "./plain_result/try_catch": {
             "default": {
-                "types": "./esm/plain_result/try_catch.d.ts",
-                "default": "./esm/plain_result/try_catch.js"
+                "types": "./esm/plain_result/operators/try_catch.d.ts",
+                "default": "./esm/plain_result/operators/try_catch.js"
             }
         },
         "./plain_result/try_catch_async": {
             "default": {
-                "types": "./esm/plain_result/try_catch_async.d.ts",
-                "default": "./esm/plain_result/try_catch_async.js"
+                "types": "./esm/plain_result/operators/try_catch_async.d.ts",
+                "default": "./esm/plain_result/operators/try_catch_async.js"
             }
         },
         "./plain_result/unsafe/as_mut": {
@@ -826,26 +826,26 @@
         },
         "./plain_result/unwrap_or": {
             "default": {
-                "types": "./esm/plain_result/unwrap_or.d.ts",
-                "default": "./esm/plain_result/unwrap_or.js"
+                "types": "./esm/plain_result/operators/unwrap_or.d.ts",
+                "default": "./esm/plain_result/operators/unwrap_or.js"
             }
         },
         "./plain_result/unwrap_or_else": {
             "default": {
-                "types": "./esm/plain_result/unwrap_or_else.d.ts",
-                "default": "./esm/plain_result/unwrap_or_else.js"
+                "types": "./esm/plain_result/operators/unwrap_or_else.d.ts",
+                "default": "./esm/plain_result/operators/unwrap_or_else.js"
             }
         },
         "./plain_result/unwrap_or_else_async": {
             "default": {
-                "types": "./esm/plain_result/unwrap_or_else_async.d.ts",
-                "default": "./esm/plain_result/unwrap_or_else_async.js"
+                "types": "./esm/plain_result/operators/unwrap_or_else_async.d.ts",
+                "default": "./esm/plain_result/operators/unwrap_or_else_async.js"
             }
         },
         "./plain_result/unwrap_or_throw": {
             "default": {
-                "types": "./esm/plain_result/unwrap_or_throw.d.ts",
-                "default": "./esm/plain_result/unwrap_or_throw.js"
+                "types": "./esm/plain_result/operators/unwrap_or_throw.d.ts",
+                "default": "./esm/plain_result/operators/unwrap_or_throw.js"
             }
         },
         "./undefinable": {

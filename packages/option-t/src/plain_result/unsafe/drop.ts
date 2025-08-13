@@ -1,10 +1,10 @@
 import type { EffectFn } from '../../internal/function.js';
+import { type Result, isOk } from '../core/result.js';
 import {
     setUndefinedToErrFieldOnErrDirectly,
     setUndefinedToValFieldOnOkDirectly,
 } from '../internal/intrinsics_unsafe.js';
 import type { MutOk, MutErr, MutResult } from '../internal/mutable.js';
-import { type Result, isOk } from '../result.js';
 import { unsafeAsMutResult } from './as_mut.js';
 
 export type { MutOk, MutErr };

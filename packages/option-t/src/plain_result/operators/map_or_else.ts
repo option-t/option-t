@@ -1,9 +1,9 @@
-import type { TransformFn, RecoveryFromErrorFn } from '../internal/function.js';
+import type { TransformFn, RecoveryFromErrorFn } from '../../internal/function.js';
+import { isOk, type Result } from '../core/result.js';
 import {
     unsafeUnwrapValueInErrWithoutAnyCheck,
     unsafeUnwrapValueInOkWithoutAnyCheck,
-} from './internal/intrinsics_unsafe.js';
-import { isOk, type Result } from './result.js';
+} from '../internal/intrinsics_unsafe.js';
 
 /**
  *  Maps a `Result<T, E>` to `U` by applying _transformer_ to a contained `Ok(T)` value in _input_,
