@@ -1,5 +1,5 @@
-import type { EffectFn } from '../internal/function.js';
-import { type NotNull, type Nullable, isNotNull } from './nullable.js';
+import type { EffectFn } from '../../internal/function.js';
+import { type NotNull, type Nullable, isNotNull } from '../core/nullable.js';
 
 /**
  *  * Return _input_ directly.

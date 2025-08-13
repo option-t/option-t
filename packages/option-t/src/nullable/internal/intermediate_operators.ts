@@ -1,13 +1,6 @@
-export {
-    expectNotNull,
-    isNotNull,
-    isNull,
-    unwrapNullable,
-    type NotNull,
-    type Nullable,
-    // FIXME(#2173):
-    // It's might better to expose this type as `Type`.
-} from '../core/nullable.js';
+// XXX:
+// This module only exports _complement operators_.
+// Do not export _core primitives_.
 
 export { andThenForNullable as andThen } from '../operators/and_then.js';
 export { andThenAsyncForNullable as andThenAsync } from '../operators/and_then_async.js';

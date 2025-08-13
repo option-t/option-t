@@ -10,7 +10,11 @@ import {
 } from './api_path_descriptor.mjs';
 
 const MAYBE_DIR = 'maybe';
+
 const NULLABLE_DIR = 'nullable';
+const NULLABLE_CORE_DIR = `${NULLABLE_DIR}/core`;
+const NULLABLE_OPERARORS_DIR = `${NULLABLE_DIR}/operators`;
+
 const UNDEFINABLE_DIR = 'undefinable';
 const PLAIN_OPTION_DIR = 'deprecated/plain_option';
 const PLAIN_RESULT_DIR = 'plain_result';
@@ -54,35 +58,37 @@ export const apiTable = Object.freeze({
     'maybe/zip_with_async': pathRedirectionTo(`${MAYBE_DIR}/zip_with_async`),
 
     'nullable': pathRedirectionMarkedAsTypeRoot(`${NULLABLE_DIR}/index`),
-    'nullable/and': pathRedirectionTo(`${NULLABLE_DIR}/and`),
-    'nullable/and_then': pathRedirectionTo(`${NULLABLE_DIR}/and_then`),
-    'nullable/and_then_async': pathRedirectionTo(`${NULLABLE_DIR}/and_then_async`),
-    'nullable/filter': pathRedirectionTo(`${NULLABLE_DIR}/filter`),
-    'nullable/filter_async': pathRedirectionTo(`${NULLABLE_DIR}/filter_async`),
-    'nullable/inspect': pathRedirectionTo(`${NULLABLE_DIR}/inspect`),
-    'nullable/map': pathRedirectionTo(`${NULLABLE_DIR}/map`),
-    'nullable/map_async': pathRedirectionTo(`${NULLABLE_DIR}/map_async`),
-    'nullable/map_or': pathRedirectionTo(`${NULLABLE_DIR}/map_or`),
-    'nullable/map_or_async': pathRedirectionTo(`${NULLABLE_DIR}/map_or_async`),
-    'nullable/map_or_else': pathRedirectionTo(`${NULLABLE_DIR}/map_or_else`),
-    'nullable/map_or_else_async': pathRedirectionTo(`${NULLABLE_DIR}/map_or_else_async`),
+    'nullable/and': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/and`),
+    'nullable/and_then': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/and_then`),
+    'nullable/and_then_async': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/and_then_async`),
+    'nullable/filter': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/filter`),
+    'nullable/filter_async': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/filter_async`),
+    'nullable/inspect': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/inspect`),
+    'nullable/map': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/map`),
+    'nullable/map_async': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/map_async`),
+    'nullable/map_or': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/map_or`),
+    'nullable/map_or_async': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/map_or_async`),
+    'nullable/map_or_else': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/map_or_else`),
+    'nullable/map_or_else_async': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/map_or_else_async`),
     'nullable/namespace': pathRedirectionMarkedAsTypeRootNamespace(`${NULLABLE_DIR}/namespace`),
-    'nullable/nullable': pathRedirectionMarkedAsCorePrimitive(`${NULLABLE_DIR}/nullable`),
-    'nullable/ok_or': pathRedirectionTo(`${NULLABLE_DIR}/ok_or`),
-    'nullable/ok_or_else': pathRedirectionTo(`${NULLABLE_DIR}/ok_or_else`),
-    'nullable/ok_or_else_async': pathRedirectionTo(`${NULLABLE_DIR}/ok_or_else_async`),
-    'nullable/or': pathRedirectionTo(`${NULLABLE_DIR}/or`),
-    'nullable/or_else': pathRedirectionTo(`${NULLABLE_DIR}/or_else`),
-    'nullable/or_else_async': pathRedirectionTo(`${NULLABLE_DIR}/or_else_async`),
-    'nullable/to_plain_result': pathRedirectionTo(`${NULLABLE_DIR}/to_plain_result`),
-    'nullable/to_undefinable': pathRedirectionTo(`${NULLABLE_DIR}/to_undefinable`),
-    'nullable/unwrap_or': pathRedirectionTo(`${NULLABLE_DIR}/unwrap_or`),
-    'nullable/unwrap_or_else': pathRedirectionTo(`${NULLABLE_DIR}/unwrap_or_else`),
-    'nullable/unwrap_or_else_async': pathRedirectionTo(`${NULLABLE_DIR}/unwrap_or_else_async`),
-    'nullable/xor': pathRedirectionTo(`${NULLABLE_DIR}/xor`),
-    'nullable/zip': pathRedirectionTo(`${NULLABLE_DIR}/zip`),
-    'nullable/zip_with': pathRedirectionTo(`${NULLABLE_DIR}/zip_with`),
-    'nullable/zip_with_async': pathRedirectionTo(`${NULLABLE_DIR}/zip_with_async`),
+    'nullable/nullable': pathRedirectionMarkedAsCorePrimitive(`${NULLABLE_CORE_DIR}/nullable`),
+    'nullable/ok_or': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/ok_or`),
+    'nullable/ok_or_else': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/ok_or_else`),
+    'nullable/ok_or_else_async': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/ok_or_else_async`),
+    'nullable/or': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/or`),
+    'nullable/or_else': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/or_else`),
+    'nullable/or_else_async': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/or_else_async`),
+    'nullable/to_plain_result': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/to_plain_result`),
+    'nullable/to_undefinable': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/to_undefinable`),
+    'nullable/unwrap_or': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/unwrap_or`),
+    'nullable/unwrap_or_else': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/unwrap_or_else`),
+    'nullable/unwrap_or_else_async': pathRedirectionTo(
+        `${NULLABLE_OPERARORS_DIR}/unwrap_or_else_async`,
+    ),
+    'nullable/xor': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/xor`),
+    'nullable/zip': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/zip`),
+    'nullable/zip_with': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/zip_with`),
+    'nullable/zip_with_async': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/zip_with_async`),
 
     'plain_option': pathRedirectionMarkedAsTypeRoot(`${PLAIN_OPTION_DIR}/index`),
     'plain_option/and': pathRedirectionTo(`${PLAIN_OPTION_DIR}/and`),

@@ -1,4 +1,4 @@
-import type { Nullable } from '../../nullable/nullable.js';
+import type { Nullable } from '../../nullable/core/nullable.js';
 import { mapOrForOption } from './map_or.js';
 import type { Option } from './option.js';
 

@@ -1,4 +1,4 @@
-import { type Nullable, isNull } from './nullable.js';
+import { type Nullable, isNull } from '../core/nullable.js';
 
 /**
  *  Return one of this pattern:

@@ -1,6 +1,6 @@
-import type { AsyncRecoveryFn } from '../internal/function.js';
-import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from './internal/error_message.js';
-import { isNotNull, type NotNull, type Nullable, expectNotNull } from './nullable.js';
+import type { AsyncRecoveryFn } from '../../internal/function.js';
+import { isNotNull, type NotNull, type Nullable, expectNotNull } from '../core/nullable.js';
+import { ERR_MSG_RECOVERER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE } from '../internal/error_message.js';
 
 /**
  *  Return _input_ as `T` if the passed _input_ is not `null`.

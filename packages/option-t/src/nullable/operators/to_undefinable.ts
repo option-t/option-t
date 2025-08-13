@@ -1,5 +1,5 @@
-import type { Undefinable } from '../undefinable/undefinable.js';
-import { type Nullable, isNull } from './nullable.js';
+import type { Undefinable } from '../../undefinable/undefinable.js';
+import { type Nullable, isNull } from '../core/nullable.js';
 
 /**
  *  Return `undefined` if _input_ is `null`.

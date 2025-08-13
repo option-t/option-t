@@ -1,5 +1,5 @@
-import type { AsyncFilterFn } from '../internal/function.js';
-import { type Nullable, isNotNull } from './nullable.js';
+import type { AsyncFilterFn } from '../../internal/function.js';
+import { type Nullable, isNotNull } from '../core/nullable.js';
 
 /**
  *  Returns `null` if the _input_ is `null`,

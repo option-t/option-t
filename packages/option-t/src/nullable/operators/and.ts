@@ -1,4 +1,4 @@
-import { type Nullable, isNotNull } from './nullable.js';
+import { type Nullable, isNotNull } from '../core/nullable.js';
 
 /**
  *  Return _b_ if _a_ is not `null`.

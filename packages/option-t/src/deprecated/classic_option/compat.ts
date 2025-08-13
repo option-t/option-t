@@ -1,5 +1,10 @@
 import { type Maybe, type NotNullOrUndefined, isNotNullOrUndefined } from '../../maybe/maybe.js';
-import { type Nullable, type NotNull, isNotNull, expectNotNull } from '../../nullable/nullable.js';
+import {
+    type Nullable,
+    type NotNull,
+    isNotNull,
+    expectNotNull,
+} from '../../nullable/core/nullable.js';
 import {
     type Undefinable,
     type NotUndefined,

@@ -1,5 +1,5 @@
-import type { AsyncTransformFn } from '../internal/function.js';
-import { type Nullable, isNull } from './nullable.js';
+import type { AsyncTransformFn } from '../../internal/function.js';
+import { type Nullable, isNull } from '../core/nullable.js';
 
 export type NullableAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Nullable<U>>;
 
