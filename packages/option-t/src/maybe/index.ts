@@ -28,6 +28,16 @@ export { unwrapOrForMaybe } from './operators/unwrap_or.js';
 export { unwrapOrElseForMaybe } from './operators/unwrap_or_else.js';
 export { unwrapOrElseAsyncForMaybe } from './operators/unwrap_or_else_async.js';
 
+import * as maybeOperators from './internal/intermediate_operators.js';
+
+/**
+ *  @experimental
+ *      This API is still experimental. We might change this without any breaking changes.
+ */
+// FIXME: https://github.com/option-t/option-t/issues/2535
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export const experimental_MaybeOperators: typeof maybeOperators = maybeOperators;
+
 // XXX:
 //  _and_ operator is equivalent of `a && b` so we don't ship it by this default set.
 //
