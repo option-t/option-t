@@ -1,4 +1,4 @@
-import { ERR_MSG_UNWRAP_NO_VAL_FOR_MAYBE } from './internal/error_message.js';
+import { ERR_MSG_UNWRAP_NO_VAL_FOR_MAYBE } from '../internal/error_message.js';
 
 export type NotNullOrUndefined<T> = T extends null | undefined ? never : T;
 

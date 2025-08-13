@@ -1,12 +1,11 @@
-import type { ZipTransformerFn } from '../internal/function.js';
-import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from './internal/error_message.js';
-
+import type { ZipTransformerFn } from '../../internal/function.js';
 import {
     isNullOrUndefined,
     type Maybe,
     type NotNullOrUndefined,
     expectNotNullOrUndefined,
-} from './maybe.js';
+} from '../core/maybe.js';
+import { ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE } from '../internal/error_message.js';
 
 /**
  *  Zips _self_ and another `Maybe` with function _transformer_.

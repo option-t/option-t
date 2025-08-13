@@ -1,5 +1,5 @@
-import type { RecoveryFn } from '../internal/function.js';
-import type { Maybe } from './maybe.js';
+import type { RecoveryFn } from '../../internal/function.js';
+import type { Maybe } from '../core/maybe.js';
 
 export type MaybeRecoveryFn<out T> = RecoveryFn<Maybe<T>>;
 

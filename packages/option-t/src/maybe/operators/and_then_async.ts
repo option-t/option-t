@@ -1,6 +1,6 @@
-import type { AsyncTransformFn } from '../internal/function.js';
+import type { AsyncTransformFn } from '../../internal/function.js';
 
-import { type Maybe, isNullOrUndefined } from './maybe.js';
+import { type Maybe, isNullOrUndefined } from '../core/maybe.js';
 
 export type MaybeAsyncTryTransformFn<in T, out U> = AsyncTransformFn<T, Maybe<U>>;
 
