@@ -27,15 +27,12 @@ export { unwrapOrForNullable } from './operators/unwrap_or.js';
 export { unwrapOrElseForNullable } from './operators/unwrap_or_else.js';
 export { unwrapOrElseAsyncForNullable } from './operators/unwrap_or_else_async.js';
 
-import * as nullableOperators from './internal/intermediate_operators.js';
-
 /**
  *  @experimental
  *      This API is still experimental. We might change this without any breaking changes.
  */
 // FIXME: https://github.com/option-t/option-t/issues/2536
-// eslint-disable-next-line @typescript-eslint/naming-convention
-export const experimental_NullableOperators: typeof nullableOperators = nullableOperators;
+export * as experimental_NullableOperators from './internal/intermediate_operators.js';
 
 // XXX:
 //  _and_ operator is equivalent of `a && b` so we don't ship it by this default set.
