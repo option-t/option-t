@@ -35,7 +35,7 @@ export { unwrapOrElseAsyncForUndefinable } from './operators/unwrap_or_else_asyn
  *      This API is still experimental. We might change this without any breaking changes.
  */
 // FIXME: https://github.com/option-t/option-t/issues/2549
-export * as experimental_UndefinableOperators from './internal/intermediate_operators.js';
+export * as experimental_UndefinableHelper from './internal/intermediate_operators.js';
 
 // XXX:
 //  _and_ operator is equivalent of `a && b` so we don't ship it by this default set.
