@@ -32,7 +32,7 @@ export { unwrapOrElseAsyncForNullable } from './operators/unwrap_or_else_async.j
  *      This API is still experimental. We might change this without any breaking changes.
  */
 // FIXME: https://github.com/option-t/option-t/issues/2536
-export * as experimental_NullableOperators from './internal/intermediate_operators.js';
+export * as experimental_NullableOperator from './internal/intermediate_operators.js';
 
 // XXX:
 //  _and_ operator is equivalent of `a && b` so we don't ship it by this default set.

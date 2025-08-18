@@ -75,7 +75,7 @@ export { unwrapOrThrowForResult } from './operators/unwrap_or_throw.js';
  *  @experimental
  *      This API is still experimental. We might change this without any breaking changes.
  */
-export * as experimental_ResultOperators from './internal/intermediate_operators.js';
+export * as experimental_ResultOperator from './internal/intermediate_operators.js';
 
 // XXX:
 //  We don't expose these itens that is unsafe operation.
