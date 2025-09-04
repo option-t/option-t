@@ -6,6 +6,10 @@ updates:
       directory: "/"
       schedule:
           interval: monthly
+      cooldown:
+          default-days: 7 # This 1-week delay is just by my intuition.
+          include:
+              - "*"
       open-pull-requests-limit: 99
       labels:
           - A-dependency
@@ -39,6 +43,10 @@ updates:
       directory: "/"
       schedule:
           interval: monthly
+      cooldown:
+          default-days: 7 # This 1-week delay is just by my intuition.
+          include:
+              - "*"
       open-pull-requests-limit: 99
       labels:
           - A-dependency
@@ -51,6 +59,10 @@ updates:
       directory: "/.github/actions/prepare_ci/"
       schedule:
           interval: monthly
+      cooldown:
+          default-days: 7 # This 1-week delay is just by my intuition.
+          include:
+              - "*"
       open-pull-requests-limit: 99
       labels:
           - A-dependency
