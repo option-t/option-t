@@ -1,3 +1,13 @@
 # https://pnpm.io/pnpm-workspace_yaml
 packages:
     - "packages/*"
+
+catalog:
+    "@eslint/js": ^9.34.0
+    "@typescript-eslint/eslint-plugin": ^8.42.0
+    "@typescript-eslint/parser": ^8.42.0
+    eslint: ^9.34.0
+    eslint-config-prettier: ^10.1.8
+    eslint-config-turbo: ^2.5.6
+    eslint-plugin-import: ^2.32.0
+    globals: ^16.3.0

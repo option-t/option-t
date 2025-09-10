@@ -1,0 +1,20 @@
+{
+    "private": true,
+    "type": "module",
+    "name": "@option-t/eslint_config",
+    "version": "54.2.6",
+    "license": "MIT",
+    "exports": {
+        ".": "./src/lib.js"
+    },
+    "dependencies": {
+        "@eslint/js": "catalog:",
+        "@typescript-eslint/eslint-plugin": "catalog:",
+        "@typescript-eslint/parser": "catalog:",
+        "eslint": "catalog:",
+        "eslint-config-prettier": "catalog:",
+        "eslint-config-turbo": "catalog:",
+        "eslint-plugin-import": "catalog:",
+        "globals": "catalog:"
+    }
+}

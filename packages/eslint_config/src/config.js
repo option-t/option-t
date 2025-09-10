@@ -5,20 +5,22 @@ import js from '@eslint/js';
 import turboConfigs from 'eslint-config-turbo/flat';
 import globals from 'globals';
 
-import * as importConfig from './tools/eslint/import_config.js';
+import * as importConfig from './config/import_config.js';
 import {
     rules as rulesForJavaScript,
     createLanguageOptionsForModule,
     createLanguageOptionsForCommonJS,
-} from './tools/eslint/javascript.js';
-import { configs as prettierConfigs } from './tools/eslint/prettier.js';
+} from './config/javascript.js';
+import { configs as prettierConfigs } from './config/prettier.js';
 import {
     createlanguageOptionsForTypeScript,
     config as configForTypeScript,
-} from './tools/eslint/typescript.js';
+} from './config/typescript.js';
 
 const THIS_FILE_NAME = fileURLToPath(import.meta.url);
 const THIS_DIR_NAME = path.dirname(THIS_FILE_NAME);
+const WORKSPACE_ROOT = path.resolve(THIS_DIR_NAME, '..');
+const REPOSITORY_ROOT = path.resolve(WORKSPACE_ROOT, '..', '..');
 
 const ECMA262_VERSION = 2022;
 
@@ -92,7 +94,7 @@ export default [
     },
     {
         files: TYPESCRIPT_FILES,
-        languageOptions: createlanguageOptionsForTypeScript(THIS_DIR_NAME),
+        languageOptions: createlanguageOptionsForTypeScript(REPOSITORY_ROOT),
         ...configForTypeScript,
     },
     {
@@ -102,7 +104,7 @@ export default [
     {
         files: APPLICATION_FILES,
         languageOptions: createlanguageOptionsForTypeScript(
-            path.resolve(THIS_DIR_NAME, 'packages/option-t/'),
+            path.resolve(REPOSITORY_ROOT, 'packages/option-t/'),
         ),
     },
     {
