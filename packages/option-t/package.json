@@ -278,6 +278,12 @@
                 "default": "./esm/nullable/operators/and_then_async.js"
             }
         },
+        "./nullable/compat/v54": {
+            "default": {
+                "types": "./esm/nullable/compat/v54.d.ts",
+                "default": "./esm/nullable/compat/v54.js"
+            }
+        },
         "./nullable/filter": {
             "default": {
                 "types": "./esm/nullable/operators/filter.d.ts",

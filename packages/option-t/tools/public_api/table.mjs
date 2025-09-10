@@ -71,6 +71,10 @@ export const apiTable = Object.freeze({
     'nullable/and': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/and`),
     'nullable/and_then': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/and_then`),
     'nullable/and_then_async': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/and_then_async`),
+    'nullable/compat/v54': pathRedirectionMarkedAsDeprecated(
+        `${NULLABLE_DIR}/compat/v54`,
+        'Use `option-t/nullable`.',
+    ),
     'nullable/filter': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/filter`),
     'nullable/filter_async': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/filter_async`),
     'nullable/inspect': pathRedirectionTo(`${NULLABLE_OPERARORS_DIR}/inspect`),

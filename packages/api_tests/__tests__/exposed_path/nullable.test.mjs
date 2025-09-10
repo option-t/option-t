@@ -10,6 +10,7 @@ testImportExposedPath(
         './nullable/and': null,
         './nullable/and_then': null,
         './nullable/and_then_async': null,
+        './nullable/compat/v54': null,
         './nullable/filter': null,
         './nullable/filter_async': null,
         './nullable/inspect': null,
