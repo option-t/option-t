@@ -1,3 +1,4 @@
+// We expose _core primitive_ directly.
 export {
     expectNotUndefined,
     isNotUndefined,
@@ -30,12 +31,8 @@ export { unwrapOrForUndefinable } from './operators/unwrap_or.js';
 export { unwrapOrElseForUndefinable } from './operators/unwrap_or_else.js';
 export { unwrapOrElseAsyncForUndefinable } from './operators/unwrap_or_else_async.js';
 
-/**
- *  @experimental
- *      This API is still experimental. We might change this without any breaking changes.
- */
-// FIXME: https://github.com/option-t/option-t/issues/2549
-export * as experimental_UndefinableOperator from './internal/intermediate_operators.js';
+// We expose _operators_ (typically named as `~ForUndefinable`) as bundled.
+export * as UndefinableOperator from './internal/intermediate_operators.js';
 
 // XXX:
 //  _and_ operator is equivalent of `a && b` so we don't ship it by this default set.
