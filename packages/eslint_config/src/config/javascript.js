@@ -48,6 +48,14 @@ const builtinRules = Object.freeze({
         },
     ],
 
+    // We should carry the root cause properly.
+    'preserve-caught-error': [
+        'warn',
+        {
+            requireCatchParameter: true,
+        },
+    ],
+
     // This prevents the error at the running time.
     'valid-typeof': ['error', { requireStringLiterals: true }],
 });

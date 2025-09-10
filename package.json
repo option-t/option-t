@@ -5,13 +5,13 @@
     "packageManager": "pnpm@10.15.1+sha512.34e538c329b5553014ca8e8f4535997f96180a1d0f614339357449935350d924e22f8614682191264ec33d1462ac21561aff97f6bb18065351c162c7e8f6de67",
     "devDependencies": {
         "@option-t/eslint_config": "workspace:",
-        "@reflink/reflink": "^0.1.19",
-        "ava": "^6.4.1",
-        "del-cli": "^6.0.0",
+        "@reflink/reflink":"catalog:",
+        "ava": "catalog:",
+        "del-cli": "catalog:",
         "eslint": "catalog:",
-        "picomatch": "^4.0.3",
-        "prettier": "^3.6.2",
-        "turbo": "^2.5.6",
-        "typescript": "^5.9.2"
+        "picomatch": "catalog:",
+        "prettier": "catalog:",
+        "turbo": "catalog:",
+        "typescript": "catalog:"
     }
 }
