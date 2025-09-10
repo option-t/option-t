@@ -872,6 +872,12 @@
                 "default": "./esm/undefinable/operators/and_then_async.js"
             }
         },
+        "./undefinable/compat/v54": {
+            "default": {
+                "types": "./esm/undefinable/compat/v54.d.ts",
+                "default": "./esm/undefinable/compat/v54.js"
+            }
+        },
         "./undefinable/filter": {
             "default": {
                 "types": "./esm/undefinable/operators/filter.d.ts",
