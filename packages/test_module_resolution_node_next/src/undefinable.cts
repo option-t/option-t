@@ -3,6 +3,7 @@ import {} from 'option-t/undefinable';
 import {} from 'option-t/undefinable/and';
 import {} from 'option-t/undefinable/and_then';
 import {} from 'option-t/undefinable/and_then_async';
+import {} from 'option-t/undefinable/compat/v54';
 import {} from 'option-t/undefinable/filter';
 import {} from 'option-t/undefinable/filter_async';
 import {} from 'option-t/undefinable/inspect';

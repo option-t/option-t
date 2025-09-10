@@ -33,21 +33,3 @@ export { unwrapOrElseAsyncForUndefinable } from './operators/unwrap_or_else_asyn
 
 // We expose _operators_ (typically named as `~ForUndefinable`) as bundled.
 export * as UndefinableOperator from './internal/intermediate_operators.js';
-
-// XXX:
-//  _and_ operator is equivalent of `a && b` so we don't ship it by this default set.
-//
-// XXX:
-//  _or_ operation is equivalent of `a || b` so we don't ship it by this default set.
-//
-// XXX:
-//  To keep a simple API set,
-//  we don't expose APIs from here that takes multiple values to compose a data flow pipeline.
-//  We may reconsider it if pipeline operator syntax proposal is advanced to the standard.
-//  But please import them directly from their path at this moment.
-//
-//  - filter
-//  - xor
-//  - zip
-//  - zipWith
-//  - zipWithAsync

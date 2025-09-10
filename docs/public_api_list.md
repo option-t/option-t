@@ -205,6 +205,7 @@ Basic APIs are exported here:
 - [`option-t/undefinable/and`](../packages/option-t/src/undefinable/operators/and.ts)
 - [`option-t/undefinable/and_then`](../packages/option-t/src/undefinable/operators/and_then.ts)
 - [`option-t/undefinable/and_then_async`](../packages/option-t/src/undefinable/operators/and_then_async.ts)
+- [`option-t/undefinable/compat/v54`](../packages/option-t/src/undefinable/compat/v54.ts) (__deprecated__. Use `option-t/undefinable`.)
 - [`option-t/undefinable/filter`](../packages/option-t/src/undefinable/operators/filter.ts)
 - [`option-t/undefinable/filter_async`](../packages/option-t/src/undefinable/operators/filter_async.ts)
 - [`option-t/undefinable/inspect`](../packages/option-t/src/undefinable/operators/inspect.ts)

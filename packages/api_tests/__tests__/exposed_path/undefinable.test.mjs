@@ -10,6 +10,7 @@ testImportExposedPath(
         './undefinable/and': null,
         './undefinable/and_then': null,
         './undefinable/and_then_async': null,
+        './undefinable/compat/v54': null,
         './undefinable/filter': null,
         './undefinable/filter_async': null,
         './undefinable/inspect': null,
