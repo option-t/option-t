@@ -2,6 +2,7 @@ import {} from 'option-t/nullable';
 import {} from 'option-t/nullable/and';
 import {} from 'option-t/nullable/and_then';
 import {} from 'option-t/nullable/and_then_async';
+import {} from 'option-t/nullable/compat/v54';
 import {} from 'option-t/nullable/filter';
 import {} from 'option-t/nullable/filter_async';
 import {} from 'option-t/nullable/inspect';

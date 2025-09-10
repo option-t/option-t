@@ -64,6 +64,7 @@ Basic APIs are exported here:
 - [`option-t/nullable/and`](../packages/option-t/src/nullable/operators/and.ts)
 - [`option-t/nullable/and_then`](../packages/option-t/src/nullable/operators/and_then.ts)
 - [`option-t/nullable/and_then_async`](../packages/option-t/src/nullable/operators/and_then_async.ts)
+- [`option-t/nullable/compat/v54`](../packages/option-t/src/nullable/compat/v54.ts) (__deprecated__. Use `option-t/nullable`.)
 - [`option-t/nullable/filter`](../packages/option-t/src/nullable/operators/filter.ts)
 - [`option-t/nullable/filter_async`](../packages/option-t/src/nullable/operators/filter_async.ts)
 - [`option-t/nullable/inspect`](../packages/option-t/src/nullable/operators/inspect.ts)
