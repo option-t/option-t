@@ -152,4 +152,7 @@ prepublish: ## Run some commands for 'pnpm run prepublish'
 
 .PHONY: publish
 publish: ## Run some commands for 'pnpm publish'
-	cd $(DIST_DIR) && pnpm publish --access public
+# This workaround this error:
+# > ERR_PNPM_GIT_UNKNOWN_BRANCH The Git HEAD may not attached to any branch, but your "publish-branch" is set to "master|main".
+# > If you want to disable Git checks on publish, set the "git-checks" setting to "false", or run again with "--no-git-checks".
+	cd $(DIST_DIR) && pnpm publish --access public --no-git-checks
