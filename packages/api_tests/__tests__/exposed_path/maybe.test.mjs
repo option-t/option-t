@@ -10,6 +10,7 @@ testImportExposedPath(
         './maybe/and': null,
         './maybe/and_then': null,
         './maybe/and_then_async': null,
+        './maybe/compat/v54': null,
         './maybe/filter': null,
         './maybe/filter_async': null,
         './maybe/inspect': null,

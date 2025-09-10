@@ -19,6 +19,7 @@ Basic APIs are exported here:
 - [`option-t/maybe/and`](../packages/option-t/src/maybe/operators/and.ts)
 - [`option-t/maybe/and_then`](../packages/option-t/src/maybe/operators/and_then.ts)
 - [`option-t/maybe/and_then_async`](../packages/option-t/src/maybe/operators/and_then_async.ts)
+- [`option-t/maybe/compat/v54`](../packages/option-t/src/maybe/compat/v54.ts) (__deprecated__. Use `option-t/maybe`.)
 - [`option-t/maybe/filter`](../packages/option-t/src/maybe/operators/filter.ts)
 - [`option-t/maybe/filter_async`](../packages/option-t/src/maybe/operators/filter_async.ts)
 - [`option-t/maybe/inspect`](../packages/option-t/src/maybe/operators/inspect.ts)
