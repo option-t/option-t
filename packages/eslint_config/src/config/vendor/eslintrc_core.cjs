@@ -27,9 +27,8 @@
 'use strict';
 
 module.exports = {
-
     // see more detail: https://eslint.org/docs/rules/
-    'rules': {
+    rules: {
         // Possible Errors
 
         // We should reconsider about this after ECMA262 introduces
@@ -52,9 +51,13 @@ module.exports = {
 
         // Best Practices
         'accessor-pairs': 0, // Allow only getter or setter to define a "read-only" or "write-only" object
-        'array-callback-return': [1, { // https://eslint.org/docs/rules/array-callback-return.html
-            'allowImplicit': false, // Should return `undefined` explicitly
-        }],
+        'array-callback-return': [
+            1,
+            {
+                // https://eslint.org/docs/rules/array-callback-return.html
+                allowImplicit: false, // Should return `undefined` explicitly
+            },
+        ],
         'block-scoped-var': 2, // https://eslint.org/docs/rules/block-scoped-var
         'complexity': 0, // We think there is no meaning to measure it in a daily linting.
         'consistent-return': 2,
@@ -112,12 +115,16 @@ module.exports = {
         'no-extend-native': 2, // We don't do this in non-library code.
         'no-extra-bind': 1, // https://eslint.org/docs/rules/no-extra-bind
         'no-extra-label': 2, // https://eslint.org/docs/rules/no-extra-label
-        'no-implicit-coercion': [2, { // https://eslint.org/docs/rules/no-implicit-coercion
-            'boolean': true,
-            'number': true,
-            'string': true,
-            'allow': ['!!', '+'], // Allow only these patterns.
-        }],
+        'no-implicit-coercion': [
+            2,
+            {
+                // https://eslint.org/docs/rules/no-implicit-coercion
+                boolean: true,
+                number: true,
+                string: true,
+                allow: ['!!', '+'], // Allow only these patterns.
+            },
+        ],
         'no-implicit-globals': 2,
         'no-implied-eval': 2,
         'no-invalid-this': 1,
@@ -125,19 +132,25 @@ module.exports = {
         'no-labels': 2, // Using a label is a rare case
         'no-lone-blocks': 1, // https://eslint.org/docs/rules/no-lone-blocks
         'no-loop-func': 2, // https://eslint.org/docs/rules/no-loop-func
-        'no-magic-numbers': [1, {
-            // Allow these values which are used commonly in test, flags, or others.
-            'ignore': [0, 1],
-        }],
+        'no-magic-numbers': [
+            1,
+            {
+                // Allow these values which are used commonly in test, flags, or others.
+                ignore: [0, 1],
+            },
+        ],
         'no-multi-str': 0, // https://eslint.org/docs/rules/no-multi-str
         'no-new': 1,
         'no-new-func': 1, // Just an escape hatch for optimizing technique.
         'no-new-wrappers': 1, // We don't have to `new` to cast a value. https://eslint.org/docs/rules/no-new-wrappers
         'no-octal-escape': 2, // https://eslint.org/docs/rules/no-octal-escape
-        'no-param-reassign': [1, {
-            'props': true
-            // 'ignorePropertyModificationsForRegex': [],
-        }],
+        'no-param-reassign': [
+            1,
+            {
+                props: true,
+                // 'ignorePropertyModificationsForRegex': [],
+            },
+        ],
         'no-proto': 2,
         'no-restricted-properties': 0, // https://eslint.org/docs/rules/no-restricted-properties
         'no-return-assign': 2, // This is a problem for readability.
@@ -152,9 +165,12 @@ module.exports = {
         'no-useless-return': 1, // https://eslint.org/docs/rules/no-useless-return
         'no-void': 2, // We live in after ES5 : https://eslint.org/docs/rules/no-void
         'no-warning-comments': 0, // We need not always enable this : https://eslint.org/docs/rules/no-warning-comments
-        'prefer-promise-reject-errors': [1, {
-            'allowEmptyReject': true, // Enable to create empty rejected one for compositing promises.
-        }],
+        'prefer-promise-reject-errors': [
+            1,
+            {
+                allowEmptyReject: true, // Enable to create empty rejected one for compositing promises.
+            },
+        ],
         'prefer-regex-literals': 'warn', // We don't have to use the constructor if we don't need create `RegEx` dynamically.
         'radix': 2, // Enforce 2nd argument of `parseInt()`.
 
@@ -198,31 +214,46 @@ module.exports = {
         //  and we need to write `let a: T | null = null;` even if a will not be `null`. This is not useful.
         'init-declarations': 'off',
         'no-label-var': 2,
-        'no-restricted-globals': [2, // https://eslint.org/docs/rules/no-restricted-globals
-            'name', 'top', 'event'
+        'no-restricted-globals': [
+            2, // https://eslint.org/docs/rules/no-restricted-globals
+            'name',
+            'top',
+            'event',
         ],
         'no-shadow': 0,
         'no-undefined': 0,
         'no-undef-init': 2,
-        'no-use-before-define': [2, { // the measure for Temporary Dead Zone
-            'functions': false, //  Function declarations are hoisted.
-            'classes': true, // Class declarations are not hoisted. We should warn it.
-        }],
+        'no-use-before-define': [
+            2,
+            {
+                // the measure for Temporary Dead Zone
+                functions: false, //  Function declarations are hoisted.
+                classes: true, // Class declarations are not hoisted. We should warn it.
+            },
+        ],
 
         // Stylistic Issues
-        'camelcase': [2, { // https://eslint.org/docs/rules/camelcase
-            'properties': 'always',
-            'ignoreDestructuring': false,
-        }],
+        'camelcase': [
+            2,
+            {
+                // https://eslint.org/docs/rules/camelcase
+                properties: 'always',
+                ignoreDestructuring: false,
+            },
+        ],
         'capitalized-comments': 0, // we don't think this is a serious problem.
         'consistent-this': [2, 'that'],
         'func-name-matching': 1,
         'func-names': [0, 'as-needed'], // we don't have to restrict this in most case.
-        'func-style': [0, 'declaration', {
-            // XXX: a top level functions should be a declaration,
-            // but it would be good to allow both forms of declaration/expression.
-            'allowArrowFunctions': true,
-        }],
+        'func-style': [
+            0,
+            'declaration',
+            {
+                // XXX: a top level functions should be a declaration,
+                // but it would be good to allow both forms of declaration/expression.
+                allowArrowFunctions: true,
+            },
+        ],
         'id-length': 0, // https://eslint.org/docs/rules/id-length
         'id-match': 0, // https://eslint.org/docs/rules/id-match
         'line-comment-position': 0, // This is needless. https://eslint.org/docs/rules/line-comment-position
@@ -235,10 +266,14 @@ module.exports = {
         'multiline-comment-style': 0, // https://eslint.org/docs/rules/multiline-comment-style
         'new-cap': 1,
         'no-array-constructor': 2, // In almost case, we don't have to use it.
-        'no-bitwise': [2, { // In almost case, we don't use bitwise operators...
-            'allow': [],
-            'int32Hint': true, // https://eslint.org/docs/rules/no-bitwise
-        }],
+        'no-bitwise': [
+            2,
+            {
+                // In almost case, we don't use bitwise operators...
+                allow: [],
+                int32Hint: true, // https://eslint.org/docs/rules/no-bitwise
+            },
+        ],
         'no-continue': 0, // https://eslint.org/docs/rules/no-continue
         'no-inline-comments': 0, // https://eslint.org/docs/rules/no-inline-comments
         'no-lonely-if': 1, // https://eslint.org/docs/rules/no-lonely-if
@@ -246,14 +281,19 @@ module.exports = {
         'no-negated-condition': 0, // https://eslint.org/docs/rules/no-negated-condition
         'no-nested-ternary': 2, // https://eslint.org/docs/rules/no-nested-ternary
         'no-plusplus': 0, // We might use it for loop.
-        'no-restricted-syntax': [2,
+        'no-restricted-syntax': [
+            2,
             // Ban the way to reflection by strings (Enable explicitly if you'd like to use).
-            'ForInStatement'
+            'ForInStatement',
         ],
         'no-ternary': 0, // https://eslint.org/docs/rules/no-ternary
-        'no-underscore-dangle': [2, { // Ban the name which starts with `_`.
-            'allowAfterThis': true, // allow after this to create a private member.
-        }],
+        'no-underscore-dangle': [
+            2,
+            {
+                // Ban the name which starts with `_`.
+                allowAfterThis: true, // allow after this to create a private member.
+            },
+        ],
         'no-unneeded-ternary': 2,
         'one-var': [2, 'never'], // https://eslint.org/docs/rules/one-var
         'operator-assignment': 0, // Unlike `i++` or `++i`, this is not a problem
@@ -272,13 +312,19 @@ module.exports = {
         'no-useless-rename': 1,
         'no-var': 1,
         'object-shorthand': 0,
-        'prefer-arrow-callback': [0, {
-            'allowNamedFunctions': true, // for debugging stack trace
-            'allowUnboundThis': false, // if `true`, ban using `this` without `bind()` in the callback.
-        }],
-        'prefer-const': [1, {
-            'destructuring': 'any', // Let's use `const` if we make one of variables `const`.
-        }],
+        'prefer-arrow-callback': [
+            0,
+            {
+                allowNamedFunctions: true, // for debugging stack trace
+                allowUnboundThis: false, // if `true`, ban using `this` without `bind()` in the callback.
+            },
+        ],
+        'prefer-const': [
+            1,
+            {
+                destructuring: 'any', // Let's use `const` if we make one of variables `const`.
+            },
+        ],
         'prefer-destructuring': 0, // It's not always true that to prefer destructuring.
 
         // After ECMAScript 2018, this feature improves code readability.
@@ -292,5 +338,5 @@ module.exports = {
         'prefer-template': 0,
         // 'sort-import': 0,
         'symbol-description': 2, // Force to pass the description to `Symbol()`.
-    }
+    },
 };

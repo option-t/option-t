@@ -27,12 +27,10 @@
 'use strict';
 
 module.exports = {
-    'parser': '@typescript-eslint/parser',
-    'plugins': [
-        '@typescript-eslint',
-    ],
+    parser: '@typescript-eslint/parser',
+    plugins: ['@typescript-eslint'],
 
-    'rules': {
+    rules: {
         // This rule is covered by typescript compiler
         'no-redeclare': 'off',
 
@@ -42,34 +40,43 @@ module.exports = {
         // TypeScript allows both forms of `[]` and `Array<T>`.
         // But typescript compiler also supports `ReadonlyArray<T>` builtin type and others.
         // So I seem it's nice to sort with `Array<T>` to decrease impedance mismatch.
-        '@typescript-eslint/array-type': ['warn', {
-            'default': 'generic',
-        }],
+        '@typescript-eslint/array-type': [
+            'warn',
+            {
+                default: 'generic',
+            },
+        ],
 
         // If you don't have use `await`, then it should be removed to reduce internal works.
         '@typescript-eslint/await-thenable': 'warn',
 
         // At almost case, ts-blahblah comment is explicit and it works well as an escape hatch.
-        '@typescript-eslint/ban-ts-comment': ['error', {
-            'ts-expect-error': false,
-            // `@ts-ignore` violates all static type checkings for _all expressions_ in the next line.
-            // It will not be too much warn about it.
-            'ts-ignore': true,
-            'ts-nocheck': false,
-            'ts-check': false,
-        }],
+        '@typescript-eslint/ban-ts-comment': [
+            'error',
+            {
+                'ts-expect-error': false,
+                // `@ts-ignore` violates all static type checkings for _all expressions_ in the next line.
+                // It will not be too much warn about it.
+                'ts-ignore': true,
+                'ts-nocheck': false,
+                'ts-check': false,
+            },
+        ],
 
         // We cannot define this. User project should enable this.
         '@typescript-eslint/ban-types': 'off',
 
         // Uniform the style.
-        '@typescript-eslint/consistent-type-assertions': ['warn', {
-            // Sort the style in both of ts and tsx.
-            'assertionStyle': 'as',
-            // `const` assertion is ignored by this rule.
-            // I think it's better to sort the type assertion style.
-            'objectLiteralTypeAssertions': 'never',
-        }],
+        '@typescript-eslint/consistent-type-assertions': [
+            'warn',
+            {
+                // Sort the style in both of ts and tsx.
+                assertionStyle: 'as',
+                // `const` assertion is ignored by this rule.
+                // I think it's better to sort the type assertion style.
+                objectLiteralTypeAssertions: 'never',
+            },
+        ],
 
         // Each style has its own pros & cons.
         '@typescript-eslint/consistent-type-definitions': 'off',
@@ -80,55 +87,62 @@ module.exports = {
         // TODO: (#64) @typescript-eslint/explicit-function-return-type
 
         // It's redundant to enforce to supply `public`.
-        '@typescript-eslint/explicit-member-accessibility': ['warn', {
-            'accessibility': 'no-public',
-            // 'ignoredMethodNames': [],
-            'overrides': {
-                // Fro parameter properties, all items should be explicited.
-                'parameterProperties': 'explicit',
+        '@typescript-eslint/explicit-member-accessibility': [
+            'warn',
+            {
+                accessibility: 'no-public',
+                // 'ignoredMethodNames': [],
+                overrides: {
+                    // Fro parameter properties, all items should be explicited.
+                    parameterProperties: 'explicit',
+                },
             },
-        }],
+        ],
 
         // I don't think it's not efffective to sort the order by public/private/protected.
-        '@typescript-eslint/member-ordering': ['warn', {
-            // * I'd like to aggregate instance fields
-            //   to know what we should initialize in the constructor to stabilize the object shape.
-            // * It's the time to refactor the object if we'd like to mix the order of static fields & methods.
-            'default': [
-                'signature',
-                'static-field',
-                'static-method',
-                'instance-field',
-                'constructor',
-                'instance-method',
-            ],
-        }],
+        '@typescript-eslint/member-ordering': [
+            'warn',
+            {
+                // * I'd like to aggregate instance fields
+                //   to know what we should initialize in the constructor to stabilize the object shape.
+                // * It's the time to refactor the object if we'd like to mix the order of static fields & methods.
+                default: [
+                    'signature',
+                    'static-field',
+                    'static-method',
+                    'instance-field',
+                    'constructor',
+                    'instance-method',
+                ],
+            },
+        ],
 
         // This should be sorted with ESLint builtin rule.
         'camelcase': 'off',
-        '@typescript-eslint/naming-convention': ['warn',
+        '@typescript-eslint/naming-convention': [
+            'warn',
             {
-                'selector': 'default',
-                'format': ['camelCase'],
+                selector: 'default',
+                format: ['camelCase'],
                 // FIXME(#378): we intent this as workaround.
-                'leadingUnderscore': 'allow',
+                leadingUnderscore: 'allow',
             },
 
             {
-                'selector': 'variable',
-                'format': ['camelCase', 'UPPER_CASE']
+                selector: 'variable',
+                format: ['camelCase', 'UPPER_CASE'],
             },
 
             {
-                'selector': 'function',
+                selector: 'function',
                 // For React's Function Component, we need allow `PascalCase`.
-                'format': ['camelCase', 'PascalCase'],
+                format: ['camelCase', 'PascalCase'],
             },
 
             {
-                'selector': 'parameter',
-                'format': ['camelCase'],
-                'leadingUnderscore': 'allow'
+                selector: 'parameter',
+                format: ['camelCase'],
+                leadingUnderscore: 'allow',
             },
 
             // Enforce that private members are prefixed with an underscore
@@ -141,28 +155,28 @@ module.exports = {
             //  * TypeScript will be transformed into plain JavaScript and plain JavaScript does not any informations
             //    to express whether a field is private or not.
             {
-                'selector': 'memberLike',
-                'modifiers': ['private', 'protected'],
-                'format': ['camelCase'],
+                selector: 'memberLike',
+                modifiers: ['private', 'protected'],
+                format: ['camelCase'],
                 // FIXME: Does this option really work?
                 // See #378
-                'leadingUnderscore': 'require',
+                leadingUnderscore: 'require',
             },
             {
-                'selector': 'enumMember',
-                'format': ['PascalCase'],
+                selector: 'enumMember',
+                format: ['PascalCase'],
             },
 
             {
-                'selector': 'typeLike',
-                'format': ['PascalCase']
+                selector: 'typeLike',
+                format: ['PascalCase'],
             },
             // A class & interface should be PascalCased
             {
-                'selector': 'class',
+                selector: 'class',
                 // Don't export to make it private.
-                'leadingUnderscore': 'forbid',
-                'format': ['PascalCase']
+                leadingUnderscore: 'forbid',
+                format: ['PascalCase'],
             },
 
             // Enforce that interface names do not begin with an I
@@ -171,14 +185,14 @@ module.exports = {
             // > Do not use "I" as a prefix for interface names.
             // We follow this.
             {
-                'selector': 'interface',
-                'format': ['PascalCase'],
+                selector: 'interface',
+                format: ['PascalCase'],
                 // Don't export to make it private.
-                'leadingUnderscore': 'forbid',
-                'custom': {
-                    'regex': '^I[A-Z]',
-                    'match': false
-                }
+                leadingUnderscore: 'forbid',
+                custom: {
+                    regex: '^I[A-Z]',
+                    match: false,
+                },
             },
 
             //  * We accept the style for T , TA , TAbc , TA1Bca , T1 , T2.
@@ -191,9 +205,9 @@ module.exports = {
             //  * We don't allow the style for `R`, `K`, `V`, or other forms which we can see in Java or other many languages.
             //      * It's short but less information.
             {
-                'selector': 'typeParameter',
-                'format': ['PascalCase'],
-                'prefix': ['T'],
+                selector: 'typeParameter',
+                format: ['PascalCase'],
+                prefix: ['T'],
                 // For more strictly, we should use this regexp, but I don't feel we don't have to do it now.
                 //'custom': {
                 //    'regex': '^T([A-Z0-9][a-zA-Z0-9]*){0,1}$',
@@ -224,30 +238,39 @@ module.exports = {
         '@typescript-eslint/no-empty-interface': 'off',
 
         // Please opt-out this rule if you don't have any workarounds.
-        '@typescript-eslint/no-explicit-any': ['warn', {
-            // Even if rest arguments, we should mark them explicitly.
-            'ignoreRestArgs': false,
-        }],
+        '@typescript-eslint/no-explicit-any': [
+            'warn',
+            {
+                // Even if rest arguments, we should mark them explicitly.
+                ignoreRestArgs: false,
+            },
+        ],
 
-        '@typescript-eslint/no-extraneous-class': ['warn', {
-            'allowConstructorOnly': true,
-            'allowEmpty': true,
-            // If there is the class which only have static members,
-            // then we have a chance to refactoring them to simple module level variables.
-            'allowStaticOnly': false,
-            // TypeScript decorator is still not standardized. We should not touch it.
-            // allowWithDecorator
-        }],
+        '@typescript-eslint/no-extraneous-class': [
+            'warn',
+            {
+                allowConstructorOnly: true,
+                allowEmpty: true,
+                // If there is the class which only have static members,
+                // then we have a chance to refactoring them to simple module level variables.
+                allowStaticOnly: false,
+                // TypeScript decorator is still not standardized. We should not touch it.
+                // allowWithDecorator
+            },
+        ],
 
         // Detect redundant code
         '@typescript-eslint/no-extra-non-null-assertion': 'warn',
 
         // Of course, this might be redundant if you set unhandledrejection event handler.
         // We still have some points which should be under discussion. See: #135
-        '@typescript-eslint/no-floating-promises': ['warn', {
-            // Promise might reject even if the its returned value is `void`.
-            'ignoreVoid': false,
-        }],
+        '@typescript-eslint/no-floating-promises': [
+            'warn',
+            {
+                // Promise might reject even if the its returned value is `void`.
+                ignoreVoid: false,
+            },
+        ],
 
         // This is common pitfalls for beginners. We must ban.
         '@typescript-eslint/no-for-in-array': 'error',
@@ -263,32 +286,40 @@ module.exports = {
 
         // This should be sorted with ESLint builtin rule.
         'no-magic-numbers': 'off',
-        '@typescript-eslint/no-magic-numbers': ['warn', {
-            // Allow these values which are used commonly in test, flags, or others.
-            'ignore': [0, 1],
+        '@typescript-eslint/no-magic-numbers': [
+            'warn',
+            {
+                // Allow these values which are used commonly in test, flags, or others.
+                ignore: [0, 1],
 
-            // Even if we use magic number, it would not be difficult for type & enum...
-            'ignoreNumericLiteralTypes': true,
-            'ignoreReadonlyClassProperties': false, // there is no difference with the case of normal const var.
-            'ignoreEnums': true,
-
-        }],
+                // Even if we use magic number, it would not be difficult for type & enum...
+                ignoreNumericLiteralTypes: true,
+                ignoreReadonlyClassProperties: false, // there is no difference with the case of normal const var.
+                ignoreEnums: true,
+            },
+        ],
 
         // Ban the misused style aggressively
         '@typescript-eslint/no-misused-new': 'error',
 
-        '@typescript-eslint/no-misused-promises': ['warn', {
-            // It's nice to detect the part which we expect to use a boolean value.
-            'checksConditionals': true,
-            // We disable this option to allow `await` for event handler callbacks.
-            'checksVoidReturn': false,
-        }],
+        '@typescript-eslint/no-misused-promises': [
+            'warn',
+            {
+                // It's nice to detect the part which we expect to use a boolean value.
+                checksConditionals: true,
+                // We disable this option to allow `await` for event handler callbacks.
+                checksVoidReturn: false,
+            },
+        ],
 
         // Only allow declarations. Use ES Module in almost projects.
-        '@typescript-eslint/no-namespace': ['error', {
-            'allowDeclarations': true,
-            'allowDefinitionFiles': true,
-        }],
+        '@typescript-eslint/no-namespace': [
+            'error',
+            {
+                allowDeclarations: true,
+                allowDefinitionFiles: true,
+            },
+        ],
 
         // Ban this pattern to keep type safety
         '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
@@ -300,10 +331,13 @@ module.exports = {
         '@typescript-eslint/no-require-imports': 'error',
 
         // Use arrow function basically.
-        '@typescript-eslint/no-this-alias': ['warn', {
-            'allowDestructuring': false,
-            'allowedNames': ['self'],
-        }],
+        '@typescript-eslint/no-this-alias': [
+            'warn',
+            {
+                allowDestructuring: false,
+                allowedNames: ['self'],
+            },
+        ],
 
         // Disabling this does not make sense completely.
         '@typescript-eslint/no-type-alias': 'off',
@@ -312,9 +346,12 @@ module.exports = {
         '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'warn',
 
         // This would find the possibility which we can unnecessary condition.
-        '@typescript-eslint/no-unnecessary-condition': ['warn', {
-            'allowConstantLoopConditions': true,
-        }],
+        '@typescript-eslint/no-unnecessary-condition': [
+            'warn',
+            {
+                allowConstantLoopConditions: true,
+            },
+        ],
 
         // Try to detect redundant case,
         '@typescript-eslint/no-unnecessary-qualifier': 'warn',
@@ -340,13 +377,16 @@ module.exports = {
         // and if you use typescript compiler with `noUnused***` options,
         // then you can disable this.
         'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': ['warn', {
-            'vars': 'all',
-            'args': 'after-used',
-            'argsIgnorePattern': '^_', // Sort with TypeScript compiler's builtin linter.
-            'caughtErrors': 'all',
-            'caughtErrorsIgnorePattern': '^_', // Allow `catch (_e) {...}`
-        }],
+        '@typescript-eslint/no-unused-vars': [
+            'warn',
+            {
+                vars: 'all',
+                args: 'after-used',
+                argsIgnorePattern: '^_', // Sort with TypeScript compiler's builtin linter.
+                caughtErrors: 'all',
+                caughtErrorsIgnorePattern: '^_', // Allow `catch (_e) {...}`
+            },
+        ],
         // Ideally, we should use this rule instead of it for TypeScript code
         // '@typescript-eslint/no-unused-vars-experimental': ['warn', {
         //    'ignoredNamesRegex': '^_',
@@ -355,12 +395,15 @@ module.exports = {
 
         // This should be sorted with ESLint builtin rule.
         'no-use-before-define': 'off',
-        '@typescript-eslint/no-use-before-define': ['error', {
-            'functions': false, //  Function declarations are hoisted.
-            'classes': true, // Class declarations are not hoisted. We should warn it.
-            'variables': true, // for Temporary Dead Zone.
-            'typedefs': true, // We rely TypeScript compiler.
-        }],
+        '@typescript-eslint/no-use-before-define': [
+            'error',
+            {
+                functions: false, //  Function declarations are hoisted.
+                classes: true, // Class declarations are not hoisted. We should warn it.
+                variables: true, // for Temporary Dead Zone.
+                typedefs: true, // We rely TypeScript compiler.
+            },
+        ],
 
         // We should sort with builtin rule.
         '@typescript-eslint/no-useless-constructor': 'off',
@@ -454,17 +497,23 @@ module.exports = {
         '@typescript-eslint/require-await': 'off',
 
         // This detects a common mistake which uses `+` for diffrent types.
-        '@typescript-eslint/restrict-plus-operands': ['warn', {
-            'skipCompoundAssignments': true,
-        }],
+        '@typescript-eslint/restrict-plus-operands': [
+            'warn',
+            {
+                skipCompoundAssignments: true,
+            },
+        ],
 
         // I think it's error prone to implicit string conversion.
         // But I also think this might be a noisy. It might be better to disable this for the future.
-        '@typescript-eslint/restrict-template-expressions': ['warn', {
-            'allowNumber': false,
-            'allowBoolean': false,
-            'allowNullish': false,
-        }],
+        '@typescript-eslint/restrict-template-expressions': [
+            'warn',
+            {
+                allowNumber: false,
+                allowBoolean: false,
+                allowNullish: false,
+            },
+        ],
 
         // FIXME: #272
         // '@typescript-eslint/return-await'
@@ -475,15 +524,18 @@ module.exports = {
         '@typescript-eslint/strict-boolean-expressions': 'off',
 
         // Basically, use ES Module import. // <reference path="" /> is just special case.
-        '@typescript-eslint/triple-slash-reference': ['error', {
-            'path': 'never',
-            'types': 'never',
-            'lib': 'never',
-        }],
+        '@typescript-eslint/triple-slash-reference': [
+            'error',
+            {
+                path: 'never',
+                types: 'never',
+                lib: 'never',
+            },
+        ],
 
         // TODO: @typescript-eslint/typedef
 
         // In some case, function definition by overloading improves IntelliSense ergonomics.
         '@typescript-eslint/unified-signature': 'off',
-    }
+    },
 };
