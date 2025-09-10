@@ -1,3 +1,4 @@
+// We expose _core primitive_ directly.
 export {
     expectNotNullOrUndefined,
     isNotNullOrUndefined,
@@ -28,12 +29,8 @@ export { unwrapOrForMaybe } from './operators/unwrap_or.js';
 export { unwrapOrElseForMaybe } from './operators/unwrap_or_else.js';
 export { unwrapOrElseAsyncForMaybe } from './operators/unwrap_or_else_async.js';
 
-/**
- *  @experimental
- *      This API is still experimental. We might change this without any breaking changes.
- */
-// FIXME: https://github.com/option-t/option-t/issues/2535
-export * as experimental_MaybeOperator from './internal/intermediate_operators.js';
+// We expose _operators_ (typically named as `~ForMaybe`) as bundled.
+export * as MaybeOperator from './internal/intermediate_operators.js';
 
 // XXX:
 //  _and_ operator is equivalent of `a && b` so we don't ship it by this default set.
