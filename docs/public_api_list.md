@@ -155,6 +155,7 @@ Basic APIs are exported here:
 - [`option-t/plain_result/and`](../packages/option-t/src/plain_result/operators/and.ts)
 - [`option-t/plain_result/and_then`](../packages/option-t/src/plain_result/operators/and_then.ts)
 - [`option-t/plain_result/and_then_async`](../packages/option-t/src/plain_result/operators/and_then_async.ts)
+- [`option-t/plain_result/compat/v54`](../packages/option-t/src/plain_result/compat/v54.ts) (__deprecated__. Use `option-t/plain_result`.)
 - [`option-t/plain_result/deprecated/try_catch_with_assert_error`](../packages/option-t/src/plain_result/deprecated/try_catch_with_assert_error.ts) (__deprecated__)
 - [`option-t/plain_result/deprecated/try_catch_with_assert_error_async`](../packages/option-t/src/plain_result/deprecated/try_catch_with_assert_error_async.ts) (__deprecated__)
 - [`option-t/plain_result/deprecated/unwrap_or_throw_error`](../packages/option-t/src/plain_result/deprecated/unwrap_or_throw_error.ts) (__deprecated__. Use `option-t/plain_result/unwrap_or_throw` instead.)

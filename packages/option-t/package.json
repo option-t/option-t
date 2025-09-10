@@ -656,6 +656,12 @@
                 "default": "./esm/plain_result/operators/and_then_async.js"
             }
         },
+        "./plain_result/compat/v54": {
+            "default": {
+                "types": "./esm/plain_result/compat/v54.d.ts",
+                "default": "./esm/plain_result/compat/v54.js"
+            }
+        },
         "./plain_result/deprecated/try_catch_with_assert_error": {
             "default": {
                 "types": "./esm/plain_result/deprecated/try_catch_with_assert_error.d.ts",
