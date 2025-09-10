@@ -1,3 +1,4 @@
+// We expose _core primitive_ directly.
 export {
     expectNotNull,
     isNotNull,
@@ -27,12 +28,8 @@ export { unwrapOrForNullable } from './operators/unwrap_or.js';
 export { unwrapOrElseForNullable } from './operators/unwrap_or_else.js';
 export { unwrapOrElseAsyncForNullable } from './operators/unwrap_or_else_async.js';
 
-/**
- *  @experimental
- *      This API is still experimental. We might change this without any breaking changes.
- */
-// FIXME: https://github.com/option-t/option-t/issues/2536
-export * as experimental_NullableOperator from './internal/intermediate_operators.js';
+// We expose _operators_ (typically named as `~ForNullable`) as bundled.
+export * as NullableOperator from './internal/intermediate_operators.js';
 
 // XXX:
 //  _and_ operator is equivalent of `a && b` so we don't ship it by this default set.
