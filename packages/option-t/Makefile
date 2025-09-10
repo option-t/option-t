@@ -4,7 +4,6 @@ INNER_PACKAGES_DIR := $(abspath $(CURDIR)/..)
 NODE_BIN := node
 NPM_MOD_DIR := $(REPO_ROOT_DIR)/node_modules
 NPM_BIN := $(NPM_MOD_DIR)/.bin
-NPM_CMD := pnpm
 
 SRC_DIR := $(CURDIR)/src
 DOCS_DIR := $(REPO_ROOT_DIR)/docs
@@ -145,12 +144,15 @@ generate_import_path_list_md: ## Generate all public import paths to docs/import
 	$(NODE_BIN) $(CURDIR)/tools/generate_import_path_list_markdown.mjs --source ${SRC_DIR} --destination ${DOCS_DIR}
 
 .PHONY: prepublish
-prepublish: ## Run some commands for 'npm run prepublish'
+prepublish: ## Run some commands for 'pnpm run prepublish'
 	$(MAKE) clean -C $(CURDIR)
 	$(MAKE) build -C $(CURDIR)
 	$(MAKE) run_test_distribution_contain_all -C $(CURDIR)
 	$(MAKE) run_test_package_json_exports_field_format -C $(CURDIR)
 
 .PHONY: publish
-publish: ## Run some commands for 'npm publish'
-	cd $(DIST_DIR) && npm publish --provenance --access public
+publish: ## Run some commands for 'pnpm publish'
+# This workaround this error:
+# > ERR_PNPM_GIT_UNKNOWN_BRANCH The Git HEAD may not attached to any branch, but your "publish-branch" is set to "master|main".
+# > If you want to disable Git checks on publish, set the "git-checks" setting to "false", or run again with "--no-git-checks".
+	cd $(DIST_DIR) && pnpm publish --access public --no-git-checks
