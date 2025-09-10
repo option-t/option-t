@@ -3,6 +3,7 @@ import {} from 'option-t/maybe';
 import {} from 'option-t/maybe/and';
 import {} from 'option-t/maybe/and_then';
 import {} from 'option-t/maybe/and_then_async';
+import {} from 'option-t/maybe/compat/v54';
 import {} from 'option-t/maybe/filter';
 import {} from 'option-t/maybe/filter_async';
 import {} from 'option-t/maybe/inspect';

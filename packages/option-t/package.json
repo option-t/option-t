@@ -92,6 +92,12 @@
                 "default": "./esm/maybe/operators/and_then_async.js"
             }
         },
+        "./maybe/compat/v54": {
+            "default": {
+                "types": "./esm/maybe/compat/v54.d.ts",
+                "default": "./esm/maybe/compat/v54.js"
+            }
+        },
         "./maybe/filter": {
             "default": {
                 "types": "./esm/maybe/operators/filter.d.ts",
