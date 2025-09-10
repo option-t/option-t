@@ -9,12 +9,21 @@ catalogs:
     '@eslint/js':
       specifier: ^9.34.0
       version: 9.34.0
+    '@reflink/reflink':
+      specifier: ^0.1.19
+      version: 0.1.19
     '@typescript-eslint/eslint-plugin':
       specifier: ^8.42.0
       version: 8.42.0
     '@typescript-eslint/parser':
       specifier: ^8.42.0
       version: 8.42.0
+    ava:
+      specifier: ^6.4.1
+      version: 6.4.1
+    del-cli:
+      specifier: ^6.0.0
+      version: 6.0.0
     eslint:
       specifier: ^9.34.0
       version: 9.34.0
@@ -27,9 +36,24 @@ catalogs:
     eslint-plugin-import:
       specifier: ^2.32.0
       version: 2.32.0
+    expect-type:
+      specifier: ^1.2.2
+      version: 1.2.2
     globals:
       specifier: ^16.3.0
       version: 16.3.0
+    picomatch:
+      specifier: ^4.0.3
+      version: 4.0.3
+    prettier:
+      specifier: ^3.6.2
+      version: 3.6.2
+    turbo:
+      specifier: ^2.5.6
+      version: 2.5.6
+    typescript:
+      specifier: ^5.9.2
+      version: 5.9.2
 
 importers:
 
@@ -39,28 +63,28 @@ importers:
         specifier: 'workspace:'
         version: link:packages/eslint_config
       '@reflink/reflink':
-        specifier: ^0.1.19
+        specifier: 'catalog:'
         version: 0.1.19
       ava:
-        specifier: ^6.4.1
+        specifier: 'catalog:'
         version: 6.4.1
       del-cli:
-        specifier: ^6.0.0
+        specifier: 'catalog:'
         version: 6.0.0
       eslint:
         specifier: 'catalog:'
         version: 9.34.0
       picomatch:
-        specifier: ^4.0.3
+        specifier: 'catalog:'
         version: 4.0.3
       prettier:
-        specifier: ^3.6.2
+        specifier: 'catalog:'
         version: 3.6.2
       turbo:
-        specifier: ^2.5.6
+        specifier: 'catalog:'
         version: 2.5.6
       typescript:
-        specifier: ^5.9.2
+        specifier: 'catalog:'
         version: 5.9.2
 
   packages/api_tests:
@@ -72,7 +96,7 @@ importers:
   packages/api_typing_tests:
     dependencies:
       expect-type:
-        specifier: ^1.2.2
+        specifier: 'catalog:'
         version: 1.2.2
       option-t:
         specifier: workspace:*
@@ -113,7 +137,7 @@ importers:
         specifier: workspace:*
         version: link:../option-t
       typescript:
-        specifier: 5.9.2
+        specifier: 'catalog:'
         version: 5.9.2
 
   packages/test_module_nodenext:

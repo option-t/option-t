@@ -8,7 +8,7 @@
         "test": "tsc -p ./tsconfig.json"
     },
     "dependencies": {
-        "expect-type": "^1.2.2",
+        "expect-type": "catalog:",
         "option-t": "workspace:*"
     }
 }
