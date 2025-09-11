@@ -111,7 +111,6 @@ test('pass undefined', async (t) => {
 }
 
 test(`exported alias' identity check`, (t) => {
-    t.is(NullableRoot.mapOrAsyncForNullable, mapOrAsyncForNullable);
     t.is(NullableRoot.NullableOperator.mapOrAsync, mapOrAsyncForNullable);
     t.is(NullableNamespace.mapOrAsync, mapOrAsyncForNullable);
     t.is(NullableRootCompatV54.mapOrAsyncForNullable, mapOrAsyncForNullable);

@@ -78,7 +78,6 @@ for (const [src, def] of testcases) {
 }
 
 test(`exported alias' identity check`, (t) => {
-    t.is(NullableRoot.unwrapOrElseAsyncForNullable, unwrapOrElseAsyncForNullable);
     t.is(NullableRoot.NullableOperator.unwrapOrElseAsync, unwrapOrElseAsyncForNullable);
     t.is(NullableNamespace.unwrapOrElseAsync, unwrapOrElseAsyncForNullable);
     t.is(NullableRootCompatV54.unwrapOrElseAsyncForNullable, unwrapOrElseAsyncForNullable);
