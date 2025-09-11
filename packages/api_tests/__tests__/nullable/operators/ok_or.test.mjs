@@ -1,6 +1,9 @@
 import test from 'ava';
 
 import { okOrForNullable } from 'option-t/nullable/ok_or';
+import * as NullableRoot from 'option-t/nullable';
+import * as NullableRootCompatV54 from 'option-t/nullable/compat/v54';
+import { Nullable as NullableNamespace } from 'option-t/nullable/namespace';
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { nonNullableValueCaseListForSync } from '../../utils.mjs';
 
@@ -38,4 +41,11 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
 
     t.true(isErr(actual), 'should be Err(E)');
     t.is(unwrapErr(actual), DEFAULT_ERR, 'should contain the expected');
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(NullableRoot.okOrForNullable, okOrForNullable);
+    t.is(NullableRoot.NullableOperator.okOr, okOrForNullable);
+    t.is(NullableNamespace.okOr, okOrForNullable);
+    t.is(NullableRootCompatV54.okOrForNullable, okOrForNullable);
 });

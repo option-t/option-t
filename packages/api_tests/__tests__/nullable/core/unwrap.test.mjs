@@ -1,5 +1,8 @@
 import test from 'ava';
 
+import * as NullableRoot from 'option-t/nullable';
+import * as NullableRootCompatV54 from 'option-t/nullable/compat/v54';
+import { Nullable as NullableNamespace } from 'option-t/nullable/namespace';
 import { unwrapNullable } from 'option-t/nullable/nullable';
 import { nonNullableValueCaseListForSync } from '../../utils.mjs';
 
@@ -31,4 +34,10 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
         result = unwrapNullable(NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
     });
     t.is(result, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(NullableRoot.unwrapNullable, unwrapNullable);
+    t.is(NullableNamespace.unwrapNullable, unwrapNullable);
+    t.is(NullableRootCompatV54.unwrapNullable, unwrapNullable);
 });

@@ -1,5 +1,8 @@
 import test from 'ava';
 
+import * as NullableRoot from 'option-t/nullable';
+import * as NullableRootCompatV54 from 'option-t/nullable/compat/v54';
+import { Nullable as NullableNamespace } from 'option-t/nullable/namespace';
 import { okOrElseAsyncForNullable } from 'option-t/nullable/ok_or_else_async';
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { nonNullableValueCaseListForSync } from '../../utils.mjs';
@@ -57,4 +60,11 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     const actual = await result;
     t.true(isErr(actual), 'should be Err(E)');
     t.is(unwrapErr(actual), DEFAULT_ERR, 'should contain the expected');
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(NullableRoot.okOrElseAsyncForNullable, okOrElseAsyncForNullable);
+    t.is(NullableRoot.NullableOperator.okOrElseAsync, okOrElseAsyncForNullable);
+    t.is(NullableNamespace.okOrElseAsync, okOrElseAsyncForNullable);
+    t.is(NullableRootCompatV54.okOrElseAsyncForNullable, okOrElseAsyncForNullable);
 });

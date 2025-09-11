@@ -1,5 +1,8 @@
 import test from 'ava';
 
+import * as NullableRoot from 'option-t/nullable';
+import * as NullableRootCompatV54 from 'option-t/nullable/compat/v54';
+import { Nullable as NullableNamespace } from 'option-t/nullable/namespace';
 import { expectNotNull } from 'option-t/nullable/nullable';
 import { nonNullableValueCaseListForSync } from '../../utils.mjs';
 
@@ -40,4 +43,10 @@ test('pass undefined', (t) => {
         result = expectNotNull(NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE, EXPECTED_MSG);
     });
     t.is(result, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(NullableRoot.expectNotNull, expectNotNull);
+    t.is(NullableNamespace.expectNotNull, expectNotNull);
+    t.is(NullableRootCompatV54.expectNotNull, expectNotNull);
 });
