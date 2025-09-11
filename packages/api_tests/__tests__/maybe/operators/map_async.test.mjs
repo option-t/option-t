@@ -62,7 +62,6 @@ for (const NULL_VALUE of [undefined, null]) {
 }
 
 test(`exported alias' identity check`, (t) => {
-    t.is(MaybeRoot.mapAsyncForMaybe, mapAsyncForMaybe);
     t.is(MaybeRoot.MaybeOperator.mapAsync, mapAsyncForMaybe);
     t.is(MaybeNamespace.mapAsync, mapAsyncForMaybe);
     t.is(MaybeRootCompatV54.mapAsyncForMaybe, mapAsyncForMaybe);

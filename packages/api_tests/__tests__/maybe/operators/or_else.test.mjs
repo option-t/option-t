@@ -32,7 +32,6 @@ for (const NULL_VALUE of [undefined, null]) {
 }
 
 test(`exported alias' identity check`, (t) => {
-    t.is(MaybeRoot.orElseForMaybe, orElseForMaybe);
     t.is(MaybeRoot.MaybeOperator.orElse, orElseForMaybe);
     t.is(MaybeNamespace.orElse, orElseForMaybe);
     t.is(MaybeRootCompatV54.orElseForMaybe, orElseForMaybe);
