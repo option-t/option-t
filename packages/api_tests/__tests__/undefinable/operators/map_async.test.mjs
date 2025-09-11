@@ -1,6 +1,9 @@
 import test from 'ava';
 
+import * as UndefinableRoot from 'option-t/undefinable';
+import * as UndefinableRootCompatV54 from 'option-t/undefinable/compat/v54';
 import { mapAsyncForUndefinable } from 'option-t/undefinable/map_async';
+import { Undefinable as UndefinableNamespace } from 'option-t/undefinable/namespace';
 import { nonNullableValueCaseListForAsync } from '../../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
@@ -67,3 +70,10 @@ for (const [src, def] of testcases) {
         );
     });
 }
+
+test(`exported alias' identity check`, (t) => {
+    t.is(UndefinableRoot.mapAsyncForUndefinable, mapAsyncForUndefinable);
+    t.is(UndefinableRoot.UndefinableOperator.mapAsync, mapAsyncForUndefinable);
+    t.is(UndefinableNamespace.mapAsync, mapAsyncForUndefinable);
+    t.is(UndefinableRootCompatV54.mapAsyncForUndefinable, mapAsyncForUndefinable);
+});

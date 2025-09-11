@@ -1,5 +1,8 @@
 import test from 'ava';
 
+import * as UndefinableRoot from 'option-t/undefinable';
+import * as UndefinableRootCompatV54 from 'option-t/undefinable/compat/v54';
+import { Undefinable as UndefinableNamespace } from 'option-t/undefinable/namespace';
 import { orElseAsyncForUndefinable } from 'option-t/undefinable/or_else_async';
 import { nonNullableValueCaseListForAsync } from '../../utils.mjs';
 
@@ -53,4 +56,11 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
     t.true(result instanceof Promise, 'result should be Promise');
     const actual = await result;
     t.is(actual, NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE);
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(UndefinableRoot.orElseAsyncForUndefinable, orElseAsyncForUndefinable);
+    t.is(UndefinableRoot.UndefinableOperator.orElseAsync, orElseAsyncForUndefinable);
+    t.is(UndefinableNamespace.orElseAsync, orElseAsyncForUndefinable);
+    t.is(UndefinableRootCompatV54.orElseAsyncForUndefinable, orElseAsyncForUndefinable);
 });

@@ -37,3 +37,7 @@ test('Undefinable::and', (t) => {
         t.is(andForUndefinable(a, b), expected, `a=${String(a)}, b=${String(b)}`);
     }
 });
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

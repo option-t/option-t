@@ -1,5 +1,8 @@
 import test from 'ava';
-import * as Undefinable from 'option-t/undefinable';
+import * as UndefinableRoot from 'option-t/undefinable';
+import * as UndefinableRootCompatV54 from 'option-t/undefinable/compat/v54';
+import { Undefinable as UndefinableNamespace } from 'option-t/undefinable/namespace';
+import { isNotUndefined } from 'option-t/undefinable/undefinable';
 
 test('Undefinable::isNotUndefined', (t) => {
     const testcase = [
@@ -22,9 +25,15 @@ test('Undefinable::isNotUndefined', (t) => {
         const expected = test[1];
 
         t.is(
-            Undefinable.isNotUndefined(input),
+            isNotUndefined(input),
             expected,
             `\`${String(input)}\` should be \`${String(expected)}\``,
         );
     });
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(UndefinableRoot.isNotUndefined, isNotUndefined);
+    t.is(UndefinableNamespace.isNotUndefined, isNotUndefined);
+    t.is(UndefinableRootCompatV54.isNotUndefined, isNotUndefined);
 });

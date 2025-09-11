@@ -1,6 +1,9 @@
 import test from 'ava';
 
+import * as UndefinableRoot from 'option-t/undefinable';
+import * as UndefinableRootCompatV54 from 'option-t/undefinable/compat/v54';
 import { inspectUndefinable } from 'option-t/undefinable/inspect';
+import { Undefinable as UndefinableNamespace } from 'option-t/undefinable/namespace';
 import { nonNullableValueCaseListForSync } from '../../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
@@ -37,4 +40,11 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     });
 
     t.is(result, NULL_VALUE_IN_THIS_TEST_CASE, 'should be input');
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(UndefinableRoot.inspectUndefinable, inspectUndefinable);
+    t.is(UndefinableRoot.UndefinableOperator.inspect, inspectUndefinable);
+    t.is(UndefinableNamespace.inspect, inspectUndefinable);
+    t.is(UndefinableRootCompatV54.inspectUndefinable, inspectUndefinable);
 });
