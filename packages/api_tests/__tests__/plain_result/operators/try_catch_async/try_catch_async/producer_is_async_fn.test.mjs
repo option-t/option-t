@@ -44,7 +44,6 @@ test('output=Err(unknown): producer is async fn', async (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.tryCatchIntoResultAsync, tryCatchIntoResultAsync);
     t.is(PlainResultRoot.ResultOperator.tryCatchIntoAsync, tryCatchIntoResultAsync);
     t.is(PlainResultNamespace.tryCatchIntoAsync, tryCatchIntoResultAsync);
     t.is(PlainResultCompatV54.tryCatchIntoResultAsync, tryCatchIntoResultAsync);

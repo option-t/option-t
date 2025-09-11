@@ -38,7 +38,6 @@ test('output=Err(unknown)', (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.tryCatchIntoResult, tryCatchIntoResult);
     t.is(PlainResultRoot.ResultOperator.tryCatchInto, tryCatchIntoResult);
     t.is(PlainResultNamespace.tryCatchInto, tryCatchIntoResult);
     t.is(PlainResultCompatV54.tryCatchIntoResult, tryCatchIntoResult);

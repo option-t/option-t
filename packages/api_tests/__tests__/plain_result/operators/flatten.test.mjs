@@ -55,7 +55,6 @@ test('this should remove only one nest level', (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.flattenForResult, flattenForResult);
     t.is(PlainResultRoot.ResultOperator.flatten, flattenForResult);
     t.is(PlainResultNamespace.flatten, flattenForResult);
     t.is(PlainResultCompatV54.flattenForResult, flattenForResult);

@@ -118,7 +118,6 @@ test('If producer throw the instance value of cross-realm `Error` constructor', 
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.tryCatchIntoResultWithEnsureError, tryCatchIntoResultWithEnsureError);
     t.is(
         PlainResultRoot.ResultOperator.tryCatchIntoWithEnsureError,
         tryCatchIntoResultWithEnsureError,

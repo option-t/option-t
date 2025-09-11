@@ -32,7 +32,6 @@ test('input is Err()', (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.inspectOkForResult, inspectOkForResult);
     t.is(PlainResultRoot.ResultOperator.inspectOk, inspectOkForResult);
     t.is(PlainResultNamespace.inspectOk, inspectOkForResult);
     t.is(PlainResultCompatV54.inspectOkForResult, inspectOkForResult);

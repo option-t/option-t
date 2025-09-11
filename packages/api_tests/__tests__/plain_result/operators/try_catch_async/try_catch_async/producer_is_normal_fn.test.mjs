@@ -61,7 +61,6 @@ test('output=Err(unknown): producer is normal fn but throw an error before retur
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.tryCatchIntoResultAsync, tryCatchIntoResultAsync);
     t.is(PlainResultRoot.ResultOperator.tryCatchIntoAsync, tryCatchIntoResultAsync);
     t.is(PlainResultNamespace.tryCatchIntoAsync, tryCatchIntoResultAsync);
     t.is(PlainResultCompatV54.tryCatchIntoResultAsync, tryCatchIntoResultAsync);

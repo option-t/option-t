@@ -220,10 +220,6 @@ test('if producer is normal function and throw a instance value from cross-realm
 
 test(`exported alias' identity check`, (t) => {
     t.is(
-        PlainResultRoot.tryCatchIntoResultWithEnsureErrorAsync,
-        tryCatchIntoResultWithEnsureErrorAsync,
-    );
-    t.is(
         PlainResultRoot.ResultOperator.tryCatchIntoWithEnsureErrorAsync,
         tryCatchIntoResultWithEnsureErrorAsync,
     );

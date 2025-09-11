@@ -60,7 +60,6 @@ test('input is Err(E), callback return Err(F)', async (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.orElseAsyncForResult, orElseAsyncForResult);
     t.is(PlainResultRoot.ResultOperator.orElseAsync, orElseAsyncForResult);
     t.is(PlainResultNamespace.orElseAsync, orElseAsyncForResult);
     t.is(PlainResultCompatV54.orElseAsyncForResult, orElseAsyncForResult);

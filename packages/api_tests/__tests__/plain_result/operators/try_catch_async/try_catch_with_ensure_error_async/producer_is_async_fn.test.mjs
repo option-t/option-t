@@ -1,7 +1,6 @@
 import { webcrypto } from 'node:crypto';
 import test from 'ava';
 
-import * as PlainResultRoot from 'option-t/plain_result';
 import { ResultOperator } from 'option-t/plain_result';
 import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
@@ -126,10 +125,6 @@ test('if producer is async function and throw a instance value from cross-realm 
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(
-        PlainResultRoot.tryCatchIntoResultWithEnsureErrorAsync,
-        tryCatchIntoResultWithEnsureErrorAsync,
-    );
     t.is(ResultOperator.tryCatchIntoWithEnsureErrorAsync, tryCatchIntoResultWithEnsureErrorAsync);
     t.is(
         PlainResultNamespace.tryCatchIntoWithEnsureErrorAsync,
