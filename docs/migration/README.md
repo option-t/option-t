@@ -3,8 +3,12 @@
 If there is no migration guide for a specific version,
 please see a release note in [Releases](https://github.com/option-t/option-t/releases).
 
+## v56 ~
+
 ## v51 ~
 
+- [v55](https://github.com/option-t/option-t/releases/tag/v55.0.0)
+- [v54](https://github.com/option-t/option-t/releases/tag/v54.0.0)
 - [v53](https://github.com/option-t/option-t/releases/tag/v53.0.0)
 - [v52](https://github.com/option-t/option-t/releases/tag/v52.0.1)
 - [v51](https://github.com/option-t/option-t/releases/tag/v51.0.0)
