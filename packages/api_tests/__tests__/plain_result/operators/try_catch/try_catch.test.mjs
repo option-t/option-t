@@ -1,5 +1,8 @@
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import {
     isOk,
     isErr,
@@ -32,4 +35,11 @@ test('output=Err(unknown)', (t) => {
 
     t.true(isErr(actual), 'should be Err(E)');
     t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.tryCatchIntoResult, tryCatchIntoResult);
+    t.is(PlainResultRoot.ResultOperator.tryCatchInto, tryCatchIntoResult);
+    t.is(PlainResultNamespace.tryCatchInto, tryCatchIntoResult);
+    t.is(PlainResultCompatV54.tryCatchIntoResult, tryCatchIntoResult);
 });

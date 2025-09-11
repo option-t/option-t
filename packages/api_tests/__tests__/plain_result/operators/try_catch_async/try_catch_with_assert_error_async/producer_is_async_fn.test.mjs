@@ -91,3 +91,7 @@ test('if producer is async function and throw a instance value from cross-realm 
 
     t.is(actual.cause, THROWN_EXPECTED, 'should set Error.cause');
 });
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

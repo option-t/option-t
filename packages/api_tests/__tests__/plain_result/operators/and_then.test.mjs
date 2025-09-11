@@ -1,6 +1,9 @@
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
 import { andThenForResult } from 'option-t/plain_result/and_then';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import {
     createOk,
     createErr,
@@ -53,4 +56,11 @@ test('input is Err(E)', (t) => {
     t.is(actual, input);
     t.true(isErr(actual));
     t.is(unwrapErr(actual), ERROR_E);
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.andThenForResult, andThenForResult);
+    t.is(PlainResultRoot.ResultOperator.andThen, andThenForResult);
+    t.is(PlainResultNamespace.andThen, andThenForResult);
+    t.is(PlainResultCompatV54.andThenForResult, andThenForResult);
 });

@@ -1,6 +1,9 @@
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { fromPromiseSettledResultToResult } from 'option-t/plain_result/from_promise_settled_result';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import {
     isOk,
     isErr,
@@ -43,4 +46,11 @@ test('should throw error if the input is not supported type', async (t) => {
             message: `\`PromiseSettledResult.status=${status}\` is not supported`,
         },
     );
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.fromPromiseSettledResultToResult, fromPromiseSettledResultToResult);
+    t.is(PlainResultRoot.ResultOperator.fromPromiseSettledResult, fromPromiseSettledResultToResult);
+    t.is(PlainResultNamespace.fromPromiseSettledResult, fromPromiseSettledResultToResult);
+    t.is(PlainResultCompatV54.fromPromiseSettledResultToResult, fromPromiseSettledResultToResult);
 });

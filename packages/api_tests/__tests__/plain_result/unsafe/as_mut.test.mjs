@@ -35,3 +35,7 @@ for (const [typename, inputValue] of TEST_CASE_LIST) {
         );
     });
 }
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

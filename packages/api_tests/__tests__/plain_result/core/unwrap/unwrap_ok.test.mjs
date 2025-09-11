@@ -1,6 +1,14 @@
 import test from 'ava';
 
-import { createOk, createErr, unwrapOk as unwrapOkFromResult } from 'option-t/plain_result/result';
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
+import {
+    createOk,
+    createErr,
+    unwrapOk as unwrapOkFromResult,
+    unwrapOk,
+} from 'option-t/plain_result/result';
 
 const EXPECTED_OK = Symbol('expected_ok');
 const EXPECTED_ERR = Symbol('expected_err');
@@ -21,4 +29,10 @@ test('Err', (t) => {
             message: 'called with `Err`',
         },
     );
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.unwrapOk, unwrapOk);
+    t.is(PlainResultNamespace.unwrapOk, unwrapOk);
+    t.is(PlainResultCompatV54.unwrapOk, unwrapOk);
 });

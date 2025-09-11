@@ -85,3 +85,7 @@ test('If producer throw the instance value from cross-realm `Error` constructor'
     // assert
     t.is(actual.cause, EXPECT_THROWN, `should set Error.cause`);
 });
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

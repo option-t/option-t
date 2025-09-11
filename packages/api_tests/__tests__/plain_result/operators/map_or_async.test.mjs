@@ -1,6 +1,9 @@
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { mapOrAsyncForResult } from 'option-t/plain_result/map_or_async';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import { createOk, createErr } from 'option-t/plain_result/result';
 
 test('Ok<T>', async (t) => {
@@ -37,4 +40,11 @@ test('Err<E>', async (t) => {
 
     const actual = await result;
     t.is(actual, EXPECTED, 'the return value');
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.mapOrAsyncForResult, mapOrAsyncForResult);
+    t.is(PlainResultRoot.ResultOperator.mapOrAsync, mapOrAsyncForResult);
+    t.is(PlainResultNamespace.mapOrAsync, mapOrAsyncForResult);
+    t.is(PlainResultCompatV54.mapOrAsyncForResult, mapOrAsyncForResult);
 });

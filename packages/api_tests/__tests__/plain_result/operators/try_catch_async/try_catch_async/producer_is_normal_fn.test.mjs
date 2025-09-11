@@ -1,5 +1,8 @@
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import {
     isOk,
     isErr,
@@ -55,4 +58,11 @@ test('output=Err(unknown): producer is normal fn but throw an error before retur
     const actual = await result;
     t.true(isErr(actual), 'should be Err(E)');
     t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.tryCatchIntoResultAsync, tryCatchIntoResultAsync);
+    t.is(PlainResultRoot.ResultOperator.tryCatchIntoAsync, tryCatchIntoResultAsync);
+    t.is(PlainResultNamespace.tryCatchIntoAsync, tryCatchIntoResultAsync);
+    t.is(PlainResultCompatV54.tryCatchIntoResultAsync, tryCatchIntoResultAsync);
 });

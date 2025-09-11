@@ -1,6 +1,9 @@
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { flattenForResult } from 'option-t/plain_result/flatten';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import {
     createOk,
     createErr,
@@ -49,4 +52,11 @@ test('this should remove only one nest level', (t) => {
 
     const actual = flattenForResult(input2);
     t.is(actual, input1, `don't unwrap the input recursively`);
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.flattenForResult, flattenForResult);
+    t.is(PlainResultRoot.ResultOperator.flatten, flattenForResult);
+    t.is(PlainResultNamespace.flatten, flattenForResult);
+    t.is(PlainResultCompatV54.flattenForResult, flattenForResult);
 });

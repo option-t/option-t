@@ -1,5 +1,8 @@
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import { orElseAsyncForResult } from 'option-t/plain_result/or_else_async';
 import { createOk, createErr } from 'option-t/plain_result/result';
 
@@ -54,4 +57,11 @@ test('input is Err(E), callback return Err(F)', async (t) => {
 
     const actual = await result;
     t.is(actual, expected);
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.orElseAsyncForResult, orElseAsyncForResult);
+    t.is(PlainResultRoot.ResultOperator.orElseAsync, orElseAsyncForResult);
+    t.is(PlainResultNamespace.orElseAsync, orElseAsyncForResult);
+    t.is(PlainResultCompatV54.orElseAsyncForResult, orElseAsyncForResult);
 });

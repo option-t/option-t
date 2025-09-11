@@ -1,6 +1,9 @@
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { inspectErrForResult } from 'option-t/plain_result/inspect';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import { createErr, createOk } from 'option-t/plain_result/result';
 
 test('input is Ok()', (t) => {
@@ -25,4 +28,11 @@ test('input is Err()', (t) => {
     });
 
     t.is(input, actual, 'should be the expect returned');
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.inspectErrForResult, inspectErrForResult);
+    t.is(PlainResultRoot.ResultOperator.inspectErr, inspectErrForResult);
+    t.is(PlainResultNamespace.inspectErr, inspectErrForResult);
+    t.is(PlainResultCompatV54.inspectErrForResult, inspectErrForResult);
 });

@@ -1,5 +1,8 @@
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import {
     createOk,
     createErr,
@@ -31,4 +34,11 @@ test('input is Err<E>, the result should be Err(e)', (t) => {
 
     t.true(isErr(actual), 'the actual should Err<E>');
     t.is(unwrapErr(actual), inner, "the actual's inner should E");
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.transposeResultToNullable, transposeResultToNullable);
+    t.is(PlainResultRoot.ResultOperator.transposeToNullable, transposeResultToNullable);
+    t.is(PlainResultNamespace.transposeToNullable, transposeResultToNullable);
+    t.is(PlainResultCompatV54.transposeResultToNullable, transposeResultToNullable);
 });

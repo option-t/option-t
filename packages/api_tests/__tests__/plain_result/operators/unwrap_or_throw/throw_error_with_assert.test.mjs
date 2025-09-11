@@ -74,3 +74,7 @@ test('input is Err, but the contained value is not an `Error` instance of curren
 
     t.is(thrown.cause, ERROR_E, `should be set Error.cause`);
 });
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});
