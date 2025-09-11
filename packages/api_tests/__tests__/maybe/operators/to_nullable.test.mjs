@@ -21,7 +21,6 @@ for (const NULL_VALUE of [undefined, null]) {
 }
 
 test(`exported alias' identity check`, (t) => {
-    t.is(MaybeRoot.toNullableFromMaybe, toNullableFromMaybe);
     t.is(MaybeRoot.MaybeOperator.toNullable, toNullableFromMaybe);
     t.is(MaybeNamespace.toNullable, toNullableFromMaybe);
     t.is(MaybeRootCompatV54.toNullableFromMaybe, toNullableFromMaybe);

@@ -28,7 +28,6 @@ test(`pass null`, (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(MaybeRoot.toResultOkFromMaybe, toResultOkFromMaybe);
     t.is(MaybeRoot.MaybeOperator.toResultOk, toResultOkFromMaybe);
     t.is(MaybeNamespace.toResultOk, toResultOkFromMaybe);
     t.is(MaybeRootCompatV54.toResultOkFromMaybe, toResultOkFromMaybe);
