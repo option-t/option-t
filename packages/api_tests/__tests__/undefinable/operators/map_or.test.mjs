@@ -1,6 +1,9 @@
 import test from 'ava';
 
+import * as UndefinableRoot from 'option-t/undefinable';
+import * as UndefinableRootCompatV54 from 'option-t/undefinable/compat/v54';
 import { mapOrForUndefinable } from 'option-t/undefinable/map_or';
+import { Undefinable as UndefinableNamespace } from 'option-t/undefinable/namespace';
 import { nonNullableValueCaseListForSync } from '../../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = undefined;
@@ -88,3 +91,10 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
         });
     }
 }
+
+test(`exported alias' identity check`, (t) => {
+    t.is(UndefinableRoot.mapOrForUndefinable, mapOrForUndefinable);
+    t.is(UndefinableRoot.UndefinableOperator.mapOr, mapOrForUndefinable);
+    t.is(UndefinableNamespace.mapOr, mapOrForUndefinable);
+    t.is(UndefinableRootCompatV54.mapOrForUndefinable, mapOrForUndefinable);
+});

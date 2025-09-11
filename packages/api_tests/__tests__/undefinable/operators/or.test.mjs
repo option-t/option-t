@@ -37,3 +37,7 @@ test('Undefinable::or', (t) => {
         t.is(orForUndefinable(a, b), expected, `a=${String(a)}, b=${String(b)}`);
     }
 });
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

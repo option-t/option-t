@@ -1,5 +1,8 @@
 import test from 'ava';
 
+import * as UndefinableRoot from 'option-t/undefinable';
+import * as UndefinableRootCompatV54 from 'option-t/undefinable/compat/v54';
+import { Undefinable as UndefinableNamespace } from 'option-t/undefinable/namespace';
 import { orElseForUndefinable } from 'option-t/undefinable/or_else';
 import { nonNullableValueCaseListForSync } from '../../utils.mjs';
 
@@ -40,4 +43,11 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
     });
 
     t.is(result, DEFAULT_VAL, 'should be the default');
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(UndefinableRoot.orElseForUndefinable, orElseForUndefinable);
+    t.is(UndefinableRoot.UndefinableOperator.orElse, orElseForUndefinable);
+    t.is(UndefinableNamespace.orElse, orElseForUndefinable);
+    t.is(UndefinableRootCompatV54.orElseForUndefinable, orElseForUndefinable);
 });

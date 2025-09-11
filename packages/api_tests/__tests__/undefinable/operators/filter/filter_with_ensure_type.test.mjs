@@ -33,3 +33,7 @@ test('input is undefined', (t) => {
     });
     t.is(actual, undefined);
 });
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

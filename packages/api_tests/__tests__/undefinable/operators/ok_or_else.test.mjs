@@ -1,6 +1,9 @@
 import test from 'ava';
 
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
+import * as UndefinableRoot from 'option-t/undefinable';
+import * as UndefinableRootCompatV54 from 'option-t/undefinable/compat/v54';
+import { Undefinable as UndefinableNamespace } from 'option-t/undefinable/namespace';
 import { okOrElseForUndefinable } from 'option-t/undefinable/ok_or_else';
 import { nonNullableValueCaseListForSync } from '../../utils.mjs';
 
@@ -48,4 +51,11 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
 
     t.true(isErr(actual), 'should be Err(E)');
     t.is(unwrapErr(actual), DEFAULT_ERR, 'should contain the expected');
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(UndefinableRoot.okOrElseForUndefinable, okOrElseForUndefinable);
+    t.is(UndefinableRoot.UndefinableOperator.okOrElse, okOrElseForUndefinable);
+    t.is(UndefinableNamespace.okOrElse, okOrElseForUndefinable);
+    t.is(UndefinableRootCompatV54.okOrElseForUndefinable, okOrElseForUndefinable);
 });

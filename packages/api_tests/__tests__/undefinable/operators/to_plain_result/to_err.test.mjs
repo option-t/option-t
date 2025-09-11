@@ -1,6 +1,9 @@
 import test from 'ava';
 
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
+import * as UndefinableRoot from 'option-t/undefinable';
+import * as UndefinableRootCompatV54 from 'option-t/undefinable/compat/v54';
+import { Undefinable as UndefinableNamespace } from 'option-t/undefinable/namespace';
 import { toResultErrFromUndefinable } from 'option-t/undefinable/to_plain_result';
 import { nonNullableValueCaseListForSync } from '../../../utils.mjs';
 
@@ -22,4 +25,11 @@ test(`pass null`, (t) => {
     const actual = toResultErrFromUndefinable(null);
     t.true(isErr(actual), 'should be Err(undefined)');
     t.is(unwrapErr(actual), null, 'should the expected result');
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(UndefinableRoot.toResultErrFromUndefinable, toResultErrFromUndefinable);
+    t.is(UndefinableRoot.UndefinableOperator.toResultErr, toResultErrFromUndefinable);
+    t.is(UndefinableNamespace.toResultErr, toResultErrFromUndefinable);
+    t.is(UndefinableRootCompatV54.toResultErrFromUndefinable, toResultErrFromUndefinable);
 });
