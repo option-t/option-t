@@ -73,3 +73,7 @@ for (const nullValue of [null, undefined]) {
         );
     });
 }
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

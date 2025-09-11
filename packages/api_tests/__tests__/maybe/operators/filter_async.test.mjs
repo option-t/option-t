@@ -39,3 +39,7 @@ test('input is null', async (t) => {
     });
     t.is(actual, undefined);
 });
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

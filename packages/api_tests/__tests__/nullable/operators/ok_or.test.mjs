@@ -1,9 +1,9 @@
 import test from 'ava';
 
-import { okOrForNullable } from 'option-t/nullable/ok_or';
 import * as NullableRoot from 'option-t/nullable';
 import * as NullableRootCompatV54 from 'option-t/nullable/compat/v54';
 import { Nullable as NullableNamespace } from 'option-t/nullable/namespace';
+import { okOrForNullable } from 'option-t/nullable/ok_or';
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { nonNullableValueCaseListForSync } from '../../utils.mjs';
 

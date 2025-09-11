@@ -1,5 +1,8 @@
 import test from 'ava';
 
+import * as MaybeRoot from 'option-t/maybe';
+import * as MaybeRootCompatV54 from 'option-t/maybe/compat/v54';
+import { Maybe as MaybeNamespace } from 'option-t/maybe/namespace';
 import { toResultErrFromMaybe } from 'option-t/maybe/to_plain_result';
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { nonNullableValueCaseListForSync } from '../../../utils.mjs';
@@ -22,4 +25,11 @@ test(`pass null`, (t) => {
     const actual = toResultErrFromMaybe(null);
     t.true(isOk(actual), 'should be Ok(void)');
     t.is(unwrapOk(actual), undefined, 'should the expected result');
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(MaybeRoot.toResultErrFromMaybe, toResultErrFromMaybe);
+    t.is(MaybeRoot.MaybeOperator.toResultErr, toResultErrFromMaybe);
+    t.is(MaybeNamespace.toResultErr, toResultErrFromMaybe);
+    t.is(MaybeRootCompatV54.toResultErrFromMaybe, toResultErrFromMaybe);
 });

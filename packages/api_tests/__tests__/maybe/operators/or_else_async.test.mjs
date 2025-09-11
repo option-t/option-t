@@ -1,5 +1,8 @@
 import test from 'ava';
 
+import * as MaybeRoot from 'option-t/maybe';
+import * as MaybeRootCompatV54 from 'option-t/maybe/compat/v54';
+import { Maybe as MaybeNamespace } from 'option-t/maybe/namespace';
 import { orElseAsyncForMaybe } from 'option-t/maybe/or_else_async';
 import { nonNullableValueCaseListForAsync } from '../../utils.mjs';
 
@@ -34,3 +37,10 @@ for (const NULL_VALUE of [undefined, null]) {
         t.is(actual, DEFAULT_VAL);
     });
 }
+
+test(`exported alias' identity check`, (t) => {
+    t.is(MaybeRoot.orElseAsyncForMaybe, orElseAsyncForMaybe);
+    t.is(MaybeRoot.MaybeOperator.orElseAsync, orElseAsyncForMaybe);
+    t.is(MaybeNamespace.orElseAsync, orElseAsyncForMaybe);
+    t.is(MaybeRootCompatV54.orElseAsyncForMaybe, orElseAsyncForMaybe);
+});
