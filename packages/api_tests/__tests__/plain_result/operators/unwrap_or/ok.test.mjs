@@ -23,7 +23,6 @@ test('input is Err(E)', (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.unwrapOrForResult, unwrapOrForResult);
     t.is(PlainResultRoot.ResultOperator.unwrapOr, unwrapOrForResult);
     t.is(PlainResultNamespace.unwrapOr, unwrapOrForResult);
     t.is(PlainResultCompatV54.unwrapOrForResult, unwrapOrForResult);

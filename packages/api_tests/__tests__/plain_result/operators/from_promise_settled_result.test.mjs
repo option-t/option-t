@@ -49,7 +49,6 @@ test('should throw error if the input is not supported type', async (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.fromPromiseSettledResultToResult, fromPromiseSettledResultToResult);
     t.is(PlainResultRoot.ResultOperator.fromPromiseSettledResult, fromPromiseSettledResultToResult);
     t.is(PlainResultNamespace.fromPromiseSettledResult, fromPromiseSettledResultToResult);
     t.is(PlainResultCompatV54.fromPromiseSettledResultToResult, fromPromiseSettledResultToResult);

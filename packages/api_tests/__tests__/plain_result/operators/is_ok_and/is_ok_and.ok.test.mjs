@@ -34,7 +34,6 @@ test('input=Ok(T), predicate returns false', (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.isOkAndForResult, isOkAndForResult);
     t.is(PlainResultRoot.ResultOperator.isOkAnd, isOkAndForResult);
     t.is(PlainResultNamespace.isOkAnd, isOkAndForResult);
     t.is(PlainResultCompatV54.isOkAndForResult, isOkAndForResult);

@@ -22,7 +22,6 @@ test('input is Err(E)', (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.toNullableFromErr, toNullableFromErr);
     t.is(PlainResultRoot.ResultOperator.toNullableFromErr, toNullableFromErr);
     t.is(PlainResultNamespace.toNullableFromErr, toNullableFromErr);
     t.is(PlainResultCompatV54.toNullableFromErr, toNullableFromErr);

@@ -49,7 +49,6 @@ test('input is Err(E), callback return Err(F)', (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.orElseForResult, orElseForResult);
     t.is(PlainResultRoot.ResultOperator.orElse, orElseForResult);
     t.is(PlainResultNamespace.orElse, orElseForResult);
     t.is(PlainResultCompatV54.orElseForResult, orElseForResult);

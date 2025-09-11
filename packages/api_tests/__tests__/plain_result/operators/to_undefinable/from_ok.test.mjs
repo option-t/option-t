@@ -22,7 +22,6 @@ test('input is Err(E)', (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.toUndefinableFromOk, toUndefinableFromOk);
     t.is(PlainResultRoot.ResultOperator.toUndefinableFromOk, toUndefinableFromOk);
     t.is(PlainResultNamespace.toUndefinableFromOk, toUndefinableFromOk);
     t.is(PlainResultCompatV54.toUndefinableFromOk, toUndefinableFromOk);

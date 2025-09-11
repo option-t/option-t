@@ -37,7 +37,6 @@ test('Err<E>', (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.mapOrForResult, mapOrForResult);
     t.is(PlainResultRoot.ResultOperator.mapOr, mapOrForResult);
     t.is(PlainResultNamespace.mapOr, mapOrForResult);
     t.is(PlainResultCompatV54.mapOrForResult, mapOrForResult);

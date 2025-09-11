@@ -68,7 +68,6 @@ test('input is Err(E)', async (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.andThenAsyncForResult, andThenAsyncForResult);
     t.is(PlainResultRoot.ResultOperator.andThenAsync, andThenAsyncForResult);
     t.is(PlainResultNamespace.andThenAsync, andThenAsyncForResult);
     t.is(PlainResultCompatV54.andThenAsyncForResult, andThenAsyncForResult);
