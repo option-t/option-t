@@ -21,7 +21,6 @@ for (const NULL_VALUE of [undefined, null]) {
 }
 
 test(`exported alias' identity check`, (t) => {
-    t.is(NullableRoot.toUndefinableFromNullable, toUndefinableFromNullable);
     t.is(NullableRoot.NullableOperator.toUndefinable, toUndefinableFromNullable);
     t.is(NullableNamespace.toUndefinable, toUndefinableFromNullable);
     t.is(NullableRootCompatV54.toUndefinableFromNullable, toUndefinableFromNullable);

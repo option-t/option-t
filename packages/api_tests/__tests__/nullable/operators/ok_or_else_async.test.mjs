@@ -63,7 +63,6 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(NullableRoot.okOrElseAsyncForNullable, okOrElseAsyncForNullable);
     t.is(NullableRoot.NullableOperator.okOrElseAsync, okOrElseAsyncForNullable);
     t.is(NullableNamespace.okOrElseAsync, okOrElseAsyncForNullable);
     t.is(NullableRootCompatV54.okOrElseAsyncForNullable, okOrElseAsyncForNullable);

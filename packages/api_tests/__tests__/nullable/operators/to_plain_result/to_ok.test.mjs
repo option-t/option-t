@@ -28,7 +28,6 @@ test(`pass null`, (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(NullableRoot.toResultOkFromNullable, toResultOkFromNullable);
     t.is(NullableRoot.NullableOperator.toResultOk, toResultOkFromNullable);
     t.is(NullableNamespace.toResultOk, toResultOkFromNullable);
     t.is(NullableRootCompatV54.toResultOkFromNullable, toResultOkFromNullable);

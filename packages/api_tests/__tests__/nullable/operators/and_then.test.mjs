@@ -47,7 +47,6 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(NullableRoot.andThenForNullable, andThenForNullable);
     t.is(NullableRoot.NullableOperator.andThen, andThenForNullable);
     t.is(NullableNamespace.andThen, andThenForNullable);
     t.is(NullableRootCompatV54.andThenForNullable, andThenForNullable);
