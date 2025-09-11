@@ -1,6 +1,9 @@
 import test from 'ava';
 
+import * as NullableRoot from 'option-t/nullable';
+import * as NullableRootCompatV54 from 'option-t/nullable/compat/v54';
 import { mapOrForNullable } from 'option-t/nullable/map_or';
+import { Nullable as NullableNamespace } from 'option-t/nullable/namespace';
 import { nonNullableValueCaseListForSync } from '../../utils.mjs';
 
 const NULL_VALUE_IN_THIS_TEST_CASE = null;
@@ -82,3 +85,10 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
         });
     }
 }
+
+test(`exported alias' identity check`, (t) => {
+    t.is(NullableRoot.mapOrForNullable, mapOrForNullable);
+    t.is(NullableRoot.NullableOperator.mapOr, mapOrForNullable);
+    t.is(NullableNamespace.mapOr, mapOrForNullable);
+    t.is(NullableRootCompatV54.mapOrForNullable, mapOrForNullable);
+});

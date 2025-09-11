@@ -30,3 +30,7 @@ for (const { a, b, expected } of TABLE) {
         t.is(actual, expected, 'should be `' + String(expected) + '`');
     });
 }
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

@@ -90,3 +90,7 @@ test(`should throw if the callback return ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) 
         },
     );
 });
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

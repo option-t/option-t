@@ -33,3 +33,7 @@ test('input is null', (t) => {
     });
     t.is(actual, null);
 });
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

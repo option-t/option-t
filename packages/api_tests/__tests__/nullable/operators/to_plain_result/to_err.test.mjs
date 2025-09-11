@@ -1,5 +1,8 @@
 import test from 'ava';
 
+import * as NullableRoot from 'option-t/nullable';
+import * as NullableRootCompatV54 from 'option-t/nullable/compat/v54';
+import { Nullable as NullableNamespace } from 'option-t/nullable/namespace';
 import { toResultErrFromNullable } from 'option-t/nullable/to_plain_result';
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { nonNullableValueCaseListForSync } from '../../../utils.mjs';
@@ -22,4 +25,11 @@ test(`pass null`, (t) => {
     const actual = toResultErrFromNullable(null);
     t.true(isOk(actual), 'should be Ok(void)');
     t.is(unwrapOk(actual), undefined, 'should the expected result');
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(NullableRoot.toResultErrFromNullable, toResultErrFromNullable);
+    t.is(NullableRoot.NullableOperator.toResultErr, toResultErrFromNullable);
+    t.is(NullableNamespace.toResultErr, toResultErrFromNullable);
+    t.is(NullableRootCompatV54.toResultErrFromNullable, toResultErrFromNullable);
 });
