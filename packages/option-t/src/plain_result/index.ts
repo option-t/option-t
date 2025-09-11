@@ -76,8 +76,3 @@ export { unwrapOrThrowForResult } from './operators/unwrap_or_throw.js';
  *      This API is still experimental. We might change this without any breaking changes.
  */
 export * as experimental_ResultOperator from './internal/intermediate_operators.js';
-/**
- *  @experimental
- *      This API is still experimental. We might change this without any breaking changes.
- */
-export * as experimental_ResultFactory from './internal/intermediate_factory.js';

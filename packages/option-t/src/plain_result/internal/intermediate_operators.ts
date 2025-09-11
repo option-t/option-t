@@ -5,6 +5,7 @@
 export { andThenForResult as andThen } from '../operators/and_then.js';
 export { andThenAsyncForResult as andThenAsync } from '../operators/and_then_async.js';
 export { flattenForResult as flatten } from '../operators/flatten.js';
+export { fromPromiseSettledResultToResult as fromPromiseSettledResult } from '../operators/from_promise_settled_result.js';
 export {
     inspectBothForResult as inspectBoth,
     inspectErrForResult as inspectErr,
@@ -34,6 +35,14 @@ export {
     transposeResultToNullable as transposeToNullable,
     transposeResultToUndefinable as transposeToUndefinable,
 } from '../operators/transpose.js';
+export {
+    tryCatchIntoResult as tryCatchInto,
+    tryCatchIntoResultWithEnsureError as tryCatchIntoWithEnsureError,
+} from '../operators/try_catch.js';
+export {
+    tryCatchIntoResultAsync as tryCatchIntoAsync,
+    tryCatchIntoResultWithEnsureErrorAsync as tryCatchIntoWithEnsureErrorAsync,
+} from '../operators/try_catch_async.js';
 export { unwrapOrForResult as unwrapOr } from '../operators/unwrap_or.js';
 export { unwrapOrElseForResult as unwrapOrElse } from '../operators/unwrap_or_else.js';
 export { unwrapOrElseAsyncForResult as unwrapOrElseAsync } from '../operators/unwrap_or_else_async.js';
