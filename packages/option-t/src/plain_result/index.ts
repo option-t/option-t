@@ -23,6 +23,7 @@
  *      Object.is(a, b);
  *  ```
  */
+// We expose _core primitive_ directly.
 export {
     createErr,
     createOk,
@@ -71,8 +72,5 @@ export { unwrapOrElseForResult } from './operators/unwrap_or_else.js';
 export { unwrapOrElseAsyncForResult } from './operators/unwrap_or_else_async.js';
 export { unwrapOrThrowForResult } from './operators/unwrap_or_throw.js';
 
-/**
- *  @experimental
- *      This API is still experimental. We might change this without any breaking changes.
- */
-export * as experimental_ResultOperator from './internal/intermediate_operators.js';
+// We expose _operators_ (typically named as `~ForResult`) as bundled.
+export * as ResultOperator from './internal/intermediate_operators.js';
