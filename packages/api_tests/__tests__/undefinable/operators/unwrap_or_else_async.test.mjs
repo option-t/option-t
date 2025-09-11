@@ -78,7 +78,6 @@ for (const [src, def] of testcases) {
 }
 
 test(`exported alias' identity check`, (t) => {
-    t.is(UndefinableRoot.unwrapOrElseAsyncForUndefinable, unwrapOrElseAsyncForUndefinable);
     t.is(UndefinableRoot.UndefinableOperator.unwrapOrElseAsync, unwrapOrElseAsyncForUndefinable);
     t.is(UndefinableNamespace.unwrapOrElseAsync, unwrapOrElseAsyncForUndefinable);
     t.is(UndefinableRootCompatV54.unwrapOrElseAsyncForUndefinable, unwrapOrElseAsyncForUndefinable);

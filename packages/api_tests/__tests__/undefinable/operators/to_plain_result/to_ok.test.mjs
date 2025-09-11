@@ -28,7 +28,6 @@ test(`pass null`, (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(UndefinableRoot.toResultOkFromUndefinable, toResultOkFromUndefinable);
     t.is(UndefinableRoot.UndefinableOperator.toResultOk, toResultOkFromUndefinable);
     t.is(UndefinableNamespace.toResultOk, toResultOkFromUndefinable);
     t.is(UndefinableRootCompatV54.toResultOkFromUndefinable, toResultOkFromUndefinable);

@@ -115,7 +115,6 @@ test('pass undefined', async (t) => {
 }
 
 test(`exported alias' identity check`, (t) => {
-    t.is(UndefinableRoot.mapOrAsyncForUndefinable, mapOrAsyncForUndefinable);
     t.is(UndefinableRoot.UndefinableOperator.mapOrAsync, mapOrAsyncForUndefinable);
     t.is(UndefinableNamespace.mapOrAsync, mapOrAsyncForUndefinable);
     t.is(UndefinableRootCompatV54.mapOrAsyncForUndefinable, mapOrAsyncForUndefinable);

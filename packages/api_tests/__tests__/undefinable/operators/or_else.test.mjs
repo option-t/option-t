@@ -46,7 +46,6 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(UndefinableRoot.orElseForUndefinable, orElseForUndefinable);
     t.is(UndefinableRoot.UndefinableOperator.orElse, orElseForUndefinable);
     t.is(UndefinableNamespace.orElse, orElseForUndefinable);
     t.is(UndefinableRootCompatV54.orElseForUndefinable, orElseForUndefinable);

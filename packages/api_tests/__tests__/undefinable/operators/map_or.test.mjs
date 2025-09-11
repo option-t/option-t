@@ -93,7 +93,6 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
 }
 
 test(`exported alias' identity check`, (t) => {
-    t.is(UndefinableRoot.mapOrForUndefinable, mapOrForUndefinable);
     t.is(UndefinableRoot.UndefinableOperator.mapOr, mapOrForUndefinable);
     t.is(UndefinableNamespace.mapOr, mapOrForUndefinable);
     t.is(UndefinableRootCompatV54.mapOrForUndefinable, mapOrForUndefinable);
