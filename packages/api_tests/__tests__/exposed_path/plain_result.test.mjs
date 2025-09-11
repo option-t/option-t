@@ -10,6 +10,7 @@ testImportExposedPath(
         './plain_result/and': null,
         './plain_result/and_then': null,
         './plain_result/and_then_async': null,
+        './plain_result/compat/v54': null,
         './plain_result/deprecated/try_catch_with_assert_error': null,
         './plain_result/deprecated/try_catch_with_assert_error_async': null,
         './plain_result/deprecated/unwrap_or_throw_error': null,

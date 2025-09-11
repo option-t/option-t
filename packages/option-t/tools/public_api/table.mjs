@@ -150,6 +150,10 @@ export const apiTable = Object.freeze({
     'plain_result/and_then_async': pathRedirectionTo(
         `${PLAIN_RESULT_OPERARORS_DIR}/and_then_async`,
     ),
+    'plain_result/compat/v54': pathRedirectionMarkedAsDeprecated(
+        `${PLAIN_RESULT_DIR}/compat/v54`,
+        'Use `option-t/plain_result`.',
+    ),
     'plain_result/deprecated/try_catch_with_assert_error': pathRedirectionMarkedAsDeprecated(
         `${PLAIN_RESULT_DEPRECATED_DIR}/try_catch_with_assert_error`,
         null,

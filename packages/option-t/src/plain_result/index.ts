@@ -81,29 +81,3 @@ export * as experimental_ResultOperator from './internal/intermediate_operators.
  *      This API is still experimental. We might change this without any breaking changes.
  */
 export * as experimental_ResultFactory from './internal/intermediate_factory.js';
-
-// XXX:
-//  We don't expose these itens that is unsafe operation.
-//
-//  - as_mut
-//  - drop
-//
-// XXX:
-//  _equals, we don't expose it by this due to that is provided for exception case
-//
-// XXX:
-//  To keep a simple API set,
-//  we don't expose APIs from here that takes multiple values to compose a data flow pipeline.
-//  We may reconsider it if pipeline operator syntax proposal is advanced to the standard.
-//  But please import them directly from their path at this moment.
-//
-//  - and
-//  - or
-//  - filter
-//  - xor
-//  - zip
-//  - zipWith
-//  - zipWithAsync
-//
-// TODO: https://github.com/option-t/option-t/issues/2267
-// `unwrap_or_throw`.

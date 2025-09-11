@@ -3,6 +3,7 @@ import {} from 'option-t/plain_result';
 import {} from 'option-t/plain_result/and';
 import {} from 'option-t/plain_result/and_then';
 import {} from 'option-t/plain_result/and_then_async';
+import {} from 'option-t/plain_result/compat/v54';
 import {} from 'option-t/plain_result/equal';
 import {} from 'option-t/plain_result/flatten';
 import {} from 'option-t/plain_result/from_promise_settled_result';
