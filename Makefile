@@ -6,7 +6,6 @@ DIST_DIR := $(MAIN_PKG)/__dist
 NODE_BIN := node
 NPM_MOD_DIR := $(CURDIR)/node_modules
 NPM_BIN := $(NPM_MOD_DIR)/.bin
-NPM_CMD := npm
 PNPM_CMD := pnpm
 
 PROJECT_TURBO_DIR := $(CURDIR)/.turbo
