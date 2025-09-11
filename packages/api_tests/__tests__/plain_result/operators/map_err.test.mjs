@@ -1,6 +1,9 @@
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { mapErrForResult } from 'option-t/plain_result/map_err';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import {
     createOk,
     createErr,
@@ -40,4 +43,11 @@ test('input is Err(E)', (t) => {
     t.not(actual, input);
     t.true(isErr(actual));
     t.is(unwrapErr(actual), ERROR_F);
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.mapErrForResult, mapErrForResult);
+    t.is(PlainResultRoot.ResultOperator.mapErr, mapErrForResult);
+    t.is(PlainResultNamespace.mapErr, mapErrForResult);
+    t.is(PlainResultCompatV54.mapErrForResult, mapErrForResult);
 });

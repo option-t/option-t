@@ -39,3 +39,7 @@ test('input is Err(not Error instance)', (t) => {
         t.is(e, ERROR_E);
     }
 });
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

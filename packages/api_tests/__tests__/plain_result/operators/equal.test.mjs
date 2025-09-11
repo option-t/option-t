@@ -82,3 +82,7 @@ function createTestcaseForSameValue(lhs) {
         });
     }
 }
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

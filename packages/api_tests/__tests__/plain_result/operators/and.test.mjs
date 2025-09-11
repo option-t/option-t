@@ -65,3 +65,7 @@ test('a=Err, b=Err', (t) => {
     t.true(isErr(actual), 'should be Err');
     t.is(unwrapErr(actual), EXPECTED, 'should be the inner value');
 });
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

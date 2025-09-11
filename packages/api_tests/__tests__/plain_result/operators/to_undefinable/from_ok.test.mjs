@@ -1,5 +1,8 @@
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import { createOk, createErr } from 'option-t/plain_result/result';
 import { toUndefinableFromOk } from 'option-t/plain_result/to_undefinable';
 
@@ -16,4 +19,11 @@ test('input is Err(E)', (t) => {
     const input = createErr(ERROR_E);
     const actual = toUndefinableFromOk(input);
     t.is(actual, undefined);
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.toUndefinableFromOk, toUndefinableFromOk);
+    t.is(PlainResultRoot.ResultOperator.toUndefinableFromOk, toUndefinableFromOk);
+    t.is(PlainResultNamespace.toUndefinableFromOk, toUndefinableFromOk);
+    t.is(PlainResultCompatV54.toUndefinableFromOk, toUndefinableFromOk);
 });

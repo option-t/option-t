@@ -1,6 +1,9 @@
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { mapAsyncForResult } from 'option-t/plain_result/map_async';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import {
     createOk,
     createErr,
@@ -46,4 +49,11 @@ test('input is Err(E)', async (t) => {
     t.is(actual, input);
     t.true(isErr(actual));
     t.is(unwrapErr(actual), ERROR_E);
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.mapAsyncForResult, mapAsyncForResult);
+    t.is(PlainResultRoot.ResultOperator.mapAsync, mapAsyncForResult);
+    t.is(PlainResultNamespace.mapAsync, mapAsyncForResult);
+    t.is(PlainResultCompatV54.mapAsyncForResult, mapAsyncForResult);
 });

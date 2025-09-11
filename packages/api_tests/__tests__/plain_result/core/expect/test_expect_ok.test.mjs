@@ -1,6 +1,14 @@
 import test from 'ava';
 
-import { createOk, createErr, expectOk as expectOkForResult } from 'option-t/plain_result/result';
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
+import {
+    createOk,
+    createErr,
+    expectOk as expectOkForResult,
+    expectOk,
+} from 'option-t/plain_result/result';
 
 test('input=Ok(T), expect=Ok(T)', (t) => {
     const EXPECTED = Symbol('expected');
@@ -30,4 +38,10 @@ test('input=Err(E), expect=Ok(T)', (t) => {
             message: MSG,
         },
     );
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.expectOk, expectOk);
+    t.is(PlainResultNamespace.expectOk, expectOk);
+    t.is(PlainResultCompatV54.expectOk, expectOk);
 });

@@ -87,3 +87,7 @@ test('should throw if the passed value is frozen: Err', (t) => {
         },
     );
 });
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

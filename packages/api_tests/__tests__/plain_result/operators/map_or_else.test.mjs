@@ -1,6 +1,9 @@
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { mapOrElseForResult } from 'option-t/plain_result/map_or_else';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import { createOk, createErr } from 'option-t/plain_result/result';
 
 const PLAN_COUNT = 2;
@@ -45,4 +48,11 @@ test('Err<E>', (t) => {
     );
 
     t.is(r, 3, 'the return value');
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(PlainResultRoot.mapOrElseForResult, mapOrElseForResult);
+    t.is(PlainResultRoot.ResultOperator.mapOrElse, mapOrElseForResult);
+    t.is(PlainResultNamespace.mapOrElse, mapOrElseForResult);
+    t.is(PlainResultCompatV54.mapOrElseForResult, mapOrElseForResult);
 });

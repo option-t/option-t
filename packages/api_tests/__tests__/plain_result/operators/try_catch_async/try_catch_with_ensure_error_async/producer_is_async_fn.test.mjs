@@ -1,6 +1,10 @@
 import { webcrypto } from 'node:crypto';
 import test from 'ava';
 
+import * as PlainResultRoot from 'option-t/plain_result';
+import { ResultOperator } from 'option-t/plain_result';
+import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
+import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { tryCatchIntoResultWithEnsureErrorAsync } from 'option-t/plain_result/try_catch_async';
 import { getCrossRealmErrorConstructor } from '../../../../cross_realm_error_helper.mjs';
@@ -119,4 +123,20 @@ test('if producer is async function and throw a instance value from cross-realm 
         );
         t.is(actual.cause, EXPECT_THROWN, '.cause should hold the expect inner value');
     }
+});
+
+test(`exported alias' identity check`, (t) => {
+    t.is(
+        PlainResultRoot.tryCatchIntoResultWithEnsureErrorAsync,
+        tryCatchIntoResultWithEnsureErrorAsync,
+    );
+    t.is(ResultOperator.tryCatchIntoWithEnsureErrorAsync, tryCatchIntoResultWithEnsureErrorAsync);
+    t.is(
+        PlainResultNamespace.tryCatchIntoWithEnsureErrorAsync,
+        tryCatchIntoResultWithEnsureErrorAsync,
+    );
+    t.is(
+        PlainResultCompatV54.tryCatchIntoResultWithEnsureErrorAsync,
+        tryCatchIntoResultWithEnsureErrorAsync,
+    );
 });
