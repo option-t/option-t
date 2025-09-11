@@ -40,7 +40,9 @@ import {
  *
  *  [realm]: https://262.ecma-international.org/14.0/#realm
  */
-export function unwrapOrThrowWithAssertErrorForResult<T>(input: Result<T, Error>): T {
+export function unwrapOrThrowWithAssertErrorForResult<T, TError extends Error>(
+    input: Result<T, TError>,
+): T {
     if (isOk(input)) {
         const val: T = unsafeUnwrapValueInOkWithoutAnyCheck<T>(input);
         return val;
