@@ -22,6 +22,15 @@ const some = Nullable.unwrapOr(numberOrNull, -1);
 ```
 
 ```ts
+// If you feel `<TypeName>.<TypeName>` is redundant, you can use `<TypeName>Operator`. 
+import { type Nullable, NullableOperator } from 'option-t/nullable';
+
+declare let numberOrNull: Nullable<number>;
+const some = NullableOperator.unwrapOr(numberOrNull, -1);
+```
+
+
+```ts
 // You can import only a specific function by the more detailed path.
 import { type Nullable, unwrapNullable } from 'option-t/nullable/nullable';
 import { unwrapOrForNullable } from 'option-t/nullable/unwrap_or';
