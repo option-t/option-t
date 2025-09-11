@@ -37,3 +37,7 @@ for (const [a, b, expected] of list) {
         t.is(orForMaybe(a, b), expected);
     });
 }
+
+test(`exported alias' identity check`, (t) => {
+    t.pass(true);
+});

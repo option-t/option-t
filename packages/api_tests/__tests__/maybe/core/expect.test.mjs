@@ -1,6 +1,9 @@
 import test from 'ava';
 
+import * as MaybeRoot from 'option-t/maybe';
+import * as MaybeRootCompatV54 from 'option-t/maybe/compat/v54';
 import { expectNotNullOrUndefined } from 'option-t/maybe/maybe';
+import { Maybe as MaybeNamespace } from 'option-t/maybe/namespace';
 import { nonNullableValueCaseListForSync } from '../../utils.mjs';
 
 for (const [INPUT, , EXPECTED] of nonNullableValueCaseListForSync) {
@@ -30,3 +33,9 @@ for (const NULL_VALUE of [undefined, null]) {
         );
     });
 }
+
+test(`exported alias' identity check`, (t) => {
+    t.is(MaybeRoot.expectNotNullOrUndefined, expectNotNullOrUndefined);
+    t.is(MaybeNamespace.expectNotNullOrUndefined, expectNotNullOrUndefined);
+    t.is(MaybeRootCompatV54.expectNotNullOrUndefined, expectNotNullOrUndefined);
+});
