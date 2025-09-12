@@ -218,6 +218,12 @@
                 "default": "./esm/maybe/operators/to_undefinable.js"
             }
         },
+        "./maybe/transpose": {
+            "default": {
+                "types": "./esm/maybe/operators/transpose.d.ts",
+                "default": "./esm/maybe/operators/transpose.js"
+            }
+        },
         "./maybe/unwrap_or": {
             "default": {
                 "types": "./esm/maybe/operators/unwrap_or.d.ts",
