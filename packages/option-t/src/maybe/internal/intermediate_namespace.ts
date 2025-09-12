@@ -27,6 +27,7 @@ export {
     toResultOkFromMaybe as toResultOk,
 } from '../operators/to_plain_result.js';
 export { toUndefinableFromMaybe as toUndefinable } from '../operators/to_undefinable.js';
+export { transposeMaybeToResult as transposeToResult } from '../operators/transpose.js';
 export { unwrapOrForMaybe as unwrapOr } from '../operators/unwrap_or.js';
 export { unwrapOrElseForMaybe as unwrapOrElse } from '../operators/unwrap_or_else.js';
 export { unwrapOrElseAsyncForMaybe as unwrapOrElseAsync } from '../operators/unwrap_or_else_async.js';
