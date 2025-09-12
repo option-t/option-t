@@ -252,6 +252,7 @@ export const apiTable = Object.freeze({
     'undefinable/to_plain_result': pathRedirectionTo(
         `${UNDEFINABLE_OPERARORS_DIR}/to_plain_result`,
     ),
+    'undefinable/transpose': pathRedirectionTo(`${UNDEFINABLE_OPERARORS_DIR}/transpose`),
     'undefinable/undefinable': pathRedirectionMarkedAsCorePrimitive(
         `${UNDEFINABLE_CORE_DIR}/undefinable`,
     ),

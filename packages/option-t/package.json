@@ -1010,6 +1010,12 @@
                 "default": "./esm/undefinable/operators/to_plain_result.js"
             }
         },
+        "./undefinable/transpose": {
+            "default": {
+                "types": "./esm/undefinable/operators/transpose.d.ts",
+                "default": "./esm/undefinable/operators/transpose.js"
+            }
+        },
         "./undefinable/undefinable": {
             "default": {
                 "types": "./esm/undefinable/core/undefinable.d.ts",
