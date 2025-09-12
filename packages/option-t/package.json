@@ -404,6 +404,12 @@
                 "default": "./esm/nullable/operators/to_undefinable.js"
             }
         },
+        "./nullable/transpose": {
+            "default": {
+                "types": "./esm/nullable/operators/transpose.d.ts",
+                "default": "./esm/nullable/operators/transpose.js"
+            }
+        },
         "./nullable/unwrap_or": {
             "default": {
                 "types": "./esm/nullable/operators/unwrap_or.d.ts",

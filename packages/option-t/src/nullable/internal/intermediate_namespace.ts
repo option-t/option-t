@@ -26,6 +26,7 @@ export {
     toResultOkFromNullable as toResultOk,
 } from '../operators/to_plain_result.js';
 export { toUndefinableFromNullable as toUndefinable } from '../operators/to_undefinable.js';
+export { transposeNullableToResult as transposeToResult } from '../operators/transpose.js';
 export { unwrapOrForNullable as unwrapOr } from '../operators/unwrap_or.js';
 export { unwrapOrElseForNullable as unwrapOrElse } from '../operators/unwrap_or_else.js';
 export { unwrapOrElseAsyncForNullable as unwrapOrElseAsync } from '../operators/unwrap_or_else_async.js';
