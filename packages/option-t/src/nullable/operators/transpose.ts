@@ -6,7 +6,7 @@ import { isNull, type Nullable } from '../core/nullable.js';
  *
  *  - `null` -> `Ok<null>`.
  *  - `Ok<T>` -> `Ok<T>`.
- *  - `Err<E>` -> `Err(E)`.
+ *  - `Err<E>` -> `Err<E>`.
  */
 export function transposeNullableToResult<T, E>(
     input: Nullable<Result<T, E>>,

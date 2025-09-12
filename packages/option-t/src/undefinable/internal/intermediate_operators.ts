@@ -21,6 +21,7 @@ export {
     toResultErrFromUndefinable as toResultErr,
     toResultOkFromUndefinable as toResultOk,
 } from '../operators/to_plain_result.js';
+export { transposeUndefinableToResult as transposeToResult } from '../operators/transpose.js';
 export { unwrapOrForUndefinable as unwrapOr } from '../operators/unwrap_or.js';
 export { unwrapOrElseForUndefinable as unwrapOrElse } from '../operators/unwrap_or_else.js';
 export { unwrapOrElseAsyncForUndefinable as unwrapOrElseAsync } from '../operators/unwrap_or_else_async.js';
