@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as PlainResultRoot from 'option-t/plain_result';
+import { ResultOperator } from 'option-t/plain_result';
 import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import { createOk, createErr } from 'option-t/plain_result/result';
@@ -23,7 +23,7 @@ test('input is Err(E)', (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.ResultOperator.unwrapOr, unwrapOrForResult);
+    t.is(ResultOperator.unwrapOr, unwrapOrForResult);
     t.is(PlainResultNamespace.unwrapOr, unwrapOrForResult);
     t.is(PlainResultCompatV54.unwrapOrForResult, unwrapOrForResult);
 });

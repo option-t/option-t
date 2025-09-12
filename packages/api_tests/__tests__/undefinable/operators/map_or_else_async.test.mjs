@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as UndefinableRoot from 'option-t/undefinable';
+import { UndefinableOperator } from 'option-t/undefinable';
 import * as UndefinableRootCompatV54 from 'option-t/undefinable/compat/v54';
 import { mapOrElseAsyncForUndefinable } from 'option-t/undefinable/map_or_else_async';
 import { Undefinable as UndefinableNamespace } from 'option-t/undefinable/namespace';
@@ -143,7 +143,7 @@ test('pass undefined', async (t) => {
 }
 
 test(`exported alias' identity check`, (t) => {
-    t.is(UndefinableRoot.UndefinableOperator.mapOrElseAsync, mapOrElseAsyncForUndefinable);
+    t.is(UndefinableOperator.mapOrElseAsync, mapOrElseAsyncForUndefinable);
     t.is(UndefinableNamespace.mapOrElseAsync, mapOrElseAsyncForUndefinable);
     t.is(UndefinableRootCompatV54.mapOrElseAsyncForUndefinable, mapOrElseAsyncForUndefinable);
 });

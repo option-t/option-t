@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as UndefinableRoot from 'option-t/undefinable';
+import { UndefinableOperator } from 'option-t/undefinable';
 import * as UndefinableRootCompatV54 from 'option-t/undefinable/compat/v54';
 import { Undefinable as UndefinableNamespace } from 'option-t/undefinable/namespace';
 import { toNullableFromUndefinable } from 'option-t/undefinable/to_nullable';
@@ -21,7 +21,7 @@ for (const NULL_VALUE of [undefined, null]) {
 }
 
 test(`exported alias' identity check`, (t) => {
-    t.is(UndefinableRoot.UndefinableOperator.toNullable, toNullableFromUndefinable);
+    t.is(UndefinableOperator.toNullable, toNullableFromUndefinable);
     t.is(UndefinableNamespace.toNullable, toNullableFromUndefinable);
     t.is(UndefinableRootCompatV54.toNullableFromUndefinable, toNullableFromUndefinable);
 });

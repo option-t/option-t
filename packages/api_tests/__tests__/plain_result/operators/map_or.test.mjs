@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as PlainResultRoot from 'option-t/plain_result';
+import { ResultOperator } from 'option-t/plain_result';
 import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { mapOrForResult } from 'option-t/plain_result/map_or';
 import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
@@ -37,7 +37,7 @@ test('Err<E>', (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.ResultOperator.mapOr, mapOrForResult);
+    t.is(ResultOperator.mapOr, mapOrForResult);
     t.is(PlainResultNamespace.mapOr, mapOrForResult);
     t.is(PlainResultCompatV54.mapOrForResult, mapOrForResult);
 });

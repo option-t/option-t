@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as PlainResultRoot from 'option-t/plain_result';
+import { ResultOperator } from 'option-t/plain_result';
 import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { inspectOkForResult } from 'option-t/plain_result/inspect';
 import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
@@ -32,7 +32,7 @@ test('input is Err()', (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.ResultOperator.inspectOk, inspectOkForResult);
+    t.is(ResultOperator.inspectOk, inspectOkForResult);
     t.is(PlainResultNamespace.inspectOk, inspectOkForResult);
     t.is(PlainResultCompatV54.inspectOkForResult, inspectOkForResult);
 });

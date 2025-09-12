@@ -1,7 +1,7 @@
 import { webcrypto } from 'node:crypto';
 import test from 'ava';
 
-import * as PlainResultRoot from 'option-t/plain_result';
+import { ResultOperator } from 'option-t/plain_result';
 import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
@@ -118,10 +118,7 @@ test('If producer throw the instance value of cross-realm `Error` constructor', 
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(
-        PlainResultRoot.ResultOperator.tryCatchIntoWithEnsureError,
-        tryCatchIntoResultWithEnsureError,
-    );
+    t.is(ResultOperator.tryCatchIntoWithEnsureError, tryCatchIntoResultWithEnsureError);
     t.is(PlainResultNamespace.tryCatchIntoWithEnsureError, tryCatchIntoResultWithEnsureError);
     t.is(PlainResultCompatV54.tryCatchIntoResultWithEnsureError, tryCatchIntoResultWithEnsureError);
 });

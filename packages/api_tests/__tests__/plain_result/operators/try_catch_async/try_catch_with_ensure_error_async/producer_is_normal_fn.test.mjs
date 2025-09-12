@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as PlainResultRoot from 'option-t/plain_result';
+import { ResultOperator } from 'option-t/plain_result';
 import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
@@ -219,10 +219,7 @@ test('if producer is normal function and throw a instance value from cross-realm
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(
-        PlainResultRoot.ResultOperator.tryCatchIntoWithEnsureErrorAsync,
-        tryCatchIntoResultWithEnsureErrorAsync,
-    );
+    t.is(ResultOperator.tryCatchIntoWithEnsureErrorAsync, tryCatchIntoResultWithEnsureErrorAsync);
     t.is(
         PlainResultNamespace.tryCatchIntoWithEnsureErrorAsync,
         tryCatchIntoResultWithEnsureErrorAsync,

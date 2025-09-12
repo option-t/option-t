@@ -1,12 +1,7 @@
 import test from 'ava';
 
 import { tryCatchIntoResultWithAssertErrorAsync } from 'option-t/plain_result/deprecated/try_catch_with_assert_error_async';
-import {
-    isOk,
-    isErr,
-    unwrapOk as unwrapOkFromResult,
-    unwrapErr as unwrapErrFromResult,
-} from 'option-t/plain_result/result';
+import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { getCrossRealmErrorConstructor } from '../../../../cross_realm_error_helper.mjs';
 
 test('output=Ok(T): producer is normal fn', async (t) => {
@@ -22,7 +17,7 @@ test('output=Ok(T): producer is normal fn', async (t) => {
 
     const actual = await result;
     t.true(isOk(actual), 'should be Ok(T)');
-    t.is(unwrapOkFromResult(actual), EXPECTED, 'should contain the expect inner value');
+    t.is(unwrapOk(actual), EXPECTED, 'should contain the expect inner value');
 });
 
 test('output=Err(Error): producer is normal fn', async (t) => {
@@ -38,7 +33,7 @@ test('output=Err(Error): producer is normal fn', async (t) => {
 
     const actual = await result;
     t.true(isErr(actual), 'should be Err(E)');
-    t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
+    t.is(unwrapErr(actual), EXPECTED, 'should contain the expect inner value');
 });
 
 test('output=Err(Error): producer is normal fn but throw an error before return any Promise', async (t) => {
@@ -55,7 +50,7 @@ test('output=Err(Error): producer is normal fn but throw an error before return 
 
     const actual = await result;
     t.true(isErr(actual), 'should be Err(E)');
-    t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
+    t.is(unwrapErr(actual), EXPECTED, 'should contain the expect inner value');
 });
 
 test('if producer is normal function and reject a Promise with not-Error-instance value', async (t) => {

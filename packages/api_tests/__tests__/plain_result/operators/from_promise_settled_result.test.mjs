@@ -1,15 +1,10 @@
 import test from 'ava';
 
-import * as PlainResultRoot from 'option-t/plain_result';
+import { ResultOperator } from 'option-t/plain_result';
 import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { fromPromiseSettledResultToResult } from 'option-t/plain_result/from_promise_settled_result';
 import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
-import {
-    isOk,
-    isErr,
-    unwrapOk as unwrapOkFromResult,
-    unwrapErr as unwrapErrFromResult,
-} from 'option-t/plain_result/result';
+import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 
 test('should be Ok(T)', async (t) => {
     const VALUE_T = Symbol('value');
@@ -18,7 +13,7 @@ test('should be Ok(T)', async (t) => {
 
     const actual = fromPromiseSettledResultToResult(input);
     t.true(isOk(actual), 'should be Ok');
-    t.is(unwrapOkFromResult(actual), VALUE_T, 'should be the wrapped value');
+    t.is(unwrapOk(actual), VALUE_T, 'should be the wrapped value');
 });
 
 test('should be Err(T)', async (t) => {
@@ -28,7 +23,7 @@ test('should be Err(T)', async (t) => {
 
     const actual = fromPromiseSettledResultToResult(input);
     t.true(isErr(actual), 'should be Ok');
-    t.is(unwrapErrFromResult(actual), VALUE_E, 'should be the wrapped value');
+    t.is(unwrapErr(actual), VALUE_E, 'should be the wrapped value');
 });
 
 test('should throw error if the input is not supported type', async (t) => {
@@ -49,7 +44,7 @@ test('should throw error if the input is not supported type', async (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.ResultOperator.fromPromiseSettledResult, fromPromiseSettledResultToResult);
+    t.is(ResultOperator.fromPromiseSettledResult, fromPromiseSettledResultToResult);
     t.is(PlainResultNamespace.fromPromiseSettledResult, fromPromiseSettledResultToResult);
     t.is(PlainResultCompatV54.fromPromiseSettledResultToResult, fromPromiseSettledResultToResult);
 });

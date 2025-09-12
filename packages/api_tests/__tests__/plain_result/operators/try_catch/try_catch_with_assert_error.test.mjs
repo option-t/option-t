@@ -2,12 +2,7 @@ import { webcrypto } from 'node:crypto';
 import test from 'ava';
 
 import { tryCatchIntoResultWithAssertError } from 'option-t/plain_result/deprecated/try_catch_with_assert_error';
-import {
-    isOk,
-    isErr,
-    unwrapOk as unwrapOkFromResult,
-    unwrapErr as unwrapErrFromResult,
-} from 'option-t/plain_result/result';
+import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { getCrossRealmErrorConstructor } from '../../../cross_realm_error_helper.mjs';
 
 test('output=Ok(T)', (t) => {
@@ -20,7 +15,7 @@ test('output=Ok(T)', (t) => {
     });
 
     t.true(isOk(actual), 'should be Ok(T)');
-    t.is(unwrapOkFromResult(actual), EXPECTED, 'should contain the expect inner value');
+    t.is(unwrapOk(actual), EXPECTED, 'should contain the expect inner value');
 });
 
 test('output=Err(Error)', (t) => {
@@ -33,7 +28,7 @@ test('output=Err(Error)', (t) => {
     });
 
     t.true(isErr(actual), 'should be Err(E)');
-    t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
+    t.is(unwrapErr(actual), EXPECTED, 'should contain the expect inner value');
 });
 
 test('If producer throw non-Error-instance value', (t) => {

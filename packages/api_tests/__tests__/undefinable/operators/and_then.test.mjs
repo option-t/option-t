@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as UndefinableRoot from 'option-t/undefinable';
+import { UndefinableOperator } from 'option-t/undefinable';
 import { andThenForUndefinable } from 'option-t/undefinable/and_then';
 import * as UndefinableRootCompatV54 from 'option-t/undefinable/compat/v54';
 import { Undefinable as UndefinableNamespace } from 'option-t/undefinable/namespace';
@@ -48,7 +48,7 @@ test(`pass ${NULL_VALUE_IN_THIS_TEST_CASE}`, (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(UndefinableRoot.UndefinableOperator.andThen, andThenForUndefinable);
+    t.is(UndefinableOperator.andThen, andThenForUndefinable);
     t.is(UndefinableNamespace.andThen, andThenForUndefinable);
     t.is(UndefinableRootCompatV54.andThenForUndefinable, andThenForUndefinable);
 });

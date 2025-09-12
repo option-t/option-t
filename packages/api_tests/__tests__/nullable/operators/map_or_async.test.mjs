@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as NullableRoot from 'option-t/nullable';
+import { NullableOperator } from 'option-t/nullable';
 import * as NullableRootCompatV54 from 'option-t/nullable/compat/v54';
 import { mapOrAsyncForNullable } from 'option-t/nullable/map_or_async';
 import { Nullable as NullableNamespace } from 'option-t/nullable/namespace';
@@ -111,7 +111,7 @@ test('pass undefined', async (t) => {
 }
 
 test(`exported alias' identity check`, (t) => {
-    t.is(NullableRoot.NullableOperator.mapOrAsync, mapOrAsyncForNullable);
+    t.is(NullableOperator.mapOrAsync, mapOrAsyncForNullable);
     t.is(NullableNamespace.mapOrAsync, mapOrAsyncForNullable);
     t.is(NullableRootCompatV54.mapOrAsyncForNullable, mapOrAsyncForNullable);
 });
