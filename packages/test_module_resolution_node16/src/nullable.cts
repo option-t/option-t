@@ -23,6 +23,7 @@ import {} from 'option-t/nullable/or_else';
 import {} from 'option-t/nullable/or_else_async';
 import {} from 'option-t/nullable/to_plain_result';
 import {} from 'option-t/nullable/to_undefinable';
+import {} from 'option-t/nullable/transpose';
 import {} from 'option-t/nullable/unwrap_or';
 import {} from 'option-t/nullable/unwrap_or_else';
 import {} from 'option-t/nullable/unwrap_or_else_async';
@@ -30,4 +31,5 @@ import {} from 'option-t/nullable/xor';
 import {} from 'option-t/nullable/zip';
 import {} from 'option-t/nullable/zip_with';
 import {} from 'option-t/nullable/zip_with_async';
+
 */

@@ -22,6 +22,7 @@ import {} from 'option-t/undefinable/or_else';
 import {} from 'option-t/undefinable/or_else_async';
 import {} from 'option-t/undefinable/to_nullable';
 import {} from 'option-t/undefinable/to_plain_result';
+import {} from 'option-t/undefinable/transpose';
 import {} from 'option-t/undefinable/undefinable';
 import {} from 'option-t/undefinable/unwrap_or';
 import {} from 'option-t/undefinable/unwrap_or_else';
@@ -30,4 +31,5 @@ import {} from 'option-t/undefinable/xor';
 import {} from 'option-t/undefinable/zip';
 import {} from 'option-t/undefinable/zip_with';
 import {} from 'option-t/undefinable/zip_with_async';
+
 */
