@@ -1,14 +1,9 @@
 import test from 'ava';
 
-import * as PlainResultRoot from 'option-t/plain_result';
+import { ResultOperator } from 'option-t/plain_result';
 import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
-import {
-    isOk,
-    isErr,
-    unwrapOk as unwrapOkFromResult,
-    unwrapErr as unwrapErrFromResult,
-} from 'option-t/plain_result/result';
+import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 import { tryCatchIntoResultAsync } from 'option-t/plain_result/try_catch_async';
 
 test('output=Ok(T): producer is async fn', async (t) => {
@@ -24,7 +19,7 @@ test('output=Ok(T): producer is async fn', async (t) => {
 
     const actual = await result;
     t.true(isOk(actual), 'should be Ok(T)');
-    t.is(unwrapOkFromResult(actual), EXPECTED, 'should contain the expect inner value');
+    t.is(unwrapOk(actual), EXPECTED, 'should contain the expect inner value');
 });
 
 test('output=Err(unknown): producer is async fn', async (t) => {
@@ -40,11 +35,11 @@ test('output=Err(unknown): producer is async fn', async (t) => {
 
     const actual = await result;
     t.true(isErr(actual), 'should be Err(E)');
-    t.is(unwrapErrFromResult(actual), EXPECTED, 'should contain the expect inner value');
+    t.is(unwrapErr(actual), EXPECTED, 'should contain the expect inner value');
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.ResultOperator.tryCatchIntoAsync, tryCatchIntoResultAsync);
+    t.is(ResultOperator.tryCatchIntoAsync, tryCatchIntoResultAsync);
     t.is(PlainResultNamespace.tryCatchIntoAsync, tryCatchIntoResultAsync);
     t.is(PlainResultCompatV54.tryCatchIntoResultAsync, tryCatchIntoResultAsync);
 });

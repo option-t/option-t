@@ -3,12 +3,7 @@ import test from 'ava';
 import * as PlainResultRoot from 'option-t/plain_result';
 import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
-import {
-    createOk,
-    createErr,
-    expectOk as expectOkForResult,
-    expectOk,
-} from 'option-t/plain_result/result';
+import { createOk, createErr, expectOk } from 'option-t/plain_result/result';
 
 test('input=Ok(T), expect=Ok(T)', (t) => {
     const EXPECTED = Symbol('expected');
@@ -17,7 +12,7 @@ test('input=Ok(T), expect=Ok(T)', (t) => {
 
     let actual;
     t.notThrows(() => {
-        actual = expectOkForResult(input, 'do not throw any errors');
+        actual = expectOk(input, 'do not throw any errors');
     });
 
     t.is(actual, EXPECTED);
@@ -31,7 +26,7 @@ test('input=Err(E), expect=Ok(T)', (t) => {
     const MSG = 'throw if the input is not expected';
     t.throws(
         () => {
-            expectOkForResult(input, MSG);
+            expectOk(input, MSG);
         },
         {
             instanceOf: TypeError,

@@ -1,7 +1,7 @@
 import test from 'ava';
 
 import { isOk, isErr, unwrapOk, unwrapErr } from 'option-t/plain_result/result';
-import * as UndefinableRoot from 'option-t/undefinable';
+import { UndefinableOperator } from 'option-t/undefinable';
 import * as UndefinableRootCompatV54 from 'option-t/undefinable/compat/v54';
 import { Undefinable as UndefinableNamespace } from 'option-t/undefinable/namespace';
 import { toResultErrFromUndefinable } from 'option-t/undefinable/to_plain_result';
@@ -28,7 +28,7 @@ test(`pass null`, (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(UndefinableRoot.UndefinableOperator.toResultErr, toResultErrFromUndefinable);
+    t.is(UndefinableOperator.toResultErr, toResultErrFromUndefinable);
     t.is(UndefinableNamespace.toResultErr, toResultErrFromUndefinable);
     t.is(UndefinableRootCompatV54.toResultErrFromUndefinable, toResultErrFromUndefinable);
 });

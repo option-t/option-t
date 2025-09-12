@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as MaybeRoot from 'option-t/maybe';
+import { MaybeOperator } from 'option-t/maybe';
 import * as MaybeRootCompatV54 from 'option-t/maybe/compat/v54';
 import { mapOrForMaybe } from 'option-t/maybe/map_or';
 import { Maybe as MaybeNamespace } from 'option-t/maybe/namespace';
@@ -71,7 +71,7 @@ for (const NULL_VALUE of [undefined, null]) {
 }
 
 test(`exported alias' identity check`, (t) => {
-    t.is(MaybeRoot.MaybeOperator.mapOr, mapOrForMaybe);
+    t.is(MaybeOperator.mapOr, mapOrForMaybe);
     t.is(MaybeNamespace.mapOr, mapOrForMaybe);
     t.is(MaybeRootCompatV54.mapOrForMaybe, mapOrForMaybe);
 });

@@ -2,10 +2,7 @@ import test from 'ava';
 
 import { okOrElseForPlainOption } from 'option-t/plain_option/ok_or_else';
 import { createSome, createNone } from 'option-t/plain_option/option';
-import {
-    unwrapOk as unwrapOkFromResult,
-    unwrapErr as unwrapErrFromResult,
-} from 'option-t/plain_result/result';
+import { unwrapOk, unwrapErr } from 'option-t/plain_result/result';
 
 test('the input is Some', (t) => {
     t.plan(2);
@@ -20,7 +17,7 @@ test('the input is Some', (t) => {
     });
 
     t.true(actual.ok, 'the actual should be Ok');
-    t.is(unwrapOkFromResult(actual), OK_VAL, 'the actual should be wrap the expect');
+    t.is(unwrapOk(actual), OK_VAL, 'the actual should be wrap the expect');
 });
 
 test('the input is None', (t) => {
@@ -35,5 +32,5 @@ test('the input is None', (t) => {
     });
 
     t.false(actual.ok, 'the actual should be Err');
-    t.is(unwrapErrFromResult(actual), ERR_VAL, 'the actual should be wrap the expect');
+    t.is(unwrapErr(actual), ERR_VAL, 'the actual should be wrap the expect');
 });

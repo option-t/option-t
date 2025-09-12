@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import * as NullableRoot from 'option-t/nullable';
+import { NullableOperator } from 'option-t/nullable';
 import * as NullableRootCompatV54 from 'option-t/nullable/compat/v54';
 import { Nullable as NullableNamespace } from 'option-t/nullable/namespace';
 import { orElseAsyncForNullable } from 'option-t/nullable/or_else_async';
@@ -59,7 +59,7 @@ test(`pass ${NULLY_VALUE_BUT_NOT_NULL_VALUE_IN_THIS_TEST_CASE}`, async (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(NullableRoot.NullableOperator.orElseAsync, orElseAsyncForNullable);
+    t.is(NullableOperator.orElseAsync, orElseAsyncForNullable);
     t.is(NullableNamespace.orElseAsync, orElseAsyncForNullable);
     t.is(NullableRootCompatV54.orElseAsyncForNullable, orElseAsyncForNullable);
 });

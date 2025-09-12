@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import test from 'ava';
 
-import * as PlainResultRoot from 'option-t/plain_result';
+import { ResultOperator } from 'option-t/plain_result';
 import * as PlainResultCompatV54 from 'option-t/plain_result/compat/v54';
 import { isErrAndForResult } from 'option-t/plain_result/is_err_and';
 import { Result as PlainResultNamespace } from 'option-t/plain_result/namespace';
@@ -34,7 +34,7 @@ test('input=Err(T), predicate returns false', (t) => {
 });
 
 test(`exported alias' identity check`, (t) => {
-    t.is(PlainResultRoot.ResultOperator.isErrAnd, isErrAndForResult);
+    t.is(ResultOperator.isErrAnd, isErrAndForResult);
     t.is(PlainResultNamespace.isErrAnd, isErrAndForResult);
     t.is(PlainResultCompatV54.isErrAndForResult, isErrAndForResult);
 });

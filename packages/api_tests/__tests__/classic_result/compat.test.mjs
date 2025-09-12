@@ -11,8 +11,8 @@ import {
     createErr,
     isOk,
     isErr,
-    unwrapOk as unwrapOkFromResult,
-    unwrapErr as unwrapErrFromResult,
+    unwrapOk,
+    unwrapErr,
 } from 'option-t/plain_result/result';
 
 test(`input is Plain's Ok`, (t) => {
@@ -39,7 +39,7 @@ test(`input is Classic's Ok`, (t) => {
     const actual = compatToPlainResult(input);
 
     t.true(isOk(actual), 'isOk');
-    t.is(unwrapOkFromResult(actual), expected, 'inner value');
+    t.is(unwrapOk(actual), expected, 'inner value');
 });
 
 test(`input is Classic's Err`, (t) => {
@@ -48,5 +48,5 @@ test(`input is Classic's Err`, (t) => {
     const actual = compatToPlainResult(input);
 
     t.true(isErr(actual), 'isErr');
-    t.is(unwrapErrFromResult(actual), expected, 'inner value');
+    t.is(unwrapErr(actual), expected, 'inner value');
 });

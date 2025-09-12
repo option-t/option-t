@@ -6,8 +6,8 @@ import {
     createErr,
     isOk,
     isErr,
-    unwrapOk as unwrapOkFromResult,
-    unwrapErr as unwrapErrFromResult,
+    unwrapOk,
+    unwrapErr,
 } from 'option-t/plain_result/result';
 
 const INNER_VALUE_A = Symbol('A');
@@ -15,9 +15,9 @@ const INNER_VALUE_B = Symbol('B');
 
 function toString(result) {
     if (isOk(result)) {
-        return `Ok<${String(unwrapOkFromResult(result))}>`;
+        return `Ok<${String(unwrapOk(result))}>`;
     } else if (isErr(result)) {
-        return `Err<${String(unwrapErrFromResult(result))}>`;
+        return `Err<${String(unwrapErr(result))}>`;
     } else {
         throw new TypeError(`unexpected type, ${String(result)}`);
     }
