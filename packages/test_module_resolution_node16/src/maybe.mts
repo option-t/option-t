@@ -23,6 +23,7 @@ import {} from 'option-t/maybe/or_else_async';
 import {} from 'option-t/maybe/to_nullable';
 import {} from 'option-t/maybe/to_plain_result';
 import {} from 'option-t/maybe/to_undefinable';
+import {} from 'option-t/maybe/transpose';
 import {} from 'option-t/maybe/unwrap_or';
 import {} from 'option-t/maybe/unwrap_or_else';
 import {} from 'option-t/maybe/unwrap_or_else_async';
