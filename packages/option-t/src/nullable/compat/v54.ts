@@ -1,6 +1,5 @@
 /**
- *  @deprecated
- *  Please migrate to:
+ *  Please migrate your codes to:
  *      1. `NullableOperator` of `option-t/nullable`.
  *      2. Import `option-t/nullable/***` directly.
  */

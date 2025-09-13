@@ -1,6 +1,5 @@
 /**
- *  @deprecated
- *  Please migrate to:
+ *  Please migrate your codes to:
  *      1. `ResultOperator` or `ResultFactory` of `option-t/plain_result`.
  *      2. Import `option-t/plain_result/***` directly.
  */
