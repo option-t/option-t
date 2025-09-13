@@ -1,6 +1,5 @@
 /**
- *  @deprecated
- *  Please migrate to:
+ *  Please migrate your codes to:
  *      1. `MaybeOperator` of `option-t/maybe`.
  *      2. Import `option-t/maybe/***` directly.
  */

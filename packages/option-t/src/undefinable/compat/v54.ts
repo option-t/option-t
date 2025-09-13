@@ -1,6 +1,5 @@
 /**
- *  @deprecated
- *  Please migrate to:
+ *  Please migrate your codes to:
  *      1. `UndefinableOperator` of `option-t/undefinable`.
  *      2. Import `option-t/undefinable/***` directly.
  */
