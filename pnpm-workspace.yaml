@@ -11,11 +11,11 @@ catalog:
     del-cli: ^7.0.0
     eslint: ^9.35.0
     eslint-config-prettier: ^10.1.8
-    eslint-config-turbo: ^2.5.6
+    eslint-config-turbo: ^2.5.8
     eslint-plugin-import: ^2.32.0
     expect-type: ^1.2.2
     globals: ^16.4.0
     picomatch: ^4.0.3
     prettier: ^3.6.2
-    turbo: ^2.5.6
+    turbo: ^2.5.8
     typescript: ^5.9.2
