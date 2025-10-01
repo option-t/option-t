@@ -3,13 +3,13 @@ packages:
     - "packages/*"
 
 catalog:
-    "@eslint/js": ^9.35.0
+    "@eslint/js": ^9.36.0
     "@reflink/reflink": ^0.1.19
     "@typescript-eslint/eslint-plugin": ^8.44.1
     "@typescript-eslint/parser": ^8.44.1
     ava: ^6.4.1
     del-cli: ^7.0.0
-    eslint: ^9.35.0
+    eslint: ^9.36.0
     eslint-config-prettier: ^10.1.8
     eslint-config-turbo: ^2.5.6
     eslint-plugin-import: ^2.32.0
