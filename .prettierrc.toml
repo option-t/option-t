@@ -23,3 +23,10 @@ useTabs = false
     [overrides.options]
     # Turborepo 2.5 does not support trailingComma even if in jsonc file.
     trailingComma = "none"
+
+[[overrides]]
+    # https://pnpm.io/ja/pnpm-workspace_yaml
+    files = "pnpm-workspace.yaml"
+    [overrides.options]
+    tabWidth = 2
+    singleQuote = true
