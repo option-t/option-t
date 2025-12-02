@@ -21,7 +21,7 @@ jobs:
                     - 24
 
         steps:
-            - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
+            - uses: actions/checkout@c2d88d3ecc89a9ef08eebf45d9637801dcee7eb5
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -36,7 +36,7 @@ jobs:
                     - 24
 
         steps:
-            - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
+            - uses: actions/checkout@c2d88d3ecc89a9ef08eebf45d9637801dcee7eb5
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -54,7 +54,7 @@ jobs:
                     - 24
 
         steps:
-            - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
+            - uses: actions/checkout@c2d88d3ecc89a9ef08eebf45d9637801dcee7eb5
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -72,7 +72,7 @@ jobs:
                     - 24
 
         steps:
-            - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
+            - uses: actions/checkout@c2d88d3ecc89a9ef08eebf45d9637801dcee7eb5
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -90,7 +90,7 @@ jobs:
                     - 24
 
         steps:
-            - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
+            - uses: actions/checkout@c2d88d3ecc89a9ef08eebf45d9637801dcee7eb5
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -108,7 +108,7 @@ jobs:
                     - 24
 
         steps:
-            - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
+            - uses: actions/checkout@c2d88d3ecc89a9ef08eebf45d9637801dcee7eb5
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -125,7 +125,7 @@ jobs:
                 node-version:
                     - 24
         steps:
-            - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
+            - uses: actions/checkout@c2d88d3ecc89a9ef08eebf45d9637801dcee7eb5
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -142,7 +142,7 @@ jobs:
                 node-version:
                     - 24
         steps:
-            - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
+            - uses: actions/checkout@c2d88d3ecc89a9ef08eebf45d9637801dcee7eb5
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -160,7 +160,7 @@ jobs:
                     - 24
 
         steps:
-            - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
+            - uses: actions/checkout@c2d88d3ecc89a9ef08eebf45d9637801dcee7eb5
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
