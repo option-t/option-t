@@ -2,19 +2,21 @@ packages:
   - packages/*
 
 catalog:
-  '@eslint/js': ^9.38.0
+  '@eslint/js': ^9.39.1
   '@reflink/reflink': ^0.1.19
-  '@typescript-eslint/eslint-plugin': ^8.47.0
-  '@typescript-eslint/parser': ^8.47.0
+  '@typescript-eslint/eslint-plugin': ^8.48.1
+  '@typescript-eslint/parser': ^8.48.1
   ava: ^6.4.1
   del-cli: ^7.0.0
-  eslint: ^9.38.0
+  eslint: ^9.39.1
   eslint-config-prettier: ^10.1.8
-  eslint-config-turbo: ^2.5.8
+  eslint-config-turbo: ^2.6.1
   eslint-plugin-import: ^2.32.0
   expect-type: ^1.2.2
   globals: ^16.5.0
   picomatch: ^4.0.3
-  prettier: ^3.6.2
-  turbo: ^2.5.8
+  prettier: ^3.7.3
+  turbo: ^2.6.1
   typescript: ^5.9.3
+
+minimumReleaseAge: 1440
