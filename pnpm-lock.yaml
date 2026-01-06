@@ -37,8 +37,8 @@ catalogs:
       specifier: ^2.32.0
       version: 2.32.0
     expect-type:
-      specifier: ^1.2.2
-      version: 1.2.2
+      specifier: ^1.3.0
+      version: 1.3.0
     globals:
       specifier: ^16.5.0
       version: 16.5.0
@@ -97,7 +97,7 @@ importers:
     dependencies:
       expect-type:
         specifier: 'catalog:'
-        version: 1.2.2
+        version: 1.3.0
       option-t:
         specifier: workspace:*
         version: link:../option-t
@@ -844,8 +844,8 @@ packages:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
 
-  expect-type@1.2.2:
-    resolution: {integrity: sha512-JhFGDVJ7tmDJItKhYgJCGLOWjuK9vPxiXoUFLwLDc99NlmklilbiQJwoctZtt13+xMw91MCk/REan6MWHqDjyA==}
+  expect-type@1.3.0:
+    resolution: {integrity: sha512-knvyeauYhqjOYvQ66MznSMs83wmHrCycNEN6Ao+2AeYEfxUIkuiVxdEa1qlGEPK+We3n0THiDciYSsCcgW/DoA==}
     engines: {node: '>=12.0.0'}
 
   fast-deep-equal@3.1.3:
@@ -2607,7 +2607,7 @@ snapshots:
 
   esutils@2.0.3: {}
 
-  expect-type@1.2.2: {}
+  expect-type@1.3.0: {}
 
   fast-deep-equal@3.1.3: {}
 
