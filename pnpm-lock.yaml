@@ -46,8 +46,8 @@ catalogs:
       specifier: ^4.0.3
       version: 4.0.3
     prettier:
-      specifier: ^3.7.4
-      version: 3.7.4
+      specifier: ^3.8.1
+      version: 3.8.1
     turbo:
       specifier: ^2.7.4
       version: 2.7.4
@@ -79,7 +79,7 @@ importers:
         version: 4.0.3
       prettier:
         specifier: 'catalog:'
-        version: 3.7.4
+        version: 3.8.1
       turbo:
         specifier: 'catalog:'
         version: 2.7.4
@@ -1411,8 +1411,8 @@ packages:
     resolution: {integrity: sha512-E6rsNU1QNJgB3sjj7OANinGncFKuK+164sLXw1/CqBjj/EkXSoSdHCtWQGBNlREIGLnL7IEUEGa08YFVUbrhVg==}
     engines: {node: '>=16'}
 
-  prettier@3.7.4:
-    resolution: {integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==}
+  prettier@3.8.1:
+    resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -3129,7 +3129,7 @@ snapshots:
 
   presentable-error@0.0.1: {}
 
-  prettier@3.7.4: {}
+  prettier@3.8.1: {}
 
   pretty-ms@9.3.0:
     dependencies:
