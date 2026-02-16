@@ -9,7 +9,6 @@ test('Ok<T>', function (t) {
     const NOT_EXPECTED = Symbol('NOT_EXPECTED');
 
     let opIsCalled = false;
-    let result = null;
     const op = function () {
         opIsCalled = true;
         t.fail();
@@ -19,7 +18,7 @@ test('Ok<T>', function (t) {
     t.not(opIsCalled, true);
 
     const original = createClassicOk(ORIGIN);
-    result = original.mapErr(op);
+    const result = original.mapErr(op);
 
     t.is(result.isOk(), true, 'the returned value should be `Ok<T, F>');
     t.is(opIsCalled, false, 'the `op` callback should not be called');
@@ -33,7 +32,6 @@ test('Err<E>', function (t) {
     const EXPECTED = Symbol('EXPECTED');
 
     let argument = null;
-    let result = null;
     const op = function (v) {
         argument = v;
         t.pass();
@@ -43,7 +41,7 @@ test('Err<E>', function (t) {
     t.not(argument, ORIGIN);
 
     const original = createClassicErr(ORIGIN);
-    result = original.mapErr(op);
+    const result = original.mapErr(op);
 
     t.is(result.isErr(), true, 'the returned value should be `Err<T, F>');
     t.is(argument, ORIGIN, 'the argument of `op` callback is expected');

@@ -60,7 +60,8 @@ export class MarkdownListItem {
         const href = this.#hrefFromDocsDir;
 
         const anchor = `[\`${name}\`](${href})`;
-        let link = '';
+        /** @type {string} */
+        let link;
         const message = this.#message;
         if (message !== null) {
             link = this.#buildLinkTextWithMessage(anchor, message);

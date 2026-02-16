@@ -28,7 +28,7 @@ export function testImportExposedPath(test, pathList) {
     const testcaseList = pathList.map(pathToNormalizedImport);
     for (const { input } of testcaseList) {
         test(input, async (t) => {
-            let actual = null;
+            let actual;
             {
                 t.plan(4);
                 let esmActual;

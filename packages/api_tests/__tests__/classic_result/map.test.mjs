@@ -34,7 +34,6 @@ test('Err<E>', (t) => {
     const ORIGIN = Symbol('ORIGIN');
     const NOT_EXPECTED = Symbol('NOT_EXPECTED');
 
-    let result = null;
     const op = function () {
         t.fail();
         return NOT_EXPECTED;
@@ -43,7 +42,7 @@ test('Err<E>', (t) => {
     t.not(ORIGIN, NOT_EXPECTED);
 
     const original = createClassicErr(ORIGIN);
-    result = original.map(op);
+    const result = original.map(op);
 
     t.true(result.isErr(), 'the returned value should be `Err<U, E>');
     t.is(result.unwrapErr(), ORIGIN, 'the returned value should wrap the expected value');

@@ -28,7 +28,7 @@ export async function mapOrElseAsyncForMaybe<T, U>(
     transformer: AsyncTransformFn<T, NotNullOrUndefined<U>>,
 ): Promise<NotNullOrUndefined<U>> {
     let result: U;
-    let messageForExpect = '';
+    let messageForExpect: string;
 
     if (isNotNullOrUndefined(input)) {
         result = await transformer(input);

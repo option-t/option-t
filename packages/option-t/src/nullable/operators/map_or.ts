@@ -22,7 +22,7 @@ export function mapOrForNullable<T, U>(
     transformer: TransformFn<T, NotNull<U>>,
 ): NotNull<U> {
     let result: U;
-    let msg = '';
+    let msg: string;
     if (input !== null) {
         result = transformer(input);
         msg = ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_NULLABLE;
