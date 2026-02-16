@@ -1,6 +1,6 @@
 // See https://turbo.build/repo/docs
 {
-    "$schema": "https://turbo.build/schema.json",
+    "$schema": "https://turborepo.dev/schema.json",
     "tasks": {
         "typecheck": {
             // Historically, we don't have any assurance for cache aware.

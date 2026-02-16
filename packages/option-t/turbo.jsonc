@@ -1,6 +1,6 @@
 // See https://turbo.build/repo/docs/reference/package-configurations
 {
-    "$schema": "https://turbo.build/schema.json",
+    "$schema": "https://turborepo.dev/schema.json",
     "extends": ["//"],
     "tasks": {
         "typecheck": {
@@ -17,4 +17,4 @@
             "outputs": []
         }
     }
-  }
+}
