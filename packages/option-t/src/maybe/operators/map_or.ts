@@ -22,7 +22,7 @@ export function mapOrForMaybe<T, U>(
     transformer: TransformFn<T, NotNullOrUndefined<U>>,
 ): NotNullOrUndefined<U> {
     let result: U;
-    let msg = '';
+    let msg: string;
     if (input !== undefined && input !== null) {
         result = transformer(input);
         msg = ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_MAYBE;

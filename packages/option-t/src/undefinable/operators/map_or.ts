@@ -22,7 +22,7 @@ export function mapOrForUndefinable<T, U>(
     transformer: TransformFn<T, NotUndefined<U>>,
 ): NotUndefined<U> {
     let result: U;
-    let msg = '';
+    let msg: string;
     if (input !== undefined) {
         result = transformer(input);
         msg = ERR_MSG_TRANSFORMER_MUST_NOT_RETURN_NO_VAL_FOR_UNDEFINABLE;

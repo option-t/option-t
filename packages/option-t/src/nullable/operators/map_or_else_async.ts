@@ -22,7 +22,7 @@ export async function mapOrElseAsyncForNullable<T, U>(
     transformer: AsyncTransformFn<T, NotNull<U>>,
 ): Promise<NotNull<U>> {
     let result: U;
-    let messageForExpect = '';
+    let messageForExpect: string;
 
     if (isNotNull(input)) {
         result = await transformer(input);
