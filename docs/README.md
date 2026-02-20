@@ -1,5 +1,7 @@
 # Documentations
 
+- [CHANGELOG_OLD](./CHANGELOG_OLD.md): This file contains changelogs until v24.1.1.
+  For newer ones, please see [GitHub's release page](https://github.com/option-t/option-t/releases).
 - [Idioms](./idiom/)
 - [Deprecated APIs](./deprecated_apis.md): This explains about our deperecated APIs including "not recommended".
 - [How to import](./how_to_import.md): This explains the details of path.
