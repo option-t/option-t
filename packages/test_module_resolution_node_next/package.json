@@ -8,6 +8,7 @@
         "test": "tsc -p ./tsconfig.json"
     },
     "dependencies": {
+        "typescript": "catalog:",
         "option-t": "workspace:*"
     }
 }
