@@ -57,4 +57,4 @@ please see a release note in [Releases](https://github.com/option-t/option-t/rel
 
 - [v25](./v25.md)
 - [v24](https://github.com/option-t/option-t/releases/tag/v24.0.0)
-- Before v23 are in [/CHANGELOG_OLD.md](../../CHANGELOG_OLD.md#2302).
+- Before v23 are in [/CHANGELOG_OLD.md](../CHANGELOG_OLD.md#2302).
