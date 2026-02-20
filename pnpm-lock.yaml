@@ -101,6 +101,9 @@ importers:
       option-t:
         specifier: workspace:*
         version: link:../option-t
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
 
   packages/eslint_config:
     dependencies:
@@ -129,7 +132,11 @@ importers:
         specifier: 'catalog:'
         version: 17.2.0
 
-  packages/option-t: {}
+  packages/option-t:
+    devDependencies:
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
 
   packages/test_module_node20:
     dependencies:
@@ -145,24 +152,36 @@ importers:
       option-t:
         specifier: workspace:*
         version: link:../option-t
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
 
   packages/test_module_resolution_bundler:
     dependencies:
       option-t:
         specifier: workspace:*
         version: link:../option-t
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
 
   packages/test_module_resolution_node16:
     dependencies:
       option-t:
         specifier: workspace:*
         version: link:../option-t
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
 
   packages/test_module_resolution_node_next:
     dependencies:
       option-t:
         specifier: workspace:*
         version: link:../option-t
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
 
 packages:
 

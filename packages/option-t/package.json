@@ -48,6 +48,9 @@
         "result",
         "result-type"
     ],
+    "devDependencies": {
+        "typescript": "catalog:"
+    },
     "sideEffects": false,
     "exports": {
         ".": {
