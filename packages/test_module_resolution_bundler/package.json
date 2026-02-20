@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "name": "@option-t/test_module_resolution_bundler",
-    "version": "55.1.1",
+    "version": "55.1.2",
     "license": "MIT",
     "scripts": {
         "test": "tsc -p ./tsconfig.json"
