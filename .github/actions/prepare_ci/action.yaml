@@ -37,7 +37,7 @@ runs:
           run: echo "dir=$(pnpm store path)" >> ${GITHUB_OUTPUT}
         - name: Restore dependencies from cache
           id: pnpm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
-          uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb
+          uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306
           with:
               path: ${{ steps.pnpm-cache-dir.outputs.dir }}
               key: v0-${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-workspace.yaml') }}
