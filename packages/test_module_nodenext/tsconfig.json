@@ -2,7 +2,8 @@
     "extends": "../../tsconfig.json",
     "compilerOptions": {
         "noEmit": true,
-        "outDir": "./__dist",
+        "rootDir": "${configDir}",
+        "outDir": "${configDir}/__dist",
         "module": "NodeNext",
         "skipLibCheck": false
     },

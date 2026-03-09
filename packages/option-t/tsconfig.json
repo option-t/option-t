@@ -14,7 +14,8 @@
 
         "diagnostics": true,
         "noEmit": false,
-        "outDir": "./__tmp_base"
+        "rootDir": "${configDir}/src",
+        "outDir": "${configDir}/__tmp_base"
     },
     "include": [
         "src/**/*",

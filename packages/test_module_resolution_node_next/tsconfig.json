@@ -2,7 +2,8 @@
     "extends": "../../tsconfig.json",
     "compilerOptions": {
         "noEmit": true,
-        "outDir": "./__dist",
+        "rootDir": "${configDir}",
+        "outDir": "${configDir}/__dist",
         // We would like to test whether generated d.ts are valid under configured moduleResolution mode.
         "moduleResolution": "nodenext",
         "module": "Node16",
