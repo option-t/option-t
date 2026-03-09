@@ -5,7 +5,7 @@
     "version": "55.1.2",
     "license": "MIT",
     "scripts": {
-        "test": "tsc -p ./tsconfig.json"
+        "test": "tsc -p ./tsconfig.json --stableTypeOrdering"
     },
     "dependencies": {
         "typescript": "catalog:",

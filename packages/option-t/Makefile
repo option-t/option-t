@@ -97,7 +97,7 @@ __build_tmp_base: clean_tmp_base __build_tmp_base__call_tsc
 
 .PHONY: __build_tmp_base__call_tsc
 __build_tmp_base__call_tsc: clean_tmp_base generate_manifest
-	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.json
+	$(NPM_BIN)/tsc --project $(CURDIR)/tsconfig.json --stableTypeOrdering
 
 .PHONY: cp_license
 cp_license: clean_dist generate_manifest
