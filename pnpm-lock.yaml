@@ -40,8 +40,8 @@ catalogs:
       specifier: ^1.3.0
       version: 1.3.0
     globals:
-      specifier: ^17.1.0
-      version: 17.2.0
+      specifier: ^17.4.0
+      version: 17.4.0
     picomatch:
       specifier: ^4.0.3
       version: 4.0.3
@@ -130,7 +130,7 @@ importers:
         version: 2.32.0(@typescript-eslint/parser@8.54.0(eslint@10.0.0)(typescript@5.9.3))(eslint@10.0.0)
       globals:
         specifier: 'catalog:'
-        version: 17.2.0
+        version: 17.4.0
 
   packages/option-t:
     devDependencies:
@@ -988,8 +988,8 @@ packages:
     resolution: {integrity: sha512-DfXN8DfhJ7NH3Oe7cFmu3NCu1wKbkReJ8TorzSAFbSKrlNaQSKfIzqYqVY8zlbs2NLBbWpRiU52GX2PbaBVNkg==}
     hasBin: true
 
-  globals@17.2.0:
-    resolution: {integrity: sha512-tovnCz/fEq+Ripoq+p/gN1u7l6A7wwkoBT9pRCzTHzsD/LvADIzXZdjmRymh5Ztf0DYC3Rwg5cZRYjxzBmzbWg==}
+  globals@17.4.0:
+    resolution: {integrity: sha512-hjrNztw/VajQwOLsMNT1cbJiH2muO3OROCHnbehc8eY5JyD2gqz4AcMHPqgaOR59DjgUjYAYLeH699g/eWi2jw==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -2719,7 +2719,7 @@ snapshots:
       package-json-from-dist: 1.0.1
       path-scurry: 1.11.1
 
-  globals@17.2.0: {}
+  globals@17.4.0: {}
 
   globalthis@1.0.4:
     dependencies:
