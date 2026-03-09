@@ -6,7 +6,7 @@ catalog:
   '@reflink/reflink': ^0.1.19
   '@typescript-eslint/eslint-plugin': ^8.56.1
   '@typescript-eslint/parser': ^8.56.1
-  ava: ^6.4.1
+  ava: ^7.0.0
   del-cli: ^7.0.0
   eslint: ^10.0.3
   eslint-config-prettier: ^10.1.8
