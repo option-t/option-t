@@ -121,10 +121,7 @@ We target to run in following environments.
     - ES Module ([ES2020](https://262.ecma-international.org/11.0/) level).
         - We have a compatibility with [_require(esm)_](https://nodejs.org/docs/latest-v22.x/api/modules.html#loading-ecmascript-modules-using-require) for Node.js.
     - A runtime environment or module bundler must support Node.js' [package.json's `exports` field](https://nodejs.org/api/packages.html#package-entry-points) (Newer is better).
-        - We require TypeScript's [`--moduleResolution`](https://www.typescriptlang.org/tsconfig/#moduleResolution)
-          or [`--module`](https://www.typescriptlang.org/tsconfig/#module)
-          are set as `node20`, `bundler`, or others that supports `exports` field if your project use TypeScript.
-
+        Please see [`docs/installation.md`](./docs/installation.md) if you want to know more details.
 
 ### Caution
 
