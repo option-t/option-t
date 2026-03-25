@@ -20,3 +20,7 @@ catalog:
   typescript: ^5.9.3
 
 minimumReleaseAge: 1440
+
+minimumReleaseAgeExclude:
+  # We trust Microsoft's release engineering...
+  - typescript
