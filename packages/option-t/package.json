@@ -30,7 +30,7 @@
         }
     ],
     "scripts": {
-        "typecheck": "tsc -p ./tsconfig.json --noEmit",
+        "typecheck": "tsc -p ./tsconfig.json --noEmit --stableTypeOrdering",
         "build": "make build -j"
     },
     "license": "MIT",
