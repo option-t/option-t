@@ -102,7 +102,7 @@ export function isOk<T, E>(input: Result<T, E>): input is Ok<T> {
     return input.ok;
 }
 
-export function createOk<T>(val: T): Ok<T> {
+export function createOk<const T>(val: T): Ok<T> {
     const r: Ok<T> = {
         ok: true,
         val,
@@ -191,7 +191,7 @@ export function isErr<T, E>(input: Result<T, E>): input is Err<E> {
     return !input.ok;
 }
 
-export function createErr<E>(err: E): Err<E> {
+export function createErr<const E>(err: E): Err<E> {
     const r: Err<E> = {
         ok: false,
         // XXX:
