@@ -20,12 +20,6 @@ jobs:
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: 24
-            # Trusted publishing requires npm CLI version 11.5.1 or later.
-            - name: Install latest npm
-              run: |
-                  echo "Current npm version: $(npm --version)"
-                  npm install -g npm@latest
-                  echo "Updated npm version: $(npm --version)"
             - run: pnpm install
             - run: make clean
             - run: make prepublish -j
