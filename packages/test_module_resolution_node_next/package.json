@@ -2,13 +2,13 @@
     "private": true,
     "type": "module",
     "name": "@option-t/test_module_resolution_node_next",
-    "version": "56.1.0",
+    "version": "56.1.1",
     "license": "MIT",
     "scripts": {
         "test": "tsc -p ./tsconfig.json --stableTypeOrdering"
     },
     "dependencies": {
-        "typescript": "catalog:",
-        "option-t": "workspace:*"
+        "option-t": "workspace:*",
+        "typescript": "catalog:"
     }
 }
