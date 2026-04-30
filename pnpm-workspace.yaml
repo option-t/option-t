@@ -17,7 +17,7 @@ catalog:
   picomatch: ^4.0.4
   prettier: ^3.8.3
   turbo: ^2.8.14
-  typescript: ^6.0.2
+  typescript: ^6.0.3
 
 minimumReleaseAge: 7200
 minimumReleaseAgeExclude:
