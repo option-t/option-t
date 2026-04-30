@@ -8,7 +8,7 @@ catalog:
   '@typescript-eslint/parser': ^8.59.0
   ava: ^7.0.0
   del-cli: ^7.0.0
-  eslint: ^10.0.3
+  eslint: ^10.2.1
   eslint-config-prettier: ^10.1.8
   eslint-config-turbo: ^2.8.14
   eslint-plugin-import: ^2.32.0
