@@ -229,7 +229,7 @@ These are written for Rust, but the essence is just same.
 
 ## Contribution
 
-- Use npm v9 or later to install dev-dependency toolchains.
+- Use pnpm to install dev-dependency toolchains.
 
 
 
