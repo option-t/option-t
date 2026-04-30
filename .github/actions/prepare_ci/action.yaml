@@ -28,8 +28,8 @@ runs:
               package-manager-cache: false
         - name: Activate corepack
           shell: bash
-          run: | # This workaround https://github.com/nodejs/corepack/issues/612
-              npm i -g corepack
+          run: | # See https://github.com/nodejs/corepack/releases
+              npm install -g corepack@0.34.7
               corepack enable
         - name: Get pnpm cache directory
           shell: bash
