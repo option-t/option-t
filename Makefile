@@ -153,13 +153,13 @@ git_diff: ## Test whether there is no committed changes.
 	git diff --exit-code
 
 .PHONY: version_major
-version_major: ## Alias to run `npm version major -ws`.
-	$(PNPM_CMD) -r exec $(PNPM_CMD) version major --no-git-tag-version
+version_major: ## Alias to run `pnpm version major`.
+	$(PNPM_CMD) version major --no-git-tag-version --recursive
 
 .PHONY: version_minor
-version_minor: ## Alias to run `npm version minor -ws`.
-	$(PNPM_CMD) -r exec $(PNPM_CMD) version minor --no-git-tag-version
+version_minor: ## Alias to run `pnpm version minor`.
+	$(PNPM_CMD) version minor --no-git-tag-version --recursive
 
 .PHONY: version_patch
-version_patch: ## Alias to run `npm version patch -ws`.
-	$(PNPM_CMD) -r exec $(PNPM_CMD) version patch --no-git-tag-version
+version_patch: ## Alias to run `pnpm version patch`.
+	$(PNPM_CMD) version patch --no-git-tag-version --recursive
