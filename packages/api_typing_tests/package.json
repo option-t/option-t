@@ -2,14 +2,14 @@
     "private": true,
     "type": "module",
     "name": "@option-t/api_typing_tests",
-    "version": "56.1.0",
+    "version": "56.1.1",
     "license": "MIT",
     "scripts": {
         "test": "tsc -p ./tsconfig.json --stableTypeOrdering"
     },
     "dependencies": {
-        "typescript": "catalog:",
         "expect-type": "catalog:",
-        "option-t": "workspace:*"
+        "option-t": "workspace:*",
+        "typescript": "catalog:"
     }
 }
