@@ -37,26 +37,12 @@ updates:
                   - eslint-config-turbo
 
     #####################################################
-    #   GitHub Action Workflows
+    #   GitHub Action
     #####################################################
     - package-ecosystem: github-actions
-      directory: "/"
-      schedule:
-          interval: monthly
-      cooldown:
-          default-days: 7 # This 1-week delay is just by my intuition.
-          include:
-              - "*"
-      open-pull-requests-limit: 99
-      labels:
-          - A-dependency
-          - I-dependency-gardening
-
-    ##################################################
-    #   In-repository composite actions
-    #####################################################
-    - package-ecosystem: github-actions
-      directory: "/.github/actions/prepare_ci/"
+      directories:
+          - "/"
+          - "/.github/**/*"
       schedule:
           interval: monthly
       cooldown:
