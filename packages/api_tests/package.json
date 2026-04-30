@@ -6,7 +6,7 @@
     "license": "MIT",
     "scripts": {
         "test": "ava --config ./ava.config.js",
-        "test:update-snapshots": "npm run test -- --update-snapshots"
+        "test:update-snapshots": "node --run test -- --update-snapshots"
     },
     "dependencies": {
         "option-t": "workspace:*"
