@@ -19,8 +19,8 @@ catalogs:
       specifier: ^8.59.0
       version: 8.59.0
     ava:
-      specifier: ^7.0.0
-      version: 7.0.0
+      specifier: ^8.0.0
+      version: 8.0.0
     del-cli:
       specifier: ^7.0.0
       version: 7.0.0
@@ -67,7 +67,7 @@ importers:
         version: 0.1.19
       ava:
         specifier: 'catalog:'
-        version: 7.0.0
+        version: 8.0.0
       del-cli:
         specifier: 'catalog:'
         version: 7.0.0
@@ -531,9 +531,9 @@ packages:
   async-sema@3.1.1:
     resolution: {integrity: sha512-tLRNUXati5MFePdAk8dw7Qt7DpxPB60ofAgn8WRhW6a2rcimZnYBP9oxHiv0OHy+Wz7kPMG+t4LGdt31+4EmGg==}
 
-  ava@7.0.0:
-    resolution: {integrity: sha512-4sRJO/gehlfAgSbuH02mClDDiyymnuFmirE3KqPXl2pic1FaFTZaAACKqr85WT4o08iLjViMR9gmMkxzbZ3AgA==}
-    engines: {node: ^20.19 || ^22.20 || ^24.12 || >=25}
+  ava@8.0.0:
+    resolution: {integrity: sha512-KMUyT3LcnZ/5ipDAqnTGn6PQUvr1Jk4dex3v7ieQrGaMlAblfIpMLwK56HfPcObvJEzyhCWXfZjbM98FeAy0oQ==}
+    engines: {node: ^22.20 || ^24.12 || >=25}
     hasBin: true
     peerDependencies:
       '@ava/typescript': '*'
@@ -607,9 +607,9 @@ packages:
   ci-parallel-vars@1.0.1:
     resolution: {integrity: sha512-uvzpYrpmidaoxvIQHM+rKSrigjOe9feHYbw4uOI2gdfe1C3xIlxO+kVXq83WQWNniTf8bAxVpy+cQeFQsMERKg==}
 
-  cli-truncate@5.2.0:
-    resolution: {integrity: sha512-xRwvIOMGrfOAnM1JYtqQImuaNtDEv9v6oIYAs4LIHwTiKee8uwvIi363igssOC0O5U04i4AlENs79LQLu9tEMw==}
-    engines: {node: '>=20'}
+  cli-truncate@6.0.0:
+    resolution: {integrity: sha512-3+YKIUFsohD9MIoOFPFBldjAlnfCmCDcqe6aYGFqlDTRKg80p4wg35L+j83QQ63iOlKRccEkbn8IuM++HsgEjA==}
+    engines: {node: '>=22'}
 
   cliui@9.0.1:
     resolution: {integrity: sha512-k7ndgKhwoQveBL+/1tqGJYNz097I7WOvwbmmU2AR5+magtbjPWQTS1C5vzGkBC8Ym8UWRzfKUzUUqFLypY4Q+w==}
@@ -714,9 +714,9 @@ packages:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
     engines: {node: '>= 0.4'}
 
-  emittery@1.2.1:
-    resolution: {integrity: sha512-sFz64DCRjirhwHLxofFqxYQm6DCp6o0Ix7jwKQvuCHPn4GMRZNuBZyLPu9Ccmk/QSCAMZt6FOUqA8JZCQvA9fw==}
-    engines: {node: '>=14.16'}
+  emittery@2.0.0:
+    resolution: {integrity: sha512-FLtgn/CGBXiX3ZtPAm5q4LWWepHChOt55J9u01WFu3dyap2U7IwptlrqoE1COR/kxwdy/DOxIBALSxIW449I1g==}
+    engines: {node: '>=22'}
 
   emoji-regex@10.6.0:
     resolution: {integrity: sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==}
@@ -1241,9 +1241,9 @@ packages:
     resolution: {integrity: sha512-BUiRtTtV39LIJwinWBjqVsU9xhdnz7/i889V859IBFpuqGAj6LuOvHv5XLbgZ2R7ptJoJaEcxkv88/h25T7Ciw==}
     engines: {node: '>=8'}
 
-  memoize@10.2.0:
-    resolution: {integrity: sha512-DeC6b7QBrZsRs3Y02A6A7lQyzFbsQbqgjI6UW0GigGWV+u1s25TycMr0XHZE4cJce7rY/vyw2ctMQqfDkIhUEA==}
-    engines: {node: '>=18'}
+  memoize@11.0.0:
+    resolution: {integrity: sha512-cjsfZaC9b1clqPeIVMbb5dLHSXgdgGWGxdAU3oTUUkHiwWTKTBNnSmcqWJncNjYtBi3S8Rp0c5GIiyGztR8TRA==}
+    engines: {node: '>=22'}
 
   meow@14.1.0:
     resolution: {integrity: sha512-EDYo6VlmtnumlcBCbh1gLJ//9jvM/ndXHfVXIFrZVr6fGcwTUyCTFNTLCKuY3ffbK8L/+3Mzqnd58RojiZqHVw==}
@@ -1523,9 +1523,9 @@ packages:
     resolution: {integrity: sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==}
     engines: {node: '>=14.16'}
 
-  slice-ansi@8.0.0:
-    resolution: {integrity: sha512-stxByr12oeeOyY2BlviTNQlYV5xOj47GirPr4yA1hE9JCtxfQN0+tVbkxwCtYDQWhEKWFHsEK48ORg5jrouCAg==}
-    engines: {node: '>=20'}
+  slice-ansi@9.0.0:
+    resolution: {integrity: sha512-SO/3iYL5S3W57LLEniscOGPZgOqZUPCx6d3dB+52B80yJ0XstzsC/eV8gnA4tM3MHDrKz+OCFSLNjswdSC+/bA==}
+    engines: {node: '>=22'}
 
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
@@ -1542,8 +1542,8 @@ packages:
     resolution: {integrity: sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ==}
     engines: {node: '>=18'}
 
-  string-width@8.2.0:
-    resolution: {integrity: sha512-6hJPQ8N0V0P3SNmP6h2J99RLuzrWz2gvT7VnK5tKvrNqJoyS9W4/Fb8mo31UiPvy00z7DQXkP2hnKBVav76thw==}
+  string-width@8.2.1:
+    resolution: {integrity: sha512-IIaP0g3iy9Cyy18w3M9YcaDudujEAVHKt3a3QJg1+sr/oX96TbaGUubG0hJyCjCBThFH+tFpcIyoUHUn1ogaLA==}
     engines: {node: '>=20'}
 
   string.prototype.trim@1.2.10:
@@ -2074,7 +2074,7 @@ snapshots:
 
   async-sema@3.1.1: {}
 
-  ava@7.0.0:
+  ava@8.0.0:
     dependencies:
       '@vercel/nft': 1.5.0
       acorn: 8.16.0
@@ -2088,13 +2088,13 @@ snapshots:
       chunkd: 2.0.1
       ci-info: 4.4.0
       ci-parallel-vars: 1.0.1
-      cli-truncate: 5.2.0
+      cli-truncate: 6.0.0
       code-excerpt: 4.0.0
       common-path-prefix: 3.0.0
       concordance: 5.0.4
       currently-unhandled: 0.4.1
       debug: 4.4.3
-      emittery: 1.2.1
+      emittery: 2.0.0
       figures: 6.1.0
       globby: 16.2.0
       ignore-by-default: 2.1.0
@@ -2102,7 +2102,7 @@ snapshots:
       is-plain-object: 5.0.0
       is-promise: 4.0.0
       matcher: 6.0.0
-      memoize: 10.2.0
+      memoize: 11.0.0
       ms: 2.1.3
       p-map: 7.0.4
       package-config: 5.0.0
@@ -2110,6 +2110,7 @@ snapshots:
       plur: 6.0.0
       pretty-ms: 9.3.0
       resolve-cwd: 3.0.0
+      slash: 5.1.0
       stack-utils: 2.0.6
       supertap: 3.0.1
       temp-dir: 3.0.0
@@ -2180,10 +2181,10 @@ snapshots:
 
   ci-parallel-vars@1.0.1: {}
 
-  cli-truncate@5.2.0:
+  cli-truncate@6.0.0:
     dependencies:
-      slice-ansi: 8.0.0
-      string-width: 8.2.0
+      slice-ansi: 9.0.0
+      string-width: 8.2.1
 
   cliui@9.0.1:
     dependencies:
@@ -2298,7 +2299,7 @@ snapshots:
       es-errors: 1.3.0
       gopd: 1.2.0
 
-  emittery@1.2.1: {}
+  emittery@2.0.0: {}
 
   emoji-regex@10.6.0: {}
 
@@ -2884,7 +2885,7 @@ snapshots:
     dependencies:
       blueimp-md5: 2.19.0
 
-  memoize@10.2.0:
+  memoize@11.0.0:
     dependencies:
       mimic-function: 5.0.1
 
@@ -3175,7 +3176,7 @@ snapshots:
 
   slash@5.1.0: {}
 
-  slice-ansi@8.0.0:
+  slice-ansi@9.0.0:
     dependencies:
       ansi-styles: 6.2.3
       is-fullwidth-code-point: 5.1.0
@@ -3197,7 +3198,7 @@ snapshots:
       get-east-asian-width: 1.5.0
       strip-ansi: 7.2.0
 
-  string-width@8.2.0:
+  string-width@8.2.1:
     dependencies:
       get-east-asian-width: 1.5.0
       strip-ansi: 7.2.0
