@@ -4,8 +4,8 @@ packages:
 catalog:
   '@eslint/js': ^10.0.1
   '@reflink/reflink': ^0.1.19
-  '@typescript-eslint/eslint-plugin': ^8.59.0
-  '@typescript-eslint/parser': ^8.59.0
+  '@typescript-eslint/eslint-plugin': ^8.59.1
+  '@typescript-eslint/parser': ^8.59.1
   ava: ^8.0.0
   del-cli: ^7.0.0
   eslint: ^10.2.1
