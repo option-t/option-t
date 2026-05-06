@@ -10,13 +10,13 @@ catalog:
   del-cli: ^7.0.0
   eslint: ^10.2.1
   eslint-config-prettier: ^10.1.8
-  eslint-config-turbo: ^2.9.6
+  eslint-config-turbo: ^2.9.7
   eslint-plugin-import: ^2.32.0
   expect-type: ^1.3.0
   globals: ^17.5.0
   picomatch: ^4.0.4
   prettier: ^3.8.3
-  turbo: ^2.9.6
+  turbo: ^2.9.7
   typescript: ^6.0.3
 
 minimumReleaseAge: 7200
