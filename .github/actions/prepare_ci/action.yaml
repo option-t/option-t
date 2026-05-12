@@ -26,26 +26,59 @@ runs:
               registry-url: "https://registry.npmjs.org"
               # See https://github.com/actions/setup-node/issues/1357
               package-manager-cache: false
+
         - name: Activate corepack
           shell: bash
           run: | # See https://github.com/nodejs/corepack/releases
               npm install -g corepack@0.34.7
               corepack enable
+
         - name: Get pnpm cache directory
           shell: bash
           id: pnpm-cache-dir
           run: echo "dir=$(pnpm store path)" >> ${GITHUB_OUTPUT}
-        - name: Restore dependencies from cache
-          id: pnpm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
-          uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+
+        - name: Get the cache unique key
+          id: pnpm-cache-key
+          shell: bash
+          run: echo "id=${{ hashFiles('**/pnpm-lock.yaml') }}" >> $GITHUB_OUTPUT
+
+        - name: Compose the full cache key
+          id: cache-full-key
+          shell: bash
+          # This control our ci cache strategy.
+          # This strategy trusts the cache generated from the _trunk_ branch implicitly.
+          #
+          # 1. The cache key is composed by based on the lockfile & the current branch reference (this pull request scope).
+          # 2. The most desired cache key is full-key-match.
+          # 3. The 1st cache candidate is the one by the current branch reference.
+          #     - This covers the case which the change touch the dependency graph in the current branch reference (≒ this pull request scope).
+          # 4. The 2nd cache candidate is the one by the _trunk_ branch's same lockfile.
+          #     - This covers the case which the change does not touch a dependency graph of this project.
+          # 5. If the fails to 4, the current change would touch the dependency graph.
+          #     - Then the matched cache is completely nothing.
+          run: |
+              echo "key=            v0-${{ runner.os }}-pnpm-${{ github.ref }}-${{ steps.pnpm-cache-key.outputs.id }}" >> ${GITHUB_OUTPUT}
+              echo "candidate=      v0-${{ runner.os }}-pnpm-${{ github.ref }}-"                                       >> ${GITHUB_OUTPUT}
+              echo "candidate-main= v0-${{ runner.os }}-pnpm-refs/heads/main-${{ steps.pnpm-cache-key.outputs.id }}"   >> ${GITHUB_OUTPUT}
+
+        - name: Restore dependencies from caches
+          id: pnpm-cache # use this to check for `cache-hit` ==> if: steps.pnpm-cache.outputs.cache-hit != 'true'
+          uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
           with:
               path: ${{ steps.pnpm-cache-dir.outputs.dir }}
-              key: v0-${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-workspace.yaml') }}
+              key: ${{ steps.cache-full-key.outputs.key }}
               restore-keys: |
-                  v0-${{ runner.os }}-pnpm-
+                  ${{ steps.cache-full-key.outputs.candidate }}
+                  ${{ steps.cache-full-key.outputs.candidate-main }}
+
         - name: Install dependencies
           shell: bash
-          # We only cache `npm config get cache`, not including `node_modules/`.
-          # thus we need to do `npm ci` to restore `node_modules/` so we need run always this step.
-          # if: steps.npm-cache.outputs.cache-hit != 'true'
           run: pnpm install
+
+        - name: Save dependencies cache
+          uses: actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+          if: ${{ (steps.pnpm-cache.outputs.cache-hit != 'true') }}
+          with:
+              path: ${{ steps.pnpm-cache-dir.outputs.dir }}
+              key: ${{ steps.cache-full-key.outputs.key }}
