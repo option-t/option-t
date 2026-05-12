@@ -57,6 +57,10 @@ runs:
           #     - This covers the case which the change does not touch a dependency graph of this project.
           # 5. If the fails to 4, the current change would touch the dependency graph.
           #     - Then the matched cache is completely nothing.
+          #
+          # Caution:
+          #     This strategy could be prone for cache efficiency (not safeness).
+          #     For example, if dependabot creates many pull requests, an overall cache storage might run out.
           run: |
               echo "key=            v0-${{ runner.os }}-pnpm-${{ github.ref }}-${{ steps.pnpm-cache-key.outputs.id }}" >> ${GITHUB_OUTPUT}
               echo "candidate=      v0-${{ runner.os }}-pnpm-${{ github.ref }}-"                                       >> ${GITHUB_OUTPUT}
