@@ -90,5 +90,5 @@ runs:
               key: ${{ steps.cache-full-key.outputs.key }}
 
         - name: Check cache hit
-            if: steps.cache.outputs.cache-hit != 'true'
+            if: steps.pnpm-cache.outputs.cache-hit != 'true'
             run: exit 1
