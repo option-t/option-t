@@ -92,3 +92,9 @@ runs:
         - name: Check cache hit
             if: steps.pnpm-cache.outputs.cache-hit != 'true'
             run: exit 1
+
+        - name: startsWith
+            run: echo ${{ startsWith(github.ref, 'refs/heads/gh-readonly-queue/') }}
+
+        - name: Debug composed
+            run: echo ${{ (steps.pnpm-cache.outputs.cache-hit != 'true') && (startsWith(github.ref, 'refs/heads/gh-readonly-queue/') != 'true') }}
