@@ -82,7 +82,7 @@ runs:
 
         - name: Check cache hit
           shell: bash
-          run: exit ${{ (steps.pnpm-cache.outputs.cache-hit != 'true') }}
+          run: echo ${{ (steps.pnpm-cache.outputs.cache-hit != 'true') }}
 
         - name: startsWith
           shell: bash
