@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "name": "@option-t/eslint_config",
-    "version": "56.1.1",
+    "version": "56.1.2",
     "license": "MIT",
     "exports": {
         ".": "./src/lib.js"
