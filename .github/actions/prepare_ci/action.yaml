@@ -88,3 +88,7 @@ runs:
           with:
               path: ${{ steps.pnpm-cache-dir.outputs.dir }}
               key: ${{ steps.cache-full-key.outputs.key }}
+
+        - name: Check cache hit
+            if: steps.cache.outputs.cache-hit != 'true'
+            run: exit 1
