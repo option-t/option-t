@@ -20,7 +20,7 @@ jobs:
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: 24
-            - run: pnpm install
+            - run: pnpm ci
             - run: make clean
             - run: make prepublish -j
             - run: make publish -j

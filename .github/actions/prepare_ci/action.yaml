@@ -48,4 +48,4 @@ runs:
           # We only cache `npm config get cache`, not including `node_modules/`.
           # thus we need to do `npm ci` to restore `node_modules/` so we need run always this step.
           # if: steps.npm-cache.outputs.cache-hit != 'true'
-          run: pnpm install
+          run: pnpm ci
