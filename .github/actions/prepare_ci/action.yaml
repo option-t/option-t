@@ -90,11 +90,14 @@ runs:
               key: ${{ steps.cache-full-key.outputs.key }}
 
         - name: Check cache hit
-            if: steps.pnpm-cache.outputs.cache-hit != 'true'
-            run: exit 1
+          if: steps.pnpm-cache.outputs.cache-hit != 'true'\
+          shell: bash
+          run: exit 1
 
         - name: startsWith
-            run: echo ${{ startsWith(github.ref, 'refs/heads/gh-readonly-queue/') }}
+          shell: bash
+          run: echo ${{ startsWith(github.ref, 'refs/heads/gh-readonly-queue/') }}
 
         - name: Debug composed
-            run: echo ${{ (steps.pnpm-cache.outputs.cache-hit != 'true') && (startsWith(github.ref, 'refs/heads/gh-readonly-queue/') != 'true') }}
+          shell: bash
+          run: echo ${{ (steps.pnpm-cache.outputs.cache-hit != 'true') && (startsWith(github.ref, 'refs/heads/gh-readonly-queue/') != 'true') }}
