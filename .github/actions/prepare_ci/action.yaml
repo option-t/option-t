@@ -80,19 +80,9 @@ runs:
           shell: bash
           run: pnpm install
 
-        - name: Save dependencies cache
-          uses: actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-          # If the current head is in github's merge queue,
-          # it's meaningless to save a cache which will never restore again.
-          if: ${{ (steps.pnpm-cache.outputs.cache-hit != 'true') && (startsWith(github.ref, 'refs/heads/gh-readonly-queue/') != 'true') }}
-          with:
-              path: ${{ steps.pnpm-cache-dir.outputs.dir }}
-              key: ${{ steps.cache-full-key.outputs.key }}
-
         - name: Check cache hit
-          if: steps.pnpm-cache.outputs.cache-hit != 'true'
           shell: bash
-          run: exit 1
+          run: exit ${{ (steps.pnpm-cache.outputs.cache-hit != 'true') }}
 
         - name: startsWith
           shell: bash
