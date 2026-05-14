@@ -15,6 +15,25 @@
                 "tsconfig.json"
             ],
             "outputs": []
+        },
+        "build": {
+            "cache": true,
+            "inputs": [
+                // @prettier-ignore
+                "src/",
+                "tools/",
+                "ava.config.mjs",
+                "Makefile",
+                "package.json",
+                "tsconfig.json"
+            ],
+            "outputs": [
+                // @prettier-ignore
+                "__dist/",
+                "__tmp_base/",
+                "__tmp_mjs/",
+                "esm/"
+            ]
         }
     }
 }

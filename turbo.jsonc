@@ -7,20 +7,24 @@
             "cache": false
         },
         "build": {
-            // Historically, we don't have any assurance for cache aware.
-            "cache": false
+            "dependsOn": ["^build"]
         },
         "test": {
-            // Historically, our testing is not designed to enable cache easily.
-            "cache": false
+            "dependsOn": ["build"]
         },
         "test:update-snapshots": {
-            // Historically, our testing is not designed to enable cache easily.
+            "dependsOn": ["build"],
+            // This task should not be cached conservatively.
             "cache": false
         }
     },
     "globalEnv": [
         // This should be used for build the package.
         "TARGET_DIR"
+    ],
+    "globalDependencies": [
+        // @prettier-ignore
+        "tsconfig.base.json",
+        "tsconfig.json"
     ]
 }
