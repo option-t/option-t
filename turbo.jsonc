@@ -7,8 +7,7 @@
             "cache": false
         },
         "build": {
-            // Historically, we don't have any assurance for cache aware.
-            "cache": false
+            "dependsOn": ["^build"]
         },
         "test": {
             // Historically, our testing is not designed to enable cache easily.
@@ -22,5 +21,10 @@
     "globalEnv": [
         // This should be used for build the package.
         "TARGET_DIR"
+    ],
+    "globalDependencies": [
+        // @prettier-ignore
+        "tsconfig.base.json",
+        "tsconfig.json"
     ]
 }
