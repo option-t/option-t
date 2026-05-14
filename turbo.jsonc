@@ -10,11 +10,11 @@
             "dependsOn": ["^build"]
         },
         "test": {
-            // Historically, our testing is not designed to enable cache easily.
-            "cache": false
+            "dependsOn": ["build"]
         },
         "test:update-snapshots": {
-            // Historically, our testing is not designed to enable cache easily.
+            "dependsOn": ["build"],
+            // This task should not be cached conservatively.
             "cache": false
         }
     },

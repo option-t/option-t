@@ -78,31 +78,19 @@ typecheck: ## Check static types.
 # Test
 ###########################
 .PHONY: test_unittest
-test_unittest: build ## Build and run unit tests
-	$(MAKE) run_test_unittest -C $(CURDIR)
-
-.PHONY: test_api_typing
-test_api_typing: build ## Build and run api typing tests
-	$(MAKE) run_test_api_typing -C $(CURDIR)
-
-.PHONY: test_import_types
-test_import_types: build ## Build and run type import tests
-	$(MAKE) run_test_import_types -C $(CURDIR)
-
-.PHONY: run_test_import_types
-run_test_import_types: ## Run type import tests
-	$(NPM_BIN)/turbo run test --filter './packages/test_module_*'
-
-.PHONY: run_test_unittest
-run_test_unittest: ## Run unit tests only.
+test_unittest: ## Build and run unit tests
 	$(NPM_BIN)/turbo run test --filter './packages/api_tests'
 
-.PHONY: run_test_api_typing
-run_test_api_typing: ## Run api typing tests only.
+.PHONY: test_api_typing
+test_api_typing: ## Build and run api typing tests
 	$(NPM_BIN)/turbo run test --filter './packages/api_typing_tests'
 
-.PHONY: run_test_unittest_with_update_snapshots
-run_test_unittest_with_update_snapshots: ## Run unit tests only with updating snapshots.
+.PHONY: test_import_types
+test_import_types: ## Build and run type import tests
+	$(NPM_BIN)/turbo run test --filter './packages/test_module_*'
+
+.PHONY: test_unittest_with_update_snapshots
+test_unittest_with_update_snapshots: ## Run unit tests only with updating snapshots.
 	$(NPM_BIN)/turbo run test:update-snapshots --filter './packages/api_tests'
 
 .PHONY: test_package_json_exports_field_format
