@@ -121,6 +121,10 @@ run_test_distribution_contain_all: ## Run the test that check to contain expecte
 run_test_distribution_contain_all_with_update_snapshots: ## Run the test that check to contain expected items all with updating snapshots.
 	$(MAKE) $@ -C $(MAIN_PKG)
 
+.PHONY: run_test_all
+run_test_all: # Run all tests
+	$(NPM_BIN)/turbo run test
+
 
 ###########################
 # Tools
@@ -140,9 +144,7 @@ format_check: ## Check code formatting
 .PHONY: prepublish
 prepublish:
 	$(MAKE) $@ -C $(MAIN_PKG)
-	$(MAKE) run_test_unittest -C $(CURDIR)
-	$(MAKE) run_test_api_typing -C $(CURDIR)
-	$(MAKE) run_test_import_types -C $(CURDIR)
+	$(MAKE) run_test_all -C $(CURDIR)
 
 .PHONY: publish
 publish: ## Run some commands for 'npm publish'
