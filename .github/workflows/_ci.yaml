@@ -6,12 +6,14 @@ name: CI workflow template
 on:
     workflow_call:
 
-permissions:
-    contents: read
+permissions: {}
 
 jobs:
     warmup_dependency_cache:
         runs-on: ubuntu-latest
+        permissions:
+            contents: read
+        timeout-minutes: 10 # This value is just by feeling.
 
         strategy:
             matrix:
@@ -22,13 +24,18 @@ jobs:
 
         steps:
             - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+              with:
+                  persist-credentials: false
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
 
     format_check:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
+        timeout-minutes: 10 # This value is just by feeling.
 
         strategy:
             matrix:
@@ -37,6 +44,8 @@ jobs:
 
         steps:
             - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+              with:
+                  persist-credentials: false
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -46,7 +55,10 @@ jobs:
 
     lint:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
+        timeout-minutes: 10 # This value is just by feeling.
 
         strategy:
             matrix:
@@ -55,6 +67,8 @@ jobs:
 
         steps:
             - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+              with:
+                  persist-credentials: false
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -64,7 +78,10 @@ jobs:
 
     build:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
+        timeout-minutes: 10 # This value is just by feeling.
 
         strategy:
             matrix:
@@ -73,6 +90,8 @@ jobs:
 
         steps:
             - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+              with:
+                  persist-credentials: false
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -82,7 +101,10 @@ jobs:
 
     unittest:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
+        timeout-minutes: 10 # This value is just by feeling.
 
         strategy:
             matrix:
@@ -92,6 +114,8 @@ jobs:
 
         steps:
             - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+              with:
+                  persist-credentials: false
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -101,7 +125,10 @@ jobs:
 
     api_typing_test:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
+        timeout-minutes: 10 # This value is just by feeling.
 
         strategy:
             matrix:
@@ -110,6 +137,8 @@ jobs:
 
         steps:
             - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+              with:
+                  persist-credentials: false
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -119,7 +148,10 @@ jobs:
 
     test_package_json_exports_field_format:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
+        timeout-minutes: 10 # This value is just by feeling.
 
         strategy:
             matrix:
@@ -127,6 +159,8 @@ jobs:
                     - 26
         steps:
             - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+              with:
+                  persist-credentials: false
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -136,7 +170,10 @@ jobs:
 
     test_import_types:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
+        timeout-minutes: 10 # This value is just by feeling.
 
         strategy:
             matrix:
@@ -144,6 +181,8 @@ jobs:
                     - 26
         steps:
             - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+              with:
+                  persist-credentials: false
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -153,7 +192,10 @@ jobs:
 
     test_distribution_contain_all:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
+        timeout-minutes: 10 # This value is just by feeling.
 
         strategy:
             matrix:
@@ -162,6 +204,8 @@ jobs:
 
         steps:
             - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+              with:
+                  persist-credentials: false
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: ${{ matrix.node-version }}
@@ -178,7 +222,9 @@ jobs:
             - test_package_json_exports_field_format
             - test_import_types
             - test_distribution_contain_all
-        runs-on: ubuntu-latest
+        permissions: {}
+        runs-on: ubuntu-slim
+        timeout-minutes: 5 # This value is just by feeling.
         if: ${{ always() }}
         steps:
             - name: Check whether required jobs are successful

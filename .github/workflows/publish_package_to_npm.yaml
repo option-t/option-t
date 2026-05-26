@@ -2,8 +2,7 @@ name: publish to npm
 on:
     release:
         types: [released]
-permissions:
-    contents: read
+permissions: {}
 
 jobs:
     build:
@@ -15,8 +14,12 @@ jobs:
             # see https://docs.npmjs.com/generating-provenance-statements
             id-token: write # OIDC
 
+        timeout-minutes: 10 # This value is just by feeling.
+
         steps:
             - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+              with:
+                  persist-credentials: false
             - uses: ./.github/actions/prepare_ci
               with:
                   node-version: 24
