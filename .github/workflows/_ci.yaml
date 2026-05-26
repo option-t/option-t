@@ -6,12 +6,13 @@ name: CI workflow template
 on:
     workflow_call:
 
-permissions:
-    contents: read
+permissions: {}
 
 jobs:
     warmup_dependency_cache:
         runs-on: ubuntu-latest
+        permissions:
+            contents: read
         timeout-minutes: 10 # This value is just by feeling.
 
         strategy:
@@ -31,6 +32,8 @@ jobs:
 
     format_check:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
         timeout-minutes: 10 # This value is just by feeling.
 
@@ -52,6 +55,8 @@ jobs:
 
     lint:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
         timeout-minutes: 10 # This value is just by feeling.
 
@@ -73,6 +78,8 @@ jobs:
 
     build:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
         timeout-minutes: 10 # This value is just by feeling.
 
@@ -94,6 +101,8 @@ jobs:
 
     unittest:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
         timeout-minutes: 10 # This value is just by feeling.
 
@@ -116,6 +125,8 @@ jobs:
 
     api_typing_test:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
         timeout-minutes: 10 # This value is just by feeling.
 
@@ -137,6 +148,8 @@ jobs:
 
     test_package_json_exports_field_format:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
         timeout-minutes: 10 # This value is just by feeling.
 
@@ -157,6 +170,8 @@ jobs:
 
     test_import_types:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
         timeout-minutes: 10 # This value is just by feeling.
 
@@ -177,6 +192,8 @@ jobs:
 
     test_distribution_contain_all:
         needs: [warmup_dependency_cache]
+        permissions:
+            contents: read
         runs-on: ubuntu-latest
         timeout-minutes: 10 # This value is just by feeling.
 
@@ -205,6 +222,7 @@ jobs:
             - test_package_json_exports_field_format
             - test_import_types
             - test_distribution_contain_all
+        permissions: {}
         runs-on: ubuntu-slim
         timeout-minutes: 5 # This value is just by feeling.
         if: ${{ always() }}

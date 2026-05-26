@@ -2,8 +2,7 @@ name: publish to npm
 on:
     release:
         types: [released]
-permissions:
-    contents: read
+permissions: {}
 
 jobs:
     build:

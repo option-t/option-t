@@ -5,9 +5,10 @@ on:
         branches:
             - "main"
 
-permissions:
-    contents: read
+permissions: {}
 
 jobs:
     ci:
         uses: ./.github/workflows/_ci.yaml
+        permissions:
+            contents: read
