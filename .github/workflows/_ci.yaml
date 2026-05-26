@@ -205,7 +205,7 @@ jobs:
             - test_package_json_exports_field_format
             - test_import_types
             - test_distribution_contain_all
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-slim
         timeout-minutes: 5 # This value is just by feeling.
         if: ${{ always() }}
         steps:
