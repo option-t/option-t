@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "license": "MIT",
-    "packageManager": "pnpm@11.3.0+sha512.2c403d6594527287672b1f7056343a1f7c3634036a67ffabfcc2b3d7595d843768f8787148d1b57cf7956c90606bbd192857c363af19e96d2d0ec9ec5741d215",
+    "packageManager": "pnpm@11.7.0+sha512.19cc852c120c7125760f2443ee6be0ca5b40f9f50598de1a09a1f177503e010e57c23c77646e01e761de59bf874fb22a3398c33ab9691fc13eb946b6f0f4d620",
     "devDependencies": {
         "@option-t/eslint_config": "workspace:^",
         "@reflink/reflink": "catalog:",
