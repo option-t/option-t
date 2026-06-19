@@ -10,6 +10,16 @@
             "dependsOn": ["^build"]
         },
         "test": {
+            "dependsOn": [
+                // @prettier-ignore,
+                // "test:ts7", // FIXME: Enable this in #2772
+                "test:ts6"
+            ]
+        },
+        "test:ts7": {
+            "dependsOn": ["build"]
+        },
+        "test:ts6": {
             "dependsOn": ["build"]
         },
         "test:update-snapshots": {
