@@ -38,6 +38,10 @@
         "type": "git",
         "url": "git+https://github.com/option-t/option-t.git"
     },
+    "homepage": "https://github.com/option-t/option-t/tree/main/packages/option-t#readme",
+    "bugs": {
+        "url": "https://github.com/option-t/option-t/issues"
+    },
     "keywords": [
         "either",
         "maybe",
