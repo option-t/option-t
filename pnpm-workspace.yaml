@@ -19,6 +19,11 @@ catalog:
   turbo: ^2.9.14
   typescript: ^6.0.3
 
+catalogs:
+  # Workaround some packages' `peerDependencies` which specify `typescript` to `*` but they only work with `^6`.
+  typescript6:
+    typescript: npm:@typescript/typescript6@^6.0.0
+
 minimumReleaseAge: 7200
 minimumReleaseAgeExclude:
   # We trust Microsoft's release engineering...

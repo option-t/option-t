@@ -15,6 +15,7 @@
         "eslint-config-prettier": "catalog:",
         "eslint-config-turbo": "catalog:",
         "eslint-plugin-import": "catalog:",
-        "globals": "catalog:"
+        "globals": "catalog:",
+        "typescript": "catalog:typescript6"
     }
 }
