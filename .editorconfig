@@ -12,3 +12,6 @@ indent_style = space
 
 [Makefile]
 indent_style = tab
+
+[pnpm-workspace.yaml]
+indent_size = 2
