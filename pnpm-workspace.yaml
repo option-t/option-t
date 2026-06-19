@@ -6,7 +6,7 @@ catalog:
   '@reflink/reflink': ^0.1.19
   '@typescript-eslint/eslint-plugin': ^8.61.0
   '@typescript-eslint/parser': ^8.61.0
-  '@typescript/typescript6': ^6.0.0
+  '@typescript/typescript6': ^6.0.1
   ava: ^8.0.1
   del-cli: ^7.0.0
   eslint: ^10.5.0
@@ -19,12 +19,12 @@ catalog:
   picomatch: ^4.0.4
   prettier: ^3.8.4
   turbo: ^2.9.18
-  typescript: ^7.0.1-rc
+  typescript: 7.0.1-rc
 
 catalogs:
   # Workaround some packages' `peerDependencies` which specify `typescript` to `*` but they only work with `^6`.
   typescript6:
-    typescript: npm:@typescript/typescript6@^6.0.0
+    typescript: npm:@typescript/typescript6@^6.0.1
 
 strictPeerDependencies: true # Detect peerDependencies corretness
 
