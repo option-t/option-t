@@ -1,15 +1,24 @@
-import importPlugin from 'eslint-plugin-import';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+import { createNodeResolver, default as importPlugin } from 'eslint-plugin-import-x';
 
 const plugins = {
-    import: importPlugin,
+    'import-x': importPlugin,
+};
+
+const settings = {
+    'import-x/resolver-next': [
+        // @prettier-ignore
+        createTypeScriptImportResolver(),
+        createNodeResolver(),
+    ],
 };
 
 const rulesForAllCode = {
-    'import/order': [
+    'import-x/order': [
         'warn',
         {
             alphabetize: {
-                caseInsensitive: false,
+                caseInsensitive: true,
                 order: 'asc',
             },
             groups: [
@@ -28,11 +37,11 @@ const rulesForAllCode = {
 const rulesForLibaryCode = {
     // Disallow to import Node.js builtin module.
     // It's hurt the portability of this library.
-    'import/no-nodejs-modules': 'error',
+    'import-x/no-nodejs-modules': 'error',
 };
 
 /**
- *  @type   {import('eslint').Linter.FlatConfig}
+ *  @type   {import('eslint').Linter.Config}
  */
 export const configForLibaryCode = {
     plugins,
@@ -40,11 +49,11 @@ export const configForLibaryCode = {
         ...rulesForAllCode,
         ...rulesForLibaryCode,
     },
-    settings: importPlugin.configs.typescript.settings,
+    settings,
 };
 
 /**
- *  @type   {import('eslint').Linter.FlatConfig}
+ *  @type   {import('eslint').Linter.Config}
  */
 export const configForJavaScript = {
     plugins,
@@ -54,11 +63,11 @@ export const configForJavaScript = {
 };
 
 /**
- *  @type   {import('eslint').Linter.FlatConfig}
+ *  @type   {import('eslint').Linter.Config}
  */
 export const configForTypeScript = {
     plugins,
-    settings: importPlugin.configs.typescript.settings,
+    settings,
     rules: {
         ...rulesForAllCode,
     },
