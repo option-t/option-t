@@ -11,13 +11,21 @@ catalog:
   eslint: ^10.2.1
   eslint-config-prettier: ^10.1.8
   eslint-config-turbo: ^2.9.14
-  eslint-plugin-import: ^2.32.0
+  eslint-import-resolver-typescript: ^4.4.5
+  eslint-plugin-import-x: ^4.16.2
   expect-type: ^1.3.0
   globals: ^17.6.0
   picomatch: ^4.0.4
   prettier: ^3.8.3
   turbo: ^2.9.14
   typescript: ^6.0.3
+
+catalogs:
+  # Workaround some packages' `peerDependencies` which specify `typescript` to `*` but they only work with `^6`.
+  typescript6:
+    typescript: npm:@typescript/typescript6@^6.0.0
+
+strictPeerDependencies: true # Detect peerDependencies corretness
 
 minimumReleaseAge: 7200
 minimumReleaseAgeExclude:
@@ -30,3 +38,5 @@ trustPolicyIgnoreAfter: 43200 # 60 * 24 * 30 min
 # Mitigate an attack vector for a typical supply chain attack.
 blockExoticSubdeps: true
 strictDepBuilds: true
+allowBuilds:
+  unrs-resolver: false
