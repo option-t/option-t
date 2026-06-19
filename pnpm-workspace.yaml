@@ -19,7 +19,7 @@ catalog:
   picomatch: ^4.0.4
   prettier: ^3.8.3
   turbo: ^2.9.14
-  typescript: ^6.0.3
+  typescript: ^7.0.1-rc
 
 catalogs:
   # Workaround some packages' `peerDependencies` which specify `typescript` to `*` but they only work with `^6`.
@@ -32,6 +32,7 @@ minimumReleaseAge: 7200
 minimumReleaseAgeExclude:
   # We trust Microsoft's release engineering...
   - typescript
+  - '@typescript/typescript-*'
 
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 43200 # 60 * 24 * 30 min
