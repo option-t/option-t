@@ -40,8 +40,8 @@ catalogs:
       specifier: ^4.4.5
       version: 4.4.5
     eslint-plugin-import-x:
-      specifier: ^4.16.2
-      version: 4.16.2
+      specifier: ^4.17.0
+      version: 4.17.0
     expect-type:
       specifier: ^1.3.0
       version: 1.3.0
@@ -140,10 +140,10 @@ importers:
         version: 2.9.18(eslint@10.5.0)(turbo@2.9.18)
       eslint-import-resolver-typescript:
         specifier: 'catalog:'
-        version: 4.4.5(eslint-plugin-import-x@4.16.2(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0))(eslint@10.5.0)
+        version: 4.4.5(eslint-plugin-import-x@4.17.0(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0))(eslint@10.5.0)
       eslint-plugin-import-x:
         specifier: 'catalog:'
-        version: 4.16.2(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0)
+        version: 4.17.0(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0)
       globals:
         specifier: 'catalog:'
         version: 17.7.0
@@ -317,9 +317,6 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
-
-  '@package-json/types@0.0.12':
-    resolution: {integrity: sha512-uu43FGU34B5VM9mCNjXCwLaGHYjXdNincqKLaraaCW+7S2+SmiBg1Nv8bPnmschrIfZmfKNY9f3fC376MRrObw==}
 
   '@reflink/reflink-darwin-arm64@0.1.19':
     resolution: {integrity: sha512-ruy44Lpepdk1FqDz38vExBY/PVUsjxZA+chd9wozjUH9JjuDT/HEaQYA6wYN9mf041l0yLVar6BCZuWABJvHSA==}
@@ -1112,8 +1109,8 @@ packages:
       eslint-plugin-import-x:
         optional: true
 
-  eslint-plugin-import-x@4.16.2:
-    resolution: {integrity: sha512-rM9K8UBHcWKpzQzStn1YRN2T5NvdeIfSVoKu/lKF41znQXHAUcBbYXe5wd6GNjZjTrP7viQ49n1D83x/2gYgIw==}
+  eslint-plugin-import-x@4.17.0:
+    resolution: {integrity: sha512-aM7V25Bg6YuYxtEhwjafzfS0NTMds1D2PMQI0K4KqJxQJRtkP4CO+MQTWRdBq2qAnmPxTxLevhXUBtByxJqS1w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       '@typescript-eslint/utils': ^8.56.0
@@ -2137,8 +2134,6 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@package-json/types@0.0.12': {}
-
   '@reflink/reflink-darwin-arm64@0.1.19':
     optional: true
 
@@ -2928,7 +2923,7 @@ snapshots:
       - supports-color
     optional: true
 
-  eslint-import-resolver-typescript@4.4.5(eslint-plugin-import-x@4.16.2(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0))(eslint@10.5.0):
+  eslint-import-resolver-typescript@4.4.5(eslint-plugin-import-x@4.17.0(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0))(eslint@10.5.0):
     dependencies:
       debug: 4.4.3
       eslint: 10.5.0
@@ -2939,13 +2934,12 @@ snapshots:
       tinyglobby: 0.2.17
       unrs-resolver: 1.12.2
     optionalDependencies:
-      eslint-plugin-import-x: 4.16.2(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0)
+      eslint-plugin-import-x: 4.17.0(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import-x@4.16.2(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0):
+  eslint-plugin-import-x@4.17.0(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0):
     dependencies:
-      '@package-json/types': 0.0.12
       '@typescript-eslint/types': 8.61.0
       comment-parser: 1.4.7
       debug: 4.4.3
