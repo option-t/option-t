@@ -52,8 +52,8 @@ catalogs:
       specifier: ^4.0.4
       version: 4.0.4
     prettier:
-      specifier: ^3.8.4
-      version: 3.8.4
+      specifier: ^3.9.6
+      version: 3.9.6
     turbo:
       specifier: ^2.9.18
       version: 2.9.18
@@ -89,7 +89,7 @@ importers:
         version: 4.0.4
       prettier:
         specifier: 'catalog:'
-        version: 3.8.4
+        version: 3.9.6
       turbo:
         specifier: 'catalog:'
         version: 2.9.18
@@ -1710,8 +1710,8 @@ packages:
     resolution: {integrity: sha512-E6rsNU1QNJgB3sjj7OANinGncFKuK+164sLXw1/CqBjj/EkXSoSdHCtWQGBNlREIGLnL7IEUEGa08YFVUbrhVg==}
     engines: {node: '>=16'}
 
-  prettier@3.8.4:
-    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
+  prettier@3.9.6:
+    resolution: {integrity: sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2238,8 +2238,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.61.0(@typescript/typescript6@6.0.1)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.61.0(@typescript/typescript6@6.0.1)
-      '@typescript-eslint/types': 8.61.0
+      '@typescript-eslint/tsconfig-utils': 8.62.0(@typescript/typescript6@6.0.1)
+      '@typescript-eslint/types': 8.62.0
       debug: 4.4.3
       typescript: '@typescript/typescript6@6.0.1'
     transitivePeerDependencies:
@@ -3579,7 +3579,7 @@ snapshots:
 
   presentable-error@0.0.1: {}
 
-  prettier@3.8.4: {}
+  prettier@3.9.6: {}
 
   pretty-ms@9.3.0:
     dependencies:
