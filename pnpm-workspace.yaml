@@ -19,7 +19,7 @@ catalog:
   picomatch: ^4.0.4
   prettier: ^3.8.4
   turbo: ^2.9.18
-  typescript: 7.0.1-rc
+  typescript: 7.0.2
 
 catalogs:
   # Workaround some packages' `peerDependencies` which specify `typescript` to `*` but they only work with `^6`.
