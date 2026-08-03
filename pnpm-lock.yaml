@@ -40,8 +40,8 @@ catalogs:
       specifier: ^4.4.5
       version: 4.4.5
     eslint-plugin-import-x:
-      specifier: ^4.17.0
-      version: 4.17.0
+      specifier: ^4.17.1
+      version: 4.17.1
     expect-type:
       specifier: ^1.3.0
       version: 1.3.0
@@ -140,10 +140,10 @@ importers:
         version: 2.9.18(eslint@10.5.0)(turbo@2.9.18)
       eslint-import-resolver-typescript:
         specifier: 'catalog:'
-        version: 4.4.5(eslint-plugin-import-x@4.17.0(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0))(eslint@10.5.0)
+        version: 4.4.5(eslint-plugin-import-x@4.17.1(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0))(eslint@10.5.0)
       eslint-plugin-import-x:
         specifier: 'catalog:'
-        version: 4.17.0(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0)
+        version: 4.17.1(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0)
       globals:
         specifier: 'catalog:'
         version: 17.7.0
@@ -1109,8 +1109,8 @@ packages:
       eslint-plugin-import-x:
         optional: true
 
-  eslint-plugin-import-x@4.17.0:
-    resolution: {integrity: sha512-aM7V25Bg6YuYxtEhwjafzfS0NTMds1D2PMQI0K4KqJxQJRtkP4CO+MQTWRdBq2qAnmPxTxLevhXUBtByxJqS1w==}
+  eslint-plugin-import-x@4.17.1:
+    resolution: {integrity: sha512-4cdstYkKCyjumM2Q9NSI03K8D2a9F4Ssz33K2lv2hQa4KmR9jPLwk3uWGtNvclfqBrPGfGuMBwsGMbe6dMRbfg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       '@typescript-eslint/utils': ^8.56.0
@@ -2238,8 +2238,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.61.0(@typescript/typescript6@6.0.1)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.61.0(@typescript/typescript6@6.0.1)
-      '@typescript-eslint/types': 8.61.0
+      '@typescript-eslint/tsconfig-utils': 8.62.0(@typescript/typescript6@6.0.1)
+      '@typescript-eslint/types': 8.62.0
       debug: 4.4.3
       typescript: '@typescript/typescript6@6.0.1'
     transitivePeerDependencies:
@@ -2923,7 +2923,7 @@ snapshots:
       - supports-color
     optional: true
 
-  eslint-import-resolver-typescript@4.4.5(eslint-plugin-import-x@4.17.0(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0))(eslint@10.5.0):
+  eslint-import-resolver-typescript@4.4.5(eslint-plugin-import-x@4.17.1(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0))(eslint@10.5.0):
     dependencies:
       debug: 4.4.3
       eslint: 10.5.0
@@ -2934,13 +2934,13 @@ snapshots:
       tinyglobby: 0.2.17
       unrs-resolver: 1.12.2
     optionalDependencies:
-      eslint-plugin-import-x: 4.17.0(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0)
+      eslint-plugin-import-x: 4.17.1(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import-x@4.17.0(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0):
+  eslint-plugin-import-x@4.17.1(@typescript-eslint/utils@8.61.0(@typescript/typescript6@6.0.1)(eslint@10.5.0))(eslint-import-resolver-node@0.3.10)(eslint@10.5.0):
     dependencies:
-      '@typescript-eslint/types': 8.61.0
+      '@typescript-eslint/types': 8.62.0
       comment-parser: 1.4.7
       debug: 4.4.3
       eslint: 10.5.0
