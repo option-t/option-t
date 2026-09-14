@@ -8,21 +8,19 @@
     - `T | undefined`
     - `T | null | undefined`
     - [_Result type_](https://en.wikipedia.org/wiki/Result_type)
-    - Tagged [_Option type_](https://en.wikipedia.org/wiki/Option_type)
 * **APIs are inspired by Rust Language's [`Option<T>`](https://doc.rust-lang.org/std/option/) and [`Result<T, E>`](https://doc.rust-lang.org/std/result/)**.
 * **This library helps to sort the "nullable" convention in your project**.
 * **TypeScript friendly APIs**.
     * We recommend to use this with some static type systems like TypeScript.
 * **Zero dependency**.
-    * We use only a pure [ECMAScript](https://tc39.es/ecma262/) feature to implement this library as possible
-      except a packaging system or a legacy module system.
     * This library is designed to be portable to any [host environments](https://tc39.es/ecma262/#host-environment)
       supporting a set of ECMAScript features which we use, _at implementation code level (not at packaging level)_.
     * We might provide a feature using [host defined](https://tc39.es/ecma262/#host-defined) facilities
       but they would be a __opt-in__.
-* **Tree shakable completely**.
-* **ES Module first**.
-    * Don't worry. We have a compatibility for _require(esm)_ of Node.js. 
+* **Tree shakable completely by adopting ES module at all**.
+    * We use only a pure [ECMAScript](https://tc39.es/ecma262/) feature to implement this library as possible
+      except a packaging system.
+    * We have a compatibility for _require(esm)_ of Node.js. 
 * **Enable to use with a programming styles that mixes an execution context between server and client across the boundary (e.g. [Qwik](https://github.com/BuilderIO/qwik)).**
 
 
