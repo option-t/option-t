@@ -24,7 +24,7 @@ catalog:
 catalogs:
   # Workaround some packages' `peerDependencies` which specify `typescript` to `*` but they only work with `^6`.
   typescript6:
-    typescript: npm:@typescript/typescript6@^6.0.1
+    typescript: npm:@typescript/typescript6@^6.0.2
 
 strictPeerDependencies: true # Detect peerDependencies corretness
 
