@@ -12,6 +12,6 @@ concurrency:
 
 jobs:
     ci:
-        uses: ./.github/workflows/_ci.yaml
+        uses: $/.github/workflows/_ci.yaml
         permissions:
             contents: read
