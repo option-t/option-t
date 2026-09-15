@@ -4,27 +4,27 @@ packages:
 catalog:
   '@eslint/js': ^10.0.1
   '@reflink/reflink': ^0.1.19
-  '@typescript-eslint/eslint-plugin': ^8.61.0
-  '@typescript-eslint/parser': ^8.68.0
+  '@typescript-eslint/eslint-plugin': ^8.70.0
+  '@typescript-eslint/parser': ^8.70.0
   '@typescript/typescript6': ^6.0.2
   ava: ^8.0.1
   del-cli: ^7.0.0
-  eslint: ^10.5.0
+  eslint: ^10.10.0
   eslint-config-prettier: ^10.1.8
-  eslint-config-turbo: ^2.9.18
+  eslint-config-turbo: ^2.10.12
   eslint-import-resolver-typescript: ^4.4.5
   eslint-plugin-import-x: ^4.17.1
   expect-type: ^1.4.0
-  globals: ^17.7.0
+  globals: ^17.12.0
   picomatch: ^4.0.7
   prettier: ^3.9.6
-  turbo: ^2.9.18
+  turbo: ^2.10.12
   typescript: 7.0.2
 
 catalogs:
   # Workaround some packages' `peerDependencies` which specify `typescript` to `*` but they only work with `^6`.
   typescript6:
-    typescript: npm:@typescript/typescript6@^6.0.1
+    typescript: npm:@typescript/typescript6@^6.0.2
 
 strictPeerDependencies: true # Detect peerDependencies corretness
 
