@@ -15,7 +15,7 @@ catalog:
   eslint-import-resolver-typescript: ^4.4.5
   eslint-plugin-import-x: ^4.17.1
   expect-type: ^1.4.0
-  globals: ^17.7.0
+  globals: ^17.12.0
   picomatch: ^4.0.7
   prettier: ^3.9.6
   turbo: ^2.10.12
