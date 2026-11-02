@@ -206,9 +206,6 @@ catalogs:
     globals:
       specifier: ^17.13.0
       version: 17.13.0
-    picomatch:
-      specifier: ^4.0.7
-      version: 4.0.7
     prettier:
       specifier: ^3.9.10
       version: 3.9.10
@@ -242,9 +239,6 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 10.13.0
-      picomatch:
-        specifier: 'catalog:'
-        version: 4.0.7
       prettier:
         specifier: 'catalog:'
         version: 3.9.10
