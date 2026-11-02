@@ -9,7 +9,6 @@
         "ava": "catalog:",
         "del-cli": "catalog:",
         "eslint": "catalog:",
-        "picomatch": "catalog:",
         "prettier": "catalog:",
         "turbo": "catalog:",
         "typescript": "catalog:"
