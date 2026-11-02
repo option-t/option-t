@@ -182,9 +182,6 @@ catalogs:
     ava:
       specifier: ^8.1.2
       version: 8.1.2
-    del-cli:
-      specifier: ^8.0.1
-      version: 8.0.1
     eslint:
       specifier: ^10.13.0
       version: 10.13.0
@@ -227,15 +224,15 @@ importers:
       '@option-t/eslint_config':
         specifier: workspace:^
         version: link:packages/eslint_config
+      '@option-t/tools':
+        specifier: workspace:^
+        version: link:packages/tools
       '@reflink/reflink':
         specifier: 'catalog:'
         version: 0.1.19
       ava:
         specifier: 'catalog:'
         version: 8.1.2
-      del-cli:
-        specifier: 'catalog:'
-        version: 8.0.1
       eslint:
         specifier: 'catalog:'
         version: 10.13.0
@@ -305,6 +302,9 @@ importers:
 
   packages/option-t:
     devDependencies:
+      '@option-t/tools':
+        specifier: workspace:^
+        version: link:../tools
       typescript:
         specifier: 'catalog:'
         version: 7.0.2
@@ -368,6 +368,8 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 7.0.2
+
+  packages/tools: {}
 
 packages:
 
@@ -1112,15 +1114,6 @@ packages:
   deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
 
-  del-cli@8.0.1:
-    resolution: {integrity: sha512-Z4+xLjVJs9dMN4gDMRfY/7b7WItNOB5EOKu9BenbJD63olx9YM5SU/DEuDFWvN0B1BdGIzejCJFgPt2vIGwj1A==}
-    engines: {node: '>=22'}
-    hasBin: true
-
-  del@9.0.1:
-    resolution: {integrity: sha512-1B11d2d8AJcTcbvXtF5a9NWVoE7G12eJPcadRGdLik38WxgsAyDQO5ZdjHoeIlAIhAhbgnD/AZVBWf9xQze+0w==}
-    engines: {node: '>=22'}
-
   detect-libc@2.1.2:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
@@ -1402,10 +1395,6 @@ packages:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
 
-  is-path-cwd@4.0.1:
-    resolution: {integrity: sha512-w3upMc5m1LfTkA4VvUcMo764hWF1uuo2NPHtLkLrlhw/tiCLxD5gIhvl72oZIY8oFVpZ/xG2JnqbibZAfSQ3Ww==}
-    engines: {node: '>=20'}
-
   is-path-inside@4.0.0:
     resolution: {integrity: sha512-lJJV/5dYS+RcL8uQdBDW9c9uWFLLBNRyFhnAKXw5tVqLlKZ4RMGZKv+YQ/IA3OhD+RpbJa1LLFM1FQPGyIXvOA==}
     engines: {node: '>=12'}
@@ -1471,10 +1460,6 @@ packages:
   memoize@11.0.0:
     resolution: {integrity: sha512-cjsfZaC9b1clqPeIVMbb5dLHSXgdgGWGxdAU3oTUUkHiwWTKTBNnSmcqWJncNjYtBi3S8Rp0c5GIiyGztR8TRA==}
     engines: {node: '>=22'}
-
-  meow@14.1.0:
-    resolution: {integrity: sha512-EDYo6VlmtnumlcBCbh1gLJ//9jvM/ndXHfVXIFrZVr6fGcwTUyCTFNTLCKuY3ffbK8L/+3Mzqnd58RojiZqHVw==}
-    engines: {node: '>=20'}
 
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -1576,10 +1561,6 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
-
-  presentable-error@0.0.1:
-    resolution: {integrity: sha512-E6rsNU1QNJgB3sjj7OANinGncFKuK+164sLXw1/CqBjj/EkXSoSdHCtWQGBNlREIGLnL7IEUEGa08YFVUbrhVg==}
-    engines: {node: '>=16'}
 
   prettier@3.9.10:
     resolution: {integrity: sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA==}
@@ -2454,22 +2435,6 @@ snapshots:
 
   deep-is@0.1.4: {}
 
-  del-cli@8.0.1:
-    dependencies:
-      del: 9.0.1
-      meow: 14.1.0
-      presentable-error: 0.0.1
-
-  del@9.0.1:
-    dependencies:
-      globby: 16.2.4
-      is-glob: 4.0.3
-      is-path-cwd: 4.0.1
-      is-path-inside: 4.0.0
-      p-map: 7.1.1
-      presentable-error: 0.0.1
-      slash: 5.1.0
-
   detect-libc@2.1.2: {}
 
   dotenv@16.0.3: {}
@@ -2741,8 +2706,6 @@ snapshots:
 
   is-number@7.0.0: {}
 
-  is-path-cwd@4.0.1: {}
-
   is-path-inside@4.0.0: {}
 
   is-plain-object@5.1.0: {}
@@ -2792,8 +2755,6 @@ snapshots:
   memoize@11.0.0:
     dependencies:
       mimic-function: 5.0.1
-
-  meow@14.1.0: {}
 
   merge2@1.4.1: {}
 
@@ -2872,8 +2833,6 @@ snapshots:
       irregular-plurals: 4.2.0
 
   prelude-ls@1.2.1: {}
-
-  presentable-error@0.0.1: {}
 
   prettier@3.9.10: {}
 

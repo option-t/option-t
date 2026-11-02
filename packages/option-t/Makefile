@@ -49,19 +49,19 @@ clean: $(addprefix clean_, $(CLEAN_TARGETS))
 
 .PHONY: clean_dist
 clean_dist:
-	$(NPM_BIN)/del $(DIST_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/rm_dir.js $(DIST_DIR) --force
 
 .PHONY: clean_generated_esm
 clean_generated_esm:
-	$(NPM_BIN)/del $(GENERATED_ESM_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/rm_dir.js $(GENERATED_ESM_DIR) --force
 
 .PHONY: clean_tmp_base
 clean_tmp_base:
-	$(NPM_BIN)/del $(TMP_BASE_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/rm_dir.js $(TMP_BASE_DIR) --force
 
 .PHONY: clean_tmp_mjs
 clean_tmp_mjs:
-	$(NPM_BIN)/del $(TMP_MJS_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/rm_dir.js $(TMP_MJS_DIR) --force
 
 
 ###########################
