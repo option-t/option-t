@@ -44,7 +44,7 @@ clean_repo_root: clean_turborepo_cache
 
 .PHONY: clean_turborepo_cache
 clean_turborepo_cache:
-	$(NPM_BIN)/del $(PROJECT_TURBO_DIR)
+	$(NODE_BIN) $(CURDIR)/tools/rm_dir.js $(PROJECT_TURBO_DIR) --force
 
 
 ###########################

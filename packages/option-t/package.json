@@ -49,6 +49,7 @@
         "result-type"
     ],
     "devDependencies": {
+        "@option-t/tools": "workspace:^",
         "typescript": "catalog:"
     },
     "sideEffects": false,

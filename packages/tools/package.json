@@ -1,0 +1,12 @@
+{
+    "private": true,
+    "type": "module",
+    "name": "@option-t/tools",
+    "version": "56.1.2",
+    "license": "MIT",
+    "exports": {
+        ".": {
+            "default": "./src/mod.js"
+        }
+    }
+}
